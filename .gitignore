@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+venv_*/
+.venv/
+env/
+
+# Django
+*.log
+db.sqlite3
+db.sqlite3-journal
+local_settings.py
+
+# Secrets / local config
+.env
+.env.*
+!.env.example
+
+# Media & generated artifacts (recreated at runtime / by seed commands)
+media/
+exports/
+
+# Test & tooling caches
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Claude / editor / OS cruft
+.claude/
+.DS_Store
+.idea/
+.vscode/
+*.swp

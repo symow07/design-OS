@@ -1,0 +1,21 @@
+django==4.2
+psycopg2-binary
+python-dotenv
+anthropic
+openai
+requests
+pillow
+django-environ
+djangorestframework
+reportlab
+whitenoise
+celery
+redis
+playwright
+# Dieline generator (merged from dieline-generator project)
+pydantic>=2.0
+svgwrite>=1.4
+shapely>=2.0.0
+# Optional: .ai (Illustrator) export fallback. Requires native cairo, so it is
+# left out by default — SVG is the primary deliverable and AI export is
+# best-effort. To enable: install system cairo, then `pip install svglib`.

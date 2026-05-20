@@ -1,0 +1,1456 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BBROSE Design OS</title>
+<style>
+  :root {
+    --bg: #0D0D0D;
+    --surface: #161616;
+    --surface-raised: #1E1E1E;
+    --border: #2A2A2A;
+    --rose-gold: #B5895A;
+    --rose-gold-light: #D4A96A;
+    --cream: #F5EDD6;
+    --cream-dim: #9E9380;
+    --amber: #D4953A;
+    --green: #5A8A5A;
+    --red: #8A3A3A;
+    --purple: #7A5A9A;
+    --teal: #3A8A8A;
+    --coral: #C4604A;
+
+    --font-serif: Georgia, 'Times New Roman', serif;
+    --font-mono: 'SF Mono', ui-monospace, 'JetBrains Mono', Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; overflow: hidden; }
+  body {
+    background: var(--bg);
+    color: var(--cream);
+    font-family: var(--font-serif);
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--rose-gold); }
+
+  /* ---------- LAYOUT ---------- */
+  #app {
+    display: grid;
+    grid-template-columns: 280px 1fr 300px;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .panel {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+  }
+  #panel-center { background: var(--bg); border-right: 1px solid var(--border); }
+  #panel-brain { border-right: none; border-left: 1px solid var(--border); }
+
+  .panel-header {
+    padding: 16px 18px;
+    border-bottom: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--rose-gold);
+  }
+
+  /* ---------- LEFT: QUEUE ---------- */
+  #panel-queue .composer {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #task-input {
+    width: 100%;
+    height: 84px;
+    resize: none;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 10px 12px;
+    color: var(--cream);
+    font-family: var(--font-serif);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  #task-input:focus { outline: none; border-color: var(--rose-gold); }
+  #task-input::placeholder { color: var(--cream-dim); font-style: italic; }
+
+  #product-select {
+    width: 100%;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 8px 10px;
+    color: var(--cream);
+    font-family: var(--font-mono);
+    font-size: 12px;
+  }
+  #product-select:focus { outline: none; border-color: var(--rose-gold); }
+
+  #btn-submit {
+    width: 100%;
+    padding: 10px 14px;
+    background: var(--rose-gold);
+    color: #1a1410;
+    border: none;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  #btn-submit:hover:not(:disabled) { background: var(--rose-gold-light); }
+  #btn-submit:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  #task-list {
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  .task-item {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    transition: background 0.12s ease;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .task-item:hover { background: var(--surface-raised); }
+  .task-item.active {
+    background: var(--surface-raised);
+    box-shadow: inset 3px 0 0 var(--rose-gold);
+  }
+
+  .task-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+    background: var(--cream-dim);
+  }
+  .task-status-dot[data-status="queued"],
+  .task-status-dot[data-status="running"] { background: var(--amber); }
+  .task-status-dot[data-status="awaiting_gate_1"],
+  .task-status-dot[data-status="awaiting_gate_2"] { background: var(--purple); }
+  .task-status-dot[data-status="gate_1_approved"],
+  .task-status-dot[data-status="gate_2_approved"] { background: var(--teal); }
+  .task-status-dot[data-status="completed"] { background: var(--green); }
+  .task-status-dot[data-status="failed"],
+  .task-status-dot[data-status="rejected"] { background: var(--red); }
+
+  .task-body { flex: 1; min-width: 0; }
+  .task-text {
+    color: var(--cream);
+    font-size: 13px;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .task-time {
+    display: block;
+    margin-top: 4px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--cream-dim);
+  }
+
+  /* ---------- CENTER ---------- */
+  #panel-center .panel-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--cream);
+    text-transform: none;
+    letter-spacing: 0;
+    font-family: var(--font-serif);
+    font-size: 18px;
+  }
+  #task-title { color: var(--cream); }
+  #task-status-badge {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border: 1px solid currentColor;
+    border-radius: 3px;
+    color: var(--cream-dim);
+  }
+  #task-status-badge[data-status="queued"],
+  #task-status-badge[data-status="running"] { color: var(--amber); }
+  #task-status-badge[data-status="awaiting_gate_1"],
+  #task-status-badge[data-status="awaiting_gate_2"] { color: var(--purple); }
+  #task-status-badge[data-status="gate_1_approved"],
+  #task-status-badge[data-status="gate_2_approved"] { color: var(--teal); }
+  #task-status-badge[data-status="completed"] { color: var(--green); }
+  #task-status-badge[data-status="failed"],
+  #task-status-badge[data-status="rejected"] { color: var(--red); }
+
+  #center-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px 32px;
+  }
+
+  /* States — empty-state shows by default; JS sets inline display:block on
+     one of the others, and :has() hides empty-state automatically. */
+  #empty-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--cream-dim);
+    font-style: italic;
+    font-size: 15px;
+  }
+  #feed-state, #gallery-state, #gate2-state, #complete-state { display: none; }
+  #center-content:has(> #feed-state[style*="block"]) > #empty-state,
+  #center-content:has(> #gallery-state[style*="block"]) > #empty-state,
+  #center-content:has(> #gate2-state[style*="block"]) > #empty-state,
+  #center-content:has(> #complete-state[style*="block"]) > #empty-state {
+    display: none;
+  }
+
+  /* Activity feed */
+  #activity-feed {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  /* Image gallery */
+  #image-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 24px;
+  }
+
+  #gate1-actions {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* Gate 2 */
+  #mockup-view {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px;
+    min-height: 320px;
+  }
+
+  /* ---------- RIGHT: BRAIN ---------- */
+  #panel-brain { background: var(--surface); }
+  #brain-content {
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  .brain-section {
+    padding: 16px 18px;
+    border-bottom: 1px solid var(--border);
+  }
+  .brain-section .label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rose-gold);
+    margin-bottom: 10px;
+  }
+  .brain-section .value {
+    font-family: var(--font-serif);
+    font-size: 14px;
+    color: var(--cream);
+    line-height: 1.5;
+  }
+  .brain-section .excerpt {
+    font-size: 12px;
+    color: var(--cream-dim);
+    margin-top: 6px;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  .color-systems {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .color-systems .system {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--cream);
+  }
+
+  #brain-stats {
+    padding: 16px 18px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--cream-dim);
+  }
+  #brain-stats .stat {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+  }
+  #brain-stats .stat .v { color: var(--cream); }
+
+  .dim { color: var(--cream-dim); font-style: italic; font-size: 12px; }
+
+  /* ============================================================
+     MILESTONE 5.4 — Runtime classes set by JS
+     ============================================================ */
+
+  /* Status colors (.status-<state>) — JS replaces classes on dot & badge */
+  .status-queued, .status-running { color: var(--amber); }
+  .status-awaiting_gate_1, .status-awaiting_gate_2 { color: var(--purple); }
+  .status-gate_1_approved, .status-gate_2_approved { color: var(--teal); }
+  .status-completed { color: var(--green); }
+  .status-failed, .status-rejected { color: var(--red); }
+
+  /* The dot needs background, not color */
+  .task-status-dot.status-queued,
+  .task-status-dot.status-running { background: var(--amber); }
+  .task-status-dot.status-awaiting_gate_1,
+  .task-status-dot.status-awaiting_gate_2 { background: var(--purple); }
+  .task-status-dot.status-gate_1_approved,
+  .task-status-dot.status-gate_2_approved { background: var(--teal); }
+  .task-status-dot.status-completed { background: var(--green); }
+  .task-status-dot.status-failed,
+  .task-status-dot.status-rejected { background: var(--red); }
+
+  /* Header badge — JS sets className = "status-badge status-<state>" */
+  .status-badge {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border: 1px solid currentColor;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+
+  /* ---------- ACTIVITY FEED ---------- */
+  .log-entry {
+    display: grid;
+    grid-template-columns: 140px 1fr auto;
+    gap: 14px;
+    align-items: baseline;
+    padding: 8px 12px;
+    margin-bottom: 4px;
+    background: var(--surface);
+    border-left: 3px solid var(--cream-dim);
+    border-radius: 0 4px 4px 0;
+    animation: feedIn 0.25s ease-out;
+  }
+  @keyframes feedIn {
+    from { opacity: 0; transform: translateX(-6px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  .log-agent {
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .log-action {
+    color: var(--cream);
+    font-family: var(--font-serif);
+    font-size: 13px;
+  }
+  .log-time {
+    color: var(--cream-dim);
+    font-size: 10px;
+    font-family: var(--font-mono);
+    white-space: nowrap;
+  }
+
+  /* ---------- IMAGE GALLERY ---------- */
+  .image-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.15s ease;
+  }
+  .image-card:hover { border-color: var(--rose-gold); }
+  .image-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    background: #000;
+    border-bottom: 1px solid var(--border);
+  }
+  .card-info {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+  .card-info h4 {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    font-weight: normal;
+    color: var(--cream);
+    margin: 0;
+  }
+  .qa-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+  .qa-score {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    padding: 3px 8px;
+    border: 1px solid currentColor;
+    border-radius: 3px;
+  }
+  .score-good { color: var(--green); }
+  .score-ok   { color: var(--amber); }
+  .score-bad  { color: var(--red); }
+  .qa-passed {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--cream-dim);
+  }
+  .card-info details {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--cream-dim);
+  }
+  .card-info details summary {
+    cursor: pointer;
+    color: var(--rose-gold);
+    user-select: none;
+    padding: 4px 0;
+  }
+  .card-info details summary:hover { color: var(--rose-gold-light); }
+  .card-info details p {
+    padding: 8px 10px;
+    margin-top: 6px;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--cream);
+    line-height: 1.5;
+    word-break: break-word;
+  }
+
+  /* ---------- BUTTONS (runtime) ---------- */
+  .btn-approve {
+    width: 100%;
+    padding: 10px 14px;
+    background: var(--rose-gold);
+    color: #1a1410;
+    border: none;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.15s ease;
+    margin-top: auto;
+  }
+  .btn-approve:hover:not(:disabled) { background: var(--rose-gold-light); }
+  .btn-approve:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  .btn-reject {
+    padding: 9px 14px;
+    background: transparent;
+    color: var(--cream-dim);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .btn-reject:hover:not(:disabled) {
+    background: var(--red);
+    color: var(--cream);
+    border-color: var(--red);
+  }
+  .btn-reject:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  .btn-download {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 10px 16px;
+    background: var(--rose-gold);
+    color: #1a1410;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+  .btn-download:hover { background: var(--rose-gold-light); }
+
+  /* ---------- GATE 1 REJECT SECTION ---------- */
+  .reject-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #reject-notes {
+    width: 100%;
+    resize: vertical;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 10px 12px;
+    color: var(--cream);
+    font-family: var(--font-serif);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  #reject-notes:focus { outline: none; border-color: var(--rose-gold); }
+  #reject-notes::placeholder { color: var(--cream-dim); font-style: italic; }
+  .reject-section .btn-reject { align-self: flex-start; }
+
+  /* ---------- DIMENSION GATE ---------- */
+  #dimensions-state { display: none; }
+  #dimensions-view h3 {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    font-weight: normal;
+    color: var(--rose-gold);
+    margin-bottom: 8px;
+  }
+  .dim-sub { color: var(--cream-dim); font-size: 12px; margin-bottom: 16px; }
+  .dim-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 18px;
+    margin-bottom: 14px;
+  }
+  .dim-row { display: flex; flex-direction: column; gap: 5px; }
+  .dim-label { font-size: 12px; color: var(--cream); }
+  .dim-hint { font-size: 10px; color: var(--cream-dim); margin-left: 4px; }
+  .dim-blocked { color: var(--coral); }
+  .dim-row input {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 8px 10px;
+    color: var(--cream);
+    font-family: var(--font-mono);
+    font-size: 13px;
+  }
+  .dim-row input:focus { outline: none; border-color: var(--rose-gold); }
+  .dim-msg { min-height: 16px; font-size: 12px; color: var(--coral); margin-bottom: 8px; }
+  .dim-error {
+    background: rgba(255,107,107,0.08);
+    border: 1px solid var(--coral);
+    border-radius: 4px;
+    padding: 8px 10px; font-size: 12px; color: var(--coral); margin-bottom: 12px;
+  }
+  .dieline-img {
+    width: 100%;
+    max-height: 520px;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+  }
+  .dl-downloads { display: flex; gap: 10px; margin-top: 12px; }
+
+  /* ---------- GATE 2 / MOCKUP VIEW ---------- */
+  #mockup-view h3 {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    font-weight: normal;
+    color: var(--rose-gold);
+    margin-bottom: 14px;
+  }
+  #mockup-view h4 {
+    font-family: var(--font-serif);
+    font-size: 14px;
+    font-weight: normal;
+    color: var(--rose-gold);
+    margin: 16px 0 10px;
+  }
+  .mockup-img {
+    max-width: 100%;
+    max-height: 480px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 4px;
+  }
+  .spec-sheet {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+  .spec-sheet pre {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 12px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--cream);
+    line-height: 1.6;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .gate2-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .gate2-actions .btn-approve { width: auto; }
+
+  /* ---------- COMPLETED ---------- */
+  #complete-state h3 {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: normal;
+    color: var(--green);
+    margin-bottom: 8px;
+  }
+  #complete-state p {
+    color: var(--cream-dim);
+    margin-bottom: 4px;
+  }
+
+  /* ---------- NOTES / NOTICES ---------- */
+  .empty-note, .loading-note, .spec-note {
+    color: var(--cream-dim);
+    font-style: italic;
+    font-size: 13px;
+    padding: 20px;
+    text-align: center;
+  }
+  .loading-note::before {
+    content: "● ";
+    color: var(--amber);
+    animation: pulse 1.4s infinite;
+  }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+  .failed-notice {
+    margin-top: 14px;
+    padding: 14px 16px;
+    background: rgba(138, 58, 58, 0.15);
+    border: 1px solid var(--red);
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--cream);
+  }
+  .failed-notice button {
+    margin-left: 12px;
+    padding: 5px 12px;
+    background: var(--red);
+    color: var(--cream);
+    border: none;
+    border-radius: 3px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .failed-notice button:hover { background: var(--coral); }
+
+  /* ============================================================
+     MILESTONE 5.5 — Search, filters, mobile, loading, toasts
+     ============================================================ */
+
+  /* Queue tools (search + filter pills) */
+  .queue-tools {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #task-search {
+    width: 100%;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 7px 10px;
+    color: var(--cream);
+    font-family: var(--font-serif);
+    font-size: 12px;
+  }
+  #task-search:focus { outline: none; border-color: var(--rose-gold); }
+  #task-search::placeholder { color: var(--cream-dim); font-style: italic; }
+
+  #filter-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .filter-pill {
+    background: transparent;
+    color: var(--cream-dim);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .filter-pill:hover { color: var(--cream); border-color: var(--cream-dim); }
+  .filter-pill.active {
+    color: var(--rose-gold);
+    border-color: var(--rose-gold);
+  }
+
+  /* Hamburger — hidden on desktop */
+  #mobile-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--rose-gold);
+    font-size: 18px;
+    line-height: 1;
+    padding: 4px 10px;
+    cursor: pointer;
+    margin-right: 8px;
+  }
+  #mobile-toggle:hover { border-color: var(--rose-gold); }
+
+  /* Loading state — any button */
+  .btn-approve.loading,
+  .btn-reject.loading,
+  .btn-download.loading,
+  #btn-submit.loading,
+  .filter-pill.loading {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  .btn-approve.loading::after,
+  .btn-reject.loading::after,
+  .btn-download.loading::after,
+  #btn-submit.loading::after {
+    content: ' ↻';
+    display: inline-block;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* Toasts */
+  #toast-stack {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    pointer-events: none;
+  }
+  .toast {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--rose-gold);
+    border-radius: 4px;
+    padding: 10px 14px;
+    color: var(--cream);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    animation: toastIn 0.25s ease-out;
+    pointer-events: auto;
+    max-width: 320px;
+  }
+  @keyframes toastIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  .toast-warning { border-left-color: var(--amber); }
+  .toast-error   { border-left-color: var(--red); }
+  .toast-info    { border-left-color: var(--rose-gold); }
+
+  /* Mobile / tablet */
+  @media (max-width: 900px) {
+    #app { grid-template-columns: 1fr; }
+    #panel-queue, #panel-brain {
+      display: none;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 86vw;
+      max-width: 360px;
+      z-index: 100;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    }
+    #panel-queue { left: 0; border-right: 1px solid var(--border); }
+    #panel-brain { right: 0; border-left: 1px solid var(--border); }
+    #panel-queue.show, #panel-brain.show { display: flex; }
+    #mobile-toggle { display: inline-block; }
+    #image-gallery { grid-template-columns: 1fr; }
+    #center-content { padding: 16px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div id="app">
+
+  <!-- LEFT: QUEUE -->
+  <section class="panel" id="panel-queue">
+    <header class="panel-header">BBROSE DESIGN OS</header>
+    <div class="composer">
+      <textarea id="task-input" placeholder="Give ARIA a task..."></textarea>
+      <select id="product-select" name="product_id">
+        <option value="">No specific product</option>
+        {% for product in products %}
+          <option value="{{ product.id }}">{{ product.product_id }} — {{ product.name }}</option>
+        {% endfor %}
+      </select>
+      <button id="btn-submit" type="button">→ Start Pipeline</button>
+    </div>
+    <div class="queue-tools">
+      <input id="task-search" type="text" placeholder="Search tasks...">
+      <div id="filter-pills">
+        <button class="filter-pill active" data-filter="all">All</button>
+        <button class="filter-pill" data-filter="running">Running</button>
+        <button class="filter-pill" data-filter="awaiting">Awaiting Approval</button>
+        <button class="filter-pill" data-filter="completed">Completed</button>
+        <button class="filter-pill" data-filter="failed">Failed</button>
+      </div>
+    </div>
+    <div id="task-list">
+      {% for t in recent_tasks %}
+      <div class="task-item" data-task-id="{{ t.id }}" data-status="{{ t.status }}">
+        <span class="task-status-dot" data-status="{{ t.status }}"></span>
+        <div class="task-body">
+          <p class="task-text">{{ t.task_text|truncatechars:60 }}</p>
+          <span class="task-time" data-iso="{{ t.created_at|date:'c' }}">{{ t.created_at|date:'M j, H:i' }}</span>
+        </div>
+      </div>
+      {% empty %}
+      <div class="brain-section"><div class="dim">No tasks yet.</div></div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- CENTER -->
+  <section class="panel" id="panel-center">
+    <header class="panel-header">
+      <button id="mobile-toggle" type="button" aria-label="Toggle queue">☰</button>
+      <span id="task-title">No task selected</span>
+      <span id="task-status-badge" data-status=""></span>
+    </header>
+    <div id="center-content">
+      <div id="empty-state" class="visible">
+        Select a task or start a new pipeline.
+      </div>
+      <div id="feed-state">
+        <div id="activity-feed"></div>
+      </div>
+      <div id="gallery-state">
+        <div id="image-gallery"></div>
+        <div id="gate1-actions"></div>
+      </div>
+      <div id="dimensions-state">
+        <div id="dimensions-view"></div>
+      </div>
+      <div id="gate2-state">
+        <div id="mockup-view"></div>
+      </div>
+      <div id="complete-state"></div>
+    </div>
+  </section>
+
+  <!-- RIGHT: BRAIN -->
+  <section class="panel" id="panel-brain">
+    <header class="panel-header">BRAND INTELLIGENCE</header>
+    <div id="brain-content">
+      {% if brand %}
+      <div class="brain-section">
+        <div class="label">Brand</div>
+        <div class="value">{{ brand.name }}</div>
+        {% if brand.brief %}
+        <div class="excerpt">{{ brand.brief|truncatechars:200 }}</div>
+        {% endif %}
+      </div>
+      {% endif %}
+
+      {% if color_systems %}
+      <div class="brain-section">
+        <div class="label">Active Color Systems</div>
+        <div class="color-systems">
+          {% for c in color_systems %}
+          <div class="system">{{ c.name }}</div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="brain-section">
+        <div class="label">Recent Completions</div>
+        <div class="value">{{ completion_count|default:0 }}</div>
+      </div>
+
+      <div id="brain-stats">
+        <div class="stat"><span>queued</span><span class="v" data-stat="queued" id="stat-queued">0</span></div>
+        <div class="stat"><span>running</span><span class="v" data-stat="running" id="stat-running">0</span></div>
+        <div class="stat"><span>awaiting gate 1</span><span class="v" data-stat="awaiting_gate_1" id="stat-awaiting_gate_1">0</span></div>
+        <div class="stat"><span>awaiting gate 2</span><span class="v" data-stat="awaiting_gate_2" id="stat-awaiting_gate_2">0</span></div>
+        <div class="stat"><span>completed</span><span class="v" data-stat="completed" id="stat-completed">0</span></div>
+        <div class="stat"><span>failed</span><span class="v" data-stat="failed" id="stat-failed">0</span></div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div id="toast-stack"></div>
+
+<script>
+// === STATE ===
+let activeTaskId = null;
+let pollInterval = null;
+let lastLogId = 0;
+
+// === INIT ===
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('btn-submit').addEventListener('click', submitTask);
+  document.querySelectorAll('.task-item').forEach(item => {
+    item.addEventListener('click', () => loadTask(item.dataset.taskId));
+  });
+
+  // Auto-load first running/gate task if any
+  const firstActive = document.querySelector('.task-item[data-status="running"], .task-item[data-status="awaiting_gate_1"], .task-item[data-status="awaiting_gate_2"]');
+  if (firstActive) loadTask(firstActive.dataset.taskId);
+
+  initSearch();
+  initFilterPills();
+  initMobileToggle();
+  initLoadingClass();
+  initConnectionToasts();
+  refreshBrainStats();
+  setInterval(refreshBrainStats, 5000);
+});
+
+// === SEARCH ===
+function initSearch() {
+  const input = document.getElementById('task-search');
+  if (!input) return;
+  input.addEventListener('input', e => {
+    const q = e.target.value.toLowerCase();
+    document.querySelectorAll('.task-item').forEach(item => {
+      const text = item.querySelector('.task-text').textContent.toLowerCase();
+      item.dataset.searchHide = text.includes(q) ? '' : '1';
+      applyTaskItemVisibility(item);
+    });
+  });
+}
+
+// === FILTER PILLS ===
+const FILTER_GROUPS = {
+  all: null,
+  running: ['queued', 'running', 'gate_1_approved', 'gate_2_approved'],
+  awaiting: ['awaiting_gate_1', 'awaiting_gate_2'],
+  completed: ['completed'],
+  failed: ['failed', 'rejected'],
+};
+
+function initFilterPills() {
+  document.querySelectorAll('.filter-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const filter = pill.dataset.filter;
+      const allowed = FILTER_GROUPS[filter];
+      document.querySelectorAll('.task-item').forEach(item => {
+        const status = item.dataset.status;
+        item.dataset.filterHide = (!allowed || allowed.includes(status)) ? '' : '1';
+        applyTaskItemVisibility(item);
+      });
+    });
+  });
+}
+
+function applyTaskItemVisibility(item) {
+  const hidden = item.dataset.searchHide === '1' || item.dataset.filterHide === '1';
+  item.style.display = hidden ? 'none' : '';
+}
+
+// === MOBILE TOGGLE ===
+function initMobileToggle() {
+  const btn = document.getElementById('mobile-toggle');
+  const queue = document.getElementById('panel-queue');
+  if (!btn || !queue) return;
+  btn.addEventListener('click', () => queue.classList.toggle('show'));
+  // Close on task select (so the user sees the center panel)
+  document.getElementById('task-list')?.addEventListener('click', () => {
+    if (window.innerWidth <= 900) queue.classList.remove('show');
+  });
+}
+
+// === LOADING CLASS ON BUTTON CLICK ===
+function initLoadingClass() {
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('.btn-approve, .btn-reject, #btn-submit, .btn-download');
+    if (!btn || btn.disabled) return;
+    btn.classList.add('loading');
+    // Clear after 8s as a fallback; explicit unlocks happen when handlers settle
+    setTimeout(() => btn.classList.remove('loading'), 8000);
+  }, true);
+}
+
+// === CONNECTION / TOASTS ===
+function initConnectionToasts() {
+  window.addEventListener('online', () => showToast('Connection restored', 'info'));
+  window.addEventListener('offline', () => showToast('Connection lost — pipeline still running', 'warning'));
+}
+
+function showToast(msg, type = 'info') {
+  const stack = document.getElementById('toast-stack');
+  if (!stack) return;
+  const t = document.createElement('div');
+  t.className = `toast toast-${type}`;
+  t.textContent = msg;
+  stack.appendChild(t);
+  setTimeout(() => t.remove(), 4000);
+}
+
+// === BRAIN STATS (live) ===
+async function refreshBrainStats() {
+  try {
+    const res = await fetch('/api/tasks/');
+    if (!res.ok) return;
+    const tasks = await res.json();
+    const counts = {};
+    tasks.forEach(t => { counts[t.status] = (counts[t.status] || 0) + 1; });
+    ['queued', 'running', 'awaiting_gate_1', 'awaiting_gate_2', 'completed', 'failed'].forEach(s => {
+      const el = document.getElementById(`stat-${s}`);
+      if (el) el.textContent = counts[s] || 0;
+    });
+  } catch {}
+}
+
+// === TASK SUBMISSION ===
+async function submitTask() {
+  const text = document.getElementById('task-input').value.trim();
+  if (!text) return;
+
+  const productEl = document.getElementById('product-select');
+  const productId = productEl ? productEl.value : null;
+
+  document.getElementById('btn-submit').disabled = true;
+  document.getElementById('btn-submit').textContent = 'Starting...';
+
+  try {
+    const res = await fetch('/api/tasks/create/', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'X-CSRFToken': getCsrf()},
+      body: JSON.stringify({task_text: text, product_id: productId || undefined})
+    });
+    const data = await res.json();
+    if (res.ok) {
+      document.getElementById('task-input').value = '';
+      addTaskToList(data.task_id, text, 'running');
+      loadTask(data.task_id);
+    } else {
+      alert('Error: ' + (data.error || 'Unknown error'));
+    }
+  } finally {
+    document.getElementById('btn-submit').disabled = false;
+    document.getElementById('btn-submit').textContent = '→ Start Pipeline';
+  }
+}
+
+// === LOAD TASK ===
+async function loadTask(taskId) {
+  if (pollInterval) clearInterval(pollInterval);
+  activeTaskId = taskId;
+  lastLogId = 0;
+
+  // Mark active in sidebar
+  document.querySelectorAll('.task-item').forEach(el => el.classList.toggle('active', el.dataset.taskId == taskId));
+
+  const data = await fetchStatus(taskId);
+  if (!data) return;
+
+  renderTaskState(data);
+
+  if (['running', 'queued'].includes(data.status)) {
+    startPolling(taskId);
+  }
+}
+
+// === POLLING ===
+function startPolling(taskId) {
+  pollInterval = setInterval(async () => {
+    if (activeTaskId != taskId) { clearInterval(pollInterval); return; }
+    const data = await fetchStatus(taskId);
+    if (!data) return;
+    renderTaskState(data);
+    if (!WORKING_STATUSES.includes(data.status)) {
+      clearInterval(pollInterval);
+    }
+  }, 2000);
+}
+
+// === FETCH STATUS ===
+async function fetchStatus(taskId) {
+  try {
+    const res = await fetch(`/api/tasks/${taskId}/status/`);
+    return res.ok ? await res.json() : null;
+  } catch { return null; }
+}
+
+// Transient states where ARIA is actively working — keep polling, show feed.
+const WORKING_STATUSES = ['running', 'queued', 'gate_1_approved', 'generating_dieline'];
+
+// === RENDER BASED ON STATUS ===
+function renderTaskState(data) {
+  document.getElementById('task-title').textContent = data.task_text.substring(0, 50);
+  document.getElementById('task-status-badge').textContent = data.status.replace(/_/g, ' ').toUpperCase();
+  document.getElementById('task-status-badge').className = `status-badge status-${data.status}`;
+
+  updateTaskDotInList(data.id, data.status);
+  hideAllStates();
+
+  if (WORKING_STATUSES.includes(data.status)) {
+    showFeed(data.logs);
+  } else if (data.status === 'awaiting_gate_1') {
+    showGallery(data.images, data.id);
+  } else if (data.status === 'awaiting_dimensions') {
+    showDimensionGate(data.packaging_output, data.id);
+  } else if (data.status === 'awaiting_gate_2') {
+    showGate2(data.packaging_output, data.id);
+  } else if (data.status === 'completed') {
+    showCompleted(data);
+  } else if (data.status === 'failed') {
+    showFailed(data.id);
+  }
+}
+
+// === ACTIVITY FEED ===
+function showFeed(logs) {
+  document.getElementById('feed-state').style.display = 'block';
+  const feed = document.getElementById('activity-feed');
+
+  const agentColors = {
+    'ARIA': 'var(--rose-gold)', 'CreativeDirector': 'var(--purple)',
+    'PromptEngineer': 'var(--teal)', 'ImageProducer': 'var(--amber)',
+    'QAReviewer': 'var(--coral)'
+  };
+
+  logs.forEach(log => {
+    if (log.id <= lastLogId) return;
+    lastLogId = log.id;
+    const el = document.createElement('div');
+    el.className = 'log-entry';
+    el.style.borderLeftColor = agentColors[log.agent_name] || 'var(--cream-dim)';
+    el.innerHTML = `<span class="log-agent" style="color:${agentColors[log.agent_name] || 'var(--cream-dim)'}">${log.agent_name}</span>
+      <span class="log-action">${log.action}</span>
+      <span class="log-time">${new Date(log.timestamp).toLocaleTimeString()}</span>`;
+    feed.appendChild(el);
+    feed.scrollTop = feed.scrollHeight;
+  });
+}
+
+// === GATE 1 GALLERY ===
+function showGallery(images, taskId) {
+  document.getElementById('gallery-state').style.display = 'block';
+  const gallery = document.getElementById('image-gallery');
+  gallery.innerHTML = '';
+
+  if (!images.length) {
+    gallery.innerHTML = '<p class="empty-note">No images generated yet. Check logs for errors.</p>';
+    return;
+  }
+
+  images.forEach(img => {
+    const qaData = img.qa_notes_parsed || {};
+    const score = qaData.score || '?';
+    const scoreClass = score >= 7 ? 'score-good' : score >= 5 ? 'score-ok' : 'score-bad';
+    const issues = (qaData.issues || []).join(', ') || 'None';
+
+    const card = document.createElement('div');
+    card.className = 'image-card';
+    card.innerHTML = `
+      <img src="${img.image_url_display}" alt="${img.direction_name}" loading="lazy">
+      <div class="card-info">
+        <h4>${img.direction_name}</h4>
+        <div class="qa-row">
+          <span class="qa-score ${scoreClass}">QA ${score}/10</span>
+          <span class="qa-passed">${img.qa_passed ? '✓ Passed' : '✗ Failed'}</span>
+        </div>
+        <details><summary>QA Notes</summary><p>${issues}</p></details>
+        <button class="btn-approve" onclick="approveGate1(${taskId}, ${img.id})">Select This Design</button>
+      </div>
+    `;
+    gallery.appendChild(card);
+  });
+
+  document.getElementById('gate1-actions').innerHTML = `
+    <div class="reject-section">
+      <textarea id="reject-notes" placeholder="Revision notes for ARIA..." rows="3"></textarea>
+      <button class="btn-reject" onclick="rejectGate1(${taskId})">Request Revision</button>
+    </div>
+  `;
+}
+
+async function approveGate1(taskId, imageId) {
+  if (!confirm('Approve this design and continue to packaging?')) return;
+  await postAction(`/api/tasks/${taskId}/gate1_approve/`, {image_id: imageId});
+  loadTask(taskId);
+}
+
+async function rejectGate1(taskId) {
+  const notes = document.getElementById('reject-notes').value.trim();
+  if (!notes) { alert('Please add revision notes before rejecting.'); return; }
+  await postAction(`/api/tasks/${taskId}/gate1_reject/`, {notes});
+  loadTask(taskId);
+}
+
+// === DIMENSION GATE (dieline backend) ===
+const DIM_FIELDS = [
+  ['width_mm', 'Width (mm)'], ['depth_mm', 'Depth (mm)'], ['height_mm', 'Height (mm)'],
+  ['bleed_mm', 'Bleed (mm)'], ['safe_margin_mm', 'Safe margin (mm)'], ['glue_tab_mm', 'Glue tab (mm)'],
+];
+
+function showDimensionGate(packagingOutput, taskId) {
+  document.getElementById('dimensions-state').style.display = 'block';
+  const view = document.getElementById('dimensions-view');
+
+  if (!packagingOutput) {
+    view.innerHTML = '<p class="loading-note">Preparing dimension estimate…</p>';
+    startPolling(taskId);
+    return;
+  }
+
+  const spec = packagingOutput.spec_sheet || {};
+  const est = spec.estimated_dimensions || {};
+  const scenario = spec.scenario || est.scenario || '?';
+
+  const rows = DIM_FIELDS.map(([key, label]) => {
+    const f = est[key] || {};
+    const val = (f.value !== null && f.value !== undefined) ? f.value : '';
+    const conf = f.confidence != null ? Math.round(f.confidence * 100) : null;
+    const hint = f.blocked
+      ? '<span class="dim-hint dim-blocked">needs manual entry</span>'
+      : (conf != null ? `<span class="dim-hint">est ${conf}% · ${f.source || ''}</span>` : '');
+    return `<label class="dim-row">
+      <span class="dim-label">${label} ${hint}</span>
+      <input type="number" step="0.1" id="dim-${key}" value="${val}" ${f.blocked ? 'placeholder="enter value"' : ''}>
+    </label>`;
+  }).join('');
+
+  const err = spec.generation_error ? `<p class="dim-error">⚠ ${spec.generation_error}</p>` : '';
+
+  view.innerHTML = `
+    <h3>Confirm Carton Dimensions</h3>
+    <p class="dim-sub">Scenario ${scenario} — ${scenario === 'A' ? 'read from product record' : 'AI estimate'}.
+      Confirm or adjust, then generate the dieline.</p>
+    ${err}
+    <div class="dim-form">${rows}</div>
+    <div id="dim-msg" class="dim-msg"></div>
+    <div class="gate2-actions">
+      <button class="btn-approve" onclick="submitDimensions(${taskId})">Generate Dieline</button>
+      <button class="btn-reject" onclick="loadTask(${taskId})">Cancel</button>
+    </div>
+  `;
+}
+
+async function submitDimensions(taskId) {
+  const dims = {};
+  for (const [key] of DIM_FIELDS) {
+    const v = document.getElementById('dim-' + key).value;
+    if (v !== '') dims[key] = parseFloat(v);
+  }
+  const msg = document.getElementById('dim-msg');
+  if (dims.width_mm == null || dims.depth_mm == null || dims.height_mm == null) {
+    msg.textContent = 'Width, depth and height are required.';
+    return;
+  }
+  msg.textContent = 'Generating…';
+  const res = await fetch(`/api/tasks/${taskId}/confirm_dimensions/`, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json', 'X-CSRFToken': getCsrf()},
+    body: JSON.stringify({dimensions: dims}),
+  });
+  if (res.ok) {
+    loadTask(taskId);
+  } else {
+    const data = await res.json().catch(() => ({}));
+    let detail = data.error || 'Generation failed';
+    if (Array.isArray(data.details)) detail += ': ' + data.details.map(d => d.msg || '').join('; ');
+    msg.textContent = detail;
+  }
+}
+
+// === GATE 2 ===
+function showGate2(packagingOutput, taskId) {
+  document.getElementById('gate2-state').style.display = 'block';
+  const view = document.getElementById('mockup-view');
+
+  if (!packagingOutput) {
+    view.innerHTML = '<p class="loading-note">Packaging output in progress...</p>';
+    startPolling(taskId);
+    return;
+  }
+
+  const svgUrl = packagingOutput.dieline_svg_url;
+  const aiUrl = packagingOutput.dieline_ai_url;
+  const renderUrl = packagingOutput.pacdora_render_url;
+
+  let preview;
+  if (svgUrl) {
+    preview = `<h3>Dieline Preview</h3>
+      <object data="${svgUrl}" type="image/svg+xml" class="dieline-img"></object>
+      <div class="dl-downloads">
+        <a href="${svgUrl}" download class="btn-download">Download SVG</a>
+        ${aiUrl ? `<a href="${aiUrl}" download class="btn-download">Download .ai</a>` : ''}
+      </div>`;
+  } else if (renderUrl) {
+    preview = `<h3>3D Mockup Preview</h3><img src="${renderUrl}" alt="3D Mockup" class="mockup-img">`;
+  } else {
+    preview = `<p class="spec-note">Packaging output not yet available. Spec sheet saved.</p>`;
+  }
+
+  view.innerHTML = `
+    ${preview}
+    <div class="spec-sheet">
+      <h4>Spec Sheet</h4>
+      <pre>${JSON.stringify(packagingOutput.spec_sheet, null, 2)}</pre>
+    </div>
+    <div class="gate2-actions">
+      <button class="btn-approve" onclick="approveGate2(${taskId}, ${packagingOutput.id})">Approve Final</button>
+      <button class="btn-reject" onclick="loadTask(${taskId})">Request Revision</button>
+    </div>
+  `;
+}
+
+async function approveGate2(taskId, outputId) {
+  if (!confirm('Approve final packaging output?')) return;
+  await postAction(`/api/tasks/${taskId}/gate2_approve/`, {packaging_output_id: outputId});
+  loadTask(taskId);
+}
+
+// === COMPLETED ===
+function showCompleted(data) {
+  document.getElementById('complete-state').style.display = 'block';
+  const po = data.packaging_output || {};
+  const links = [];
+  if (po.spec_sheet) links.push(`<a href="/api/tasks/${data.id}/download_spec/" class="btn-download">Download Spec Sheet PDF</a>`);
+  if (po.dieline_svg_url) links.push(`<a href="${po.dieline_svg_url}" download class="btn-download">Download Dieline SVG</a>`);
+  if (po.dieline_ai_url) links.push(`<a href="${po.dieline_ai_url}" download class="btn-download">Download Dieline .ai</a>`);
+  document.getElementById('complete-state').innerHTML = `
+    <h3>✓ Pipeline Complete</h3>
+    <p>Task completed successfully.</p>
+    <div class="dl-downloads">${links.join('')}</div>
+  `;
+}
+
+// === FAILED ===
+function showFailed(taskId) {
+  document.getElementById('feed-state').style.display = 'block';
+  const feed = document.getElementById('activity-feed');
+  const retry = document.createElement('div');
+  retry.className = 'failed-notice';
+  retry.innerHTML = `<p>Pipeline failed. <button onclick="retryTask(${taskId})">Retry</button></p>`;
+  feed.appendChild(retry);
+}
+
+async function retryTask(taskId) {
+  await postAction(`/api/tasks/${taskId}/retry/`, {});
+  loadTask(taskId);
+}
+
+// === HELPERS ===
+function hideAllStates() {
+  ['feed-state', 'gallery-state', 'dimensions-state', 'gate2-state', 'complete-state'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = 'none';
+  });
+}
+
+function addTaskToList(taskId, text, status) {
+  const list = document.getElementById('task-list');
+  const item = document.createElement('div');
+  item.className = 'task-item';
+  item.dataset.taskId = taskId;
+  item.dataset.status = status;
+  item.addEventListener('click', () => loadTask(taskId));
+  item.innerHTML = `<span class="task-status-dot status-${status}"></span>
+    <p class="task-text">${text.substring(0, 60)}</p>
+    <span class="task-time">just now</span>`;
+  list.prepend(item);
+}
+
+function updateTaskDotInList(taskId, status) {
+  const item = document.querySelector(`.task-item[data-task-id="${taskId}"]`);
+  if (item) {
+    item.dataset.status = status;
+    const dot = item.querySelector('.task-status-dot');
+    if (dot) dot.className = `task-status-dot status-${status}`;
+  }
+}
+
+async function postAction(url, body) {
+  try {
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'X-CSRFToken': getCsrf()},
+      body: JSON.stringify(body)
+    });
+    return res.ok ? await res.json() : null;
+  } catch { return null; }
+}
+
+function getCsrf() {
+  return document.cookie.split(';').find(c => c.trim().startsWith('csrftoken='))?.split('=')[1] || '';
+}
+</script>
+
+</body>
+</html>
