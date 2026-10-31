@@ -1,0 +1,40 @@
+{
+ "thresholds": {
+  "RAKING_DIRECTIONAL_SPAN": {
+   "flat_max_value": 0.54186,
+   "statistic": "MAX over the seed ensemble (conservative)"
+  },
+  "RAKING_SHADOW_FRACTION": {
+   "flat_max_value": 0.089844,
+   "statistic": "MAX over the seed ensemble (conservative)"
+  }
+ },
+ "threshold_hash": "cf77f711e36021f6",
+ "hashed_strictly_before_any_baked_frame": true,
+ "floors": {
+  "RAKING_DIRECTIONAL_SPAN": {
+   "floor": 0.00579,
+   "eligible": true,
+   "required": 0.25
+  },
+  "RAKING_SHADOW_FRACTION": {
+   "floor": 0.0,
+   "eligible": true,
+   "required": 0.25
+  }
+ },
+ "calibration": [
+  {
+   "energy": 721573.1810458936,
+   "peak": 0.3865370740771293,
+   "clipped": 0
+  }
+ ],
+ "energy": 721573.1810458936,
+ "A195_kind": {
+  "kind": "BOUND",
+  "why": "raking flat thresholds are worst-excursion quantities whose job is to be cleared",
+  "combining_rule": "WORST_OBSERVED_EXCURSION_ACROSS_ENSEMBLES",
+  "combining_rule_identity": "fd91d08471da03fb"
+ }
+}

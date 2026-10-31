@@ -1,0 +1,27 @@
+{
+  "record_type": "raking_independence_sweep/1.0",
+  "declared_before_measurement": true,
+  "question": "is the third channel the texture instrument in raking clothes? sweep the physics that drives texture and see if raking axes track GRANULARITY",
+  "sweep": {
+    "parameter": "milling.micronormal_amplitude",
+    "family": "POWDER_MATTE",
+    "seed": 400,
+    "levels": [
+      0.02,
+      0.05,
+      0.08,
+      0.11,
+      0.14,
+      0.17,
+      0.2,
+      0.23,
+      0.26,
+      0.29,
+      0.32,
+      0.35
+    ]
+  },
+  "statistic": "abs Spearman across levels: each raking axis vs GRANULARITY_INDEX",
+  "ceiling": 0.8,
+  "asymmetric_reading": "divergence (<= 0.80) MEASURES independence on evidence that does not degrade with census growth; tracking (> 0.80) VOIDS the crossing pre-commitment \u2014 decided now at commissioning, not under rescue"
+}

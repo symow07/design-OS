@@ -1,0 +1,177 @@
+{
+ "record_type": "a129_shade_token_matrix/1.0",
+ "protocol_identity": "44414377f5af69e0",
+ "method": "per-frame material_identity match, ERA-CORRECT: committed frame hashes are compared against the hash the engine of their own era computes \u2014 the executor's prior non-match was HASH-FUNCTION DRIFT (the contract repair changed the spec dict the hash covers: engine commits 3506602/ab1304b/9a9f b98 between the floor frames and today), not a shade fact",
+ "matrix": {
+  "MATTE_floor_ensemble_eligibility": {
+   "token": "prov_char_neutral (0.62, 0.55, 0.48)",
+   "hash_era": "ERA engine (036a280) \u2014 pre-contract-repair hash inputs",
+   "frames": {
+    "40": {
+     "committed": "44b930cbf279da23",
+     "computed": "44b930cbf279da23",
+     "match": true
+    },
+    "81": {
+     "committed": "11ef762778f7809d",
+     "computed": "11ef762778f7809d",
+     "match": true
+    },
+    "82": {
+     "committed": "2b2d9d9240d31230",
+     "computed": "2b2d9d9240d31230",
+     "match": true
+    },
+    "83": {
+     "committed": "ab2dfbe80b65af83",
+     "computed": "ab2dfbe80b65af83",
+     "match": true
+    },
+    "84": {
+     "committed": "a01d6ea5fe28f521",
+     "computed": "a01d6ea5fe28f521",
+     "match": true
+    },
+    "99": {
+     "committed": "194c5b0b6fd23b27",
+     "computed": "194c5b0b6fd23b27",
+     "match": true
+    }
+   },
+   "all_match": true
+  },
+  "P1_readings_POWDER_SATIN": {
+   "token": "prov_char_neutral (0.62, 0.55, 0.48)",
+   "hash_era": "CURRENT engine \u2014 post-repair frames",
+   "frames": {
+    "40": {
+     "committed": "34025dbda3f8da78",
+     "computed": "34025dbda3f8da78",
+     "match": true
+    },
+    "81": {
+     "committed": "361868ddf6201572",
+     "computed": "361868ddf6201572",
+     "match": true
+    },
+    "82": {
+     "committed": "65f36539fe0ed1b6",
+     "computed": "65f36539fe0ed1b6",
+     "match": true
+    },
+    "83": {
+     "committed": "e625cc4ecb1a7bee",
+     "computed": "e625cc4ecb1a7bee",
+     "match": true
+    },
+    "84": {
+     "committed": "53b2cca8c70e0612",
+     "computed": "53b2cca8c70e0612",
+     "match": true
+    },
+    "99": {
+     "committed": "a81bfcab29f4c019",
+     "computed": "a81bfcab29f4c019",
+     "match": true
+    }
+   },
+   "all_match": true
+  },
+  "P1_readings_PRESSED_POWDER": {
+   "token": "prov_char_neutral (0.62, 0.55, 0.48)",
+   "hash_era": "CURRENT engine \u2014 post-repair frames",
+   "frames": {
+    "40": {
+     "committed": "7df2d1d72d866cab",
+     "computed": "7df2d1d72d866cab",
+     "match": true
+    },
+    "81": {
+     "committed": "006b6d854cfea8ed",
+     "computed": "006b6d854cfea8ed",
+     "match": true
+    },
+    "82": {
+     "committed": "7511a807bec90232",
+     "computed": "7511a807bec90232",
+     "match": true
+    },
+    "83": {
+     "committed": "34e965b15f96c518",
+     "computed": "34e965b15f96c518",
+     "match": true
+    },
+    "84": {
+     "committed": "8afd281558ee699e",
+     "computed": "8afd281558ee699e",
+     "match": true
+    },
+    "99": {
+     "committed": "b985924b801749a7",
+     "computed": "b985924b801749a7",
+     "match": true
+    }
+   },
+   "all_match": true
+  },
+  "P1_readings_CREAM": {
+   "token": "prov_char_neutral (0.62, 0.55, 0.48)",
+   "hash_era": "CURRENT engine \u2014 post-repair frames",
+   "frames": {
+    "40": {
+     "committed": "1439e4295f2edf30",
+     "computed": "1439e4295f2edf30",
+     "match": true
+    },
+    "81": {
+     "committed": "8edc749efc36c518",
+     "computed": "8edc749efc36c518",
+     "match": true
+    },
+    "82": {
+     "committed": "ca2cb9c20ddd4c07",
+     "computed": "ca2cb9c20ddd4c07",
+     "match": true
+    },
+    "83": {
+     "committed": "a68555cf7e6b3bbc",
+     "computed": "a68555cf7e6b3bbc",
+     "match": true
+    },
+    "84": {
+     "committed": "8003490ddafe0a9b",
+     "computed": "8003490ddafe0a9b",
+     "match": true
+    },
+    "99": {
+     "committed": "b6362e77707902f2",
+     "computed": "b6362e77707902f2",
+     "match": true
+    }
+   },
+   "all_match": true
+  }
+ },
+ "per_fail": {
+  "MATTE_VS_SATIN": {
+   "floor_token": "prov_char_neutral",
+   "readings_token": "prov_char_neutral",
+   "share_token": true
+  },
+  "PRESSED_VS_MATTE": {
+   "floor_token": "prov_char_neutral",
+   "readings_token": "prov_char_neutral",
+   "share_token": true
+  },
+  "SATIN_VS_CREAM": {
+   "floor_token": "prov_char_neutral (the FWHM spreads come from the same P1 ensembles as the readings \u2014 trivially shared)",
+   "readings_token": "prov_char_neutral",
+   "share_token": true
+  }
+ },
+ "divergent_fails_marked": [],
+ "verdict": "NO DIVERGENCE \u2014 floor and readings share prov_char_neutral for all three FAILs, established era-hash-exactly six-for-six on the floor ensemble and current-hash-exactly eighteen-for-eighteen on the P1 readings. The A129 premise dissolves: it inherited the executor's bounded-search non-match, which era-correct hashing shows was an artifact",
+ "rendering_vs_bookkeeping": "MOOT for divergence (none exists). The real mechanism finding: material_identity is NOT stable across engine versions \u2014 the hash covers the spec dict, and the contract repair's declared constants moved it, so identity comparisons across eras REQUIRE era-correct hashing. Recorded as its own finding; every future cross-era identity comparison must state which era's hash it used. The A123 warm-non-match conclusion SURVIVES this finding and is now POSITIVE: the floor ensemble is established neutral, not merely not-warm; the A123 record's subsidiary token-divergence finding is superseded adjacent per 2k",
+ "owner_approved": false,
+ "retroactive_reach": "the drift mechanism reaches back through every cross-era identity claim in the arc: re-running the A100 census-frame search with the era engine identifies ALL FOUR frames exactly (prov_char_neutral, seeds 42/43/44/45) \u2014 the A100 non-match was the same artifact; superseded adjacent in a100_recoverability.json; no decision changes"
+}

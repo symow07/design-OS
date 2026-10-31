@@ -1,0 +1,247 @@
+{
+  "record_type": "import_graph_result/1.0",
+  "instrument": "AST import graph (Import/ImportFrom nodes), transitive closure from 15 declared measurement entry points + the declared subprocess edge to blender_scripts",
+  "dynamic_import_check": {
+    "in_services": [
+      "pipeline_errors.py:60",
+      "palette_powder_rigs.py:130",
+      "palette_moulded_rect.py:527",
+      "palette_m5_closeout.py:288",
+      "palette_m5_closeout.py:497",
+      "palette_m5_closeout.py:329",
+      "palette_m5_closeout.py:331"
+    ],
+    "in_measurement_closure": [
+      "palette_powder_rigs.py:130",
+      "palette_moulded_rect.py:527"
+    ],
+    "verdict": "STOP AND ESCALATE"
+  },
+  "reachable_count": 50,
+  "result": {
+    "INERT_BY_UNREACHABILITY_measured": [
+      "a3p_evidence_render.py:434",
+      "ai_style_profile.py:64",
+      "container_projection.py:69",
+      "container_projection.py:72",
+      "container_projection.py:80",
+      "m3_calibration.py:135",
+      "m3_calibration.py:154",
+      "palette_compact_family.py:184",
+      "palette_thickness_authority.py:154",
+      "palette_thickness_field.py:124",
+      "pipeline_errors.py:76",
+      "visual_inspector.py:137",
+      "visual_inspector.py:87",
+      "web_geometry_research.py:146",
+      "web_research_tavily.py:217"
+    ],
+    "NOT_ASSESSED": {
+      "concept_analysis.py:217": {
+        "import_reachable": true,
+        "imported_by_within_closure": [
+          "geometry_validation_render.py"
+        ]
+      },
+      "concept_analysis.py:276": {
+        "import_reachable": true,
+        "imported_by_within_closure": [
+          "geometry_validation_render.py"
+        ]
+      },
+      "material_characterization.py:354": {
+        "import_reachable": true,
+        "imported_by_within_closure": []
+      },
+      "material_characterization.py:367": {
+        "import_reachable": true,
+        "imported_by_within_closure": []
+      },
+      "material_characterization.py:387": {
+        "import_reachable": true,
+        "imported_by_within_closure": []
+      },
+      "material_characterization.py:389": {
+        "import_reachable": true,
+        "imported_by_within_closure": []
+      },
+      "palette_baked_geometry.py:60": {
+        "import_reachable": true,
+        "imported_by_within_closure": [
+          "palette_baked_clearance.py",
+          "palette_raking_rig.py"
+        ]
+      },
+      "palette_contracts.py:149": {
+        "import_reachable": true,
+        "imported_by_within_closure": [
+          "palette_layout_kernel.py",
+          "palette_layout_validators.py",
+          "palette_mechanism_contracts.py",
+          "palette_mechanism_geometry.py",
+          "palette_moulded_geometry.py",
+          "palette_stackup_engine.py"
+        ]
+      },
+      "palette_layout_kernel.py:101": {
+        "import_reachable": true,
+        "imported_by_within_closure": [
+          "palette_layout_validators.py",
+          "palt_p1.py"
+        ]
+      },
+      "palette_layout_kernel.py:103": {
+        "import_reachable": true,
+        "imported_by_within_closure": [
+          "palette_layout_validators.py",
+          "palt_p1.py"
+        ]
+      },
+      "palette_layout_kernel.py:105": {
+        "import_reachable": true,
+        "imported_by_within_closure": [
+          "palette_layout_validators.py",
+          "palt_p1.py"
+        ]
+      },
+      "palette_layout_kernel.py:118": {
+        "import_reachable": true,
+        "imported_by_within_closure": [
+          "palette_layout_validators.py",
+          "palt_p1.py"
+        ]
+      },
+      "palette_moulded_rect.py:498": {
+        "import_reachable": true,
+        "imported_by_within_closure": [
+          "palette_baked_clearance.py"
+        ]
+      },
+      "palette_recessed_tray_geometry.py:147": {
+        "import_reachable": true,
+        "imported_by_within_closure": [
+          "palette_rect_tray_geometry.py"
+        ]
+      },
+      "palette_stackup_engine.py:117": {
+        "import_reachable": true,
+        "imported_by_within_closure": [
+          "palette_mechanism_geometry.py",
+          "palette_moulded_geometry.py"
+        ]
+      },
+      "palette_stackup_engine.py:119": {
+        "import_reachable": true,
+        "imported_by_within_closure": [
+          "palette_mechanism_geometry.py",
+          "palette_moulded_geometry.py"
+        ]
+      },
+      "palette_stackup_engine.py:196": {
+        "import_reachable": true,
+        "imported_by_within_closure": [
+          "palette_mechanism_geometry.py",
+          "palette_moulded_geometry.py"
+        ]
+      },
+      "palette_stackup_engine.py:198": {
+        "import_reachable": true,
+        "imported_by_within_closure": [
+          "palette_mechanism_geometry.py",
+          "palette_moulded_geometry.py"
+        ]
+      },
+      "palette_stackup_engine.py:200": {
+        "import_reachable": true,
+        "imported_by_within_closure": [
+          "palette_mechanism_geometry.py",
+          "palette_moulded_geometry.py"
+        ]
+      },
+      "palette_stackup_engine.py:202": {
+        "import_reachable": true,
+        "imported_by_within_closure": [
+          "palette_mechanism_geometry.py",
+          "palette_moulded_geometry.py"
+        ]
+      },
+      "palette_stackup_engine.py:204": {
+        "import_reachable": true,
+        "imported_by_within_closure": [
+          "palette_mechanism_geometry.py",
+          "palette_moulded_geometry.py"
+        ]
+      },
+      "palette_stackup_engine.py:205": {
+        "import_reachable": true,
+        "imported_by_within_closure": [
+          "palette_mechanism_geometry.py",
+          "palette_moulded_geometry.py"
+        ]
+      },
+      "palette_stackup_engine.py:206": {
+        "import_reachable": true,
+        "imported_by_within_closure": [
+          "palette_mechanism_geometry.py",
+          "palette_moulded_geometry.py"
+        ]
+      },
+      "palette_stackup_engine.py:207": {
+        "import_reachable": true,
+        "imported_by_within_closure": [
+          "palette_mechanism_geometry.py",
+          "palette_moulded_geometry.py"
+        ]
+      },
+      "palette_stackup_engine.py:216": {
+        "import_reachable": true,
+        "imported_by_within_closure": [
+          "palette_mechanism_geometry.py",
+          "palette_moulded_geometry.py"
+        ]
+      },
+      "palette_stackup_engine.py:218": {
+        "import_reachable": true,
+        "imported_by_within_closure": [
+          "palette_mechanism_geometry.py",
+          "palette_moulded_geometry.py"
+        ]
+      },
+      "palette_stackup_engine.py:219": {
+        "import_reachable": true,
+        "imported_by_within_closure": [
+          "palette_mechanism_geometry.py",
+          "palette_moulded_geometry.py"
+        ]
+      },
+      "palette_stackup_engine.py:221": {
+        "import_reachable": true,
+        "imported_by_within_closure": [
+          "palette_mechanism_geometry.py",
+          "palette_moulded_geometry.py"
+        ]
+      },
+      "palette_stackup_engine.py:79": {
+        "import_reachable": true,
+        "imported_by_within_closure": [
+          "palette_mechanism_geometry.py",
+          "palette_moulded_geometry.py"
+        ]
+      },
+      "palette_stackup_engine.py:94": {
+        "import_reachable": true,
+        "imported_by_within_closure": [
+          "palette_mechanism_geometry.py",
+          "palette_moulded_geometry.py"
+        ]
+      }
+    }
+  },
+  "ESCALATION_2026_08_08": {
+    "stop_condition": "dynamic import found in the measurement closure \u2014 palette_powder_rigs.py:130 and palette_moulded_rect.py:527",
+    "characterization": "both are __import__(\"hashlib\") \u2014 CONSTANT LITERAL arguments importing the standard library, statically resolvable by the same AST instrument (ast.Constant), incapable of adding any edge between services modules. My assessment: the instrument is NOT silently defeated by these two calls. Per the ruling, that assessment is not mine to act on: found means stop and escalate, never substitute or extend the instrument unbidden.",
+    "second_defect_surfaced": "the quick graph maps modules by BASENAME and shows collision symptoms (material_characterization.py reachable with an empty importer list, adjacent to palette_material_characterization.py) \u2014 the instrument needs package-qualified resolution before its clears can be trusted, and that rebuild should be gated by the same ruling",
+    "state": "the 45 STAY NOT_ASSESSED as committed in the reversion; the graph output above is PROVISIONAL AND UNAPPLIED \u2014 no entry was restored on its word; the manifest stays HELD",
+    "question_for_the_owner": "does constant-literal stdlib __import__ void the import graph under 1t, or may the declared instrument resolve constant arguments \u2014 and should the rebuilt graph use package-qualified module identity (fixing the basename collision) as part of the same declaration?"
+  }
+}

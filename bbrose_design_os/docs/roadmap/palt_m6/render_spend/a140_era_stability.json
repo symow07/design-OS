@@ -1,0 +1,67 @@
+{
+ "record_type": "a140_era_stability_establishment/1.0",
+ "protocol_identity": "270ae2a1e6db6986",
+ "question": "are the 2m identities era-stable \u2014 what does each hash cover, and can a covered field move on an engine change with the underlying quantity unchanged?",
+ "fail_markers": {
+  "identities": [
+   "MATTE_SHEEN_spread@a2b626e6522f (M_V_S, P_V_M)",
+   "SATIN_CREAM_FWHM_spread@50c33e7c3f36 (S_V_C)",
+   "SATIN_CREAM_GRAN_spread@2d0289310a16 (S_V_C GRAN banked)"
+  ],
+  "verdict": "NON_RECOMPUTABLE_FROM_COMMITTED_RECORDS \u2014 a stronger defect than era-sensitivity",
+  "evidence": "commit 73e996a (where the markers were minted) committed ONLY the JSON records \u2014 no payload, no serialization recipe, no deriving script; a bounded mechanical reconstruction (360 payload shapes x 2 truncations over family/seeds/statistic/value/pairings/instrument permutations) reproduces NONE of the three hashes",
+  "coverage": "UNDETERMINABLE \u2014 what the hash covers cannot be established from records",
+  "era_sensitivity": "UNDETERMINABLE \u2014 for the same reason",
+  "what_the_marker_actually_detects": "nothing, mechanically: a frozen opaque string comparable only to itself. The A95 staleness mechanism \u2014 the identity MOVES when the estimate is remeasured \u2014 cannot fire, because no instrument can recompute the identity to detect a move; any movement would be performed by recollection, which is the exact failure A95 was built to remove",
+  "ownership": "the executor's: the markers were minted in-session without committing payload or recipe \u2014 the mirrored class again (a quantity existing at authoring time, not committed as itself), in the very mechanism built to escape recollection"
+ },
+ "glitter_identity": {
+  "identity": "d8016b3a3fec2c26",
+  "verdict": "REPRODUCIBLE_AND_ERA_STABLE",
+  "recipe_now_committed": {
+   "hash": "sha256(json.dumps(payload, sort_keys=True))[:16]",
+   "payload": {
+    "ensemble_seeds_61_66": "the six event counts as committed in analysis_spreads.json glitter_event_ensemble.events",
+    "matte_controls": {
+     "67": 0,
+     "68": 0
+    },
+    "law": {
+     "threshold_min_events": 25,
+     "control_max_events": 5,
+     "luminance_factor": 1.8,
+     "area_px": [
+      4,
+      2000
+     ]
+    },
+    "measured_in": "scene-linear resolved pixel events"
+   },
+   "reproduced": true
+  },
+  "coverage": "event counts, control values, law constants, measurement basis \u2014 NO engine-derived field; an engine change cannot move it; it moves iff a count, control, or law constant changes, which is exactly what it should detect"
+ },
+ "invariance_stamps": {
+  "verdict": "ERA_STABLE_BY_CONSTRUCTION",
+  "reason": "the ENERGY_INVARIANT/NOT_ENERGY_INVARIANT stamps carry no hash \u2014 they are content records (shifts, reference values, cleared ranges: measured numbers) read directly by read_stamped_axis; the material_identity strings stored in adjacent ct rows are era-tagged provenance that no current instrument compares across eras"
+ },
+ "cross_era_comparison_enumeration": {
+  "instrument": "committed-record scan for identity-comparison content (match/non-match structures)",
+  "scope": "all committed JSON records",
+  "m6_records": [
+   "render_spend/a100_recoverability.json \u2014 WAS era-confounded, superseded adjacent 390c65b",
+   "render_spend/a123_mvs_condition_read.json \u2014 subsidiary finding WAS era-confounded, superseded adjacent a4906f3",
+   "render_spend/a129_shade_token_matrix.json \u2014 era-correct by construction (the fix)",
+   "render_spend/spend_declaration.json \u2014 stores identities, compares only within-era at execution",
+   "lid_roof_repair/repair_executed.json \u2014 compares repair identities within one era"
+  ],
+  "out_of_m6_scope_listed_not_analyzed": [
+   "production_authority/production_authority_preflight.json",
+   "visual_quality/complete_product/complete_product_review.json",
+   "visual_quality/vq3/vq3_closeout_verification.json",
+   "visual_quality/vq3/vq3_material_closeout.json"
+  ]
+ },
+ "stop": "A140's stop clause taken in its stronger form: the markers are not merely era-sensitive \u2014 their coverage cannot be established at all. Steps 4-7 (A135 recovery, A136 measurement, A139 restoration, A141 line) NOT executed; the defect in the arc's staleness machinery reports first",
+ "owner_approved": false
+}

@@ -1,0 +1,18 @@
+{
+ "record_type": "a152_closure_stop/1.0",
+ "protocol_identity": "57e586fe4c0a829a",
+ "citing_disposition_count_first": {
+  "instrument": "committed-record walk counting INERT_BY_UNREACHABILITY dispositions",
+  "count": "45 dispositions in allowlist_closure/results.json final_dispositions_all_62 carry INERT_BY_UNREACHABILITY, every one reading [closure=powder_measurement@24f5d79e3cbd] per gate_baseline.json discharge_semantics; plus the 15 measured sites in reachability_instrument/graph_result.json result.INERT_BY_UNREACHABILITY_measured and 2 entries in sections_c_a30_a31.json. 45 is the size of what is currently inoperative"
+ },
+ "entry_point_set_recoverability": {
+  "verdict": "NOT_RECOVERABLE_FROM_COMMITTED_RECORDS",
+  "evidence": "graph_result.json describes the instrument ('AST import graph, transitive closure from 15 declared measurement entry points + the declared subprocess edge') and its outputs (reachable_count 50, the 15 INERT sites) but never ENUMERATES the 15 entry points; searched: closure_identity/body.json (carries the LAYOUT 13-module list, which is the 373459d42057 payload \u2014 recomputable \u2014 but not the powder entry set), a64_chokepoint, reversion, scope_provenance/a41_a43, allowlist_closure records, class_scope/body, the reachability and closure-identity briefs \u2014 no list",
+  "consequence_prescribed_not_executed": "per A152: the 45 dispositions would be marked CLOSURE_BASIS_UNESTABLISHED adjacent per 2k and the manifest distance restated \u2014 STOPPED before marking or restating anything, as ordered"
+ },
+ "completed_before_the_stop": {
+  "A153_resolved_incidentally": "373459d42057 is RECOMPUTABLE: sha256(the 13-module list committed beside it in closure_identity/body.json, sort_keys)[:12] reproduces exactly \u2014 payload co-located; census reclassified adjacent",
+  "repair_and_b862941c": "NOT reached \u2014 after closure in the order, stop fired first"
+ },
+ "owner_approved": false
+}

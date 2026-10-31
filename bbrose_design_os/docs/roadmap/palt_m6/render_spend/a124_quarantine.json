@@ -1,0 +1,42 @@
+{
+ "record_type": "a124_quarantine/1.0",
+ "protocol_identity": "4bee12abd596d496",
+ "families": {
+  "P5_CTL_67": {
+   "axes": {
+    "median_event_area_px": {
+     "stamp": "NOT_A_READING_ZERO_EVENT_FALLBACK_SUBSTITUTED_0.0",
+     "mechanism": "raises via palette_energy_recovery.read_stamped_axis \u2014 any stamp other than ENERGY_INVARIANT_AT_CONDITION raises, so a citation is stopped mechanically"
+    }
+   }
+  },
+  "P5_CTL_68": {
+   "axes": {
+    "median_event_area_px": {
+     "stamp": "NOT_A_READING_ZERO_EVENT_FALLBACK_SUBSTITUTED_0.0",
+     "mechanism": "raises via palette_energy_recovery.read_stamped_axis \u2014 any stamp other than ENERGY_INVARIANT_AT_CONDITION raises, so a citation is stopped mechanically"
+    }
+   }
+  },
+  "P6_GL_MATTE": {
+   "axes": {
+    "median_event_area_px": {
+     "stamp": "NOT_A_READING_ZERO_EVENT_FALLBACK_SUBSTITUTED_0.0",
+     "mechanism": "raises via palette_energy_recovery.read_stamped_axis \u2014 any stamp other than ENERGY_INVARIANT_AT_CONDITION raises, so a citation is stopped mechanically"
+    }
+   }
+  }
+ },
+ "mechanical_citation_search": {
+  "instrument": "this script (committed with the record): git ls-files -> every tracked .json/.md/.py scanned for 'median_event_area_px' co-occurring with the three frame labels",
+  "files_scanned": 3015,
+  "co_occurrence_hits": [],
+  "verdict": "no committed record cites the three fabricated values"
+ },
+ "manifest_split_update": {
+  "owner_premise_corrected": "the launcher says 'three sites moved' \u2014 the trace shows THREE FIRINGS at ONE site (palette_powder_rigs.py:particle_census), by citation of firing_trace.jsonl",
+  "old_split": "1 closed-forward (downgraded to code-property by A97) / 27 wired-not-exercised / 6 terminal frozen-M5 / 1 fixable-unwired; distance 34",
+  "new_split": "1 FIRED_LIVE_UNDER_CONTROLLED_TRACE (the same site, now a run-level observation: 3 recorded firings in a queue whose processes stamped first-act controls per 2o; substituted values quarantined) / 27 wired-not-exercised unchanged (none on this queue's executed paths) / 6 terminal / 1 fixable-unwired",
+  "distance": "UNCHANGED at 34 \u2014 the movement is in the QUALITY of the 1 (code-property -> live observation), not the count; no new site closed"
+ }
+}

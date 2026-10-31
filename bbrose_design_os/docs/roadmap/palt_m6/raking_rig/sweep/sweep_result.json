@@ -1,0 +1,118 @@
+{
+  "record_type": "raking_independence_sweep/1.0",
+  "declared_before_measurement": true,
+  "question": "is the third channel the texture instrument in raking clothes? sweep the physics that drives texture and see if raking axes track GRANULARITY",
+  "sweep": {
+    "parameter": "milling.micronormal_amplitude",
+    "family": "POWDER_MATTE",
+    "seed": 400,
+    "levels": [
+      0.02,
+      0.05,
+      0.08,
+      0.11,
+      0.14,
+      0.17,
+      0.2,
+      0.23,
+      0.26,
+      0.29,
+      0.32,
+      0.35
+    ]
+  },
+  "statistic": "abs Spearman across levels: each raking axis vs GRANULARITY_INDEX",
+  "ceiling": 0.8,
+  "asymmetric_reading": "divergence (<= 0.80) MEASURES independence on evidence that does not degrade with census growth; tracking (> 0.80) VOIDS the crossing pre-commitment \u2014 decided now at commissioning, not under rescue",
+  "rows": [
+    {
+      "level": 0.02,
+      "RAKING_DIRECTIONAL_SPAN": 0.539032,
+      "RAKING_SHADOW_FRACTION": 0.089844,
+      "GRANULARITY_INDEX": 0.030871
+    },
+    {
+      "level": 0.05,
+      "RAKING_DIRECTIONAL_SPAN": 0.539791,
+      "RAKING_SHADOW_FRACTION": 0.089844,
+      "GRANULARITY_INDEX": 0.032432
+    },
+    {
+      "level": 0.08,
+      "RAKING_DIRECTIONAL_SPAN": 0.540467,
+      "RAKING_SHADOW_FRACTION": 0.089844,
+      "GRANULARITY_INDEX": 0.035164
+    },
+    {
+      "level": 0.11,
+      "RAKING_DIRECTIONAL_SPAN": 0.541719,
+      "RAKING_SHADOW_FRACTION": 0.089844,
+      "GRANULARITY_INDEX": 0.038802
+    },
+    {
+      "level": 0.14,
+      "RAKING_DIRECTIONAL_SPAN": 0.543303,
+      "RAKING_SHADOW_FRACTION": 0.089844,
+      "GRANULARITY_INDEX": 0.043115
+    },
+    {
+      "level": 0.17,
+      "RAKING_DIRECTIONAL_SPAN": 0.544557,
+      "RAKING_SHADOW_FRACTION": 0.089844,
+      "GRANULARITY_INDEX": 0.047898
+    },
+    {
+      "level": 0.2,
+      "RAKING_DIRECTIONAL_SPAN": 0.54614,
+      "RAKING_SHADOW_FRACTION": 0.089844,
+      "GRANULARITY_INDEX": 0.053005
+    },
+    {
+      "level": 0.23,
+      "RAKING_DIRECTIONAL_SPAN": 0.547631,
+      "RAKING_SHADOW_FRACTION": 0.089844,
+      "GRANULARITY_INDEX": 0.058345
+    },
+    {
+      "level": 0.26,
+      "RAKING_DIRECTIONAL_SPAN": 0.548932,
+      "RAKING_SHADOW_FRACTION": 0.089844,
+      "GRANULARITY_INDEX": 0.063825
+    },
+    {
+      "level": 0.29,
+      "RAKING_DIRECTIONAL_SPAN": 0.549905,
+      "RAKING_SHADOW_FRACTION": 0.089844,
+      "GRANULARITY_INDEX": 0.069385
+    },
+    {
+      "level": 0.32,
+      "RAKING_DIRECTIONAL_SPAN": 0.550534,
+      "RAKING_SHADOW_FRACTION": 0.089844,
+      "GRANULARITY_INDEX": 0.074977
+    },
+    {
+      "level": 0.35,
+      "RAKING_DIRECTIONAL_SPAN": 0.551402,
+      "RAKING_SHADOW_FRACTION": 0.089844,
+      "GRANULARITY_INDEX": 0.080557
+    }
+  ],
+  "result": {
+    "RAKING_DIRECTIONAL_SPAN": {
+      "abs_spearman_vs_GRANULARITY": 1.0,
+      "ruling": "TRACKING_PRE_COMMITMENT_VOID"
+    },
+    "RAKING_SHADOW_FRACTION": {
+      "abs_spearman_vs_GRANULARITY": 1.0,
+      "ruling": "TRACKING_PRE_COMMITMENT_VOID"
+    }
+  },
+  "SUPERSESSION_2026_08_08": {
+    "what": "the committed result row RAKING_SHADOW_FRACTION abs_spearman_vs_GRANULARITY = 1.0 is INVALID: the SHADOW readings are bit-constant (0.089844 at all 12 levels, one distinct value) and a Spearman against a zero-variance vector is undefined \u2014 the 1.0 came from an unguarded correlation implementation, not from a measurement",
+    "class": "CONSTANT_VECTOR_CORRELATION_ARTIFACT \u2014 the same refusal-to-measure family as the flat-subject SHADOW floor 0.0 (FLOOR_NOT_MEASURABLE): micronormal amplitude casts no measurable shadows on a flat subject, the axis did not respond, and the statistic should have refused",
+    "what_still_stands": "RAKING_DIRECTIONAL_SPAN 1.0 was computed on 12 distinct monotone values and stands as a genuine number (its meaning is now governed by the amended 1a: the sweep as a whole is SWEEP_DEGENERATE_UNDER_DRIVER)",
+    "discovered_by": "M6 independence amendment Phase 3 \u2014 span qualification found span_effect 0.0; original rows preserved above, nothing deleted",
+    "authorization": "M6_INDEPENDENCE_AMENDMENT_PROMPT.md (owner)"
+  }
+}

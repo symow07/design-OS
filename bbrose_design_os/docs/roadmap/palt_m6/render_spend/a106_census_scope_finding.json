@@ -1,0 +1,18 @@
+{
+ "record_type": "a106_census_scope_finding/1.0",
+ "protocol_identity": "ca44a5706d270461",
+ "question": "did the texture census declare eight rows and deliver seven, or declare seven with GLITTER never in scope? Answered by citation, not by inference from the result table.",
+ "citations": {
+  "n6_growth": "a2_obligation_discharge.json line 3: 'SHIMMER and POWDER_METALLIC joined the texture census (flake rig commissioning, d893bc4)' \u2014 two joiners named; the flake commissioning (d893bc4) declared SHIMMER vs POWDER_METALLIC on the FLAKE_REFLECTION_RIG; GLITTER's rig is the particle rig, commissioned separately",
+  "n8_growth": "a2_firing_declaration.json part_1_census, declared_before_measurement=true: 'BAKED and MARBLED join the granularity census (texture rig, per-member calibrated); N=8 recompute' \u2014 two joiners named, N=8 declared",
+  "n8_delivery": "a2_firing_result.json census_n8.granularity: exactly eight rows (MATTE, SATIN, PRESSED, CREAM, SHIMMER, METALLIC, BAKED, MARBLED)",
+  "glitter_anticipated_never_declared": "axis_independence_matrix.json SCHEDULED_OBLIGATION.trigger: 'the moment any of the flake, metallic, glitter or shimmer families joins the texture/lobe census' \u2014 a conditional trigger anticipating that GLITTER COULD join; no record declares that it did or that it must"
+ },
+ "verdict": "THE CENSUS DECLARED EIGHT AND DELIVERED EIGHT; GLITTER WAS NEVER IN SCOPE \u2014 the second A106 branch, with one correction to the launcher's premise, stated per the standing practice: the N=8 census DOES have eight texture rows; the missing row is a NINTH (of the nine structural families), never declared at any growth. No DECLARED_BUT_UNREALIZED exists inside the census node; declared and delivered agree at every growth.",
+ "coverage_gap_named": {
+  "name": "GLITTER_HAS_NO_TEXTURE_CENSUS_CHARACTERISATION",
+  "statement": "GLITTER has never been characterised on the texture rig; its M6 standing rests on the GLITTER_PARTICLE_RIG (events) and flake-adjacent instruments only. M7 and any future GRANULARITY-family claim about GLITTER must treat texture axes as UNMEASURED for it, not as replicable."
+ },
+ "where_the_false_scope_entered": "downstream, in the executor's own records: combined_manifest/manifest_declaration.json queue_102.p4 ('6 remaining census families') and combined_manifest/completion_state.json census_replicate ('12 texture-side frames (6 families x 2 seeds)') \u2014 both counted GLITTER as a census family. Identified here as carriers; superseded by the amended spend declaration's strike; the prior records stand per 2k as what was claimed at the time.",
+ "owner_approved": false
+}

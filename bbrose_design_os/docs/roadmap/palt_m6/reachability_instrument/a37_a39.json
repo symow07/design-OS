@@ -1,0 +1,173 @@
+{
+  "record_type": "reachability_a37_a39/1.0",
+  "A39_instruments": {
+    "exit_path_analysis": "AST (ast.walk over ExceptHandler) \u2014 was never textual",
+    "guard_test_shapes": "TEXTUAL (regex) \u2014 the comment-line match proves it; A18 family, corrected below",
+    "ast_reconversion": {
+      "textual_count": 27,
+      "ast_count": 28,
+      "moved": 1,
+      "note": "the AST count is the authority; textual counts are floors"
+    }
+  },
+  "A37_cross_reference": {
+    "overlap_dead": [],
+    "overlap_census": [],
+    "no_overlap": [
+      {
+        "site": "palette_axis_eligibility.py:216",
+        "key": "lobe_axes",
+        "line": "for axis, row in ruling.get(\"lobe_axes\", {}).items():"
+      },
+      {
+        "site": "palette_axis_eligibility.py:218",
+        "key": "texture_axes",
+        "line": "for axis, row in ruling.get(\"texture_axes\", {}).items():"
+      },
+      {
+        "site": "palette_axis_eligibility.py:237",
+        "key": null,
+        "line": "if any(c in grouped.get(axis, set()) for c in counted):"
+      },
+      {
+        "site": "palette_baked_clearance.py:54",
+        "key": "lid_roof_mm",
+        "line": "- dims.get(\"lid_roof_mm\", 1.6))"
+      },
+      {
+        "site": "palette_characterization_protocol.py:298",
+        "key": "environment_panels",
+        "line": "panels = r.get(\"environment_panels\", [])"
+      },
+      {
+        "site": "palette_characterization_protocol.py:524",
+        "key": "QUARTER_CYLINDER",
+        "line": "q = measurement[\"regions\"].get(\"QUARTER_CYLINDER\", {})"
+      },
+      {
+        "site": "palette_characterization_protocol.py:307",
+        "key": "samples",
+        "line": "\"samples\": o.get(\"samples\", r[\"samples\"]),"
+      },
+      {
+        "site": "palette_characterization_protocol.py:312",
+        "key": "background_strips",
+        "line": "\"background_strips\": r.get(\"background_strips\", []),"
+      },
+      {
+        "site": "palette_characterization_protocol.py:317",
+        "key": "diffuse_source",
+        "line": "\"diffuse_source\": r.get(\"diffuse_source\","
+      },
+      {
+        "site": "palette_characterization_protocol.py:321",
+        "key": "specular_source",
+        "line": "\"specular_source\": r.get(\"specular_source\","
+      },
+      {
+        "site": "palette_characterization_protocol.py:300",
+        "key": null,
+        "line": "pn.update(o.get(pn[\"name\"], {}))"
+      },
+      {
+        "site": "palette_characterization_protocol.py:504",
+        "key": "grid",
+        "line": "grid = measurement[\"regions\"].get(region, {}).get(\"grid\")"
+      },
+      {
+        "site": "palette_characterization_protocol.py:512",
+        "key": "clipped_sample_count",
+        "line": "return sum(r.get(\"clipped_sample_count\", 0)"
+      },
+      {
+        "site": "palette_characterization_protocol.py:530",
+        "key": "specular_to_diffuse_ratio",
+        "line": "float(q.get(\"specular_to_diffuse_ratio\", 0.0)),"
+      },
+      {
+        "site": "palette_characterization_protocol.py:297",
+        "key": null,
+        "line": "r[key].update(o.get(key, {}))"
+      },
+      {
+        "site": "palette_characterization_protocol.py:654",
+        "key": "scene_linear_peak",
+        "line": "peak = max(r.get(\"scene_linear_peak\", 0.0)"
+      },
+      {
+        "site": "palette_characterization_rig.py:299",
+        "key": "_frame",
+        "line": "frame = axes.get(\"_frame\", {})"
+      },
+      {
+        "site": "palette_characterization_rig.py:335",
+        "key": "frame",
+        "line": "frame = measurement.get(\"frame\", {})"
+      },
+      {
+        "site": "palette_characterization_rig.py:127",
+        "key": "samples",
+        "line": "\"samples\": o.get(\"samples\", rig[\"samples\"]),"
+      },
+      {
+        "site": "palette_characterization_rig.py:284",
+        "key": "frame",
+        "line": "\"_frame\": measurement.get(\"frame\", {}),"
+      },
+      {
+        "site": "palette_characterization_rig.py:336",
+        "key": "scene_linear_peak",
+        "line": "peak = float(frame.get(\"scene_linear_peak\", 0.0))"
+      },
+      {
+        "site": "palette_characterization_rig.py:337",
+        "key": "clipped_sample_count",
+        "line": "clipped = int(frame.get(\"clipped_sample_count\", 0))"
+      },
+      {
+        "site": "palette_characterization_rig.py:121",
+        "key": null,
+        "line": "rig[key].update(o.get(key, {}))"
+      },
+      {
+        "site": "palette_characterization_rig.py:264",
+        "key": null,
+        "line": "return float(r.get(region, {}).get(key, default))"
+      },
+      {
+        "site": "palette_characterization_rig.py:264",
+        "key": null,
+        "line": "return float(r.get(region, {}).get(key, default))"
+      },
+      {
+        "site": "palette_characterization_rig.py:300",
+        "key": "percentiles",
+        "line": "ref = float(frame.get(\"percentiles\", {}).get(\"50\")"
+      },
+      {
+        "site": "palette_flake_rig.py:199",
+        "key": "independent",
+        "line": "if not spec_row.get(\"independent\", False):"
+      },
+      {
+        "site": "palette_flake_rig.py:142",
+        "key": "scene_linear_peak",
+        "line": "peak = max(r.get(\"scene_linear_peak\", 0.0)"
+      }
+    ]
+  },
+  "A39_383_180_reconciliation": {
+    "the_383": "300 floor/seed-only + 21 clearing + 62 census",
+    "the_180": "lobe 90 + texture 30 + marbling pre/post 60 \u2014 the subset re-derived for the distribution",
+    "the_other_203": "flake 30 + raking flat 60 + BAKED relief 30 (floor class, audited in the extra-coverage passes) + 21 clearing + 62 census",
+    "band_applied_to_the_203": {
+      "flake_raking_relief_minima": {
+        "extra_min": 0.004656,
+        "texture_relief_min": 0.07935149999999999
+      },
+      "clearing_min": 0.0520805,
+      "census_min": 0.024585151058017694,
+      "result": "extra-coverage min 0.004656 IS the marbling-pre span already counted among the 15 conditioning findings; excluding marbling, the flake/raking/relief minimum is 0.0793 (texture) and the raking-flat/relief minima are 0.147/1.44; clearing min 0.0521; census min 0.0246 \u2014 ALL above the 0.01 band. CONDITIONING FINDINGS REMAIN 15, all MARBLE_CHROMA_SPAN; the band now provably covers all 383"
+    }
+  }
+}

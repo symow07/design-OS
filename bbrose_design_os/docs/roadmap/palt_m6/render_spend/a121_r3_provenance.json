@@ -1,0 +1,13 @@
+{
+ "record_type": "a121_r3_withdrawal_provenance/1.0",
+ "protocol_identity": "4bee12abd596d496",
+ "question": "was SURFACE_AUTOCORRELATION_MM's withdrawal DECLARED and adjudicated at the time, or entered as an implementation consequence of a repair?",
+ "verdict": "DECLARED_AND_ADJUDICATED \u2014 branch one; close and proceed",
+ "citations": {
+  "declared": "instrument_repair_declaration.json R3_WITHDRAW_SURFACE_AUTOCORRELATION_MM, answering finding F3_SURFACE_AUTOCORRELATION_MM_IS_DEAD_BY_CONSTRUCTION: 'the axis is WITHDRAWN. It correlates a field that a 3x3 box high-pass has just whitened, so it reports its own kernel support (0.14 mm = 2 px) on every frame ever measured. It is not admitted, not repaired in place, and not counted toward any pair.'",
+  "adjudicated_with_evidence": "same record: replacement_status NONE_DECLARED_YET ('grain SCALE remains an unmeasured quantity. No pair currently depends on it, so M6 is not blocked by its absence'); assertion SYNTHETIC_FIELD_CONTROL for any future scale axis; negative_control 'the withdrawn axis fails that synthetic control. Recording that failure is what makes the withdrawal evidence rather than opinion.'",
+  "realized": "instrument_repair_phase0.json: 'R3 formal withdrawal completed with its synthetic control'; bars_moved: []; grain scale recorded as unmeasured; formula retained only as withdrawn_autocorrelation_reference for the control"
+ },
+ "bar_adjacency_addressed": "the withdrawal did not shrink the pool of REAL axes: F3 records the axis as dead-by-construction \u2014 it reported its kernel support constant on every frame ever measured, so it never was an independent axis a pair could count; the declaration adjudicates exactly the no-pair-depends-on-it question, and PASS_LAW's two-independent-axes requirement was never satisfiable through it",
+ "owner_approved": false
+}

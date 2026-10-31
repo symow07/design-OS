@@ -1,0 +1,26 @@
+{
+ "record_type": "a128_gbc_verdict_census/1.0",
+ "protocol_identity": "44414377f5af69e0",
+ "instrument": "committed script: git ls-files -> 2,056 committed JSON records scanned for GRAZING_BAND_CONTRAST (46 carriers), then a structural detector for counting roles (axes_clearing/qualifying_axes/counted lists and clears:true adjacency to verdicts)",
+ "scope": {
+  "records_scanned": 2056,
+  "gbc_carriers": 46,
+  "counting_role_hits": 7
+ },
+ "verdicts_counting_gbc_as_required_independent_axis": [],
+ "finding": "ZERO committed PASS_LAW verdicts counted GBC as one of their two required independent axes. The three diffuse verdicts counted GRAN+SHEEN/FWHM (a2_obligation_discharge, adjudication records); GBC was REJECTED at fixture validation (texture_axes_validation: detects false, rejected_axes) and re-entered as an admitted axis of the repaired instrument without ever carrying a two-axis verdict. No verdict loses its second axis; nothing is restated; no stop fires",
+ "the_one_counting_appearance": {
+  "where": "the sweep-degeneracy determinations (measurement_adequacy/phase3_4_ruling SWEEP_DEGENERATE_UNDER_DRIVER and the driver_completeness A2/N antecedents) \u2014 GBC is one of SEVEN qualifying axes in a correlation-matrix degeneracy ruling, not a PASS_LAW axis count",
+  "energy_classification": "WITHIN-ENERGY",
+  "evidence_not_assumption": "(i) the milling.surface_smoothing sweep rows carry exactly ONE distinct _energy (731845.9432) across all rows; (ii) the micronormal counted sweep and seed replicas record no energy but their _planar_peak drifts monotonically 0.675 -> 0.859 across levels \u2014 the signature of a FIXED energy with the surface property moving brightness; per-level recalibration would pin peaks near 0.88. The energy VALUE for those two records is unrecorded \u2014 stated as a floor, not silently upgraded to a recorded fact",
+  "consequence": "within-energy comparisons are untouched by GBC's energy non-invariance; the degeneracy ruling stands"
+ },
+ "fixture_level_control_record": "the commissioned exposure-only control validated invariance at FIXTURE condition and the claim was generalised to member conditions unvalidated \u2014 1p, third instance in this single report, alongside the withdrawn autocorrelation axis and the floor-shade question",
+ "owner_approved": false,
+ "A135_AMENDED_IN_PLACE_2026_08_11": {
+  "what_moves": "the_one_counting_appearance.energy_classification below read WITHIN-ENERGY on evidence. Per A135 the two records without a recorded energy (micronormal_counted_instrument_sweep, micronormal_seed_replicas) move OUT of the evidenced column to WITHIN_ENERGY_UNVERIFIABLE \u2014 the bounded recovery found no recorded value in any committed artifact or any revision of those records",
+  "what_stands": "sweep_milling_surface_smoothing carries exactly ONE recorded _energy (731845.9432) across all rows and remains WITHIN-ENERGY on recorded evidence",
+  "peak_drift_premise_withdrawn": "the monotone 0.675->0.859 drift was cited as evidence of fixed energy; per A135 it is NOT evidence \u2014 the solve's stopping condition is a WINDOW acceptance, not convergence on the target, so first-iteration landings from a shared prior energy drift too and the signature does not discriminate between the two generators",
+  "not_softened": "no part of this is restated as 'probably within-energy'"
+ }
+}

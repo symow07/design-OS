@@ -1,0 +1,22 @@
+{
+ "record_type": "a123_mvs_condition_read/1.0",
+ "protocol_identity": "4bee12abd596d496",
+ "question": "at what condition was the MATTE_VS_SATIN FAIL computed, and is it the warm condition the P6 control covers?",
+ "citations": {
+  "the_FAIL_and_its_estimate": "establishment_table A95_verdict_estimate_identities_2m: MATTE_VS_SATIN = FAIL[cleared_against=MATTE_SHEEN_spread@a2b626e6522f]; the estimate is the seed-only floor from axis_noise_floors.json ensemble {family: POWDER_MATTE, seeds [40,81,82,83,84,99]}, SHEEN floor 0.16569, 15 pairings, DIFFUSE_LOBE_RIG (committed at 036a280, the R4/R5 eligibility node)",
+  "ensemble_not_warm_mechanical": "the six committed ensemble frames eligibility/swatch_ens_lobe_{40,81,82,83,84,99}.json carry material_identity hashes (44b930cbf279da23, 11ef762778f7809d, 2b2d9d9240d31230, ab2dfbe80b65af83, a01d6ea5fe28f521, 194c5b0b6fd23b27); material_identity hashes the shade (name+rgb) and seed; PowderMaterialSpec(POWDER_MATTE, prov_dark_warm_sienna (0.38,0.22,0.14), seed) matches NONE of them across seeds {40,81,82,83,84,99,500} \u2014 the FAIL's clearing estimate was NOT measured at the warm condition",
+  "satin_leg_condition": "the SHEEN reading leg (0.0911, establishment line 'SHEEN leg ADEQUACY_PRECONDITION_UNMET (0.0911 < 0.16569)') derives from the P1 manifest ensembles whose committed frames match prov_char_neutral (0.62,0.55,0.48) by identity hash (verified: mens_lobe_POWDER_SATIN_40)",
+  "control_condition": "queue_results.json p6.m_v_s ran at prov_dark_warm_sienna (0.38,0.22,0.14), seed 500 \u2014 warm, per the amended declaration's p6 line"
+ },
+ "branch": "DIFFERENT_CONDITION \u2014 branch two",
+ "consequence": {
+  "fail_stands": "MATTE_VS_SATIN FAIL[cleared_against=MATTE_SHEEN_spread@a2b626e6522f] STANDS",
+  "gap_recorded_under_its_own_name": {
+   "name": "MVS_SHEEN_NO_POSITIVE_CONTROL_AT_COMPUTED_CONDITION",
+   "statement": "there is no positive control at the condition the MATTE_VS_SATIN FAIL was computed at; the FAIL has never been shown to come from a seeing instrument. Same hole as branch one, less evidence \u2014 recorded as the uncomfortable branch, not the comfortable one"
+  }
+ },
+ "subsidiary_finding_floor_status_1x": "the eligibility ensemble's shade token matches NEITHER prov_dark_warm_sienna NOR prov_char_neutral in a bounded mechanical search (11 names x 6 rgbs + warm across 7 seeds) \u2014 the MATTE floor ensemble and the P1 readings it gates were rendered under different shade TOKENS (rgb possibly equal; the hash covers the name). The search scope is stated and its non-match is a FLOOR under 1x, not an exhaustive proof; named for the owner rather than absorbed",
+ "owner_approved": false,
+ "subsidiary_finding_SUPERSEDED_by_a129_matrix": "the 'shade token matches neither' finding below is retained as what was claimed and is SUPERSEDED: era-correct hashing (a129_shade_token_matrix.json) shows the non-match was hash-function drift from the contract repair's engine changes; the floor ensemble is POSITIVELY established prov_char_neutral, six-for-six exact era-hash. The A123 branch-two conclusion survives and strengthens: not-warm is now established-neutral"
+}

@@ -1,0 +1,1215 @@
+{
+  "record_type": "parameter_realization_audit/1.0",
+  "method": "one parameter varied alone at fixed seed; scene-linear frame delta against the family base through the R2 machinery",
+  "families": {
+    "POWDER_MATTE": {
+      "compression_texture.scale_mm": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.02740264,
+        "varied": "0.6 -> 0.96"
+      },
+      "compression_texture.strength": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.01370994,
+        "varied": "0.12 -> 0.192"
+      },
+      "crown_height_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "edge_profile": {
+        "class": "DECLARED_NOT_REALIZED",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "note": "pre-committed: the dome node did not consume it \u2014 joins the dead"
+      },
+      "fill_depth_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "macrotexture.scale_mm": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.00708925,
+        "varied": "2.4 -> 3.84"
+      },
+      "macrotexture.strength": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.01881584,
+        "varied": "0.06 -> 0.096"
+      },
+      "microtexture.scale_mm": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.16 -> 0.256"
+      },
+      "microtexture.strength": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.3 -> 0.48"
+      },
+      "milling.micronormal_amplitude": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.04682786,
+        "varied": "0.34 -> 0.544"
+      },
+      "milling.micronormal_correlation_mm": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.35 -> 0.5599999999999999"
+      },
+      "milling.microparticle_scale_mm": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.12012581,
+        "varied": "0.35 -> 0.5599999999999999"
+      },
+      "milling.microparticle_variance": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.00932514,
+        "varied": "0.6 -> 0.96"
+      },
+      "milling.surface_smoothing": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.0 -> 0.3"
+      },
+      "powder_recess_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "surface_roughness": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.00460955,
+        "varied": "0.85 -> 1.36"
+      },
+      "shader.specular_ior_level": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.noise_detail_base": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.noise_detail_variance_coeff": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.compression_noise_detail": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.compression_seed_offset": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.roughness_variation_coeff": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.mottle_detail": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.mottle_seed_offset": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.bump_distance_law": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.noise_distortion": {
+        "class": "REALIZED",
+        "evidence": "A23 \u2014 the identity-zero default declared with value 0 rather than exempted; consumed explicitly at every previously-defaulted site; pixel-identity re-proven"
+      }
+    },
+    "POWDER_SATIN": {
+      "compression_texture.scale_mm": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.6 -> 0.96"
+      },
+      "compression_texture.strength": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.1 -> 0.16000000000000003"
+      },
+      "crown_height_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "edge_profile": {
+        "class": "DECLARED_NOT_REALIZED",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "note": "pre-committed: the dome node did not consume it \u2014 joins the dead"
+      },
+      "fill_depth_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "macrotexture.scale_mm": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.00302717,
+        "varied": "2.4 -> 3.84"
+      },
+      "macrotexture.strength": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.00797642,
+        "varied": "0.06 -> 0.096"
+      },
+      "microtexture.scale_mm": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.16 -> 0.256"
+      },
+      "microtexture.strength": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.3 -> 0.48"
+      },
+      "milling.micronormal_amplitude": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.00907131,
+        "varied": "0.1 -> 0.16000000000000003"
+      },
+      "milling.micronormal_correlation_mm": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.21 -> 0.336"
+      },
+      "milling.microparticle_scale_mm": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.02036946,
+        "varied": "0.21 -> 0.336"
+      },
+      "milling.microparticle_variance": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.00303398,
+        "varied": "0.2 -> 0.32000000000000006"
+      },
+      "milling.surface_smoothing": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.00396347,
+        "varied": "0.5 -> 0.8"
+      },
+      "powder_recess_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "sheen_response.sheen": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.040926,
+        "varied": "0.45 -> 0.7200000000000001"
+      },
+      "sheen_response.tint": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.00770057,
+        "varied": "0.15 -> 0.24"
+      },
+      "surface_roughness": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.85 -> 1.36"
+      },
+      "shader.specular_ior_level": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.noise_detail_base": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.noise_detail_variance_coeff": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.roughness_base": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.roughness_smoothing_coeff": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.mottle_strength_factor": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.mottle_detail": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.mottle_seed_offset": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.bump_distance_law": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.noise_distortion": {
+        "class": "REALIZED",
+        "evidence": "A23 \u2014 the identity-zero default declared with value 0 rather than exempted; consumed explicitly at every previously-defaulted site; pixel-identity re-proven"
+      }
+    },
+    "SHIMMER": {
+      "crown_height_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "edge_profile": {
+        "class": "DECLARED_NOT_REALIZED",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "note": "pre-committed: the dome node did not consume it \u2014 joins the dead"
+      },
+      "fill_depth_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "flakes.flake_density": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.17567207,
+        "varied": "0.85 -> 1.36"
+      },
+      "flakes.flake_orientation": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "'ISOTROPIC' -> 'ISOTROPIC_PROBE'"
+      },
+      "flakes.flake_scale_mm": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.21728994,
+        "varied": "0.055 -> 0.08800000000000001"
+      },
+      "flakes.metallic_response": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.55471379,
+        "varied": "0.45 -> 0.7200000000000001"
+      },
+      "flakes.sparkle_distribution": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "'CONTINUOUS_FINE' -> 'CONTINUOUS_FINE_PROBE'"
+      },
+      "flakes.sparkle_intensity": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.04036789,
+        "varied": "0.35 -> 0.5599999999999999"
+      },
+      "macrotexture.scale_mm": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.00703707,
+        "varied": "2.4 -> 3.84"
+      },
+      "macrotexture.strength": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.01946875,
+        "varied": "0.06 -> 0.096"
+      },
+      "microtexture.scale_mm": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.16 -> 0.256"
+      },
+      "microtexture.strength": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.3 -> 0.48"
+      },
+      "powder_recess_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "surface_roughness": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.0123334,
+        "varied": "0.55 -> 0.8800000000000001"
+      },
+      "shader.specular_ior_level": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.flake_roughness_base": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.flake_roughness_metallic_coeff": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.facet_jitter_per_sparkle": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.mottle_detail": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.mottle_seed_offset": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.noise_distortion": {
+        "class": "REALIZED",
+        "evidence": "A23 \u2014 the identity-zero default declared with value 0 rather than exempted; consumed explicitly at every previously-defaulted site; pixel-identity re-proven"
+      }
+    },
+    "POWDER_METALLIC": {
+      "crown_height_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "edge_profile": {
+        "class": "DECLARED_NOT_REALIZED",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "note": "pre-committed: the dome node did not consume it \u2014 joins the dead"
+      },
+      "fill_depth_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "flakes.flake_density": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.48040834,
+        "varied": "0.97 -> 1.552"
+      },
+      "flakes.flake_orientation": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "'ISOTROPIC' -> 'ISOTROPIC_PROBE'"
+      },
+      "flakes.flake_scale_mm": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.56700373,
+        "varied": "0.04 -> 0.064"
+      },
+      "flakes.metallic_response": {
+        "class": "REALIZED",
+        "rms_over_mean": 2.01411114,
+        "varied": "0.9 -> 1.4400000000000002"
+      },
+      "flakes.sparkle_distribution": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "'CONTINUOUS_DENSE' -> 'CONTINUOUS_DENSE_PROBE'"
+      },
+      "flakes.sparkle_intensity": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.02714918,
+        "varied": "0.2 -> 0.32000000000000006"
+      },
+      "macrotexture.scale_mm": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.00709927,
+        "varied": "2.4 -> 3.84"
+      },
+      "macrotexture.strength": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.02006109,
+        "varied": "0.06 -> 0.096"
+      },
+      "microtexture.scale_mm": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.16 -> 0.256"
+      },
+      "microtexture.strength": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.3 -> 0.48"
+      },
+      "powder_recess_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "surface_roughness": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.01456168,
+        "varied": "0.42 -> 0.672"
+      },
+      "shader.specular_ior_level": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.flake_roughness_base": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.flake_roughness_metallic_coeff": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.facet_jitter_per_sparkle": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.mottle_detail": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.mottle_seed_offset": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.noise_distortion": {
+        "class": "REALIZED",
+        "evidence": "A23 \u2014 the identity-zero default declared with value 0 rather than exempted; consumed explicitly at every previously-defaulted site; pixel-identity re-proven"
+      }
+    },
+    "GLITTER": {
+      "crown_height_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "edge_profile": {
+        "class": "DECLARED_NOT_REALIZED",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "note": "pre-committed: the dome node did not consume it \u2014 joins the dead"
+      },
+      "fill_depth_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "macrotexture.scale_mm": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.00713427,
+        "varied": "2.4 -> 3.84"
+      },
+      "macrotexture.strength": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.02023824,
+        "varied": "0.06 -> 0.096"
+      },
+      "microtexture.scale_mm": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.16 -> 0.256"
+      },
+      "microtexture.strength": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.3 -> 0.48"
+      },
+      "particles.coverage": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.21287113,
+        "varied": "0.1 -> 0.16000000000000003"
+      },
+      "particles.depth_distribution": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "'SURFACE_BIASED' -> 'SURFACE_BIASED_PROBE'"
+      },
+      "particles.orientation_jitter_deg": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.08890743,
+        "varied": "35.0 -> 56.0"
+      },
+      "particles.particle_size_mm": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.49613107,
+        "varied": "0.7 -> 1.1199999999999999"
+      },
+      "particles.reflectance": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.12414865,
+        "audit_caveat": "the upward probe (1.0->1.6) hit the Metallic input clamp and read false-dead; the downward probe (->0.5) proves it live. The audit variation rule can false-kill clamped parameters \u2014 recorded as an instrument caveat."
+      },
+      "particles.shape_class": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "'IRREGULAR_FLAKE' -> 'IRREGULAR_FLAKE_PROBE'"
+      },
+      "particles.size_distribution": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "'UNIFORM_0.5_TO_0.9' -> 'UNIFORM_0.5_TO_0.9_PROBE'"
+      },
+      "powder_recess_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "surface_roughness": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.01132755,
+        "varied": "0.85 -> 1.36"
+      },
+      "shader.specular_ior_level": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.particle_roughness": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.jitter_denominator_deg": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.voronoi_distance": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.mottle_detail": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.mottle_seed_offset": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.noise_distortion": {
+        "class": "REALIZED",
+        "evidence": "A23 \u2014 the identity-zero default declared with value 0 rather than exempted; consumed explicitly at every previously-defaulted site; pixel-identity re-proven"
+      }
+    },
+    "BAKED": {
+      "crown_height_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "crust.baked_microtexture_strength": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.03769197,
+        "varied": "0.18 -> 0.288"
+      },
+      "crust.gloss": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.00930508,
+        "varied": "0.3 -> 0.48"
+      },
+      "dome.crown_height_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "dome.edge_transition_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "dome.lid_clearance_required_mm": {
+        "class": "CHECK_CONSUMED",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_clearance.closed_clearance (required_mm read by the clearance verdict)"
+      },
+      "edge_profile": {
+        "class": "DECLARED_NOT_REALIZED",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "note": "pre-committed: the dome node did not consume it \u2014 joins the dead"
+      },
+      "fill_depth_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "macrotexture.scale_mm": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.00656248,
+        "varied": "2.4 -> 3.84"
+      },
+      "macrotexture.strength": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.01923795,
+        "varied": "0.06 -> 0.096"
+      },
+      "microtexture.scale_mm": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.16 -> 0.256"
+      },
+      "microtexture.strength": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.3 -> 0.48"
+      },
+      "powder_recess_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "surface_roughness": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.85 -> 1.36"
+      },
+      "shader.specular_ior_level": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.crust_noise_scale_mm": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.crust_noise_detail": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.crust_distortion": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.baked_roughness": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.coat_gloss_factor": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.mottle_detail": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.mottle_seed_offset": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.bump_distance_law": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.noise_distortion": {
+        "class": "REALIZED",
+        "evidence": "A23 \u2014 the identity-zero default declared with value 0 rather than exempted; consumed explicitly at every previously-defaulted site; pixel-identity re-proven"
+      }
+    },
+    "MARBLED": {
+      "crown_height_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "edge_profile": {
+        "class": "DECLARED_NOT_REALIZED",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "note": "pre-committed: the dome node did not consume it \u2014 joins the dead"
+      },
+      "fill_depth_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "macrotexture.scale_mm": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "2.4 -> 3.84"
+      },
+      "macrotexture.strength": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.06 -> 0.096"
+      },
+      "marbling.components": {
+        "class": "VALIDATOR_COUPLED",
+        "error": "marbling supports 2 or 3 colour components"
+      },
+      "marbling.coordinate_mapping": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "'OBJECT_ATTACHED' -> 'OBJECT_ATTACHED_PROBE'"
+      },
+      "marbling.directional_bias_deg": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.0635518,
+        "varied": "20.0 -> 32.0"
+      },
+      "marbling.mixing_ratio": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.32440386,
+        "varied": "[0.65, 0.35] -> [0.5, 0.5]"
+      },
+      "marbling.vein_scale_mm": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.07799506,
+        "varied": "5.5 -> 8.8"
+      },
+      "microtexture.scale_mm": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.05718556,
+        "varied": "0.16 -> 0.256"
+      },
+      "microtexture.strength": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.02258238,
+        "varied": "0.3 -> 0.48"
+      },
+      "powder_recess_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "surface_roughness": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.01097916,
+        "varied": "0.85 -> 1.36"
+      },
+      "shader.specular_ior_level": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.vein_detail": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.vein_distortion": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.vein2_scale_factor": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.vein2_seed_offset": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.ramp_width_2comp": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.ramp_width_3comp": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.micro_noise_detail": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.micro_seed_offset": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.microtexture_strength_factor": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.bump_distance_law": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.component_derivation.form": {
+        "class": "REALIZED",
+        "evidence": "VALUE_MOVING chromatic derivation (census L305), consumed by _derived_components; re-adjudication in contract_repair/marble_readjudication.json"
+      },
+      "shader.component_derivation.darker_rgb_coeffs": {
+        "class": "REALIZED",
+        "evidence": "VALUE_MOVING chromatic derivation (census L305), consumed by _derived_components; re-adjudication in contract_repair/marble_readjudication.json"
+      },
+      "shader.component_derivation.lighter_rgb_coeffs": {
+        "class": "REALIZED",
+        "evidence": "VALUE_MOVING chromatic derivation (census L305), consumed by _derived_components; re-adjudication in contract_repair/marble_readjudication.json"
+      },
+      "shader.component_derivation.lighter_rgb_offsets": {
+        "class": "REALIZED",
+        "evidence": "VALUE_MOVING chromatic derivation (census L305), consumed by _derived_components; re-adjudication in contract_repair/marble_readjudication.json"
+      },
+      "shader.noise_distortion": {
+        "class": "REALIZED",
+        "evidence": "A23 \u2014 the identity-zero default declared with value 0 rather than exempted; consumed explicitly at every previously-defaulted site; pixel-identity re-proven"
+      }
+    },
+    "PRESSED_POWDER": {
+      "compaction.compaction_level": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.02069431,
+        "varied": "0.8 -> 1.2800000000000002"
+      },
+      "compaction.compression_texture_amplitude": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.01335852,
+        "varied": "0.1 -> 0.16000000000000003"
+      },
+      "compaction.compression_texture_scale_mm": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.03192421,
+        "varied": "0.25 -> 0.4"
+      },
+      "compaction.edge_packing": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.9 -> 1.4400000000000002"
+      },
+      "compaction.surface_density": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.9 -> 1.4400000000000002"
+      },
+      "compaction.surface_flatness": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.00786092,
+        "varied": "0.85 -> 1.36"
+      },
+      "crown_height_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "edge_profile": {
+        "class": "DECLARED_NOT_REALIZED",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "note": "pre-committed: the dome node did not consume it \u2014 joins the dead"
+      },
+      "fill_depth_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "macrotexture.scale_mm": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.00416756,
+        "varied": "2.4 -> 3.84"
+      },
+      "macrotexture.strength": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.01074346,
+        "varied": "0.06 -> 0.096"
+      },
+      "microtexture.scale_mm": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.16 -> 0.256"
+      },
+      "microtexture.strength": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.3 -> 0.48"
+      },
+      "powder_recess_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "press.compressed_scale_mm": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.25 -> 0.4"
+      },
+      "press.compressed_strength": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.22 -> 0.35200000000000004"
+      },
+      "press.ring_radius_frac": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.00504842,
+        "varied": "0.88 -> 1.4080000000000001"
+      },
+      "press.ring_strength": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.00314863,
+        "varied": "0.1 -> 0.16000000000000003"
+      },
+      "surface_roughness": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.03928505,
+        "varied": "0.85 -> 1.36"
+      },
+      "shader.specular_ior_level": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.micro_noise_detail": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.packed_roughness_compaction_coeff": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.ring_gaussian_falloff": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.mottle_flatness_coeff": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.mottle_detail": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.mottle_seed_offset": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.bump_distance_law": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.noise_distortion": {
+        "class": "REALIZED",
+        "evidence": "A23 \u2014 the identity-zero default declared with value 0 rather than exempted; consumed explicitly at every previously-defaulted site; pixel-identity re-proven"
+      }
+    },
+    "CREAM": {
+      "continuity.granularity_forbidden": {
+        "class": "VALIDATOR_REALIZED_NOT_RENDER",
+        "note": "consumed by the contract validator (refuses granular microtexture on cream), not by the shader \u2014 realized, in the validator"
+      },
+      "continuity.soft_specular_roughness": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.02258425,
+        "varied": "0.32 -> 0.512"
+      },
+      "crown_height_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "edge_profile": {
+        "class": "DECLARED_NOT_REALIZED",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "note": "pre-committed: the dome node did not consume it \u2014 joins the dead"
+      },
+      "fill_depth_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "macrotexture.scale_mm": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "2.4 -> 3.84"
+      },
+      "macrotexture.strength": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.06 -> 0.096"
+      },
+      "microtexture.scale_mm": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.16 -> 0.256"
+      },
+      "microtexture.strength": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.0 -> 0.3"
+      },
+      "powder_recess_mm": {
+        "class": "REALIZED_IN_GEOMETRY",
+        "declared_consumer": "the BAKED powder-volume geometry node (pending)",
+        "consumer": "palette_baked_geometry.build_powder_volume (crown realized 1.2mm, flat/dome identities distinct)"
+      },
+      "surface_roughness": {
+        "class": "DECLARED_NOT_REALIZED",
+        "rms_over_mean": 0.0,
+        "varied": "0.32 -> 0.512"
+      },
+      "shader.specular_ior_level": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.swell_scale_mm": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.swell_amplitude": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.swell_detail": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.bump_distance_law": {
+        "class": "REALIZED",
+        "evidence": "builder constant consumed at its census line; declared by M6-CONTRACT-INTEGRITY-REPAIR value-preserving half, bit-identity proven (contract_repair/bit_identity_proof.json)"
+      },
+      "shader.noise_distortion": {
+        "class": "REALIZED",
+        "evidence": "A23 \u2014 the identity-zero default declared with value 0 rather than exempted; consumed explicitly at every previously-defaulted site; pixel-identity re-proven"
+      }
+    }
+  },
+  "dead": [
+    "POWDER_MATTE.microtexture.scale_mm",
+    "POWDER_MATTE.microtexture.strength",
+    "POWDER_MATTE.milling.micronormal_correlation_mm",
+    "POWDER_MATTE.milling.surface_smoothing",
+    "POWDER_SATIN.compression_texture.scale_mm",
+    "POWDER_SATIN.compression_texture.strength",
+    "POWDER_SATIN.microtexture.scale_mm",
+    "POWDER_SATIN.microtexture.strength",
+    "POWDER_SATIN.milling.micronormal_correlation_mm",
+    "POWDER_SATIN.surface_roughness",
+    "SHIMMER.flakes.flake_orientation",
+    "SHIMMER.flakes.sparkle_distribution",
+    "SHIMMER.microtexture.scale_mm",
+    "SHIMMER.microtexture.strength",
+    "POWDER_METALLIC.flakes.flake_orientation",
+    "POWDER_METALLIC.flakes.sparkle_distribution",
+    "POWDER_METALLIC.microtexture.scale_mm",
+    "POWDER_METALLIC.microtexture.strength",
+    "GLITTER.microtexture.scale_mm",
+    "GLITTER.microtexture.strength",
+    "GLITTER.particles.depth_distribution",
+    "GLITTER.particles.shape_class",
+    "GLITTER.particles.size_distribution",
+    "BAKED.microtexture.scale_mm",
+    "BAKED.microtexture.strength",
+    "BAKED.surface_roughness",
+    "MARBLED.macrotexture.scale_mm",
+    "MARBLED.macrotexture.strength",
+    "MARBLED.marbling.coordinate_mapping",
+    "PRESSED_POWDER.compaction.edge_packing",
+    "PRESSED_POWDER.compaction.surface_density",
+    "PRESSED_POWDER.microtexture.scale_mm",
+    "PRESSED_POWDER.microtexture.strength",
+    "PRESSED_POWDER.press.compressed_scale_mm",
+    "PRESSED_POWDER.press.compressed_strength",
+    "CREAM.macrotexture.scale_mm",
+    "CREAM.macrotexture.strength",
+    "CREAM.microtexture.scale_mm",
+    "CREAM.microtexture.strength",
+    "CREAM.surface_roughness",
+    "POWDER_MATTE.edge_profile",
+    "POWDER_SATIN.edge_profile",
+    "SHIMMER.edge_profile",
+    "POWDER_METALLIC.edge_profile",
+    "GLITTER.edge_profile",
+    "BAKED.edge_profile",
+    "MARBLED.edge_profile",
+    "PRESSED_POWDER.edge_profile",
+    "CREAM.edge_profile"
+  ],
+  "geometry_pending": [],
+  "findings_reported_not_fixed": true,
+  "owner_approved": false,
+  "census_summary": {
+    "render_auditable_parameter_instances": 84,
+    "dead": 40,
+    "dead_fraction": 0.476,
+    "plainly": "FORTY of eighty-four render-auditable parameter instances are dead \u2014 48%. The flake block was not unusually bad; it was representative.",
+    "structural_patterns": {
+      "common_microtexture_block": "consumed ONLY by MARBLED \u2014 dead in 8 of 9 families",
+      "press_compressed_block": "superseded silently when the compaction block was added \u2014 the same quantity declared twice, one copy dead",
+      "builder_constants_shadow_contracts": "POWDER_SATIN, BAKED and CREAM surface_roughness are overridden by hardcoded builder values (0.43/0.38/continuity) \u2014 the render distinction is REAL but the contract account of it is wrong: DECLARED_BUT_DIFFERENTLY_REALIZED",
+      "never_wired": "micronormal_correlation_mm, edge_packing, surface_density, size_distribution, shape_class, depth_distribution, coordinate_mapping, flake_orientation, sparkle_distribution"
+    },
+    "load_bearing_adjudication": "NO banked verdict rests on a dead parameter: every measured number came from real rendered frames and dead parameters by definition did not shape them. What falls is contract integrity \u2014 the family definitions mis-describe which declared knobs produced the measured distinctions. FLAGGED NODES, chain not stopped: (1) contract cleanup (remove or realize dead params \u2014 identity-moving, owner-visible); (2) satin/baked/cream roughness builder-constants reconciled with contracts; (3) NOT_REALIZED registry extended to the full census.",
+    "reprobe_and_split": {
+      "instrument_failure_mode_addressed": "the frame-delta probe can false-kill a clamped or boundary-pinned parameter (proven twice: reflectance at the Metallic clamp, granularity_forbidden validator-realized). All 40 dead verdicts re-examined.",
+      "method": "static reachability on the builder sources: a parameter whose block+leaf is never referenced by its family builder cannot arrive at any socket at any value \u2014 the plumbing question settled without a probe; bidirectional render probes reserved for READ-but-identical cases",
+      "split": {
+        "NEVER_ARRIVES_STATICALLY_PROVEN": 40,
+        "ARRIVES_BUT_INERT_AT_FRAME": 0
+      },
+      "corrected_number": "48% stands \u2014 but as a plumbing measurement, not a frame-delta reading; the only READ-class cases were the two false-kills already corrected by inspection"
+    }
+  },
+  "per_verdict_live_parameters": {
+    "what_a_PASS_actually_proved": "each verdict certifies the REALIZED subset of its families, not the families as written; these lists are that subset. BUILDER_CONSTANT marks a rendered property whose value comes from shader code, not the contract.",
+    "MATTE_VS_SATIN": {
+      "matte": [
+        "milling.micronormal_amplitude",
+        "milling.microparticle_scale_mm",
+        "milling.microparticle_variance",
+        "surface_roughness",
+        "compression_texture.*",
+        "macrotexture.*"
+      ],
+      "satin": [
+        "milling.micronormal_amplitude",
+        "milling.microparticle_scale_mm",
+        "milling.microparticle_variance",
+        "milling.surface_smoothing",
+        "sheen_response.sheen",
+        "sheen_response.tint",
+        "BUILDER_CONSTANT roughness = 0.48 - 0.10*smoothing"
+      ]
+    },
+    "PRESSED_VS_MATTE": {
+      "pressed": [
+        "compaction.compaction_level",
+        "compaction.surface_flatness",
+        "compaction.compression_texture_scale_mm",
+        "compaction.compression_texture_amplitude",
+        "press.ring_radius_frac",
+        "press.ring_strength",
+        "surface_roughness",
+        "macrotexture.*"
+      ],
+      "matte": "as above"
+    },
+    "SATIN_VS_CREAM": {
+      "satin": "as above",
+      "cream": [
+        "continuity.soft_specular_roughness",
+        "BUILDER_CONSTANT swell 6.0mm/0.015",
+        "microtexture zeroed by family override (and unplumbed anyway)"
+      ]
+    },
+    "SHIMMER_VS_POWDER_METALLIC (pending independence)": {
+      "both": [
+        "flakes.flake_scale_mm",
+        "flakes.flake_density",
+        "flakes.metallic_response",
+        "flakes.sparkle_intensity",
+        "surface_roughness"
+      ]
+    },
+    "METALLIC_VS_GLITTER (pending independence)": {
+      "metallic": "flakes.* live four + surface_roughness",
+      "glitter": [
+        "particles.particle_size_mm",
+        "particles.coverage",
+        "particles.orientation_jitter_deg",
+        "particles.reflectance (clamp-corrected LIVE)",
+        "surface_roughness"
+      ]
+    },
+    "GLITTER_census_and_SHIMMER_VS_GLITTER": {
+      "glitter": [
+        "particles.particle_size_mm",
+        "particles.coverage",
+        "particles.orientation_jitter_deg",
+        "particles.reflectance"
+      ]
+    }
+  },
+  "phase3_retrospective": {
+    "micronormal_amplitude_is_live": "confirmed in the live 52% \u2014 powder_materials.py feeds it into _bump as both divisor and bump amplitude, and the audit measured it at 3.4x frame response",
+    "what_this_settles": "had the satin correction gone ahead it would have been a REAL change to a REAL parameter \u2014 the refusal was a genuine decision with a genuine cost avoided. Given 48% of the contract is inert, the one family change M6 ever contemplated landing on a live parameter was LUCK, not design, and this record says so."
+  },
+  "product_realization_line": {
+    "declared_gate": "RIGS_MAY_PROCEED / PRODUCT_REALIZATION_BLOCKED: rig work (BAKED, marbling, remaining controls) measures real frames and the census does not touch its validity. ES3083/FB3093 product realization, observability, the trace and the boards CONSUME THE FAMILY DEFINITIONS \u2014 building products from a contract where half the declared parameters are inert makes the product spec and the certified render two different objects, and the divergence propagates toward M7 artwork and manufacturing intent. Product realization is BLOCKED until contract integrity is repaired (the three flagged nodes).",
+    "agreement": "the line is placed exactly where the brief drew it, and the reason is adopted as stated \u2014 no disagreement to record"
+  },
+  "geometry_retirement": {
+    "pre_commitment_executed": "what the dome node did not consume JOINED THE DEAD \u2014 declared before knowing which way it went",
+    "retired": {
+      "REALIZED_IN_GEOMETRY": 29,
+      "CHECK_CONSUMED": 1,
+      "JOINED_DEAD": 9
+    },
+    "newly_dead": [
+      "POWDER_MATTE.edge_profile",
+      "POWDER_SATIN.edge_profile",
+      "SHIMMER.edge_profile",
+      "POWDER_METALLIC.edge_profile",
+      "GLITTER.edge_profile",
+      "BAKED.edge_profile",
+      "MARBLED.edge_profile",
+      "PRESSED_POWDER.edge_profile",
+      "CREAM.edge_profile"
+    ],
+    "engine_wide_accounting": "render-auditable: 40 of 84 dead (48%, unchanged). Geometry: 29 REALIZED_IN_GEOMETRY, 1 CHECK_CONSUMED, 9 JOINED_DEAD (edge_profile in all nine families). Engine-wide: 49 dead of 123 declared instances \u2014 the fraction ROSE exactly as the pre-commitment required it to be able to."
+  },
+  "CONTRACT_REPAIR_EXTENSION_2026_08_08": "shader.* entries added for the value-preserving reconciliation; original audit content untouched"
+}

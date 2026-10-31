@@ -1,0 +1,158 @@
+{
+ "record_type": "a100_energy_recoverability/1.0",
+ "protocol_identity": "37b2b7aadcc186e5",
+ "question": "are the census-era texture-rig calibrated energies for the five families uncached in family_energies.json recoverable from committed records? (zero-render check, before declaration)",
+ "reading_instrument_2f": "apps/pipeline/services/palette_energy_recovery.py \u2014 read_cached_energy (committed values) and derive_census_energy (exact re-computation of the committed solve from committed probe/base peaks); suite-tested; renders nothing",
+ "findings": {
+  "POWDER_MATTE": {
+   "verdict": "RECOVERABLE",
+   "energy": 2302449.9932754873,
+   "committed_record": "docs/roadmap/palt_m6/independence_sweeps/family_energies.json",
+   "commit": "63bb0a9"
+  },
+  "SHIMMER": {
+   "verdict": "DERIVABLE_CONDITIONAL",
+   "detail": {
+    "family": "SHIMMER",
+    "energy": 212740.0676555797,
+    "status": "EXACT_IFF_SINGLE_ITERATION_CONVERGENCE",
+    "law": "E1 = ref * (CAL_TARGET - base_peak) / (probe_peak - base_peak); palette_powder_texture_axes.characterize_texture_pair",
+    "inputs": {
+     "ref": 900000.0,
+     "cal_target": 0.88,
+     "probe_peak": 3.674341450643539,
+     "base_peak": 0.015016663586348294,
+     "probe_path": "docs/roadmap/palt_m6/texture_axes/swatch_probe_census_SHIMMER.json",
+     "base_path": "docs/roadmap/palt_m6/texture_axes/swatch_base_census_SHIMMER.json"
+    },
+    "consistent_committed_evidence": {
+     "cal_path": "docs/roadmap/palt_m6/texture_axes/swatch_cal_census_SHIMMER.json",
+     "cal_peak": 0.9062545751214027,
+     "cal_clipped": 0,
+     "window": [
+      0.35,
+      0.92
+     ]
+    },
+    "verification_that_would_prove_it": "re-render the cal frame at this energy (same spec, seed and half samples) and compare scene-linear pixels to the committed cal EXR; pixel identity proves the committed cal frame IS the iteration-one render, i.e. the census energy is exactly this value",
+    "quartet_committed_in": "5aba427"
+   }
+  },
+  "POWDER_METALLIC": {
+   "verdict": "DERIVABLE_CONDITIONAL",
+   "detail": {
+    "family": "POWDER_METALLIC",
+    "energy": 98951.6815947448,
+    "status": "EXACT_IFF_SINGLE_ITERATION_CONVERGENCE",
+    "law": "E1 = ref * (CAL_TARGET - base_peak) / (probe_peak - base_peak); palette_powder_texture_axes.characterize_texture_pair",
+    "inputs": {
+     "ref": 900000.0,
+     "cal_target": 0.88,
+     "probe_peak": 7.913823255157471,
+     "base_peak": 0.011127769516222179,
+     "probe_path": "docs/roadmap/palt_m6/texture_axes/swatch_probe_census_POWDER_METALLIC.json",
+     "base_path": "docs/roadmap/palt_m6/texture_axes/swatch_base_census_POWDER_METALLIC.json"
+    },
+    "consistent_committed_evidence": {
+     "cal_path": "docs/roadmap/palt_m6/texture_axes/swatch_cal_census_POWDER_METALLIC.json",
+     "cal_peak": 0.8696374186635016,
+     "cal_clipped": 0,
+     "window": [
+      0.35,
+      0.92
+     ]
+    },
+    "verification_that_would_prove_it": "re-render the cal frame at this energy (same spec, seed and half samples) and compare scene-linear pixels to the committed cal EXR; pixel identity proves the committed cal frame IS the iteration-one render, i.e. the census energy is exactly this value",
+    "quartet_committed_in": "5aba427"
+   }
+  },
+  "BAKED": {
+   "verdict": "DERIVABLE_CONDITIONAL",
+   "detail": {
+    "family": "BAKED",
+    "energy": 426480.461434052,
+    "status": "EXACT_IFF_SINGLE_ITERATION_CONVERGENCE",
+    "law": "E1 = ref * (CAL_TARGET - base_peak) / (probe_peak - base_peak); palette_powder_texture_axes.characterize_texture_pair",
+    "inputs": {
+     "ref": 900000.0,
+     "cal_target": 0.88,
+     "probe_peak": 1.8371664391279219,
+     "base_peak": 0.017917759709060194,
+     "probe_path": "docs/roadmap/palt_m6/texture_axes/swatch_probe_census_BAKED.json",
+     "base_path": "docs/roadmap/palt_m6/texture_axes/swatch_base_census_BAKED.json"
+    },
+    "consistent_committed_evidence": {
+     "cal_path": "docs/roadmap/palt_m6/texture_axes/swatch_cal_census_BAKED.json",
+     "cal_peak": 0.8880148319721222,
+     "cal_clipped": 0,
+     "window": [
+      0.35,
+      0.92
+     ]
+    },
+    "verification_that_would_prove_it": "re-render the cal frame at this energy (same spec, seed and half samples) and compare scene-linear pixels to the committed cal EXR; pixel identity proves the committed cal frame IS the iteration-one render, i.e. the census energy is exactly this value",
+    "quartet_committed_in": "eba9a7a"
+   }
+  },
+  "MARBLED": {
+   "verdict": "DERIVABLE_CONDITIONAL",
+   "detail": {
+    "family": "MARBLED",
+    "energy": 2490018.321880993,
+    "status": "EXACT_IFF_SINGLE_ITERATION_CONVERGENCE",
+    "law": "E1 = ref * (CAL_TARGET - base_peak) / (probe_peak - base_peak); palette_powder_texture_axes.characterize_texture_pair",
+    "inputs": {
+     "ref": 900000.0,
+     "cal_target": 0.88,
+     "probe_peak": 0.33001794507503507,
+     "base_peak": 0.01871093519926071,
+     "probe_path": "docs/roadmap/palt_m6/texture_axes/swatch_probe_census_MARBLED.json",
+     "base_path": "docs/roadmap/palt_m6/texture_axes/swatch_base_census_MARBLED.json"
+    },
+    "consistent_committed_evidence": {
+     "cal_path": "docs/roadmap/palt_m6/texture_axes/swatch_cal_census_MARBLED.json",
+     "cal_peak": 0.8764869373083115,
+     "cal_clipped": 0,
+     "window": [
+      0.35,
+      0.92
+     ]
+    },
+    "verification_that_would_prove_it": "re-render the cal frame at this energy (same spec, seed and half samples) and compare scene-linear pixels to the committed cal EXR; pixel identity proves the committed cal frame IS the iteration-one render, i.e. the census energy is exactly this value",
+    "quartet_committed_in": "eba9a7a"
+   }
+  },
+  "GLITTER": {
+   "verdict": "NOT_APPLICABLE_NEVER_IN_TEXTURE_CENSUS",
+   "evidence": "a2_firing_result.json census_n8.granularity has no GLITTER row; no tx/probe/base/cal census quartet exists for GLITTER in texture_axes/",
+   "consequence": "the escalation record's '12 texture-side frames (6 families x 2 seeds)' silently included a GLITTER texture row that has nothing to replicate \u2014 the replicable texture side is 5 families x 2 seeds = 10 frames; the divergence goes back to the declarer per 2n rather than being resolved here"
+  }
+ },
+ "why_conditional_not_proven": "the calibration loop overwrote its cal frame in place each iteration (same label, same file), so committed records support but cannot prove single-iteration convergence; E1 equals the census-era energy IFF the loop broke on iteration one. All four committed cal frames satisfy the convergence conditions (peak in window, clipped 0), which every iteration count would also produce.",
+ "conversion_to_proof": "one half-sample re-render of the cal frame per family at the derived E1, compared scene-linear pixel-for-pixel against the committed cal EXR (the same pixel-identity instrument the contract repair used); identity proves the committed cal frame IS the iteration-one render and the energy is exactly E1. Four frames, entering the declared spend as their own line per A100 \u2014 not estimated, enumerated.",
+ "estimation_performed": false,
+ "owner_approved": false,
+ "SUPERSEDED_ADJACENT_2026_08_11_era_hashing": {
+  "what_falls": "the 'bounded mechanical search failed to match the committed material_identity hashes' ground for removing pixel verification \u2014 the search was HASH-ERA-CONFOUNDED (contract repair moved the engine's spec-hash inputs)",
+  "era_correct_identifications": {
+   "SHIMMER": {
+    "shade": "prov_char_neutral",
+    "seed": 42
+   },
+   "POWDER_METALLIC": {
+    "shade": "prov_char_neutral",
+    "seed": 43
+   },
+   "BAKED": {
+    "shade": "prov_char_neutral",
+    "seed": 44
+   },
+   "MARBLED": {
+    "shade": "prov_char_neutral",
+    "seed": 45
+   },
+   "method": "036a280-era engine hash, exact match per family"
+  },
+  "what_stands": "everything decided: branch two fired on the tolerance read (independent of identity matching); the second verification ground stands (render_identity does not hash the sample count); the recalibration ran and its energies are committed per 2q. This supersession changes no decision \u2014 it completes the record and hands future forensics the census specs"
+ }
+}

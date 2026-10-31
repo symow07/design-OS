@@ -1,0 +1,209 @@
+{
+  "record_type": "baked_geometry_rig/1.0",
+  "rig": {
+    "camera": {
+      "azimuth": 0.0,
+      "elevation": 55.0,
+      "distance": 300.0,
+      "ortho_scale": 40.0
+    },
+    "raking_source": {
+      "azimuth": 90.0,
+      "elevation": 10.0,
+      "distance": 300.0,
+      "size": 120.0,
+      "energy": 200000.0
+    },
+    "fill_source": {
+      "azimuth": 210.0,
+      "elevation": 40.0,
+      "distance": 400.0,
+      "size": 200.0,
+      "energy": 3000.0
+    },
+    "raking_elevation_deg_max": 12.0,
+    "window": [
+      0.35,
+      0.92
+    ],
+    "pan_inner_w": 22.6,
+    "pan_inner_d": 16.6
+  },
+  "axes": {
+    "RAKING_DIRECTIONAL_SPAN": {
+      "independent": true
+    },
+    "RAKING_SHADOW_FRACTION": {
+      "independent": true
+    }
+  },
+  "calibration_instrument_only": [
+    {
+      "energy": 721573.1810458936,
+      "peak": 0.3865370740771293,
+      "clipped": 0
+    }
+  ],
+  "voided_attempts": [
+    {
+      "flat_target": 0.8,
+      "energy": 1443146.3620917872,
+      "voided": "BAKED clipped \u2014 thresholds re-derived from flat data alone at a lower target"
+    },
+    {
+      "flat_target": 0.6,
+      "energy": 1082359.7715688404,
+      "voided": "BAKED clipped \u2014 thresholds re-derived from flat data alone at a lower target"
+    }
+  ],
+  "flat_target_used": 0.4,
+  "flat_ensemble": {
+    "300": {
+      "RAKING_DIRECTIONAL_SPAN": 0.540522,
+      "RAKING_SHADOW_FRACTION": 0.089844
+    },
+    "301": {
+      "RAKING_DIRECTIONAL_SPAN": 0.538731,
+      "RAKING_SHADOW_FRACTION": 0.089844
+    },
+    "302": {
+      "RAKING_DIRECTIONAL_SPAN": 0.540349,
+      "RAKING_SHADOW_FRACTION": 0.089844
+    },
+    "303": {
+      "RAKING_DIRECTIONAL_SPAN": 0.539554,
+      "RAKING_SHADOW_FRACTION": 0.089844
+    },
+    "304": {
+      "RAKING_DIRECTIONAL_SPAN": 0.54186,
+      "RAKING_SHADOW_FRACTION": 0.089844
+    },
+    "305": {
+      "RAKING_DIRECTIONAL_SPAN": 0.540478,
+      "RAKING_SHADOW_FRACTION": 0.089844
+    }
+  },
+  "floors": {
+    "RAKING_DIRECTIONAL_SPAN": {
+      "floor": 0.00579,
+      "eligible": true,
+      "required": 0.25
+    },
+    "RAKING_SHADOW_FRACTION": {
+      "floor": 0.0,
+      "eligible": true,
+      "required": 0.25
+    }
+  },
+  "thresholds_hashed_before_baked": {
+    "hash": "cf77f711e36021f6",
+    "RAKING_DIRECTIONAL_SPAN": {
+      "flat_max_value": 0.54186,
+      "statistic": "MAX over the seed ensemble (conservative)"
+    },
+    "RAKING_SHADOW_FRACTION": {
+      "flat_max_value": 0.089844,
+      "statistic": "MAX over the seed ensemble (conservative)"
+    }
+  },
+  "baked_axes": {
+    "RAKING_DIRECTIONAL_SPAN": 1.44473,
+    "RAKING_SHADOW_FRACTION": 0.150391
+  },
+  "pair_PRESSED_VS_BAKED": {
+    "RAKING_DIRECTIONAL_SPAN": {
+      "flat": 0.540522,
+      "baked": 1.44473,
+      "effect": 0.91093,
+      "exceeds_hashed_threshold": true,
+      "counts": true,
+      "reasons": []
+    },
+    "RAKING_SHADOW_FRACTION": {
+      "flat": 0.089844,
+      "baked": 0.150391,
+      "effect": 0.50406,
+      "exceeds_hashed_threshold": true,
+      "counts": true,
+      "reasons": []
+    }
+  },
+  "counted_axes": [
+    "RAKING_DIRECTIONAL_SPAN",
+    "RAKING_SHADOW_FRACTION"
+  ],
+  "PRESSED_VS_BAKED": "PASS",
+  "census_correlations": {
+    "RAKING_DIRECTIONAL_SPAN": {
+      "vs_GRANULARITY": 0.7714,
+      "vs_LOBE_SHEEN": 0.7714
+    },
+    "RAKING_SHADOW_FRACTION": {
+      "vs_GRANULARITY": 0.7714,
+      "vs_LOBE_SHEEN": 0.7714
+    }
+  },
+  "third_channel_ruling": {
+    "RAKING_DIRECTIONAL_SPAN": "VOID_TRACKS_GRANULARITY_BY_SWEEP",
+    "RAKING_SHADOW_FRACTION": "VOID_TRACKS_GRANULARITY_BY_SWEEP"
+  },
+  "crossing_pre_commitment": "VOID",
+  "owner_approved": false,
+  "manufacturing_authority": "NOT_ESTABLISHED",
+  "third_channel_margin_caveat": "both axes read 0.7714 vs GRANULARITY and vs the lobe representative \u2014 below the 0.80 ceiling but ONE attainable rank-step below it at N=6. The pre-commitment STANDS on a real margin, and that margin is thin; the recurring A2 obligation re-measures these at every census growth alongside the staked correlations.",
+  "two_gate_restatement": {
+    "why": "the hashed flat threshold and the R4 seed floor are different gates; the boundary report stated only one. Both were measured and both apply.",
+    "RAKING_DIRECTIONAL_SPAN": "effect 0.91093 >= required 0.25 (floor 0.00579 x 2.0 -> bar dominates) AND exceeds hashed flat threshold \u2014 clears both gates",
+    "RAKING_SHADOW_FRACTION": "effect 0.50406 >= required 0.25 AND exceeds hashed threshold \u2014 clears both gates. CAVEAT: its seed floor measured literally 0.0 \u2014 all six flat members produce identical shadow fractions at 32x32 grid resolution, so the statistic is quantization-coarse on flat subjects and its margin gate reduces to the bar; recorded, not smoothed over.",
+    "verdict_stands_on_both_gates": true
+  },
+  "third_channel_ruling_SUPERSEDED": {
+    "prior": {
+      "RAKING_DIRECTIONAL_SPAN": "INDEPENDENT",
+      "RAKING_SHADOW_FRACTION": "INDEPENDENT"
+    },
+    "prior_basis": "N=6 family census at 0.7714 \u2014 one rank-step under the ceiling, the coarse instrument",
+    "superseded_by": "sweep/sweep_result.json \u2014 12-point micronormal_amplitude sweep, the finer instrument",
+    "measured": "both raking axes track GRANULARITY_INDEX at |rho| = 1.0 across the sweep",
+    "physical_reading": "micro-normal amplitude IS surface relief; raking light measures relief shadowing and GRANULARITY measures relief texture contrast \u2014 two optics on one physical quantity. Under a relief driver they must track, and they do.",
+    "ruling": "THE CROSSING PRE-COMMITMENT IS VOID \u2014 decided at commissioning, as point 3 required"
+  },
+  "pressed_vs_baked_unaffected": "the raking axes remain valid for PRESSED_VS_BAKED: that verdict asks the dome/geometry question over hashed thresholds and does not require independence from GRANULARITY. What died is raking as the DIFFUSE third channel.",
+  "relief_subject_floors": {
+    "why": "the flat ensemble could not vary SHADOW_FRACTION (FLOOR_NOT_MEASURABLE); floors re-measured on a seed-varied BAKED ensemble where relief exists",
+    "floors": {
+      "RAKING_DIRECTIONAL_SPAN": {
+        "floor": 0.00317,
+        "distinct_values": 6,
+        "eligible": true,
+        "required": 0.25
+      },
+      "RAKING_SHADOW_FRACTION": {
+        "floor": 0.02614,
+        "distinct_values": 5,
+        "eligible": true,
+        "required": 0.25
+      }
+    },
+    "regate": {
+      "RAKING_DIRECTIONAL_SPAN": {
+        "effect": 0.91093,
+        "relief_floor": 0.00317,
+        "required": 0.25,
+        "clears": true
+      },
+      "RAKING_SHADOW_FRACTION": {
+        "effect": 0.50406,
+        "relief_floor": 0.02614,
+        "required": 0.25,
+        "clears": true
+      }
+    },
+    "PRESSED_VS_BAKED_regated": "PASS"
+  },
+  "ADEQUACY_1i_2026_08_08": {
+    "classification": "both PRESSED_VS_BAKED clearings ADEQUACY_UNASSESSED \u2014 relief floors are same-subject proxies, not spreads of the cross-family effect",
+    "law": "adequacy_1i at 3586022acc972aff (retroactive, symmetric)",
+    "detail": "measurement_adequacy/phase2_retroactive.json"
+  }
+}

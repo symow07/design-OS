@@ -1,0 +1,14 @@
+{
+  "record_type": "a37_fired_finding/1.0",
+  "site": "palette_baked_clearance.py:54",
+  "shape": "dims.get(\"lid_roof_mm\", 1.6)",
+  "firing_established_by": "the declared instrument, record named per 1u: BC.MR.build_rect_components(BC.OC.confirmed_intent()) evaluated live \u2014 lid_roof_mm ABSENT from dims, so the default branch ran on every invocation, including the one that produced the committed closed_clearance.json",
+  "the_silent_substitution": "the declared contract value is lid_roof_mm: 1.5 (palette_moulded_rect.py:53); the silent default is 1.6 \u2014 they DISAGREE, and the committed clearance was computed from the undeclared 1.6",
+  "severity": "DECLARED_BUT_UNREALIZED RECURRING after M6-CONTRACT-INTEGRITY-REPAIR claimed the class closed \u2014 recorded as a recurrence with that severity per the pre-committed consequence, not as a new count. The recurrence is in the CASE contract (moulded_rect), outside the powder-shader census the repair swept \u2014 the class outlived the census scope.",
+  "direction": "using 1.6 instead of 1.5 lowers lid_roof_underside_z by 0.1mm and REDUCES the computed clearance \u2014 the committed 5.35mm is 0.1mm CONSERVATIVE vs the declared-value computation (5.45). The physical verdict is not threatened; the number is still not the contract's number.",
+  "void_list": [
+    "closed_clearance.json ESTABLISHED row -> suspends to NOT-ESTABLISHED (degradation, commits now): a committed number whose computation chain contains a fired silent substitution is not established, whatever its direction"
+  ],
+  "repair": "plumbing lid_roof_mm into dims (or aligning the default) is a REPAIR \u2014 a declared node item, not this node",
+  "owner_approved": false
+}
