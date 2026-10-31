@@ -1,0 +1,67 @@
+{
+ "record_type": "a291_recompute_under_A289/1.0",
+ "law": "55e38b4cd427fdf6",
+ "new_recipe_identity": "23ef45d0d3521739",
+ "superseded_recipe": "6d6e4ab90686503f",
+ "supersession_reason": "UNITS_INCOMMENSURABLE_WITH_MARGIN",
+ "rows": [
+  {
+   "cell": "MATTE_VS_SATIN / SHEEN",
+   "proxy": 0.16569,
+   "dispersion_A289": 0.16896,
+   "ratio": 1.0198,
+   "margin": 0.09112,
+   "disposition": "UNMET",
+   "prior": "UNMET",
+   "CHANGED": "no",
+   "premise_holds": false
+  },
+  {
+   "cell": "PRESSED_VS_MATTE / SHEEN",
+   "proxy": 0.16569,
+   "dispersion_A289": 0.17835,
+   "ratio": 1.0764,
+   "margin": 0.11572,
+   "disposition": "UNMET",
+   "prior": "UNMET",
+   "CHANGED": "no",
+   "premise_holds": false
+  },
+  {
+   "cell": "SATIN_VS_CREAM / FWHM",
+   "proxy": 0.04781,
+   "dispersion_A289": 0.06026,
+   "ratio": 1.2605,
+   "margin": 0.0343,
+   "disposition": "UNMET",
+   "prior": "UNMET",
+   "CHANGED": "no",
+   "premise_holds": false
+  },
+  {
+   "cell": "SATIN_VS_CREAM / GRANULARITY",
+   "proxy": 0.04201,
+   "dispersion_A289": 0.04034,
+   "ratio": 0.9603,
+   "margin": 0.1923,
+   "disposition": "MET",
+   "prior": "MET",
+   "CHANGED": "no",
+   "premise_holds": true
+  }
+ ],
+ "dispositions_changed": [],
+ "premise_PROXY_BOUNDS_TEST": {
+  "status": "UNRESOLVED_AT_PARITY",
+  "ratios": {
+   "MATTE_VS_SATIN / SHEEN": 1.0198,
+   "PRESSED_VS_MATTE / SHEEN": 1.0764,
+   "SATIN_VS_CREAM / FWHM": 1.2605,
+   "SATIN_VS_CREAM / GRANULARITY": 0.9603
+  },
+  "holds_in": [
+   "SATIN_VS_CREAM / GRANULARITY"
+  ],
+  "3f_note": "near-parity is not 'the proxy is fine' \u2014 the ordering between the two quantities is NOT established in either direction"
+ }
+}

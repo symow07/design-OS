@@ -1,0 +1,201 @@
+{
+ "record_type": "confirm_profile_ui2b2b_screenshot_evidence/1.0",
+ "captured_with": "apps/pipeline/tests/ui2b2b_screenshot_capture.py (live-server Playwright harness \u2014 real interface, real retry flow, no mockups)",
+ "screenshots": [
+  {
+   "file": "desktop_reconstruction_failed.png",
+   "viewport": {
+    "width": 1280,
+    "height": 900
+   },
+   "task_id": 1,
+   "lifecycle_state": "FAILED",
+   "retry_eligible": true,
+   "gate_decision_id": 1,
+   "gate2_visible": false,
+   "note": "RECONSTRUCTION_WORKER_FAILED with scrubbed message; eligibility-gated retry control",
+   "route": "/dashboard/",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "desktop_retry_dialog.png",
+   "viewport": {
+    "width": 1280,
+    "height": 900
+   },
+   "task_id": 1,
+   "lifecycle_state": "FAILED",
+   "retry_eligible": true,
+   "gate_decision_id": 1,
+   "gate2_visible": false,
+   "note": "reviewed dialog: reuse statements, failure code, gate decision id, Cancel focused",
+   "route": "/dashboard/",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "desktop_retry_queued.png",
+   "viewport": {
+    "width": 1280,
+    "height": 900
+   },
+   "task_id": 1,
+   "lifecycle_state": "QUEUED (after retry)",
+   "retry_eligible": false,
+   "gate_decision_id": 1,
+   "gate2_visible": false,
+   "note": "one dispatch; polling resumed; history preserved",
+   "route": "/dashboard/",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "desktop_retry_running.png",
+   "viewport": {
+    "width": 1280,
+    "height": 900
+   },
+   "task_id": 1,
+   "lifecycle_state": "RUNNING (after retry)",
+   "retry_eligible": false,
+   "gate_decision_id": 1,
+   "gate2_visible": false,
+   "note": "persisted worker start-log evidence",
+   "route": "/dashboard/",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "desktop_recovered_completed.png",
+   "viewport": {
+    "width": 1280,
+    "height": 900
+   },
+   "task_id": 1,
+   "lifecycle_state": "COMPLETED (recovered)",
+   "retry_eligible": false,
+   "gate_decision_id": 1,
+   "gate2_visible": true,
+   "note": "recovered result: AI source card + PNG preview; one GateDecision throughout",
+   "route": "/dashboard/",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "desktop_completed_with_gate2.png",
+   "viewport": {
+    "width": 1280,
+    "height": 900
+   },
+   "task_id": 1,
+   "lifecycle_state": "COMPLETED (recovered)",
+   "retry_eligible": false,
+   "gate_decision_id": 1,
+   "gate2_visible": true,
+   "note": "existing Gate-2 approval UI beside the result",
+   "route": "/dashboard/",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "desktop_optional_png_unavailable.png",
+   "viewport": {
+    "width": 1280,
+    "height": 900
+   },
+   "task_id": 2,
+   "lifecycle_state": "COMPLETED",
+   "retry_eligible": false,
+   "gate_decision_id": 2,
+   "gate2_visible": true,
+   "note": "PREVIEW_UNAVAILABLE; AI authority retained; NO retry",
+   "route": "/dashboard/",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "desktop_technical_intervention_required.png",
+   "viewport": {
+    "width": 1280,
+    "height": 900
+   },
+   "task_id": 3,
+   "lifecycle_state": "RECONSTRUCTION_STATUS_INCONSISTENT",
+   "retry_eligible": false,
+   "gate_decision_id": 3,
+   "gate2_visible": false,
+   "note": "RECONSTRUCTION_ARTIFACT_INVALID \u2192 technical intervention, no retry control, no paths",
+   "route": "/dashboard/",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "desktop_dispatch_failed.png",
+   "viewport": {
+    "width": 1280,
+    "height": 900
+   },
+   "task_id": 4,
+   "lifecycle_state": "FAILED (dispatch)",
+   "retry_eligible": true,
+   "gate_decision_id": 4,
+   "gate2_visible": false,
+   "note": "RECONSTRUCTION_DISPATCH_FAILED: confirmed profile safe; retry redispatches the same decision",
+   "route": "/dashboard/",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "mobile_reconstruction_failed.png",
+   "viewport": {
+    "width": 390,
+    "height": 844
+   },
+   "task_id": 5,
+   "lifecycle_state": "FAILED",
+   "retry_eligible": true,
+   "gate_decision_id": 5,
+   "gate2_visible": false,
+   "note": "390px failure panel",
+   "route": "/dashboard/",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "mobile_retry_dialog.png",
+   "viewport": {
+    "width": 390,
+    "height": 844
+   },
+   "task_id": 5,
+   "lifecycle_state": "FAILED",
+   "retry_eligible": true,
+   "gate_decision_id": 5,
+   "gate2_visible": false,
+   "note": "390px dialog: stacked actions, no overflow",
+   "route": "/dashboard/",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "mobile_recovered_completed.png",
+   "viewport": {
+    "width": 390,
+    "height": 844
+   },
+   "task_id": 1,
+   "lifecycle_state": "COMPLETED (recovered)",
+   "retry_eligible": false,
+   "gate_decision_id": 1,
+   "gate2_visible": true,
+   "note": "390px result cards",
+   "route": "/dashboard/",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "mobile_completed_with_gate2.png",
+   "viewport": {
+    "width": 390,
+    "height": 844
+   },
+   "task_id": 1,
+   "lifecycle_state": "COMPLETED (recovered)",
+   "retry_eligible": false,
+   "gate_decision_id": 1,
+   "gate2_visible": true,
+   "note": "390px Gate-2 continuity",
+   "route": "/dashboard/",
+   "captured_at": "2026-08-01"
+  }
+ ]
+}

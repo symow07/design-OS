@@ -1,0 +1,45 @@
+{
+ "record_type": "a333_migrating_flake_observation/1.0",
+ "law": "c640f8c06b56003e",
+ "for": "M6-BROWSER-FLAKE-CAUSE \u2014 named, NOT authorized; recorded only, NOT investigated (A189)",
+ "observations": [
+  {
+   "date": "2026-08-11",
+   "run": "full suite, M6-GATE-EXTENT node, run 1",
+   "failed": 2,
+   "ids": [
+    "test_groups_render_in_fixed_order_with_owner_labels"
+   ],
+   "registration": "registered, invocations SPENT at 92ab4a0 (3c node)",
+   "second_id": "UNRECOVERED_NOT_OBSERVED",
+   "why_unrecovered": "the run reported '2 failed' but I read its output through tail, so only ONE of the two FAILED lines entered my observation. The output is gone and the id is NOT recoverable. It is NOT guessed here \u2014 the register contains a plausible candidate (test_duplicate_filenames_both_display, the other spent entry) and writing that in would be inference presented as observation, which is the pin-claim defect again. This is also 3m's own lesson turned on the observer: my observation window was narrower than the event, and the record says so rather than filling the gap."
+  },
+  {
+   "date": "2026-08-11",
+   "run": "full suite, M6-GATE-EXTENT node, run 2",
+   "failed": 2,
+   "ids": [
+    "test_no_dieline_or_confirmed_profile_language",
+    "test_packaging_without_references_renders_no_section"
+   ],
+   "registration": "UNREGISTERED at the time; registered at invocations_allowed 0 during that node"
+  },
+  {
+   "date": "2026-08-11",
+   "run": "full suite, M6-GATE-EXTENT corrections",
+   "failed": 0,
+   "ids": [],
+   "registration": "n/a \u2014 green"
+  },
+  {
+   "date": "2026-08-12",
+   "run": "TIER_2 on the real full suite, this node",
+   "failed": 0,
+   "ids": [],
+   "registration": "n/a \u2014 GREEN, 5970 collected"
+  }
+ ],
+ "signature": "the ids MOVE between runs while the failure COUNT stays at two, and all pass 12/12 in isolation. That is a different signature from a specific test being flaky and it narrows the cause. Carried as a stated observation, not a hypothesis.",
+ "not_investigated_here": true,
+ "hash_correction": "an earlier version of this record carried '92aB40', which is not a valid short SHA and does not resolve. Corrected to 92ab4a0."
+}

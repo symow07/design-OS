@@ -1,0 +1,53 @@
+{
+  "record_type": "driver_completeness_phase5_N/1.0",
+  "protocol_identity": "eb20aad9698e1825",
+  "replica_measurement": {
+    "deciding_pair_GRAN_GRAZING_BAND_by_seed": {
+      "400": 0.7978,
+      "401": 0.9648,
+      "402": 0.8945
+    },
+    "second_divergent_pair_by_seed": {
+      "400": 0.789,
+      "401": 0.8769,
+      "402": 0.8242
+    },
+    "seed_spread_of_deciding_statistic": 0.167,
+    "margin_of_the_seed400_reading_to_ceiling": 0.0022,
+    "counted_tracking_by_seed_SEED_STABLE": {
+      "GRAN|SHEEN": [
+        0.9956,
+        1.0,
+        0.9868
+      ],
+      "GRAN|FWHM": [
+        0.9824,
+        0.9824,
+        0.9956
+      ]
+    },
+    "validity_by_seed": {
+      "400": "VALID",
+      "401": "DEGENERATE",
+      "402": "DEGENERATE"
+    }
+  },
+  "frozen_reading_applied": "bullet 3 of validity_precision_declaration.json: the seed-400 margin (0.0022) sits inside the seed spread (0.167) and neither decisive bullet fires -> UNRESOLVED_MARGINAL, committed as such, NOTHING ruled",
+  "drafting_defect_surfaced_not_redrafted": {
+    "defect": "the frozen readings deadlock: 'valid_by_margin' keys on the minimum rho across seeds, which is anchored at 0.7978 with a fixed 0.0022 margin no amount of seed replication can grow; 'degenerate_by_margin' says 'deciding rho > 0.80' without naming WHICH rho (the commissioned seed-400 reading is <= 0.80 forever; the replica consensus is > 0.80 already). As written, no additional seed can ever resolve either decisive bullet.",
+    "why_not_silently_fixed": "re-drafting a frozen reading after seeing which interpretation produces which verdict is the rescue pattern this whole arc exists to prevent",
+    "the_two_interpretations_and_their_precision_instruments": {
+      "commissioned_anchor": "the law's sweep is the seed-400 commissioned instrument; its rho is refined by MORE LEVELS at seed 400 (A3: 'more levels') until its own margin to 0.80 exceeds the level-resampling sensitivity \u2014 resolvable, ~25-level refinement",
+      "ensemble_consensus": "the statistic is the seed-ensemble reading; seeds 401/402 already sit 0.1648/0.0945 above the ceiling and two more seeds would likely decide DEGENERATE by margin"
+    },
+    "escalated": "the choice of interpretation decides N and is the owner's, not mine"
+  },
+  "N": "UNRESOLVED \u2014 conditional per pair below",
+  "per_pair_conditional_justification": {
+    "MATTE_VS_SATIN": "census 0.3571 holds; every declared sweepable driver NOT_COMMON (1e-valid) or degenerate; fenced by 5 builder constants; conservation HOLDS. Stands as PASS_WITH_UNTESTED_DRIVER iff the micronormal sweep is ruled degenerate; FAILS on seed-stable counted tracking 0.9956 iff ruled valid",
+    "PRESSED_VS_MATTE": "census 0.3571; same structure (A2 driver adjudicated degenerate on its own matrix; fenced by 5 builder constants; conservation HOLDS); stands iff degenerate, FAILS at 0.9956 iff valid",
+    "SATIN_VS_CREAM": "census 0.1905; same structure (4 builder constants; conservation HOLDS); stands iff degenerate, FAILS at 0.9824 iff valid"
+  },
+  "what_the_question_reduces_to": "is GRAZING_BAND_CONTRAST's seed-400 divergence instrument-resolving or noise? It is the weakest qualifying axis (span 1.7x floor), its divergence vanishes at both replica seeds, and the counted tracking it would activate is seed-stable at 0.98-1.0",
+  "owner_approved": false
+}

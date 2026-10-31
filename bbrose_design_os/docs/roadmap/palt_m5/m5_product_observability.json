@@ -1,0 +1,133 @@
+{
+  "record_type": "m5_product_observability/1.0",
+  "geometry": "PALT-P1B ES3083 (unchanged)",
+  "predeclared_bar": {
+    "fraction": 0.04,
+    "level": 10
+  },
+  "invalid_views": {
+    "specular_condition_deck": {
+      "verdict": "INVALID_VIEW_OCCLUDED_OPTICAL_PATH",
+      "measured_fraction_before_diagnosis": 0.0,
+      "blockers": [
+        "base_outer_shell",
+        "metal_pan_7",
+        "powder_7",
+        "lid_outer_shell",
+        "lid_structural_rim"
+      ],
+      "lesson": "an occluded view scores 0.000 exactly like a material tie; the commissioning check now refuses to measure it"
+    },
+    "specular_condition_closed_lid_uncalibrated": {
+      "verdict": "INVALID_CLIPPED_MEASUREMENT",
+      "measured_fraction_before_diagnosis": 1.0,
+      "evidence": [
+        "ms_specular_condition_closed_lid_matte_clipped.png",
+        "ms_specular_condition_closed_lid_satin_clipped.png"
+      ],
+      "lesson": "at the transplanted 9.0e5 the satin frame saturated to full white; a clipped frame trivially differs from any exposed frame, so 1.000 was evidence of saturation, not of a sheen. The energy was CALIBRATED DOWN from a scene-linear float render \u2014 against the pass \u2014 and the pair re-measured unclipped at the unchanged bar"
+    }
+  },
+  "comparisons": [
+    {
+      "differing_pixel_fraction": 0.000124,
+      "bar": 0.04,
+      "level": 10,
+      "visible": false,
+      "pair": "MATTE_vs_SATIN",
+      "view": "grazing_lid",
+      "a": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/docs/roadmap/palt_m5/product/ms_grazing_lid_matte.png",
+      "b": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/docs/roadmap/palt_m5/product/ms_grazing_lid_satin.png"
+    },
+    {
+      "differing_pixel_fraction": 0.000243,
+      "bar": 0.04,
+      "level": 10,
+      "visible": false,
+      "pair": "MATTE_vs_SATIN",
+      "view": "bevel_edge",
+      "a": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/docs/roadmap/palt_m5/product/ms_bevel_edge_matte.png",
+      "b": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/docs/roadmap/palt_m5/product/ms_bevel_edge_satin.png"
+    },
+    {
+      "differing_pixel_fraction": 0.005828,
+      "bar": 0.04,
+      "level": 10,
+      "visible": false,
+      "pair": "MATTE_vs_SATIN",
+      "view": "shallow_exterior",
+      "a": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/docs/roadmap/palt_m5/product/ms_shallow_exterior_matte.png",
+      "b": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/docs/roadmap/palt_m5/product/ms_shallow_exterior_satin.png"
+    },
+    {
+      "differing_pixel_fraction": 0.001773,
+      "bar": 0.04,
+      "level": 10,
+      "visible": false,
+      "pair": "MATTE_vs_SATIN",
+      "view": "sheen_band_crop",
+      "a": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/docs/roadmap/palt_m5/product/ms_sheen_band_crop_matte.png",
+      "b": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/docs/roadmap/palt_m5/product/ms_sheen_band_crop_satin.png"
+    },
+    {
+      "differing_pixel_fraction": 0.01019,
+      "bar": 0.04,
+      "level": 10,
+      "visible": false,
+      "pair": "MATTE_vs_SATIN",
+      "view": "specular_lid_crop",
+      "a": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/docs/roadmap/palt_m5/product/ms_specular_lid_crop_matte.png",
+      "b": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/docs/roadmap/palt_m5/product/ms_specular_lid_crop_satin.png"
+    },
+    {
+      "differing_pixel_fraction": 0.707278,
+      "bar": 0.04,
+      "level": 10,
+      "visible": true,
+      "pair": "MATTE_vs_SATIN",
+      "view": "specular_condition_closed_lid",
+      "a": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/docs/roadmap/palt_m5/product/ms_specular_condition_closed_lid_matte.png",
+      "b": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/docs/roadmap/palt_m5/product/ms_specular_condition_closed_lid_satin.png",
+      "calibration": {
+        "reference_energy": 900000.0,
+        "measured_peak_linear": 137.78640747070312,
+        "target_linear": 0.85,
+        "calibrated_energy": 5552.071601566782,
+        "calibrated_on": "SATIN \u2014 the brighter member; calibrating on it moves the energy DOWN, against the pass",
+        "identical_for_both_materials": true,
+        "exr": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/docs/roadmap/palt_m5/product/ms_specular_condition_closed_lid_calibration.exr"
+      },
+      "p99_8bit": {
+        "matte": 103,
+        "satin": 214
+      },
+      "unclipped": true
+    },
+    {
+      "differing_pixel_fraction": 0.670322,
+      "bar": 0.04,
+      "level": 10,
+      "visible": true,
+      "pair": "GLOSSY_vs_METALLIC",
+      "view": "bevel_edge",
+      "a": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/docs/roadmap/palt_m5/product/gm_bevel_edge_glossy.png",
+      "b": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/docs/roadmap/palt_m5/product/gm_bevel_edge_metallic.png"
+    },
+    {
+      "differing_pixel_fraction": 0.52468,
+      "bar": 0.04,
+      "level": 10,
+      "visible": true,
+      "pair": "GLOSSY_vs_METALLIC",
+      "view": "shallow_exterior",
+      "a": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/docs/roadmap/palt_m5/product/gm_shallow_exterior_glossy.png",
+      "b": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/docs/roadmap/palt_m5/product/gm_shallow_exterior_metallic.png"
+    }
+  ],
+  "pair_verdicts": {
+    "MATTE_vs_SATIN": "PASS",
+    "GLOSSY_vs_METALLIC": "PASS"
+  },
+  "standard_three_quarter": "NON_DISCRIMINATING_VIEW_CONFIGURATION \u2014 allowed, because at least one defensible product view carries each difference",
+  "M5_PRODUCT_MATERIAL_OBSERVABILITY": "PASS"
+}

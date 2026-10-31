@@ -1,0 +1,183 @@
+{
+  "record_type": "palette_design_fidelity/1.0",
+  "concept_reference": "ConceptReference:6 ES3083吸塑_展盒刀线 — BBROSE 'Outer Glow' eyeshadow palette (media/references/ref_ES3083吸塑_展盒刀线.png)",
+  "intent_identity": "9b3603e17e85746c",
+  "tray_mesh_identity": "999db34286f2b789",
+  "metrics": [
+    {
+      "metric": "PAN_SHAPE_REALISED",
+      "intent_field": "pan_shapes",
+      "means": "the built pocket cross-section is the shape the design calls for",
+      "intended": "RECTANGULAR",
+      "measured": "RECTANGULAR",
+      "verdict": "PASS",
+      "weight": 3.0,
+      "constraint_level": "HARD_VISIBLE_CONSTRAINT",
+      "confirmation_state": "PENDING_OWNER_CONFIRMATION",
+      "confidence": 0.9,
+      "discriminating_power": "DISCRIMINATING"
+    },
+    {
+      "metric": "PAN_COUNT_REALISED",
+      "intent_field": "pan_count",
+      "means": "the built pocket count equals the counted pan count",
+      "intended": 12,
+      "measured": 12,
+      "verdict": "PASS",
+      "weight": 1.0,
+      "constraint_level": "SOFT_VISUAL_CONSTRAINT",
+      "confirmation_state": "PENDING_OWNER_CONFIRMATION",
+      "confidence": 0.55,
+      "discriminating_power": "DISCRIMINATING"
+    },
+    {
+      "metric": "GRID_REALISED",
+      "intent_field": "rows",
+      "means": "the built row count equals the read row count",
+      "intended": 3,
+      "measured": 3,
+      "verdict": "PASS",
+      "weight": 1.0,
+      "constraint_level": "SOFT_VISUAL_CONSTRAINT",
+      "confirmation_state": "PENDING_OWNER_CONFIRMATION",
+      "confidence": 0.55,
+      "discriminating_power": "DISCRIMINATING"
+    },
+    {
+      "metric": "COLUMN_GRID_REALISED",
+      "intent_field": "columns",
+      "means": "the built column count equals the read column count",
+      "intended": 4,
+      "measured": 4,
+      "verdict": "PASS",
+      "weight": 1.0,
+      "constraint_level": "SOFT_VISUAL_CONSTRAINT",
+      "confirmation_state": "PENDING_OWNER_CONFIRMATION",
+      "confidence": 0.55,
+      "discriminating_power": "DISCRIMINATING"
+    },
+    {
+      "metric": "SPACING_RHYTHM_REALISED",
+      "intent_field": "spacing_rhythm",
+      "means": "the deck land between pockets is uniform across the field",
+      "intended": "tight even spacing",
+      "measured": 0.0,
+      "verdict": "PASS",
+      "weight": 1.0,
+      "constraint_level": "SOFT_VISUAL_CONSTRAINT",
+      "confirmation_state": "PENDING_OWNER_CONFIRMATION",
+      "confidence": 0.6,
+      "discriminating_power": "DISCRIMINATING",
+      "discriminating_power_note": "passes because pitch_x - pitch_y happens to equal pan_width - pan_height in the current defaults. That is not enforced anywhere and would fail if either pitch moved."
+    },
+    {
+      "metric": "MARGIN_REALISED",
+      "intent_field": "margins",
+      "means": "the border land is no wider than the inter-pocket land is tight",
+      "intended": "tight margins",
+      "measured": 1.181821,
+      "verdict": "PASS",
+      "weight": 1.0,
+      "constraint_level": "SOFT_VISUAL_CONSTRAINT",
+      "confirmation_state": "PENDING_OWNER_CONFIRMATION",
+      "confidence": 0.55,
+      "discriminating_power": "PASSES_BY_CONSTRUCTION",
+      "discriminating_power_note": "the tray envelope is now DEFINED as field + 2*land and the metric asks margin <= land, so equality holds by construction for every default build. It still fires against a supplied envelope — see test_a_loose_border_still_fails_the_margin_metric — but its pass is not evidence about the design."
+    },
+    {
+      "metric": "ALIGNMENT_REALISED",
+      "intent_field": "alignment",
+      "means": "pocket centres lie on an orthogonal lattice",
+      "intended": "ORTHOGONAL_GRID",
+      "measured": "ORTHOGONAL_GRID",
+      "verdict": "PASS",
+      "weight": 1.0,
+      "constraint_level": "SOFT_VISUAL_CONSTRAINT",
+      "confirmation_state": "PENDING_OWNER_CONFIRMATION",
+      "confidence": 0.7,
+      "discriminating_power": "DISCRIMINATING"
+    },
+    {
+      "metric": "CORNER_SOFTNESS_REALISED",
+      "intent_field": "corner_radius_impression",
+      "means": "the outer silhouette carries a real corner radius",
+      "intended": "softly rounded corners",
+      "measured": 4.0,
+      "verdict": "PASS",
+      "weight": 1.0,
+      "constraint_level": "SOFT_VISUAL_CONSTRAINT",
+      "confirmation_state": "PENDING_OWNER_CONFIRMATION",
+      "confidence": 0.55,
+      "discriminating_power": "PASSES_BY_CONSTRUCTION",
+      "discriminating_power_note": "passes for any non-zero corner radius; it detects a hard-edged slab, nothing finer."
+    },
+    {
+      "metric": "SLIMNESS_REALISED",
+      "intent_field": "perceived_thickness",
+      "means": "the tray height is small against its footprint",
+      "intended": "slim",
+      "measured": 0.046322,
+      "verdict": "PASS",
+      "weight": 1.0,
+      "constraint_level": "SOFT_VISUAL_CONSTRAINT",
+      "confirmation_state": "PENDING_OWNER_CONFIRMATION",
+      "confidence": 0.5,
+      "discriminating_power": "PASSES_WITH_LARGE_HEADROOM",
+      "discriminating_power_note": "0.046 against a 0.15 threshold — passes with more than 3x headroom, so it would not catch a moderately thicker tray."
+    },
+    {
+      "metric": "ORNAMENT_NOT_MOULDED",
+      "intent_field": "ornament",
+      "means": "decorative ornament did NOT become moulded relief",
+      "intended": "BUBBLE_DOT_SCATTER",
+      "measured": 1.8,
+      "verdict": "PASS",
+      "weight": 0.25,
+      "constraint_level": "DECORATIVE_PREFERENCE",
+      "confirmation_state": "PENDING_OWNER_CONFIRMATION",
+      "confidence": 0.8,
+      "discriminating_power": "GUARANTEED_BY_CONSTRUCTION",
+      "discriminating_power_note": "the tray kernel cannot express ornament as relief at all.",
+      "evidence_kind": "GUARANTEED_BY_CONSTRUCTION_NOT_MEASURED"
+    }
+  ],
+  "headline": "6/6 DISCRIMINATING metrics pass; 2 pass by construction, 1 with large headroom, 1 guaranteed by construction",
+  "discriminating_metrics_passed": "6/6",
+  "all_discriminating_metrics_passed": true,
+  "passes_by_construction": [
+    "MARGIN_REALISED",
+    "CORNER_SOFTNESS_REALISED"
+  ],
+  "passes_with_large_headroom": [
+    "SLIMNESS_REALISED"
+  ],
+  "weighted_score": 1.0,
+  "weighted_score_caveat": "the aggregate includes metrics that cannot fail for a default build. Read discriminating_metrics_passed, not this number.",
+  "hard_constraints_passed": "1/1",
+  "all_hard_constraints_passed": true,
+  "unmeasurable": [],
+  "failed": [],
+  "pixel_overlay_computed": false,
+  "why_no_pixel_overlay": "the ES3083 sheet carries no calibrated scale, so an overlay would report a number with no unit behind it",
+  "measures": "WHETHER_THE_BUILT_GEOMETRY_REALISES_THE_STATED_INTENT",
+  "does_not_measure": [
+    "visual similarity to the source image",
+    "whether the intent itself is correct — it is an AI draft",
+    "manufacturability"
+  ],
+  "score_is_evidence_of": "INTENT_REALISATION_ONLY",
+  "structurally_guaranteed": [
+    "ORNAMENT_NOT_MOULDED"
+  ],
+  "owner_approved": false,
+  "manufacturing_authority": "NOT_ESTABLISHED",
+  "report_identity": "f7075a2ca4edba56",
+  "provisional_default_changed_by_this_metric": {
+    "metric": "MARGIN_REALISED",
+    "found": "the arbitrary 118.0 x 70.0 tray envelope gave a 3.8 mm border against a 1.181821 mm inter-pocket land, contradicting the intent's 'tight margins' reading",
+    "action": "the tray envelope is now DERIVED as field + 2*land: 109.563642 x 64.763642 mm",
+    "what_was_NOT_changed": "the metric threshold — a supplied loose envelope still fails MARGIN_REALISED",
+    "consequence_recorded_honestly": "because the envelope is now defined as field + 2*land and the metric asks margin <= land, MARGIN_REALISED can no longer fail for a DEFAULT build. It is reclassified PASSES_BY_CONSTRUCTION and excluded from the discriminating count rather than left inflating it.",
+    "authority": "the envelope remains a PROVISIONAL_DESIGN_DEFAULT with no authoritative source"
+  }
+}

@@ -1,0 +1,28 @@
+{
+ "record_type": "a317_outcome_space_declaration/1.0",
+ "declared_before_measurement": true,
+ "declared_utc": "2026-08-11T09:34:43.215130Z",
+ "question": "does the restored characterization suite pass AT each commit hashed under the degraded gate",
+ "commits": {
+  "c394e62": {
+   "node": "3h",
+   "identity_in_force": "3de128decd31507f"
+  },
+  "edcfdb9": {
+   "node": "3i",
+   "identity_in_force": "55e38b4cd427fdf6"
+  },
+  "e244533": {
+   "node": "3j",
+   "identity_in_force": "1748a3de3b3e30e6"
+  }
+ },
+ "outcome_space": [
+  "PASSES_AT_ALL_THREE",
+  "FAILS_AT_ONE_OR_MORE",
+  "NOT_RUNNABLE_AT_THAT_COMMIT"
+ ],
+ "expectation_declared": "NONE \u2014 not derivable, so nothing is said (A299)",
+ "restore_source": "d3fc99b \u2014 the last commit at which the file was 335 lines",
+ "pin_rule": "each commit gets ITS OWN identity, not the current one"
+}

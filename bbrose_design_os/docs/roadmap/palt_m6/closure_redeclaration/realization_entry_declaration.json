@@ -1,0 +1,40 @@
+{
+ "record_type": "palette_product_realization_entry_declaration/1.0",
+ "protocol_identity": "12bdc94cc3419fbb",
+ "rationale_first_line": "A61 established at programme level that realization calls flow TOWARD powder code \u2014 palettes are rendered as products whose geometry originates in the layout chain \u2014 and a measurement-rooted import graph structurally cannot observe that direction; this closure exists to observe it",
+ "declared_before_computation": true,
+ "entries_with_file_line_and_reasoning": {
+  "palt_p1_evidence.py:91 generate_palt_p1_evidence": "the committed runner that renders the palette product's evidence views \u2014 product realization initiates here",
+  "palt_p1_evidence.py:228 generate_stress_fixture": "the stress-fixture product render entry in the same runner",
+  "palette_review_board.py:18 build_review_board": "assembles the product's review artifact and drives render consumption \u2014 an initiation site for realized output",
+  "palette_moulded_geometry.py:298 build_moulded_components": "the moulded product assembly construction every palette realization executes",
+  "palt_p1.py:24 build_palt_p1": "the product specification realized into geometry",
+  "palette_powder_engine.py:478 PowderMaterialSpec.realize": "the shader-side block production render scripts consume \u2014 the A61 bridge by which product realization flows INTO powder code",
+  "blender_scripts/palette_views.py:14 <argv cfg>": "the renderer-side subprocess entry for product views \u2014 a DECLARED subprocess edge, executed out-of-process",
+  "blender_scripts/palette_csg_views.py:25 <argv cfg>": "the renderer-side subprocess entry for CSG views \u2014 declared subprocess edge",
+  "blender_scripts/powder_materials.py:1 <module>": "the renderer-side powder shader module executed inside product renders that carry powder \u2014 declared subprocess-side module (no argv of its own; consumed by the render script's powder_family dispatch)"
+ },
+ "n_entries": 9,
+ "root_modules_for_traversal": [
+  "blender_scripts/palette_csg_views",
+  "blender_scripts/palette_views",
+  "blender_scripts/powder_materials",
+  "palette_moulded_geometry",
+  "palette_powder_engine",
+  "palette_review_board",
+  "palt_p1",
+  "palt_p1_evidence"
+ ],
+ "traversal_direction_stated": "IMPORT-direction traversal rooted at the realization roots, plus the three declared subprocess edges (the blender scripts, which are also roots since they execute out-of-process). Why this direction answers 'what does producing a rendered palette reach': same-process Python execution requires import, so everything realization can execute in-process is import-reachable from its roots; the only cross-process execution is the declared subprocess edges. This is NOT a call-direction instrument: call edges are not obtained, and the known failure modes of the import instrument are (i) dynamic imports \u2014 the computation re-runs the constant-literal dynamic-import scan and STOPS on any non-constant occurrence in the closure, per the reachability arc's precedent; (ii) reflection/getattr dispatch \u2014 no known instance in services; named as residual, not discharged",
+ "declared_non_reach": {
+  "measurement rig measure-paths": "rigs OBSERVE products; realization does not import them \u2014 acceptable because measurement-side contamination is the measurement closure's jurisdiction (3a: two directions, two closures)",
+  "container/A3P/M3 modules": "a different product family's realization",
+  "Django UI chains": "no committed M6 palette realization initiates from UI (Complete Product is deliberately UI-gated)",
+  "tests": "not realization"
+ },
+ "closure_set_identity": "f88642093b368ebc",
+ "recipe_co_located": "sha256(json.dumps({'closure': 'palette_product_realization', 'entries': sorted(entry strings)}, sort_keys=True)).hexdigest()[:16] \u2014 computable from this record alone",
+ "provenance_identity_2x": "minted at computation time over the code commit and instrument hash, as its own identity, in the computation record",
+ "owner_approved": false,
+ "a170_renumbering_pointer": "NOTE per A170: this record was executed under launcher ruling numbers A158-A163 which COLLIDED with the prior node's; the canonical numbers are A164-A169 \u2014 see a170_renumbering.json"
+}

@@ -1,0 +1,107 @@
+{
+  "record_type": "axis_instrument_defect_findings/1.0",
+  "status": "FINDINGS_ONLY_NO_REPAIR_APPLIED",
+  "recorded_utc": "2026-08-07T08:35:31Z",
+  "git_sha_at_finding": "67151ef356de1207e3ee86894ecbb11c6b10f19a",
+  "protocol_identity_unchanged": "087c7f64317910fb",
+  "node": "M6-DIFFUSE-PAIR-AXIS-DIAGNOSIS",
+  "scope": "the INSTRUMENT only. No powder family, no shader, no pass law, no bar and no validity window is touched, proposed or moved by this record.",
+  "method": "read-only re-measurement of frames already on disk (docs/roadmap/palt_m6/texture_axes/, working tree, post-bump-fix), by docs/roadmap/palt_m6/axis_instrument_forensics.py. No render was performed. Every number below is reproducible from the committed frames.",
+
+  "why_this_record_exists": "M6 has now produced two verdicts that were later withdrawn (927ab8a CHARACTERIZATION_AXIS_INSUFFICIENT, revised at 05d481c to BOTH). Both withdrawals had the same root cause: a DECLARED property of the measurement chain was never REALIZED, and nothing in the chain could detect that. The chain was then asked to judge families. This record enumerates every remaining instance of that defect class that can be established without rendering.",
+
+  "defect_class": "DECLARED_BUT_UNREALIZED — a property the instrument states in its own docstring or design is not true of the artifact it actually measures, and no check exists that could notice.",
+
+  "findings": {
+    "F1_FRAME_PROVENANCE_16BIT_IS_8BIT": {
+      "severity": "BLOCKS_M6",
+      "claim_made_by_the_code": "blender_scripts/material_characterization.py:268-274 — 'a dim-but-valid frame quantises away at 8 bits; the census reads this 16-bit copy so the rig's calibrated energy cannot crush event contrast into quantisation noise', and palette_powder_texture_axes.py docstring — 'same rig geometry the glitter census commissioned, 16-bit frames'.",
+      "measured_reality": {
+        "file": "swatch_tx_SURFACE_CONTINUITY_low_16bit.png",
+        "pil_mode": "RGBA",
+        "dtype": "uint8",
+        "channels": 4,
+        "max_value": 255,
+        "bit_depth_actual": 8
+      },
+      "reading": "scene.render.image_settings.color_depth = '16' is set, but the file written and subsequently read as png16 is 8-bit RGBA. The 16-bit measurement path is DECLARED and NOT REALIZED. This is the identical shape of the Bump/Distance defect fixed at 05d481c.",
+      "collateral": "palette_powder_rigs.py:344 — the GLITTER_PARTICLE_RIG census, recorded PASS at 27ded17 with 87 discrete events, reads the same d['png16']. That PASS therefore rests on the exact condition its own comment says would invalidate it. The PASS is not hereby overturned; it is placed IN QUESTION pending re-measurement on a genuinely 16-bit or EXR frame.",
+      "falsifiable_by": "open the file, read dtype. Negative control: a true 16-bit write returns dtype uint16 and max_value up to 65535."
+    },
+
+    "F2_ALPHA_CHANNEL_CONTAMINATES_LUMINANCE": {
+      "severity": "BLOCKS_M6",
+      "location": "palette_powder_texture_axes.py:79-81 — raw.astype(float).mean(axis=2)",
+      "measured_reality": "the frame is 4-channel RGBA and alpha is 255 everywhere, so the quantity every texture axis is computed from is (R+G+B+255)/4, not luminance. The high-pass field is scaled by 0.75 and the normalising mean carries a constant +63.75 offset.",
+      "consequence_measured": "the GRAZING_BAND_CONTRAST verdict on its own positive fixture FLIPS with the reader: relative effect 0.2683 (DETECTS, as the instrument reads it) versus 0.1078 (RGB only) versus 0.1252 (EXR scene-linear). The bar is 0.25. The only reading under which this axis passes its positive fixture is the one contaminated by alpha.",
+      "reading": "a measurement whose verdict depends on how many channels the reader happens to average is not a measurement. Under the project rule that a convenient PASS is worse than an honest FAIL, the 0.2683 must be discarded, not banked.",
+      "falsifiable_by": "docs/roadmap/palt_m6/axis_instrument_forensics.py — reader_sensitivity block; verdict_depends_on_reader = true."
+    },
+
+    "F3_SURFACE_AUTOCORRELATION_MM_IS_DEAD_BY_CONSTRUCTION": {
+      "severity": "AXIS_MUST_BE_WITHDRAWN_OR_REDESIGNED",
+      "measured_reality": "0.140000 mm on every frame measured, under all three readers, on both members of all three fixtures — including MICRO_NORMAL_CORRELATION, its own declared positive fixture, where grain scale changes 0.21mm -> 0.42mm (a factor of 2).",
+      "reading": "0.14 mm = 2 px at 14.286 px/mm. The axis correlates a field that has just been passed through a 3x3 box high-pass. That operator whitens the field over a +/-1 px support, so the correlation it then measures is the correlation of its own kernel, not of the grain. The axis is mathematically incapable of returning any other value. It is not insensitive; it is measuring the instrument.",
+      "additional": "quantisation compounds it: the axis reports in integer pixel lags, so its entire dynamic range between 0.21mm and 0.42mm grain is 3 discrete values.",
+      "falsifiable_by": "feed it a synthetic field with a known correlation length and confirm it returns 0.14 regardless — a negative control this axis has never had."
+    },
+
+    "F4_EDGE_HIGHLIGHT_RESPONSE_NOISE_FLOOR_EXCEEDS_THE_PASS_BAR": {
+      "severity": "PUTS_A_RECORDED_PASS_IN_QUESTION",
+      "source": "docs/roadmap/palt_m6/diffuse_pairs_report.json, negative_controls.MATTE_vs_MATTE_seed_only",
+      "measured_reality": "EDGE_HIGHLIGHT_RESPONSE relative effect 0.27991 between two POWDER_MATTE specs that differ only by random seed (40 vs 99). The pass bar is 0.25. The axis cleared the bar on pure seed noise.",
+      "why_it_was_not_caught": "the negative control's own success criterion is the pair verdict (fewer than 2 axes clearing => FAIL => 'behaved'). A single axis firing on noise is invisible to it, so controls_misbehaved was recorded as [].",
+      "consequence": "POWDER_MATTE_vs_POWDER_SATIN was ruled PASS on exactly two clearing axes: SHEEN_REGION_RESPONSE 0.4225 and EDGE_HIGHLIGHT_RESPONSE 0.3604. One of those two sits at 1.29x its own measured seed-noise floor. That PASS is NOT SUPPORTED by the evidence as recorded.",
+      "note": "PRESSED_POWDER_vs_POWDER_MATTE cleared on three axes (HIGHLIGHT_FWHM 0.3091, SHEEN 0.4471, EDGE 0.4191) and survives the removal of EDGE. MATTE_vs_SATIN does not."
+    },
+
+    "F5_AXES_ARE_NOT_INDEPENDENT_AS_THE_LAW_REQUIRES": {
+      "severity": "PUTS_THE_PASS_LAW_APPLICATION_IN_QUESTION",
+      "location": "palette_characterization_rig.py:266-281, axes_from()",
+      "measured_reality": "four of the six lobe axes read the IDENTICAL metric, highlight_fwhm_fraction, differing only by which region it is sampled from: HIGHLIGHT_FWHM (QUARTER_CYLINDER), GRAZING_RESPONSE (GRAZING), SHEEN_REGION_RESPONSE (SHALLOW_CURVE), EDGE_HIGHLIGHT_RESPONSE (BEVEL). Only HIGHLIGHT_PEAK and SPECULAR_TO_DIFFUSE_RATIO are different quantities.",
+      "reading": "PASS_LAW.required_independent_axes = 2. The §6 correction already caught this once — five axes previously read peak/median — and the fix changed WHICH scalar was shared rather than removing the sharing. A pair clearing on two of these four has not been shown to clear two INDEPENDENT axes. Independence is currently ASSERTED in prose, never MEASURED.",
+      "what_would_settle_it": "the cross-axis correlation over the existing family census. Independence must become a measured quantity with a declared threshold, not a claim in a docstring."
+    },
+
+    "F6_NO_STIMULUS_REALIZATION_CONTROL_EXISTS": {
+      "severity": "THE_ROOT_CAUSE_OF_BOTH_WITHDRAWN_VERDICTS",
+      "reading": "nothing in the sensitivity study or the texture-axis validation ever checks that the two members of a fixture pair rendered DIFFERENTLY. Renders are deterministic and both members share a seed, so an unrealized parameter produces bit-identical frames and every axis then reports a relative effect of exactly 0.0 — which the study records as 'the axis is blind'. That is precisely the false conclusion drawn at 927ab8a.",
+      "corroborating_evidence": "texture_axes_validation.json, verdict FAIL, records low == high to six decimal places on all three axes (GRANULARITY_INDEX 0.006385 vs 0.006385; SURFACE_AUTOCORRELATION_MM 0.14 vs 0.14; GRAZING_BAND_CONTRAST 0.0 vs 0.0). Identical to the digit is the signature of identical frames, not of an insensitive axis.",
+      "post_fix_measurement": "on the current post-bump-fix frames the stimulus DOES land: PLANAR rms difference 17.25 (SURFACE_CONTINUITY), 12.99 (MICRO_NORMAL_CORRELATION), 13.34 (COMPACTION) code values; no pair is bit-identical. texture_axes_validation.json is therefore STALE and its FAIL verdict must not be cited.",
+      "structural_remedy_required": "per the project rule that a defect class returning a third time becomes an assertion rather than care, every fixture pair must carry a frame-level realization assertion that runs BEFORE any axis is computed and REFUSES to report a relative effect on frames it cannot prove differ."
+    },
+
+    "F7_SILENT_ZERO_FALLBACKS_ARE_INDISTINGUISHABLE_FROM_MEASUREMENTS": {
+      "severity": "UNFALSIFIABLE_OUTPUT",
+      "location": "palette_powder_texture_axes.py:120-135 — lag_mm stays 0.0 when var <= 1e-12; contrast returns 0.0 when the region median is 0.",
+      "reading": "a returned 0.0 currently means either 'measured zero' or 'the region was degenerate and I declined to measure'. The reader cannot tell. GRAZING_BAND_CONTRAST 0.0/0.0 in texture_axes_validation.json was read as a measurement; it is not established that it was one. A degenerate region must raise, never return a number.",
+      "note": "the GRAZING region is NOT black on the current frames (mean 55-76 code values), so the specific historical 0.0 is explained by F6, not by darkness. The fallback remains an unfalsifiable output regardless."
+    },
+
+    "F8_ROUGHNESS_ONLY_FIXTURE_READING_IS_CORRECT_AND_SHOULD_STAND": {
+      "severity": "NONE_THIS_IS_A_CLEARED_HYPOTHESIS",
+      "hypothesis_tested": "that surface_roughness never reaches the shader, which would have made ROUGHNESS_ONLY's near-zero effects (0.0008-0.0387 on all six axes) another instance of the defect class.",
+      "result": "FALSIFIED by reading the shader. blender_scripts/powder_materials.py:204-207 wires surface_roughness into the Principled BSDF Roughness socket on the POWDER_MATTE path via an ADD node. The parameter IS plumbed.",
+      "correct_reading": "for POWDER_MATTE at its declared milling defaults, the micro-normal field dominates the apparent lobe and the roughness constant contributes almost nothing on top — which is exactly what the family docstring claims ('the broad dull lobe comes from the normal field, not from a roughness constant'). The fixture behaved as designed and correctly established that no axis is merely a roughness detector. This finding is recorded so the hypothesis is not raised a third time."
+    }
+  },
+
+  "what_this_record_does_NOT_establish": [
+    "it does not establish that any powder family is or is not distinguishable — every family verdict is suspended until the instrument is repaired and re-run",
+    "it does not overturn the GLITTER_PARTICLE_RIG PASS; it places it in question pending re-measurement",
+    "it does not propose moving any bar, window or law, and none has moved",
+    "it does not constitute owner acceptance of anything"
+  ],
+
+  "authority_states_after_this_record": {
+    "M6_DIFFUSE_PAIR_DIAGNOSIS": "INSTRUMENT_DEFECTS_IDENTIFIED_REPAIR_DECLARED_NOT_REALIZED",
+    "M6_DIFFUSE_PAIR_RULINGS": "SUSPENDED_PENDING_INSTRUMENT_REPAIR",
+    "MATTE_VS_SATIN_PASS": "IN_QUESTION_ONE_OF_TWO_CLEARING_AXES_SITS_AT_ITS_NOISE_FLOOR",
+    "GLITTER_PARTICLE_RIG_PASS": "IN_QUESTION_FRAME_PROVENANCE",
+    "TEXTURE_AXES_VALIDATION_FAIL": "STALE_SUPERSEDED_MEASURED_ON_STRUCTURELESS_FRAMES",
+    "PASS_LAW": "UNCHANGED_2_AXES_AT_25_PERCENT",
+    "PROTOCOL_IDENTITY": "087c7f64317910fb_UNCHANGED",
+    "owner_approved": false,
+    "manufacturing_authority": "NOT_ESTABLISHED"
+  }
+}

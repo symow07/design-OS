@@ -1,0 +1,62 @@
+{
+ "record_type": "m6_declared_ensemble_spreads_declaration/1.0",
+ "created_at": "2026-08-14",
+ "declared_before_realization": true,
+ "node": "M6-DECLARED-ENSEMBLE-SPREADS — the bounded completion the establishment table names (named_nodes_not_started), scoped by the launcher to also carry the SHEEN resolving-power legs and the A4 independence discharge",
+ "completes": {
+  "SATIN_VS_CREAM": "both legs (GRAN + FWHM) re-measured with FULL 6-seed declared ensembles for POWDER_SATIN and CREAM on the texture rig — replacing the partial 2-seed estimates the strict ruling refuses",
+  "METALLIC_VS_GLITTER": "both legs with 6-seed declared flake-rig ensembles for POWDER_METALLIC and GLITTER",
+  "MATTE_VS_SATIN__SHEEN_LEG": "resolving-power completion: the SHEEN clearing's dispersion re-measured on the declared ensembles against the adequacy precondition 0.16569 (clearing_dispersion, recipe 6d6e4ab90686503f — max_seed_only_effect reported alongside, NEVER the bar)",
+  "PRESSED_VS_MATTE__SHEEN_LEG": "same completion for PRESSED_POWDER vs POWDER_MATTE (0.1157 partial vs 0.16569)",
+  "GLITTER_EVENT_ENSEMBLE": "the event census re-run as a DECLARED ensemble (the suspension's own remedy): the census trio (GLITTER / MATTE_CONTROL / SHIMMER) at the declared member set below — the favorable partial replicate (144 vs 113, controls 0) is cited as favorable-partial and is NOT evidence",
+  "A4_INDEPENDENCE": "SHIMMER_VS_METALLIC independence discharged by the programme's sweep precedent on the completed ensembles — measured, not argued"
+ },
+ "ensembles_declared": {
+  "rule": "each instrument's OWN seed-derivation convention is the authority (a600: seeds are per-rig constants) — members are the rig's base seed plus the rig's declared member offsets, 6 members per family, calibration per member (never energy reuse across members deeper than the instrument's own declared reuse path)",
+  "texture_rig_families": {"POWDER_SATIN": "base 41", "CREAM": "base 48", "POWDER_MATTE": "base 40", "PRESSED_POWDER": "base 47"},
+  "flake_rig_families": {"POWDER_METALLIC": "base 140", "SHIMMER": "base 130", "GLITTER": "flake-rig member set per its PAIR_SEEDS convention"},
+  "glitter_census_trio": "GLITTER 61 / MATTE_CONTROL 62 / SHIMMER 63 with the census's declared ensemble offsets"
+ },
+ "spend": {
+  "estimate_from_the_table": "~54 renders for the spread ensembles",
+  "ceiling": 80,
+  "includes": "spread ensembles + SHEEN resolving-power members + glitter event ensemble; the N=8 CENSUS REPLICATE is NOT in this node (M6-CENSUS-REPLICATE, ~32-48 renders, separately named by the table) — conditions 11/13 may therefore remain unestablished on their census legs even after this campaign, and that will be reported honestly, not blurred"
+ },
+ "laws_carried_unmoved": [
+  "PASS_LAW 2 independent axes at >= 0.25",
+  "adequacy precondition 0.16569 on clearing_dispersion (the NAMED quantity)",
+  "independence ceiling 0.80 with the fitted-population bound declared at use",
+  "crossing rescue VOID — diffuse pairs FAIL if 0.6571 grows past 0.80",
+  "strict establishment ruling: only declared-ensemble spreads establish",
+  "no PASS inherited; honest FAIL per pair"
+ ],
+ "execution_status": "PARTIALLY EXECUTED, NOT COMPLETE — corrected 2026-08-28 under OWNER_BLOCKER_CLEARANCE.md §BH2, replacing \"DECLARED, NOT STARTED\", which was 13 days stale (declaration landed 2026-08-14 at 575bc6e; the newest commit touching this directory was 4815f68, 2026-08-15, \"M6 spreads A4 DISCHARGED\") and was the 4th instance of the stale-status defect class this arc found. MEASURED ON DISK, not inferred: seven firing traces (sc, mvs_sheen, pvm_sheen, pvm_sheen_superseded_1, lobe, glitter, flake), six raw_*.json records, six adjudication_*.json covering all six families, and one A4 independence discharge (adjudicated 2026-08-15); spreads_queue_ledger.json records six queue-control first acts and pair_runs_spent 66 against this declaration's ceiling of 80. NOT CLAIMED, deliberately: that the campaign is COMPLETE, that the six adjudications are individually sound, or that the render count has been audited — §BH3 makes auditing the adjudications and recounting renders the FIRST obligation of the P1 arc, and the M6 exit gate has NOT been re-run. The spend.includes caution stands verbatim: the N=8 census replicate is not in this node, so conditions 11/13 may remain unestablished on their census legs, and §BH2's owner approval explicitly does not rule them established.",
+ "declaration_identity_note": "the queue-control first act of the render session MUST name this record's sha256-derived identity; computed at execution time from the committed bytes so the declaration cannot drift after declaration",
+ "spend_status": "CLOSED — zero further renders under this declaration. Ruled 2026-08-29 at OWNER_BLOCKER_CLEARANCE.md §BH4(c), owner's own words: \"Zero further renders under this declaration. Your audit says the three unestablished pairs fail on measurement, not on missing work — more renders buy nothing.\" MEASURED, not inferred, and read directly out of docs/roadmap/palt_m6/spreads_ceiling_breach.json rather than retyped from it: 101 renders were executed against the ceiling of 80 declared at line 20 — 21 over, 126.2% of cap — of which 60 carry a render_identity and are auditable from the records while 41 are countable only by derivation. spreads_queue_ledger.json's pair_runs_spent of 66 is an honest count in a DIFFERENT UNIT and is deliberately NOT corrected here, because re-denominating it is the build §BH4(d) queued and expressly forbade inside a record commit. THIS CLOSES SPEND AND NOTHING ELSE: it does not declare the campaign complete, does not rule any condition established, does not move any bar or adjudication verdict, and does not touch the binding clauses at lines 1-32 — the ceiling of 80 at line 20 and the identity discipline at line 34 stand byte-identical to the bytes committed 2026-08-14.",
+ "owner_approved": true,
+ "owner_approval": {
+  "owner_approved_by": "BBrose (PROJECT_OWNER)",
+  "ruled": "2026-08-28",
+  "authority": "OWNER_BLOCKER_CLEARANCE.md §BH2 — owner's typed words: \"I approve BOTH records ... Flip owner_approved to true in both, each edit citing §BH2.\"",
+  "what_the_approval_authorizes": "The owner's own scoping sentence: the approval \"authorizes the declared campaign to COMPLETE against the committed declaration\". It is not authority to re-declare, to re-scope, or to raise the ceiling of 80.",
+  "what_it_explicitly_does_NOT_do": "It does not rule conditions 11/13 established. Owner: \"I am NOT ruling that conditions 11/13 are established — the declaration's own caution about them survives my approval verbatim.\" The spend.includes caution above is that caution and it is unedited."
+ },
+ "identity_supersession_2026_08_28": {
+  "superseded_identity": "c1434e1efdb98a62",
+  "what_that_string_was": "sha256(this file's bytes)[:16] as committed 2026-08-14 — simultaneously this record's entry in docs/roadmap/palt_m6/record_digest_manifest.json (classification REVISABLE) and the CAMPAIGN'S DECLARATION IDENTITY that the executed queue-control first acts named.",
+  "why_it_necessarily_moved": "§BH2 ordered execution_status corrected and owner_approved flipped. Both are STATUS fields. The identity hashes the WHOLE record, so it cannot tell an honest status correction apart from a silent re-scoping of the campaign — and that is why this field sat stale for thirteen days: correcting it looked like tampering.",
+  "what_did_NOT_move": "Every binding clause: record_type, created_at, declared_before_realization, node, completes, ensembles_declared, spend (ceiling 80 included), laws_carried_unmoved, and declaration_identity_note itself. Asserted line-by-line by the commit that performed this edit: lines 1-32 and line 34 are byte-identical to the committed 2026-08-14 bytes.",
+  "where_the_old_identity_remains_pinned": "21 sites across 9 files: 6 queue-control first acts in spreads_queue_ledger.json, 12 in the six raw_*.json, 1 in record_digest_manifest.json, and 1 in palt_m4c/palette_roadmap_continuation_state.json. Those pins are NOT falsified and are not edited — they are history, and they correctly record the bytes those runs actually ran against.",
+  "what_the_P1_arc_must_therefore_do": "Line 34 says the identity is \"computed at execution time from the committed bytes\". P1's queue-control first act will therefore name the CURRENT identity, which is not c1434e1efdb98a62. That is the discipline working as written, not failing — but without this record the ledger would show two identities with no bridge between them, so the bridge is written here per §AZ0(u): superseded, with reason, not deleted.",
+  "the_defect_this_exposes_and_does_NOT_fix": "A whole-record identity cannot distinguish scope from status. The fix is a scope-only identity computed over the binding clauses alone, leaving status and approval fields out of it. That is a BUILD and it is unruled, so per §AC it is PROPOSED to the owner as its own item and is not built inside this record commit."
+ },
+ "identity_supersession_2026_08_29": {
+   "superseded_identity": "fd10bee04a2f9cbe",
+   "what_that_string_was": "sha256(this file's bytes)[:16] as committed 2026-08-28 by the §BH2 status correction, and the identity §BH4(e)'s bridge names as the one P1's queue-control first act must carry.",
+   "why_it_necessarily_moved": "§BH4(c) ordered spend closed, which is a STATUS fact. The identity hashes the WHOLE record, so it moves for a status field exactly as it moves for a re-scoping, and it cannot tell them apart.",
+   "THIS_IS_THE_SECOND_SUPERSESSION_IN_TWO_DAYS": "identity_supersession_2026_08_28 recorded the first and proposed the fix: a SCOPE-ONLY identity computed over the binding clauses alone, leaving status and approval fields out of it. That proposal is now carrying two instances rather than one, from two different owner rulings, neither of which changed a single binding clause. The measurement that would have made both supersessions unnecessary already exists and is asserted by the commit performing this edit: sha256(lines 1-32) = e9fce152e29e635a, UNCHANGED across both. Still a BUILD, still unruled, still not built inside a record commit (§AC).",
+   "what_did_NOT_move": "Every binding clause: record_type, created_at, declared_before_realization, node, completes, ensembles_declared, spend (ceiling 80 included, at line 20), laws_carried_unmoved — and declaration_identity_note itself. Asserted by hash, not by reading: sha256(lines 1-32)[:16] = e9fce152e29e635a and sha256(line 34)[:16] = 6fcd8b4a44d76343, both identical to the committed 2026-08-14 bytes. LINE 34 IS ALSO STILL LINE 34: the new field was placed BELOW it precisely so the owner's citation — made at §BH2, at §BH3 and again at §BH4(c) — does not become a dangling reference by drifting one line down.",
+   "where_the_older_identities_remain_pinned": "COUNTED AT WRITE TIME FROM THE GIT ROOT, not recalled: c1434e1efdb98a62 at 23 sites across 10 files, unedited and not falsified — they record the bytes those runs actually ran against. fd10bee04a2f9cbe at 3 sites across 2 files, and they are OWNER_BLOCKER_CLEARANCE.md, bbrose_design_os/docs/roadmap/palt_m6/record_digest_manifest.json — the clearance document and the digest manifest, NOT any P1 first-act record, which an earlier draft of this field claimed and which is false. That pair was counted in the instant BEFORE this field existed, so it does not count this field; once committed, the declaration itself becomes a third file and a fourth site. READ THE ROOT BEFORE CORRECTING THESE NUMBERS: the identical grep answers 21 sites / 9 files from the pytest root and 23 / 10 from the git root, both at exit 0, because OWNER_BLOCKER_CLEARANCE.md is tracked at the git root only. The narrower reading silently omits the file that carries the owner's ruling. That is TWO_ROOTS_MEASUREMENT, the class this arc cites most and the one commit P measured ABSENT from DEFECT_CLASS_REGISTER. The chain is now three links: c1434e1efdb98a62 → fd10bee04a2f9cbe → the identity recorded by the commit carrying this field.",
+   "what_the_P1_arc_must_therefore_do": "unchanged in principle from the 08-28 record: line 34 says the identity is computed at execution time from the committed bytes, so P1's queue-control first act names the CURRENT identity. §BH4(e) bridges c1434e1efdb98a62 → fd10bee04a2f9cbe; this record extends that bridge by one link rather than replacing it, per §AZ0(u)."
+ }
+}

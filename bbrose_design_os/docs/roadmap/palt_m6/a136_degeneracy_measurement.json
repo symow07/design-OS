@@ -1,0 +1,33 @@
+{
+ "record_type": "a136_degeneracy_measurement/1.0",
+ "protocol_identity": "a229810ce00ff35c",
+ "framing_a147": "the question is not whether six axes remain, it is whether the ruling has a deciding statistic at all",
+ "a190_boundary_reported_first": {
+  "searched": [
+   "measurement_adequacy/* (all 7 records)",
+   "driver_completeness/phase2_A2_ruling full_matrix_guarded (15 pairs)"
+  ],
+  "not_reached_and_why": [
+   "the FULL pairwise matrix at 25-level refined density \u2014 NEVER COMMITTED; phase3_raw carries only the min pair, its rho, and TWO counted pairs per seed",
+   "recorded energies for the refined-density renders \u2014 NO measurement_adequacy record carries an energy field at all"
+  ]
+ },
+ "1_remaining_qualifying_count_without_GBC": {
+  "phase2_A2 (15-pair matrix)": "6 listed -> 5 without GBC",
+  "phase3_4 (25 levels)": "7 listed -> 6 without GBC"
+ },
+ "2_still_satisfies_required_independent_axes_2": "YES on count in both records \u2014 but count was never the binding question here: this is a DEGENERACY ruling over a correlation matrix, not a PASS_LAW two-axis verdict, and A128 already established that ZERO committed PASS_LAW verdicts counted GBC",
+ "3_does_the_CONCLUSION_depend_on_GBC": {
+  "answer": "NO \u2014 and provably, not merely observably",
+  "proof": "degeneracy holds when every qualifying pair sits above the 0.80 ceiling. The recorded MINIMUM over ALL pairs (GBC included) is 0.8504 at seed 400, 0.8800 at 401, 0.8183 at 402 \u2014 all above the ceiling. A minimum over a SUBSET cannot fall below the minimum over the whole set, so every non-GBC pair is also above the ceiling and the SWEEP_DEGENERATE_UNDER_DRIVER conclusion survives GBC's removal without recomputation. Corroborated where the record permits: the two committed non-GBC pairs at seed 400 read 0.9991 and 0.9939, and the independent phase2 matrix min excluding GBC is 0.9909",
+  "direction": "removing GBC makes the ruling STRONGER, not weaker"
+ },
+ "4_does_the_ruling_still_have_a_DECIDING_STATISTIC": {
+  "answer": "NO \u2014 and this is the finding",
+  "detail": "the ruling's stated deciding statistic IS a GBC pair (GRAZING_BAND_CONTRAST|GRAZING_RESPONSE, min_rho 0.8504, margin 0.0504 against spread 0.03214, on which the 1i adequacy precondition was declared MET). With GBC withdrawn the deciding statistic must be recomputed as the min over the remaining pairs \u2014 and the full 25-level pairwise matrix was NEVER COMMITTED, so the new minimum is NOT COMPUTABLE from committed records, and neither is its 1i adequacy margin",
+  "consequence": "the conclusion stands on a WEAKER footing than the record claims: not on a deciding statistic with a measured adequacy margin, but on the bounding argument in item 3. That is sufficient for the conclusion and insufficient for the adequacy claim, and the two must not be conflated (3d: a claim is citable at the strength of its weakest checked premise)",
+  "marked": "SWEEP_DEGENERATE_UNDER_DRIVER stands, QUALIFIED [deciding_statistic=GBC_pair_withdrawn; conclusion_rests_on_min_bound_not_on_a_recomputed_deciding_statistic; 1i_adequacy_margin_NOT_RECOMPUTABLE_full_matrix_never_committed]"
+ },
+ "energy_status_note": "A147 anticipated that an UNVERIFIABLE energy would make the deciding statistic unverifiable. The refined-density records carry NO energy field at all \u2014 so their energy status is not merely unverifiable, it was never recorded in any form. That is a stronger absence than A135's and is stated rather than folded into it",
+ "owner_approved": false
+}

@@ -1,0 +1,191 @@
+{
+  "record_type": "declaration_guard_body/1.0",
+  "A46_partition_of_14": {
+    "DECLARED_AGREEING": [
+      {
+        "site": "palette_characterization_protocol.py:307",
+        "key": "samples",
+        "evidence": "the default EXPRESSION is a contract reference, not a literal: 'r[\"samples\"]' \u2014 the fallback defers to the declared value by construction"
+      },
+      {
+        "site": "palette_characterization_rig.py:127",
+        "key": "samples",
+        "evidence": "the default EXPRESSION is a contract reference, not a literal: 'rig[\"samples\"]' \u2014 the fallback defers to the declared value by construction"
+      }
+    ],
+    "DECLARED_CONFLICTING": [],
+    "UNDECLARED_DEFAULT": [
+      {
+        "site": "palette_axis_eligibility.py:216",
+        "key": "lobe_axes",
+        "class": "BUILDER_CONSTANT (different syntax, per 1y)",
+        "line": "for axis, row in ruling.get(\"lobe_axes\", {}).items():"
+      },
+      {
+        "site": "palette_axis_eligibility.py:218",
+        "key": "texture_axes",
+        "class": "BUILDER_CONSTANT (different syntax, per 1y)",
+        "line": "for axis, row in ruling.get(\"texture_axes\", {}).items():"
+      },
+      {
+        "site": "palette_axis_eligibility.py:237",
+        "key": null,
+        "class": "BUILDER_CONSTANT (different syntax, per 1y)",
+        "line": "if any(c in grouped.get(axis, set()) for c in counted):"
+      },
+      {
+        "site": "palette_characterization_protocol.py:298",
+        "key": "environment_panels",
+        "class": "BUILDER_CONSTANT (different syntax, per 1y)",
+        "line": "panels = r.get(\"environment_panels\", [])"
+      },
+      {
+        "site": "palette_characterization_protocol.py:312",
+        "key": "background_strips",
+        "class": "BUILDER_CONSTANT (different syntax, per 1y)",
+        "line": "\"background_strips\": r.get(\"background_strips\", []),"
+      },
+      {
+        "site": "palette_characterization_protocol.py:317",
+        "key": "diffuse_source",
+        "class": "BUILDER_CONSTANT (different syntax, per 1y)",
+        "line": "\"diffuse_source\": r.get(\"diffuse_source\","
+      },
+      {
+        "site": "palette_characterization_protocol.py:321",
+        "key": "specular_source",
+        "class": "BUILDER_CONSTANT (different syntax, per 1y)",
+        "line": "\"specular_source\": r.get(\"specular_source\","
+      },
+      {
+        "site": "palette_characterization_protocol.py:300",
+        "key": null,
+        "class": "BUILDER_CONSTANT (different syntax, per 1y)",
+        "line": "pn.update(o.get(pn[\"name\"], {}))"
+      },
+      {
+        "site": "palette_characterization_protocol.py:297",
+        "key": null,
+        "class": "BUILDER_CONSTANT (different syntax, per 1y)",
+        "line": "r[key].update(o.get(key, {}))"
+      },
+      {
+        "site": "palette_characterization_rig.py:121",
+        "key": null,
+        "class": "BUILDER_CONSTANT (different syntax, per 1y)",
+        "line": "rig[key].update(o.get(key, {}))"
+      },
+      {
+        "site": "palette_characterization_rig.py:264",
+        "key": null,
+        "class": "BUILDER_CONSTANT (different syntax, per 1y)",
+        "line": "return float(r.get(region, {}).get(key, default))"
+      },
+      {
+        "site": "palette_characterization_rig.py:264",
+        "key": null,
+        "class": "BUILDER_CONSTANT (different syntax, per 1y)",
+        "line": "return float(r.get(region, {}).get(key, default))"
+      }
+    ]
+  },
+  "A47_census_restated": {
+    "original_25": 25,
+    "supplement_7": 7,
+    "wider_mechanisms_in_builder": {
+      "default_args": 3,
+      "lookup_defaults": 0,
+      "class_attrs": 0,
+      "env_reads": 0
+    },
+    "detail": {
+      "kw_defaults": [
+        [
+          "_noise",
+          "detail",
+          3.0
+        ],
+        [
+          "_noise",
+          "distortion",
+          0.0
+        ],
+        [
+          "_bump",
+          "scale_mm",
+          0.3
+        ]
+      ]
+    },
+    "restatement": "builder-scope: 25 census + 7 supplement + 3 keyword-default constants (detail=3.0 and scale_mm=0.3 dead but class members per 1y; distortion=0.0 and law defaults now declared) \u2014 25 was a floor; the class enumeration for the builder is 25+7+3. System-scope adds the 28 measurement lookup-defaults per 1y.",
+    "instrument_error_caught": "the first scan read args.defaults and returned a FALSE ZERO \u2014 keyword-only defaults live in kw_defaults. A census tool producing a plausible zero from mis-scoped input, caught in the node about census completeness, corrected before commit. The shape joins the guard corpus."
+  },
+  "A49": {
+    "composition_condition": "CONFIRMED: the one unresolvable import (pipeline_errors.py:60) sits OUTSIDE the reach set; every module IN the closure parsed with zero unresolvable imports and zero eval/exec \u2014 the condition the argument rested on now stated and measured",
+    "entry_point_check": "NONE \u2014 no entry-point or name-keyed module loading anywhere in services; the import graph has no invisible edges of that kind",
+    "rig_contracts_evaluated": "ZERO substitutions \u2014 every rig-contract validity value consumed by direct index or with a defaulting read agreeing with the contract; the exemption is replaced by an evaluation"
+  },
+  "reachability_before_behaviour": {
+    "cleared_structurally": 139,
+    "survivors": 55,
+    "survivors_already_dispositioned": 6,
+    "survivors_remaining": [
+      "m4b_a_tray_views.py:149:ifexp_default_0.9",
+      "material_characterization.py:367:ifexp_default_0.0",
+      "material_characterization.py:387:ifexp_default_0.0",
+      "material_characterization.py:388:ifexp_default_0.0",
+      "material_characterization.py:354:ifexp_default_0.0",
+      "p1_material_studio.py:178:ifexp_default_58.0",
+      "palette_csg_views.py:155:ifexp_default_0.32",
+      "palette_csg_views.py:302:except_swallow",
+      "concept_analysis.py:217:ifexp_default_0.0",
+      "concept_analysis.py:276:ifexp_default_1.0",
+      "palette_baked_geometry.py:59:ifexp_default_0.0",
+      "palette_characterization_protocol.py:414:ifexp_default_0.0",
+      "palette_characterization_protocol.py:482:ifexp_default_0.0",
+      "palette_characterization_protocol.py:500:ifexp_default_0.0",
+      "palette_characterization_protocol.py:471:ifexp_default_0.0",
+      "palette_characterization_protocol.py:563:ifexp_default_0.0",
+      "palette_characterization_protocol.py:433:ifexp_default_0.0",
+      "palette_characterization_rig.py:315:ifexp_default_0.0",
+      "palette_contracts.py:149:ifexp_default_0.0",
+      "palette_layout_kernel.py:100:ifexp_default_0.0",
+      "palette_layout_kernel.py:102:ifexp_default_0.0",
+      "palette_layout_kernel.py:104:ifexp_default_0.0",
+      "palette_layout_kernel.py:118:ifexp_default_0.0",
+      "palette_material_characterization.py:176:ifexp_default_255.0",
+      "palette_material_characterization.py:266:ifexp_default_0.0",
+      "palette_moulded_geometry.py:443:ifexp_default_0.3",
+      "palette_moulded_rect.py:498:ifexp_default_0.0",
+      "palette_powder_axis_diagnosis.py:118:ifexp_default_0.0",
+      "palette_powder_rigs.py:289:ifexp_default_61",
+      "palette_powder_rigs.py:234:ifexp_default_0.0",
+      "palette_raking_rig.py:293:except_swallow",
+      "palette_recessed_tray_geometry.py:147:ifexp_default_0.0",
+      "palette_stackup_engine.py:79:ifexp_default_0.0",
+      "palette_stackup_engine.py:260:except_swallow",
+      "palette_stackup_engine.py:117:ifexp_default_0.0",
+      "palette_stackup_engine.py:119:ifexp_default_0.0",
+      "palette_stackup_engine.py:195:ifexp_default_0.0",
+      "palette_stackup_engine.py:197:ifexp_default_0.0",
+      "palette_stackup_engine.py:199:ifexp_default_0.0",
+      "palette_stackup_engine.py:201:ifexp_default_0.0",
+      "palette_stackup_engine.py:204:ifexp_default_0.0",
+      "palette_stackup_engine.py:205:ifexp_default_0.0",
+      "palette_stackup_engine.py:206:ifexp_default_0.0",
+      "palette_stackup_engine.py:207:ifexp_default_0.0",
+      "palette_stackup_engine.py:216:ifexp_default_0.0",
+      "palette_stackup_engine.py:217:ifexp_default_0.0",
+      "palette_stackup_engine.py:219:ifexp_default_0.0",
+      "palette_stackup_engine.py:220:ifexp_default_0.0",
+      "palette_stackup_engine.py:93:ifexp_default_0.0"
+    ]
+  },
+  "section_E_distance": {
+    "enumeration_complete_by_competent_instrument": "YES for shapes (AST, 194) \u2014 pending the corpus proving detector coverage",
+    "sites_reaching_committed_numbers_with_behaviour_disposition": "6 of 55 survivors (49 remaining \u2014 the distance)",
+    "guard_corpus": "built this node (see corpus test)",
+    "distance_number": 49
+  },
+  "A46_note": "first partition misclassified contract-deferring defaults as undeclared (checked key names against the powder universe only); corrected by default-expression kind \u2014 literals are the class, contract references are not. Both figures kept."
+}

@@ -1,0 +1,206 @@
+{
+ "record_type": "a311_vocabulary_sweep/1.0",
+ "law": "cb8d155b48536dbe",
+ "corpus_enumeration": {
+  "file": "apps/pipeline/services/palette_powder_protocol.py",
+  "identity": "cb8d155b48536dbe",
+  "blocks": {
+   "PASS_LAW": 5,
+   "INDEPENDENCE_LAW": 102,
+   "REQUIRED_DISTINCTIONS": 7,
+   "COLOUR_AUTHORITY": 3,
+   "FAMILY_STRUCTURE": 9,
+   "SUB_RIGS": 5,
+   "DENOMINATOR_CONVENTION": 9
+  },
+  "stamp_correction": "the first write stamped HEAD e244533, which cannot produce identity cb8d155b48536dbe \u2014 the defect 3k prohibits. The corpus is the one that produces the cited identity; it is introduced by the 3k commit, whose message carries this correction."
+ },
+ "dimensions_stated_before_product": [
+  "executable_choice_required",
+  "under_whose_authority",
+  "AUTHORITY_HASHED (a function of the second, not free)"
+ ],
+ "rows": [
+  {
+   "term": "relative effect",
+   "executable_choice_required": "YES",
+   "what_was_chosen": "MEAN_OF_THE_TWO_VALUES",
+   "where_chosen": "palette_material_swatch.py adj. MINIMUM_RELATIVE_EFFECT; 48f6bd4; 2026-08-07",
+   "under_whose_authority": "HASHED_BLOCK",
+   "AUTHORITY_HASHED": "YES",
+   "results_citing_it": "every clearing, proxy, floor"
+  },
+  {
+   "term": "relative_effect_bar 0.25",
+   "executable_choice_required": "NO",
+   "what_was_chosen": "NONE_REQUIRED",
+   "where_chosen": "PASS_LAW, hashed",
+   "under_whose_authority": "HASHED_BLOCK",
+   "AUTHORITY_HASHED": "YES",
+   "results_citing_it": "all adequacy"
+  },
+  {
+   "term": "required_independent_axes 2",
+   "executable_choice_required": "NO",
+   "what_was_chosen": "NONE_REQUIRED",
+   "where_chosen": "PASS_LAW, hashed",
+   "under_whose_authority": "HASHED_BLOCK",
+   "AUTHORITY_HASHED": "YES",
+   "results_citing_it": "all PASS_LAW verdicts"
+  },
+  {
+   "term": "independent axis",
+   "executable_choice_required": "YES",
+   "what_was_chosen": "per-pair independence via R5 ceiling 0.80",
+   "where_chosen": "INDEPENDENCE_LAW + axis_independence_matrix",
+   "under_whose_authority": "HASHED_BLOCK",
+   "AUTHORITY_HASHED": "YES",
+   "results_citing_it": "all verdicts"
+  },
+  {
+   "term": "spread (1i)",
+   "executable_choice_required": "YES",
+   "what_was_chosen": "replicate spread of the same statistic",
+   "where_chosen": "INDEPENDENCE_LAW adequacy_1i, hashed",
+   "under_whose_authority": "HASHED_BLOCK",
+   "AUTHORITY_HASHED": "YES",
+   "results_citing_it": "all 1i"
+  },
+  {
+   "term": "its dispersion (1k)",
+   "executable_choice_required": "YES",
+   "what_was_chosen": "MAX_PAIRWISE_ABSOLUTE_DIFFERENCE",
+   "where_chosen": "A289 ruling; recipe 23ef45d0d3521739",
+   "under_whose_authority": "RULING",
+   "AUTHORITY_HASHED": "NO",
+   "results_citing_it": "4 named-quantity cells"
+  },
+  {
+   "term": "clearing",
+   "executable_choice_required": "YES",
+   "what_was_chosen": "relative_effect(family_a, family_b) per seed",
+   "where_chosen": "palette_clearing_dispersion.py",
+   "under_whose_authority": "UNHASHED_ARTIFACT",
+   "AUTHORITY_HASHED": "NO",
+   "results_citing_it": "4 named-quantity cells"
+  },
+  {
+   "term": "floor / max_seed_only_effect",
+   "executable_choice_required": "YES",
+   "what_was_chosen": "max pairwise effect over the seed ensemble",
+   "where_chosen": "palette_axis_eligibility.measure_noise_floors",
+   "under_whose_authority": "UNHASHED_ARTIFACT",
+   "AUTHORITY_HASHED": "NO",
+   "results_citing_it": "all proxy dispositions"
+  },
+  {
+   "term": "margin",
+   "executable_choice_required": "YES",
+   "what_was_chosen": "reading minus threshold",
+   "where_chosen": "phase2_retroactive rows + apply_pass_law",
+   "under_whose_authority": "UNHASHED_ARTIFACT",
+   "AUTHORITY_HASHED": "NO",
+   "results_citing_it": "all 1i"
+  },
+  {
+   "term": "seed ensemble",
+   "executable_choice_required": "YES",
+   "what_was_chosen": "40,81,82,83,84,99 (6 seeds)",
+   "where_chosen": "axis_noise_floors ensemble block",
+   "under_whose_authority": "UNHASHED_ARTIFACT",
+   "AUTHORITY_HASHED": "NO",
+   "results_citing_it": "all spreads"
+  },
+  {
+   "term": "family",
+   "executable_choice_required": "NO",
+   "what_was_chosen": "NONE_REQUIRED",
+   "where_chosen": "FAMILY_STRUCTURE, hashed",
+   "under_whose_authority": "HASHED_BLOCK",
+   "AUTHORITY_HASHED": "YES",
+   "results_citing_it": "everything"
+  },
+  {
+   "term": "separation margin 2.0",
+   "executable_choice_required": "NO",
+   "what_was_chosen": "NONE_REQUIRED",
+   "where_chosen": "axis_noise_floors / PASS_LAW-adjacent",
+   "under_whose_authority": "UNHASHED_ARTIFACT",
+   "AUTHORITY_HASHED": "NO",
+   "results_citing_it": "required_clearing_effect"
+  },
+  {
+   "term": "R5 ceiling 0.80",
+   "executable_choice_required": "NO",
+   "what_was_chosen": "NONE_REQUIRED",
+   "where_chosen": "INDEPENDENCE_LAW, hashed",
+   "under_whose_authority": "HASHED_BLOCK",
+   "AUTHORITY_HASHED": "YES",
+   "results_citing_it": "independence"
+  }
+ ],
+ "terms_determined_in_fact_not_in_law": [
+  {
+   "term": "its dispersion (1k)",
+   "executable_choice_required": "YES",
+   "what_was_chosen": "MAX_PAIRWISE_ABSOLUTE_DIFFERENCE",
+   "where_chosen": "A289 ruling; recipe 23ef45d0d3521739",
+   "under_whose_authority": "RULING",
+   "AUTHORITY_HASHED": "NO",
+   "results_citing_it": "4 named-quantity cells"
+  },
+  {
+   "term": "clearing",
+   "executable_choice_required": "YES",
+   "what_was_chosen": "relative_effect(family_a, family_b) per seed",
+   "where_chosen": "palette_clearing_dispersion.py",
+   "under_whose_authority": "UNHASHED_ARTIFACT",
+   "AUTHORITY_HASHED": "NO",
+   "results_citing_it": "4 named-quantity cells"
+  },
+  {
+   "term": "floor / max_seed_only_effect",
+   "executable_choice_required": "YES",
+   "what_was_chosen": "max pairwise effect over the seed ensemble",
+   "where_chosen": "palette_axis_eligibility.measure_noise_floors",
+   "under_whose_authority": "UNHASHED_ARTIFACT",
+   "AUTHORITY_HASHED": "NO",
+   "results_citing_it": "all proxy dispositions"
+  },
+  {
+   "term": "margin",
+   "executable_choice_required": "YES",
+   "what_was_chosen": "reading minus threshold",
+   "where_chosen": "phase2_retroactive rows + apply_pass_law",
+   "under_whose_authority": "UNHASHED_ARTIFACT",
+   "AUTHORITY_HASHED": "NO",
+   "results_citing_it": "all 1i"
+  },
+  {
+   "term": "seed ensemble",
+   "executable_choice_required": "YES",
+   "what_was_chosen": "40,81,82,83,84,99 (6 seeds)",
+   "where_chosen": "axis_noise_floors ensemble block",
+   "under_whose_authority": "UNHASHED_ARTIFACT",
+   "AUTHORITY_HASHED": "NO",
+   "results_citing_it": "all spreads"
+  },
+  {
+   "term": "separation margin 2.0",
+   "executable_choice_required": "NO",
+   "what_was_chosen": "NONE_REQUIRED",
+   "where_chosen": "axis_noise_floors / PASS_LAW-adjacent",
+   "under_whose_authority": "UNHASHED_ARTIFACT",
+   "AUTHORITY_HASHED": "NO",
+   "results_citing_it": "required_clearing_effect"
+  }
+ ],
+ "no_ratification_performed": "per A311 \u2014 each needs its own ratification_changes_meaning check",
+ "enumeration_boundary": {
+  "candidates": 13,
+  "selection": "CURATED_BY_READING_THE_CORPUS_NOT_PATTERN_MATCHED",
+  "completeness": "NOT_PROVEN_COMPLETE",
+  "classifier": "CONSTANT_GENUINE",
+  "a298_gate_exercised": "NO \u2014 a constant classifier makes 13/13 GENUINE vacuous"
+ }
+}

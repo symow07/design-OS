@@ -1,0 +1,53 @@
+{
+ "record_type": "a262_empty_cell_declaration/1.0",
+ "law": "b12db39c624f01c2",
+ "declared_before_computation": true,
+ "confound_restated": "the two unstable tests are the two SHEEN tests AND the two MATTE-containing tests \u2014 the same two. The design cannot separate a family-specific instability in MATTE, an axis-specific sensitivity in SHEEN, a rig-wide seed artifact, or a material-intrinsic property",
+ "global_artifact_candidate": "DISFAVOURED on data in hand \u2014 verified this node, see A261 verification",
+ "empty_cells": {
+  "S_v_C x SHEEN (SHEEN without MATTE)": {
+   "frames": "PRESENT 6/6 both families",
+   "computable_now": true
+  },
+  "M_v_C x FWHM (MATTE without SHEEN)": {
+   "frames": "PRESENT 6/6 both families",
+   "computable_now": true
+  },
+  "M_v_C x GRANULARITY (corroborator)": {
+   "frames": "ABSENT \u2014 MATTE texture frames do not exist at the ensemble seeds (texture frames exist only for CREAM, POWDER_SATIN, PRESSED_POWDER)",
+   "computable_now": false,
+   "would_require": "6 new MATTE texture renders \u2014 NOT rendered, NOT authorized here"
+  }
+ },
+ "branches_declared": {
+  "unstable|stable": "AXIS_SPECIFIC \u2014 the SHEEN instrument is the suspect",
+  "stable|unstable": "FAMILY_SPECIFIC \u2014 MATTE's rendering is the suspect",
+  "unstable|unstable": "BROADER_THAN_EITHER \u2014 enumerate again before diagnosing",
+  "stable|stable": "PAIRING_INTRINSIC \u2014 the instability lives in the pairing; the material-intrinsic reading, which would have to be DECLARED as a limitation rather than fixed as a defect"
+ },
+ "cardinality_assertion": {
+  "dimensions": {
+   "SHEEN_without_MATTE": [
+    "stable",
+    "unstable"
+   ],
+   "MATTE_without_SHEEN": [
+    "stable",
+    "unstable"
+   ]
+  },
+  "cells": 4,
+  "declared": 4,
+  "complete": true
+ },
+ "every_branch_publishable": "including PAIRING_INTRINSIC, which is the branch that would make M6's exit gate declare a LIMITATION rather than clear a defect",
+ "no_diagnosis_named_A264": "not rig-injected, not material-intrinsic, not as a hedged working hypothesis. The sayable statement is: the separation is unstable across seeds in the two SHEEN/MATTE tests and stable in the two SATIN_VS_CREAM tests, and the design cannot currently attribute that to the axis, the family, or the material",
+ "computation_deferred_to": "the next node, per the owner's ordering",
+ "A492_CORRECTION_IN_PLACE": {
+  "claim": "M_v_C x FWHM: frames PRESENT 6/6 both families, computable_now true",
+  "status": "WRONG_ON_THE_MATTE_SIDE",
+  "evidence": "P1 content-derived inventory: POWDER_MATTE has NO frames at any declared-ensemble seed in either the mens_lobe or tx_mens_tex campaign; CREAM has all six",
+  "not_deleted": "the wrong claim is why we looked",
+  "correct_half": "the texture-frame statement is verbatim correct"
+ }
+}

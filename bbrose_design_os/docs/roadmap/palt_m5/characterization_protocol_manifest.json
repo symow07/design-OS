@@ -1,0 +1,32 @@
+{
+  "record_type": "characterization_protocol_manifest/1.0",
+  "date": "2026-08-07",
+  "architecture": "one protocol, three fixed sub-rigs selected by the physical question, never by the desired answer",
+  "sub_rigs": {
+    "DIELECTRIC_LOBE_RIG": {
+      "verdict": "PASS",
+      "basis": "matte/satin ruling \u2014 pass law, 7 controls, 8 perturbations",
+      "validity": "peak window 0.35-0.92, zero clipping"
+    },
+    "REFLECTIVE_MATERIAL_RIG": {
+      "verdict": "PASS",
+      "commissioning": "mirror reference pattern contrast 0.279 >= 0.20",
+      "glossy_vs_metallic": "4 independent axes clear (contrast 0.844, edge sharpness 1.136, coherence 0.612, environment correlation 1.065); metal correlates 0.988 with the mirror reference, glossy -0.077",
+      "controls": "5 of 5 behaved",
+      "robustness": "8 of 8 stable"
+    },
+    "TRANSMISSION_RIG": {
+      "verdict": "PASS",
+      "fixture": "closed plates \u2014 an open sheet bends a transmitted ray permanently; a plate offsets it",
+      "pairs": "3 of 3 clear >= 2 independent axes",
+      "exposure_control": "behaved"
+    }
+  },
+  "commissioning_defects_caught_by_the_rigs_own_gates": [
+    "reflective: first specular source clipped 128k samples (2.4e6 -> 9.0e5, window unchanged)",
+    "transmission: target off the camera sight line (0.0 reference contrast)",
+    "transmission: 26mm periodic bars aliased under refraction (fine aperiodic pattern)",
+    "transmission: open-sheet fixture measured a refraction artefact (closed plates)"
+  ],
+  "M5_CHARACTERIZATION_PROTOCOL": "PASS"
+}

@@ -1,0 +1,136 @@
+{
+ "record_type": "a589_two_measurements/1.0",
+ "date": "2026-08-13",
+ "protocol_identity_at_run": "9c2df485891b8e27",
+ "question": "A583 \u2014 which measurement does the SATIN_VS_CREAM/GRANULARITY headline number belong to? Identify the measurements; do not reproduce them.",
+ "NOTHING_REPRODUCED": "no axis value was computed in this node, from any frame, by any route. Every statement below rests on committed code, committed records, git history, or file presence.",
+ "M1_THE_PAIR_RULING_CENSUS": {
+  "a_POPULATION": {
+   "n": "ONE material instance per family",
+   "what_n_counts": "the labels n6 and n8 count FAMILIES IN THE CENSUS, not seeds and not frames. axis_independence_matrix_n6.json carries census_families as an explicit 6-member list; a2_firing_result.json::census_n8.granularity carries 8 keys, the same six plus BAKED and MARBLED.",
+   "census_families_n6": [
+    "CREAM",
+    "POWDER_MATTE",
+    "POWDER_METALLIC",
+    "POWDER_SATIN",
+    "PRESSED_POWDER",
+    "SHIMMER"
+   ],
+   "seeds": {
+    "POWDER_SATIN": 41,
+    "CREAM": 48,
+    "source": "palette_powder_texture_axes.py::rule_diffuse_pairs, seeds = {POWDER_MATTE: 40, POWDER_SATIN: 41, PRESSED_POWDER: 47, CREAM: 48} \u2014 committed code, not inferred",
+    "note": "the two members are measured at DIFFERENT seeds, so M1's comparison is cross-seed as well as cross-family"
+   }
+  },
+  "b_SAME_PAIR_IN_BOTH_RECORDS": {
+   "n6": {
+    "CREAM": 0.063597,
+    "POWDER_MATTE": 0.082618,
+    "POWDER_METALLIC": 0.072389,
+    "POWDER_SATIN": 0.040564,
+    "PRESSED_POWDER": 0.031566,
+    "SHIMMER": 0.173517
+   },
+   "n8": {
+    "BAKED": 0.14988,
+    "CREAM": 0.063597,
+    "MARBLED": 0.046502,
+    "POWDER_MATTE": 0.082618,
+    "POWDER_METALLIC": 0.072389,
+    "POWDER_SATIN": 0.040564,
+    "PRESSED_POWDER": 0.031566,
+    "SHIMMER": 0.173517
+   },
+   "identical_on_all_six_shared_families": true,
+   "finding": "the six n6 values are carried into n8 BYTE-IDENTICAL; n8 adds BAKED and MARBLED and recomputes nothing. The population label changed from 6 to 8 while the six existing values did not move."
+  },
+  "c_RIG": {
+   "value": "TEXTURE (mirror-placed source)",
+   "documentary_ground": [
+    "a2_firing_result.json::part_1_census \u2014 'texture rig, per-member calibrated'",
+    "rule_diffuse_pairs calls characterize_texture_pair, which applies PR.glitter_rig_overrides()",
+    "the frames it writes are docs/roadmap/palt_m6/texture_axes/swatch_tx_SATIN_VS_CREAM_{POWDER_SATIN,CREAM}.*, present on disk"
+   ],
+   "NOT_inferred_from_identity_hashes": "geometry_identity, camera_identity and lighting_contract_identity are IDENTICAL between the texture and lobe frames (720d17daee36e487 / 7288018cf21f5c4b / ba2d457cb68ddff5), so those hashes do NOT distinguish the rigs and are not used here as if they did."
+  },
+  "d_CALIBRATION": {
+   "value": "PER-MEMBER, ESTABLISHED",
+   "documentary_ground": "the full probe/base/cal/tx quartet exists on disk for both members \u2014 swatch_{probe,base,cal,tx}_SATIN_VS_CREAM_{POWDER_SATIN,CREAM}.json \u2014 which is exactly what characterize_texture_pair emits when it iterates each member to CAL_TARGET inside SUBJECT_WINDOW."
+  },
+  "e_TIME": {
+   "n6": "commit 5aba427, 2026-08-07",
+   "n8": "commit eba9a7a, 2026-08-08",
+   "ruling_record": "diffuse_pair_rulings_phase1.json added in commit 382f372, 2026-08-07"
+  }
+ },
+ "M2_THE_PER_SEED_TABLE": {
+  "a_POPULATION": {
+   "n": "6 seeds x 2 families = 12 measurements",
+   "seeds": [
+    40,
+    81,
+    82,
+    83,
+    84,
+    99
+   ],
+   "what_n_counts": "SEEDS, and the SAME six seeds for both families, so M2's per-seed clearing is a same-seed comparison"
+  },
+  "b_SAME_PAIR_IN_BOTH_RECORDS": "NOT_APPLICABLE \u2014 M2 is not a census",
+  "c_RIG": {
+   "value": "TEXTURE",
+   "documentary_ground": "a222_named_test_declaration.json, which carries declared_before_any_clearing_computed = true, states test 4's inputs as 'SATIN + CREAM texture frames (swatch_tx_mens_tex_*), same six seeds \u2014 present'. 72 such files exist (3 families x 6 seeds x 4 artifacts)."
+  },
+  "d_CALIBRATION": {
+   "value": "UNESTABLISHED",
+   "extent_A564": {
+    "predicate_1": "filename prefix swatch_probe_mens_tex, swatch_base_mens_tex or swatch_cal_mens_tex \u2014 the quartet characterize_texture_pair always emits",
+    "population_1": "all files under docs/",
+    "result_1": "0 matches; only swatch_tx_mens_tex_* exist",
+    "predicate_2": "any record outside the frame directory mentioning 'mens_tex' and stating an energy or a calibration",
+    "population_2": "the 7 non-frame records that mention mens_tex at all",
+    "result_2": "0 state either",
+    "predicate_3": "an energy or calibration field in the frame record schema itself",
+    "population_3": "the 13 top-level keys of material_scene_linear_measurement/1.0",
+    "result_3": "no such field exists; the schema cannot record it"
+   },
+   "why_UNESTABLISHED_and_not_ABSENT": "measured_pair_at reuses a known energy and emits ONLY tx_ frames, so a disk state with no quartet is exactly what a calibrated-elsewhere reuse looks like. Two routes are consistent with the evidence and the corpus does not fix which was taken."
+  },
+  "e_TIME": "commit c4956fe, 2026-08-11"
+ },
+ "A584_PREDICTION": "the same pair 0.040564 / 0.063597 appears in BOTH the n6 and the n8 record",
+ "A584_SCORED": "HELD",
+ "A584_detail": "held, and more strongly than worded: not merely the SATIN and CREAM pair but ALL SIX shared families are byte-identical across n6 and n8. The owner's stated reasoning \u2014 that a value was carried across a population-label change without being recomputed \u2014 is confirmed for six of six.",
+ "A585_VERDICT": "ATTRIBUTED",
+ "A585_chain": {
+  "1_committed_code_fixes_the_members_and_their_order": "RULING_PAIRS = (..., ('SATIN_VS_CREAM', POWDER_SATIN, CREAM)) fixes fam_a = POWDER_SATIN and fam_b = CREAM",
+  "2_committed_code_fixes_the_seeds": "rule_diffuse_pairs seeds POWDER_SATIN 41, CREAM 48",
+  "3_the_code_was_byte_identical_when_the_record_was_written": "at commit 382f372, which ADDED diffuse_pair_rulings_phase1.json, both RULING_PAIRS and the seeds dict read exactly as they do at HEAD \u2014 verified by git show at that commit, so the attribution does not assume the code never moved",
+  "4_the_record_is_that_function_s_output_by_STRUCTURE": "diffuse_pair_rulings/1.0 carries rulings keyed by the RULING_PAIRS label, each with lobe_axes, texture_axes, axes_clearing, verdict and diagnosis, and texture_axes entries shaped {a, b, relative_effect, clears} \u2014 the shape rule_diffuse_pairs builds. Its SATIN_VS_CREAM entry reads a = 0.040564, b = 0.063597 in fam_a/fam_b order.",
+  "5_the_margin_row_is_tied_by_NAME": "measurement_adequacy/phase0.json::threshold_comparison_inventory[4] is 'SATIN_VS_CREAM PASS leg / GRANULARITY cross-family effect', threshold 0.25, margin 0.1923. The tie from step 4 is by CELL NAME and by the statistic's name \u2014 a CROSS-FAMILY EFFECT, which is a single value per pair. M2 produces per-seed clearings, not a cross-family effect, so it has no candidate row here.",
+  "what_is_NOT_the_basis": "the numeric agreement between 0.4423 and the row's reading is CORROBORATION, not the basis. A585 forbids attribution by numeric match, and the chain above stands without it: steps 1-4 are code and structure, step 5 is naming."
+ },
+ "THE_EXPLANATION_OF_THE_NON_REPRODUCTION": "M1's seeds are {41, 48}. M2's ensemble is {40, 81, 82, 83, 84, 99}. The intersection is EMPTY. No aggregation over M2's per-seed values could ever have reproduced M1's family values, because M1 was measured at seeds M2 does not contain \u2014 and at a DIFFERENT seed for each of its two members. A578's non-reproduction is fully explained, documentarily, without either measurement being wrong.",
+ "A582_RESTATED_AND_NOW_SHARPENED": "a233_test4_result.json carries a per-seed table from M2 and a margin field from M1 and names neither. This is 3v's shape \u2014 which act governs must be stated rather than inferred \u2014 applied to measurements. It is the condition candidate amendment 3ac names.",
+ "A581_ASYMMETRY_RECORDED": {
+  "finding": "three of the four marked cells are in a WORSE evidentiary position than SATIN_VS_CREAM/GRANULARITY. For MATTE_VS_SATIN/SHEEN, PRESSED_VS_MATTE/SHEEN and SATIN_VS_CREAM/FWHM, a245_tests_1_3_result.json records per-seed CLEARINGS only \u2014 no family axis values anywhere in the corpus \u2014 so the reproduction question cannot even be posed for them, let alone answered.",
+  "extent_A564": "predicate = a 'per_seed' key whose leaves are per-family axis values rather than clearings; population = the 11 records carrying any 'per_seed' key among 1827 files under docs/roadmap/**/*.json; result = exactly one, a233_test4_result.json",
+  "consequence": "it governs how the three are eventually dispositioned: whatever is decided for the GRANULARITY cell on the strength of this node, the other three have strictly less behind them, not the same."
+ },
+ "A588_compliance": {
+  "reproduce_0_1923": "not attempted by any route; no axis computed",
+  "texture_rig_rerun": "NOT performed; A573 superseded, A574 stays UNSCORED and was not revived",
+  "marks": "all four keep PUBLISHED_WITHOUT_RECOVERABLE_INPUTS",
+  "withdrawal": "not performed \u2014 an owner act",
+  "either_measurement_declared_wrong": "NO. Neither has been shown wrong and neither is called wrong here. They are different measurements.",
+  "rendered": "nothing",
+  "characterization_invocations": "none spent; two of six remain",
+  "deferred_untouched": [
+   "3ac",
+   "class 24",
+   "A548 extent control",
+   "A554 harvest"
+  ]
+ }
+}

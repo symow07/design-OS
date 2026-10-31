@@ -1,0 +1,47 @@
+{
+ "record_type": "a255_per_seed_bar_verification/1.0",
+ "law": "2216115499023fa7",
+ "bar": 0.25,
+ "bar_source": "PASS_LAW.relative_effect_bar, unmoved across 34 amendments",
+ "counts": {
+  "above_bar": 23,
+  "total": 24
+ },
+ "holds": true,
+ "exceptions": [
+  {
+   "test": "SATIN_VS_CREAM / HIGHLIGHT_FWHM",
+   "seed": "81",
+   "clearing": 0.247847,
+   "misses_by": 0.00215
+  }
+ ],
+ "per_test_swing": {
+  "MATTE_VS_SATIN / SHEEN_REGION_RESPONSE": {
+   "min": 0.269411,
+   "max": 0.438376,
+   "swing": 0.16896
+  },
+  "PRESSED_VS_MATTE / SHEEN_REGION_RESPONSE": {
+   "min": 0.279001,
+   "max": 0.457347,
+   "swing": 0.17835
+  },
+  "SATIN_VS_CREAM / HIGHLIGHT_FWHM": {
+   "min": 0.247847,
+   "max": 0.308111,
+   "swing": 0.06026
+  },
+  "SATIN_VS_CREAM / GRANULARITY_INDEX (test 4)": {
+   "min": 0.400732379478274,
+   "max": 0.44107601980122035,
+   "swing": 0.04034
+  }
+ },
+ "computed_not_read": "recomputed from the committed per-seed clearings, not read off the report",
+ "A294_CORRECTION": {
+  "struck": "'adequacy tracks STABILITY not magnitude' \u2014 it does not hold as stated: GRANULARITY has BOTH the smallest swing (0.040) and the largest margin (0.1923), so four points cannot separate which dimension does the work. And 'P_v_M separates more and fails just as hard' is loose: margin-to-swing is 0.65 for P_v_M vs 0.54 for M_v_S, so P_v_M is NEARER to clearing",
+  "near_tautology": "the 1i disposition IS margin against swing under correct units, so observing that the smallest-swing case clears is substantially observing that the test computed its own output",
+  "what_SURVIVES": "23 of 24 per-seed clearings exceed the 0.25 bar while three of four comparisons fail adequacy \u2014 not tautological, not downstream of the units defect. The families DO separate at the required magnitude at nearly every seed while the separation is too variable to certify. The reframing from 'not discriminable' to 'separates but unstably' STANDS; the causal gloss does not"
+ }
+}

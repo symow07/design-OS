@@ -1,0 +1,24 @@
+{
+ "record_type": "a541_derivation_search/1.0",
+ "date": "2026-08-12",
+ "result": "DERIVATION_FOUND",
+ "artifact": "apps/pipeline/services/palette_powder_texture_axes.py",
+ "lines": 623,
+ "digest": "5df7bbe128ce1a52",
+ "evidence": {
+  "measure_texture_axes": "line 234 \u2014 computes GRANULARITY_INDEX from the frame image via high-pass and percentile spread over the median",
+  "load_scene_linear": "line 125 \u2014 reads the EXR",
+  "frame_provenance_assertion": "line 104 \u2014 ALREADY EXISTS",
+  "region_alignment_assertion": "line 150 \u2014 cross-checks the frame against the measurement record",
+  "axis_declaration": "line 69 \u2014 GRANULARITY_INDEX declared independent"
+ },
+ "A540_IS_FALSE": "A540 states \"Nothing located turns scene_linear_peak, scene_linear_mean and percentiles into GRANULARITY, FWHM or SHEEN\" and that the four cells lack both inputs and method. The METHOD half is false. The derivation exists, in the working tree, uncommitted-to-nowhere, 623 lines, with provenance assertions already written into it.",
+ "A532_IS_PARTLY_MINE_TO_CORRECT": "I reported at A532 that \"no located service performs\" the derivation. I had searched for the FRAME PREFIXES (swatch_mens_lobe, swatch_tx_mens_tex, fens) and found no service naming them \u2014 which is true and remains true \u2014 then generalised that to the derivation being absent. Searching for the AXIS NAME finds it immediately. Third instance of the same search-extent error, after the MATTE/FWHM claim and the _s(\\d+) predicate.",
+ "what_still_stands": "A521 stands unchanged: WHICH frames each published cell read is still unrecorded. The inputs are lost; the method is not. PUBLISHED_WITHOUT_RECOVERABLE_INPUTS remains correct as worded.",
+ "A542_MOOT": "re-specification is forbidden by its own condition \u2014 A542 applies only IF ABSENT, and it is not absent. Re-specifying an existing 623-line instrument from first principles would have manufactured a second method and destroyed the comparison.",
+ "A543_NOT_ATTEMPTED": "the recompute must use the FOUND derivation, not a re-specification; that is the next node",
+ "nothing_tuned": true,
+ "no_invocation_spent": true,
+ "no_mark_discharged": true,
+ "no_amendment_minted": true
+}

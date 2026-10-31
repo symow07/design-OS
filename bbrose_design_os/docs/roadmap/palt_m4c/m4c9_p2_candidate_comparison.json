@@ -1,0 +1,74 @@
+{
+  "record_type": "palette_p2_candidate_comparison/1.0",
+  "purpose": "input to the owner's PALT-P2 selection. This does NOT select. PALT_P2_SELECTED_CONCEPT remains PENDING_OWNER_SELECTION.",
+  "method": "read from the §4 asset audit already committed to this repository. No asset was re-opened, no provider call, no image generation, no OCR.",
+  "headline_finding": {
+    "finding": "FB3093/FB3090 is NOT the same product form as ES3083",
+    "es3083": "EYESHADOW_PALETTE — a multi-pan field in a thermoformed tray",
+    "fb3093": "PRESSED_POWDER_COMPACT (粉饼) — a single-pan face powder",
+    "consequence": "FB3093 is not a like-for-like second palette. Choosing it as PALT-P2 exercises a genuinely different structural case (one large pocket, no lattice) rather than a variation on the ES3083 case.",
+    "authority": "AI_READING_OF_A_RECORDED_DESCRIPTION_NOT_OWNER_CONFIRMED"
+  },
+  "what_each_would_exercise": {
+    "FB3093_as_P2": [
+      "single-pocket tray — the 3x3 and 4x3 lattices both become 1x1, which tests whether the lattice construction degenerates cleanly",
+      "a much larger pocket-to-tray ratio than either pilot has seen",
+      "artwork-heavy validation: star badges, repeating logo side panels, a '24H' wear claim and a multi-shade colour reference strip",
+      "a native .ai source with 13164 vector objects and 12 text blocks — the first real test of the M6 .AI export path at production scale"
+    ],
+    "a_second_eyeshadow_palette_as_P2": [
+      "a different pan grid against the same rectangular kernel",
+      "little new structural coverage — ES3083 already exercises it"
+    ]
+  },
+  "blocking_gaps": [
+    {
+      "gap": "the FB native .ai file is NOT present in this working copy (file_present: False for ConceptReference 11, 30 and 48); only the PNG dieline render at ConceptReference 2 is available",
+      "consequence": "the 13164-object vector source cannot be opened here, so no FB dimension can be read"
+    },
+    {
+      "gap": "rights are UNVERIFIED / RIGHTS_UNREVIEWED on every FB record, and the description reads as a competitor-adjacent 'Super Stay' styling",
+      "consequence": "an ownership and rights review is required before FB artwork drives any BBROSE deliverable"
+    },
+    {
+      "gap": "no FB record carries owner_selected_status; all read UNKNOWN_NOT_RECORDED"
+    }
+  ],
+  "recommendation_to_the_owner": {
+    "recommendation": "select FB3093/FB3090 for PALT-P2 ONLY if the intent is to broaden structural coverage to single-pan compacts; it is not a second eyeshadow palette",
+    "prerequisite": "resolve the rights review and locate the native .ai source, or accept that P2 runs from the PNG dieline alone with no readable dimension",
+    "not_a_selection": true
+  },
+  "candidates_considered": [
+    {
+      "reference": 2,
+      "title": "FB3093__FB3090粉饼",
+      "category": "PRESSED_POWDER_COMPACT",
+      "file_present": true,
+      "kind": "PNG dieline render"
+    },
+    {
+      "reference": 11,
+      "title": "FB3093  FB3090粉饼",
+      "category": "PRESSED_POWDER_COMPACT",
+      "file_present": false,
+      "kind": "native .ai, 13164 objects, 12 text blocks"
+    },
+    {
+      "reference": 30,
+      "title": "FB3093  FB3090粉饼",
+      "file_present": false,
+      "kind": "native .ai (duplicate link, task 51)"
+    },
+    {
+      "reference": 48,
+      "title": "FB3093  FB3090粉饼",
+      "file_present": false,
+      "kind": "native .ai (duplicate link, task 52)"
+    }
+  ],
+  "note_on_duplicates": "references 11, 30 and 48 are three links to ONE native source (identical library_item_id). They are not three designs, and a P2 selection must not be read as covering three assets.",
+  "PALT_P2_SELECTED_CONCEPT": "PENDING_OWNER_SELECTION",
+  "owner_approved": false,
+  "manufacturing_authority": "NOT_ESTABLISHED"
+}

@@ -1,0 +1,130 @@
+{
+  "record_type": "palette_evidence_render_contract/1.0",
+  "version": 1,
+  "contract": {
+    "schema": "palette_evidence_render_contract/1.0",
+    "version": 1,
+    "purpose": "TECHNICAL_FORM_LEGIBILITY_NOT_CLIENT_PRESENTATION_BEAUTY",
+    "clay_albedo": [
+      0.42,
+      0.42,
+      0.425
+    ],
+    "clay_roughness": 0.62,
+    "beauty_colour": false,
+    "cosmetic_artwork": false,
+    "material_styling": false,
+    "backdrop_colour": [
+      0.055,
+      0.055,
+      0.062
+    ],
+    "backdrop_strength": 0.55,
+    "why_dark": "the clay is a mid grey; a mid-grey backdrop leaves a flat elevation with no silhouette. A dark backdrop separates every view without touching the part.",
+    "key_light": {
+      "loc": [
+        -160,
+        -220,
+        260
+      ],
+      "rot_deg": [
+        42,
+        0,
+        -36
+      ],
+      "size": [
+        260,
+        260
+      ],
+      "energy": 520000.0
+    },
+    "fill_light": {
+      "loc": [
+        200,
+        -180,
+        130
+      ],
+      "rot_deg": [
+        66,
+        0,
+        48
+      ],
+      "size": [
+        220,
+        220
+      ],
+      "energy": 150000.0
+    },
+    "rim_light": {
+      "loc": [
+        90,
+        230,
+        200
+      ],
+      "rot_deg": [
+        52,
+        0,
+        160
+      ],
+      "size": [
+        60,
+        240
+      ],
+      "energy": 1150000.0,
+      "role": "edge separation against the dark backdrop"
+    },
+    "second_rim_light": {
+      "loc": [
+        -230,
+        120,
+        170
+      ],
+      "rot_deg": [
+        58,
+        0,
+        -110
+      ],
+      "size": [
+        60,
+        240
+      ],
+      "energy": 900000.0,
+      "role": "separation for the opposite elevation"
+    },
+    "dramatic_lighting": false,
+    "depth_of_field": false,
+    "engine": "CYCLES",
+    "device": "CPU",
+    "seed": 0,
+    "samples": 40,
+    "denoising": false,
+    "view_transform": "Standard",
+    "exposure": 0.0,
+    "gamma": 1.0,
+    "colour_depth": "8",
+    "film_transparent": false,
+    "resolution": [
+      1500,
+      1500
+    ],
+    "camera_mode": "ORTHOGRAPHIC",
+    "contact_shading": "AREA_LIGHT_SOFT_SHADOW_NO_POST_AO",
+    "post_processing": "NONE",
+    "edge_enhancement": false,
+    "silhouette_altering_post": false,
+    "minimum_subject_coverage": 0.05,
+    "minimum_luminance_contrast": 40.0,
+    "thresholds_predeclared": true
+  },
+  "frame_rules": {
+    "CLOSED_STATE_FRAME": "derived from the CLOSED assembly bounds",
+    "OPEN_STATE_FRAME": "derived from the articulated open assembly bounds",
+    "DETAIL_FRAME": "derived from the selected component bounds plus a deterministic margin",
+    "PAN_LAYOUT_FRAME": "derived from the tray and pan-field bounds"
+  },
+  "frame_margin": 1.18,
+  "detail_margin_mm": 8.0,
+  "contract_identity": "2c9969e73c4d4904",
+  "changes_geometry": false,
+  "owner_approved": false
+}

@@ -1,0 +1,72 @@
+{
+ "record_type": "a509_browser_flake_characterization/1.0",
+ "date": "2026-08-12",
+ "bound": "A189 one node",
+ "outcome": "CAUSE_NOT_ESTABLISHED_WITHIN_BOUND",
+ "A511_answered_first": {
+  "question": "does isolation now fail reproducibly",
+  "runs": [
+   "inv1 12 passed",
+   "inv2 12 passed",
+   "inv3 12 passed"
+  ],
+  "answer": "NO \u2014 isolation does NOT fail reproducibly",
+  "consequence": "H2 REFUTED. A333 12/12-in-isolation signature has NOT moved.",
+  "my_escalation_was_wrong": "last node I reported isolation had moved to 10/12 and called it the first observation inconsistent with transient-under-load. Three fresh isolated runs return 12/12. The 10/12 was a SINGLE observation taken immediately after a full-suite gate run, and I generalised from n=1 into an escalated question that shaped this entire node. The owner adopted that reasoning verbatim at A505. The reasoning was mine and it was under-evidenced."
+ },
+ "invocation_ledger": {
+  "granted": 6,
+  "spent": 4,
+  "unspent": 2,
+  "runs": [
+   {
+    "inv": 1,
+    "scope": "browser file isolated",
+    "result": "12 passed",
+    "PASS_RECORDED": true
+   },
+   {
+    "inv": 2,
+    "scope": "browser file isolated",
+    "result": "12 passed",
+    "PASS_RECORDED": true
+   },
+   {
+    "inv": 3,
+    "scope": "browser file isolated",
+    "result": "12 passed",
+    "PASS_RECORDED": true
+   },
+   {
+    "inv": 4,
+    "scope": "apps/pipeline/tests/ entire dir",
+    "result": "0 browser failures; 1 unrelated failure test_green_suite_passes_gate",
+    "PASS_RECORDED": true
+   }
+  ],
+  "why_stopped_at_four": "A508 says if six is not enough, stop and say what was learned and what would be needed, rather than stretching six into an unbounded loop. Invocations 5 and 6 would each buy one full-suite run at ~8.5 minutes, and the full suite has already been observed RED, RED, GREEN \u2014 so two more samples cannot establish a rate, only extend an inconclusive one.",
+  "fence_restated": "NONE of these results is admissible as gate satisfaction, none counts toward any pass, and no flake id was closed or downgraded"
+ },
+ "hypotheses_scored": {
+  "H1_SHARED_MUTABLE_STATE": "NOT_ESTABLISHED \u2014 not refuted either. The declared refuting observation (a single test failing alone in a fresh process) was SOUGHT and NOT FOUND: isolation is clean 3/3.",
+  "H2_ISOLATION_SIGNATURE_MOVED": "REFUTED by its own declared refuting observation",
+  "H3_LOAD_OR_TIMING": "NOT_REFUTED \u2014 its refuting observation was the isolated file failing with nothing else running, and that did not occur",
+  "H4_ORDER_DEPENDENCE_WITHIN_THE_FILE": "NOT_TESTED \u2014 invocations 5 and 6 unspent"
+ },
+ "A510_owner_prediction": {
+  "prediction": "H1 SHARED_MUTABLE_STATE, not load/timing",
+  "scored": "NOT_TESTED",
+  "why": "the evidence narrowed the location but discriminated neither H1 nor H3; asserting either would be manufacturing a cause to satisfy the bound, which A509 forbids"
+ },
+ "what_was_narrowed": {
+  "isolated_file": "clean 3/3",
+  "pipeline_dir_only": "0 browser failures",
+  "full_apps_suite": "RED (4), RED (4), GREEN (0)",
+  "reading": "the failure needs the full-apps context and is intermittent even there. It does not reproduce in isolation or within the pipeline test directory alone."
+ },
+ "what_would_be_needed": "a harness that runs the full apps suite N>=10 times recording the failing set each time, plus a bisection over the non-pipeline apps that precede pipeline in collection order. That is a multi-hour characterization and exceeds A189 one-node bound.",
+ "A512": "the 5990/0 green run stands BESIDE the red ones, not over them",
+ "no_amendment_minted": true,
+ "no_flake_id_moved": true,
+ "nothing_rendered": true
+}

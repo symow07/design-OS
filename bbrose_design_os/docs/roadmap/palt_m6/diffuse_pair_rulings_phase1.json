@@ -1,0 +1,195 @@
+{
+  "record_type": "diffuse_pair_rulings/1.0",
+  "material_definitions_changed": false,
+  "admitted_texture_axes": [
+    "GRANULARITY_INDEX"
+  ],
+  "pass_law": "2 independent axes at >= 25% \u2014 unchanged",
+  "rulings": {
+    "MATTE_VS_SATIN": {
+      "lobe_axes": {
+        "HIGHLIGHT_FWHM": {
+          "a": 0.164513,
+          "b": 0.176662,
+          "relative_effect": 0.071224,
+          "bar": 0.25,
+          "clears": false
+        },
+        "HIGHLIGHT_PEAK": {
+          "a": 39.449095,
+          "b": 37.623124,
+          "relative_effect": 0.047383,
+          "bar": 0.25,
+          "clears": false
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "a": 1.521231,
+          "b": 1.353835,
+          "relative_effect": 0.116447,
+          "bar": 0.25,
+          "clears": false
+        },
+        "GRAZING_RESPONSE": {
+          "a": 0.077493,
+          "b": 0.092742,
+          "relative_effect": 0.179149,
+          "bar": 0.25,
+          "clears": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "a": 0.081379,
+          "b": 0.124967,
+          "relative_effect": 0.422477,
+          "bar": 0.25,
+          "clears": true
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "a": 0.145254,
+          "b": 0.209112,
+          "relative_effect": 0.360409,
+          "bar": 0.25,
+          "clears": true
+        }
+      },
+      "texture_axes": {
+        "GRANULARITY_INDEX": {
+          "a": 0.082618,
+          "b": 0.040564,
+          "relative_effect": 0.6828,
+          "clears": true
+        }
+      },
+      "axes_clearing": [
+        "SHEEN_REGION_RESPONSE",
+        "EDGE_HIGHLIGHT_RESPONSE",
+        "GRANULARITY_INDEX"
+      ],
+      "verdict": "PASS",
+      "diagnosis": "PREVIOUS_RIG_AXIS_INSUFFICIENCY"
+    },
+    "PRESSED_VS_MATTE": {
+      "lobe_axes": {
+        "HIGHLIGHT_FWHM": {
+          "a": 0.22465,
+          "b": 0.164513,
+          "relative_effect": 0.309062,
+          "bar": 0.25,
+          "clears": true
+        },
+        "HIGHLIGHT_PEAK": {
+          "a": 37.729011,
+          "b": 39.449095,
+          "relative_effect": 0.044574,
+          "bar": 0.25,
+          "clears": false
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "a": 1.450972,
+          "b": 1.521231,
+          "relative_effect": 0.047278,
+          "bar": 0.25,
+          "clears": false
+        },
+        "GRAZING_RESPONSE": {
+          "a": 0.085862,
+          "b": 0.077493,
+          "relative_effect": 0.102462,
+          "bar": 0.25,
+          "clears": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "a": 0.128235,
+          "b": 0.081379,
+          "relative_effect": 0.447074,
+          "bar": 0.25,
+          "clears": true
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "a": 0.222265,
+          "b": 0.145254,
+          "relative_effect": 0.419087,
+          "bar": 0.25,
+          "clears": true
+        }
+      },
+      "texture_axes": {
+        "GRANULARITY_INDEX": {
+          "a": 0.031566,
+          "b": 0.082618,
+          "relative_effect": 0.8942,
+          "clears": true
+        }
+      },
+      "axes_clearing": [
+        "HIGHLIGHT_FWHM",
+        "SHEEN_REGION_RESPONSE",
+        "EDGE_HIGHLIGHT_RESPONSE",
+        "GRANULARITY_INDEX"
+      ],
+      "verdict": "PASS",
+      "diagnosis": "PREVIOUS_RIG_AXIS_INSUFFICIENCY"
+    },
+    "SATIN_VS_CREAM": {
+      "lobe_axes": {
+        "HIGHLIGHT_FWHM": {
+          "a": 0.176662,
+          "b": 0.23521,
+          "relative_effect": 0.2843,
+          "bar": 0.25,
+          "clears": true
+        },
+        "HIGHLIGHT_PEAK": {
+          "a": 37.623124,
+          "b": 37.667481,
+          "relative_effect": 0.001178,
+          "bar": 0.25,
+          "clears": false
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "a": 1.353835,
+          "b": 1.450882,
+          "relative_effect": 0.069203,
+          "bar": 0.25,
+          "clears": false
+        },
+        "GRAZING_RESPONSE": {
+          "a": 0.092742,
+          "b": 0.105817,
+          "relative_effect": 0.131701,
+          "bar": 0.25,
+          "clears": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "a": 0.124967,
+          "b": 0.160163,
+          "relative_effect": 0.246875,
+          "bar": 0.25,
+          "clears": false
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "a": 0.209112,
+          "b": 0.244377,
+          "relative_effect": 0.155528,
+          "bar": 0.25,
+          "clears": false
+        }
+      },
+      "texture_axes": {
+        "GRANULARITY_INDEX": {
+          "a": 0.040564,
+          "b": 0.063597,
+          "relative_effect": 0.4423,
+          "clears": true
+        }
+      },
+      "axes_clearing": [
+        "HIGHLIGHT_FWHM",
+        "GRANULARITY_INDEX"
+      ],
+      "verdict": "PASS",
+      "diagnosis": "PREVIOUS_RIG_AXIS_INSUFFICIENCY"
+    }
+  },
+  "failed_pairs": [],
+  "verdict": "PASS"
+}

@@ -1,0 +1,31 @@
+{
+ "record_type": "m7_artwork_scope_ruling/1.0",
+ "created_at": "2026-08-13",
+ "decided_by": "PROJECT_OWNER",
+ "RULING": "M7's artwork deliverable is BBROSE ORIGINAL artwork on ES3083 geometry, not reproduction of the vendor's lid artwork.",
+ "question_it_answers": {
+  "raised_at": "7d985bb, Step 4(a)",
+  "quoted": "does M7 require reproducing the vendor's lid artwork, or producing BBROSE's own lid artwork on ES3083 geometry?",
+  "why_it_could_not_be_answered_from_the_record": "extent: every file containing PALT-M7 or palt_m7 — six — none distinguished the two readings, and the only two that define M7 disagreed: progress_tracker.json titles it 'ES3083 artwork + shade labels + editable .AI (Illustrator 2026); then PALT-P2 FB3093 / PALT-P3 experimental', while palt_m1/palette_roadmap.md:45 gives 'PALT-P2 and PALT-P3 pilots'."
+ },
+ "what_it_resolves": {
+  "blocker": "ES3083_TYPEFACE_UNIDENTIFIED",
+  "how": "the blocker was CONDITIONAL on this exact question. Under vendor reproduction the vendor's outlined typeface would be genuinely required and unrecoverable; under BBROSE-original it never appears. The owner has ruled BBROSE-original, so the blocker's condition is resolved and it is WITHDRAWN in palette_roadmap_continuation_state.json."
+ },
+ "what_it_explicitly_does_NOT_cover": {
+  "typeface": "it does NOT choose a typeface. BBROSE has no settled brand typeface: the VQ2 Imbue approval carries scope 'VQ-2 concept-front artwork only — not Gate-2, not manufacturability, not production authority' with approved_words exactly ['Rose','Damascena']. Choosing a palette typeface remains an open owner design decision, which is a decision and not a blocker.",
+  "lid_layout": "it does NOT settle lid layout.",
+  "es3083_geometry_authority": "it makes NO claim about ES3083 geometry authority, which remains DERIVED_BOUNDED_NOT_MEASURED. D3 ES3083_DIMENSIONS_UNREADABLE is untouched.",
+  "vendor_sheet_status": "the vendor sheet remains the design-intent source it always was — M4C-4 read intent from it; this ruling says the OUTPUT is BBROSE's, not that the input is discarded."
+ },
+ "M4C4_PRECONDITION_CHECK": {
+  "why_checked": "a ruling must not contradict a confirmation the owner already gave. Checked BEFORE the ruling was written.",
+  "result": "NO CONFLICT",
+  "finding_1_no_confirmation_exists_on_disk": "M4C-4 confirmations persist to the DB model PaletteIntentConfirmation via palette_confirmation_flow.save_confirmation, not to any committed record. TWO committed records state the panel was never confirmed at all: open_defect_inventory.md D4 ('served but never confirmed by the owner in a browser') and palette_roadmap_continuation_state.json blocker VQ1_HUMAN_STRUCTURAL_REVIEW ('drafted and served but has NOT been confirmed by the owner in the browser'). So there is no confirmation on record that this ruling could contradict.",
+  "finding_2_and_it_would_not_have_conflicted_anyway": "the artwork fields M4C-4 would commit (palette_es3083_intent.py:103-125) classify what was READ from the vendor sheet, not what must be reproduced: typography_zones is HARD but names WORDS ('EYE SHADOW','OUTER GLOW','BBROSE','SOMBRA DE OJOS') and no typeface; shade_names records that a label strip exists; ornament and pattern are DECORATIVE, and ornament carries 'ornament only — must not become moulded relief'. Nothing in that set commits the owner to vendor artwork FIDELITY.",
+  "extent": "grep over docs/ for a persisted M4C-4 confirmation verdict — none; plus a read of every artwork-classified field in palette_es3083_intent.py",
+  "FLAG_ON_THE_INSTRUCTING_BRIEF": "the brief describes 'the M4C-4 panel the owner confirmed on 2026-08-12'. Two committed records say it was served and NEVER confirmed. Reported rather than reconciled: either the confirmation happened in a browser against a DB this working copy does not carry, or D4 and the continuation-state blocker are stale. Both still stand as written."
+ },
+ "why_this_location": "docs/roadmap/palt_m4c/ holds the ES3083 authority classification (palt_m4c_es3083_authority.json) and the continuation state whose blocker this resolves. Rejected: docs/production_authority/, where supplier_outreach_deferral.json lives — that directory is scoped to manufacturing and supplier gates, and this is a roadmap scope ruling; and docs/roadmap/palt_m6/, which would bind an M7 scope decision into the M6 record-digest chain for no reason.",
+ "owner_approved": true
+}

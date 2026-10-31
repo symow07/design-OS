@@ -1,0 +1,55 @@
+{
+  "record_type": "palette_evidence_manifest/1.0",
+  "total_deferred_images": 41,
+  "milestones": {
+    "A3R": {
+      "deferred_image_count": 13,
+      "named_diagnostics_total": 19,
+      "produced": 1,
+      "state": "NOT_PRODUCED",
+      "quoted": "no evidence images were produced in A3R — 18 of the 19 named diagnostics are missing.",
+      "source": "docs/roadmap/palt_m4b_a3r/a3r_validation_report.json"
+    },
+    "A3F": {
+      "deferred_image_count": 16,
+      "state": "NOT_PRODUCED",
+      "quoted": "no A3F evidence images and none of the 13 deferred A3R images were produced",
+      "source": "docs/roadmap/palt_m4b_a3f/a3f_validation_report.json"
+    },
+    "A3M": {
+      "deferred_image_count": 12,
+      "state": "NOT_PRODUCED",
+      "quoted": "no A3R, A3F or A3M evidence images were produced; the gap is now three milestones deep",
+      "source": "docs/roadmap/palt_m4b_a3m/a3m_validation_report.json"
+    }
+  },
+  "image_names": "NOT_ENUMERATED_IN_REPOSITORY",
+  "why_names_absent": "the individual diagnostic names were specified in the owner directives and never persisted here; inventing 41 filenames would produce a manifest that looks complete and is not",
+  "produced_numerical_evidence": {
+    "A3R_thickness_convergence": "docs/roadmap/palt_m4b_a3r/thickness_convergence_table.json",
+    "A3R_method_comparison": "docs/roadmap/palt_m4b_a3r/thickness_method_comparison.json",
+    "A3R_minimum_region": "docs/roadmap/palt_m4b_a3r/minimum_region_manifest.json",
+    "A3M_identity_migration": "docs/roadmap/palt_m4b_a3m/identity_migration_map.json",
+    "A3P_cup_wall_proof": "docs/roadmap/palt_m4b_a3p/a3p_cup_wall_proof.json",
+    "A3P_classifier_validation": "docs/roadmap/palt_m4b_a3p/a3p_classifier_validation.json"
+  },
+  "superseded_findings": {
+    "A3M_SECTION_6_CUP_WALL_UNPROVEN": {
+      "superseded_by": "A3P build-time FaceLog provenance",
+      "evidence": "docs/roadmap/palt_m4b_a3p/a3p_cup_wall_proof.json",
+      "why": "z-band classification put deck-skin faces inside the cup-wall band; provenance replaces inference"
+    }
+  },
+  "blocks": [
+    "PALT_M5 pilot evidence package",
+    "any claim that A3R/A3F/A3M were VISUALLY verified"
+  ],
+  "does_not_block": [
+    "the numerical thickness authority, which has durable evidence",
+    "geometry construction, which is deterministic and tested"
+  ],
+  "requires": "the pinned Blender 4.5.12 LTS render runtime, in its VISUALIZATION_AND_RENDERING_ONLY role",
+  "visual_verification_claimed": false,
+  "owner_approved": false,
+  "manufacturing_authority": "NOT_ESTABLISHED"
+}

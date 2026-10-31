@@ -1,0 +1,212 @@
+{
+ "record_type": "h2_design_request_index/1.0",
+ "source_of_truth": "DERIVED read-only from the run trees + the emission record — regenerate via h2_design_request.design_request_index; owner decisions land ONLY through the clearance sheet",
+ "requests": [
+  {
+   "request_id": "es3083_lid_alt_01",
+   "product": "BBROSE ES3083 eyeshadow palette — alternate lid artwork direction",
+   "stage": "accepted",
+   "brief_measurement_tiers": [
+    "MEASURED"
+   ],
+   "ledger_entries": 30,
+   "record_defects": [],
+   "candidates": [
+    {
+     "candidate_id": "A1",
+     "title": "ROSE-GESTURE — one unbroken monoline rose, off-centre, cropped by the frame",
+     "direction": "botanical_gesture",
+     "png": "es3083_alt_lid_A1_rose_gesture.png"
+    },
+    {
+     "candidate_id": "A2",
+     "title": "TWELVE-ROSETTE — six interleaved twelve-lobed rings; the module count echoes the palette's 12-pan interior",
+     "direction": "geometric_rosette",
+     "png": "es3083_alt_lid_A2_twelve_rosette.png"
+    },
+    {
+     "candidate_id": "A3",
+     "title": "LETTER-FIELD — the brand's own B at monumental scale as letter-as-image",
+     "direction": "typographic_play",
+     "png": "es3083_alt_lid_A3_letter_field.png"
+    },
+    {
+     "candidate_id": "A4",
+     "title": "NOCTURNE — inverted ground: deep 627 C lid, pale 621 C type, keyline and original leaf sprig",
+     "direction": "tonal_inversion",
+     "png": "es3083_alt_lid_A4_nocturne.png"
+    },
+    {
+     "candidate_id": "A5",
+     "title": "QUIET-CORNER — near-empty sage field, lower-left ranged wordmark inside a hairline patch",
+     "direction": "quiet_minimal",
+     "png": "es3083_alt_lid_A5_quiet_corner.png"
+    }
+   ],
+   "contact_sheet": true,
+   "emissions": [
+    {
+     "ai": "es3083_lid_A2.ai",
+     "ai_sha256": "c331ec366330e8cc761c8bba87311ebe0c722f9ca85983bdf22fb1319ae49d82",
+     "owner_approved": true,
+     "superseded": false
+    }
+   ],
+   "owner_decisions": [
+    {
+     "record": "owner_pick_ingestion",
+     "authority": "OWNER_BLOCKER_CLEARANCE.md §J (J1), SIGNED: BBrose (PROJECT_OWNER, via Cowork question session), DATE: 2026-08-15",
+     "decision_dialect": "pick_verbatim_field",
+     "verdict": "A2 Twelve-Rosette",
+     "verdict_verbatim": "A2 Twelve-Rosette",
+     "date": "2026-08-15"
+    },
+    {
+     "record": "emission acceptance (es3083_lid_A2.ai)",
+     "authority": "OWNER_BLOCKER_CLEARANCE.md §K (K1), SIGNED: BBrose (PROJECT_OWNER, via Cowork question session), DATE: 2026-08-15",
+     "decision_dialect": "acceptance_record",
+     "verdict": "ACCEPTED",
+     "verdict_verbatim": "Accepted",
+     "date": "2026-08-15"
+    }
+   ]
+  },
+  {
+   "request_id": "fb3093_compact_01",
+   "product": "BBROSE FB3093 face-powder compact — lid artwork direction",
+   "stage": "rejected",
+   "brief_measurement_tiers": [
+    "PRIOR"
+   ],
+   "ledger_entries": 27,
+   "record_defects": [],
+   "candidates": [
+    {
+     "candidate_id": "B1",
+     "title": "POWDER-BOX GARLAND — heritage perimeter leaf garland on a hairline frame, centered stack",
+     "direction": "heritage_border",
+     "png": "fb3093_lid_B1_powder_box_garland.png"
+    },
+    {
+     "candidate_id": "B2",
+     "title": "VEIL MESH — all-over hairline 45° mesh reading as fabric over skin, calm clearing for the words",
+     "direction": "veil_mesh",
+     "png": "fb3093_lid_B2_veil_mesh.png"
+    },
+    {
+     "candidate_id": "B3",
+     "title": "PUFF BLOOM — the ghost of a powder puff pressed once; tone from dot density alone",
+     "direction": "powder_bloom",
+     "png": "fb3093_lid_B3_puff_bloom.png"
+    },
+    {
+     "candidate_id": "B4",
+     "title": "QUIET PLATE — dead-centre micro-stack, equal margins, ground as hero",
+     "direction": "quiet_minimal",
+     "png": "fb3093_lid_B4_quiet_plate.png"
+    },
+    {
+     "candidate_id": "B5",
+     "title": "PHARMACY SEAL — small dotted-ring B seal, one hairline rule, formal three-line stack",
+     "direction": "seal_typographic",
+     "png": "fb3093_lid_B5_pharmacy_seal.png"
+    }
+   ],
+   "contact_sheet": true,
+   "emissions": [],
+   "owner_decisions": [
+    {
+     "record": "owner_pick_ingestion",
+     "authority": "OWNER_BLOCKER_CLEARANCE.md §L (L1), SIGNED: BBrose (PROJECT_OWNER, via Cowork question session), DATE: 2026-08-15",
+     "decision_dialect": "verdict_field",
+     "verdict": "ALL FIVE B1-B5 REJECTED",
+     "verdict_verbatim": "all of them look too simple and can be done easily, i need more complexity, and more creativity.",
+     "date": "2026-08-15"
+    }
+   ]
+  },
+  {
+   "request_id": "fb3093_compact_02",
+   "product": "BBROSE FB3093 face-powder compact — lid artwork direction",
+   "stage": "accepted",
+   "brief_measurement_tiers": [
+    "PRIOR"
+   ],
+   "ledger_entries": 27,
+   "record_defects": [],
+   "candidates": [
+    {
+     "candidate_id": "C1",
+     "title": "ENGINE-TURNED CARTOUCHE",
+     "direction": "guilloche_cartouche",
+     "png": "fb3093_lid_C1_engine_turned_cartouche.png"
+    },
+    {
+     "candidate_id": "C2",
+     "title": "PHYLLOTAXIS B",
+     "direction": "phyllotaxis_glyph_carving",
+     "png": "fb3093_lid_C2_phyllotaxis_b.png"
+    },
+    {
+     "candidate_id": "C3",
+     "title": "STRAPWORK MOIRE",
+     "direction": "strapwork_interlace_moire",
+     "png": "fb3093_lid_C3_strapwork_moire.png"
+    },
+    {
+     "candidate_id": "C4",
+     "title": "SECURITY LATTICE",
+     "direction": "security_rosette_lattice",
+     "png": "fb3093_lid_C4_security_lattice.png"
+    },
+    {
+     "candidate_id": "C5",
+     "title": "GIRIH FIELD",
+     "direction": "girih_interlace",
+     "png": "fb3093_lid_C5_girih_field.png"
+    }
+   ],
+   "contact_sheet": true,
+   "emissions": [
+    {
+     "ai": "fb3093_lid_C1.ai",
+     "ai_sha256": "4fb3541d52acf6c317ba4aeaa6f2117778ca087e9318ffc3609b02ef4b228513",
+     "owner_approved": true,
+     "superseded": true
+    },
+    {
+     "ai": "fb3093_lid_C3.ai",
+     "ai_sha256": "d7962702fd98842665a0fbef6ff4f661e99a84bfbcbb0ff05429a4f6147496c2",
+     "owner_approved": true,
+     "superseded": false
+    }
+   ],
+   "owner_decisions": [
+    {
+     "record": "owner_pick_ingestion",
+     "authority": "OWNER_BLOCKER_CLEARANCE.md §M (M1), SIGNED: BBrose (PROJECT_OWNER, via Cowork question session), DATE: 2026-08-17",
+     "decision_dialect": "verdict_field",
+     "verdict": "DUAL PICK — C1 ENGINE-TURNED CARTOUCHE and C3 STRAPWORK MOIRÉ",
+     "verdict_verbatim": "c1 & c3",
+     "date": "2026-08-17"
+    },
+    {
+     "record": "emission acceptance (fb3093_lid_C1.ai)",
+     "authority": "OWNER_BLOCKER_CLEARANCE.md §P (P1), SIGNED: BBrose (PROJECT_OWNER, via Cowork question session), DATE: 2026-08-17",
+     "decision_dialect": "acceptance_record",
+     "verdict": "ACCEPTED",
+     "verdict_verbatim": "Accepted",
+     "date": "2026-08-17"
+    },
+    {
+     "record": "emission acceptance (fb3093_lid_C3.ai)",
+     "authority": "OWNER_BLOCKER_CLEARANCE.md §N (N1), SIGNED: BBrose (PROJECT_OWNER, via Cowork question session), DATE: 2026-08-17",
+     "decision_dialect": "acceptance_record",
+     "verdict": "ACCEPTED",
+     "verdict_verbatim": "Both accepted",
+     "date": "2026-08-17"
+    }
+   ]
+  }
+ ]
+}

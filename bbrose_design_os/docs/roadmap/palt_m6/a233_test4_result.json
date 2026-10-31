@@ -1,0 +1,54 @@
+{
+ "record_type": "a233_test4_result/1.0",
+ "law": "953dc78bed263921",
+ "test": "SATIN_VS_CREAM / GRANULARITY_INDEX (banked ESTABLISHED under proxy)",
+ "recipe_identity": "6d6e4ab90686503f",
+ "per_seed_granularity": {
+  "POWDER_SATIN": {
+   "40": 0.041395,
+   "81": 0.042363,
+   "82": 0.040624,
+   "83": 0.04155,
+   "84": 0.041036,
+   "99": 0.04062
+  },
+  "CREAM": {
+   "40": 0.063692,
+   "81": 0.063593,
+   "82": 0.063612,
+   "83": 0.063672,
+   "84": 0.063681,
+   "99": 0.063578
+  }
+ },
+ "per_seed_clearings": {
+  "40": 0.4243531550049007,
+  "81": 0.400732379478274,
+  "82": 0.44107601980122035,
+  "83": 0.4204824086217713,
+  "84": 0.4324990211713475,
+  "99": 0.44066104915641363
+ },
+ "clearing_dispersion": 0.09584993534746519,
+ "seed_only_max_proxy": 0.04201,
+ "ratio_test_over_proxy": 2.2815980801586573,
+ "margin": 0.1923,
+ "1i_under_named_test": "MET",
+ "premise_PROXY_BOUNDS_TEST_holds": false,
+ "branch_fired": "MET_and_dispersion_GT_seed_only_max (premise fails, verdict unaffected)",
+ "FOURTH_BRANCH_NOT_ENUMERATED": {
+  "what_happened": "the outcome was MET with clearing_dispersion GREATER than seed_only_max. A233 enumerated three outcomes over a 2x2 space (MET/UNMET x dispersion LE/GT) and omitted this cell",
+  "whose_defect": "joint: the declarer wrote the three, the executor committed them without checking the enumeration was exhaustive \u2014 a count-vs-enumeration failure of exactly the 2p shape, inside a declaration written to prevent unchecked premises",
+  "why_it_matters": "the omitted cell is the one that fired, so the declaration did not in fact pre-commit an interpretation for the observed outcome. It is reported as unenumerated rather than mapped onto the nearest declared branch",
+  "what_it_means_on_its_face": "the premise PROXY_BOUNDS_TEST is REFUTED (ratio 2.28) while the GRANULARITY verdict is unaffected (margin 0.1923 still exceeds the named comparator 0.09585) \u2014 the two questions test 4 was designed to answer at once came apart, which is precisely what a 2x2 allows and a 3-outcome list cannot express"
+ },
+ "A235_consequence_fires": "the direction claim is VOID: this computation does NOT only move adequacy toward MET. At its first check the named comparator is 2.28x the proxy, i.e. a HIGHER bar. If that generalises, tests 1-3's FAILs stand MORE firmly rather than flipping \u2014 the opposite of what A221 raised as the possibility. ONE instance; not generalised here",
+ "A223_pass_law_standing_same_sentence": "GRANULARITY's adequacy is MET under the named test, and SATIN_VS_CREAM remains a PASS_LAW FAIL: the pair holds one adequate axis where the law requires two independent axes at >= 0.25 with supporting axes never counting, so nothing about the pair's standing improves",
+ "premise_instance_1_of_4": {
+  "test": "SATIN_VS_CREAM/GRANULARITY",
+  "seed_only_max": 0.04201,
+  "clearing_dispersion": 0.09585,
+  "ratio": 2.2816,
+  "premise_holds": "NO"
+ }
+}

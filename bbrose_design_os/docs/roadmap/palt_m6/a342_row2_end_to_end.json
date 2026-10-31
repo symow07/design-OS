@@ -1,0 +1,17 @@
+{
+ "record_type": "a342_row2_end_to_end/1.0",
+ "date": "2026-08-12",
+ "closed": "AMBER consumes an invocation and persists it \u2014 VERIFIED_END_TO_END",
+ "method": "real main() path against a COPY of the real register; live register never touched",
+ "before": {
+  "invocations_allowed": 2,
+  "invocations_used": 0
+ },
+ "after": {
+  "invocations_allowed": 2,
+  "invocations_used": 1
+ },
+ "artifact_value": "TIER_2=AMBER, AMBER_CONSUMED remaining=1, rc=0",
+ "live_register_untouched": true,
+ "incidental_finding": "the first attempt REFUSED as UNREGISTERED because pytest reported the node id with a relative-path prefix that did not byte-match the register key. Register keys must byte-match pytest's reported node id, which depends on the invocation's rootdir. A correctly registered flake can silently present as unregistered if the suite is invoked from a different path. NOT in the class register yet."
+}

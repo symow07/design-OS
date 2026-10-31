@@ -1,0 +1,1148 @@
+{
+  "record_type": "palt_m4b_a3_strategy_matrix/1.0",
+  "milestone": "PALT-M4B-A3",
+  "policy": {
+    "version": "palette_thickness_policy/1.0",
+    "material": "ABS",
+    "MINIMUM_LOCAL_WALL_THICKNESS": {
+      "mm": 1.0,
+      "provenance": "A2 policy, carried forward unchanged",
+      "authority": "DESIGN_DEFAULT",
+      "confidence": "MODERATE",
+      "supplier_confirmed": false
+    },
+    "TARGET_NOMINAL_WALL_THICKNESS": {
+      "mm": 1.2,
+      "provenance": "mid of the 1.0-1.5 mm band typical for a small ABS cosmetic tray",
+      "authority": "DESIGN_DEFAULT",
+      "confidence": "MODERATE",
+      "supplier_confirmed": false
+    },
+    "MAXIMUM_LOCAL_THICKNESS": {
+      "mm": 2.5,
+      "provenance": "target nominal x the 2.0 sink threshold, rounded down",
+      "authority": "DESIGN_DEFAULT",
+      "confidence": "LOW",
+      "supplier_confirmed": false
+    },
+    "MAXIMUM_THICKNESS_RATIO": {
+      "mm": 2.5,
+      "provenance": "A2 policy, DELIBERATELY UNCHANGED \u2014 the geometry moves to meet the policy, the policy does not move to meet the geometry",
+      "authority": "DESIGN_DEFAULT",
+      "confidence": "MODERATE",
+      "supplier_confirmed": false
+    },
+    "MAXIMUM_ABRUPT_THICKNESS_CHANGE": {
+      "mm": 2.0,
+      "provenance": "ratio across a transition shorter than 1 mm, carried from A2",
+      "authority": "DESIGN_DEFAULT",
+      "confidence": "LOW",
+      "supplier_confirmed": false
+    },
+    "MINIMUM_DECK_LIGAMENT": {
+      "mm": 2.0,
+      "provenance": "twice the minimum local wall: the land between two cavities carries both pocket walls",
+      "authority": "DESIGN_DEFAULT",
+      "confidence": "MODERATE",
+      "supplier_confirmed": false
+    },
+    "MINIMUM_POCKET_FLOOR_THICKNESS": {
+      "mm": 1.0,
+      "provenance": "owner M4B-A preserved value",
+      "authority": "OWNER_STATED",
+      "confidence": "HIGH",
+      "supplier_confirmed": false
+    },
+    "MAXIMUM_UNSUPPORTED_SPAN": {
+      "mm": 22.0,
+      "provenance": "deck skin span between adjacent pocket cup supports at pitch 30.6; declared BEFORE measuring, per the A2 discipline",
+      "authority": "DESIGN_DEFAULT",
+      "confidence": "LOW",
+      "supplier_confirmed": false
+    },
+    "sink_threshold_ratio_vs_nominal": 2.0,
+    "target_nominal_wall_mm": 1.2
+  },
+  "rib_policy": {
+    "version": "palette_rib_policy/1.0",
+    "rib_thickness_mm": 1.0,
+    "rib_thickness_rule": "at or below the adjoining nominal wall so the rib root does not read through as a sink line",
+    "rib_height_mm": 4.65,
+    "rib_draft_deg": 1.5,
+    "rib_root_radius_mm": 0.4,
+    "rib_spacing_mm": 30.6,
+    "rib_termination": "RUN_OUT_INTO_THE_PERIMETER_WALL_NO_FREE_ENDS",
+    "pocket_support_relationship": "ribs must not touch a pocket cup",
+    "outer_wall_relationship": "every rib terminates in the perimeter wall",
+    "hinge_interface_placeholder": "TOP_EDGE band, DECLARED_NOT_MODELLED",
+    "clasp_interface_placeholder": "BOTTOM_EDGE band, DECLARED_NOT_MODELLED",
+    "minimum_rib_to_pocket_clearance_mm": 0.5,
+    "viable_placement": "DIAGONAL_INTERSTITIAL_ONLY \u2014 at pitch 30.6 the cup circles leave ~13.8 mm between DIAGONAL neighbours but under 0.1 mm on the cell grid, so an orthogonal cell-grid rib is excluded and a diagonal rib lattice is the viable option. Meshing it is deferred to M4B-B.",
+    "authority": "DESIGN_DEFAULT",
+    "manufacturing_authority": "NOT_MANUFACTURER_CONFIRMED",
+    "structural_sufficiency": "NOT_DEMONSTRATED_NO_FEA_NO_PHYSICAL_PART"
+  },
+  "strategies": [
+    {
+      "strategy": "A_UNIFORM_UNDERSIDE_CORE",
+      "description": "one continuous underside recess with a controlled outer perimeter; the core's inner face is a plain cylinder at the pocket's widest radius, so it pulls straight but the cup wall thickens downward",
+      "constructible": true,
+      "valid": false,
+      "verdict": "INVALID",
+      "checks": {
+        "min_wall_at_or_above_policy": true,
+        "pocket_wall_at_or_above_policy": true,
+        "deck_ligament_at_or_above_policy": true,
+        "ratio_within_policy": false,
+        "pocket_floor_at_or_above_policy": true,
+        "no_solid_thick_floor": false
+      },
+      "minimum_thickness_mm": 1.0,
+      "maximum_thickness_mm": 5.7,
+      "median_thickness_mm": 1.0,
+      "thickness_ratio": 5.7,
+      "percentiles_mm": {
+        "p1": 1.0,
+        "p5": 1.0,
+        "p25": 1.0,
+        "p50": 1.0,
+        "p75": 1.0,
+        "p95": 1.0,
+        "p99": 1.977955
+      },
+      "uniformity_band_mm": 0.0,
+      "cup_wall_top_mm": 1.372912,
+      "cup_wall_bottom_mm": 2.079786,
+      "cup_wall_variation_mm": 0.706874,
+      "material_volume_mm3": 21792.749,
+      "pocket_floor_support": "CONTINUOUS_1.0_MM_FLOOR_ON_EVERY_POCKET",
+      "deck_deflection_risk_proxy": 0.03,
+      "unsupported_span_mm": 0.415584,
+      "unsupported_span_within_policy": true,
+      "rib_count": 0,
+      "rib_intersections": 0,
+      "deck_ligament_mm": 2.415584,
+      "pocket_wall_at_mouth_mm": 1.207792,
+      "inter_pocket_material_section_mm": 2.415584,
+      "likely_sink_risk_regions": 8,
+      "likely_warpage_risk_regions": {
+        "axis": "x",
+        "from_mm": -52.64,
+        "to_mm": -47.376,
+        "d_min_per_mm": 0.0
+      },
+      "mould_release": "core pulls DOWNWARD, cavity pulls UPWARD; no undercut is created by the coring",
+      "visual_impact": "none from above \u2014 the coring is entirely on the underside, which is hidden by the case base",
+      "authority": "PROVISIONAL_DESIGN_DEFAULT",
+      "confidence": "MODERATE \u2014 geometry is exact; the wall and ratio policies are DESIGN_DEFAULT and NOT supplier confirmed",
+      "tray_mesh_identity": "5d0b89a9c657047f",
+      "thickness_field": {
+        "record_type": "palette_thickness_field/1.0",
+        "sampling": {
+          "version": "thickness_field_sampling/1.0",
+          "plane_families": [
+            "x",
+            "y"
+          ],
+          "planes_per_family": 21,
+          "plane_span_fraction": 0.94,
+          "measure": "MEDIAL_RIDGE_OF_THE_RASTERISED_DISTANCE_FIELD",
+          "raster_pitch_mm": 0.05,
+          "geodesic_skip": 6,
+          "percentiles": [
+            1,
+            5,
+            25,
+            50,
+            75,
+            95,
+            99
+          ],
+          "method": "ORTHOGONAL_SECTION_LATTICE_MEDIAL_RIDGE_THICKNESS",
+          "limitation": "2D in-plane measure; overstates where the true minimum runs out of plane, so the reported minimum is an upper bound on the true minimum"
+        },
+        "sample_count": 165448,
+        "plane_count": 42,
+        "minimum_thickness_mm": 1.0,
+        "maximum_thickness_mm": 5.7,
+        "median_thickness_mm": 1.0,
+        "mean_thickness_mm": 1.030816,
+        "percentiles_mm": {
+          "p1": 1.0,
+          "p5": 1.0,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p95": 1.0,
+          "p99": 1.977955
+        },
+        "thickness_ratio": 5.7,
+        "largest_gradient": {
+          "axis": "x",
+          "from_mm": -52.64,
+          "to_mm": -47.376,
+          "d_min_per_mm": 0.0
+        },
+        "gradient_count": 40,
+        "histogram": {
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            159088,
+            456,
+            3288,
+            516,
+            1108,
+            272,
+            672,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            48
+          ],
+          "edges_mm": [
+            0.0,
+            0.2375,
+            0.475,
+            0.7125,
+            0.95,
+            1.1875,
+            1.425,
+            1.6625,
+            1.9,
+            2.1375,
+            2.375,
+            2.6125,
+            2.85,
+            3.0875,
+            3.325,
+            3.5625,
+            3.8,
+            4.0375,
+            4.275,
+            4.5125,
+            4.75,
+            4.9875,
+            5.225,
+            5.4625,
+            5.7
+          ]
+        },
+        "per_plane": [
+          {
+            "axis": "x",
+            "at_mm": -52.64,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.143795,
+            "sample_count": 4302
+          },
+          {
+            "axis": "x",
+            "at_mm": -47.376,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 4316
+          },
+          {
+            "axis": "x",
+            "at_mm": -42.112,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.589576,
+            "sample_count": 3602
+          },
+          {
+            "axis": "x",
+            "at_mm": -36.848,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3998
+          },
+          {
+            "axis": "x",
+            "at_mm": -31.584,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 4022
+          },
+          {
+            "axis": "x",
+            "at_mm": -26.32,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3974
+          },
+          {
+            "axis": "x",
+            "at_mm": -21.056,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.100158,
+            "sample_count": 3842
+          },
+          {
+            "axis": "x",
+            "at_mm": -15.792,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 5.7,
+            "sample_count": 3626
+          },
+          {
+            "axis": "x",
+            "at_mm": -10.528,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.3,
+            "sample_count": 3728
+          },
+          {
+            "axis": "x",
+            "at_mm": -5.264,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3944
+          },
+          {
+            "axis": "x",
+            "at_mm": 0.0,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 4016
+          },
+          {
+            "axis": "x",
+            "at_mm": 5.264,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3944
+          },
+          {
+            "axis": "x",
+            "at_mm": 10.528,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.3,
+            "sample_count": 3728
+          },
+          {
+            "axis": "x",
+            "at_mm": 15.792,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 5.7,
+            "sample_count": 3626
+          },
+          {
+            "axis": "x",
+            "at_mm": 21.056,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.100158,
+            "sample_count": 3842
+          },
+          {
+            "axis": "x",
+            "at_mm": 26.32,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3974
+          },
+          {
+            "axis": "x",
+            "at_mm": 31.584,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 4022
+          },
+          {
+            "axis": "x",
+            "at_mm": 36.848,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3998
+          },
+          {
+            "axis": "x",
+            "at_mm": 42.112,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.589576,
+            "sample_count": 3602
+          },
+          {
+            "axis": "x",
+            "at_mm": 47.376,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 4316
+          },
+          {
+            "axis": "x",
+            "at_mm": 52.64,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.143442,
+            "sample_count": 4302
+          },
+          {
+            "axis": "y",
+            "at_mm": -52.64,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.143442,
+            "sample_count": 4302
+          },
+          {
+            "axis": "y",
+            "at_mm": -47.376,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 4316
+          },
+          {
+            "axis": "y",
+            "at_mm": -42.112,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.589576,
+            "sample_count": 3602
+          },
+          {
+            "axis": "y",
+            "at_mm": -36.848,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3998
+          },
+          {
+            "axis": "y",
+            "at_mm": -31.584,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 4022
+          },
+          {
+            "axis": "y",
+            "at_mm": -26.32,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3974
+          },
+          {
+            "axis": "y",
+            "at_mm": -21.056,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.100158,
+            "sample_count": 3842
+          },
+          {
+            "axis": "y",
+            "at_mm": -15.792,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 5.7,
+            "sample_count": 3626
+          },
+          {
+            "axis": "y",
+            "at_mm": -10.528,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.3,
+            "sample_count": 3728
+          },
+          {
+            "axis": "y",
+            "at_mm": -5.264,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3944
+          },
+          {
+            "axis": "y",
+            "at_mm": 0.0,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 4016
+          },
+          {
+            "axis": "y",
+            "at_mm": 5.264,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3944
+          },
+          {
+            "axis": "y",
+            "at_mm": 10.528,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.3,
+            "sample_count": 3728
+          },
+          {
+            "axis": "y",
+            "at_mm": 15.792,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 5.7,
+            "sample_count": 3626
+          },
+          {
+            "axis": "y",
+            "at_mm": 21.056,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.100158,
+            "sample_count": 3842
+          },
+          {
+            "axis": "y",
+            "at_mm": 26.32,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3974
+          },
+          {
+            "axis": "y",
+            "at_mm": 31.584,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 4022
+          },
+          {
+            "axis": "y",
+            "at_mm": 36.848,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3998
+          },
+          {
+            "axis": "y",
+            "at_mm": 42.112,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.589576,
+            "sample_count": 3602
+          },
+          {
+            "axis": "y",
+            "at_mm": 47.376,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 4316
+          },
+          {
+            "axis": "y",
+            "at_mm": 52.64,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.143795,
+            "sample_count": 4302
+          }
+        ],
+        "evidence_basis": "SECTION_LATTICE_GEOMETRY_ONLY_NO_MOULD_FLOW"
+      },
+      "risk": {
+        "record_type": "palette_thickness_risk/1.0",
+        "MOULDING_SINK_RISK": "PROVISIONAL_ENGINEERING_RISK",
+        "sink_threshold_mm": 2.4,
+        "planes_above_sink_threshold": 8,
+        "plane_count": 42,
+        "fraction_above_sink_threshold": 0.1905,
+        "maximum_thickness_mm": 5.7,
+        "minimum_thickness_mm": 1.0,
+        "thickness_ratio": 5.7,
+        "warpage_proxy": "LARGEST_LOCAL_MINIMUM_GRADIENT",
+        "largest_gradient": {
+          "axis": "x",
+          "from_mm": -52.64,
+          "to_mm": -47.376,
+          "d_min_per_mm": 0.0
+        },
+        "claim_limit": "risk CLASSIFICATIONS from section geometry only. No mould-flow simulation was run, so no sink or warpage is asserted as fact.",
+        "evidence_basis": "SECTION_LATTICE_GEOMETRY_ONLY_NO_MOULD_FLOW"
+      }
+    },
+    {
+      "strategy": "B_CELLULAR_UNDERSIDE_CORE",
+      "description": "nine cell voids separated by ribs on the 3x3 cell grid, plus the perimeter band; straight-pull core faces as in A",
+      "constructible": false,
+      "valid": false,
+      "verdict": "NOT_CONSTRUCTIBLE",
+      "reason": "cell-grid rib of 1.0 mm leaves -0.2922 mm to the pocket cup (cup reaches 15.0922 mm, cell inner half-width 14.8000 mm). The policy floor is 0.5 mm. At the PALT-P1 pitch the cups nearly fill their cells, so CELL-GRID rib placement is geometrically excluded \u2014 see RIB_POLICY['viable_placement'] for the diagonal alternative, which is deferred to M4B-B.",
+      "authority": "PROVISIONAL_DESIGN_DEFAULT",
+      "confidence": "HIGH \u2014 the failure is a measured geometric constraint, not an implementation limit"
+    },
+    {
+      "strategy": "C_POCKET_FOLLOWING_CORE",
+      "description": "the core's inner face is the pocket profile offset by the cup wall, so the wall is uniform by construction; single interstitial void plus the perimeter band",
+      "constructible": true,
+      "valid": false,
+      "verdict": "INVALID",
+      "checks": {
+        "min_wall_at_or_above_policy": false,
+        "pocket_wall_at_or_above_policy": true,
+        "deck_ligament_at_or_above_policy": true,
+        "ratio_within_policy": false,
+        "pocket_floor_at_or_above_policy": true,
+        "no_solid_thick_floor": true
+      },
+      "minimum_thickness_mm": 0.663437,
+      "maximum_thickness_mm": 2.143795,
+      "median_thickness_mm": 1.0,
+      "thickness_ratio": 3.2313,
+      "percentiles_mm": {
+        "p1": 1.0,
+        "p5": 1.0,
+        "p25": 1.0,
+        "p50": 1.0,
+        "p75": 1.0,
+        "p95": 1.0,
+        "p99": 1.08291
+      },
+      "uniformity_band_mm": 0.0,
+      "cup_wall_top_mm": 1.0,
+      "cup_wall_bottom_mm": 1.0,
+      "cup_wall_variation_mm": 0.0,
+      "material_volume_mm3": 19505.738,
+      "pocket_floor_support": "CONTINUOUS_1.0_MM_FLOOR_ON_EVERY_POCKET",
+      "deck_deflection_risk_proxy": 1.819,
+      "unsupported_span_mm": 1.161408,
+      "unsupported_span_within_policy": true,
+      "rib_count": 0,
+      "rib_intersections": 0,
+      "deck_ligament_mm": 2.415584,
+      "pocket_wall_at_mouth_mm": 1.207792,
+      "inter_pocket_material_section_mm": 2.415584,
+      "likely_sink_risk_regions": 0,
+      "likely_warpage_risk_regions": {
+        "axis": "x",
+        "from_mm": -42.112,
+        "to_mm": -36.848,
+        "d_min_per_mm": 0.063937
+      },
+      "mould_release": "core pulls DOWNWARD, cavity pulls UPWARD; no undercut is created by the coring",
+      "visual_impact": "none from above \u2014 the coring is entirely on the underside, which is hidden by the case base",
+      "authority": "PROVISIONAL_DESIGN_DEFAULT",
+      "confidence": "MODERATE \u2014 geometry is exact; the wall and ratio policies are DESIGN_DEFAULT and NOT supplier confirmed",
+      "tray_mesh_identity": "26c817b8c113851a",
+      "thickness_field": {
+        "record_type": "palette_thickness_field/1.0",
+        "sampling": {
+          "version": "thickness_field_sampling/1.0",
+          "plane_families": [
+            "x",
+            "y"
+          ],
+          "planes_per_family": 21,
+          "plane_span_fraction": 0.94,
+          "measure": "MEDIAL_RIDGE_OF_THE_RASTERISED_DISTANCE_FIELD",
+          "raster_pitch_mm": 0.05,
+          "geodesic_skip": 6,
+          "percentiles": [
+            1,
+            5,
+            25,
+            50,
+            75,
+            95,
+            99
+          ],
+          "method": "ORTHOGONAL_SECTION_LATTICE_MEDIAL_RIDGE_THICKNESS",
+          "limitation": "2D in-plane measure; overstates where the true minimum runs out of plane, so the reported minimum is an upper bound on the true minimum"
+        },
+        "sample_count": 166564,
+        "plane_count": 42,
+        "minimum_thickness_mm": 0.663437,
+        "maximum_thickness_mm": 2.143795,
+        "median_thickness_mm": 1.0,
+        "mean_thickness_mm": 1.002636,
+        "percentiles_mm": {
+          "p1": 1.0,
+          "p5": 1.0,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p95": 1.0,
+          "p99": 1.08291
+        },
+        "thickness_ratio": 3.2313,
+        "largest_gradient": {
+          "axis": "x",
+          "from_mm": -42.112,
+          "to_mm": -36.848,
+          "d_min_per_mm": 0.063937
+        },
+        "gradient_count": 40,
+        "histogram": {
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            48,
+            48,
+            48,
+            0,
+            164740,
+            912,
+            204,
+            96,
+            144,
+            0,
+            120,
+            0,
+            120,
+            0,
+            0,
+            76,
+            8
+          ],
+          "edges_mm": [
+            0.0,
+            0.089325,
+            0.17865,
+            0.267974,
+            0.357299,
+            0.446624,
+            0.535949,
+            0.625273,
+            0.714598,
+            0.803923,
+            0.893248,
+            0.982573,
+            1.071897,
+            1.161222,
+            1.250547,
+            1.339872,
+            1.429196,
+            1.518521,
+            1.607846,
+            1.697171,
+            1.786496,
+            1.87582,
+            1.965145,
+            2.05447,
+            2.143795
+          ]
+        },
+        "per_plane": [
+          {
+            "axis": "x",
+            "at_mm": -52.64,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.143795,
+            "sample_count": 4302
+          },
+          {
+            "axis": "x",
+            "at_mm": -47.376,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 4316
+          },
+          {
+            "axis": "x",
+            "at_mm": -42.112,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3620
+          },
+          {
+            "axis": "x",
+            "at_mm": -36.848,
+            "loop_count": 1,
+            "min_mm": 0.663437,
+            "max_mm": 2.045635,
+            "sample_count": 3902
+          },
+          {
+            "axis": "x",
+            "at_mm": -31.584,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3926
+          },
+          {
+            "axis": "x",
+            "at_mm": -26.32,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3902
+          },
+          {
+            "axis": "x",
+            "at_mm": -21.056,
+            "loop_count": 1,
+            "min_mm": 0.754177,
+            "max_mm": 2.045635,
+            "sample_count": 3782
+          },
+          {
+            "axis": "x",
+            "at_mm": -15.792,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 4316
+          },
+          {
+            "axis": "x",
+            "at_mm": -10.528,
+            "loop_count": 1,
+            "min_mm": 0.806545,
+            "max_mm": 2.045635,
+            "sample_count": 3716
+          },
+          {
+            "axis": "x",
+            "at_mm": -5.264,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3896
+          },
+          {
+            "axis": "x",
+            "at_mm": 0.0,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3926
+          },
+          {
+            "axis": "x",
+            "at_mm": 5.264,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3896
+          },
+          {
+            "axis": "x",
+            "at_mm": 10.528,
+            "loop_count": 1,
+            "min_mm": 0.806545,
+            "max_mm": 2.045635,
+            "sample_count": 3716
+          },
+          {
+            "axis": "x",
+            "at_mm": 15.792,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 4316
+          },
+          {
+            "axis": "x",
+            "at_mm": 21.056,
+            "loop_count": 1,
+            "min_mm": 0.754177,
+            "max_mm": 2.045635,
+            "sample_count": 3782
+          },
+          {
+            "axis": "x",
+            "at_mm": 26.32,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3902
+          },
+          {
+            "axis": "x",
+            "at_mm": 31.584,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3926
+          },
+          {
+            "axis": "x",
+            "at_mm": 36.848,
+            "loop_count": 1,
+            "min_mm": 0.663437,
+            "max_mm": 2.045635,
+            "sample_count": 3902
+          },
+          {
+            "axis": "x",
+            "at_mm": 42.112,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3620
+          },
+          {
+            "axis": "x",
+            "at_mm": 47.376,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 4316
+          },
+          {
+            "axis": "x",
+            "at_mm": 52.64,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.143442,
+            "sample_count": 4302
+          },
+          {
+            "axis": "y",
+            "at_mm": -52.64,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.143442,
+            "sample_count": 4302
+          },
+          {
+            "axis": "y",
+            "at_mm": -47.376,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 4316
+          },
+          {
+            "axis": "y",
+            "at_mm": -42.112,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3620
+          },
+          {
+            "axis": "y",
+            "at_mm": -36.848,
+            "loop_count": 1,
+            "min_mm": 0.663437,
+            "max_mm": 2.045635,
+            "sample_count": 3902
+          },
+          {
+            "axis": "y",
+            "at_mm": -31.584,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3926
+          },
+          {
+            "axis": "y",
+            "at_mm": -26.32,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3902
+          },
+          {
+            "axis": "y",
+            "at_mm": -21.056,
+            "loop_count": 1,
+            "min_mm": 0.754177,
+            "max_mm": 2.045635,
+            "sample_count": 3782
+          },
+          {
+            "axis": "y",
+            "at_mm": -15.792,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 4316
+          },
+          {
+            "axis": "y",
+            "at_mm": -10.528,
+            "loop_count": 1,
+            "min_mm": 0.806545,
+            "max_mm": 2.045635,
+            "sample_count": 3716
+          },
+          {
+            "axis": "y",
+            "at_mm": -5.264,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3896
+          },
+          {
+            "axis": "y",
+            "at_mm": 0.0,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3926
+          },
+          {
+            "axis": "y",
+            "at_mm": 5.264,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3896
+          },
+          {
+            "axis": "y",
+            "at_mm": 10.528,
+            "loop_count": 1,
+            "min_mm": 0.806545,
+            "max_mm": 2.045635,
+            "sample_count": 3716
+          },
+          {
+            "axis": "y",
+            "at_mm": 15.792,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 4316
+          },
+          {
+            "axis": "y",
+            "at_mm": 21.056,
+            "loop_count": 1,
+            "min_mm": 0.754177,
+            "max_mm": 2.045635,
+            "sample_count": 3782
+          },
+          {
+            "axis": "y",
+            "at_mm": 26.32,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3902
+          },
+          {
+            "axis": "y",
+            "at_mm": 31.584,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3926
+          },
+          {
+            "axis": "y",
+            "at_mm": 36.848,
+            "loop_count": 1,
+            "min_mm": 0.663437,
+            "max_mm": 2.045635,
+            "sample_count": 3902
+          },
+          {
+            "axis": "y",
+            "at_mm": 42.112,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 3620
+          },
+          {
+            "axis": "y",
+            "at_mm": 47.376,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.045635,
+            "sample_count": 4316
+          },
+          {
+            "axis": "y",
+            "at_mm": 52.64,
+            "loop_count": 1,
+            "min_mm": 1.0,
+            "max_mm": 2.143795,
+            "sample_count": 4302
+          }
+        ],
+        "evidence_basis": "SECTION_LATTICE_GEOMETRY_ONLY_NO_MOULD_FLOW"
+      },
+      "risk": {
+        "record_type": "palette_thickness_risk/1.0",
+        "MOULDING_SINK_RISK": "PROVISIONAL_ENGINEERING_RISK",
+        "sink_threshold_mm": 2.4,
+        "planes_above_sink_threshold": 0,
+        "plane_count": 42,
+        "fraction_above_sink_threshold": 0.0,
+        "maximum_thickness_mm": 2.143795,
+        "minimum_thickness_mm": 0.663437,
+        "thickness_ratio": 3.2313,
+        "warpage_proxy": "LARGEST_LOCAL_MINIMUM_GRADIENT",
+        "largest_gradient": {
+          "axis": "x",
+          "from_mm": -42.112,
+          "to_mm": -36.848,
+          "d_min_per_mm": 0.063937
+        },
+        "claim_limit": "risk CLASSIFICATIONS from section geometry only. No mould-flow simulation was run, so no sink or warpage is asserted as fact.",
+        "evidence_basis": "SECTION_LATTICE_GEOMETRY_ONLY_NO_MOULD_FLOW"
+      }
+    },
+    {
+      "strategy": "D_HYBRID_CORE",
+      "description": "pocket-following cups for a uniform wall, plus cell-grid ribs and the perimeter band",
+      "constructible": false,
+      "valid": false,
+      "verdict": "NOT_CONSTRUCTIBLE",
+      "reason": "cell-grid rib of 1.0 mm leaves 0.0807 mm to the pocket cup (cup reaches 14.7193 mm, cell inner half-width 14.8000 mm). The policy floor is 0.5 mm. At the PALT-P1 pitch the cups nearly fill their cells, so CELL-GRID rib placement is geometrically excluded \u2014 see RIB_POLICY['viable_placement'] for the diagonal alternative, which is deferred to M4B-B.",
+      "authority": "PROVISIONAL_DESIGN_DEFAULT",
+      "confidence": "HIGH \u2014 the failure is a measured geometric constraint, not an implementation limit"
+    }
+  ],
+  "uncored_baseline": {
+    "description": "the A3 pocket geometry with A2's SOLID underside \u2014 isolates what the coring did",
+    "minimum_thickness_mm": 1.0,
+    "maximum_thickness_mm": 5.7,
+    "thickness_ratio": 5.7,
+    "mesh_identity": "5a8b2c01fe5b23fa"
+  }
+}

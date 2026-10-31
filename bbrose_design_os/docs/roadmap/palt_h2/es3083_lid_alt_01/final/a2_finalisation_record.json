@@ -1,0 +1,67 @@
+{
+ "record_type": "h2_a2_finalisation/1.0",
+ "finalised_on": "2026-08-15",
+ "authority": "OWNER_BLOCKER_CLEARANCE.md §J via owner_pick_ingestion.json",
+ "precedent": "E1/C3 finalisation (finalize_lid_C3.py) — machinery imported, not re-implemented",
+ "before": "../candidates/es3083_alt_lid_A2_twelve_rosette.svg (as picked)",
+ "final_svg": "es3083_lid_A2_final.svg",
+ "final_png": "es3083_lid_A2_final.png (800 dpi)",
+ "measurements": {
+  "rosette_centring": {
+   "designed_centre_y_mm": 28.275,
+   "wordmark_ink_top_mm": 54.073,
+   "optical_centre_y_mm": 27.037,
+   "shift_mm": -1.238,
+   "applied_mm": -1.238,
+   "derivation": "equalise frame-top->rosette-ink and rosette-ink->wordmark-ink clearances: cy = wordmark_ink_top/2 = 54.073/2",
+   "ring_geometry": "UNTOUCHED — same rings shifted as one body"
+  },
+  "ink_centring": {
+   "BBROSE": {
+    "measured_offset_mm": -0.019,
+    "applied_mm": 0.0,
+    "note": "below 0.05 mm noise floor — not applied"
+   },
+   "EYE SHADOW · SOMBRA DE OJOS": {
+    "measured_offset_mm": 0.015,
+    "applied_mm": 0.0,
+    "note": "below 0.05 mm noise floor — not applied"
+   }
+  },
+  "kerning": {
+   "source": "legacy 'kern' table (GPOS absent)",
+   "pairs_in_font": 5,
+   "pairs_touching_A2_strings": "NONE — verified no-op for both lines including the middot line"
+  },
+  "type_block": {
+   "wordmark_ink_bottom_mm": 56.613,
+   "bilingual_ink_top_mm": 59.434,
+   "measured_gap_mm": 2.821,
+   "change": "NONE — the picked spacing kept; no spacing standard exists in the programme"
+  },
+  "stroke_weight": {
+   "ring_mm": 0.18,
+   "change": "NONE — treatment variable of the picked composition; no die/stock or minimum-stroke standard exists in the programme to judge it against"
+  },
+  "colour": {
+   "verdict": "CITED — 621C/627C sRGB are the substrate constants verified at C3 finalisation (round-trip dE76 0.18 / 0.34, D50-Bradford path); same constants, not re-derived (meta-work ban)"
+  },
+  "safe_margins_mm": {
+   "frame": [
+    65.0,
+    65.0
+   ],
+   "ink_bbox": [
+    11.64,
+    6.17,
+    53.36,
+    60.8
+   ],
+   "clearance_left": 11.64,
+   "clearance_right": 11.64,
+   "clearance_top": 6.17,
+   "clearance_bottom": 4.2,
+   "note": "no die-derived safe-margin standard exists in the programme; clearances are measurements, not a pass against a fabricated standard"
+  }
+ }
+}

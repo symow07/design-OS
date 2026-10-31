@@ -1,0 +1,199 @@
+{
+ "record_type": "a252_proxy_disposition_census/1.0",
+ "law": "2216115499023fa7",
+ "a190_boundary_reported_first": {
+  "source": "measurement_adequacy/phase2_retroactive.json key 'table' \u2014 the programme's own retroactive 1i sweep, 31 rows",
+  "corroborated_by": "establishment_closure/phase0.json restates the same rows in full",
+  "not_reached_and_why": [
+   "dispositions outside that sweep \u2014 none known; the sweep was declared retroactive and symmetric over the whole programme",
+   "code-side gates \u2014 no committed gate computes a 1i adequacy decision",
+   "the four named-quantity tests of this arc \u2014 they ARE the named quantity, not proxy-obtained"
+  ]
+ },
+ "totals": {
+  "rows": 31,
+  "ADEQUACY_UNASSESSED": 26,
+  "ADEQUACY_PRECONDITION_UNMET": 1,
+  "ADEQUATE": 4,
+  "proxy_obtained_with_a_numeric_or_named_spread": 5
+ },
+ "the_METs_enumerated_not_counted": {
+  "1_counted_tracking_GRAN|SHEEN": {
+   "statistic": "sweep |rho|",
+   "reading": 0.9956,
+   "threshold": 0.8,
+   "margin": 0.1956,
+   "spread_used": 0.0132,
+   "class": "NO_REFERENT",
+   "why": "a correlation between two axes across sweep LEVELS, not a cross-family clearing; 1k's named quantity has no referent \u2014 there is no 'clearing recomputed at each seed' for a rho tracking statistic"
+  },
+  "2_counted_tracking_GRAN|FWHM": {
+   "statistic": "sweep |rho|",
+   "reading": 0.9824,
+   "threshold": 0.8,
+   "margin": 0.1824,
+   "spread_used": 0.0132,
+   "class": "NO_REFERENT",
+   "why": "same shape as row 1",
+   "note_found_in_passing": "this row's own note reads 'margin 0.1024 > spread' while its stated margin is 0.1824 \u2014 an internal inconsistency in the committed record, reported not repaired"
+  },
+  "3_A3_grain_scale_GRANULARITY_qualification": {
+   "statistic": "span",
+   "reading": 0.2338,
+   "threshold": 0.2338,
+   "margin": 0.0,
+   "spread_used": "measured per A3",
+   "class": "RECOMPUTABLE_IN_PRINCIPLE_INPUTS_TO_CONFIRM",
+   "why": "a span qualification over a seeded ensemble; whether 1k's named quantity has a referent depends on whether the qualification is a cross-family clearing, which its record does not state \u2014 and its stated margin is 0.0, which is the row most exposed to any comparator change"
+  },
+  "4_BAKED_clearance": {
+   "statistic": "CLEARS_AT_WORST_CASE mm",
+   "reading": 5.35,
+   "threshold": 0.0,
+   "margin": 5.35,
+   "spread_used": "SPREAD_INAPPLICABLE_DETERMINISTIC",
+   "class": "NO_REFERENT",
+   "why": "a deterministic geometry computation, bit-identical on rebuild, with no seed ensemble \u2014 1i itself declares this spread-inapplicable and adequate at any positive margin, so no proxy was used and none is at issue"
+  }
+ },
+ "three_classes": {
+  "RECOMPUTABLE": 0,
+  "RECOMPUTABLE_IN_PRINCIPLE_INPUTS_TO_CONFIRM": 1,
+  "NO_REFERENT": 3,
+  "INPUTS_ABSENT": 0
+ },
+ "the_number_before_the_work": "FOUR METs exist in the whole programme. THREE have no referent for 1k's named quantity (two rho-tracking correlations and one deterministic geometry clearance that 1i itself exempts). ONE \u2014 the A3 grain-scale GRANULARITY span qualification \u2014 may have a referent, and its record does not say. So the recomputation queue this census produces is at most one row, not a programme-wide sweep",
+ "A136_note_per_A252": "A136's degeneracy MET is NO_REFERENT and its MET is citable at PROXY STRENGTH AND NO HIGHER (3d) \u2014 stated here rather than left for a reader to infer",
+ "owner_expectation_vs_finding": "the owner expected a short list and asked for the number found rather than the number expected: it is 4 METs, of which at most 1 is recomputable",
+ "owner_approved": false,
+ "A259_RESOLUTION_UPDATES_THE_CLASSES": {
+  "A3_grain_scale_row": "resolved NO_REFERENT \u2014 a driver-span qualification, not a cross-family clearing",
+  "three_classes_after_resolution": {
+   "RECOMPUTABLE": 0,
+   "NO_REFERENT": 4,
+   "INPUTS_ABSENT": 0
+  },
+  "consequence": "ZERO METs in the programme are recomputable under 1k's named quantity. The recomputation queue A250 mandated is EMPTY \u2014 not because the METs are safe, but because none of them is a cross-family clearing. Each is MET_UNDER_PROXY with adequacy_under_named_quantity NOT_COMPUTED and NOT_COMPUTABLE, and that is the honest terminal status"
+ },
+ "A258_partition_of_the_26": {
+  "counts": {
+   "APPLIES_NOT_RUN": 21,
+   "DOES_NOT_APPLY": 1,
+   "UNCLASSIFIED": 4
+  },
+  "classification_rule": "DOES_NOT_APPLY where the record itself marks the spread inapplicable (deterministic geometry, no seed ensemble \u2014 1i's own exemption); APPLIES_NOT_RUN where the statistic is a seeded measurement comparison and no spread was ever measured; UNCLASSIFIED where the record does not say enough",
+  "APPLIES_NOT_RUN": [
+   {
+    "verdict": "MATTE_VS_SATIN PASS leg",
+    "statistic": "granularity cross-family effect"
+   },
+   {
+    "verdict": "MATTE_VS_SATIN PASS leg",
+    "statistic": "sheen cross-family effect"
+   },
+   {
+    "verdict": "PRESSED_VS_MATTE PASS leg",
+    "statistic": "granularity cross-family effect"
+   },
+   {
+    "verdict": "PRESSED_VS_MATTE PASS leg",
+    "statistic": "sheen cross-family effect"
+   },
+   {
+    "verdict": "SATIN_VS_CREAM PASS leg",
+    "statistic": "granularity cross-family effect"
+   },
+   {
+    "verdict": "SATIN_VS_CREAM PASS leg",
+    "statistic": "fwhm cross-family effect"
+   },
+   {
+    "verdict": "SHIMMER_VS_METALLIC leg",
+    "statistic": "pattern_contrast effect"
+   },
+   {
+    "verdict": "SHIMMER_VS_METALLIC leg",
+    "statistic": "coherence effect"
+   },
+   {
+    "verdict": "SHIMMER_VS_METALLIC leg",
+    "statistic": "env_correlation effect"
+   },
+   {
+    "verdict": "METALLIC_VS_GLITTER leg",
+    "statistic": "pattern_contrast effect"
+   },
+   {
+    "verdict": "METALLIC_VS_GLITTER leg",
+    "statistic": "env_correlation effect"
+   },
+   {
+    "verdict": "PRESSED_VS_BAKED PASS leg",
+    "statistic": "raking_span effect"
+   },
+   {
+    "verdict": "PRESSED_VS_BAKED PASS leg",
+    "statistic": "raking_shadow effect"
+   },
+   {
+    "verdict": "R5 census (all three pairs)",
+    "statistic": "gran|sheen census |rho| n=8"
+   },
+   {
+    "verdict": "R5 census (SATIN_VS_CREAM)",
+    "statistic": "gran|fwhm census |rho| n=8"
+   },
+   {
+    "verdict": "compression_texture_amplitude 1a (A2)",
+    "statistic": "min qualifying |rho|"
+   },
+   {
+    "verdict": "sheen sweep 1a VALID",
+    "statistic": "min qualifying |rho|"
+   },
+   {
+    "verdict": "surface_smoothing sweep 1a VALID",
+    "statistic": "min qualifying |rho|"
+   },
+   {
+    "verdict": "surface_roughness sweep 1a VALID",
+    "statistic": "min qualifying |rho|"
+   },
+   {
+    "verdict": "GLITTER_PARTICLE_RIG PASS",
+    "statistic": "event count"
+   },
+   {
+    "verdict": "SOLID_VS_MARBLED FAIL",
+    "statistic": "chroma span"
+   }
+  ],
+  "DOES_NOT_APPLY": [
+   {
+    "verdict": "glitter controls",
+    "statistic": "control event count (matte, shimmer)",
+    "why": "deterministic/geometric \u2014 no seed ensemble exists (1i: spread-inapplicable)"
+   }
+  ],
+  "UNCLASSIFIED": [
+   {
+    "verdict": "EDGE INELIGIBLE (exclusion)",
+    "statistic": "edge seed-only floor"
+   },
+   {
+    "verdict": "MARBLING axis INELIGIBLE",
+    "statistic": "chroma-axis floor"
+   },
+   {
+    "verdict": "MARBLING axis INELIGIBLE",
+    "statistic": "coherence-axis floor"
+   },
+   {
+    "verdict": "FLAKE EDGE_SHARPNESS INELIGIBLE",
+    "statistic": "edge-sharpness floor"
+   }
+  ],
+  "the_fraction_for_the_exit_gate": "5 of 31 rows carry an adequacy disposition at all (4 ADEQUATE + 1 UNMET); 26 are ADEQUACY_UNASSESSED, of which 21 are APPLIES_NOT_RUN and 1 DOES_NOT_APPLY",
+  "no_assessments_ordered_or_run": true
+ }
+}

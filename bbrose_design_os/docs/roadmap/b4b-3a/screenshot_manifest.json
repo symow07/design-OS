@@ -1,0 +1,163 @@
+{
+ "record_type": "b4b3a_screenshot_evidence/1.0",
+ "captured_with": "apps/pipeline/tests/b4b3a_screenshot_capture.py (live-server Playwright harness \u2014 real interface, no mockups)",
+ "screenshots": [
+  {
+   "file": "desktop_references_all_categories.png",
+   "viewport": {
+    "width": 1280,
+    "height": 900
+   },
+   "route": "/dashboard/",
+   "design_target": "product_container",
+   "reference_inventory": [
+    {
+     "kind": "container",
+     "file": "container-reference.png"
+    },
+    {
+     "kind": "logo",
+     "file": "logo-reference.png"
+    },
+    {
+     "kind": "label",
+     "file": "label-reference.png"
+    },
+    {
+     "kind": "inspiration",
+     "file": "inspiration-reference.png"
+    },
+    {
+     "kind": "color",
+     "file": "color-reference.png"
+    }
+   ],
+   "ui_state": "five grouped categories, raster previews via /api/tasks/<id>/references/<rid>/",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "desktop_reference_server_error_not_present.png",
+   "viewport": {
+    "width": 1280,
+    "height": 900
+   },
+   "route": "/dashboard/",
+   "design_target": "product_container",
+   "reference_inventory": [
+    {
+     "kind": "container",
+     "file": "container-reference.png"
+    },
+    {
+     "kind": "logo",
+     "file": "logo-reference.png"
+    },
+    {
+     "kind": "label",
+     "file": "label-reference.png"
+    },
+    {
+     "kind": "inspiration",
+     "file": "inspiration-reference.png"
+    },
+    {
+     "kind": "color",
+     "file": "color-reference.png"
+    }
+   ],
+   "ui_state": "persisted accepted references only \u2014 no creation-time server-error card classes present (asserted in DOM)",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "desktop_mixed_raster_and_documents.png",
+   "viewport": {
+    "width": 1280,
+    "height": 900
+   },
+   "route": "/dashboard/",
+   "design_target": "product_container",
+   "reference_inventory": [
+    {
+     "kind": "container",
+     "file": "amber-bottle.png"
+    },
+    {
+     "kind": "logo",
+     "file": "mark.ai"
+    },
+    {
+     "kind": "label",
+     "file": "label-sheet.pdf"
+    },
+    {
+     "kind": "label",
+     "file": "die-notes.eps"
+    }
+   ],
+   "ui_state": "raster preview beside neutral PDF/EPS/AI cards \u2014 no fake thumbnails",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "desktop_empty_references.png",
+   "viewport": {
+    "width": 1280,
+    "height": 900
+   },
+   "route": "/dashboard/",
+   "design_target": "product_container",
+   "reference_inventory": [],
+   "ui_state": "exact empty state: 'No references were supplied for this task.' \u2014 no headings, no placeholder cards",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "mobile_references_all_categories.png",
+   "viewport": {
+    "width": 390,
+    "height": 844
+   },
+   "route": "/dashboard/",
+   "design_target": "product_container",
+   "reference_inventory": [
+    {
+     "kind": "container",
+     "file": "container-reference.png"
+    },
+    {
+     "kind": "logo",
+     "file": "logo-reference.png"
+    },
+    {
+     "kind": "label",
+     "file": "label-reference.png"
+    },
+    {
+     "kind": "inspiration",
+     "file": "inspiration-reference.png"
+    },
+    {
+     "kind": "color",
+     "file": "color-reference.png"
+    }
+   ],
+   "ui_state": "390px: grouped categories stacked, previews intact",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "mobile_long_filename.png",
+   "viewport": {
+    "width": 390,
+    "height": 844
+   },
+   "route": "/dashboard/",
+   "design_target": "product_container",
+   "reference_inventory": [
+    {
+     "kind": "container",
+     "file": "\u53c2\u7167-\u30d5\u30a1\u30a4\u30eb-\u30ed\u30f3\u30b0\u30cd\u30fc\u30e0\u30ed\u30f3\u30b0\u30cd\u30fc\u30e0\u30ed\u30f3\u30b0\u30cd\u30fc\u30e0\u30ed\u30f3\u30b0\u30cd\u30fc\u30e0\u30ed\u30f3\u30b0\u30cd\u30fc\u30e0\u30ed\u30f3\u30b0\u30cd\u30fc\u30e0-extremely-long-unicode-reference-name-\ud83c\udf39.png"
+    }
+   ],
+   "ui_state": "390px: long Unicode filename wraps inside its card; actions reachable",
+   "captured_at": "2026-08-01"
+  }
+ ]
+}

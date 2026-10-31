@@ -1,0 +1,94 @@
+{
+ "record_type": "a559_provenance_refusal_demonstration/1.0",
+ "law": "3aa",
+ "date": "2026-08-12",
+ "protocol_identity_at_run": "d7718d0a34f8672d",
+ "law_identity_note": "protocol_identity_at_run is the identity IN FORCE WHEN THE NUMBERS WERE COMPUTED, which is the pre-3aa corpus d7718d0a34f8672d. 3aa is hashed in the SAME COMMIT, after and behind this instrument, so the committing identity is necessarily different \u2014 that is the intended order (A560), not a mismatch.",
+ "instrument": "apps/pipeline/services/palette_powder_texture_axes.py",
+ "derivation_code_digest": "1e09561b8ff16a06",
+ "what_is_demonstrated": "each probe constructs a call in which A558 (a)-(e) cannot be assembled and shows measure_texture_axes RAISING. The guard is seen firing, not reported present \u2014 two prior probes in this arc printed NO REFUSAL \u2014 UNPROVEN against a guard that was dead code behind a shadowed __post_init__.",
+ "probes": [
+  {
+   "probe": "bare_ndarray_never_loaded_through_the_instrument",
+   "REFUSED": true,
+   "exception": "ProvenanceIncompleteError",
+   "message": "the frame carries no identity \u2014 it was not loaded through load_scene_linear and was not declared through provenanced_frame, so (a) and (b) cannot be assembled and this measurement returns no number (3aa)"
+  },
+  {
+   "probe": "frame_identity_present_but_family_is_None",
+   "REFUSED": true,
+   "exception": "ProvenanceIncompleteError",
+   "message": "frame identity field 'family' is None \u2014 a provenance block that names nothing is not provenance (3aa)"
+  },
+  {
+   "probe": "frame_identity_present_but_seed_is_None",
+   "REFUSED": true,
+   "exception": "ProvenanceIncompleteError",
+   "message": "frame identity field 'seed' is None \u2014 a provenance block that names nothing is not provenance (3aa)"
+  },
+  {
+   "probe": "frame_identity_present_but_path_is_None",
+   "REFUSED": true,
+   "exception": "ProvenanceIncompleteError",
+   "message": "frame identity field 'path' is None \u2014 a provenance block that names nothing is not provenance (3aa)"
+  },
+  {
+   "probe": "region_mask_GRAZING_absent_from_the_index",
+   "REFUSED": true,
+   "exception": "ProvenanceIncompleteError",
+   "message": "region mask 'GRAZING' absent from the index \u2014 (d) cannot be assembled"
+  },
+  {
+   "probe": "region_mask_GRAZING_present_but_empty",
+   "REFUSED": true,
+   "exception": "ProvenanceIncompleteError",
+   "message": "region mask 'GRAZING' is empty \u2014 an empty mask names no pixels and cannot identify what was measured"
+  },
+  {
+   "probe": "frame_on_disk_with_no_scene_linear_authority_beside_it",
+   "REFUSED": true,
+   "exception": "ProvenanceIncompleteError",
+   "message": "no scene-linear authority beside docs/roadmap/palt_m6/combined_manifest/frames/does_not_exist.exr \u2014 the frame cannot be alignment-asserted, so it is not measured"
+  },
+  {
+   "probe": "axis_with_no_NAMED_denominator",
+   "REFUSED": true,
+   "exception": "ProvenanceIncompleteError",
+   "message": "axis 'GRANULARITY_INDEX' has no NAMED denominator \u2014 (e) cannot be assembled for an axis whose divisor is unstated"
+  }
+ ],
+ "refused_count": 8,
+ "probe_count": 8,
+ "why_it_cannot_pass_vacuously": {
+  "completeness_loop": "over PROVENANCE_REQUIRED_KEYS, a fixed 6-tuple literal ['frames_read_in_order', 'frame_identities', 'derivation_code_digest', 'region_masks', 'alignment_tolerance', 'axis_denominators'] \u2014 it cannot iterate zero times",
+  "per_frame_loop": "over FRAME_IDENTITY_FIELDS, a fixed 4-tuple literal ['path', 'family', 'seed', 'pixel_digest'] \u2014 absent AND present-but-None are both refusals, so a null identity cannot satisfy it",
+  "region_loop": "over PROVENANCE_REGIONS, a fixed 2-tuple literal ['PLANAR', 'GRAZING'] \u2014 the same fixed tuple region_alignment_assertion iterates",
+  "a_missing_key_raises_rather_than_skips": "region_idx[region] is a subscript, not a lookup carrying a default; KeyError is caught only to re-raise as ProvenanceIncompleteError. Probe 'region_mask_GRAZING_absent_from_the_index' proves the difference a skipping loop would hide: with GRAZING absent the loop would otherwise have run once and passed",
+  "no_availability_branch": "there is no 'if provenance available' test anywhere in the module. _seal_provenance is the FIRST statement of measure_texture_axes and measure_texture_axes has exactly one return statement, which carries _provenance unconditionally",
+  "the_positive_control": "a well-formed call returns all three keys, so the refusals above are not an instrument that refuses everything"
+ },
+ "positive_control": {
+  "returned_keys": [
+   "GRANULARITY_INDEX",
+   "GRAZING_BAND_CONTRAST",
+   "_provenance"
+  ],
+  "provenance_keys": [
+   "alignment_tolerance",
+   "axis_denominators",
+   "derivation",
+   "derivation_code_digest",
+   "frame_identities",
+   "frames_read_in_order",
+   "law",
+   "pair_relative_effect_denominator",
+   "region_masks",
+   "schema"
+  ]
+ },
+ "defect_found_in_this_instrument_by_the_standing_control": {
+  "what": "the first implementation used attribute lookup carrying a default value in three places. That is the A32/1q lookup-with-default shape \u2014 the SAME silent-fallback class 3aa exists to close \u2014 and the standing source-scan control (test_palette_statistics SourceScanTests / ComposedGateTests) failed the suite on all three.",
+  "disposition": "REPAIRED, not baselined: explicit isinstance tests and explicit membership tests replace every one. A fourth firing was the shape written literally inside an explanatory comment, since the control scans source text; the comment was reworded.",
+  "class": "existing register class \u2014 silent fallback / lookup-with-default (1q, A32). NO new class minted."
+ }
+}

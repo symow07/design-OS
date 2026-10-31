@@ -1,0 +1,30 @@
+{
+ "record_type": "h2_l_mandate_self_check/1.0",
+ "request_id": "fb3093_compact_02",
+ "checked_on": "2026-08-17",
+ "question_asked": "§L's own words, per candidate, before the owner sees anything: does this look simple / easily done?",
+ "method": "Render the full board, LOOK at it, judge each tile, fix or drop, re-render, repeat until nothing on the board fails the question. Three passes were needed; the record keeps every failure.",
+ "pass_1": {
+  "C1": "REWORK — the cartouche rosette stacked three lobe counts (10/14/18) at once and the focal point collapsed into a spiky tangle; complex but muddled is still a fail.",
+  "C2": "PASS — the B condenses out of the golden-angle field with visible Fibonacci arms.",
+  "C3": "REWORK — the offset-ring 'moiré' at 0.58mm pitch rendered as a near-solid ring disc (no interference read), and the braid's under-breaks were so wide the strands read as detached S-hooks.",
+  "C4": "REWORK — same spiky-tangle rosette defect at larger scale; micro-dash rules missing on the two vertical edges.",
+  "C5": "FAIL — the khatam construction emitted only mid-side fragments of the rotated square (its corners were never drawn): the stars read as boxes with tick-marks — precisely 'easily done'."
+ },
+ "fixes_after_pass_1": "New _rosette helper encoding the A2 grammar the owner already picked (SAME lobe count every ring, half-lobe phase alternation → legible weave) replacing all ring stacks; C3 medallion switched from offset rings to ray fans; C5 interlace rebuilt as TRUE two-square interlace with segment-intersection-computed breaks at all 8 crossings (Kaplan consistency rule, ledger e19); C4 dashes on all four edges.",
+ "pass_2": {
+  "C1": "PASS", "C2": "PASS",
+  "C3": "REWORK — equal-count fans offset 2.4° at 4.09° pitch just doubled the rays (offset/pitch=0.59, no beat frequency); the centre rosette was swallowed; braids ended mid-phase before the corner bosses.",
+  "C4": "PASS — weave tightened (14 rings / 14 lobes / depth 0.105).",
+  "C5": "REWORK — outer rotated-square half-diagonal 8.35mm exceeded the 8.0mm half-pitch: neighbouring stars collided and the field read as noise."
+ },
+ "fixes_after_pass_2": "C3: fans given DIFFERENT ray counts (96/102 → |Δ|=6 beat lobes, real moiré per ledger e23/e24), centre rosette enlarged, braid period snapped to integer periods per edge; C5: outer half reduced to 0.070·FW so the rotated diagonal stays inside the cell.",
+ "pass_3_final": {
+  "C1": "PASS", "C2": "PASS", "C3": "PASS (braid terminations taper cleanly; recorded as the finalisation-pass polish point if picked)",
+  "C4": "PASS",
+  "C5": "PASS — held as the airiest of the five; the true computed interlace reads as craft, and the board benefits from one lattice-genre entry. Dropping it was considered and declined; if the owner reads it as simple, that verdict binds and is expected input."
+ },
+ "candidates_dropped": [],
+ "quiet_minimal_absent_by_design": "§L supersedes the C3-era quiet-minimal default; the contract's NO_QUIET_MINIMAL_CANDIDATE rule was amended to accept a SIGNED owner-mandate waiver (round_pointer.json) rather than deleted — the default still binds every request without such a mandate.",
+ "measured_bars": "candidates/complexity_stats.json — C1 210 elements / 39,806 polyline points; C2 5,094 elements; C3 325 / 10,336; C4 232 / 10,480; C5 616 / 2,640. Round-1 baseline: 36/121/2,404/4/33."
+}

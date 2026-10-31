@@ -1,0 +1,62 @@
+{
+  "record_type": "palt_m4c_status/1.0",
+  "milestone": "PALT-M4C",
+  "date": "2026-08-06",
+  "PALETTE_SELECTED_CONCEPT_USAGE": "INSUFFICIENT_ROOT_CAUSE_IDENTIFIED",
+  "PALETTE_DESIGN_INTENT_BRIDGE": "IMPLEMENTED",
+  "PALETTE_VISUAL_FIDELITY_TO_SELECTED_CONCEPT": "NOT_ESTABLISHED_NO_ASSET_EXISTS",
+  "root_cause": {
+    "finding": "'palette' is NOT a valid DesignTask.design_target. The engine does not ignore supplied palette designs - no palette design can be supplied to it, because a palette task cannot be created.",
+    "design_target_choices": [
+      "product_container",
+      "packaging",
+      "complete_product",
+      "gift_set",
+      "display_stand",
+      "marketing_material",
+      "exhibition_booth",
+      "social_media"
+    ],
+    "evidence": {
+      "palette_tasks": 0,
+      "task_reference_rows": 0,
+      "concept_reference_rows": 53,
+      "generated_image_rows": 74,
+      "design_target_counts": {
+        "packaging": 24,
+        "product_container": 7
+      },
+      "note": "all 53 concepts and 74 generated images belong to packaging and product_container tasks"
+    },
+    "consequence": "sections L and M cannot run against real data; only a clearly labelled PROVISIONAL_INTENT_VARIANT is possible",
+    "remedy": "add a 'palette' design_target choice + migration, then a palette task can carry TaskReferences and ConceptReferences into the bridge implemented here"
+  },
+  "implemented": {
+    "design_intent_schema": "palette_design_intent.py \u2014 70 fields across 6 groups, 3 authority levels, 2-stage confirmation, decomposition rules",
+    "concept_to_contract_mapping": "palette_intent_mapping.py \u2014 18 deterministic rules, provenance on every resolved value",
+    "design_engineering_conflicts": "PaletteDesignEngineeringConflict \u2014 reported, never silently resolved",
+    "contract_channel": "palt_p1.build_palt_p1(design_intent=...) \u2014 the audit's loss point is closed; absent intent is behaviour-identical"
+  },
+  "authority": {
+    "selected_concept": "DESIGN_INTENT_REFERENCE",
+    "not": [
+      "MANUFACTURING_DRAWING",
+      "CAD_AUTHORITY",
+      "SUPPLIER_AUTHORITY",
+      "TOLERANCE_AUTHORITY",
+      "HIDDEN_GEOMETRY_AUTHORITY"
+    ],
+    "owner_approved": false,
+    "manufacturing_authority": "NOT_ESTABLISHED"
+  },
+  "toolchain": {
+    "illustrator": "Adobe Illustrator 2026 INSTALLED (section Q is not toolchain-blocked)",
+    "scipy": "absent"
+  },
+  "PALT_P1_FINAL_DIMENSIONS": "NOT_APPROVED",
+  "PALT_P1_MANUFACTURING_AUTHORITY": "NOT_ESTABLISHED",
+  "PALT_P1_OWNER_APPROVAL": "NOT_GRANTED",
+  "GATE_2": "BLOCKED",
+  "PALT_M4B_B": "BLOCKED",
+  "PALT_M5": "BLOCKED"
+}

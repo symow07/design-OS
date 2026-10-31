@@ -1,0 +1,78 @@
+{
+  "record_type": "a3m_validation_report/1.0",
+  "milestone": "PALT-M4B-A3M",
+  "A3M_RESULT": "MAXIMUM_MEASUREMENT_ARTIFACT_RESOLVED",
+  "exit_criteria_met": false,
+  "A3F_SELECTED_OFFSET_TARGET": 1.2,
+  "A3F_CURRENT_CONSTRUCTION_IDENTITY": "6c23c5417ef93dbb",
+  "geometry_mutated": false,
+  "identities": {
+    "a3f_mesh_geometry": "7c0558062fde67a7",
+    "a3f_construction_contract": "583a9d8a22e8ec6f",
+    "a3_mesh_geometry": "743ead2beceb7fe5",
+    "evidence_package": "8b220f698d9b43a9"
+  },
+  "maximum": {
+    "reported_ray_mm": 11.830091,
+    "location_xyz": [
+      -30.151002,
+      -44.327052,
+      6.847279
+    ],
+    "source_face": 720,
+    "opposing_face": 14998,
+    "source_normal": [
+      -0.048201,
+      0.981146,
+      0.187164
+    ],
+    "opposing_normal": [
+      0.0,
+      -0.999657,
+      -0.026177
+    ],
+    "midpoint_inscribed_diameter_mm": 0.819609,
+    "midpoint_ratio": 0.069282,
+    "classification": "LONG_PATH_NOT_LOCAL_WALL_THICKNESS",
+    "feature": "DECK_SKIN \u2014 a horizontal path from a pocket rim to the outer wall across the 1.0 mm deck sheet at z 6.85",
+    "methods_agreeing": [
+      "B_NORMAL_RAY_MIDPOINT_INSCRIBED_SPHERE",
+      "A_ANALYTICAL_DECK_SKIN_1.0mm"
+    ]
+  },
+  "authoritative_maximum_local_wall_mm": 2.161657,
+  "longest_material_path_mm": 11.830091,
+  "authoritative_minimum_mm": 1.0,
+  "global_minimum_classification": {
+    "value_mm": 1.0,
+    "z_mm": 2.5,
+    "feature": "POCKET_FLOOR / BASE_SKIN",
+    "policy": "MINIMUM_POCKET_FLOOR_THICKNESS = 1.0 (owner-stated)",
+    "separate_policy_bound_feature": true
+  },
+  "thickness_ratio": 2.1617,
+  "policy_results": {
+    "MINIMUM_LOCAL_WALL_1.0": true,
+    "MAXIMUM_LOCAL_THICKNESS_2.5": true,
+    "MAXIMUM_THICKNESS_RATIO_2.5": true,
+    "MINIMUM_DECK_LIGAMENT_2.0": true
+  },
+  "policies_unchanged": {
+    "MINIMUM_LOCAL_WALL": 1.0,
+    "TARGET_NOMINAL_WALL": 1.2,
+    "MAXIMUM_LOCAL_THICKNESS": 2.5,
+    "MAXIMUM_THICKNESS_RATIO": 2.5,
+    "MINIMUM_DECK_LIGAMENT": 2.0
+  },
+  "PALT_P1_FINAL_DIMENSIONS": "NOT_APPROVED",
+  "PALT_P1_MANUFACTURING_AUTHORITY": "NOT_ESTABLISHED",
+  "PALT_P1_OWNER_APPROVAL": "REJECTED_PENDING_M4B",
+  "PALT_M4B_B": "BLOCKED",
+  "PALT_M5": "BLOCKED",
+  "provider_calls": 0,
+  "unresolved": [
+    "SECTION 6 NOT SATISFIED: the 1.20 mm cup-wall map is NOT proven. Classifying samples by z band puts deck-skin faces at z=6.15 inside the cup-wall band, so the reported cup-wall minimum of 1.00000 mm is contaminated and I cannot assert the wall holds 1.20 mm. Per section 6 that leaves A3F geometrically unproven, not passed.",
+    "no A3R, A3F or A3M evidence images were produced; the gap is now three milestones deep",
+    "the maximum classification rests on a midpoint-inscribed-sphere test with a 0.60 ratio threshold that I chose; it is validated on a 4 mm slab fixture but is not an independent second method in the strict sense"
+  ]
+}

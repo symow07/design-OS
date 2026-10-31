@@ -1,0 +1,292 @@
+{
+  "record_type": "axis_instrument_forensics/1.0",
+  "read_only": true,
+  "frames_dir": "docs/roadmap/palt_m6/texture_axes",
+  "region_pixel_counts": {
+    "PLANAR": 99390,
+    "SHALLOW_CURVE": 60946,
+    "QUARTER_CYLINDER": 24315,
+    "BEVEL": 4967,
+    "GRAZING": 58212
+  },
+  "frame_provenance": {
+    "path": "swatch_tx_SURFACE_CONTINUITY_low_16bit.png",
+    "pil_mode": "RGBA",
+    "dtype": "uint8",
+    "channels": 4,
+    "max_value": 255,
+    "bit_depth_actual": 8
+  },
+  "stimulus_realization": {
+    "SURFACE_CONTINUITY": {
+      "PLANAR": {
+        "bit_identical": false,
+        "rms_difference_codes": 17.2523,
+        "mean_low": 214.536,
+        "mean_high": 199.099
+      },
+      "GRAZING": {
+        "bit_identical": false,
+        "rms_difference_codes": 15.5035,
+        "mean_low": 76.258,
+        "mean_high": 70.677
+      },
+      "stimulus_landed": true
+    },
+    "MICRO_NORMAL_CORRELATION": {
+      "PLANAR": {
+        "bit_identical": false,
+        "rms_difference_codes": 12.9937,
+        "mean_low": 211.424,
+        "mean_high": 199.674
+      },
+      "GRAZING": {
+        "bit_identical": false,
+        "rms_difference_codes": 11.6313,
+        "mean_low": 75.014,
+        "mean_high": 71.088
+      },
+      "stimulus_landed": true
+    },
+    "COMPACTION": {
+      "PLANAR": {
+        "bit_identical": false,
+        "rms_difference_codes": 13.3389,
+        "mean_low": 211.331,
+        "mean_high": 199.297
+      },
+      "GRAZING": {
+        "bit_identical": false,
+        "rms_difference_codes": 19.6456,
+        "mean_low": 72.465,
+        "mean_high": 55.246
+      },
+      "stimulus_landed": true
+    }
+  },
+  "reader_sensitivity": {
+    "AS_INSTRUMENT_READS_IT": {
+      "SURFACE_CONTINUITY": {
+        "target_axis": "GRANULARITY_INDEX",
+        "target_detects": true,
+        "axes": {
+          "GRANULARITY_INDEX": {
+            "low": 0.013513,
+            "high": 0.025993,
+            "relative_effect": 0.6318,
+            "detects": true
+          },
+          "SURFACE_AUTOCORRELATION_MM": {
+            "low": 0.14,
+            "high": 0.14,
+            "relative_effect": 0.0,
+            "detects": false
+          },
+          "GRAZING_BAND_CONTRAST": {
+            "low": 0.627615,
+            "high": 0.597826,
+            "relative_effect": 0.0486,
+            "detects": false
+          }
+        }
+      },
+      "MICRO_NORMAL_CORRELATION": {
+        "target_axis": "SURFACE_AUTOCORRELATION_MM",
+        "target_detects": false,
+        "axes": {
+          "GRANULARITY_INDEX": {
+            "low": 0.018673,
+            "high": 0.021534,
+            "relative_effect": 0.1423,
+            "detects": false
+          },
+          "SURFACE_AUTOCORRELATION_MM": {
+            "low": 0.14,
+            "high": 0.14,
+            "relative_effect": 0.0,
+            "detects": false
+          },
+          "GRAZING_BAND_CONTRAST": {
+            "low": 0.624473,
+            "high": 0.595238,
+            "relative_effect": 0.0479,
+            "detects": false
+          }
+        }
+      },
+      "COMPACTION": {
+        "target_axis": "GRAZING_BAND_CONTRAST",
+        "target_detects": true,
+        "axes": {
+          "GRANULARITY_INDEX": {
+            "low": 0.013453,
+            "high": 0.013933,
+            "relative_effect": 0.0351,
+            "detects": false
+          },
+          "SURFACE_AUTOCORRELATION_MM": {
+            "low": 0.14,
+            "high": 0.14,
+            "relative_effect": 0.0,
+            "detects": false
+          },
+          "GRAZING_BAND_CONTRAST": {
+            "low": 0.604301,
+            "high": 0.461353,
+            "relative_effect": 0.2683,
+            "detects": true
+          }
+        }
+      }
+    },
+    "RGB_ONLY_8BIT": {
+      "SURFACE_CONTINUITY": {
+        "target_axis": "GRANULARITY_INDEX",
+        "target_detects": true,
+        "axes": {
+          "GRANULARITY_INDEX": {
+            "low": 0.018867,
+            "high": 0.037091,
+            "relative_effect": 0.6513,
+            "detects": true
+          },
+          "SURFACE_AUTOCORRELATION_MM": {
+            "low": 0.14,
+            "high": 0.14,
+            "relative_effect": 0.0,
+            "detects": false
+          },
+          "GRAZING_BAND_CONTRAST": {
+            "low": 1.345291,
+            "high": 1.341463,
+            "relative_effect": 0.0028,
+            "detects": false
+          }
+        }
+      },
+      "MICRO_NORMAL_CORRELATION": {
+        "target_axis": "SURFACE_AUTOCORRELATION_MM",
+        "target_detects": false,
+        "axes": {
+          "GRANULARITY_INDEX": {
+            "low": 0.026181,
+            "high": 0.0307,
+            "relative_effect": 0.1589,
+            "detects": false
+          },
+          "SURFACE_AUTOCORRELATION_MM": {
+            "low": 0.14,
+            "high": 0.14,
+            "relative_effect": 0.0,
+            "detects": false
+          },
+          "GRAZING_BAND_CONTRAST": {
+            "low": 1.351598,
+            "high": 1.328502,
+            "relative_effect": 0.0172,
+            "detects": false
+          }
+        }
+      },
+      "COMPACTION": {
+        "target_axis": "GRAZING_BAND_CONTRAST",
+        "target_detects": false,
+        "axes": {
+          "GRANULARITY_INDEX": {
+            "low": 0.018864,
+            "high": 0.019876,
+            "relative_effect": 0.0522,
+            "detects": false
+          },
+          "SURFACE_AUTOCORRELATION_MM": {
+            "low": 0.14,
+            "high": 0.14,
+            "relative_effect": 0.0,
+            "detects": false
+          },
+          "GRAZING_BAND_CONTRAST": {
+            "low": 1.338095,
+            "high": 1.201258,
+            "relative_effect": 0.1078,
+            "detects": false
+          }
+        }
+      }
+    },
+    "EXR_SCENE_LINEAR": {
+      "SURFACE_CONTINUITY": {
+        "target_axis": "GRANULARITY_INDEX",
+        "target_detects": true,
+        "axes": {
+          "GRANULARITY_INDEX": {
+            "low": 0.030582,
+            "high": 0.077106,
+            "relative_effect": 0.8641,
+            "detects": true
+          },
+          "SURFACE_AUTOCORRELATION_MM": {
+            "low": 0.14,
+            "high": 0.14,
+            "relative_effect": 0.0,
+            "detects": false
+          },
+          "GRAZING_BAND_CONTRAST": {
+            "low": 2.748631,
+            "high": 2.777807,
+            "relative_effect": 0.0106,
+            "detects": false
+          }
+        }
+      },
+      "MICRO_NORMAL_CORRELATION": {
+        "target_axis": "SURFACE_AUTOCORRELATION_MM",
+        "target_detects": false,
+        "axes": {
+          "GRANULARITY_INDEX": {
+            "low": 0.050873,
+            "high": 0.061864,
+            "relative_effect": 0.195,
+            "detects": false
+          },
+          "SURFACE_AUTOCORRELATION_MM": {
+            "low": 0.14,
+            "high": 0.14,
+            "relative_effect": 0.0,
+            "detects": false
+          },
+          "GRAZING_BAND_CONTRAST": {
+            "low": 2.77473,
+            "high": 2.720528,
+            "relative_effect": 0.0197,
+            "detects": false
+          }
+        }
+      },
+      "COMPACTION": {
+        "target_axis": "GRAZING_BAND_CONTRAST",
+        "target_detects": false,
+        "axes": {
+          "GRANULARITY_INDEX": {
+            "low": 0.030688,
+            "high": 0.034144,
+            "relative_effect": 0.1066,
+            "detects": false
+          },
+          "SURFACE_AUTOCORRELATION_MM": {
+            "low": 0.14,
+            "high": 0.14,
+            "relative_effect": 0.0,
+            "detects": false
+          },
+          "GRAZING_BAND_CONTRAST": {
+            "low": 2.728165,
+            "high": 2.40664,
+            "relative_effect": 0.1252,
+            "detects": false
+          }
+        }
+      }
+    }
+  },
+  "verdict_depends_on_reader": true
+}

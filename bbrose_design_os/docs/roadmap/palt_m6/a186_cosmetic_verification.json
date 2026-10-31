@@ -1,0 +1,15 @@
+{
+ "record_type": "a186_strengthened_cosmetic_verification/1.0",
+ "protocol_identity": "a229810ce00ff35c",
+ "migration_commit": "f10d2a2 (parent 92ab4a0)",
+ "instrument": "multiset of raw match texts per (section, file, symbol) \u2014 REPLACES the per-symbol distribution, which it subsumes \u2014 PLUS a git assertion that the migration commit changed no scanned source",
+ "what_the_old_proof_could_not_see": "an in-place edit: .get(k, 0.0) -> .get(k, 1.0) leaves the distribution identical and the old instrument would have returned cosmetic",
+ "result": {
+  "multiset_unchanged": true,
+  "scanned_tree_untouched": true,
+  "scanned_files_changed": [],
+  "cosmetic_established": true
+ },
+ "multiset_delta_entries": 0,
+ "verdict": "ESTABLISHED \u2014 the conclusion published earlier as 'proven cosmetic' is now proven by an instrument that could have refuted it"
+}

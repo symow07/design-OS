@@ -1,0 +1,16 @@
+{
+ "record_type": "m7_dependency_narrowing_ruling/1.0",
+ "created_at": "2026-08-13",
+ "decided_by": "PROJECT_OWNER",
+ "RULING": "M7's ARTWORK HALF IS EXEMPT FROM THE M6 DEPENDENCY. ES3083 artwork + shade labels + editable .AI proceed while M6 remains PARKED, because the artwork consumes no family verdict. The dependency on palettes.palt_m6_powder_material_engine is NARROWED to M7's second half, the PALT-P2 / PALT-P3 pilots.",
+ "what_it_does_NOT_do": [
+  "it does NOT close M6",
+  "it does NOT establish the three diffuse verdicts, which remain NOT ESTABLISHED",
+  "it does NOT touch D7 (the unre-derivable corpus) or D8 (the measurement window)",
+  "it does NOT exempt the PILOTS — PALT-P2 and PALT-P3 still wait on M6"
+ ],
+ "misreading_guard": "if a later reader takes this as M6 being discharged in any respect, they have misread it: nothing about M6's open verdicts changes. This ruling re-scopes ONE dependency edge and only for the artwork half.",
+ "mechanical_effect": "progress_tracker.json M7 node: the dependency edge is RETAINED (the pilots half still needs it) and carries dependency_scope_narrowed_2026_08_13 naming this record; the tracker cannot express a per-deliverable edge without restructuring nodes, which is not authorized",
+ "authorization_route_read_again": "progress_tracker.json is not digest-bound, carries no owner/authorization field, and roadmap_status validates structure (duplicate ids, statuses, weights, percentages, pointers), not dependency semantics. The owner decision needed for THIS edit is supplied by this ruling itself; no further route exists to invoke. Verified by re-reading record_digest_manifest patterns and roadmap_status.py on 2026-08-13, not carried over from 61ddd75.",
+ "owner_approved": true
+}

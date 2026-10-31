@@ -1,0 +1,49 @@
+{
+  "record_type": "axis_instrument_findings_status/1.0",
+  "verified_at_head": "c375264",
+  "findings_recorded_at": "67151ef",
+  "method": "axis_instrument_forensics.py re-run at HEAD against the frames in docs/roadmap/palt_m6/texture_axes (output committed as axis_instrument_forensics_at_head.json \u2014 numbers reproduce the 67151ef record exactly, frames unchanged since), plus direct reading of the instrument code at HEAD.",
+  "status": {
+    "F1_FRAME_PROVENANCE_16BIT_IS_8BIT": {
+      "state": "LIVE_AS_AMENDED",
+      "amendment": "PNG IHDR headers prove every _16bit.png on disk is a GENUINE 16-bit RGBA file (bit_depth=16, colour_type=6, all 62 files). The writer was never broken. The defect sits in the READER: PIL silently downconverts 16-bit RGBA to uint8 on load, so the instrument measured 8-bit data from 16-bit files \u2014 and the forensic provenance block itself used PIL and therefore mischaracterized the file as 8-bit-on-disk. A finding about the finding, recorded rather than smoothed over.",
+      "unchanged": "every measured consequence stands \u2014 the reader-sensitivity numbers were measured through the actual (PIL) reading path; and R1 is the correct repair regardless, because a 16-bit PNG is still display-encoded and the scene-linear EXR is the only honest measurement frame.",
+      "evidence": "PNG IHDR bytes read directly; cv2 confirms uint16 on load."
+    },
+    "F2_ALPHA_CHANNEL_CONTAMINATES_LUMINANCE": {
+      "state": "LIVE",
+      "evidence": "palette_powder_texture_axes._region_image at HEAD still does raw.astype(float).mean(axis=2) on 4-channel frames; reader-sensitivity at HEAD still flips GRAZING_BAND_CONTRAST (0.2683 contaminated / 0.1078 RGB / 0.1252 EXR).",
+      "mitigating_note": "the contaminated 0.2683 was NOT banked at HEAD \u2014 GRAZING_BAND_CONTRAST was REJECTED by its own admission gate at c375264 and counts toward nothing. The defect in the reader remains."
+    },
+    "F3_SURFACE_AUTOCORRELATION_MM_IS_DEAD_BY_CONSTRUCTION": {
+      "state": "CLOSED_IN_EFFECT",
+      "closed_by": "c375264",
+      "evidence": "the axis failed its own positive fixture and is in rejected_axes in texture_axes_validation.json; diffuse_pair_rulings admitted_texture_axes = ['GRANULARITY_INDEX'] only, so it can reach no pair.",
+      "residual": "R3's formal withdrawal (removal from the registry) and the SYNTHETIC_FIELD_CONTROL that turns the withdrawal into evidence are still owed \u2014 done in Phase 0."
+    },
+    "F4_EDGE_HIGHLIGHT_RESPONSE_NOISE_FLOOR_EXCEEDS_THE_PASS_BAR": {
+      "state": "LIVE",
+      "evidence": "no per-axis noise floor exists anywhere at HEAD; MATTE_VS_SATIN's current PASS record counts EDGE at 0.3604 against its measured 0.27991 seed-only floor. Held for Phase 2 per the brief."
+    },
+    "F5_AXES_ARE_NOT_INDEPENDENT_AS_THE_LAW_REQUIRES": {
+      "state": "LIVE",
+      "evidence": "axes_from at HEAD still reads highlight_fwhm_fraction on four regions; no correlation has ever been computed. Held for Phase 2."
+    },
+    "F6_NO_STIMULUS_REALIZATION_CONTROL_EXISTS": {
+      "state": "LIVE",
+      "evidence": "no realization gate exists in the instrument at HEAD; the only realization check lives in the external forensics script, which the instrument never runs."
+    },
+    "F7_SILENT_ZERO_FALLBACKS": {
+      "state": "LIVE",
+      "evidence": "measure_texture_axes at HEAD: lag_mm stays 0.0 below the variance floor; contrast returns 0.0 on zero median. Both rejected axes reduce exposure but the return paths remain."
+    },
+    "F8_ROUGHNESS_ONLY_READING_CORRECT": {
+      "state": "STANDS_AS_CLEARED",
+      "evidence": "no code change since touched the roughness plumbing; the cleared hypothesis is carried forward so it is not raised a third time."
+    }
+  },
+  "consequence_for_phase_1": "every ruling number at HEAD (GRANULARITY admission 0.456, MATTE_VS_SATIN PASS axes, SATIN_VS_CREAM FAIL_MATERIAL_MODEL) was measured through the F2-contaminated 8-bit reader and is suspended pending Phase 1 re-measurement on scene-linear frames; none is carried forward.",
+  "no_bar_moved": true,
+  "protocol_identity_unchanged": "087c7f64317910fb",
+  "owner_approved": false
+}

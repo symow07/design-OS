@@ -1,0 +1,1009 @@
+{
+  "record_type": "reflective_metric_report/1.0",
+  "rig_identity": "2726137e73ac136c",
+  "commissioning": {
+    "mirror_pattern_contrast": 0.279322,
+    "gate": 0.2,
+    "clipped_subject_samples": 0,
+    "verdict": "PASS"
+  },
+  "operating_windows": {
+    "ABS_GLOSSY": {
+      "subject_peak": 0.263257,
+      "min_required": 0.05,
+      "clipped": 0,
+      "verdict": "PASS"
+    },
+    "METAL_METALLIC": {
+      "subject_peak": 0.145527,
+      "min_required": 0.05,
+      "clipped": 0,
+      "verdict": "PASS"
+    }
+  },
+  "glossy_vs_metallic": {
+    "a": "ABS GLOSSY",
+    "b": "METAL METALLIC",
+    "axes": {
+      "REFLECTED_PATTERN_CONTRAST": {
+        "a": 0.111928,
+        "b": 0.275253,
+        "effect": 0.84366,
+        "bar": 0.25,
+        "kind": "relative",
+        "clears": true,
+        "independent": true
+      },
+      "REFLECTION_EDGE_SHARPNESS": {
+        "a": 0.039642,
+        "b": 0.142369,
+        "effect": 1.128794,
+        "bar": 0.25,
+        "kind": "relative",
+        "clears": true,
+        "independent": true
+      },
+      "REFLECTION_COHERENCE": {
+        "a": 0.937809,
+        "b": 0.343538,
+        "effect": 0.594271,
+        "bar": 0.25,
+        "kind": "absolute",
+        "clears": true,
+        "independent": true
+      },
+      "SPECULAR_TO_DIFFUSE_RESPONSE": {
+        "a": 1.526023,
+        "b": 1.622169,
+        "effect": 0.06108,
+        "bar": 0.25,
+        "kind": "relative",
+        "clears": false,
+        "independent": true
+      },
+      "ENVIRONMENT_CORRELATION": {
+        "a": -0.109713,
+        "b": 0.987943,
+        "effect": 1.097655,
+        "bar": 0.25,
+        "kind": "absolute",
+        "clears": true,
+        "independent": true
+      },
+      "GRAZING_REFLECTION_RESPONSE": {
+        "a": 0.223437,
+        "b": 0.371171,
+        "effect": 0.496911,
+        "bar": 0.25,
+        "kind": "relative",
+        "clears": true,
+        "independent": false
+      }
+    },
+    "independent_axes_clearing": [
+      "REFLECTED_PATTERN_CONTRAST",
+      "REFLECTION_EDGE_SHARPNESS",
+      "REFLECTION_COHERENCE",
+      "ENVIRONMENT_CORRELATION"
+    ],
+    "supporting_axes_clearing": [
+      "GRAZING_REFLECTION_RESPONSE"
+    ],
+    "axes_required": 2,
+    "verdict": "PASS"
+  },
+  "negative_controls": [
+    {
+      "a": "METAL METALLIC",
+      "b": "METAL METALLIC",
+      "axes": {
+        "REFLECTED_PATTERN_CONTRAST": {
+          "a": 0.275253,
+          "b": 0.275253,
+          "effect": 0.0,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": true
+        },
+        "REFLECTION_EDGE_SHARPNESS": {
+          "a": 0.142369,
+          "b": 0.142369,
+          "effect": 0.0,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": true
+        },
+        "REFLECTION_COHERENCE": {
+          "a": 0.343538,
+          "b": 0.343538,
+          "effect": 0.0,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": false,
+          "independent": true
+        },
+        "SPECULAR_TO_DIFFUSE_RESPONSE": {
+          "a": 1.622169,
+          "b": 1.622169,
+          "effect": 0.0,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": true
+        },
+        "ENVIRONMENT_CORRELATION": {
+          "a": 0.987943,
+          "b": 0.987943,
+          "effect": 0.0,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": false,
+          "independent": true
+        },
+        "GRAZING_REFLECTION_RESPONSE": {
+          "a": 0.371171,
+          "b": 0.371171,
+          "effect": 0.0,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": false
+        }
+      },
+      "independent_axes_clearing": [],
+      "supporting_axes_clearing": [],
+      "axes_required": 2,
+      "verdict": "FAIL",
+      "control": "METAL_vs_identical_METAL",
+      "expected": "FAIL",
+      "behaved": true
+    },
+    {
+      "a": "ABS GLOSSY",
+      "b": "ABS GLOSSY",
+      "axes": {
+        "REFLECTED_PATTERN_CONTRAST": {
+          "a": 0.111928,
+          "b": 0.111928,
+          "effect": 0.0,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": true
+        },
+        "REFLECTION_EDGE_SHARPNESS": {
+          "a": 0.039642,
+          "b": 0.039642,
+          "effect": 0.0,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": true
+        },
+        "REFLECTION_COHERENCE": {
+          "a": 0.937809,
+          "b": 0.937809,
+          "effect": 0.0,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": false,
+          "independent": true
+        },
+        "SPECULAR_TO_DIFFUSE_RESPONSE": {
+          "a": 1.526023,
+          "b": 1.526023,
+          "effect": 0.0,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": true
+        },
+        "ENVIRONMENT_CORRELATION": {
+          "a": -0.109713,
+          "b": -0.109713,
+          "effect": 0.0,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": false,
+          "independent": true
+        },
+        "GRAZING_REFLECTION_RESPONSE": {
+          "a": 0.223437,
+          "b": 0.223437,
+          "effect": 0.0,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": false
+        }
+      },
+      "independent_axes_clearing": [],
+      "supporting_axes_clearing": [],
+      "axes_required": 2,
+      "verdict": "FAIL",
+      "control": "GLOSSY_vs_identical_GLOSSY",
+      "expected": "FAIL",
+      "behaved": true
+    },
+    {
+      "a": "METAL METALLIC",
+      "b": "METAL METALLIC",
+      "axes": {
+        "REFLECTED_PATTERN_CONTRAST": {
+          "a": 0.275253,
+          "b": 0.275253,
+          "effect": 0.0,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": true
+        },
+        "REFLECTION_EDGE_SHARPNESS": {
+          "a": 0.142369,
+          "b": 0.142369,
+          "effect": 0.0,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": true
+        },
+        "REFLECTION_COHERENCE": {
+          "a": 0.343538,
+          "b": 0.343538,
+          "effect": 0.0,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": false,
+          "independent": true
+        },
+        "SPECULAR_TO_DIFFUSE_RESPONSE": {
+          "a": 1.622169,
+          "b": 1.622169,
+          "effect": 0.0,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": true
+        },
+        "ENVIRONMENT_CORRELATION": {
+          "a": 0.987943,
+          "b": 0.987943,
+          "effect": 0.0,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": false,
+          "independent": true
+        },
+        "GRAZING_REFLECTION_RESPONSE": {
+          "a": 0.371171,
+          "b": 0.371171,
+          "effect": 0.0,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": false
+        }
+      },
+      "independent_axes_clearing": [],
+      "supporting_axes_clearing": [],
+      "axes_required": 2,
+      "verdict": "FAIL",
+      "control": "METAL_vs_METAL_renamed",
+      "expected": "FAIL",
+      "behaved": true
+    },
+    {
+      "a": "METAL METALLIC",
+      "b": "METAL METALLIC",
+      "axes": {
+        "REFLECTED_PATTERN_CONTRAST": {
+          "a": 0.275253,
+          "b": 0.340892,
+          "effect": 0.213063,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": true
+        },
+        "REFLECTION_EDGE_SHARPNESS": {
+          "a": 0.142369,
+          "b": 0.142158,
+          "effect": 0.001483,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": true
+        },
+        "REFLECTION_COHERENCE": {
+          "a": 0.343538,
+          "b": 0.343177,
+          "effect": 0.000361,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": false,
+          "independent": true
+        },
+        "SPECULAR_TO_DIFFUSE_RESPONSE": {
+          "a": 1.622169,
+          "b": 1.624045,
+          "effect": 0.001155,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": true
+        },
+        "ENVIRONMENT_CORRELATION": {
+          "a": 0.987943,
+          "b": 0.988092,
+          "effect": 0.00015,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": false,
+          "independent": true
+        },
+        "GRAZING_REFLECTION_RESPONSE": {
+          "a": 0.371171,
+          "b": 0.372298,
+          "effect": 0.003032,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": false
+        }
+      },
+      "independent_axes_clearing": [],
+      "supporting_axes_clearing": [],
+      "axes_required": 2,
+      "verdict": "FAIL",
+      "control": "METAL_vs_METAL_exposure_only",
+      "expected": "FAIL",
+      "behaved": true
+    },
+    {
+      "a": "METAL METALLIC",
+      "b": "METAL METALLIC",
+      "axes": {
+        "REFLECTED_PATTERN_CONTRAST": {
+          "a": 0.275253,
+          "b": 0.281854,
+          "effect": 0.023697,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": true
+        },
+        "REFLECTION_EDGE_SHARPNESS": {
+          "a": 0.142369,
+          "b": 0.138248,
+          "effect": 0.029374,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": true
+        },
+        "REFLECTION_COHERENCE": {
+          "a": 0.343538,
+          "b": 0.339718,
+          "effect": 0.003819,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": false,
+          "independent": true
+        },
+        "SPECULAR_TO_DIFFUSE_RESPONSE": {
+          "a": 1.622169,
+          "b": 1.590077,
+          "effect": 0.019981,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": true
+        },
+        "ENVIRONMENT_CORRELATION": {
+          "a": 0.987943,
+          "b": 0.987435,
+          "effect": 0.000508,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": false,
+          "independent": true
+        },
+        "GRAZING_REFLECTION_RESPONSE": {
+          "a": 0.371171,
+          "b": 0.347506,
+          "effect": 0.065855,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": false
+        }
+      },
+      "independent_axes_clearing": [],
+      "supporting_axes_clearing": [],
+      "axes_required": 2,
+      "verdict": "FAIL",
+      "control": "METAL_vs_METAL_environment_intensity",
+      "expected": "FAIL",
+      "behaved": true
+    }
+  ],
+  "controls_misbehaved": [],
+  "robustness": [
+    {
+      "a": "ABS GLOSSY",
+      "b": "METAL METALLIC",
+      "axes": {
+        "REFLECTED_PATTERN_CONTRAST": {
+          "a": 0.113375,
+          "b": 0.280182,
+          "effect": 0.847689,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": true
+        },
+        "REFLECTION_EDGE_SHARPNESS": {
+          "a": 0.038963,
+          "b": 0.142673,
+          "effect": 1.141947,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": true
+        },
+        "REFLECTION_COHERENCE": {
+          "a": 0.937038,
+          "b": 0.345143,
+          "effect": 0.591895,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": true,
+          "independent": true
+        },
+        "SPECULAR_TO_DIFFUSE_RESPONSE": {
+          "a": 1.536604,
+          "b": 1.623467,
+          "effect": 0.054975,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": true
+        },
+        "ENVIRONMENT_CORRELATION": {
+          "a": -0.109796,
+          "b": 0.987623,
+          "effect": 1.097419,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": true,
+          "independent": true
+        },
+        "GRAZING_REFLECTION_RESPONSE": {
+          "a": 0.224797,
+          "b": 0.377296,
+          "effect": 0.506563,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": false
+        }
+      },
+      "independent_axes_clearing": [
+        "REFLECTED_PATTERN_CONTRAST",
+        "REFLECTION_EDGE_SHARPNESS",
+        "REFLECTION_COHERENCE",
+        "ENVIRONMENT_CORRELATION"
+      ],
+      "supporting_axes_clearing": [
+        "GRAZING_REFLECTION_RESPONSE"
+      ],
+      "axes_required": 2,
+      "verdict": "PASS",
+      "perturbation": "panel_intensity_plus_5pct"
+    },
+    {
+      "a": "ABS GLOSSY",
+      "b": "METAL METALLIC",
+      "axes": {
+        "REFLECTED_PATTERN_CONTRAST": {
+          "a": 0.112719,
+          "b": 0.26862,
+          "effect": 0.817649,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": true
+        },
+        "REFLECTION_EDGE_SHARPNESS": {
+          "a": 0.038435,
+          "b": 0.142336,
+          "effect": 1.149538,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": true
+        },
+        "REFLECTION_COHERENCE": {
+          "a": 0.935926,
+          "b": 0.342877,
+          "effect": 0.593049,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": true,
+          "independent": true
+        },
+        "SPECULAR_TO_DIFFUSE_RESPONSE": {
+          "a": 1.521414,
+          "b": 1.617845,
+          "effect": 0.061435,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": true
+        },
+        "ENVIRONMENT_CORRELATION": {
+          "a": -0.107694,
+          "b": 0.98804,
+          "effect": 1.095734,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": true,
+          "independent": true
+        },
+        "GRAZING_REFLECTION_RESPONSE": {
+          "a": 0.219508,
+          "b": 0.366338,
+          "effect": 0.50126,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": false
+        }
+      },
+      "independent_axes_clearing": [
+        "REFLECTED_PATTERN_CONTRAST",
+        "REFLECTION_EDGE_SHARPNESS",
+        "REFLECTION_COHERENCE",
+        "ENVIRONMENT_CORRELATION"
+      ],
+      "supporting_axes_clearing": [
+        "GRAZING_REFLECTION_RESPONSE"
+      ],
+      "axes_required": 2,
+      "verdict": "PASS",
+      "perturbation": "panel_intensity_minus_5pct"
+    },
+    {
+      "a": "ABS GLOSSY",
+      "b": "METAL METALLIC",
+      "axes": {
+        "REFLECTED_PATTERN_CONTRAST": {
+          "a": 0.109692,
+          "b": 0.272114,
+          "effect": 0.850811,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": true
+        },
+        "REFLECTION_EDGE_SHARPNESS": {
+          "a": 0.039673,
+          "b": 0.142722,
+          "effect": 1.129959,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": true
+        },
+        "REFLECTION_COHERENCE": {
+          "a": 0.934093,
+          "b": 0.344451,
+          "effect": 0.589642,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": true,
+          "independent": true
+        },
+        "SPECULAR_TO_DIFFUSE_RESPONSE": {
+          "a": 1.509044,
+          "b": 1.634627,
+          "effect": 0.079895,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": true
+        },
+        "ENVIRONMENT_CORRELATION": {
+          "a": -0.114387,
+          "b": 0.987107,
+          "effect": 1.101494,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": true,
+          "independent": true
+        },
+        "GRAZING_REFLECTION_RESPONSE": {
+          "a": 0.223143,
+          "b": 0.38286,
+          "effect": 0.527116,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": false
+        }
+      },
+      "independent_axes_clearing": [
+        "REFLECTED_PATTERN_CONTRAST",
+        "REFLECTION_EDGE_SHARPNESS",
+        "REFLECTION_COHERENCE",
+        "ENVIRONMENT_CORRELATION"
+      ],
+      "supporting_axes_clearing": [
+        "GRAZING_REFLECTION_RESPONSE"
+      ],
+      "axes_required": 2,
+      "verdict": "PASS",
+      "perturbation": "strip_angle_plus_2deg"
+    },
+    {
+      "a": "ABS GLOSSY",
+      "b": "METAL METALLIC",
+      "axes": {
+        "REFLECTED_PATTERN_CONTRAST": {
+          "a": 0.115057,
+          "b": 0.275996,
+          "effect": 0.823105,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": true
+        },
+        "REFLECTION_EDGE_SHARPNESS": {
+          "a": 0.039279,
+          "b": 0.148438,
+          "effect": 1.163013,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": true
+        },
+        "REFLECTION_COHERENCE": {
+          "a": 0.937735,
+          "b": 0.342577,
+          "effect": 0.595158,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": true,
+          "independent": true
+        },
+        "SPECULAR_TO_DIFFUSE_RESPONSE": {
+          "a": 1.538124,
+          "b": 1.606192,
+          "effect": 0.043296,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": true
+        },
+        "ENVIRONMENT_CORRELATION": {
+          "a": -0.10804,
+          "b": 0.988325,
+          "effect": 1.096364,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": true,
+          "independent": true
+        },
+        "GRAZING_REFLECTION_RESPONSE": {
+          "a": 0.22501,
+          "b": 0.358379,
+          "effect": 0.457222,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": false
+        }
+      },
+      "independent_axes_clearing": [
+        "REFLECTED_PATTERN_CONTRAST",
+        "REFLECTION_EDGE_SHARPNESS",
+        "REFLECTION_COHERENCE",
+        "ENVIRONMENT_CORRELATION"
+      ],
+      "supporting_axes_clearing": [
+        "GRAZING_REFLECTION_RESPONSE"
+      ],
+      "axes_required": 2,
+      "verdict": "PASS",
+      "perturbation": "strip_angle_minus_2deg"
+    },
+    {
+      "a": "ABS GLOSSY",
+      "b": "METAL METALLIC",
+      "axes": {
+        "REFLECTED_PATTERN_CONTRAST": {
+          "a": 0.212035,
+          "b": 4.34861,
+          "effect": 1.814031,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": true
+        },
+        "REFLECTION_EDGE_SHARPNESS": {
+          "a": 0.223648,
+          "b": 0.310407,
+          "effect": 0.324904,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": true
+        },
+        "REFLECTION_COHERENCE": {
+          "a": 0.601525,
+          "b": 0.451271,
+          "effect": 0.150254,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": false,
+          "independent": true
+        },
+        "SPECULAR_TO_DIFFUSE_RESPONSE": {
+          "a": 1.517627,
+          "b": 1.587394,
+          "effect": 0.044938,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": true
+        },
+        "ENVIRONMENT_CORRELATION": {
+          "a": -0.442117,
+          "b": 0.531231,
+          "effect": 0.973348,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": true,
+          "independent": true
+        },
+        "GRAZING_REFLECTION_RESPONSE": {
+          "a": 0.315341,
+          "b": 0.613963,
+          "effect": 0.642679,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": false
+        }
+      },
+      "independent_axes_clearing": [
+        "REFLECTED_PATTERN_CONTRAST",
+        "REFLECTION_EDGE_SHARPNESS",
+        "ENVIRONMENT_CORRELATION"
+      ],
+      "supporting_axes_clearing": [
+        "GRAZING_REFLECTION_RESPONSE"
+      ],
+      "axes_required": 2,
+      "verdict": "PASS",
+      "perturbation": "camera_plus_1deg"
+    },
+    {
+      "a": "ABS GLOSSY",
+      "b": "METAL METALLIC",
+      "axes": {
+        "REFLECTED_PATTERN_CONTRAST": {
+          "a": 0.397361,
+          "b": 12.500058,
+          "effect": 1.876763,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": true
+        },
+        "REFLECTION_EDGE_SHARPNESS": {
+          "a": 0.293111,
+          "b": 0.408772,
+          "effect": 0.329573,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": true
+        },
+        "REFLECTION_COHERENCE": {
+          "a": 0.583107,
+          "b": 0.582975,
+          "effect": 0.000132,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": false,
+          "independent": true
+        },
+        "SPECULAR_TO_DIFFUSE_RESPONSE": {
+          "a": 1.528174,
+          "b": 1.568736,
+          "effect": 0.026195,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": true
+        },
+        "ENVIRONMENT_CORRELATION": {
+          "a": -0.449439,
+          "b": 0.443548,
+          "effect": 0.892986,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": true,
+          "independent": true
+        },
+        "GRAZING_REFLECTION_RESPONSE": {
+          "a": 0.386712,
+          "b": 0.467656,
+          "effect": 0.189483,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": false
+        }
+      },
+      "independent_axes_clearing": [
+        "REFLECTED_PATTERN_CONTRAST",
+        "REFLECTION_EDGE_SHARPNESS",
+        "ENVIRONMENT_CORRELATION"
+      ],
+      "supporting_axes_clearing": [],
+      "axes_required": 2,
+      "verdict": "PASS",
+      "perturbation": "camera_minus_1deg"
+    },
+    {
+      "a": "ABS GLOSSY",
+      "b": "METAL METALLIC",
+      "axes": {
+        "REFLECTED_PATTERN_CONTRAST": {
+          "a": 0.108397,
+          "b": 0.260071,
+          "effect": 0.823268,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": true
+        },
+        "REFLECTION_EDGE_SHARPNESS": {
+          "a": 0.051368,
+          "b": 0.14391,
+          "effect": 0.9478,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": true
+        },
+        "REFLECTION_COHERENCE": {
+          "a": 0.950613,
+          "b": 0.33078,
+          "effect": 0.619833,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": true,
+          "independent": true
+        },
+        "SPECULAR_TO_DIFFUSE_RESPONSE": {
+          "a": 1.531409,
+          "b": 1.611577,
+          "effect": 0.051014,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": true
+        },
+        "ENVIRONMENT_CORRELATION": {
+          "a": -0.091344,
+          "b": 0.985506,
+          "effect": 1.07685,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": true,
+          "independent": true
+        },
+        "GRAZING_REFLECTION_RESPONSE": {
+          "a": 0.206855,
+          "b": 0.379825,
+          "effect": 0.589658,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": false
+        }
+      },
+      "independent_axes_clearing": [
+        "REFLECTED_PATTERN_CONTRAST",
+        "REFLECTION_EDGE_SHARPNESS",
+        "REFLECTION_COHERENCE",
+        "ENVIRONMENT_CORRELATION"
+      ],
+      "supporting_axes_clearing": [
+        "GRAZING_REFLECTION_RESPONSE"
+      ],
+      "axes_required": 2,
+      "verdict": "PASS",
+      "perturbation": "panel_distance_plus_5pct"
+    },
+    {
+      "a": "ABS GLOSSY",
+      "b": "METAL METALLIC",
+      "axes": {
+        "REFLECTED_PATTERN_CONTRAST": {
+          "a": 0.117026,
+          "b": 0.275165,
+          "effect": 0.80644,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": true
+        },
+        "REFLECTION_EDGE_SHARPNESS": {
+          "a": 0.0448,
+          "b": 0.142494,
+          "effect": 1.043223,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": true
+        },
+        "REFLECTION_COHERENCE": {
+          "a": 0.935775,
+          "b": 0.342855,
+          "effect": 0.592921,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": true,
+          "independent": true
+        },
+        "SPECULAR_TO_DIFFUSE_RESPONSE": {
+          "a": 1.553007,
+          "b": 1.616553,
+          "effect": 0.040098,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": true
+        },
+        "ENVIRONMENT_CORRELATION": {
+          "a": -0.149471,
+          "b": 0.986344,
+          "effect": 1.135816,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": true,
+          "independent": true
+        },
+        "GRAZING_REFLECTION_RESPONSE": {
+          "a": 0.236298,
+          "b": 0.362562,
+          "effect": 0.421679,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": false
+        }
+      },
+      "independent_axes_clearing": [
+        "REFLECTED_PATTERN_CONTRAST",
+        "REFLECTION_EDGE_SHARPNESS",
+        "REFLECTION_COHERENCE",
+        "ENVIRONMENT_CORRELATION"
+      ],
+      "supporting_axes_clearing": [
+        "GRAZING_REFLECTION_RESPONSE"
+      ],
+      "axes_required": 2,
+      "verdict": "PASS",
+      "perturbation": "panel_distance_minus_5pct"
+    }
+  ],
+  "robustness_unstable": [],
+  "REFLECTIVE_MATERIAL_RIG": "PASS"
+}

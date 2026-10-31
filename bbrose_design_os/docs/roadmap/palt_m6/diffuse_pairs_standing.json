@@ -1,0 +1,42 @@
+{
+  "record_type": "diffuse_pairs_standing/1.0",
+  "as_of": "post-R4 (EDGE ineligible, floor 0.27991) and post-R5 (SHEEN|FWHM and SHEEN|EDGE at rho=1.0 \u2014 SHEEN and FWHM may not both count)",
+  "law": "2 independent axes at >= 0.25 \u2014 unmoved",
+  "pairs": {
+    "MATTE_VS_SATIN": {
+      "verdict": "PASS",
+      "standing_on": {
+        "GRANULARITY_INDEX": 0.6828,
+        "SHEEN_REGION_RESPONSE": 0.4225
+      },
+      "notes": "SHEEN clears its own floor requirement 0.33138; GRANULARITY is the second instrument (rho vs SHEEN 0.4). EDGE 0.3604 excluded: ineligible, within noise margin, and rho=1.0 with counted SHEEN. FWHM 0.0712 below bar."
+    },
+    "PRESSED_VS_MATTE": {
+      "verdict": "PASS",
+      "standing_on": {
+        "GRANULARITY_INDEX": 0.8942,
+        "SHEEN_REGION_RESPONSE": 0.4471
+      },
+      "notes": "FWHM 0.3091 clears the bar but is rho=1.0 with counted SHEEN and therefore does not add a second lobe axis; EDGE 0.4191 excluded as ineligible. The pair does NOT stand on three axes; it stands on exactly these two."
+    },
+    "SATIN_VS_CREAM": {
+      "verdict": "PASS",
+      "standing_on": {
+        "GRANULARITY_INDEX": 0.4423,
+        "HIGHLIGHT_FWHM": 0.2843
+      },
+      "notes": "two instruments at rho=0.4 \u2014 not exposed to the N=4 degeneracy; SHEEN 0.2469 honestly below bar."
+    }
+  },
+  "inherited_by": "the flake rig and the metallic-vs-glitter cross-check take these as the standing baseline",
+  "owner_approved": false,
+  "KNOWN_STRUCTURAL_EXPOSURE": {
+    "finding": "GRANULARITY_INDEX is the carrying axis for ALL THREE diffuse pairs (0.6828, 0.8942, 0.4423), each time paired with a single lobe axis. Nothing about any individual pairing is wrong \u2014 wide margins over its 0.1169 floor, different instrument \u2014 but the verdicts are structurally concentrated: if GRANULARITY_INDEX is ever found defective, three verdicts fall together, and this project has already withdrawn two verdicts to a defective axis.",
+    "design_constraint_inherited_by_every_future_rig": "no rig may be architected so that one axis carries every pair in it; the flake rig takes this as a hard constraint at declaration time"
+  },
+  "ADEQUACY_1i_2026_08_08": {
+    "classification": "all six clearing-effect comparisons behind these PASSes are ADEQUACY_UNASSESSED \u2014 no replicate spread of any cross-family effect statistic has ever been measured; the verdicts stand MARKED, each mark a standing measurement obligation",
+    "law": "adequacy_1i at 3586022acc972aff (retroactive, symmetric)",
+    "detail": "measurement_adequacy/phase2_retroactive.json"
+  }
+}

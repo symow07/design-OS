@@ -1,0 +1,118 @@
+{
+  "routed": {
+    "INERT_BY_UNREACHABILITY": [
+      "a3p_evidence_render.py:434",
+      "ai_style_profile.py:64",
+      "concept_analysis.py:217",
+      "concept_analysis.py:276",
+      "container_projection.py:69",
+      "container_projection.py:72",
+      "container_projection.py:80",
+      "m3_calibration.py:135",
+      "m3_calibration.py:154",
+      "material_characterization.py:354",
+      "material_characterization.py:367",
+      "material_characterization.py:387",
+      "material_characterization.py:389",
+      "palette_baked_geometry.py:60",
+      "palette_compact_family.py:184",
+      "palette_contracts.py:149",
+      "palette_layout_kernel.py:101",
+      "palette_layout_kernel.py:103",
+      "palette_layout_kernel.py:105",
+      "palette_layout_kernel.py:118",
+      "palette_moulded_rect.py:498",
+      "palette_recessed_tray_geometry.py:147",
+      "palette_stackup_engine.py:117",
+      "palette_stackup_engine.py:119",
+      "palette_stackup_engine.py:196",
+      "palette_stackup_engine.py:198",
+      "palette_stackup_engine.py:200",
+      "palette_stackup_engine.py:202",
+      "palette_stackup_engine.py:204",
+      "palette_stackup_engine.py:205",
+      "palette_stackup_engine.py:206",
+      "palette_stackup_engine.py:207",
+      "palette_stackup_engine.py:216",
+      "palette_stackup_engine.py:218",
+      "palette_stackup_engine.py:219",
+      "palette_stackup_engine.py:221",
+      "palette_stackup_engine.py:79",
+      "palette_stackup_engine.py:94",
+      "palette_thickness_authority.py:154",
+      "palette_thickness_field.py:124",
+      "visual_inspector.py:137",
+      "visual_inspector.py:87",
+      "web_geometry_research.py:146"
+    ],
+    "NOT_ASSESSED": [
+      "palette_characterization_protocol.py:414",
+      "palette_characterization_protocol.py:433",
+      "palette_characterization_protocol.py:471",
+      "palette_characterization_protocol.py:482",
+      "palette_characterization_protocol.py:500",
+      "palette_characterization_protocol.py:563",
+      "palette_characterization_rig.py:315",
+      "palette_material_characterization.py:266",
+      "palette_powder_axis_diagnosis.py:118",
+      "palette_powder_rigs.py:235",
+      "palette_raking_rig.py:256",
+      "palette_raking_rig.py:313",
+      "palette_raking_rig.py:348"
+    ]
+  },
+  "not_assessed_detail": {
+    "palette_characterization_protocol.py:414": {
+      "line": "return (p95 - p5) / p50 if p50 > 1e-9 else 0.0",
+      "enclosing_function": "grid_pattern_contrast"
+    },
+    "palette_characterization_protocol.py:433": {
+      "line": "return ([[(v - lo) / rng if m else 0.0",
+      "enclosing_function": "_normalised"
+    },
+    "palette_characterization_protocol.py:471": {
+      "line": "m = sum(block) / len(block) if block else 0.0",
+      "enclosing_function": "grid_coherence"
+    },
+    "palette_characterization_protocol.py:482": {
+      "line": "return low_var / total if total > 1e-12 else 0.0",
+      "enclosing_function": "grid_coherence"
+    },
+    "palette_characterization_protocol.py:500": {
+      "line": "return cov / denom if denom > 1e-12 else 0.0",
+      "enclosing_function": "grid_correlation"
+    },
+    "palette_characterization_protocol.py:563": {
+      "line": "effect = abs(va - vb) / mean if mean > 1e-9 else 0.0",
+      "enclosing_function": "apply_pass_law"
+    },
+    "palette_characterization_rig.py:315": {
+      "line": "effect = abs(va - vb) / mean if mean > 1e-9 else 0.0",
+      "enclosing_function": "discriminate"
+    },
+    "palette_material_characterization.py:266": {
+      "line": "effect = abs(va - vb) / mean if mean > 1e-9 else 0.0",
+      "enclosing_function": "discriminate"
+    },
+    "palette_powder_axis_diagnosis.py:118": {
+      "line": "effect = abs(va - vb) / mean if mean > 1e-9 else 0.0",
+      "enclosing_function": "run_study"
+    },
+    "palette_powder_rigs.py:235": {
+      "line": "if areas else 0.0),",
+      "enclosing_function": "particle_census"
+    },
+    "palette_raking_rig.py:256": {
+      "line": "effs.append(abs(a - b) / mean if mean > 1e-9 else 0.0)",
+      "enclosing_function": "commission_raking_rig"
+    },
+    "palette_raking_rig.py:313": {
+      "line": "eff = abs(a - b) / mean if mean > 1e-9 else 0.0",
+      "enclosing_function": "commission_raking_rig"
+    },
+    "palette_raking_rig.py:348": {
+      "line": "# 1g \u2014 the `if den else 0.0` this replaces was a live instance",
+      "enclosing_function": "commission_raking_rig"
+    }
+  }
+}

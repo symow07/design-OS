@@ -1,0 +1,73 @@
+{
+ "record_type": "h2_c1_finalisation/1.0",
+ "finalised_on": "2026-08-17",
+ "authority": "OWNER_BLOCKER_CLEARANCE.md §M via owner_pick_ingestion.json",
+ "precedent": "E1/C3/A2 finalisation — machinery imported from finalize_lid_C3, not re-implemented",
+ "before": "../candidates/fb3093_lid_C1_engine_turned_cartouche.svg (as picked)",
+ "final_svg": "fb3093_lid_C1_final.svg",
+ "final_png": "fb3093_lid_C1_final.png (800 dpi)",
+ "measurements": {
+  "lattice_margins": {
+   "rows_first_last_margin_mm": [
+    0.867,
+    0.76
+   ],
+   "cols_first_last_margin_mm": [
+    0.867,
+    0.76
+   ],
+   "shift_mm": [
+    -0.053,
+    -0.053
+   ],
+   "applied_mm": [
+    -0.053,
+    -0.053
+   ],
+   "note": "rigid-body translation per axis; wave phases ride along"
+  },
+  "rosette_centring": {
+   "cartouche_inner_ink_top_mm": 17.114,
+   "wordmark_ink_top_mm": 35.81,
+   "designed_centre_y_mm": 28.296,
+   "optical_centre_y_mm": 26.462,
+   "clearance_above_before_mm": 4.017,
+   "clearance_below_before_mm": 0.35,
+   "shift_mm": -1.834,
+   "applied_mm": -1.834,
+   "derivation": "equalise cartouche-inner-top->rosette-ink and rosette-ink->wordmark-ink (the A2 rule in the cartouche channel)",
+   "ring_geometry": "UNTOUCHED — same rings shifted as one body"
+  },
+  "ink_centring": {
+   "BBROSE": {
+    "measured_offset_mm": -0.023,
+    "applied_mm": 0.0,
+    "note": "below 0.05 mm noise floor — not applied"
+   },
+   "FACE POWDER · POLVOS": {
+    "measured_offset_mm": -0.009,
+    "applied_mm": 0.0,
+    "note": "below 0.05 mm noise floor — not applied"
+   }
+  },
+  "kerning": {
+   "source": "legacy 'kern' table (GPOS absent)",
+   "pairs_in_font": 5,
+   "pairs_touching_C1_strings": "NONE — verified no-op for both lines including the middot line"
+  },
+  "kept_by_verification": {
+   "cartouche_vertical_station": "0.455*FH — compositional choice of the pick, kept (not a defect channel)",
+   "stroke_weights_mm": {
+    "lattice": 0.05,
+    "cartouche_keys": [
+     0.3,
+     0.1
+    ],
+    "rosette": 0.07,
+    "boss": 0.07
+   },
+   "boss_centres_symmetric": "by construction at 0.09/0.91 fractions — verified equal margins",
+   "colour": "substrate constants, Lab round-trip verified at C3 finalisation (dE76 0.18/0.34) — cited, not re-derived"
+  }
+ }
+}

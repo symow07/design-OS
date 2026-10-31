@@ -1,0 +1,30 @@
+{
+ "record_type": "a179_allowlist_rekey/1.0",
+ "protocol_identity": "37074516cb840101",
+ "defect_retired": "line-keyed allowlist entries ('file.py:LINE') moved whenever an unrelated edit shifted a line, tripping the suite four times across this arc \u2014 once causing a red-suite commit (a716c30)",
+ "new_keying": {
+  "form": "file :: enclosing symbol :: whitespace-normalized match text -> COUNT",
+  "line_independent_by_construction": "line numbers are used only to FIND the enclosing symbol; no line number enters a key",
+  "counts_included_because": "co-located occurrences must not hide behind each other \u2014 see the masked-occurrence finding below"
+ },
+ "masked_occurrence_finding": {
+  "site": "palette_characterization_rig.py, symbol _get (was line 265)",
+  "source": "return float(r.get(region, {}).get(key, default))",
+  "statement": "TWO lookup-default occurrences on ONE line. The line-keyed allowlist collapsed them to a single entry, so the class census under-counted by one and a second occurrence sat inside an allowlisted key unseen. The rekey exposes it: the A32 census is 27 occurrences across 27 keys where the old list carried 26 entries. Line-keying was not merely fragile \u2014 it was under-counting the class it gates",
+  "dispositioned": "NO \u2014 counted and located only, as the A32 brief requires"
+ },
+ "baselines": {
+  "fallback_keys": 22,
+  "fallback_occurrences": 30,
+  "a32_keys": 27,
+  "a32_occurrences": 27
+ },
+ "structural_guard": "test_no_allowlist_key_is_line_positional fails the suite if any key embeds a line number \u2014 the rekey cannot silently regress",
+ "demonstrated_not_asserted": {
+  "line_movement_unit": "keys computed over a source and over the same source shifted by five lines are equal (test_keys_survive_line_movement_demonstrated)",
+  "line_movement_live": "five blank lines injected into the real palette_flake_rig.py moved every subsequent line number; the source-scan gates PASSED (5 passed) where the line-keyed form failed four times; file restored, zero diff",
+  "negative_control": "a new lookup-default injected into a measurement module made the gate FAIL, naming the symbol and the text rather than a line: \"palette_flake_rig.py::declaration::.get('x', 0.5) (found 1, allowed 0)\"; file restored, 41 passed"
+ },
+ "scope_decision_stated": "the rekey covers the LIVE GATES (the two test allowlists that trip). Line-keyed DISPOSITION RECORDS (allowlist_dispositions, the four-state table, the closure computations) are historical records of what was measured, not gates: they do not trip, and per 2k they stand as what was committed. Not rekeyed, and the decision is stated rather than left implicit",
+ "owner_approved": false
+}

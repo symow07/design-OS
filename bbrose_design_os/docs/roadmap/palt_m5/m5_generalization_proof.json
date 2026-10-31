@@ -1,0 +1,77 @@
+{
+  "record_type": "palette_material_generalization_proof/1.0",
+  "variants": [
+    {
+      "variant": "DARK_GLOSSY_ABS",
+      "description": "a dark high-gloss case",
+      "mesh_geometry_identity": "8bf1c0faac8e86bc",
+      "material_contract_identity": "d7e478dc9c9b2e01",
+      "evidence_identity": "1fb7ae4e87c92318",
+      "symbolic_colour_references": [],
+      "resolved_component_count": 43
+    },
+    {
+      "variant": "ES3083_SYMBOLIC_ZONES",
+      "description": "the ES3083 zone assignment; both Pantone tokens stay symbolic and carry no RGB",
+      "mesh_geometry_identity": "8bf1c0faac8e86bc",
+      "material_contract_identity": "cd1b634aa21a2d01",
+      "evidence_identity": "db69add5dc811a0f",
+      "symbolic_colour_references": [
+        "PANTONE 621 C",
+        "PANTONE 627 C"
+      ],
+      "resolved_component_count": 43
+    },
+    {
+      "variant": "LIGHT_SATIN_ABS",
+      "description": "a light satin case",
+      "mesh_geometry_identity": "8bf1c0faac8e86bc",
+      "material_contract_identity": "3ed4191f8c8a1f6b",
+      "evidence_identity": "6f62f7179072b625",
+      "symbolic_colour_references": [],
+      "resolved_component_count": 43
+    },
+    {
+      "variant": "METALLIC_ACCENT",
+      "description": "metallic lid, hinge and clasp",
+      "mesh_geometry_identity": "8bf1c0faac8e86bc",
+      "material_contract_identity": "3c2739549d6cde46",
+      "evidence_identity": "f9ce47a2b90762c1",
+      "symbolic_colour_references": [],
+      "resolved_component_count": 43
+    },
+    {
+      "variant": "NEUTRAL_ABS_MATTE",
+      "description": "the engineering default look",
+      "mesh_geometry_identity": "8bf1c0faac8e86bc",
+      "material_contract_identity": "e23c4915766a2982",
+      "evidence_identity": "0ac4fb3370cce24d",
+      "symbolic_colour_references": [],
+      "resolved_component_count": 43
+    },
+    {
+      "variant": "OWNER_SUBSTITUTED_COLOUR",
+      "description": "an arbitrary owner-selected colour on a different base material",
+      "mesh_geometry_identity": "8bf1c0faac8e86bc",
+      "material_contract_identity": "93e71d5a9da79875",
+      "evidence_identity": "ad2fa1e479413664",
+      "symbolic_colour_references": [],
+      "resolved_component_count": 43
+    }
+  ],
+  "variant_count": 6,
+  "distinct_mesh_identities": 1,
+  "distinct_material_identities": 6,
+  "distinct_evidence_identities": 6,
+  "geometry_rebuilt": false,
+  "pantone_rgb_fabricated": false,
+  "verdict": "PASS",
+  "proves": "COLOUR_AND_FINISH_CHANGE_WITHOUT_GEOMETRY_RECONSTRUCTION",
+  "does_not_prove": [
+    "that any of these materials is manufacturable",
+    "any Pantone value \u2014 the tokens remain symbolic",
+    "owner approval of any colour"
+  ],
+  "owner_approved": false,
+  "manufacturing_authority": "NOT_ESTABLISHED"
+}

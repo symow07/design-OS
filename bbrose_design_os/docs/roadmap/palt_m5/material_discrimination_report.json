@@ -1,0 +1,265 @@
+{
+  "record_type": "material_discrimination_report/1.0",
+  "predeclared_bars": {
+    "mean_luminance": 6.0,
+    "highlight_fraction": 0.01,
+    "highlight_p99": 10.0,
+    "specular_spread": 4.0
+  },
+  "bars_predeclared_before_measurement": true,
+  "pairs": [
+    {
+      "a": "ABS MATTE",
+      "b": "ABS GLOSSY",
+      "axes": {
+        "mean_luminance": {
+          "a": 70.6311,
+          "b": 69.0427,
+          "delta": 1.5884,
+          "bar": 6.0,
+          "clears": false
+        },
+        "highlight_fraction": {
+          "a": 0.094931,
+          "b": 0.110441,
+          "delta": 0.01551,
+          "bar": 0.01,
+          "clears": true
+        },
+        "highlight_p99": {
+          "a": 114.3333,
+          "b": 107.6667,
+          "delta": 6.6666,
+          "bar": 10.0,
+          "clears": false
+        },
+        "specular_spread": {
+          "a": 12.3209,
+          "b": 11.9115,
+          "delta": 0.4094,
+          "bar": 4.0,
+          "clears": false
+        }
+      },
+      "axes_clearing_the_bar": [
+        "highlight_fraction"
+      ],
+      "verdict": "PASS",
+      "why": "two renders are distinguishable when they differ by at least the predeclared bar on at least one measured axis; differing JSON is not evidence",
+      "image": "docs/roadmap/palt_m5/evidence/matte_vs_glossy_detail.png",
+      "pair": "matte_vs_glossy_detail.png"
+    },
+    {
+      "a": "ABS MATTE",
+      "b": "ABS SATIN",
+      "axes": {
+        "mean_luminance": {
+          "a": 70.6311,
+          "b": 72.497,
+          "delta": 1.8659,
+          "bar": 6.0,
+          "clears": false
+        },
+        "highlight_fraction": {
+          "a": 0.094931,
+          "b": 0.095298,
+          "delta": 0.000367,
+          "bar": 0.01,
+          "clears": false
+        },
+        "highlight_p99": {
+          "a": 114.3333,
+          "b": 112.3333,
+          "delta": 2.0,
+          "bar": 10.0,
+          "clears": false
+        },
+        "specular_spread": {
+          "a": 12.3209,
+          "b": 11.3943,
+          "delta": 0.9266,
+          "bar": 4.0,
+          "clears": false
+        }
+      },
+      "axes_clearing_the_bar": [],
+      "verdict": "FAIL",
+      "why": "two renders are distinguishable when they differ by at least the predeclared bar on at least one measured axis; differing JSON is not evidence",
+      "image": "docs/roadmap/palt_m5/evidence/matte_vs_satin_detail.png",
+      "pair": "matte_vs_satin_detail.png"
+    },
+    {
+      "a": "ABS GLOSSY",
+      "b": "METAL METALLIC",
+      "axes": {
+        "mean_luminance": {
+          "a": 69.0427,
+          "b": 45.581,
+          "delta": 23.4617,
+          "bar": 6.0,
+          "clears": true
+        },
+        "highlight_fraction": {
+          "a": 0.110441,
+          "b": 0.106986,
+          "delta": 0.003455,
+          "bar": 0.01,
+          "clears": false
+        },
+        "highlight_p99": {
+          "a": 107.6667,
+          "b": 106.6667,
+          "delta": 1.0,
+          "bar": 10.0,
+          "clears": false
+        },
+        "specular_spread": {
+          "a": 11.9115,
+          "b": 15.9607,
+          "delta": 4.0492,
+          "bar": 4.0,
+          "clears": true
+        }
+      },
+      "axes_clearing_the_bar": [
+        "mean_luminance",
+        "specular_spread"
+      ],
+      "verdict": "PASS",
+      "why": "two renders are distinguishable when they differ by at least the predeclared bar on at least one measured axis; differing JSON is not evidence",
+      "image": "docs/roadmap/palt_m5/evidence/glossy_vs_metallic_detail.png",
+      "pair": "glossy_vs_metallic_detail.png"
+    },
+    {
+      "a": "ABS MATTE",
+      "b": "ACRYLIC TRANSPARENT",
+      "axes": {
+        "mean_luminance": {
+          "a": 70.6311,
+          "b": 41.5692,
+          "delta": 29.0619,
+          "bar": 6.0,
+          "clears": true
+        },
+        "highlight_fraction": {
+          "a": 0.094931,
+          "b": 0.137214,
+          "delta": 0.042283,
+          "bar": 0.01,
+          "clears": true
+        },
+        "highlight_p99": {
+          "a": 114.3333,
+          "b": 108.6667,
+          "delta": 5.6666,
+          "bar": 10.0,
+          "clears": false
+        },
+        "specular_spread": {
+          "a": 12.3209,
+          "b": 20.5987,
+          "delta": 8.2778,
+          "bar": 4.0,
+          "clears": true
+        }
+      },
+      "axes_clearing_the_bar": [
+        "mean_luminance",
+        "highlight_fraction",
+        "specular_spread"
+      ],
+      "verdict": "PASS",
+      "why": "two renders are distinguishable when they differ by at least the predeclared bar on at least one measured axis; differing JSON is not evidence",
+      "image": "docs/roadmap/palt_m5/evidence/opaque_vs_transparent_detail.png",
+      "pair": "opaque_vs_transparent_detail.png"
+    },
+    {
+      "a": "ABS MATTE",
+      "b": "ACRYLIC TRANSLUCENT",
+      "axes": {
+        "mean_luminance": {
+          "a": 70.6311,
+          "b": 46.2952,
+          "delta": 24.3359,
+          "bar": 6.0,
+          "clears": true
+        },
+        "highlight_fraction": {
+          "a": 0.094931,
+          "b": 0.184133,
+          "delta": 0.089202,
+          "bar": 0.01,
+          "clears": true
+        },
+        "highlight_p99": {
+          "a": 114.3333,
+          "b": 100.6667,
+          "delta": 13.6666,
+          "bar": 10.0,
+          "clears": true
+        },
+        "specular_spread": {
+          "a": 12.3209,
+          "b": 19.2683,
+          "delta": 6.9474,
+          "bar": 4.0,
+          "clears": true
+        }
+      },
+      "axes_clearing_the_bar": [
+        "mean_luminance",
+        "highlight_fraction",
+        "highlight_p99",
+        "specular_spread"
+      ],
+      "verdict": "PASS",
+      "why": "two renders are distinguishable when they differ by at least the predeclared bar on at least one measured axis; differing JSON is not evidence",
+      "image": "docs/roadmap/palt_m5/evidence/opaque_vs_translucent_detail.png",
+      "pair": "opaque_vs_translucent_detail.png"
+    }
+  ],
+  "negative_control": {
+    "a": "ABS MATTE",
+    "b": "ABS MATTE (same render)",
+    "axes": {
+      "mean_luminance": {
+        "a": 70.6311,
+        "b": 70.6311,
+        "delta": 0.0,
+        "bar": 6.0,
+        "clears": false
+      },
+      "highlight_fraction": {
+        "a": 0.094931,
+        "b": 0.094931,
+        "delta": 0.0,
+        "bar": 0.01,
+        "clears": false
+      },
+      "highlight_p99": {
+        "a": 114.3333,
+        "b": 114.3333,
+        "delta": 0.0,
+        "bar": 10.0,
+        "clears": false
+      },
+      "specular_spread": {
+        "a": 12.3209,
+        "b": 12.3209,
+        "delta": 0.0,
+        "bar": 4.0,
+        "clears": false
+      }
+    },
+    "axes_clearing_the_bar": [],
+    "verdict": "FAIL",
+    "why": "two renders are distinguishable when they differ by at least the predeclared bar on at least one measured axis; differing JSON is not evidence",
+    "pair": "NEGATIVE_CONTROL_SELF_COMPARISON"
+  },
+  "negative_control_verdict_must_be": "FAIL",
+  "negative_control_behaved": true,
+  "failed_pairs": [
+    "matte_vs_satin_detail.png"
+  ],
+  "MATERIAL_DIFFERENTIATION": "FAIL"
+}

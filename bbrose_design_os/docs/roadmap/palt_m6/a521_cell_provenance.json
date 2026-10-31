@@ -1,0 +1,28 @@
+{
+ "record_type": "a521_cell_provenance/1.0",
+ "date": "2026-08-12",
+ "method": "BACKWARD from the published numbers, not forward from the prefixes",
+ "found": {
+  "record": "a233_test4_result.json",
+  "cell": "SATIN_VS_CREAM / GRANULARITY_INDEX",
+  "carries": "per_seed_granularity for POWDER_SATIN and CREAM at seeds 40,81,82,83,84,99",
+  "sample": {
+   "POWDER_SATIN_40": 0.041395,
+   "CREAM_40": 0.063692
+  }
+ },
+ "THE_FINDING": {
+  "verdict_IS_traceable_to_its_per_seed_inputs": true,
+  "verdict_is_NOT_traceable_to_frames": true,
+  "evidence": "the value 0.041395 appears in EXACTLY ONE file in the entire corpus \u2014 the result record itself. No frame record contains it. Frames carry scene_linear_peak, scene_linear_mean, percentiles, clipped_sample_count, saturated_sample_count. GRANULARITY is a DERIVED quantity whose derivation output was stored only in the result and whose frame inputs were never recorded.",
+  "consequence": "the CELL -> FRAME-SET table A521 asks for CANNOT be derived from reads, because nothing in the corpus records WHICH FRAMES WERE READ. Not by any record, forward or backward."
+ },
+ "A522": "CELL_PROVENANCE_NOT_RECOVERABLE at the frame-set level; STOP on the MATTE requirement",
+ "six_and_six": "NOT SCORABLE \u2014 the requirement cannot be derived even backward",
+ "A523_owner_prediction": {
+  "predicted": "backward search SUCCEEDS and the table is recoverable",
+  "scored": "FAILED, with a nuance the prediction did not enumerate",
+  "nuance": "the owner framed failure as 'a published verdict cannot be traced to its inputs'. The middle case is what obtains: the verdict IS traceable to its per-seed inputs, which are recorded, and is NOT traceable to the frames those inputs were derived from. The numbers survive; the provenance of the numbers does not."
+ },
+ "severity": "this is the DETERMINED_IN_FACT_NOT_IN_LAW shape (class ten) at the level of an entire measurement campaign: four published cells rest on per-seed values no artifact can be shown to have produced. Re-deriving any cell, or extending it to MATTE, requires re-running a derivation whose inputs are unidentified."
+}

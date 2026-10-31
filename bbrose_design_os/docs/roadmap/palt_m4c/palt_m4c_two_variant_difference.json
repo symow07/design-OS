@@ -1,0 +1,264 @@
+{
+  "record_type": "palt_m4c_two_variant_difference/1.0",
+  "concept": "ConceptReference:6 ES3083\u5438\u5851_\u5c55\u76d2\u5200\u7ebf \u2014 BBROSE 'Outer Glow' eyeshadow palette (media/references/ref_ES3083\u5438\u5851_\u5c55\u76d2\u5200\u7ebf.png)",
+  "intent_identity": "9b3603e17e85746c",
+  "intent_state": "AI_DESIGN_INTENT_DRAFT",
+  "owner_approved": false,
+  "ENGINEERING_DEFAULT_VARIANT": {
+    "layout.pan_count": 9,
+    "layout.rows": 3,
+    "layout.columns": 3,
+    "pan.shape": "CIRCLE",
+    "layout.outer_margin_mm": 5.0,
+    "layout.inter_pan_gap_mm": 4.0,
+    "case.corner_radius_mm": 6.0,
+    "mirror.present": true,
+    "case.outer_height_mm": 15.0,
+    "material.primary": "ABS_NEUTRAL",
+    "material.powder_finish": "UNSPECIFIED",
+    "artwork.logo_zone": "NONE",
+    "artwork.type_zones": [],
+    "case.opening_direction": "UPWARD",
+    "hinge.edge": "TOP_EDGE"
+  },
+  "DESIGN_INTENT_DRIVEN_VARIANT": {
+    "layout.pan_count": 9,
+    "layout.rows": 3,
+    "layout.columns": 3,
+    "pan.shape": "RECTANGULAR",
+    "layout.outer_margin_mm": 4.0,
+    "layout.inter_pan_gap_mm": 4.0,
+    "case.corner_radius_mm": 7.2,
+    "mirror.present": true,
+    "case.outer_height_mm": 12.0,
+    "material.primary": "MOULDED_PLASTIC_MATTE",
+    "material.powder_finish": "PRESSED_POWDER",
+    "artwork.logo_zone": "LID_CENTRE",
+    "artwork.type_zones": [
+      "EYE SHADOW",
+      "OUTER GLOW",
+      "BBROSE",
+      "SOMBRA DE OJOS"
+    ],
+    "case.opening_direction": "UPWARD",
+    "hinge.edge": "TOP_EDGE"
+  },
+  "differences": [
+    {
+      "field": "artwork.logo_zone",
+      "default": "NONE",
+      "intent_driven": "LID_CENTRE",
+      "origin": "CONCEPT_DERIVED",
+      "changed": true
+    },
+    {
+      "field": "artwork.type_zones",
+      "default": [],
+      "intent_driven": [
+        "EYE SHADOW",
+        "OUTER GLOW",
+        "BBROSE",
+        "SOMBRA DE OJOS"
+      ],
+      "origin": "CONCEPT_DERIVED",
+      "changed": true
+    },
+    {
+      "field": "case.corner_radius_mm",
+      "default": 6.0,
+      "intent_driven": 7.2,
+      "origin": "CONCEPT_DERIVED",
+      "changed": true
+    },
+    {
+      "field": "case.opening_direction",
+      "default": "UPWARD",
+      "intent_driven": "UPWARD",
+      "origin": "CONCEPT_DERIVED",
+      "changed": false
+    },
+    {
+      "field": "case.outer_height_mm",
+      "default": 15.0,
+      "intent_driven": 12.0,
+      "origin": "CONCEPT_DERIVED",
+      "changed": true
+    },
+    {
+      "field": "layout.inter_pan_gap_mm",
+      "default": 4.0,
+      "intent_driven": 4.0,
+      "origin": "CONCEPT_DERIVED",
+      "changed": false
+    },
+    {
+      "field": "layout.outer_margin_mm",
+      "default": 5.0,
+      "intent_driven": 4.0,
+      "origin": "CONCEPT_DERIVED",
+      "changed": true
+    },
+    {
+      "field": "material.powder_finish",
+      "default": "UNSPECIFIED",
+      "intent_driven": "PRESSED_POWDER",
+      "origin": "CONCEPT_DERIVED",
+      "changed": true
+    },
+    {
+      "field": "material.primary",
+      "default": "ABS_NEUTRAL",
+      "intent_driven": "MOULDED_PLASTIC_MATTE",
+      "origin": "CONCEPT_DERIVED",
+      "changed": true
+    },
+    {
+      "field": "pan.shape",
+      "default": "CIRCLE",
+      "intent_driven": "RECTANGULAR",
+      "origin": "CONCEPT_DERIVED",
+      "changed": true
+    }
+  ],
+  "fields_changed": 8,
+  "DESIGN_INTENT_BRIDGE": "PASS",
+  "provenance": {
+    "artwork.logo_zone": {
+      "target": "artwork.logo_zone",
+      "value": "LID_CENTRE",
+      "origin": "CONCEPT_DERIVED",
+      "source_field": "logo_position",
+      "source_reference": "ConceptReference:6 ES3083\u5438\u5851_\u5c55\u76d2\u5200\u7ebf \u2014 BBROSE 'Outer Glow' eyeshadow palette (media/references/ref_ES3083\u5438\u5851_\u5c55\u76d2\u5200\u7ebf.png)",
+      "mapping_rule": "sets the logo zone",
+      "scaling_rule": "SOFT_SCALE_UNRESOLVED=1.0",
+      "confidence": 0.65,
+      "authority": "PROVISIONAL_DESIGN_INTENT_NOT_OWNER_CONFIRMED",
+      "confirmation_state": "PENDING_OWNER_CONFIRMATION",
+      "conflict": ""
+    },
+    "artwork.type_zones": {
+      "target": "artwork.type_zones",
+      "value": [
+        "EYE SHADOW",
+        "OUTER GLOW",
+        "BBROSE",
+        "SOMBRA DE OJOS"
+      ],
+      "origin": "CONCEPT_DERIVED",
+      "source_field": "typography_zones",
+      "source_reference": "ConceptReference:6 ES3083\u5438\u5851_\u5c55\u76d2\u5200\u7ebf \u2014 BBROSE 'Outer Glow' eyeshadow palette (media/references/ref_ES3083\u5438\u5851_\u5c55\u76d2\u5200\u7ebf.png)",
+      "mapping_rule": "sets typography zones",
+      "scaling_rule": "EXACT (hard visible constraint)",
+      "confidence": 0.9,
+      "authority": "PROVISIONAL_DESIGN_INTENT_NOT_OWNER_CONFIRMED",
+      "confirmation_state": "PENDING_OWNER_CONFIRMATION",
+      "conflict": ""
+    },
+    "case.corner_radius_mm": {
+      "target": "case.corner_radius_mm",
+      "value": 7.2,
+      "origin": "CONCEPT_DERIVED",
+      "source_field": "corner_radius_impression",
+      "source_reference": "ConceptReference:6 ES3083\u5438\u5851_\u5c55\u76d2\u5200\u7ebf \u2014 BBROSE 'Outer Glow' eyeshadow palette (media/references/ref_ES3083\u5438\u5851_\u5c55\u76d2\u5200\u7ebf.png)",
+      "mapping_rule": "a SOFT corner impression scales the corner radius",
+      "scaling_rule": "SOFT_SCALE[soft]=1.2",
+      "confidence": 0.55,
+      "authority": "PROVISIONAL_DESIGN_INTENT_NOT_OWNER_CONFIRMED",
+      "confirmation_state": "PENDING_OWNER_CONFIRMATION",
+      "conflict": ""
+    },
+    "case.opening_direction": {
+      "target": "case.opening_direction",
+      "value": "UPWARD",
+      "origin": "CONCEPT_DERIVED",
+      "source_field": "opening_direction",
+      "source_reference": "ConceptReference:6 ES3083\u5438\u5851_\u5c55\u76d2\u5200\u7ebf \u2014 BBROSE 'Outer Glow' eyeshadow palette (media/references/ref_ES3083\u5438\u5851_\u5c55\u76d2\u5200\u7ebf.png)",
+      "mapping_rule": "visible opening sets the direction",
+      "scaling_rule": "EXACT (hard visible constraint)",
+      "confidence": 0.85,
+      "authority": "PROVISIONAL_DESIGN_INTENT_NOT_OWNER_CONFIRMED",
+      "confirmation_state": "PENDING_OWNER_CONFIRMATION",
+      "conflict": ""
+    },
+    "case.outer_height_mm": {
+      "target": "case.outer_height_mm",
+      "value": 12.0,
+      "origin": "CONCEPT_DERIVED",
+      "source_field": "perceived_thickness",
+      "source_reference": "ConceptReference:6 ES3083\u5438\u5851_\u5c55\u76d2\u5200\u7ebf \u2014 BBROSE 'Outer Glow' eyeshadow palette (media/references/ref_ES3083\u5438\u5851_\u5c55\u76d2\u5200\u7ebf.png)",
+      "mapping_rule": "a SOFT thickness impression scales the case height within the stack-up range",
+      "scaling_rule": "SOFT_SCALE[slim]=0.8",
+      "confidence": 0.5,
+      "authority": "PROVISIONAL_DESIGN_INTENT_NOT_OWNER_CONFIRMED",
+      "confirmation_state": "PENDING_OWNER_CONFIRMATION",
+      "conflict": ""
+    },
+    "layout.inter_pan_gap_mm": {
+      "target": "layout.inter_pan_gap_mm",
+      "value": 4.0,
+      "origin": "CONCEPT_DERIVED",
+      "source_field": "spacing_rhythm",
+      "source_reference": "ConceptReference:6 ES3083\u5438\u5851_\u5c55\u76d2\u5200\u7ebf \u2014 BBROSE 'Outer Glow' eyeshadow palette (media/references/ref_ES3083\u5438\u5851_\u5c55\u76d2\u5200\u7ebf.png)",
+      "mapping_rule": "a SOFT spacing impression scales the gap within the feasible range",
+      "scaling_rule": "SOFT_SCALE[even]=1.0",
+      "confidence": 0.6,
+      "authority": "PROVISIONAL_DESIGN_INTENT_NOT_OWNER_CONFIRMED",
+      "confirmation_state": "PENDING_OWNER_CONFIRMATION",
+      "conflict": ""
+    },
+    "layout.outer_margin_mm": {
+      "target": "layout.outer_margin_mm",
+      "value": 4.0,
+      "origin": "CONCEPT_DERIVED",
+      "source_field": "margins",
+      "source_reference": "ConceptReference:6 ES3083\u5438\u5851_\u5c55\u76d2\u5200\u7ebf \u2014 BBROSE 'Outer Glow' eyeshadow palette (media/references/ref_ES3083\u5438\u5851_\u5c55\u76d2\u5200\u7ebf.png)",
+      "mapping_rule": "a SOFT margin impression scales the default margin within the feasible range; never below the engineering minimum",
+      "scaling_rule": "SOFT_SCALE[tight]=0.8",
+      "confidence": 0.55,
+      "authority": "PROVISIONAL_DESIGN_INTENT_NOT_OWNER_CONFIRMED",
+      "confirmation_state": "PENDING_OWNER_CONFIRMATION",
+      "conflict": ""
+    },
+    "material.powder_finish": {
+      "target": "material.powder_finish",
+      "value": "PRESSED_POWDER",
+      "origin": "CONCEPT_DERIVED",
+      "source_field": "powder_finish_intent",
+      "source_reference": "ConceptReference:6 ES3083\u5438\u5851_\u5c55\u76d2\u5200\u7ebf \u2014 BBROSE 'Outer Glow' eyeshadow palette (media/references/ref_ES3083\u5438\u5851_\u5c55\u76d2\u5200\u7ebf.png)",
+      "mapping_rule": "sets the powder finish family",
+      "scaling_rule": "SOFT_SCALE_UNRESOLVED=1.0",
+      "confidence": 0.7,
+      "authority": "PROVISIONAL_DESIGN_INTENT_NOT_OWNER_CONFIRMED",
+      "confirmation_state": "PENDING_OWNER_CONFIRMATION",
+      "conflict": ""
+    },
+    "material.primary": {
+      "target": "material.primary",
+      "value": "MOULDED_PLASTIC_MATTE",
+      "origin": "CONCEPT_DERIVED",
+      "source_field": "apparent_material",
+      "source_reference": "ConceptReference:6 ES3083\u5438\u5851_\u5c55\u76d2\u5200\u7ebf \u2014 BBROSE 'Outer Glow' eyeshadow palette (media/references/ref_ES3083\u5438\u5851_\u5c55\u76d2\u5200\u7ebf.png)",
+      "mapping_rule": "apparent material sets the render material only, never the geometry",
+      "scaling_rule": "SOFT_SCALE_UNRESOLVED=1.0",
+      "confidence": 0.6,
+      "authority": "PROVISIONAL_DESIGN_INTENT_NOT_OWNER_CONFIRMED",
+      "confirmation_state": "PENDING_OWNER_CONFIRMATION",
+      "conflict": ""
+    },
+    "pan.shape": {
+      "target": "pan.shape",
+      "value": "RECTANGULAR",
+      "origin": "CONCEPT_DERIVED",
+      "source_field": "pan_shapes",
+      "source_reference": "ConceptReference:6 ES3083\u5438\u5851_\u5c55\u76d2\u5200\u7ebf \u2014 BBROSE 'Outer Glow' eyeshadow palette (media/references/ref_ES3083\u5438\u5851_\u5c55\u76d2\u5200\u7ebf.png)",
+      "mapping_rule": "a visibly circular pan sets shape=CIRCLE",
+      "scaling_rule": "EXACT (hard visible constraint)",
+      "confidence": 0.9,
+      "authority": "PROVISIONAL_DESIGN_INTENT_NOT_OWNER_CONFIRMED",
+      "confirmation_state": "PENDING_OWNER_CONFIRMATION",
+      "conflict": ""
+    }
+  },
+  "manufacturing_authority": "NOT_ESTABLISHED",
+  "note": "the variants are NOT identical, so the bridge is not a manifest-path claim"
+}

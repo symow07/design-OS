@@ -1,0 +1,154 @@
+{
+ "record_type": "palt_m2_validation_report/1.0",
+ "created_at": "2026-08-05",
+ "milestone": "PALT-M2 \u2014 Palette Contract and Parametric Layout Kernel",
+ "status": "IMPLEMENTED_PENDING_OWNER_REVIEW",
+ "versions": {
+  "contract_schema": "palette_geometry/1.0",
+  "kernel": "palette_layout_kernel/1.0",
+  "validators": "palette_layout_validators/1.0"
+ },
+ "authority": {
+  "PALETTE_GEOMETRY_AUTHORITY": "PROVISIONAL_DESIGN_ONLY",
+  "MANUFACTURING_AUTHORITY": "NOT_ESTABLISHED",
+  "MATERIAL_AUTHORITY": "NOT_EXPRESSIBLE_IN_THIS_CONTRACT",
+  "MODULE_EQUIVALENCE_AUTHORITY": "CALCULATED_LAYOUT_HEURISTIC",
+  "usage_restriction": "design and validation only \u2014 never supplier or tooling geometry"
+ },
+ "palt_m1_correction_applied": {
+  "MODULE_EQUIVALENCE_AUTHORITY": "CALCULATED_LAYOUT_HEURISTIC",
+  "never": [
+   "MANUFACTURER_STANDARD",
+   "INDUSTRY_STANDARD",
+   "PRODUCTION_RULE"
+  ],
+  "enforcement": "the module is the POCKET module (nominal pan + 2 x tolerance) and MODULE_SMALLER_THAN_PAN_FOOTPRINT fires when a pan cannot fit its own module; both layout modes are first-class"
+ },
+ "palt_p1_feasibility": {
+  "proposed_outer_mm": [
+   116.0,
+   92.0,
+   15.0
+  ],
+  "proposed_is_feasible": false,
+  "finding_codes": [
+   "CASE_BOUNDARY_VIOLATION",
+   "HINGE_ZONE_COLLISION",
+   "INSUFFICIENT_OUTER_MARGIN"
+  ],
+  "finding_count": 9,
+  "minimum_feasible_at_specified_spacing_mm": [
+   101.8,
+   113.3,
+   9.0
+  ],
+  "minimum_case_validates": true,
+  "absolute_floor_mm": [
+   89.8,
+   101.3,
+   9.0
+  ],
+  "absolute_floor_validates": true,
+  "conclusion": "the proposed 92 mm depth cannot hold three rows of 26 mm pans together with hinge and clasp reservations at ANY permitted spacing \u2014 the depth is the binding constraint, not the width",
+  "binding_constraint": "DEPTH (the hinge + clasp reservations plus three 26.6 mm pocket modules and margins exceed 92 mm at every permitted spacing)"
+ },
+ "validator_codes": [
+  "PAN_OVERLAP",
+  "CASE_BOUNDARY_VIOLATION",
+  "INSUFFICIENT_OUTER_MARGIN",
+  "INSUFFICIENT_INTER_PAN_GAP",
+  "HINGE_ZONE_COLLISION",
+  "CLASP_ZONE_COLLISION",
+  "MIRROR_COLLISION",
+  "APPLICATOR_ZONE_COLLISION",
+  "IMPOSSIBLE_PAN_DEPTH",
+  "INSUFFICIENT_CASE_THICKNESS",
+  "INVALID_REFILL_REMOVAL_CLEARANCE",
+  "WALL_BELOW_MINIMUM",
+  "MODULE_SMALLER_THAN_PAN_FOOTPRINT"
+ ],
+ "tests": {
+  "file": "apps/pipeline/tests/test_palette_layout_kernel.py",
+  "result": "28 passed in 0.06s"
+ },
+ "exit_criteria": {
+  "contracts_versioned": true,
+  "layouts_deterministic": true,
+  "invalid_geometry_fails_closed": true,
+  "every_dimension_has_provenance": true,
+  "palt_p1_has_a_valid_resolved_layout": true,
+  "palt_p1_valid_layout_note": "the layout resolves deterministically; it is VALID in the minimum feasible case and INVALID in the owner's provisional 116x92x15 \u2014 reported, never forced",
+  "minimum_feasible_dimensions_calculated": true,
+  "supplier_research_documented": true,
+  "canonical_tests_green": true,
+  "owner_review_requested": true
+ },
+ "prohibitions_observed": [
+  "no Blender palette modelling",
+  "no powder materials",
+  "no image generation",
+  "no Illustrator export",
+  "no client presentation rendering",
+  "no supplier contacted",
+  "no commercial commitment",
+  "no patent clearance claimed"
+ ],
+ "provider_calls": 0,
+ "owner_review_2026_08_05": {
+  "PALT_M2_CONTRACT_SYSTEM": "PASS",
+  "PALT_M2_LAYOUT_KERNEL": "PASS",
+  "PALT_M2_FAIL_CLOSED_VALIDATION": "PASS",
+  "PALT_M2_PALT_P1_FINAL_DIMENSIONS": "NOT_APPROVED",
+  "PALT_M2_MANUFACTURING_READINESS": "NOT_ESTABLISHED",
+  "PALT_M2_OWNER_DECISION": "ACCEPTED_WITH_CORRECTIONS",
+  "PALT_M3": "AUTHORIZED"
+ },
+ "corrected_feasibility_classifications": {
+  "PALT_P1_PAN_LAYOUT": "3 x 3 OF 26 MM ROUND PANS \u2014 RETAINED; NOT reduced to 3x2 to preserve a footprint",
+  "116x92x15": {
+   "classification": [
+    "TARGET_DESIGN_ENVELOPE",
+    "INFEASIBLE_UNDER_CURRENT_RESERVED_BAND_STRATEGY"
+   ],
+   "explicitly_not": "NOT PROVEN INFEASIBLE UNDER ALL MECHANISM STRATEGIES",
+   "correction": "the PALT-M2 conclusion overreached: it tested ONE mechanism strategy (internal reserved bands) and ONE hinge edge. PALT-M3 tests alternatives."
+  },
+  "101.8x113.3x9": {
+   "classification": [
+    "ANALYTICAL_MINIMUM_UNDER_CURRENT_ASSUMPTIONS"
+   ],
+   "explicitly_not": [
+    "NOT OWNER-APPROVED",
+    "NOT MANUFACTURING-CONFIRMED",
+    "NOT A FINAL PREMIUM PRODUCT SIZE"
+   ]
+  },
+  "89.8x101.3x9": {
+   "classification": [
+    "MATHEMATICAL_FLOOR"
+   ],
+   "explicitly_not": [
+    "NOT A DESIGN RECOMMENDATION",
+    "NOT MANUFACTURING-CONFIRMED",
+    "NOT A PREMIUM POSITIONING DECISION"
+   ]
+  },
+  "9mm_height_results": "NEITHER 9 mm result may be described as a viable premium production thickness until the complete mechanical stack-up is validated (PALT-M3)"
+ },
+ "corrected_83x83_inference": {
+  "previous_statement": "PALT-M2 suggested the 83x83x12 market listing implied wall-integrated hinge/clasp",
+  "corrected_status": "UNVERIFIED_MECHANISM_HYPOTHESIS",
+  "not": "NOT a factual supplier finding; a market listing is NEVER a technical drawing",
+  "alternative_explanations_all_equally_unverified": [
+   "smaller pans",
+   "shallower pans",
+   "different pan count or effective diameter",
+   "reduced gaps",
+   "thinner construction",
+   "no comparable mirror",
+   "wall-integrated mechanisms",
+   "external hinge geometry",
+   "inaccurate listing dimensions"
+  ]
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "record_type": "m6_sheen_fwhm_instrument_resolution/1.0",
+ "created_at": "2026-08-15",
+ "node": "M6-SPREADS-EXECUTION attempt 4 — instrument resolution for the SHEEN and FWHM leg completions, declared BEFORE any render consumes it (the 4aac8bc precedent: declaring is lawful; guessing is not)",
+ "finding_this_resolves": "the adjudication act refused all three lobe legs with ABSENT_STATISTIC: SHEEN_REGION_RESPONSE and HIGHLIGHT_FWHM are axes of the characterization (lobe/swatch) rig — palette_characterization_rig.axes_from over characterize_powder swatches — while the attempt-3 raw records (raw_sc, raw_mvs_sheen, raw_pvm_sheen) carry texture-rig axes only (GRANULARITY_INDEX, GRAZING_BAND_CONTRAST). A texture-rig record cannot adjudicate a lobe leg; adjudication_sc.json, adjudication_mvs_sheen.json and adjudication_pvm_sheen.json record the refusals.",
+ "declaration_defect_recorded_not_amended": "spreads_campaign_declaration.json 'completes.SATIN_VS_CREAM' reads 'both legs (GRAN + FWHM) re-measured ... on the texture rig' — an under-specification: no texture-rig function produces HIGHLIGHT_FWHM. The declaration is NOT amended (forbidden); the defect is recorded here, and the completion executes on the statistic's OWN instrument, which is what the establishment table's named node priced all along: 'M6-DECLARED-ENSEMBLE-SPREADS: 6-seed declared ensembles for SATIN/PRESSED/CREAM (lobe+texture) ...'.",
+ "instrument_resolved": {
+  "rig": "DIFFUSE_LOBE_RIG (palette_characterization_rig) — the instrument every standing SHEEN/FWHM reading and spread came from (forward identity MATTE_SHEEN_spread_fw names it; diffuse_pairs_standing.json readings 0.4225 / 0.4471 / 0.2843 are its discriminate() relative effects)",
+  "measurement": "characterize_powder(spec, out_dir) per family member; axes via axes_from + normalized (normalization touches HIGHLIGHT_PEAK only; SHEEN_REGION_RESPONSE and HIGHLIGHT_FWHM are ratios and unchanged by it)",
+  "clearing_functional": "abs(a-b)/mean(abs(a),abs(b)) — discriminate()'s unchanged relative effect, identical to palette_clearing_dispersion.relative_effect",
+  "member_pairing": "member k of family A with member k of family B; member 0 = the canonical pair seeds, so the member-0 clearing must reproduce the committed reading or the adjudication refuses"
+ },
+ "member_seeds_consumed_not_redeclared": {
+  "POWDER_MATTE": [40, 81, 82, 83, 84, 99],
+  "POWDER_SATIN": [41, 410, 411, 412, 413, 414],
+  "CREAM": [48, 480, 481, 482, 483, 484],
+  "PRESSED_POWDER": [47, 470, 471, 472, 473, 474],
+  "authority": "member_set_resolution.json (MATTE, record-resolved) + ensemble_convention_declaration.json at 4aac8bc (SATIN/CREAM/PRESSED, pinned)"
+ },
+ "legs_this_completes": [
+  "M_V_S SHEEN clearing — adequacy: committed margin 0.09112 vs the DIRECT clearing_dispersion (A289 recipe); 0.16569 max_seed_only_effect reported alongside, never the bar",
+  "P_V_M SHEEN clearing — same, margin 0.11572",
+  "S_V_C FWHM clearing — same, margin 0.0343"
+ ],
+ "spend_declared_before_render": "24 lobe member-measurements (4 families x 6 members), counted 24 against the driver's enforced ceiling of 80 (conservative unit: one unit per rendered member-measurement; attempt 3's texture phases counted one unit per member-PAIR, i.e. per two renders — this act counts HARDER, so the ceiling cannot be snuck past)",
+ "laws_untouched": "PASS_LAW, adequacy precondition semantics, independence ceiling 0.80, crossing-rescue VOID, strict establishment ruling — all unmoved",
+ "owner_approved": false
+}

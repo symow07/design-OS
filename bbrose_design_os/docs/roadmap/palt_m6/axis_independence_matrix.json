@@ -1,0 +1,98 @@
+{
+  "record_type": "axis_eligibility/1.0:independence",
+  "census_families": [
+    "CREAM",
+    "POWDER_MATTE",
+    "POWDER_SATIN",
+    "PRESSED_POWDER"
+  ],
+  "ceiling": 0.8,
+  "abs_spearman": {
+    "HIGHLIGHT_FWHM|HIGHLIGHT_PEAK": 0.4,
+    "HIGHLIGHT_FWHM|SPECULAR_TO_DIFFUSE_RATIO": 0.4,
+    "HIGHLIGHT_FWHM|GRAZING_RESPONSE": 0.8,
+    "HIGHLIGHT_FWHM|SHEEN_REGION_RESPONSE": 1.0,
+    "HIGHLIGHT_FWHM|EDGE_HIGHLIGHT_RESPONSE": 1.0,
+    "HIGHLIGHT_FWHM|GRANULARITY_INDEX": 0.4,
+    "HIGHLIGHT_PEAK|SPECULAR_TO_DIFFUSE_RATIO": 1.0,
+    "HIGHLIGHT_PEAK|GRAZING_RESPONSE": 0.8,
+    "HIGHLIGHT_PEAK|SHEEN_REGION_RESPONSE": 0.4,
+    "HIGHLIGHT_PEAK|EDGE_HIGHLIGHT_RESPONSE": 0.4,
+    "HIGHLIGHT_PEAK|GRANULARITY_INDEX": 0.4,
+    "SPECULAR_TO_DIFFUSE_RATIO|GRAZING_RESPONSE": 0.8,
+    "SPECULAR_TO_DIFFUSE_RATIO|SHEEN_REGION_RESPONSE": 0.4,
+    "SPECULAR_TO_DIFFUSE_RATIO|EDGE_HIGHLIGHT_RESPONSE": 0.4,
+    "SPECULAR_TO_DIFFUSE_RATIO|GRANULARITY_INDEX": 0.4,
+    "GRAZING_RESPONSE|SHEEN_REGION_RESPONSE": 0.8,
+    "GRAZING_RESPONSE|EDGE_HIGHLIGHT_RESPONSE": 0.8,
+    "GRAZING_RESPONSE|GRANULARITY_INDEX": 0.2,
+    "SHEEN_REGION_RESPONSE|EDGE_HIGHLIGHT_RESPONSE": 1.0,
+    "SHEEN_REGION_RESPONSE|GRANULARITY_INDEX": 0.4,
+    "EDGE_HIGHLIGHT_RESPONSE|GRANULARITY_INDEX": 0.4
+  },
+  "over_ceiling_pairs": [
+    [
+      "HIGHLIGHT_FWHM",
+      "SHEEN_REGION_RESPONSE",
+      1.0
+    ],
+    [
+      "HIGHLIGHT_FWHM",
+      "EDGE_HIGHLIGHT_RESPONSE",
+      1.0
+    ],
+    [
+      "HIGHLIGHT_PEAK",
+      "SPECULAR_TO_DIFFUSE_RATIO",
+      1.0
+    ],
+    [
+      "SHEEN_REGION_RESPONSE",
+      "EDGE_HIGHLIGHT_RESPONSE",
+      1.0
+    ]
+  ],
+  "note": "two axes above the ceiling may not both count toward one pair's two-axis requirement",
+  "census_size_caveat": {
+    "attainable_abs_spearman_at_N4": [
+      0.0,
+      0.2,
+      0.4,
+      0.6,
+      0.8,
+      1.0
+    ],
+    "ceiling_is_strict_greater_than": 0.8,
+    "consequence": "the check can only ever fire at exactly 1.0 \u2014 perfect monotone agreement across all four ranks. At N=4, rho=0.80 is one adjacent rank swap; a 0.80 reading is not measured independence, it is \"not perfectly monotone over four points\".",
+    "pairs_at_exactly_0_80": [
+      "HIGHLIGHT_FWHM|GRAZING_RESPONSE",
+      "HIGHLIGHT_PEAK|GRAZING_RESPONSE",
+      "SPECULAR_TO_DIFFUSE_RATIO|GRAZING_RESPONSE",
+      "GRAZING_RESPONSE|SHEEN_REGION_RESPONSE",
+      "GRAZING_RESPONSE|EDGE_HIGHLIGHT_RESPONSE"
+    ],
+    "what_is_actually_banked": "SATIN_VS_CREAM rests on HIGHLIGHT_FWHM | GRANULARITY_INDEX at rho = 0.4, on two different instruments \u2014 nowhere near the ceiling, so that PASS is not exposed to the degeneracy. Stated explicitly rather than left to inference."
+  },
+  "SCHEDULED_OBLIGATION": {
+    "trigger": "the moment any of the flake, metallic, glitter or shimmer families joins the texture/lobe census (the flake rig commissioning is the first such moment)",
+    "action": "recompute R5 independence on the enlarged census; any pair whose counted axes include a relationship read at 0.80 on the N=4 census is re-adjudicated on the new correlations",
+    "status": "PENDING_TRIGGER_NOT_AN_INTENTION",
+    "declared_stake_before_the_number_exists": "this obligation is not a formality. All three diffuse pairs stand on GRANULARITY_INDEX plus one lobe axis. At the enlarged census, Spearman gains resolution and SHEEN|GRANULARITY (0.4 at N=4) and FWHM|GRANULARITY (0.4 at N=4) are re-measured; a SINGLE correlation rising above 0.80 could expose all three diffuse verdicts simultaneously. Declared now, while the number is unknown, so that whichever way it lands the result cannot be rationalised afterward.",
+    "pre_committed_response_if_ceiling_crossed_SUPERSEDED": {
+      "prior": {
+        "decided_at": "0.6571, before any number arrives",
+        "trajectory": "monotone 0.4 (N=4) -> 0.6571 (N=6); baked, marbled and the remaining families all grow the census ahead",
+        "if_GRANULARITY_x_lobe_crosses_0_80": "the three diffuse verdicts do not get a better argument \u2014 they require a genuinely THIRD instrument measuring something neither the lobe rig (specular lobe statistics) nor the texture rig (high-frequency granularity) measures. That instrument EXISTS in the declared protocol and must be commissioned inside M6 anyway: the BAKED_GEOMETRY_RIG raking-light apparatus. Raking incidence measures shadowing/occlusion of surface relief \u2014 a third physical channel (grazing shadow structure, not lobe width, not texture RMS). Pre-commitment: on crossing, the diffuse pairs are re-adjudicated REQUIRING one counted axis from the raking rig (commissioned with its own floors, realization gates and controls per the standing machinery); a pair that cannot find a raking axis FAILS and is recorded as FAIL. This response is fixed now so the number, when it arrives, cannot be reasoned toward a preferred conclusion."
+      },
+      "sweep_verdict": "the raking rig tracks GRANULARITY at |rho|=1.0 under the relief driver \u2014 it is NOT a third channel",
+      "consequence_now": "if GRANULARITY x lobe crosses 0.80 at any census growth, NO rescue channel exists: the diffuse pairs are re-adjudicated, cannot find a qualifying second instrument, and FAIL \u2014 recorded as FAIL per the original pre-commitment terms. Any future candidate third channel (e.g. a crown-height-driver sweep separating dome response from relief response) is a NEW declared instrument requiring its own pre-declaration; none is run now to rescue anything.",
+      "current_margin": "the staked correlations read 0.6571; the verdicts stand today"
+    }
+  },
+  "A1_RULING_2026_08_08": {
+    "void_superseded_in_place": "the third-channel VOID's evidence is withdrawn: one leg was a Spearman against a bit-constant vector (undefined, not 1.0 \u2014 CONSTANT_VECTOR_CORRELATION_ARTIFACT, see raking_rig/sweep/sweep_result.json) and the sweep as a whole is degenerate under amended 1a. Prior text preserved above.",
+    "raking_status": "NOT_COMMISSIONED_AS_INDEPENDENT_CHANNEL \u2014 neither voided nor available. Before raking may be counted toward any pair anywhere it requires its own declared commissioning with measured noise floors, negative controls and realization gates. DISTINCT from its BAKED-geometry role: PRESSED_VS_BAKED stands on the raking rig as PRIMARY commissioned instrument with relief-subject floors \u2014 untouched by this ruling.",
+    "improvement_improves_nothing": "no verdict flips, no pair gains a channel, nothing FAIL becomes PASS. The AMENDMENT_INDUCED_IMPROVEMENT hold is discharged BY RULING, not by commitment \u2014 recorded as the demonstration that 1c prevented the amendment functioning as a rescue vehicle.",
+    "owner_authorization": "M6_DRIVER_COMPLETENESS_PROMPT.md A1"
+  }
+}

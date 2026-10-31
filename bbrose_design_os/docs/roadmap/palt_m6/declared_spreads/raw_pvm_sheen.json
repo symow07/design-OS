@@ -1,0 +1,978 @@
+{
+ "record_type": "m6_spreads_raw_measurements_pvm_sheen/1.0",
+ "phase": "pvm_sheen",
+ "families": [
+  "PRESSED_POWDER",
+  "POWDER_MATTE"
+ ],
+ "members_a": [
+  47,
+  470,
+  471,
+  472,
+  473,
+  474
+ ],
+ "members_b": [
+  40,
+  81,
+  82,
+  83,
+  84,
+  99
+ ],
+ "queue_control_stamp": {
+  "control_site": "queue_control:first_act",
+  "queue": "m6_spreads_pvm_sheen",
+  "trace_path": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/docs/roadmap/palt_m6/declared_spreads/spreads_firing_trace_pvm_sheen.jsonl",
+  "ts": 1786759538.636426,
+  "declaration_identity": "c1434e1efdb98a62"
+ },
+ "declaration_identity": "c1434e1efdb98a62",
+ "rows": [
+  {
+   "member": 0,
+   "seed_a": 47,
+   "seed_b": 40,
+   "pair_report": {
+    "_calibration": {
+     "per_member": {
+      "pvm_sheen_m0_PRESSED_POWDER": {
+       "base_peak": 0.01772389622405171,
+       "iterations": [
+        {
+         "energy": 1357461.0324119087,
+         "peak": 0.8922539253234864,
+         "clipped": 0
+        }
+       ],
+       "energy": 1357461.0324119087
+      },
+      "pvm_sheen_m0_POWDER_MATTE": {
+       "base_peak": 0.018990541611239316,
+       "iterations": [
+        {
+         "energy": 2392811.22317012,
+         "peak": 0.8852012644529342,
+         "clipped": 0
+        }
+       ],
+       "energy": 2392811.22317012
+      }
+     },
+     "why": "normalisation-invariant axes, exposure control mandatory [SUPERSEDED per 2u 2026-08-11: refuted for GRAZING_BAND_CONTRAST at member conditions four-for-four; GRANULARITY_INDEX established; see render_spend/queue_results.json]",
+     "window": [
+      0.35,
+      0.92
+     ]
+    },
+    "_stimulus": {
+     "rms": 0.08383982,
+     "low_member_mean": 0.574454,
+     "rms_over_mean": 0.14594699,
+     "floor": 0.002,
+     "realized": true
+    },
+    "pvm_sheen_m0_PRESSED_POWDER": {
+     "GRANULARITY_INDEX": 0.031566,
+     "GRAZING_BAND_CONTRAST": 2.445259,
+     "_provenance": {
+      "law": "3aa",
+      "schema": "texture_axis_measurement_provenance/1.0",
+      "frames_read_in_order": [
+       "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/var/m6_spreads_frames/pvm_sheen/member_0/swatch_tx_pvm_sheen_m0_PRESSED_POWDER.exr"
+      ],
+      "frame_identities": [
+       {
+        "path": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/var/m6_spreads_frames/pvm_sheen/member_0/swatch_tx_pvm_sheen_m0_PRESSED_POWDER.exr",
+        "family": "PRESSED_POWDER",
+        "seed": 47,
+        "pixel_digest": "52b95d2bcfc5363b",
+        "source_kind": "SCENE_LINEAR_EXR",
+        "shape": [
+         1200,
+         1200
+        ],
+        "dtype": "float64",
+        "region_alignment": "ASSERTED",
+        "measurement_record": {
+         "render_identity": "a4954f8906eb4fad",
+         "material_identity": "cbc05d7da14ffe88",
+         "geometry_identity": "720d17daee36e487",
+         "camera_identity": "7288018cf21f5c4b",
+         "lighting_contract_identity": "ba2d457cb68ddff5"
+        },
+        "region_alignment_tolerance": 0.05
+       }
+      ],
+      "derivation_code_digest": "3f82917029269f6a",
+      "derivation": {
+       "module": "apps/pipeline/services/palette_powder_texture_axes.py",
+       "function": "measure_texture_axes"
+      },
+      "region_masks": {
+       "PLANAR": {
+        "sample_count": 99133,
+        "index_digest": "f28a148f628307f4"
+       },
+       "GRAZING": {
+        "sample_count": 58431,
+        "index_digest": "36b56c7c684fdf69"
+       }
+      },
+      "alignment_tolerance": 0.05,
+      "axis_denominators": {
+       "GRANULARITY_INDEX": "PLANAR_REGION_MEAN",
+       "GRAZING_BAND_CONTRAST": "GRAZING_REGION_MEDIAN"
+      },
+      "pair_relative_effect_denominator": "MEAN_OF_THE_TWO_VALUES"
+     },
+     "_planar_peak": 0.8625264451146126
+    },
+    "pvm_sheen_m0_POWDER_MATTE": {
+     "GRANULARITY_INDEX": 0.082618,
+     "GRAZING_BAND_CONTRAST": 2.72308,
+     "_provenance": {
+      "law": "3aa",
+      "schema": "texture_axis_measurement_provenance/1.0",
+      "frames_read_in_order": [
+       "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/var/m6_spreads_frames/pvm_sheen/member_0/swatch_tx_pvm_sheen_m0_POWDER_MATTE.exr"
+      ],
+      "frame_identities": [
+       {
+        "path": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/var/m6_spreads_frames/pvm_sheen/member_0/swatch_tx_pvm_sheen_m0_POWDER_MATTE.exr",
+        "family": "POWDER_MATTE",
+        "seed": 40,
+        "pixel_digest": "994d94c7d77d18c7",
+        "source_kind": "SCENE_LINEAR_EXR",
+        "shape": [
+         1200,
+         1200
+        ],
+        "dtype": "float64",
+        "region_alignment": "ASSERTED",
+        "measurement_record": {
+         "render_identity": "9552c1217e20c8eb",
+         "material_identity": "b6c5879af0196e05",
+         "geometry_identity": "720d17daee36e487",
+         "camera_identity": "7288018cf21f5c4b",
+         "lighting_contract_identity": "ba2d457cb68ddff5"
+        },
+        "region_alignment_tolerance": 0.05
+       }
+      ],
+      "derivation_code_digest": "3f82917029269f6a",
+      "derivation": {
+       "module": "apps/pipeline/services/palette_powder_texture_axes.py",
+       "function": "measure_texture_axes"
+      },
+      "region_masks": {
+       "PLANAR": {
+        "sample_count": 99133,
+        "index_digest": "f28a148f628307f4"
+       },
+       "GRAZING": {
+        "sample_count": 58431,
+        "index_digest": "36b56c7c684fdf69"
+       }
+      },
+      "alignment_tolerance": 0.05,
+      "axis_denominators": {
+       "GRANULARITY_INDEX": "PLANAR_REGION_MEAN",
+       "GRAZING_BAND_CONTRAST": "GRAZING_REGION_MEDIAN"
+      },
+      "pair_relative_effect_denominator": "MEAN_OF_THE_TWO_VALUES"
+     },
+     "_planar_peak": 0.8661368135094643
+    }
+   }
+  },
+  {
+   "member": 1,
+   "seed_a": 470,
+   "seed_b": 81,
+   "pair_report": {
+    "_calibration": {
+     "per_member": {
+      "pvm_sheen_m1_PRESSED_POWDER": {
+       "base_peak": 0.017666513729840516,
+       "iterations": [
+        {
+         "energy": 1367190.0801169793,
+         "peak": 0.8901790357589722,
+         "clipped": 0
+        }
+       ],
+       "energy": 1367190.0801169793
+      },
+      "pvm_sheen_m1_POWDER_MATTE": {
+       "base_peak": 0.018209270971640944,
+       "iterations": [
+        {
+         "energy": 2299757.923357538,
+         "peak": 0.8907083319187163,
+         "clipped": 0
+        }
+       ],
+       "energy": 2299757.923357538
+      }
+     },
+     "why": "normalisation-invariant axes, exposure control mandatory [SUPERSEDED per 2u 2026-08-11: refuted for GRAZING_BAND_CONTRAST at member conditions four-for-four; GRANULARITY_INDEX established; see render_spend/queue_results.json]",
+     "window": [
+      0.35,
+      0.92
+     ]
+    },
+    "_stimulus": {
+     "rms": 0.08857163,
+     "low_member_mean": 0.552631,
+     "rms_over_mean": 0.16027253,
+     "floor": 0.002,
+     "realized": true
+    },
+    "pvm_sheen_m1_PRESSED_POWDER": {
+     "GRANULARITY_INDEX": 0.031169,
+     "GRAZING_BAND_CONTRAST": 2.456769,
+     "_provenance": {
+      "law": "3aa",
+      "schema": "texture_axis_measurement_provenance/1.0",
+      "frames_read_in_order": [
+       "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/var/m6_spreads_frames/pvm_sheen/member_1/swatch_tx_pvm_sheen_m1_PRESSED_POWDER.exr"
+      ],
+      "frame_identities": [
+       {
+        "path": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/var/m6_spreads_frames/pvm_sheen/member_1/swatch_tx_pvm_sheen_m1_PRESSED_POWDER.exr",
+        "family": "PRESSED_POWDER",
+        "seed": 470,
+        "pixel_digest": "94d916d83d4a062d",
+        "source_kind": "SCENE_LINEAR_EXR",
+        "shape": [
+         1200,
+         1200
+        ],
+        "dtype": "float64",
+        "region_alignment": "ASSERTED",
+        "measurement_record": {
+         "render_identity": "a959ead385a6069b",
+         "material_identity": "e46970026e5092fd",
+         "geometry_identity": "720d17daee36e487",
+         "camera_identity": "7288018cf21f5c4b",
+         "lighting_contract_identity": "ba2d457cb68ddff5"
+        },
+        "region_alignment_tolerance": 0.05
+       }
+      ],
+      "derivation_code_digest": "3f82917029269f6a",
+      "derivation": {
+       "module": "apps/pipeline/services/palette_powder_texture_axes.py",
+       "function": "measure_texture_axes"
+      },
+      "region_masks": {
+       "PLANAR": {
+        "sample_count": 99133,
+        "index_digest": "f28a148f628307f4"
+       },
+       "GRAZING": {
+        "sample_count": 58431,
+        "index_digest": "36b56c7c684fdf69"
+       }
+      },
+      "alignment_tolerance": 0.05,
+      "axis_denominators": {
+       "GRANULARITY_INDEX": "PLANAR_REGION_MEAN",
+       "GRAZING_BAND_CONTRAST": "GRAZING_REGION_MEDIAN"
+      },
+      "pair_relative_effect_denominator": "MEAN_OF_THE_TWO_VALUES"
+     },
+     "_planar_peak": 0.864144287109375
+    },
+    "pvm_sheen_m1_POWDER_MATTE": {
+     "GRANULARITY_INDEX": 0.087376,
+     "GRAZING_BAND_CONTRAST": 2.71773,
+     "_provenance": {
+      "law": "3aa",
+      "schema": "texture_axis_measurement_provenance/1.0",
+      "frames_read_in_order": [
+       "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/var/m6_spreads_frames/pvm_sheen/member_1/swatch_tx_pvm_sheen_m1_POWDER_MATTE.exr"
+      ],
+      "frame_identities": [
+       {
+        "path": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/var/m6_spreads_frames/pvm_sheen/member_1/swatch_tx_pvm_sheen_m1_POWDER_MATTE.exr",
+        "family": "POWDER_MATTE",
+        "seed": 81,
+        "pixel_digest": "714f46b279293ef0",
+        "source_kind": "SCENE_LINEAR_EXR",
+        "shape": [
+         1200,
+         1200
+        ],
+        "dtype": "float64",
+        "region_alignment": "ASSERTED",
+        "measurement_record": {
+         "render_identity": "7a23dac1e74008ea",
+         "material_identity": "cb8248e3d3ff4460",
+         "geometry_identity": "720d17daee36e487",
+         "camera_identity": "7288018cf21f5c4b",
+         "lighting_contract_identity": "ba2d457cb68ddff5"
+        },
+        "region_alignment_tolerance": 0.05
+       }
+      ],
+      "derivation_code_digest": "3f82917029269f6a",
+      "derivation": {
+       "module": "apps/pipeline/services/palette_powder_texture_axes.py",
+       "function": "measure_texture_axes"
+      },
+      "region_masks": {
+       "PLANAR": {
+        "sample_count": 99133,
+        "index_digest": "f28a148f628307f4"
+       },
+       "GRAZING": {
+        "sample_count": 58431,
+        "index_digest": "36b56c7c684fdf69"
+       }
+      },
+      "alignment_tolerance": 0.05,
+      "axis_denominators": {
+       "GRANULARITY_INDEX": "PLANAR_REGION_MEAN",
+       "GRAZING_BAND_CONTRAST": "GRAZING_REGION_MEDIAN"
+      },
+      "pair_relative_effect_denominator": "MEAN_OF_THE_TWO_VALUES"
+     },
+     "_planar_peak": 0.8481435992479324
+    }
+   }
+  },
+  {
+   "member": 2,
+   "seed_a": 471,
+   "seed_b": 82,
+   "pair_report": {
+    "_calibration": {
+     "per_member": {
+      "pvm_sheen_m2_PRESSED_POWDER": {
+       "base_peak": 0.01773988888002932,
+       "iterations": [
+        {
+         "energy": 1354627.6501068948,
+         "peak": 0.8782526616334916,
+         "clipped": 0
+        }
+       ],
+       "energy": 1354627.6501068948
+      },
+      "pvm_sheen_m2_POWDER_MATTE": {
+       "base_peak": 0.0182921050529927,
+       "iterations": [
+        {
+         "energy": 2473124.2377711115,
+         "peak": 0.8905133637785911,
+         "clipped": 0
+        }
+       ],
+       "energy": 2473124.2377711115
+      }
+     },
+     "why": "normalisation-invariant axes, exposure control mandatory [SUPERSEDED per 2u 2026-08-11: refuted for GRAZING_BAND_CONTRAST at member conditions four-for-four; GRANULARITY_INDEX established; see render_spend/queue_results.json]",
+     "window": [
+      0.35,
+      0.92
+     ]
+    },
+    "_stimulus": {
+     "rms": 0.08502958,
+     "low_member_mean": 0.57557,
+     "rms_over_mean": 0.14773096,
+     "floor": 0.002,
+     "realized": true
+    },
+    "pvm_sheen_m2_PRESSED_POWDER": {
+     "GRANULARITY_INDEX": 0.031229,
+     "GRAZING_BAND_CONTRAST": 2.449473,
+     "_provenance": {
+      "law": "3aa",
+      "schema": "texture_axis_measurement_provenance/1.0",
+      "frames_read_in_order": [
+       "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/var/m6_spreads_frames/pvm_sheen/member_2/swatch_tx_pvm_sheen_m2_PRESSED_POWDER.exr"
+      ],
+      "frame_identities": [
+       {
+        "path": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/var/m6_spreads_frames/pvm_sheen/member_2/swatch_tx_pvm_sheen_m2_PRESSED_POWDER.exr",
+        "family": "PRESSED_POWDER",
+        "seed": 471,
+        "pixel_digest": "0f391e241ae66901",
+        "source_kind": "SCENE_LINEAR_EXR",
+        "shape": [
+         1200,
+         1200
+        ],
+        "dtype": "float64",
+        "region_alignment": "ASSERTED",
+        "measurement_record": {
+         "render_identity": "bb6f6bd828992fa2",
+         "material_identity": "239c6263f0e1bde5",
+         "geometry_identity": "720d17daee36e487",
+         "camera_identity": "7288018cf21f5c4b",
+         "lighting_contract_identity": "ba2d457cb68ddff5"
+        },
+        "region_alignment_tolerance": 0.05
+       }
+      ],
+      "derivation_code_digest": "3f82917029269f6a",
+      "derivation": {
+       "module": "apps/pipeline/services/palette_powder_texture_axes.py",
+       "function": "measure_texture_axes"
+      },
+      "region_masks": {
+       "PLANAR": {
+        "sample_count": 99133,
+        "index_digest": "f28a148f628307f4"
+       },
+       "GRAZING": {
+        "sample_count": 58431,
+        "index_digest": "36b56c7c684fdf69"
+       }
+      },
+      "alignment_tolerance": 0.05,
+      "axis_denominators": {
+       "GRANULARITY_INDEX": "PLANAR_REGION_MEAN",
+       "GRAZING_BAND_CONTRAST": "GRAZING_REGION_MEDIAN"
+      },
+      "pair_relative_effect_denominator": "MEAN_OF_THE_TWO_VALUES"
+     },
+     "_planar_peak": 0.8521691173315048
+    },
+    "pvm_sheen_m2_POWDER_MATTE": {
+     "GRANULARITY_INDEX": 0.077763,
+     "GRAZING_BAND_CONTRAST": 2.747585,
+     "_provenance": {
+      "law": "3aa",
+      "schema": "texture_axis_measurement_provenance/1.0",
+      "frames_read_in_order": [
+       "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/var/m6_spreads_frames/pvm_sheen/member_2/swatch_tx_pvm_sheen_m2_POWDER_MATTE.exr"
+      ],
+      "frame_identities": [
+       {
+        "path": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/var/m6_spreads_frames/pvm_sheen/member_2/swatch_tx_pvm_sheen_m2_POWDER_MATTE.exr",
+        "family": "POWDER_MATTE",
+        "seed": 82,
+        "pixel_digest": "d85cc3b6e98c76fc",
+        "source_kind": "SCENE_LINEAR_EXR",
+        "shape": [
+         1200,
+         1200
+        ],
+        "dtype": "float64",
+        "region_alignment": "ASSERTED",
+        "measurement_record": {
+         "render_identity": "9e8a8f3c9c61f7ff",
+         "material_identity": "565597e7d05060ff",
+         "geometry_identity": "720d17daee36e487",
+         "camera_identity": "7288018cf21f5c4b",
+         "lighting_contract_identity": "ba2d457cb68ddff5"
+        },
+        "region_alignment_tolerance": 0.05
+       }
+      ],
+      "derivation_code_digest": "3f82917029269f6a",
+      "derivation": {
+       "module": "apps/pipeline/services/palette_powder_texture_axes.py",
+       "function": "measure_texture_axes"
+      },
+      "region_masks": {
+       "PLANAR": {
+        "sample_count": 99133,
+        "index_digest": "f28a148f628307f4"
+       },
+       "GRAZING": {
+        "sample_count": 58431,
+        "index_digest": "36b56c7c684fdf69"
+       }
+      },
+      "alignment_tolerance": 0.05,
+      "axis_denominators": {
+       "GRANULARITY_INDEX": "PLANAR_REGION_MEAN",
+       "GRAZING_BAND_CONTRAST": "GRAZING_REGION_MEDIAN"
+      },
+      "pair_relative_effect_denominator": "MEAN_OF_THE_TWO_VALUES"
+     },
+     "_planar_peak": 0.8886545156478882
+    }
+   }
+  },
+  {
+   "member": 3,
+   "seed_a": 472,
+   "seed_b": 83,
+   "pair_report": {
+    "_calibration": {
+     "per_member": {
+      "pvm_sheen_m3_PRESSED_POWDER": {
+       "base_peak": 0.017740337139740586,
+       "iterations": [
+        {
+         "energy": 1343050.9863218246,
+         "peak": 0.8705541518330574,
+         "clipped": 0
+        }
+       ],
+       "energy": 1343050.9863218246
+      },
+      "pvm_sheen_m3_POWDER_MATTE": {
+       "base_peak": 0.018478949389606716,
+       "iterations": [
+        {
+         "energy": 2329372.648014386,
+         "peak": 0.894772956943512,
+         "clipped": 0
+        }
+       ],
+       "energy": 2329372.648014386
+      }
+     },
+     "why": "normalisation-invariant axes, exposure control mandatory [SUPERSEDED per 2u 2026-08-11: refuted for GRAZING_BAND_CONTRAST at member conditions four-for-four; GRANULARITY_INDEX established; see render_spend/queue_results.json]",
+     "window": [
+      0.35,
+      0.92
+     ]
+    },
+    "_stimulus": {
+     "rms": 0.08283827,
+     "low_member_mean": 0.559725,
+     "rms_over_mean": 0.14799817,
+     "floor": 0.002,
+     "realized": true
+    },
+    "pvm_sheen_m3_PRESSED_POWDER": {
+     "GRANULARITY_INDEX": 0.032257,
+     "GRAZING_BAND_CONTRAST": 2.452031,
+     "_provenance": {
+      "law": "3aa",
+      "schema": "texture_axis_measurement_provenance/1.0",
+      "frames_read_in_order": [
+       "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/var/m6_spreads_frames/pvm_sheen/member_3/swatch_tx_pvm_sheen_m3_PRESSED_POWDER.exr"
+      ],
+      "frame_identities": [
+       {
+        "path": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/var/m6_spreads_frames/pvm_sheen/member_3/swatch_tx_pvm_sheen_m3_PRESSED_POWDER.exr",
+        "family": "PRESSED_POWDER",
+        "seed": 472,
+        "pixel_digest": "7b90be5c2f5b6484",
+        "source_kind": "SCENE_LINEAR_EXR",
+        "shape": [
+         1200,
+         1200
+        ],
+        "dtype": "float64",
+        "region_alignment": "ASSERTED",
+        "measurement_record": {
+         "render_identity": "0d4d6df07e221091",
+         "material_identity": "bc660b74cdbc4744",
+         "geometry_identity": "720d17daee36e487",
+         "camera_identity": "7288018cf21f5c4b",
+         "lighting_contract_identity": "ba2d457cb68ddff5"
+        },
+        "region_alignment_tolerance": 0.05
+       }
+      ],
+      "derivation_code_digest": "3f82917029269f6a",
+      "derivation": {
+       "module": "apps/pipeline/services/palette_powder_texture_axes.py",
+       "function": "measure_texture_axes"
+      },
+      "region_masks": {
+       "PLANAR": {
+        "sample_count": 99133,
+        "index_digest": "f28a148f628307f4"
+       },
+       "GRAZING": {
+        "sample_count": 58431,
+        "index_digest": "36b56c7c684fdf69"
+       }
+      },
+      "alignment_tolerance": 0.05,
+      "axis_denominators": {
+       "GRANULARITY_INDEX": "PLANAR_REGION_MEAN",
+       "GRAZING_BAND_CONTRAST": "GRAZING_REGION_MEDIAN"
+      },
+      "pair_relative_effect_denominator": "MEAN_OF_THE_TWO_VALUES"
+     },
+     "_planar_peak": 0.853012121784687
+    },
+    "pvm_sheen_m3_POWDER_MATTE": {
+     "GRANULARITY_INDEX": 0.082067,
+     "GRAZING_BAND_CONTRAST": 2.723258,
+     "_provenance": {
+      "law": "3aa",
+      "schema": "texture_axis_measurement_provenance/1.0",
+      "frames_read_in_order": [
+       "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/var/m6_spreads_frames/pvm_sheen/member_3/swatch_tx_pvm_sheen_m3_POWDER_MATTE.exr"
+      ],
+      "frame_identities": [
+       {
+        "path": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/var/m6_spreads_frames/pvm_sheen/member_3/swatch_tx_pvm_sheen_m3_POWDER_MATTE.exr",
+        "family": "POWDER_MATTE",
+        "seed": 83,
+        "pixel_digest": "932a16d4bae1c8d4",
+        "source_kind": "SCENE_LINEAR_EXR",
+        "shape": [
+         1200,
+         1200
+        ],
+        "dtype": "float64",
+        "region_alignment": "ASSERTED",
+        "measurement_record": {
+         "render_identity": "056149017045949c",
+         "material_identity": "d3784e4c91ce12e0",
+         "geometry_identity": "720d17daee36e487",
+         "camera_identity": "7288018cf21f5c4b",
+         "lighting_contract_identity": "ba2d457cb68ddff5"
+        },
+        "region_alignment_tolerance": 0.05
+       }
+      ],
+      "derivation_code_digest": "3f82917029269f6a",
+      "derivation": {
+       "module": "apps/pipeline/services/palette_powder_texture_axes.py",
+       "function": "measure_texture_axes"
+      },
+      "region_masks": {
+       "PLANAR": {
+        "sample_count": 99133,
+        "index_digest": "f28a148f628307f4"
+       },
+       "GRAZING": {
+        "sample_count": 58431,
+        "index_digest": "36b56c7c684fdf69"
+       }
+      },
+      "alignment_tolerance": 0.05,
+      "axis_denominators": {
+       "GRANULARITY_INDEX": "PLANAR_REGION_MEAN",
+       "GRAZING_BAND_CONTRAST": "GRAZING_REGION_MEDIAN"
+      },
+      "pair_relative_effect_denominator": "MEAN_OF_THE_TWO_VALUES"
+     },
+     "_planar_peak": 0.8670877292752266
+    }
+   }
+  },
+  {
+   "member": 4,
+   "seed_a": 473,
+   "seed_b": 84,
+   "pair_report": {
+    "_calibration": {
+     "per_member": {
+      "pvm_sheen_m4_PRESSED_POWDER": {
+       "base_peak": 0.01769992784410715,
+       "iterations": [
+        {
+         "energy": 1361752.3399543883,
+         "peak": 0.8717108625650406,
+         "clipped": 0
+        }
+       ],
+       "energy": 1361752.3399543883
+      },
+      "pvm_sheen_m4_POWDER_MATTE": {
+       "base_peak": 0.018342174802348017,
+       "iterations": [
+        {
+         "energy": 2410311.0902693802,
+         "peak": 0.8959167389869689,
+         "clipped": 0
+        }
+       ],
+       "energy": 2410311.0902693802
+      }
+     },
+     "why": "normalisation-invariant axes, exposure control mandatory [SUPERSEDED per 2u 2026-08-11: refuted for GRAZING_BAND_CONTRAST at member conditions four-for-four; GRANULARITY_INDEX established; see render_spend/queue_results.json]",
+     "window": [
+      0.35,
+      0.92
+     ]
+    },
+    "_stimulus": {
+     "rms": 0.08399096,
+     "low_member_mean": 0.578348,
+     "rms_over_mean": 0.14522569,
+     "floor": 0.002,
+     "realized": true
+    },
+    "pvm_sheen_m4_PRESSED_POWDER": {
+     "GRANULARITY_INDEX": 0.033372,
+     "GRAZING_BAND_CONTRAST": 2.447422,
+     "_provenance": {
+      "law": "3aa",
+      "schema": "texture_axis_measurement_provenance/1.0",
+      "frames_read_in_order": [
+       "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/var/m6_spreads_frames/pvm_sheen/member_4/swatch_tx_pvm_sheen_m4_PRESSED_POWDER.exr"
+      ],
+      "frame_identities": [
+       {
+        "path": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/var/m6_spreads_frames/pvm_sheen/member_4/swatch_tx_pvm_sheen_m4_PRESSED_POWDER.exr",
+        "family": "PRESSED_POWDER",
+        "seed": 473,
+        "pixel_digest": "9ecd78cfee8f4130",
+        "source_kind": "SCENE_LINEAR_EXR",
+        "shape": [
+         1200,
+         1200
+        ],
+        "dtype": "float64",
+        "region_alignment": "ASSERTED",
+        "measurement_record": {
+         "render_identity": "75c25983360061d0",
+         "material_identity": "40bdaf62db635f14",
+         "geometry_identity": "720d17daee36e487",
+         "camera_identity": "7288018cf21f5c4b",
+         "lighting_contract_identity": "ba2d457cb68ddff5"
+        },
+        "region_alignment_tolerance": 0.05
+       }
+      ],
+      "derivation_code_digest": "3f82917029269f6a",
+      "derivation": {
+       "module": "apps/pipeline/services/palette_powder_texture_axes.py",
+       "function": "measure_texture_axes"
+      },
+      "region_masks": {
+       "PLANAR": {
+        "sample_count": 99133,
+        "index_digest": "f28a148f628307f4"
+       },
+       "GRAZING": {
+        "sample_count": 58431,
+        "index_digest": "36b56c7c684fdf69"
+       }
+      },
+      "alignment_tolerance": 0.05,
+      "axis_denominators": {
+       "GRANULARITY_INDEX": "PLANAR_REGION_MEAN",
+       "GRAZING_BAND_CONTRAST": "GRAZING_REGION_MEDIAN"
+      },
+      "pair_relative_effect_denominator": "MEAN_OF_THE_TWO_VALUES"
+     },
+     "_planar_peak": 0.8658846653938294
+    },
+    "pvm_sheen_m4_POWDER_MATTE": {
+     "GRANULARITY_INDEX": 0.08098,
+     "GRAZING_BAND_CONTRAST": 2.736047,
+     "_provenance": {
+      "law": "3aa",
+      "schema": "texture_axis_measurement_provenance/1.0",
+      "frames_read_in_order": [
+       "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/var/m6_spreads_frames/pvm_sheen/member_4/swatch_tx_pvm_sheen_m4_POWDER_MATTE.exr"
+      ],
+      "frame_identities": [
+       {
+        "path": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/var/m6_spreads_frames/pvm_sheen/member_4/swatch_tx_pvm_sheen_m4_POWDER_MATTE.exr",
+        "family": "POWDER_MATTE",
+        "seed": 84,
+        "pixel_digest": "3f575116bfafd2b1",
+        "source_kind": "SCENE_LINEAR_EXR",
+        "shape": [
+         1200,
+         1200
+        ],
+        "dtype": "float64",
+        "region_alignment": "ASSERTED",
+        "measurement_record": {
+         "render_identity": "54553dbe4d4e54ec",
+         "material_identity": "cd41131605f431c5",
+         "geometry_identity": "720d17daee36e487",
+         "camera_identity": "7288018cf21f5c4b",
+         "lighting_contract_identity": "ba2d457cb68ddff5"
+        },
+        "region_alignment_tolerance": 0.05
+       }
+      ],
+      "derivation_code_digest": "3f82917029269f6a",
+      "derivation": {
+       "module": "apps/pipeline/services/palette_powder_texture_axes.py",
+       "function": "measure_texture_axes"
+      },
+      "region_masks": {
+       "PLANAR": {
+        "sample_count": 99133,
+        "index_digest": "f28a148f628307f4"
+       },
+       "GRAZING": {
+        "sample_count": 58431,
+        "index_digest": "36b56c7c684fdf69"
+       }
+      },
+      "alignment_tolerance": 0.05,
+      "axis_denominators": {
+       "GRANULARITY_INDEX": "PLANAR_REGION_MEAN",
+       "GRAZING_BAND_CONTRAST": "GRAZING_REGION_MEDIAN"
+      },
+      "pair_relative_effect_denominator": "MEAN_OF_THE_TWO_VALUES"
+     },
+     "_planar_peak": 0.8893624855518341
+    }
+   }
+  },
+  {
+   "member": 5,
+   "seed_a": 474,
+   "seed_b": 99,
+   "pair_report": {
+    "_calibration": {
+     "per_member": {
+      "pvm_sheen_m5_PRESSED_POWDER": {
+       "base_peak": 0.017792532703280448,
+       "iterations": [
+        {
+         "energy": 1347563.155329217,
+         "peak": 0.8754670611143113,
+         "clipped": 0
+        }
+       ],
+       "energy": 1347563.155329217
+      },
+      "pvm_sheen_m5_POWDER_MATTE": {
+       "base_peak": 0.019216866721212863,
+       "iterations": [
+        {
+         "energy": 2362377.586391257,
+         "peak": 0.889236024260521,
+         "clipped": 0
+        }
+       ],
+       "energy": 2362377.586391257
+      }
+     },
+     "why": "normalisation-invariant axes, exposure control mandatory [SUPERSEDED per 2u 2026-08-11: refuted for GRAZING_BAND_CONTRAST at member conditions four-for-four; GRANULARITY_INDEX established; see render_spend/queue_results.json]",
+     "window": [
+      0.35,
+      0.92
+     ]
+    },
+    "_stimulus": {
+     "rms": 0.0836198,
+     "low_member_mean": 0.56736,
+     "rms_over_mean": 0.14738396,
+     "floor": 0.002,
+     "realized": true
+    },
+    "pvm_sheen_m5_PRESSED_POWDER": {
+     "GRANULARITY_INDEX": 0.034432,
+     "GRAZING_BAND_CONTRAST": 2.442291,
+     "_provenance": {
+      "law": "3aa",
+      "schema": "texture_axis_measurement_provenance/1.0",
+      "frames_read_in_order": [
+       "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/var/m6_spreads_frames/pvm_sheen/member_5/swatch_tx_pvm_sheen_m5_PRESSED_POWDER.exr"
+      ],
+      "frame_identities": [
+       {
+        "path": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/var/m6_spreads_frames/pvm_sheen/member_5/swatch_tx_pvm_sheen_m5_PRESSED_POWDER.exr",
+        "family": "PRESSED_POWDER",
+        "seed": 474,
+        "pixel_digest": "8cd399cf3345cf10",
+        "source_kind": "SCENE_LINEAR_EXR",
+        "shape": [
+         1200,
+         1200
+        ],
+        "dtype": "float64",
+        "region_alignment": "ASSERTED",
+        "measurement_record": {
+         "render_identity": "5539239189bc4a09",
+         "material_identity": "fffff9df243c436e",
+         "geometry_identity": "720d17daee36e487",
+         "camera_identity": "7288018cf21f5c4b",
+         "lighting_contract_identity": "ba2d457cb68ddff5"
+        },
+        "region_alignment_tolerance": 0.05
+       }
+      ],
+      "derivation_code_digest": "3f82917029269f6a",
+      "derivation": {
+       "module": "apps/pipeline/services/palette_powder_texture_axes.py",
+       "function": "measure_texture_axes"
+      },
+      "region_masks": {
+       "PLANAR": {
+        "sample_count": 99133,
+        "index_digest": "f28a148f628307f4"
+       },
+       "GRAZING": {
+        "sample_count": 58431,
+        "index_digest": "36b56c7c684fdf69"
+       }
+      },
+      "alignment_tolerance": 0.05,
+      "axis_denominators": {
+       "GRANULARITY_INDEX": "PLANAR_REGION_MEAN",
+       "GRAZING_BAND_CONTRAST": "GRAZING_REGION_MEDIAN"
+      },
+      "pair_relative_effect_denominator": "MEAN_OF_THE_TWO_VALUES"
+     },
+     "_planar_peak": 0.8576173468232154
+    },
+    "pvm_sheen_m5_POWDER_MATTE": {
+     "GRANULARITY_INDEX": 0.0822,
+     "GRAZING_BAND_CONTRAST": 2.73064,
+     "_provenance": {
+      "law": "3aa",
+      "schema": "texture_axis_measurement_provenance/1.0",
+      "frames_read_in_order": [
+       "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/var/m6_spreads_frames/pvm_sheen/member_5/swatch_tx_pvm_sheen_m5_POWDER_MATTE.exr"
+      ],
+      "frame_identities": [
+       {
+        "path": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/var/m6_spreads_frames/pvm_sheen/member_5/swatch_tx_pvm_sheen_m5_POWDER_MATTE.exr",
+        "family": "POWDER_MATTE",
+        "seed": 99,
+        "pixel_digest": "2ff3ac0e5c24d741",
+        "source_kind": "SCENE_LINEAR_EXR",
+        "shape": [
+         1200,
+         1200
+        ],
+        "dtype": "float64",
+        "region_alignment": "ASSERTED",
+        "measurement_record": {
+         "render_identity": "4ce7a1e88c43155e",
+         "material_identity": "34a03e017fc57635",
+         "geometry_identity": "720d17daee36e487",
+         "camera_identity": "7288018cf21f5c4b",
+         "lighting_contract_identity": "ba2d457cb68ddff5"
+        },
+        "region_alignment_tolerance": 0.05
+       }
+      ],
+      "derivation_code_digest": "3f82917029269f6a",
+      "derivation": {
+       "module": "apps/pipeline/services/palette_powder_texture_axes.py",
+       "function": "measure_texture_axes"
+      },
+      "region_masks": {
+       "PLANAR": {
+        "sample_count": 99133,
+        "index_digest": "f28a148f628307f4"
+       },
+       "GRAZING": {
+        "sample_count": 58431,
+        "index_digest": "36b56c7c684fdf69"
+       }
+      },
+      "alignment_tolerance": 0.05,
+      "axis_denominators": {
+       "GRANULARITY_INDEX": "PLANAR_REGION_MEAN",
+       "GRAZING_BAND_CONTRAST": "GRAZING_REGION_MEDIAN"
+      },
+      "pair_relative_effect_denominator": "MEAN_OF_THE_TWO_VALUES"
+     },
+     "_planar_peak": 0.8517741576790809
+    }
+   }
+  }
+ ],
+ "adjudication": "DEFERRED BY DESIGN \u2014 raw measurements only; the establishment machinery adjudicates in its own act reading this record",
+ "owner_approved": false
+}

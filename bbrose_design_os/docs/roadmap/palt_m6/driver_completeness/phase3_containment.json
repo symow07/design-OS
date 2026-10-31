@@ -1,0 +1,382 @@
+{
+  "record_type": "driver_completeness_phase3_containment/1.0",
+  "declared_before_any_extension_render": true,
+  "interval_rule": "Built-in mutable sequence.\n\nIf no argument is given, the constructor creates a new empty list.\nThe argument must be an iterable if specified.",
+  "table": [
+    {
+      "pair": "MATTE_VS_SATIN",
+      "driver": "compression_texture.strength",
+      "note": "matte 0.12 REALIZED; satin declares 0.10 but never arrives -> 0",
+      "interval": [
+        0.0,
+        0.12
+      ],
+      "swept_range": [
+        0.02,
+        0.3
+      ],
+      "containment": "DOES_NOT_CONTAIN",
+      "extension_levels": [
+        0.0,
+        0.01
+      ]
+    },
+    {
+      "pair": "MATTE_VS_SATIN",
+      "driver": "compression_texture.scale_mm",
+      "note": "scale member; separation carried by the strength amplitude",
+      "containment": "GOVERNED_BY compression_texture.strength"
+    },
+    {
+      "pair": "MATTE_VS_SATIN",
+      "driver": "milling.microparticle_scale_mm",
+      "note": "both sides realized: matte 0.35, satin 0.21 \u2014 plus the A3 marginal case",
+      "interval": [
+        0.21,
+        0.35
+      ],
+      "swept_range": [
+        0.22,
+        0.55
+      ],
+      "containment": "DOES_NOT_CONTAIN",
+      "extension_levels": [
+        0.21,
+        0.215
+      ]
+    },
+    {
+      "pair": "MATTE_VS_SATIN",
+      "driver": "milling.microparticle_variance",
+      "note": "both sides realized",
+      "interval": [
+        0.2,
+        0.6
+      ],
+      "swept_range": [
+        0.05,
+        0.95
+      ],
+      "containment": "CONTAINS"
+    },
+    {
+      "pair": "MATTE_VS_SATIN",
+      "driver": "milling.surface_smoothing",
+      "note": "satin 0.5 REALIZED; matte declares 0.0 and it never arrives -> effective 0 either way",
+      "interval": [
+        0.0,
+        0.5
+      ],
+      "swept_range": [
+        0.05,
+        0.95
+      ],
+      "containment": "DOES_NOT_CONTAIN",
+      "extension_levels": [
+        0.0,
+        0.025
+      ]
+    },
+    {
+      "pair": "MATTE_VS_SATIN",
+      "driver": "sheen_response.sheen",
+      "note": "satin 0.45; matte has no sheen block -> Sheen Weight 0",
+      "interval": [
+        0.0,
+        0.45
+      ],
+      "swept_range": [
+        0.05,
+        0.85
+      ],
+      "containment": "DOES_NOT_CONTAIN",
+      "extension_levels": [
+        0.0,
+        0.025
+      ]
+    },
+    {
+      "pair": "MATTE_VS_SATIN",
+      "driver": "sheen_response.tint",
+      "note": "tint is moot at weight 0; rides the weight separation",
+      "containment": "GOVERNED_BY sheen_response.sheen"
+    },
+    {
+      "pair": "MATTE_VS_SATIN",
+      "driver": "surface_roughness",
+      "note": "realized roughness: matte 0.85 base; satin realized 0.43 via census L229",
+      "interval": [
+        0.43,
+        0.85
+      ],
+      "swept_range": [
+        0.4,
+        0.95
+      ],
+      "containment": "CONTAINS"
+    },
+    {
+      "pair": "PRESSED_VS_MATTE",
+      "driver": "compaction.compaction_level",
+      "note": "pressed 0.8; matte has no compaction block -> 0",
+      "interval": [
+        0.0,
+        0.8
+      ],
+      "swept_range": [
+        0.1,
+        0.95
+      ],
+      "containment": "DOES_NOT_CONTAIN",
+      "extension_levels": [
+        0.0,
+        0.05
+      ]
+    },
+    {
+      "pair": "PRESSED_VS_MATTE",
+      "driver": "compaction.surface_flatness",
+      "note": "shape member of the absent block",
+      "containment": "GOVERNED_BY compaction.compaction_level"
+    },
+    {
+      "pair": "PRESSED_VS_MATTE",
+      "driver": "compaction.compression_texture_amplitude",
+      "note": "own amplitude; the Phase-2 pre-declared extension",
+      "interval": [
+        0.0,
+        0.1
+      ],
+      "swept_range": [
+        0.02,
+        0.3
+      ],
+      "containment": "DOES_NOT_CONTAIN",
+      "extension_levels": [
+        0.0,
+        0.01
+      ]
+    },
+    {
+      "pair": "PRESSED_VS_MATTE",
+      "driver": "compaction.compression_texture_scale_mm",
+      "note": "scale member",
+      "containment": "GOVERNED_BY compaction.compression_texture_amplitude"
+    },
+    {
+      "pair": "PRESSED_VS_MATTE",
+      "driver": "press.ring_strength",
+      "note": "pressed 0.10; matte has no ring -> 0",
+      "interval": [
+        0.0,
+        0.1
+      ],
+      "swept_range": [
+        0.02,
+        0.35
+      ],
+      "containment": "DOES_NOT_CONTAIN",
+      "extension_levels": [
+        0.0,
+        0.01
+      ]
+    },
+    {
+      "pair": "PRESSED_VS_MATTE",
+      "driver": "press.ring_radius_frac",
+      "note": "no radius without a ring",
+      "containment": "GOVERNED_BY press.ring_strength"
+    },
+    {
+      "pair": "PRESSED_VS_MATTE",
+      "driver": "compression_texture.strength",
+      "note": "matte 0.12; pressed has no compression_texture block -> 0",
+      "interval": [
+        0.0,
+        0.12
+      ],
+      "swept_range": [
+        0.02,
+        0.3
+      ],
+      "containment": "DOES_NOT_CONTAIN",
+      "extension_levels": [
+        0.0,
+        0.01
+      ]
+    },
+    {
+      "pair": "PRESSED_VS_MATTE",
+      "driver": "compression_texture.scale_mm",
+      "note": "scale member",
+      "containment": "GOVERNED_BY compression_texture.strength"
+    },
+    {
+      "pair": "PRESSED_VS_MATTE",
+      "driver": "milling.microparticle_scale_mm",
+      "note": "milling absent on pressed; scale member of the absent block",
+      "containment": "GOVERNED_BY milling.micronormal_amplitude"
+    },
+    {
+      "pair": "PRESSED_VS_MATTE",
+      "driver": "milling.microparticle_variance",
+      "note": "shape member",
+      "containment": "GOVERNED_BY milling.micronormal_amplitude"
+    },
+    {
+      "pair": "SATIN_VS_CREAM",
+      "driver": "continuity.soft_specular_roughness",
+      "note": "cream 0.32 realized; block-absent effective on satin is its realized roughness 0.43",
+      "interval": [
+        0.32,
+        0.43
+      ],
+      "swept_range": [
+        0.1,
+        0.7
+      ],
+      "containment": "CONTAINS"
+    },
+    {
+      "pair": "SATIN_VS_CREAM",
+      "driver": "macrotexture.strength",
+      "note": "satin declares 0.06 (renders at x0.5 -> 0.03 effective; interval in declared units); cream never arrives -> 0",
+      "interval": [
+        0.0,
+        0.06
+      ],
+      "swept_range": [
+        0.01,
+        0.2
+      ],
+      "containment": "DOES_NOT_CONTAIN",
+      "extension_levels": [
+        0.0,
+        0.005
+      ]
+    },
+    {
+      "pair": "SATIN_VS_CREAM",
+      "driver": "macrotexture.scale_mm",
+      "note": "scale member",
+      "containment": "GOVERNED_BY macrotexture.strength"
+    },
+    {
+      "pair": "SATIN_VS_CREAM",
+      "driver": "milling.microparticle_scale_mm",
+      "note": "milling absent on cream",
+      "containment": "GOVERNED_BY milling.micronormal_amplitude"
+    },
+    {
+      "pair": "SATIN_VS_CREAM",
+      "driver": "milling.microparticle_variance",
+      "note": "shape member",
+      "containment": "GOVERNED_BY milling.micronormal_amplitude"
+    },
+    {
+      "pair": "SATIN_VS_CREAM",
+      "driver": "milling.surface_smoothing",
+      "note": "shape member of the absent block (its realized-roughness consequence is the roughness-construction builder row)",
+      "containment": "GOVERNED_BY milling.micronormal_amplitude"
+    },
+    {
+      "pair": "SATIN_VS_CREAM",
+      "driver": "sheen_response.sheen",
+      "note": "satin 0.45; cream has no sheen block -> weight 0",
+      "interval": [
+        0.0,
+        0.45
+      ],
+      "swept_range": [
+        0.05,
+        0.85
+      ],
+      "containment": "DOES_NOT_CONTAIN",
+      "extension_levels": [
+        0.0,
+        0.025
+      ]
+    },
+    {
+      "pair": "SATIN_VS_CREAM",
+      "driver": "sheen_response.tint",
+      "note": "rides the weight",
+      "containment": "GOVERNED_BY sheen_response.sheen"
+    }
+  ],
+  "extension_plan": {
+    "compression_texture.strength": [
+      0.0,
+      0.01
+    ],
+    "milling.microparticle_scale_mm": [
+      0.21,
+      0.215
+    ],
+    "milling.surface_smoothing": [
+      0.0,
+      0.025
+    ],
+    "sheen_response.sheen": [
+      0.0,
+      0.025
+    ],
+    "compaction.compaction_level": [
+      0.0,
+      0.05
+    ],
+    "compaction.compression_texture_amplitude": [
+      0.0,
+      0.01
+    ],
+    "press.ring_strength": [
+      0.0,
+      0.01
+    ],
+    "macrotexture.strength": [
+      0.0,
+      0.005
+    ]
+  },
+  "extension_reading_frozen": "per 1h: a re-swept driver whose extended sweep is VALID with counted axes tracking above 0.80 FAILS its pair; VALID with counted axes divergent satisfies the driver condition without improving the pair; still-degenerate leaves the standing ruling; a counted axis still under its floor over the CONTAINING range is a valid NOT_COMMON_DRIVER reading per 1e",
+  "A3_declaration": {
+    "case": "GRANULARITY under milling.microparticle_scale_mm \u2014 span 0.2260 vs required 0.2338, margin -0.0078",
+    "status": "MARGINAL_NON_QUALIFYING",
+    "resolution": "precision, never bar: extension level 0.21 (the exact satin endpoint) joins the sweep; the span statistic's seed-only spread is measured by repeating the two extreme levels (0.21, 0.55) at seeds 401 and 402 on both rigs; the verdict must be decided by a margin exceeding the maximum observed seed-to-seed span difference",
+    "readings_declared_before_measuring": {
+      "qualifies_after_precision": "GRANULARITY is adjudicated a real responder to grain scale; the counted pair reading is then decided by SHEEN's own qualification over the containing range \u2014 if SHEEN stays under floor the NOT_COMMON reading stands via SHEEN alone; if both qualify and track on a VALID sweep, MATTE_VS_SATIN FAILS per 1h",
+      "non_qualifying_by_sufficient_margin": "MARGINAL_NON_QUALIFYING resolves to NOT_COMMON via GRANULARITY with the margin stated",
+      "still_marginal": "recorded as UNRESOLVED_MARGINAL and escalated \u2014 not rounded in either direction"
+    }
+  },
+  "owner_approved": false,
+  "governor_containment_consequence": {
+    "finding": "GOVERNED_BY rows inherit their governor's containment. The micronormal governor's sweep spans [0.02, 0.35] against governed intervals [0, 0.34] (PRESSED_VS_MATTE) and [0, 0.10] (SATIN_VS_CREAM) \u2014 DOES_NOT_CONTAIN. Additionally its GRANULARITY leg was measured on raking-rig frames, not the counted mirror-source texture instrument (standing caveat in retained_micronormal_full_matrix.json), and extension levels cannot join a rank vector measured on a different instrument.",
+    "mandated_by": "hashed 1e \u2014 'the driver must be re-swept over at least the containing interval before the pair may be ruled'",
+    "plan": {
+      "parameter": "milling.micronormal_amplitude",
+      "family": "POWDER_MATTE",
+      "seed": 400,
+      "instruments": "counted: mirror-source texture rig (GRANULARITY) + diffuse lobe rig (all six axes)",
+      "levels": [
+        0.0,
+        0.01,
+        0.02,
+        0.05,
+        0.08,
+        0.1,
+        0.14,
+        0.17,
+        0.2,
+        0.23,
+        0.26,
+        0.29,
+        0.32,
+        0.34,
+        0.35
+      ],
+      "endpoints_exact": "0.0 (absent-effective), 0.10 (satin), 0.34 (matte)"
+    },
+    "reading_frozen": "per 1h and 1d: VALID with counted axes tracking above 0.80 -> every pair whose families differ in this driver FAILS (all three do); VALID with counted divergent -> driver condition satisfied, no status improvement; degenerate -> carries no information, standing rulings unchanged"
+  }
+}

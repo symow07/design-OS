@@ -1,0 +1,16 @@
+{
+ "record_type": "h2_pipeline_run_record/1.0",
+ "request_id": "es3083_lid_alt_01",
+ "run_date": "2026-08-15",
+ "what_this_is": "The FIRST LIVE RUN of the design-request pipeline (§H2) — the workflow the system was built for, exercised end-to-end in the H2 construction session on the demonstration brief the launcher carried.",
+ "stages_executed": {
+  "brief": "brief.json — demonstration brief verbatim; 4 MEASURED-tier measurements as at-request-time inputs; quantity resolved in-request per THE_RULE; zero standing blockers created",
+  "harvest": "inspiration_ledger.json — 30 entries from REAL web searches (session workflow wf_c41590fb-a49: five parallel agents over Pinterest/Dribbble/Behance/GitHub/editorial, 55 tool uses); every entry carries URL provenance + observed + idea + originality note",
+  "generate": "candidates/ — five ORIGINAL SVG candidates (A1 botanical_gesture, A2 geometric_rosette, A3 typographic_play, A4 tonal_inversion, A5 quiet_minimal) with PNG previews; each cites its ledger entries; nothing traced or copied; C3 layout not re-served",
+  "contact_sheet": "contact_sheet.png — A1-A5 at equal scale, provenance printed on the board face"
+ },
+ "validation": "request_validation.json — h2_pipeline.validate_request: brief PASS, ledger PASS (30 entries), candidates PASS, contact_sheet PASS → REQUEST PASS",
+ "failure_signals_dead": "The §H2 failure signal ('an arc with zero web/generation calls') cannot fire on this arc: 55 real web tool uses and 5 generated candidates are on the record.",
+ "awaiting": "RESOLVED 2026-08-15 — owner picked A2 TWELVE-ROSETTE (§J, verbatim 'A2 Twelve-Rosette', no adjustments; owner_pick_ingestion.json). Next: A2 finalisation pass + .ai emission per §J's authorization.",
+ "not_claimed": "No production authority, no Gate-2 movement, no manufacturing claim. The accepted C3 lid remains the shipped deliverable; these candidates are the commissioned exploration."
+}

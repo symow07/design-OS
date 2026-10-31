@@ -1,0 +1,170 @@
+{
+ "record_type": "palt_m3_validation_report/1.0",
+ "created_at": "2026-08-05",
+ "milestone": "PALT-M3 \u2014 Case Stack-Up and Mechanism Strategy Engine",
+ "status": "IMPLEMENTED_PENDING_OWNER_REVIEW",
+ "versions": {
+  "mechanism_schema": "palette_mechanism_strategy/1.0",
+  "stackup_engine": "palette_stackup_engine/1.0",
+  "validators": "palette_mechanism_validators/1.0"
+ },
+ "authority": {
+  "MECHANISM_ENVELOPE_AUTHORITY": "DESIGN_DEFAULT \u2014 engineering estimates; no manufacturer drawing was obtainable",
+  "MANUFACTURING_AUTHORITY": "NOT_ESTABLISHED",
+  "note": "a strategy comparison narrows the design space; it does not confirm that any strategy is manufacturable as drawn"
+ },
+ "owner_corrections_applied": {
+  "PALT_P1_PAN_LAYOUT": "3 x 3 OF 26 MM ROUND PANS retained \u2014 NOT reduced to 3x2",
+  "116x92x15": "TARGET_DESIGN_ENVELOPE; was INFEASIBLE_UNDER_CURRENT_RESERVED_BAND_STRATEGY, now tested under 8 configurations \u2192 INFEASIBLE_UNDER_ALL_TESTED_MECHANISM_STRATEGIES (explicitly NOT all possible)",
+  "101.8x113.3x9": "ANALYTICAL_MINIMUM_UNDER_CURRENT_ASSUMPTIONS \u2014 and now shown to have been UNDERSTATED (it omitted lid borders, assembly clearance, moulding tolerance)",
+  "89.8x101.3x9": "MATHEMATICAL_FLOOR \u2014 not a design recommendation",
+  "9mm_heights": "reclassified: GEOMETRIC_LOWER_BOUND only; never a viable premium production thickness",
+  "83x83_inference": "UNVERIFIED_MECHANISM_HYPOTHESIS \u2014 a market listing is never a technical drawing"
+ },
+ "mechanism_strategies": {
+  "hinge": [
+   "INTERNAL_RESERVED_BAND_PIN_HINGE",
+   "WALL_INTEGRATED_PIN_HINGE",
+   "EXTERNAL_BARREL_HINGE",
+   "LIVING_HINGE",
+   "CUSTOM_MECHANISM_PLACEHOLDER"
+  ],
+  "clasp": [
+   "INTERNAL_RESERVED_BAND_SNAP_CLASP",
+   "WALL_INTEGRATED_SNAP_CLASP",
+   "MAGNETIC_CLOSURE",
+   "FRICTION_CLOSURE",
+   "CUSTOM_MECHANISM_PLACEHOLDER"
+  ],
+  "retention": [
+   "ADHESIVE_FIXED",
+   "PRESS_FIT",
+   "MAGNETIC_REFILL",
+   "RETENTION_LIP",
+   "CUSTOM_RETENTION_PLACEHOLDER"
+  ]
+ },
+ "stackup_formulas": {
+  "height": "GEOMETRIC_LOWER_BOUND = base_skin + tray_floor + pan_depth + lid_inner + lid_outer + mirror + interior_clearance; ENGINEERING_MINIMUM = lower + pan_adhesive + pan_proud + powder_crown + mirror_adhesive + mirror_safety + mechanism_height + parting_gap + mfg_tolerance + warpage; PREMIUM_DESIGN_TARGET = engineering + 2*premium_skin + premium_clearance + decoration_allowance",
+  "footprint": "min = pan_field + internal_bands(on-axis) + wall_adds(on-axis) + 2*margin + 2*tray_wall + 2*case_wall + assembly_clearance + moulding_tolerance + 2*lid_border; external adds reported SEPARATELY",
+  "pocket_module": "max(pan_w + 2*tolerance + 2*retention_pocket_add) (+ 2*removal_clearance when refillable)",
+  "allowances_mm": {
+   "pan_seating_adhesive_mm": 0.15,
+   "pan_proud_recess_mm": 0.2,
+   "powder_crown_mm": 0.3,
+   "interior_clearance_above_powder_mm": 0.5,
+   "mirror_adhesive_mm": 0.15,
+   "mirror_safety_clearance_mm": 0.3,
+   "cosmetic_parting_gap_mm": 0.2,
+   "manufacturing_tolerance_mm": 0.3,
+   "warpage_allowance_mm": 0.4,
+   "decoration_insert_allowance_mm": 0.6,
+   "assembly_clearance_mm": 0.3,
+   "moulding_tolerance_mm": 0.2,
+   "lid_structural_border_mm": 2.0,
+   "premium_skin_uplift_mm": 0.8,
+   "premium_clearance_uplift_mm": 0.5
+  }
+ },
+ "palt_p1_height_result": {
+  "GEOMETRIC_LOWER_BOUND_mm": 9.0,
+  "ENGINEERING_MINIMUM_mm": 11.15,
+  "PREMIUM_DESIGN_TARGET_mm": 13.85,
+  "components_mm": {
+   "outer_base_skin": 1.5,
+   "tray_floor": 1.0,
+   "pan_depth": 3.5,
+   "pan_seating_adhesive": 0.15,
+   "pan_proud_recess": 0.2,
+   "powder_crown": 0.3,
+   "interior_clearance_above_powder": 0.5,
+   "lid_inner_skin": 0.75,
+   "lid_outer_skin": 0.75,
+   "mirror_thickness": 1.0,
+   "mirror_adhesive": 0.15,
+   "mirror_safety_clearance": 0.3,
+   "hinge_height_envelope": 0.0,
+   "clasp_closure_clearance": 0.0,
+   "retention_height": 0.15,
+   "cosmetic_parting_gap": 0.2,
+   "manufacturing_tolerance": 0.3,
+   "warpage_allowance": 0.4,
+   "premium_skin_uplift_x2": 1.6,
+   "premium_clearance_uplift": 0.5,
+   "decoration_insert_allowance": 0.6
+  },
+  "authority": "DESIGN_DEFAULT allowances; MANUFACTURING_AUTHORITY NOT_ESTABLISHED",
+  "warning": "the geometric lower bound is a mathematical artefact and must never be presented as a production recommendation or a premium thickness"
+ },
+ "palt_p1_matrix_result": {
+  "any_tested_strategy_fits_116x92": false,
+  "smallest_depth_any_strategy_mm": 101.3,
+  "smallest_width_any_strategy_mm": 103.5,
+  "shortfall_on_depth_mm": 9.3,
+  "classification": "INFEASIBLE_UNDER_ALL_TESTED_MECHANISM_STRATEGIES \u2014 the depth axis is short by about 9.3 mm even in the most compact wall-integrated configuration",
+  "explicitly_not": "NOT proven infeasible under ALL POSSIBLE strategies; six hinge/clasp combinations and both hinge edges were tested, not every conceivable mechanism"
+ },
+ "recommended_envelope": {
+  "recommendation": "~116 x 116 x 15 mm near-square, wall-integrated pin hinge + wall-integrated snap clasp on the long edge, adhesive-fixed pans, mirror retained",
+  "basis": "config A2 geometry (109.3 x 111.5 minimum) at the standard 4.0 gap / 5.0 margin, rounded up for premium comfort; keeps the owner's 116 mm width and the 3x3 layout",
+  "explicitly_not": "NOT the smallest option (C1 at 103.5 x 101.3 is smaller but squeezes spacing to 2.0/3.0, which conflicts with MID_SIZE_PREMIUM)",
+  "status": "RECOMMENDATION ONLY \u2014 NOT owner-approved, NOT manufacturing-confirmed"
+ },
+ "unresolved_manufacturing_unknowns": [
+  "clasp: achievable tolerance",
+  "clasp: closure feel",
+  "clasp: detent geometry",
+  "clasp: loosening over cycles",
+  "clasp: magnet grade",
+  "clasp: magnet thickness",
+  "clasp: pull force",
+  "clasp: retention force",
+  "clasp: wear over cycles",
+  "hinge: achievable wall thickening without sink marks",
+  "hinge: external barrel diameter",
+  "hinge: fatigue life",
+  "hinge: gudgeon dimensions",
+  "hinge: hinge pin diameter",
+  "hinge: hinge web thickness",
+  "hinge: minimum pin engagement",
+  "hinge: visual acceptability",
+  "retention: adhesive thickness in production"
+ ],
+ "supplier_outreach_status": {
+  "CHANNEL_STATUS": "NO_APPROVED_OUTBOUND_COMMUNICATION_CHANNEL_AVAILABLE",
+  "requests_sent": 0,
+  "responses_received": 0,
+  "files_received": 0,
+  "prepared_recipients": 5,
+  "honest_statement": "the recipient list and ready-to-send messages are prepared; NOTHING was sent and no message left this system"
+ },
+ "tests": {
+  "file": "apps/pipeline/tests/test_palette_mechanism_stackup.py",
+  "result": "34 passed in 0.04s"
+ },
+ "exit_criteria": {
+  "at_least_two_credible_mechanism_strategies_modelled": true,
+  "full_height_stackup_explicit": true,
+  "lower_bound_engineering_minimum_premium_target_separated": true,
+  "palt_p1_has_a_mechanism_strategy_matrix": true,
+  "116x92_tested_under_multiple_strategies": true,
+  "supplier_outreach_documented_honestly": true,
+  "no_market_listing_treated_as_technical_drawing": true,
+  "canonical_tests_green": true,
+  "owner_review_requested": true
+ },
+ "prohibitions_observed": [
+  "no powder rendering",
+  "no client presentation rendering",
+  "no Blender",
+  "no image generation",
+  "no Illustrator export",
+  "no order",
+  "no quantity promise",
+  "no pricing or commercial terms",
+  "no exclusivity",
+  "no patent clearance claim",
+  "no unnecessary disclosure of BBROSE concepts"
+ ],
+ "provider_calls": 0
+}

@@ -1,0 +1,39 @@
+{
+ "record_type": "canonical_test_baseline/1.0",
+ "recorded_at": "2026-08-04",
+ "head": "d95d28a (branch v2-features-phase12-14)",
+ "policy": "docs/roadmap/test_runner_policy.json (CANONICAL_TEST_RUNNER=PYTEST)",
+ "pytest": {
+  "invocation": "venv/bin/python -m pytest -q -m \"not pacdora\"",
+  "result": "GREEN",
+  "passed": 5119,
+  "failed": 0,
+  "errors": 0,
+  "deselected": 1,
+  "deselected_reason": "pacdora marker (legacy Playwright backend, excluded per pytest.ini)",
+  "subtests_passed": 3,
+  "warnings": 562,
+  "duration_seconds": 408.96
+ },
+ "companion_checks": {
+  "manage_py_check": "PASS — System check identified no issues (0 silenced)",
+  "makemigrations_check_dry_run": "PASS — No changes detected (exit 0)",
+  "ruff": {
+   "version": "0.15.20 (pinned requirements-dev.txt; installed into venv this session)",
+   "result": "3 errors, ALL in legacy demo script eyeliner_task.py (E401 line 2; E702 lines 31, 32); 1 auto-fixable",
+   "handling": "RECORDED ONLY — no fix applied (no repair authorized; never mixed into intake records)"
+  }
+ },
+ "notes": [
+  "the 14 findings observed under manage.py test do NOT reproduce under full pytest — no separate defect investigation is triggered by this baseline",
+  "manage.py test remains NON_CANONICAL_DIAGNOSTIC_RUNNER; its compatibility is not claimed",
+  "563-warning inventory (RuntimeWarning in artwork_segments sqrt, DATABASES override warnings, staticfiles dir) is pre-existing and untouched"
+ ],
+ "state_preservation": [
+  "received.zip unchanged (sha256 cfceb952754553e437fa7856a7fafe711e862ea57358aff0b69cdf75e432d71c)",
+  "original photographs unchanged",
+  "no P1 geometry; no Blender pilot render; no reconstruction change",
+  "no Task or GateDecision change; no provider/image-generation/OCR call",
+  "Gate 2 blocked; Packaging production not started"
+ ]
+}

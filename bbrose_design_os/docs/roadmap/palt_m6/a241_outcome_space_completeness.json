@@ -1,0 +1,162 @@
+{
+ "record_type": "a241_outcome_space_completeness/1.0",
+ "law": "2216115499023fa7",
+ "assertion_used": "outcomes = itertools.product(*dimensions); assert len(declared) == len(outcomes)",
+ "checks": [
+  {
+   "declaration": "A233 test-4 outcomes",
+   "dimensions": {
+    "verdict": [
+     "MET",
+     "UNMET"
+    ],
+    "premise": [
+     "disp<=proxy",
+     "disp>proxy"
+    ]
+   },
+   "product_cardinality": 4,
+   "declared_branches": 3,
+   "complete": false,
+   "missing_count": 1
+  },
+  {
+   "declaration": "A150 verdict-identity states",
+   "dimensions": {
+    "value": [
+     "moved",
+     "unmoved"
+    ],
+    "provenance": [
+     "moved",
+     "unmoved"
+    ]
+   },
+   "product_cardinality": 4,
+   "declared_branches": 4,
+   "complete": true,
+   "missing_count": 0
+  },
+  {
+   "declaration": "A115b energy-control contingencies",
+   "dimensions": {
+    "direction": [
+     "up",
+     "down"
+    ],
+    "outcome": [
+     "accepted",
+     "refused"
+    ]
+   },
+   "product_cardinality": 4,
+   "declared_branches": 2,
+   "complete": false,
+   "missing_count": 2
+  },
+  {
+   "declaration": "A105 tolerance branches",
+   "dimensions": {
+    "tolerance": [
+     "bounds_energy",
+     "absent_or_other"
+    ]
+   },
+   "product_cardinality": 2,
+   "declared_branches": 2,
+   "complete": true,
+   "missing_count": 0
+  },
+  {
+   "declaration": "A100 recoverability",
+   "dimensions": {
+    "result": [
+     "recoverable",
+     "not_recoverable"
+    ]
+   },
+   "product_cardinality": 2,
+   "declared_branches": 2,
+   "complete": true,
+   "missing_count": 0
+  },
+  {
+   "declaration": "A152 entry-point recoverability",
+   "dimensions": {
+    "result": [
+     "recoverable",
+     "not_recoverable"
+    ]
+   },
+   "product_cardinality": 2,
+   "declared_branches": 2,
+   "complete": true,
+   "missing_count": 0
+  },
+  {
+   "declaration": "A214 candidate availability",
+   "dimensions": {
+    "answer": [
+     "yes",
+     "no"
+    ]
+   },
+   "product_cardinality": 2,
+   "declared_branches": 2,
+   "complete": true,
+   "missing_count": 0
+  },
+  {
+   "declaration": "A182 baseline dispositions",
+   "dimensions": {
+    "disposition": [
+     "cosmetic",
+     "changed",
+     "removed"
+    ]
+   },
+   "product_cardinality": 3,
+   "declared_branches": 3,
+   "complete": true,
+   "missing_count": 0
+  },
+  {
+   "declaration": "A171 UI walk outcomes",
+   "dimensions": {
+    "outcome": [
+     "reaches_root",
+     "no_reach",
+     "reaches_non_root"
+    ]
+   },
+   "product_cardinality": 3,
+   "declared_branches": 3,
+   "complete": true,
+   "missing_count": 0
+  },
+  {
+   "declaration": "A205 admissibility",
+   "dimensions": {
+    "candidates": [
+     "agree",
+     "disagree"
+    ]
+   },
+   "product_cardinality": 2,
+   "declared_branches": 2,
+   "complete": true,
+   "missing_count": 0
+  }
+ ],
+ "counts": {
+  "checked": 10,
+  "complete": 8,
+  "incomplete": 2
+ },
+ "incomplete_detail": {
+  "A233 test-4 outcomes": "3 of 4 \u2014 the omitted cell (MET with dispersion > proxy) is the one that fired; already reported",
+  "A115b energy-control contingencies": "2 of 4 \u2014 A115b enumerated the UP direction only (clip -> one retry -> second clip stops). The DOWN direction's refusal was NOT enumerated, and it is exactly what occurred: three of four families' down-frames landed below window. Handled at execution under A104's separate pass condition, so no law gap opened \u2014 but the enumeration was incomplete, and this is the second instance the owner expected"
+ },
+ "exemplar_complete": "A150's verdict-identity states: a genuine 2x2 with all four cells declared, including AGREEMENT_ACROSS_INSTRUMENT_CHANGE \u2014 the cell that exists only because the product was taken rather than described",
+ "owner_approved": false
+}

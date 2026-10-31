@@ -1,0 +1,53 @@
+{
+ "record_type": "a361_absent_vs_guarded/1.0",
+ "law": "264d484c94b5c457",
+ "date": "2026-08-12",
+ "defect_structurally_absent_rows": [
+  {
+   "class": "EXTENT_OF_COMPARISON_EXCEEDING_EXTENT_OF_SUBJECT",
+   "condition_achieved": "a FAILED token placed mid-line in captured stdout; failed_ids returned [] while the anchored form still returned its id, so the check was not passing by matching nothing",
+   "reintroduction_mutation": "drop the ^ anchor from the failed_ids regex \u2014 OBSERVED to reintroduce over-collection",
+   "standing_control": "AbsentDefectStandingControls::test_extent_of_comparison_remains_absent",
+   "immunity_kind": "STRUCTURAL"
+  },
+  {
+   "class": "OBSERVATION_WINDOW_NARROWER_THAN_EVENT",
+   "condition_achieved": "two FAILED ids separated by 400 chars; both returned from the full capture",
+   "reintroduction_mutation": "slice proc.stdout to its last 200 chars \u2014 OBSERVED to lose one of two ids",
+   "standing_control": "AbsentDefectStandingControls::test_observation_window_remains_full",
+   "immunity_kind": "STRUCTURAL"
+  }
+ ],
+ "unguarded_immunity": "NONE \u2014 a reintroducing mutation was constructed and observed for both rows",
+ "a365_scan": {
+  "matches_found": 3,
+  "files": [
+   "tools/tier2_gate.py",
+   "tools/flake_gate.py",
+   "tools/claim_scan.py"
+  ],
+  "unexpected": "one match was in claim_scan.py ITSELF \u2014 the rule stating what it forbids used the forbidden phrase",
+  "second_defect": "the scan was LINE-based while prose wraps: the planted claim split across two lines and was MISSED. Repaired to join prose lines. A comparison window narrower than its subject, inside the check for a different class.",
+  "third_defect": "after repair the scan caught my OWN new A366 docstring; rephrased",
+  "scope": "INSTRUMENTS only \u2014 no law record or boundary report was scanned or acted on",
+  "final": "clean"
+ },
+ "a370_returncode_disposition": "UNANSWERABLE_BY_LOSS_OF_RECORD \u2014 not reconstructed, not inferred from the floor",
+ "rerun_tally": {
+  "CAUGHT": 11,
+  "DEFECT_STRUCTURALLY_ABSENT": 2,
+  "EXHIBITED": 0,
+  "ATTEMPT_NOT_EXECUTED": 0,
+  "NOT_APPLICABLE": 0
+ },
+ "found_by": {
+  "FOUND_BY_FIRING": [
+   "claim_scan line-window defect",
+   "claim_scan self-match",
+   "the A366 docstring tripping the standing control"
+  ],
+  "FOUND_BY_ADJUDICATION": [
+   "A352(6) ruled form was insufficient \u2014 owner-owned at A365"
+  ]
+ }
+}

@@ -1,0 +1,72 @@
+{
+  "record_type": "palt_m4b_a_status/1.0",
+  "milestone": "PALT-M4B-A",
+  "date": "2026-08-06",
+  "PALT_M4B_A_KERNEL": "IMPLEMENTED_AND_VALIDATED",
+  "PALT_M4B_A_MESH_DIAGNOSTICS": "CLEAN",
+  "PALT_M4B_A_SECTION_ENGINE": "IMPLEMENTED_AND_VALIDATED",
+  "PALT_M4B_A_PAN_POCKET_CONTRACT": "CONFLICT_DETECTED_OWNER_DECISION_REQUIRED",
+  "PALT_M4B_A_OWNER_REVIEW": "PENDING_STRICT_REVIEW",
+  "PALT_M4B_IMPLEMENTATION": "INCOMPLETE",
+  "PALT_M4B_RENDER_PIPELINE": "REPLACED_BOOLEAN_FREE",
+  "PALETTE_TRAY_GEOMETRY_AUTHORITY": "DETERMINISTIC_PYTHON_MESH_CONSTRUCTION",
+  "BLENDER_ROLE": "VISUALIZATION_AND_RENDERING_ONLY",
+  "BLENDER_BOOLEAN_MODIFIERS": "NOT_AUTHORITY_FOR_CORE_TRAY_GEOMETRY",
+  "PALT_P1_FINAL_DIMENSIONS": "NOT_APPROVED",
+  "PALT_P1_MANUFACTURING_AUTHORITY": "NOT_ESTABLISHED",
+  "PALT_P1_OWNER_APPROVAL": "REJECTED_PENDING_M4B",
+  "PALT_M5": "BLOCKED",
+  "self_approved": false,
+  "provider_calls": 0,
+  "image_generation_calls": 0,
+  "tray_mesh_identity": "ec65ea9402c16230",
+  "section_identity": "d10ae2f570e4ae3a",
+  "failure_count": 1,
+  "declared_count": 5,
+  "open_failures": [
+    "PAN_POCKET_INTERSECTION"
+  ],
+  "unresolved_defects": [
+    "PAN_POCKET_INTERSECTION \u2014 the 26.6 mm pocket, the 0.6 mm moulded floor fillet and the sharp-cornered 26.0 mm pan model cannot all three hold. Interference 0.0542 mm at z 2.65 mm (the pan base). This follows from M4B-A's decision to MODEL the moulded fillets, which section 2 asked for; without them the pan clears. Three solved resolutions are published; none applied.",
+    "MOULDING.wall_to_floor_radius_mm (0.8) vs internal_fillet_mm (0.6) for the pocket \u2014 interpretation awaiting confirmation.",
+    "structural rib / hinge / clasp reinforcement interfaces are declared, not modelled; deferred to M4B-B.",
+    "solid-block section variation above 5:1 would sink in ABS; underside hollowing proposed for M4B-B."
+  ],
+  "deliverables": {
+    "renders": [
+      "pan_seating_closeup",
+      "recessed_pocket_closeup",
+      "recessed_tray_neutral_three_quarter",
+      "recessed_tray_normals",
+      "recessed_tray_top",
+      "recessed_tray_wireframe"
+    ],
+    "sections": [
+      "centre_section.png",
+      "centre_section_annotated.png"
+    ],
+    "manifests": [
+      "tray_topology_manifest.json",
+      "tray_mesh_diagnostics.json",
+      "tray_section_manifest.json"
+    ]
+  },
+  "not_created_deliberately": [
+    "the complete M4B review board (owner: not in this slice)"
+  ],
+  "required_test_inversions": [
+    {
+      "owner_test": "no pan/pocket intersection",
+      "implemented_as": "test_pan_pocket_interference_is_reported_not_repaired",
+      "inverted": true,
+      "reason": "the test asserts that the interference IS detected and reported with a number, and that nothing was mutated to hide it. Asserting the owner's original polarity would require changing a dimension to pass, which is prohibited. It flips back to the owner's polarity as soon as the pan/pocket conflict is ruled on.",
+      "declared_not_substituted": true
+    }
+  ],
+  "pocket_diameter_reading": {
+    "contract_value_mm": 26.6,
+    "meaning": "THEORETICAL_SHARP_CORNER_WALL_LINE_AT_DECK_PLANE",
+    "visible_opening_across_top_view_mm": 27.758826,
+    "note": "a caliper on recessed_tray_top.png reads 27.76, not 26.6, because the 0.6 mm rim fillet bulges outward from the wall line. This is a semantics statement, not a discrepancy."
+  }
+}

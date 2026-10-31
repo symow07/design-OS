@@ -1,0 +1,136 @@
+{
+  "validation": {
+    "record_type": "long_path_classifier_validation/1.0",
+    "threshold": 0.6,
+    "threshold_authority": [
+      "DESIGN_DEFAULT",
+      "NOT_INDUSTRY_STANDARD",
+      "NOT_MANUFACTURER_CONFIRMED"
+    ],
+    "true_positives": 5,
+    "true_negatives": 1,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "total": 6,
+    "accuracy": 1.0,
+    "sensitivity": 1.0,
+    "specificity": 1.0,
+    "ambiguous_count": 0,
+    "ambiguity_rate": 0.0,
+    "ambiguous_cases": [],
+    "cases": [
+      {
+        "ratio": 1.0,
+        "predicted_local_wall": true,
+        "expected_local_wall": true,
+        "correct": true
+      },
+      {
+        "ratio": 1.0,
+        "predicted_local_wall": true,
+        "expected_local_wall": true,
+        "correct": true
+      },
+      {
+        "ratio": 1.0,
+        "predicted_local_wall": true,
+        "expected_local_wall": true,
+        "correct": true
+      },
+      {
+        "ratio": 1.0,
+        "predicted_local_wall": true,
+        "expected_local_wall": true,
+        "correct": true
+      },
+      {
+        "ratio": 0.069282,
+        "predicted_local_wall": false,
+        "expected_local_wall": false,
+        "correct": true
+      },
+      {
+        "ratio": 1.0,
+        "predicted_local_wall": true,
+        "expected_local_wall": true,
+        "correct": true
+      }
+    ],
+    "note": "a case within 0.05 of the threshold is flagged ambiguous and must not be relied on for a policy verdict"
+  },
+  "sensitivity": {
+    "record_type": "long_path_threshold_sensitivity/1.0",
+    "sweep": [
+      {
+        "threshold": 0.3,
+        "accuracy": 1.0,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      {
+        "threshold": 0.4,
+        "accuracy": 1.0,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      {
+        "threshold": 0.5,
+        "accuracy": 1.0,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      {
+        "threshold": 0.6,
+        "accuracy": 1.0,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      {
+        "threshold": 0.7,
+        "accuracy": 1.0,
+        "false_positives": 0,
+        "false_negatives": 0
+      },
+      {
+        "threshold": 0.8,
+        "accuracy": 1.0,
+        "false_positives": 0,
+        "false_negatives": 0
+      }
+    ],
+    "thresholds_with_perfect_accuracy": [
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8
+    ],
+    "selected": 0.6,
+    "selected_is_inside_the_plateau": true
+  },
+  "population_separation": {
+    "local_wall_ratios": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "long_path_ratios": [
+      0.0693
+    ],
+    "gap": {
+      "max_long_path": 0.0693,
+      "min_local_wall": 1.0,
+      "margin": 0.9307
+    }
+  },
+  "limitations": [
+    "Only 1 TRUE NEGATIVE. Specificity 1.0 rests on a single long-path case plus the real tray, so it is not a strong estimate.",
+    "The threshold sweep is FLAT across 0.3-0.8: every candidate scores 1.0. The fixture populations separate by a wide margin, so the evidence does NOT pin 0.60 specifically - it only shows 0.60 sits inside a broad plateau.",
+    "No fixture produces a ratio in the 0.3-0.8 band, so boundary behaviour is untested. A tapered wedge or oblique L-junction fixture would be needed to constrain the threshold.",
+    "The threshold remains DESIGN_DEFAULT / NOT_INDUSTRY_STANDARD / NOT_MANUFACTURER_CONFIRMED and must not be cited as a validated constant."
+  ],
+  "verdict": "CLASSIFIER_SEPARATES_THE_OBSERVED_POPULATIONS; THRESHOLD_VALUE_NOT_EVIDENCE_PINNED"
+}

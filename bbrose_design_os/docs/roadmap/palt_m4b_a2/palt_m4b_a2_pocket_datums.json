@@ -1,0 +1,92 @@
+{
+  "record_type": "palette_pocket_datums/1.0",
+  "datums": {
+    "PAN_NOMINAL_OUTER_DIAMETER": {
+      "datum": "PAN_NOMINAL_OUTER_DIAMETER",
+      "value_mm": 26.0,
+      "z_datum_mm": "2.65..6.15",
+      "measurement_direction": "DIAMETRAL",
+      "provenance": "owner M4B-A preserved value",
+      "authority": "OWNER_ACCEPTED_CONTRACT",
+      "tolerance_mm": null,
+      "controls_fit": true,
+      "visual_only": false
+    },
+    "PAN_MAXIMUM_ENVELOPE_DIAMETER": {
+      "datum": "PAN_MAXIMUM_ENVELOPE_DIAMETER",
+      "value_mm": 26.6,
+      "z_datum_mm": "2.65..6.15",
+      "measurement_direction": "DIAMETRAL",
+      "provenance": "26.0 + 2 x 0.30 layout tolerance \u2014 this is what the 26.6 in palt_p1 actually measures",
+      "authority": "CALCULATED_LAYOUT_HEURISTIC",
+      "tolerance_mm": 0.3,
+      "controls_fit": true,
+      "visual_only": false
+    },
+    "POCKET_FUNCTIONAL_DIAMETER_AT_SEATING_DATUM": {
+      "datum": "POCKET_FUNCTIONAL_DIAMETER_AT_SEATING_DATUM",
+      "value_mm": 26.8,
+      "z_datum_mm": 2.65,
+      "measurement_direction": "DIAMETRAL",
+      "provenance": "cavity width at the plane the pan base occupies \u2014 the only datum that governs whether the pan fits",
+      "authority": "DERIVED_FROM_BUILT_MESH",
+      "tolerance_mm": null,
+      "controls_fit": true,
+      "visual_only": false
+    },
+    "POCKET_DIAMETER_AT_FLOOR_FILLET_TANGENT": {
+      "datum": "POCKET_DIAMETER_AT_FLOOR_FILLET_TANGENT",
+      "value_mm": 26.024844,
+      "z_datum_mm": 3.07906,
+      "measurement_direction": "DIAMETRAL",
+      "provenance": "where the floor fillet becomes the flat pocket floor; the pan's flat base must land inside this",
+      "authority": "DERIVED_FROM_BUILT_MESH",
+      "tolerance_mm": null,
+      "controls_fit": true,
+      "visual_only": false
+    },
+    "POCKET_SHARP_WALL_THEORETICAL_DIAMETER_AT_DECK": {
+      "datum": "POCKET_SHARP_WALL_THEORETICAL_DIAMETER_AT_DECK",
+      "value_mm": 27.508434,
+      "z_datum_mm": 7.15,
+      "measurement_direction": "DIAMETRAL",
+      "provenance": "the drafted wall line extrapolated to the deck plane; the kernel's construction input, not a measurable feature",
+      "authority": "DESIGN_DEFAULT_NOT_MANUFACTURER_CONFIRMED",
+      "tolerance_mm": null,
+      "controls_fit": false,
+      "visual_only": false
+    },
+    "POCKET_VISIBLE_MOUTH_DIAMETER_AT_RIM": {
+      "datum": "POCKET_VISIBLE_MOUTH_DIAMETER_AT_RIM",
+      "value_mm": 28.66726,
+      "z_datum_mm": 7.15,
+      "measurement_direction": "DIAMETRAL",
+      "provenance": "where the rim fillet meets the flat deck \u2014 what a caliper on the top view reads",
+      "authority": "DERIVED_FROM_BUILT_MESH",
+      "tolerance_mm": null,
+      "controls_fit": false,
+      "visual_only": true
+    },
+    "POCKET_MAXIMUM_FILLET_ENVELOPE_DIAMETER": {
+      "datum": "POCKET_MAXIMUM_FILLET_ENVELOPE_DIAMETER",
+      "value_mm": 28.667261,
+      "z_datum_mm": 7.15,
+      "measurement_direction": "DIAMETRAL",
+      "provenance": "widest point of the whole pocket profile including both fillets \u2014 drives deck ligament, not fit",
+      "authority": "DERIVED_FROM_BUILT_MESH",
+      "tolerance_mm": null,
+      "controls_fit": false,
+      "visual_only": true
+    }
+  },
+  "fit_controlling": [
+    "PAN_NOMINAL_OUTER_DIAMETER",
+    "PAN_MAXIMUM_ENVELOPE_DIAMETER",
+    "POCKET_FUNCTIONAL_DIAMETER_AT_SEATING_DATUM",
+    "POCKET_DIAMETER_AT_FLOOR_FILLET_TANGENT"
+  ],
+  "visual_only": [
+    "POCKET_VISIBLE_MOUTH_DIAMETER_AT_RIM",
+    "POCKET_MAXIMUM_FILLET_ENVELOPE_DIAMETER"
+  ]
+}

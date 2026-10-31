@@ -1,0 +1,140 @@
+{
+  "record_type": "thickness_convergence_table/1.0",
+  "criterion": {
+    "version": "thickness_convergence/1.0",
+    "levels_planes_per_family": [
+      5,
+      9,
+      13,
+      21,
+      33,
+      49
+    ],
+    "levels_ray_samples_per_face": [
+      1,
+      2,
+      4
+    ],
+    "minimum_tolerance_mm": 0.02,
+    "coordinate_tolerance_mm": 0.5,
+    "stable_levels_required": 3
+  },
+  "ray_levels": [
+    {
+      "level": "ray_stride_17",
+      "samples": 622,
+      "minimum_mm": 0.600738,
+      "maximum_mm": 1.883112,
+      "minimum_xyz": [
+        -25.841829,
+        -17.960994,
+        2.79107
+      ],
+      "source_face": 1032,
+      "opposing_face": 17097,
+      "delta_from_previous_mm": null,
+      "converged": false
+    },
+    {
+      "level": "ray_stride_11",
+      "samples": 960,
+      "minimum_mm": 0.600738,
+      "maximum_mm": 1.883112,
+      "minimum_xyz": [
+        -23.467508,
+        -19.132122,
+        2.79107
+      ],
+      "source_face": 1028,
+      "opposing_face": 17093,
+      "delta_from_previous_mm": 0.0,
+      "converged": true
+    },
+    {
+      "level": "ray_stride_7",
+      "samples": 1509,
+      "minimum_mm": 0.600738,
+      "maximum_mm": 1.883112,
+      "minimum_xyz": [
+        -28.399004,
+        -17.275575,
+        2.79107
+      ],
+      "source_face": 1036,
+      "opposing_face": 17101,
+      "delta_from_previous_mm": 0.0,
+      "converged": true
+    },
+    {
+      "level": "ray_stride_5",
+      "samples": 2109,
+      "minimum_mm": 0.600738,
+      "maximum_mm": 1.883112,
+      "minimum_xyz": [
+        -22.377804,
+        -19.886449,
+        2.79107
+      ],
+      "source_face": 1026,
+      "opposing_face": 17091,
+      "delta_from_previous_mm": 0.0,
+      "converged": true
+    },
+    {
+      "level": "ray_stride_3",
+      "samples": 3520,
+      "minimum_mm": 0.600738,
+      "maximum_mm": 1.883112,
+      "minimum_xyz": [
+        -23.467508,
+        -19.132122,
+        2.79107
+      ],
+      "source_face": 1028,
+      "opposing_face": 17093,
+      "delta_from_previous_mm": 0.0,
+      "converged": true
+    }
+  ],
+  "plane_levels": [
+    {
+      "level": "planes_5",
+      "minimum_mm": 1.0,
+      "maximum_mm": 2.143795,
+      "ratio": 2.1438
+    },
+    {
+      "level": "planes_9",
+      "minimum_mm": 0.751244,
+      "maximum_mm": 2.865375,
+      "ratio": 3.8142
+    },
+    {
+      "level": "planes_13",
+      "minimum_mm": 0.633764,
+      "maximum_mm": 3.04635,
+      "ratio": 4.8068
+    },
+    {
+      "level": "planes_21",
+      "minimum_mm": 0.663437,
+      "maximum_mm": 2.143795,
+      "ratio": 3.2313
+    },
+    {
+      "level": "planes_33",
+      "minimum_mm": 0.626151,
+      "maximum_mm": 4.65689,
+      "ratio": 7.4373
+    },
+    {
+      "level": "planes_49",
+      "minimum_mm": 0.619254,
+      "maximum_mm": 3.04635,
+      "ratio": 4.9194
+    }
+  ],
+  "stable_levels": 4,
+  "status": "CONVERGED",
+  "note": "the plane-sampling family does NOT converge and is retained as diagnostic only"
+}

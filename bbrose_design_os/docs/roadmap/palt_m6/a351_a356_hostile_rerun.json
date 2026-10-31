@@ -1,0 +1,52 @@
+{
+ "record_type": "a351_a356_hostile_rerun/1.0",
+ "law": "70875b14bd1b75bb",
+ "date": "2026-08-12",
+ "a351_redisposition": {
+  "SILENT_EXTENT_LOSS": {
+   "disposition": "CAUGHT",
+   "named_reason": "MANIFEST_FILE_MISSING",
+   "matches_condition": true
+  },
+  "EXTENT_OF_COMPARISON": {
+   "disposition": "NO_NAMED_REFUSAL",
+   "why": "the instrument did not refuse at all; it simply did not exhibit the defect. A348 has no cell for absence-of-defect, so CAUGHT is not admissible and ATTEMPT_NOT_EXECUTED is wrong because the attempt DID execute."
+  },
+  "OBSERVATION_WINDOW": {
+   "disposition": "NO_NAMED_REFUSAL",
+   "why": "same shape"
+  }
+ },
+ "a349_discrimination": {
+  "file removed": "MANIFEST_FILE_MISSING",
+  "file below floor": "TIER1_FLOOR",
+  "undeclared added": "MANIFEST_FILE_UNDECLARED",
+  "control": "NO REFUSALS",
+  "verdict": "distinct conditions produce distinct reasons"
+ },
+ "a349_first_attempt_contaminated": "my first discrimination fixture carried an undeclared _pad key, so MANIFEST_FILE_UNDECLARED fired in ALL three conditions \u2014 a constant reason across distinct conditions, which is exactly the failure A349 names, appearing in my own demo. Redone clean.",
+ "a354": {
+  "greens_readable_on_disk": 2,
+  "both": "collected=5970 failures=0 \u2014 collection complete",
+  "returncode": "NOT RECORDED in the captured line; earlier runs overwritten because .tier2_gate_output is not retained per-run. A354 is answered for collection completeness and UNANSWERABLE for returncode on prior runs.",
+  "repair": ".tier2_last_run now records returncode"
+ },
+ "a353": "gate passes since 77c8d1c marked PROVISIONAL_PENDING_HOSTILE_RECLEAR",
+ "rerun_tally": {
+  "CAUGHT": 7,
+  "EXHIBITED": 3,
+  "NO_NAMED_REFUSAL": 2,
+  "ATTEMPT_NOT_EXECUTED": 0
+ },
+ "second_round_exhibited": {
+  "UNCHECKED_IMPOSSIBILITY_CLAIM": "still EXHIBITED \u2014 no check inspects claims. The plant is now RECORDED in the docstring rather than silently removed.",
+  "IDENTITY_KEY_SENSITIVE_TO_INVOCATION_CONTEXT": "EXHIBITED \u2014 A352 authorized seven repairs and this was not among them; not extended (scope rule).",
+  "TRANSCRIBED_PROSE_NUMBER": "RE-DISPOSED CAUGHT. All comment transcriptions removed. The 49/28 my detector still flagged are the EXPECTED_TARGETS DECLARATION, not a comment \u2014 my detector compared over a wider extent than its subject, which is EXTENT_OF_COMPARISON_EXCEEDING_EXTENT_OF_SUBJECT inside the hostile check for a different class."
+ },
+ "found_by": {
+  "FOUND_BY_HOSTILE_SUITE": 1,
+  "FOUND_BY_FIRING": 2,
+  "FOUND_BY_AUTHOR_REVIEW": 1,
+  "a357_both_halves": "author review caught four real defects across three nodes AND missed seven in the same objects. Both halves recorded. This is a measurement of the control, not a criticism of the reviewer."
+ }
+}

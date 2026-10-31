@@ -1,0 +1,65 @@
+{
+  "record_type": "material_metric_independence_report/1.0",
+  "finding": "five of the six axes previously read the SAME scalar \u2014 scene-linear peak divided by median \u2014 from five regions. Those are transformations of one quantity, not five independent axes, and every one of them describes how TALL a highlight is. What separates a matte from a satin is how WIDE it is.",
+  "correction": "each region axis now reports its own lobe width, measured on its own surface. Height remains represented once, by HIGHLIGHT_PEAK.",
+  "axes": {
+    "HIGHLIGHT_FWHM": {
+      "physical": "lobe width",
+      "region": "QUARTER_CYLINDER",
+      "formula": "fraction of region samples above the half-height between median and p99.9",
+      "depends_on": null,
+      "discriminating_for_matte_satin": true,
+      "relative_effect": 1.189
+    },
+    "HIGHLIGHT_PEAK": {
+      "physical": "lobe height",
+      "region": "QUARTER_CYLINDER",
+      "formula": "scene-linear p99.9, normalised by the frame median",
+      "depends_on": null,
+      "discriminating_for_matte_satin": false,
+      "relative_effect": 0.072
+    },
+    "SPECULAR_TO_DIFFUSE_RATIO": {
+      "physical": "specular dominance",
+      "region": "QUARTER_CYLINDER",
+      "formula": "p99.9 / median",
+      "depends_on": "shares its numerator with HIGHLIGHT_PEAK \u2014 retained because the denominator differs, but NOT counted as independent of it when both clear",
+      "discriminating_for_matte_satin": false,
+      "relative_effect": 0.05
+    },
+    "GRAZING_RESPONSE": {
+      "physical": "lobe width at grazing incidence",
+      "region": "GRAZING (74 degree ramp)",
+      "formula": "region FWHM fraction",
+      "depends_on": null,
+      "discriminating_for_matte_satin": true,
+      "relative_effect": 0.413
+    },
+    "SHEEN_REGION_RESPONSE": {
+      "physical": "lobe width on a shallow curve",
+      "region": "SHALLOW_CURVE",
+      "formula": "region FWHM fraction",
+      "depends_on": null,
+      "discriminating_for_matte_satin": false,
+      "relative_effect": 0.141
+    },
+    "EDGE_HIGHLIGHT_RESPONSE": {
+      "physical": "lobe width on a bevel",
+      "region": "BEVEL",
+      "formula": "region FWHM fraction",
+      "depends_on": null,
+      "discriminating_for_matte_satin": true,
+      "relative_effect": 0.59
+    }
+  },
+  "independence_basis": "the three clearing axes are measured on three DIFFERENT physical surfaces \u2014 a convex quarter-cylinder, a 74-degree grazing ramp and a 1.6 mm bevel \u2014 so they are not transformations of one scalar",
+  "matte_vs_satin_axes_clearing": [
+    "HIGHLIGHT_FWHM",
+    "GRAZING_RESPONSE",
+    "EDGE_HIGHLIGHT_RESPONSE"
+  ],
+  "axes_required": 2,
+  "minimum_relative_effect": 0.25,
+  "thresholds_unchanged": true,
+  "status": "PASS_PENDING_NEGATIVE_CONTROLS_AND_ROBUSTNESS"
+}

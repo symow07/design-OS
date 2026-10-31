@@ -1,0 +1,99 @@
+{
+ "record_type": "gate_refusal_demonstrations/1.0",
+ "law": "cb8d155b48536dbe",
+ "principle": "3l \u2014 a gate that has never refused is unproven. Instruments get the same rule as experiments: MVS_SHEEN_NO_POSITIVE_CONTROL_AT_COMPUTED_CONDITION has been OPEN on this reasoning.",
+ "demonstrations": [
+  {
+   "gate": "A298 manifest",
+   "clause": "unclassified candidate",
+   "date": "2026-08-11",
+   "via": "tools/sweep_manifest.py",
+   "result": "UnclassifiedCandidate RAISED; bulk write NOT reached",
+   "refused": true
+  },
+  {
+   "gate": "A315 extent",
+   "clause": "1 \u2014 declared target empty",
+   "date": "2026-08-11",
+   "via": "tools/extent_gate.py",
+   "result": "EMPTY_TARGET, exit 1",
+   "refused": true
+  },
+  {
+   "gate": "A315 extent",
+   "clause": "1 \u2014 declared target missing",
+   "date": "2026-08-11",
+   "via": "tools/extent_gate.py",
+   "result": "MISSING_TARGET, exit 1",
+   "refused": true
+  },
+  {
+   "gate": "A315 extent",
+   "clause": "2 \u2014 exists, non-empty, collects nothing",
+   "date": "2026-08-11",
+   "via": "tools/extent_gate.py",
+   "result": "ABSENT_FROM_COLLECTION, exit 1",
+   "refused": true
+  },
+  {
+   "gate": "A315 extent",
+   "clause": "3 \u2014 below declared floor",
+   "date": "2026-08-11",
+   "via": "tools/extent_gate.py",
+   "result": "BELOW_DECLARED_FLOOR 28 < 29, exit 1",
+   "refused": true
+  },
+  {
+   "gate": "A315 extent",
+   "clause": "4 \u2014 undeclared target present",
+   "date": "2026-08-11",
+   "via": "tools/extent_gate.py",
+   "result": "UNDECLARED_TARGET test_artwork_segments.py, exit 1",
+   "refused": true
+  },
+  {
+   "gate": "A315 extent",
+   "clause": "BEYOND A315 \u2014 collection report unreadable",
+   "date": "2026-08-11",
+   "via": "tools/extent_gate.py",
+   "result": "COLLECTION_UNREADABLE rc=2, exit 1",
+   "refused": true
+  },
+  {
+   "gate": "A315 extent",
+   "clause": "BEYOND A315 \u2014 empty declaration",
+   "date": "2026-08-11",
+   "via": "tools/extent_gate.py",
+   "result": "EXTENT_GATE_REFUSED, exit 2",
+   "refused": true
+  },
+  {
+   "gate": "sanctioned path",
+   "clause": "1 via guarded_commit.sh, not the helper",
+   "date": "2026-08-11",
+   "via": "tools/guarded_commit.sh --dry-run",
+   "result": "EMPTY_TARGET, exit 1, no commit",
+   "refused": true
+  },
+  {
+   "gate": "sanctioned path",
+   "clause": "SUITE_CMD overridden without the named opt-out",
+   "date": "2026-08-11",
+   "via": "tools/guarded_commit.sh --dry-run",
+   "result": "GUARDED_COMMIT_REFUSED, exit 1",
+   "refused": true
+  }
+ ],
+ "control": "unperturbed declaration exits 0",
+ "clause_2_note": "SUPERSEDED. The first version of this record said clause 2 could not be demonstrated independently because clause 1 catches the empty and missing cases first. That was wrong and cheap to disprove: a .py file that exists, is non-empty and defines no tests reaches ABSENT_FROM_COLLECTION without clause 1 firing. One file, one run. I asserted an impossibility instead of testing it.",
+ "scratch_state_reverted": "yes \u2014 test file restored byte-identical to git",
+ "branches_beyond_a315": "COLLECTION_UNREADABLE and the empty-declaration refusal are additions beyond A315's four clauses. Declared as such rather than counted inside the four, and demonstrated anyway because 3l says once per clause it ASSERTS, not once per clause it was asked for.",
+ "demonstrated_through_the_sanctioned_path": "the first five demonstrations invoked the helper directly, which made 'the sanctioned path refuses and does not commit' an inference from set -e rather than a measurement. Two demonstrations now run guarded_commit.sh itself: exit 1, no commit.",
+ "count": {
+  "total": 10,
+  "a315_four_clauses": 5,
+  "beyond_a315": 2,
+  "sanctioned_path": 2,
+  "a298": 1
+ }
+}

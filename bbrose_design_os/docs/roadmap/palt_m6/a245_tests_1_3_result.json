@@ -1,0 +1,156 @@
+{
+ "record_type": "a245_tests_1_3_result/1.0",
+ "law": "2216115499023fa7",
+ "recipe_identity": "6d6e4ab90686503f",
+ "rows": [
+  {
+   "test": "MATTE_VS_SATIN / SHEEN_REGION_RESPONSE",
+   "axis": "SHEEN_REGION_RESPONSE",
+   "per_seed_clearings": {
+    "40": 0.42611,
+    "81": 0.372871,
+    "82": 0.269411,
+    "83": 0.28125,
+    "84": 0.438376,
+    "99": 0.371452
+   },
+   "seed_only_max": 0.16569,
+   "clearing_dispersion": 0.477446,
+   "ratio_test_over_proxy": 2.8816,
+   "premise_holds": false,
+   "flip_threshold": 0.09112,
+   "disposition": "UNMET",
+   "CHANGED": "no"
+  },
+  {
+   "test": "PRESSED_VS_MATTE / SHEEN_REGION_RESPONSE",
+   "axis": "SHEEN_REGION_RESPONSE",
+   "per_seed_clearings": {
+    "40": 0.457347,
+    "81": 0.40375,
+    "82": 0.279001,
+    "83": 0.321854,
+    "84": 0.454161,
+    "99": 0.384604
+   },
+   "seed_only_max": 0.16569,
+   "clearing_dispersion": 0.484408,
+   "ratio_test_over_proxy": 2.9236,
+   "premise_holds": false,
+   "flip_threshold": 0.11572,
+   "disposition": "UNMET",
+   "CHANGED": "no"
+  },
+  {
+   "test": "SATIN_VS_CREAM / HIGHLIGHT_FWHM",
+   "axis": "HIGHLIGHT_FWHM",
+   "per_seed_clearings": {
+    "40": 0.2604,
+    "81": 0.247847,
+    "82": 0.290291,
+    "83": 0.288398,
+    "84": 0.308111,
+    "99": 0.256116
+   },
+   "seed_only_max": 0.04781,
+   "clearing_dispersion": 0.216796,
+   "ratio_test_over_proxy": 4.5345,
+   "premise_holds": false,
+   "flip_threshold": 0.0343,
+   "disposition": "UNMET",
+   "CHANGED": "no"
+  }
+ ],
+ "flips": [],
+ "premise_instances": {
+  "MATTE_VS_SATIN / SHEEN_REGION_RESPONSE": {
+   "ratio": 2.8816,
+   "holds": false
+  },
+  "PRESSED_VS_MATTE / SHEEN_REGION_RESPONSE": {
+   "ratio": 2.9236,
+   "holds": false
+  },
+  "SATIN_VS_CREAM / HIGHLIGHT_FWHM": {
+   "ratio": 4.5345,
+   "holds": false
+  }
+ },
+ "A234_four_instances": {
+  "ratios_test_over_proxy": {
+   "SATIN_VS_CREAM/GRANULARITY (test 4)": 2.2816,
+   "MATTE_VS_SATIN/SHEEN": 2.8816,
+   "PRESSED_VS_MATTE/SHEEN": 2.9236,
+   "SATIN_VS_CREAM/FWHM": 4.5345
+  },
+  "premise_holds_count": 0,
+  "instances": 4,
+  "answer_to_the_A234_question": "the premise fails EVERYWHERE, not nowhere and not in one family \u2014 4 of 4, ratios 2.28 to 4.53",
+  "what_3f_forbids_me_from_concluding": "that the converse ordering (test >= proxy) is established. Four instances in one direction is EVIDENCE, not a theorem: 3f says a refuted bound leaves no bound, and it binds symmetrically \u2014 I may not now assert the reverse ordering as known because it happens to favour a conservative reading. The quantities remain unordered as law; each disposition stays computed, not inferred",
+  "what_it_does_support": "across every pair and both axes measured, the clearing varies across seeds by 2.3x to 4.5x what either family's own axis varies alone. The proxy is not conservative here \u2014 it is the LENIENT quantity, and the programme has been using it as the bar"
+ },
+ "A223_same_sentence": "no test flipped: all three comparisons remain 1i UNMET under the named quantity, so nothing became adequate to attempt, and MATTE_VS_SATIN, PRESSED_VS_MATTE and SATIN_VS_CREAM all remain PASS_LAW FAILs holding fewer than the two independent axes the law requires",
+ "A243_banked_result_strengthened": "SATIN_VS_CREAM/GRANULARITY's banked ESTABLISHED survives against a comparator 2.28x higher than the one it was banked against \u2014 recorded as STRENGTHENED, not merely surviving",
+ "withdrawn_2026_08_11_A293": {
+  "phrasings_withdrawn": [
+   "the proxy is lenient",
+   "the programme has been using too low a bar",
+   "the FAILs were measured against too low a bar and still failed",
+   "the proxy sat below the named quantity by factors of 2.28 to 4.53",
+   "PROXY_BOUNDS_TEST REFUTED_AT_4_OF_4",
+   "clearing varies by 2.3x to 4.5x"
+  ],
+  "why": "all downstream of the units defect established at A284",
+  "replacement_sentence_the_only_sayable_one": "the proxy sat between 0.96 and 1.26 times the named quantity across the four instances where both were computed",
+  "premise_status": "UNRESOLVED_AT_PARITY \u2014 and per 3f the converse is not concluded either",
+  "sweep_scope": "5815 tracked files scanned; 46 carry the phrasings, 94 instances",
+  "instances_by_file": {
+   "apps/dielines/docs/28x28x120_engine_reference.json": 2,
+   "apps/pipeline/services/image_checks.py": 1,
+   "docs/complete_product/pilot_authorization_packet.json": 1,
+   "docs/qualification/reverse_tuck_end_carton_1_1/qualification_matrix.json": 1,
+   "docs/qualification/straight_tuck_end_carton_1_1/qualification_matrix.json": 1,
+   "docs/roadmap/palt_m4b_a2/palt_m4b_a2_thickness_report.json": 1,
+   "docs/roadmap/palt_m6/a233_test4_result.json": 4,
+   "docs/roadmap/palt_m6/a245_tests_1_3_result.json": 9,
+   "docs/roadmap/palt_m6/a284_units_recomputation.json": 10,
+   "docs/roadmap/palt_m6/axis_instrument_forensics.json": 1,
+   "docs/roadmap/palt_m6/axis_instrument_forensics_at_head.json": 1,
+   "docs/roadmap/palt_m6/controls_independence_audit_inbox.json": 2,
+   "docs/roadmap/palt_m6/establishment_closure/establishment_table.json": 3,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_POWDER_SATIN_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_PRESSED_POWDER_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_compaction_compaction_level_L11_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_continuity_soft_specular_roughness_L00.json": 2,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_milling_surface_smoothing_L11_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_press_ring_strength_L05.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_press_ring_strength_L05_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_press_ring_strength_L06.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_press_ring_strength_L06_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_press_ring_strength_L07_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_press_ring_strength_L08_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_press_ring_strength_L09_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_press_ring_strength_L10_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_press_ring_strength_L11_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_tx_tex_compression_texture_strength_ext_0p0.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_tx_tex_macrotexture_strength_L07.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_tx_tex_milling_microparticle_scale_mm_L03.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_tx_tex_milling_microparticle_scale_mm_L06.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_tx_tex_milling_microparticle_scale_mm_ext_0p215.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_tx_tex_sheen_response_tint_L06.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_tx_tex_surface_roughness_L10.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/sweep_press_ring_strength.json": 1,
+   "docs/roadmap/palt_m6/measurement_adequacy/phase2_retroactive.json": 17,
+   "docs/roadmap/palt_m6/raking_rig/sweep/swatch_sw_tx_0p02.json": 1,
+   "docs/roadmap/palt_m6/raking_rig/sweep/swatch_sw_tx_0p08.json": 1,
+   "docs/roadmap/palt_m6/raking_rig/sweep/swatch_tx_sw_tx_cal_a.json": 1,
+   "docs/roadmap/palt_m6/raking_rig/sweep/swatch_tx_sw_tx_cal_b.json": 1,
+   "docs/roadmap/palt_m6/texture_axes/swatch_probe_census_SHIMMER.json": 2,
+   "docs/roadmap/palt_m6/texture_axes/swatch_tx_SURFACE_CONTINUITY_low.json": 1,
+   "docs/visual_quality/vq1_master/vq1_neck_shoulder_dense_confirmation.json": 1,
+   "docs/visual_quality/vq2/received/Rose_Damascena_Custom_Lettering_manifest.json": 6,
+   "docs/visual_quality/vq2/vq2_authoritative_bbrose_logo.json": 2,
+   "docs/visual_quality/vq2/vq2_typography_manifest.json": 1
+  }
+ }
+}

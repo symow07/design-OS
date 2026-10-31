@@ -1,0 +1,45 @@
+{
+ "record_type": "m4c4_panel_confirmation/1.0",
+ "created_at": "2026-08-13",
+ "records_an_event_of": "2026-08-12",
+ "decided_by": "PROJECT_OWNER",
+ "why_this_record_exists": "the confirmation existed only in the DB (PaletteIntentConfirmation) and in OWNER_BLOCKER_SESSION.md at the REPOSITORY ROOT. At 61ddd75 I searched docs/ and apps/, stated that extent honestly, and concluded no committed record showed the panel confirmed. The extent was correctly STATED and wrongly CHOSEN: it excluded the repository root, which is where the evidence was. This record lands the fact where docs/ can see it.",
+ "CONFIRMED": true,
+ "task": 9,
+ "versions": [
+  {
+   "version": 1,
+   "identity": "e2e81bcd60d7f35f",
+   "actions": 20
+  },
+  {
+   "version": 2,
+   "identity": "ad8dc32c8987f953",
+   "actions": 21
+  },
+  {
+   "version": 3,
+   "identity": null,
+   "actions": 21,
+   "note": "regulatory_zones confirmed; identity not recorded in the source"
+  }
+ ],
+ "gate_decisions": [
+  57,
+  58
+ ],
+ "scope": "VISIBLE_COMPOSITION_ONLY",
+ "draft_never_mutated": "9b3603e17e85746c",
+ "owner_reclassifications": "pan_count, rows and columns corrected and reclassified to HARD — the twelve-pan 4x3 grid is now the firmest geometry in the programme rather than a 0.55-confidence image read",
+ "GRANTED_NO_GATE_APPROVAL": {
+  "statement": "confirming the panel granted NO authority. All four programme flags are unchanged at every version.",
+  "PALT_P1_FINAL_DIMENSIONS": "NOT_APPROVED",
+  "PALT_P1_MANUFACTURING_AUTHORITY": "NOT_ESTABLISHED",
+  "PALT_P1_OWNER_APPROVAL": "NOT_GRANTED",
+  "GATE_2": "BLOCKED",
+  "this_is_correct_behaviour_not_a_shortfall": true
+ },
+ "source": "OWNER_BLOCKER_SESSION.md:66-86, repository root",
+ "why_this_location": "docs/roadmap/palt_m4c/ is the M4C-4 node's own directory and already holds palt_m4c_es3083_authority.json and the continuation state whose blocker this discharges.",
+ "owner_approved": true
+}

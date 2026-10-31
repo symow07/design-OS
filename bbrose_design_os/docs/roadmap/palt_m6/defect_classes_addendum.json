@@ -1,0 +1,24 @@
+{
+ "record_type": "defect_classes_addendum/1.0",
+ "law": "c640f8c06b56003e",
+ "recorded": "2026-08-12",
+ "CURE_CARRYING_THE_DISEASE": {
+  "ruling": "A329",
+  "definition": "a remedy whose own implementation instantiates the failure class it was written to prevent",
+  "instance": "the A315 extent gate: one environment variable converted the whole assertion into a stderr line \u2014 piped through tail in every invocation of the session \u2014 followed by a commit, and the artifact could not distinguish that commit from a fully asserted one. SILENT_EXTENT_LOSS inside the cure for SILENT_EXTENT_LOSS, at the first opportunity.",
+  "binding_consequence_1": "a52b6a5 marked EXTENT_ASSERTION_UNRECORDED; NOT backfilled (3k)",
+  "binding_consequence_2": "from here, any newly built gate is tested against its OWN failure class before it is trusted, and that test is one of A319's refusal demonstrations. Done for TIER_2 this node."
+ },
+ "READ_IS_NOT_FIRED": {
+  "ruling": "A330",
+  "statement": "reading a check does not exercise it; only firing it does",
+  "instances": "the grep/sed/sort implementation would have refused every commit; clause 4 compared a set against itself and could never fire. Both survived writing and two readings. Both died on first attempt to fire.",
+  "heuristic_now_at_four_instances": [
+   "A214",
+   "A310",
+   "A317",
+   "A330"
+  ],
+  "standing": "where a check is cheap and firable, FIRE IT INSTEAD OF ARGUING \u2014 including against the owner's rulings. Promoted from coincidence to the programme's strongest working heuristic."
+ }
+}

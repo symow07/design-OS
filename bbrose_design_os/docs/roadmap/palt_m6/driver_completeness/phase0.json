@@ -1,0 +1,1482 @@
+{
+  "record_type": "driver_completeness_phase0/1.0",
+  "no_edits_no_measurements": true,
+  "item1_amended_law_verbatim": {
+    "identity": "f2438bcae8b86533",
+    "INDEPENDENCE_LAW": {
+      "sweep_validity_1a": "a sweep over a single driver is VALID as an independence instrument only if its pairwise |rho| matrix contains at least one pair reading at or below the R5 ceiling of 0.80. A sweep in which every measured pair tracks above the ceiling is recorded as SWEEP_DEGENERATE_UNDER_DRIVER and yields no independence evidence in either direction \u2014 it may not disturb a verdict and may not support one. Rationale, declared before any matrix was read: rank correlation along a monotone driver is 1.0 by construction for any two monotonically-responding axes; divergence somewhere in the matrix is the only demonstration that the instrument resolves difference rather than restating the driver's own ordering \u2014 the sweep-space analogue of the documented N=4 census degeneracy. This condition is SYMMETRIC: it can void the number that threatens three verdicts and it can equally void a number that would have rescued one.",
+      "conjunctive_law_1b": "two axes may both count toward one pair's two-axis requirement only if BOTH hold: (i) CENSUS CONDITION \u2014 unchanged, unmoved, not reinterpreted: |rho| across the family census at or below 0.80, subject to the recorded census-size caveat; (ii) DRIVER CONDITION \u2014 for every parameter that (a) is declared in the contract or is a builder constant proven to reach the render, (b) is proven REALIZED rather than NEVER_ARRIVES, and (c) actually differs in value between the two families of this specific pair, a sweep of that parameter on the rig carrying the counted axes must not show the two counted axes tracking above 0.80 \u2014 provided that sweep is VALID under 1a. A parameter that does not differ between the pair's families is not a driver for that pair. A differing but non-sweepable parameter is NON_SWEEPABLE_DRIVER: the pair is PASS_WITH_UNTESTED_DRIVER on the standing obligations list \u2014 not a FAIL (no tracking evidence exists), not clean (the check could not run).",
+      "asymmetry_1c": "any verdict that IMPROVES under this amendment (a FAIL becoming PASS, a fenced provisional becoming clean) is NOT committed \u2014 recorded as AMENDMENT_INDUCED_IMPROVEMENT and held for the owner. Verdicts that DEGRADE are committed immediately. An amendment that can only help is a rescue vehicle; this asymmetry is what prevents it from becoming one.",
+      "strictly_additive": "the amendment removes no condition and moves no bar; no pair that fails today can pass because of it",
+      "owner_authorization": "M6_INDEPENDENCE_AMENDMENT_PROMPT.md, 2026-08-08"
+    },
+    "PASS_LAW": {
+      "required_independent_axes": 2,
+      "relative_effect_bar": 0.25,
+      "supporting_axes_never_count": true,
+      "declared_before_measurement": true,
+      "independence": "CONJUNCTIVE_PAIR_SPECIFIC_SEE_INDEPENDENCE_LAW"
+    },
+    "file": "apps/pipeline/services/palette_powder_protocol.py"
+  },
+  "item2_pairs_restated": {
+    "MATTE_VS_SATIN": {
+      "counted_axes": [
+        "GRANULARITY_INDEX",
+        "SHEEN_REGION_RESPONSE"
+      ],
+      "inter_family_effects": null,
+      "census_abs_rho": {
+        "pair": "GRANULARITY_INDEX|SHEEN_REGION_RESPONSE",
+        "abs_rho_n8": 0.3571,
+        "ceiling": 0.8,
+        "holds": true,
+        "caveat": "N=8 census attainable-set caveat stands as recorded in the axis independence matrix"
+      },
+      "driver_table": "independence_drivers_phase2.json pairs[MATTE_VS_SATIN] (restated in item3 below with actual values)",
+      "not_common_rows_with_ranges_and_spans": [
+        {
+          "driver": "compression_texture.scale_mm",
+          "swept_range": [
+            0.25,
+            1.2
+          ],
+          "counted_axis_spans": {
+            "GRANULARITY_INDEX": {
+              "span_effect": 0.11101,
+              "required": 0.2338,
+              "n_levels": 12,
+              "qualifies": false
+            },
+            "SHEEN_REGION_RESPONSE": {
+              "span_effect": 0.06704,
+              "required": 0.33138,
+              "n_levels": 12,
+              "qualifies": false
+            }
+          }
+        },
+        {
+          "driver": "compression_texture.strength",
+          "swept_range": [
+            0.02,
+            0.3
+          ],
+          "counted_axis_spans": {
+            "GRANULARITY_INDEX": {
+              "span_effect": 0.14149,
+              "required": 0.2338,
+              "n_levels": 11,
+              "qualifies": false
+            },
+            "SHEEN_REGION_RESPONSE": {
+              "span_effect": 0.07448,
+              "required": 0.33138,
+              "n_levels": 12,
+              "qualifies": false
+            }
+          }
+        },
+        {
+          "driver": "milling.microparticle_scale_mm",
+          "swept_range": [
+            0.22,
+            0.55
+          ],
+          "counted_axis_spans": {
+            "GRANULARITY_INDEX": {
+              "span_effect": 0.22596,
+              "required": 0.2338,
+              "n_levels": 12,
+              "qualifies": false
+            },
+            "SHEEN_REGION_RESPONSE": {
+              "span_effect": 0.20949,
+              "required": 0.33138,
+              "n_levels": 12,
+              "qualifies": false
+            }
+          }
+        },
+        {
+          "driver": "milling.microparticle_variance",
+          "swept_range": [
+            0.05,
+            0.95
+          ],
+          "counted_axis_spans": {
+            "GRANULARITY_INDEX": {
+              "span_effect": 0.03591,
+              "required": 0.2338,
+              "n_levels": 11,
+              "qualifies": false
+            },
+            "SHEEN_REGION_RESPONSE": {
+              "span_effect": 0.01381,
+              "required": 0.33138,
+              "n_levels": 12,
+              "qualifies": false
+            }
+          }
+        },
+        {
+          "driver": "milling.surface_smoothing",
+          "swept_range": [
+            0.05,
+            0.95
+          ],
+          "counted_axis_spans": {
+            "GRANULARITY_INDEX": {
+              "span_effect": 0.55723,
+              "required": 0.2338,
+              "n_levels": 12,
+              "qualifies": true
+            },
+            "SHEEN_REGION_RESPONSE": {
+              "span_effect": 0.00745,
+              "required": 0.33138,
+              "n_levels": 12,
+              "qualifies": false
+            }
+          }
+        },
+        {
+          "driver": "sheen_response.sheen",
+          "swept_range": [
+            0.05,
+            0.85
+          ],
+          "counted_axis_spans": {
+            "GRANULARITY_INDEX": {
+              "span_effect": 0.09122,
+              "required": 0.2338,
+              "n_levels": 10,
+              "qualifies": false
+            },
+            "SHEEN_REGION_RESPONSE": {
+              "span_effect": 0.22142,
+              "required": 0.33138,
+              "n_levels": 12,
+              "qualifies": false
+            }
+          }
+        },
+        {
+          "driver": "sheen_response.tint",
+          "swept_range": [
+            0.02,
+            0.6
+          ],
+          "counted_axis_spans": {
+            "GRANULARITY_INDEX": {
+              "span_effect": 0.03687,
+              "required": 0.2338,
+              "n_levels": 8,
+              "qualifies": false
+            },
+            "SHEEN_REGION_RESPONSE": {
+              "span_effect": 0.07631,
+              "required": 0.33138,
+              "n_levels": 12,
+              "qualifies": false
+            }
+          }
+        },
+        {
+          "driver": "surface_roughness",
+          "swept_range": [
+            0.4,
+            0.95
+          ],
+          "counted_axis_spans": {
+            "GRANULARITY_INDEX": {
+              "span_effect": 0.24029,
+              "required": 0.2338,
+              "n_levels": 11,
+              "qualifies": true
+            },
+            "SHEEN_REGION_RESPONSE": {
+              "span_effect": 0.01598,
+              "required": 0.33138,
+              "n_levels": 12,
+              "qualifies": false
+            }
+          }
+        }
+      ],
+      "verdict_as_committed": "PASS_WITH_UNTESTED_DRIVER"
+    },
+    "PRESSED_VS_MATTE": {
+      "counted_axes": [
+        "GRANULARITY_INDEX",
+        "SHEEN_REGION_RESPONSE"
+      ],
+      "inter_family_effects": null,
+      "census_abs_rho": {
+        "pair": "GRANULARITY_INDEX|SHEEN_REGION_RESPONSE",
+        "abs_rho_n8": 0.3571,
+        "ceiling": 0.8,
+        "holds": true,
+        "caveat": "N=8 census attainable-set caveat stands as recorded in the axis independence matrix"
+      },
+      "driver_table": "independence_drivers_phase2.json pairs[PRESSED_VS_MATTE] (restated in item3 below with actual values)",
+      "not_common_rows_with_ranges_and_spans": [
+        {
+          "driver": "compaction.compaction_level",
+          "swept_range": [
+            0.1,
+            0.95
+          ],
+          "counted_axis_spans": {
+            "GRANULARITY_INDEX": {
+              "span_effect": 0.13389,
+              "required": 0.2338,
+              "n_levels": 12,
+              "qualifies": false
+            },
+            "SHEEN_REGION_RESPONSE": {
+              "span_effect": 0.00945,
+              "required": 0.33138,
+              "n_levels": 12,
+              "qualifies": false
+            }
+          }
+        },
+        {
+          "driver": "compaction.compression_texture_scale_mm",
+          "swept_range": [
+            0.25,
+            1.2
+          ],
+          "counted_axis_spans": {
+            "GRANULARITY_INDEX": {
+              "span_effect": 0.07595,
+              "required": 0.2338,
+              "n_levels": 11,
+              "qualifies": false
+            },
+            "SHEEN_REGION_RESPONSE": {
+              "span_effect": 0.19643,
+              "required": 0.33138,
+              "n_levels": 12,
+              "qualifies": false
+            }
+          }
+        },
+        {
+          "driver": "compaction.surface_flatness",
+          "swept_range": [
+            0.1,
+            0.95
+          ],
+          "counted_axis_spans": {
+            "GRANULARITY_INDEX": {
+              "span_effect": 0.0005,
+              "required": 0.2338,
+              "n_levels": 7,
+              "qualifies": false
+            },
+            "SHEEN_REGION_RESPONSE": {
+              "span_effect": 0.00925,
+              "required": 0.33138,
+              "n_levels": 12,
+              "qualifies": false
+            }
+          }
+        },
+        {
+          "driver": "compression_texture.scale_mm",
+          "swept_range": [
+            0.25,
+            1.2
+          ],
+          "counted_axis_spans": {
+            "GRANULARITY_INDEX": {
+              "span_effect": 0.11101,
+              "required": 0.2338,
+              "n_levels": 12,
+              "qualifies": false
+            },
+            "SHEEN_REGION_RESPONSE": {
+              "span_effect": 0.06704,
+              "required": 0.33138,
+              "n_levels": 12,
+              "qualifies": false
+            }
+          }
+        },
+        {
+          "driver": "compression_texture.strength",
+          "swept_range": [
+            0.02,
+            0.3
+          ],
+          "counted_axis_spans": {
+            "GRANULARITY_INDEX": {
+              "span_effect": 0.14149,
+              "required": 0.2338,
+              "n_levels": 11,
+              "qualifies": false
+            },
+            "SHEEN_REGION_RESPONSE": {
+              "span_effect": 0.07448,
+              "required": 0.33138,
+              "n_levels": 12,
+              "qualifies": false
+            }
+          }
+        },
+        {
+          "driver": "milling.microparticle_scale_mm",
+          "swept_range": [
+            0.22,
+            0.55
+          ],
+          "counted_axis_spans": {
+            "GRANULARITY_INDEX": {
+              "span_effect": 0.22596,
+              "required": 0.2338,
+              "n_levels": 12,
+              "qualifies": false
+            },
+            "SHEEN_REGION_RESPONSE": {
+              "span_effect": 0.20949,
+              "required": 0.33138,
+              "n_levels": 12,
+              "qualifies": false
+            }
+          }
+        },
+        {
+          "driver": "milling.microparticle_variance",
+          "swept_range": [
+            0.05,
+            0.95
+          ],
+          "counted_axis_spans": {
+            "GRANULARITY_INDEX": {
+              "span_effect": 0.03591,
+              "required": 0.2338,
+              "n_levels": 11,
+              "qualifies": false
+            },
+            "SHEEN_REGION_RESPONSE": {
+              "span_effect": 0.01381,
+              "required": 0.33138,
+              "n_levels": 12,
+              "qualifies": false
+            }
+          }
+        },
+        {
+          "driver": "press.ring_radius_frac",
+          "swept_range": [
+            0.55,
+            0.95
+          ],
+          "counted_axis_spans": {
+            "GRANULARITY_INDEX": {
+              "span_effect": 0.0153,
+              "required": 0.2338,
+              "n_levels": 12,
+              "qualifies": false
+            },
+            "SHEEN_REGION_RESPONSE": {
+              "span_effect": 0.05294,
+              "required": 0.33138,
+              "n_levels": 12,
+              "qualifies": false
+            }
+          }
+        },
+        {
+          "driver": "press.ring_strength",
+          "swept_range": [
+            0.02,
+            0.35
+          ],
+          "counted_axis_spans": {
+            "GRANULARITY_INDEX": {
+              "span_effect": 0.75439,
+              "required": 0.2338,
+              "n_levels": 12,
+              "qualifies": true
+            },
+            "SHEEN_REGION_RESPONSE": {
+              "span_effect": 0.12459,
+              "required": 0.33138,
+              "n_levels": 12,
+              "qualifies": false
+            }
+          }
+        }
+      ],
+      "verdict_as_committed": "PASS_WITH_UNTESTED_DRIVER"
+    },
+    "SATIN_VS_CREAM": {
+      "counted_axes": [
+        "GRANULARITY_INDEX",
+        "HIGHLIGHT_FWHM"
+      ],
+      "inter_family_effects": null,
+      "census_abs_rho": {
+        "pair": "GRANULARITY_INDEX|HIGHLIGHT_FWHM",
+        "abs_rho_n8": 0.1905,
+        "ceiling": 0.8,
+        "holds": true,
+        "caveat": "N=8 census attainable-set caveat stands as recorded in the axis independence matrix"
+      },
+      "driver_table": "independence_drivers_phase2.json pairs[SATIN_VS_CREAM] (restated in item3 below with actual values)",
+      "not_common_rows_with_ranges_and_spans": [
+        {
+          "driver": "continuity.soft_specular_roughness",
+          "swept_range": [
+            0.1,
+            0.7
+          ],
+          "counted_axis_spans": {
+            "GRANULARITY_INDEX": {
+              "span_effect": 1.19052,
+              "required": 0.2338,
+              "n_levels": 12,
+              "qualifies": true
+            },
+            "HIGHLIGHT_FWHM": {
+              "span_effect": 0.03744,
+              "required": 0.1827,
+              "n_levels": 12,
+              "qualifies": false
+            }
+          }
+        },
+        {
+          "driver": "macrotexture.scale_mm",
+          "swept_range": [
+            1.0,
+            4.0
+          ],
+          "counted_axis_spans": {
+            "GRANULARITY_INDEX": {
+              "qualifies": false,
+              "reason": "only 0 measured levels"
+            },
+            "HIGHLIGHT_FWHM": {
+              "span_effect": 0.02484,
+              "required": 0.1827,
+              "n_levels": 12,
+              "qualifies": false
+            }
+          }
+        },
+        {
+          "driver": "macrotexture.strength",
+          "swept_range": [
+            0.01,
+            0.2
+          ],
+          "counted_axis_spans": {
+            "GRANULARITY_INDEX": {
+              "span_effect": 0.00562,
+              "required": 0.2338,
+              "n_levels": 9,
+              "qualifies": false
+            },
+            "HIGHLIGHT_FWHM": {
+              "span_effect": 0.02016,
+              "required": 0.1827,
+              "n_levels": 12,
+              "qualifies": false
+            }
+          }
+        },
+        {
+          "driver": "milling.microparticle_scale_mm",
+          "swept_range": [
+            0.22,
+            0.55
+          ],
+          "counted_axis_spans": {
+            "GRANULARITY_INDEX": {
+              "span_effect": 0.22596,
+              "required": 0.2338,
+              "n_levels": 12,
+              "qualifies": false
+            },
+            "HIGHLIGHT_FWHM": {
+              "span_effect": 0.16941,
+              "required": 0.1827,
+              "n_levels": 12,
+              "qualifies": false
+            }
+          }
+        },
+        {
+          "driver": "milling.microparticle_variance",
+          "swept_range": [
+            0.05,
+            0.95
+          ],
+          "counted_axis_spans": {
+            "GRANULARITY_INDEX": {
+              "span_effect": 0.03591,
+              "required": 0.2338,
+              "n_levels": 11,
+              "qualifies": false
+            },
+            "HIGHLIGHT_FWHM": {
+              "span_effect": 0.03161,
+              "required": 0.1827,
+              "n_levels": 12,
+              "qualifies": false
+            }
+          }
+        },
+        {
+          "driver": "milling.surface_smoothing",
+          "swept_range": [
+            0.05,
+            0.95
+          ],
+          "counted_axis_spans": {
+            "GRANULARITY_INDEX": {
+              "span_effect": 0.55723,
+              "required": 0.2338,
+              "n_levels": 12,
+              "qualifies": true
+            },
+            "HIGHLIGHT_FWHM": {
+              "span_effect": 0.01084,
+              "required": 0.1827,
+              "n_levels": 12,
+              "qualifies": false
+            }
+          }
+        },
+        {
+          "driver": "sheen_response.sheen",
+          "swept_range": [
+            0.05,
+            0.85
+          ],
+          "counted_axis_spans": {
+            "GRANULARITY_INDEX": {
+              "span_effect": 0.09122,
+              "required": 0.2338,
+              "n_levels": 10,
+              "qualifies": false
+            },
+            "HIGHLIGHT_FWHM": {
+              "span_effect": 1.41865,
+              "required": 0.1827,
+              "n_levels": 12,
+              "qualifies": true
+            }
+          }
+        },
+        {
+          "driver": "sheen_response.tint",
+          "swept_range": [
+            0.02,
+            0.6
+          ],
+          "counted_axis_spans": {
+            "GRANULARITY_INDEX": {
+              "span_effect": 0.03687,
+              "required": 0.2338,
+              "n_levels": 8,
+              "qualifies": false
+            },
+            "HIGHLIGHT_FWHM": {
+              "span_effect": 0.24372,
+              "required": 0.1827,
+              "n_levels": 12,
+              "qualifies": true
+            }
+          }
+        }
+      ],
+      "verdict_as_committed": "PASS_WITH_UNTESTED_DRIVER"
+    }
+  },
+  "item3_driver_value_table": {
+    "MATTE_VS_SATIN": [
+      {
+        "driver": "compression_texture.scale_mm",
+        "family_a": "POWDER_MATTE",
+        "family_b": "POWDER_SATIN",
+        "declared_a": 0.6,
+        "declared_b": 0.6,
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": 0.6,
+        "effective_b": "0.6 DECLARED / 0 EFFECTIVE",
+        "effective_notes": [
+          "POWDER_SATIN declares 0.6 but it never arrives (audit) \u2014 render-effective 0 contribution"
+        ]
+      },
+      {
+        "driver": "compression_texture.strength",
+        "family_a": "POWDER_MATTE",
+        "family_b": "POWDER_SATIN",
+        "declared_a": 0.12,
+        "declared_b": 0.1,
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": 0.12,
+        "effective_b": "0.1 DECLARED / 0 EFFECTIVE",
+        "effective_notes": [
+          "POWDER_SATIN declares 0.1 but it never arrives (audit) \u2014 render-effective 0 contribution"
+        ]
+      },
+      {
+        "driver": "milling.micronormal_amplitude",
+        "family_a": "POWDER_MATTE",
+        "family_b": "POWDER_SATIN",
+        "declared_a": 0.34,
+        "declared_b": 0.1,
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": 0.34,
+        "effective_b": 0.1
+      },
+      {
+        "driver": "milling.microparticle_scale_mm",
+        "family_a": "POWDER_MATTE",
+        "family_b": "POWDER_SATIN",
+        "declared_a": 0.35,
+        "declared_b": 0.21,
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": 0.35,
+        "effective_b": 0.21
+      },
+      {
+        "driver": "milling.microparticle_variance",
+        "family_a": "POWDER_MATTE",
+        "family_b": "POWDER_SATIN",
+        "declared_a": 0.6,
+        "declared_b": 0.2,
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": 0.6,
+        "effective_b": 0.2
+      },
+      {
+        "driver": "milling.surface_smoothing",
+        "family_a": "POWDER_MATTE",
+        "family_b": "POWDER_SATIN",
+        "declared_a": 0.0,
+        "declared_b": 0.5,
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": "0.0 DECLARED / 0 EFFECTIVE",
+        "effective_b": 0.5,
+        "effective_notes": [
+          "POWDER_MATTE declares 0.0 but it never arrives (audit) \u2014 render-effective 0 contribution"
+        ]
+      },
+      {
+        "driver": "sheen_response.sheen",
+        "family_a": "POWDER_MATTE",
+        "family_b": "POWDER_SATIN",
+        "declared_a": "<ABSENT>",
+        "declared_b": 0.45,
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": "ABSENT_BLOCK",
+        "effective_b": 0.45,
+        "effective_notes": [
+          "POWDER_MATTE: Sheen Weight stays at the Principled default 0.0 (apps/pipeline/services/blender_scripts/powder_materials.py L231 sets it only for satin) \u2014 effective sheen 0, tint moot at weight 0"
+        ]
+      },
+      {
+        "driver": "sheen_response.tint",
+        "family_a": "POWDER_MATTE",
+        "family_b": "POWDER_SATIN",
+        "declared_a": "<ABSENT>",
+        "declared_b": 0.15,
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": "ABSENT_BLOCK",
+        "effective_b": 0.15,
+        "effective_notes": [
+          "POWDER_MATTE: Sheen Weight stays at the Principled default 0.0 (apps/pipeline/services/blender_scripts/powder_materials.py L231 sets it only for satin) \u2014 effective sheen 0, tint moot at weight 0"
+        ]
+      },
+      {
+        "driver": "surface_roughness",
+        "family_a": "POWDER_MATTE",
+        "family_b": "POWDER_SATIN",
+        "declared_a": 0.85,
+        "declared_b": 0.85,
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": 0.85,
+        "effective_b": "0.85 DECLARED / 0 EFFECTIVE",
+        "effective_notes": [
+          "POWDER_SATIN declares 0.85 but it never arrives (audit) \u2014 render-effective 0 contribution",
+          "realized roughness: matte 0.85 base (+variation 0.08*(1+0.6), census L206); satin realized 0.43 via census L229 \u2014 the separating interval for realized roughness is [0.43, 0.85]"
+        ]
+      },
+      {
+        "driver": "builder:specular_ior_level",
+        "family_a": "POWDER_MATTE",
+        "family_b": "POWDER_SATIN",
+        "value_a": "0.18 (L208 matte override)",
+        "value_b": "0.28 (L166 base)",
+        "evidence": "builder_constant_census.json lines [208, 166] -> apps/pipeline/services/blender_scripts/powder_materials.py",
+        "effective_note": "builder constants ARE the render-effective values; both sides stated"
+      },
+      {
+        "driver": "builder:roughness_construction",
+        "family_a": "POWDER_MATTE",
+        "family_b": "POWDER_SATIN",
+        "value_a": "base surface_roughness + variation 0.08*(1+variance) (L206)",
+        "value_b": "ROUGHNESS = 0.48 - 0.10*surface_smoothing (L229; surface_roughness unused)",
+        "evidence": "builder_constant_census.json lines [206, 229] -> apps/pipeline/services/blender_scripts/powder_materials.py",
+        "effective_note": "builder constants ARE the render-effective values; both sides stated"
+      },
+      {
+        "driver": "builder:noise_detail",
+        "family_a": "POWDER_MATTE",
+        "family_b": "POWDER_SATIN",
+        "value_a": "3 + 3*variance (L194)",
+        "value_b": "2 + 2*variance (L224)",
+        "evidence": "builder_constant_census.json lines [194, 224] -> apps/pipeline/services/blender_scripts/powder_materials.py",
+        "effective_note": "builder constants ARE the render-effective values; both sides stated"
+      },
+      {
+        "driver": "builder:compression_noise_detail",
+        "family_a": "POWDER_MATTE",
+        "family_b": "POWDER_SATIN",
+        "value_a": "2.0 (L196)",
+        "value_b": "none (satin compression texture never built)",
+        "evidence": "builder_constant_census.json lines [196] -> apps/pipeline/services/blender_scripts/powder_materials.py",
+        "effective_note": "builder constants ARE the render-effective values; both sides stated"
+      },
+      {
+        "driver": "builder:mottle_construction",
+        "family_a": "POWDER_MATTE",
+        "family_b": "POWDER_SATIN",
+        "value_a": "black-mix base strength (L173)",
+        "value_b": "satin mottle strength *0.5 (L238)",
+        "evidence": "builder_constant_census.json lines [173, 238] -> apps/pipeline/services/blender_scripts/powder_materials.py",
+        "effective_note": "builder constants ARE the render-effective values; both sides stated"
+      }
+    ],
+    "PRESSED_VS_MATTE": [
+      {
+        "driver": "compaction.compaction_level",
+        "family_a": "PRESSED_POWDER",
+        "family_b": "POWDER_MATTE",
+        "declared_a": 0.8,
+        "declared_b": "<ABSENT>",
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": 0.8,
+        "effective_b": "ABSENT_BLOCK",
+        "effective_notes": [
+          "POWDER_MATTE: 0 contribution \u2014 no packed-roughness reduction (apps/pipeline/services/blender_scripts/powder_materials.py L385-387 applies only in _pressed), no compression texture"
+        ]
+      },
+      {
+        "driver": "compaction.compression_texture_amplitude",
+        "family_a": "PRESSED_POWDER",
+        "family_b": "POWDER_MATTE",
+        "declared_a": 0.1,
+        "declared_b": "<ABSENT>",
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": 0.1,
+        "effective_b": "ABSENT_BLOCK",
+        "effective_notes": [
+          "POWDER_MATTE: 0 contribution \u2014 no packed-roughness reduction (apps/pipeline/services/blender_scripts/powder_materials.py L385-387 applies only in _pressed), no compression texture"
+        ]
+      },
+      {
+        "driver": "compaction.compression_texture_scale_mm",
+        "family_a": "PRESSED_POWDER",
+        "family_b": "POWDER_MATTE",
+        "declared_a": 0.25,
+        "declared_b": "<ABSENT>",
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": 0.25,
+        "effective_b": "ABSENT_BLOCK",
+        "effective_notes": [
+          "POWDER_MATTE: 0 contribution \u2014 no packed-roughness reduction (apps/pipeline/services/blender_scripts/powder_materials.py L385-387 applies only in _pressed), no compression texture"
+        ]
+      },
+      {
+        "driver": "compaction.surface_flatness",
+        "family_a": "PRESSED_POWDER",
+        "family_b": "POWDER_MATTE",
+        "declared_a": 0.85,
+        "declared_b": "<ABSENT>",
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": 0.85,
+        "effective_b": "ABSENT_BLOCK",
+        "effective_notes": [
+          "POWDER_MATTE: 0 contribution \u2014 no packed-roughness reduction (apps/pipeline/services/blender_scripts/powder_materials.py L385-387 applies only in _pressed), no compression texture"
+        ]
+      },
+      {
+        "driver": "compression_texture.scale_mm",
+        "family_a": "PRESSED_POWDER",
+        "family_b": "POWDER_MATTE",
+        "declared_a": "<ABSENT>",
+        "declared_b": 0.6,
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": "ABSENT_BLOCK",
+        "effective_b": 0.6,
+        "effective_notes": [
+          "PRESSED_POWDER: 0 contribution \u2014 only the matte builder reads it (apps/pipeline/services/blender_scripts/powder_materials.py L195-199); satin never builds it (census L196 note), pressed uses compaction's own texture"
+        ]
+      },
+      {
+        "driver": "compression_texture.strength",
+        "family_a": "PRESSED_POWDER",
+        "family_b": "POWDER_MATTE",
+        "declared_a": "<ABSENT>",
+        "declared_b": 0.12,
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": "ABSENT_BLOCK",
+        "effective_b": 0.12,
+        "effective_notes": [
+          "PRESSED_POWDER: 0 contribution \u2014 only the matte builder reads it (apps/pipeline/services/blender_scripts/powder_materials.py L195-199); satin never builds it (census L196 note), pressed uses compaction's own texture"
+        ]
+      },
+      {
+        "driver": "milling.micronormal_amplitude",
+        "family_a": "PRESSED_POWDER",
+        "family_b": "POWDER_MATTE",
+        "declared_a": "<ABSENT>",
+        "declared_b": 0.34,
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": "ABSENT_BLOCK",
+        "effective_b": 0.34,
+        "effective_notes": [
+          "PRESSED_POWDER: 0 contribution \u2014 the family's builder function omits the milling node group entirely (dispatch apps/pipeline/services/blender_scripts/powder_materials.py L422-430); no micro-normal field, no grain. For amplitude-like members the effective value is 0; for scale/shape members (microparticle_scale_mm, _variance, micronormal_correlation_mm) absence has no scale \u2014 separation is carried by the block's amplitude member (micronormal_amplitude 0) and containment for those rows is governed by that row"
+        ]
+      },
+      {
+        "driver": "milling.microparticle_scale_mm",
+        "family_a": "PRESSED_POWDER",
+        "family_b": "POWDER_MATTE",
+        "declared_a": "<ABSENT>",
+        "declared_b": 0.35,
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": "ABSENT_BLOCK",
+        "effective_b": 0.35,
+        "effective_notes": [
+          "PRESSED_POWDER: 0 contribution \u2014 the family's builder function omits the milling node group entirely (dispatch apps/pipeline/services/blender_scripts/powder_materials.py L422-430); no micro-normal field, no grain. For amplitude-like members the effective value is 0; for scale/shape members (microparticle_scale_mm, _variance, micronormal_correlation_mm) absence has no scale \u2014 separation is carried by the block's amplitude member (micronormal_amplitude 0) and containment for those rows is governed by that row"
+        ]
+      },
+      {
+        "driver": "milling.microparticle_variance",
+        "family_a": "PRESSED_POWDER",
+        "family_b": "POWDER_MATTE",
+        "declared_a": "<ABSENT>",
+        "declared_b": 0.6,
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": "ABSENT_BLOCK",
+        "effective_b": 0.6,
+        "effective_notes": [
+          "PRESSED_POWDER: 0 contribution \u2014 the family's builder function omits the milling node group entirely (dispatch apps/pipeline/services/blender_scripts/powder_materials.py L422-430); no micro-normal field, no grain. For amplitude-like members the effective value is 0; for scale/shape members (microparticle_scale_mm, _variance, micronormal_correlation_mm) absence has no scale \u2014 separation is carried by the block's amplitude member (micronormal_amplitude 0) and containment for those rows is governed by that row"
+        ]
+      },
+      {
+        "driver": "press.ring_radius_frac",
+        "family_a": "PRESSED_POWDER",
+        "family_b": "POWDER_MATTE",
+        "declared_a": 0.88,
+        "declared_b": "<ABSENT>",
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": 0.88,
+        "effective_b": "ABSENT_BLOCK",
+        "effective_notes": [
+          "POWDER_MATTE: 0 contribution \u2014 no ring (apps/pipeline/services/blender_scripts/powder_materials.py L381-390 only in _pressed); ring_strength effective 0; ring_radius_frac has no radius when there is no ring \u2014 governed by the ring_strength row"
+        ]
+      },
+      {
+        "driver": "press.ring_strength",
+        "family_a": "PRESSED_POWDER",
+        "family_b": "POWDER_MATTE",
+        "declared_a": 0.1,
+        "declared_b": "<ABSENT>",
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": 0.1,
+        "effective_b": "ABSENT_BLOCK",
+        "effective_notes": [
+          "POWDER_MATTE: 0 contribution \u2014 no ring (apps/pipeline/services/blender_scripts/powder_materials.py L381-390 only in _pressed); ring_strength effective 0; ring_radius_frac has no radius when there is no ring \u2014 governed by the ring_strength row"
+        ]
+      },
+      {
+        "driver": "builder:specular_ior_level",
+        "family_a": "PRESSED_POWDER",
+        "family_b": "POWDER_MATTE",
+        "value_a": "0.28 (L166 base)",
+        "value_b": "0.18 (L208 matte override)",
+        "evidence": "builder_constant_census.json lines [166, 208] -> apps/pipeline/services/blender_scripts/powder_materials.py",
+        "effective_note": "builder constants ARE the render-effective values; both sides stated"
+      },
+      {
+        "driver": "builder:roughness_construction",
+        "family_a": "PRESSED_POWDER",
+        "family_b": "POWDER_MATTE",
+        "value_a": "packed = surface_roughness*(1-0.35*compaction_level) (census 'pressed')",
+        "value_b": "base surface_roughness + variation 0.08*(1+variance) (L206)",
+        "evidence": "builder_constant_census.json lines ['pressed', 206] -> apps/pipeline/services/blender_scripts/powder_materials.py",
+        "effective_note": "builder constants ARE the render-effective values; both sides stated"
+      },
+      {
+        "driver": "builder:noise_detail",
+        "family_a": "PRESSED_POWDER",
+        "family_b": "POWDER_MATTE",
+        "value_a": "compressed-texture construction (no milling noise)",
+        "value_b": "3 + 3*variance (L194) + compression noise detail 2.0 (L196)",
+        "evidence": "builder_constant_census.json lines [194, 196] -> apps/pipeline/services/blender_scripts/powder_materials.py",
+        "effective_note": "builder constants ARE the render-effective values; both sides stated"
+      },
+      {
+        "driver": "builder:ring_gaussian_falloff",
+        "family_a": "PRESSED_POWDER",
+        "family_b": "POWDER_MATTE",
+        "value_a": "-250 ('pressed ring')",
+        "value_b": "none",
+        "evidence": "builder_constant_census.json lines ['pressed ring'] -> apps/pipeline/services/blender_scripts/powder_materials.py",
+        "effective_note": "builder constants ARE the render-effective values; both sides stated"
+      },
+      {
+        "driver": "builder:mottle_construction",
+        "family_a": "PRESSED_POWDER",
+        "family_b": "POWDER_MATTE",
+        "value_a": "base *(1-0.5*surface_flatness) ('pressed mottle')",
+        "value_b": "black-mix base strength (L173)",
+        "evidence": "builder_constant_census.json lines ['pressed mottle', 173] -> apps/pipeline/services/blender_scripts/powder_materials.py",
+        "effective_note": "builder constants ARE the render-effective values; both sides stated"
+      }
+    ],
+    "SATIN_VS_CREAM": [
+      {
+        "driver": "continuity.soft_specular_roughness",
+        "family_a": "POWDER_SATIN",
+        "family_b": "CREAM",
+        "declared_a": "<ABSENT>",
+        "declared_b": 0.32,
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": "ABSENT_BLOCK",
+        "effective_b": 0.32,
+        "effective_notes": [
+          "POWDER_SATIN: absent block, but the axis-relevant quantity is realized roughness: satin's builder realizes ROUGHNESS = 0.48 - 0.10*surface_smoothing(0.5) = 0.43 (census L229) \u2014 soft_specular_roughness's block-absent effective value is 0.43"
+        ]
+      },
+      {
+        "driver": "macrotexture.scale_mm",
+        "family_a": "POWDER_SATIN",
+        "family_b": "CREAM",
+        "declared_a": 2.4,
+        "declared_b": 2.4,
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": 2.4,
+        "effective_b": "2.4 DECLARED / 0 EFFECTIVE",
+        "effective_notes": [
+          "CREAM declares 2.4 but it never arrives (audit) \u2014 render-effective 0 contribution"
+        ]
+      },
+      {
+        "driver": "macrotexture.strength",
+        "family_a": "POWDER_SATIN",
+        "family_b": "CREAM",
+        "declared_a": 0.06,
+        "declared_b": 0.06,
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": 0.06,
+        "effective_b": "0.06 DECLARED / 0 EFFECTIVE",
+        "effective_notes": [
+          "CREAM declares 0.06 but it never arrives (audit) \u2014 render-effective 0 contribution",
+          "satin effective 0.03 (builder x0.5, L238)"
+        ]
+      },
+      {
+        "driver": "milling.micronormal_amplitude",
+        "family_a": "POWDER_SATIN",
+        "family_b": "CREAM",
+        "declared_a": 0.1,
+        "declared_b": "<ABSENT>",
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": 0.1,
+        "effective_b": "ABSENT_BLOCK",
+        "effective_notes": [
+          "CREAM: 0 contribution \u2014 the family's builder function omits the milling node group entirely (dispatch apps/pipeline/services/blender_scripts/powder_materials.py L422-430); no micro-normal field, no grain. For amplitude-like members the effective value is 0; for scale/shape members (microparticle_scale_mm, _variance, micronormal_correlation_mm) absence has no scale \u2014 separation is carried by the block's amplitude member (micronormal_amplitude 0) and containment for those rows is governed by that row"
+        ]
+      },
+      {
+        "driver": "milling.microparticle_scale_mm",
+        "family_a": "POWDER_SATIN",
+        "family_b": "CREAM",
+        "declared_a": 0.21,
+        "declared_b": "<ABSENT>",
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": 0.21,
+        "effective_b": "ABSENT_BLOCK",
+        "effective_notes": [
+          "CREAM: 0 contribution \u2014 the family's builder function omits the milling node group entirely (dispatch apps/pipeline/services/blender_scripts/powder_materials.py L422-430); no micro-normal field, no grain. For amplitude-like members the effective value is 0; for scale/shape members (microparticle_scale_mm, _variance, micronormal_correlation_mm) absence has no scale \u2014 separation is carried by the block's amplitude member (micronormal_amplitude 0) and containment for those rows is governed by that row"
+        ]
+      },
+      {
+        "driver": "milling.microparticle_variance",
+        "family_a": "POWDER_SATIN",
+        "family_b": "CREAM",
+        "declared_a": 0.2,
+        "declared_b": "<ABSENT>",
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": 0.2,
+        "effective_b": "ABSENT_BLOCK",
+        "effective_notes": [
+          "CREAM: 0 contribution \u2014 the family's builder function omits the milling node group entirely (dispatch apps/pipeline/services/blender_scripts/powder_materials.py L422-430); no micro-normal field, no grain. For amplitude-like members the effective value is 0; for scale/shape members (microparticle_scale_mm, _variance, micronormal_correlation_mm) absence has no scale \u2014 separation is carried by the block's amplitude member (micronormal_amplitude 0) and containment for those rows is governed by that row"
+        ]
+      },
+      {
+        "driver": "milling.surface_smoothing",
+        "family_a": "POWDER_SATIN",
+        "family_b": "CREAM",
+        "declared_a": 0.5,
+        "declared_b": "<ABSENT>",
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": 0.5,
+        "effective_b": "ABSENT_BLOCK",
+        "effective_notes": [
+          "CREAM: 0 contribution \u2014 the family's builder function omits the milling node group entirely (dispatch apps/pipeline/services/blender_scripts/powder_materials.py L422-430); no micro-normal field, no grain. For amplitude-like members the effective value is 0; for scale/shape members (microparticle_scale_mm, _variance, micronormal_correlation_mm) absence has no scale \u2014 separation is carried by the block's amplitude member (micronormal_amplitude 0) and containment for those rows is governed by that row"
+        ]
+      },
+      {
+        "driver": "sheen_response.sheen",
+        "family_a": "POWDER_SATIN",
+        "family_b": "CREAM",
+        "declared_a": 0.45,
+        "declared_b": "<ABSENT>",
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": 0.45,
+        "effective_b": "ABSENT_BLOCK",
+        "effective_notes": [
+          "CREAM: Sheen Weight stays at the Principled default 0.0 (apps/pipeline/services/blender_scripts/powder_materials.py L231 sets it only for satin) \u2014 effective sheen 0, tint moot at weight 0"
+        ]
+      },
+      {
+        "driver": "sheen_response.tint",
+        "family_a": "POWDER_SATIN",
+        "family_b": "CREAM",
+        "declared_a": 0.15,
+        "declared_b": "<ABSENT>",
+        "evidence": "apps/pipeline/services/palette_powder_engine.py FAMILY_PARAMS/COMMON_PARAMS (L59-152), audit classes in realization_audit.json",
+        "effective_a": 0.15,
+        "effective_b": "ABSENT_BLOCK",
+        "effective_notes": [
+          "CREAM: Sheen Weight stays at the Principled default 0.0 (apps/pipeline/services/blender_scripts/powder_materials.py L231 sets it only for satin) \u2014 effective sheen 0, tint moot at weight 0"
+        ]
+      },
+      {
+        "driver": "builder:roughness_construction",
+        "family_a": "POWDER_SATIN",
+        "family_b": "CREAM",
+        "value_a": "ROUGHNESS = 0.48 - 0.10*surface_smoothing (L229)",
+        "value_b": "declared continuity.soft_specular_roughness (REALIZED declared param on the cream side)",
+        "evidence": "builder_constant_census.json lines [229] -> apps/pipeline/services/blender_scripts/powder_materials.py",
+        "effective_note": "builder constants ARE the render-effective values; both sides stated"
+      },
+      {
+        "driver": "builder:noise_detail",
+        "family_a": "POWDER_SATIN",
+        "family_b": "CREAM",
+        "value_a": "2 + 2*variance (L224)",
+        "value_b": "none (no milling)",
+        "evidence": "builder_constant_census.json lines [224] -> apps/pipeline/services/blender_scripts/powder_materials.py",
+        "effective_note": "builder constants ARE the render-effective values; both sides stated"
+      },
+      {
+        "driver": "builder:mottle_construction",
+        "family_a": "POWDER_SATIN",
+        "family_b": "CREAM",
+        "value_a": "satin mottle strength *0.5 (L238)",
+        "value_b": "none (CREAM not in the L173 mottle family list)",
+        "evidence": "builder_constant_census.json lines [238, 173] -> apps/pipeline/services/blender_scripts/powder_materials.py",
+        "effective_note": "builder constants ARE the render-effective values; both sides stated"
+      },
+      {
+        "driver": "builder:cream_swell",
+        "family_a": "POWDER_SATIN",
+        "family_b": "CREAM",
+        "value_a": "none",
+        "value_b": "swell scale 6.0mm / amplitude 0.015 ('cream')",
+        "evidence": "builder_constant_census.json lines ['cream'] -> apps/pipeline/services/blender_scripts/powder_materials.py",
+        "effective_note": "builder constants ARE the render-effective values; both sides stated"
+      }
+    ]
+  },
+  "item4_span_rule": {
+    "rule": "an axis joins a sweep's matrix only if its total response across the sweep clears floor x 2.0; rho over all measured levels for qualifying axes",
+    "selected_by": "negative_control_1a.json \u2014 per-level gating collapsed the known-good flake_density divergence (COHERENCE|ENV 0.3916 preserved under span, NOT_COMPUTABLE under per-level); the micronormal verdict is invariant to the choice"
+  },
+  "item5_compression_texture_amplitude_sweep": {
+    "record": "independence_sweeps/sweep_compaction_compression_texture_amplitude.json (rows retained in full)",
+    "rows": [
+      {
+        "level": 0.02,
+        "label": "compaction_compression_texture_amplitude_L00",
+        "texture": {
+          "GRANULARITY_INDEX": 0.021574,
+          "GRAZING_BAND_CONTRAST": 2.442921,
+          "_planar_peak": 0.8296289098978042,
+          "_stimulus_rms": 0.02524655
+        },
+        "lobe": {
+          "HIGHLIGHT_FWHM": 0.2319892363517756,
+          "HIGHLIGHT_PEAK": 37.55880046456979,
+          "SPECULAR_TO_DIFFUSE_RATIO": 1.4401328550508252,
+          "GRAZING_RESPONSE": 0.09027742123188033,
+          "SHEEN_REGION_RESPONSE": 0.14526671922217843,
+          "EDGE_HIGHLIGHT_RESPONSE": 0.2344643537933664,
+          "_clipped": 0
+        }
+      },
+      {
+        "level": 0.04545,
+        "label": "compaction_compression_texture_amplitude_L01",
+        "texture": {
+          "GRANULARITY_INDEX": 0.024308,
+          "GRAZING_BAND_CONTRAST": 2.447398,
+          "_planar_peak": 0.8427520075201989,
+          "_stimulus_rms": 0.0175659
+        },
+        "lobe": {
+          "HIGHLIGHT_FWHM": 0.23260080727361684,
+          "HIGHLIGHT_PEAK": 37.565470946977825,
+          "SPECULAR_TO_DIFFUSE_RATIO": 1.4404418164873762,
+          "GRAZING_RESPONSE": 0.09219421197651931,
+          "SHEEN_REGION_RESPONSE": 0.13935422414925766,
+          "EDGE_HIGHLIGHT_RESPONSE": 0.2354174609226077,
+          "_clipped": 0
+        }
+      },
+      {
+        "level": 0.07091,
+        "label": "compaction_compression_texture_amplitude_L02",
+        "texture": {
+          "GRANULARITY_INDEX": 0.028467,
+          "GRAZING_BAND_CONTRAST": 2.450433,
+          "_planar_peak": 0.8557913081169128,
+          "_stimulus_rms": 0.00961467
+        },
+        "lobe": {
+          "HIGHLIGHT_FWHM": 0.2289313817425694,
+          "HIGHLIGHT_PEAK": 37.63563901486047,
+          "SPECULAR_TO_DIFFUSE_RATIO": 1.4431153235096654,
+          "GRAZING_RESPONSE": 0.09043144905957454,
+          "SHEEN_REGION_RESPONSE": 0.13531401918276179,
+          "EDGE_HIGHLIGHT_RESPONSE": 0.2276019824628288,
+          "_clipped": 0
+        }
+      },
+      {
+        "level": 0.09636,
+        "label": "compaction_compression_texture_amplitude_L03",
+        "texture": {
+          "STIMULUS_NOT_REALIZED": true,
+          "stimulus": {
+            "rms": 0.00078083,
+            "low_member_mean": 0.577591,
+            "rms_over_mean": 0.00135188,
+            "floor": 0.002,
+            "realized": false
+          }
+        },
+        "lobe": {
+          "HIGHLIGHT_FWHM": 0.22440575692094428,
+          "HIGHLIGHT_PEAK": 37.780289374043,
+          "SPECULAR_TO_DIFFUSE_RATIO": 1.449483710975341,
+          "GRAZING_RESPONSE": 0.08658075336721946,
+          "SHEEN_REGION_RESPONSE": 0.13068256470897385,
+          "EDGE_HIGHLIGHT_RESPONSE": 0.22035836828059474,
+          "_clipped": 0
+        }
+      },
+      {
+        "level": 0.12182,
+        "label": "compaction_compression_texture_amplitude_L04",
+        "texture": {
+          "GRANULARITY_INDEX": 0.038849,
+          "GRAZING_BAND_CONTRAST": 2.463467,
+          "_planar_peak": 0.8768693444371223,
+          "_stimulus_rms": 0.00755903
+        },
+        "lobe": {
+          "HIGHLIGHT_FWHM": 0.21947241815142496,
+          "HIGHLIGHT_PEAK": 37.898072181843894,
+          "SPECULAR_TO_DIFFUSE_RATIO": 1.4542833942196296,
+          "GRAZING_RESPONSE": 0.08320925536102411,
+          "SHEEN_REGION_RESPONSE": 0.12504927079227435,
+          "EDGE_HIGHLIGHT_RESPONSE": 0.20548989706443005,
+          "_clipped": 0
+        }
+      },
+      {
+        "level": 0.14727,
+        "label": "compaction_compression_texture_amplitude_L05",
+        "texture": {
+          "GRANULARITY_INDEX": 0.044428,
+          "GRAZING_BAND_CONTRAST": 2.460602,
+          "_planar_peak": 0.8844905430555343,
+          "_stimulus_rms": 0.0166174
+        },
+        "lobe": {
+          "HIGHLIGHT_FWHM": 0.21559913564643046,
+          "HIGHLIGHT_PEAK": 38.0248052614698,
+          "SPECULAR_TO_DIFFUSE_RATIO": 1.461909277830848,
+          "GRAZING_RESPONSE": 0.077818281391727,
+          "SHEEN_REGION_RESPONSE": 0.12007292077256602,
+          "EDGE_HIGHLIGHT_RESPONSE": 0.19557758292032024,
+          "_clipped": 0
+        }
+      },
+      {
+        "level": 0.17273,
+        "label": "compaction_compression_texture_amplitude_L06",
+        "texture": {
+          "GRANULARITY_INDEX": 0.050046,
+          "GRAZING_BAND_CONTRAST": 2.469434,
+          "_planar_peak": 0.890872981774807,
+          "_stimulus_rms": 0.02615489
+        },
+        "lobe": {
+          "HIGHLIGHT_FWHM": 0.2102173115342276,
+          "HIGHLIGHT_PEAK": 38.179065537571645,
+          "SPECULAR_TO_DIFFUSE_RATIO": 1.4695092423050746,
+          "GRAZING_RESPONSE": 0.0766545155824819,
+          "SHEEN_REGION_RESPONSE": 0.11557285507817633,
+          "EDGE_HIGHLIGHT_RESPONSE": 0.2079679756004575,
+          "_clipped": 0
+        }
+      },
+      {
+        "level": 0.19818,
+        "label": "compaction_compression_texture_amplitude_L07",
+        "texture": {
+          "GRANULARITY_INDEX": 0.055624,
+          "GRAZING_BAND_CONTRAST": 2.474673,
+          "_planar_peak": 0.8948831630110741,
+          "_stimulus_rms": 0.0361903
+        },
+        "lobe": {
+          "HIGHLIGHT_FWHM": 0.20389774534186814,
+          "HIGHLIGHT_PEAK": 38.37679810656443,
+          "SPECULAR_TO_DIFFUSE_RATIO": 1.4791834527264902,
+          "GRAZING_RESPONSE": 0.0766545155824819,
+          "SHEEN_REGION_RESPONSE": 0.11071147024044146,
+          "EDGE_HIGHLIGHT_RESPONSE": 0.19786504003049943,
+          "_clipped": 0
+        }
+      },
+      {
+        "level": 0.22364,
+        "label": "compaction_compression_texture_amplitude_L08",
+        "texture": {
+          "GRANULARITY_INDEX": 0.06111,
+          "GRAZING_BAND_CONTRAST": 2.476589,
+          "_planar_peak": 0.8983713790774345,
+          "_stimulus_rms": 0.04673696
+        },
+        "lobe": {
+          "HIGHLIGHT_FWHM": 0.19941289191503242,
+          "HIGHLIGHT_PEAK": 38.4546830337879,
+          "SPECULAR_TO_DIFFUSE_RATIO": 1.4849638007604848,
+          "GRAZING_RESPONSE": 0.07184542451780733,
+          "SHEEN_REGION_RESPONSE": 0.10603074497437918,
+          "EDGE_HIGHLIGHT_RESPONSE": 0.18776210446054137,
+          "_clipped": 0
+        }
+      },
+      {
+        "level": 0.24909,
+        "label": "compaction_compression_texture_amplitude_L09",
+        "texture": {
+          "GRANULARITY_INDEX": 0.0665,
+          "GRAZING_BAND_CONTRAST": 2.490746,
+          "_planar_peak": 0.9007803919792174,
+          "_stimulus_rms": 0.05778195
+        },
+        "lobe": {
+          "HIGHLIGHT_FWHM": 0.1959880947527215,
+          "HIGHLIGHT_PEAK": 38.58763703264824,
+          "SPECULAR_TO_DIFFUSE_RATIO": 1.494024560907014,
+          "GRAZING_RESPONSE": 0.07155448306549606,
+          "SHEEN_REGION_RESPONSE": 0.10123505452634345,
+          "EDGE_HIGHLIGHT_RESPONSE": 0.17861227601982463,
+          "_clipped": 0
+        }
+      },
+      {
+        "level": 0.27455,
+        "label": "compaction_compression_texture_amplitude_L10",
+        "texture": {
+          "GRANULARITY_INDEX": 0.071778,
+          "GRAZING_BAND_CONTRAST": 2.494104,
+          "_planar_peak": 0.9013308369755745,
+          "_stimulus_rms": 0.06928215
+        },
+        "lobe": {
+          "HIGHLIGHT_FWHM": 0.19235944061646348,
+          "HIGHLIGHT_PEAK": 38.66758001802787,
+          "SPECULAR_TO_DIFFUSE_RATIO": 1.500158693850909,
+          "GRAZING_RESPONSE": 0.0735568448255207,
+          "SHEEN_REGION_RESPONSE": 0.09803245302851137,
+          "EDGE_HIGHLIGHT_RESPONSE": 0.1606938619900877,
+          "_clipped": 0
+        }
+      },
+      {
+        "level": 0.3,
+        "label": "compaction_compression_texture_amplitude_L11",
+        "texture": {
+          "GRANULARITY_INDEX": 0.076941,
+          "GRAZING_BAND_CONTRAST": 2.491986,
+          "_planar_peak": 0.9005785002589226,
+          "_stimulus_rms": 0.08118711
+        },
+        "lobe": {
+          "HIGHLIGHT_FWHM": 0.1874668732417336,
+          "HIGHLIGHT_PEAK": 38.81191029311132,
+          "SPECULAR_TO_DIFFUSE_RATIO": 1.5093088998427457,
+          "GRAZING_RESPONSE": 0.07331724598244083,
+          "SHEEN_REGION_RESPONSE": 0.09451780317960846,
+          "EDGE_HIGHLIGHT_RESPONSE": 0.1528783835303088,
+          "_clipped": 0
+        }
+      }
+    ],
+    "analysis_as_recorded": {
+      "parameter": "compaction.compression_texture_amplitude",
+      "family": "PRESSED_POWDER",
+      "instrument_notes": {
+        "texture_levels_refused": [],
+        "texture_levels_unrealized": [
+          0.09636
+        ],
+        "lobe_levels_refused": [],
+        "lobe_levels_clipped": []
+      },
+      "axis_qualification": {
+        "GRANULARITY_INDEX": {
+          "span_effect": 1.12403,
+          "required": 0.2338,
+          "n_levels": 11,
+          "qualifies": true
+        },
+        "GRAZING_BAND_CONTRAST": {
+          "span_effect": 0.02073,
+          "required": 0.01302,
+          "n_levels": 11,
+          "qualifies": true
+        },
+        "HIGHLIGHT_FWHM": {
+          "span_effect": 0.21489,
+          "required": 0.1827,
+          "n_levels": 12,
+          "qualifies": true
+        },
+        "HIGHLIGHT_PEAK": {
+          "span_effect": 0.03282,
+          "required": 0.01594,
+          "n_levels": 12,
+          "qualifies": true
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "span_effect": 0.04691,
+          "required": 0.01772,
+          "n_levels": 12,
+          "qualifies": true
+        },
+        "GRAZING_RESPONSE": {
+          "span_effect": 0.25209,
+          "required": 0.29912,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "span_effect": 0.42329,
+          "required": 0.33138,
+          "n_levels": 12,
+          "qualifies": true
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "span_effect": 0.42514,
+          "required": 0.55982,
+          "n_levels": 12,
+          "qualifies": false
+        }
+      },
+      "matrix_over_qualifying_axes": {
+        "GRANULARITY_INDEX|GRAZING_BAND_CONTRAST": {
+          "abs_rho": 0.9818,
+          "n": 11
+        },
+        "GRANULARITY_INDEX|HIGHLIGHT_FWHM": {
+          "abs_rho": 0.9909,
+          "n": 11
+        },
+        "GRANULARITY_INDEX|HIGHLIGHT_PEAK": {
+          "abs_rho": 1.0,
+          "n": 11
+        },
+        "GRANULARITY_INDEX|SPECULAR_TO_DIFFUSE_RATIO": {
+          "abs_rho": 1.0,
+          "n": 11
+        },
+        "GRANULARITY_INDEX|SHEEN_REGION_RESPONSE": {
+          "abs_rho": 1.0,
+          "n": 11
+        },
+        "GRAZING_BAND_CONTRAST|HIGHLIGHT_FWHM": {
+          "abs_rho": 0.9727,
+          "n": 11
+        },
+        "GRAZING_BAND_CONTRAST|HIGHLIGHT_PEAK": {
+          "abs_rho": 0.9818,
+          "n": 11
+        },
+        "GRAZING_BAND_CONTRAST|SPECULAR_TO_DIFFUSE_RATIO": {
+          "abs_rho": 0.9818,
+          "n": 11
+        },
+        "GRAZING_BAND_CONTRAST|SHEEN_REGION_RESPONSE": {
+          "abs_rho": 0.9818,
+          "n": 11
+        },
+        "HIGHLIGHT_FWHM|HIGHLIGHT_PEAK": {
+          "abs_rho": 0.993,
+          "n": 12
+        },
+        "HIGHLIGHT_FWHM|SPECULAR_TO_DIFFUSE_RATIO": {
+          "abs_rho": 0.993,
+          "n": 12
+        },
+        "HIGHLIGHT_FWHM|SHEEN_REGION_RESPONSE": {
+          "abs_rho": 0.993,
+          "n": 12
+        },
+        "HIGHLIGHT_PEAK|SPECULAR_TO_DIFFUSE_RATIO": {
+          "abs_rho": 1.0,
+          "n": 12
+        },
+        "HIGHLIGHT_PEAK|SHEEN_REGION_RESPONSE": {
+          "abs_rho": 1.0,
+          "n": 12
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO|SHEEN_REGION_RESPONSE": {
+          "abs_rho": 1.0,
+          "n": 12
+        }
+      },
+      "divergent_pairs_establishing_validity": [],
+      "validity_1a": "SWEEP_DEGENERATE_UNDER_DRIVER",
+      "counted_axis_readings": {
+        "PRESSED_VS_MATTE": {
+          "abs_rho": 1.0,
+          "n": 11,
+          "sweep_validity": "SWEEP_DEGENERATE_UNDER_DRIVER",
+          "status": "DEGENERATE_CARRIES_NO_INFORMATION"
+        }
+      }
+    }
+  },
+  "exit_condition": "item 3 complete for every driver in every table \u2014 43 rows",
+  "owner_approved": false
+}

@@ -1,0 +1,163 @@
+{
+ "record_type": "a284_units_recomputation/1.0",
+ "law": "b12db39c624f01c2",
+ "rows": [
+  {
+   "cell": "MATTE_VS_SATIN / SHEEN_REGION_RESPONSE",
+   "proxy": 0.16569,
+   "relative_dispersion": 0.477446,
+   "ratio_relative": 2.8816,
+   "absolute_swing": 0.16896,
+   "ratio_absolute": 1.0198,
+   "margin": 0.09112,
+   "disposition_under_relative": "UNMET",
+   "disposition_under_absolute": "UNMET",
+   "premise_holds_absolute": false
+  },
+  {
+   "cell": "PRESSED_VS_MATTE / SHEEN_REGION_RESPONSE",
+   "proxy": 0.16569,
+   "relative_dispersion": 0.484408,
+   "ratio_relative": 2.9236,
+   "absolute_swing": 0.17835,
+   "ratio_absolute": 1.0764,
+   "margin": 0.11572,
+   "disposition_under_relative": "UNMET",
+   "disposition_under_absolute": "UNMET",
+   "premise_holds_absolute": false
+  },
+  {
+   "cell": "SATIN_VS_CREAM / HIGHLIGHT_FWHM",
+   "proxy": 0.04781,
+   "relative_dispersion": 0.216796,
+   "ratio_relative": 4.5345,
+   "absolute_swing": 0.06026,
+   "ratio_absolute": 1.2605,
+   "margin": 0.0343,
+   "disposition_under_relative": "UNMET",
+   "disposition_under_absolute": "UNMET",
+   "premise_holds_absolute": false
+  },
+  {
+   "cell": "SATIN_VS_CREAM / GRANULARITY_INDEX",
+   "proxy": 0.04201,
+   "relative_dispersion": 0.09584993534746519,
+   "ratio_relative": 2.2816,
+   "absolute_swing": 0.04034,
+   "ratio_absolute": 0.9603,
+   "margin": 0.1923,
+   "disposition_under_relative": "MET",
+   "disposition_under_absolute": "MET",
+   "premise_holds_absolute": true
+  },
+  {
+   "cell": "SATIN_VS_CREAM / SHEEN (NOT_APPLICABLE)",
+   "proxy": 0.03566,
+   "relative_dispersion": 0.582405198012602,
+   "ratio_relative": 16.3322,
+   "absolute_swing": 0.08263,
+   "ratio_absolute": 2.3171,
+   "margin": null,
+   "disposition_under_relative": null,
+   "disposition_under_absolute": null,
+   "premise_holds_absolute": false
+  }
+ ],
+ "dispositions_changed": [],
+ "units_finding_from_the_code": {
+  "1_clearing_dispersion_6d6e4ab90686503f": {
+   "input": "raw axis values per family per seed (e.g. SHEEN_REGION_RESPONSE)",
+   "intermediate": "per_seed[s] = relative_effect(axis_a[s], axis_b[s]) \u2014 a RELATIVE EFFECT",
+   "output": "dispersion = max relative_effect(per_seed[i], per_seed[j]) \u2014 a relative effect OF relative effects",
+   "units": "FRACTION_OF_A_RELATIVE_EFFECT (dimensionless fraction of a quantity that is already a fraction)"
+  },
+  "2_seed_only_max": {
+   "code": "palette_axis_eligibility: floors[axis] = max _effect(lobe_members[i][axis], lobe_members[j][axis])",
+   "input": "raw axis values",
+   "units": "RELATIVE_EFFECT"
+  },
+  "3_margin": {
+   "code": "clearing - PASS_LAW.relative_effect_bar (0.25); clearing is a relative effect",
+   "units": "RELATIVE_EFFECT"
+  },
+  "commensurable": false,
+  "verdict": "margin and seed_only_max ARE commensurable \u2014 both relative effects over raw axis values. clearing_dispersion is NOT: it applies the effect functional a second time, to quantities that are already effects. The owner's reading is CORRECT and confirmed from the code, not from resemblance",
+  "where_it_came_from": "A230 affirmed holding the functional fixed while moving the point. Holding the functional fixed does NOT hold the units fixed when the input type changes from raw values to effects \u2014 and I wrote the recipe that did it, under that affirmation"
+ },
+ "dimensionally_matched_comparator": "max pairwise ABSOLUTE difference of the per-seed clearings \u2014 a difference of relative effects, therefore in relative-effect units, commensurable with margin and with seed_only_max",
+ "headline_correction": {
+  "was": "PROXY_BOUNDS_TEST REFUTED 4 of 4 by factors of 2.28 to 4.53",
+  "is": "under the matched comparator the ratios are 0.96, 1.02, 1.08, 1.26 \u2014 NEAR PARITY. The premise HOLDS at GRANULARITY (0.96) and fails marginally at the other three. It was not refuted by large factors; the large factors were a units artifact",
+  "A254_sayable_sentence_withdrawn": "'the proxy sat below the named quantity in all four instances by factors of 2.28 to 4.53' is WITHDRAWN as a units artifact. The replacement, computed under matched units: the proxy sat at 0.96 to 1.26 times the named quantity across the four instances \u2014 at parity within about a quarter, holding in one and marginally failing in three",
+  "what_is_NOT_at_risk": "no disposition changes under either measure \u2014 the same four verdicts, three UNMET and GRANULARITY MET, verified by recomputation rather than taken from the owner",
+  "what_IS_at_risk": "the 'lenient proxy' narrative built on the large factors. The proxy is not dramatically lenient; it is approximately right, slightly lenient in three of four cases"
+ },
+ "withdrawn_2026_08_11_A293": {
+  "phrasings_withdrawn": [
+   "the proxy is lenient",
+   "the programme has been using too low a bar",
+   "the FAILs were measured against too low a bar and still failed",
+   "the proxy sat below the named quantity by factors of 2.28 to 4.53",
+   "PROXY_BOUNDS_TEST REFUTED_AT_4_OF_4",
+   "clearing varies by 2.3x to 4.5x"
+  ],
+  "why": "all downstream of the units defect established at A284",
+  "replacement_sentence_the_only_sayable_one": "the proxy sat between 0.96 and 1.26 times the named quantity across the four instances where both were computed",
+  "premise_status": "UNRESOLVED_AT_PARITY \u2014 and per 3f the converse is not concluded either",
+  "sweep_scope": "5815 tracked files scanned; 46 carry the phrasings, 94 instances",
+  "instances_by_file": {
+   "apps/dielines/docs/28x28x120_engine_reference.json": 2,
+   "apps/pipeline/services/image_checks.py": 1,
+   "docs/complete_product/pilot_authorization_packet.json": 1,
+   "docs/qualification/reverse_tuck_end_carton_1_1/qualification_matrix.json": 1,
+   "docs/qualification/straight_tuck_end_carton_1_1/qualification_matrix.json": 1,
+   "docs/roadmap/palt_m4b_a2/palt_m4b_a2_thickness_report.json": 1,
+   "docs/roadmap/palt_m6/a233_test4_result.json": 4,
+   "docs/roadmap/palt_m6/a245_tests_1_3_result.json": 9,
+   "docs/roadmap/palt_m6/a284_units_recomputation.json": 10,
+   "docs/roadmap/palt_m6/axis_instrument_forensics.json": 1,
+   "docs/roadmap/palt_m6/axis_instrument_forensics_at_head.json": 1,
+   "docs/roadmap/palt_m6/controls_independence_audit_inbox.json": 2,
+   "docs/roadmap/palt_m6/establishment_closure/establishment_table.json": 3,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_POWDER_SATIN_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_PRESSED_POWDER_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_compaction_compaction_level_L11_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_continuity_soft_specular_roughness_L00.json": 2,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_milling_surface_smoothing_L11_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_press_ring_strength_L05.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_press_ring_strength_L05_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_press_ring_strength_L06.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_press_ring_strength_L06_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_press_ring_strength_L07_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_press_ring_strength_L08_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_press_ring_strength_L09_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_press_ring_strength_L10_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_press_ring_strength_L11_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_tx_tex_compression_texture_strength_ext_0p0.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_tx_tex_macrotexture_strength_L07.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_tx_tex_milling_microparticle_scale_mm_L03.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_tx_tex_milling_microparticle_scale_mm_L06.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_tx_tex_milling_microparticle_scale_mm_ext_0p215.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_tx_tex_sheen_response_tint_L06.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_tx_tex_surface_roughness_L10.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/sweep_press_ring_strength.json": 1,
+   "docs/roadmap/palt_m6/measurement_adequacy/phase2_retroactive.json": 17,
+   "docs/roadmap/palt_m6/raking_rig/sweep/swatch_sw_tx_0p02.json": 1,
+   "docs/roadmap/palt_m6/raking_rig/sweep/swatch_sw_tx_0p08.json": 1,
+   "docs/roadmap/palt_m6/raking_rig/sweep/swatch_tx_sw_tx_cal_a.json": 1,
+   "docs/roadmap/palt_m6/raking_rig/sweep/swatch_tx_sw_tx_cal_b.json": 1,
+   "docs/roadmap/palt_m6/texture_axes/swatch_probe_census_SHIMMER.json": 2,
+   "docs/roadmap/palt_m6/texture_axes/swatch_tx_SURFACE_CONTINUITY_low.json": 1,
+   "docs/visual_quality/vq1_master/vq1_neck_shoulder_dense_confirmation.json": 1,
+   "docs/visual_quality/vq2/received/Rose_Damascena_Custom_Lettering_manifest.json": 6,
+   "docs/visual_quality/vq2/vq2_authoritative_bbrose_logo.json": 2,
+   "docs/visual_quality/vq2/vq2_typography_manifest.json": 1
+  }
+ },
+ "A293_sweep_corrected": {
+  "first_pass_defect": "my regex matched bare numerals 2.28 and 4.53, which occur as ordinary measurement values in frame records, VQ manifests and dieline docs. It reported 46 files / 94 instances and I stamped the withdrawal onto all of them, polluting 43 measurement records that never made the claim. Reverted",
+  "true_count": "FOUR records carry the lenient-proxy claim: a245_tests_1_3_result, a284_units_recomputation, establishment_table, phase2_retroactive",
+  "class": "the same over-collection shape as the A154 first pass (1,441), the A204 first pass (680) and the A217 first pass (67) \u2014 a keyword sweep reported before classification. Fourth instance, and the first where I ACTED on the raw count before classifying rather than only reporting it",
+  "withdrawal_applies_to": "those four records only"
+ }
+}

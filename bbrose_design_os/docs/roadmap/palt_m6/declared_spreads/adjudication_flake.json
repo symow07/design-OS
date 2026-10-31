@@ -1,0 +1,150 @@
+{
+ "record_type": "m6_spreads_adjudication_flake/1.0",
+ "adjudicated": "2026-08-15",
+ "raw_record": "raw_flake.json",
+ "acts": [
+  {
+   "row": "S_V_M PATTERN clearing",
+   "axis": "REFLECTED_PATTERN_CONTRAST",
+   "mode": "reproduce",
+   "per_member_clearings": {
+    "0": 0.3039827290568095,
+    "1": 0.32991613582044244,
+    "2": 0.30523796416660925,
+    "3": 0.2544673463310169,
+    "4": 0.25388435338857923,
+    "5": 0.1887023096673545
+   },
+   "dispersion": 0.14121382615308795,
+   "reading": 0.30398,
+   "margin": 0.054,
+   "clears_bar": true,
+   "adequacy_precondition_met": false,
+   "prior_row_state": {
+    "reading": 0.30398,
+    "margin": 0.054,
+    "spread": 0.06501,
+    "spread_source": "TRANSFER: SHIMMER 6-seed",
+    "status": "UNMET_BY_CONSERVATIVE_PROXY",
+    "note": ""
+   },
+   "new_status": "ADEQUACY_PRECONDITION_UNMET_DIRECT",
+   "cleared_against": "49bbdcd0e90cddaf"
+  },
+  {
+   "row": "S_V_M COHERENCE clearing",
+   "axis": "REFLECTION_COHERENCE",
+   "mode": "reproduce",
+   "per_member_clearings": {
+    "0": 0.4848822224673256,
+    "1": 0.47568478114194673,
+    "2": 0.4694977403871814,
+    "3": 0.4833735657416602,
+    "4": 0.4631852323150808,
+    "5": 0.5173984774668761
+   },
+   "dispersion": 0.054213245151795264,
+   "reading": 0.48488,
+   "margin": 0.235,
+   "clears_bar": true,
+   "adequacy_precondition_met": true,
+   "prior_row_state": {
+    "reading": 0.48488,
+    "margin": 0.235,
+    "spread": 0.03198,
+    "spread_source": "TRANSFER: SHIMMER 6-seed",
+    "status": "ESTABLISHED",
+    "note": ""
+   },
+   "new_status": "ESTABLISHED",
+   "cleared_against": "3c85e8be3595155f"
+  },
+  {
+   "row": "S_V_M ENV clearing",
+   "axis": "ENVIRONMENT_CORRELATION",
+   "mode": "reproduce",
+   "per_member_clearings": {
+    "0": 0.5413614014926194,
+    "1": 0.5999308009954216,
+    "2": 0.6709524212683738,
+    "3": 0.6381492399230482,
+    "4": 0.5461078773465973,
+    "5": 0.6761759249373427
+   },
+   "dispersion": 0.13481452344472333,
+   "reading": 0.54136,
+   "margin": 0.291,
+   "clears_bar": true,
+   "adequacy_precondition_met": true,
+   "prior_row_state": {
+    "reading": 0.54136,
+    "margin": 0.291,
+    "spread": 0.12492,
+    "spread_source": "TRANSFER: SHIMMER 6-seed",
+    "status": "ESTABLISHED",
+    "note": ""
+   },
+   "new_status": "ESTABLISHED",
+   "cleared_against": "47aa6405622cf31c"
+  },
+  {
+   "row": "MvG PATTERN clearing",
+   "axis": "REFLECTED_PATTERN_CONTRAST",
+   "mode": "rebase",
+   "per_member_clearings": {
+    "0": 0.8811692064432116,
+    "1": 0.8170281928676667,
+    "2": 0.9380598464675557,
+    "3": 0.9269316493027426,
+    "4": 1.0030820542001717,
+    "5": 0.9803702946708523
+   },
+   "dispersion": 0.186053861332505,
+   "reading": 0.88117,
+   "margin": 0.63117,
+   "clears_bar": true,
+   "adequacy_precondition_met": true,
+   "prior_row_state": {
+    "reading": 0.88117,
+    "margin": 0.631,
+    "spread": 0.07089,
+    "spread_source": "PARTIAL: glitter member 1 pairing (transfer rejected \u2014 no declared-ensemble member)",
+    "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+    "note": ""
+   },
+   "new_status": "ESTABLISHED",
+   "cleared_against": "efe828d0d48c10cd"
+  },
+  {
+   "row": "MvG ENV clearing",
+   "axis": "ENVIRONMENT_CORRELATION",
+   "mode": "rebase",
+   "per_member_clearings": {
+    "0": 0.6967403982568873,
+    "1": 0.6909314964818557,
+    "2": 0.6021654502850863,
+    "3": 0.6252076423991234,
+    "4": 0.5377558896620137,
+    "5": 0.5131393515180998
+   },
+   "dispersion": 0.18360104673878752,
+   "reading": 0.69674,
+   "margin": 0.44674,
+   "clears_bar": true,
+   "adequacy_precondition_met": true,
+   "prior_row_state": {
+    "reading": 0.69674,
+    "margin": 0.447,
+    "spread": 0.29584,
+    "spread_source": "PARTIAL: glitter member 1 pairing",
+    "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+    "note": ""
+   },
+   "new_status": "ESTABLISHED",
+   "cleared_against": "65f1169b831ad52b"
+  }
+ ],
+ "pair_lines": "NOT restated here \u2014 the A4 independence discharge finishes the flake pairs in its own act",
+ "law": "per-member clearing under each axis's declared kind (palette_flake_rig._axis_effect); dispersion = A289 max pairwise |delta|; adequacy = margin > dispersion; MvG rows re-based per glitter_flake_member_set_declaration.json",
+ "owner_approved": false
+}

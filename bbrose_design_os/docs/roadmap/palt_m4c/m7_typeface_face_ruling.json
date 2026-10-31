@@ -1,0 +1,22 @@
+{
+ "record_type": "m7_typeface_face_ruling/1.0",
+ "created_at": "2026-08-14",
+ "decided_by": "PROJECT_OWNER",
+ "TARGET_FACE": {
+  "family": "Adobe Caslon Pro",
+  "chosen_on": "the true-scale specimen at e595a2d, in the specimen's own numbers: largest cap height of the four shortlisted faces under the uniform sizing rule — 7.37 mm against Adobe Garamond Pro 7.20, Minion Pro 6.86, Crimson Text 6.01 — with the crispest serifs at 16 mm label height, inside the ruled old-style/humanist direction",
+  "LICENCE_NOT_HELD": "Illustrator 2026 here is NOT a current Creative Cloud subscription, so the Adobe Fonts activation route named in es3083_font_census.json is UNAVAILABLE. The loose OTFs in materials/Fonts are fsType 8 with no grant on record and remain UNDETERMINED.",
+  "MUST_NOT_BE_USED": "in any deliverable, working file, or render. This includes substitution tests — the parametric proof was run with a licence-clear TEST face instead.",
+  "becomes_SET_FACE_when": "a purchased desktop licence held by BBROSE is recorded with its evidence (invoice or licence text) in this record and in the substrate's TYPEFACE_SPEC. Until then every render sets the SET_FACE."
+ },
+ "SET_FACE": {
+  "family": "Crimson Text",
+  "style": "Regular",
+  "licence": "LICENCE-CLEAR — OFL declared in the file: nameID14 scripts.sil.org/OFL, fsType 0",
+  "why": "the only suitable licence-clear face in the library (census at e595a2d); the artwork is BUILT in it today so that layout, fit and geometry work are real rather than deferred",
+  "style_constraint": "only Regular carries the in-file OFL declaration. THE SHEET NEEDS ONLY REGULAR — the cleaner answer. Any future style beyond Regular is fetched fresh from source with its OFL.txt, not taken from the loose Bold/Italic/SemiBold files, whose standing is family provenance only."
+ },
+ "TWO_FIELDS_BY_DESIGN": "TARGET_FACE and SET_FACE disagree ON PURPOSE and each is a named field, not a caveat on the other — the D11 failure mode (a record whose halves disagree undetected) designed out by making the disagreement the record's explicit subject. The artwork is parametric on the face precisely so the swap, when licensed, is one field in the substrate's TYPEFACE_SPEC and a re-run.",
+ "consumed_by": "docs/roadmap/palt_m7/es3083_artwork_geometry_substrate.json TYPEFACE_SPEC_2026_08_14, which the renderer docs/roadmap/palt_m7/label_sheet/render_label_sheet.py reads",
+ "owner_approved": true
+}

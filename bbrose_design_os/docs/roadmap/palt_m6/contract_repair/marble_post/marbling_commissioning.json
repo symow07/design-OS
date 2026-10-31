@@ -1,0 +1,89 @@
+{
+  "record_type": "marbling_structure_rig/1.0",
+  "commissioning": {
+    "illumination_uniformity_deviation": 0.02419,
+    "gate": 0.08,
+    "frames": [
+      "mb_uniform_reference.png"
+    ]
+  },
+  "floors": {
+    "MARBLE_CHROMA_SPAN": {
+      "floor": 0.8123,
+      "eligible": false,
+      "required": 1.62461
+    },
+    "MARBLE_CHROMA_COHERENCE": {
+      "floor": 1.13222,
+      "eligible": false,
+      "required": 2.26445
+    }
+  },
+  "derived_coefficients_in_the_verdict": "component colours derived by x0.55 (darker) and x1.35+0.05 (lighter) \u2014 undeclared builder coefficients, the source of every chroma number below",
+  "colour_authority": "every shade PROVISIONAL_VISUALIZATION_SHADE, NO_AUTHORITATIVE_SOURCE \u2014 this verdict is about spatial structure and is never readable as a palette decision",
+  "pair_warm": {
+    "MARBLE_CHROMA_SPAN": {
+      "marbled": 0.021334,
+      "solid": 0.003788,
+      "effect": 1.39686,
+      "counts": false,
+      "reasons": [
+        "INELIGIBLE_0.8123",
+        "BELOW_REQUIRED"
+      ]
+    },
+    "MARBLE_CHROMA_COHERENCE": {
+      "marbled": 0.159174,
+      "solid": 0.160493,
+      "effect": 0.00825,
+      "counts": false,
+      "reasons": [
+        "INELIGIBLE_1.13222",
+        "BELOW_REQUIRED"
+      ]
+    }
+  },
+  "verdict_warm": "FAIL",
+  "pair_cool_shade_swap": {
+    "MARBLE_CHROMA_SPAN": {
+      "marbled": 0.02065,
+      "solid": 0.001073,
+      "effect": 1.80242,
+      "counts": false,
+      "reasons": [
+        "INELIGIBLE_0.8123"
+      ]
+    },
+    "MARBLE_CHROMA_COHERENCE": {
+      "marbled": 0.163072,
+      "solid": 0.152945,
+      "effect": 0.06409,
+      "counts": false,
+      "reasons": [
+        "INELIGIBLE_1.13222",
+        "BELOW_REQUIRED"
+      ]
+    }
+  },
+  "verdict_cool": "FAIL",
+  "shade_invariance": "FAILS \u2014 the distinction is a fact about one placeholder pair; recorded before M7 could inherit it",
+  "SOLID_VS_MARBLED": "FAIL",
+  "microtexture_block_discharge": {
+    "pre_committed": "live -> engine count stands at 49/123; dead -> rises",
+    "audit_rows": {
+      "microtexture.scale_mm": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.05718556,
+        "varied": "0.16 -> 0.256"
+      },
+      "microtexture.strength": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.02258238,
+        "varied": "0.3 -> 0.48"
+      }
+    },
+    "outcome": "LIVE_FOR_ITS_ONLY_CONSUMER \u2014 the count stands at 49 of 123"
+  },
+  "owner_approved": false,
+  "manufacturing_authority": "NOT_ESTABLISHED"
+}

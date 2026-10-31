@@ -1,0 +1,108 @@
+{
+  "record_type": "palette_design_graph/1.0",
+  "packaging_link": {
+    "record_type": "palette_packaging_link/1.0",
+    "relationship": "APPEARS_ON_THE_SAME_SOURCE_SHEET",
+    "linked_target": "packaging",
+    "artifact": "ES3083 display box (吸塑_展盒刀线)",
+    "merged_into_palette": false,
+    "why_not_merged": "the display box is a Packaging artifact with its own dieline and its own structural authority. Merging it would let a carton dimension present itself as a palette dimension.",
+    "shared_fields": [
+      "logo_position",
+      "typography_zones",
+      "shade_names",
+      "regulatory_zones",
+      "ornament",
+      "pattern",
+      "playful",
+      "youthful"
+    ],
+    "packaging_authority": "NOT_ESTABLISHED_BY_THIS_MODULE"
+  },
+  "graph_identity": "ec7e2c3fc51e6bcc",
+  "node_count": 22,
+  "unresolved": [
+    "named spot colours are not resolved to licensed values",
+    "page size is the PROVISIONAL tray envelope, not a measured product dimension",
+    "exact pan count and grid (4x3 assumed, SOFT)",
+    "mirror presence in the lid interior",
+    "which edge is the product TOP",
+    "pan pitch and pan size in millimetres — NOT readable from the sheet; no dimension is claimed"
+  ],
+  "emission_ready": false,
+  "why_not_emission_ready": "unresolved spot colours, provisional dimensions, and no owner confirmation",
+  "owner_approved": false,
+  "manufacturing_authority": "NOT_ESTABLISHED",
+  "document_metadata": {
+    "schema": "palette_design_graph/1.0",
+    "design_target": "palette",
+    "concept_reference": "ConceptReference:6 ES3083吸塑_展盒刀线 — BBROSE 'Outer Glow' eyeshadow palette (media/references/ref_ES3083吸塑_展盒刀线.png)",
+    "intent_identity": "9b3603e17e85746c",
+    "tray_mesh_identity": "999db34286f2b789",
+    "pan_mesh_identity": "a9228480f7ed5cf0",
+    "provenance": [
+      {
+        "intent_field": "pan_shapes",
+        "constraint_level": "HARD_VISIBLE_CONSTRAINT",
+        "confirmation_state": "PENDING_OWNER_CONFIRMATION",
+        "confidence": 0.9,
+        "source_region": "rendered open case + thermoformed tray photograph",
+        "graph_role": "structure"
+      },
+      {
+        "intent_field": "typography_zones",
+        "constraint_level": "HARD_VISIBLE_CONSTRAINT",
+        "confirmation_state": "PENDING_OWNER_CONFIRMATION",
+        "confidence": 0.9,
+        "source_region": "display box and case face",
+        "graph_role": "typography"
+      },
+      {
+        "intent_field": "ornament",
+        "constraint_level": "DECORATIVE_PREFERENCE",
+        "confirmation_state": "PENDING_OWNER_CONFIRMATION",
+        "confidence": 0.8,
+        "source_region": "case and box artwork",
+        "graph_role": "decoration"
+      },
+      {
+        "intent_field": "pattern",
+        "constraint_level": "DECORATIVE_PREFERENCE",
+        "confirmation_state": "PENDING_OWNER_CONFIRMATION",
+        "confidence": 0.85,
+        "source_region": "EYE SHAD(O)W wordmark",
+        "graph_role": "decoration"
+      }
+    ],
+    "spot_colour_authority": {
+      "state": "UNRESOLVED_SPOT_COLOUR",
+      "why": "Pantone 621 C / 627 C are named on the production sheet, but no licensed Pantone conversion is available here. Inventing an RGB or CMYK value would create a colour that no one specified.",
+      "governs": "THE_NAMED_SPOT_COLOUR_NOT_THE_PLACEHOLDER",
+      "required_before_emission": "licensed spot definition or an owner-supplied measured value"
+    },
+    "dimensional_authority": {
+      "source": "NO_AUTHORITATIVE_SOURCE_PROVISIONAL_DEFAULT",
+      "why": "the ES3083 production sheet carries no readable pan pitch or pan size in millimetres; the pocket envelope is derived from the provisional rectangular pan contract plus its tolerance",
+      "final_dimensions": "NOT_APPROVED",
+      "manufacturing_authority": "NOT_ESTABLISHED",
+      "owner_approval": "NOT_GRANTED"
+    },
+    "grid_authority": {
+      "constraint_level": "SOFT_VISUAL_CONSTRAINT",
+      "confidence": 0.55,
+      "confirmation_state": "PENDING_OWNER_CONFIRMATION"
+    }
+  },
+  "document_summary": {
+    "page_w_mm": 109.563642,
+    "page_h_mm": 64.763642,
+    "title": "BBROSE OUTER GLOW EYESHADOW PALETTE",
+    "roles": [
+      "artwork",
+      "decoration",
+      "structure",
+      "typography"
+    ],
+    "node_count": 22
+  }
+}

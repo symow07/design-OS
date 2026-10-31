@@ -1,0 +1,393 @@
+{
+ "record_type": "a578_published_record_consistency/1.0",
+ "law": "3aa",
+ "date": "2026-08-12",
+ "protocol_identity_at_run": "721cde40dc7c394d",
+ "question": "A570 \u2014 does the published record describe a computation that happened? Do the records' own recorded inputs produce the records' own recorded outputs?",
+ "A571_a_family_labelling": {
+  "POWDER_SATIN": 0.040564,
+  "CREAM": 0.063597,
+  "authority": "LABELLED, not inferred from ordering: axis_independence_matrix_n6.json::census and a2_firing_result.json::census_n8.granularity both name the family against the value. Corroborated by diffuse_pair_rulings_phase1.json::rulings.SATIN_VS_CREAM.texture_axes.GRANULARITY_INDEX, where b=0.040564 sits against POWDER_MATTE a=0.082618.",
+  "my_prior_report_gave_them_unpaired": "corrected here; the pairing is now documentary, not positional",
+  "rig_of_the_published_values": "a2_firing_result.json states the granularity census is on the TEXTURE RIG, per-member calibrated. Recorded as a fact about the source, NOT used to diagnose any measured value."
+ },
+ "A571_b_aggregations": {
+  "full_set_over_all_six_seeds": {
+   "POWDER_SATIN": {
+    "arithmetic_mean": {
+     "value": 0.041264666666666665,
+     "target": 0.040564,
+     "abs_diff": 0.0007006666666666619,
+     "agreement_decimal_places": 3,
+     "reproduces_exactly": false
+    },
+    "median": {
+     "value": 0.0412155,
+     "target": 0.040564,
+     "abs_diff": 0.0006514999999999993,
+     "agreement_decimal_places": 3,
+     "reproduces_exactly": false
+    },
+    "geometric_mean": {
+     "value": 0.041260283506196704,
+     "target": 0.040564,
+     "abs_diff": 0.0006962835061967015,
+     "agreement_decimal_places": 3,
+     "reproduces_exactly": false
+    },
+    "harmonic_mean": {
+     "value": 0.041255925983786974,
+     "target": 0.040564,
+     "abs_diff": 0.0006919259837869715,
+     "agreement_decimal_places": 3,
+     "reproduces_exactly": false
+    },
+    "trimmed_mean_drop_min_and_max": {
+     "value": 0.04115125,
+     "target": 0.040564,
+     "abs_diff": 0.0005872499999999975,
+     "agreement_decimal_places": 3,
+     "reproduces_exactly": false
+    },
+    "minimum": {
+     "value": 0.04062,
+     "target": 0.040564,
+     "abs_diff": 5.6000000000000494e-05,
+     "agreement_decimal_places": 4,
+     "reproduces_exactly": false
+    },
+    "maximum": {
+     "value": 0.042363,
+     "target": 0.040564,
+     "abs_diff": 0.001798999999999995,
+     "agreement_decimal_places": 2,
+     "reproduces_exactly": false
+    },
+    "midrange": {
+     "value": 0.0414915,
+     "target": 0.040564,
+     "abs_diff": 0.0009274999999999978,
+     "agreement_decimal_places": 3,
+     "reproduces_exactly": false
+    },
+    "root_mean_square": {
+     "value": 0.04126907511684748,
+     "target": 0.040564,
+     "abs_diff": 0.0007050751168474756,
+     "agreement_decimal_places": 3,
+     "reproduces_exactly": false
+    }
+   },
+   "CREAM": {
+    "arithmetic_mean": {
+     "value": 0.063638,
+     "target": 0.063597,
+     "abs_diff": 4.099999999999937e-05,
+     "agreement_decimal_places": 4,
+     "reproduces_exactly": false
+    },
+    "median": {
+     "value": 0.063642,
+     "target": 0.063597,
+     "abs_diff": 4.500000000000337e-05,
+     "agreement_decimal_places": 4,
+     "reproduces_exactly": false
+    },
+    "geometric_mean": {
+     "value": 0.06363798399474425,
+     "target": 0.063597,
+     "abs_diff": 4.098399474425363e-05,
+     "agreement_decimal_places": 4,
+     "reproduces_exactly": false
+    },
+    "harmonic_mean": {
+     "value": 0.06363796798882634,
+     "target": 0.063597,
+     "abs_diff": 4.0967988826343116e-05,
+     "agreement_decimal_places": 4,
+     "reproduces_exactly": false
+    },
+    "trimmed_mean_drop_min_and_max": {
+     "value": 0.0636395,
+     "target": 0.063597,
+     "abs_diff": 4.250000000000087e-05,
+     "agreement_decimal_places": 4,
+     "reproduces_exactly": false
+    },
+    "minimum": {
+     "value": 0.063578,
+     "target": 0.063597,
+     "abs_diff": 1.9000000000005124e-05,
+     "agreement_decimal_places": 4,
+     "reproduces_exactly": false
+    },
+    "maximum": {
+     "value": 0.063692,
+     "target": 0.063597,
+     "abs_diff": 9.499999999999786e-05,
+     "agreement_decimal_places": 3,
+     "reproduces_exactly": false
+    },
+    "midrange": {
+     "value": 0.063635,
+     "target": 0.063597,
+     "abs_diff": 3.799999999999637e-05,
+     "agreement_decimal_places": 4,
+     "reproduces_exactly": false
+    },
+    "root_mean_square": {
+     "value": 0.06363801600458645,
+     "target": 0.063597,
+     "abs_diff": 4.1016004586447163e-05,
+     "agreement_decimal_places": 4,
+     "reproduces_exactly": false
+    }
+   }
+  },
+  "every_non_empty_subset": {
+   "POWDER_SATIN": {
+    "combinations_tried": 189,
+    "subsets_enumerated": 63,
+    "aggregations_per_subset": [
+     "arithmetic_mean",
+     "geometric_mean",
+     "median"
+    ],
+    "exact_reproductions": [],
+    "closest": {
+     "subset": [
+      "99"
+     ],
+     "agg": "arithmetic_mean",
+     "value": 0.04062,
+     "abs_diff": 5.6000000000000494e-05,
+     "agreement_decimal_places": 4
+    },
+    "best_agreement_decimal_places": 4
+   },
+   "CREAM": {
+    "combinations_tried": 189,
+    "subsets_enumerated": 63,
+    "aggregations_per_subset": [
+     "arithmetic_mean",
+     "geometric_mean",
+     "median"
+    ],
+    "exact_reproductions": [],
+    "closest": {
+     "subset": [
+      "82",
+      "99"
+     ],
+     "agg": "arithmetic_mean",
+     "value": 0.063595,
+     "abs_diff": 2.000000000002e-06,
+     "agreement_decimal_places": 4
+    },
+    "best_agreement_decimal_places": 5
+   }
+  },
+  "exact_reproductions_total": 0,
+  "finding": "ZERO exact reproductions in 378 subset combinations plus 18 full-set aggregations. The best agreement on BOTH families simultaneously is 4 decimal places, by MINIMUM \u2014 and the minimum hypothesis fails downstream: carried through, it yields margin 0.190661, not the recorded 0.1923. No aggregation closes the loop."
+ },
+ "A571_c_extent": {
+  "predicate_for_reproduction": "|aggregate(recorded per-seed values of family F) - published family value of F| tested at every decimal place from 9 down to 1, and exactly at 1e-9",
+  "key": "a233_test4_result.json::per_seed_granularity.{POWDER_SATIN,CREAM}.{40,81,82,83,84,99} against the census values 0.040564 / 0.063597",
+  "aggregation_set_tried_full": [
+   "arithmetic_mean",
+   "geometric_mean",
+   "harmonic_mean",
+   "maximum",
+   "median",
+   "midrange",
+   "minimum",
+   "root_mean_square",
+   "trimmed_mean_drop_min_and_max"
+  ],
+  "aggregation_set_tried_subsets": [
+   "arithmetic_mean",
+   "geometric_mean",
+   "median"
+  ],
+  "subsets_enumerated": "all 63 non-empty subsets of the six seeds",
+  "combinations_total": 396,
+  "population_of_records_searched": "1827 files under docs/roadmap/**/*.json, scanned numerically at every leaf for exact equality with each of the four marked cell values, and by text for 0.040564, 0.063597 and 0.4423",
+  "records_carrying_per_seed_FAMILY_AXIS_values_for_a_marked_cell": [
+   "docs/roadmap/palt_m6/a233_test4_result.json"
+  ],
+  "extent_of_that_claim": "predicate = presence of a 'per_seed' key whose leaves are per-family axis values rather than per-seed clearings; population = the 11 records in the 1827-file corpus carrying any 'per_seed' key. a245_tests_1_3_result.json carries per_seed_CLEARINGS only for the other three marked cells \u2014 no family axis values are recorded anywhere for them, so for those three the reproduction question cannot be posed at all, let alone answered."
+ },
+ "A571_d_internal_paths": {
+  "per_seed_values_to_per_seed_clearings": {
+   "rows": {
+    "40": {
+     "recomputed": 0.4243531550049007,
+     "recorded": 0.4243531550049007,
+     "exact": true
+    },
+    "81": {
+     "recomputed": 0.400732379478274,
+     "recorded": 0.400732379478274,
+     "exact": true
+    },
+    "82": {
+     "recomputed": 0.44107601980122035,
+     "recorded": 0.44107601980122035,
+     "exact": true
+    },
+    "83": {
+     "recomputed": 0.4204824086217713,
+     "recorded": 0.4204824086217713,
+     "exact": true
+    },
+    "84": {
+     "recomputed": 0.4324990211713475,
+     "recorded": 0.4324990211713475,
+     "exact": true
+    },
+    "99": {
+     "recomputed": 0.44066104915641363,
+     "recorded": 0.44066104915641363,
+     "exact": true
+    }
+   },
+   "all_exact": true,
+   "verdict": "REPRODUCES EXACTLY, all six seeds, to 16 digits"
+  },
+  "per_seed_clearings_to_clearing_dispersion": {
+   "recorded": 0.09584993534746519,
+   "as_relative_effect_of_relative_effects": 0.09584993534746519,
+   "as_max_pairwise_absolute_difference": 0.04034364032294635,
+   "verdict": "REPRODUCES EXACTLY under the effect-of-effects reading A284 identified as the units defect; the dimensionally-matched absolute comparator gives 0.04034364032294635"
+  },
+  "dispersion_over_proxy_to_ratio": {
+   "recorded": 2.2815980801586573,
+   "recomputed": 2.2815980801586573,
+   "verdict": "REPRODUCES EXACTLY"
+  },
+  "per_seed_clearings_to_margin": {
+   "rows": {
+    "arithmetic_mean": {
+     "clearing": 0.4266340055389879,
+     "margin": 0.1766340055389879,
+     "abs_diff_to_recorded_margin": 0.015665994461012106
+    },
+    "median": {
+     "clearing": 0.4284260880881241,
+     "margin": 0.1784260880881241,
+     "abs_diff_to_recorded_margin": 0.013873911911875897
+    },
+    "minimum": {
+     "clearing": 0.400732379478274,
+     "margin": 0.150732379478274,
+     "abs_diff_to_recorded_margin": 0.041567620521725995
+    },
+    "maximum": {
+     "clearing": 0.44107601980122035,
+     "margin": 0.19107601980122035,
+     "abs_diff_to_recorded_margin": 0.001223980198779645
+    }
+   },
+   "verdict": "DOES NOT REPRODUCE. Closest is the MAXIMUM clearing at margin 0.191076, off by 0.001224"
+  },
+  "per_seed_values_to_family_aggregate_to_margin": {
+   "rows": {
+    "arithmetic_mean": {
+     "POWDER_SATIN": 0.041264666666666665,
+     "CREAM": 0.063638,
+     "effect": 0.42655413907495204,
+     "margin": 0.17655413907495204,
+     "abs_diff_to_recorded_margin": 0.015745860925047955
+    },
+    "median": {
+     "POWDER_SATIN": 0.0412155,
+     "CREAM": 0.063642,
+     "effect": 0.427751949073743,
+     "margin": 0.17775194907374298,
+     "abs_diff_to_recorded_margin": 0.014548050926257022
+    },
+    "geometric_mean": {
+     "POWDER_SATIN": 0.041260283506196704,
+     "CREAM": 0.06363798399474425,
+     "effect": 0.4266552922496421,
+     "margin": 0.1766552922496421,
+     "abs_diff_to_recorded_margin": 0.015644707750357895
+    },
+    "harmonic_mean": {
+     "POWDER_SATIN": 0.041255925983786974,
+     "CREAM": 0.06363796798882634,
+     "effect": 0.42675586075359323,
+     "margin": 0.17675586075359323,
+     "abs_diff_to_recorded_margin": 0.015544139246406768
+    },
+    "trimmed_mean_drop_min_and_max": {
+     "POWDER_SATIN": 0.04115125,
+     "CREAM": 0.0636395,
+     "effect": 0.4292029592306573,
+     "margin": 0.17920295923065732,
+     "abs_diff_to_recorded_margin": 0.013097040769342677
+    },
+    "minimum": {
+     "POWDER_SATIN": 0.04062,
+     "CREAM": 0.063578,
+     "effect": 0.44066104915641363,
+     "margin": 0.19066104915641363,
+     "abs_diff_to_recorded_margin": 0.0016389508435863676
+    },
+    "maximum": {
+     "POWDER_SATIN": 0.042363,
+     "CREAM": 0.063692,
+     "effect": 0.40222526047805385,
+     "margin": 0.15222526047805385,
+     "abs_diff_to_recorded_margin": 0.04007473952194615
+    },
+    "midrange": {
+     "POWDER_SATIN": 0.0414915,
+     "CREAM": 0.063635,
+     "effect": 0.4212734182151978,
+     "margin": 0.17127341821519781,
+     "abs_diff_to_recorded_margin": 0.021026581784802184
+    },
+    "root_mean_square": {
+     "POWDER_SATIN": 0.04126907511684748,
+     "CREAM": 0.06363801600458645,
+     "effect": 0.42645240943428836,
+     "margin": 0.17645240943428836,
+     "abs_diff_to_recorded_margin": 0.01584759056571164
+    }
+   },
+   "verdict": "DOES NOT REPRODUCE under any of the nine aggregations. Closest is MINIMUM at margin 0.190661, off by 0.001639"
+  },
+  "published_family_values_to_effect_to_margin": {
+   "effect": 0.4422576588166396,
+   "recorded_effect": 0.4423,
+   "margin": 0.1922576588166396,
+   "recorded_margin": 0.1923,
+   "verdict": "REPRODUCES to 4dp \u2014 0.4422576588166396 -> 0.4423 and 0.1922576588166396 -> 0.1923. This is the ONLY path that reaches the recorded margin."
+  }
+ },
+ "A572_PREDICTION": "no aggregation over the recorded per-seed values will reproduce the recorded family values, at any precision better than the third decimal place",
+ "A572_SCORED": "FAILED_AS_WORDED_SUBSTANCE_HELD",
+ "A572_scoring_detail": {
+  "why_failed_as_worded": "MINIMUM agrees with BOTH published family values at 4 decimal places (0.040620 vs 0.040564; 0.063578 vs 0.063597), and one subset aggregation reaches 5 decimal places on CREAM. Both are better than the third decimal place, so the prediction as literally worded is refuted.",
+  "why_the_substance_held": "the values are published to SIX decimals and zero aggregations reproduce either family exactly or at 5dp on both. The one aggregation reaching 4dp on both is MINIMUM, which is not a family aggregate in any sense the programme uses, and which fails the downstream check: it yields margin 0.190661 against a recorded 0.1923.",
+  "reported_this_way_because": "scoring it HELD on the strength of the conclusion would be grading the prediction by its verdict rather than its wording. The owner asked for either way."
+ },
+ "DETERMINATION": "INTERNALLY_INCONSISTENT",
+ "the_inconsistency_stated_precisely": "a233_test4_result.json is internally consistent WITHIN its own derived chain: per-seed family values reproduce its per-seed clearings exactly, those reproduce its clearing_dispersion exactly, and that reproduces its ratio exactly. Its 'margin' field does NOT belong to that chain. 0.1923 is reachable only from the census values 0.040564 / 0.063597 published in axis_independence_matrix_n6 and a2_firing_result, and those census values are not reproducible from a233's own per-seed table by any enumerated aggregation. One file therefore publishes a per-seed table and a margin that are outputs of TWO DIFFERENT MEASUREMENTS of the same cell, and says nothing about it.",
+ "what_this_does_not_establish": "that either measurement is wrong. Both may be individually correct. What is established is that the record does not identify which measurement its headline number came from \u2014 which is class ten, DETERMINED_IN_FACT_NOT_IN_LAW, and the reason 3aa was hashed.",
+ "A573_ITEM_TWO_NOT_REACHED": "A571 directs a STOP when no aggregation reproduces the family values, because a re-run cannot match a target its own source cannot produce. None does. The texture-rig re-run against swatch_tx_mens_tex is NOT performed and A574 is UNSCORED.",
+ "A577_compliance": {
+  "marks": "all four keep PUBLISHED_WITHOUT_RECOVERABLE_INPUTS",
+  "withdrawal": "NOT performed \u2014 an owner act, not authorized here",
+  "derivation": "not re-specified, not adjusted, not run",
+  "second_rig": "not tried; item two not reached at all",
+  "rendered": "nothing",
+  "characterization_invocations": "none spent; two of six remain",
+  "deferred_untouched": [
+   "3ab",
+   "A548 extent control",
+   "A554 harvest"
+  ]
+ }
+}

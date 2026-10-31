@@ -1,0 +1,129 @@
+{
+  "record_type": "tray_section_manifest/1.0",
+  "milestone": "PALT-M4B-A",
+  "method": "DETERMINISTIC_PYTHON_MESH_PLANE_INTERSECTION",
+  "boolean_free": true,
+  "axis": "y",
+  "at_mm": 0.0,
+  "section_identity": "d10ae2f570e4ae3a",
+  "topology": {
+    "version": "mesh_section_topology/1.0",
+    "on_plane_epsilon_mm": 1e-09,
+    "point_identity": "COMBINATORIAL_VERTEX_AND_EDGE_KEYS",
+    "join_tolerance": null,
+    "cap_strategy": "EAR_CLIPPING_SIMPLE_POLYGON"
+  },
+  "component_count": 7,
+  "loop_count": 7,
+  "open_loop_count": 0,
+  "layers_exposed": {
+    "tray_deck": true,
+    "pocket_wall": true,
+    "pocket_floor": true,
+    "metal_pan": true,
+    "powder_placeholder": true,
+    "tray_underside": true,
+    "pan_recess": true,
+    "powder_to_lid_clearance_reference": true
+  },
+  "components": {
+    "metal_pan_4": {
+      "loop_count": 1,
+      "coplanar_face_count": 0,
+      "point_contact_count": 100,
+      "loops": [
+        {
+          "role": "OUTER",
+          "closed": true,
+          "point_count": 10,
+          "signed_area_mm2": 8.125,
+          "cap_triangles": 8
+        }
+      ]
+    },
+    "metal_pan_5": {
+      "loop_count": 1,
+      "coplanar_face_count": 0,
+      "point_contact_count": 100,
+      "loops": [
+        {
+          "role": "OUTER",
+          "closed": true,
+          "point_count": 10,
+          "signed_area_mm2": 8.125,
+          "cap_triangles": 8
+        }
+      ]
+    },
+    "metal_pan_6": {
+      "loop_count": 1,
+      "coplanar_face_count": 0,
+      "point_contact_count": 100,
+      "loops": [
+        {
+          "role": "OUTER",
+          "closed": true,
+          "point_count": 10,
+          "signed_area_mm2": 8.125,
+          "cap_triangles": 8
+        }
+      ]
+    },
+    "powder_4": {
+      "loop_count": 1,
+      "coplanar_face_count": 0,
+      "point_contact_count": 108,
+      "loops": [
+        {
+          "role": "OUTER",
+          "closed": true,
+          "point_count": 14,
+          "signed_area_mm2": 85.549612,
+          "cap_triangles": 12
+        }
+      ]
+    },
+    "powder_5": {
+      "loop_count": 1,
+      "coplanar_face_count": 0,
+      "point_contact_count": 108,
+      "loops": [
+        {
+          "role": "OUTER",
+          "closed": true,
+          "point_count": 14,
+          "signed_area_mm2": 85.549612,
+          "cap_triangles": 12
+        }
+      ]
+    },
+    "powder_6": {
+      "loop_count": 1,
+      "coplanar_face_count": 0,
+      "point_contact_count": 108,
+      "loops": [
+        {
+          "role": "OUTER",
+          "closed": true,
+          "point_count": 14,
+          "signed_area_mm2": 85.549612,
+          "cap_triangles": 12
+        }
+      ]
+    },
+    "recessed_palette_tray": {
+      "loop_count": 1,
+      "coplanar_face_count": 0,
+      "point_contact_count": 520,
+      "loops": [
+        {
+          "role": "OUTER",
+          "closed": true,
+          "point_count": 84,
+          "signed_area_mm2": -263.159303,
+          "cap_triangles": 82
+        }
+      ]
+    }
+  }
+}

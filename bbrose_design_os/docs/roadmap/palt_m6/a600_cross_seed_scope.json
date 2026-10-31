@@ -1,0 +1,269 @@
+{
+ "record_type": "a600_cross_seed_scope/1.0",
+ "date": "2026-08-13",
+ "protocol_identity_at_run": "ca4e1dff06909008",
+ "law_identity_note": "the identity in force when these numbers were computed; the class 20 disposition lands in the same commit and moves it",
+ "question": "A593 \u2014 is the cross-seed pair comparison a footnote on one cell or a standing condition on the census method?",
+ "A593_a_WHAT_THE_SEED_ATTACHES_TO": {
+  "answer": "MIXED \u2014 it is not one convention",
+  "attaches_to_FAMILY": [
+   "palette_powder_texture_axes.rule_diffuse_pairs: seeds = {POWDER_MATTE: 40, POWDER_SATIN: 41, PRESSED_POWDER: 47, CREAM: 48}, a dict keyed by family",
+   "palette_flake_rig: PAIR_SEEDS = {SHIMMER: 130, POWDER_METALLIC: 140} \u2014 keyed by family DESPITE the name",
+   "palette_powder_rigs glitter census: ((GLITTER, 61), (MATTE_CONTROL, 62), (SHIMMER, 63))"
+  ],
+  "attaches_to_NEITHER_family_but_to_the_ENSEMBLE": [
+   "palette_raking_rig: the BAKED member and the PRESSED_POWDER reference are both FLOOR_SEEDS[0] = 300",
+   "palette_marbling_rig: the MARBLED member and the POWDER_MATTE solid are both FLOOR_SEEDS[0] = 500"
+  ],
+  "AND_THE_PER_FAMILY_CONSTANT_IS_NOT_GLOBAL": "SHIMMER carries THREE different seeds across the corpus: 42 in palette_raking_rig's census map, 63 in the glitter census, 130 in the flake rig. POWDER_METALLIC carries 43 and 140. So even where the seed attaches to the family it is a per-RIG constant, not a per-family one, and the phrase 'the seed for SHIMMER' has no referent without a rig named beside it."
+ },
+ "A593_b_EVERY_CANONICAL_PAIR": {
+  "pairs": [
+   {
+    "pair": "POWDER_MATTE vs POWDER_SATIN",
+    "rig": "DIFFUSE_MICROTEXTURE",
+    "module": "palette_powder_texture_axes.rule_diffuse_pairs",
+    "seeds": {
+     "POWDER_MATTE": 40,
+     "POWDER_SATIN": 41
+    },
+    "class": "CROSS_SEED",
+    "published_records": 12
+   },
+   {
+    "pair": "POWDER_SATIN vs CREAM",
+    "rig": "DIFFUSE_MICROTEXTURE",
+    "module": "palette_powder_texture_axes.rule_diffuse_pairs",
+    "seeds": {
+     "POWDER_SATIN": 41,
+     "CREAM": 48
+    },
+    "class": "CROSS_SEED",
+    "published_records": 12
+   },
+   {
+    "pair": "PRESSED_POWDER vs POWDER_MATTE",
+    "rig": "DIFFUSE_MICROTEXTURE",
+    "module": "palette_powder_texture_axes.rule_diffuse_pairs",
+    "seeds": {
+     "PRESSED_POWDER": 47,
+     "POWDER_MATTE": 40
+    },
+    "class": "CROSS_SEED",
+    "published_records": 12
+   },
+   {
+    "pair": "SHIMMER vs POWDER_METALLIC",
+    "rig": "FLAKE_REFLECTION",
+    "module": "palette_flake_rig.PAIR_SEEDS",
+    "seeds": {
+     "SHIMMER": 130,
+     "POWDER_METALLIC": 140
+    },
+    "class": "CROSS_SEED",
+    "published_records": 2
+   },
+   {
+    "pair": "SHIMMER vs GLITTER",
+    "rig": "GLITTER_PARTICLE",
+    "module": "palette_powder_rigs, census tuple",
+    "seeds": {
+     "SHIMMER": 63,
+     "GLITTER": 61
+    },
+    "class": "CROSS_SEED",
+    "published_records": 1
+   },
+   {
+    "pair": "BAKED vs PRESSED_POWDER",
+    "rig": "BAKED_GEOMETRY",
+    "module": "palette_raking_rig, FLOOR_SEEDS[0] for BOTH members",
+    "seeds": {
+     "BAKED": 300,
+     "PRESSED_POWDER": 300
+    },
+    "class": "SAME_SEED",
+    "published_records": 3
+   },
+   {
+    "pair": "MARBLED vs POWDER_MATTE",
+    "rig": "MARBLING_STRUCTURE",
+    "module": "palette_marbling_rig, FLOOR_SEEDS[0] for BOTH members",
+    "seeds": {
+     "MARBLED": 500,
+     "POWDER_MATTE": 500
+    },
+    "class": "SAME_SEED",
+    "published_records": 6
+   }
+  ],
+  "counts": {
+   "CROSS_SEED": 5,
+   "SAME_SEED": 2,
+   "total": 7
+  }
+ },
+ "A593_c_PUBLISHED_LEGS_ON_CROSS_SEED": {
+  "count": 5,
+  "which": [
+   "POWDER_MATTE vs POWDER_SATIN",
+   "POWDER_SATIN vs CREAM",
+   "PRESSED_POWDER vs POWDER_MATTE",
+   "SHIMMER vs POWDER_METALLIC",
+   "SHIMMER vs GLITTER"
+  ],
+  "verdict": "A591 is a STANDING CONDITION ON THE CENSUS METHOD, not a footnote on one cell. Five of the seven canonical pairs \u2014 every pair adjudicated on the diffuse, flake and glitter rigs \u2014 vary family and seed together. The two that do not are the two whose rigs happen to seed both members from the same ensemble constant."
+ },
+ "A593_d_EXTENT": {
+  "predicate": "the seed argument passed to PowderMaterialSpec at each pair's own comparison site, read from committed code",
+  "key": "PP.REQUIRED_DISTINCTIONS, the seven canonical pairs",
+  "population_of_modules": [
+   "palette_powder_texture_axes.py",
+   "palette_flake_rig.py",
+   "palette_powder_rigs.py",
+   "palette_raking_rig.py",
+   "palette_marbling_rig.py"
+  ],
+  "population_of_records": "docs/roadmap/palt_m6/**/*.json scanned for each pair label co-occurring with a verdict/PASS/FAIL token; all seven pairs have published records, counts in the table above",
+  "NOT_claimed": "that these are the only published legs in the corpus. The claim is bounded to REQUIRED_DISTINCTIONS, which is the hashed set the pass law is written over."
+ },
+ "A594_PREDICTION": "the seed attaches to the FAMILY, not the pair, and therefore EVERY census pair between two distinct families is CROSS_SEED, count equal to the full pair count with zero SAME_SEED",
+ "A594_SCORED": "FAILED",
+ "A594_detail": "TWO of the seven are SAME_SEED \u2014 BAKED vs PRESSED_POWDER at 300 and MARBLED vs POWDER_MATTE at 500 \u2014 so the zero-SAME_SEED clause is refuted outright. The attachment clause is also only three-fifths true: in the raking and marbling rigs the seed attaches to the ensemble and is SHARED by both members, which is neither family-attached nor pair-chosen. The prediction's direction was right for the majority and its universality was wrong.",
+ "A595_OUTCOME": "COMPUTED_b_TWO_SEEDS_EXIST",
+ "A595_a_SEEDS_PER_FAMILY_ON_THE_CENSUS_RIG": {
+  "method": "distinct material_identity per family across every swatch_tx_*.json in docs/roadmap/palt_m6/texture_axes/. material_identity hashes the spec INCLUDING the seed, so distinct seeds cannot share one.",
+  "pair_and_census_frames": {
+   "BAKED": 1,
+   "CREAM": 1,
+   "MARBLED": 1,
+   "POWDER_MATTE": 1,
+   "POWDER_METALLIC": 1,
+   "POWDER_SATIN": 1,
+   "PRESSED_POWDER": 1,
+   "SHIMMER": 1
+  },
+  "swatch_tx_SATIN_VS_CREAM_specifically": "one seed per member \u2014 POWDER_SATIN 5740bef6b166eb53, CREAM 4f641dfba9fa4ae9. POWDER_SATIN's identity is shared with swatch_tx_MATTE_VS_SATIN_POWDER_SATIN, so seed 41 is used in both pairs it appears in.",
+  "BUT_THE_SECTION_7_CONTROLS_CARRY_A_SECOND_SEED": "swatch_tx_ctl_a_seed_only is POWDER_MATTE seed 80 and swatch_tx_ctl_b_seed_only is POWDER_MATTE seed 81, both on this rig, both at the SAME calibrated energy reused from ctl_base via measured_pair_at. That is two seeds of one family on the census rig, which is what A595(b) asks for."
+ },
+ "A595_b_WITHIN_FAMILY_SEED_DISPERSION": {
+  "family": "POWDER_MATTE",
+  "rig": "census/texture rig (docs/roadmap/palt_m6/texture_axes)",
+  "energy": "one calibrated energy, reused for both members",
+  "axis": "GRANULARITY_INDEX",
+  "seed_80": 0.084137,
+  "seed_81": 0.087398,
+  "A289_max_pairwise_absolute_difference": 0.003261,
+  "relative_effect_MEAN_OF_THE_TWO_VALUES": 0.03802139505057277,
+  "GRAZING_BAND_CONTRAST_for_completeness": {
+   "seed_80": 2.738858,
+   "seed_81": 2.72315,
+   "A289_max_pairwise_absolute_difference": 0.015708000000000055,
+   "relative_effect": 0.00575173086527887
+  },
+  "n": 2,
+  "replicates": "NONE. Two label-pairs are committed \u2014 ctl_a/ctl_b_seed_only and ctl_base/ctl_seed \u2014 and they are PIXEL-IDENTICAL (digests 1de32918c0be65b6 at seed 80 and 7e6f3e27b491f04b at seed 81). They are one render written under two labels, not two realisations. The EXR files differ in bytes and agree in pixels, so the container metadata differs and the measurement does not.",
+  "_provenance": {
+   "law": "3aa",
+   "schema": "texture_axis_measurement_provenance/1.0",
+   "frames_read_in_order": [
+    "docs/roadmap/palt_m6/texture_axes/swatch_tx_ctl_a_seed_only.exr",
+    "docs/roadmap/palt_m6/texture_axes/swatch_tx_ctl_b_seed_only.exr"
+   ],
+   "frame_identities": [
+    {
+     "path": "docs/roadmap/palt_m6/texture_axes/swatch_tx_ctl_a_seed_only.exr",
+     "family": "POWDER_MATTE",
+     "seed": 80,
+     "pixel_digest": "1de32918c0be65b6",
+     "source_kind": "SCENE_LINEAR_EXR",
+     "shape": [
+      1200,
+      1200
+     ],
+     "dtype": "float64",
+     "region_alignment": "ASSERTED",
+     "measurement_record": {
+      "render_identity": "2e22d1bdc89adbd1",
+      "material_identity": "0a9a611fcf52466e",
+      "geometry_identity": "720d17daee36e487",
+      "camera_identity": "7288018cf21f5c4b",
+      "lighting_contract_identity": "ba2d457cb68ddff5"
+     },
+     "region_alignment_tolerance": 0.05
+    },
+    {
+     "path": "docs/roadmap/palt_m6/texture_axes/swatch_tx_ctl_b_seed_only.exr",
+     "family": "POWDER_MATTE",
+     "seed": 81,
+     "pixel_digest": "7e6f3e27b491f04b",
+     "source_kind": "SCENE_LINEAR_EXR",
+     "shape": [
+      1200,
+      1200
+     ],
+     "dtype": "float64",
+     "region_alignment": "ASSERTED",
+     "measurement_record": {
+      "render_identity": "554cee87444a899e",
+      "material_identity": "c027f5adb1446b4d",
+      "geometry_identity": "720d17daee36e487",
+      "camera_identity": "7288018cf21f5c4b",
+      "lighting_contract_identity": "ba2d457cb68ddff5"
+     },
+     "region_alignment_tolerance": 0.05
+    }
+   ],
+   "derivation_code_digest": "1e09561b8ff16a06",
+   "derivation": {
+    "module": "apps/pipeline/services/palette_powder_texture_axes.py",
+    "function": "measure_texture_axes"
+   },
+   "region_masks": {
+    "PLANAR": {
+     "sample_count": 99133,
+     "index_digest": "f28a148f628307f4"
+    },
+    "GRAZING": {
+     "sample_count": 58431,
+     "index_digest": "36b56c7c684fdf69"
+    }
+   },
+   "alignment_tolerance": 0.05,
+   "axis_denominators": {
+    "GRANULARITY_INDEX": "PLANAR_REGION_MEAN",
+    "GRAZING_BAND_CONTRAST": "GRAZING_REGION_MEDIAN"
+   },
+   "pair_relative_effect_denominator": "MEAN_OF_THE_TWO_VALUES"
+  }
+ },
+ "A595_WHAT_THIS_ESTABLISHES_AND_WHAT_IT_DOES_NOT": {
+  "establishes": "on the census rig, at one calibrated energy, for POWDER_MATTE, moving the seed from 80 to 81 moves GRANULARITY_INDEX by a relative effect of 0.0380 \u2014 under the 0.25 bar, and about 8.6% of the 0.4423 the SATIN_VS_CREAM leg rests on. The section 7 seed-only control therefore BEHAVED, as it was recorded to.",
+  "does_NOT_establish": "a bound on the confound in the SATIN_VS_CREAM cell. That cell varies POWDER_SATIN at seed 41 against CREAM at seed 48 \u2014 different families and different seeds from the pair measured here. Carrying 0.0380 across to it would be the A592 population-transfer error committed in a new direction, and it is NOT carried across.",
+  "what_would_establish_it": "a second seed for POWDER_SATIN and for CREAM on this rig. Those pixels do not exist. Per A599 that is the answer and not a reason to make them; no render is priced here because A595(c)'s branch did not fire."
+ },
+ "A596_PREDICTION": "only one seed per family exists on the census rig, so the answer is (c), NOT_QUANTIFIABLE_WITHOUT_RENDER",
+ "A596_SCORED": "FAILED",
+ "A596_detail": "true of the pair and census frames \u2014 one seed per family for all eight \u2014 and false of the rig as a whole, because the section 7 seed-only control is itself a two-seed within-family measurement on that rig and was already committed. The reasoning 'a per-family constant seed implies one frame per family was ever needed' overlooked the controls, which exist precisely to vary one thing at a time.",
+ "A591_CLASS_20_DISPOSITION": {
+  "class": "MEASURE_CONFOUNDED_BY_A_PROCESS_VARIABLE",
+  "disposition": "EXHIBITED",
+  "at": "the cross-seed pair comparison in five of the seven canonical pairs; first named at M1's POWDER_SATIN 41 against CREAM 48",
+  "found_by": "FOUND_BY_AUTHOR_REVIEW",
+  "not_an_error": "the census is NOT called wrong, not adjusted and not withdrawn. The finding is an UNQUANTIFIED CONFOUND: family and seed are varied together and no record separates them. A591 rules such a comparison legitimate where the seed-induced variation is measured and declared small relative to the effect; it is illegitimate SILENTLY."
+ },
+ "A599_compliance": {
+  "rendered": "nothing; disk-only",
+  "render_priced": "no \u2014 A595(c)'s branch did not fire, and a price is a question to BBrose in any case",
+  "census_called_wrong": "no",
+  "M2_dispersion_imported": "no (A592)",
+  "reproduction_of_0_1923": "not reopened; settled at A585",
+  "marks": "all four keep PUBLISHED_WITHOUT_RECOVERABLE_INPUTS",
+  "characterization_invocations": "none spent; two of six remain",
+  "deferred_untouched": [
+   "3ac",
+   "class 24",
+   "A548 extent control"
+  ]
+ }
+}

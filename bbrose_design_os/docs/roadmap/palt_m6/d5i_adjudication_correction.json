@@ -1,0 +1,58 @@
+{
+ "record_type": "d5i_adjudication_correction/1.0",
+ "created_at": "2026-08-13",
+ "corrects": "the seven-family adjudication table committed in b92521f's message",
+ "why": "three of the seven FAIL verdicts were reached by applying a rule outside the population it was fitted on, and by adjudicating a family on axes that do not measure its declared distinction. The numbers were not wrong; the VERDICT was not the instrument's to give.",
+ "THE_TWO_BOUNDS_VERIFIED_BEFORE_CORRECTING": {
+  "population_bound": {
+   "fact": "axis_independence_matrix_n6.json census_families is SIX: CREAM, POWDER_MATTE, POWDER_METALLIC, POWDER_SATIN, PRESSED_POWDER, SHIMMER. The R5 correlation structure — FWHM|SHEEN 1.0000, GRAZING|SHEEN 0.9429 and the rest — is a Spearman across THOSE SIX families.",
+   "absent_from_the_census": [
+    "MARBLED",
+    "GLITTER",
+    "BAKED"
+   ],
+   "consequence_3aa": "a derived quantity carries the identity of its inputs. The matrix's inputs are six families. Applying its ceiling to a family outside them is an EXTRAPOLATION and had to be declared as one."
+  },
+  "instrument_bound": {
+   "fact": "axes_from() returns six axes — HIGHLIGHT_FWHM, HIGHLIGHT_PEAK, SPECULAR_TO_DIFFUSE_RATIO, GRAZING_RESPONSE, SHEEN_REGION_RESPONSE, EDGE_HIGHLIGHT_RESPONSE — and NONE is chromatic.",
+   "consequence": "the chroma spread on which MARBLED read 9.8x and GLITTER 19.2x is not among the axes the R5 adjudication ranged over, so that adjudication could not have counted it for or against them."
+  }
+ },
+ "CORRECTED_VERDICTS": {
+  "MARBLED": {
+   "was": "FAIL",
+   "now": "NEITHER",
+   "adjudicated_axes_do_not_measure_its_distinction": "MARBLED's declared distinction is CHROMATIC-SPATIAL and its instrument is the MARBLING_STRUCTURE_RIG (REQUIRED_DISTINCTIONS: MARBLED vs POWDER_MATTE). None of the six lobe axes is chromatic.",
+   "what_actually_measured_it": "chroma spread p95-p5 of (R-B)/(R+G+B) on PLANAR: 0.015150 against a POWDER_MATTE control at the same colour and seed of 0.001547 — 9.8x. That figure stands and is untouched by this correction.",
+   "population_bound_applies": true,
+   "what_would_settle_it": "the MARBLING_STRUCTURE_RIG's own qualified axes, C2_CHROMA_HISTOGRAM_L1 (floor 0.05483) and C3_HUE_CIRCULAR_STD (floor 0.02359). They are NOT IMPLEMENTED in committed code and their record definitions leave the chroma field and hue underdetermined.",
+   "cost": "implementing two qualified axes plus their negative and positive controls — an instrument build, not a measurement, and it is M6-CONTRACT-INTEGRITY-REPAIR-adjacent work"
+  },
+  "GLITTER": {
+   "was": "FAIL",
+   "now": "NEITHER",
+   "adjudicated_axes_do_not_measure_its_distinction": "GLITTER's declared distinction is a DISCRETE-EVENT PARTICLE CENSUS on the GLITTER_PARTICLE_RIG (SHIMMER vs GLITTER), with GLITTER_MIN_EVENTS 25 and CONTROL_MAX_EVENTS 5. An event count is not a lobe width and no lobe axis reports it.",
+   "what_actually_measured_it": "chroma spread 0.029708 against 0.001547 — 19.2x, the largest of the seven. That figure stands.",
+   "population_bound_applies": true,
+   "what_would_settle_it": "particle_census() on the glitter rig at this colour and seed, against its declared event thresholds",
+   "cost": "a rig run — the instrument exists and is committed"
+  },
+  "BAKED": {
+   "was": "FAIL",
+   "now": "NEITHER",
+   "adjudicated_axes_do_not_measure_its_distinction": "BAKED's declared distinction is the BAKED_GEOMETRY_RIG — raking light across the pan profile (BAKED vs PRESSED_POWDER) — and its crust is partly GLOSS via Coat Weight. The characterization rig's lobe axes are not the raking rig's axes.",
+   "what_actually_measured_it": "nothing here did. GRAZING_RESPONSE 0.271 at Moss Garden's depth and 0.347 at Attar's own value are real readings on an eligible axis, but one countable axis is not the two the pass law requires, and the raking rig was not run.",
+   "population_bound_applies": true,
+   "what_would_settle_it": "commission_raking_rig against PRESSED_POWDER at these colours, on RAKING_AXES",
+   "cost": "a rig run with its own calibration and floor ensemble — the instrument exists and is committed"
+  }
+ },
+ "VERDICTS_THAT_SURVIVE_UNCHANGED": {
+  "POWDER_METALLIC": "PASS",
+  "SHIMMER": "PASS",
+  "why_the_bounds_do_not_reach_them": "BOTH are INSIDE the six-family census, so the population bound does not apply; and both clear on eligible, CO-COUNTABLE axes — HIGHLIGHT_PEAK, which the matrix puts under the 0.80 ceiling against all four others (0.6000 / 0.4286 / 0.4857 / 0.6000), plus one member of the mutually-correlated cluster. POWDER_METALLIC clears PEAK 1.064 and every cluster axis; SHIMMER clears PEAK 0.294 with FWHM 1.025, GRAZING 0.562 and SHEEN 0.652.",
+  "what_the_PASS_does_and_does_not_certify": "it certifies that at Moss Garden's colour and seed, on the characterization rig, these two are distinguishable from POWDER_MATTE on two independent eligible axes. It is NOT a REQUIRED_DISTINCTIONS verdict: the hashed pair for both is SHIMMER vs POWDER_METALLIC on the FLAKE_REFLECTION_RIG, which is a different pair on a different instrument and is untouched by this table."
+ },
+ "WHAT_THIS_CORRECTION_IS_NOT": "R5 was NOT re-run on an expanded census, no new matrix was computed, no bar was moved or substituted, and no pan was reclassified. The three numbers are unchanged. What changed is that a verdict which the instrument was not entitled to give is no longer recorded as one.",
+ "PRESSED_POWDER_unchanged": "remains NEITHER, as ruled at b92521f — it IS inside the census, so only the instrument bound applies to it: the committed verdict M6_PRESSED_VS_MATTE rests on GRANULARITY plus SHEEN and GRANULARITY is a texture-rig axis absent from this table."
+}

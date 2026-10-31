@@ -1,0 +1,16 @@
+{
+  "record_type": "driver_completeness_validity_precision_declaration/1.0",
+  "the_marginal_verdict": {
+    "statistic": "1a validity of the counted-instrument micronormal sweep \u2014 carried ONLY by GRANULARITY|GRAZING_BAND 0.7978 and GRAZING_BAND|GRAZING 0.7890 vs ceiling 0.80 (margins 0.0022 and 0.0110); every other qualifying pair tracks. GRAZING_BAND_CONTRAST is the weakest qualifier in the matrix (span 0.0227 vs required 0.0130) and its low-half level ordering is jitter on a slow trend",
+    "stakes": "VALID + counted tracking (0.9956/0.9956/0.9824, all differing) FAILS all three diffuse pairs per hashed 1d/1h -> N = 0; DEGENERATE carries no information -> standing rulings stand -> N = 3",
+    "why_not_ruled_now": "the owner's A3 ruling in this same brief: a verdict decided by a margin smaller than the statistic's noise is decided by noise and is resolved by precision, never by bar. The margin here is 0.0022. Ruling either way on it would be committing a coin flip. This scrutiny is SYMMETRIC: a rho of 0.8022 (degenerate by 0.0022) would get the identical treatment."
+  },
+  "precision_instrument": "the sweep repeated at seeds 401 and 402, same 15 levels, same commissioned chokepoints (A3's 'more seeds on the existing rig'); the seed spread of the deciding statistic = max over replica seeds of |rho_seed - rho_400| for GRANULARITY|GRAZING_BAND and GRAZING_BAND|GRAZING",
+  "readings_declared_before_measuring": {
+    "valid_by_margin": "min replica-consistent rho <= 0.80 with |margin| > seed spread on the deciding pair -> VALID decided -> all three diffuse pairs FAIL per 1h, committed, no substitute channel, N = 0",
+    "degenerate_by_margin": "deciding rho > 0.80 with |margin| > seed spread -> SWEEP_DEGENERATE_UNDER_DRIVER -> no information either direction -> standing PASS_WITH_UNTESTED_DRIVER rulings stand -> N = 3",
+    "within_spread": "UNRESOLVED_MARGINAL \u2014 committed as such, escalated to the owner, NOTHING ruled; N stays provisional"
+  },
+  "conservation_note_independent_of_this": "Phase 4 conservation HOLDS for all six pair-axis rows regardless of this resolution \u2014 the owner's prediction (MATTE_VS_SATIN SHEEN violation) did NOT hold: the containing-interval extensions revealed the missing response (sheen span over [0, 0.45] accounts for SHEEN's 0.4225)",
+  "owner_approved": false
+}

@@ -1,0 +1,82 @@
+{
+ "record_type": "a338_hostile_suite/1.0",
+ "law": "pending 3n",
+ "date": "2026-08-12",
+ "adversary": "the hashed DEFECT_CLASS_REGISTER, not the builder's imagination (A337)",
+ "instruments_under_test": [
+  "tools/tier2_gate.py",
+  "tools/extent_gate.py",
+  "tools/guarded_commit.sh"
+ ],
+ "results": [
+  {
+   "class": "SILENT_EXTENT_LOSS",
+   "disposition": "CAUGHT",
+   "attempt": "file removed from collection -> MANIFEST_FILE_MISSING",
+   "mutation_proof": "clause (a) set-equality neutered -> the attempt then succeeds, so the check is load-bearing"
+  },
+  {
+   "class": "CURE_CARRYING_THE_DISEASE",
+   "disposition": "EXHIBITED",
+   "attempt": "SUITE_CMD=venv/bin/python --version + named opt-out -> exit 0, would commit, TIER_2 never ran",
+   "mutation_proof": "n/a \u2014 attempt succeeded"
+  },
+  {
+   "class": "EXTENT_OF_COMPARISON_EXCEEDING_EXTENT_OF_SUBJECT",
+   "disposition": "CAUGHT",
+   "attempt": "'FAILED ...' embedded mid-line in captured stdout -> not matched",
+   "mutation_proof": "same text moved to line start -> matched, so the ^ anchor is load-bearing"
+  },
+  {
+   "class": "REPORT_BEFORE_CLASSIFY",
+   "disposition": "EXHIBITED",
+   "attempt": "regenerate_manifest prints its diff then applies it with no classification gate",
+   "mutation_proof": "n/a \u2014 attempt succeeded"
+  },
+  {
+   "class": "UNCHECKED_IMPOSSIBILITY_CLAIM",
+   "disposition": "EXHIBITED",
+   "attempt": "planted a false impossibility claim in the instrument docstring; nothing refuses",
+   "mutation_proof": "n/a \u2014 attempt succeeded"
+  },
+  {
+   "class": "METRIC_MUTATED_BY_ITS_OWN_OBSERVATION",
+   "disposition": "EXHIBITED",
+   "attempt": "guarded_commit --dry-run calls tier2_gate --check, which CONSUMES a finite invocation",
+   "mutation_proof": "n/a \u2014 attempt succeeded"
+  },
+  {
+   "class": "OBSERVATION_WINDOW_NARROWER_THAN_EVENT",
+   "disposition": "CAUGHT",
+   "attempt": "no DECISION path reads a truncated window; subprocess capture_output reads in full",
+   "mutation_proof": "window narrowed to the last 200 chars -> one of two ids lost, so full capture is load-bearing"
+  },
+  {
+   "class": "TRANSCRIBED_PROSE_NUMBER_DIVERGING_FROM_COMPUTED_FIELD",
+   "disposition": "EXHIBITED",
+   "attempt": "49, 28, 77 and 5970 are transcribed into instrument comments beside the computed fields",
+   "mutation_proof": "n/a \u2014 attempt succeeded"
+  },
+  {
+   "class": "UNENUMERATED_DIMENSION_NOT_CELL",
+   "disposition": "EXHIBITED",
+   "attempt": "pytest ERROR is not FAILED: an ERROR-only run gives failed_ids=[] and dispositions GREEN; main() never consults proc.returncode",
+   "mutation_proof": "regex widened to (FAILED|ERROR) -> the id is seen, so the omission is the whole cause"
+  },
+  {
+   "class": "DETERMINED_IN_FACT_NOT_IN_LAW",
+   "disposition": "EXHIBITED",
+   "attempt": "the manifest, the per-file floors and total_floor all live in docs/ JSON, editable without protocol_identity() moving",
+   "mutation_proof": "n/a \u2014 attempt succeeded"
+  }
+ ],
+ "tally": {
+  "CAUGHT": 3,
+  "EXHIBITED": 7,
+  "NOT_APPLICABLE": 0,
+  "DISCARDED": 0
+ },
+ "no_NOT_APPLICABLE": "every class was made applicable and attempted; A338's dangerous cell is empty",
+ "none_fixed_in_this_node": "the launcher framed EXHIBITED as the node's best outcome and asked for it as a finding. Repairing seven instrument defects is scope the launcher did not authorize; they are reported and left standing for the owner to sequence.",
+ "found_by": "FOUND_BY_HOSTILE_SUITE \u2014 all seven"
+}

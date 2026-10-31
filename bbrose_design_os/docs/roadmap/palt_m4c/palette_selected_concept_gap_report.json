@@ -1,0 +1,116 @@
+{
+  "record_type": "palette_selected_concept_gap_report/1.0",
+  "milestone": "PALT-M4C",
+  "date": "2026-08-06",
+  "PALETTE_SELECTED_CONCEPT_USAGE": "INSUFFICIENT",
+  "PALETTE_DESIGN_INTENT_BRIDGE": "NOT_IMPLEMENTED",
+  "PALETTE_VISUAL_FIDELITY_TO_SELECTED_CONCEPT": "NOT_ESTABLISHED",
+  "method": "repository trace",
+  "headline_finding": "No palette module imports any Django model. The selected concept is not under-used by the palette engine, it is structurally unreachable from it.",
+  "verification": {
+    "command": "grep -l 'from apps.pipeline.models|TaskReference|DesignTask|DesignBrief' apps/pipeline/services/palette*.py apps/pipeline/services/palt*.py",
+    "result": "no matches"
+  },
+  "exact_loss_point": {
+    "file": "apps/pipeline/services/palt_p1.py",
+    "function": "build_palt_p1",
+    "signature": "build_palt_p1(outer_width=None, outer_depth=None, outer_height=None, inter_pan_gap=4.0, outer_margin=5.0)",
+    "explanation": "every downstream palette artefact derives from the PaletteSpec this returns; there is no argument, keyword or module hook through which design intent can enter. Concept data is not discarded inside the pipeline - it never crosses into it."
+  },
+  "where_design_enters_and_stops": [
+    {
+      "stage": "reference upload",
+      "impl": "apps/pipeline/models.py::TaskReference",
+      "palette_reach": false
+    },
+    {
+      "stage": "signature-checked intake",
+      "impl": "apps/pipeline/references.py",
+      "palette_reach": false
+    },
+    {
+      "stage": "concept generation",
+      "impl": "apps/pipeline/agents/image_producer.py",
+      "palette_reach": false
+    },
+    {
+      "stage": "owner selection",
+      "impl": "models.py::DesignBrief.selected_direction_id written by views.py:420",
+      "palette_reach": false
+    },
+    {
+      "stage": "review board",
+      "impl": "apps/pipeline/review_board.py",
+      "palette_reach": false
+    },
+    {
+      "stage": "reference resolution",
+      "impl": "services/visual_reference_resolver.py::resolve_visual_references",
+      "palette_reach": false
+    },
+    {
+      "stage": "container asset resolution",
+      "impl": "services/container_asset_resolver.py::resolve_product_assets",
+      "palette_reach": false
+    },
+    {
+      "stage": "palette contract",
+      "impl": "services/palt_p1.py::build_palt_p1",
+      "palette_reach": true,
+      "note": "five floats only"
+    }
+  ],
+  "preserved_but_unused": [
+    "uploaded file",
+    "kind (container|logo|label|inspiration|color)",
+    "original_filename",
+    "media_type",
+    "file_size",
+    "ordering",
+    "REFERENCE_ONLY status",
+    "selected_direction_id",
+    "direction_selected_at"
+  ],
+  "never_extracted": [
+    "silhouette",
+    "proportion",
+    "corner character",
+    "pan count",
+    "pan placement",
+    "margins",
+    "spacing rhythm",
+    "mirror proportion",
+    "hinge position",
+    "clasp position",
+    "material impression",
+    "colour zones",
+    "artwork zones",
+    "typography zones",
+    "style character"
+  ],
+  "replaced_by_generic_defaults": [
+    "palt_p1.PROPOSED_OUTER",
+    "26.0 mm pan",
+    "3x3 module lattice",
+    "4.0 mm inter-pan gap",
+    "5.0 mm outer margin",
+    "palette_stackup_engine.ALLOWANCES (16 values)"
+  ],
+  "affects": {
+    "geometry": false,
+    "layout": false,
+    "materials": false,
+    "artwork": false,
+    "visual_validation": false
+  },
+  "existing_bridge_never_connected": [
+    "services/container_asset_resolver.py::resolve_product_assets",
+    "services/visual_reference_resolver.py::resolve_visual_references",
+    "services/reference_manifest.py",
+    "apps/pipeline/review_board.py",
+    "apps/ire/concept_fidelity.py",
+    "apps/ire/container_concept_fidelity.py"
+  ],
+  "remedy": "additive - the palette contract needs an optional PaletteDesignIntent input and provenance on every resolved value; no existing palette geometry must be discarded",
+  "authority": "repository finding only; establishes no manufacturing authority; the selected AI concept remains DESIGN_INTENT_REFERENCE"
+}

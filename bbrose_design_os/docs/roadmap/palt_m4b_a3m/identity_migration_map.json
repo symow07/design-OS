@@ -1,0 +1,31 @@
+{
+  "record_type": "identity_migration_map/1.0",
+  "schemas": {
+    "geometry": "mesh_geometry_identity/1.0",
+    "contract": "construction_contract_identity/1.0",
+    "evidence": "evidence_package_identity/1.0"
+  },
+  "policy": "default-valued keys are NEVER stripped to restore a historical hash; identities are separated instead",
+  "entries": [
+    {
+      "old_identity": "26c817b8c113851a",
+      "mesh_geometry_identity": "743ead2beceb7fe5",
+      "construction_contract_identity": "425f398ffcc36601",
+      "geometry_changed": false,
+      "reason": "A3F added cup_offset_mode to the core config; the config is part of the legacy combined hash so the STRING moved while the mesh stayed byte-identical",
+      "milestone": "PALT-M4B-A3F",
+      "compatibility": "TRACEABLE",
+      "legacy_alias": "26c817b8c113851a"
+    },
+    {
+      "old_identity": "6c23c5417ef93dbb",
+      "mesh_geometry_identity": "7c0558062fde67a7",
+      "construction_contract_identity": "583a9d8a22e8ec6f",
+      "geometry_changed": true,
+      "reason": "A3F true-normal cup offset at a 1.20 mm target",
+      "milestone": "PALT-M4B-A3F",
+      "compatibility": "TRACEABLE",
+      "legacy_alias": "6c23c5417ef93dbb"
+    }
+  ]
+}

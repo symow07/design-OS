@@ -1,0 +1,91 @@
+{
+  "record_type": "palette_two_variant_geometry_proof/1.0",
+  "variant_a": {
+    "id": "PALT-P1A",
+    "role": "ENGINEERING_REGRESSION_FIXTURE",
+    "pocket_shape": "CIRCULAR",
+    "pocket_count": 9,
+    "pocket_opening_x_mm": 27.758826,
+    "pocket_opening_y_mm": 27.758826,
+    "pocket_is_isotropic": true,
+    "pocket_depth_mm": 4.65,
+    "vertex_count": 7682,
+    "face_count": 15360,
+    "mesh_identity": "ec65ea9402c16230"
+  },
+  "variant_b": {
+    "id": "PALT-P1B",
+    "role": "OWNER_DESIGN_INTENT_PILOT",
+    "concept": "ES3083 吸塑_展盒刀线",
+    "pocket_shape": "RECTANGULAR",
+    "pocket_count": 12,
+    "pocket_opening_x_mm": 25.618179,
+    "pocket_opening_y_mm": 19.618179,
+    "pocket_is_isotropic": false,
+    "pocket_depth_mm": 1.8,
+    "vertex_count": 6992,
+    "face_count": 13980,
+    "mesh_identity": "999db34286f2b789"
+  },
+  "checks": [
+    {
+      "check": "MESH_IDENTITY_DIFFERS",
+      "why": "identical identities would mean one design produced the other's geometry",
+      "verdict": "PASS",
+      "a": "ec65ea9402c16230",
+      "b": "999db34286f2b789"
+    },
+    {
+      "check": "POCKET_CROSS_SECTION_DIFFERS",
+      "why": "the headline design difference is round vs rectangular pans; it must be visible in the built surface",
+      "verdict": "PASS",
+      "a": "CIRCULAR",
+      "b": "RECTANGULAR"
+    },
+    {
+      "check": "RECTANGULAR_POCKET_IS_ANISOTROPIC",
+      "why": "a rectangular pocket whose two openings were equal would be a rounded square standing in for a rectangle",
+      "verdict": "PASS",
+      "a": true,
+      "b": false
+    },
+    {
+      "check": "POCKET_COUNT_DIFFERS",
+      "why": "ES3083 reads as a 4x3 field, the fixture is 3x3",
+      "verdict": "PASS",
+      "a": 9,
+      "b": 12
+    },
+    {
+      "check": "TOPOLOGY_DIFFERS",
+      "why": "different pocket shapes must produce different meshes, not the same mesh with different labels",
+      "verdict": "PASS",
+      "a": [
+        7682,
+        15360
+      ],
+      "b": [
+        6992,
+        13980
+      ]
+    },
+    {
+      "check": "FIXTURE_IDENTITY_PRESERVED",
+      "why": "the regression fixture must survive the pilot; a proof that retired it would destroy its own baseline",
+      "verdict": "PASS",
+      "a": "ec65ea9402c16230",
+      "b": "ec65ea9402c16230"
+    }
+  ],
+  "verdict": "PASS",
+  "failed": [],
+  "proves": "TWO_DESIGN_INTENTS_PRODUCE_TWO_DIFFERENT_BUILT_MESHES",
+  "does_not_prove": [
+    "that either variant matches its source design dimensionally",
+    "that either variant is manufacturable",
+    "that the ES3083 reading is correct — it is an AI draft"
+  ],
+  "owner_approved": false,
+  "manufacturing_authority": "NOT_ESTABLISHED",
+  "proof_identity": "e41d6a27a8bf7980"
+}

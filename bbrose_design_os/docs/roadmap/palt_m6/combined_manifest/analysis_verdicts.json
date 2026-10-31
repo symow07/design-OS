@@ -1,0 +1,82 @@
+{
+  "record_type": "combined_manifest_analysis/1.0",
+  "accounting_88_of_102": {
+    "answer": "102 WAS THE DECLARED SPEND. 88 is not a saving: 22 declared frames did not render, masked by 18 unplanned frames.",
+    "per_ensemble": {
+      "P1 member ensembles": "declared 36, rendered 54 \u2014 +18 UNPLANNED (the pair machinery re-renders a base member per texture pair; the declaration under-counted the instrument cost)",
+      "P4 census replicate": "declared 24, rendered 12 \u2014 the 12 TEXTURE-side frames never rendered AND the lobe side covers only 6 of 9 families at the replicate seeds: the census replicate is DOUBLY gapped and its rows stay NOT_ESTABLISHED_PENDING_SPREAD. Cost: condition-(i) establishment for all diffuse pairs remains open.",
+      "P5 glitter": "declared 6, rendered 4 \u2014 the 2 matte zero-particle CONTROL frames at new seeds never rendered. Cost: the event ensemble lacks its declared per-seed negative control; the establishment below is HELD with the gap named.",
+      "P6 positive controls": "declared 8, rendered 0 \u2014 the C3-class shade-symmetric positive controls never ran. Cost: 1p condition coverage for the new ensembles remains open.",
+      "P7 calibrations": "declared ~10, rendered 0 \u2014 LEGITIMATE (cached energies reused; the only true saving)"
+    },
+    "owned": "the runner was written by me against the declaration and silently under-implemented P4/P5/P6 while overrunning P1 within the cap \u2014 the cap held but the SPEND PLAN did not, and no frame may now be added without the owner (the 22 missing frames come to the owner as a request, not a unilateral run)"
+  },
+  "trace_reading": {
+    "trace_file": "ABSENT \u2014 zero log_firing calls. The writer was suite-validated and the runner set the env unconditionally (committed runner text + ledger proves the run); an absent file therefore means NO WIRED SITE FIRED on any executed path \u2014 stated with the caveat that env-setting rests on the runner text, a code fact not a trace fact",
+    "three_way_split_never_merged": {
+      "closed_forward_by_trace": [
+        "palette_powder_rigs.py:particle_census \u2014 EXECUTED (P5 ledger tags), zero firings: the manifest-produced glitter events are clean of it. FORWARD ONLY."
+      ],
+      "wired_not_exercised": "27 sites \u2014 the case-geometry chain (layout/stackup/moulded/clearance/contracts/thickness/tray/compact/concept), characterization_rig:discriminate (module ran, function never invoked), material_characterization, axis_diagnosis. NOT closed by a trace that ran; sound by refutation (the queue process never imports the case chain)",
+      "unwired_7": {
+        "frozen_M5_6": "TERMINAL disposition: NOT_ASSESSED_PERMANENT_M5_FREEZE \u2014 the trace may never touch the frozen instrument, so these are closable ONLY by the A7 register node deciding to break the freeze; pending is the wrong word and is retired for them",
+        "concept_analysis_276": "FIXABLE: the site is an ifexp whose current line/shape did not match the line-keyed wiring edit; the fix is AST-located rewiring keyed on file/symbol/shape \u2014 an M6-ALLOWLIST-REKEY work item"
+      }
+    }
+  },
+  "member_negative_controls_as_declared": {
+    "SATIN": {
+      "HIGHLIGHT_FWHM": 0.04781,
+      "HIGHLIGHT_PEAK": 0.00507,
+      "SPECULAR_TO_DIFFUSE_RATIO": 0.0061,
+      "GRAZING_RESPONSE": 0.09613,
+      "SHEEN_REGION_RESPONSE": 0.03566,
+      "EDGE_HIGHLIGHT_RESPONSE": 0.14368
+    },
+    "PRESSED": {
+      "HIGHLIGHT_FWHM": 0.03363,
+      "HIGHLIGHT_PEAK": 0.00774,
+      "SPECULAR_TO_DIFFUSE_RATIO": 0.00789,
+      "GRAZING_RESPONSE": 0.14754,
+      "SHEEN_REGION_RESPONSE": 0.03027,
+      "EDGE_HIGHLIGHT_RESPONSE": 0.04874
+    },
+    "CREAM": {
+      "HIGHLIGHT_FWHM": 0.03289,
+      "HIGHLIGHT_PEAK": 0.00756,
+      "SPECULAR_TO_DIFFUSE_RATIO": 0.01112,
+      "GRAZING_RESPONSE": 0.05503,
+      "SHEEN_REGION_RESPONSE": 0.08353,
+      "EDGE_HIGHLIGHT_RESPONSE": 0.07129
+    },
+    "texture_GRAN": {
+      "POWDER_SATIN": 0.04201,
+      "PRESSED_POWDER": 0.04096,
+      "CREAM": 0.00179
+    },
+    "flake": null,
+    "marbling_solid_C2": {
+      "n_seeds": 6,
+      "max_pairwise": 0.00291,
+      "holds_below_bar": true
+    },
+    "behaved": "every member ensemble sits far below the 0.25 bar \u2014 all negative controls HOLD"
+  },
+  "adequacy_re_reads_and_verdicts": {
+    "M_V_S_SHEEN": "margin 0.0911 vs max-member spread 0.16569 (MATTE is the binding member \u2014 the direct SATIN spread 0.03566 does not rescue it): UNMET, now on member-complete evidence",
+    "P_V_M_SHEEN": "margin 0.1157 vs 0.16569 (MATTE binding): UNMET",
+    "S_V_C_FWHM": "margin 0.0343 vs max(SATIN 0.04781, CREAM 0.03289) = 0.04781: UNMET_DIRECT \u2014 the earlier 2-seed partial (0.0343 > 0.0243) pointed the other way and the declared ensemble overrules it. DEGRADATION, COMMITS.",
+    "S_V_C_GRAN": "margin 0.1923 vs max(0.04201, 0.00179): ESTABLISHES on direct declared-ensemble evidence \u2014 an IMPROVEMENT (pending -> established): HELD, NOT BANKED, placed with the owner under 1c/2j",
+    "M_V_S_GRAN / P_V_M_GRAN": "stand (margins 0.4328/0.6442 vs 0.1169) \u2014 already established, member-completed, no status change",
+    "SOLID_VS_MARBLED": "the C2 solid-member negative control HOLDS (0.00291) \u2014 qualifier count firms 1-PENDING -> 1. Verdict FAIL stands (one axis of two). Not an improvement: FAIL to FAIL.",
+    "GLITTER_events": "6-seed ensemble 113-161, all >= 25; margin 88 vs count-spread 48: would ESTABLISH \u2014 IMPROVEMENT, HELD, with the P5 control gap named alongside it"
+  },
+  "PASS_LAW_verdicts_as_declared": {
+    "declaration": "2 independent axes at >= 0.25, supporting never count, R5 0.80, margin 2.0 \u2014 as written before measurement, unmoved through eighteen amendments",
+    "MATTE_VS_SATIN": "FAIL \u2014 one adequate independent axis (GRANULARITY 0.6828); SHEEN 0.4225 uncertifiable at margin 0.0911 < member spread 0.16569",
+    "PRESSED_VS_MATTE": "FAIL \u2014 one adequate axis (GRANULARITY 0.8942); SHEEN 0.4471 uncertifiable (0.1157 < 0.16569)",
+    "SATIN_VS_CREAM": "FAIL \u2014 FWHM 0.2843 uncertifiable (0.0343 < 0.04781); GRAN establishment HELD, and even if granted the pair has one axis",
+    "note": "the bar did not move; these are the axes and effect sizes as declared. The FAILs are degradations and COMMIT; the two improvements are HELD."
+  },
+  "owner_approved": false
+}

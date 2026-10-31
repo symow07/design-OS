@@ -1,0 +1,179 @@
+{
+  "record_type": "a3p_cup_wall_proof/1.0",
+  "milestone": "PALT-M4B-A3P",
+  "frozen_mesh_geometry_identity": "7c0558062fde67a7",
+  "frozen_construction_contract_identity": "583a9d8a22e8ec6f",
+  "target_mm": 1.2,
+  "tolerance_mm": 0.02,
+  "tolerance_basis": "A-PRIORI polygon discretisation bound: a 64-gon at r=14.09 mm has chord error r*(1-cos(pi/64)) = 0.01697 mm. Declared from the topology constants BEFORE measuring, not fitted to the result.",
+  "provenance_method": "BUILD_TIME_FACE_CLASS (no elevation bands, bounding boxes, normals or appearance)",
+  "face_class_counts": {
+    "BASE_SKIN_UNDERSIDE": 960,
+    "CORE_CEILING": 1536,
+    "CORE_WALL": 5760,
+    "OUTER_DECK_TOP": 1536,
+    "OUTER_SIDE_WALL": 384,
+    "PERIMETER_STRUCTURE": 384,
+    "POCKET_DRAFTED_WALL": 1152,
+    "POCKET_FLOOR": 576,
+    "POCKET_FLOOR_FILLET": 5760,
+    "POCKET_RIM_FILLET": 5760
+  },
+  "unclassified_faces": 0,
+  "per_class": {
+    "POCKET_RIM_FILLET->CORE_WALL": {
+      "n": 1152,
+      "min_mm": 1.507651,
+      "max_mm": 4.598806,
+      "median_mm": 2.128714,
+      "p5_mm": 1.507651,
+      "p95_mm": 4.598806,
+      "deviation_from_target_mm": 3.398806,
+      "min_coord": [
+        -23.674452,
+        -18.605956,
+        7.061204
+      ],
+      "controlling_face_pair": [
+        389,
+        16452
+      ]
+    },
+    "POCKET_RIM_FILLET->CORE_CEILING": {
+      "n": 432,
+      "min_mm": 1.693596,
+      "max_mm": 3.944925,
+      "median_mm": 1.763123,
+      "p5_mm": 1.695582,
+      "p95_mm": 3.922745,
+      "deviation_from_target_mm": 2.744925,
+      "min_coord": [
+        -44.357376,
+        -31.049653,
+        6.948809
+      ],
+      "controlling_face_pair": [
+        560,
+        16368
+      ]
+    },
+    "POCKET_RIM_FILLET->POCKET_DRAFTED_WALL": {
+      "n": 144,
+      "min_mm": 3.23326,
+      "max_mm": 9.428527,
+      "median_mm": 4.366074,
+      "p5_mm": 3.23326,
+      "p95_mm": 9.428527,
+      "deviation_from_target_mm": 8.228527,
+      "min_coord": [
+        0.449653,
+        -16.866291,
+        6.882344
+      ],
+      "controlling_face_pair": [
+        2255,
+        7249
+      ]
+    },
+    "POCKET_RIM_FILLET->OUTER_SIDE_WALL": {
+      "n": 20,
+      "min_mm": 11.824271,
+      "max_mm": 11.852494,
+      "median_mm": 11.846641,
+      "p5_mm": 11.824271,
+      "p95_mm": 11.852494,
+      "deviation_from_target_mm": 10.652494,
+      "min_coord": [
+        -31.049653,
+        -44.333709,
+        6.882344
+      ],
+      "controlling_face_pair": [
+        719,
+        14996
+      ]
+    },
+    "POCKET_DRAFTED_WALL->CORE_WALL": {
+      "n": 384,
+      "min_mm": 1.198556,
+      "max_mm": 1.198556,
+      "median_mm": 1.198556,
+      "p5_mm": 1.198556,
+      "p95_mm": 1.198556,
+      "deviation_from_target_mm": 0.001444,
+      "min_coord": [
+        -22.294683,
+        -19.778897,
+        4.323445
+      ],
+      "controlling_face_pair": [
+        770,
+        16450
+      ]
+    },
+    "POCKET_FLOOR_FILLET->CORE_WALL": {
+      "n": 1344,
+      "min_mm": 1.184496,
+      "max_mm": 1.185591,
+      "median_mm": 1.184768,
+      "p5_mm": 1.184496,
+      "p95_mm": 1.185591,
+      "deviation_from_target_mm": 0.015504,
+      "min_coord": [
+        -21.320132,
+        -20.692766,
+        2.958839
+      ],
+      "controlling_face_pair": [
+        896,
+        16576
+      ]
+    },
+    "POCKET_FLOOR_FILLET->BASE_SKIN_UNDERSIDE": {
+      "n": 576,
+      "min_mm": 1.021414,
+      "max_mm": 1.178444,
+      "median_mm": 1.030888,
+      "p5_mm": 1.021414,
+      "p95_mm": 1.178444,
+      "deviation_from_target_mm": 0.178586,
+      "min_coord": [
+        -23.702188,
+        -19.511451,
+        2.509362
+      ],
+      "controlling_face_pair": [
+        1412,
+        17090
+      ]
+    }
+  },
+  "cup_wall_verdict": {
+    "worst_deviation_mm": 0.015504,
+    "tolerance_mm": 0.02,
+    "within_tolerance": true,
+    "classes_proven": [
+      "POCKET_DRAFTED_WALL->CORE_WALL",
+      "POCKET_FLOOR_FILLET->CORE_WALL"
+    ],
+    "conclusion": "the true-normal cup wall holds 1.20 mm within the a-priori discretisation bound"
+  },
+  "below_target_map": {
+    "counts": {
+      "1.20": 1786,
+      "1.10": 570,
+      "1.00": 0
+    },
+    "by_face_class_below_1.20": {
+      "OUTER_DECK_TOP": 143,
+      "POCKET_DRAFTED_WALL": 128,
+      "POCKET_FLOOR_FILLET": 640,
+      "POCKET_FLOOR": 64,
+      "CORE_CEILING": 171,
+      "CORE_WALL": 576,
+      "BASE_SKIN_UNDERSIDE": 64
+    },
+    "unknown_classifications": 0,
+    "note": "A3M reported 427 below 1.20 and 0 below 1.00 using elevation bands. With build-time provenance every sample now carries a real class."
+  }
+}

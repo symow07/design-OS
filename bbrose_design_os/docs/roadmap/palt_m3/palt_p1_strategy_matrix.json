@@ -1,0 +1,819 @@
+{
+ "record_type": "palt_p1_strategy_matrix/1.0",
+ "created_at": "2026-08-05",
+ "engine_version": "palette_stackup_engine/1.0",
+ "validator_version": "palette_mechanism_validators/1.0",
+ "authority": {
+  "MECHANISM_ENVELOPE_AUTHORITY": "DESIGN_DEFAULT \u2014 engineering estimates; no manufacturer drawing was obtainable",
+  "MANUFACTURING_AUTHORITY": "NOT_ESTABLISHED",
+  "note": "a strategy comparison narrows the design space; it does not confirm that any strategy is manufacturable as drawn"
+ },
+ "pan_layout": "3 x 3 OF 26 MM ROUND PANS \u2014 RETAINED (owner: not reduced to 3x2 to preserve a footprint)",
+ "target_envelope_mm": [
+  116.0,
+  92.0,
+  15.0
+ ],
+ "target_envelope_classification": [
+  "TARGET_DESIGN_ENVELOPE",
+  "tested here under MULTIPLE mechanism strategies and both hinge edges \u2014 PALT-M2 tested only the internal reserved band"
+ ],
+ "configurations": [
+  {
+   "label": "A1 reserved-band hinge + clasp, hinge on LONG edge (depth axis)",
+   "valid": false,
+   "failure_codes": [
+    "TARGET_DEPTH_EXCEEDED"
+   ],
+   "mechanism": {
+    "hinge_strategy": "INTERNAL_RESERVED_BAND_PIN_HINGE",
+    "clasp_strategy": "INTERNAL_RESERVED_BAND_SNAP_CLASP",
+    "retention_strategy": "ADHESIVE_FIXED",
+    "hinge_edge": "TOP_EDGE",
+    "clasp_edge": "BOTTOM_EDGE",
+    "hinge_axis": "depth",
+    "clasp_axis": "depth",
+    "case_orientation": "LANDSCAPE",
+    "opening_direction": "AWAY_FROM_USER",
+    "material_conflict": null
+   },
+   "minimum_width_mm": 109.3,
+   "minimum_depth_mm": 120.3,
+   "external_add_mm": [
+    0.0,
+    0.0
+   ],
+   "GEOMETRIC_LOWER_BOUND_height_mm": 9.0,
+   "ENGINEERING_MINIMUM_height_mm": 11.15,
+   "PREMIUM_DESIGN_TARGET_height_mm": 13.85,
+   "fits_target": {
+    "width": true,
+    "depth": false,
+    "height": true
+   },
+   "footprint_stackup": {
+    "minimum_width_mm": 109.3,
+    "minimum_depth_mm": 120.3,
+    "external_width_add_mm": 0.0,
+    "external_depth_add_mm": 0.0,
+    "total_external_width_mm": 109.3,
+    "total_external_depth_mm": 120.3,
+    "components_mm": {
+     "pocket_module_w": 26.6,
+     "pocket_module_h": 26.6,
+     "retention_pocket_add_per_side": 0.0,
+     "pan_field_w": 87.8,
+     "pan_field_h": 87.8,
+     "inter_pan_gap": 4.0,
+     "outer_margin_x2": 10.0,
+     "internal_tray_walls_x2": 3.0,
+     "outer_case_walls_x2": 4.0,
+     "hinge_internal_band": 6.0,
+     "clasp_internal_band": 5.0,
+     "hinge_wall_add": 0.0,
+     "clasp_wall_add": 0.0,
+     "hinge_external_add": 0.0,
+     "clasp_external_add": 0.0,
+     "lid_structural_border_x2": 4.0,
+     "assembly_clearance": 0.3,
+     "moulding_tolerance": 0.2,
+     "corner_radius_effect": "corner radius reduces usable corner area; with round pans on a 5.0 mm margin and R4.0 the corner pans stay clear \u2014 re-check for square pans"
+    },
+    "authority": "DESIGN_DEFAULT allowances; MANUFACTURING_AUTHORITY NOT_ESTABLISHED"
+   },
+   "footprint_error": null,
+   "dimension_provenance": "DESIGN_DEFAULT allowances + ONLINE_REPORTED pan family; nothing MANUFACTURER_CONFIRMED",
+   "confidence": "LOW \u2014 mechanism envelopes are engineering estimates",
+   "manufacturing_unknowns": [
+    "hinge: hinge pin diameter",
+    "hinge: gudgeon dimensions",
+    "clasp: detent geometry",
+    "clasp: retention force",
+    "retention: adhesive thickness in production"
+   ],
+   "judged_against_envelope_mm": [
+    116.0,
+    92.0,
+    15.0
+   ]
+  },
+  {
+   "label": "A2 wall-integrated hinge + clasp, hinge on LONG edge",
+   "valid": false,
+   "failure_codes": [
+    "TARGET_DEPTH_EXCEEDED"
+   ],
+   "mechanism": {
+    "hinge_strategy": "WALL_INTEGRATED_PIN_HINGE",
+    "clasp_strategy": "WALL_INTEGRATED_SNAP_CLASP",
+    "retention_strategy": "ADHESIVE_FIXED",
+    "hinge_edge": "TOP_EDGE",
+    "clasp_edge": "BOTTOM_EDGE",
+    "hinge_axis": "depth",
+    "clasp_axis": "depth",
+    "case_orientation": "LANDSCAPE",
+    "opening_direction": "AWAY_FROM_USER",
+    "material_conflict": null
+   },
+   "minimum_width_mm": 109.3,
+   "minimum_depth_mm": 111.5,
+   "external_add_mm": [
+    0.0,
+    0.0
+   ],
+   "GEOMETRIC_LOWER_BOUND_height_mm": 9.0,
+   "ENGINEERING_MINIMUM_height_mm": 11.15,
+   "PREMIUM_DESIGN_TARGET_height_mm": 13.85,
+   "fits_target": {
+    "width": true,
+    "depth": false,
+    "height": true
+   },
+   "footprint_stackup": {
+    "minimum_width_mm": 109.3,
+    "minimum_depth_mm": 111.5,
+    "external_width_add_mm": 0.0,
+    "external_depth_add_mm": 0.0,
+    "total_external_width_mm": 109.3,
+    "total_external_depth_mm": 111.5,
+    "components_mm": {
+     "pocket_module_w": 26.6,
+     "pocket_module_h": 26.6,
+     "retention_pocket_add_per_side": 0.0,
+     "pan_field_w": 87.8,
+     "pan_field_h": 87.8,
+     "inter_pan_gap": 4.0,
+     "outer_margin_x2": 10.0,
+     "internal_tray_walls_x2": 3.0,
+     "outer_case_walls_x2": 4.0,
+     "hinge_internal_band": 0.0,
+     "clasp_internal_band": 0.0,
+     "hinge_wall_add": 1.2,
+     "clasp_wall_add": 1.0,
+     "hinge_external_add": 0.0,
+     "clasp_external_add": 0.0,
+     "lid_structural_border_x2": 4.0,
+     "assembly_clearance": 0.3,
+     "moulding_tolerance": 0.2,
+     "corner_radius_effect": "corner radius reduces usable corner area; with round pans on a 5.0 mm margin and R4.0 the corner pans stay clear \u2014 re-check for square pans"
+    },
+    "authority": "DESIGN_DEFAULT allowances; MANUFACTURING_AUTHORITY NOT_ESTABLISHED"
+   },
+   "footprint_error": null,
+   "dimension_provenance": "DESIGN_DEFAULT allowances + ONLINE_REPORTED pan family; nothing MANUFACTURER_CONFIRMED",
+   "confidence": "LOW \u2014 mechanism envelopes are engineering estimates",
+   "manufacturing_unknowns": [
+    "hinge: achievable wall thickening without sink marks",
+    "hinge: minimum pin engagement",
+    "clasp: retention force",
+    "clasp: wear over cycles",
+    "retention: adhesive thickness in production"
+   ],
+   "judged_against_envelope_mm": [
+    116.0,
+    92.0,
+    15.0
+   ]
+  },
+  {
+   "label": "A3 external barrel hinge + wall-integrated clasp, LONG edge",
+   "valid": false,
+   "failure_codes": [
+    "TARGET_DEPTH_EXCEEDED"
+   ],
+   "mechanism": {
+    "hinge_strategy": "EXTERNAL_BARREL_HINGE",
+    "clasp_strategy": "WALL_INTEGRATED_SNAP_CLASP",
+    "retention_strategy": "ADHESIVE_FIXED",
+    "hinge_edge": "TOP_EDGE",
+    "clasp_edge": "BOTTOM_EDGE",
+    "hinge_axis": "depth",
+    "clasp_axis": "depth",
+    "case_orientation": "LANDSCAPE",
+    "opening_direction": "AWAY_FROM_USER",
+    "material_conflict": null
+   },
+   "minimum_width_mm": 109.3,
+   "minimum_depth_mm": 110.3,
+   "external_add_mm": [
+    0.0,
+    3.5
+   ],
+   "GEOMETRIC_LOWER_BOUND_height_mm": 9.0,
+   "ENGINEERING_MINIMUM_height_mm": 11.15,
+   "PREMIUM_DESIGN_TARGET_height_mm": 13.85,
+   "fits_target": {
+    "width": true,
+    "depth": false,
+    "height": true
+   },
+   "footprint_stackup": {
+    "minimum_width_mm": 109.3,
+    "minimum_depth_mm": 110.3,
+    "external_width_add_mm": 0.0,
+    "external_depth_add_mm": 3.5,
+    "total_external_width_mm": 109.3,
+    "total_external_depth_mm": 113.8,
+    "components_mm": {
+     "pocket_module_w": 26.6,
+     "pocket_module_h": 26.6,
+     "retention_pocket_add_per_side": 0.0,
+     "pan_field_w": 87.8,
+     "pan_field_h": 87.8,
+     "inter_pan_gap": 4.0,
+     "outer_margin_x2": 10.0,
+     "internal_tray_walls_x2": 3.0,
+     "outer_case_walls_x2": 4.0,
+     "hinge_internal_band": 0.0,
+     "clasp_internal_band": 0.0,
+     "hinge_wall_add": 0.0,
+     "clasp_wall_add": 1.0,
+     "hinge_external_add": 3.5,
+     "clasp_external_add": 0.0,
+     "lid_structural_border_x2": 4.0,
+     "assembly_clearance": 0.3,
+     "moulding_tolerance": 0.2,
+     "corner_radius_effect": "corner radius reduces usable corner area; with round pans on a 5.0 mm margin and R4.0 the corner pans stay clear \u2014 re-check for square pans"
+    },
+    "authority": "DESIGN_DEFAULT allowances; MANUFACTURING_AUTHORITY NOT_ESTABLISHED"
+   },
+   "footprint_error": null,
+   "dimension_provenance": "DESIGN_DEFAULT allowances + ONLINE_REPORTED pan family; nothing MANUFACTURER_CONFIRMED",
+   "confidence": "LOW \u2014 mechanism envelopes are engineering estimates",
+   "manufacturing_unknowns": [
+    "hinge: external barrel diameter",
+    "hinge: visual acceptability",
+    "clasp: retention force",
+    "clasp: wear over cycles",
+    "retention: adhesive thickness in production"
+   ],
+   "judged_against_envelope_mm": [
+    116.0,
+    92.0,
+    15.0
+   ]
+  },
+  {
+   "label": "A4 reserved-band hinge + clasp, hinge on SHORT edge (width axis)",
+   "valid": false,
+   "failure_codes": [
+    "TARGET_WIDTH_EXCEEDED",
+    "TARGET_DEPTH_EXCEEDED"
+   ],
+   "mechanism": {
+    "hinge_strategy": "INTERNAL_RESERVED_BAND_PIN_HINGE",
+    "clasp_strategy": "INTERNAL_RESERVED_BAND_SNAP_CLASP",
+    "retention_strategy": "ADHESIVE_FIXED",
+    "hinge_edge": "LEFT_EDGE",
+    "clasp_edge": "RIGHT_EDGE",
+    "hinge_axis": "width",
+    "clasp_axis": "width",
+    "case_orientation": "LANDSCAPE",
+    "opening_direction": "AWAY_FROM_USER",
+    "material_conflict": null
+   },
+   "minimum_width_mm": 120.3,
+   "minimum_depth_mm": 109.3,
+   "external_add_mm": [
+    0.0,
+    0.0
+   ],
+   "GEOMETRIC_LOWER_BOUND_height_mm": 9.0,
+   "ENGINEERING_MINIMUM_height_mm": 11.15,
+   "PREMIUM_DESIGN_TARGET_height_mm": 13.85,
+   "fits_target": {
+    "width": false,
+    "depth": false,
+    "height": true
+   },
+   "footprint_stackup": {
+    "minimum_width_mm": 120.3,
+    "minimum_depth_mm": 109.3,
+    "external_width_add_mm": 0.0,
+    "external_depth_add_mm": 0.0,
+    "total_external_width_mm": 120.3,
+    "total_external_depth_mm": 109.3,
+    "components_mm": {
+     "pocket_module_w": 26.6,
+     "pocket_module_h": 26.6,
+     "retention_pocket_add_per_side": 0.0,
+     "pan_field_w": 87.8,
+     "pan_field_h": 87.8,
+     "inter_pan_gap": 4.0,
+     "outer_margin_x2": 10.0,
+     "internal_tray_walls_x2": 3.0,
+     "outer_case_walls_x2": 4.0,
+     "hinge_internal_band": 6.0,
+     "clasp_internal_band": 5.0,
+     "hinge_wall_add": 0.0,
+     "clasp_wall_add": 0.0,
+     "hinge_external_add": 0.0,
+     "clasp_external_add": 0.0,
+     "lid_structural_border_x2": 4.0,
+     "assembly_clearance": 0.3,
+     "moulding_tolerance": 0.2,
+     "corner_radius_effect": "corner radius reduces usable corner area; with round pans on a 5.0 mm margin and R4.0 the corner pans stay clear \u2014 re-check for square pans"
+    },
+    "authority": "DESIGN_DEFAULT allowances; MANUFACTURING_AUTHORITY NOT_ESTABLISHED"
+   },
+   "footprint_error": null,
+   "dimension_provenance": "DESIGN_DEFAULT allowances + ONLINE_REPORTED pan family; nothing MANUFACTURER_CONFIRMED",
+   "confidence": "LOW \u2014 mechanism envelopes are engineering estimates",
+   "manufacturing_unknowns": [
+    "hinge: hinge pin diameter",
+    "hinge: gudgeon dimensions",
+    "clasp: detent geometry",
+    "clasp: retention force",
+    "retention: adhesive thickness in production"
+   ],
+   "judged_against_envelope_mm": [
+    116.0,
+    92.0,
+    15.0
+   ]
+  },
+  {
+   "label": "A5 wall-integrated hinge + magnetic clasp, hinge on SHORT edge",
+   "valid": false,
+   "failure_codes": [
+    "TARGET_DEPTH_EXCEEDED"
+   ],
+   "mechanism": {
+    "hinge_strategy": "WALL_INTEGRATED_PIN_HINGE",
+    "clasp_strategy": "MAGNETIC_CLOSURE",
+    "retention_strategy": "ADHESIVE_FIXED",
+    "hinge_edge": "LEFT_EDGE",
+    "clasp_edge": "RIGHT_EDGE",
+    "hinge_axis": "width",
+    "clasp_axis": "width",
+    "case_orientation": "LANDSCAPE",
+    "opening_direction": "AWAY_FROM_USER",
+    "material_conflict": null
+   },
+   "minimum_width_mm": 111.3,
+   "minimum_depth_mm": 109.3,
+   "external_add_mm": [
+    0.0,
+    0.0
+   ],
+   "GEOMETRIC_LOWER_BOUND_height_mm": 9.0,
+   "ENGINEERING_MINIMUM_height_mm": 11.55,
+   "PREMIUM_DESIGN_TARGET_height_mm": 14.25,
+   "fits_target": {
+    "width": true,
+    "depth": false,
+    "height": true
+   },
+   "footprint_stackup": {
+    "minimum_width_mm": 111.3,
+    "minimum_depth_mm": 109.3,
+    "external_width_add_mm": 0.0,
+    "external_depth_add_mm": 0.0,
+    "total_external_width_mm": 111.3,
+    "total_external_depth_mm": 109.3,
+    "components_mm": {
+     "pocket_module_w": 26.6,
+     "pocket_module_h": 26.6,
+     "retention_pocket_add_per_side": 0.0,
+     "pan_field_w": 87.8,
+     "pan_field_h": 87.8,
+     "inter_pan_gap": 4.0,
+     "outer_margin_x2": 10.0,
+     "internal_tray_walls_x2": 3.0,
+     "outer_case_walls_x2": 4.0,
+     "hinge_internal_band": 0.0,
+     "clasp_internal_band": 0.0,
+     "hinge_wall_add": 1.2,
+     "clasp_wall_add": 0.8,
+     "hinge_external_add": 0.0,
+     "clasp_external_add": 0.0,
+     "lid_structural_border_x2": 4.0,
+     "assembly_clearance": 0.3,
+     "moulding_tolerance": 0.2,
+     "corner_radius_effect": "corner radius reduces usable corner area; with round pans on a 5.0 mm margin and R4.0 the corner pans stay clear \u2014 re-check for square pans"
+    },
+    "authority": "DESIGN_DEFAULT allowances; MANUFACTURING_AUTHORITY NOT_ESTABLISHED"
+   },
+   "footprint_error": null,
+   "dimension_provenance": "DESIGN_DEFAULT allowances + ONLINE_REPORTED pan family; nothing MANUFACTURER_CONFIRMED",
+   "confidence": "LOW \u2014 mechanism envelopes are engineering estimates",
+   "manufacturing_unknowns": [
+    "hinge: achievable wall thickening without sink marks",
+    "hinge: minimum pin engagement",
+    "clasp: magnet grade",
+    "clasp: pull force",
+    "clasp: magnet thickness",
+    "retention: adhesive thickness in production"
+   ],
+   "judged_against_envelope_mm": [
+    116.0,
+    92.0,
+    15.0
+   ]
+  },
+  {
+   "label": "A6 living hinge (PP) + friction closure, LONG edge \u2014 material conflict expected on an ABS case",
+   "valid": false,
+   "failure_codes": [
+    "MECHANISM_MATERIAL_CONFLICT",
+    "TARGET_DEPTH_EXCEEDED"
+   ],
+   "mechanism": {
+    "hinge_strategy": "LIVING_HINGE",
+    "clasp_strategy": "FRICTION_CLOSURE",
+    "retention_strategy": "ADHESIVE_FIXED",
+    "hinge_edge": "TOP_EDGE",
+    "clasp_edge": "BOTTOM_EDGE",
+    "hinge_axis": "depth",
+    "clasp_axis": "depth",
+    "case_orientation": "LANDSCAPE",
+    "opening_direction": "AWAY_FROM_USER",
+    "material_conflict": "LIVING_HINGE requires PP; case material is ABS"
+   },
+   "minimum_width_mm": 109.3,
+   "minimum_depth_mm": 109.9,
+   "external_add_mm": [
+    0.0,
+    0.0
+   ],
+   "GEOMETRIC_LOWER_BOUND_height_mm": 9.0,
+   "ENGINEERING_MINIMUM_height_mm": 11.15,
+   "PREMIUM_DESIGN_TARGET_height_mm": 13.85,
+   "fits_target": {
+    "width": true,
+    "depth": false,
+    "height": true
+   },
+   "footprint_stackup": {
+    "minimum_width_mm": 109.3,
+    "minimum_depth_mm": 109.9,
+    "external_width_add_mm": 0.0,
+    "external_depth_add_mm": 0.0,
+    "total_external_width_mm": 109.3,
+    "total_external_depth_mm": 109.9,
+    "components_mm": {
+     "pocket_module_w": 26.6,
+     "pocket_module_h": 26.6,
+     "retention_pocket_add_per_side": 0.0,
+     "pan_field_w": 87.8,
+     "pan_field_h": 87.8,
+     "inter_pan_gap": 4.0,
+     "outer_margin_x2": 10.0,
+     "internal_tray_walls_x2": 3.0,
+     "outer_case_walls_x2": 4.0,
+     "hinge_internal_band": 0.0,
+     "clasp_internal_band": 0.0,
+     "hinge_wall_add": 0.6,
+     "clasp_wall_add": 0.0,
+     "hinge_external_add": 0.0,
+     "clasp_external_add": 0.0,
+     "lid_structural_border_x2": 4.0,
+     "assembly_clearance": 0.3,
+     "moulding_tolerance": 0.2,
+     "corner_radius_effect": "corner radius reduces usable corner area; with round pans on a 5.0 mm margin and R4.0 the corner pans stay clear \u2014 re-check for square pans"
+    },
+    "authority": "DESIGN_DEFAULT allowances; MANUFACTURING_AUTHORITY NOT_ESTABLISHED"
+   },
+   "footprint_error": null,
+   "dimension_provenance": "DESIGN_DEFAULT allowances + ONLINE_REPORTED pan family; nothing MANUFACTURER_CONFIRMED",
+   "confidence": "LOW \u2014 mechanism envelopes are engineering estimates",
+   "manufacturing_unknowns": [
+    "hinge: fatigue life",
+    "hinge: hinge web thickness",
+    "clasp: achievable tolerance",
+    "clasp: closure feel",
+    "clasp: loosening over cycles",
+    "retention: adhesive thickness in production"
+   ],
+   "judged_against_envelope_mm": [
+    116.0,
+    92.0,
+    15.0
+   ]
+  },
+  {
+   "label": "B1 near-square envelope, reserved-band mechanism",
+   "valid": false,
+   "failure_codes": [
+    "TARGET_WIDTH_EXCEEDED",
+    "TARGET_DEPTH_EXCEEDED"
+   ],
+   "mechanism": {
+    "hinge_strategy": "INTERNAL_RESERVED_BAND_PIN_HINGE",
+    "clasp_strategy": "INTERNAL_RESERVED_BAND_SNAP_CLASP",
+    "retention_strategy": "ADHESIVE_FIXED",
+    "hinge_edge": "TOP_EDGE",
+    "clasp_edge": "BOTTOM_EDGE",
+    "hinge_axis": "depth",
+    "clasp_axis": "depth",
+    "case_orientation": "PORTRAIT",
+    "opening_direction": "AWAY_FROM_USER",
+    "material_conflict": null
+   },
+   "minimum_width_mm": 109.3,
+   "minimum_depth_mm": 120.3,
+   "external_add_mm": [
+    0.0,
+    0.0
+   ],
+   "GEOMETRIC_LOWER_BOUND_height_mm": 9.0,
+   "ENGINEERING_MINIMUM_height_mm": 11.15,
+   "PREMIUM_DESIGN_TARGET_height_mm": 13.85,
+   "fits_target": {
+    "width": false,
+    "depth": false,
+    "height": true
+   },
+   "footprint_stackup": {
+    "minimum_width_mm": 109.3,
+    "minimum_depth_mm": 120.3,
+    "external_width_add_mm": 0.0,
+    "external_depth_add_mm": 0.0,
+    "total_external_width_mm": 109.3,
+    "total_external_depth_mm": 120.3,
+    "components_mm": {
+     "pocket_module_w": 26.6,
+     "pocket_module_h": 26.6,
+     "retention_pocket_add_per_side": 0.0,
+     "pan_field_w": 87.8,
+     "pan_field_h": 87.8,
+     "inter_pan_gap": 4.0,
+     "outer_margin_x2": 10.0,
+     "internal_tray_walls_x2": 3.0,
+     "outer_case_walls_x2": 4.0,
+     "hinge_internal_band": 6.0,
+     "clasp_internal_band": 5.0,
+     "hinge_wall_add": 0.0,
+     "clasp_wall_add": 0.0,
+     "hinge_external_add": 0.0,
+     "clasp_external_add": 0.0,
+     "lid_structural_border_x2": 4.0,
+     "assembly_clearance": 0.3,
+     "moulding_tolerance": 0.2,
+     "corner_radius_effect": "corner radius reduces usable corner area; with round pans on a 5.0 mm margin and R4.0 the corner pans stay clear \u2014 re-check for square pans"
+    },
+    "authority": "DESIGN_DEFAULT allowances; MANUFACTURING_AUTHORITY NOT_ESTABLISHED"
+   },
+   "footprint_error": null,
+   "dimension_provenance": "DESIGN_DEFAULT allowances + ONLINE_REPORTED pan family; nothing MANUFACTURER_CONFIRMED",
+   "confidence": "LOW \u2014 mechanism envelopes are engineering estimates",
+   "manufacturing_unknowns": [
+    "hinge: hinge pin diameter",
+    "hinge: gudgeon dimensions",
+    "clasp: detent geometry",
+    "clasp: retention force",
+    "retention: adhesive thickness in production"
+   ],
+   "judged_against_envelope_mm": [
+    101.8,
+    113.3,
+    15.0
+   ]
+  },
+  {
+   "label": "B2 near-square envelope, wall-integrated mechanism",
+   "valid": false,
+   "failure_codes": [
+    "TARGET_WIDTH_EXCEEDED"
+   ],
+   "mechanism": {
+    "hinge_strategy": "WALL_INTEGRATED_PIN_HINGE",
+    "clasp_strategy": "WALL_INTEGRATED_SNAP_CLASP",
+    "retention_strategy": "ADHESIVE_FIXED",
+    "hinge_edge": "TOP_EDGE",
+    "clasp_edge": "BOTTOM_EDGE",
+    "hinge_axis": "depth",
+    "clasp_axis": "depth",
+    "case_orientation": "PORTRAIT",
+    "opening_direction": "AWAY_FROM_USER",
+    "material_conflict": null
+   },
+   "minimum_width_mm": 109.3,
+   "minimum_depth_mm": 111.5,
+   "external_add_mm": [
+    0.0,
+    0.0
+   ],
+   "GEOMETRIC_LOWER_BOUND_height_mm": 9.0,
+   "ENGINEERING_MINIMUM_height_mm": 11.15,
+   "PREMIUM_DESIGN_TARGET_height_mm": 13.85,
+   "fits_target": {
+    "width": false,
+    "depth": true,
+    "height": true
+   },
+   "footprint_stackup": {
+    "minimum_width_mm": 109.3,
+    "minimum_depth_mm": 111.5,
+    "external_width_add_mm": 0.0,
+    "external_depth_add_mm": 0.0,
+    "total_external_width_mm": 109.3,
+    "total_external_depth_mm": 111.5,
+    "components_mm": {
+     "pocket_module_w": 26.6,
+     "pocket_module_h": 26.6,
+     "retention_pocket_add_per_side": 0.0,
+     "pan_field_w": 87.8,
+     "pan_field_h": 87.8,
+     "inter_pan_gap": 4.0,
+     "outer_margin_x2": 10.0,
+     "internal_tray_walls_x2": 3.0,
+     "outer_case_walls_x2": 4.0,
+     "hinge_internal_band": 0.0,
+     "clasp_internal_band": 0.0,
+     "hinge_wall_add": 1.2,
+     "clasp_wall_add": 1.0,
+     "hinge_external_add": 0.0,
+     "clasp_external_add": 0.0,
+     "lid_structural_border_x2": 4.0,
+     "assembly_clearance": 0.3,
+     "moulding_tolerance": 0.2,
+     "corner_radius_effect": "corner radius reduces usable corner area; with round pans on a 5.0 mm margin and R4.0 the corner pans stay clear \u2014 re-check for square pans"
+    },
+    "authority": "DESIGN_DEFAULT allowances; MANUFACTURING_AUTHORITY NOT_ESTABLISHED"
+   },
+   "footprint_error": null,
+   "dimension_provenance": "DESIGN_DEFAULT allowances + ONLINE_REPORTED pan family; nothing MANUFACTURER_CONFIRMED",
+   "confidence": "LOW \u2014 mechanism envelopes are engineering estimates",
+   "manufacturing_unknowns": [
+    "hinge: achievable wall thickening without sink marks",
+    "hinge: minimum pin engagement",
+    "clasp: retention force",
+    "clasp: wear over cycles",
+    "retention: adhesive thickness in production"
+   ],
+   "judged_against_envelope_mm": [
+    101.8,
+    113.3,
+    15.0
+   ]
+  },
+  {
+   "label": "C1 compact optimised, wall-integrated hinge + clasp, SHORT edge",
+   "valid": false,
+   "failure_codes": [
+    "TARGET_DEPTH_EXCEEDED"
+   ],
+   "mechanism": {
+    "hinge_strategy": "WALL_INTEGRATED_PIN_HINGE",
+    "clasp_strategy": "WALL_INTEGRATED_SNAP_CLASP",
+    "retention_strategy": "ADHESIVE_FIXED",
+    "hinge_edge": "LEFT_EDGE",
+    "clasp_edge": "RIGHT_EDGE",
+    "hinge_axis": "width",
+    "clasp_axis": "width",
+    "case_orientation": "LANDSCAPE",
+    "opening_direction": "AWAY_FROM_USER",
+    "material_conflict": null
+   },
+   "minimum_width_mm": 103.5,
+   "minimum_depth_mm": 101.3,
+   "external_add_mm": [
+    0.0,
+    0.0
+   ],
+   "GEOMETRIC_LOWER_BOUND_height_mm": 9.0,
+   "ENGINEERING_MINIMUM_height_mm": 11.15,
+   "PREMIUM_DESIGN_TARGET_height_mm": 13.85,
+   "fits_target": {
+    "width": true,
+    "depth": false,
+    "height": true
+   },
+   "footprint_stackup": {
+    "minimum_width_mm": 103.5,
+    "minimum_depth_mm": 101.3,
+    "external_width_add_mm": 0.0,
+    "external_depth_add_mm": 0.0,
+    "total_external_width_mm": 103.5,
+    "total_external_depth_mm": 101.3,
+    "components_mm": {
+     "pocket_module_w": 26.6,
+     "pocket_module_h": 26.6,
+     "retention_pocket_add_per_side": 0.0,
+     "pan_field_w": 83.8,
+     "pan_field_h": 83.8,
+     "inter_pan_gap": 2.0,
+     "outer_margin_x2": 6.0,
+     "internal_tray_walls_x2": 3.0,
+     "outer_case_walls_x2": 4.0,
+     "hinge_internal_band": 0.0,
+     "clasp_internal_band": 0.0,
+     "hinge_wall_add": 1.2,
+     "clasp_wall_add": 1.0,
+     "hinge_external_add": 0.0,
+     "clasp_external_add": 0.0,
+     "lid_structural_border_x2": 4.0,
+     "assembly_clearance": 0.3,
+     "moulding_tolerance": 0.2,
+     "corner_radius_effect": "corner radius reduces usable corner area; with round pans on a 3.0 mm margin and R4.0 the corner pans stay clear \u2014 re-check for square pans"
+    },
+    "authority": "DESIGN_DEFAULT allowances; MANUFACTURING_AUTHORITY NOT_ESTABLISHED"
+   },
+   "footprint_error": null,
+   "dimension_provenance": "DESIGN_DEFAULT allowances + ONLINE_REPORTED pan family; nothing MANUFACTURER_CONFIRMED",
+   "confidence": "LOW \u2014 mechanism envelopes are engineering estimates",
+   "manufacturing_unknowns": [
+    "hinge: achievable wall thickening without sink marks",
+    "hinge: minimum pin engagement",
+    "clasp: retention force",
+    "clasp: wear over cycles",
+    "retention: adhesive thickness in production"
+   ],
+   "judged_against_envelope_mm": [
+    116.0,
+    92.0,
+    15.0
+   ]
+  },
+  {
+   "label": "C2 compact optimised, reserved-band mechanism, SHORT edge",
+   "valid": false,
+   "failure_codes": [
+    "TARGET_DEPTH_EXCEEDED"
+   ],
+   "mechanism": {
+    "hinge_strategy": "INTERNAL_RESERVED_BAND_PIN_HINGE",
+    "clasp_strategy": "INTERNAL_RESERVED_BAND_SNAP_CLASP",
+    "retention_strategy": "ADHESIVE_FIXED",
+    "hinge_edge": "LEFT_EDGE",
+    "clasp_edge": "RIGHT_EDGE",
+    "hinge_axis": "width",
+    "clasp_axis": "width",
+    "case_orientation": "LANDSCAPE",
+    "opening_direction": "AWAY_FROM_USER",
+    "material_conflict": null
+   },
+   "minimum_width_mm": 112.3,
+   "minimum_depth_mm": 101.3,
+   "external_add_mm": [
+    0.0,
+    0.0
+   ],
+   "GEOMETRIC_LOWER_BOUND_height_mm": 9.0,
+   "ENGINEERING_MINIMUM_height_mm": 11.15,
+   "PREMIUM_DESIGN_TARGET_height_mm": 13.85,
+   "fits_target": {
+    "width": true,
+    "depth": false,
+    "height": true
+   },
+   "footprint_stackup": {
+    "minimum_width_mm": 112.3,
+    "minimum_depth_mm": 101.3,
+    "external_width_add_mm": 0.0,
+    "external_depth_add_mm": 0.0,
+    "total_external_width_mm": 112.3,
+    "total_external_depth_mm": 101.3,
+    "components_mm": {
+     "pocket_module_w": 26.6,
+     "pocket_module_h": 26.6,
+     "retention_pocket_add_per_side": 0.0,
+     "pan_field_w": 83.8,
+     "pan_field_h": 83.8,
+     "inter_pan_gap": 2.0,
+     "outer_margin_x2": 6.0,
+     "internal_tray_walls_x2": 3.0,
+     "outer_case_walls_x2": 4.0,
+     "hinge_internal_band": 6.0,
+     "clasp_internal_band": 5.0,
+     "hinge_wall_add": 0.0,
+     "clasp_wall_add": 0.0,
+     "hinge_external_add": 0.0,
+     "clasp_external_add": 0.0,
+     "lid_structural_border_x2": 4.0,
+     "assembly_clearance": 0.3,
+     "moulding_tolerance": 0.2,
+     "corner_radius_effect": "corner radius reduces usable corner area; with round pans on a 3.0 mm margin and R4.0 the corner pans stay clear \u2014 re-check for square pans"
+    },
+    "authority": "DESIGN_DEFAULT allowances; MANUFACTURING_AUTHORITY NOT_ESTABLISHED"
+   },
+   "footprint_error": null,
+   "dimension_provenance": "DESIGN_DEFAULT allowances + ONLINE_REPORTED pan family; nothing MANUFACTURER_CONFIRMED",
+   "confidence": "LOW \u2014 mechanism envelopes are engineering estimates",
+   "manufacturing_unknowns": [
+    "hinge: hinge pin diameter",
+    "hinge: gudgeon dimensions",
+    "clasp: detent geometry",
+    "clasp: retention force",
+    "retention: adhesive thickness in production"
+   ],
+   "judged_against_envelope_mm": [
+    116.0,
+    92.0,
+    15.0
+   ]
+  }
+ ],
+ "feasible_within_target_envelope": [],
+ "target_envelope_result": {
+  "any_tested_strategy_fits_116x92": false,
+  "smallest_depth_any_strategy_mm": 101.3,
+  "smallest_width_any_strategy_mm": 103.5,
+  "shortfall_on_depth_mm": 9.3,
+  "classification": "INFEASIBLE_UNDER_ALL_TESTED_MECHANISM_STRATEGIES \u2014 the depth axis is short by about 9.3 mm even in the most compact wall-integrated configuration",
+  "explicitly_not": "NOT proven infeasible under ALL POSSIBLE strategies; six hinge/clasp combinations and both hinge edges were tested, not every conceivable mechanism"
+ },
+ "selection_rule": "the smallest configuration is NEVER chosen automatically; see palt_p1_mechanism_decision.md",
+ "manufacturing_readiness": "NOT_ESTABLISHED"
+}

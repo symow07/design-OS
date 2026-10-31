@@ -1,0 +1,65 @@
+{
+ "record_type": "a274_cell_declaration/1.0",
+ "law": "b12db39c624f01c2",
+ "declared_before_any_number": true,
+ "cell": "SATIN_VS_CREAM x SHEEN_REGION_RESPONSE (SHEEN without MATTE)",
+ "frames": "existing, 6/6 both families at seeds 40/81/82/83/84/99 \u2014 no renders",
+ "swing_classification_declared_first": {
+  "bands": {
+   "STABLE": "swing <= 0.060",
+   "UNDECLARED_INTERVAL": "0.060 < swing < 0.169",
+   "UNSTABLE": "swing >= 0.169"
+  },
+  "defence": "the four already-computed swings are the ONLY calibration that exists: 0.040 and 0.060 stable, 0.169 and 0.178 unstable. Each band edge is set at the WORST observed value in its own class \u2014 the same bound-not-estimate discipline as 3e \u2014 and the gap between 0.060 and 0.169 is left explicitly UNDECLARED rather than split, because a midpoint would invent a boundary the data does not contain",
+  "not_assigned_to_the_nearer_band": "a swing in the gap is reported UNDECLARED_INTERVAL"
+ },
+ "pair_vs_axis_branches": {
+  "STABLE|STABLE": "PAIRING_INTRINSIC \u2014 declared as a limitation, not fixed as a defect",
+  "STABLE|UNDECLARED_INTERVAL": "UNDECLARED_INTERVAL_PRESENT \u2014 no diagnosis; the band is not assigned to a neighbour",
+  "STABLE|UNSTABLE": "FAMILY_SPECIFIC \u2014 MATTE's rendering is the suspect",
+  "UNDECLARED_INTERVAL|STABLE": "UNDECLARED_INTERVAL_PRESENT \u2014 no diagnosis; the band is not assigned to a neighbour",
+  "UNDECLARED_INTERVAL|UNDECLARED_INTERVAL": "UNDECLARED_INTERVAL_PRESENT \u2014 no diagnosis; the band is not assigned to a neighbour",
+  "UNDECLARED_INTERVAL|UNSTABLE": "UNDECLARED_INTERVAL_PRESENT \u2014 no diagnosis; the band is not assigned to a neighbour",
+  "UNSTABLE|STABLE": "AXIS_SPECIFIC \u2014 the SHEEN instrument is the suspect",
+  "UNSTABLE|UNDECLARED_INTERVAL": "UNDECLARED_INTERVAL_PRESENT \u2014 no diagnosis; the band is not assigned to a neighbour",
+  "UNSTABLE|UNSTABLE": "BROADER_THAN_EITHER \u2014 enumerate again before diagnosing"
+ },
+ "pair_vs_axis_cardinality": {
+  "dimensions": {
+   "SHEEN_without_MATTE": [
+    "STABLE",
+    "UNDECLARED_INTERVAL",
+    "UNSTABLE"
+   ],
+   "MATTE_without_SHEEN": [
+    "STABLE",
+    "UNDECLARED_INTERVAL",
+    "UNSTABLE"
+   ]
+  },
+  "cells": 9,
+  "declared": 9,
+  "complete": true
+ },
+ "within_pair_axis_branches": {
+  "UNSTABLE": "within-pair axis isolation: same pair, same families, same seeds, same frame type (lobe) as S_v_C x FWHM which swings 0.060 STABLE \u2014 the instability is in the SHEEN MEASUREMENT specifically, not the pair, not the lobe pipeline, not the seeds",
+  "STABLE": "no within-pair isolation \u2014 SHEEN is not unstable when MATTE is absent; the axis hypothesis is not supported by this cell",
+  "UNDECLARED_INTERVAL": "no reading assigned; the swing falls in the band the four calibrating observations do not cover"
+ },
+ "within_pair_cardinality": {
+  "dimensions": {
+   "S_v_C_SHEEN": [
+    "STABLE",
+    "UNDECLARED_INTERVAL",
+    "UNSTABLE"
+   ]
+  },
+  "cells": 3,
+  "declared": 3,
+  "complete": true
+ },
+ "A262_superseded_per_2k": "A262 declared this space as 2x2=4 and its cardinality assertion passed FOR THE DIMENSIONS IT NAMED \u2014 but its value-set omitted the UNDECLARED_INTERVAL band the owner mandated in the same transmission's boundary instruction. With a 3-valued classification the space is 3x3=9. A262's four branches are retained and superseded here; the assertion was right about the cardinality of the wrong dimensions",
+ "every_branch_publishes": "including PAIRING_INTRINSIC, the branch that would make the exit gate declare a limitation rather than clear a defect",
+ "M_v_C_x_FWHM_not_computed_here": "its informational value is CONDITIONAL on this cell's result (A272); computing both now would spend the ambiguous one before knowing it was needed and would produce two numbers at once",
+ "six_MATTE_texture_frames": "NOT requested, NOT rendered \u2014 trigger named in A275"
+}

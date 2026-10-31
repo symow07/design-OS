@@ -1,0 +1,94 @@
+{
+ "record_type": "m6_spreads_adjudication_sc/1.0",
+ "adjudicated": "2026-08-15",
+ "phase": "sc",
+ "raw_record": "raw_sc.json",
+ "pair_level_lines_restated": {
+  "SATIN_VS_CREAM": "NOT ESTABLISHED \u2014 S_V_C GRAN clearing: ESTABLISHED; S_V_C FWHM clearing: NOT_ESTABLISHED_PENDING_SPREAD [restated 2026-08-15 by the spreads adjudication act from the rows in place]"
+ },
+ "law": "1k clearing_dispersion under A289 (recipe 23ef45d0d3521739); adequacy = committed margin > directly measured dispersion; max_seed_only_effect never the bar; crossing rescue VOID (0.6571 past 0.80 fails the diffuse pairs) cited \u2014 this act grows no census",
+ "acts": [
+  {
+   "row": "S_V_C GRAN clearing",
+   "statistic": "GRANULARITY_INDEX",
+   "families": [
+    "POWDER_SATIN",
+    "CREAM"
+   ],
+   "member_seeds": {
+    "0": [
+     41,
+     48
+    ],
+    "1": [
+     410,
+     480
+    ],
+    "2": [
+     411,
+     481
+    ],
+    "3": [
+     412,
+     482
+    ],
+    "4": [
+     413,
+     483
+    ],
+    "5": [
+     414,
+     484
+    ]
+   },
+   "per_member_clearings": {
+    "0": 0.4422576588166396,
+    "1": 0.4333572693762267,
+    "2": 0.43381875167220885,
+    "3": 0.41524604152839684,
+    "4": 0.4214414929067885,
+    "5": 0.44449985614270643
+   },
+   "pairwise": {
+    "0|1": 0.008900389440412881,
+    "0|2": 0.00843890714443074,
+    "0|3": 0.02701161728824275,
+    "0|4": 0.02081616590985108,
+    "0|5": 0.0022421973260668415,
+    "1|2": 0.00046148229598214074,
+    "1|3": 0.01811122784782987,
+    "1|4": 0.0119157764694382,
+    "1|5": 0.011142586766479723,
+    "2|3": 0.01857271014381201,
+    "2|4": 0.01237725876542034,
+    "2|5": 0.010681104470497582,
+    "3|4": 0.00619545137839167,
+    "3|5": 0.029253814614309592,
+    "4|5": 0.023058363235917922
+   },
+   "clearing_dispersion": 0.029253814614309592,
+   "recipe_identity": "23ef45d0d3521739",
+   "reading_reproduced_at_member_0": 0.4422576588166396,
+   "committed_reading": 0.4423,
+   "margin": 0.1923,
+   "adequacy_precondition_met": true,
+   "prior_row_state": {
+    "spread": 0.08064,
+    "spread_source": "PARTIAL: satin/cream 2-seed direct (1 pairing) \u2014 NOT a declared-ensemble spread",
+    "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+    "note": "margin exceeds the partial estimate 2.4x; completion in M6-DECLARED-ENSEMBLE-SPREADS"
+   },
+   "new_status": "ESTABLISHED",
+   "cleared_against": "dd2bd5559b98bc8a"
+  }
+ ],
+ "findings": [
+  {
+   "row": "S_V_C FWHM clearing",
+   "finding": "ABSENT_STATISTIC",
+   "statistic": "HIGHLIGHT_FWHM",
+   "detail": "the raw record measures neither family's HIGHLIGHT_FWHM \u2014 the leg's named quantity remains unmeasured by this record and the row stands untouched; refusal, not approximation"
+  }
+ ],
+ "owner_approved": false
+}

@@ -1,0 +1,183 @@
+{
+ "record_type": "master_roadmap/3.0",
+ "rebased_at": "2026-08-03",
+ "baseline_commit": "5512cdc",
+ "objective": "Client-approvable premium cosmetic design with editable Illustrator authority. A valid AI file containing poor design is a failed result.",
+ "state_authority": "docs/roadmap/progress_tracker.json (bbrose_progress_tracker/3.0) \u2014 validated by `manage.py roadmap_status`; percentages quoted anywhere else must trace to it",
+ "documents": {
+  "master": "docs/roadmap/master_roadmap_v3.md",
+  "gap_analysis": "docs/roadmap/roadmap_gap_analysis.md",
+  "quality_backlog": "docs/roadmap/quality_improvement_backlog.md",
+  "methodology": "docs/roadmap/progress_methodology.md",
+  "change_log": "docs/roadmap/roadmap_change_log.md"
+ },
+ "historical_records_preserved": [
+  "docs/roadmap/b4b_2_progress.json (superseded as state authority, preserved as history)",
+  "docs/roadmap/acceptance/",
+  "docs/roadmap/rejected-evidence/",
+  "docs/visual_quality/"
+ ],
+ "program_state": {
+  "PRODUCT_CONTAINER_END_TO_END_ACCEPTANCE": "REJECTED",
+  "PRODUCT_CONTAINER_WORKFLOW": "IMPLEMENTED_BUT_NOT_OWNER_ACCEPTED",
+  "GATE_2": "NOT_READY_FOR_OWNER_APPROVAL",
+  "VQR_6_SINGLE_ARTIFACT_AND_STATUS_AUTHORITY": "IMPLEMENTED",
+  "VQR_2A_FAIL_CLOSED_VISUAL_QUALITY_GATE": "OWNER_ACCEPTED",
+  "PACKAGING_PRODUCTION": "NOT_STARTED",
+  "COMPLETE_PRODUCT_CREATION": "DEFERRED_UNTIL_DEDICATED_UX",
+  "MASTER_ROADMAP_V3": "ACCEPTED_WITH_REQUIRED_TRACKER_AMENDMENTS",
+  "VQR_1": "AUTHORIZED_AFTER_TRACKER_AMENDMENT",
+  "PRODUCT_CONTAINER_OWNER_ACCEPTANCE_READINESS": 0
+ },
+ "recovery_sequence": [
+  {
+   "id": "R1",
+   "name": "VQR-1 M3 backbone integration",
+   "tracker_node": "pc.vqr1_m3_integration",
+   "effort": "M",
+   "priority": "CRITICAL",
+   "quality_impact": "CRITICAL",
+   "depends_on": [],
+   "parallel_with": [
+    "R2a"
+   ],
+   "owner_review_at_exit": true
+  },
+  {
+   "id": "R2a",
+   "name": "VQR-2B-a concept-side measurement + golden visual fixtures",
+   "tracker_node": "pc.vqr2b_concept_analysis",
+   "effort": "M",
+   "priority": "HIGH",
+   "quality_impact": "HIGH",
+   "depends_on": [],
+   "parallel_with": [
+    "R1"
+   ],
+   "owner_review_at_exit": false
+  },
+  {
+   "id": "R2b",
+   "name": "VQR-2B-b reconstruction fidelity measurement",
+   "tracker_node": "pc.vqr2b_reconstruction_measurement",
+   "effort": "M",
+   "priority": "CRITICAL",
+   "quality_impact": "CRITICAL",
+   "depends_on": [
+    "R1",
+    "R2a"
+   ],
+   "owner_review_at_exit": true,
+   "also_delivers": [
+    "review_board.minimum_fidelity_comparison"
+   ]
+  },
+  {
+   "id": "R3",
+   "name": "Design Graph 2.0 + Typography Authority Service",
+   "tracker_node": "ire.design_graph_v2",
+   "effort": "L",
+   "priority": "CRITICAL",
+   "quality_impact": "CRITICAL",
+   "depends_on": [
+    "R1"
+   ],
+   "owner_review_at_exit": false,
+   "also_delivers": [
+    "brand_gov.minimum_component_library",
+    "brand_gov.font_governance"
+   ]
+  },
+  {
+   "id": "R4",
+   "name": "VQR-3 front-artwork composition",
+   "tracker_node": "pc.vqr3_artwork_composition",
+   "effort": "L",
+   "priority": "CRITICAL",
+   "quality_impact": "CRITICAL",
+   "depends_on": [
+    "R2b",
+    "R3"
+   ],
+   "owner_review_at_exit": true
+  },
+  {
+   "id": "R5",
+   "name": "VQR-4 typography quality",
+   "tracker_node": "pc.vqr4_typography_quality",
+   "effort": "M",
+   "priority": "HIGH",
+   "quality_impact": "HIGH",
+   "depends_on": [
+    "R4"
+   ],
+   "parallel_with": [
+    "Q4-concept-gate"
+   ],
+   "owner_review_at_exit": false
+  },
+  {
+   "id": "R6",
+   "name": "Design Adjustment Studio (minimal)",
+   "tracker_node": "pc.design_adjustment_studio",
+   "effort": "L",
+   "priority": "HIGH",
+   "quality_impact": "HIGH",
+   "depends_on": [
+    "R4",
+    "R5"
+   ],
+   "owner_review_at_exit": true
+  },
+  {
+   "id": "R7",
+   "name": "VQR-5 material realization",
+   "tracker_node": "pc.vqr5_materials",
+   "effort": "L",
+   "priority": "HIGH",
+   "quality_impact": "HIGH",
+   "depends_on": [
+    "R6"
+   ],
+   "owner_review_at_exit": false
+  },
+  {
+   "id": "R8",
+   "name": "ACC-2 new owner acceptance",
+   "tracker_node": "pc.acceptance_outcome",
+   "effort": "M",
+   "priority": "CRITICAL",
+   "quality_impact": "CRITICAL",
+   "depends_on": [
+    "R7"
+   ],
+   "owner_review_at_exit": true
+  }
+ ],
+ "critical_path": [
+  "R1",
+  "R2b",
+  "R3",
+  "R4",
+  "R5",
+  "R6",
+  "R7",
+  "R8"
+ ],
+ "post_acceptance_target_order": [
+  "complete_product",
+  "display_stand (Target SDK first)",
+  "gift_set",
+  "marketing_material",
+  "social_media",
+  "exhibition_booth"
+ ],
+ "never_list": [
+  "auto-approval of any gate by score or AI judgment",
+  "silent provider fallback",
+  "automatic brand-master promotion",
+  "Image Trace mass vectorization",
+  "SVG output resurrection",
+  "score averaging over blocking defects"
+ ]
+}

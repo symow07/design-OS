@@ -1,0 +1,16 @@
+{
+ "record_type": "a157b_declaration_crosscheck/1.0",
+ "protocol_identity": "c2d423674ed411e5",
+ "framing": "a COMPARISON of two declarations via their outputs under the era instrument (reimplemented from its committed description \u2014 the era script itself was never committed, stated per 2z) on the era code tree (0d92e7c); never a recovery of one from the other (2y)",
+ "era_gap": "4 of the 16 fresh entries did not exist in era code (palette_firing_trace, palette_queue_control, palette_energy_recovery, palette_spend_reconciler) \u2014 the comparison runs on the 12 present",
+ "results": {
+  "reachable_fresh_on_era": 21,
+  "reachable_old_committed": 50,
+  "inert_fresh_on_era": 43,
+  "inert_old_committed_sites": 15,
+  "old_15_subset_of_fresh_inert": true,
+  "fresh_minus_old_28_sites": "all in the case-geometry/layout chain (stackup_engine x16, layout_kernel x4, contracts, moulded_rect, recessed_tray) and the M5 material path (material_characterization x5, palette_material_characterization:266)"
+ },
+ "finding_for_the_owner": "THE TWO DECLARATIONS DISAGREE on scope: the old entry set reached 29 more modules \u2014 it treated case-geometry/layout and M5-material modules as powder-measurement entry points; the fresh declaration scopes powder measurement to the powder rigs and their instruments. Everything the old declaration ruled INERT the fresh one also rules INERT (no contradiction in that direction); the disagreement is 28 sites the old declaration kept in-reach that the fresh one rules outside. It composes with the old records' own internal disagreement (graph 15 vs allowlist-closure 43/45). Comes to the owner as a finding, not resolved here",
+ "owner_approved": false
+}

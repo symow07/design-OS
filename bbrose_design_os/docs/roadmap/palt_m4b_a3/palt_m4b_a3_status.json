@@ -1,0 +1,159 @@
+{
+  "record_type": "palt_m4b_a3_status/1.0",
+  "milestone": "PALT-M4B-A3",
+  "date": "2026-08-06",
+  "PALT_M4B_A3_CORING_GEOMETRY": "IMPLEMENTED_AND_MANIFOLD",
+  "PALT_M4B_A3_DECK_LIGAMENT": "PASS",
+  "PALT_M4B_A3_POCKET_WALL_A2_METRIC": "PASS",
+  "PALT_M4B_A3_CLEARANCE_PRESERVED": "PASS",
+  "PALT_M4B_A3_THICKNESS_RATIO": "FAIL",
+  "PALT_M4B_A3_MINIMUM_WALL": "FAIL",
+  "PALT_M4B_A3_EXIT_CRITERIA": "NOT_MET",
+  "PALT_M4B_A3_OWNER_ACCEPTANCE": "NOT_REQUESTED_SLICE_INCOMPLETE",
+  "MOULDING_SINK_RISK": "PROVISIONAL_ENGINEERING_RISK",
+  "PALT_P1_FINAL_DIMENSIONS": "NOT_APPROVED",
+  "PALT_P1_MANUFACTURING_AUTHORITY": "NOT_ESTABLISHED",
+  "PALT_P1_OWNER_APPROVAL": "REJECTED_PENDING_M4B",
+  "PALT_M4B_B": "BLOCKED",
+  "PALT_M5": "BLOCKED",
+  "self_approved": false,
+  "provider_calls": 0,
+  "image_generation_calls": 0,
+  "selection": {
+    "record_type": "palt_m4b_a3_selection/1.0",
+    "selected": "C_POCKET_FOLLOWING_CORE",
+    "policy_satisfied": false,
+    "status": "BEST_CONSTRUCTIBLE_CANDIDATE_NOT_A_PASSING_SELECTION",
+    "rule": "smallest p95-p5 thickness band, tie-broken on cup-wall variation",
+    "unmet_policies": [
+      "min_wall_at_or_above_policy",
+      "no_solid_thick_floor",
+      "ratio_within_policy"
+    ],
+    "rejected": [
+      {
+        "strategy": "A_UNIFORM_UNDERSIDE_CORE",
+        "verdict": "INVALID",
+        "reason": [
+          "ratio_within_policy",
+          "no_solid_thick_floor"
+        ]
+      },
+      {
+        "strategy": "B_CELLULAR_UNDERSIDE_CORE",
+        "verdict": "NOT_CONSTRUCTIBLE",
+        "reason": "cell-grid rib of 1.0 mm leaves -0.2922 mm to the pocket cup (cup reaches 15.0922 mm, cell inner half-width 14.8000 mm). The policy floor is 0.5 mm. At the PALT-P1 pitch the cups nearly fill their cells, so CELL-GRID rib placement is geometrically excluded \u2014 see RIB_POLICY['viable_placement'] for the diagonal alternative, which is deferred to M4B-B."
+      },
+      {
+        "strategy": "C_POCKET_FOLLOWING_CORE",
+        "verdict": "INVALID",
+        "reason": [
+          "min_wall_at_or_above_policy",
+          "ratio_within_policy"
+        ]
+      },
+      {
+        "strategy": "D_HYBRID_CORE",
+        "verdict": "NOT_CONSTRUCTIBLE",
+        "reason": "cell-grid rib of 1.0 mm leaves 0.0807 mm to the pocket cup (cup reaches 14.7193 mm, cell inner half-width 14.8000 mm). The policy floor is 0.5 mm. At the PALT-P1 pitch the cups nearly fill their cells, so CELL-GRID rib placement is geometrically excluded \u2014 see RIB_POLICY['viable_placement'] for the diagonal alternative, which is deferred to M4B-B."
+      }
+    ],
+    "authority": "PROVISIONAL_DESIGN_DEFAULT"
+  },
+  "clearance": {
+    "record_type": "palt_m4b_a3_clearance_recheck/1.0",
+    "PAN_POCKET_INTERSECTION_COUNT": 0,
+    "GEOMETRIC_CLEARANCE": "PASS",
+    "ENGINEERING_CLEARANCE_RSS": "PASS",
+    "MANUFACTURING_CONFIRMED_CLEARANCE": "NOT_ESTABLISHED",
+    "measurement": {
+      "min_radial_clearance_mm": 0.564709,
+      "min_radial_at_z_mm": 2.80192,
+      "min_normal_clearance_mm": 0.249767,
+      "min_vertical_clearance_mm": 0.15,
+      "governing_clearance_mm": 0.249767,
+      "metric_note": "governing = min(radial-at-elevation, signed normal distance); radial alone can read clearance where two arcs foul"
+    },
+    "seating": {
+      "pocket_flat_floor_radius_mm": 13.012422,
+      "pan_flat_base_radius_mm": 12.7,
+      "flat_seating_margin_mm": 0.312422,
+      "seats_on_flat_base": true,
+      "contact_mode": "FLAT_FACE_SEATING",
+      "adhesive_gap_mm": 0.1499999999999999,
+      "stable": true,
+      "note": "a positive margin means the whole flat base is carried by the flat pocket floor; negative means the base overhangs onto the fillet and the pan is carried on a ring"
+    },
+    "tiers": {
+      "record_type": "clearance_classification/1.0",
+      "GEOMETRIC_CLEARANCE": {
+        "established": true,
+        "value_mm": 0.249767,
+        "criterion": "governing clearance > 0"
+      },
+      "ENGINEERING_CLEARANCE": {
+        "established": true,
+        "value_mm": 0.249767,
+        "required_mm": 0.162853,
+        "method": "ROOT_SUM_SQUARE",
+        "worst_case_required_mm": 0.351,
+        "survives_worst_case": false,
+        "criterion": "governing clearance >= the RSS tolerance stack AND the pan seats on its flat base"
+      },
+      "MANUFACTURING_CONFIRMED_CLEARANCE": {
+        "established": false,
+        "reason": "no supplier has confirmed the pan shell tolerance, the moulding capability or the plating build",
+        "status": "NOT_ESTABLISHED"
+      },
+      "production_ready": false,
+      "authority": "PROVISIONAL_DESIGN_DEFAULT"
+    },
+    "pan_recess_mm": 1.0,
+    "adhesive_gap_mm": 0.1499999999999999,
+    "powder_crown_z_mm": 6.45,
+    "powder_to_lid_clearance_mm": 2.1,
+    "pocket_floor_breakthrough": false,
+    "outer_wall_breakthrough": false,
+    "deck_ligament_mm": 2.415584,
+    "deck_ligament_within_policy": true,
+    "fit_datum_unchanged_mm": 26.8
+  },
+  "deliverables": [
+    "A2_vs_A3_thickness_comparison.png",
+    "between_two_pans_section.png",
+    "centre_column_section.png",
+    "centre_row_section.png",
+    "core_construction_section.png",
+    "maximum_thickness_section.png",
+    "minimum_pocket_wall_section.png",
+    "narrow_ligament_section.png",
+    "outer_wall_transition_section.png",
+    "strategy_A_thickness_map.png",
+    "strategy_B_thickness_map.png",
+    "strategy_C_thickness_map.png",
+    "strategy_D_thickness_map.png",
+    "thickness_histogram.png"
+  ],
+  "pixel_hashes": {
+    "strategy_A_thickness_map.png": "cfd10e5c10b109b5",
+    "strategy_B_thickness_map.png": "0a881b37bf2c4239",
+    "strategy_C_thickness_map.png": "de48e817a99f0060",
+    "strategy_D_thickness_map.png": "1423a11b89b8d9d5",
+    "thickness_histogram.png": "785f9a54a657b0b0",
+    "A2_vs_A3_thickness_comparison.png": "aecf2d0ccd4f6387",
+    "centre_row_section.png": "c77655ceb4c44fe4",
+    "centre_column_section.png": "289eb5518caa4318",
+    "between_two_pans_section.png": "6e96f83da66b0900",
+    "narrow_ligament_section.png": "40c9884f981a2615",
+    "minimum_pocket_wall_section.png": "c9d3816ed9faf62e",
+    "maximum_thickness_section.png": "2b1396df54a60722",
+    "core_construction_section.png": "9b8c7a3ef8bf2f9e",
+    "outer_wall_transition_section.png": "7b818e224484f308"
+  },
+  "unresolved": [
+    "a 0.663 mm minimum wall is present in the sampled field and its LOCATION IS NOT IDENTIFIED. It is invariant to deck skin thickness (1.0-1.6 mm), so it is neither the rim-fillet interaction nor a deck-skin effect. Until it is located and fixed the minimum-wall and thickness-ratio policies both fail.",
+    "the section-lattice thickness method is density sensitive: 5 planes/family reported a false PASS (max 2.144, ratio 2.144) that 21 planes/family contradicts. Any future thickness verdict must state its sampling density.",
+    "cell-grid ribs are geometrically excluded at pitch 30.6 (B overlaps by 0.29 mm, D clears by only 0.08 mm against a 0.5 mm policy floor). A diagonal rib lattice is the viable placement and is not implemented.",
+    "no FEA and no physical part: structural sufficiency of any rib or skin is NOT demonstrated."
+  ]
+}

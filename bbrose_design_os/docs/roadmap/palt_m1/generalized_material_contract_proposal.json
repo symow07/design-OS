@@ -1,0 +1,98 @@
+{
+ "record_type": "generalized_material_contract_proposal/1.0",
+ "status": "PROPOSAL — NOT IMPLEMENTED",
+ "created_at": "2026-08-05",
+ "purpose": "replace P1-specific hard-coded material values with a structured, provenance-carrying specification that any product target can consume; geometry identity must not change when only materials change",
+ "authorities": {
+  "GEOMETRY_AUTHORITY": "shape/dimensions/mesh identity",
+  "MATERIAL_SPECIFICATION_AUTHORITY": "material class, finish, optical parameters",
+  "COLOUR_AUTHORITY": "colour values + provenance",
+  "ARTWORK_AUTHORITY": "editable .AI artwork + typography",
+  "RENDER_SCENE_AUTHORITY": "lighting/camera/exposure — VISUALIZATION_ONLY",
+  "manufacturing_barrier": "no render material or rendered colour ever becomes manufacturing, masterbatch or print authority"
+ },
+ "schema": {
+  "material_specification/1.0": {
+   "spec_id": "string (stable identifier)",
+   "applies_to_component": "body | closure | collar | bulb | applicator | contents | mirror | pan | case | lid | insert",
+   "material_class": {
+    "enum": ["GLASS", "PLASTIC", "ACRYLIC", "ALUMINIUM", "RUBBER", "POWDER", "PAPERBOARD", "MIRROR"],
+    "fail_closed": "unknown class is refused, never defaulted"
+   },
+   "finish": {
+    "enum": ["GLOSSY", "MATTE", "FROSTED", "SATIN", "METALLIC", "SOFT_TOUCH"],
+    "note": "finish is a SURFACE treatment and must never silently remove transmission (P1 V2/V3 rejection lesson)"
+   },
+   "transparency": {
+    "enum": ["CLEAR", "TINTED", "TRANSLUCENT", "OPAQUE"]
+   },
+   "colour": {
+    "value": "sRGB triple or named colour reference",
+    "authority": "OWNER_CONFIRMED | MEASURED_FROM_SAMPLE | ONLINE_ANALOGOUS_REFERENCE | DESIGN_DEFAULT",
+    "confidence": "HIGH | MEDIUM | LOW",
+    "production_colour_barrier": "a render colour is NEVER a Pantone/masterbatch/print specification without its own physical authority (lab dip, drawdown, printed proof)"
+   },
+   "optical": {
+    "surface_roughness": "0..1",
+    "ior": "float (glass ~1.5, acrylic ~1.49, water/serum ~1.33-1.38)",
+    "transmission_weight": "0..1",
+    "volume_absorption_colour": "sRGB triple",
+    "volume_absorption_density_per_mm": "float",
+    "metallic": "0..1",
+    "specular_ior_level": "0..1",
+    "micro_roughness": "optional secondary roughness/bump for realism"
+   },
+   "thickness_mm": {
+    "value": "float",
+    "authority": "VISUALIZATION_ONLY_GEOMETRY unless measured",
+    "note": "wall thickness drives optical path length and therefore perceived colour"
+   },
+   "contents": {
+    "present": "bool",
+    "fill_level_fraction": "0..1 of internal cavity height",
+    "fill_colour": "sRGB triple",
+    "fill_transparency": "CLEAR | TINTED | TRANSLUCENT | OPAQUE",
+    "fill_absorption_density_per_mm": "float",
+    "authority": "VISUALIZATION_ONLY_GEOMETRY",
+    "why_first_class": "P1 V2/V3 were rejected as 'opaque brown' because the vessel was modelled EMPTY — all colour had to come from the wall, which physically saturates toward brown/red over long optical paths. Contents are a material input, not an afterthought."
+   }
+  },
+  "material_preset/1.0": {
+   "preset_id": "string",
+   "description": "human-readable",
+   "base_specification": "a material_specification/1.0",
+   "openness_rule": "presets are STARTING POINTS; an arbitrary valid specification is always accepted and never forced into a preset"
+  },
+  "scene_specification/1.0": {
+   "mode": {
+    "enum": ["NEUTRAL_VALIDATION", "CLIENT_PRESENTATION"],
+    "rule": "NEUTRAL_VALIDATION uses the clay override and is the ONLY geometry-truth mode; CLIENT_PRESENTATION never validates silhouette or dimensions"
+   },
+   "lighting_preset": "studio_neutral_grey | studio_soft_key | edge_transmission_study | flat_documentation",
+   "background": "grey | white | calibration_card | stripes | transparent",
+   "colour_management": "pinned: Standard view transform, exposure 0, gamma 1, Cycles CPU seed 0",
+   "no_depth_of_field_in_validation_views": true
+  }
+ },
+ "solvers": {
+  "absorption_for_target_transmission": {
+   "law": "transmitted = exp(-density * (1 - colour) * path_mm)",
+   "usage": "given a target transmitted RGB at a stated path length, solve absorption colour+density instead of guessing",
+   "provenance": "derived during P1 V4 after tan/red failures; documented so no future target repeats the search"
+  }
+ },
+ "invariants_to_test": [
+  "material_change_preserves_mesh_identity — changing any material field leaves every mesh identity byte-identical",
+  "unknown_material_class_is_refused (fail-closed, never defaulted)",
+  "finish_never_zeroes_transmission for CLEAR/TINTED/TRANSLUCENT specs",
+  "neutral_validation_mode_ignores_material_specification entirely",
+  "existing P1 V1-V4 fixtures render unchanged while the generalized path is disabled",
+  "colour provenance is mandatory and never promoted to production authority"
+ ],
+ "explicitly_out_of_scope_here": [
+  "implementation",
+  "Blender changes",
+  "image generation",
+  "any claim of manufacturing accuracy"
+ ]
+}

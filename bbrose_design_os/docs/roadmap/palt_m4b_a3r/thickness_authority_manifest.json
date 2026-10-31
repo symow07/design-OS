@@ -1,0 +1,49 @@
+{
+  "record_type": "thickness_authority_manifest/1.0",
+  "A3R_INPUT_TRAY_IDENTITY": "26c817b8c113851a",
+  "methods": {
+    "A_ANALYTICAL": "closed form",
+    "B_NORMAL_RAY": {
+      "version": "normal_ray_thickness/1.0",
+      "sample_pattern": "FACE_CENTROID_PLUS_FIXED_BARYCENTRIC",
+      "barycentric": [
+        [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        [
+          0.6,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.6,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.6
+        ]
+      ],
+      "normal_method": "FACE_WINDING_CROSS_PRODUCT_UNIT",
+      "ray_epsilon_mm": 1e-06,
+      "max_ray_distance_mm": 12.0,
+      "adjacency_exclusion_depth": 1,
+      "opposing_face_cos": 0.2,
+      "intersection_ordering": "ASCENDING_T_THEN_ASCENDING_FACE_INDEX",
+      "ambiguity_relative_tolerance": 0.02,
+      "coordinate_quantization": 1e-06,
+      "acceleration": "UNIFORM_BUCKET_GRID/1.0",
+      "bucket_mm": 3.0,
+      "ambiguity_policy": "REPORT_AS_SURFACE_PAIRING_AMBIGUITY_NOT_A_VALUE"
+    },
+    "C_SECTION": "deterministic mesh-plane interval"
+  },
+  "authoritative_definition": "LOCAL_NORMAL_THICKNESS",
+  "authoritative_minimum_mm": 0.600738,
+  "ray_identity": "b95df9fddd3e1dae",
+  "synthetic_fixtures": "slab 2.0 exact, cylindrical shell 1.5, near-miss pair rejects 0.4 gap"
+}

@@ -1,0 +1,30 @@
+{
+  "record_type": "combined_manifest_declaration/1.0",
+  "protocol_identity": "92bfaadcbd6691e9",
+  "declared_before_first_frame": true,
+  "precondition_1_wiring": "28 of the 35 sites wired through FT.traced_zero (observation-only; behavior unchanged, suite green); NAMED UNWIRED: 6 frozen-M5 protocol sites (may not touch) + concept_analysis:276 (shape mismatch at line) \u2014 these remain NOT_ASSESSED regardless of the trace",
+  "precondition_2_reflexive": "traced_zero corpus tests in suite: records when active, behavior identical when inactive; the writer raises on unset destination (A38 control)",
+  "precondition_3_controls": "positive (deliberate firing recorded) and raising-writer (empty destination raises) both PASS in suite",
+  "precondition_4_pass_law_declared": {
+    "required_independent_axes": 2,
+    "relative_effect_bar": 0.25,
+    "supporting_axes_never_count": true,
+    "r5_ceiling": 0.8,
+    "noise_floor_separation_margin": 2.0,
+    "declared": "here, before any frame; not restated after"
+  },
+  "precondition_5_negative_controls": "declared with each ensemble: seed-only pairings ARE the negative control per member (a statistic separating same-material seed variants is measuring the seed); exposure-only control per texture calibration as commissioned; glitter zero-particle controls at the event ensemble seeds",
+  "queue_102": {
+    "p1_member_ensembles": "SATIN/PRESSED/CREAM x 6 seeds x lobe+texture (36)",
+    "p2_flake_ensembles": "METALLIC/GLITTER x 6 seeds (12)",
+    "p3_marbling_solid": "warm-MATTE x 6 seeds on the marbling rig (6)",
+    "p4_census_replicate": "6 remaining census families x 2 seeds x 2 rigs (24)",
+    "p5_glitter_events": "event ensemble 61-66 completion + matte controls (6)",
+    "p6_positive_controls": "C3-class warm/cool cross-fixtures (8)",
+    "p7_calibrations": "texture per-family energies, reused from disk where cached (~10)",
+    "cap": 102,
+    "growth_rule": "exceeding 102 comes to the owner BEFORE the frames run"
+  },
+  "trace_env": "M6_FIRING_TRACE_PATH set for every queue process; forward closure only \u2014 already-committed numbers stay open on unwired sites per A62",
+  "owner_approved": false
+}

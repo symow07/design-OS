@@ -1,0 +1,24 @@
+{
+ "record_type": "a236_glitter_adequacy_citation_check/1.0",
+ "law": "953dc78bed263921",
+ "question": "does any record cite the glitter result as 1i-adequate, as clearing a noise floor, or in any way implying an adequacy assessment was performed?",
+ "a190_boundary_reported_first": {
+  "scanned": "2,185 tracked .json and .md records",
+  "unreadable": 0,
+  "not_reached_and_why": [
+   "code files \u2014 a citation of a verdict lives in a record, not in a module",
+   "untracked files"
+  ]
+ },
+ "finding": "NO \u2014 no record makes such a claim; the negative finding is on the record",
+ "evidence": {
+  "measurement_adequacy/phase2_retroactive.json": "all three GLITTER-naming rows carry classification_1i: ADEQUACY_UNASSESSED with replicate_spread: NO_REPLICATE_SPREAD_EVER_MEASURED \u2014 including the row for the GLITTER_PARTICLE_RIG PASS itself",
+  "establishment_closure/phase0.json": "same rows, same classification, restated in full",
+  "glitter_particle_rig_report.json": "its own ADEQUACY_1i block states 'the event-count PASS (113 vs 25) and control comparisons are ADEQUACY_UNASSESSED on the repaired chain'",
+  "establishment_table.json": "GLITTER_RIG carried as suspended pending a declared event ensemble; the 2026-08-11 release records the ensemble and controls, and claims establishment of the EVENT COUNT, not of 1i adequacy"
+ },
+ "status_recorded": "ADEQUACY_NEVER_ASSESSED",
+ "distinct_from": "'assessed and MET' \u2014 the distinction is preserved everywhere it appears; no overclaim of the 3d shape found",
+ "why_the_negative_matters": "the question will be asked again at the exit gate",
+ "owner_approved": false
+}

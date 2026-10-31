@@ -1,0 +1,29 @@
+{
+ "record_type": "powder_measurement_entry_declaration/1.0",
+ "protocol_identity": "c2d423674ed411e5",
+ "declared_before_computation": true,
+ "entries_with_reasoning": {
+  "palette_characterization_rig": "the render+measure chokepoint every powder swatch passes through (characterize_powder, region_indices, axes_from)",
+  "palette_powder_texture_axes": "texture measurement and calibration entry (pairs, single-subject renders, the measure chokepoints)",
+  "palette_powder_rigs": "particle census and rig overrides \u2014 the glitter-event measurement entry",
+  "palette_flake_rig": "flake reflection measurement entry",
+  "palette_marbling_rig": "marbling structure measurement entry",
+  "palette_raking_rig": "raking relief measurement entry",
+  "palette_axis_eligibility": "noise-floor and eligibility ensembles \u2014 invokes the rigs to measure floors",
+  "palette_statistics": "the guarded correlation instrument every adjudication consumes",
+  "palette_powder_engine": "material specs realized by every powder render; identity source for frames",
+  "palette_powder_protocol": "the law adjudications consult (PASS_LAW, INDEPENDENCE_LAW, identities)",
+  "palette_firing_trace": "the trace instrument live during every measurement run",
+  "palette_queue_control": "queue evidence: first-act control and the trace citing path",
+  "palette_energy_recovery": "energy reading/derivation and the stamped-axis citing path",
+  "palette_spend_reconciler": "spend reconciliation every measurement queue ends with",
+  "palette_rig_validation": "external caller invoking rig measurement, found in the class-scope arc; absent from the old graph (A157's naming)",
+  "blender_scripts/powder_materials": "the DECLARED subprocess edge \u2014 the renderer-side script measurement renders execute"
+ },
+ "n_entries": 16,
+ "closure_set_identity": "9561c595db668306",
+ "recipe_co_located": "sha256(json.dumps({'closure': 'powder_measurement', 'entries': sorted(entry names)}, sort_keys=True)).hexdigest()[:16] \u2014 computable from this record alone",
+ "instrument_declared": "AST import graph (Import/ImportFrom nodes) over apps/pipeline/services, transitive closure from these entries, plus the declared subprocess edge to blender_scripts \u2014 the committed script closure_graph.py beside this record; computed against CURRENT committed code, not the era's (A158)",
+ "provenance_identity_2x": "minted at computation time over the code commit the closure is computed against \u2014 a separate identity per 2x, in the computation record",
+ "owner_approved": false
+}

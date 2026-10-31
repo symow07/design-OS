@@ -1,0 +1,297 @@
+{
+  "record_type": "class_scope_body/1.0",
+  "graph_on_36": {
+    "reach_powder_committing": [
+      "concept_analysis.py:217:ifexp_default_0.0",
+      "concept_analysis.py:276:ifexp_default_1.0",
+      "palette_baked_geometry.py:59:ifexp_default_0.0",
+      "palette_contracts.py:149:ifexp_default_0.0",
+      "palette_layout_kernel.py:100:ifexp_default_0.0",
+      "palette_layout_kernel.py:102:ifexp_default_0.0",
+      "palette_layout_kernel.py:104:ifexp_default_0.0",
+      "palette_layout_kernel.py:118:ifexp_default_0.0",
+      "palette_moulded_geometry.py:443:ifexp_default_0.3",
+      "palette_moulded_rect.py:498:ifexp_default_0.0",
+      "palette_recessed_tray_geometry.py:147:ifexp_default_0.0",
+      "palette_stackup_engine.py:79:ifexp_default_0.0",
+      "palette_stackup_engine.py:260:except_swallow",
+      "palette_stackup_engine.py:117:ifexp_default_0.0",
+      "palette_stackup_engine.py:119:ifexp_default_0.0",
+      "palette_stackup_engine.py:195:ifexp_default_0.0",
+      "palette_stackup_engine.py:197:ifexp_default_0.0",
+      "palette_stackup_engine.py:199:ifexp_default_0.0",
+      "palette_stackup_engine.py:201:ifexp_default_0.0",
+      "palette_stackup_engine.py:204:ifexp_default_0.0",
+      "palette_stackup_engine.py:205:ifexp_default_0.0",
+      "palette_stackup_engine.py:206:ifexp_default_0.0",
+      "palette_stackup_engine.py:207:ifexp_default_0.0",
+      "palette_stackup_engine.py:216:ifexp_default_0.0",
+      "palette_stackup_engine.py:217:ifexp_default_0.0",
+      "palette_stackup_engine.py:219:ifexp_default_0.0",
+      "palette_stackup_engine.py:220:ifexp_default_0.0",
+      "palette_stackup_engine.py:93:ifexp_default_0.0"
+    ],
+    "outside_powder": [
+      "m4b_a_tray_views.py:149:ifexp_default_0.9",
+      "material_characterization.py:367:ifexp_default_0.0",
+      "material_characterization.py:387:ifexp_default_0.0",
+      "material_characterization.py:388:ifexp_default_0.0",
+      "material_characterization.py:354:ifexp_default_0.0",
+      "p1_material_studio.py:178:ifexp_default_58.0",
+      "palette_csg_views.py:155:ifexp_default_0.32",
+      "palette_csg_views.py:302:except_swallow"
+    ],
+    "consequence": "the in-powder set JOINS THE MANIFEST GATE per the pre-commitment \u2014 established by the graph, not by reading; the clearance chain (baked_clearance -> moulded_rect -> layout/contracts) is exactly where lid_roof fired, so this is consistent, not surprising"
+  },
+  "layout_node_declared": {
+    "node": "M6-LAYOUT-FALLBACK-AUDIT",
+    "sites": [
+      "m4b_a_tray_views.py:149:ifexp_default_0.9",
+      "material_characterization.py:367:ifexp_default_0.0",
+      "material_characterization.py:387:ifexp_default_0.0",
+      "material_characterization.py:388:ifexp_default_0.0",
+      "material_characterization.py:354:ifexp_default_0.0",
+      "p1_material_studio.py:178:ifexp_default_58.0",
+      "palette_csg_views.py:155:ifexp_default_0.32",
+      "palette_csg_views.py:302:except_swallow"
+    ],
+    "status_applied": "layout/mechanism records carry NOT_ESTABLISHED_PENDING_FALLBACK_AUDIT, inherited downstream",
+    "consumers": "layout records feed dieline/case geometry (moulded_rect -> physical output path) \u2014 per the pre-commitment this REPRIORITISES the layout audit ahead of its deferred position, stated at the boundary for the owner"
+  },
+  "join_813": {
+    "counts": {
+      "DISPOSITIONED_BY_AUDIT_ARC": 26,
+      "INERT_BY_UNREACHABILITY_GRAPH": 638,
+      "NOT_ASSESSED_IN_REACH": 149
+    },
+    "unmapped": 0,
+    "not_assessed_in_reach_keys": [
+      [
+        "concept_analysis.py",
+        "mask_quality",
+        "ifexp"
+      ],
+      [
+        "concept_analysis.py",
+        "mask_quality",
+        "regex"
+      ],
+      [
+        "concept_analysis.py",
+        "measure_mask",
+        "ifexp"
+      ],
+      [
+        "concept_analysis.py",
+        "measure_mask",
+        "regex"
+      ],
+      [
+        "container_geometry.py",
+        "_section_points",
+        "lookup_default"
+      ],
+      [
+        "container_geometry.py",
+        "_section_points",
+        "regex"
+      ],
+      [
+        "container_geometry.py",
+        "build_geometry_record",
+        "regex"
+      ],
+      [
+        "container_geometry.py",
+        "classify_geometry",
+        "regex"
+      ],
+      [
+        "geometry_validation_render.py",
+        "check_views",
+        "regex"
+      ],
+      [
+        "geometry_validation_render.py",
+        "export_obj",
+        "numeric_default_arg"
+      ],
+      [
+        "geometry_validation_render.py",
+        "render_fixture",
+        "lookup_default"
+      ],
+      [
+        "geometry_validation_render.py",
+        "render_fixture",
+        "or_default"
+      ],
+      [
+        "geometry_validation_render.py",
+        "render_fixture",
+        "regex"
+      ],
+      [
+        "m4b_a_tray_views.py",
+        "<module>",
+        "ifexp"
+      ],
+      [
+        "m4b_a_tray_views.py",
+        "<module>",
+        "lookup_default"
+      ],
+      [
+        "m4b_a_tray_views.py",
+        "<module>",
+        "regex"
+      ],
+      [
+        "m4b_a_tray_views.py",
+        "clay",
+        "numeric_default_arg"
+      ],
+      [
+        "m4b_a_tray_views.py",
+        "wire_mat",
+        "lookup_default"
+      ],
+      [
+        "m4b_a_tray_views.py",
+        "wire_mat",
+        "regex"
+      ],
+      [
+        "material_characterization.py",
+        "<module>",
+        "ifexp"
+      ],
+      [
+        "material_characterization.py",
+        "<module>",
+        "lookup_default"
+      ],
+      [
+        "material_characterization.py",
+        "<module>",
+        "regex"
+      ],
+      [
+        "material_characterization.py",
+        "principled",
+        "lookup_default"
+      ],
+      [
+        "material_characterization.py",
+        "principled",
+        "regex"
+      ],
+      [
+        "p1_material_preview.py",
+        "<module>",
+        "lookup_default"
+      ],
+      [
+        "p1_material_preview.py",
+        "<module>",
+        "regex"
+      ],
+      [
+        "p1_material_studio.py",
+        "<module>",
+        "lookup_default"
+      ],
+      [
+        "p1_material_studio.py",
+        "<module>",
+        "regex"
+      ],
+      [
+        "p1_material_studio.py",
+        "flat_material",
+        "numeric_default_arg"
+      ],
+      [
+        "p1_material_studio.py",
+        "make_backdrop",
+        "ifexp"
+      ],
+      [
+        "palette_baked_geometry.py",
+        "_rounded_rect_boundary",
+        "numeric_default_arg"
+      ],
+      [
+        "palette_baked_geometry.py",
+        "build_powder_volume",
+        "ifexp"
+      ],
+      [
+        "palette_baked_geometry.py",
+        "build_powder_volume",
+        "numeric_default_arg"
+      ],
+      [
+        "palette_baked_geometry.py",
+        "build_powder_volume",
+        "regex"
+      ],
+      [
+        "palette_characterization_protocol.py",
+        "_clipped_subject",
+        "lookup_default"
+      ],
+      [
+        "palette_characterization_protocol.py",
+        "_clipped_subject",
+        "regex"
+      ],
+      [
+        "palette_characterization_protocol.py",
+        "_normalised",
+        "ifexp"
+      ],
+      [
+        "palette_characterization_protocol.py",
+        "_normalised",
+        "or_default"
+      ],
+      [
+        "palette_characterization_protocol.py",
+        "_normalised",
+        "regex"
+      ],
+      [
+        "palette_characterization_protocol.py",
+        "_region_grid",
+        "regex"
+      ]
+    ],
+    "statement": "every key maps to a disposition CLASS by declared instrument: audit-arc files carry the firing-audit records; unreachable files discharge by the validated graph; in-reach non-audited keys are NOT_ASSESSED and join the class ledger \u2014 zero keys without any disposition"
+  },
+  "A61_span": {
+    "from": "95cddef (A22 gate declared)",
+    "to": "6e29604 (composed gate)",
+    "commits_through_gate": 16,
+    "unprotected_shapes": [
+      "line-break ratio guards",
+      "kw-only numeric defaults",
+      "or-defaults",
+      "AST-only except-swallow variants"
+    ]
+  },
+  "A62_seven": {
+    "palette_characterization_rig.py:315:ifexp_default_0.0": "render/measure chokepoint \u2014 every powder measurement record transits it",
+    "palette_material_characterization.py:176:ifexp_default_255.0": "M5 committed pair verdicts (frozen protocol scope, A7 register)",
+    "palette_material_characterization.py:266:ifexp_default_0.0": "M5 committed pair verdicts (frozen protocol scope, A7 register)",
+    "palette_powder_axis_diagnosis.py:118:ifexp_default_0.0": "diagnostic study records only (no verdict)",
+    "palette_powder_rigs.py:289:ifexp_default_61": "glitter event census records (113/144) \u2014 already NOT_ESTABLISHED_PENDING_SPREAD",
+    "palette_powder_rigs.py:234:ifexp_default_0.0": "glitter event census records (113/144) \u2014 already NOT_ESTABLISHED_PENDING_SPREAD",
+    "palette_raking_rig.py:293:except_swallow": "enumerate at manifest"
+  },
+  "distances": {
+    "class": 43,
+    "manifest": "7 + 28 in-powder joiners (revised by the graph)"
+  },
+  "owner_approved": false
+}

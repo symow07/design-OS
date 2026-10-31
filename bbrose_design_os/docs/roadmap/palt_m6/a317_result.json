@@ -1,0 +1,56 @@
+{
+ "record_type": "a317_result/1.0",
+ "declared_before_measurement": true,
+ "declared_utc": "2026-08-11T09:34:43.215130Z",
+ "question": "does the restored characterization suite pass AT each commit hashed under the degraded gate",
+ "commits": {
+  "c394e62": {
+   "node": "3h",
+   "identity_in_force": "3de128decd31507f"
+  },
+  "edcfdb9": {
+   "node": "3i",
+   "identity_in_force": "55e38b4cd427fdf6"
+  },
+  "e244533": {
+   "node": "3j",
+   "identity_in_force": "1748a3de3b3e30e6"
+  }
+ },
+ "outcome_space": [
+  "PASSES_AT_ALL_THREE",
+  "FAILS_AT_ONE_OR_MORE",
+  "NOT_RUNNABLE_AT_THAT_COMMIT"
+ ],
+ "expectation_declared": "NONE \u2014 not derivable, so nothing is said (A299)",
+ "restore_source": "d3fc99b \u2014 the last commit at which the file was 335 lines",
+ "pin_rule": "each commit gets ITS OWN identity, not the current one",
+ "measured_utc": "2026-08-11T09:37:05.665144Z",
+ "outcome": "PASSES_AT_ALL_THREE",
+ "per_commit": {
+  "c394e62": {
+   "node": "3h",
+   "declared_identity": "3de128decd31507f",
+   "computed_identity": "3de128decd31507f",
+   "identity_match": "YES",
+   "result": "28 passed, 2 subtests passed"
+  },
+  "edcfdb9": {
+   "node": "3i",
+   "declared_identity": "55e38b4cd427fdf6",
+   "computed_identity": "55e38b4cd427fdf6",
+   "identity_match": "YES",
+   "result": "28 passed, 2 subtests passed"
+  },
+  "e244533": {
+   "node": "3j",
+   "declared_identity": "1748a3de3b3e30e6",
+   "computed_identity": "1748a3de3b3e30e6",
+   "identity_match": "YES",
+   "result": "28 passed, 2 subtests passed"
+  }
+ },
+ "bonus_verification": "each commit's DECLARED identity was recomputed from its own tree and matched \u2014 the three amendments were correctly hashed even though the gate that should have proven it was degraded",
+ "reading": "the gate failure is real and the substantive risk did NOT materialize. The missing coverage would have passed at all three commits. This neither excuses the degraded gate nor unhashes anything: it establishes that the amendments were hashed under an UNVERIFIED gate, which is a classification question for the next node (A317).",
+ "env_note": "scratch worktrees carry no .env; SECRET_KEY and DATABASE_URL were supplied as throwaway values from the environment. .env was not read, echoed or copied."
+}

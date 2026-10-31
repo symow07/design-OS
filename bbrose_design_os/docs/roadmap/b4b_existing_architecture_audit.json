@@ -1,0 +1,89 @@
+{
+ "record_type": "b4b_existing_architecture_audit/1.0",
+ "created_at": "2026-07-31",
+ "slice": "PRODUCT_CONTAINER_B4B_OPTIONAL_REFERENCES",
+ "purpose": "section 2 requires inspecting the existing code before adding models or fields. This is that inspection, and it doubles as the migration justification section 15 asks for.",
+
+ "already_exists": {
+  "model": {
+   "name": "apps.pipeline.models.TaskReference",
+   "migration": "apps/pipeline/migrations/0013_taskreference.py",
+   "fields": ["task (FK DesignTask, related_name='references', CASCADE)",
+              "kind (CharField, choices REF_KINDS)",
+              "image (ImageField, upload_to='task_refs/')",
+              "created_at (auto_now_add)"],
+   "verdict": "REUSE. No second model is needed and none will be created."
+  },
+  "categories": {
+   "REF_KINDS": ["container", "logo", "label", "inspiration", "color"],
+   "verdict": "the five required categories already exist. NOTE the stored value is 'color', not 'colour' — the brief lists 'colour'. Reuse the stored key and change only the owner-facing label, rather than migrating data for a spelling."
+  },
+  "upload_persistence": {
+   "where": "apps/pipeline/views.py ~line 175, inside task creation",
+   "behaviour": "iterates request.FILES.getlist(kind) per valid kind and creates a TaskReference per file, before enqueue",
+   "verdict": "the wiring exists. It performs NO validation of any kind."
+  },
+  "creation_ui": {
+   "where": "templates/dashboard/_task_list.html #ref-uploads",
+   "behaviour": "five labelled file inputs, one per category, inside the Product Container panel; thumbnails container #ref-thumbs",
+   "verdict": "category-per-file is already explicit rather than one bucket."
+  },
+  "client_upload": {
+   "where": "static/js/poll.js REF_FILES + multipart submit",
+   "behaviour": "collects files per kind and appends them to FormData under the kind name; JSON path unchanged for packaging",
+   "verdict": "reuse. Packaging never sends files."
+  },
+  "review_board": {
+   "where": "apps/pipeline/review_board.py ~line 176",
+   "behaviour": "builds ReferenceItem(name=<kind label>, image_url=...) for every reference",
+   "verdict": "a References section exists and is populated."
+  }
+ },
+
+ "gaps_found": {
+  "blocking_a_migration": [
+   "image is an ImageField, which validates that the upload is a decodable image. Section 5 requires .pdf, .ai and .eps, and an ImageField will reject all three. This alone makes a field change unavoidable.",
+   "no original_filename — the sanitized stored name cannot be reversed to what the user uploaded",
+   "no media_type — section 6 requires the DETECTED type, and section 5 requires rejecting extension/content-type conflicts, which cannot be checked or recorded without storing it",
+   "no file_size — required by sections 6 and 8",
+   "no ordering — section 6 and the pipeline manifest both require it",
+   "no source classification (USER_UPLOAD) or status (REFERENCE_ONLY) — section 6 requires both persisted, and the REFERENCE ONLY badge in section 8 should read a stored fact rather than be hardcoded in a template"
+  ],
+  "migration_verdict": "REQUIRED, and minimal: one AlterField (ImageField -> FileField with validators) plus six AddFields on an existing table. No new model, no new relationship, no data migration.",
+  "not_blocking_a_migration": [
+   "no size limit anywhere — no central setting exists, so one must be introduced and referenced by model validation, the view, the JS and the tests",
+   "no format allowlist — any file type is currently accepted",
+   "no extension/content-type conflict detection",
+   "no filename sanitisation, traversal guard or collision handling beyond Django's storage default",
+   "creation is not transactional — a file failing partway leaves earlier TaskReference rows and their files behind",
+   "no authorization check on reference access — task ownership is not enforced when serving a reference",
+   "review board shows only a name and an image URL: no grouping by category, no filename, media type, size, timestamp, REFERENCE ONLY badge or empty state",
+   "no file-card fallback — a PDF/AI/EPS would be rendered through an <img> URL and silently appear broken",
+   "no pipeline manifest — references are not exposed to the front half in a structured form"
+  ]
+ },
+
+ "decisions_recorded_before_implementation": {
+  "reuse_taskreference": true,
+  "create_second_model": false,
+  "duplicate_upload_fields": false,
+  "parallel_relationship": false,
+  "target_specific_storage": false,
+  "colour_spelling": "keep the stored key 'color'; label it 'Colour Reference' in the UI"
+ },
+
+ "implementation_not_started": true,
+ "why_not_started": "the remaining work is security-sensitive file handling — allowlists, content-type conflict detection, path traversal, collision handling, transactional creation and per-task authorization — plus a schema change, a manifest, Review Board rework and roughly thirty required test properties. Starting it without room to finish and verify it properly would leave a half-applied migration and partially validated uploads in the tree, which is worse than a clean stopping point. The inspection is complete and durable; the build is not begun.",
+
+ "state_unchanged_by_this_record": {
+  "migration_applied": false,
+  "model_changed": false,
+  "gate_a": "PASSED",
+  "supplier_outreach": "DEFERRED_UNTIL_REAL_SUPPLIER_ENGAGEMENT",
+  "packaging_production": "NOT_STARTED",
+  "complete_product_pipeline": "PRESERVED",
+  "complete_product_creation_entry": "DEFERRED_UNTIL_DEDICATED_UX",
+  "provider_calls": 0,
+  "image_generation_calls": 0
+ }
+}

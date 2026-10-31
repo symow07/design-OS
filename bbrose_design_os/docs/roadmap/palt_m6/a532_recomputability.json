@@ -1,0 +1,11 @@
+{
+ "record_type": "a532_recomputability/1.0",
+ "date": "2026-08-12",
+ "question": "can ANY currently computable cell be recomputed under a provenance-carrying path with the same value",
+ "answer": "NO \u2014 no cell is currently recomputable",
+ "why": "recomputation needs two things the corpus does not hold: (1) WHICH frames each cell read \u2014 established unrecoverable at A521 in both directions; (2) the derivation that turned frame quantities (scene_linear_peak/mean/percentiles) into GRANULARITY, FWHM and SHEEN \u2014 no service was found that names the frame prefixes, so the derivation code is also unlocated.",
+ "measure_of_the_loss": "this is the depth A532 asked for. It is not that one cell lost its inputs; it is that no published M6 cell can be reproduced from the corpus at all. The numbers are readable and none of them is re-derivable.",
+ "A531_scope": "the provenance mechanism is specified \u2014 every derived quantity records path, family, seed and digest of every frame it reads, in the result artifact, at computation time, as a side effect of computing (A500 lesson). Its BUILD belongs to the next node, per the launcher NEXT NODE section and A533, so that the law and the instrument land together.",
+ "no_backfill_attempted": true,
+ "no_marked_cell_cited": true
+}

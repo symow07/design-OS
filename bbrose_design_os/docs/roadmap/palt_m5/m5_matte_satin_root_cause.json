@@ -1,0 +1,78 @@
+{
+  "record_type": "m5_matte_satin_root_cause/1.0",
+  "MATTE_VS_SATIN_CURRENT_PRODUCT_VIEW": "NON_DISCRIMINATING_VIEW_CONFIGURATION",
+  "MATTE_VS_SATIN": "FAIL",
+  "swatch_fixture": {
+    "built": true,
+    "geometry_identity": "720d17daee36e487",
+    "role": "ENGINEERING_MATERIAL_CHARACTERIZATION_FIXTURE",
+    "regions": [
+      "PLANAR",
+      "SHALLOW_CURVE",
+      "QUARTER_CYLINDER",
+      "BEVEL",
+      "GRAZING"
+    ],
+    "identical_for_every_material": true
+  },
+  "pass_law_declared_before_measurement": true,
+  "pass_law": "at least 2 of 6 independent axes differ by >= 25% relative effect, and the negative controls fail",
+  "measured": {
+    "HIGHLIGHT_FWHM": {
+      "matte": 0.0508,
+      "satin": 0.0916,
+      "relative_effect": 0.573,
+      "clears": true
+    },
+    "HIGHLIGHT_PEAK": {
+      "relative_effect": 0.049,
+      "clears": false
+    },
+    "SPECULAR_TO_DIFFUSE_RATIO": {
+      "matte": 1.1265,
+      "satin": 1.0723,
+      "relative_effect": 0.049,
+      "clears": false
+    },
+    "GRAZING_RESPONSE": {
+      "relative_effect": 0.0,
+      "clears": false
+    },
+    "SHEEN_REGION_RESPONSE": {
+      "relative_effect": 0.032,
+      "clears": false
+    },
+    "EDGE_HIGHLIGHT_RESPONSE": {
+      "relative_effect": 0.004,
+      "clears": false
+    }
+  },
+  "axes_clearing": 1,
+  "axes_required": 2,
+  "progress": "the swatch DOES separate the two materials — highlight full width at half maximum differs by 57% relative effect, which the three-quarter palette view could not show at all. The fixture works.",
+  "ROOT_CAUSE": {
+    "finding": "the characterization rig produces almost no specular lobe. SPECULAR_TO_DIFFUSE_RATIO is 1.13 for matte and 1.07 for satin — a value near 1.0 means the render is essentially pure diffuse, so five of the six axes have no signal to carry.",
+    "why": "the key is a 260 mm area light at 9.0e4 — very broad and dim. A specular highlight needs a compact, brighter source; a large soft box spreads the reflection until it merges with the diffuse base.",
+    "category": "LIGHT_SIZE_AND_SAMPLING, per §14's root-cause list",
+    "not_the_cause": [
+      "the shading model",
+      "the sheen implementation",
+      "colour management",
+      "normal smoothing",
+      "the material definitions themselves — FWHM proves they differ"
+    ],
+    "scene_linear_confirms": "peak linear 0.18-0.23 with ZERO clipping, so the missing lobe is genuinely absent rather than clipped away"
+  },
+  "what_was_NOT_done": [
+    "no threshold was lowered — the 25% effect size and the 2-axis requirement were declared before measurement and stand",
+    "satin was not made glossy to cross a metric",
+    "P1B geometry was not modified",
+    "the pair was not declared distinct on the one clearing axis"
+  ],
+  "next": "add a compact high-intensity specular source to the characterization rig so a lobe exists, then re-measure against the unchanged pass law",
+  "M5_MATTE_SATIN_MODEL": "NOT_YET_FAILED — the model is not implicated; the rig is",
+  "M5_COMPLETION": "INCOMPLETE",
+  "M6": "BLOCKED_PENDING_M5_MATERIAL_DIFFERENTIATION",
+  "owner_approved": false,
+  "manufacturing_authority": "NOT_ESTABLISHED"
+}

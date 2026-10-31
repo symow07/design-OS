@@ -1,0 +1,55 @@
+{
+  "record_type": "pocket_diameter_conflict/1.0",
+  "conflict": "two active contracts assigned different meanings to a field both called 'pocket diameter'",
+  "resolution": "NOT_A_VALUE_CONFLICT \u2014 A DATUM CONFLICT. The two numbers measure different things at different datums. Both are retained under explicit names and the ambiguous field name is retired.",
+  "entries": [
+    {
+      "value_mm": 26.6,
+      "source_file": "apps/pipeline/services/palt_p1.py",
+      "field_name": "PaletteLayoutSpec.module_width / module_height",
+      "original_purpose": "the PLAN-VIEW lattice module \u2014 the footprint reserved per pan so the 3x3 pitch can be resolved. It is a spacing reservation, never a cavity wall position at any elevation.",
+      "derivation": "26.0 nominal pan + 2 x 0.30 manufacturing tolerance + 2 x 0.0 retention pocket add",
+      "authority": "CALCULATED_LAYOUT_HEURISTIC",
+      "milestone_introduced": "PALT-M1 / PALT-M2 (layout contract); the owner's M1 review explicitly corrected its class to CALCULATED_LAYOUT_HEURISTIC and NOT an industry or production standard",
+      "status": "ACTIVE_AT_A_DIFFERENT_DATUM",
+      "controls_fit": false,
+      "re_datumed_as": "PAN_MAXIMUM_ENVELOPE_DIAMETER (and, separately, the layout module)",
+      "note": "pocket_module_mm(spec, PALT_P1_MECHANISM) returns exactly 26.6 only because ADHESIVE_FIXED retention adds 0.0. A retention strategy with a non-zero pocket add would move the module without moving any cavity wall \u2014 which is what proves the two quantities are independent."
+    },
+    {
+      "value_mm": 26.8,
+      "source_file": "apps/pipeline/services/palette_moulded_geometry.py",
+      "field_name": "PAN_SYSTEM['pocket_diameter_mm']",
+      "original_purpose": "the moulded CAVITY diameter giving the metal pan radial seating clearance",
+      "derivation": "26.0 nominal pan + 2 x 0.40 seating clearance",
+      "authority": "DESIGN_DEFAULT_NOT_MANUFACTURER_CONFIRMED",
+      "milestone_introduced": "PALT-M4B (the module the owner declared INCOMPLETE)",
+      "status": "ACTIVE_AND_CORRECTLY_DATUMED_FOR_FIT",
+      "controls_fit": true,
+      "re_datumed_as": "POCKET_FUNCTIONAL_DIAMETER_AT_SEATING_DATUM",
+      "note": "adopted as the A2 fit datum as an EXPLICIT DECISION, not inherited silently: it is the only one of the two that was ever defined as a cavity, and it is the value that lets a nominal pan seat. It still originates in an INCOMPLETE module, so it stays DESIGN_DEFAULT / NOT_MANUFACTURER_CONFIRMED."
+    },
+    {
+      "value_mm": 27.758826,
+      "source_file": "derived from the built mesh",
+      "field_name": "pockets[i].opening_radius_mm x 2",
+      "original_purpose": "the visible mouth where the 0.6 mm rim fillet meets the flat deck",
+      "derivation": "sharp wall line at deck + 2 x rim fillet tangent offset",
+      "authority": "DERIVED_FROM_BUILT_MESH",
+      "milestone_introduced": "PALT-M4B-A",
+      "status": "ACTIVE_VISUAL_ONLY",
+      "controls_fit": false,
+      "re_datumed_as": "POCKET_VISIBLE_MOUTH_DIAMETER_AT_RIM",
+      "note": "a caliper on the top view reads this, not the fit datum. Reporting it as a discrepancy would be wrong \u2014 but the distinction has to be explicit and testable, which is what DATUMS provides."
+    }
+  ],
+  "retired_field": {
+    "name": "pocket_diameter_mm",
+    "action": "RETIRED_AS_AMBIGUOUS",
+    "enforced_by": "palette_recessed_tray_geometry.build_recessed_palette_tray raises RecessedTrayError when the key is present",
+    "values_preserved": true
+  },
+  "unresolved": [
+    "the 0.30 mm 'manufacturing tolerance' behind 26.6 is annotated 'pressed-powder pans have WIDE tolerance (R10)' \u2014 that is a POWDER/layout heuristic, not a drawn metal-pan shell tolerance. Using it as PAN_MAXIMUM_ENVELOPE is conservative and probably overstated. A real pan-shell tolerance is NOT_ESTABLISHED and needs a supplier drawing."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+ "record_type": "a261_seed_direction_verification/1.0",
+ "law": "b12db39c624f01c2",
+ "instrument": "palette_statistics.guarded_spearman over per-seed clearing vectors",
+ "confirmed": {
+  "two_SHEEN_tests_move_together": "rho +0.9429",
+  "both_highest_at_40_and_84": "CONFIRMED \u2014 ranks 5,6 and 6,5",
+  "both_lowest_at_82_and_83": "CONFIRMED \u2014 ranks 1,2 and 1,2"
+ },
+ "corrected": {
+  "S_v_C_tests_highest_at_82_and_83": "PARTIALLY CONFIRMED. At seed 82 both S_v_C tests are high (ranks 5 and 6) while both SHEEN tests are at their LOWEST (rank 1) \u2014 a clean opposite. At seed 83, S_v_C FWHM is rank 4 but S_v_C GRANULARITY is rank 2, i.e. LOW \u2014 so the claim holds at 82 and does not hold at 83 for GRANULARITY"
+ },
+ "cross_test_correlations": {
+  "SHEEN vs SHEEN": 0.9429,
+  "M_v_S SHEEN vs S_v_C FWHM": 0.0286,
+  "M_v_S SHEEN vs S_v_C GRAN": -0.3143,
+  "P_v_M SHEEN vs S_v_C FWHM": -0.1429,
+  "P_v_M SHEEN vs S_v_C GRAN": -0.3714,
+  "S_v_C FWHM vs S_v_C GRAN": 0.4857
+ },
+ "conclusion": "the rig-wide seed-artifact candidate is DISFAVOURED: a bad render at one seed would push every clearing the same direction, and three of the four cross-group correlations are NEGATIVE with the fourth near zero. The elimination rests principally on seed 82's clean opposition, with the seed-83 half of the original claim corrected",
+ "elimination_strength": "DISFAVOURED, not eliminated \u2014 3f's discipline: refuting 'all tests move together' does not establish any particular alternative"
+}

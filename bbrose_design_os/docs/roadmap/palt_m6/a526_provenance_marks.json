@@ -1,0 +1,31 @@
+{
+ "record_type": "a526_provenance_marks/1.0",
+ "date": "2026-08-12",
+ "mark": "PUBLISHED_WITHOUT_RECOVERABLE_INPUTS",
+ "cells": {
+  "MATTE_VS_SATIN/SHEEN": 0.09112,
+  "PRESSED_VS_MATTE/SHEEN": 0.11572,
+  "SATIN_VS_CREAM/FWHM": 0.0343,
+  "SATIN_VS_CREAM/GRANULARITY": 0.1923
+ },
+ "not_withdrawn": "they may well be correct; the mark is about citability, not correctness",
+ "binding": "no downstream node may cite them as ESTABLISHED until the mark is discharged",
+ "A527": "class ten DETERMINED_IN_FACT_NOT_IN_LAW, disposition recorded at CAMPAIGN SCALE \u2014 the largest instance in the register. No new class minted.",
+ "A507_reassertion": {
+  "a262": "9f623273cc874f96 UNCHANGED",
+  "stop_record": "f439e6da5bdeaf6b UNCHANGED",
+  "manifest_at_pin_time": "f325077d3d589503 UNCHANGED at re-assertion",
+  "note": "the manifest necessarily moves again in this same commit because this node adds records; the re-assertion above proves it was unchanged BETWEEN ruling and landing, which is what A507 asked"
+ },
+ "bce98bd79f6445ff": "SUPERSEDED_BY_SPLIT",
+ "A519_split_could_not_be_performed_as_specified": "A519 ordered the three record files to land while palette_powder_protocol.py and test_characterization_protocol.py stayed blocked. Hashing 3z REQUIRES both of those files \u2014 the amendment lives in the protocol and the pin lives in the test. They are the same two files A519 reserved. The split as written is unsatisfiable, so this commit lands all of them under A529's leniency, which scopes exactly to 'the single commit that hashes 3z and performs A519's split'. Nothing else is included. Reported rather than quietly reconciled.",
+ "A529_LENIENCY": {
+  "granted": 1,
+  "status": "UNSPENT",
+  "recorded_unspent": true,
+  "gate_verdict_verbatim": "TIER_2=GREEN collected=5990 failures=0 / GUARDED_COMMIT_DRY_RUN_OK: tier1 green, tier2=GREEN",
+  "why_unspent": "A529 \u2014 leniency pays for a refusal, not for a run. The gate GREENed, so the commit lands through the ordinary path and the count is NOT reduced.",
+  "flake_ledger_unchanged": "no leniency consumed, no invocation spent, no flake id touched",
+  "first_gate_attempt_this_node": "REFUSED at TIER_1 on a STALE PIN \u2014 my replace chain targeted 4c0c4b27d414e04e while the file held 5c27236b061c2fb4 from an earlier node. The pin guard caught it. Corrected, then the gate ran clean."
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "record_type": "defect_classes/1.0",
+ "law": "cb8d155b48536dbe",
+ "recorded": "2026-08-11T09:42:24.623255Z",
+ "SILENT_EXTENT_LOSS": {
+  "ruling": "A316",
+  "definition": "a check whose failure mode is collecting nothing, read through a channel that cannot distinguish 'ran and passed' from 'did not run'",
+  "instance": "test_characterization_protocol.py zero bytes across 3h, 3i, 3j; gate exited 0 three times",
+  "shape": "UNDER-inclusion never noticed",
+  "pairs_with": {
+   "class": "report_before_classify",
+   "shape": "OVER-inclusion acted on",
+   "instances": [
+    1441,
+    680,
+    67,
+    94
+   ],
+   "why_the_pair_is_the_record": "the two are the same failure to declare extent separately from outcome, in opposite directions; neither is visible from the verdict alone"
+  }
+ },
+ "EXTENT_OF_COMPARISON_EXCEEDING_EXTENT_OF_SUBJECT": {
+  "ruling": "A322",
+  "definition": "a comparison wider than its subject reports a difference belonging to something else",
+  "instance": "byte-equality check took four comment lines against a three-line comment, pulling in the NEXT constant's comment and reporting a mismatch that did not exist",
+  "symmetry": "same day, same node: a comparison WIDER than its subject and a suite NARROWER than its declaration. Common cure is 3l \u2014 extent is declared and checked separately from outcome."
+ }
+}

@@ -1,0 +1,55 @@
+{
+ "record_type": "a376_record_enumeration/1.0",
+ "law": "d6d9a4f5325eab71",
+ "date": "2026-08-12",
+ "enumeration": {
+  "total": 1636,
+  "owner_estimate": "~40",
+  "ratio": "41x underestimate \u2014 the enumeration IS the finding, per 2p"
+ },
+ "classification": {
+  "APPEND_ONLY": 5,
+  "REVISABLE": 1631,
+  "append_only_evidence": "flake_register, suite_manifest_diffs, opt_out_log, defect_classes, method_evidence_register \u2014 each is DATED HISTORY whose entries accrete; adding is legitimate, editing prior bytes is not",
+  "revisable_evidence": "every measurement swatch and every findings record \u2014 23 swatches were rewritten wholesale by the A293 revert cycle, so classifying them APPEND_ONLY would make the manifest refuse on facts that already happened"
+ },
+ "history_revised_in_place": {
+  "multi_commit": 115,
+  "shrank_since_first_commit": 28,
+  "prefix_unstable": 16,
+  "reading": "28 records SHRANK. 23 are swatch measurement records from the A293 revert/re-apply cycle; opt_out_log shrank 2262->725 in this arc, which was my own recorded reset. These are REVISABLE and legitimately so \u2014 but they were believed to be measurement history and were being rewritten with no record of it. That is A376 expecting exactly this and finding it."
+ },
+ "binding": {
+  "APPEND_ONLY": "prefix stability over the first 512 bytes PLUS monotonic growth \u2014 stronger than a digest: catches truncation, reordering and edits to history while permitting appends",
+  "REVISABLE": "digest, with regeneration printing and recording its diff, routed through sweep_manifest.writable()",
+  "manifest_digest": "a9a49cdbb22bbf11 bound into EXTENT_DIGESTS"
+ },
+ "first_regeneration_diff": "+1636 added, -0 removed, ~0 changed (first generation)",
+ "a378_matrix": {
+  "dimensions_stated_before_the_product": [
+   "defect class (14)",
+   "instrument (8: tier2_gate, extent_gate, guarded_commit, sweep_manifest, opt_out_log, flake_gate, claim_scan, fixture_diff, record_integrity)"
+  ],
+  "shape": "14 x 9 = 126 cells",
+  "tractable_in_one_node": false,
+  "proposed_reduction": "fill only cells where the instrument HAS the code path the class describes; the rest are NOT_APPLICABLE with a one-line structural reason. Estimated live cells ~35. NOT filled this node \u2014 A384 ends instrument work and this is proposed, not performed.",
+  "not_sampled_silently": true
+ },
+ "a379_audit": {
+  "evidentiary_by_CLI_found": [
+   "claim_scan.py \u2014 I ran it, saw exit 0, then wrote a violating docstring"
+  ],
+  "converted": "test_instrument_prose_asserts_no_absolutes (standing control, already added last node) is now the evidentiary form; the CLI is diagnostic only",
+  "still_CLI_only": [
+   "record_integrity.py \u2014 now wired onto the commit path, so it is a standing control",
+   "tier2_gate --check \u2014 already on the commit path"
+  ]
+ },
+ "a381_ledger": {
+  "FOUND_BY_AUTHOR_REVIEW": 4,
+  "FOUND_BY_HOSTILE_SUITE": 8,
+  "FOUND_BY_FIRING": 5,
+  "FOUND_BY_ADJUDICATION": 3,
+  "saturation_hypothesis": "RECORDED AS HYPOTHESIS, NOT CONCLUSION \u2014 author review catches what a careful reader can hold in mind and appears to saturate there; the remaining defects require execution to surface. The ledger keeps testing it."
+ }
+}

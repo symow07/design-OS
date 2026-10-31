@@ -1,0 +1,31 @@
+{
+ "record_type": "m6_spreads_member_set_resolution/1.0",
+ "created_at": "2026-08-15",
+ "purpose": "work item 2 of the spreads-execution launcher: the campaign driver's SOLE seed authority, resolved from each instrument's OWN records, fail-closed — no guesses, no analogy from MATTE",
+ "resolved": {
+  "POWDER_MATTE_texture": {
+   "members": [40, 81, 82, 83, 84, 99],
+   "reading": "axis_noise_floors.json ensemble field, verbatim: {family: POWDER_MATTE, seeds: [40, 81, 82, 83, 84, 99]} — also mirrored in establishment_closure/phase0.json axis_noise_floors_in_full"
+  },
+  "SHIMMER_flake": {
+   "members": [130, 131, 132, 133, 134, 135],
+   "reading": "palette_flake_rig.FLOOR_SEEDS = (130..135), an instrument constant, with flake_floor_131..135.json on disk and member 130 measured in the pair run (PAIR_SEEDS SHIMMER 130)"
+  }
+ },
+ "UNRESOLVABLE": {
+  "POWDER_SATIN_texture": "no record enumerates a 6-member set. The only extra seed on record beyond base 41 is the [400, 401] replicate pair (establishment_closure/phase3_measurements.json) — explicitly a 2-seed partial, the very estimate class the strict ruling refuses to let establish",
+  "CREAM_texture": "same reading — base 48 plus the [400, 401] replicate pair only",
+  "PRESSED_POWDER_texture": "same reading — base 47; no ensemble enumeration anywhere",
+  "POWDER_METALLIC_flake": "PAIR_SEEDS 140 plus the ['committed member', 992] replicate (phase3_measurements.json); FLOOR_SEEDS (130-135) is SHIMMER's floor set and reading it as METALLIC's would be analogy, not a record",
+  "GLITTER_flake_and_event_ensemble": "census trio 61/62/63 plus ec replicates s66/s67/s991 only; a236_glitter_adequacy_check.json and the phase records carry NO_REPLICATE_SPREAD_EVER_MEASURED on every GLITTER row — the event-ensemble convention the campaign declaration deferred to DOES NOT EXIST in records (that absence is the suspension itself)"
+ },
+ "consequence_for_the_campaign": {
+  "executable_members_under_the_committed_declaration": 0,
+  "why": "every declared item pairs at least one UNRESOLVABLE family: SATIN/CREAM (both unresolvable), METALLIC/GLITTER (both), SHEEN resolving power M_v_S (MATTE resolved x SATIN unresolvable), P_v_M (PRESSED unresolvable), glitter event ensemble (unresolvable), A4 (rides on completed ensembles). 'Proceed with the resolvable ones' therefore executes nothing — recorded plainly, not padded.",
+  "what_the_fail_closed_rule_just_caught": "the establishment table priced this node at ~54 renders, but the member sets those renders need were never pinned anywhere — the node was under-specified upstream of its declaration, and the no-guessing rule surfaced it BEFORE a single frame was spent against invented seeds",
+  "the_unblock_is_a_new_act_not_this_session": "each instrument needs its member-set constants pinned the way FLOOR_SEEDS was — an instrument-commissioning declaration (M6-ENSEMBLE-CONVENTION-DECLARATION: five member sets + the glitter event-ensemble rule, declared in the instruments with records, zero renders). This session's launcher forbids new declarations and campaign amendments, so the act is named for the NEXT launcher, not performed here.",
+  "campaign_declaration_untouched": "spreads_campaign_declaration.json stands as committed — its deferral to 'each instrument's own convention' is exactly what made this resolution decidable"
+ },
+ "gate_consequence": "NO re-gate this session (partial-campaign re-gate forbidden; zero members landed). Conditions 11-15 stand as at 575bc6e; 17 stands FAIL as owner-ruled (G1).",
+ "owner_approved": false
+}

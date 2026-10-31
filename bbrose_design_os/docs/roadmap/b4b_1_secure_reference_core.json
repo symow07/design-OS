@@ -1,0 +1,150 @@
+{
+ "record_type": "b4b_1_secure_reference_core/1.0",
+ "created_at": "2026-07-31",
+ "B4B_1_SECURE_REFERENCE_CORE": "IMPLEMENTED",
+ "supersedes_nothing": "docs/roadmap/b4b_existing_architecture_audit.json is preserved unchanged",
+ "schema": {
+  "migration": "apps/pipeline/migrations/0026_taskreference_secure_core.py",
+  "alter_field": "TaskReference.image ImageField -> FileField",
+  "why_the_alter_was_required": "PDF, AI and EPS are valid project references but an ImageField validates by decoding the upload as an image, so all three were rejected. Type safety did not weaken - it moved to signature checking in apps/pipeline/references.py, which is stricter than ImageField because it also catches an extension that disagrees with the content.",
+  "add_fields": [
+   "original_filename",
+   "media_type",
+   "file_size",
+   "ordering",
+   "source",
+   "status"
+  ],
+  "meta": "ordering = ['ordering', 'id'] for a stable, testable sequence",
+  "no_create_model": true,
+  "no_delete_model": true,
+  "no_remove_field": true,
+  "no_relationship_change": true,
+  "no_data_migration": true,
+  "category_key_preserved": "color",
+  "owner_facing_label": "Colour Reference",
+  "existing_rows": "readable; defaults are migration-safe and new uploads populate every field explicitly"
+ },
+ "file_size_limit": {
+  "bytes": 20971520,
+  "mb": 20.0,
+  "setting": "REFERENCE_MAX_UPLOAD_BYTES",
+  "constant": "apps.pipeline.references.DEFAULT_MAX_UPLOAD_BYTES",
+  "read_via": "apps.pipeline.references.max_upload_bytes()",
+  "applies": "per file, not per request",
+  "duplication_guard": "a test greps apps/ and static/ for the literal and fails if it appears more than once"
+ },
+ "supported_formats": {
+  "extensions": [
+   ".ai",
+   ".eps",
+   ".jpeg",
+   ".jpg",
+   ".pdf",
+   ".png",
+   ".webp"
+  ],
+  "detected_media_types": [
+   "application/pdf",
+   "application/postscript",
+   "application/vnd.adobe.illustrator",
+   "image/jpeg",
+   "image/png",
+   "image/webp"
+  ],
+  "explicitly_rejected": [
+   ".7z",
+   ".bat",
+   ".dll",
+   ".docm",
+   ".exe",
+   ".gz",
+   ".htm",
+   ".html",
+   ".js",
+   ".mjs",
+   ".pptm",
+   ".ps1",
+   ".rar",
+   ".sh",
+   ".so",
+   ".svg",
+   ".tar",
+   ".xlsm",
+   ".zip"
+  ],
+  "svg_note": "refused by name, not by omission from the allowlist"
+ },
+ "signature_rules": {
+  "png": "\\x89PNG\\r\\n\\x1a\\n",
+  "jpeg": "\\xff\\xd8\\xff",
+  "webp": "RIFF....WEBP",
+  "pdf": "%PDF-",
+  "eps": "%!PS-Adobe",
+  "browser_content_type": "never trusted; detection is from the bytes",
+  "ai_dual_container": ".ai may be PDF-based or PostScript-based and both are legitimate, so .ai accepts either. .pdf must be PDF and .eps must be PostScript. Illustrator is only claimed as the media type when the PostScript header actually says Illustrator; otherwise the container type is preserved rather than inventing certainty.",
+  "what_this_does_not_prove": "signature detection establishes membership of the permitted reference class. It does not establish that a file is safe production artwork."
+ },
+ "filename_strategy": {
+  "original_filename": "sanitised for display and audit; directory components stripped under both / and \\\\; never the storage identity",
+  "stored_name": "task_refs/<uuid4 hex><validated extension>, generated independently of anything the user supplied",
+  "collisions": "impossible by construction; identical original names coexist",
+  "traversal": "cannot influence storage location, and the download view re-checks that the resolved path stays inside task_refs/"
+ },
+ "transaction_strategy": {
+  "order": [
+   "validate every file",
+   "open transaction",
+   "create task",
+   "save each reference and record its stored path",
+   "transaction.on_commit(dispatch)",
+   "commit"
+  ],
+  "all_or_nothing": "one invalid sibling rejects the whole submission; no partial rows, no stored files, no enqueue",
+  "storage_cleanup": "storage writes survive a database rollback, so every path written is tracked and deleted by hand on failure",
+  "enqueue": "transaction.on_commit only - a task whose references failed can never run",
+  "form_text": "preserved in the rejection payload"
+ },
+ "authorization": {
+  "route": "/api/tasks/<task_id>/references/<reference_id>/",
+  "view": "apps.pipeline.views.task_reference_file",
+  "policy": [
+   "authenticated",
+   "reference must belong to the task in the URL",
+   "requester must own the task (staff/superuser may view)",
+   "resolved path must stay inside the reference root",
+   "unauthorised -> 404, which does not leak existence"
+  ],
+  "response": "server-detected media type, sanitised download filename, no absolute filesystem path",
+  "media_url": "not relied upon for references"
+ },
+ "error_codes": [
+  "REFERENCE_FILE_TOO_LARGE",
+  "REFERENCE_EXTENSION_NOT_ALLOWED",
+  "REFERENCE_SIGNATURE_INVALID",
+  "REFERENCE_EXTENSION_TYPE_MISMATCH",
+  "REFERENCE_FILENAME_INVALID",
+  "REFERENCE_CATEGORY_INVALID",
+  "REFERENCE_STORAGE_FAILED",
+  "REFERENCE_FILE_EMPTY"
+ ],
+ "known_boundaries": {
+  "references_remain_optional": true,
+  "status": "REFERENCE_ONLY, persisted on the row rather than hardcoded in a template",
+  "source": "USER_UPLOAD",
+  "no_dimension_inference": "nothing derives capacity, neck finish, material, wall thickness, tolerance, print zone or supplier compatibility from an upload",
+  "confirm_profile_remains_authoritative": true,
+  "no_provider_or_image_generation_call": true,
+  "no_ocr": true
+ },
+ "not_in_this_slice": [
+  "drag and drop UI",
+  "selected-file cards",
+  "thumbnails",
+  "Review Board redesign",
+  "category grouping",
+  "pipeline reference manifest",
+  "screenshots"
+ ],
+ "next_milestone": "B4B_2_REFERENCE_CREATION_UI"
+}

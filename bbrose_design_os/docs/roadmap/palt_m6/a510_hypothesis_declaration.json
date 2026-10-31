@@ -1,0 +1,55 @@
+{
+ "record_type": "a510_hypothesis_declaration/1.0",
+ "date": "2026-08-12",
+ "declared_before_any_run": true,
+ "fence_restated": "the six invocations are CHARACTERIZATION ONLY. Results are NOT admissible as gate satisfaction, count toward no pass, and close no flake id. Every run is recorded, PASSES INCLUDED \u2014 a characterization that records only failures cannot establish a rate (3n).",
+ "hypotheses": [
+  {
+   "id": "H1",
+   "name": "SHARED_MUTABLE_STATE_IN_THE_MODULE",
+   "claim": "a fixture, browser context, or artefact directory outlives a test and leaks into the next",
+   "confirms": "failures depend on WHICH tests ran before them \u2014 the same test passes alone and fails after siblings, and the failing SET changes when order changes",
+   "refutes": "a single test fails ALONE, in a fresh process, with nothing before it",
+   "invocations": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "H2",
+   "name": "ISOLATION_SIGNATURE_GENUINELY_MOVED",
+   "claim": "isolation now fails reproducibly, so A333's 12/12-in-isolation signature is void",
+   "confirms": "repeated isolated runs of the file fail at a similar rate",
+   "refutes": "repeated isolated runs return 12/12; the 10/12 was a single observation",
+   "invocations": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "H3",
+   "name": "LOAD_OR_TIMING",
+   "claim": "resource contention under a full-suite run",
+   "confirms": "failures appear only in the full suite and never in the isolated file",
+   "refutes": "the isolated file fails with nothing else running",
+   "invocations": [
+    4
+   ]
+  },
+  {
+   "id": "H4",
+   "name": "ORDER_DEPENDENCE_WITHIN_THE_FILE",
+   "claim": "the failing set is a function of execution order",
+   "confirms": "reversing or randomising order moves the failing set",
+   "refutes": "the same ids fail under every order",
+   "invocations": [
+    5,
+    6
+   ]
+  }
+ ],
+ "owner_prediction_A510": "H1 SHARED_MUTABLE_STATE, NOT load/timing/contention",
+ "A511_answered_first": "whether isolation now fails REPRODUCIBLY, before any cause is proposed"
+}

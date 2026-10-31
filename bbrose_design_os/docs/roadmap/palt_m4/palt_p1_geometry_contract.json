@@ -1,0 +1,880 @@
+{
+ "record_type": "palt_p1_geometry_contract/1.0",
+ "created_at": "2026-08-05",
+ "component_schema": "palette_component_geometry/1.0",
+ "assembly_schema": "palt_p1_assembly/1.0",
+ "owner_decisions_applied": {
+  "PALT_P1_PILOT_ENVELOPE": "116 x 116 x 15 mm \u2014 PROVISIONALLY_APPROVED_FOR_GEOMETRY_DEVELOPMENT",
+  "PALT_P1_FINAL_DIMENSIONS": "NOT_APPROVED",
+  "layout": "3 x 3, nine 26 mm round pans",
+  "case": "ABS baseline",
+  "mirror": "included",
+  "pans": "fixed adhesive",
+  "refillability": "OFF",
+  "spacing": "premium (gap 4.0, margin 5.0)",
+  "closed_height_target": "15 mm",
+  "HINGE": "WALL_INTEGRATED_PIN_HINGE",
+  "CLASP": "WALL_INTEGRATED_SNAP_CLASP",
+  "HINGE_EDGE": "TOP_EDGE",
+  "CLASP_EDGE": "BOTTOM_EDGE",
+  "OPENING_DIRECTION": "UPWARD",
+  "FRONT_ARTWORK_ORIENTATION": "CLASP_AT_BOTTOM",
+  "ambiguity_corrected": "the earlier phrase 'long edge' is replaced by explicit edge names"
+ },
+ "states": [
+  "CLOSED",
+  "OPEN_90",
+  "OPEN_REVIEW_ANGLE",
+  "EXPLODED",
+  "BASE_ONLY",
+  "LID_ONLY",
+  "TRAY_ONLY",
+  "MECHANISM_DETAIL"
+ ],
+ "open_review_angle": {
+  "value_deg": 110.0,
+  "provenance": "DESIGN_DEFAULT",
+  "authority": "NOT_MANUFACTURER_CONFIRMED",
+  "configurable": "compose_state(open_angle_deg=...) changes the angle WITHOUT rebuilding the case"
+ },
+ "resolved_dimensions": {
+  "envelope_mm": [
+   116.0,
+   116.0,
+   15.0
+  ],
+  "case_wall_mm": 2.0,
+  "base_thickness_mm": 1.5,
+  "tray_floor_mm": 1.0,
+  "lid_thickness_mm": 1.5,
+  "mirror_thickness_mm": 1.0,
+  "parting_gap_mm": 0.2,
+  "base_height_mm": 7.8,
+  "lid_height_mm": 7.0,
+  "pan_diameter_mm": 26.0,
+  "pan_depth_mm": 3.5,
+  "pocket_diameter_mm": 26.6,
+  "pitch_mm": 30.6,
+  "inter_pan_gap_mm": 4.0,
+  "outer_margin_mm": 5.0,
+  "height_stackup": {
+   "GEOMETRIC_LOWER_BOUND_mm": 9.0,
+   "ENGINEERING_MINIMUM_mm": 11.15,
+   "PREMIUM_DESIGN_TARGET_mm": 13.85,
+   "components_mm": {
+    "outer_base_skin": 1.5,
+    "tray_floor": 1.0,
+    "pan_depth": 3.5,
+    "pan_seating_adhesive": 0.15,
+    "pan_proud_recess": 0.2,
+    "powder_crown": 0.3,
+    "interior_clearance_above_powder": 0.5,
+    "lid_inner_skin": 0.75,
+    "lid_outer_skin": 0.75,
+    "mirror_thickness": 1.0,
+    "mirror_adhesive": 0.15,
+    "mirror_safety_clearance": 0.3,
+    "hinge_height_envelope": 0.0,
+    "clasp_closure_clearance": 0.0,
+    "retention_height": 0.15,
+    "cosmetic_parting_gap": 0.2,
+    "manufacturing_tolerance": 0.3,
+    "warpage_allowance": 0.4,
+    "premium_skin_uplift_x2": 1.6,
+    "premium_clearance_uplift": 0.5,
+    "decoration_insert_allowance": 0.6
+   },
+   "authority": "DESIGN_DEFAULT allowances; MANUFACTURING_AUTHORITY NOT_ESTABLISHED",
+   "warning": "the geometric lower bound is a mathematical artefact and must never be presented as a production recommendation or a premium thickness"
+  },
+  "hinge": {
+   "barrel_radius_mm": 1.6,
+   "barrel_length_mm": 14.0,
+   "barrel_count": 3,
+   "pin_radius_mm": 0.8,
+   "pin_overhang_mm": 2.0
+  },
+  "hinge_wall_mm": 3.2,
+  "clasp_wall_mm": 3.0,
+  "clasp": {
+   "hook_width_mm": 16.0,
+   "hook_depth_mm": 2.2,
+   "hook_height_mm": 2.6,
+   "detent_width_mm": 18.0,
+   "detent_depth_mm": 1.4,
+   "detent_height_mm": 2.0
+  },
+  "open_review_angle_deg": 110.0,
+  "provenance": "resolved from PALT-M2 contracts + PALT-M3 stack-up; mechanism figures are DESIGN_DEFAULT estimates",
+  "hinge_axis_y_mm": 56.4,
+  "hinge_axis_z_mm": 7.8999999999999995
+ },
+ "contract_identity": "395cacc3ee66d14e",
+ "contract_spec": {
+  "palette_id": "PALT-P1",
+  "case": {
+   "shape": "ROUNDED_RECTANGLE",
+   "outer_width": {
+    "value": 116.0,
+    "unit": "mm",
+    "provenance": "DESIGN_DEFAULT",
+    "confidence": "LOW",
+    "authority": "GENERIC_RENDERING_DEFAULT",
+    "tolerance_mm": null,
+    "note": "PROVISIONAL_DESIGN_DEFAULT (owner)"
+   },
+   "outer_depth": {
+    "value": 116.0,
+    "unit": "mm",
+    "provenance": "DESIGN_DEFAULT",
+    "confidence": "LOW",
+    "authority": "GENERIC_RENDERING_DEFAULT",
+    "tolerance_mm": null,
+    "note": "PROVISIONAL_DESIGN_DEFAULT (owner)"
+   },
+   "outer_height": {
+    "value": 15.0,
+    "unit": "mm",
+    "provenance": "DESIGN_DEFAULT",
+    "confidence": "LOW",
+    "authority": "GENERIC_RENDERING_DEFAULT",
+    "tolerance_mm": null,
+    "note": "PROVISIONAL_DESIGN_DEFAULT (owner)"
+   },
+   "wall_thickness": {
+    "value": 2.0,
+    "unit": "mm",
+    "provenance": "DESIGN_DEFAULT",
+    "confidence": "LOW",
+    "authority": "GENERIC_RENDERING_DEFAULT",
+    "tolerance_mm": null,
+    "note": "mid-range ABS wall (R14: 1.5-3.0)"
+   },
+   "base_thickness": {
+    "value": 1.5,
+    "unit": "mm",
+    "provenance": "DESIGN_DEFAULT",
+    "confidence": "LOW",
+    "authority": "GENERIC_RENDERING_DEFAULT",
+    "tolerance_mm": null,
+    "note": null
+   },
+   "corner_radius": {
+    "value": 4.0,
+    "unit": "mm",
+    "provenance": "DESIGN_DEFAULT",
+    "confidence": "LOW",
+    "authority": "GENERIC_RENDERING_DEFAULT",
+    "tolerance_mm": null,
+    "note": null
+   },
+   "material": "ABS",
+   "outline_points": null
+  },
+  "tray": {
+   "wall_thickness": {
+    "value": 1.5,
+    "unit": "mm",
+    "provenance": "DESIGN_DEFAULT",
+    "confidence": "LOW",
+    "authority": "GENERIC_RENDERING_DEFAULT",
+    "tolerance_mm": null,
+    "note": "tray pocket wall, ABS minimum"
+   },
+   "floor_thickness": {
+    "value": 1.0,
+    "unit": "mm",
+    "provenance": "DESIGN_DEFAULT",
+    "confidence": "LOW",
+    "authority": "GENERIC_RENDERING_DEFAULT",
+    "tolerance_mm": null,
+    "note": null
+   },
+   "inter_pan_gap": {
+    "value": 4.0,
+    "unit": "mm",
+    "provenance": "DESIGN_DEFAULT",
+    "confidence": "LOW",
+    "authority": "GENERIC_RENDERING_DEFAULT",
+    "tolerance_mm": null,
+    "note": null
+   },
+   "outer_margin": {
+    "value": 5.0,
+    "unit": "mm",
+    "provenance": "DESIGN_DEFAULT",
+    "confidence": "LOW",
+    "authority": "GENERIC_RENDERING_DEFAULT",
+    "tolerance_mm": null,
+    "note": null
+   },
+   "minimum_inter_pan_gap": {
+    "value": 1.5,
+    "unit": "mm",
+    "provenance": "DESIGN_DEFAULT",
+    "confidence": "LOW",
+    "authority": "GENERIC_RENDERING_DEFAULT",
+    "tolerance_mm": null,
+    "note": "below this, moulded pocket walls approach the ABS minimum wall and cross-contamination risk rises"
+   }
+  },
+  "lid": {
+   "thickness": {
+    "value": 1.5,
+    "unit": "mm",
+    "provenance": "DESIGN_DEFAULT",
+    "confidence": "LOW",
+    "authority": "GENERIC_RENDERING_DEFAULT",
+    "tolerance_mm": null,
+    "note": null
+   },
+   "inner_clearance": {
+    "value": 0.5,
+    "unit": "mm",
+    "provenance": "DESIGN_DEFAULT",
+    "confidence": "LOW",
+    "authority": "GENERIC_RENDERING_DEFAULT",
+    "tolerance_mm": null,
+    "note": "clearance between the closed lid face and pan top"
+   }
+  },
+  "layout": {
+   "mode": "MODULE_LATTICE",
+   "pans": [
+    {
+     "pan_id": "P1",
+     "shape": "CIRCLE",
+     "width": {
+      "value": 26.0,
+      "unit": "mm",
+      "provenance": "ONLINE_REPORTED",
+      "confidence": "MEDIUM",
+      "authority": "ONLINE_ANALOGOUS_REFERENCE",
+      "tolerance_mm": null,
+      "note": "26 mm is a cross-vendor interchange standard (R1, R2, R6)"
+     },
+     "height": {
+      "value": 26.0,
+      "unit": "mm",
+      "provenance": "ONLINE_REPORTED",
+      "confidence": "MEDIUM",
+      "authority": "ONLINE_ANALOGOUS_REFERENCE",
+      "tolerance_mm": null,
+      "note": "circular pan: width == height"
+     },
+     "depth": {
+      "value": 3.5,
+      "unit": "mm",
+      "provenance": "ONLINE_REPORTED",
+      "confidence": "MEDIUM",
+      "authority": "ONLINE_ANALOGOUS_REFERENCE",
+      "tolerance_mm": null,
+      "note": "shallow eye-pan family (R2)"
+     },
+     "removal_clearance": {
+      "value": 0.0,
+      "unit": "mm",
+      "provenance": "DESIGN_DEFAULT",
+      "confidence": "LOW",
+      "authority": "GENERIC_RENDERING_DEFAULT",
+      "tolerance_mm": null,
+      "note": "extra clearance needed to lift a refillable pan out"
+     },
+     "manufacturing_tolerance": {
+      "value": 0.3,
+      "unit": "mm",
+      "provenance": "DESIGN_DEFAULT",
+      "confidence": "LOW",
+      "authority": "GENERIC_RENDERING_DEFAULT",
+      "tolerance_mm": null,
+      "note": "pressed-powder pans have WIDE tolerance (R10)"
+     },
+     "refillable": false,
+     "zone": "EYE"
+    },
+    {
+     "pan_id": "P2",
+     "shape": "CIRCLE",
+     "width": {
+      "value": 26.0,
+      "unit": "mm",
+      "provenance": "ONLINE_REPORTED",
+      "confidence": "MEDIUM",
+      "authority": "ONLINE_ANALOGOUS_REFERENCE",
+      "tolerance_mm": null,
+      "note": "26 mm is a cross-vendor interchange standard (R1, R2, R6)"
+     },
+     "height": {
+      "value": 26.0,
+      "unit": "mm",
+      "provenance": "ONLINE_REPORTED",
+      "confidence": "MEDIUM",
+      "authority": "ONLINE_ANALOGOUS_REFERENCE",
+      "tolerance_mm": null,
+      "note": "circular pan: width == height"
+     },
+     "depth": {
+      "value": 3.5,
+      "unit": "mm",
+      "provenance": "ONLINE_REPORTED",
+      "confidence": "MEDIUM",
+      "authority": "ONLINE_ANALOGOUS_REFERENCE",
+      "tolerance_mm": null,
+      "note": "shallow eye-pan family (R2)"
+     },
+     "removal_clearance": {
+      "value": 0.0,
+      "unit": "mm",
+      "provenance": "DESIGN_DEFAULT",
+      "confidence": "LOW",
+      "authority": "GENERIC_RENDERING_DEFAULT",
+      "tolerance_mm": null,
+      "note": "extra clearance needed to lift a refillable pan out"
+     },
+     "manufacturing_tolerance": {
+      "value": 0.3,
+      "unit": "mm",
+      "provenance": "DESIGN_DEFAULT",
+      "confidence": "LOW",
+      "authority": "GENERIC_RENDERING_DEFAULT",
+      "tolerance_mm": null,
+      "note": "pressed-powder pans have WIDE tolerance (R10)"
+     },
+     "refillable": false,
+     "zone": "EYE"
+    },
+    {
+     "pan_id": "P3",
+     "shape": "CIRCLE",
+     "width": {
+      "value": 26.0,
+      "unit": "mm",
+      "provenance": "ONLINE_REPORTED",
+      "confidence": "MEDIUM",
+      "authority": "ONLINE_ANALOGOUS_REFERENCE",
+      "tolerance_mm": null,
+      "note": "26 mm is a cross-vendor interchange standard (R1, R2, R6)"
+     },
+     "height": {
+      "value": 26.0,
+      "unit": "mm",
+      "provenance": "ONLINE_REPORTED",
+      "confidence": "MEDIUM",
+      "authority": "ONLINE_ANALOGOUS_REFERENCE",
+      "tolerance_mm": null,
+      "note": "circular pan: width == height"
+     },
+     "depth": {
+      "value": 3.5,
+      "unit": "mm",
+      "provenance": "ONLINE_REPORTED",
+      "confidence": "MEDIUM",
+      "authority": "ONLINE_ANALOGOUS_REFERENCE",
+      "tolerance_mm": null,
+      "note": "shallow eye-pan family (R2)"
+     },
+     "removal_clearance": {
+      "value": 0.0,
+      "unit": "mm",
+      "provenance": "DESIGN_DEFAULT",
+      "confidence": "LOW",
+      "authority": "GENERIC_RENDERING_DEFAULT",
+      "tolerance_mm": null,
+      "note": "extra clearance needed to lift a refillable pan out"
+     },
+     "manufacturing_tolerance": {
+      "value": 0.3,
+      "unit": "mm",
+      "provenance": "DESIGN_DEFAULT",
+      "confidence": "LOW",
+      "authority": "GENERIC_RENDERING_DEFAULT",
+      "tolerance_mm": null,
+      "note": "pressed-powder pans have WIDE tolerance (R10)"
+     },
+     "refillable": false,
+     "zone": "EYE"
+    },
+    {
+     "pan_id": "P4",
+     "shape": "CIRCLE",
+     "width": {
+      "value": 26.0,
+      "unit": "mm",
+      "provenance": "ONLINE_REPORTED",
+      "confidence": "MEDIUM",
+      "authority": "ONLINE_ANALOGOUS_REFERENCE",
+      "tolerance_mm": null,
+      "note": "26 mm is a cross-vendor interchange standard (R1, R2, R6)"
+     },
+     "height": {
+      "value": 26.0,
+      "unit": "mm",
+      "provenance": "ONLINE_REPORTED",
+      "confidence": "MEDIUM",
+      "authority": "ONLINE_ANALOGOUS_REFERENCE",
+      "tolerance_mm": null,
+      "note": "circular pan: width == height"
+     },
+     "depth": {
+      "value": 3.5,
+      "unit": "mm",
+      "provenance": "ONLINE_REPORTED",
+      "confidence": "MEDIUM",
+      "authority": "ONLINE_ANALOGOUS_REFERENCE",
+      "tolerance_mm": null,
+      "note": "shallow eye-pan family (R2)"
+     },
+     "removal_clearance": {
+      "value": 0.0,
+      "unit": "mm",
+      "provenance": "DESIGN_DEFAULT",
+      "confidence": "LOW",
+      "authority": "GENERIC_RENDERING_DEFAULT",
+      "tolerance_mm": null,
+      "note": "extra clearance needed to lift a refillable pan out"
+     },
+     "manufacturing_tolerance": {
+      "value": 0.3,
+      "unit": "mm",
+      "provenance": "DESIGN_DEFAULT",
+      "confidence": "LOW",
+      "authority": "GENERIC_RENDERING_DEFAULT",
+      "tolerance_mm": null,
+      "note": "pressed-powder pans have WIDE tolerance (R10)"
+     },
+     "refillable": false,
+     "zone": "EYE"
+    },
+    {
+     "pan_id": "P5",
+     "shape": "CIRCLE",
+     "width": {
+      "value": 26.0,
+      "unit": "mm",
+      "provenance": "ONLINE_REPORTED",
+      "confidence": "MEDIUM",
+      "authority": "ONLINE_ANALOGOUS_REFERENCE",
+      "tolerance_mm": null,
+      "note": "26 mm is a cross-vendor interchange standard (R1, R2, R6)"
+     },
+     "height": {
+      "value": 26.0,
+      "unit": "mm",
+      "provenance": "ONLINE_REPORTED",
+      "confidence": "MEDIUM",
+      "authority": "ONLINE_ANALOGOUS_REFERENCE",
+      "tolerance_mm": null,
+      "note": "circular pan: width == height"
+     },
+     "depth": {
+      "value": 3.5,
+      "unit": "mm",
+      "provenance": "ONLINE_REPORTED",
+      "confidence": "MEDIUM",
+      "authority": "ONLINE_ANALOGOUS_REFERENCE",
+      "tolerance_mm": null,
+      "note": "shallow eye-pan family (R2)"
+     },
+     "removal_clearance": {
+      "value": 0.0,
+      "unit": "mm",
+      "provenance": "DESIGN_DEFAULT",
+      "confidence": "LOW",
+      "authority": "GENERIC_RENDERING_DEFAULT",
+      "tolerance_mm": null,
+      "note": "extra clearance needed to lift a refillable pan out"
+     },
+     "manufacturing_tolerance": {
+      "value": 0.3,
+      "unit": "mm",
+      "provenance": "DESIGN_DEFAULT",
+      "confidence": "LOW",
+      "authority": "GENERIC_RENDERING_DEFAULT",
+      "tolerance_mm": null,
+      "note": "pressed-powder pans have WIDE tolerance (R10)"
+     },
+     "refillable": false,
+     "zone": "EYE"
+    },
+    {
+     "pan_id": "P6",
+     "shape": "CIRCLE",
+     "width": {
+      "value": 26.0,
+      "unit": "mm",
+      "provenance": "ONLINE_REPORTED",
+      "confidence": "MEDIUM",
+      "authority": "ONLINE_ANALOGOUS_REFERENCE",
+      "tolerance_mm": null,
+      "note": "26 mm is a cross-vendor interchange standard (R1, R2, R6)"
+     },
+     "height": {
+      "value": 26.0,
+      "unit": "mm",
+      "provenance": "ONLINE_REPORTED",
+      "confidence": "MEDIUM",
+      "authority": "ONLINE_ANALOGOUS_REFERENCE",
+      "tolerance_mm": null,
+      "note": "circular pan: width == height"
+     },
+     "depth": {
+      "value": 3.5,
+      "unit": "mm",
+      "provenance": "ONLINE_REPORTED",
+      "confidence": "MEDIUM",
+      "authority": "ONLINE_ANALOGOUS_REFERENCE",
+      "tolerance_mm": null,
+      "note": "shallow eye-pan family (R2)"
+     },
+     "removal_clearance": {
+      "value": 0.0,
+      "unit": "mm",
+      "provenance": "DESIGN_DEFAULT",
+      "confidence": "LOW",
+      "authority": "GENERIC_RENDERING_DEFAULT",
+      "tolerance_mm": null,
+      "note": "extra clearance needed to lift a refillable pan out"
+     },
+     "manufacturing_tolerance": {
+      "value": 0.3,
+      "unit": "mm",
+      "provenance": "DESIGN_DEFAULT",
+      "confidence": "LOW",
+      "authority": "GENERIC_RENDERING_DEFAULT",
+      "tolerance_mm": null,
+      "note": "pressed-powder pans have WIDE tolerance (R10)"
+     },
+     "refillable": false,
+     "zone": "EYE"
+    },
+    {
+     "pan_id": "P7",
+     "shape": "CIRCLE",
+     "width": {
+      "value": 26.0,
+      "unit": "mm",
+      "provenance": "ONLINE_REPORTED",
+      "confidence": "MEDIUM",
+      "authority": "ONLINE_ANALOGOUS_REFERENCE",
+      "tolerance_mm": null,
+      "note": "26 mm is a cross-vendor interchange standard (R1, R2, R6)"
+     },
+     "height": {
+      "value": 26.0,
+      "unit": "mm",
+      "provenance": "ONLINE_REPORTED",
+      "confidence": "MEDIUM",
+      "authority": "ONLINE_ANALOGOUS_REFERENCE",
+      "tolerance_mm": null,
+      "note": "circular pan: width == height"
+     },
+     "depth": {
+      "value": 3.5,
+      "unit": "mm",
+      "provenance": "ONLINE_REPORTED",
+      "confidence": "MEDIUM",
+      "authority": "ONLINE_ANALOGOUS_REFERENCE",
+      "tolerance_mm": null,
+      "note": "shallow eye-pan family (R2)"
+     },
+     "removal_clearance": {
+      "value": 0.0,
+      "unit": "mm",
+      "provenance": "DESIGN_DEFAULT",
+      "confidence": "LOW",
+      "authority": "GENERIC_RENDERING_DEFAULT",
+      "tolerance_mm": null,
+      "note": "extra clearance needed to lift a refillable pan out"
+     },
+     "manufacturing_tolerance": {
+      "value": 0.3,
+      "unit": "mm",
+      "provenance": "DESIGN_DEFAULT",
+      "confidence": "LOW",
+      "authority": "GENERIC_RENDERING_DEFAULT",
+      "tolerance_mm": null,
+      "note": "pressed-powder pans have WIDE tolerance (R10)"
+     },
+     "refillable": false,
+     "zone": "EYE"
+    },
+    {
+     "pan_id": "P8",
+     "shape": "CIRCLE",
+     "width": {
+      "value": 26.0,
+      "unit": "mm",
+      "provenance": "ONLINE_REPORTED",
+      "confidence": "MEDIUM",
+      "authority": "ONLINE_ANALOGOUS_REFERENCE",
+      "tolerance_mm": null,
+      "note": "26 mm is a cross-vendor interchange standard (R1, R2, R6)"
+     },
+     "height": {
+      "value": 26.0,
+      "unit": "mm",
+      "provenance": "ONLINE_REPORTED",
+      "confidence": "MEDIUM",
+      "authority": "ONLINE_ANALOGOUS_REFERENCE",
+      "tolerance_mm": null,
+      "note": "circular pan: width == height"
+     },
+     "depth": {
+      "value": 3.5,
+      "unit": "mm",
+      "provenance": "ONLINE_REPORTED",
+      "confidence": "MEDIUM",
+      "authority": "ONLINE_ANALOGOUS_REFERENCE",
+      "tolerance_mm": null,
+      "note": "shallow eye-pan family (R2)"
+     },
+     "removal_clearance": {
+      "value": 0.0,
+      "unit": "mm",
+      "provenance": "DESIGN_DEFAULT",
+      "confidence": "LOW",
+      "authority": "GENERIC_RENDERING_DEFAULT",
+      "tolerance_mm": null,
+      "note": "extra clearance needed to lift a refillable pan out"
+     },
+     "manufacturing_tolerance": {
+      "value": 0.3,
+      "unit": "mm",
+      "provenance": "DESIGN_DEFAULT",
+      "confidence": "LOW",
+      "authority": "GENERIC_RENDERING_DEFAULT",
+      "tolerance_mm": null,
+      "note": "pressed-powder pans have WIDE tolerance (R10)"
+     },
+     "refillable": false,
+     "zone": "EYE"
+    },
+    {
+     "pan_id": "P9",
+     "shape": "CIRCLE",
+     "width": {
+      "value": 26.0,
+      "unit": "mm",
+      "provenance": "ONLINE_REPORTED",
+      "confidence": "MEDIUM",
+      "authority": "ONLINE_ANALOGOUS_REFERENCE",
+      "tolerance_mm": null,
+      "note": "26 mm is a cross-vendor interchange standard (R1, R2, R6)"
+     },
+     "height": {
+      "value": 26.0,
+      "unit": "mm",
+      "provenance": "ONLINE_REPORTED",
+      "confidence": "MEDIUM",
+      "authority": "ONLINE_ANALOGOUS_REFERENCE",
+      "tolerance_mm": null,
+      "note": "circular pan: width == height"
+     },
+     "depth": {
+      "value": 3.5,
+      "unit": "mm",
+      "provenance": "ONLINE_REPORTED",
+      "confidence": "MEDIUM",
+      "authority": "ONLINE_ANALOGOUS_REFERENCE",
+      "tolerance_mm": null,
+      "note": "shallow eye-pan family (R2)"
+     },
+     "removal_clearance": {
+      "value": 0.0,
+      "unit": "mm",
+      "provenance": "DESIGN_DEFAULT",
+      "confidence": "LOW",
+      "authority": "GENERIC_RENDERING_DEFAULT",
+      "tolerance_mm": null,
+      "note": "extra clearance needed to lift a refillable pan out"
+     },
+     "manufacturing_tolerance": {
+      "value": 0.3,
+      "unit": "mm",
+      "provenance": "DESIGN_DEFAULT",
+      "confidence": "LOW",
+      "authority": "GENERIC_RENDERING_DEFAULT",
+      "tolerance_mm": null,
+      "note": "pressed-powder pans have WIDE tolerance (R10)"
+     },
+     "refillable": false,
+     "zone": "EYE"
+    }
+   ],
+   "module_width": {
+    "value": 26.6,
+    "unit": "mm",
+    "provenance": "CALCULATED",
+    "confidence": "MEDIUM",
+    "authority": "CALCULATED_FROM_OWNER_DATA",
+    "tolerance_mm": null,
+    "note": "26.0 nominal pan + 2 x 0.30 manufacturing tolerance"
+   },
+   "module_height": {
+    "value": 26.6,
+    "unit": "mm",
+    "provenance": "CALCULATED",
+    "confidence": "MEDIUM",
+    "authority": "CALCULATED_FROM_OWNER_DATA",
+    "tolerance_mm": null,
+    "note": "26.0 nominal pan + 2 x 0.30 manufacturing tolerance"
+   },
+   "rows": 3,
+   "cols": 3,
+   "occupancy": [
+    [
+     "P1",
+     0,
+     0,
+     1,
+     1
+    ],
+    [
+     "P2",
+     0,
+     1,
+     1,
+     1
+    ],
+    [
+     "P3",
+     0,
+     2,
+     1,
+     1
+    ],
+    [
+     "P4",
+     1,
+     0,
+     1,
+     1
+    ],
+    [
+     "P5",
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     "P6",
+     1,
+     2,
+     1,
+     1
+    ],
+    [
+     "P7",
+     2,
+     0,
+     1,
+     1
+    ],
+    [
+     "P8",
+     2,
+     1,
+     1,
+     1
+    ],
+    [
+     "P9",
+     2,
+     2,
+     1,
+     1
+    ]
+   ],
+   "placements": []
+  },
+  "mirror": {
+   "present": true,
+   "coverage": "LID_FULL",
+   "thickness": {
+    "value": 1.0,
+    "unit": "mm",
+    "provenance": "DESIGN_DEFAULT",
+    "confidence": "LOW",
+    "authority": "GENERIC_RENDERING_DEFAULT",
+    "tolerance_mm": null,
+    "note": "mirror thickness is a research GAP"
+   },
+   "inset": {
+    "value": 3.0,
+    "unit": "mm",
+    "provenance": "DESIGN_DEFAULT",
+    "confidence": "LOW",
+    "authority": "GENERIC_RENDERING_DEFAULT",
+    "tolerance_mm": null,
+    "note": null
+   }
+  },
+  "hinge": {
+   "family": "PIN_HINGE",
+   "zone_depth": {
+    "value": 6.0,
+    "unit": "mm",
+    "provenance": "DESIGN_DEFAULT",
+    "confidence": "LOW",
+    "authority": "GENERIC_RENDERING_DEFAULT",
+    "tolerance_mm": null,
+    "note": "rear band reserved for the hinge barrel; unvalidated"
+   },
+   "clearance": {
+    "value": 0.5,
+    "unit": "mm",
+    "provenance": "DESIGN_DEFAULT",
+    "confidence": "LOW",
+    "authority": "GENERIC_RENDERING_DEFAULT",
+    "tolerance_mm": null,
+    "note": null
+   },
+   "open_angle_deg": {
+    "value": 115.0,
+    "unit": "mm",
+    "provenance": "DESIGN_DEFAULT",
+    "confidence": "LOW",
+    "authority": "GENERIC_RENDERING_DEFAULT",
+    "tolerance_mm": null,
+    "note": "obtuse is a FUNCTIONAL requirement (mirror must face the user); the number itself is unvalidated"
+   }
+  },
+  "clasp": {
+   "family": "MECHANICAL_DETENT",
+   "zone_depth": {
+    "value": 5.0,
+    "unit": "mm",
+    "provenance": "DESIGN_DEFAULT",
+    "confidence": "LOW",
+    "authority": "GENERIC_RENDERING_DEFAULT",
+    "tolerance_mm": null,
+    "note": "front band reserved for the clasp; unvalidated"
+   }
+  },
+  "applicator": {
+   "present": false,
+   "kind": "NONE",
+   "zone_depth": {
+    "value": 0.0,
+    "unit": "mm",
+    "provenance": "DESIGN_DEFAULT",
+    "confidence": "LOW",
+    "authority": "GENERIC_RENDERING_DEFAULT",
+    "tolerance_mm": null,
+    "note": null
+   }
+  },
+  "refillable_default": false,
+  "schema": "palette_geometry/1.0"
+ },
+ "authority": {
+  "CONTRACT_GEOMETRY": "resolved from PALT-M2/M3 contracts",
+  "VISUALIZATION_GEOMETRY": "meshes for review only",
+  "MECHANISM_ASSUMPTIONS": "DESIGN_DEFAULT estimates",
+  "MANUFACTURING_GEOMETRY": "NOT_ESTABLISHED",
+  "PALT_P1_FINAL_DIMENSIONS": "NOT_APPROVED",
+  "PALT_P1_OWNER_APPROVAL": "PENDING_VISUAL_REVIEW"
+ },
+ "validator_version": "palette_geometry_validators/1.0"
+}

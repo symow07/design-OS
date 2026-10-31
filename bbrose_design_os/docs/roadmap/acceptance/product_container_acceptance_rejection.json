@@ -1,0 +1,146 @@
+{
+ "record_type": "product_container_acceptance_rejection/1.0",
+ "recorded_at": "2026-08-03",
+ "implementation_commit": "7268260",
+ "states": {
+  "PRODUCT_CONTAINER_END_TO_END_ACCEPTANCE": "REJECTED",
+  "PRODUCT_CONTAINER_WORKFLOW": "IMPLEMENTED_BUT_NOT_OWNER_ACCEPTED",
+  "OWNER_ACCEPTANCE_DEFECT": "BLOCKING_RECONSTRUCTION_VISUAL_QUALITY_FAILURE",
+  "GATE_2": "NOT_READY_FOR_OWNER_APPROVAL",
+  "OTHER_CUSTOM_PROFILE_RECONSTRUCTION": "PENDING",
+  "PACKAGING_PRODUCTION": "NOT_STARTED",
+  "MANUFACTURING_AUTHORITY": "NOT_GRANTED"
+ },
+ "classification": "BLOCKING",
+ "rejected_evidence": {
+  "tasks": {
+   "53": "dry-run: clean COMPLETED reconstruction (the visual subject)",
+   "55": "COMPLETED with PNG removed (optional-PNG demo)",
+   "56": "INCONSISTENT/TECHNICAL_INTERVENTION (status-contradiction subject)"
+  },
+  "gate_decisions": {
+   "53": 48,
+   "55": 53,
+   "56": 54
+  },
+  "profile_hash": "8b573a8eb888f8974d8ff261806b3377",
+  "combined_hash": "d900ea11d6f7643860cc8ea2ce862933",
+  "artboard_mediabox_pt": "0 0 595.2756 841.8898 (A4 portrait)",
+  "design_graph": {
+   "mode": "native",
+   "primitives": 4,
+   "motif_groups": 0,
+   "logo_zone_used": "front-controlled-fallback",
+   "zones_consumed": [
+    "z_front"
+   ]
+  },
+  "measurements": {
+   "selected_concept_ink": "160x708 px on 640x900 (20% coverage, aspect 4.42 \u2014 tall slender bottle)",
+   "reconstruction_ink": "500x720 px on 595x842 (72% coverage, aspect 1.44 \u2014 wide squat block field)"
+  },
+  "artifacts": [
+   {
+    "task": 53,
+    "role": "ai",
+    "stored_name": "container_task_53_DAELj1H.ai",
+    "sha256": "9cb13994dda815505d572b726111f862d775f05fbf8ae0c4b74d1c5e81875fa8",
+    "bytes": 78868,
+    "copy": "task53_ai.ai"
+   },
+   {
+    "task": 53,
+    "role": "png",
+    "stored_name": "container_task_53_qLO97Bq.png",
+    "sha256": "1d57593fe08c0045ffd16d8a522ffc8ca101b0bc01c7796a8e7706fa9173ea90",
+    "bytes": 33350,
+    "copy": "task53_png.png"
+   },
+   {
+    "task": 53,
+    "role": "concept",
+    "stored_name": "acceptance_concept_53.png",
+    "sha256": "4b1fd032236c903b0ed0ba0d258cfcc017c7b65eef15916de8b33aaae3407d70",
+    "bytes": 4237,
+    "copy": "task53_concept.png"
+   },
+   {
+    "task": 55,
+    "role": "ai",
+    "stored_name": "container_task_55.ai",
+    "sha256": "c67e1db02cc002d3f57d6b2c5a8df8cc47ada793fd6f7d21e3ff1b2f94a53761",
+    "bytes": 78874,
+    "copy": "task55_ai.ai"
+   },
+   {
+    "task": 55,
+    "role": "png",
+    "stored_name": "",
+    "state": "UNRESOLVABLE_TAMPERED_DEMO_RECORD"
+   },
+   {
+    "task": 55,
+    "role": "concept",
+    "stored_name": "acceptance_concept_55.png",
+    "sha256": "4b1fd032236c903b0ed0ba0d258cfcc017c7b65eef15916de8b33aaae3407d70",
+    "bytes": 4237,
+    "copy": "task55_concept.png"
+   },
+   {
+    "task": 56,
+    "role": "ai",
+    "stored_name": "../../tampered-demo-record",
+    "state": "UNRESOLVABLE_TAMPERED_DEMO_RECORD"
+   },
+   {
+    "task": 56,
+    "role": "png",
+    "stored_name": "container_task_56.png",
+    "sha256": "47da3242c81bdf2ecd4a8d90b59001f7e5ab8c525d5611b351132b61778eb297",
+    "bytes": 34413,
+    "copy": "task56_png.png"
+   },
+   {
+    "task": 56,
+    "role": "concept",
+    "stored_name": "acceptance_concept_56.png",
+    "sha256": "4b1fd032236c903b0ed0ba0d258cfcc017c7b65eef15916de8b33aaae3407d70",
+    "bytes": 4237,
+    "copy": "task56_concept.png"
+   }
+  ],
+  "owner_screenshot": "referenced by owner rejection statement; investigator captures of the same screens preserved beside this record"
+ },
+ "defects": {
+  "A_SELECTED_CONCEPT_FIDELITY_FAILURE": "BLOCKING",
+  "B_PRODUCT_FORM_FAILURE": "BLOCKING",
+  "C_TYPOGRAPHY_FAILURE": "BLOCKING",
+  "D_LABEL_COMPOSITION_FAILURE": "BLOCKING",
+  "E_CLOSURE_FAILURE": "BLOCKING",
+  "F_CANVAS_AND_PRESENTATION_FAILURE": "BLOCKING",
+  "G_MATERIAL_REALIZATION_FAILURE": "BLOCKING",
+  "H_CLIENT_APPROVAL_FAILURE": "BLOCKING",
+  "I_STATUS_AUTHORITY_INCONSISTENCY": "BLOCKING"
+ },
+ "root_cause": {
+  "first_divergence_stage": "silhouette/backbone construction \u2014 reconstruct_container derives ALL geometry from the parametric profile via targets/container/silhouettes.build_backbone (coarse rounded rectangles, factor-based cap blocks). The selected concept image contributes colors/zones/motif extraction only; its silhouette, composition and proportions never become geometry.",
+  "vq1_not_integrated": "the OWNER-ACCEPTED VQ-1 M3 structural backbone (apps/ire/vq1_backbone.py, frozen 4ecc8e9df1d1) is NOT wired into the production reconstruction path \u2014 production still uses the pre-VQ coarse silhouettes module.",
+  "vacuous_fidelity_gate": "container_fidelity_report passed overall (MEASURED_PASS) with 7 of 8 axes UNMEASURED (logo, motif family/position, wrap alignment, product-name zone, \u2026) \u2014 UNMEASURED does not fail the gate, so an unmeasured reconstruction ships.",
+  "typography_gate_shallow": "typography fidelity records MEASURED_PASS from text-run presence (8 runs), not legibility/scale/placement.",
+  "label_placeholder": "decoration zones render as tinted fields + keyline (2B-2 native artwork); with motif_groups=0 the front artwork IS the placeholder rectangle.",
+  "closure": "closure derived from the confirmed profile parametrically; without closure_geometry the legacy factor cap block renders; the accepted VQ-1 dropper assembly is not the production path.",
+  "artboard": "A4 (595.2756x841.8898 pt) page for a 95 mm product \u2014 canvas not derived from product scale.",
+  "material_realization": "material records persist, but visual glass/frost/rose-gold realization is FINAL VISUAL QUALITY PROGRAM backlog (VQ-2\u2026VQ-9), declared NOT implemented (final_visual_quality_program/1.0).",
+  "precedent": "live pilot task 52 was already CONTAINER_STAGE_FAILED_VISUAL_FIDELITY after 4 Gate-2 rejections \u2014 the same engine gap.",
+  "status_contradiction_mechanism": "PackagingOutputSerializer.get_design_preview_ai_url returns obj.design_preview_ai.url whenever the FieldFile is truthy \u2014 a tampered/unresolvable record still yields a raw /files/ URL, and gates.js renders \"Download Design .ai (editable)\" independent of the reconstruction-status/result availability contracts. Two availability derivations, one screen.",
+  "inputs_reached_reconstruction": {
+   "selected_concept_image": "available to identity/motif extraction; motif extraction yielded 0 groups; image geometry never consumed",
+   "references": "fixture tasks carried 0 references by design; in the full flow the B4b-3B manifest feeds CD/PE and the logo preference only \u2014 not reconstruction geometry",
+   "typography": "product name emitted as live text runs, not placeholder \u2014 but unstyled/ungated for quality",
+   "closure_from_profile": true
+  }
+ },
+ "quality_principle": "PRESERVE DESIGN INTENT, NOT MERELY VALID VECTOR GEOMETRY",
+ "no_automatic_regeneration": true,
+ "provider_calls_during_walkthrough_and_investigation": 0
+}

@@ -1,0 +1,259 @@
+{
+ "record_type": "m6_spreads_raw_glitter/1.0",
+ "phase": "glitter",
+ "instrument": "GLITTER_PARTICLE_RIG (palette_powder_rigs.particle_census, law untouched); calibration = the rig's own fixed-point law at member-0 seeds",
+ "ensemble": [
+  [
+   61,
+   62,
+   63
+  ],
+  [
+   610,
+   620,
+   630
+  ],
+  [
+   611,
+   621,
+   631
+  ],
+  [
+   612,
+   622,
+   632
+  ],
+  [
+   613,
+   623,
+   633
+  ],
+  [
+   614,
+   624,
+   634
+  ]
+ ],
+ "ensemble_authority": "palette_powder_rigs.GLITTER_EVENT_ENSEMBLE pinned at 4aac8bc",
+ "predeclared": {
+  "GLITTER_MIN_EVENTS": 25,
+  "CONTROL_MAX_EVENTS": 5,
+  "EVENT_LUMINANCE_FACTOR": 1.8,
+  "EVENT_MIN_AREA_PX": 4,
+  "EVENT_MAX_AREA_PX": 2000
+ },
+ "energy_calibration": {
+  "reference_energy": 900000.0,
+  "calibration_fixture": "GLITTER (measured brightest of {'SHIMMER': 3.3119802907466886, 'GLITTER': 8.803372479438782})",
+  "base_peak_specular_off": 0.018607145446166394,
+  "target_linear": 0.92,
+  "iterations": [
+   {
+    "energy": 92152.58936199959,
+    "peak": 0.9044773518323899,
+    "clipped": 0
+   }
+  ],
+  "calibrated_energy": 92152.58936199959,
+  "law": "E_{n+1} = E_n * (target - base_peak) / peak_n \u2014 the rig's own law, verbatim"
+ },
+ "renders_this_phase": 22,
+ "rows": [
+  {
+   "member": 0,
+   "trio_seeds": [
+    61,
+    62,
+    63
+   ],
+   "census": {
+    "GLITTER": {
+     "seed": 61,
+     "event_count": 113,
+     "median_event_area_px": 53.0,
+     "scene_linear_peak": 0.9044773518323899,
+     "material_identity": "afcab87a2b12ace9"
+    },
+    "MATTE_CONTROL": {
+     "seed": 62,
+     "event_count": 0,
+     "median_event_area_px": 0.0,
+     "scene_linear_peak": 0.04998177015483379,
+     "material_identity": "a6b21fe41b3b2283"
+    },
+    "SHIMMER": {
+     "seed": 63,
+     "event_count": 0,
+     "median_event_area_px": 0.0,
+     "scene_linear_peak": 0.35959745910167695,
+     "material_identity": "ec9eb3e7fc6dfddf"
+    }
+   }
+  },
+  {
+   "member": 1,
+   "trio_seeds": [
+    610,
+    620,
+    630
+   ],
+   "census": {
+    "GLITTER": {
+     "seed": 610,
+     "event_count": 119,
+     "median_event_area_px": 54.0,
+     "scene_linear_peak": 0.904205026948452,
+     "material_identity": "ce60cb420a14198b"
+    },
+    "MATTE_CONTROL": {
+     "seed": 620,
+     "event_count": 0,
+     "median_event_area_px": 0.0,
+     "scene_linear_peak": 0.05090660388246179,
+     "material_identity": "e9c68fb64847cbb9"
+    },
+    "SHIMMER": {
+     "seed": 630,
+     "event_count": 0,
+     "median_event_area_px": 0.0,
+     "scene_linear_peak": 0.36174214336872096,
+     "material_identity": "b1aa0346b8c34ed1"
+    }
+   }
+  },
+  {
+   "member": 2,
+   "trio_seeds": [
+    611,
+    621,
+    631
+   ],
+   "census": {
+    "GLITTER": {
+     "seed": 611,
+     "event_count": 147,
+     "median_event_area_px": 48.0,
+     "scene_linear_peak": 0.9079590481281281,
+     "material_identity": "4b8ca02affe24e4f"
+    },
+    "MATTE_CONTROL": {
+     "seed": 621,
+     "event_count": 0,
+     "median_event_area_px": 0.0,
+     "scene_linear_peak": 0.049887807120382786,
+     "material_identity": "786c5f68a1da57b4"
+    },
+    "SHIMMER": {
+     "seed": 631,
+     "event_count": 0,
+     "median_event_area_px": 0.0,
+     "scene_linear_peak": 0.36599343711733817,
+     "material_identity": "6377d416bbc58013"
+    }
+   }
+  },
+  {
+   "member": 3,
+   "trio_seeds": [
+    612,
+    622,
+    632
+   ],
+   "census": {
+    "GLITTER": {
+     "seed": 612,
+     "event_count": 104,
+     "median_event_area_px": 47.5,
+     "scene_linear_peak": 0.9030149359583856,
+     "material_identity": "2b44242060fb0640"
+    },
+    "MATTE_CONTROL": {
+     "seed": 622,
+     "event_count": 0,
+     "median_event_area_px": 0.0,
+     "scene_linear_peak": 0.05130398338884115,
+     "material_identity": "874360195e3f1300"
+    },
+    "SHIMMER": {
+     "seed": 632,
+     "event_count": 0,
+     "median_event_area_px": 0.0,
+     "scene_linear_peak": 0.35054802587628364,
+     "material_identity": "962323aa055f15e4"
+    }
+   }
+  },
+  {
+   "member": 4,
+   "trio_seeds": [
+    613,
+    623,
+    633
+   ],
+   "census": {
+    "GLITTER": {
+     "seed": 613,
+     "event_count": 129,
+     "median_event_area_px": 44.0,
+     "scene_linear_peak": 0.9058265241384506,
+     "material_identity": "4b60397b7989470b"
+    },
+    "MATTE_CONTROL": {
+     "seed": 623,
+     "event_count": 0,
+     "median_event_area_px": 0.0,
+     "scene_linear_peak": 0.04910617363750935,
+     "material_identity": "ba190f017ca79e03"
+    },
+    "SHIMMER": {
+     "seed": 633,
+     "event_count": 0,
+     "median_event_area_px": 0.0,
+     "scene_linear_peak": 0.3547507280051708,
+     "material_identity": "1e58bbd40000b423"
+    }
+   }
+  },
+  {
+   "member": 5,
+   "trio_seeds": [
+    614,
+    624,
+    634
+   ],
+   "census": {
+    "GLITTER": {
+     "seed": 614,
+     "event_count": 149,
+     "median_event_area_px": 43.0,
+     "scene_linear_peak": 0.9061281898260116,
+     "material_identity": "0198350607643b02"
+    },
+    "MATTE_CONTROL": {
+     "seed": 624,
+     "event_count": 0,
+     "median_event_area_px": 0.0,
+     "scene_linear_peak": 0.05039201195165515,
+     "material_identity": "d776f53cc6f1b4ff"
+    },
+    "SHIMMER": {
+     "seed": 634,
+     "event_count": 0,
+     "median_event_area_px": 0.0,
+     "scene_linear_peak": 0.36162150653004643,
+     "material_identity": "14d90975b4129bb0"
+    }
+   }
+  }
+ ],
+ "queue_control_stamp": {
+  "control_site": "queue_control:first_act",
+  "queue": "m6_spreads_glitter",
+  "trace_path": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/docs/roadmap/palt_m6/declared_spreads/spreads_firing_trace_glitter.jsonl",
+  "ts": 1786762391.11351,
+  "declaration_identity": "c1434e1efdb98a62"
+ },
+ "declaration_identity": "c1434e1efdb98a62",
+ "adjudication": "DEFERRED BY DESIGN \u2014 raw event counts only; the establishment machinery adjudicates in its own act reading this record; the favorable partial replicate (144 vs 113) is NOT evidence and inherits nothing",
+ "owner_approved": false
+}

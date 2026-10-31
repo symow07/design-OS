@@ -1,0 +1,165 @@
+{
+  "record_type": "palette_variant_visual_proof/1.0",
+  "variant_a": {
+    "id": "PALT-P1A",
+    "role": "ENGINEERING_DEFAULT",
+    "mesh_identity": "ec65ea9402c16230"
+  },
+  "variant_b": {
+    "id": "PALT-P1B",
+    "role": "ES3083_DESIGN_INTENT_VARIANT",
+    "mesh_identity": "999db34286f2b789"
+  },
+  "lighting": "IDENTICAL_NEUTRAL_CLAY_BOTH_VARIANTS",
+  "camera": "IDENTICAL_ORTHOGRAPHIC_PARAMETERS_BOTH_VARIANTS",
+  "frame": "ONE_SHARED_FRAME_PER_COMPARED_STATE_SPANNING_BOTH_FAMILIES",
+  "why_shared_frame": "these views are placed side by side, and two images at different scales captioned as an identical-camera comparison would mislead a reviewer about how much the design changed",
+  "views_produced": [
+    "artwork_zone_comparison",
+    "closed_three_quarter",
+    "closed_top",
+    "colour_zone_diagram",
+    "interior_crop",
+    "layout_graph_comparison",
+    "open_three_quarter",
+    "open_top",
+    "pan_layout_top",
+    "silhouette_comparison"
+  ],
+  "produced_count": 10,
+  "required_view_count": 10,
+  "views_missing": [],
+  "all_required_views_exist": true,
+  "required_difference_count": 11,
+  "measured_differences": [
+    {
+      "difference": "rectangular rather than circular pans",
+      "a": "CIRCULAR",
+      "b": "RECTANGULAR",
+      "visible": true,
+      "excluded_from_verdict": false
+    },
+    {
+      "difference": "12 rather than 9 pans",
+      "a": 9,
+      "b": 12,
+      "visible": true,
+      "excluded_from_verdict": false
+    },
+    {
+      "difference": "4 x 3 rather than 3 x 3 layout",
+      "a": "3x3",
+      "b": "4x3",
+      "visible": true,
+      "excluded_from_verdict": false
+    },
+    {
+      "difference": "ES3083-derived margins",
+      "a": 10.1,
+      "b": 1.181821,
+      "visible": true,
+      "excluded_from_verdict": false
+    },
+    {
+      "difference": "ES3083-derived spacing",
+      "a": [
+        30.6,
+        30.6
+      ],
+      "b": [
+        26.8,
+        20.8
+      ],
+      "visible": true,
+      "excluded_from_verdict": false
+    },
+    {
+      "difference": "case proportion",
+      "a": 1.0,
+      "b": 1.691746,
+      "visible": true,
+      "excluded_from_verdict": false
+    },
+    {
+      "difference": "lid / base relationship",
+      "a": [
+        0.731,
+        0.4862
+      ],
+      "b": [
+        0.5682,
+        -0.4724
+      ],
+      "visible": true,
+      "excluded_from_verdict": false
+    },
+    {
+      "difference": "artwork zones",
+      "a": [],
+      "b": [
+        "artwork",
+        "decoration",
+        "label",
+        "panel"
+      ],
+      "visible": true,
+      "excluded_from_verdict": false
+    },
+    {
+      "difference": "typography zones",
+      "a": [],
+      "b": [
+        "EYE SHADOW",
+        "OUTER GLOW",
+        "BBROSE",
+        "SOMBRA DE OJOS"
+      ],
+      "visible": true,
+      "excluded_from_verdict": false
+    },
+    {
+      "difference": "colour zones",
+      "a": [],
+      "b": [
+        "PANTONE 621 C",
+        "PANTONE 627 C"
+      ],
+      "visible": true,
+      "excluded_from_verdict": false
+    },
+    {
+      "difference": "design character",
+      "a": [
+        "CIRCULAR",
+        9,
+        [
+          3,
+          3
+        ],
+        0,
+        0
+      ],
+      "b": [
+        "RECTANGULAR",
+        12,
+        [
+          4,
+          3
+        ],
+        4,
+        2
+      ],
+      "visible": true,
+      "excluded_from_verdict": false
+    }
+  ],
+  "differences_judged": 11,
+  "differences_not_visible": [],
+  "differences_excluded_from_verdict": [],
+  "negative_control": "comparing a variant with itself yields no visible difference on any axis, so the check can fail",
+  "DESIGN_INTENT_BRIDGE": "PASS",
+  "why": "every difference flag is MEASURED by comparing the two builds; none is asserted, or the verdict could not fail. The verdict requires all ten views to exist.",
+  "owner_approved": false,
+  "manufacturing_authority": "NOT_ESTABLISHED",
+  "proof_identity": "e41d6a27a8bf7980"
+}

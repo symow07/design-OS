@@ -1,0 +1,113 @@
+{
+ "record_type": "a154_colocation_sweep/1.0",
+ "protocol_identity": "a229810ce00ff35c",
+ "a190_boundary_reported_first": {
+  "root_searched": "docs/roadmap/palt_m6",
+  "recursive": true,
+  "tracked_json_records": 1562,
+  "parsed": 1562,
+  "unreadable": [],
+  "classification_rule": "an identity is RECORD-MINTED when a record creates it from an ad-hoc payload (its recipe must be co-located, A154) and CODE-PRODUCED when committed code produces it and records merely cite it (its recipe is co-located with the producer). The first pass conflated them and reported 1,441 records 'without a co-located recipe' \u2014 almost all of them frame records citing engine identities and records citing the protocol identity. That count was an artifact of the classification, not a finding",
+  "not_reached_and_why": [
+   "records outside docs/roadmap/palt_m6",
+   "identities in code \u2014 swept by reading the producer instead",
+   "non-JSON records"
+  ]
+ },
+ "record_minted_identities": {
+  "forward value MATTE_SHEEN_spread_fw": {
+   "record": "docs/roadmap/palt_m6/establishment_closure/establishment_table.json",
+   "identity": "0ff0d2baa16012ba",
+   "recipe_co_located": true,
+   "identity_present": true
+  },
+  "forward value SATIN_CREAM_FWHM_spread_fw": {
+   "record": "docs/roadmap/palt_m6/establishment_closure/establishment_table.json",
+   "identity": "c7254009ff8dc82c",
+   "recipe_co_located": true,
+   "identity_present": true
+  },
+  "forward value SATIN_CREAM_GRAN_spread_fw": {
+   "record": "docs/roadmap/palt_m6/establishment_closure/establishment_table.json",
+   "identity": "989b6f72fc3df8d5",
+   "recipe_co_located": true,
+   "identity_present": true
+  },
+  "provenance MATTE_SHEEN": {
+   "record": "docs/roadmap/palt_m6/establishment_closure/establishment_table.json",
+   "identity": "f4ae50564a75af49",
+   "recipe_co_located": true,
+   "identity_present": true
+  },
+  "provenance SATIN_CREAM (both)": {
+   "record": "docs/roadmap/palt_m6/establishment_closure/establishment_table.json",
+   "identity": "ea9336214a046da2",
+   "recipe_co_located": true,
+   "identity_present": true
+  },
+  "glitter release": {
+   "record": "docs/roadmap/palt_m6/render_spend/glitter_banking_release.json",
+   "identity": "d8016b3a3fec2c26",
+   "recipe_co_located": true,
+   "identity_present": true
+  },
+  "measurement closure set": {
+   "record": "docs/roadmap/palt_m6/closure_redeclaration/entry_declaration.json",
+   "identity": "9561c595db668306",
+   "recipe_co_located": true,
+   "identity_present": true
+  },
+  "measurement closure provenance": {
+   "record": "docs/roadmap/palt_m6/closure_redeclaration/closure_computation.json",
+   "identity": "0ead6e96deee367c",
+   "recipe_co_located": true,
+   "identity_present": true
+  },
+  "realization closure set": {
+   "record": "docs/roadmap/palt_m6/closure_redeclaration/realization_entry_declaration.json",
+   "identity": "f88642093b368ebc",
+   "recipe_co_located": true,
+   "identity_present": true
+  },
+  "realization closure provenance": {
+   "record": "docs/roadmap/palt_m6/closure_redeclaration/realization_computation.json",
+   "identity": null,
+   "recipe_co_located": true,
+   "identity_present": true
+  },
+  "traversal set": {
+   "record": "docs/roadmap/palt_m6/closure_redeclaration/four_state_table.json",
+   "identity": "e90b9c2bf43cb217",
+   "recipe_co_located": true,
+   "identity_present": true
+  },
+  "UI confirmation chain": {
+   "record": "docs/roadmap/palt_m6/closure_redeclaration/a171_ui_walk.json",
+   "identity": "650593d4b27f0dde",
+   "recipe_co_located": true,
+   "identity_present": true
+  },
+  "allowlist baseline scheme": {
+   "record": "docs/roadmap/palt_m6/allowlist_baseline.json",
+   "identity": null,
+   "recipe_co_located": true,
+   "identity_present": true
+  }
+ },
+ "record_minted_without_colocated_recipe": [],
+ "code_produced_identities": {
+  "protocol identity chain": "palette_powder_protocol.protocol_identity() \u2014 recipe in the same file, every era (the A154 template)",
+  "frame identities (material/camera/geometry/lighting/render, ~1,400 records)": "palette_powder_engine + palette_characterization_rig \u2014 the recipe is the committed producer; records CITE, they do not mint",
+  "repair_identity": "palette_instrument_repair_protocol.repair_identity() \u2014 producer committed, reproduces exactly (A161)",
+  "flake content/law-era identities": "palette_flake_rig \u2014 recipes in the producers' own docstrings (A173)",
+  "allowlist keys": "tools/allowlist_census.key_of \u2014 shared by gate and writer"
+ },
+ "not_recomputable_carried_openly": {
+  "cleared_against x3": "PRODUCING_CODE_UNAVAILABLE (a140/a161) \u2014 superseded in place, forward identities minted beside them",
+  "closure_identity 24f5d79e3cbd": "PRODUCING_CODE_UNAVAILABLE and its entry set never committed (a152) \u2014 replaced by the fresh closure",
+  "b862941c303588f9": "PRODUCING_CODE_UNAVAILABLE (a161)"
+ },
+ "verdict": "every RECORD-MINTED identity in the arc now carries its recipe in the record that mints it; one gap found and closed",
+ "owner_approved": false,
+ "finding_and_closure": "ONE gap found: the glitter release record cited d8016b3a3fec2c26 while its recipe sat in a140_era_stability.json. Closed in place: the release record now carries the recipe and the payload, and the identity reproduces from that record alone \u2014 verified"
+}

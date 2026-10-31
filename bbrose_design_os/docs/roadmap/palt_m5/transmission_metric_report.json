@@ -1,0 +1,257 @@
+{
+  "record_type": "transmission_metric_report/1.0",
+  "rig_identity": "2f18ef460fe87743",
+  "commissioning": {
+    "reference_pattern_contrast": 100.832287,
+    "gate": 0.3,
+    "verdict": "PASS"
+  },
+  "pairs": [
+    {
+      "a": "OPAQUE",
+      "b": "TRANSPARENT",
+      "axes": {
+        "TRANSMITTED_CONTRAST": {
+          "a": 0.456018,
+          "b": 42.054614,
+          "effect": 1.957091,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": true
+        },
+        "BACKGROUND_VISIBILITY": {
+          "a": 0.221784,
+          "b": 0.740194,
+          "effect": 0.51841,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": true,
+          "independent": true
+        },
+        "TRANSMITTED_DETAIL": {
+          "a": 0.049604,
+          "b": 0.334613,
+          "effect": 1.483588,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": true
+        },
+        "SCATTERING_OR_BLUR": {
+          "a": 0.316001,
+          "b": 0.418222,
+          "effect": 0.278446,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": false
+        },
+        "EDGE_TRANSMISSION": {
+          "a": 0.234428,
+          "b": 0.786452,
+          "effect": 0.552024,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": true,
+          "independent": true
+        }
+      },
+      "independent_axes_clearing": [
+        "TRANSMITTED_CONTRAST",
+        "BACKGROUND_VISIBILITY",
+        "TRANSMITTED_DETAIL",
+        "EDGE_TRANSMISSION"
+      ],
+      "supporting_axes_clearing": [
+        "SCATTERING_OR_BLUR"
+      ],
+      "axes_required": 2,
+      "verdict": "PASS",
+      "pair": "OPAQUE_vs_TRANSPARENT"
+    },
+    {
+      "a": "OPAQUE",
+      "b": "TRANSLUCENT",
+      "axes": {
+        "TRANSMITTED_CONTRAST": {
+          "a": 0.456018,
+          "b": 1.710463,
+          "effect": 1.158048,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": true
+        },
+        "BACKGROUND_VISIBILITY": {
+          "a": 0.221784,
+          "b": 0.13477,
+          "effect": 0.087014,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": false,
+          "independent": true
+        },
+        "TRANSMITTED_DETAIL": {
+          "a": 0.049604,
+          "b": 0.336842,
+          "effect": 1.486567,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": true
+        },
+        "SCATTERING_OR_BLUR": {
+          "a": 0.316001,
+          "b": 0.70441,
+          "effect": 0.76128,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": false
+        },
+        "EDGE_TRANSMISSION": {
+          "a": 0.234428,
+          "b": 0.330483,
+          "effect": 0.096055,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": false,
+          "independent": true
+        }
+      },
+      "independent_axes_clearing": [
+        "TRANSMITTED_CONTRAST",
+        "TRANSMITTED_DETAIL"
+      ],
+      "supporting_axes_clearing": [
+        "SCATTERING_OR_BLUR"
+      ],
+      "axes_required": 2,
+      "verdict": "PASS",
+      "pair": "OPAQUE_vs_TRANSLUCENT"
+    },
+    {
+      "a": "TRANSPARENT",
+      "b": "TRANSLUCENT",
+      "axes": {
+        "TRANSMITTED_CONTRAST": {
+          "a": 42.054614,
+          "b": 1.710463,
+          "effect": 1.843669,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": true
+        },
+        "BACKGROUND_VISIBILITY": {
+          "a": 0.740194,
+          "b": 0.13477,
+          "effect": 0.605424,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": true,
+          "independent": true
+        },
+        "TRANSMITTED_DETAIL": {
+          "a": 0.334613,
+          "b": 0.336842,
+          "effect": 0.006639,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": false,
+          "independent": true
+        },
+        "SCATTERING_OR_BLUR": {
+          "a": 0.418222,
+          "b": 0.70441,
+          "effect": 0.509853,
+          "bar": 0.25,
+          "kind": "relative",
+          "clears": true,
+          "independent": false
+        },
+        "EDGE_TRANSMISSION": {
+          "a": 0.786452,
+          "b": 0.330483,
+          "effect": 0.455969,
+          "bar": 0.25,
+          "kind": "absolute",
+          "clears": true,
+          "independent": true
+        }
+      },
+      "independent_axes_clearing": [
+        "TRANSMITTED_CONTRAST",
+        "BACKGROUND_VISIBILITY",
+        "EDGE_TRANSMISSION"
+      ],
+      "supporting_axes_clearing": [
+        "SCATTERING_OR_BLUR"
+      ],
+      "axes_required": 2,
+      "verdict": "PASS",
+      "pair": "TRANSPARENT_vs_TRANSLUCENT"
+    }
+  ],
+  "failed_pairs": [],
+  "exposure_control": {
+    "a": "OPAQUE",
+    "b": "OPAQUE brighter",
+    "axes": {
+      "TRANSMITTED_CONTRAST": {
+        "a": 0.456018,
+        "b": 0.424765,
+        "effect": 0.070968,
+        "bar": 0.25,
+        "kind": "relative",
+        "clears": false,
+        "independent": true
+      },
+      "BACKGROUND_VISIBILITY": {
+        "a": 0.221784,
+        "b": 0.217698,
+        "effect": 0.004086,
+        "bar": 0.25,
+        "kind": "absolute",
+        "clears": false,
+        "independent": true
+      },
+      "TRANSMITTED_DETAIL": {
+        "a": 0.049604,
+        "b": 0.054185,
+        "effect": 0.088289,
+        "bar": 0.25,
+        "kind": "relative",
+        "clears": false,
+        "independent": true
+      },
+      "SCATTERING_OR_BLUR": {
+        "a": 0.316001,
+        "b": 0.328538,
+        "effect": 0.038903,
+        "bar": 0.25,
+        "kind": "relative",
+        "clears": false,
+        "independent": false
+      },
+      "EDGE_TRANSMISSION": {
+        "a": 0.234428,
+        "b": 0.226545,
+        "effect": 0.007883,
+        "bar": 0.25,
+        "kind": "absolute",
+        "clears": false,
+        "independent": true
+      }
+    },
+    "independent_axes_clearing": [],
+    "supporting_axes_clearing": [],
+    "axes_required": 2,
+    "verdict": "FAIL",
+    "control": "OPAQUE_vs_OPAQUE_exposure_only",
+    "expected": "FAIL",
+    "behaved": true
+  },
+  "TRANSMISSION_RIG": "PASS"
+}

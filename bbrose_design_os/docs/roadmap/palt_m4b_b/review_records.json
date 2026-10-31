@@ -1,0 +1,461 @@
+[
+  {
+    "family": "P1A",
+    "out_dir": "docs/roadmap/palt_m4b_b/review_p1a",
+    "produced": [
+      "clasp_exploded",
+      "clasp_exterior",
+      "clasp_interior",
+      "closed_front",
+      "closed_side",
+      "closed_three_quarter",
+      "closed_top",
+      "dimension_overlay",
+      "exploded_palette",
+      "hinge_exploded",
+      "hinge_exterior",
+      "hinge_interior",
+      "lid_interior",
+      "mirror_stack_view",
+      "open_front",
+      "open_side",
+      "open_three_quarter",
+      "open_top",
+      "pan_layout",
+      "recessed_pocket_detail"
+    ],
+    "produced_count": 20,
+    "skipped": [],
+    "entries": [
+      {
+        "semantic_view_id": "closed_top",
+        "camera_id": "top",
+        "state_id": "CLOSED",
+        "output_filename": "closed_top.png",
+        "means": "the closed palette from above"
+      },
+      {
+        "semantic_view_id": "closed_front",
+        "camera_id": "front",
+        "state_id": "CLOSED",
+        "output_filename": "closed_front.png",
+        "means": "the closed front elevation"
+      },
+      {
+        "semantic_view_id": "closed_side",
+        "camera_id": "side",
+        "state_id": "CLOSED",
+        "output_filename": "closed_side.png",
+        "means": "the closed side elevation"
+      },
+      {
+        "semantic_view_id": "closed_three_quarter",
+        "camera_id": "three_quarter",
+        "state_id": "CLOSED",
+        "output_filename": "closed_three_quarter.png",
+        "means": "the closed palette, three-quarter"
+      },
+      {
+        "semantic_view_id": "open_top",
+        "camera_id": "top",
+        "state_id": "OPEN_REVIEW_ANGLE",
+        "output_filename": "open_top.png",
+        "means": "opened, from above"
+      },
+      {
+        "semantic_view_id": "open_front",
+        "camera_id": "front",
+        "state_id": "OPEN_REVIEW_ANGLE",
+        "output_filename": "open_front.png",
+        "means": "opened front elevation"
+      },
+      {
+        "semantic_view_id": "open_side",
+        "camera_id": "side",
+        "state_id": "OPEN_REVIEW_ANGLE",
+        "output_filename": "open_side.png",
+        "means": "opened side elevation \u2014 the lid angle reads here"
+      },
+      {
+        "semantic_view_id": "open_three_quarter",
+        "camera_id": "three_quarter",
+        "state_id": "OPEN_REVIEW_ANGLE",
+        "output_filename": "open_three_quarter.png",
+        "means": "opened, three-quarter"
+      },
+      {
+        "semantic_view_id": "pan_layout",
+        "camera_id": "top_tray",
+        "state_id": "TRAY_ONLY",
+        "output_filename": "pan_layout.png",
+        "means": "the pan field alone \u2014 lid, hinge and clasp removed"
+      },
+      {
+        "semantic_view_id": "recessed_pocket_detail",
+        "camera_id": "pocket_detail",
+        "state_id": "TRAY_ONLY",
+        "output_filename": "recessed_pocket_detail.png",
+        "means": "one pocket, its draft and the seated pan"
+      },
+      {
+        "semantic_view_id": "hinge_exterior",
+        "camera_id": "hinge_ext",
+        "state_id": "CLOSED",
+        "output_filename": "hinge_exterior.png",
+        "means": "the hinge from outside"
+      },
+      {
+        "semantic_view_id": "hinge_interior",
+        "camera_id": "hinge_int",
+        "state_id": "OPEN_90",
+        "output_filename": "hinge_interior.png",
+        "means": "the knuckles from inside the case"
+      },
+      {
+        "semantic_view_id": "hinge_exploded",
+        "camera_id": "hinge_ext",
+        "state_id": "EXPLODED",
+        "output_filename": "hinge_exploded.png",
+        "means": "the hinge separated"
+      },
+      {
+        "semantic_view_id": "clasp_exterior",
+        "camera_id": "clasp_ext",
+        "state_id": "CLOSED",
+        "output_filename": "clasp_exterior.png",
+        "means": "the clasp from outside"
+      },
+      {
+        "semantic_view_id": "clasp_interior",
+        "camera_id": "clasp_int",
+        "state_id": "OPEN_90",
+        "output_filename": "clasp_interior.png",
+        "means": "the hook and detent from inside"
+      },
+      {
+        "semantic_view_id": "clasp_exploded",
+        "camera_id": "clasp_ext",
+        "state_id": "EXPLODED",
+        "output_filename": "clasp_exploded.png",
+        "means": "the clasp separated"
+      },
+      {
+        "semantic_view_id": "lid_interior",
+        "camera_id": "lid_int",
+        "state_id": "OPEN_REVIEW_ANGLE",
+        "output_filename": "lid_interior.png",
+        "means": "the inside of the lid"
+      },
+      {
+        "semantic_view_id": "mirror_stack_view",
+        "camera_id": "mirror_stack_cam",
+        "state_id": "OPEN_REVIEW_ANGLE",
+        "output_filename": "mirror_stack_view.png",
+        "means": "the mirror in its recess"
+      },
+      {
+        "semantic_view_id": "exploded_palette",
+        "camera_id": "three_quarter",
+        "state_id": "EXPLODED",
+        "output_filename": "exploded_palette.png",
+        "means": "every component separated"
+      },
+      {
+        "semantic_view_id": "dimension_overlay",
+        "camera_id": "DRAWN",
+        "state_id": "DRAWN",
+        "output_filename": "dimension_overlay.png",
+        "means": "drawn dimension view"
+      }
+    ],
+    "render_contract_identity": "2c9969e73c4d4904",
+    "render_contract_version": 1,
+    "lighting": "MEDIUM_GREY_TECHNICAL_CLAY_STUDIO",
+    "renderer": "palette_csg_views.py (one script, both families)",
+    "shared_frames": {
+      "TRAY_ONLY": {
+        "centre": [
+          0.0,
+          -1.6499999999999986,
+          5.275
+        ],
+        "bounds_lo": [
+          -58.0,
+          -61.3,
+          0.0
+        ],
+        "bounds_hi": [
+          58.0,
+          58.0,
+          10.55
+        ],
+        "ortho_scale": 140.774
+      },
+      "OPEN_REVIEW_ANGLE": {
+        "centre": [
+          0.0,
+          20.097076269223514,
+          59.05272028397934
+        ],
+        "bounds_lo": [
+          -58.0,
+          -61.3,
+          0.0
+        ],
+        "bounds_hi": [
+          58.0,
+          101.49415253844703,
+          118.10544056795868
+        ],
+        "ortho_scale": 192.09709999536747
+      },
+      "CLOSED": {
+        "centre": [
+          0.0,
+          -1.5,
+          7.5
+        ],
+        "bounds_lo": [
+          -58.0,
+          -61.3,
+          0.0
+        ],
+        "bounds_hi": [
+          58.0,
+          58.3,
+          15.0
+        ],
+        "ortho_scale": 141.128
+      }
+    },
+    "frame_policy": "the six side-by-side views share one frame across both families; every other view is framed by what its camera actually sees"
+  },
+  {
+    "family": "P1B",
+    "out_dir": "docs/roadmap/palt_m4b_b/review_p1b",
+    "produced": [
+      "clasp_exploded",
+      "clasp_exterior",
+      "clasp_interior",
+      "closed_front",
+      "closed_side",
+      "closed_three_quarter",
+      "closed_top",
+      "dimension_overlay",
+      "exploded_palette",
+      "hinge_exploded",
+      "hinge_exterior",
+      "hinge_interior",
+      "lid_interior",
+      "open_front",
+      "open_side",
+      "open_three_quarter",
+      "open_top",
+      "pan_layout",
+      "recessed_pocket_detail"
+    ],
+    "produced_count": 19,
+    "skipped": [
+      {
+        "view": "mirror_stack_view",
+        "why": "the concept establishes no mirror, so there is no stack to show"
+      }
+    ],
+    "entries": [
+      {
+        "semantic_view_id": "closed_top",
+        "camera_id": "top",
+        "state_id": "CLOSED",
+        "output_filename": "closed_top.png",
+        "means": "the closed palette from above"
+      },
+      {
+        "semantic_view_id": "closed_front",
+        "camera_id": "front",
+        "state_id": "CLOSED",
+        "output_filename": "closed_front.png",
+        "means": "the closed front elevation"
+      },
+      {
+        "semantic_view_id": "closed_side",
+        "camera_id": "side",
+        "state_id": "CLOSED",
+        "output_filename": "closed_side.png",
+        "means": "the closed side elevation"
+      },
+      {
+        "semantic_view_id": "closed_three_quarter",
+        "camera_id": "three_quarter",
+        "state_id": "CLOSED",
+        "output_filename": "closed_three_quarter.png",
+        "means": "the closed palette, three-quarter"
+      },
+      {
+        "semantic_view_id": "open_top",
+        "camera_id": "top",
+        "state_id": "OPEN_REVIEW_ANGLE",
+        "output_filename": "open_top.png",
+        "means": "opened, from above"
+      },
+      {
+        "semantic_view_id": "open_front",
+        "camera_id": "front",
+        "state_id": "OPEN_REVIEW_ANGLE",
+        "output_filename": "open_front.png",
+        "means": "opened front elevation"
+      },
+      {
+        "semantic_view_id": "open_side",
+        "camera_id": "side",
+        "state_id": "OPEN_REVIEW_ANGLE",
+        "output_filename": "open_side.png",
+        "means": "opened side elevation \u2014 the lid angle reads here"
+      },
+      {
+        "semantic_view_id": "open_three_quarter",
+        "camera_id": "three_quarter",
+        "state_id": "OPEN_REVIEW_ANGLE",
+        "output_filename": "open_three_quarter.png",
+        "means": "opened, three-quarter"
+      },
+      {
+        "semantic_view_id": "pan_layout",
+        "camera_id": "top_tray",
+        "state_id": "TRAY_ONLY",
+        "output_filename": "pan_layout.png",
+        "means": "the pan field alone \u2014 lid, hinge and clasp removed"
+      },
+      {
+        "semantic_view_id": "recessed_pocket_detail",
+        "camera_id": "pocket_detail",
+        "state_id": "TRAY_ONLY",
+        "output_filename": "recessed_pocket_detail.png",
+        "means": "one pocket, its draft and the seated pan"
+      },
+      {
+        "semantic_view_id": "hinge_exterior",
+        "camera_id": "hinge_ext",
+        "state_id": "CLOSED",
+        "output_filename": "hinge_exterior.png",
+        "means": "the hinge from outside"
+      },
+      {
+        "semantic_view_id": "hinge_interior",
+        "camera_id": "hinge_int",
+        "state_id": "OPEN_90",
+        "output_filename": "hinge_interior.png",
+        "means": "the knuckles from inside the case"
+      },
+      {
+        "semantic_view_id": "hinge_exploded",
+        "camera_id": "hinge_ext",
+        "state_id": "EXPLODED",
+        "output_filename": "hinge_exploded.png",
+        "means": "the hinge separated"
+      },
+      {
+        "semantic_view_id": "clasp_exterior",
+        "camera_id": "clasp_ext",
+        "state_id": "CLOSED",
+        "output_filename": "clasp_exterior.png",
+        "means": "the clasp from outside"
+      },
+      {
+        "semantic_view_id": "clasp_interior",
+        "camera_id": "clasp_int",
+        "state_id": "OPEN_90",
+        "output_filename": "clasp_interior.png",
+        "means": "the hook and detent from inside"
+      },
+      {
+        "semantic_view_id": "clasp_exploded",
+        "camera_id": "clasp_ext",
+        "state_id": "EXPLODED",
+        "output_filename": "clasp_exploded.png",
+        "means": "the clasp separated"
+      },
+      {
+        "semantic_view_id": "lid_interior",
+        "camera_id": "lid_int",
+        "state_id": "OPEN_REVIEW_ANGLE",
+        "output_filename": "lid_interior.png",
+        "means": "the inside of the lid"
+      },
+      {
+        "semantic_view_id": "exploded_palette",
+        "camera_id": "three_quarter",
+        "state_id": "EXPLODED",
+        "output_filename": "exploded_palette.png",
+        "means": "every component separated"
+      },
+      {
+        "semantic_view_id": "dimension_overlay",
+        "camera_id": "DRAWN",
+        "state_id": "DRAWN",
+        "output_filename": "dimension_overlay.png",
+        "means": "drawn dimension view"
+      }
+    ],
+    "render_contract_identity": "2c9969e73c4d4904",
+    "render_contract_version": 1,
+    "lighting": "MEDIUM_GREY_TECHNICAL_CLAY_STUDIO",
+    "renderer": "palette_csg_views.py (one script, both families)",
+    "shared_frames": {
+      "TRAY_ONLY": {
+        "centre": [
+          0.0,
+          -1.6499999999999986,
+          5.275
+        ],
+        "bounds_lo": [
+          -58.0,
+          -61.3,
+          0.0
+        ],
+        "bounds_hi": [
+          58.0,
+          58.0,
+          10.55
+        ],
+        "ortho_scale": 140.774
+      },
+      "OPEN_REVIEW_ANGLE": {
+        "centre": [
+          0.0,
+          20.097076269223514,
+          59.05272028397934
+        ],
+        "bounds_lo": [
+          -58.0,
+          -61.3,
+          0.0
+        ],
+        "bounds_hi": [
+          58.0,
+          101.49415253844703,
+          118.10544056795868
+        ],
+        "ortho_scale": 192.09709999536747
+      },
+      "CLOSED": {
+        "centre": [
+          0.0,
+          -1.5,
+          7.5
+        ],
+        "bounds_lo": [
+          -58.0,
+          -61.3,
+          0.0
+        ],
+        "bounds_hi": [
+          58.0,
+          58.3,
+          15.0
+        ],
+        "ortho_scale": 141.128
+      }
+    },
+    "frame_policy": "the six side-by-side views share one frame across both families; every other view is framed by what its camera actually sees"
+  }
+]

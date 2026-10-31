@@ -1,0 +1,42 @@
+{
+  "record_type": "palette_technical_sections/1.0",
+  "family": "P1B",
+  "out_dir": "docs/roadmap/palt_m4b_b/sections_p1b",
+  "required": [
+    "pan_row",
+    "pan_column",
+    "lid_base_stack",
+    "mirror_stack",
+    "hinge_axial",
+    "hinge_cross",
+    "clasp_engaged",
+    "clasp_disengaged",
+    "pocket_and_pan",
+    "outer_wall",
+    "parting_seam"
+  ],
+  "produced": [
+    "clasp_disengaged",
+    "clasp_engaged",
+    "hinge_axial",
+    "hinge_cross",
+    "lid_base_stack",
+    "outer_wall",
+    "pan_column",
+    "pan_row",
+    "parting_seam",
+    "pocket_and_pan"
+  ],
+  "produced_count": 10,
+  "skipped": [
+    {
+      "section": "mirror_stack",
+      "why": "no mirror is established by the concept, so there is no stack to cut"
+    }
+  ],
+  "method": "TRUE_PLANE_CUT_NOT_CLIPPED_RENDER",
+  "join_tolerance": null,
+  "identity": "d9108a309c6e35f3",
+  "owner_approved": false,
+  "manufacturing_authority": "NOT_ESTABLISHED"
+}

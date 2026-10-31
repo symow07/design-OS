@@ -1,0 +1,14 @@
+{
+  "record_type": "conditioning_factor_declaration/1.0",
+  "declared_before_any_distribution_was_computed": true,
+  "realization_floor_reference": 0.002,
+  "CONDITIONING_factor": 5.0,
+  "conditioning_band": "denominator <= 0.01 (5x the R2 realization floor of 0.002)",
+  "justification_before_the_numbers": [
+    "the property at issue is operand precision, so the reference must be the protocol's own threshold for a realized signal \u2014 R2's rms/mean >= 0.002 \u2014 not the fallback guard, which sits six orders lower and answers a different question",
+    "a factor of 5 is the smallest multiple that admits operands meaningfully above the realization floor while still flagging ratios whose operands are within one order of it; a ratio of two quantities under 0.01 inherits their noise regardless of how far the denominator sits from the fallback guard",
+    "one number applied identically to every consumer class and every axis, per the construction the owner asked to see repeated \u2014 no per-class band, so no class can be exempted after its data is seen",
+    "declared consequence: a conditioning finding moves NO verdict. It is a fragility record of the NEAR_FIRING kind, and whether operand precision at that scale threatens the 0.25 bar is a separate measurable question this node does not answer"
+  ],
+  "owner_approved": false
+}

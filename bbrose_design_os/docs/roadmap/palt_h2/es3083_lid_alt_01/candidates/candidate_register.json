@@ -1,0 +1,55 @@
+{
+ "record_type": "h2_candidate_register/1.0",
+ "request_id": "es3083_lid_alt_01",
+ "generated_on": "2026-08-15",
+ "generation_executor": "render_candidates.py in this directory — parametric on es3083_artwork_geometry_substrate.json under the M7 construction rules (no hard-coded mm, SET_FACE only, live text, measured colours, no corner radius asserted). All curve geometry computed from scratch in-script; nothing traced from any web source.",
+ "c3_distinction": "The shipped C3 lid (accepted §I) is untouched and its minimal-central layout is NOT re-served: A5, the quiet_minimal candidate, is composed as a lower-left ranged corner block inside a hairline patch keyline — no centred whisper stack, no centred rule.",
+ "first_render_defects_caught": "Visual verification of the first contact sheet caught three composition defects before anything shipped: A1's spiral read as a square coil (rebuilt as an epitrochoid-on-spiral whose petal loops self-intersect); A3's Spanish line started INSIDE the giant B's measured 46mm advance — dark ink on dark glyph swallowed the leading S (column moved clear; assert_a3_column_clear now measures the B advance and refuses overlap); A4's leaves clustered into a knot (leaves now spaced along the stem tangent). assert_text_fits measures every tracked line against the frame. Guards are measurements, not eyeballing.",
+ "candidates": [
+  {
+   "candidate_id": "A1",
+   "title": "ROSE-GESTURE — one unbroken monoline rose, off-centre, cropped by the frame",
+   "svg": "es3083_alt_lid_A1_rose_gesture.svg",
+   "png": "es3083_alt_lid_A1_rose_gesture.png",
+   "direction": "botanical_gesture",
+   "inspired_by_ledger_entries": ["e03", "e08", "e10", "e30"],
+   "originality_statement": "Takes the harvested IDEA of a single continuous-line botanical mark drawn in one gesture (e03/e10), quiet single-gesture abstraction (e08), and the off-centre crop (e30). The curve itself is an original epitrochoid-on-spiral computed in render_candidates.py — no web line-drawing was traced, auto-vectorised, or imitated."
+  },
+  {
+   "candidate_id": "A2",
+   "title": "TWELVE-ROSETTE — six interleaved twelve-lobed rings; the module count echoes the palette's 12-pan interior",
+   "svg": "es3083_alt_lid_A2_twelve_rosette.svg",
+   "png": "es3083_alt_lid_A2_twelve_rosette.png",
+   "direction": "geometric_rosette",
+   "inspired_by_ledger_entries": ["e04", "e14", "e22"],
+   "originality_statement": "Takes the IDEAS of a centred radial botanical burst (e14), a mathematical rosette that reads as rose without depicting one (e22), and a module count echoing the product's own 12-pan grid (e04). The rings are r = R(0.91 + 0.09·cos12θ) with alternate-ring phase interleave, computed here — no pattern was copied."
+  },
+  {
+   "candidate_id": "A3",
+   "title": "LETTER-FIELD — the brand's own B at monumental scale as letter-as-image",
+   "svg": "es3083_alt_lid_A3_letter_field.svg",
+   "png": "es3083_alt_lid_A3_letter_field.png",
+   "direction": "typographic_play",
+   "inspired_by_ledger_entries": ["e06", "e12", "e23", "e27"],
+   "originality_statement": "Takes the typographic ATTITUDE of letterform-as-abstract-image (e06/e23/e27) and language-as-artwork (e12). The glyph is BBROSE's own initial set in the brand's licensed Crimson Text — no third-party logo, lockup, or letter treatment imitated. Words remain the established lid set only."
+  },
+  {
+   "candidate_id": "A4",
+   "title": "NOCTURNE — inverted ground: deep 627 C lid, pale 621 C type, keyline and original leaf sprig",
+   "svg": "es3083_alt_lid_A4_nocturne.svg",
+   "png": "es3083_alt_lid_A4_nocturne.png",
+   "direction": "tonal_inversion",
+   "inspired_by_ledger_entries": ["e02", "e16", "e28", "e29"],
+   "originality_statement": "Takes the COLOUR FEELING of tonal inversion (e16/e29 — deep ground, pale ink), the keyline-patch class (e02), and single-weight botanical linework in the brand's two greens (e28). The sprig is an original parametric stem-and-leaf-loop construction — no illustration reused."
+  },
+  {
+   "candidate_id": "A5",
+   "title": "QUIET-CORNER — near-empty sage field, lower-left ranged wordmark inside a hairline patch",
+   "svg": "es3083_alt_lid_A5_quiet_corner.svg",
+   "png": "es3083_alt_lid_A5_quiet_corner.png",
+   "direction": "quiet_minimal",
+   "inspired_by_ledger_entries": ["e01", "e02", "e07", "e25"],
+   "originality_statement": "Takes tone-on-tone single-ink restraint (e01), the wordmark-plus-keyline patch class (e02), the near-empty off-centre lid (e07), and the whisper register (e25). Honours the recorded owner taste (C3-over-C1 pick) while composing differently from shipped C3 — corner-ranged, no centred stack, no rule."
+  }
+ ]
+}

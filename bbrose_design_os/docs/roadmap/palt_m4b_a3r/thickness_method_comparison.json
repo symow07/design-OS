@@ -1,0 +1,55 @@
+{
+  "record_type": "thickness_method_comparison/1.0",
+  "definitions": {
+    "LOCAL_NORMAL_THICKNESS": "surface point -> first opposing surface along the inward surface normal",
+    "MINIMUM_MATERIAL_LIGAMENT": "diameter of the largest inscribed circle at the point",
+    "SECTION_HORIZONTAL_THICKNESS": "material interval along the section horizontal axis",
+    "SECTION_VERTICAL_THICKNESS": "material interval along the section vertical axis",
+    "ANALYTICAL_NOMINAL_THICKNESS": "closed form from the construction"
+  },
+  "policy_controlling": {
+    "MINIMUM_LOCAL_WALL": "LOCAL_NORMAL_THICKNESS",
+    "POCKET_WALL": "LOCAL_NORMAL_THICKNESS",
+    "DECK_LIGAMENT": "SECTION_HORIZONTAL_THICKNESS",
+    "BASE_SKIN": "ANALYTICAL_NOMINAL_THICKNESS",
+    "POCKET_FLOOR": "ANALYTICAL_NOMINAL_THICKNESS",
+    "MAXIMUM_THICKNESS_RATIO": "MINIMUM_MATERIAL_LIGAMENT"
+  },
+  "at_minimum_point": [
+    -23.467508,
+    -19.132122,
+    2.79107
+  ],
+  "A_ANALYTICAL": {
+    "value_mm": 0.85726026,
+    "definition": "ANALYTICAL_NOMINAL_THICKNESS"
+  },
+  "B_NORMAL_RAY": {
+    "value_mm": 0.600738,
+    "definition": "LOCAL_NORMAL_THICKNESS"
+  },
+  "C_SECTION": {
+    "value_mm": 14.47712,
+    "definition": "SECTION_HORIZONTAL_THICKNESS"
+  },
+  "A3_PLANE_MEDIAL_RIDGE": {
+    "value_mm": 0.663,
+    "definition": "MINIMUM_MATERIAL_LIGAMENT",
+    "status": "DIAGNOSTIC_ONLY"
+  },
+  "agreement": {
+    "methods": {
+      "A_ANALYTICAL": 0.85726026,
+      "B_NORMAL_RAY": 0.600738,
+      "C_SECTION": 14.47712
+    },
+    "methods_below_policy": [
+      "A_ANALYTICAL",
+      "B_NORMAL_RAY"
+    ],
+    "methods_in_agreement": [],
+    "classification": "CONFIRMED_PHYSICAL_THIN_REGION",
+    "requires_two_methods": true,
+    "note": "a larger value from one method does NOT discard a smaller one; they measure different definitions"
+  }
+}

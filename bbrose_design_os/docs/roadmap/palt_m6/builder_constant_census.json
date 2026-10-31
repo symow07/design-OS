@@ -1,0 +1,192 @@
+{
+  "record_type": "builder_constant_census/1.0",
+  "why": "the mirror of the 48%: properties the render REALIZES whose values exist only in shader code, with no declaration. An over-claiming contract is visible and reviewable; an under-declaring contract has nothing on the page to review, approve, or hand a supplier \u2014 the specification silently isn't one.",
+  "source": "apps/pipeline/services/blender_scripts/powder_materials.py",
+  "classes": {
+    "MATERIAL_PROPERTY_UNDECLARED": "a rendered appearance property whose VALUE lives only in code",
+    "DERIVATION_COEFFICIENT_UNDECLARED": "a declared parameter reaches the shader only through an undeclared mapping \u2014 the physics of the mapping is itself unspecified contract",
+    "INSTRUMENT_MACHINERY": "determinism/seeding plumbing, not a material property"
+  },
+  "entries": [
+    {
+      "line": 166,
+      "value": "Specular IOR Level 0.28",
+      "families": "ALL (base)",
+      "class": "MATERIAL_PROPERTY_UNDECLARED"
+    },
+    {
+      "line": 208,
+      "value": "Specular IOR Level 0.18 (matte override)",
+      "families": "POWDER_MATTE",
+      "class": "MATERIAL_PROPERTY_UNDECLARED"
+    },
+    {
+      "line": 206,
+      "value": "roughness variation 0.08*(1+variance)",
+      "families": "POWDER_MATTE",
+      "class": "DERIVATION_COEFFICIENT_UNDECLARED"
+    },
+    {
+      "line": 194,
+      "value": "noise detail 3+3*variance",
+      "families": "POWDER_MATTE",
+      "class": "DERIVATION_COEFFICIENT_UNDECLARED"
+    },
+    {
+      "line": 196,
+      "value": "compression noise detail 2.0",
+      "families": "POWDER_MATTE",
+      "class": "MATERIAL_PROPERTY_UNDECLARED"
+    },
+    {
+      "line": 229,
+      "value": "ROUGHNESS = 0.48 - 0.10*surface_smoothing",
+      "families": "POWDER_SATIN",
+      "class": "MATERIAL_PROPERTY_UNDECLARED",
+      "note": "THE HEADLINE CASE \u2014 part of what the MATTE_VS_SATIN and SATIN_VS_CREAM PASSes rest on, nowhere in the contract; the contract's own surface_roughness is dead on this family"
+    },
+    {
+      "line": 224,
+      "value": "satin noise detail 2+2*variance",
+      "families": "POWDER_SATIN",
+      "class": "DERIVATION_COEFFICIENT_UNDECLARED"
+    },
+    {
+      "line": 238,
+      "value": "satin mottle strength *0.5",
+      "families": "POWDER_SATIN",
+      "class": "DERIVATION_COEFFICIENT_UNDECLARED"
+    },
+    {
+      "line": 251,
+      "value": "flake roughness = 0.18 + 0.25*(1-metallic_response)",
+      "families": "SHIMMER, POWDER_METALLIC",
+      "class": "MATERIAL_PROPERTY_UNDECLARED",
+      "note": "carries part of both reflective PASSes"
+    },
+    {
+      "line": 255,
+      "value": "facet jitter = sparkle_intensity (1:1, normal-displacement units)",
+      "families": "SHIMMER, POWDER_METALLIC",
+      "class": "DERIVATION_COEFFICIENT_UNDECLARED"
+    },
+    {
+      "line": 278,
+      "value": "glitter particle roughness 0.05",
+      "families": "GLITTER",
+      "class": "MATERIAL_PROPERTY_UNDECLARED",
+      "note": "carries the discrete-glint physics of the 113-event census"
+    },
+    {
+      "line": 280,
+      "value": "jitter = orientation_jitter_deg / 90",
+      "families": "GLITTER",
+      "class": "DERIVATION_COEFFICIENT_UNDECLARED"
+    },
+    {
+      "line": 271,
+      "value": "Voronoi distance CHEBYCHEV (shape_class hardcoded)",
+      "families": "GLITTER",
+      "class": "MATERIAL_PROPERTY_UNDECLARED",
+      "note": "the contract's shape_class string is dead; the actual shape law is this literal"
+    },
+    {
+      "line": 290,
+      "value": "crust noise scale 0.5mm, detail 5.0, distortion 0.8",
+      "families": "BAKED",
+      "class": "MATERIAL_PROPERTY_UNDECLARED"
+    },
+    {
+      "line": 296,
+      "value": "BAKED roughness 0.38",
+      "families": "BAKED",
+      "class": "MATERIAL_PROPERTY_UNDECLARED",
+      "note": "contract surface_roughness dead on this family"
+    },
+    {
+      "line": 297,
+      "value": "coat = crust.gloss * 0.5",
+      "families": "BAKED",
+      "class": "DERIVATION_COEFFICIENT_UNDECLARED"
+    },
+    {
+      "line": 305,
+      "value": "marbled component derivation *0.55 darker / *1.35+0.05 lighter",
+      "families": "MARBLED",
+      "class": "MATERIAL_PROPERTY_UNDECLARED",
+      "note": "the actual marble colours are these coefficients, not contract values"
+    },
+    {
+      "line": 323,
+      "value": "marble ramp width +-0.10 (2-comp) / +-0.08 (3-comp)",
+      "families": "MARBLED",
+      "class": "MATERIAL_PROPERTY_UNDECLARED"
+    },
+    {
+      "line": 318,
+      "value": "vein detail 4.0, distortion 1.2",
+      "families": "MARBLED",
+      "class": "MATERIAL_PROPERTY_UNDECLARED"
+    },
+    {
+      "line": "marbled bump",
+      "value": "microtexture strength *0.8",
+      "families": "MARBLED",
+      "class": "DERIVATION_COEFFICIENT_UNDECLARED"
+    },
+    {
+      "line": "pressed",
+      "value": "packed roughness = surface_roughness*(1-0.35*compaction_level)",
+      "families": "PRESSED_POWDER",
+      "class": "DERIVATION_COEFFICIENT_UNDECLARED"
+    },
+    {
+      "line": "pressed ring",
+      "value": "ring gaussian falloff -250",
+      "families": "PRESSED_POWDER",
+      "class": "MATERIAL_PROPERTY_UNDECLARED"
+    },
+    {
+      "line": "pressed mottle",
+      "value": "mottle *(1-0.5*surface_flatness)",
+      "families": "PRESSED_POWDER",
+      "class": "DERIVATION_COEFFICIENT_UNDECLARED"
+    },
+    {
+      "line": "cream",
+      "value": "swell scale 6.0mm / amplitude 0.015",
+      "families": "CREAM",
+      "class": "MATERIAL_PROPERTY_UNDECLARED"
+    },
+    {
+      "line": 116,
+      "value": "bump Distance = amplitude * scale_mm (physical-height law)",
+      "families": "ALL bump users",
+      "class": "DERIVATION_COEFFICIENT_UNDECLARED",
+      "note": "the realization law itself \u2014 deliberate (05d481c) but undeclared in any contract"
+    },
+    {
+      "line": 173,
+      "value": "mottle black-mix construction, seed offset +5, detail 2.0",
+      "families": "matte/pressed/flakes/glitter/baked",
+      "class": "MATERIAL_PROPERTY_UNDECLARED"
+    },
+    {
+      "line": 46,
+      "value": "seed offsets 7.13/3.71/1.97, W 0.7311, Randomness 1.0",
+      "families": "ALL",
+      "class": "INSTRUMENT_MACHINERY"
+    }
+  ],
+  "count": {
+    "MATERIAL_PROPERTY_UNDECLARED": 15,
+    "DERIVATION_COEFFICIENT_UNDECLARED": 10,
+    "INSTRUMENT_MACHINERY": 1
+  },
+  "the_two_numbers_together": "contract integrity, both directions: 40 of 84 declared parameters never reach the render (over-claim, visible once marked); 25 rendered properties/mappings exist only in builder code (under-declaration, invisible on the page). Several under-declared values carry banked verdicts: satin's roughness law, the flake roughness law, glitter's particle roughness and CHEBYCHEV shape law. The verdicts measured real frames and stand; the specification of what was measured lives half in code.",
+  "owner_approved": false,
+  "marbling_colour_authority_note": {
+    "carried_forward_for_the_marbling_node": "the marble palette is produced by UNDECLARED coefficients (*0.55 / *1.35+0.05) applied to PROVISIONAL shades \u2014 two layers from any authority, and the second layer is invisible on the page. COLOUR_AUTHORITY stands: pan_shades NO_AUTHORITATIVE_SOURCE_NEUTRAL_PLACEHOLDERS_ONLY, Pantone symbolic, FB3090 UNSOURCED. Fine as visualization; NOT a blocker on the marbling rig, whose question is chromatic-spatial structure. But the rig record must not let the derived colours read as a palette decision, and the two coefficients are declared as part of contract repair rather than discovered by whoever specifies a marbled shade to a supplier.",
+    "marbling_touches_contract_integrity_from_both_sides": "it is the only consumer of the common microtexture block (discharges that part of the over-claimed audit) AND the family whose colours sit in the under-declared half \u2014 the node is written once with both jobs in it."
+  }
+}

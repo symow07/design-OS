@@ -1,0 +1,267 @@
+{
+  "record_type": "tray_topology_manifest/1.0",
+  "milestone": "PALT-M4B-A",
+  "mesh_identity": "ec65ea9402c16230",
+  "topology": {
+    "version": "recessed_tray_topology/1.0",
+    "cells_x": 3,
+    "cells_y": 3,
+    "cell_edge_samples": 16,
+    "pocket_segments": 64,
+    "fillet_arc_samples": 5,
+    "draft_strategy": "LINEAR_TAPER_FROM_RIM_TO_FLOOR",
+    "fillet_strategy": "TANGENT_ARC_RIM_AND_FLOOR_FILLETS",
+    "coordinate_quantization": 1e-06,
+    "weld_tolerance": null,
+    "outer_loop_samples": 192
+  },
+  "shared_vertex_reuse_count": 392,
+  "weld_count": 0,
+  "weld_tolerance": null,
+  "authority": "DETERMINISTIC_PYTHON_MESH_CONSTRUCTION",
+  "blender_role": "VISUALIZATION_AND_RENDERING_ONLY",
+  "boolean_free": true,
+  "elevations_mm": {
+    "underside": 1.5,
+    "pocket_floor": 2.5,
+    "deck": 7.15
+  },
+  "draft": {
+    "tray_draft_deg": 1.5,
+    "pocket_draft_deg": 2.0,
+    "tray_underside_inset_mm": 0.14795,
+    "release_direction": "UPWARD"
+  },
+  "fillets_mm": {
+    "rim": 0.6,
+    "floor": 0.6,
+    "strategy": "TANGENT_ARC_RIM_AND_FLOOR_FILLETS"
+  },
+  "pocket_profile_rings": [
+    [
+      13.879413265,
+      7.15
+    ],
+    [
+      13.69799133,
+      7.121914401
+    ],
+    [
+      13.533553875,
+      7.040286939
+    ],
+    [
+      13.401495314,
+      6.912759469
+    ],
+    [
+      13.314178793,
+      6.751270942
+    ],
+    [
+      13.279778769,
+      6.570939698
+    ],
+    [
+      13.157839653,
+      3.079060302
+    ],
+    [
+      13.123439629,
+      2.898729058
+    ],
+    [
+      13.036123108,
+      2.737240531
+    ],
+    [
+      12.904064547,
+      2.609713061
+    ],
+    [
+      12.739627091,
+      2.528085599
+    ],
+    [
+      12.558205157,
+      2.5
+    ]
+  ],
+  "pockets": [
+    {
+      "row": 0,
+      "col": 0,
+      "centre_mm": [
+        -30.6,
+        -30.6
+      ],
+      "sharp_corner_radius_mm": 13.3,
+      "opening_radius_mm": 13.879413,
+      "floor_radius_mm": 12.558205,
+      "depth_mm": 4.65,
+      "deck_tangent_radius_mm": 13.879413,
+      "wall_top_z_mm": 6.57094,
+      "wall_bottom_z_mm": 3.07906,
+      "flat_floor_radius_mm": 12.558205
+    },
+    {
+      "row": 0,
+      "col": 1,
+      "centre_mm": [
+        0.0,
+        -30.6
+      ],
+      "sharp_corner_radius_mm": 13.3,
+      "opening_radius_mm": 13.879413,
+      "floor_radius_mm": 12.558205,
+      "depth_mm": 4.65,
+      "deck_tangent_radius_mm": 13.879413,
+      "wall_top_z_mm": 6.57094,
+      "wall_bottom_z_mm": 3.07906,
+      "flat_floor_radius_mm": 12.558205
+    },
+    {
+      "row": 0,
+      "col": 2,
+      "centre_mm": [
+        30.6,
+        -30.6
+      ],
+      "sharp_corner_radius_mm": 13.3,
+      "opening_radius_mm": 13.879413,
+      "floor_radius_mm": 12.558205,
+      "depth_mm": 4.65,
+      "deck_tangent_radius_mm": 13.879413,
+      "wall_top_z_mm": 6.57094,
+      "wall_bottom_z_mm": 3.07906,
+      "flat_floor_radius_mm": 12.558205
+    },
+    {
+      "row": 1,
+      "col": 0,
+      "centre_mm": [
+        -30.6,
+        0.0
+      ],
+      "sharp_corner_radius_mm": 13.3,
+      "opening_radius_mm": 13.879413,
+      "floor_radius_mm": 12.558205,
+      "depth_mm": 4.65,
+      "deck_tangent_radius_mm": 13.879413,
+      "wall_top_z_mm": 6.57094,
+      "wall_bottom_z_mm": 3.07906,
+      "flat_floor_radius_mm": 12.558205
+    },
+    {
+      "row": 1,
+      "col": 1,
+      "centre_mm": [
+        0.0,
+        0.0
+      ],
+      "sharp_corner_radius_mm": 13.3,
+      "opening_radius_mm": 13.879413,
+      "floor_radius_mm": 12.558205,
+      "depth_mm": 4.65,
+      "deck_tangent_radius_mm": 13.879413,
+      "wall_top_z_mm": 6.57094,
+      "wall_bottom_z_mm": 3.07906,
+      "flat_floor_radius_mm": 12.558205
+    },
+    {
+      "row": 1,
+      "col": 2,
+      "centre_mm": [
+        30.6,
+        0.0
+      ],
+      "sharp_corner_radius_mm": 13.3,
+      "opening_radius_mm": 13.879413,
+      "floor_radius_mm": 12.558205,
+      "depth_mm": 4.65,
+      "deck_tangent_radius_mm": 13.879413,
+      "wall_top_z_mm": 6.57094,
+      "wall_bottom_z_mm": 3.07906,
+      "flat_floor_radius_mm": 12.558205
+    },
+    {
+      "row": 2,
+      "col": 0,
+      "centre_mm": [
+        -30.6,
+        30.6
+      ],
+      "sharp_corner_radius_mm": 13.3,
+      "opening_radius_mm": 13.879413,
+      "floor_radius_mm": 12.558205,
+      "depth_mm": 4.65,
+      "deck_tangent_radius_mm": 13.879413,
+      "wall_top_z_mm": 6.57094,
+      "wall_bottom_z_mm": 3.07906,
+      "flat_floor_radius_mm": 12.558205
+    },
+    {
+      "row": 2,
+      "col": 1,
+      "centre_mm": [
+        0.0,
+        30.6
+      ],
+      "sharp_corner_radius_mm": 13.3,
+      "opening_radius_mm": 13.879413,
+      "floor_radius_mm": 12.558205,
+      "depth_mm": 4.65,
+      "deck_tangent_radius_mm": 13.879413,
+      "wall_top_z_mm": 6.57094,
+      "wall_bottom_z_mm": 3.07906,
+      "flat_floor_radius_mm": 12.558205
+    },
+    {
+      "row": 2,
+      "col": 2,
+      "centre_mm": [
+        30.6,
+        30.6
+      ],
+      "sharp_corner_radius_mm": 13.3,
+      "opening_radius_mm": 13.879413,
+      "floor_radius_mm": 12.558205,
+      "depth_mm": 4.65,
+      "deck_tangent_radius_mm": 13.879413,
+      "wall_top_z_mm": 6.57094,
+      "wall_bottom_z_mm": 3.07906,
+      "flat_floor_radius_mm": 12.558205
+    }
+  ],
+  "interface_regions": {
+    "hinge_reinforcement_interface": {
+      "edge": "TOP_EDGE",
+      "y_mm": 56.0,
+      "band_mm": 1.2,
+      "status": "DECLARED_NOT_MODELLED"
+    },
+    "clasp_reinforcement_interface": {
+      "edge": "BOTTOM_EDGE",
+      "y_mm": -56.0,
+      "band_mm": 1.0,
+      "status": "DECLARED_NOT_MODELLED"
+    },
+    "structural_rib_interfaces": {
+      "x_mm": [
+        -15.3,
+        15.3
+      ],
+      "span_y_mm": [
+        -53.0,
+        53.0
+      ],
+      "thickness_mm": 1.0,
+      "status": "DECLARED_NOT_MODELLED"
+    },
+    "tray_footprint_mm": [
+      112.0,
+      112.0
+    ]
+  },
+  "component_count": 19
+}

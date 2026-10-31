@@ -1,0 +1,49 @@
+{
+  "record_type": "rect_pocket_datum_evidence/1.0",
+  "solution": {
+    "record_type": "rect_pocket_datum_solution/1.0",
+    "seating_datum_z_mm": 1.531682,
+    "profile_offset_at_seating_datum_mm": -0.07695135,
+    "pocket_sharp_wall_width_at_deck_mm": 24.953903,
+    "pocket_sharp_wall_height_at_deck_mm": 18.953903,
+    "pocket_sharp_wall_corner_radius_at_deck_mm": 2.476951,
+    "deck_opening_offset_mm": 0.332138,
+    "input_datum": "FUNCTIONAL_CLEARANCE_AT_SEATING_DATUM",
+    "output_datum": "SHARP_WALL_THEORETICAL_AT_DECK_PLANE",
+    "derived_border_margin_mm": 1.181821,
+    "derived_tray_width_mm": 109.563642,
+    "derived_tray_depth_mm": 64.763642
+  },
+  "pan_envelope": {
+    "record_type": "rect_pocket_envelope/1.0",
+    "datum": "FUNCTIONAL_CLEARANCE_AT_SEATING_DATUM",
+    "functional_width_at_seating_datum_mm": 24.8,
+    "functional_height_at_seating_datum_mm": 18.8,
+    "functional_corner_radius_at_seating_datum_mm": 2.4,
+    "pocket_draft_deg": 2.0,
+    "seating_clearance_per_side_mm": 0.4,
+    "adhesive_allowance_mm": 0.15,
+    "note": "the pocket corner radius grows with the tolerance, so the offset stays a true rounded rectangle rather than a scaled one",
+    "authority": "PROVISIONAL_DESIGN_DEFAULT"
+  },
+  "built_section_at_seating_datum": {
+    "z_mm": 1.531682,
+    "width_mm": 24.80000030011526,
+    "height_mm": 18.80000030011526,
+    "corner_radius_mm": 2.399999650057631
+  },
+  "pan_contract": {
+    "pan_width_mm": 24.0,
+    "pan_height_mm": 18.0,
+    "pan_depth_mm": 3.5,
+    "corner_radius_mm": 2.0,
+    "side_wall_draft_deg": 0.0,
+    "base_corner_radius_mm": 0.3,
+    "metal_wall_thickness_mm": 0.25,
+    "metal_floor_thickness_mm": 0.25,
+    "pocket_tolerance_mm": 0.4,
+    "pocket_draft_deg": 2.0,
+    "adhesive_allowance_mm": 0.15,
+    "powder_crown_mm": 0.3
+  }
+}

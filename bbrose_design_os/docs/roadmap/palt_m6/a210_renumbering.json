@@ -1,0 +1,20 @@
+{
+ "record_type": "a210_ruling_renumbering/1.0",
+ "protocol_identity": "a229810ce00ff35c",
+ "defect": "the M6-COMBINING-RULE launcher reused A192-A200, colliding with M6-QUEUE-RESUME's A191-A193; both transmissions internally consistent so the header enumeration could not catch it \u2014 the second occurrence of this shape (see a170_renumbering.json)",
+ "canonical_renumbering_2k": {
+  "M6-COMBINING-RULE A192": "A201",
+  "M6-COMBINING-RULE A193": "A202",
+  "M6-COMBINING-RULE A194": "A203",
+  "M6-COMBINING-RULE A195": "A204",
+  "M6-COMBINING-RULE A196": "A205",
+  "M6-COMBINING-RULE A197": "A206",
+  "M6-COMBINING-RULE A198": "A207",
+  "M6-COMBINING-RULE A199": "A208",
+  "M6-COMBINING-RULE A200": "A209"
+ },
+ "priority": "M6-QUEUE-RESUME's A191-A193 keep their numbers \u2014 they were first",
+ "no_execution_forked": "pointer repair only; nothing re-executed",
+ "numbering_resumes_at": "A210",
+ "format_fix": "A218: header enumeration now carries the FIRST and LAST ruling number of the immediately preceding node"
+}

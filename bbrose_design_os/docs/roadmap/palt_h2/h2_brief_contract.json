@@ -1,0 +1,82 @@
+{
+ "record_type": "h2_design_request_brief_contract/1.0",
+ "created_at": "2026-08-15",
+ "authority": "OWNER_BLOCKER_CLEARANCE.md §H2 (signed BBrose 2026-08-15), activated via h2_design_request_pipeline_pointer.json after §I acceptance",
+ "purpose": "The contract every design request (brief) is validated against before the pipeline runs. BBrose submits a brief; the engine harvests web inspiration and generates ORIGINAL candidates. Measurements and product information arrive AT REQUEST TIME as inputs of the brief.",
+ "THE_RULE": "A missing field is resolved IN-REQUEST: either ask the owner within the same request cycle, or take a web-derived rough number and mark it tier PRIOR with source provenance. A missing field may NEVER become a standing owner-side blocker, may never park in a clearance document, and may never accumulate in a launcher. (Owner ruling §H2: per-request INPUTS, never standing blockers.)",
+ "schema": {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "h2_design_request_brief/1.0",
+  "type": "object",
+  "required": ["record_type", "request_id", "submitted_by", "submitted_on", "product_identity", "physical_measurements", "deliverables_wanted", "brand_constraints"],
+  "properties": {
+   "record_type": {"const": "h2_design_request_brief/1.0"},
+   "request_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_]{2,63}$", "description": "Slug; becomes the directory docs/roadmap/palt_h2/<request_id>/ holding the ledger, candidates, and contact sheet."},
+   "submitted_by": {"type": "string"},
+   "submitted_on": {"type": "string", "description": "ISO date"},
+   "product_identity": {
+    "type": "object",
+    "required": ["name", "category"],
+    "properties": {
+     "name": {"type": "string", "description": "e.g. 'ES3083 eyeshadow palette lid'"},
+     "item_no": {"type": "string", "description": "Optional item number"},
+     "category": {"type": "string", "description": "Product category driving the web search, e.g. 'eyeshadow palette packaging'"},
+     "description": {"type": "string"}
+    }
+   },
+   "physical_measurements": {
+    "type": "array",
+    "description": "Every dimension the artwork is parametric on. Empty array is VALID only if deliverables need no geometry (then record why).",
+    "items": {
+     "type": "object",
+     "required": ["name", "value", "unit", "tier", "source"],
+     "properties": {
+      "name": {"type": "string"},
+      "value": {"type": ["number", "array"], "description": "Scalar or [w,h] / [w,h,d] vector"},
+      "unit": {"type": "string", "enum": ["mm", "g", "ml", "count"]},
+      "tier": {"type": "string", "enum": ["MEASURED", "PRIOR"], "description": "MEASURED = owner-supplied (calipers, spec sheet in hand). PRIOR = web-derived rough number, usable immediately, superseded in place when a MEASURED value arrives."},
+      "source": {"type": "string", "description": "MEASURED: who measured / which record. PRIOR: the URL it came from."}
+     }
+    }
+   },
+   "deliverables_wanted": {
+    "type": "array",
+    "minItems": 1,
+    "items": {"type": "string"},
+    "description": "e.g. 'lid artwork direction candidates + contact sheet', 'label sheet', 'editable .ai emission'"
+   },
+   "brand_constraints": {
+    "type": "object",
+    "required": ["wordmark", "taste"],
+    "properties": {
+     "wordmark": {"type": "string", "description": "Default 'BBROSE'"},
+     "set_face": {"type": "string", "description": "Default 'Crimson Text (OFL, SET_FACE per C1 acceptance)' — brief may override"},
+     "colour_family": {"type": "string", "description": "Default 'PANTONE 621 C / 627 C family (measured-Lab-verified sRGB: ground 207,224,216; deep ink 17,50,44)' — brief may override"},
+     "taste": {"type": "string", "description": "Recorded owner taste default: QUIET-MINIMAL — the owner chose minimal-central C3 over the advisor-recommended bold C1 (section_e_owner_picks_ingestion.json). At least one generated candidate always honours this."},
+     "overrides": {"type": "string", "description": "Anything in this brief that overrides a brand default, stated explicitly"}
+    }
+   },
+   "quantity_allocation": {"type": "string", "description": "Optional: units, markets, allocation notes. Missing → resolve in-request or mark N/A."},
+   "inspiration_notes": {"type": "string", "description": "Free text: moods, references, directions the owner already likes or forbids"},
+   "in_request_resolutions": {
+    "type": "array",
+    "description": "Audit trail of THE_RULE firing: every field that was missing at submission and how it was resolved in-request.",
+    "items": {
+     "type": "object",
+     "required": ["field", "resolution"],
+     "properties": {
+      "field": {"type": "string"},
+      "resolution": {"type": "string", "description": "'asked owner: <answer>' or 'PRIOR taken: <value> from <url>'"}
+     }
+    }
+   }
+  }
+ },
+ "pipeline_stages_downstream_of_a_valid_brief": [
+  "1. HARVEST — real web searches (Pinterest, Dribbble, Behance, GitHub, general image/web) for the category and mood → inspiration_ledger.json under docs/roadmap/palt_h2/<request_id>/; 0 entries = stage FAILED",
+  "2. GENERATE — 4-6 ORIGINAL candidates from scratch (SVG-first, renderable previews); each records which ledger entries inspired it; at least one quiet/minimal; inspired-by never copied",
+  "3. CONTACT SHEET — one review board PNG, all candidates side by side; the owner picks from artifacts; the pick is design authority"
+ ],
+ "originality_rule": "Web material contributes IDEAS (mood, composition class, colour feeling, typographic attitude) with provenance recorded per entry. No traced, reproduced, or closely-derived artwork, ever. Each ledger entry carries an originality note stating what idea was taken and what was NOT taken.",
+ "owner_approved": false
+}

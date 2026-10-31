@@ -1,0 +1,12 @@
+{
+ "record_type": "a163_flake_identity_classification/1.0",
+ "protocol_identity": "12bdc94cc3419fbb",
+ "producing_code_cited": "palette_flake_rig.declaration_identity() = sha256(json.dumps(declaration(), sort_keys=True, default=str))[:16], committed at the era and today",
+ "era_correct_run": "at the record's minting commit (a494f03) the producer computes db99241de28a626b \u2014 NOT the record's 31b04a6c1eff8de2",
+ "classification": {
+  "part_1_2z": "the record's identity was never produced by the module producer: it is the record SELF-HASH (recipe identified at ada4eb9, reproduces exactly). The 'divergence' was the executor comparing TWO DIFFERENT IDENTITY SYSTEMS that share the name declaration_identity \u2014 neither is stale",
+  "part_2_2x": "the module's producer IS a composite doing what composites do: its payload embeds protocol_identity_untouched = PP.protocol_identity(), so the module identity moves on EVERY protocol amendment (era eb20aad9698e1825 -> current chain tip) regardless of whether the flake declaration's own content moved. If it is ever used for staleness it must split into declaration-content and law-version identities per 2x"
+ },
+ "owner_approved": false,
+ "a170_renumbering_pointer": "NOTE per A170: this record was executed under launcher ruling numbers A158-A163 which COLLIDED with the prior node's; the canonical numbers are A164-A169 \u2014 see a170_renumbering.json"
+}

@@ -1,0 +1,87 @@
+{
+ "member_lobe_spreads": {
+  "POWDER_SATIN": {
+   "n_seeds": 6,
+   "max_pairwise": {
+    "HIGHLIGHT_FWHM": 0.04781,
+    "HIGHLIGHT_PEAK": 0.00507,
+    "SPECULAR_TO_DIFFUSE_RATIO": 0.0061,
+    "GRAZING_RESPONSE": 0.09613,
+    "SHEEN_REGION_RESPONSE": 0.03566,
+    "EDGE_HIGHLIGHT_RESPONSE": 0.14368
+   }
+  },
+  "PRESSED_POWDER": {
+   "n_seeds": 6,
+   "max_pairwise": {
+    "HIGHLIGHT_FWHM": 0.03363,
+    "HIGHLIGHT_PEAK": 0.00774,
+    "SPECULAR_TO_DIFFUSE_RATIO": 0.00789,
+    "GRAZING_RESPONSE": 0.14754,
+    "SHEEN_REGION_RESPONSE": 0.03027,
+    "EDGE_HIGHLIGHT_RESPONSE": 0.04874
+   }
+  },
+  "CREAM": {
+   "n_seeds": 6,
+   "max_pairwise": {
+    "HIGHLIGHT_FWHM": 0.03289,
+    "HIGHLIGHT_PEAK": 0.00756,
+    "SPECULAR_TO_DIFFUSE_RATIO": 0.01112,
+    "GRAZING_RESPONSE": 0.05503,
+    "SHEEN_REGION_RESPONSE": 0.08353,
+    "EDGE_HIGHLIGHT_RESPONSE": 0.07129
+   }
+  }
+ },
+ "member_texture_spreads": {
+  "POWDER_SATIN": {
+   "n_seeds": 6,
+   "GRANULARITY_max_pairwise": 0.04201
+  },
+  "PRESSED_POWDER": {
+   "n_seeds": 6,
+   "GRANULARITY_max_pairwise": 0.04096
+  },
+  "CREAM": {
+   "n_seeds": 6,
+   "GRANULARITY_max_pairwise": 0.00179
+  }
+ },
+ "marbling_solid_member_C2": {
+  "n_seeds": 6,
+  "max_pairwise": 0.00291,
+  "holds_below_bar": true
+ },
+ "glitter_event_ensemble": {
+  "events": {
+   "61": 113,
+   "66": 144,
+   "62": 136,
+   "63": 145,
+   "64": 161,
+   "65": 121
+  },
+  "min": 113,
+  "max": 161,
+  "all_above_threshold_25": true
+ },
+ "census_lobe_replicate": {
+  "seeds": [
+   700,
+   701
+  ],
+  "families_per_seed": {
+   "700": 6,
+   "701": 6
+  },
+  "gap": "TEXTURE-SIDE ROWS NOT RENDERED (12 declared frames) \u2014 the GRAN census rho replicate is NOT computable; lobe-side rho replicates only"
+ },
+ "A195_kind": {
+  "kind": "BOUND",
+  "why": "member spreads are max_pairwise excursions used as 1i comparators \u2014 their job is to be cleared, so they are bounds",
+  "combining_rule": "WORST_OBSERVED_EXCURSION_ACROSS_ENSEMBLES",
+  "combining_rule_identity": "fd91d08471da03fb",
+  "second_ensemble": "seeds 810-815 (FLOOR-STATISTIC-REPLICATE); combined values now carried in floor_statistic_replicate_result.json"
+ }
+}

@@ -1,0 +1,362 @@
+{
+ "record_type": "palette_roadmap_tracker/1.3",
+ "created_at": "2026-08-05",
+ "milestone": "PALT-M4 \u2014 PALT-P1 parametric geometry and neutral validation",
+ "status": "PALT_M4_IMPLEMENTED_PENDING_OWNER_VISUAL_REVIEW",
+ "authority_limitations": {
+  "PALETTE_GEOMETRY_AUTHORITY": "PROVISIONAL_DESIGN_ONLY",
+  "MANUFACTURING_AUTHORITY": "NOT_ESTABLISHED",
+  "MATERIAL_AUTHORITY": "VISUALIZATION_PARAMETERS_ONLY",
+  "REFERENCE_AUTHORITY": "SUPPLIER / RETAILER / PATENT ANALOGUES ONLY \u2014 no manufacturer technical drawing was obtainable"
+ },
+ "phases": [
+  {
+   "id": "PALT-M1",
+   "title": "Foundation: taxonomy, architecture, contracts, research, pilots",
+   "status": "OWNER_ACCEPTED_WITH_CONDITIONS",
+   "implementation_percent": 100,
+   "owner_gate": "G1 architecture decision \u2014 APPROVED",
+   "blocked_by": null
+  },
+  {
+   "id": "PALT-M2",
+   "title": "PALT-M2 \u2014 palette contract + parametric layout kernel (deterministic, non-rendering)",
+   "status": "OWNER_ACCEPTED_WITH_CORRECTIONS",
+   "implementation_percent": 100,
+   "owner_gate": null,
+   "blocked_by": null,
+   "deliverables": [
+    "palette_contracts.py",
+    "palette_layout_kernel.py",
+    "palette_layout_validators.py",
+    "palt_p1.py",
+    "palt_p1_contract.json",
+    "palt_p1_layout_result.json",
+    "palt_p1_minimum_dimensions.json",
+    "supplier_reference_shortlist.json",
+    "supplier_technical_drawing_request.md",
+    "palt_m2_architecture.md",
+    "palt_m2_validation_report.json"
+   ],
+   "tests": "apps/pipeline/tests/test_palette_layout_kernel.py \u2014 28 passed"
+  },
+  {
+   "id": "PALT-M3",
+   "title": "PALT-M3 \u2014 case stack-up + mechanism strategy engine",
+   "status": "OWNER_ACCEPTED",
+   "implementation_percent": 100,
+   "owner_gate": null,
+   "blocked_by": null,
+   "deliverables": [
+    "palette_mechanism_contracts.py",
+    "palette_stackup_engine.py",
+    "palette_mechanism_validators.py",
+    "palt_p1_strategy_matrix.json",
+    "palt_p1_height_stackup.json",
+    "palt_p1_footprint_stackup.json",
+    "palt_p1_mechanism_decision.md",
+    "supplier_outreach_log.json",
+    "supplier_request_package.md",
+    "palt_m3_architecture.md",
+    "palt_m3_validation_report.json"
+   ],
+   "tests": "apps/pipeline/tests/test_palette_mechanism_stackup.py \u2014 34 passed"
+  },
+  {
+   "id": "PALT-M4",
+   "title": "PALT-M4 \u2014 PALT-P1 parametric geometry + neutral validation",
+   "status": "IMPLEMENTED_PENDING_OWNER_VISUAL_REVIEW",
+   "implementation_percent": 100,
+   "owner_gate": "G4 pilot visual acceptance",
+   "blocked_by": null,
+   "deliverables": [
+    "palette_geometry.py",
+    "palette_mechanism_geometry.py",
+    "palette_geometry_validators.py",
+    "palt_p1_evidence.py",
+    "palette_review_board.py",
+    "blender_scripts/palette_views.py",
+    "palt_p1_geometry_contract.json",
+    "palt_p1_component_manifest.json",
+    "palt_p1_open_closed_validation.json",
+    "palt_p1_geometry_diagnostics.json",
+    "palt_p1_neutral_review_board.png/.pdf",
+    "palt_p1_stress_fixture_comparison.png",
+    "palt_m4_validation_report.json",
+    "palt_m4_visual_assessment.md"
+   ],
+   "tests": "apps/pipeline/tests/test_palt_p1_geometry.py \u2014 31 passed"
+  },
+  {
+   "id": "PALT-M5",
+   "title": "PALT-P1 pilot evidence package",
+   "status": "NOT_STARTED",
+   "implementation_percent": 0,
+   "owner_gate": "G4 pilot visual acceptance",
+   "blocked_by": "PALT-M4 owner visual review"
+  },
+  {
+   "id": "PALT-M6",
+   "title": "artwork + shade system + .AI export + PNG preview",
+   "status": "NOT_STARTED",
+   "implementation_percent": 0,
+   "owner_gate": "G5 artwork acceptance",
+   "blocked_by": "PALT-M5"
+  },
+  {
+   "id": "PALT-M7",
+   "title": "PALT-P2 and PALT-P3 pilots",
+   "status": "NOT_STARTED",
+   "implementation_percent": 0,
+   "owner_gate": null,
+   "blocked_by": "PALT-M6"
+  }
+ ],
+ "gme_dependency": [
+  {
+   "id": "GME-1",
+   "title": "material_specification/1.0 contract",
+   "status": "PROPOSED"
+  },
+  {
+   "id": "GME-2",
+   "title": "resolver + Beer-Lambert solver",
+   "status": "NOT_STARTED"
+  },
+  {
+   "id": "GME-3",
+   "title": "renderer adaptation (non-regression enforced)",
+   "status": "NOT_STARTED"
+  },
+  {
+   "id": "GME-4",
+   "title": "open preset library",
+   "status": "NOT_STARTED"
+  },
+  {
+   "id": "GME-5",
+   "title": "colour system with provenance",
+   "status": "NOT_STARTED"
+  },
+  {
+   "id": "GME-6",
+   "title": "scene modes (neutral validation vs client presentation)",
+   "status": "NOT_STARTED"
+  }
+ ],
+ "pilots": [
+  {
+   "id": "PALT-P1",
+   "title": "Standard eyeshadow palette",
+   "status": "SPECIFIED_NOT_MODELLED",
+   "proposed_case_mm": [
+    116,
+    92,
+    15
+   ],
+   "pans": "9 x 26 mm round, 3.5 mm deep, 3x3 grid",
+   "tag": "CALCULATED / DESIGN_DEFAULT"
+  },
+  {
+   "id": "PALT-P2",
+   "title": "Mixed face palette",
+   "status": "SPECIFIED_NOT_MODELLED",
+   "proposed_case_mm": [
+    168,
+    104,
+    18
+   ],
+   "pans": "6 eye (1x1) + 2 blush/contour (2x1) + 1 highlighter (2x2) on a 26 mm module lattice",
+   "tag": "CALCULATED / DESIGN_DEFAULT"
+  },
+  {
+   "id": "PALT-P3",
+   "title": "Experimental BBROSE palette",
+   "status": "SPECIFIED_NOT_MODELLED",
+   "proposed_envelope_mm": [
+    150,
+    118,
+    17
+   ],
+   "pans": "mixed 15/26/36 mm, magnetic refill throughout",
+   "tag": "DESIGN_DEFAULT"
+  }
+ ],
+ "research_summary": {
+  "technical_references": 9,
+  "visual_references": 6,
+  "patents_reviewed": 5,
+  "exact_matches": 0,
+  "manufacturer_technical_drawings_obtained": 0,
+  "web_searches": 7,
+  "page_fetches": 3
+ },
+ "owner_decisions_pending": [
+  "PALT-M4 G4: strict visual review of palt_p1_neutral_review_board.png \u2014 six honest weaknesses reported in palt_m4_visual_assessment.md",
+  "pan depth: keep 3.5 mm or move to the 5.0 mm family for a more premium well depth",
+  "whether draft angles should be modelled before any supplier conversation",
+  "provide or approve an outbound supplier channel (still unsent from PALT-M3)"
+ ],
+ "exit_criteria": {
+  "architecture_decision_documented": true,
+  "online_reference_library_usable": true,
+  "measurement_ranges_provenance_tagged": true,
+  "palette_taxonomy_complete": true,
+  "pan_layout_contract_defined": true,
+  "mechanical_system_contract_defined": true,
+  "powder_material_system_defined": true,
+  "first_three_pilots_specified": true,
+  "roadmap_and_tracker_updated": true,
+  "owner_review_requested": true
+ },
+ "prohibitions_observed": [
+  "no production modelling",
+  "no Blender implementation",
+  "no image generation",
+  "no provider calls",
+  "P1 preserved unchanged; no P1 V5 created"
+ ],
+ "updated_at": "2026-08-05",
+ "owner_review_palt_m1": {
+  "PALT_M1_RESEARCH": "ACCEPTED",
+  "PALT_M1_ARCHITECTURE": "APPROVED",
+  "PALT_M1_MANUFACTURING_READINESS": "NOT_ESTABLISHED",
+  "PALT_M1_OWNER_DECISION": "ACCEPTED_WITH_CONDITIONS",
+  "G1_HYBRID_ARCHITECTURE": "APPROVED",
+  "PALT_M2": "AUTHORIZED",
+  "required_correction_applied": "MODULE_EQUIVALENCE_AUTHORITY = CALCULATED_LAYOUT_HEURISTIC (never a manufacturer/industry standard or production rule); both MODULE_LATTICE and ABSOLUTE_DIMENSIONAL_LAYOUT are first-class modes"
+ },
+ "owner_decisions_resolved": {
+  "G1_ARCHITECTURE": "APPROVED \u2014 HYBRID",
+  "REFILLABILITY_ENGINE_SUPPORT": "YES",
+  "REFILLABILITY_DEFAULT": "OFF",
+  "BBROSE_REFILLABILITY_PRODUCT_PROMISE": "NOT_ESTABLISHED",
+  "FIRST_PILOT": "PALT-P1",
+  "SIZE_POSITIONING": "MID_SIZE_PREMIUM",
+  "PRIMARY_CASE_MATERIAL": "ABS (PP for intentional living hinges)",
+  "MIRROR_SYSTEM": "OPTIONAL_CONFIGURABLE_COMPONENT",
+  "PALT_P1_MIRROR": "YES",
+  "SUPPLIER_TECHNICAL_DRAWING_RESEARCH": "AUTHORIZED (research/preparation only)"
+ },
+ "palt_p1_feasibility_headline": {
+  "proposed_mm": [
+   116.0,
+   92.0,
+   15.0
+  ],
+  "feasible": false,
+  "minimum_feasible_at_specified_spacing_mm": [
+   101.8,
+   113.3,
+   9.0
+  ],
+  "absolute_floor_mm": [
+   89.8,
+   101.3,
+   9.0
+  ],
+  "binding_constraint": "DEPTH \u2014 three 26.6 mm pocket modules + hinge + clasp + margins cannot fit 92 mm at any permitted spacing",
+  "note": "reported, never forced; the proposal was not adjusted to pass"
+ },
+ "owner_review_palt_m2": {
+  "PALT_M2_CONTRACT_SYSTEM": "PASS",
+  "PALT_M2_LAYOUT_KERNEL": "PASS",
+  "PALT_M2_FAIL_CLOSED_VALIDATION": "PASS",
+  "PALT_M2_PALT_P1_FINAL_DIMENSIONS": "NOT_APPROVED",
+  "PALT_M2_MANUFACTURING_READINESS": "NOT_ESTABLISHED",
+  "PALT_M2_OWNER_DECISION": "ACCEPTED_WITH_CORRECTIONS",
+  "PALT_M3": "AUTHORIZED",
+  "corrections_applied": [
+   "3x3 layout RETAINED (not reduced to 3x2)",
+   "116x92x15 = TARGET_DESIGN_ENVELOPE, infeasibility scoped to tested strategies",
+   "101.8x113.3x9 = ANALYTICAL_MINIMUM_UNDER_CURRENT_ASSUMPTIONS (and later shown understated)",
+   "89.8x101.3x9 = MATHEMATICAL_FLOOR only",
+   "no 9 mm result may be called a premium production thickness",
+   "83x83 inference downgraded to UNVERIFIED_MECHANISM_HYPOTHESIS"
+  ]
+ },
+ "palt_p1_stackup_headline": {
+  "height": {
+   "GEOMETRIC_LOWER_BOUND_mm": 9.0,
+   "ENGINEERING_MINIMUM_mm": 11.15,
+   "PREMIUM_DESIGN_TARGET_mm": 13.85,
+   "note": "the 15 mm target height is comfortable; 9 mm is a mathematical artefact only"
+  },
+  "footprint": {
+   "reserved_band_min_mm": [
+    109.3,
+    120.3
+   ],
+   "wall_integrated_min_mm": [
+    109.3,
+    111.5
+   ],
+   "compact_tight_spacing_min_mm": [
+    103.5,
+    101.3
+   ],
+   "target_116x92_result": "INFEASIBLE_UNDER_ALL_TESTED_MECHANISM_STRATEGIES \u2014 depth short by 9.3 mm",
+   "note": "width was never the constraint"
+  },
+  "recommended_envelope_mm": [
+   116,
+   116,
+   15
+  ],
+  "recommendation_status": "RECOMMENDATION ONLY \u2014 not owner-approved, not manufacturing-confirmed, deliberately NOT the smallest option"
+ },
+ "supplier_outreach_status": {
+  "CHANNEL_STATUS": "NO_APPROVED_OUTBOUND_COMMUNICATION_CHANNEL_AVAILABLE",
+  "requests_sent": 0,
+  "responses_received": 0,
+  "prepared_recipients": 5
+ },
+ "owner_review_palt_m3": {
+  "PALT_M3_STACKUP_ENGINE": "PASS",
+  "PALT_M3_MECHANISM_ENGINE": "PASS",
+  "PALT_M3_STRATEGY_MATRIX": "PASS",
+  "PALT_M3_MANUFACTURING_READINESS": "NOT_ESTABLISHED",
+  "PALT_P1_PILOT_ENVELOPE": "116 x 116 x 15 mm \u2014 PROVISIONALLY_APPROVED_FOR_GEOMETRY_DEVELOPMENT",
+  "PALT_P1_FINAL_DIMENSIONS": "NOT_APPROVED",
+  "PALT_M4": "AUTHORIZED",
+  "mechanism_decided": "WALL_INTEGRATED_PIN_HINGE at TOP_EDGE + WALL_INTEGRATED_SNAP_CLASP at BOTTOM_EDGE, opening UPWARD, front artwork CLASP_AT_BOTTOM ('long edge' ambiguity corrected)"
+ },
+ "palt_p1_geometry_headline": {
+  "envelope_mm": [
+   116.0,
+   116.0,
+   15.0
+  ],
+  "components": 33,
+  "all_manifold": true,
+  "validators": "19 checks, 0 findings",
+  "states": [
+   "CLOSED",
+   "OPEN_90",
+   "OPEN_REVIEW_ANGLE",
+   "EXPLODED",
+   "BASE_ONLY",
+   "LID_ONLY",
+   "TRAY_ONLY",
+   "MECHANISM_DETAIL"
+  ],
+  "open_review_angle_deg": 110.0,
+  "identities_shared_across_states": true,
+  "resolved": {
+   "pitch_mm": 30.6,
+   "pocket_dia_mm": 26.6,
+   "base_h_mm": 7.8,
+   "lid_h_mm": 7.0,
+   "hinge_wall_mm": 3.2,
+   "clasp_wall_mm": 3.0,
+   "parting_gap_mm": 0.2
+  },
+  "stress_fixture_mm": [
+   101.3,
+   103.5,
+   15.0
+  ],
+  "stress_fixture_status": "ENGINEERING_STRESS_FIXTURE \u2014 NOT_PRODUCT_RECOMMENDATION, NOT_OWNER_APPROVED"
+ },
+ "concurrent_test_database_isolation": "OPEN_NON_BLOCKING_RISK"
+}

@@ -1,0 +1,71 @@
+{
+ "record_type": "m6_a4_independence_discharge/1.0",
+ "adjudicated": "2026-08-15",
+ "raw_record": "raw_flake.json",
+ "population_bound": "N=18: the three flake families' declared ensemble member-measurements (SHIMMER FLOOR_SEEDS, METALLIC_ENSEMBLE_SEEDS, GLITTER_FLAKE_ENSEMBLE_SEEDS) \u2014 fitted population declared at use, binds nothing outside it",
+ "ceiling": 0.8,
+ "abs_spearman_matrix": {
+  "ENVIRONMENT_CORRELATION|REFLECTED_PATTERN_CONTRAST": 0.00516,
+  "ENVIRONMENT_CORRELATION|REFLECTION_COHERENCE": 0.00722,
+  "REFLECTED_PATTERN_CONTRAST|REFLECTION_COHERENCE": -0.86997
+ },
+ "rulings": {
+  "SHIMMER_VS_METALLIC": {
+   "counted_axes": [
+    "REFLECTED_PATTERN_CONTRAST",
+    "REFLECTION_COHERENCE",
+    "ENVIRONMENT_CORRELATION"
+   ],
+   "leg_status": {
+    "REFLECTED_PATTERN_CONTRAST": "ADEQUACY_PRECONDITION_UNMET_DIRECT",
+    "REFLECTION_COHERENCE": "ESTABLISHED",
+    "ENVIRONMENT_CORRELATION": "ESTABLISHED"
+   },
+   "established_counted": [
+    "REFLECTION_COHERENCE",
+    "ENVIRONMENT_CORRELATION"
+   ],
+   "abs_spearman_among_established": {
+    "ENVIRONMENT_CORRELATION|REFLECTION_COHERENCE": 0.00722
+   },
+   "independence_discharged": true,
+   "pair_established": true,
+   "cleared_against": "fb508e9b57cec3b5"
+  },
+  "METALLIC_VS_GLITTER": {
+   "counted_axes": [
+    "REFLECTED_PATTERN_CONTRAST",
+    "ENVIRONMENT_CORRELATION"
+   ],
+   "leg_status": {
+    "REFLECTED_PATTERN_CONTRAST": "ESTABLISHED",
+    "ENVIRONMENT_CORRELATION": "ESTABLISHED"
+   },
+   "established_counted": [
+    "REFLECTED_PATTERN_CONTRAST",
+    "ENVIRONMENT_CORRELATION"
+   ],
+   "abs_spearman_among_established": {
+    "ENVIRONMENT_CORRELATION|REFLECTED_PATTERN_CONTRAST": 0.00516
+   },
+   "independence_discharged": true,
+   "pair_established": true,
+   "cleared_against": "5ae616f63fd77158"
+  }
+ },
+ "pair_level_lines_restated": {
+  "SHIMMER_VS_METALLIC": "ESTABLISHED \u2014 2 counted axes established (REFLECTION_COHERENCE, ENVIRONMENT_CORRELATION) with independence DISCHARGED by measurement: |rho| ENVIRONMENT_CORRELATION|REFLECTION_COHERENCE=0.00722 vs ceiling 0.8 across the declared N=18 flake-ensemble population (POPULATION_BOUND: the three flake families' declared members; binds nothing outside it); REFLECTED_PATTERN_CONTRAST: ADEQUACY_PRECONDITION_UNMET_DIRECT; REFLECTION_COHERENCE: ESTABLISHED; ENVIRONMENT_CORRELATION: ESTABLISHED [cleared_against=fb508e9b57cec3b5; restated 2026-08-15 by the A4 discharge act]",
+  "METALLIC_VS_GLITTER": "ESTABLISHED \u2014 2 counted axes established (REFLECTED_PATTERN_CONTRAST, ENVIRONMENT_CORRELATION) with independence DISCHARGED by measurement: |rho| ENVIRONMENT_CORRELATION|REFLECTED_PATTERN_CONTRAST=0.00516 vs ceiling 0.8 across the declared N=18 flake-ensemble population (POPULATION_BOUND: the three flake families' declared members; binds nothing outside it); REFLECTED_PATTERN_CONTRAST: ESTABLISHED; ENVIRONMENT_CORRELATION: ESTABLISHED [cleared_against=5ae616f63fd77158; restated 2026-08-15 by the A4 discharge act]"
+ },
+ "crossing_rescue": "VOID constraint cited, not re-derived: this act grows no diffuse census; the 0.6571 pre-commitment concerns GRANULARITY x lobe on the diffuse pairs and stands untriggered",
+ "owner_approved": true,
+ "owner_approval": {
+  "owner_approved_by": "BBrose (PROJECT_OWNER)",
+  "ruled": "2026-08-28",
+  "authority": "OWNER_BLOCKER_CLEARANCE.md \u00a7BH2 \u2014 \"I approve BOTH records ... Flip owner_approved to true in both, each edit citing \u00a7BH2.\"",
+  "legitimized_as_of": "2026-08-15, this record's own adjudication date \u2014 NOT 2026-08-28. Owner: \"The discharge is already-performed work \u2014 my approval legitimizes it as of its own date (2026-08-15); it does not re-perform it.\" Every measurement above keeps its original timestamp and none was recomputed for this approval.",
+  "what_approval_attaches_to": "The record's LEGITIMACY, not the STRENGTH of its findings. This discharge's honest failed leg \u2014 SHIMMER_VS_METALLIC's REFLECTED_PATTERN_CONTRAST at ADEQUACY_PRECONDITION_UNMET_DIRECT, beside two ESTABLISHED legs \u2014 is approved AS A TRUE RECORD OF A FAILED LEG and stays a failed leg. Approving a measurement is not the same act as believing its subject passed.",
+  "what_it_does_NOT_rule": "Not that conditions 11/13 are established. Owner: \"I am NOT ruling that conditions 11/13 are established.\" The population_bound above still binds nothing outside the declared N=18 flake-ensemble population, and the crossing_rescue note stands untriggered as written.",
+  "audit_still_owed": "\u00a7BH3 makes auditing the six adjudications the P1 arc's first obligation. This approval legitimizes the record; it does not certify that its arithmetic was independently re-checked, and the executor that proposed it said plainly that it had not re-checked it."
+ }
+}

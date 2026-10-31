@@ -1,0 +1,48 @@
+{
+ "record_type": "a302_denominator_exposure/1.0",
+ "law": "1748a3de3b3e30e6",
+ "exposure": {
+  "mean": {
+   "clearings_above_bar_of_24": 23,
+   "dispositions": {
+    "MATTE_VS_SATIN/SHEEN": "UNMET",
+    "PRESSED_VS_MATTE/SHEEN": "UNMET",
+    "SATIN_VS_CREAM/FWHM": "UNMET",
+    "SATIN_VS_CREAM/GRAN": "MET"
+   }
+  },
+  "larger": {
+   "clearings_above_bar_of_24": 18,
+   "dispositions": {
+    "MATTE_VS_SATIN/SHEEN": "UNMET",
+    "PRESSED_VS_MATTE/SHEEN": "UNMET",
+    "SATIN_VS_CREAM/FWHM": "UNMET",
+    "SATIN_VS_CREAM/GRAN": "MET"
+   }
+  },
+  "smaller": {
+   "clearings_above_bar_of_24": 24,
+   "dispositions": {
+    "MATTE_VS_SATIN/SHEEN": "UNMET",
+    "PRESSED_VS_MATTE/SHEEN": "UNMET",
+    "SATIN_VS_CREAM/FWHM": "UNMET",
+    "SATIN_VS_CREAM/GRAN": "MET"
+   }
+  },
+  "first_arg": {
+   "clearings_above_bar_of_24": 23,
+   "dispositions": {
+    "MATTE_VS_SATIN/SHEEN": "UNMET",
+    "PRESSED_VS_MATTE/SHEEN": "UNMET",
+    "SATIN_VS_CREAM/FWHM": "UNMET",
+    "SATIN_VS_CREAM/GRAN": "MET"
+   }
+  }
+ },
+ "symmetry_violations": [
+  "first_arg"
+ ],
+ "read_as_confirmatory_not_decisive": "provenance determines the convention, so this table confirms rather than decides",
+ "A304_first_argument_excluded": "independently confirmed: first_arg is the ONLY convention that breaks relative_effect(a,b) == relative_effect(b,a). mean, larger and smaller are all symmetric. No existing call site yields different values under reversed arguments under the implemented (mean) convention \u2014 zero defects found",
+ "what_turns_on_it": "the four dispositions are IDENTICAL under all four conventions. The 23-of-24 finding is convention-sensitive in its count \u2014 mean 23, larger 18, smaller 24, first_arg 23 \u2014 but its substance (the great majority of per-seed clearings exceed the bar while three of four comparisons fail adequacy) survives every convention, including the most conservative"
+}

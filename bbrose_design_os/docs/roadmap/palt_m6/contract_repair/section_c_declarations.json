@@ -1,0 +1,759 @@
+{
+  "record_type": "contract_repair_section_c/1.0",
+  "protocol_identity": "399522a75cde1878",
+  "pre_repair_HEAD": "723acb4c5",
+  "C1_confirmed": "A8/A12 hold: no void of the three diffuse verdicts, no dependency \u2014 trivially satisfied (no standing to depend on), CONFIRMED not assumed: no repair decision below cites any diffuse verdict",
+  "C2_snapshot": {
+    "what": "every committed statistic the repair could move, at pre-repair HEAD 723acb4c5",
+    "establishment_table": [
+      {
+        "verdict": "M_V_S GRAN clearing",
+        "affirmative_side": "affirmative",
+        "statistic": "cross-family effect",
+        "reading": 0.6828,
+        "threshold": 0.25,
+        "margin": 0.4328,
+        "spread": 0.1169,
+        "spread_source": "TRANSFER: MATTE 6-seed declared ensemble",
+        "status": "ESTABLISHED",
+        "note": ""
+      },
+      {
+        "verdict": "M_V_S SHEEN clearing",
+        "affirmative_side": "affirmative",
+        "statistic": "cross-family effect",
+        "reading": 0.4225,
+        "threshold": 0.33138,
+        "margin": 0.0911,
+        "spread": 0.16569,
+        "spread_source": "TRANSFER: MATTE 6-seed",
+        "status": "UNMET_BY_CONSERVATIVE_PROXY",
+        "note": "remedy: resolving power on the clearing measurement",
+        "proxy_named": "max_seed_only_effect \u2014 the clearing functional at the NULL point (instrument response to nothing), from the member family declared ensemble",
+        "direct_quantity_named": "the cross-family clearing itself recomputed at each seed of the declared ensemble, and its dispersion \u2014 never yet measured for this row"
+      },
+      {
+        "verdict": "P_V_M GRAN clearing",
+        "affirmative_side": "affirmative",
+        "statistic": "cross-family effect",
+        "reading": 0.8942,
+        "threshold": 0.25,
+        "margin": 0.6442,
+        "spread": 0.1169,
+        "spread_source": "TRANSFER: MATTE 6-seed",
+        "status": "ESTABLISHED",
+        "note": ""
+      },
+      {
+        "verdict": "P_V_M SHEEN clearing",
+        "affirmative_side": "affirmative",
+        "statistic": "cross-family effect",
+        "reading": 0.4471,
+        "threshold": 0.33138,
+        "margin": 0.1157,
+        "spread": 0.16569,
+        "spread_source": "TRANSFER: MATTE 6-seed",
+        "status": "UNMET_BY_CONSERVATIVE_PROXY",
+        "note": "",
+        "proxy_named": "max_seed_only_effect \u2014 the clearing functional at the NULL point (instrument response to nothing), from the member family declared ensemble",
+        "direct_quantity_named": "the cross-family clearing itself recomputed at each seed of the declared ensemble, and its dispersion \u2014 never yet measured for this row"
+      },
+      {
+        "verdict": "S_V_C GRAN clearing",
+        "affirmative_side": "affirmative",
+        "statistic": "cross-family effect",
+        "reading": 0.4423,
+        "threshold": 0.25,
+        "margin": 0.1923,
+        "spread": 0.08064,
+        "spread_source": "PARTIAL: satin/cream 2-seed direct (1 pairing) \u2014 NOT a declared-ensemble spread",
+        "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+        "note": "margin exceeds the partial estimate 2.4x; completion in M6-DECLARED-ENSEMBLE-SPREADS"
+      },
+      {
+        "verdict": "S_V_C FWHM clearing",
+        "affirmative_side": "affirmative",
+        "statistic": "cross-family effect",
+        "reading": 0.2843,
+        "threshold": 0.25,
+        "margin": 0.0343,
+        "spread": 0.02431,
+        "spread_source": "PARTIAL: satin/cream 2-seed direct",
+        "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+        "note": "margin exceeds the partial estimate only 1.4x \u2014 the weakest open clearing in the protocol"
+      },
+      {
+        "verdict": "S_V_M PATTERN clearing",
+        "affirmative_side": "affirmative",
+        "statistic": "cross-family effect",
+        "reading": 0.30398,
+        "threshold": 0.25,
+        "margin": 0.054,
+        "spread": 0.06501,
+        "spread_source": "TRANSFER: SHIMMER 6-seed",
+        "status": "UNMET_BY_CONSERVATIVE_PROXY",
+        "note": "",
+        "proxy_named": "max_seed_only_effect \u2014 the clearing functional at the NULL point (instrument response to nothing), from the member family declared ensemble",
+        "direct_quantity_named": "the cross-family clearing itself recomputed at each seed of the declared ensemble, and its dispersion \u2014 never yet measured for this row"
+      },
+      {
+        "verdict": "S_V_M COHERENCE clearing",
+        "affirmative_side": "affirmative",
+        "statistic": "cross-family effect",
+        "reading": 0.48488,
+        "threshold": 0.25,
+        "margin": 0.235,
+        "spread": 0.03198,
+        "spread_source": "TRANSFER: SHIMMER 6-seed",
+        "status": "ESTABLISHED",
+        "note": ""
+      },
+      {
+        "verdict": "S_V_M ENV clearing",
+        "affirmative_side": "affirmative",
+        "statistic": "cross-family effect",
+        "reading": 0.54136,
+        "threshold": 0.25,
+        "margin": 0.291,
+        "spread": 0.12492,
+        "spread_source": "TRANSFER: SHIMMER 6-seed",
+        "status": "ESTABLISHED",
+        "note": ""
+      },
+      {
+        "verdict": "MvG PATTERN clearing",
+        "affirmative_side": "affirmative",
+        "statistic": "cross-family effect",
+        "reading": 0.88117,
+        "threshold": 0.25,
+        "margin": 0.631,
+        "spread": 0.07089,
+        "spread_source": "PARTIAL: glitter member 1 pairing (transfer rejected \u2014 no declared-ensemble member)",
+        "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+        "note": ""
+      },
+      {
+        "verdict": "MvG ENV clearing",
+        "affirmative_side": "affirmative",
+        "statistic": "cross-family effect",
+        "reading": 0.69674,
+        "threshold": 0.25,
+        "margin": 0.447,
+        "spread": 0.29584,
+        "spread_source": "PARTIAL: glitter member 1 pairing",
+        "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+        "note": ""
+      },
+      {
+        "verdict": "P_V_B SPAN clearing",
+        "affirmative_side": "affirmative",
+        "statistic": "cross-family effect",
+        "reading": 0.91093,
+        "threshold": 0.25,
+        "margin": 0.661,
+        "spread": 0.00317,
+        "spread_source": "TRANSFER: BAKED 6-seed relief ensemble",
+        "status": "ESTABLISHED",
+        "note": ""
+      },
+      {
+        "verdict": "P_V_B SHADOW clearing",
+        "affirmative_side": "affirmative",
+        "statistic": "cross-family effect",
+        "reading": 0.50406,
+        "threshold": 0.25,
+        "margin": 0.254,
+        "spread": 0.02614,
+        "spread_source": "TRANSFER: BAKED 6-seed relief",
+        "status": "ESTABLISHED",
+        "note": ""
+      },
+      {
+        "verdict": "R5 census GRAN|SHEEN",
+        "affirmative_side": "affirmative",
+        "statistic": "census Spearman",
+        "reading": 0.3571,
+        "threshold": 0.8,
+        "margin": 0.4429,
+        "spread": null,
+        "spread_source": "NONE \u2014 single census",
+        "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+        "note": "M6-CENSUS-REPLICATE named"
+      },
+      {
+        "verdict": "R5 census GRAN|FWHM",
+        "affirmative_side": "affirmative",
+        "statistic": "census Spearman",
+        "reading": 0.1905,
+        "threshold": 0.8,
+        "margin": 0.6095,
+        "spread": null,
+        "spread_source": "NONE",
+        "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+        "note": ""
+      },
+      {
+        "verdict": "counted-instrument 1a validity",
+        "affirmative_side": "affirmative",
+        "statistic": "min qualifying rho",
+        "reading": 0.8504,
+        "threshold": 0.8,
+        "margin": 0.0504,
+        "spread": 0.0321,
+        "spread_source": "DIRECT: 3-seed at refined density",
+        "status": "ESTABLISHED_DEGENERATE",
+        "note": "the one comparison RESOLVED by this arc: degenerate, margin > spread"
+      },
+      {
+        "verdict": "counted tracking GRAN|SHEEN",
+        "affirmative_side": "affirmative",
+        "statistic": "sweep rho",
+        "reading": 0.9991,
+        "threshold": 0.8,
+        "margin": 0.1991,
+        "spread": 0.0132,
+        "spread_source": "DIRECT: 3-seed",
+        "status": "ESTABLISHED",
+        "note": "adequate AND uninformative (degenerate sweep)"
+      },
+      {
+        "verdict": "counted tracking GRAN|FWHM",
+        "affirmative_side": "affirmative",
+        "statistic": "sweep rho",
+        "reading": 0.9939,
+        "threshold": 0.8,
+        "margin": 0.1939,
+        "spread": 0.0132,
+        "spread_source": "DIRECT: 3-seed",
+        "status": "ESTABLISHED",
+        "note": ""
+      },
+      {
+        "verdict": "A3 grain-scale qualification",
+        "affirmative_side": "affirmative",
+        "statistic": "span",
+        "reading": null,
+        "threshold": 0.2338,
+        "margin": null,
+        "spread": null,
+        "spread_source": "DIRECT: A3 seed probes",
+        "status": "ESTABLISHED",
+        "note": "resolved by its own protocol"
+      },
+      {
+        "verdict": "BAKED clearance",
+        "affirmative_side": "affirmative",
+        "statistic": "worst-case mm",
+        "reading": 5.35,
+        "threshold": 0.0,
+        "margin": 5.35,
+        "spread": null,
+        "spread_source": "SPREAD_INAPPLICABLE_DETERMINISTIC",
+        "status": "ESTABLISHED",
+        "note": ""
+      },
+      {
+        "verdict": "A2 degeneracy margin",
+        "affirmative_side": "degeneracy \u2014 stands",
+        "statistic": "1a min-rho",
+        "reading": 0.9727,
+        "threshold": 0.8,
+        "margin": 0.1727,
+        "spread": null,
+        "spread_source": "NONE",
+        "status": "STANDS_DEGENERACY_1j",
+        "note": ""
+      },
+      {
+        "verdict": "sheen sweep VALID badge",
+        "affirmative_side": "affirmative",
+        "statistic": "1a min-rho",
+        "reading": 0.3333,
+        "threshold": 0.8,
+        "margin": 0.467,
+        "spread": null,
+        "spread_source": "NONE",
+        "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+        "note": "zero downstream reliance"
+      },
+      {
+        "verdict": "smoothing sweep VALID badge",
+        "affirmative_side": "affirmative",
+        "statistic": "1a min-rho",
+        "reading": 0.049,
+        "threshold": 0.8,
+        "margin": 0.751,
+        "spread": null,
+        "spread_source": "NONE",
+        "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+        "note": ""
+      },
+      {
+        "verdict": "roughness sweep VALID badge",
+        "affirmative_side": "affirmative",
+        "statistic": "1a min-rho",
+        "reading": 0.6909,
+        "threshold": 0.8,
+        "margin": 0.109,
+        "spread": null,
+        "spread_source": "NONE",
+        "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+        "note": ""
+      },
+      {
+        "verdict": "GLITTER event PASS",
+        "affirmative_side": "affirmative",
+        "statistic": "event count",
+        "reading": 113,
+        "threshold": 25,
+        "margin": 88,
+        "spread": 31,
+        "spread_source": "PARTIAL: 1 replicate pairing (s66: 144 events; no declared event ensemble exists)",
+        "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+        "note": "partial data favorable (both >= 25, control 0 at both seeds); needs an ensemble DECLARATION first"
+      },
+      {
+        "verdict": "glitter control cleanliness",
+        "affirmative_side": "affirmative",
+        "statistic": "event count",
+        "reading": 0,
+        "threshold": 5,
+        "margin": 5,
+        "spread": 0,
+        "spread_source": "PARTIAL: replicate control also 0",
+        "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+        "note": ""
+      },
+      {
+        "verdict": "EDGE ineligibility",
+        "affirmative_side": "exclusion \u2014 stands",
+        "statistic": "floor statistic",
+        "reading": 0.27991,
+        "threshold": 0.25,
+        "margin": 0.03,
+        "spread": null,
+        "spread_source": "NONE",
+        "status": "STANDS_EXCLUSION_1j",
+        "note": ""
+      },
+      {
+        "verdict": "marbling chroma ineligibility",
+        "affirmative_side": "exclusion \u2014 stands",
+        "statistic": "floor statistic",
+        "reading": 0.418,
+        "threshold": 0.25,
+        "margin": 0.168,
+        "spread": null,
+        "spread_source": "NONE",
+        "status": "STANDS_EXCLUSION_1j",
+        "note": ""
+      },
+      {
+        "verdict": "marbling coherence ineligibility",
+        "affirmative_side": "exclusion \u2014 stands",
+        "statistic": "floor statistic",
+        "reading": 0.697,
+        "threshold": 0.25,
+        "margin": 0.447,
+        "spread": null,
+        "spread_source": "NONE",
+        "status": "STANDS_EXCLUSION_1j",
+        "note": ""
+      },
+      {
+        "verdict": "flake EDGE ineligibility",
+        "affirmative_side": "exclusion \u2014 stands",
+        "statistic": "floor statistic",
+        "reading": 0.54122,
+        "threshold": 0.25,
+        "margin": 0.291,
+        "spread": null,
+        "spread_source": "NONE",
+        "status": "STANDS_EXCLUSION_1j",
+        "note": ""
+      },
+      {
+        "verdict": "SOLID_VS_MARBLED FAIL",
+        "affirmative_side": "negative \u2014 stands",
+        "statistic": "chroma span",
+        "reading": 0.005,
+        "threshold": 0.25,
+        "margin": 0.245,
+        "spread": null,
+        "spread_source": "NONE",
+        "status": "STANDS_NOT_CERTIFIED_1j",
+        "note": ""
+      }
+    ],
+    "floors": {
+      "HIGHLIGHT_FWHM": {
+        "instrument": "DIFFUSE_LOBE_RIG",
+        "pairings": 15,
+        "max_seed_only_effect": 0.09135,
+        "mean_seed_only_effect": 0.04049,
+        "floor": 0.09135,
+        "eligible": true,
+        "required_clearing_effect": 0.25
+      },
+      "HIGHLIGHT_PEAK": {
+        "instrument": "DIFFUSE_LOBE_RIG",
+        "pairings": 15,
+        "max_seed_only_effect": 0.00797,
+        "mean_seed_only_effect": 0.00351,
+        "floor": 0.00797,
+        "eligible": true,
+        "required_clearing_effect": 0.25
+      },
+      "SPECULAR_TO_DIFFUSE_RATIO": {
+        "instrument": "DIFFUSE_LOBE_RIG",
+        "pairings": 15,
+        "max_seed_only_effect": 0.00886,
+        "mean_seed_only_effect": 0.00389,
+        "floor": 0.00886,
+        "eligible": true,
+        "required_clearing_effect": 0.25
+      },
+      "GRAZING_RESPONSE": {
+        "instrument": "DIFFUSE_LOBE_RIG",
+        "pairings": 15,
+        "max_seed_only_effect": 0.14956,
+        "mean_seed_only_effect": 0.05433,
+        "floor": 0.14956,
+        "eligible": true,
+        "required_clearing_effect": 0.29912
+      },
+      "SHEEN_REGION_RESPONSE": {
+        "instrument": "DIFFUSE_LOBE_RIG",
+        "pairings": 15,
+        "max_seed_only_effect": 0.16569,
+        "mean_seed_only_effect": 0.08296,
+        "floor": 0.16569,
+        "eligible": true,
+        "required_clearing_effect": 0.33138
+      },
+      "EDGE_HIGHLIGHT_RESPONSE": {
+        "instrument": "DIFFUSE_LOBE_RIG",
+        "pairings": 15,
+        "max_seed_only_effect": 0.27991,
+        "mean_seed_only_effect": 0.11622,
+        "floor": 0.27991,
+        "eligible": false,
+        "required_clearing_effect": 0.55982
+      },
+      "GRANULARITY_INDEX": {
+        "instrument": "MIRROR_SOURCE_TEXTURE_RIG",
+        "pairings": 15,
+        "max_seed_only_effect": 0.1169,
+        "mean_seed_only_effect": 0.0431,
+        "floor": 0.1169,
+        "eligible": true,
+        "required_clearing_effect": 0.25
+      },
+      "GRAZING_BAND_CONTRAST": {
+        "instrument": "MIRROR_SOURCE_TEXTURE_RIG",
+        "pairings": 15,
+        "max_seed_only_effect": 0.00651,
+        "mean_seed_only_effect": 0.00301,
+        "floor": 0.00651,
+        "eligible": true,
+        "required_clearing_effect": 0.25
+      }
+    },
+    "diffuse_standing": {
+      "MATTE_VS_SATIN": {
+        "verdict": "PASS",
+        "standing_on": {
+          "GRANULARITY_INDEX": 0.6828,
+          "SHEEN_REGION_RESPONSE": 0.4225
+        },
+        "notes": "SHEEN clears its own floor requirement 0.33138; GRANULARITY is the second instrument (rho vs SHEEN 0.4). EDGE 0.3604 excluded: ineligible, within noise margin, and rho=1.0 with counted SHEEN. FWHM 0.0712 below bar."
+      },
+      "PRESSED_VS_MATTE": {
+        "verdict": "PASS",
+        "standing_on": {
+          "GRANULARITY_INDEX": 0.8942,
+          "SHEEN_REGION_RESPONSE": 0.4471
+        },
+        "notes": "FWHM 0.3091 clears the bar but is rho=1.0 with counted SHEEN and therefore does not add a second lobe axis; EDGE 0.4191 excluded as ineligible. The pair does NOT stand on three axes; it stands on exactly these two."
+      },
+      "SATIN_VS_CREAM": {
+        "verdict": "PASS",
+        "standing_on": {
+          "GRANULARITY_INDEX": 0.4423,
+          "HIGHLIGHT_FWHM": 0.2843
+        },
+        "notes": "two instruments at rho=0.4 \u2014 not exposed to the N=4 degeneracy; SHEEN 0.2469 honestly below bar."
+      }
+    },
+    "census_n8": {
+      "granularity": {
+        "POWDER_MATTE": 0.082618,
+        "POWDER_SATIN": 0.040564,
+        "PRESSED_POWDER": 0.031566,
+        "CREAM": 0.063597,
+        "SHIMMER": 0.173517,
+        "POWDER_METALLIC": 0.072389,
+        "BAKED": 0.14988,
+        "MARBLED": 0.046502
+      },
+      "GRANULARITY_x_SHEEN": 0.3571,
+      "GRANULARITY_x_FWHM": 0.1905,
+      "ceiling": 0.8,
+      "crossed": false
+    },
+    "glitter_events": {
+      "GLITTER_s61": 113,
+      "GLITTER_s66": 144,
+      "controls": 0
+    }
+  },
+  "C3_re_adjudication_obligation": "DECLARED BEFORE THE REPAIR RUNS: every verdict and every establishment-table row is carried forward and re-adjudicated on the repaired engine, pre- and post-repair values side by side; no verdict survives by inertia. Scope note: the preserving half proves bit-identity, so its re-adjudication is the proof itself; the moving half (marble) re-runs the marbling rig",
+  "C4_anti_reroll_guard": "DECLARED BEFORE THE REPAIR: a verdict that IMPROVES after the repair must be explainable by a NAMED parameter whose realization changed, traceable to a specific census entry; an unattributable improvement is an unexplained movement, REPORTED never banked",
+  "C5_commit_separation": "preserving and moving halves land as separate commits; the boundary legible in history",
+  "C6_marble_mandate": "the component derivation becomes genuinely chromatic \u2014 reconciling a luminance-preserving scalar under a new name is declaration theatre and is refused",
+  "classification_before_execution": [
+    {
+      "line": 166,
+      "value": "Specular IOR Level 0.28",
+      "families": "ALL (base)",
+      "class": "MATERIAL_PROPERTY_UNDECLARED",
+      "classification": "VALUE_PRESERVING",
+      "void_list": []
+    },
+    {
+      "line": 208,
+      "value": "Specular IOR Level 0.18 (matte override)",
+      "families": "POWDER_MATTE",
+      "class": "MATERIAL_PROPERTY_UNDECLARED",
+      "classification": "VALUE_PRESERVING",
+      "void_list": []
+    },
+    {
+      "line": 206,
+      "value": "roughness variation 0.08*(1+variance)",
+      "families": "POWDER_MATTE",
+      "class": "DERIVATION_COEFFICIENT_UNDECLARED",
+      "classification": "VALUE_PRESERVING",
+      "void_list": []
+    },
+    {
+      "line": 194,
+      "value": "noise detail 3+3*variance",
+      "families": "POWDER_MATTE",
+      "class": "DERIVATION_COEFFICIENT_UNDECLARED",
+      "classification": "VALUE_PRESERVING",
+      "void_list": []
+    },
+    {
+      "line": 196,
+      "value": "compression noise detail 2.0",
+      "families": "POWDER_MATTE",
+      "class": "MATERIAL_PROPERTY_UNDECLARED",
+      "classification": "VALUE_PRESERVING",
+      "void_list": []
+    },
+    {
+      "line": 229,
+      "value": "ROUGHNESS = 0.48 - 0.10*surface_smoothing",
+      "families": "POWDER_SATIN",
+      "class": "MATERIAL_PROPERTY_UNDECLARED",
+      "note": "THE HEADLINE CASE \u2014 part of what the MATTE_VS_SATIN and SATIN_VS_CREAM PASSes rest on, nowhere in the contract; the contract's own surface_roughness is dead on this family",
+      "classification": "VALUE_PRESERVING",
+      "void_list": []
+    },
+    {
+      "line": 224,
+      "value": "satin noise detail 2+2*variance",
+      "families": "POWDER_SATIN",
+      "class": "DERIVATION_COEFFICIENT_UNDECLARED",
+      "classification": "VALUE_PRESERVING",
+      "void_list": []
+    },
+    {
+      "line": 238,
+      "value": "satin mottle strength *0.5",
+      "families": "POWDER_SATIN",
+      "class": "DERIVATION_COEFFICIENT_UNDECLARED",
+      "classification": "VALUE_PRESERVING",
+      "void_list": []
+    },
+    {
+      "line": 251,
+      "value": "flake roughness = 0.18 + 0.25*(1-metallic_response)",
+      "families": "SHIMMER, POWDER_METALLIC",
+      "class": "MATERIAL_PROPERTY_UNDECLARED",
+      "note": "carries part of both reflective PASSes",
+      "classification": "VALUE_PRESERVING",
+      "void_list": []
+    },
+    {
+      "line": 255,
+      "value": "facet jitter = sparkle_intensity (1:1, normal-displacement units)",
+      "families": "SHIMMER, POWDER_METALLIC",
+      "class": "DERIVATION_COEFFICIENT_UNDECLARED",
+      "classification": "VALUE_PRESERVING",
+      "void_list": []
+    },
+    {
+      "line": 278,
+      "value": "glitter particle roughness 0.05",
+      "families": "GLITTER",
+      "class": "MATERIAL_PROPERTY_UNDECLARED",
+      "note": "carries the discrete-glint physics of the 113-event census",
+      "classification": "VALUE_PRESERVING",
+      "void_list": []
+    },
+    {
+      "line": 280,
+      "value": "jitter = orientation_jitter_deg / 90",
+      "families": "GLITTER",
+      "class": "DERIVATION_COEFFICIENT_UNDECLARED",
+      "classification": "VALUE_PRESERVING",
+      "void_list": []
+    },
+    {
+      "line": 271,
+      "value": "Voronoi distance CHEBYCHEV (shape_class hardcoded)",
+      "families": "GLITTER",
+      "class": "MATERIAL_PROPERTY_UNDECLARED",
+      "note": "the contract's shape_class string is dead; the actual shape law is this literal",
+      "classification": "VALUE_PRESERVING",
+      "void_list": []
+    },
+    {
+      "line": 290,
+      "value": "crust noise scale 0.5mm, detail 5.0, distortion 0.8",
+      "families": "BAKED",
+      "class": "MATERIAL_PROPERTY_UNDECLARED",
+      "classification": "VALUE_PRESERVING",
+      "void_list": []
+    },
+    {
+      "line": 296,
+      "value": "BAKED roughness 0.38",
+      "families": "BAKED",
+      "class": "MATERIAL_PROPERTY_UNDECLARED",
+      "note": "contract surface_roughness dead on this family",
+      "classification": "VALUE_PRESERVING",
+      "void_list": []
+    },
+    {
+      "line": 297,
+      "value": "coat = crust.gloss * 0.5",
+      "families": "BAKED",
+      "class": "DERIVATION_COEFFICIENT_UNDECLARED",
+      "classification": "VALUE_PRESERVING",
+      "void_list": []
+    },
+    {
+      "line": 305,
+      "value": "marbled component derivation *0.55 darker / *1.35+0.05 lighter",
+      "families": "MARBLED",
+      "class": "MATERIAL_PROPERTY_UNDECLARED",
+      "note": "the actual marble colours are these coefficients, not contract values",
+      "classification": "VALUE_MOVING",
+      "void_list": [
+        "SOLID_VS_MARBLED FAIL (stands-not-certified) \u2014 re-adjudicated on the repaired engine; anti-reroll guard applies and the attribution IS this census entry",
+        "MARBLED's rows in the N=8 census \u2014 census comparisons already NOT_ESTABLISHED_PENDING_SPREAD; marked VOIDED_BY_REPAIR; M6-CENSUS-REPLICATE is sequenced after this repair and re-measures on the repaired engine"
+      ]
+    },
+    {
+      "line": 323,
+      "value": "marble ramp width +-0.10 (2-comp) / +-0.08 (3-comp)",
+      "families": "MARBLED",
+      "class": "MATERIAL_PROPERTY_UNDECLARED",
+      "classification": "VALUE_PRESERVING",
+      "void_list": []
+    },
+    {
+      "line": 318,
+      "value": "vein detail 4.0, distortion 1.2",
+      "families": "MARBLED",
+      "class": "MATERIAL_PROPERTY_UNDECLARED",
+      "classification": "VALUE_PRESERVING",
+      "void_list": []
+    },
+    {
+      "line": "marbled bump",
+      "value": "microtexture strength *0.8",
+      "families": "MARBLED",
+      "class": "DERIVATION_COEFFICIENT_UNDECLARED",
+      "classification": "VALUE_PRESERVING",
+      "void_list": []
+    },
+    {
+      "line": "pressed",
+      "value": "packed roughness = surface_roughness*(1-0.35*compaction_level)",
+      "families": "PRESSED_POWDER",
+      "class": "DERIVATION_COEFFICIENT_UNDECLARED",
+      "classification": "VALUE_PRESERVING",
+      "void_list": []
+    },
+    {
+      "line": "pressed ring",
+      "value": "ring gaussian falloff -250",
+      "families": "PRESSED_POWDER",
+      "class": "MATERIAL_PROPERTY_UNDECLARED",
+      "classification": "VALUE_PRESERVING",
+      "void_list": []
+    },
+    {
+      "line": "pressed mottle",
+      "value": "mottle *(1-0.5*surface_flatness)",
+      "families": "PRESSED_POWDER",
+      "class": "DERIVATION_COEFFICIENT_UNDECLARED",
+      "classification": "VALUE_PRESERVING",
+      "void_list": []
+    },
+    {
+      "line": "cream",
+      "value": "swell scale 6.0mm / amplitude 0.015",
+      "families": "CREAM",
+      "class": "MATERIAL_PROPERTY_UNDECLARED",
+      "classification": "VALUE_PRESERVING",
+      "void_list": []
+    },
+    {
+      "line": 116,
+      "value": "bump Distance = amplitude * scale_mm (physical-height law)",
+      "families": "ALL bump users",
+      "class": "DERIVATION_COEFFICIENT_UNDECLARED",
+      "note": "the realization law itself \u2014 deliberate (05d481c) but undeclared in any contract",
+      "classification": "VALUE_PRESERVING",
+      "void_list": []
+    },
+    {
+      "line": 173,
+      "value": "mottle black-mix construction, seed offset +5, detail 2.0",
+      "families": "matte/pressed/flakes/glitter/baked",
+      "class": "MATERIAL_PROPERTY_UNDECLARED",
+      "classification": "VALUE_PRESERVING",
+      "void_list": []
+    },
+    {
+      "line": 46,
+      "value": "seed offsets 7.13/3.71/1.97, W 0.7311, Randomness 1.0",
+      "families": "ALL",
+      "class": "INSTRUMENT_MACHINERY",
+      "classification": "INSTRUMENT_MACHINERY_NOT_CONTRACT",
+      "void_list": []
+    }
+  ],
+  "classification_counts": {
+    "VALUE_PRESERVING": 25,
+    "VALUE_MOVING": 1,
+    "INSTRUMENT_MACHINERY_NOT_CONTRACT": 1
+  },
+  "dead_49": {
+    "action": "MARKED AND DECLARED engine-wide (costless), plumbing DEFERRED per the design rule \u2014 each future plumbing is a declared family-revision node paying its void list knowingly",
+    "count": 49,
+    "edge_profile_note": "dead in all nine families; plumbing voids every M6 verdict at once \u2014 the extreme deferral case",
+    "source": "realization_audit.json dead list, carried by reference"
+  },
+  "bit_identity_fixture_plan": "one lobe-rig render per family (all nine), rendered PRE-repair from the unedited engine into contract_repair/bitfix_pre/, re-rendered post-preserving-half into bitfix_post/, EXR byte-compared; declared before any edit",
+  "owner_approved": false,
+  "CENSUS_SUPPLEMENT_2026_08_08": {
+    "finding": "implementation surfaced SIX realized constants no census row names: pressed micro_noise_detail 4.0, marbled micro_noise_detail 4.0 + vein2_scale_factor 0.6 + seed offsets (+11 vein2, +2 micro), cream swell_detail 1.0, matte compression_seed_offset 1. The census undercounted; the supplement joins the value-preserving half (declared and consumed) rather than being left as known undeclared constants in the node that exists to eliminate them",
+    "classification": "all six VALUE_PRESERVING, empty void lists"
+  }
+}

@@ -1,0 +1,336 @@
+{
+  "record_type": "material_rig_finish_validation/1.0",
+  "finishes": [
+    "ABS_GLOSSY",
+    "ABS_MATTE",
+    "ABS_SATIN",
+    "ACRYLIC_TRANSLUCENT",
+    "ACRYLIC_TRANSPARENT",
+    "METAL_METALLIC"
+  ],
+  "operating_windows": {
+    "ABS_MATTE": {
+      "scene_linear_peak": 0.533542,
+      "target_window": [
+        0.35,
+        0.92
+      ],
+      "in_window": true,
+      "clipped_sample_count": 0,
+      "maximum_clipped_samples": 0,
+      "no_clipping": true,
+      "verdict": "PASS"
+    },
+    "ABS_SATIN": {
+      "scene_linear_peak": 0.587765,
+      "target_window": [
+        0.35,
+        0.92
+      ],
+      "in_window": true,
+      "clipped_sample_count": 0,
+      "maximum_clipped_samples": 0,
+      "no_clipping": true,
+      "verdict": "PASS"
+    },
+    "ABS_GLOSSY": {
+      "scene_linear_peak": 0.478074,
+      "target_window": [
+        0.35,
+        0.92
+      ],
+      "in_window": true,
+      "clipped_sample_count": 0,
+      "maximum_clipped_samples": 0,
+      "no_clipping": true,
+      "verdict": "PASS"
+    },
+    "METAL_METALLIC": {
+      "scene_linear_peak": 0.114454,
+      "target_window": [
+        0.35,
+        0.92
+      ],
+      "in_window": false,
+      "clipped_sample_count": 0,
+      "maximum_clipped_samples": 0,
+      "no_clipping": true,
+      "verdict": "FAIL"
+    },
+    "ACRYLIC_TRANSPARENT": {
+      "scene_linear_peak": 0.354247,
+      "target_window": [
+        0.35,
+        0.92
+      ],
+      "in_window": true,
+      "clipped_sample_count": 0,
+      "maximum_clipped_samples": 0,
+      "no_clipping": true,
+      "verdict": "PASS"
+    },
+    "ACRYLIC_TRANSLUCENT": {
+      "scene_linear_peak": 0.466905,
+      "target_window": [
+        0.35,
+        0.92
+      ],
+      "in_window": true,
+      "clipped_sample_count": 0,
+      "maximum_clipped_samples": 0,
+      "no_clipping": true,
+      "verdict": "PASS"
+    }
+  },
+  "out_of_window": [
+    "METAL_METALLIC"
+  ],
+  "preserved_pairs": [
+    {
+      "a": "ABS MATTE",
+      "b": "ABS GLOSSY",
+      "axes": {
+        "HIGHLIGHT_FWHM": {
+          "a": 0.216741,
+          "b": 0.227015,
+          "relative_effect": 0.046307,
+          "bar": 0.25,
+          "clears": false
+        },
+        "HIGHLIGHT_PEAK": {
+          "a": 43.501155,
+          "b": 40.400921,
+          "relative_effect": 0.073901,
+          "bar": 0.25,
+          "clears": false
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "a": 1.440167,
+          "b": 1.49423,
+          "relative_effect": 0.036848,
+          "bar": 0.25,
+          "clears": false
+        },
+        "GRAZING_RESPONSE": {
+          "a": 0.083107,
+          "b": 0.020657,
+          "relative_effect": 1.203695,
+          "bar": 0.25,
+          "clears": true
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "a": 0.12881,
+          "b": 0.137991,
+          "relative_effect": 0.068821,
+          "bar": 0.25,
+          "clears": false
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "a": 0.197484,
+          "b": 0.143347,
+          "relative_effect": 0.317673,
+          "bar": 0.25,
+          "clears": true
+        }
+      },
+      "axes_clearing": [
+        "GRAZING_RESPONSE",
+        "EDGE_HIGHLIGHT_RESPONSE"
+      ],
+      "axes_required": 2,
+      "measured_in": "SCENE_LINEAR",
+      "normalized": true,
+      "verdict": "PASS",
+      "pass_law": "a material pair is distinguishable when at least 2 of the 6 independent axes differ by at least 25% relative effect size, AND the negative controls fail",
+      "pair": "MATTE_vs_GLOSSY"
+    },
+    {
+      "a": "ABS GLOSSY",
+      "b": "METAL METALLIC",
+      "axes": {
+        "HIGHLIGHT_FWHM": {
+          "a": 0.227015,
+          "b": 0.005504,
+          "relative_effect": 1.905313,
+          "bar": 0.25,
+          "clears": true
+        },
+        "HIGHLIGHT_PEAK": {
+          "a": 40.400921,
+          "b": 2.227437,
+          "relative_effect": 1.79099,
+          "bar": 0.25,
+          "clears": true
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "a": 1.49423,
+          "b": 2.448375,
+          "relative_effect": 0.484017,
+          "bar": 0.25,
+          "clears": true
+        },
+        "GRAZING_RESPONSE": {
+          "a": 0.020657,
+          "b": 0.006503,
+          "relative_effect": 1.042218,
+          "bar": 0.25,
+          "clears": true
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "a": 0.137991,
+          "b": 0.003301,
+          "relative_effect": 1.906544,
+          "bar": 0.25,
+          "clears": true
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "a": 0.143347,
+          "b": 0.003241,
+          "relative_effect": 1.911573,
+          "bar": 0.25,
+          "clears": true
+        }
+      },
+      "axes_clearing": [
+        "HIGHLIGHT_FWHM",
+        "HIGHLIGHT_PEAK",
+        "SPECULAR_TO_DIFFUSE_RATIO",
+        "GRAZING_RESPONSE",
+        "SHEEN_REGION_RESPONSE",
+        "EDGE_HIGHLIGHT_RESPONSE"
+      ],
+      "axes_required": 2,
+      "measured_in": "SCENE_LINEAR",
+      "normalized": true,
+      "verdict": "PASS",
+      "pass_law": "a material pair is distinguishable when at least 2 of the 6 independent axes differ by at least 25% relative effect size, AND the negative controls fail",
+      "pair": "GLOSSY_vs_METALLIC"
+    },
+    {
+      "a": "ABS MATTE",
+      "b": "ACRYLIC TRANSPARENT",
+      "axes": {
+        "HIGHLIGHT_FWHM": {
+          "a": 0.216741,
+          "b": 0.035186,
+          "relative_effect": 1.441334,
+          "bar": 0.25,
+          "clears": true
+        },
+        "HIGHLIGHT_PEAK": {
+          "a": 43.501155,
+          "b": 19.689953,
+          "relative_effect": 0.753625,
+          "bar": 0.25,
+          "clears": true
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "a": 1.440167,
+          "b": 4.683314,
+          "relative_effect": 1.05925,
+          "bar": 0.25,
+          "clears": true
+        },
+        "GRAZING_RESPONSE": {
+          "a": 0.083107,
+          "b": 0.012117,
+          "relative_effect": 1.491014,
+          "bar": 0.25,
+          "clears": true
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "a": 0.12881,
+          "b": 0.107936,
+          "relative_effect": 0.176344,
+          "bar": 0.25,
+          "clears": false
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "a": 0.197484,
+          "b": 0.013153,
+          "relative_effect": 1.750226,
+          "bar": 0.25,
+          "clears": true
+        }
+      },
+      "axes_clearing": [
+        "HIGHLIGHT_FWHM",
+        "HIGHLIGHT_PEAK",
+        "SPECULAR_TO_DIFFUSE_RATIO",
+        "GRAZING_RESPONSE",
+        "EDGE_HIGHLIGHT_RESPONSE"
+      ],
+      "axes_required": 2,
+      "measured_in": "SCENE_LINEAR",
+      "normalized": true,
+      "verdict": "PASS",
+      "pass_law": "a material pair is distinguishable when at least 2 of the 6 independent axes differ by at least 25% relative effect size, AND the negative controls fail",
+      "pair": "OPAQUE_vs_TRANSPARENT"
+    },
+    {
+      "a": "ABS MATTE",
+      "b": "ACRYLIC TRANSLUCENT",
+      "axes": {
+        "HIGHLIGHT_FWHM": {
+          "a": 0.216741,
+          "b": 0.033759,
+          "relative_effect": 1.460938,
+          "bar": 0.25,
+          "clears": true
+        },
+        "HIGHLIGHT_PEAK": {
+          "a": 43.501155,
+          "b": 29.930179,
+          "relative_effect": 0.369624,
+          "bar": 0.25,
+          "clears": true
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "a": 1.440167,
+          "b": 3.777969,
+          "relative_effect": 0.89603,
+          "bar": 0.25,
+          "clears": true
+        },
+        "GRAZING_RESPONSE": {
+          "a": 0.083107,
+          "b": 0.017953,
+          "relative_effect": 1.289416,
+          "bar": 0.25,
+          "clears": true
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "a": 0.12881,
+          "b": 0.001511,
+          "relative_effect": 1.953623,
+          "bar": 0.25,
+          "clears": true
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "a": 0.197484,
+          "b": 0.02154,
+          "relative_effect": 1.606614,
+          "bar": 0.25,
+          "clears": true
+        }
+      },
+      "axes_clearing": [
+        "HIGHLIGHT_FWHM",
+        "HIGHLIGHT_PEAK",
+        "SPECULAR_TO_DIFFUSE_RATIO",
+        "GRAZING_RESPONSE",
+        "SHEEN_REGION_RESPONSE",
+        "EDGE_HIGHLIGHT_RESPONSE"
+      ],
+      "axes_required": 2,
+      "measured_in": "SCENE_LINEAR",
+      "normalized": true,
+      "verdict": "PASS",
+      "pass_law": "a material pair is distinguishable when at least 2 of the 6 independent axes differ by at least 25% relative effect size, AND the negative controls fail",
+      "pair": "OPAQUE_vs_TRANSLUCENT"
+    }
+  ],
+  "collapsed_pairs": [],
+  "verdict": "FAIL",
+  "why": "the rig is a reusable M5/M6 asset; making matte and satin work while collapsing another pair would be a failure, not a trade"
+}

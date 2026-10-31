@@ -1,0 +1,115 @@
+{
+ "record_type": "h2_c3_finalisation/1.0",
+ "finalised_on": "2026-08-17",
+ "authority": "OWNER_BLOCKER_CLEARANCE.md §M via owner_pick_ingestion.json",
+ "precedent": "E1/C3/A2 finalisation — machinery imported from finalize_lid_C3, not re-implemented",
+ "before": "../candidates/fb3093_lid_C3_strapwork_moire.svg (as picked)",
+ "final_svg": "fb3093_lid_C3_final.svg",
+ "final_png": "fb3093_lid_C3_final.png (800 dpi)",
+ "measurements": {
+  "braid_termination_tuck": {
+   "gap_as_picked_mm": 1.44,
+   "overlap_final_mm": 0.594,
+   "rule": "strand ends extended to land under the boss plates (plates draw after braids and conceal them); amplitude, strap width and gap rule are the picked values unchanged",
+   "period_resnap_per_edge": [
+    {
+     "span_mm": [
+      44.21,
+      48.28
+     ],
+     "period_mm": [
+      8.842,
+      9.655
+     ],
+     "period_count": [
+      5,
+      5
+     ]
+    },
+    {
+     "span_mm": [
+      44.21,
+      48.28
+     ],
+     "period_mm": [
+      8.842,
+      9.655
+     ],
+     "period_count": [
+      5,
+      5
+     ]
+    },
+    {
+     "span_mm": [
+      44.21,
+      48.28
+     ],
+     "period_mm": [
+      8.842,
+      9.655
+     ],
+     "period_count": [
+      5,
+      5
+     ]
+    },
+    {
+     "span_mm": [
+      44.21,
+      48.28
+     ],
+     "period_mm": [
+      8.842,
+      9.655
+     ],
+     "period_count": [
+      5,
+      5
+     ]
+    }
+   ],
+   "period_count_preserved": true
+  },
+  "ink_centring": {
+   "BBROSE": {
+    "measured_offset_mm": -0.026,
+    "applied_mm": 0.0,
+    "note": "below 0.05 mm noise floor — not applied"
+   },
+   "FACE POWDER · POLVOS": {
+    "measured_offset_mm": -0.002,
+    "applied_mm": 0.0,
+    "note": "below 0.05 mm noise floor — not applied"
+   }
+  },
+  "kerning": {
+   "source": "legacy 'kern' table (GPOS absent)",
+   "pairs_touching_C3_strings": "NONE — verified no-op for both lines including the middot line"
+  },
+  "kept_by_verification": {
+   "ray_fans": "96 + 102 rays (|Δ|=6 beat design) — counts kept",
+   "medallion_station": "centre (FW/2, 0.435·FH) — compositional, kept",
+   "weights_mm": {
+    "braid_hairlines": 0.1,
+    "rays": 0.07,
+    "plate_key": 0.25,
+    "outer_ring": 0.12
+   },
+   "colour": "substrate constants, Lab round-trip verified at C3 finalisation — cited, not re-derived"
+  },
+  "moire_beat_verification": {
+   "rejected_instrument": "angular-darkness FFT of the raster render — dominated by f=2/f=4 pixel-grid anisotropy, not the moiré; rejected and recorded, not hidden",
+   "geometry_proof": {
+    "exact_coincidence_axes": 6,
+    "derivation": "gcd(96,102) = 6: both fans carry a ray at every multiple of 60 degrees",
+    "alignment_envelope_periods": 6,
+    "method": "nearest-ray cross-fan misalignment |a-b| sampled at 2160 angles, 1/72-rev smoothing, below-mean segment count"
+   },
+   "designed_beats": 6,
+   "verdict": "PASS",
+   "perceptual_evidence": "fb3093_lid_C3_medallion_crop.png (800dpi) — to be LOOKED AT and the read recorded",
+   "perceptual_read": "LOOKED AT (800dpi crop, this session, after the geometry proof): the six-fold beat READS — six paired-spoke convergence axes at the 60-degree coincidence angles, finer interleaved texture between them. Honest characterisation: the beat presents as ray-pairing sectors, not as six tonal patches; at the ~32mm medallion production scale this is a subtle six-fold vibration, consistent with the picked contact-sheet appearance."
+  }
+ }
+}

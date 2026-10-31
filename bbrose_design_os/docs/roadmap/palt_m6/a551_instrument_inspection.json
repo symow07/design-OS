@@ -1,0 +1,42 @@
+{
+ "record_type": "a551_instrument_inspection/1.0",
+ "date": "2026-08-12",
+ "instrument": "apps/pipeline/services/palette_powder_texture_axes.py",
+ "axes_it_actually_computes": {
+  "GRANULARITY_INDEX": "RMS of a high-pass over the PLANAR region mask, divided by the PLANAR mean",
+  "GRAZING_BAND_CONTRAST": "(p95 - p5) of GRAZING values divided by the GRAZING median"
+ },
+ "AXES_IT_DOES_NOT_COMPUTE": {
+  "FWHM": "ABSENT from this module",
+  "SHEEN": "ABSENT from this module",
+  "extent_of_this_absence_claim": "grep for def/axis names across the 623 lines of this ONE file; NOT a claim about the corpus (A548)"
+ },
+ "frame_provenance_assertion": {
+  "called_on_the_A543_path": "YES \u2014 line 138, inside load_scene_linear, so every EXR read asserts",
+  "refusals_demonstrated": {
+   "None": "frame unreadable",
+   "uint8 RGBA (the F1/F2 negative control)": "REFUSED",
+   "float 2-channel": "REFUSED",
+   "float 2-D": "REFUSED"
+  },
+  "accepts": "float RGBA, alpha dropped explicitly",
+  "vacuous_pass": "NO \u2014 every branch is an explicit type/shape test"
+ },
+ "region_alignment_assertion": {
+  "called_on_the_pair_path": "YES \u2014 line 396 inside characterize_texture_pair",
+  "ALIGNMENT_TOLERANCE": 0.05,
+  "refusals_demonstrated": {
+   "misaligned 5x": "FrameProvenanceError REGION_ALIGNMENT failed",
+   "zero authority": "DegenerateRegionError"
+  },
+  "vacuous_pass": "NO \u2014 the loop is over a FIXED tuple (PLANAR, GRAZING) so it cannot iterate zero times, a missing region KeyErrors rather than skipping, and the tolerance is a finite constant"
+ },
+ "A387_shape_absent": "neither guard is present-but-uncalled; both are wired on the path A543 would take",
+ "A552_NOT_REACHED": "3aa not hashed. The found instrument PROVES its guards but does NOT yet write frame paths, digests or its own code digest into a result artifact \u2014 which is exactly what 3aa requires. The instrument for 3aa is therefore still partly to be built, and A533/A552 forbid landing the law over an instrument that does not yet do the thing.",
+ "A553_NOT_REACHED": "no recompute attempted; no value computed; the owner revised prediction is UNSCORED",
+ "A548_A554_NOT_BUILT": "extent control and gate harvest not built this node",
+ "nothing_respecified": true,
+ "nothing_tuned": true,
+ "no_mark_discharged": true,
+ "no_invocation_spent": true
+}

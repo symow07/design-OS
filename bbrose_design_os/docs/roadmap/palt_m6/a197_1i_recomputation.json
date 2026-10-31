@@ -1,0 +1,90 @@
+{
+ "record_type": "a197_1i_recomputation/1.0",
+ "combining_rule": "WORST_OBSERVED_EXCURSION_ACROSS_ENSEMBLES",
+ "combining_rule_identity": "fd91d08471da03fb",
+ "instrument_defect_found_and_fixed": "the first pass computed CHANGED via `\"MET\" in prior_disposition`, and \"MET\" is a substring of \"UNMET\" \u2014 it reported all three FAILs as CHANGED with identical prior and A192 columns. Caught by reading the output, fixed with an explicit prior_met boolean; the corrected table is below",
+ "table": [
+  {
+   "id": "MATTE_VS_SATIN / SHEEN",
+   "margin": 0.09112,
+   "ensembles": {
+    "original(40,81-84,99)": 0.16569,
+    "replicate(810-815)": 0.14703
+   },
+   "prior_floor": 0.16569,
+   "floor_A192": 0.16569,
+   "prior": "1i UNMET -> FAIL",
+   "under_A192": "1i UNMET -> FAIL",
+   "CHANGED": "no",
+   "gap_margin_to_floor": 0.07457
+  },
+  {
+   "id": "PRESSED_VS_MATTE / SHEEN",
+   "margin": 0.11572,
+   "ensembles": {
+    "original(40,81-84,99)": 0.16569,
+    "replicate(810-815)": 0.14703
+   },
+   "prior_floor": 0.16569,
+   "floor_A192": 0.16569,
+   "prior": "1i UNMET -> FAIL",
+   "under_A192": "1i UNMET -> FAIL",
+   "CHANGED": "no",
+   "gap_margin_to_floor": 0.04997
+  },
+  {
+   "id": "SATIN_VS_CREAM / FWHM",
+   "margin": 0.0343,
+   "ensembles": {
+    "original(40,81-84,99)": 0.04781,
+    "replicate(810-815)": 0.06227
+   },
+   "prior_floor": 0.04781,
+   "floor_A192": 0.06227,
+   "prior": "1i UNMET -> FAIL",
+   "under_A192": "1i UNMET -> FAIL",
+   "CHANGED": "no",
+   "gap_margin_to_floor": 0.02797
+  },
+  {
+   "id": "SATIN_VS_CREAM / GRANULARITY (banked)",
+   "margin": 0.1923,
+   "ensembles": {
+    "original(40,81-84,99)": 0.04201
+   },
+   "prior_floor": 0.04201,
+   "floor_A192": 0.04201,
+   "prior": "1i MET -> ESTABLISHED",
+   "under_A192": "1i MET -> ESTABLISHED",
+   "CHANGED": "no",
+   "gap_margin_to_floor": -0.15029
+  },
+  {
+   "id": "SWEEP_DEGENERACY / min pair rho (A136)",
+   "margin": 0.0504,
+   "ensembles": {
+    "refined seeds 400/401/402": 0.03214
+   },
+   "prior_floor": 0.03214,
+   "floor_A192": 0.03214,
+   "prior": "1i MET -> stands (QUALIFIED, A136)",
+   "under_A192": "1i MET -> stands",
+   "CHANGED": "no",
+   "gap_margin_to_floor": -0.01826
+  },
+  {
+   "id": "GLITTER events 113 vs 25",
+   "margin": null,
+   "prior_floor": null,
+   "floor_A192": null,
+   "prior": "ADEQUACY_UNASSESSED",
+   "under_A192": "ADEQUACY_UNASSESSED",
+   "CHANGED": "no",
+   "note": "no numeric 1i test exists to recompute"
+  }
+ ],
+ "dispositions_changed": [],
+ "verdict": "NO live 1i test changes disposition under the declared rule",
+ "pressed_vs_matte_note": "the owner flagged this as closest to flipping. Under A192 its floor RISES from the replicate 0.14703 to the worst 0.16569, so the gap WIDENS from 0.03131 to 0.04997 \u2014 it moves AWAY from flipping, which is the conservative direction the rule exists to guarantee",
+ "owner_approved": false
+}

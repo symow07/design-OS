@@ -1,0 +1,126 @@
+{
+  "record_type": "m5_validation_report/1.0",
+  "checks": [
+    {
+      "n": 1,
+      "condition": "six production variants exist",
+      "verdict": "PASS",
+      "detail": "6 variants recorded"
+    },
+    {
+      "n": 2,
+      "condition": "one geometry identity for material-only changes",
+      "verdict": "PASS",
+      "detail": "distinct mesh identities: 1"
+    },
+    {
+      "n": 3,
+      "condition": "material identities differ correctly",
+      "verdict": "PASS",
+      "detail": "6 of 6"
+    },
+    {
+      "n": 4,
+      "condition": "evidence identities differ correctly",
+      "verdict": "PASS",
+      "detail": "6 of 6"
+    },
+    {
+      "n": 5,
+      "condition": "dielectric lobe rig passes",
+      "verdict": "PASS",
+      "detail": "PASS_CHARACTERIZATION_AND_PRODUCT"
+    },
+    {
+      "n": 6,
+      "condition": "matte vs satin passes robustly",
+      "verdict": "PASS",
+      "detail": "PASS \u2014 the verdict holds through all eight perturbations: light intensity +-5%, angle +-2deg, camera +-1deg, distance +-5%"
+    },
+    {
+      "n": 7,
+      "condition": "reflection rig passes",
+      "verdict": "PASS",
+      "detail": "PASS"
+    },
+    {
+      "n": 8,
+      "condition": "glossy vs metallic passes robustly",
+      "verdict": "PASS",
+      "detail": "pair PASS, unstable []"
+    },
+    {
+      "n": 9,
+      "condition": "transmission rig passes",
+      "verdict": "PASS",
+      "detail": "PASS"
+    },
+    {
+      "n": 10,
+      "condition": "opaque/transparent/translucent distinguishable",
+      "verdict": "PASS",
+      "detail": "failed pairs: []"
+    },
+    {
+      "n": 11,
+      "condition": "negative controls all fail as expected",
+      "verdict": "PASS",
+      "detail": "dielectric, reflective and transmission control sets"
+    },
+    {
+      "n": 12,
+      "condition": "exposure-only changes cannot fool classifiers",
+      "verdict": "PASS",
+      "detail": "exposure controls behaved in every sub-rig"
+    },
+    {
+      "n": 13,
+      "condition": "actual ES3083 product observability passes",
+      "verdict": "PASS",
+      "detail": "PASS"
+    },
+    {
+      "n": 14,
+      "condition": "production workflow trace passes",
+      "verdict": "PASS",
+      "detail": "PASS"
+    },
+    {
+      "n": 15,
+      "condition": "a non-ES3083 fixture proves reuse",
+      "verdict": "PASS",
+      "detail": "PALT-P1A (round engineering regression fixture): PASS"
+    },
+    {
+      "n": 16,
+      "condition": "Pantone tokens remain symbolic authority",
+      "verdict": "PASS",
+      "detail": "['PANTONE 621 C', 'PANTONE 627 C']"
+    },
+    {
+      "n": 17,
+      "condition": "proxy colours remain VISUALIZATION_ONLY",
+      "verdict": "PASS",
+      "detail": "display_proxy authority checked against the engine"
+    },
+    {
+      "n": 18,
+      "condition": "Review Board evidence is complete",
+      "verdict": "PASS",
+      "detail": "board and manifests present"
+    },
+    {
+      "n": 19,
+      "condition": "full canonical pytest passes",
+      "verdict": "PASS",
+      "detail": "a suite cannot verify itself from inside; this check reads the external checkpoint record written after the suite exited: 5878 passed, 1 deselected, 585 warnings, 401 subtests passed in 519.54s (0:08:39) @ b7da21e"
+    }
+  ],
+  "failed": [],
+  "M5_COMPLETION": "PASS",
+  "protocol_identity": "6b187e8b87bdb5e9",
+  "owner_approved": false,
+  "manufacturing_authority": "NOT_ESTABLISHED",
+  "PALT_P1_FINAL_DIMENSIONS": "NOT_APPROVED",
+  "GATE_2": "BLOCKED"
+}

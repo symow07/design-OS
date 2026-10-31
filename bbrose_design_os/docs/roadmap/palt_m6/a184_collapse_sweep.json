@@ -1,0 +1,63 @@
+{
+ "record_type": "a184_collapse_sweep/1.0",
+ "protocol_identity": "128b32d942988573",
+ "method": "count occurrences per line-key, live and era-correct, to find keys that could have absorbed more than one occurrence. Count and locate only \u2014 nothing dispositioned, per the A32 brief",
+ "live": {
+  "fallbacks": "30 occurrences on 30 distinct lines \u2014 NO line-level collapse; the 5 keys carrying count>1 are SYMBOL-level aggregation (several 'else 0.0' in one function), which is the new scheme working as designed, not a collapse",
+  "a32": "27 occurrences on 26 distinct lines \u2014 ONE collapse: palette_characterization_rig.py:265 (symbol _get), 'return float(r.get(region, {}).get(key, default))', two lookup-defaults on one line",
+  "count_correction": "a32 26 -> 27 (+1); fallbacks 30 -> 30 (no correction)"
+ },
+ "historical": {
+  "record": "fallback_audit/allowlist_dispositions.json, 62 entries, era 2bd5b7d",
+  "checked": "62 of 62, era-correct against that commit's own sources",
+  "gap_closed": "the first pass reported 4 entries' era files unavailable because it looked only at the services root; material_characterization.py lives in blender_scripts/ \u2014 resolved rather than left as a partial sweep",
+  "collapsed_entries": "NONE",
+  "count_correction": "+0 \u2014 the historical 62 is 62 occurrences",
+  "footnote_warranted": false,
+  "footnote_statement": "NO historical disposition record rests on an under-reported count: every one of the 62 line-keys carried exactly one occurrence at its era. The derived records (allowlist_closure/results.json final_dispositions_all_62, the four-state table's 62 sites) therefore stand on a count this sweep confirms. The single live collapse at _get post-dates that record and is carried in the live baseline, not in the historical one"
+ },
+ "owner_approved": false,
+ "a190_enumeration_boundary": {
+  "rule": "a sweep reports its own enumeration boundary as data \u2014 what it searched, what it could not reach, and why \u2014 BEFORE it reports findings; a sweep that cannot state where it stopped has not established where it stopped",
+  "fallback_scope": {
+   "root_searched": "apps/pipeline/services",
+   "recursive": true,
+   "subdirectories_included": [
+    "blender_scripts"
+   ],
+   "files_scanned": 172,
+   "files_skipped": 0,
+   "files_unreadable": [],
+   "not_reached_and_why": [
+    "anything outside apps/pipeline/services \u2014 the gate's declared scope is the services tree",
+    "non-.py files",
+    "historical revisions \u2014 a sweep over committed history must materialize era sources explicitly and state that it did"
+   ]
+  },
+  "a32_scope": {
+   "root_searched": "apps/pipeline/services",
+   "recursive": true,
+   "subdirectories_included": [
+    "blender_scripts"
+   ],
+   "files_scanned": 12,
+   "files_skipped": 160,
+   "files_unreadable": [],
+   "not_reached_and_why": [
+    "anything outside apps/pipeline/services \u2014 the gate's declared scope is the services tree",
+    "non-.py files",
+    "historical revisions \u2014 a sweep over committed history must materialize era sources explicitly and state that it did"
+   ]
+  },
+  "why_this_rule_exists": "this sweep's first pass called four historical entries 'era files unavailable' when they were in a blender_scripts/ subdirectory \u2014 the instrument's boundary read as a property of the world, the same shape as the collapse itself and as pipeline_errors.py:76",
+  "historical_sweep_boundary": {
+   "materialized_from": "git show <era>:<path> at commit 2bd5b7d",
+   "paths_tried": [
+    "apps/pipeline/services/<file>",
+    "apps/pipeline/services/blender_scripts/<file>"
+   ],
+   "entries_resolved": "62 of 62",
+   "not_reached": "none"
+  }
+ }
+}

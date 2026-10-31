@@ -1,0 +1,745 @@
+{
+ "record_type": "a217_substring_disposition_sweep/1.0",
+ "protocol_identity": "a229810ce00ff35c",
+ "rule": "status and disposition comparisons are equality against an enumerated value, never substring or prefix tests",
+ "a190_boundary_reported_first": {
+  "roots_searched": [
+   "apps/pipeline/services",
+   "apps/pipeline/tests",
+   "tools",
+   "docs/roadmap/palt_m6"
+  ],
+  "recursive": true,
+  "python_files_scanned": 403,
+  "unreadable": [],
+  "not_reached_and_why": [
+   "non-.py files \u2014 a substring comparison is a code construct",
+   "code outside these roots (dashboard/UI, other apps) \u2014 outside the measurement/gate surface this rule governs; named rather than assumed away",
+   "runtime-constructed comparisons \u2014 an AST scan cannot see them; stated as the instrument's limit"
+  ]
+ },
+ "equality_sites_already_correct": 1097,
+ "substring_or_prefix_sites": [
+  {
+   "file": "apps/pipeline/services/visual_quality_program.py",
+   "line": 281,
+   "source": "'REJECTED' in (human_state or '')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_2c1_composite_activation.py",
+   "line": 136,
+   "source": "'REJECTED' in acceptance['state']"
+  },
+  {
+   "file": "apps/pipeline/tests/test_b4b1_reference_core.py",
+   "line": 280,
+   "source": "'color' in KINDS"
+  },
+  {
+   "file": "apps/pipeline/tests/test_b4b1_reference_core.py",
+   "line": 281,
+   "source": "'colour' not in KINDS"
+  },
+  {
+   "file": "apps/pipeline/tests/test_b4b1_reference_core.py",
+   "line": 446,
+   "source": "'task_refs' not in resp.get('Content-Disposition', '')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_b4b3a_review_board_references.py",
+   "line": 214,
+   "source": "'attachment' not in inline.get('Content-Disposition', '')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_b4b3a_review_board_references.py",
+   "line": 217,
+   "source": "'attachment' in att['Content-Disposition']"
+  },
+  {
+   "file": "apps/pipeline/tests/test_b4b3a_review_board_references.py",
+   "line": 218,
+   "source": "'amber.png' in att['Content-Disposition']"
+  },
+  {
+   "file": "apps/pipeline/tests/test_browser_recon_result.py",
+   "line": 231,
+   "source": "'RECONSTRUCTION_STATUS_INCONSISTENT' in page.text_content('.recon-status-panel')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_browser_recon_status.py",
+   "line": 248,
+   "source": "'Queued for reconstruction' in page.text_content('#recon-status')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_browser_recon_status.py",
+   "line": 276,
+   "source": "'Queued for reconstruction' in page.text_content('#recon-status')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_browser_responsive_a11y.py",
+   "line": 198,
+   "source": "'Release to add files' in page.text_content('.ref-zone[data-kind=\"container\"] .ref-zone-drop')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_browser_retry_recovery.py",
+   "line": 182,
+   "source": "'Reconstruction failed' in page.text_content('.recon-status-panel')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_browser_staged_references.py",
+   "line": 191,
+   "source": "kinds[ext][1].startswith('blob:test-')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_composite_golden_fixtures.py",
+   "line": 196,
+   "source": "hda['state'].startswith('REJECTED')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_composite_golden_fixtures.py",
+   "line": 335,
+   "source": "'COMPLETED' not in comp.PROJECT_STATES"
+  },
+  {
+   "file": "apps/pipeline/tests/test_concept_selection_ceremony.py",
+   "line": 124,
+   "source": "'does not recreate or alter it' in p['statements'][0]"
+  },
+  {
+   "file": "apps/pipeline/tests/test_confirm_profile_ui2b2a.py",
+   "line": 114,
+   "source": "'attachment' in disposition"
+  },
+  {
+   "file": "apps/pipeline/tests/test_confirm_profile_ui2b2a.py",
+   "line": 115,
+   "source": "'.ai' in disposition"
+  },
+  {
+   "file": "apps/pipeline/tests/test_confirm_profile_ui2b2a.py",
+   "line": 116,
+   "source": "'/' not in disposition.split('filename=')[-1].strip('\"')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_confirm_profile_ui2b2a.py",
+   "line": 123,
+   "source": "'attachment' not in inline.get('Content-Disposition', '')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_confirm_profile_ui2b2a.py",
+   "line": 126,
+   "source": "'attachment' in att['Content-Disposition']"
+  },
+  {
+   "file": "apps/pipeline/tests/test_container_confirmation_2c2e.py",
+   "line": 355,
+   "source": "hda['state'].startswith('REJECTED')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_gate1_concept_selection.py",
+   "line": 99,
+   "source": "'preserved' in stored['unselected_disposition']"
+  },
+  {
+   "file": "apps/pipeline/tests/test_pilot_closeout.py",
+   "line": 107,
+   "source": "hda['state'].startswith('REJECTED')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_pilot_closeout.py",
+   "line": 133,
+   "source": "'HUMAN_REJECTED' in f['state']"
+  },
+  {
+   "file": "apps/pipeline/tests/test_pilot_closeout.py",
+   "line": 134,
+   "source": "'NEVER_ACCEPTED_FIXTURE' in f['state']"
+  },
+  {
+   "file": "apps/pipeline/tests/test_rbv_contracts.py",
+   "line": 30,
+   "source": "'PROPOSED' in data['status']"
+  },
+  {
+   "file": "apps/pipeline/tests/test_rbv_geometry_core.py",
+   "line": 93,
+   "source": "'cad_or_technical_drawing' in state['missing_evidence']"
+  },
+  {
+   "file": "apps/pipeline/tests/test_rbv_geometry_core.py",
+   "line": 94,
+   "source": "'front_photo' in state['missing_evidence']"
+  },
+  {
+   "file": "apps/pipeline/tests/test_rbv_geometry_core.py",
+   "line": 95,
+   "source": "'overall_height_mm' not in state['missing_evidence']"
+  },
+  {
+   "file": "apps/pipeline/tests/test_supplier_dispatch.py",
+   "line": 81,
+   "source": "'SENT_PENDING' not in s['status']"
+  },
+  {
+   "file": "apps/pipeline/tests/test_supplier_eml.py",
+   "line": 246,
+   "source": "'only when sent-message evidence is returned' in MAN['status_will_become']"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq1_close1.py",
+   "line": 160,
+   "source": "claim['verdict'].startswith('CLAIM_CONFIRMED')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq1_corr4.py",
+   "line": 32,
+   "source": "a['status'].startswith('MANUALLY_CALIBRATED')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq1_corr5.py",
+   "line": 218,
+   "source": "'ACCEPTED' not in g['status']"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq1_master.py",
+   "line": 201,
+   "source": "self.STOP['release_status'].startswith('NOT ')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq1_master.py",
+   "line": 292,
+   "source": "self.STOP['release_status'].startswith('NOT ')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq1_master.py",
+   "line": 468,
+   "source": "self.STOP['release_status'].startswith('NOT ')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq1_master.py",
+   "line": 517,
+   "source": "self.S['release_status'].startswith('NOT ')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq1_master.py",
+   "line": 527,
+   "source": "self.S['m3_deterministic_status'].startswith('DETERMINISTIC_GATES_PASSED_PENDING_VISUAL_INSPECTION')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq1_master.py",
+   "line": 623,
+   "source": "self.ST['release_status'].startswith('NOT ')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq1_master.py",
+   "line": 720,
+   "source": "self.ST['release_status'].startswith('NOT ')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq1_reset1.py",
+   "line": 109,
+   "source": "'AUTO_ACCEPTED' not in vi.VERDICTS"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq2_a2.py",
+   "line": 327,
+   "source": "a['state'].startswith('VQ2_')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq2_a2.py",
+   "line": 328,
+   "source": "'PENDING_OWNER' in a['state']"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq2_a2_r1.py",
+   "line": 315,
+   "source": "a['state'].startswith('VQ2_')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq2_a2_r1.py",
+   "line": 316,
+   "source": "'PENDING_OWNER' in a['state']"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq2_a2_r2.py",
+   "line": 266,
+   "source": "v['a2']['state'].startswith('VQ2_')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq2_a2_r2.py",
+   "line": 267,
+   "source": "'PENDING_OWNER' in v['a2']['state']"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq2_asset_gate.py",
+   "line": 43,
+   "source": "A1['state'].startswith('VQ2_HARD_STOP')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq2_asset_gate.py",
+   "line": 100,
+   "source": "bb['authority_status'].startswith('AUTHORITATIVE_VECTOR_LOGO_LOCATED')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq2_asset_gate.py",
+   "line": 144,
+   "source": "BY['BBROSE.pdf']['authority_status'].endswith('PENDING_OWNER_CONFIRMATION')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq2_asset_gate.py",
+   "line": 198,
+   "source": "'VQ2_FLAT_WIDTH_UNRESOLVED_PENDING_WRAP_MODEL' in STATE['production_only_blockers']"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq2_asset_gate.py",
+   "line": 181,
+   "source": "'PENDING' in b['state']"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq2_handoff_format.py",
+   "line": 213,
+   "source": "STATE['validation_contract_version'].startswith('3.')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq2_handoff_format.py",
+   "line": 215,
+   "source": "'NOT_AUTHORITATIVE_NATIVE_AI_SOURCE' in STATE['handoff_template_classification']"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq2_handoff_format.py",
+   "line": 208,
+   "source": "'PENDING' in b['state']"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq2_lettering_commission.py",
+   "line": 41,
+   "source": "'PENDING' in b['state']"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq2_logo_confirmed.py",
+   "line": 239,
+   "source": "'VQ2_FLAT_WIDTH_UNRESOLVED_PENDING_WRAP_MODEL' in STATE['production_only_blockers']"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq2_logo_confirmed.py",
+   "line": 177,
+   "source": "f['glyph_coverage'].startswith('SUBSET')"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq2_logo_confirmed.py",
+   "line": 223,
+   "source": "'PENDING' in b['state']"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq2_receipt_contract.py",
+   "line": 305,
+   "source": "'PENDING' in b['state']"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq2_receipt_rejection.py",
+   "line": 134,
+   "source": "'PENDING' in b['state']"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq2_typeface_gate.py",
+   "line": 155,
+   "source": "'HARD_STOP' in STATE['lp1']"
+  },
+  {
+   "file": "apps/pipeline/tests/test_vq2_typeface_gate.py",
+   "line": 156,
+   "source": "'NOT_OFFERED_AS_CANDIDATE' in STATE['lp1']"
+  },
+  {
+   "file": "apps/pipeline/tests/ui2b2b_screenshot_capture.py",
+   "line": 46,
+   "source": "state.startswith('COMPLETED')"
+  }
+ ],
+ "instance_that_prompted_it": "the A206 recompute tested for the substring 'MET' inside the prior-disposition string; 'MET' is a substring of 'UNMET', so it reported three unchanged verdicts as CHANGED \u2014 the same class as the normalizer that elided a Call's callee: a comparison at the wrong granularity producing output that looks like a finding",
+ "owner_approved": false,
+ "classification": {
+  "rule": "a raw hit is not a finding: membership in a COLLECTION is legitimate, an HTTP Content-Disposition header is not a status enum, and a browser test searching rendered page text is not a disposition comparison. Reporting 67 as offenders would be the same classification artifact as the A154 and A204 first passes",
+  "counts": {
+   "STATUS_ENUM_SUBSTRING": 50,
+   "COLLECTION_MEMBERSHIP": 5,
+   "HTTP_HEADER_OR_RENDERED_TEXT": 12
+  },
+  "equality_sites_already_correct": 1097,
+  "status_enum_substring_in_measurement_or_gate_surface": [
+   {
+    "file": "apps/pipeline/services/visual_quality_program.py",
+    "line": 281,
+    "source": "'REJECTED' in (human_state or '')"
+   }
+  ],
+  "detail": {
+   "STATUS_ENUM_SUBSTRING": [
+    {
+     "file": "apps/pipeline/services/visual_quality_program.py",
+     "line": 281,
+     "source": "'REJECTED' in (human_state or '')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_2c1_composite_activation.py",
+     "line": 136,
+     "source": "'REJECTED' in acceptance['state']"
+    },
+    {
+     "file": "apps/pipeline/tests/test_browser_staged_references.py",
+     "line": 191,
+     "source": "kinds[ext][1].startswith('blob:test-')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_composite_golden_fixtures.py",
+     "line": 196,
+     "source": "hda['state'].startswith('REJECTED')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_concept_selection_ceremony.py",
+     "line": 124,
+     "source": "'does not recreate or alter it' in p['statements'][0]"
+    },
+    {
+     "file": "apps/pipeline/tests/test_confirm_profile_ui2b2a.py",
+     "line": 114,
+     "source": "'attachment' in disposition"
+    },
+    {
+     "file": "apps/pipeline/tests/test_confirm_profile_ui2b2a.py",
+     "line": 115,
+     "source": "'.ai' in disposition"
+    },
+    {
+     "file": "apps/pipeline/tests/test_container_confirmation_2c2e.py",
+     "line": 355,
+     "source": "hda['state'].startswith('REJECTED')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_gate1_concept_selection.py",
+     "line": 99,
+     "source": "'preserved' in stored['unselected_disposition']"
+    },
+    {
+     "file": "apps/pipeline/tests/test_pilot_closeout.py",
+     "line": 107,
+     "source": "hda['state'].startswith('REJECTED')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_pilot_closeout.py",
+     "line": 133,
+     "source": "'HUMAN_REJECTED' in f['state']"
+    },
+    {
+     "file": "apps/pipeline/tests/test_pilot_closeout.py",
+     "line": 134,
+     "source": "'NEVER_ACCEPTED_FIXTURE' in f['state']"
+    },
+    {
+     "file": "apps/pipeline/tests/test_rbv_contracts.py",
+     "line": 30,
+     "source": "'PROPOSED' in data['status']"
+    },
+    {
+     "file": "apps/pipeline/tests/test_rbv_geometry_core.py",
+     "line": 93,
+     "source": "'cad_or_technical_drawing' in state['missing_evidence']"
+    },
+    {
+     "file": "apps/pipeline/tests/test_rbv_geometry_core.py",
+     "line": 94,
+     "source": "'front_photo' in state['missing_evidence']"
+    },
+    {
+     "file": "apps/pipeline/tests/test_rbv_geometry_core.py",
+     "line": 95,
+     "source": "'overall_height_mm' not in state['missing_evidence']"
+    },
+    {
+     "file": "apps/pipeline/tests/test_supplier_dispatch.py",
+     "line": 81,
+     "source": "'SENT_PENDING' not in s['status']"
+    },
+    {
+     "file": "apps/pipeline/tests/test_supplier_eml.py",
+     "line": 246,
+     "source": "'only when sent-message evidence is returned' in MAN['status_will_become']"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq1_close1.py",
+     "line": 160,
+     "source": "claim['verdict'].startswith('CLAIM_CONFIRMED')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq1_corr4.py",
+     "line": 32,
+     "source": "a['status'].startswith('MANUALLY_CALIBRATED')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq1_corr5.py",
+     "line": 218,
+     "source": "'ACCEPTED' not in g['status']"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq1_master.py",
+     "line": 201,
+     "source": "self.STOP['release_status'].startswith('NOT ')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq1_master.py",
+     "line": 292,
+     "source": "self.STOP['release_status'].startswith('NOT ')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq1_master.py",
+     "line": 468,
+     "source": "self.STOP['release_status'].startswith('NOT ')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq1_master.py",
+     "line": 517,
+     "source": "self.S['release_status'].startswith('NOT ')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq1_master.py",
+     "line": 527,
+     "source": "self.S['m3_deterministic_status'].startswith('DETERMINISTIC_GATES_PASSED_PENDING_VISUAL_INSPECTION')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq1_master.py",
+     "line": 623,
+     "source": "self.ST['release_status'].startswith('NOT ')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq1_master.py",
+     "line": 720,
+     "source": "self.ST['release_status'].startswith('NOT ')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq2_a2.py",
+     "line": 327,
+     "source": "a['state'].startswith('VQ2_')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq2_a2.py",
+     "line": 328,
+     "source": "'PENDING_OWNER' in a['state']"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq2_a2_r1.py",
+     "line": 315,
+     "source": "a['state'].startswith('VQ2_')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq2_a2_r1.py",
+     "line": 316,
+     "source": "'PENDING_OWNER' in a['state']"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq2_a2_r2.py",
+     "line": 266,
+     "source": "v['a2']['state'].startswith('VQ2_')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq2_a2_r2.py",
+     "line": 267,
+     "source": "'PENDING_OWNER' in v['a2']['state']"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq2_asset_gate.py",
+     "line": 43,
+     "source": "A1['state'].startswith('VQ2_HARD_STOP')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq2_asset_gate.py",
+     "line": 100,
+     "source": "bb['authority_status'].startswith('AUTHORITATIVE_VECTOR_LOGO_LOCATED')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq2_asset_gate.py",
+     "line": 144,
+     "source": "BY['BBROSE.pdf']['authority_status'].endswith('PENDING_OWNER_CONFIRMATION')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq2_asset_gate.py",
+     "line": 198,
+     "source": "'VQ2_FLAT_WIDTH_UNRESOLVED_PENDING_WRAP_MODEL' in STATE['production_only_blockers']"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq2_asset_gate.py",
+     "line": 181,
+     "source": "'PENDING' in b['state']"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq2_handoff_format.py",
+     "line": 213,
+     "source": "STATE['validation_contract_version'].startswith('3.')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq2_handoff_format.py",
+     "line": 215,
+     "source": "'NOT_AUTHORITATIVE_NATIVE_AI_SOURCE' in STATE['handoff_template_classification']"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq2_handoff_format.py",
+     "line": 208,
+     "source": "'PENDING' in b['state']"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq2_lettering_commission.py",
+     "line": 41,
+     "source": "'PENDING' in b['state']"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq2_logo_confirmed.py",
+     "line": 239,
+     "source": "'VQ2_FLAT_WIDTH_UNRESOLVED_PENDING_WRAP_MODEL' in STATE['production_only_blockers']"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq2_logo_confirmed.py",
+     "line": 177,
+     "source": "f['glyph_coverage'].startswith('SUBSET')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq2_logo_confirmed.py",
+     "line": 223,
+     "source": "'PENDING' in b['state']"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq2_receipt_contract.py",
+     "line": 305,
+     "source": "'PENDING' in b['state']"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq2_receipt_rejection.py",
+     "line": 134,
+     "source": "'PENDING' in b['state']"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq2_typeface_gate.py",
+     "line": 155,
+     "source": "'HARD_STOP' in STATE['lp1']"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq2_typeface_gate.py",
+     "line": 156,
+     "source": "'NOT_OFFERED_AS_CANDIDATE' in STATE['lp1']"
+    }
+   ],
+   "COLLECTION_MEMBERSHIP": [
+    {
+     "file": "apps/pipeline/tests/test_b4b1_reference_core.py",
+     "line": 280,
+     "source": "'color' in KINDS"
+    },
+    {
+     "file": "apps/pipeline/tests/test_b4b1_reference_core.py",
+     "line": 281,
+     "source": "'colour' not in KINDS"
+    },
+    {
+     "file": "apps/pipeline/tests/test_composite_golden_fixtures.py",
+     "line": 335,
+     "source": "'COMPLETED' not in comp.PROJECT_STATES"
+    },
+    {
+     "file": "apps/pipeline/tests/test_vq1_reset1.py",
+     "line": 109,
+     "source": "'AUTO_ACCEPTED' not in vi.VERDICTS"
+    },
+    {
+     "file": "apps/pipeline/tests/ui2b2b_screenshot_capture.py",
+     "line": 46,
+     "source": "state.startswith('COMPLETED')"
+    }
+   ],
+   "HTTP_HEADER_OR_RENDERED_TEXT": [
+    {
+     "file": "apps/pipeline/tests/test_b4b1_reference_core.py",
+     "line": 446,
+     "source": "'task_refs' not in resp.get('Content-Disposition', '')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_b4b3a_review_board_references.py",
+     "line": 214,
+     "source": "'attachment' not in inline.get('Content-Disposition', '')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_b4b3a_review_board_references.py",
+     "line": 217,
+     "source": "'attachment' in att['Content-Disposition']"
+    },
+    {
+     "file": "apps/pipeline/tests/test_b4b3a_review_board_references.py",
+     "line": 218,
+     "source": "'amber.png' in att['Content-Disposition']"
+    },
+    {
+     "file": "apps/pipeline/tests/test_browser_recon_result.py",
+     "line": 231,
+     "source": "'RECONSTRUCTION_STATUS_INCONSISTENT' in page.text_content('.recon-status-panel')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_browser_recon_status.py",
+     "line": 248,
+     "source": "'Queued for reconstruction' in page.text_content('#recon-status')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_browser_recon_status.py",
+     "line": 276,
+     "source": "'Queued for reconstruction' in page.text_content('#recon-status')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_browser_responsive_a11y.py",
+     "line": 198,
+     "source": "'Release to add files' in page.text_content('.ref-zone[data-kind=\"container\"] .ref-zone-drop')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_browser_retry_recovery.py",
+     "line": 182,
+     "source": "'Reconstruction failed' in page.text_content('.recon-status-panel')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_confirm_profile_ui2b2a.py",
+     "line": 116,
+     "source": "'/' not in disposition.split('filename=')[-1].strip('\"')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_confirm_profile_ui2b2a.py",
+     "line": 123,
+     "source": "'attachment' not in inline.get('Content-Disposition', '')"
+    },
+    {
+     "file": "apps/pipeline/tests/test_confirm_profile_ui2b2a.py",
+     "line": 126,
+     "source": "'attachment' in att['Content-Disposition']"
+    }
+   ]
+  }
+ },
+ "finding": "1097 equality comparisons on status-like values are already correct. 50 genuine status-enum substring or prefix comparisons exist, of which 1 sit in the measurement/gate surface (services or tools) and the rest in VQ/pilot test code outside it. The instance that prompted the rule was in an uncommitted computation script and so does not appear in any file",
+ "not_fixed_here_and_why": "A217 asked for the class to be swept and counted, not for the instances to be repaired; repairing VQ/pilot test assertions is a different surface and would be scope creep inside a node that is already branching on A214",
+ "A224_dispositions_2026_08_11": {
+  "GATE_SURFACE_REPAIRED": {
+   "count": 1,
+   "site": "visual_quality_program.py visual_verdict",
+   "was": "'REJECTED' in (human_state or '')",
+   "now": "token equality against HUMAN_REJECTION_STATES (an enumerated frozenset), splitting compound states into tokens",
+   "why_now": "gate surfaces do not wait for the arc they belong to",
+   "demonstrated": "'REJECTED / REVISION_REQUIRED' -> REJECTED_BY_HUMAN; 'NEVER_REJECTED' -> PASSES_PENDING_HUMAN_REVIEW, where the substring form would have read it as a rejection"
+  },
+  "SUBSTRING_STATUS_TESTS_VQ_SURFACE": {
+   "count": 49,
+   "disposition": "DEFERRED_WITH_ARC",
+   "dated": "2026-08-11",
+   "reason": "parked bottle/VQ arc",
+   "why_recorded": "a quiet 49 is a surprise waiting for whoever unparks that arc"
+  },
+  "NOT_APPLICABLE": {
+   "count": 17,
+   "composition": "12 HTTP Content-Disposition or rendered page text, 5 collection membership",
+   "reason": "an HTTP header is not a status enum and membership in a collection is not a substring test",
+   "why_recorded": "so the next sweep does not re-adjudicate them"
+  }
+ }
+}

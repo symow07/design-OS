@@ -1,0 +1,225 @@
+{
+ "record_type": "b4b2_screenshot_evidence/1.0",
+ "captured_with": "apps/pipeline/tests/b4b2_screenshot_capture.py (live-server Playwright harness \u2014 real interface, no mockups)",
+ "screenshots": [
+  {
+   "file": "desktop_product_container_empty.png",
+   "viewport": {
+    "width": 1280,
+    "height": 900
+   },
+   "route": "/dashboard/",
+   "design_target": "product_container",
+   "staged_inventory": [],
+   "ui_state": "Product Container selected; References empty",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "desktop_all_five_categories_staged.png",
+   "viewport": {
+    "width": 1280,
+    "height": 900
+   },
+   "route": "/dashboard/",
+   "design_target": "product_container",
+   "staged_inventory": [
+    {
+     "name": "amber-bottle.png",
+     "category": "container"
+    },
+    {
+     "name": "bbrose-mark.png",
+     "category": "logo"
+    },
+    {
+     "name": "dieline-notes.pdf",
+     "category": "label"
+    },
+    {
+     "name": "mood-rose.png",
+     "category": "inspiration"
+    },
+    {
+     "name": "palette.png",
+     "category": "color"
+    }
+   ],
+   "ui_state": "one file staged in each of the five categories; raster thumbs + PDF document card",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "product_container_restored_after_switch.png",
+   "viewport": {
+    "width": 1280,
+    "height": 900
+   },
+   "route": "/dashboard/",
+   "design_target": "product_container",
+   "staged_inventory": [
+    {
+     "name": "amber-bottle.png",
+     "category": "container"
+    },
+    {
+     "name": "bbrose-mark.png",
+     "category": "logo"
+    },
+    {
+     "name": "dieline-notes.pdf",
+     "category": "label"
+    },
+    {
+     "name": "mood-rose.png",
+     "category": "inspiration"
+    },
+    {
+     "name": "palette.png",
+     "category": "color"
+    }
+   ],
+   "ui_state": "after Product Container -> Packaging -> Product Container round trip; identical cards restored",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "packaging_references_held.png",
+   "viewport": {
+    "width": 1280,
+    "height": 900
+   },
+   "route": "/dashboard/",
+   "design_target": "packaging",
+   "staged_inventory": [
+    {
+     "name": "amber-bottle.png",
+     "category": "container"
+    },
+    {
+     "name": "bbrose-mark.png",
+     "category": "logo"
+    },
+    {
+     "name": "dieline-notes.pdf",
+     "category": "label"
+    },
+    {
+     "name": "mood-rose.png",
+     "category": "inspiration"
+    },
+    {
+     "name": "palette.png",
+     "category": "color"
+    }
+   ],
+   "ui_state": "Packaging selected; 5 held files; held-reference notice with Return action",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "packaging_omission_confirmation.png",
+   "viewport": {
+    "width": 1280,
+    "height": 900
+   },
+   "route": "/dashboard/",
+   "design_target": "packaging",
+   "staged_inventory": [
+    {
+     "name": "amber-bottle.png",
+     "category": "container"
+    },
+    {
+     "name": "bbrose-mark.png",
+     "category": "logo"
+    },
+    {
+     "name": "dieline-notes.pdf",
+     "category": "label"
+    },
+    {
+     "name": "mood-rose.png",
+     "category": "inspiration"
+    },
+    {
+     "name": "palette.png",
+     "category": "color"
+    }
+   ],
+   "ui_state": "omission confirmation open; exact count; Cancel focused",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "desktop_drag_active.png",
+   "viewport": {
+    "width": 1280,
+    "height": 900
+   },
+   "route": "/dashboard/",
+   "design_target": "product_container",
+   "staged_inventory": [],
+   "ui_state": "Container zone drag-active: solid border + 'Release to add files'",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "desktop_server_validation_error.png",
+   "viewport": {
+    "width": 1280,
+    "height": 900
+   },
+   "route": "/dashboard/",
+   "design_target": "product_container",
+   "staged_inventory": [
+    {
+     "name": "good-bottle.png",
+     "category": "container"
+    },
+    {
+     "name": "bad-scan.png",
+     "category": "container"
+    }
+   ],
+   "ui_state": "server 400: summary row + REJECTED card (still staged, removable); first card unmarked",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "mobile_multiple_references.png",
+   "viewport": {
+    "width": 390,
+    "height": 844
+   },
+   "route": "/dashboard/",
+   "design_target": "product_container",
+   "staged_inventory": [
+    {
+     "name": "amber-bottle.png",
+     "category": "container"
+    },
+    {
+     "name": "an-extremely-long-reference-filename-that-keeps-going_final_v2_APPROVED.png",
+     "category": "container"
+    },
+    {
+     "name": "dieline-notes.pdf",
+     "category": "label"
+    }
+   ],
+   "ui_state": "390px drawer: stacked categories, 3 staged files, long filename ellipsised",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "mobile_validation_error.png",
+   "viewport": {
+    "width": 390,
+    "height": 844
+   },
+   "route": "/dashboard/",
+   "design_target": "product_container",
+   "staged_inventory": [
+    {
+     "name": "good.png",
+     "category": "container"
+    }
+   ],
+   "ui_state": "390px: NOT ADDED row for notes.txt; valid sibling staged",
+   "captured_at": "2026-08-01"
+  }
+ ]
+}

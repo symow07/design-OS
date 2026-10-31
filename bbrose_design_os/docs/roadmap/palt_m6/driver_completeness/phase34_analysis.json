@@ -1,0 +1,500 @@
+{
+  "record_type": "driver_completeness_phase34_analysis/1.0",
+  "accounting_rule_declared_before_numbers": "measured effect ACCOUNTED iff <= sum of enumerated sweepable drivers' interval-spans + the axis noise floor; GOVERNED rows contribute via their governor only; builder constants are the named-residual candidates",
+  "phase3_extended_sweeps": {
+    "compaction.compaction_level": {
+      "validity_1a": "VALID",
+      "divergent_pairs": [
+        {
+          "pair": "GRAZING_BAND_CONTRAST|HIGHLIGHT_PEAK",
+          "abs_rho": 0.5209
+        }
+      ],
+      "axis_qualification": {
+        "GRANULARITY_INDEX": {
+          "span": 0.13452,
+          "required": 0.2338,
+          "n": 14,
+          "qualifies": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "span": 0.0107,
+          "required": 0.33138,
+          "n": 14,
+          "qualifies": false
+        },
+        "HIGHLIGHT_FWHM": {
+          "span": 0.01579,
+          "required": 0.1827,
+          "n": 14,
+          "qualifies": false
+        }
+      },
+      "n_qualifying_axes": 2,
+      "PRESSED_VS_MATTE": {
+        "status": "NOT_COMMON_DRIVER_1e_VALID",
+        "under_floor_axis": [
+          "GRANULARITY_INDEX",
+          "SHEEN_REGION_RESPONSE"
+        ]
+      }
+    },
+    "compaction.compression_texture_amplitude": {
+      "validity_1a": "SWEEP_DEGENERATE_UNDER_DRIVER",
+      "divergent_pairs": [],
+      "axis_qualification": {
+        "GRANULARITY_INDEX": {
+          "span": 1.14726,
+          "required": 0.2338,
+          "n": 13,
+          "qualifies": true
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "span": 0.4262,
+          "required": 0.33138,
+          "n": 14,
+          "qualifies": true
+        },
+        "HIGHLIGHT_FWHM": {
+          "span": 0.21489,
+          "required": 0.1827,
+          "n": 14,
+          "qualifies": true
+        }
+      },
+      "n_qualifying_axes": 6,
+      "PRESSED_VS_MATTE": {
+        "status": "DEGENERATE_NO_INFORMATION",
+        "abs_rho": 0.9835,
+        "n": 13
+      }
+    },
+    "compression_texture.strength": {
+      "validity_1a": "SWEEP_DEGENERATE_UNDER_DRIVER",
+      "divergent_pairs": [],
+      "axis_qualification": {
+        "GRANULARITY_INDEX": {
+          "span": 0.14209,
+          "required": 0.2338,
+          "n": 13,
+          "qualifies": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "span": 0.07503,
+          "required": 0.33138,
+          "n": 14,
+          "qualifies": false
+        },
+        "HIGHLIGHT_FWHM": {
+          "span": 0.03554,
+          "required": 0.1827,
+          "n": 14,
+          "qualifies": false
+        }
+      },
+      "n_qualifying_axes": 0,
+      "MATTE_VS_SATIN": {
+        "status": "NOT_COMMON_DRIVER_1e_VALID",
+        "under_floor_axis": [
+          "GRANULARITY_INDEX",
+          "SHEEN_REGION_RESPONSE"
+        ]
+      },
+      "PRESSED_VS_MATTE": {
+        "status": "NOT_COMMON_DRIVER_1e_VALID",
+        "under_floor_axis": [
+          "GRANULARITY_INDEX",
+          "SHEEN_REGION_RESPONSE"
+        ]
+      }
+    },
+    "macrotexture.strength": {
+      "validity_1a": "SWEEP_DEGENERATE_UNDER_DRIVER",
+      "divergent_pairs": [],
+      "axis_qualification": {
+        "GRANULARITY_INDEX": {
+          "span": 0.0059,
+          "required": 0.2338,
+          "n": 11,
+          "qualifies": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "span": 0.01725,
+          "required": 0.33138,
+          "n": 14,
+          "qualifies": false
+        },
+        "HIGHLIGHT_FWHM": {
+          "span": 0.02085,
+          "required": 0.1827,
+          "n": 14,
+          "qualifies": false
+        }
+      },
+      "n_qualifying_axes": 2,
+      "SATIN_VS_CREAM": {
+        "status": "NOT_COMMON_DRIVER_1e_VALID",
+        "under_floor_axis": [
+          "GRANULARITY_INDEX",
+          "HIGHLIGHT_FWHM"
+        ]
+      }
+    },
+    "milling.micronormal_amplitude": {
+      "validity_1a": "VALID",
+      "divergent_pairs": [
+        {
+          "pair": "GRANULARITY_INDEX|GRAZING_BAND_CONTRAST",
+          "abs_rho": 0.7978
+        },
+        {
+          "pair": "GRAZING_BAND_CONTRAST|GRAZING_RESPONSE",
+          "abs_rho": 0.789
+        }
+      ],
+      "axis_qualification": {
+        "GRANULARITY_INDEX": {
+          "span": 1.11104,
+          "required": 0.2338,
+          "n": 14,
+          "qualifies": true
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "span": 0.52949,
+          "required": 0.33138,
+          "n": 15,
+          "qualifies": true
+        },
+        "HIGHLIGHT_FWHM": {
+          "span": 0.26862,
+          "required": 0.1827,
+          "n": 15,
+          "qualifies": true
+        }
+      },
+      "n_qualifying_axes": 7,
+      "MATTE_VS_SATIN": {
+        "status": "VALID_TRACKING_COUNTED_FAILS",
+        "abs_rho": 0.9956,
+        "n": 14
+      },
+      "PRESSED_VS_MATTE": {
+        "status": "VALID_TRACKING_COUNTED_FAILS",
+        "abs_rho": 0.9956,
+        "n": 14
+      },
+      "SATIN_VS_CREAM": {
+        "status": "VALID_TRACKING_COUNTED_FAILS",
+        "abs_rho": 0.9824,
+        "n": 14
+      }
+    },
+    "milling.microparticle_scale_mm": {
+      "validity_1a": "VALID",
+      "divergent_pairs": [
+        {
+          "pair": "GRANULARITY_INDEX|HIGHLIGHT_PEAK",
+          "abs_rho": 0.7451
+        },
+        {
+          "pair": "GRANULARITY_INDEX|SPECULAR_TO_DIFFUSE_RATIO",
+          "abs_rho": 0.7407
+        }
+      ],
+      "axis_qualification": {
+        "GRANULARITY_INDEX": {
+          "span": 0.34795,
+          "required": 0.2338,
+          "n": 14,
+          "qualifies": true
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "span": 0.20949,
+          "required": 0.33138,
+          "n": 14,
+          "qualifies": false
+        },
+        "HIGHLIGHT_FWHM": {
+          "span": 0.16941,
+          "required": 0.1827,
+          "n": 14,
+          "qualifies": false
+        }
+      },
+      "n_qualifying_axes": 3,
+      "MATTE_VS_SATIN": {
+        "status": "NOT_COMMON_DRIVER_1e_VALID",
+        "under_floor_axis": [
+          "SHEEN_REGION_RESPONSE"
+        ]
+      },
+      "PRESSED_VS_MATTE": {
+        "status": "NOT_COMMON_DRIVER_1e_VALID",
+        "under_floor_axis": [
+          "SHEEN_REGION_RESPONSE"
+        ]
+      },
+      "SATIN_VS_CREAM": {
+        "status": "NOT_COMMON_DRIVER_1e_VALID",
+        "under_floor_axis": [
+          "HIGHLIGHT_FWHM"
+        ]
+      }
+    },
+    "milling.surface_smoothing": {
+      "validity_1a": "VALID",
+      "divergent_pairs": [
+        {
+          "pair": "GRANULARITY_INDEX|GRAZING_BAND_CONTRAST",
+          "abs_rho": 0.3538
+        }
+      ],
+      "axis_qualification": {
+        "GRANULARITY_INDEX": {
+          "span": 0.56676,
+          "required": 0.2338,
+          "n": 14,
+          "qualifies": true
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "span": 0.00745,
+          "required": 0.33138,
+          "n": 14,
+          "qualifies": false
+        },
+        "HIGHLIGHT_FWHM": {
+          "span": 0.01153,
+          "required": 0.1827,
+          "n": 14,
+          "qualifies": false
+        }
+      },
+      "n_qualifying_axes": 2,
+      "MATTE_VS_SATIN": {
+        "status": "NOT_COMMON_DRIVER_1e_VALID",
+        "under_floor_axis": [
+          "SHEEN_REGION_RESPONSE"
+        ]
+      },
+      "SATIN_VS_CREAM": {
+        "status": "NOT_COMMON_DRIVER_1e_VALID",
+        "under_floor_axis": [
+          "HIGHLIGHT_FWHM"
+        ]
+      }
+    },
+    "press.ring_strength": {
+      "validity_1a": "SWEEP_DEGENERATE_UNDER_DRIVER",
+      "divergent_pairs": [],
+      "axis_qualification": {
+        "GRANULARITY_INDEX": {
+          "span": 0.75439,
+          "required": 0.2338,
+          "n": 14,
+          "qualifies": true
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "span": 0.13318,
+          "required": 0.33138,
+          "n": 14,
+          "qualifies": false
+        },
+        "HIGHLIGHT_FWHM": {
+          "span": 0.01631,
+          "required": 0.1827,
+          "n": 14,
+          "qualifies": false
+        }
+      },
+      "n_qualifying_axes": 2,
+      "PRESSED_VS_MATTE": {
+        "status": "NOT_COMMON_DRIVER_1e_VALID",
+        "under_floor_axis": [
+          "SHEEN_REGION_RESPONSE"
+        ]
+      }
+    },
+    "sheen_response.sheen": {
+      "validity_1a": "VALID",
+      "divergent_pairs": [
+        {
+          "pair": "GRAZING_BAND_CONTRAST|SPECULAR_TO_DIFFUSE_RATIO",
+          "abs_rho": 0.1678
+        },
+        {
+          "pair": "HIGHLIGHT_FWHM|SPECULAR_TO_DIFFUSE_RATIO",
+          "abs_rho": 0.0462
+        },
+        {
+          "pair": "HIGHLIGHT_PEAK|SPECULAR_TO_DIFFUSE_RATIO",
+          "abs_rho": 0.0593
+        },
+        {
+          "pair": "SPECULAR_TO_DIFFUSE_RATIO|EDGE_HIGHLIGHT_RESPONSE",
+          "abs_rho": 0.0593
+        }
+      ],
+      "axis_qualification": {
+        "GRANULARITY_INDEX": {
+          "span": 0.09663,
+          "required": 0.2338,
+          "n": 12,
+          "qualifies": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "span": 0.22938,
+          "required": 0.33138,
+          "n": 14,
+          "qualifies": false
+        },
+        "HIGHLIGHT_FWHM": {
+          "span": 1.42441,
+          "required": 0.1827,
+          "n": 14,
+          "qualifies": true
+        }
+      },
+      "n_qualifying_axes": 5,
+      "MATTE_VS_SATIN": {
+        "status": "NOT_COMMON_DRIVER_1e_VALID",
+        "under_floor_axis": [
+          "GRANULARITY_INDEX",
+          "SHEEN_REGION_RESPONSE"
+        ]
+      },
+      "SATIN_VS_CREAM": {
+        "status": "NOT_COMMON_DRIVER_1e_VALID",
+        "under_floor_axis": [
+          "GRANULARITY_INDEX"
+        ]
+      }
+    }
+  },
+  "phase3_1h_fails": [
+    [
+      "MATTE_VS_SATIN",
+      "milling.micronormal_amplitude",
+      0.9956
+    ],
+    [
+      "PRESSED_VS_MATTE",
+      "milling.micronormal_amplitude",
+      0.9956
+    ],
+    [
+      "SATIN_VS_CREAM",
+      "milling.micronormal_amplitude",
+      0.9824
+    ]
+  ],
+  "A3_resolution": {
+    "new_span_with_0p21": 0.34795,
+    "required": 0.2338,
+    "margin": 0.11415,
+    "seed_spread_of_span_statistic": 0.02382,
+    "decided": true,
+    "resolution": "QUALIFIES \u2014 GRANULARITY is a real responder to grain scale; counted reading decided by SHEEN per the declared readings"
+  },
+  "phase4_conservation": {
+    "MATTE_VS_SATIN": {
+      "GRANULARITY_INDEX": {
+        "measured_inter_family_effect": 0.6828,
+        "driver_interval_spans": {
+          "compression_texture.strength": 0.01651,
+          "milling.microparticle_scale_mm": 0.26188,
+          "milling.microparticle_variance": 0.01522,
+          "milling.surface_smoothing": 0.11132,
+          "sheen_response.sheen": 0.03585,
+          "surface_roughness": 0.15108,
+          "milling.micronormal_amplitude": 0.68301
+        },
+        "sum_of_spans": 1.27487,
+        "axis_floor": 0.1169,
+        "accounted_bound": 1.39177,
+        "conservation": "HOLDS",
+        "residual": 0.0
+      },
+      "SHEEN_REGION_RESPONSE": {
+        "measured_inter_family_effect": 0.4225,
+        "driver_interval_spans": {
+          "compression_texture.strength": 0.02534,
+          "milling.microparticle_scale_mm": 0.10222,
+          "milling.microparticle_variance": 0.00925,
+          "milling.surface_smoothing": 0.00493,
+          "sheen_response.sheen": 0.09293,
+          "surface_roughness": 0.01447,
+          "milling.micronormal_amplitude": 0.25763
+        },
+        "sum_of_spans": 0.50677,
+        "axis_floor": 0.16569,
+        "accounted_bound": 0.67246,
+        "conservation": "HOLDS",
+        "residual": 0.0
+      }
+    },
+    "PRESSED_VS_MATTE": {
+      "GRANULARITY_INDEX": {
+        "measured_inter_family_effect": 0.8942,
+        "driver_interval_spans": {
+          "compaction.compaction_level": 0.07526,
+          "compaction.compression_texture_amplitude": 0.30904,
+          "press.ring_strength": 0.00555,
+          "compression_texture.strength": 0.01651,
+          "milling.micronormal_amplitude": 1.05987
+        },
+        "sum_of_spans": 1.46623,
+        "axis_floor": 0.1169,
+        "accounted_bound": 1.58313,
+        "conservation": "HOLDS",
+        "residual": 0.0
+      },
+      "SHEEN_REGION_RESPONSE": {
+        "measured_inter_family_effect": 0.4471,
+        "driver_interval_spans": {
+          "compaction.compaction_level": 0.0107,
+          "compaction.compression_texture_amplitude": 0.10874,
+          "press.ring_strength": 0.03409,
+          "compression_texture.strength": 0.02534,
+          "milling.micronormal_amplitude": 0.51941
+        },
+        "sum_of_spans": 0.69828,
+        "axis_floor": 0.16569,
+        "accounted_bound": 0.86397,
+        "conservation": "HOLDS",
+        "residual": 0.0
+      }
+    },
+    "SATIN_VS_CREAM": {
+      "GRANULARITY_INDEX": {
+        "measured_inter_family_effect": 0.4423,
+        "driver_interval_spans": {
+          "continuity.soft_specular_roughness": 0.28795,
+          "macrotexture.strength": 0.00071,
+          "sheen_response.sheen": 0.03585,
+          "milling.micronormal_amplitude": 0.46014
+        },
+        "sum_of_spans": 0.78465,
+        "axis_floor": 0.1169,
+        "accounted_bound": 0.90155,
+        "conservation": "HOLDS",
+        "residual": 0.0
+      },
+      "HIGHLIGHT_FWHM": {
+        "measured_inter_family_effect": 0.2843,
+        "driver_interval_spans": {
+          "continuity.soft_specular_roughness": 0.00536,
+          "macrotexture.strength": 0.00713,
+          "sheen_response.sheen": 0.19587,
+          "milling.micronormal_amplitude": 0.04123
+        },
+        "sum_of_spans": 0.24959,
+        "axis_floor": 0.09135,
+        "accounted_bound": 0.34094,
+        "conservation": "HOLDS",
+        "residual": 0.0
+      }
+    }
+  },
+  "owner_prediction": "MATTE_VS_SATIN violates conservation on SHEEN (>=0.331 inter-family effect vs best-driver span 0.221); residual lands on the named builder constants",
+  "owner_approved": false
+}

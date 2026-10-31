@@ -1,0 +1,149 @@
+{
+  "record_type": "palette_variant_visual_proof/1.0",
+  "variant_a": {
+    "id": "PALT-P1A",
+    "role": "ENGINEERING_DEFAULT",
+    "mesh_identity": "ec65ea9402c16230"
+  },
+  "variant_b": {
+    "id": "PALT-P1B",
+    "role": "ES3083_DESIGN_INTENT_VARIANT",
+    "mesh_identity": "999db34286f2b789"
+  },
+  "lighting": "IDENTICAL_NEUTRAL_CLAY_BOTH_VARIANTS",
+  "camera": "IDENTICAL_ORTHOGRAPHIC_PARAMETERS_BOTH_VARIANTS",
+  "views_produced": [
+    "artwork_zone_comparison",
+    "colour_zone_diagram",
+    "interior_crop",
+    "layout_graph_comparison",
+    "open_three_quarter",
+    "open_top",
+    "pan_layout_top",
+    "silhouette_comparison"
+  ],
+  "views_blocked": [
+    {
+      "view": "closed_top",
+      "means": "closed, from above",
+      "state": "BLOCKED_ON_UNBUILT_LID_GEOMETRY",
+      "why": "the lid and its hinge are PALT-M4B-B and have not been built; rendering a closed palette would mean inventing a lid"
+    },
+    {
+      "view": "closed_three_quarter",
+      "means": "closed, three-quarter",
+      "state": "BLOCKED_ON_UNBUILT_LID_GEOMETRY",
+      "why": "the lid and its hinge are PALT-M4B-B and have not been built; rendering a closed palette would mean inventing a lid"
+    }
+  ],
+  "required_view_count": 10,
+  "produced_count": 8,
+  "required_difference_count": 9,
+  "measured_differences": [
+    {
+      "difference": "rectangular rather than circular pans",
+      "a": "CIRCULAR",
+      "b": "RECTANGULAR",
+      "visible": true,
+      "excluded_from_verdict": false
+    },
+    {
+      "difference": "12 rather than 9 pans",
+      "a": 9,
+      "b": 12,
+      "visible": true,
+      "excluded_from_verdict": false
+    },
+    {
+      "difference": "4 x 3 rather than 3 x 3 layout",
+      "a": "3x3",
+      "b": "4x3",
+      "visible": true,
+      "excluded_from_verdict": false
+    },
+    {
+      "difference": "ES3083-derived margins",
+      "a": 10.1,
+      "b": 1.181821,
+      "visible": true,
+      "excluded_from_verdict": false
+    },
+    {
+      "difference": "ES3083-derived spacing",
+      "a": [
+        30.6,
+        30.6
+      ],
+      "b": [
+        26.8,
+        20.8
+      ],
+      "visible": true,
+      "excluded_from_verdict": false
+    },
+    {
+      "difference": "case proportion",
+      "a": 1.0,
+      "b": 1.691746,
+      "visible": true,
+      "excluded_from_verdict": false
+    },
+    {
+      "difference": "artwork hierarchy",
+      "a": [],
+      "b": [
+        "EYE SHADOW",
+        "OUTER GLOW",
+        "BBROSE",
+        "SOMBRA DE OJOS"
+      ],
+      "visible": true,
+      "excluded_from_verdict": false
+    },
+    {
+      "difference": "colour zones",
+      "a": [],
+      "b": [
+        "PANTONE 621 C",
+        "PANTONE 627 C"
+      ],
+      "visible": true,
+      "excluded_from_verdict": false
+    },
+    {
+      "difference": "design character",
+      "a": [
+        "CIRCULAR",
+        9,
+        [
+          3,
+          3
+        ],
+        0,
+        0
+      ],
+      "b": [
+        "RECTANGULAR",
+        12,
+        [
+          4,
+          3
+        ],
+        4,
+        2
+      ],
+      "visible": true,
+      "excluded_from_verdict": false
+    }
+  ],
+  "differences_judged": 9,
+  "differences_not_visible": [],
+  "differences_excluded_from_verdict": [],
+  "DESIGN_INTENT_BRIDGE": "PASS",
+  "verdict_excludes_blocked_views": true,
+  "why": "the two blocked views need a lid that does not exist; they are excluded from the verdict rather than counted as passes. Every difference flag is MEASURED by comparing the two builds — none is asserted, or the verdict could not fail.",
+  "negative_control": "comparing a variant with itself yields nine False flags, so the check can fail",
+  "owner_approved": false,
+  "manufacturing_authority": "NOT_ESTABLISHED",
+  "proof_identity": "e41d6a27a8bf7980"
+}

@@ -1,0 +1,577 @@
+{
+ "record_type": "b4b_2_progress/1.0",
+ "created_at": "2026-07-31",
+ "B4B_2_REFERENCE_CREATION_UI": "IMPLEMENTED",
+ "B4B_2_CONFIG_BOUNDARY": "IMPLEMENTED",
+ "what_was_delivered": {
+  "section": "section 8's prerequisite - the browser reads the limit and the allowlist from rendered context instead of carrying a copy",
+  "module": "apps/pipeline/targets/ui.py: REFERENCE_CATEGORIES, REFERENCE_ONLY_NOTICE, PREVIEWABLE_EXTENSIONS, reference_config()",
+  "rendered": "#reference-config data attributes in _task_list.html",
+  "config": {
+   "max_file_bytes": 20971520,
+   "max_file_mb": 20.0,
+   "allowed_extensions": [
+    ".ai",
+    ".eps",
+    ".jpeg",
+    ".jpg",
+    ".pdf",
+    ".png",
+    ".webp"
+   ],
+   "previewable_extensions": [
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".webp"
+   ],
+   "categories": [
+    {
+     "key": "container",
+     "label": "Container Reference",
+     "description": "A bottle, jar, tube, palette, mascara component or similar physical form used as visual guidance."
+    },
+    {
+     "key": "logo",
+     "label": "Brand Logo",
+     "description": "An approved or provisional brand mark to consider during concept development."
+    },
+    {
+     "key": "label",
+     "label": "Existing Label or Artwork",
+     "description": "Existing typography, front artwork, decoration or layout reference."
+    },
+    {
+     "key": "inspiration",
+     "label": "Visual Inspiration",
+     "description": "Shape, material, styling, mood or competitor inspiration."
+    },
+    {
+     "key": "color",
+     "label": "Colour Reference",
+     "description": "Colour chips, palettes, product photography or material-colour guidance."
+    }
+   ],
+   "reference_only_notice": "All uploaded files are REFERENCE ONLY. They do not confirm dimensions, capacity, material, compatibility or production specifications.",
+   "upload_url": "/api/tasks/create/",
+   "authorized_file_url_template": "/api/tasks/{task_id}/references/{reference_id}/"
+  },
+  "properties_proven": [
+   "the limit and allowlist are read from apps/pipeline/references.py",
+   "no 20 MB literal exists anywhere in static/",
+   "the five persisted keys stay container/logo/label/inspiration/color",
+   "the label says Colour Reference while the key stays color",
+   "previewable excludes .pdf/.ai/.eps so a document can never reach an img",
+   "the only file route is the authorized endpoint; no reference.image.url appears in templates or static"
+  ],
+  "tests_added": 9,
+  "risk": "additive only; the submit path was not touched"
+ },
+ "why_the_slice_was_not_completed": "static/js/poll.js holds the ONLY task-creation submit path in the product. B4b-2 requires rewriting its reference handling into a canonical staged-file inventory with drag and drop, per-file cards, object-URL lifecycle, removal, target-switch preservation and a Packaging omission confirmation, plus roughly forty-five behavioural properties and seven inspected screenshots. I did not have room left in this session to write that and verify it, and a half-rewritten submit path would break the primary way work enters the system - a worse outcome than stopping.",
+ "not_started": [
+  "drag and drop",
+  "selected-file cards",
+  "local previews",
+  "removal",
+  "client preliminary validation",
+  "server-error presentation",
+  "target-switch preservation",
+  "Packaging omission confirmation",
+  "aria-live and focus",
+  "screenshots"
+ ],
+ "suggested_split": {
+  "B4B_2A": "canonical staged-file inventory + file picker + drag/drop + cards + removal + object-URL lifecycle",
+  "B4B_2B": "client preliminary validation + server error-code presentation + text preservation + focus/aria-live",
+  "B4B_2C": "target-switch preservation + Packaging omission confirmation + responsive pass + the seven screenshots"
+ },
+ "next_milestone_after_b4b_2": "B4B_3_REVIEW_BOARD_AND_PIPELINE_MANIFEST",
+ "migration_created": false,
+ "b4b_1_security_intact": true,
+ "B4B_2A_CANONICAL_STAGED_REFERENCE_INVENTORY": "IMPLEMENTED",
+ "b4b_2a_preflight": {
+  "date": "2026-07-31",
+  "question": "section 16 requires 'the project's established JavaScript test strategy'. Before writing 2A I checked what that actually is, because the answer decides how the whole slice is built.",
+  "finding": "there is no npm/jest/vitest toolchain - no package.json, no *.test.js anywhere. Two approaches exist in-repo instead.",
+  "approach_1_source_inspection": {
+   "example": "apps/pipeline/tests/test_2c1_composite_activation.py reads static/js into _JS and asserts on its text",
+   "verdict": "NOT suitable for 2A. Section 16 explicitly rules out tests that search for implementation phrases when behavioural testing is possible, and almost every 2A property - staging, ordering, duplicate filenames, object-URL revocation, FormData contents - is behavioural."
+  },
+  "approach_2_real_browser": {
+   "example": "apps/pipeline/tests/test_browser_gate1.py - StaticLiveServerTestCase + Playwright, headless Chromium, 4 tests",
+   "verdict": "THIS is the established strategy and the one 2A must use. Playwright is installed and already drove the B4a screenshots, so the harness is proven in this repo.",
+   "how_to_assert_object_urls": "shim URL.createObjectURL/revokeObjectURL in page.add_init_script and record calls on window, then read them back - that makes the lifecycle requirements in section 8 behavioural rather than textual",
+   "how_to_assert_formdata": "intercept the fetch via page.route or stub it in an init script and inspect the multipart entries, so 'staged files appear exactly once' is checked against the real payload"
+  },
+  "why_2a_was_not_started": "the slice needs a new staged-reference module, drop zones and aria-live in the template, state CSS, and - the risky part - rewiring poll.js's submit to build its payload from the inventory instead of the native inputs. poll.js holds the only task-creation path in the product. Together with roughly forty-five behavioural properties in a live-browser harness this is a full session's work, and I did not have room left to write it and verify it. Nothing was changed.",
+  "recommended_order_for_the_next_session": [
+   "1. static/js/staged_references.js - config parsing from #reference-config, inventory add/remove/list, object-URL lifecycle, FormData build. Pure and separately testable; touches nothing.",
+   "2. template drop zones + aria-live region + CSS states.",
+   "3. LAST: swap poll.js's payload construction to the inventory. One small, reviewable diff against a module that is already proven.",
+   "4. browser tests throughout, following test_browser_gate1.py."
+  ]
+ },
+ "B4B_2A_1_STAGED_REFERENCE_STATE_MODULE": "IMPLEMENTED",
+ "b4b_2a_1": {
+  "date": "2026-08-01",
+  "module": "static/js/staged_references.js",
+  "wired_into_production": false,
+  "unwired_note": "the module is deliberately unused by poll.js and the templates; a test asserts that isolation. 2A-2/2A-3 wire it in on purpose, with the poll.js edit last.",
+  "public_api": {
+   "factory": "DesignOSStagedReferences.create(options)",
+   "options": [
+    "categories [{key,label}] (required; the five persisted keys, 'color' never 'colour')",
+    "previewableExtensions (from #reference-config; no second allowlist in the module)",
+    "serverFields (optional map; default field name == category key, the existing view contract)",
+    "referenceOnlyLabel",
+    "urlApi {create, revoke} \u2014 the test seam"
+   ],
+   "operations": [
+    "addFiles(category, files) -> {ok, entries|error}",
+    "remove(id) -> {ok, removed}",
+    "list() / get(id) / count()",
+    "clear({confirmedSuccess}) \u2014 ordinary clear refuses during submission; the confirmedSuccess path is for 2A-3 after the server confirms the task",
+    "appendToFormData(fd) -> count",
+    "setSubmitting(b) / isSubmitting()",
+    "dispose() \u2014 teardown, idempotent"
+   ]
+  },
+  "entry_structure": [
+   "id (ref-<n>, monotonic, never reused)",
+   "file (the File object, authoritative binary, never copied)",
+   "category + categoryLabel",
+   "name",
+   "mime",
+   "size",
+   "ext (normalised lowercase)",
+   "previewKind raster|file-card",
+   "objectUrl or null",
+   "order (monotonic, never renumbered on removal)",
+   "referenceOnly badge text"
+  ],
+  "identity_strategy": "monotonic counter \u2014 unique even for the same File staged twice, deterministic for tests",
+  "object_url_ownership": "one URL per previewable raster entry; documents get null so a PDF can never reach an <img>. Revoked URLs are nulled, which is what makes repeated clear()/dispose() unable to double-revoke.",
+  "formdata": "appends each staged File exactly once, in insertion order, under the existing field contract, with its original filename; appends nothing else and never submits",
+  "submitting_lock": "blocks add/remove/ordinary clear; reads stay available; clear({confirmedSuccess:true}) is the explicit success path",
+  "browser_tests": {
+   "file": "apps/pipeline/tests/test_browser_staged_references.py",
+   "harness": "StaticLiveServerTestCase + Playwright headless Chromium, per test_browser_gate1.py",
+   "seams": [
+    "URL.createObjectURL/revokeObjectURL replaced by recorders in an init script (the module's default urlApi then records)",
+    "window.fetch wrapped and recorded",
+    "FormData inspected through its own entries() in the browser"
+   ],
+   "count": 12,
+   "covers": "the 46 required behavioural properties, grouped"
+  },
+  "not_done_here": [
+   "DOM cards",
+   "drop zones",
+   "poll.js wiring",
+   "preliminary validation UX (2B)",
+   "target-switch preservation (2C)"
+  ]
+ },
+ "next_steps": [
+  "Owner review of the root-cause report and recovery roadmap (docs/roadmap/acceptance/) BEFORE any implementation or regeneration"
+ ],
+ "B4B_2A_2_REFERENCE_DOM_AND_CARD_RENDERER": "IMPLEMENTED",
+ "b4b_2a_2": {
+  "date": "2026-08-01",
+  "files": {
+   "ui_module": "static/js/staged_reference_ui.js",
+   "template": "templates/dashboard/_task_list.html (fieldset #reference-section, rendered from reference_config + json_script categories)",
+   "css": "static/css/dashboard.css (B4b-2A-2 block)",
+   "load_order": "index.html: staged_references.js -> staged_reference_ui.js -> poll.js",
+   "tests": "apps/pipeline/tests/test_browser_staged_reference_ui.py (16 Playwright tests)"
+  },
+  "dom_structure": "one fieldset with legend, REFERENCE ONLY notice and guidance; five .ref-category blocks (label zone with title/description/drop text, a focusable multiple file input, a per-category .ref-cards host); polite #ref-live region",
+  "card_renderer": "cards rebuilt from controller.list() on every change - no DOM-only file list. createElement + textContent only; filenames never travel through innerHTML. Raster entries render an <img> from entry.objectUrl (alt = filename, object-fit contain); .pdf/.ai/.eps render a neutral extension card and never an <img>. The UI calls no URL API itself - asserted by counting real createObjectURL calls.",
+  "ref_files_bridge": {
+   "deviation_from_brief": "section 6 asked for a DataTransfer input.files sync as the compatibility mechanism. Reading poll.js showed its payload comes from its own REF_FILES global - populated by change listeners that CONCATENATE and then clear the input - and never from input.files at submit time. A sync-plus-change-dispatch would therefore duplicate every file, and a silent sync would carry nothing.",
+   "mechanism": "window.REF_FILES is an accessor property installed before poll.js evaluates: the getter derives {kind: [File]} from the canonical inventory (it cannot become a second inventory - it IS the canonical one, viewed); poll.js's success-path REF_FILES = {} lands in the setter and performs the confirmed-success cleanup (clear + rerender + revoke).",
+   "native_inputs": "ALSO mirrored per category via DataTransfer - observable and tested, but carrying no authority and dispatching no events",
+   "compat_failure": "if DataTransfer is unavailable, staging is preserved, an aria-live warning is announced (and never overwritten by the add tally), and #btn-submit is disabled so a task cannot quietly ship without its references",
+   "removed_in": "B4b-2A-3, which switches poll.js to DesignOSReferenceUI.appendToFormData"
+  },
+  "integration_handle": "window.DesignOSReferenceUI: controller, list, count, appendToFormData, setSubmitting (also disables inputs/remove buttons), clearAfterSuccess, isCompatibilityFailed",
+  "defect_found_by_real_mouse_testing": "in the narrow composer column the card's detail line overflowed its flex item and its text hit-tested above the transparent remove button - a real user's click on the remove control would have hit text. element.click() worked; only a genuine coordinate click exposed it. Fixed in CSS (ellipsis clip + position:relative on the button).",
+  "wire_evidence": "the E2E test intercepts POST /api/tasks/create/ and reads the multipart body: name=\"container\"; filename=\"shape.png\" and name=\"color\"; filename=\"chips.pdf\" present, no colour field, design_target product_container; after the fulfilled 201 the inventory, cards and object URLs are all cleared. Packaging submits application/json with no filename= and no staged file.",
+  "poll_js": "byte-for-byte unchanged"
+ },
+ "B4B_2A_3_SUBMISSION_INTEGRATION": "IMPLEMENTED",
+ "b4b_2a_3": {
+  "date": "2026-08-01",
+  "poll_js_diff": "34 insertions, 47 deletions \u2014 net smaller. Removed: the whole reference block (inventory global, change listeners, thumbnail renderer, splice-removal, has-files probe) and its init call. Added: target-only transport branch (Product Container is ALWAYS multipart, zero files valid), the missing-handle and append-exception guards that refuse to dispatch, setSubmitting around the request, clearAfterSuccess on confirmed 201 only, and a catch so network failure or malformed JSON restores interaction instead of escaping.",
+  "bridge_removed": "the accessor global, FileList mirroring, DataTransfer compat mode and its submit pause are all gone from active code \u2014 a grep over static/ and templates/ returns empty, asserted in-suite. Native inputs are pickers whose value clears on staging; no file-transfer browser capability is needed anywhere.",
+  "handle_scope": "poll.js touches only the public handle (appendToFormData, setSubmitting, clearAfterSuccess); the state module never appears in poll.js \u2014 asserted.",
+  "wire_tests": "apps/pipeline/tests/test_browser_submission_wire.py \u2014 14 Playwright tests parsing intercepted multipart bodies: zero refs valid, five categories in order, color never colour, duplicates and the same File twice as distinct parts, removed files absent, FORGED input.files cannot reach the payload, submission works with DataTransfer deleted, append called for container and not packaging (packaging held files stay held), double-click one request, a genuinely stalled in-flight request blocks staging/removal, abort/4xx/5xx retain inventory+cards+URLs and restore interaction, 201 clears everything including picker values, missing handle and throwing append refuse to dispatch.",
+  "shared_harness": "RefUiHarness mixin in test_browser_staged_reference_ui.py (auth context, URL recorders, recorded auto-dismissed dialogs)",
+  "playwright_gotcha": "page.evaluate CALLS an expression that yields a function \u2014 assignments of functions must be wrapped in an IIFE or the assigned function executes"
+ },
+ "B4B_2B_REFERENCE_VALIDATION_AND_ERROR_PRESENTATION": "IMPLEMENTED",
+ "b4b_2b": {
+  "completed_at": "2026-08-01",
+  "validation_layers": {
+   "browser_preliminary": "category / emptiness / extension / size only, all read from #reference-config \u2014 no signature is ever read in JS; a refused file owns no inventory entry and no object URL",
+   "server_authoritative": "unchanged B4b-1 core; every Rejection now carries file_index \u2014 the position of the file within its CATEGORY in multipart order, which equals the client per-category staging order"
+  },
+  "duplicate_filename_correlation": "category + file_index, never filename alone \u2014 two files named logo.png in one category are distinguished by position",
+  "error_presentation": {
+   "client_refusals": "NOT ADDED rows in #ref-errors, dismissable, role=alert, filename + category label + reason",
+   "server_verdicts": "REJECTED \u2014 <owner wording> worn by the STAGED card (.server-error); the file stays staged, previewed and removable; a summary row states no task was created and the files are still staged in the browser",
+   "general_errors": "network / malformed / non-reference 4xx-5xx on a container flow render one .ref-error-general row and never mark an individual file",
+   "known_code_map": "SERVER_MESSAGES maps the 7 B4b-1 codes to owner wording; unknown codes fall back to the server message",
+   "focus": "first rejected card\u2019s remove control, else first error row; deferred one tick because the submit lock holds remove buttons disabled until poll.js finally runs",
+   "announcements": "#ref-live aria-live on every refusal and verdict"
+  },
+  "alerts_replaced": {
+   "REFERENCE_UI_UNAVAILABLE": "missing DesignOSReferenceUI handle \u2014 poll.js writes the row directly (_referenceIntegrationError); alert() only if #ref-errors itself is absent",
+   "REFERENCE_PAYLOAD_BUILD_FAILED": "appendToFormData threw",
+   "TASK_CREATE_FAILED": "non-reference server refusal on a container flow",
+   "SUBMISSION_FAILED": "network failure / malformed response",
+   "kept": "Packaging (JSON) flows keep the plain alert \u2014 out of scope"
+  },
+  "state_preservation": "task text and every staged file (entries, cards, object URLs) survive any 4xx/5xx/network failure; success remains the only clearing moment",
+  "files": {
+   "server": "apps/pipeline/references.py (Rejection.file_index, validate_all enumerate, error_payload)",
+   "ui": "static/js/staged_reference_ui.js (preValidate, SERVER_MESSAGES, error rendering, error API: clearErrors/showClientErrors/showServerErrors/showGeneralError/focusFirstError)",
+   "submission": "static/js/poll.js (structured branches + _referenceIntegrationError)",
+   "template": "templates/dashboard/_task_list.html (#ref-errors, final-validation guidance line)",
+   "css": "static/css/dashboard.css (B4b-2B block \u2014 textual badges, never colour alone)"
+  },
+  "tests": {
+   "server_contract": "test_b4b1_reference_core.py::TestFileIndexContract (7) \u2014 per-category indices, duplicates distinguished, nothing created, no internal paths, success shape pinned",
+   "browser": "test_browser_reference_errors.py (20) \u2014 preliminary refusals, partition staging, no client signature reads, dismissal, focus, server card marking incl. duplicate positions, unmatched fallback, state preservation, resubmission clearing, general errors, packaging alert untouched, dialogs asserted empty throughout",
+   "updated": "test_browser_submission_wire.py: the two pre-dispatch failure tests now assert structured rows, not dialogs"
+  },
+  "migration_created": false,
+  "remaining_in_b4b_2": [
+   "B4b-2C: target-switch preservation, Packaging omission confirmation, screenshots"
+  ]
+ },
+ "B4B_2C_TARGET_SWITCHING_PACKAGING_CONFIRMATION_AND_VISUAL_VALIDATION": "IMPLEMENTED",
+ "next_milestone": "VQR_1_INTEGRATE_OWNER_ACCEPTED_M3_BACKBONE",
+ "b4b_2c": {
+  "completed_at": "2026-08-01",
+  "target_switching": {
+   "mechanism": "the switch is a VIEW change only \u2014 #container-inputs hides, the canonical inventory in staged_references.js is never touched; poll.js reports visibility to the UI module via DesignOSReferenceUI.setTargetVisibility",
+   "preserved_across_round_trips": [
+    "entries, client ids, insertion order",
+    "object URLs (none created or revoked by a switch)",
+    "server-error card states",
+    "preliminary NOT ADDED rows (not duplicated)",
+    "error summary",
+    "shared fields (project name, brief, product)",
+    "container hints (hidden, not cleared)",
+    "values typed while Packaging was selected"
+   ],
+   "no_request_dispatched_by_switching": true,
+   "controller_decoration": "the UI-exposed controller wraps addFiles/remove/clear so ANY mutation repaints cards, errors and the held notice; verdicts are pruned when their entry goes"
+  },
+  "held_reference_notice": {
+   "element": "#ref-held-notice (role=status, outside #container-inputs)",
+   "shown": "only when a non-container target is visible AND canonical count > 0; exact count, correct plurals, correction note only when server-error cards exist",
+   "count_source": "controller.count() alone \u2014 preliminary rejections, dismissed rows, native inputs and DOM cards can never inflate it",
+   "action": "Return to Product Container button -> chip click + focus first staged remove control (legend fallback)"
+  },
+  "omission_confirmation": {
+   "controller": "static/js/omission_dialog.js \u2014 presents the native <dialog id=omission-dialog> via showModal; one outcome per open (settled guard), callbacks dropped on settle",
+   "actions": {
+    "cancel": "close, keep everything, focus back to the submit control (explicit opener)",
+    "return": "close, switch to Product Container, focus references, no dispatch",
+    "submit": "close, submitTask(true) \u2014 exactly one JSON request, no appendToFormData"
+   },
+   "one_shot": "approval is a call parameter, never stored; every failure (abort/4xx/5xx/malformed) requires a fresh confirmation; Escape = Cancel; Enter on open hits the autofocused Cancel; background inert + explicit Tab wrap; the btn-submit click listener is an arrow wrapper so the event object can never approve",
+   "success": "confirmed Packaging 2xx after approval clears the held inventory, revokes all object URLs, hides the notice, clears cards/errors/pickers (clearAfterSuccess)",
+   "no_confirm_alert": true
+  },
+  "packaging_regression_boundary": "Packaging stays JSON on the existing endpoint; no reference bytes or filenames in the body; appendToFormData not called; zero-held submits need no confirmation; Product Container submission never opens the dialog",
+  "responsive_corrections": [
+   ".ref-grid: viewport-width 2-col replaced with repeat(auto-fit, minmax(200px, 1fr)) \u2014 two columns inside the ~250px queue panel crushed filenames to one ellipsised letter (screenshot finding)",
+   ".omission-dialog [hidden] display:none !important \u2014 .composer-hint display:block silently defeated the UA [hidden] rule, showing the correction note without server errors (screenshot finding; test hardened to computed visibility)",
+   "omission actions stack full-width <=640px; held notice Return wraps to its own row"
+  ],
+  "screenshot_evidence": {
+   "directory": "docs/roadmap/b4b-2/",
+   "manifest": "screenshot_manifest.json (viewport/route/target/inventory/state per image)",
+   "capture": "apps/pipeline/tests/b4b2_screenshot_capture.py \u2014 explicit run only, live-server Playwright, real PNG bytes for genuine thumbnails",
+   "images": [
+    "desktop_product_container_empty.png",
+    "desktop_all_five_categories_staged.png",
+    "desktop_drag_active.png",
+    "desktop_server_validation_error.png",
+    "mobile_multiple_references.png",
+    "packaging_references_held.png",
+    "packaging_omission_confirmation.png",
+    "mobile_validation_error.png",
+    "product_container_restored_after_switch.png"
+   ],
+   "inspection_findings_fixed": [
+    "element screenshots painted the offscreen composer black -> scroll-into-view + viewport capture",
+    "correction note visible without server errors ([hidden] defeated by CSS)",
+    "filenames unreadable in 2-col grid inside the narrow panel"
+   ]
+  },
+  "tests": {
+   "test_browser_target_switching.py": 15,
+   "test_browser_packaging_omission.py": 21,
+   "test_browser_responsive_a11y.py": 16,
+   "updated": [
+    "test_browser_submission_wire.py (packaging append test now confirms through the dialog; success clears held)",
+    "test_browser_staged_reference_ui.py (packaging JSON test confirms through the dialog; harness gained viewport + mobile-drawer support)"
+   ]
+  },
+  "migration_created": false
+ },
+ "B4B_3A_REVIEW_BOARD_REFERENCE_PRESENTATION": "IMPLEMENTED",
+ "B4B_3_REVIEW_BOARD_AND_PIPELINE_REFERENCE_MANIFEST": "IMPLEMENTED",
+ "b4b_3a": {
+  "completed_at": "2026-08-01",
+  "reused": "existing Review Board References section (ReviewBoardData.references) + TaskReference + the B4b-1 authorized endpoint \u2014 no new model, relationship or storage path; no migration",
+  "data_layer": {
+   "where": "apps/pipeline/review_board.py",
+   "reference_item": "enriched with id/category/category_label/category_note/filename/media_type/file_size(+display)/uploaded_at/source/status/previewable/doc_type/open_url/download_url; legacy name/image_url/label kept",
+   "urls": "ONLY /api/tasks/<id>/references/<rid>/ (+?download=1) \u2014 ref.image.url / MEDIA_URL removed from the payload (they were present before this slice)",
+   "ordering": "fixed category order (container,logo,label,inspiration,color) then persisted ordering, created_at, pk \u2014 never alphabetical",
+   "labels": "shared with the creation UI (REFERENCE_CATEGORIES); stored key stays color, label says Colour Reference; \u00a74 notes in REFERENCE_REVIEW_NOTES",
+   "references_expected": "new additive flag \u2014 True only for product_container, so Packaging/Complete Product empty boards render exactly as before",
+   "no_bytes": "builder touches metadata only (proven by deleting the stored file and building the board); one query regardless of reference count"
+  },
+  "endpoint": "?download=1 toggles ONLY the disposition (attachment + safe original filename); same authorization; selects nothing",
+  "renderer": "static/js/review_board.js _rbReferences/_rbReferenceCard \u2014 section titled References; grouped h4 headings + notes; raster <img> via authorized URL (alt=filename, object-fit contain); PDF/AI/EPS = neutral tile + \"<type> document \u2014 no visual preview\", never <img>; metadata line + <time>; stored status as badge text; Open/Download with filename in aria-labels; exact empty state for expected targets, nothing otherwise; all user text through escapeHtml",
+  "tests": {
+   "server": "test_b4b3a_review_board_references.py (15): grouping/ordering vs alphabetical, colour label, notes non-authoritative, duplicates, metadata-from-row, authorized URLs, doc types (incl. both .ai interiors), no raw path/URL in payload, no bytes read, references_expected, constant query count, download disposition + authz",
+   "browser": "test_browser_review_board_references.py (12): group order/labels/notes, preview loads via authorized endpoint (naturalWidth>0), neutral doc cards never img, metadata/badge/actions, duplicates, exact empty state, packaging renders no section, concepts stay separate, no dieline language, XSS filenames neutralized, long Unicode contained, 390px geometry",
+   "updated": "test_review_board.py key-set (+references_expected); test_reference_uploads.py label -> Container Reference"
+  },
+  "screenshots": "docs/roadmap/b4b-3a/ \u2014 6 images + manifest (b4b3a_screenshot_capture.py, explicit run only); inspected, no defects found this round",
+  "browser_gotcha": "task-item real-mouse clicks are intercepted by the persistent #vq-program section \u2014 board tests invoke loadTask(id) directly (same production function)",
+  "migration_created": false
+ },
+ "B4B_3B_PIPELINE_REFERENCE_MANIFEST": "IMPLEMENTED",
+ "b4b_3b": {
+  "completed_at": "2026-08-01",
+  "module": "apps/pipeline/services/reference_manifest.py",
+  "schema": "design_os.task_reference_manifest/1.0",
+  "category_catalog": "keys/labels/order shared via targets/ui.py REFERENCE_CATEGORIES; \u00a76 usage semantics (guidance + allowed + forbidden incl. production_authority everywhere) live once in reference_manifest.USAGE_SEMANTICS",
+  "ordering": "reference_rows_in_display_order \u2014 fixed category order, persisted ordering, uploaded_at, pk; the Review Board imports the SAME helper so the surfaces cannot disagree (consistency-tested)",
+  "content_locator": "{kind: task_reference, task_id, reference_id} \u2014 no storage key, path, FileField URL, MEDIA_URL, bytes, base64 or credentials anywhere in the manifest (payload-scanned in tests); the browser endpoint deliberately does not appear in it",
+  "no_byte_read": "builder uses row metadata + storage.exists (stat); proven by patching FileSystemStorage.open AND builtins.open to raise while building; missing objects become availability=MISSING and the manifest stays usable for audit",
+  "resolver": "resolve_task_reference_content(task_id=, reference_id=) \u2014 verifies row existence + task scope, REFERENCE_ONLY status, accepted persisted media type, size limit, root-bounded realpath (SuspiciousOperation caught), object existence, stat-size == recorded size; returns ResolvedReferenceContent (identity + metadata + BytesIO whose .name is the SAFE filename) \u2014 never a path, URL or model; verify_task_reference_content is the stat-only variant",
+  "attachment_policy": "ELIGIBLE_RASTER = image/png|jpeg|webp only, deduped by reference_id, manifest order kept; PDF/AI/EPS = METADATA_ONLY_FOR_CURRENT_IMAGE_STAGE \u2014 never converted, rasterized or sent to the provider",
+  "provider_adapter": "existing openai images.edit interface already accepts image files, so eligible rasters flow through the EXISTING VisualReferenceBundle (_upload_paths is now manifest-driven and resolver-verified) \u2014 no parallel provider API, no PROVIDER_REFERENCE_ATTACHMENT_ADAPTER_PENDING needed",
+  "missing_content": "an eligible upload that fails resolution is NEVER silently skipped: bundle.upload_content_errors carries {code REFERENCE_CONTENT_UNAVAILABLE, reference_id, category, original_filename} and BOTH pre-spend validators refuse \u2014 zero provider calls, persisted refusal via the existing prespend audit log",
+  "front_half": {
+   "aria": "ARIAAgent._reference_manifest() builds once per run for product_container ONLY (other targets get {} so container semantics cannot leak), audit-logs the full manifest via AgentLog (\u00a717)",
+   "creative_director": "uploaded_reference_context appended to run_structured reference_summaries (\u00a712)",
+   "prompt_engineer": "generic agent gains an Owner-uploaded references (REFERENCE ONLY) block; the container structured contract carries the same text through product_block into build_regeneration_prompts (\u00a713); .ai remains the artwork source of truth",
+   "queue": "payload stays the bare task id (asserted)"
+  },
+  "audit_strategy": "existing AgentLog rows \u2014 \"ARIA: reference manifest built\" with the full metadata manifest as payload + the existing prespend persistence for refusals; no new model, no migration",
+  "packaging_isolation": "ARIA manifest {} for non-container targets even with planted rows; packaging bundles carry no upload paths/errors; omission confirmation (B4b-2C) remains the client-side gate",
+  "ire_boundary": "references stay guidance: no Image Trace, no embedding as final vector artwork, no editability claim \u2014 constraints carried verbatim in both reasoning contexts",
+  "tests": "test_b4b3b_reference_manifest.py (39): manifest 15, resolver 11, pipeline context 12, review-board consistency 1; legacy grounding test updated to B4b-1 metadata rows (untyped legacy rows are not attachment-eligible)",
+  "migration_created": false
+ },
+ "PRODUCT_CONTAINER_CONFIRM_PROFILE_UI_1_EDITOR_AND_PREVIEW": "IMPLEMENTED",
+ "PRODUCT_CONTAINER_CONFIRM_PROFILE_UI": "IMPLEMENTED",
+ "confirm_profile_ui1": {
+  "completed_at": "2026-08-01",
+  "b3_contract_audit": {
+   "existing_ui": "confirm_profile.js already carried the 2B-3V COMBINED confirmation (archetype cards, chips, mm sliders, authority table, zone cards, live POST + resume) \u2014 UI-1 enhanced it in place; no second editor, no parallel endpoint, backend untouched",
+   "fields": "profile: archetype/variant/cap_style/height_mm/width_mm/depth_mm/neck_ratio/cap_*_mm; versioned record container_profile/1.0 (body_*_mm, cap_type)",
+   "archetypes": "SUPPORTED_ARCHETYPES = bottle/jar/tube; \"other\" exists only as a B4a hint value \u2014 presented as a legitimate editor selection flagged confirmable: false, never hidden, never converted to bottle",
+   "vocabulary": "variants cylindrical/tapered/square/slim/standard; caps screw/pump/flip/lid/crimp/dropper (dropper was MISSING from the old JS bottle catalog although the live dropper-bottle pilot uses it \u2014 fixed)",
+   "ranges": "height 40-200, width 20-120, depth 10-120, neck 0.2-0.7 (the silhouettes clamp); defaults 110/40/40/0.42 from the ContainerProfile dataclass",
+   "state_transition": "awaiting_container_profile -> generating_dieline via the untouched ConfirmContainerProfileView (UI-2 scope)"
+  },
+  "editor_config": "container_profile_editor_config/1.0 in the task detail payload (product_container only, None elsewhere): archetypes+labels+descriptions+confirmable, per-archetype variants/caps, bounded proportions, defaults, INITIAL_HINTS_ONLY hints parsed from the B4a bracket block, gate_eligible, disclaimers. CONTAINER_OPTS deleted from the browser \u2014 no duplicate catalog remains (tested).",
+  "editor": "archetype radiogroup (roving tabindex, arrow keys, \"\u2713 selected\" text mark), config-driven chips whose invalidation CLEARS visibly with a note (never silent substitution; explicit empty states for Other), slider+number proportions kept in sync with aria-valuetext, one local state object + snapshot, dirty status region, Reset to Suggested Profile (disabled when clean), \"Profile selection incomplete\" gating; the EXISTING confirm button is disabled with an honest note while incomplete or Other \u2014 no dead control was added and no confirmation was implemented",
+  "preview": "deterministic canvas renderer driven only by editor state (no network, no provider, nothing persisted): bottle body/shoulder/neck/closure incl. dropper collar+bulb, jar broad body+lid, tube body+dispensing closure/crimp, Other = dashed neutral custom silhouette (never a fabricated bottle); \"PROFILE PREVIEW \u2014 NOT PRODUCTION GEOMETRY\" badge + textual accessible summary",
+  "tests": {
+   "server": "test_confirm_profile_ui1.py (20)",
+   "browser": "test_browser_profile_editor.py (24: 17 interaction + 7 responsive/a11y)"
+  },
+  "screenshots": "docs/roadmap/confirm-profile-ui-1/ \u2014 8 images + manifest (ui1_screenshot_capture.py, explicit run only); inspected clean",
+  "migration_created": false,
+  "not_done_here": "POST/confirmation, GateDecision, state change, reconstruction \u2014 UI-2"
+ },
+ "PRODUCT_CONTAINER_CONFIRM_PROFILE_UI_2A_CONFIRMATION_AND_DISPATCH": "IMPLEMENTED",
+ "confirm_profile_ui2a": {
+  "completed_at": "2026-08-01",
+  "safety_guard": "\u00a70 satisfied atomically: the reviewed flow lands in the same commit that removes the direct POST \u2014 the page button now only OPENS the dialog (browser tests assert zero requests from opening/review/cancel/escape), and the server independently strict-validates every submission; no deployed revision ever had an enabled unreviewed path plus the UI-1 editor",
+  "backend_findings": "endpoint POST /api/tasks/<id>/confirm_container_profile/ (IsReviewer); pre-UI-2A the sanitizer SILENTLY IGNORED junk numerics (Infinity passed float()), accepted arbitrary 40-char variant/cap strings, never checked design_target or gate state before writing rejected proposals, dispatched before the gate writes were atomic, and a repeated POST with a DIFFERENT profile silently resumed the old one",
+  "other_outcome": "B \u2014 silhouettes builds bottle/jar/tube only; Other stays selectable + nonconfirmable with the exact \u00a75 wording and OTHER_CUSTOM_PROFILE_RECONSTRUCTION_PENDING recorded (editor config pending_code + server 400); parent milestone NOT complete",
+  "request_schema": "{profile: {archetype, variant, cap_style, height_mm, width_mm, depth_mm, neck_ratio, cap_*_mm}, zones: [...]} \u2014 unchanged 2B-1 combined contract; values from the editor state only",
+  "server_validation": "validate_container_profile_payload (targets/ui catalog+ranges = the SAME source as the editor config): finite numerics in range, archetype/variant + archetype/closure compatibility, PROFILE_VALIDATION_FAILED 400 creates nothing; design-target + gate-state preconditions refuse before any spec write",
+  "idempotency": "confirmed spec = decision identity: identical replay \u2192 replayed:true resume with no new GateDecision/dispatch; DIFFERENT profile \u2192 409 PROFILE_ALREADY_CONFIRMED naming the differing fields; empty profile stays the legitimate resume body",
+  "transaction": "spec persistence + selected-concept lineage + state CAS + GateDecision in ONE transaction.atomic block; worker dispatch strictly after commit; dispatch failure \u2192 gate preserved + generation_error RECONSTRUCTION_DISPATCH_FAILED + honest response; retry duplicates nothing",
+  "gate_decision": "existing GateDecision(gate=container_profile, approve) \u2014 notes now reference schema version, profile hash, combined hash and HUMAN_CONFIRMED_CONCEPT_ONLY; the exact payload lives hash-referenced in container_profile/1.0; authority also persisted on container_confirmation and returned in the response",
+  "dialog": "native modal inside #profile-view: exact values, concept-only + gate-consequence sentences, Cancel (autofocus) / Review Profile / Confirm & Reconstruct; Escape=Cancel pre-dispatch and inert in flight; explicit Tab wrap; settled+in-flight guards make double interaction one request; visible locked Confirming\u2026 state",
+  "client_recovery": "409 \u2192 dialog closes, structured refusal rendered, editor/preview/dirty untouched, focus to the error; network \u2192 \u00a717 state inspection via /status/ before any retry (confirmed \u2192 render confirmed; else honest not-confirmed message); 5xx \u2192 editor preserved",
+  "confirmed_ui": "render.js routes container generating_dieline WITH container_confirmation to the frozen confirmed view (HUMAN-CONFIRMED CONCEPT PROFILE badge, persisted values, schema+authority, Reconstruction queued/running) \u2014 refresh cannot resurrect an editable editor; packaging generating_dieline untouched",
+  "tests": {
+   "server": "test_confirm_profile_ui2a.py (19)",
+   "browser": "ConfirmationDialogBrowserTests (10)",
+   "updated": "harness gained csrftoken cookie (Django 4.1+ secret-in-cookie) + reviewer role in profile fixtures; two label pins updated for the dialog-scoped Confirm & Reconstruct"
+  },
+  "migration_created": false
+ },
+ "PRODUCT_CONTAINER_CONFIRM_PROFILE_UI_2B_1_STATUS_AND_POLLING": "IMPLEMENTED",
+ "confirm_profile_ui2b1": {
+  "completed_at": "2026-08-01",
+  "lifecycle_audit": "confirmation \u2192 generating_dieline + container_resume identity; worker resume_aria_container_profile \u2192 reconstruct_container; failure \u2192 spec.generation_error (RAW exception text, may embed paths) + status back to awaiting_container_profile; success \u2192 awaiting_gate_2 + design_preview_ai/.design_preview artifacts; NO persisted phase records; worker start/success ARE persisted as ARIA AgentLog milestones; existing browser loop = SSE + 10s interval fallback with two real gaps (no post-await stale check; overlapping interval callbacks possible)",
+  "status_schema": "container_reconstruction_status/1.0 built by services/reconstruction_status.build_container_reconstruction_status \u2014 embedded in the existing /status/ payload (no new endpoint); None for other targets / unconfirmed / no GateDecision",
+  "normalization": "QUEUED (resume identity, no start log) / RUNNING (persisted ARIA start-log evidence) / COMPLETED (post-reconstruction status AND recorded .ai artifact) / FAILED (generation_error incl. RECONSTRUCTION_DISPATCH_FAILED, or task failed) / RECONSTRUCTION_STATUS_INCONSISTENT for record sets that do not describe one clean state (success status without the required output, generating without a resume identity)",
+  "phase_progress_policy": "phase is ALWAYS null in 1.0 \u2014 no persisted phase records exist and none were invented; progress is an indeterminate <progress> for active states; no numeric percentage anywhere (tested)",
+  "artifact_policy": "availability booleans only (ai/png); no path, storage key, MEDIA_URL, provider response or traceback; stored failure text is path-scrubbed ([path removed]) and bounded",
+  "authorization": "rides the existing /status/ endpoint (IsAuthenticated + IsTeamMember, non-leaking 403); payload None where not applicable",
+  "polling_controller": "poll.js interval fallback rebuilt: settle-then-schedule (never overlapping), generation token + post-await activeTask checks make stale responses inert (SSE refresh got the same post-await guard), terminal snapshots stop the loop (and loadTask never starts one), poll_after_ms from the payload clamped by POLL_MIN_MS/POLL_MAX_MS with POLL_FALLBACK_MS \u2014 all central constants; STATUS_RETRY_LIMIT bounded retries then a persistent note; STATUS_REFRESH_FAILED never claims RECONSTRUCTION_FAILED",
+  "status_ui": "_reconStatusHtml in the frozen confirmed panel: coarse labels (Queued for reconstruction / Reconstruction in progress / completed / failed / inconsistent), honest dispatch line, indeterminate progress, textual AI/PNG availability, timestamps, role=status + role=alert, snapshot-signature skip so identical polls never rebuild the DOM (no re-announcement, no focus churn); legacy rendering kept as fallback (2B-3V pins intact); existing Resume button preserved on FAILED",
+  "defects_found": [
+   "/status/ was cacheable: Chromium served repeated polls from memory cache \u2014 Cache-Control: no-store added (a frozen status view in real browsers, found via Playwright)",
+   "pre-existing loop could paint task A snapshots onto task B after a switch (no post-await stale check) \u2014 fixed with the generation token"
+  ],
+  "test_gotcha": "time.sleep blocks sync-Playwright event dispatch \u2014 request-event counters read stale until the next Playwright call; use page.wait_for_timeout",
+  "tests": {
+   "server": "test_confirm_profile_ui2b1.py (13)",
+   "browser": "test_browser_recon_status.py (12)"
+  },
+  "migration_created": false
+ },
+ "PRODUCT_CONTAINER_CONFIRM_PROFILE_UI_2B_2A_RESULT_PRESENTATION_AND_ACCESS": "IMPLEMENTED",
+ "confirm_profile_ui2b2a": {
+  "completed_at": "2026-08-01",
+  "artifact_audit": "artifacts are PackagingOutput FileFields (design_preview_ai = PDF-based .ai named container_task_<id>.ai; design_preview = optional PNG \u2014 pdf_to_png failure does NOT invalidate the AI per the existing contract); no per-artifact rows, hashes or timestamps persisted; fidelity reports live in the spec; /files/<path> is authenticated but NOT task-scoped, so a focused role-addressed endpoint was added instead of reusing it",
+  "result_schema": "container_reconstruction_result/1.0 (services/reconstruction_status.py) \u2014 COMPLETED-only (None otherwise; a missing .ai downgrades the STATUS to INCONSISTENT and no result is fabricated); roles AI_SOURCE_OF_TRUTH / PNG_PREVIEW_ONLY; safe basename, role-fixed media types, size via a storage stat, sha256 honestly null (never persisted), validation_state RECORDED/NOT_RECORDED from the spec fidelity report; deleted storage is caught by the availability stat (available:false, no URL)",
+  "endpoint": "GET /api/tasks/<id>/reconstruction-artifact/<role>/ (IsAuthenticated+IsTeamMember) \u2014 role selects the artifact (never a path), applicability rides the same status derivation, dielines root-bounded realpath, .ai ALWAYS attachment (never inline even though PDF-based), png inline with ?download=1 disposition toggle, non-leaking 404 for every mismatch, serving mutates nothing",
+  "presentation": "render.js: awaiting_gate_2 with a result (or an INCONSISTENT status) ALSO shows the frozen confirmed panel beside the untouched Gate-2 approval UI; _reconResultHtml renders the AI source card (badge, meta, Download .AI, source-of-truth + concept-only sentences) and the PNG preview card (authorized img, object-fit contain, Open/Download, inline onerror fallback to PREVIEW_UNAVAILABLE keeping the AI card intact); COMPLETED status wording now says the result is presented below (stale next-step sentence fixed via screenshot inspection)",
+  "test_gotchas": "route interception of the panel-rendered <img> proved unreliable in this Playwright build (compiled-regex and wildcard-suffix globs never matched; even a matching glob missed the real panel load while intercepting probe-injected images) \u2014 the client fallback test forces a 404 on the live img instead",
+  "tests": {
+   "server": "test_confirm_profile_ui2b2a.py (12)",
+   "browser": "test_browser_recon_result.py (13)"
+  },
+  "screenshots": "docs/roadmap/confirm-profile-ui-2b-2a/ \u2014 7 images + manifest (ui2b2a_screenshot_capture.py); inspected; one wording defect found and fixed",
+  "migration_created": false
+ },
+ "PRODUCT_CONTAINER_CONFIRM_PROFILE_UI_2B_2B_RECOVERY_RETRY_AND_FINAL_VALIDATION": "IMPLEMENTED",
+ "PRODUCT_CONTAINER_WORKFLOW": "IMPLEMENTED_BUT_NOT_OWNER_ACCEPTED",
+ "OTHER_CUSTOM_PROFILE_RECONSTRUCTION": "OTHER_CUSTOM_PROFILE_RECONSTRUCTION_PENDING",
+ "confirm_profile_ui2b2b": {
+  "completed_at": "2026-08-01",
+  "retry_audit": "the empty-body resume was authoritative but had two gaps: a DISPATCH-FAILED task (status generating_dieline + marker) answered \"already running\" WITHOUT redispatching, and an inconsistent completion (awaiting_gate_2 without the .ai) had no recovery transition at all. Worker-failure recovery already worked via the awaiting_container_profile CAS.",
+  "failure_classification": "STATUS_REFRESH_FAILED (client-only, never retryable) / RECONSTRUCTION_DISPATCH_FAILED (retry = redispatch, spec-marker CAS under select_for_update) / RECONSTRUCTION_WORKER_FAILED (retry via status CAS) / RETRYABLE_RECONSTRUCTION_INCONSISTENCY (success state without its .ai \u2014 CAS from the post-reconstruction status) / RECONSTRUCTION_ARTIFACT_INVALID + TECHNICAL_INTERVENTION_REQUIRED (tampered/unexplainable records: no retry, adjudication first) / PREVIEW_UNAVAILABLE (completed stays completed; no retry)",
+  "eligibility": "retry block inside container_reconstruction_status/1.0 (eligible, reason_code, requires_owner_confirmation, active_attempt, existing_gate_decision_id, confirmed_profile_hash, attempts_so_far, action=RESUME_EXISTING_CONFIRMED_PROFILE); server-side eligibility is revalidated inside the retry request \u2014 a rendered button is never trusted. COMPLETED now also demands the .ai STORAGE OBJECT (stat), so record-without-object is an inconsistency.",
+  "reuse_not_reconfirm": "every retry derives the dispatch payload from the PERSISTED confirmed record; one GateDecision throughout (tested across double clicks, replays, queue failures and full recovery); responses say replayed:true for no-op replays and retry_reason for accepted retries; container_retry_history (spec) + an actor-attributed AgentLog row preserve every attempt and its previous failure",
+  "exactly_once": "task-status CAS (worker failure, inconsistent completion) and a select_for_update spec-marker CAS (dispatch failure) make each accepted retry dispatch once; dispatch after the transaction; queue failure re-marks DISPATCH_FAILED with an honest 502 and remains retryable",
+  "client": "eligibility-gated \"Retry reconstruction\u2026\" opener; native reviewed dialog (reuse statements, failure code, decision id, availability; Cancel autofocus, Review Confirmed Profile focuses the frozen summary, explicit Tab wrap, Escape=Cancel pre-dispatch and inert in flight, settled+in-flight one-shot guards); accepted retry \u2192 loadTask \u2192 QUEUED + polling resumes once; \u00a712 ambiguity: reconcile through /status/ (accepted\u2192render active; eligible\u2192retry-again message; else RETRY_STATE_UNRESOLVED), never a blind re-POST",
+  "gate2_continuity": "recovered completion renders result + Gate-2 approval UI together; clean results expose no retry; Gate-2 decision rows proven untouched by retry",
+  "tests": {
+   "server": "test_confirm_profile_ui2b2b.py (18)",
+   "browser": "test_browser_retry_recovery.py (8)",
+   "matrix": "324 across the Confirm Profile + B4b + board suites"
+  },
+  "screenshots": "docs/roadmap/confirm-profile-ui-2b-2b/ \u2014 13 images + manifest through the REAL retry flow; inspected clean",
+  "migration_created": false
+ },
+ "PRODUCT_CONTAINER_END_TO_END_ACCEPTANCE": "REJECTED",
+ "OWNER_ACCEPTANCE_DEFECT": "BLOCKING_RECONSTRUCTION_VISUAL_QUALITY_FAILURE",
+ "GATE_2": "NOT_READY_FOR_OWNER_APPROVAL",
+ "acceptance_rejection": "docs/roadmap/acceptance/product_container_acceptance_rejection.json",
+ "VQR_6_SINGLE_ARTIFACT_AND_STATUS_AUTHORITY": "IMPLEMENTED",
+ "vqr6": {
+  "completed_at": "2026-08-03",
+  "scope_honesty": "VQR-6 removes the CONTRADICTION between result surfaces; it fixes NO visual reconstruction quality problem. The owner rejection, defects A-I and GATE_2 NOT_READY all stand. Do not mark any visual reconstruction quality problem fixed through VQR-6.",
+  "previous_conflicting_authorities": [
+   "PackagingOutputSerializer.get_design_preview_ai_url returned a raw FileField URL on truthy field (defect I mechanism)",
+   "review_board SelectedSection used the same raw _abs(FileField) rule",
+   "gates.js rendered Download/handoff/approve controls from URL presence alone",
+   "Gate2ApproveView and GenerateHandoffView never consulted the status/result contracts",
+   "review_board ComparisonSection.reconstruction_url emitted the raw /files/dielines PNG URL (found by live dev-DB verification after the first commit; fixed + pinned)"
+  ],
+  "single_authority": {
+   "readiness_contract": "build_container_gate2_readiness(task) in apps/pipeline/services/reconstruction_status.py",
+   "fields": [
+    "ready",
+    "reason_code",
+    "lifecycle_state",
+    "ai_authoritative",
+    "png_preview_available",
+    "technical_intervention_required"
+   ],
+   "rule": "ready ONLY when lifecycle COMPLETED + result contract present + AI artifact available by storage stat + no technical intervention; png_preview_available reads the STATUS artifacts so PNG-alone states remain sayable and never ready",
+   "exposure": "container_gate2_readiness key in /api/tasks/<id>/status/"
+  },
+  "serializer": "container design_preview_url/design_preview_ai_url now come from container_reconstruction_result/1.0 authorized endpoints or None - never FileField truthiness; packaging unchanged",
+  "server_enforcement": "Gate2ApproveView refuses 409 GATE_2_NOT_READY before any decision/state work; GenerateHandoffView refuses unless ai_authoritative and no technical intervention; DOM manipulation cannot bypass",
+  "client": "gates.js consumes container_gate2_readiness: handoff section and approve/reject controls render only when vouched; blocked state = one coherent .gate2-blocked role=alert panel; PNG-missing completion keeps the authoritative .ai action (new honest branch) instead of claiming output unavailable",
+  "task_56_regression_fixture": "tampered record preserved untouched; test_browser_vqr6_authority.py builds the same shape and holds the coherent blocked state",
+  "tests": {
+   "server": "apps/pipeline/tests/test_vqr6_result_authority.py (12)",
+   "browser": "apps/pipeline/tests/test_browser_vqr6_authority.py (6)"
+  },
+  "migration_created": false,
+  "provider_calls": 0,
+  "live_dev_db_verification": {
+   "verified_at": "2026-08-03",
+   "revision": "amended VQR-6 commit",
+   "task_53_valid_completed": "ready=True; serializer + comparison emit authorized /reconstruction-artifact/ endpoints only",
+   "task_54_simulated_worker_failure": "ready=False reason FAILED; no artifact URLs",
+   "task_55_png_deleted": "ready=True ai_authoritative=True png_preview_available=False; AI action retained",
+   "task_56_tampered": "ready=False TECHNICAL_INTERVENTION_REQUIRED; approve + handoff probes both 409 GATE_2_NOT_READY with zero writes (spec, artifact name, decisions unchanged); record preserved as regression fixture",
+   "raw_url_scan": "no /files/dielines or tampered-name strings anywhere in status payloads; Gate-1 concept /files/ URLs are concept authority, out of VQR-6 scope"
+  }
+ },
+ "VQR_2A_FAIL_CLOSED_VISUAL_QUALITY_GATE": "IMPLEMENTED",
+ "vqr2a": {
+  "completed_at": "2026-08-03",
+  "scope_honesty": "VQR-2A DETECTS visual quality failure; it corrects nothing. No visual defect is fixed merely because it is now detected. Owner acceptance remains REJECTED; Gate 2 remains NOT_READY_FOR_OWNER_APPROVAL.",
+  "previous_fidelity_gate_defect": "apps/ire/container_fidelity.py let one MEASURED_PASS axis outvote seven UNMEASURED axes (task 53: overall MEASURED_PASS with 7/8 unmeasured). Fixed fail-closed: overall MEASURED_PASS requires every required axis measured+passed; unmeasured required axes -> UNMEASURED_BLOCKING with a blocking_unmeasured list. Historical persisted reports (task 53's included) are untouched audit evidence.",
+  "quality_schema": "product_container_visual_quality_gate/1.0 (apps/pipeline/services/visual_quality_gate.py)",
+  "required_axes": [
+   "artifact_authority",
+   "artboard_fitness",
+   "silhouette_fidelity",
+   "closure_fidelity",
+   "front_artwork_resolution",
+   "logo_quality",
+   "typography_quality",
+   "composition_quality"
+  ],
+  "fail_closed_semantics": "PASS/FAIL/UNMEASURED/NOT_APPLICABLE per axis; combine_axes is the only overall decision: any required FAIL or UNMEASURED -> overall FAIL with blocking findings; missing/malformed axis data becomes UNMEASURED, never PASS",
+  "threshold_strategy": "vqr2a_thresholds/1.0 dict centralizes every numeric constant (fixed-page catalog, 1.0pt match tolerance, 3.0x product-extent factor, 0.15 silhouette aspect deviation, closure component requirements, 5pt text floor, 8pt logo extent); version quoted in every report; axes without an accepted measurement stay UNMEASURED and document the missing measurement (VQR-1/2B/3/4)",
+  "measurement_availability": {
+   "artifact_authority": "MEASURED (VQR-6 authority reused, no new derivation)",
+   "artboard_fitness": "MEASURED (/MediaBox parsed from the .ai bytes; task 53 = exact A4 595.28x841.89 -> VQ_ARTBOARD_NOT_PRODUCT_DERIVED)",
+   "front_artwork_resolution": "MEASURED (design graph placeholder signature: motif_groups empty + zero decorative rasters + consumed zone -> VQ_FRONT_ARTWORK_UNRESOLVED_PLACEHOLDER)",
+   "silhouette_fidelity": "UNMEASURED until VQR-2B (no product bounds persisted; graph product_bounds honored when recorded)",
+   "closure_fidelity": "UNMEASURED until VQR-1 (no assembly inventory; graph closure_assembly honored; generic cap block can never pass as the confirmed dropper)",
+   "logo_quality": "UNMEASURED until VQR-3 (container_logo_metrics/1.0 honored when recorded)",
+   "typography_quality": "UNMEASURED until VQR-4 (run count alone never passes; container_typography_metrics/1.0 honored)",
+   "composition_quality": "UNMEASURED until VQR-2B/3 (zone containment alone insufficient; container_composition_metrics/1.0 honored)"
+  },
+  "integration": "evaluated once per /status/ request; full report at container_visual_quality_gate; build_container_gate2_readiness gains handoff_ready/owner_review_ready/visual_quality/inspection_only with precedence TECHNICAL_INTERVENTION > artifact authority > VISUAL_QUALITY_GATE_FAILED > clean; Gate2Approve + GenerateHandoff refuse 409 GATE_2_NOT_READY reason VISUAL_QUALITY_GATE_FAILED with the quality summary, before any write",
+  "inspection_access": "quality-failed artifacts stay downloadable through the authorized endpoints, labeled 'REJECTED RECONSTRUCTION - INSPECTION ONLY' with explicit 'technical inspection only / not owner-approved artwork' wording in both the result panel and the Gate-2 surface; the VQ panel lists all 8 axes, never hides UNMEASURED",
+  "live_fixture_results": {
+   "task_53": "overall FAIL (artboard A4 FAIL + placeholder FAIL + 5 UNMEASURED); ready False reason VISUAL_QUALITY_GATE_FAILED; inspection_only True; handoff blocked",
+   "task_54": "quality None (worker failure is never a visual result); reason FAILED",
+   "task_55": "overall FAIL identical to 53; blocked by quality, NOT by the missing optional PNG; AI inspection retained",
+   "task_56": "quality None; TECHNICAL_INTERVENTION_REQUIRED precedence preserved; no artifact actions"
+  },
+  "no_automatic_regeneration": "the gate is an evaluator/blocker only: pure read, no dispatch, no provider, no GateDecision, no artifact writes \u2014 pinned by tests",
+  "tests": {
+   "server": "apps/pipeline/tests/test_vqr2a_visual_quality_gate.py (27)",
+   "browser": "apps/pipeline/tests/test_browser_vqr2a_quality.py (5)",
+   "updated_to_new_truth": [
+    "test_vqr6_result_authority.py",
+    "test_browser_vqr6_authority.py",
+    "test_browser_recon_result.py",
+    "test_browser_retry_recovery.py",
+    "test_2b3d_readiness.py (quality stubbed PASS so the 2B-3D production layer stays testable)"
+   ]
+  },
+  "migration_created": false,
+  "provider_calls": 0
+ }
+}

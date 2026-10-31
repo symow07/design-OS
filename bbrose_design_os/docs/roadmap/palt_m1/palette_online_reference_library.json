@@ -1,0 +1,404 @@
+{
+ "record_type": "palette_online_reference_library/1.0",
+ "created_at": "2026-08-05",
+ "research_authorization": "owner-authorized online research; BBROSE is open to new shapes/layouts/structures; research NOT limited to current BBROSE products; NO competitor product may be copied exactly",
+ "authority_classes_used": [
+  "MANUFACTURER_TECHNICAL_DRAWING",
+  "MANUFACTURER_CATALOGUE",
+  "SUPPLIER_REFERENCE",
+  "PATENT_REFERENCE",
+  "RETAILER_DIMENSION",
+  "VISUAL_ANALOGUE",
+  "CALCULATED_DESIGN_DEFAULT"
+ ],
+ "standing_rule": "online measurements are DESIGN REFERENCES ONLY unless manufacturer-authoritative; none of these values is a BBROSE specification until owner-confirmed",
+ "summary": {
+  "technical_references": 9,
+  "visual_references": 6,
+  "exact_matches_found": 0,
+  "note": "no MANUFACTURER_TECHNICAL_DRAWING with full dimensioned tolerances was obtainable from public sources; supplier catalogues and retailer listings dominate"
+ },
+ "references": [
+  {
+   "id": "R1",
+   "source": "TOPFEEL \u2014 empty eye palette guide",
+   "url": "https://www.topfeelmakeup.com/empty-eye-palette/",
+   "manufacturer_or_supplier": "TOPFEEL (packaging supplier)",
+   "product_type": "empty magnetic eyeshadow palettes, multiple pan counts",
+   "reported_dimensions": {
+    "pan_diameters_mm": {
+     "mini_eyeshadow": 15,
+     "medium_blush": 26,
+     "large_highlighter": 36
+    },
+    "average_case_weight_g": {
+     "plastic": 65,
+     "metal": 120,
+     "cardboard": 90,
+     "hybrid": 100
+    },
+    "formats": [
+     "6-pan portable",
+     "9-pan magnetic (described as the de-facto standard)",
+     "12-pan refillable plastic"
+    ]
+   },
+   "authority_level": "SUPPLIER_REFERENCE",
+   "exact_or_analogous": "ANALOGOUS",
+   "useful_structural_principles": [
+    "a three-tier pan family (15 / 26 / 36 mm) covers eye, blush and face products",
+    "9-pan magnetic is the most common consumer format \u2014 a sensible pilot baseline",
+    "case material drives weight class, which drives perceived quality"
+   ],
+   "must_not_be_copied": [
+    "supplier's specific case styling or branding"
+   ]
+  },
+  {
+   "id": "R2",
+   "source": "Amazon listings \u2014 empty 26 mm magnetic pans (multiple vendors)",
+   "url": "https://www.amazon.com/Allwon-Eyeshadow-Palette-Magnetic-Makeup/dp/B07C3PRM9H",
+   "manufacturer_or_supplier": "Allwon / Pangda and similar pan vendors",
+   "product_type": "empty metal pans, round and square",
+   "reported_dimensions": {
+    "pan_diameter_mm": 26,
+    "pan_depth_mm": [
+     3.5,
+     5.0
+    ],
+    "shapes": [
+     "round",
+     "square"
+    ]
+   },
+   "authority_level": "RETAILER_DIMENSION",
+   "exact_or_analogous": "ANALOGOUS",
+   "useful_structural_principles": [
+    "26 mm is a genuine cross-vendor interchange standard \u2014 refill compatibility is a real design constraint",
+    "two depth families (3.5 and 5.0) exist at the same diameter; depth is an independent axis from diameter"
+   ],
+   "must_not_be_copied": []
+  },
+  {
+   "id": "R3",
+   "source": "Supplier catalogue dimensions aggregated via search (15-pan large format)",
+   "url": "https://sphere-resources.com/product-category/packaging/cosmetics-packaging/eyeshadow-palette-cases/",
+   "manufacturer_or_supplier": "Sphere Resources (OEM packaging)",
+   "product_type": "15-pan large-format palette (12 x 1 g + 3 x 5 g)",
+   "reported_dimensions": {
+    "case_mm": [
+     104,
+     61,
+     18
+    ]
+   },
+   "authority_level": "SUPPLIER_REFERENCE",
+   "exact_or_analogous": "ANALOGOUS",
+   "useful_structural_principles": [
+    "mixed-capacity layouts (small eye pans + larger face pans) are a mainstream format, not an exotic one",
+    "an 18 mm case height accommodates a deeper face pan alongside shallow eye pans"
+   ],
+   "must_not_be_copied": [
+    "the specific 12+3 arrangement as a signature layout"
+   ]
+  },
+  {
+   "id": "R4",
+   "source": "Supplier listing \u2014 12-pan customizable palette",
+   "url": "https://sphere-resources.com/product/oem-custom-eyeshadow-palettes/",
+   "manufacturer_or_supplier": "Sphere Resources (OEM packaging)",
+   "product_type": "12-pan eyeshadow palette",
+   "reported_dimensions": {
+    "case_mm": [
+     150,
+     90,
+     15
+    ],
+    "pan_diameter_mm": 26
+   },
+   "authority_level": "SUPPLIER_REFERENCE",
+   "exact_or_analogous": "ANALOGOUS",
+   "useful_structural_principles": [
+    "a 150 x 90 case with 26 mm pans implies generous inter-pan spacing and margins \u2014 useful to bound the spacing range",
+    "case thickness can be as low as 15 mm for a single-level 26 mm/3.5 mm pan layout"
+   ],
+   "must_not_be_copied": []
+  },
+  {
+   "id": "R5",
+   "source": "Supplier catalogue \u2014 slim and ultra-slim formats",
+   "url": "https://www.yudongpack.com/eyeshadow-pallet-case/",
+   "manufacturer_or_supplier": "Yudong (palette case factory)",
+   "product_type": "slim tri-colour compact; ultra-slim 7-pan; ultra-slim 10-pan",
+   "reported_dimensions": {
+    "tri_colour_mm": [
+     95.5,
+     43.5,
+     17.5
+    ],
+    "ultra_slim_7_pan_mm": [
+     78,
+     85,
+     11.5
+    ],
+    "ultra_slim_10_pan_mm": [
+     134,
+     67,
+     13
+    ]
+   },
+   "authority_level": "SUPPLIER_REFERENCE",
+   "exact_or_analogous": "ANALOGOUS",
+   "useful_structural_principles": [
+    "11.5-13 mm is the practical ULTRA-SLIM floor for a single-level palette",
+    "aspect ratio varies widely (78x85 near-square vs 134x67 elongated) \u2014 outer proportion is a free design variable"
+   ],
+   "must_not_be_copied": []
+  },
+  {
+   "id": "R6",
+   "source": "MS Makeup OEM \u2014 custom 9-colour palette",
+   "url": "https://www.msmakeupoem.com/products/custom-9-colors-eyeshadow-palette-50pcs",
+   "manufacturer_or_supplier": "MS Makeup (OEM)",
+   "product_type": "9-shade eyeshadow palette",
+   "reported_dimensions": {
+    "case_mm": [
+     83,
+     83,
+     12
+    ]
+   },
+   "authority_level": "MANUFACTURER_CATALOGUE",
+   "exact_or_analogous": "ANALOGOUS",
+   "useful_structural_principles": [
+    "a square 83 x 83 x 12 case with a 3x3 grid implies ~26 mm pans on a ~27-28 mm pitch with small margins \u2014 a tight, efficient benchmark"
+   ],
+   "must_not_be_copied": [
+    "the exact outer square proportion as a BBROSE signature"
+   ]
+  },
+  {
+   "id": "R7",
+   "source": "Artist of Makeup \u2014 empty 9-pan palette",
+   "url": "https://artistofmakeup.com/products/empty-9-palette-hd-eyeshadows-not-included",
+   "manufacturer_or_supplier": "Artist of Makeup",
+   "product_type": "empty 9-pan palette with 30 mm pans",
+   "reported_dimensions": {
+    "case_mm": [
+     116,
+     116,
+     10
+    ],
+    "pan_diameter_mm": 30
+   },
+   "authority_level": "RETAILER_DIMENSION",
+   "exact_or_analogous": "ANALOGOUS",
+   "useful_structural_principles": [
+    "30 mm pans exist alongside the 26 mm standard \u2014 pan diameter must be a parameter, never a constant",
+    "a 10 mm case is achievable when the lid carries no mirror"
+   ],
+   "must_not_be_copied": []
+  },
+  {
+   "id": "R8",
+   "source": "Retailer listings \u2014 consumer 9-shade palettes",
+   "url": "https://www.amazon.com/9-Color-Eyeshadow-Palette-Versatile-Vibrant/dp/B0DG889D7J",
+   "manufacturer_or_supplier": "various consumer brands",
+   "product_type": "retail 9-shade palettes",
+   "reported_dimensions": {
+    "examples_mm": [
+     [
+      73.3,
+      74.0,
+      13.3
+     ],
+     [
+      135,
+      60,
+      20
+     ]
+    ]
+   },
+   "authority_level": "RETAILER_DIMENSION",
+   "exact_or_analogous": "ANALOGOUS",
+   "useful_structural_principles": [
+    "retail packs cluster 73-135 mm long, 60-74 mm deep, 12-20 mm thick",
+    "retailer dimensions often include outer packaging \u2014 treat as UPPER bounds, not case dimensions"
+   ],
+   "must_not_be_copied": [
+    "any brand's shade layout or graphic identity"
+   ]
+  },
+  {
+   "id": "R9",
+   "source": "Alovey \u2014 compact powder cases with mirror",
+   "url": "https://www.alovey.com/product/custom-powder-compact-case-with-mirror/",
+   "manufacturer_or_supplier": "Alovey (compact manufacturer)",
+   "product_type": "round/square powder compacts with mirror",
+   "reported_dimensions": {
+    "examples": [
+     "W74 x H17.5 mm (godet d57.5)",
+     "W97 x H19.5 mm (godet d81)",
+     "W54 x H14.5 mm",
+     "W81 x H31 mm (11 g)"
+    ],
+    "common_godet_mm": 58.5
+   },
+   "authority_level": "MANUFACTURER_CATALOGUE",
+   "exact_or_analogous": "ANALOGOUS",
+   "useful_structural_principles": [
+    "compacts pair an outer width with an inner godet diameter \u2014 the same two-level relationship palettes need (case vs pan)",
+    "58.5 mm is a recurring godet standard for face powder \u2014 the natural 'large face pan' anchor",
+    "closed thickness 14.5-19.5 mm for mirrored single-godet compacts; 31 mm for deep 11 g formats"
+   ],
+   "must_not_be_copied": [
+    "specific decorative case styling"
+   ]
+  },
+  {
+   "id": "R10",
+   "source": "Google Patents US20220408898A1 \u2014 refillable makeup palette with sliding drawer",
+   "url": "https://patents.google.com/patent/US20220408898A1/en",
+   "manufacturer_or_supplier": "patent applicant",
+   "product_type": "refillable palette, sliding drawer, spring-tab pan retention",
+   "reported_dimensions": {
+    "note": "no dimensional tolerances stated; patent explicitly notes pressed-powder pans have WIDE size tolerance and the design absorbs it via spring pressure"
+   },
+   "authority_level": "PATENT_REFERENCE",
+   "exact_or_analogous": "ANALOGOUS",
+   "useful_structural_principles": [
+    "PAN TOLERANCE IS REAL: pressed-powder pans vary enough that retention must be compliant, not interference-fit \u2014 our pan-layout engine must carry a tolerance/clearance parameter",
+    "sandwiched retention (upward spring + downward frame) resists shipping movement",
+    "lid = hinged rear + clasp front + optional mirror is the canonical three-part architecture"
+   ],
+   "must_not_be_copied": [
+    "spring-tab retention mechanism as claimed",
+    "living-hinge removable compartment lids as claimed",
+    "angled rear stringer backstops as claimed",
+    "the specific areas-of-reveal frame construction"
+   ]
+  },
+  {
+   "id": "R11",
+   "source": "Google Patents EP0188547A1 \u2014 magnetic cosmetic case",
+   "url": "https://patents.google.com/patent/EP0188547A1/en",
+   "manufacturer_or_supplier": "patent applicant",
+   "product_type": "magnetic pan retention with mirrored opposing section",
+   "reported_dimensions": {},
+   "authority_level": "PATENT_REFERENCE",
+   "exact_or_analogous": "ANALOGOUS",
+   "useful_structural_principles": [
+    "magnet-lined section + mirrored opposing section is long-established prior art \u2014 magnetic refill is a generic capability, not a novel claim to design around"
+   ],
+   "must_not_be_copied": [
+    "the specific claimed magnet-lining construction"
+   ]
+  },
+  {
+   "id": "R12",
+   "source": "Google Patents US5638838A \u2014 cosmetic compact snap-on hinge",
+   "url": "https://patents.google.com/patent/US5638838A/en",
+   "manufacturer_or_supplier": "patent applicant",
+   "product_type": "compact hinge mechanism",
+   "reported_dimensions": {},
+   "authority_level": "PATENT_REFERENCE",
+   "exact_or_analogous": "ANALOGOUS",
+   "useful_structural_principles": [
+    "gudgeons + pivot pin + resilient snap jaws is the classic compact hinge family",
+    "the lid opens to a 'predetermined obtuse viewing angle' so the mirror faces the user \u2014 the open angle is a FUNCTIONAL requirement driven by mirror use, not a styling choice"
+   ],
+   "must_not_be_copied": [
+    "the claimed snap-jaw geometry"
+   ]
+  },
+  {
+   "id": "R13",
+   "source": "Google Patents US20150201733A1 \u2014 portable interchangeable cosmetic compact",
+   "url": "https://patents.google.com/patent/US20150201733A1/en",
+   "manufacturer_or_supplier": "patent applicant",
+   "product_type": "interchangeable tray locked into a base, clasped mirrored lids (clasps may be magnetic)",
+   "reported_dimensions": {},
+   "authority_level": "PATENT_REFERENCE",
+   "exact_or_analogous": "ANALOGOUS",
+   "useful_structural_principles": [
+    "a removable TRAY (not just removable pans) is a distinct refill strategy worth modelling as its own taxonomy axis",
+    "magnetic clasping is an alternative to mechanical clasping"
+   ],
+   "must_not_be_copied": [
+    "the claimed tray-locking and clasp arrangement"
+   ]
+  },
+  {
+   "id": "R14",
+   "source": "Injection-moulding design guidance (Protolabs, TDL, FOW and equivalents)",
+   "url": "https://www.protolabs.com/resources/design-tips/improving-part-design-with-uniform-wall-thickness/",
+   "manufacturer_or_supplier": "moulding industry design guidance",
+   "product_type": "ABS / PP / PC-ABS moulded parts",
+   "reported_dimensions": {
+    "abs_wall_mm": [
+     1.5,
+     3.0
+    ],
+    "pp_wall_mm": [
+     1.0,
+     3.5
+    ],
+    "general_start_mm": [
+     1.2,
+     3.0
+    ],
+    "rib_thickness_fraction_of_wall": [
+     0.4,
+     0.6
+    ],
+    "uniformity_tolerance": {
+     "amorphous_abs": "+/-25% of nominal",
+     "semi_crystalline_pp": "+/-15% of nominal"
+    },
+    "thickness_transition": "<= 1:1.5 step, or a smooth taper/fillet"
+   },
+   "authority_level": "MANUFACTURER_TECHNICAL_DRAWING",
+   "exact_or_analogous": "ANALOGOUS (process guidance, not a product drawing)",
+   "useful_structural_principles": [
+    "wall uniformity is a COSMETIC requirement (sink/warp), which makes it a visual-quality constraint, not only a manufacturing one",
+    "ribs stiffen tall lid walls instead of thickening them \u2014 relevant to thin palette lids",
+    "these ranges bound any plausible case wall we propose"
+   ],
+   "must_not_be_copied": []
+  },
+  {
+   "id": "R15",
+   "source": "Refillable magnetic palette vendors (Coosei, Make Up For Ever, Z Palette-class systems)",
+   "url": "https://coosei.com/collections/magnetic-palette",
+   "manufacturer_or_supplier": "multiple refill-system vendors",
+   "product_type": "refillable magnetic palettes with mixed pan sizes",
+   "reported_dimensions": {
+    "pan_equivalence_reported": "blush ~= 3 eyeshadows; camouflage cream ~= 2 eyeshadows; brow powder ~= 1 eyeshadow",
+    "mixed_configurations": "4 small pans OR 1 large pan OR 1 medium + 2 small in the same zone",
+    "sizes_offered": [
+     "M",
+     "L",
+     "XL"
+    ]
+   },
+   "authority_level": "SUPPLIER_REFERENCE",
+   "exact_or_analogous": "ANALOGOUS",
+   "useful_structural_principles": [
+    "mixed layouts can be EXPRESSED as module occupancy \u2014 but occupancy is a convenience for reflowable layouts, not a physical law; the engine must equally support direct dimension-based placement"
+   ],
+   "must_not_be_copied": [
+    "any vendor's specific case or insert design"
+   ],
+   "MODULE_EQUIVALENCE_AUTHORITY": "CALCULATED_LAYOUT_HEURISTIC",
+   "owner_correction_2026_08_05": "the blush~3 / cream~2 / brow=1 relationships are NOT a MANUFACTURER_STANDARD, INDUSTRY_STANDARD or PRODUCTION_RULE. They are a CALCULATED_LAYOUT_HEURISTIC only. Every module must resolve to explicit dimensions."
+  }
+ ],
+ "visual_references_note": "R1, R5, R6, R7, R8, R15 also served as VISUAL_ANALOGUE material for proportion and format expectations; none was used to copy styling",
+ "gaps": [
+  "no public MANUFACTURER_TECHNICAL_DRAWING with tolerances, draft angles or hinge pin dimensions was obtainable \u2014 supplier drawings are quote-gated",
+  "mirror thickness and mirror attachment method are not published in any source found",
+  "clasp force / detent specifications are not published",
+  "no source states a standard OPEN ANGLE in degrees; only 'predetermined obtuse angle' (R12)",
+  "pan tolerance is acknowledged as wide (R10) but never numerically specified"
+ ]
+}

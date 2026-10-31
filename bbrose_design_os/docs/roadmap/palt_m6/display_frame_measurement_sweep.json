@@ -1,0 +1,51 @@
+{
+  "record_type": "display_frame_measurement_sweep/1.0",
+  "git_sha_swept": "a23c49000141f5b939f4a85d63423e5290cf4652",
+  "rule": "a site that feeds a NUMBER into a VERDICT must read scene-linear through the provenance-asserting loader, or carry a DISPLAY_SPACE_BY_DECLARATION exemption naming the declaration that defines its bar on the display frame. Boards, previews and compositing are PRESENTATION and may read PNGs freely.",
+  "MEASUREMENT_SCENE_LINEAR_COMPLIANT": {
+    "palette_powder_texture_axes": "all texture axes: EXR via load_scene_linear + REGION_ALIGNMENT_ASSERTION",
+    "palette_powder_rigs.particle_census": "EXR via the loader (Phase 4)",
+    "palette_characterization_rig": "lobe axes read the Blender-side scene-linear measurement JSON; no image read exists in that path"
+  },
+  "MEASUREMENT_DISPLAY_SPACE_BY_DECLARATION": {
+    "palette_m5_closeout._pixel_difference/_p99_8bit": "M5 \u00a79 product observability \u2014 the 4%/10-level bar is DECLARED on 8-bit display levels ('pixels, because the owner looks at pixels'); the display frame is the declared subject",
+    "palette_m5_evidence (luminance stats)": "M5 \u00a75 visual legibility \u2014 a human-view property, declared on the review frame",
+    "palette_m4b_b_gate.subject_separation": "M4B-B evidence legibility \u2014 same declaration class",
+    "palette_variant_visual_proof": "\u00a75 visual discrimination declared as display-frame proof",
+    "a3p_evidence_render.validate_package": "the artifact under test IS the review image",
+    "geometry_validation_render/mesh_diagnostics pixel checks": "RBV \u00a711 review-image checks \u2014 subject is the review frame",
+    "image_checks/visual_input_quality": "input QC of inherently 8-bit sources (uploads, photos) \u2014 the display frame is the authentic artifact",
+    "gate_a_corr1/ire vq raster checks": "Illustrator raster verification \u2014 the deliverable is display-encoded",
+    "note": "each exemption names WHY the display frame is the subject; a future re-declaration of any of these bars must revisit its exemption"
+  },
+  "PRESENTATION": [
+    "p1_v3_evidence",
+    "p1_v4_evidence",
+    "p1_review_board",
+    "p1_pilot_evidence",
+    "palette_review_board",
+    "palt_p1_evidence",
+    "palt_p1_m4b_evidence.stamp",
+    "palette_m5_closeout._tile",
+    "palette_m5_evidence boards",
+    "ire compose/compose_vector_art/vq1_close1(_package)/vq2_artwork/vq2_vectorize/pdf_raster",
+    "dielines exporters (mockup_3d, design_preview)",
+    "intelligence.artwork_preview",
+    "flat_artwork",
+    "container_visual_graph",
+    "concept_visual_graph",
+    "selected_concept_contract",
+    "reference_pack",
+    "production_authority_package",
+    "web_research_tavily",
+    "visual_extract/visual_inspector/visual_review (AI-vision inputs \u2014 display sources)",
+    "core.import_design_references"
+  ],
+  "LEGACY_NO_CALLERS": {
+    "palette_material_characterization._linear": "16-bit PNG reader, era-consistent normalisation, ZERO importers anywhere \u2014 its records are closed M5 history. Any revival must route through the loader.",
+    "palette_powder_rigs._planar_luminance": "REMOVED this commit \u2014 a dead measurement path is a future defect"
+  },
+  "png16_threading": "palette_characterization_rig writes and returns a genuinely 16-bit review artifact (IHDR-verified); no measurement consumes it since Phase 4. PRESENTATION.",
+  "found_by_sweep_not_accident": "no unclassified measurement-feeding display read remains",
+  "owner_approved": false
+}

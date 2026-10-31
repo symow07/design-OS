@@ -1,0 +1,39 @@
+{
+ "record_type": "a195_threshold_kind_sweep/1.0",
+ "protocol_identity": "a229810ce00ff35c (3e not yet hashed at sweep time)",
+ "a190_boundary_reported_first": {
+  "root_searched": "docs/roadmap/palt_m6",
+  "tracked_json": 1567,
+  "frame_measurement_records_excluded": 1283,
+  "why_excluded": "swatch/frame records are MEASUREMENTS not declarations",
+  "records_examined": 284,
+  "regex_hits_before_classification": 680,
+  "why_the_raw_count_is_not_the_finding": "the keyword sweep over-collects: allowlist baseline KEYS containing 'window', boolean fields like holds_below_bar, and per-frame stats. Reporting 680 as 'thresholds' would be a classification artifact, the same defect as the A154 first pass; the classified counts below are the finding",
+  "not_reached_and_why": [
+   "code-declared constants \u2014 swept by reading the modules, listed below",
+   "records outside docs/roadmap/palt_m6"
+  ]
+ },
+ "classification_rule": "DERIVED_FROM_REPEATED_MEASUREMENT -> a kind is required (3e); DECLARED_CONSTANT -> fixed before measurement, no combining question, kind not applicable and stated as such rather than left blank",
+ "stamped_BOUND": {
+  "axis_noise_floors.json": "BOUND (8 floors)",
+  "analysis_spreads.json": "BOUND (member lobe + texture spreads)",
+  "floor_statistic_replicate_result.json": "BOUND (2-ensemble combination)",
+  "axis_sensitivity_matrix.json": "BOUND",
+  "raking_rig/flat_thresholds.json": "BOUND"
+ },
+ "declared_constants_no_combining_question": {
+  "PASS_LAW bars (0.25 relative effect, 0.80 R5 ceiling, 2.0 separation margin)": "DECLARED_CONSTANT \u2014 fixed before measurement, never derived from an ensemble; no combining question arises. Byte-identical across 32 amendments.",
+  "glitter predeclared (GLITTER_MIN_EVENTS 25, CONTROL_MAX_EVENTS 5, EVENT_LUMINANCE_FACTOR 1.8, EVENT_MIN/MAX_AREA_PX 4/2000)": "DECLARED_CONSTANT \u2014 predeclared law, not measured",
+  "SUBJECT_WINDOW (0.35, 0.92) and CAL_TARGET 0.88": "DECLARED_CONSTANT \u2014 instrument operating window, declared",
+  "flake PASS_BAR 0.25 / SEPARATION_MARGIN 2.0": "DECLARED_CONSTANT \u2014 the unmoved law bars restated in the rig",
+  "texture_axes_validation effect_bar 0.25": "DECLARED_CONSTANT \u2014 the law bar"
+ },
+ "unclassified_not_guessed": [],
+ "counts": {
+  "records_stamped": 5,
+  "constant_groups_declared": 5,
+  "unclassified": 0
+ },
+ "owner_approved": false
+}

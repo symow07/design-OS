@@ -1,0 +1,24 @@
+{
+ "record_type": "a135_energy_recovery/1.0",
+ "protocol_identity": "a229810ce00ff35c",
+ "a190_boundary_reported_first": {
+  "searched": [
+   "every tracked file (any extension) for an energy value co-occurring with the two records' own labels (mncount_, mnrep401_) or parameter (milling.micronormal_amplitude)",
+   "the two records themselves, every nesting level",
+   "git history of both records (all revisions) for a dropped field"
+  ],
+  "not_reached_and_why": [
+   "the render processes themselves \u2014 vanished, and per 2o they emitted no energy record",
+   "untracked files \u2014 not committed records"
+  ],
+  "bound": "this search; if it does not recover a RECORDED value the classification is WITHIN_ENERGY_UNVERIFIABLE, stated as a floor"
+ },
+ "search_result": {
+  "label_cooccurring_energy_values": [],
+  "revisions_with_an_energy_field": []
+ },
+ "verdict": "NOT RECOVERED",
+ "classification": "WITHIN_ENERGY_UNVERIFIABLE",
+ "statement": "the energy for micronormal_counted_instrument_sweep and micronormal_seed_replicas is NOT RECORDED in any committed artifact and is NOT RECOVERABLE by this bounded search. Their within-energy status is WITHIN_ENERGY_UNVERIFIABLE, stated as a FLOOR with the missing value named: the per-row specular_source energy at render time. Not softened to 'probably within-energy'",
+ "owner_approved": false
+}

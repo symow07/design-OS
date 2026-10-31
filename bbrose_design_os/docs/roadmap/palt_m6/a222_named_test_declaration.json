@@ -1,0 +1,114 @@
+{
+ "record_type": "a222_named_test_declaration/1.0",
+ "law_in_force": "953dc78bed263921 (thirty-three authorizations)",
+ "declared_before_any_clearing_computed": true,
+ "recipe_module": "apps/pipeline/services/palette_clearing_dispersion.py",
+ "recipe_identity": "6d6e4ab90686503f",
+ "dispersion_measure_declared": "MAX_PAIRWISE_RELATIVE_EFFECT",
+ "why_that_measure": "1k's own sentence: max_seed_only_effect is 'the same functional at the null point'. The proxy is that functional where the two families coincide; the named test is that functional where they do not. Holding the functional fixed and moving only the point is what makes proxy and test comparable \u2014 any other dispersion measure would change two things at once and the difference could not be attributed",
+ "direction_stated_before_the_numbers": "a maximum over a set is not below a dispersion over that set, so the proxy sits at or above the test. This computation can only move adequacy toward MET \u2014 the direction that favours the executor \u2014 which is why the recipe and this declaration are committed first",
+ "test_set_named_in_full": {
+  "1_MATTE_VS_SATIN / SHEEN_REGION_RESPONSE": {
+   "current": "1i UNMET (proxy) -> FAIL",
+   "will_run": true,
+   "inputs": "MATTE + SATIN lobe frames, seeds 40/81/82/83/84/99 \u2014 both present"
+  },
+  "2_PRESSED_VS_MATTE / SHEEN_REGION_RESPONSE": {
+   "current": "1i UNMET (proxy) -> FAIL",
+   "will_run": true,
+   "inputs": "PRESSED + MATTE lobe frames, same six seeds \u2014 both present"
+  },
+  "3_SATIN_VS_CREAM / HIGHLIGHT_FWHM": {
+   "current": "1i UNMET (proxy) -> FAIL",
+   "will_run": true,
+   "inputs": "SATIN + CREAM lobe frames, same six seeds \u2014 both present"
+  },
+  "4_SATIN_VS_CREAM / GRANULARITY_INDEX": {
+   "current": "1i MET (proxy) -> BANKED ESTABLISHED",
+   "will_run": true,
+   "inputs": "SATIN + CREAM texture frames (swatch_tx_mens_tex_*), same six seeds \u2014 present",
+   "note": "named explicitly because it can come back UNMET; that is a publishable finding"
+  },
+  "5_SWEEP_DEGENERACY / min qualifying-pair rho": {
+   "current": "1i MET -> A136 QUALIFIED",
+   "will_run": false,
+   "why_not": "the quantity is a correlation-matrix minimum, not a cross-family clearing, so 1k's named quantity has no referent here; and the full 25-level pairwise matrix was never committed (A136), so nothing could be recomputed per seed even if it did. Named and excluded WITH the reason, not omitted"
+  },
+  "6_GLITTER event count 113 vs threshold 25": {
+   "current": "ADEQUACY_UNASSESSED",
+   "will_run": false,
+   "why_not": "no numeric 1i comparison exists to recompute \u2014 the adequacy was never assessed rather than assessed against a proxy"
+  }
+ },
+ "both_outcomes_publish": "a FAIL->MET flip and a MET->UNMET flip are equally publishable. Specifically: if test 4 (currently banked ESTABLISHED) returns UNMET under the named test, that is a finding and it publishes",
+ "proxy_results_retained": "the proxy results are RETAINED alongside, not replaced \u2014 both figures kept, instruments named, never merged",
+ "a223_fence": "clearing 1i grants nothing. 1i is an adequacy PRECONDITION: a family that moves from 'cannot be assessed' to 'can be assessed' has moved to the starting line, not past it. Any record reporting a 1i flip states the family's PASS_LAW standing IN THE SAME SENTENCE \u2014 two required independent axes, 0.25 bar, supporting axes never counting \u2014 because if they are reported separately the first one read becomes the headline",
+ "what_this_does_not_touch": "MVS_SHEEN_NO_POSITIVE_CONTROL_AT_COMPUTED_CONDITION stays OPEN: a clearing recomputed per seed at an uncontrolled condition is still uncontrolled (2o)",
+ "computation_deferred_to": "the next node, per A228 step 5",
+ "owner_approved": false,
+ "A232_premise_stated": {
+  "premise": "PROXY_BOUNDS_TEST",
+  "kind": "EMPIRICAL_NOT_ARITHMETIC",
+  "holds_if": "clearing dispersion across seeds does not exceed seed-only max excursion, i.e. no seed-by-family interaction exceeding seed-alone variation",
+  "status": "UNCHECKED_AT_DECLARATION",
+  "checked_by": "A233",
+  "correction_to_my_own_prior_wording": "I wrote twice, and the declarer wrote in A221, that a maximum over a set is not below a dispersion over that set. That is true for the SAME set under the SAME functional. Proxy and test are not: the proxy is the functional at the NULL point (seed noise alone, families coincident); the test is the functional at the ACTUAL point and contains the seed noise AND whatever the real family difference does across seeds. If the family difference interacts with seed \u2014 some seeds separating the families more than others \u2014 the clearing's dispersion can EXCEED the seed-only maximum. Grain placement, tile phase and lobe sampling are all seed-dependent and nothing in the rig forbids it. The claim is empirical",
+  "consequence_if_it_fails_A235": "the declaration's sentence 'this can only move adequacy toward MET \u2014 the direction that favours me' is TRUE ONLY UNDER THIS PREMISE. If the premise fails, adequacy can move toward UNMET and things currently banked can come back. The A222 fence was built against a loosening move; it turns out to fence a move whose direction is not known in advance \u2014 a stronger reason for the fence, not a weaker one"
+ },
+ "A233_test4_runs_first_alone": {
+  "why_first": "if the recipe or the premise is defective, tests 1-3's numbers are not results and should not exist yet; and an ordering declared before any number cannot be an ordering chosen for its result",
+  "runs_as_both": "a re-evaluation of GRANULARITY under the named quantity, AND the cheapest available check on the A232 premise \u2014 the premise check and the test share one computation",
+  "outcomes_and_discriminators_declared_before_the_number": {
+   "MET_and_dispersion_LE_seed_only_max": "premise holds at this instance; GRANULARITY stands; proceed",
+   "UNMET_and_dispersion_GT_seed_only_max": "the premise FAILS here \u2014 a real finding about the rig, not about the recipe; the A235 direction claim is VOID and GRANULARITY's banking is genuinely in question",
+   "UNMET_and_dispersion_LE_seed_only_max": "CONTRADICTION \u2014 the arithmetic cannot produce this if the recipe implements what it says (margin 0.1923 cannot be <= a dispersion that is itself <= 0.04201). This is the recipe-defect signature. DISCRIMINATING CHECK, committed now: run the recipe on the NULL-POINT inputs (same family against itself across the ensemble) and confirm it reproduces the committed proxy value to the last recorded digit. A recipe that cannot reproduce the proxy at the null point is not implementing 1k's functional"
+  },
+  "what_is_NOT_declared": "which outcome will be accepted. Per A231 the discriminator is declared, never the verdict \u2014 the earlier proposal ('an UNMET means the recipe is wrong') was insulation and is withdrawn"
+ },
+ "A236_exclusion_statuses": {
+  "test_5_A136": "NOT_APPLICABLE_BY_REFERENT",
+  "test_6_glitter": "ADEQUACY_NEVER_ASSESSED"
+ },
+ "A245_flip_thresholds_declared_before_computation": {
+  "law_in_force": "2216115499023fa7",
+  "form": "the disposition flips to MET when clearing_dispersion falls strictly BELOW the test's clearing margin",
+  "thresholds": {
+   "MATTE_VS_SATIN / SHEEN_REGION_RESPONSE": {
+    "flips_to_MET_if_dispersion_below": 0.09112
+   },
+   "PRESSED_VS_MATTE / SHEEN_REGION_RESPONSE": {
+    "flips_to_MET_if_dispersion_below": 0.11572
+   },
+   "SATIN_VS_CREAM / HIGHLIGHT_FWHM": {
+    "flips_to_MET_if_dispersion_below": 0.0343
+   }
+  },
+  "why_committed_first": "a prediction written before the measurement is what makes the measurement capable of being wrong, and it removes any question of what the computation was for",
+  "3f_correction_carried": "my claim that 'a higher comparator can only keep them UNMET' assumed the comparator is higher for these three. Test 4 refuted proxy>=test at ONE instance in ONE pair on ONE axis; it did not establish test>=proxy anywhere. Per 3f the quantities are unordered until separately established, so these three are LIVE verdict computations that can flip",
+  "A223_unchanged": "any flip to MET establishes that the comparison is adequate to ATTEMPT and nothing about the families; PASS_LAW standing stated in the same sentence, every time"
+ },
+ "A292_measure_field_replaced": {
+  "survives": "test set, both-directions publication, proxy retention, predating every number",
+  "failed": "one field \u2014 the dispersion measure and its stated reason",
+  "post_hoc_admissibility_COMPUTED": {
+   "requirement": "3e \u2014 agreement across every LEGALLY AVAILABLE candidate",
+   "agreement": "4 of 4 cells, every disposition identical under both candidates",
+   "evidence": "the two-column table in a284_units_recomputation.json \u2014 computed, not asserted",
+   "contrast_with_A205": "A205 failed because that sentence was written WITHOUT the computation; here it exists"
+  },
+  "candidate_set_with_availability": {
+   "MAX_PAIRWISE_RELATIVE_EFFECT": "NOT AVAILABLE \u2014 dimensionally incommensurable with margin",
+   "other relative forms": "NOT AVAILABLE \u2014 same dimensional exclusion",
+   "STANDARD_DEVIATION": "NOT AVAILABLE \u2014 an estimator; 3e requires a BOUND and predates this choice",
+   "MEAN_ABSOLUTE_DEVIATION": "NOT AVAILABLE \u2014 same 3e exclusion",
+   "INTERQUARTILE_RANGE": "NOT AVAILABLE \u2014 same 3e exclusion; discards the worst excursion by construction",
+   "MAX_PAIRWISE_ABSOLUTE_DIFFERENCE": "AVAILABLE \u2014 dimensionally sound and a bound; SELECTED by A289"
+  },
+  "candidates_not_named_by_the_owner_checked_by_me": {
+   "MAX_ABSOLUTE_DEVIATION_FROM_THE_MEAN": "dimensionally sound and bound-like, but NOT the worst excursion BETWEEN TWO MEMBERS, which is what the proxy measures \u2014 selecting it would reintroduce a functional mismatch",
+   "TOTAL_RANGE": "identical to MAX_PAIRWISE_ABSOLUTE_DIFFERENCE over a finite set \u2014 same quantity, not a candidate"
+  },
+  "new_recipe_identity": "23ef45d0d3521739",
+  "superseded_recipe": "6d6e4ab90686503f"
+ }
+}

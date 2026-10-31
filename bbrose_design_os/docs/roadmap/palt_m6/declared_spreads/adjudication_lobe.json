@@ -1,0 +1,235 @@
+{
+ "record_type": "m6_spreads_adjudication_lobe/1.0",
+ "adjudicated": "2026-08-15",
+ "phase": "lobe",
+ "raw_record": "raw_lobe.json",
+ "pair_level_lines_restated": {
+  "MATTE_VS_SATIN": "NOT ESTABLISHED \u2014 M_V_S GRAN clearing: ESTABLISHED; M_V_S SHEEN clearing: ADEQUACY_PRECONDITION_UNMET_DIRECT; census leg (R5 census GRAN|SHEEN) NOT_ESTABLISHED_PENDING_SPREAD [restated 2026-08-15 by the spreads adjudication act from the rows in place]",
+  "PRESSED_VS_MATTE": "NOT ESTABLISHED \u2014 P_V_M GRAN clearing: ESTABLISHED; P_V_M SHEEN clearing: ADEQUACY_PRECONDITION_UNMET_DIRECT; census leg (R5 census GRAN|SHEEN) NOT_ESTABLISHED_PENDING_SPREAD [restated 2026-08-15 by the spreads adjudication act from the rows in place]",
+  "SATIN_VS_CREAM": "NOT ESTABLISHED \u2014 S_V_C GRAN clearing: ESTABLISHED; S_V_C FWHM clearing: ADEQUACY_PRECONDITION_UNMET_DIRECT [restated 2026-08-15 by the spreads adjudication act from the rows in place]"
+ },
+ "law": "1k clearing_dispersion under A289 (recipe 23ef45d0d3521739); adequacy = committed margin > directly measured dispersion; max_seed_only_effect never the bar; crossing rescue VOID (0.6571 past 0.80 fails the diffuse pairs) cited \u2014 this act grows no census",
+ "acts": [
+  {
+   "row": "M_V_S SHEEN clearing",
+   "statistic": "SHEEN_REGION_RESPONSE",
+   "families": [
+    "POWDER_MATTE",
+    "POWDER_SATIN"
+   ],
+   "member_seeds": {
+    "0": [
+     40,
+     41
+    ],
+    "1": [
+     81,
+     410
+    ],
+    "2": [
+     82,
+     411
+    ],
+    "3": [
+     83,
+     412
+    ],
+    "4": [
+     84,
+     413
+    ],
+    "5": [
+     99,
+     414
+    ]
+   },
+   "per_member_clearings": {
+    "0": 0.422476918178924,
+    "1": 0.37274549098196397,
+    "2": 0.265544716657979,
+    "3": 0.28631929214247903,
+    "4": 0.41197778314416805,
+    "5": 0.3672286215577085
+   },
+   "pairwise": {
+    "0|1": 0.049731427196960054,
+    "0|2": 0.156932201520945,
+    "0|3": 0.136157626036445,
+    "0|4": 0.010499135034755969,
+    "0|5": 0.0552482966212155,
+    "1|2": 0.10720077432398495,
+    "1|3": 0.08642619883948494,
+    "1|4": 0.039232292162204085,
+    "1|5": 0.005516869424255444,
+    "2|3": 0.020774575484500013,
+    "2|4": 0.14643306648618903,
+    "2|5": 0.1016839048997295,
+    "3|4": 0.12565849100168902,
+    "3|5": 0.08090932941522949,
+    "4|5": 0.04474916158645953
+   },
+   "clearing_dispersion": 0.156932201520945,
+   "recipe_identity": "23ef45d0d3521739",
+   "reading_reproduced_at_member_0": 0.422476918178924,
+   "committed_reading": 0.4225,
+   "margin": 0.0911,
+   "adequacy_precondition_met": false,
+   "prior_row_state": {
+    "spread": 0.16569,
+    "spread_source": "TRANSFER: MATTE 6-seed",
+    "status": "UNMET_BY_CONSERVATIVE_PROXY",
+    "note": "remedy: resolving power on the clearing measurement"
+   },
+   "new_status": "ADEQUACY_PRECONDITION_UNMET_DIRECT",
+   "cleared_against": "532cd8de650ff5cc"
+  },
+  {
+   "row": "P_V_M SHEEN clearing",
+   "statistic": "SHEEN_REGION_RESPONSE",
+   "families": [
+    "PRESSED_POWDER",
+    "POWDER_MATTE"
+   ],
+   "member_seeds": {
+    "0": [
+     47,
+     40
+    ],
+    "1": [
+     470,
+     81
+    ],
+    "2": [
+     471,
+     82
+    ],
+    "3": [
+     472,
+     83
+    ],
+    "4": [
+     473,
+     84
+    ],
+    "5": [
+     474,
+     99
+    ]
+   },
+   "per_member_clearings": {
+    "0": 0.44707357204419024,
+    "1": 0.364171703083837,
+    "2": 0.29823920508511736,
+    "3": 0.3470712670508425,
+    "4": 0.4352791878172588,
+    "5": 0.3617298124760811
+   },
+   "pairwise": {
+    "0|1": 0.08290186896035323,
+    "0|2": 0.14883436695907287,
+    "0|3": 0.10000230499334772,
+    "0|4": 0.011794384226931465,
+    "0|5": 0.08534375956810913,
+    "1|2": 0.06593249799871964,
+    "1|3": 0.017100436032994493,
+    "1|4": 0.07110748473342177,
+    "1|5": 0.0024418906077559033,
+    "2|3": 0.04883206196572515,
+    "2|4": 0.1370399827321414,
+    "2|5": 0.06349060739096374,
+    "3|4": 0.08820792076641626,
+    "3|5": 0.01465854542523859,
+    "4|5": 0.07354937534117767
+   },
+   "clearing_dispersion": 0.14883436695907287,
+   "recipe_identity": "23ef45d0d3521739",
+   "reading_reproduced_at_member_0": 0.44707357204419024,
+   "committed_reading": 0.4471,
+   "margin": 0.1157,
+   "adequacy_precondition_met": false,
+   "prior_row_state": {
+    "spread": 0.16569,
+    "spread_source": "TRANSFER: MATTE 6-seed",
+    "status": "UNMET_BY_CONSERVATIVE_PROXY",
+    "note": ""
+   },
+   "new_status": "ADEQUACY_PRECONDITION_UNMET_DIRECT",
+   "cleared_against": "1c1c2013f19a9f61"
+  },
+  {
+   "row": "S_V_C FWHM clearing",
+   "statistic": "HIGHLIGHT_FWHM",
+   "families": [
+    "POWDER_SATIN",
+    "CREAM"
+   ],
+   "member_seeds": {
+    "0": [
+     41,
+     48
+    ],
+    "1": [
+     410,
+     480
+    ],
+    "2": [
+     411,
+     481
+    ],
+    "3": [
+     412,
+     482
+    ],
+    "4": [
+     413,
+     483
+    ],
+    "5": [
+     414,
+     484
+    ]
+   },
+   "per_member_clearings": {
+    "0": 0.28430013858641845,
+    "1": 0.2441231435034918,
+    "2": 0.2359956985042526,
+    "3": 0.2900823206585653,
+    "4": 0.25473725336979874,
+    "5": 0.26862764195967664
+   },
+   "pairwise": {
+    "0|1": 0.04017699508292666,
+    "0|2": 0.04830444008216586,
+    "0|3": 0.005782182072146869,
+    "0|4": 0.029562885216619705,
+    "0|5": 0.015672496626741805,
+    "1|2": 0.008127444999239203,
+    "1|3": 0.04595917715507353,
+    "1|4": 0.010614109866306953,
+    "1|5": 0.024504498456184853,
+    "2|3": 0.05408662215431273,
+    "2|4": 0.018741554865546156,
+    "2|5": 0.032631943455424056,
+    "3|4": 0.035345067288766574,
+    "3|5": 0.021454678698888674,
+    "4|5": 0.0138903885898779
+   },
+   "clearing_dispersion": 0.05408662215431273,
+   "recipe_identity": "23ef45d0d3521739",
+   "reading_reproduced_at_member_0": 0.28430013858641845,
+   "committed_reading": 0.2843,
+   "margin": 0.0343,
+   "adequacy_precondition_met": false,
+   "prior_row_state": {
+    "spread": 0.02431,
+    "spread_source": "PARTIAL: satin/cream 2-seed direct",
+    "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+    "note": "margin exceeds the partial estimate only 1.4x \u2014 the weakest open clearing in the protocol"
+   },
+   "new_status": "ADEQUACY_PRECONDITION_UNMET_DIRECT",
+   "cleared_against": "8bc1c031a89b038e"
+  }
+ ],
+ "findings": [],
+ "owner_approved": false
+}

@@ -1,0 +1,70 @@
+{
+ "record_type": "m6_spreads_adjudication_glitter/1.0",
+ "adjudicated": "2026-08-15",
+ "raw_record": "raw_glitter.json",
+ "member_counts": {
+  "GLITTER": [
+   113,
+   119,
+   147,
+   104,
+   129,
+   149
+  ],
+  "MATTE_CONTROL": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "SHIMMER": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "median_areas": [
+   53.0,
+   54.0,
+   48.0,
+   47.5,
+   44.0,
+   43.0
+  ]
+ },
+ "acts": [
+  {
+   "row": "GLITTER event PASS",
+   "spread": 45,
+   "new_status": "ESTABLISHED",
+   "prior_row_state": {
+    "spread": 31,
+    "spread_source": "PARTIAL: 1 replicate pairing (s66: 144 events; no declared event ensemble exists)",
+    "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+    "note": "partial data favorable (both >= 25, control 0 at both seeds); needs an ensemble DECLARATION first"
+   },
+   "cleared_against": "2b2f67422a65afd9"
+  },
+  {
+   "row": "glitter control cleanliness",
+   "spread": 0,
+   "new_status": "ESTABLISHED",
+   "prior_row_state": {
+    "spread": 0,
+    "spread_source": "PARTIAL: replicate control also 0",
+    "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+    "note": ""
+   },
+   "cleared_against": "95e1cc4f7eacca77"
+  }
+ ],
+ "pair_level_lines_restated": {
+  "GLITTER_RIG": "ESTABLISHED \u2014 event ensemble measured at the declared six trios: GLITTER counts [113, 119, 147, 104, 129, 149] (all >= 25, replicate spread 45 < margin 88); controls [0, 0, 0, 0, 0, 0] and SHIMMER [0, 0, 0, 0, 0, 0] all quiet at every member; median event areas [53.0, 54.0, 48.0, 47.5, 44.0, 43.0] all resolve (bar 4.5); both census axes clear at every member \u2014 the favorable partial replicate is cited as favorable-partial and inherited nothing [cleared_against=f9367fe5c015a373; restated 2026-08-15]"
+ },
+ "law": "replicate spread = max pairwise |delta| across the declared members (A289's measure in the census's own count units); adequacy = committed margin > spread; census law thresholds unchanged; member 0 reproduced the committed census exactly",
+ "owner_approved": false
+}

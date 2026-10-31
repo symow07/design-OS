@@ -1,0 +1,92 @@
+{
+ "record_type": "a274_cell_result/1.0",
+ "law": "b12db39c624f01c2",
+ "cell": "SATIN_VS_CREAM x SHEEN_REGION_RESPONSE",
+ "per_seed_clearings": {
+  "40": 0.1544037694816962,
+  "81": 0.1005614164970079,
+  "82": 0.17276860492940901,
+  "83": 0.12400199600798407,
+  "84": 0.1831907991742848,
+  "99": 0.1310787311866643
+ },
+ "swing": 0.0826293826772769,
+ "band": "UNDECLARED_INTERVAL",
+ "seed_only_max": 0.03566,
+ "clearing_dispersion": 0.582405198012602,
+ "ratio_test_over_proxy": 16.332170443426868,
+ "comparison_S_v_C_FWHM": {
+  "swing": 0.06026,
+  "band": "STABLE"
+ },
+ "band_assigned_per_declaration": "UNDECLARED_INTERVAL",
+ "not_assigned_to_the_nearer_band": "swing 0.08263 sits in the declared gap (0.060, 0.169). It is NOT assigned to STABLE, which is nearer. That is the A233 cell and the owner named it as the most likely way this node goes wrong",
+ "DECLARATION_DEFECT_FOUND_BY_COMPUTING": {
+  "what": "I banded a quantity the named instrument does not compute. The declared bands are over ABSOLUTE SWING (max-min of the per-seed clearings). The instrument 1k names and this arc committed \u2014 clearing_dispersion, recipe 6d6e4ab90686503f \u2014 computes MAX PAIRWISE RELATIVE EFFECT. They are different quantities and they classify this cell differently",
+  "the_two_readings": {
+   "absolute_swing": {
+    "value": 0.08263,
+    "calibration_stable": [
+     0.04034,
+     0.06026
+    ],
+    "calibration_unstable": [
+     0.16896,
+     0.17835
+    ],
+    "band": "UNDECLARED_INTERVAL"
+   },
+   "relative_dispersion": {
+    "value": 0.582405,
+    "calibration_stable": [
+     0.09585,
+     0.216796
+    ],
+    "calibration_unstable": [
+     0.477446,
+     0.484408
+    ],
+    "position": "ABOVE BOTH unstable calibration values \u2014 the most unstable of all five"
+   }
+  },
+  "why_they_disagree": "the per-seed clearings here are SMALL (0.101-0.183, every one BELOW the 0.25 effect bar) where the other four sat at 0.25-0.46. The same absolute wobble is a far larger relative wobble on a smaller base",
+  "not_resolved_here": "I do not pick the measure that gives a decidable answer. The declared band governs and the reading is UNDECLARED_INTERVAL; the relative-dispersion reading is reported beside it, not instead of it",
+  "class": "a calibration declared over a quantity other than the one the instrument computes \u2014 a units mismatch inside a pre-commitment, which is the shape a pre-commitment is supposed to prevent"
+ },
+ "substantive_observation_not_a_diagnosis": "this is the FIRST cell whose per-seed clearings are ALL BELOW the 0.25 relative effect bar \u2014 0.101 to 0.183, six of six under. The other four tests had 23 of 24 above it. So SATIN and CREAM barely separate on SHEEN at any seed, which is a different situation from an unstable-but-present separation, and neither the pair-vs-axis nor the within-pair branch anticipated it",
+ "branch_fired": {
+  "pair_vs_axis": "UNDECLARED_INTERVAL_PRESENT \u2014 no diagnosis; the band is not assigned to a neighbour",
+  "within_pair_axis_comparison": "UNDECLARED_INTERVAL \u2014 no reading assigned"
+ },
+ "A264_still_holds": "no diagnosis named: not axis-specific, not family-specific, not pairing-intrinsic",
+ "calibration_table": {
+  "S_v_C GRANULARITY": {
+   "swing": 0.04034,
+   "disp": 0.09585,
+   "band": "STABLE"
+  },
+  "S_v_C FWHM": {
+   "swing": 0.06026,
+   "disp": 0.216796,
+   "band": "STABLE"
+  },
+  "M_v_S SHEEN": {
+   "swing": 0.16896,
+   "disp": 0.477446,
+   "band": "UNSTABLE"
+  },
+  "P_v_M SHEEN": {
+   "swing": 0.17835,
+   "disp": 0.484408,
+   "band": "UNSTABLE"
+  }
+ },
+ "A278_RECLASSIFICATION": {
+  "band": "NOT_APPLICABLE",
+  "reason": "NO_SEPARATION_AT_REQUIRED_MAGNITUDE",
+  "effect_bar_clearance": "0_OF_6_SEEDS",
+  "stability_classification": "INAPPLICABLE_NOT_UNDECLARED",
+  "supersedes": "the UNDECLARED_INTERVAL band assigned earlier in this record, and the 'most unstable of all five cells' reading I attached to its relative dispersion. It is not unstable; it is ABSENT. A near-zero base producing a large fractional wobble is the artifact I identified in my own question, and the domain check is what prevents it being reported as a property of the axis",
+  "law": "3h \u2014 a qualifier has a domain"
+ }
+}

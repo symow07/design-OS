@@ -1,0 +1,20 @@
+{
+  "record_type": "m5_canonical_suite_record/1.0",
+  "written_by": "checkpoint process AFTER the suite exited — the suite never writes this record and cannot verify itself from inside",
+  "command": "venv/bin/python -m pytest -q -m \"not pacdora\"",
+  "exit_code": 0,
+  "summary_line": "5878 passed, 1 deselected, 585 warnings, 401 subtests passed in 519.54s (0:08:39)",
+  "passed": 5878,
+  "failed": 0,
+  "deselected": 1,
+  "subtests_passed": 401,
+  "duration_seconds": 519.54,
+  "git_head_at_run": "b7da21ed87d95527dcad144ec6507a8dda87a251",
+  "notes": [
+    "The suite ran against b7da21e — the M5 §9 closure commit, so every closing guard (mirror-geometry pin, script-angle pin, ray-clearance negative control, calibrated-row record test) is inside this count.",
+    "Six tests more than the cefaa37 run: the option (a) guards added during §9 closure.",
+    "The one deselected test is the pacdora-marked quarantine, excluded by the canonical marker expression.",
+    "This record is the external evidence read by exit-gate condition 19; a fresh suite must be run and this record rewritten at every checkpoint that claims condition 19."
+  ],
+  "recorded_at": "2026-08-07"
+}

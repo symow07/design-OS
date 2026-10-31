@@ -1,0 +1,924 @@
+{
+ "record_type": "a3p_evidence_validation/1.0",
+ "required_count": 41,
+ "present_count": 41,
+ "findings": [],
+ "entries": [
+  {
+   "filename": "controlling_face_pair.png",
+   "milestone": "A3R",
+   "purpose": "the two faces that define the failing 0.600738 mm interval",
+   "required_feature": "FACE_PAIR",
+   "pixel_hash": "e3738563b59d25b8",
+   "dimensions": [
+    2400,
+    1600
+   ],
+   "std": 20.366,
+   "source_geometry_identity": "743ead2beceb7fe5",
+   "status": "HISTORICAL",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "HISTORICAL A3R FAILURE EVIDENCE",
+    "FROZEN GEOMETRY 26c817b8c113851a",
+    "0.600738 MM FLOOR-FILLET FAILURE"
+   ],
+   "feature_probe": "12119 diagnostic-red pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "minimum_location_top.png",
+   "milestone": "A3R",
+   "purpose": "where the minimum sits, seen from above",
+   "required_feature": "MINIMUM_MARKER",
+   "pixel_hash": "c1d2046253af26ff",
+   "dimensions": [
+    1800,
+    2050
+   ],
+   "std": 39.174,
+   "source_geometry_identity": "743ead2beceb7fe5",
+   "status": "HISTORICAL",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "HISTORICAL A3R FAILURE EVIDENCE",
+    "FROZEN GEOMETRY 26c817b8c113851a",
+    "0.600738 MM FLOOR-FILLET FAILURE"
+   ],
+   "feature_probe": "9667 diagnostic-red pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "minimum_location_underside.png",
+   "milestone": "A3R",
+   "purpose": "the same location from the underside",
+   "required_feature": "MINIMUM_MARKER",
+   "pixel_hash": "fce834d3a5f93830",
+   "dimensions": [
+    1800,
+    2050
+   ],
+   "std": 52.746,
+   "source_geometry_identity": "743ead2beceb7fe5",
+   "status": "HISTORICAL",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "HISTORICAL A3R FAILURE EVIDENCE",
+    "FROZEN GEOMETRY 26c817b8c113851a",
+    "0.600738 MM FLOOR-FILLET FAILURE"
+   ],
+   "feature_probe": "8702 diagnostic-red pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "minimum_location_wireframe.png",
+   "milestone": "A3R",
+   "purpose": "the minimum against the mesh topology",
+   "required_feature": "WIREFRAME",
+   "pixel_hash": "3bb5fcc6bed7c1d1",
+   "dimensions": [
+    1800,
+    2050
+   ],
+   "std": 28.302,
+   "source_geometry_identity": "743ead2beceb7fe5",
+   "status": "HISTORICAL",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "HISTORICAL A3R FAILURE EVIDENCE",
+    "FROZEN GEOMETRY 26c817b8c113851a",
+    "0.600738 MM FLOOR-FILLET FAILURE"
+   ],
+   "feature_probe": "6668 dark line pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "minimum_location_normals.png",
+   "milestone": "A3R",
+   "purpose": "the surface normals used to measure it",
+   "required_feature": "NORMALS",
+   "pixel_hash": "0fa1baf877467a66",
+   "dimensions": [
+    1800,
+    2050
+   ],
+   "std": 33.003,
+   "source_geometry_identity": "743ead2beceb7fe5",
+   "status": "HISTORICAL",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "HISTORICAL A3R FAILURE EVIDENCE",
+    "FROZEN GEOMETRY 26c817b8c113851a",
+    "0.600738 MM FLOOR-FILLET FAILURE"
+   ],
+   "feature_probe": "normal-direction colour present",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "minimum_cross_section_primary.png",
+   "milestone": "A3R",
+   "purpose": "a true section through the minimum",
+   "required_feature": "SECTION",
+   "pixel_hash": "9f77cb3ad4f2e9f0",
+   "dimensions": [
+    2400,
+    1450
+   ],
+   "std": 21.768,
+   "source_geometry_identity": "743ead2beceb7fe5",
+   "status": "HISTORICAL",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "HISTORICAL A3R FAILURE EVIDENCE",
+    "FROZEN GEOMETRY 26c817b8c113851a",
+    "0.600738 MM FLOOR-FILLET FAILURE"
+   ],
+   "feature_probe": "50344 section-fill pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "minimum_cross_section_orthogonal.png",
+   "milestone": "A3R",
+   "purpose": "the orthogonal section through the same point",
+   "required_feature": "SECTION",
+   "pixel_hash": "100bc038ed377da1",
+   "dimensions": [
+    2400,
+    1450
+   ],
+   "std": 21.932,
+   "source_geometry_identity": "743ead2beceb7fe5",
+   "status": "HISTORICAL",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "HISTORICAL A3R FAILURE EVIDENCE",
+    "FROZEN GEOMETRY 26c817b8c113851a",
+    "0.600738 MM FLOOR-FILLET FAILURE"
+   ],
+   "feature_probe": "46718 section-fill pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "analytical_vs_ray_vs_section.png",
+   "milestone": "A3R",
+   "purpose": "the three independent methods side by side",
+   "required_feature": "METHOD_COMPARISON",
+   "pixel_hash": "a9f361c3f0d9f0e0",
+   "dimensions": [
+    2000,
+    1500
+   ],
+   "std": 34.816,
+   "source_geometry_identity": "743ead2beceb7fe5",
+   "status": "HISTORICAL",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "HISTORICAL A3R FAILURE EVIDENCE",
+    "FROZEN GEOMETRY 26c817b8c113851a",
+    "0.600738 MM FLOOR-FILLET FAILURE"
+   ],
+   "feature_probe": "146576 inked pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "convergence_plot.png",
+   "milestone": "A3R",
+   "purpose": "the density-convergence study",
+   "required_feature": "CONVERGENCE",
+   "pixel_hash": "251ccedfc41cbf16",
+   "dimensions": [
+    2000,
+    1500
+   ],
+   "std": 25.959,
+   "source_geometry_identity": "743ead2beceb7fe5",
+   "status": "HISTORICAL",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "HISTORICAL A3R FAILURE EVIDENCE",
+    "FROZEN GEOMETRY 26c817b8c113851a",
+    "0.600738 MM FLOOR-FILLET FAILURE"
+   ],
+   "feature_probe": "45057 inked pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "adaptive_refinement_map.png",
+   "milestone": "A3R",
+   "purpose": "adaptive refinement around the detected minimum",
+   "required_feature": "REFINEMENT",
+   "pixel_hash": "9bd4e104820b4167",
+   "dimensions": [
+    2000,
+    1650
+   ],
+   "std": 48.641,
+   "source_geometry_identity": "743ead2beceb7fe5",
+   "status": "HISTORICAL",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "HISTORICAL A3R FAILURE EVIDENCE",
+    "FROZEN GEOMETRY 26c817b8c113851a",
+    "0.600738 MM FLOOR-FILLET FAILURE"
+   ],
+   "feature_probe": "353313 inked pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "opposing_surface_pair_map.png",
+   "milestone": "A3R",
+   "purpose": "which surface each sample was paired against",
+   "required_feature": "PAIR_MAP",
+   "pixel_hash": "4bcf2aa3eb0b01ed",
+   "dimensions": [
+    2000,
+    1650
+   ],
+   "std": 51.905,
+   "source_geometry_identity": "743ead2beceb7fe5",
+   "status": "HISTORICAL",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "HISTORICAL A3R FAILURE EVIDENCE",
+    "FROZEN GEOMETRY 26c817b8c113851a",
+    "0.600738 MM FLOOR-FILLET FAILURE"
+   ],
+   "feature_probe": "385044 inked pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "thickness_definition_diagram.png",
+   "milestone": "A3R",
+   "purpose": "what each thickness definition means and why they differ",
+   "required_feature": "DEFINITION_DIAGRAM",
+   "pixel_hash": "146769c09418890f",
+   "dimensions": [
+    2000,
+    1500
+   ],
+   "std": 36.792,
+   "source_geometry_identity": "743ead2beceb7fe5",
+   "status": "HISTORICAL",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "HISTORICAL A3R FAILURE EVIDENCE",
+    "FROZEN GEOMETRY 26c817b8c113851a",
+    "0.600738 MM FLOOR-FILLET FAILURE"
+   ],
+   "feature_probe": "162870 inked pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "false_pairing_diagnostic.png",
+   "milestone": "A3R",
+   "purpose": "how an incorrect opposing-surface pair would present",
+   "required_feature": "FALSE_PAIRING",
+   "pixel_hash": "16b423fe98c48a8f",
+   "dimensions": [
+    2000,
+    1500
+   ],
+   "std": 37.405,
+   "source_geometry_identity": "743ead2beceb7fe5",
+   "status": "HISTORICAL",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "HISTORICAL A3R FAILURE EVIDENCE",
+    "FROZEN GEOMETRY 26c817b8c113851a",
+    "0.600738 MM FLOOR-FILLET FAILURE"
+   ],
+   "feature_probe": "140082 inked pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "radial_offset_vs_normal_offset_diagram.png",
+   "milestone": "A3F",
+   "purpose": "why a radial offset does not preserve local normal thickness",
+   "required_feature": "OFFSET_COMPARISON",
+   "pixel_hash": "a2b225109c43cee0",
+   "dimensions": [
+    2000,
+    1450
+   ],
+   "std": 26.006,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3F CORRECTED GEOMETRY",
+    "TRUE-NORMAL CUP OFFSET 1.20 MM",
+    "GEOMETRY 7c0558062fde67a7"
+   ],
+   "feature_probe": "6880 diagnostic-red pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "offset_strategy_matrix.png",
+   "milestone": "A3F",
+   "purpose": "the 1.00 / 1.10 / 1.20 / 1.30 mm strategy matrix",
+   "required_feature": "STRATEGY_MATRIX",
+   "pixel_hash": "6504e1a63c339dc8",
+   "dimensions": [
+    2200,
+    1500
+   ],
+   "std": 23.302,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3F CORRECTED GEOMETRY",
+    "TRUE-NORMAL CUP OFFSET 1.20 MM",
+    "GEOMETRY 7c0558062fde67a7"
+   ],
+   "feature_probe": "61536 inked pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "corrected_profile_control_points.png",
+   "milestone": "A3F",
+   "purpose": "the corrected meridional profile and its control points",
+   "required_feature": "PROFILE",
+   "pixel_hash": "0a40ce2ee9dc5ce1",
+   "dimensions": [
+    2000,
+    1550
+   ],
+   "std": 22.512,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3F CORRECTED GEOMETRY",
+    "TRUE-NORMAL CUP OFFSET 1.20 MM",
+    "GEOMETRY 7c0558062fde67a7"
+   ],
+   "feature_probe": "36032 inked pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "corrected_floor_fillet_closeup.png",
+   "milestone": "A3F",
+   "purpose": "the floor fillet that previously collapsed",
+   "required_feature": "FILLET_CLOSEUP",
+   "pixel_hash": "4b22204018593460",
+   "dimensions": [
+    2400,
+    1450
+   ],
+   "std": 21.272,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3F CORRECTED GEOMETRY",
+    "TRUE-NORMAL CUP OFFSET 1.20 MM",
+    "GEOMETRY 7c0558062fde67a7"
+   ],
+   "feature_probe": "54492 section-fill pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "corrected_tray_top.png",
+   "milestone": "A3F",
+   "purpose": "the corrected tray from above",
+   "required_feature": "TRAY_VIEW",
+   "pixel_hash": "0ca17cffe3113b8f",
+   "dimensions": [
+    1800,
+    2050
+   ],
+   "std": 39.32,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3F CORRECTED GEOMETRY",
+    "TRUE-NORMAL CUP OFFSET 1.20 MM",
+    "GEOMETRY 7c0558062fde67a7"
+   ],
+   "feature_probe": "3259185 shaded body pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "corrected_tray_underside.png",
+   "milestone": "A3F",
+   "purpose": "the corrected tray underside showing the core",
+   "required_feature": "TRAY_VIEW",
+   "pixel_hash": "9253c444a5614f60",
+   "dimensions": [
+    1800,
+    2050
+   ],
+   "std": 52.746,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3F CORRECTED GEOMETRY",
+    "TRUE-NORMAL CUP OFFSET 1.20 MM",
+    "GEOMETRY 7c0558062fde67a7"
+   ],
+   "feature_probe": "3257379 shaded body pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "corrected_tray_wireframe.png",
+   "milestone": "A3F",
+   "purpose": "the corrected mesh topology",
+   "required_feature": "WIREFRAME",
+   "pixel_hash": "61bc2ce93b07a736",
+   "dimensions": [
+    1800,
+    2050
+   ],
+   "std": 27.962,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3F CORRECTED GEOMETRY",
+    "TRUE-NORMAL CUP OFFSET 1.20 MM",
+    "GEOMETRY 7c0558062fde67a7"
+   ],
+   "feature_probe": "11991 dark line pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "corrected_tray_normals.png",
+   "milestone": "A3F",
+   "purpose": "the corrected surface normals",
+   "required_feature": "NORMALS",
+   "pixel_hash": "60ab8cea04f02220",
+   "dimensions": [
+    1800,
+    2050
+   ],
+   "std": 33.174,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3F CORRECTED GEOMETRY",
+    "TRUE-NORMAL CUP OFFSET 1.20 MM",
+    "GEOMETRY 7c0558062fde67a7"
+   ],
+   "feature_probe": "normal-direction colour present",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "corrected_minimum_location.png",
+   "milestone": "A3F",
+   "purpose": "where the corrected minimum now sits",
+   "required_feature": "MINIMUM_MARKER",
+   "pixel_hash": "185d7ca92317c300",
+   "dimensions": [
+    1800,
+    2050
+   ],
+   "std": 39.325,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3F CORRECTED GEOMETRY",
+    "TRUE-NORMAL CUP OFFSET 1.20 MM",
+    "GEOMETRY 7c0558062fde67a7"
+   ],
+   "feature_probe": "1511 diagnostic-red pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "corrected_minimum_cross_section.png",
+   "milestone": "A3F",
+   "purpose": "a true section through the corrected minimum",
+   "required_feature": "SECTION",
+   "pixel_hash": "884f739bfa9e6456",
+   "dimensions": [
+    2400,
+    1450
+   ],
+   "std": 22.855,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3F CORRECTED GEOMETRY",
+    "TRUE-NORMAL CUP OFFSET 1.20 MM",
+    "GEOMETRY 7c0558062fde67a7"
+   ],
+   "feature_probe": "48881 section-fill pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "analytical_vs_ray_corrected.png",
+   "milestone": "A3F",
+   "purpose": "analytical against ray measurement on the corrected geometry",
+   "required_feature": "METHOD_COMPARISON",
+   "pixel_hash": "9c8b699786c4cc05",
+   "dimensions": [
+    2000,
+    1500
+   ],
+   "std": 42.927,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3F CORRECTED GEOMETRY",
+    "TRUE-NORMAL CUP OFFSET 1.20 MM",
+    "GEOMETRY 7c0558062fde67a7"
+   ],
+   "feature_probe": "198032 inked pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "A3_vs_A3F_thickness_comparison.png",
+   "milestone": "A3F",
+   "purpose": "the failed and corrected thickness fields side by side",
+   "required_feature": "COMPARISON",
+   "pixel_hash": "23d4bf315a598d8f",
+   "dimensions": [
+    4060,
+    2100
+   ],
+   "std": 47.733,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3F CORRECTED GEOMETRY",
+    "TRUE-NORMAL CUP OFFSET 1.20 MM",
+    "GEOMETRY 7c0558062fde67a7"
+   ],
+   "feature_probe": "792054 inked pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "corrected_thickness_map.png",
+   "milestone": "A3F",
+   "purpose": "the corrected thickness field",
+   "required_feature": "THICKNESS_MAP",
+   "pixel_hash": "f96f35e0d59ac0d2",
+   "dimensions": [
+    2000,
+    1650
+   ],
+   "std": 54.604,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3F CORRECTED GEOMETRY",
+    "TRUE-NORMAL CUP OFFSET 1.20 MM",
+    "GEOMETRY 7c0558062fde67a7"
+   ],
+   "feature_probe": "405630 inked pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "corrected_thickness_histogram.png",
+   "milestone": "A3F",
+   "purpose": "the corrected thickness distribution",
+   "required_feature": "HISTOGRAM",
+   "pixel_hash": "eeb4d0f0d1194c4f",
+   "dimensions": [
+    2000,
+    1500
+   ],
+   "std": 31.507,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3F CORRECTED GEOMETRY",
+    "TRUE-NORMAL CUP OFFSET 1.20 MM",
+    "GEOMETRY 7c0558062fde67a7"
+   ],
+   "feature_probe": "74677 inked pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "corrected_sink_risk_map.png",
+   "milestone": "A3F",
+   "purpose": "moulding sink risk",
+   "required_feature": "RISK_MAP",
+   "pixel_hash": "623cadfb001bf7b6",
+   "dimensions": [
+    2000,
+    1650
+   ],
+   "std": 54.426,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3F CORRECTED GEOMETRY",
+    "TRUE-NORMAL CUP OFFSET 1.20 MM",
+    "GEOMETRY 7c0558062fde67a7"
+   ],
+   "feature_probe": "403816 inked pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "corrected_warpage_risk_map.png",
+   "milestone": "A3F",
+   "purpose": "moulding warpage risk",
+   "required_feature": "RISK_MAP",
+   "pixel_hash": "a50c895a3d1c97d7",
+   "dimensions": [
+    2000,
+    1650
+   ],
+   "std": 54.882,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3F CORRECTED GEOMETRY",
+    "TRUE-NORMAL CUP OFFSET 1.20 MM",
+    "GEOMETRY 7c0558062fde67a7"
+   ],
+   "feature_probe": "404372 inked pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "maximum_location_top.png",
+   "milestone": "A3M",
+   "purpose": "where the reported maximum sits, from above",
+   "required_feature": "MAXIMUM_MARKER",
+   "pixel_hash": "5b275533e800b815",
+   "dimensions": [
+    1800,
+    2050
+   ],
+   "std": 39.315,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3M MAXIMUM-THICKNESS DIAGNOSTIC",
+    "GEOMETRY 7c0558062fde67a7",
+    "LOCAL WALL IS NOT LONGEST MATERIAL PATH"
+   ],
+   "feature_probe": "1285 diagnostic-red pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "maximum_location_underside.png",
+   "milestone": "A3M",
+   "purpose": "the same location from the underside",
+   "required_feature": "MAXIMUM_MARKER",
+   "pixel_hash": "8848191a1af23a8f",
+   "dimensions": [
+    1800,
+    2050
+   ],
+   "std": 52.627,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3M MAXIMUM-THICKNESS DIAGNOSTIC",
+    "GEOMETRY 7c0558062fde67a7",
+    "LOCAL WALL IS NOT LONGEST MATERIAL PATH"
+   ],
+   "feature_probe": "1662 diagnostic-red pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "maximum_location_wireframe.png",
+   "milestone": "A3M",
+   "purpose": "the maximum against the mesh topology",
+   "required_feature": "WIREFRAME",
+   "pixel_hash": "41a3d9b181193a7b",
+   "dimensions": [
+    1800,
+    2050
+   ],
+   "std": 28.264,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3M MAXIMUM-THICKNESS DIAGNOSTIC",
+    "GEOMETRY 7c0558062fde67a7",
+    "LOCAL WALL IS NOT LONGEST MATERIAL PATH"
+   ],
+   "feature_probe": "13712 dark line pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "maximum_location_normals.png",
+   "milestone": "A3M",
+   "purpose": "the source and opposing normals at the maximum",
+   "required_feature": "NORMALS",
+   "pixel_hash": "7be6bb61e71b5a48",
+   "dimensions": [
+    1800,
+    2050
+   ],
+   "std": 33.441,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3M MAXIMUM-THICKNESS DIAGNOSTIC",
+    "GEOMETRY 7c0558062fde67a7",
+    "LOCAL WALL IS NOT LONGEST MATERIAL PATH"
+   ],
+   "feature_probe": "normal-direction colour present",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "maximum_controlling_face_pair.png",
+   "milestone": "A3M",
+   "purpose": "the face pair the ray actually connected",
+   "required_feature": "FACE_PAIR",
+   "pixel_hash": "9f6659760990172a",
+   "dimensions": [
+    2400,
+    1600
+   ],
+   "std": 22.979,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3M MAXIMUM-THICKNESS DIAGNOSTIC",
+    "GEOMETRY 7c0558062fde67a7",
+    "LOCAL WALL IS NOT LONGEST MATERIAL PATH"
+   ],
+   "feature_probe": "3353 diagnostic-red pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "maximum_cross_section_primary.png",
+   "milestone": "A3M",
+   "purpose": "a true section through the maximum",
+   "required_feature": "SECTION",
+   "pixel_hash": "499a49112baea355",
+   "dimensions": [
+    2400,
+    1450
+   ],
+   "std": 30.892,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3M MAXIMUM-THICKNESS DIAGNOSTIC",
+    "GEOMETRY 7c0558062fde67a7",
+    "LOCAL WALL IS NOT LONGEST MATERIAL PATH"
+   ],
+   "feature_probe": "599981 section-fill pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "maximum_cross_section_orthogonal.png",
+   "milestone": "A3M",
+   "purpose": "the orthogonal section through the same point",
+   "required_feature": "SECTION",
+   "pixel_hash": "f0a7500d2f7d0c73",
+   "dimensions": [
+    2400,
+    1450
+   ],
+   "std": 23.305,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3M MAXIMUM-THICKNESS DIAGNOSTIC",
+    "GEOMETRY 7c0558062fde67a7",
+    "LOCAL WALL IS NOT LONGEST MATERIAL PATH"
+   ],
+   "feature_probe": "47993 section-fill pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "maximum_candidate_intersections.png",
+   "milestone": "A3M",
+   "purpose": "every candidate intersection, not only the selected hit",
+   "required_feature": "CANDIDATES",
+   "pixel_hash": "a3b0492e5ff81c76",
+   "dimensions": [
+    2000,
+    1500
+   ],
+   "std": 29.665,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3M MAXIMUM-THICKNESS DIAGNOSTIC",
+    "GEOMETRY 7c0558062fde67a7",
+    "LOCAL WALL IS NOT LONGEST MATERIAL PATH"
+   ],
+   "feature_probe": "49020 inked pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "maximum_method_comparison.png",
+   "milestone": "A3M",
+   "purpose": "the three independent methods at the maximum",
+   "required_feature": "METHOD_COMPARISON",
+   "pixel_hash": "6a65273c954ca960",
+   "dimensions": [
+    2000,
+    1500
+   ],
+   "std": 41.157,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3M MAXIMUM-THICKNESS DIAGNOSTIC",
+    "GEOMETRY 7c0558062fde67a7",
+    "LOCAL WALL IS NOT LONGEST MATERIAL PATH"
+   ],
+   "feature_probe": "158308 inked pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "maximum_convergence_plot.png",
+   "milestone": "A3M",
+   "purpose": "adaptive convergence around the maximum",
+   "required_feature": "CONVERGENCE",
+   "pixel_hash": "57f71f11eb44f3a2",
+   "dimensions": [
+    2000,
+    1500
+   ],
+   "std": 27.01,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3M MAXIMUM-THICKNESS DIAGNOSTIC",
+    "GEOMETRY 7c0558062fde67a7",
+    "LOCAL WALL IS NOT LONGEST MATERIAL PATH"
+   ],
+   "feature_probe": "41460 inked pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "local_wall_vs_long_path_diagram.png",
+   "milestone": "A3M",
+   "purpose": "why 11.83 mm is a long material path and not a local wall",
+   "required_feature": "DEFINITION_DIAGRAM",
+   "pixel_hash": "d468d833eebed24d",
+   "dimensions": [
+    2000,
+    1500
+   ],
+   "std": 38.668,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3M MAXIMUM-THICKNESS DIAGNOSTIC",
+    "GEOMETRY 7c0558062fde67a7",
+    "LOCAL WALL IS NOT LONGEST MATERIAL PATH"
+   ],
+   "feature_probe": "140131 inked pixels",
+   "verdict": "PASS"
+  },
+  {
+   "filename": "below_1_20_region_map.png",
+   "milestone": "A3M",
+   "purpose": "every region below the 1.20 mm target, classified",
+   "required_feature": "REGION_MAP",
+   "pixel_hash": "1b3ef004dca9affa",
+   "dimensions": [
+    2000,
+    1650
+   ],
+   "std": 48.831,
+   "source_geometry_identity": "7c0558062fde67a7",
+   "status": "CURRENT",
+   "blender_version": "Blender 4.5.12 LTS (pinned)",
+   "labels": [
+    "A3M MAXIMUM-THICKNESS DIAGNOSTIC",
+    "GEOMETRY 7c0558062fde67a7",
+    "LOCAL WALL IS NOT LONGEST MATERIAL PATH"
+   ],
+   "feature_probe": "335471 inked pixels",
+   "verdict": "PASS"
+  }
+ ],
+ "A3P_41_DIAGNOSTICS": "COMPLETE",
+ "A3P_EVIDENCE_MANIFEST": "PASS",
+ "failure_conditions_checked": [
+  "IMAGE_ABSENT",
+  "FILENAME_NOT_IN_MANIFEST",
+  "WRONG_SOURCE_GEOMETRY",
+  "HISTORICAL_PRESENTED_AS_CURRENT",
+  "REQUIRED_LABEL_MISSING",
+  "PIXEL_HASH_MISSING",
+  "EVIDENCE_VISUALLY_BLANK",
+  "REQUIRED_FEATURE_NOT_EXPOSED"
+ ],
+ "owner_approved": false,
+ "manufacturing_authority": "NOT_ESTABLISHED"
+}

@@ -1,0 +1,67 @@
+{
+ "record_type": "a326_tier2_demonstrations/1.0",
+ "law": "c640f8c06b56003e",
+ "demonstrations": [
+  {
+   "row": 1,
+   "label": "all pass",
+   "date": "2026-08-12",
+   "artifact_value": "GREEN",
+   "fired": true,
+   "detail": "no failures"
+  },
+  {
+   "row": 2,
+   "label": "registered, invocation available",
+   "date": "2026-08-12",
+   "artifact_value": "AMBER",
+   "fired": true,
+   "detail": [
+    {
+     "id": "apps/pipeline/tests/test_browser_review_board_references.py::ReviewBoardReferenceBrowserTests::test_x",
+     "remaining": 0
+    }
+   ]
+  },
+  {
+   "row": 3,
+   "label": "registered, invocations SPENT",
+   "date": "2026-08-12",
+   "artifact_value": "REFUSE",
+   "fired": true,
+   "detail": [
+    "INVOCATIONS_SPENT: apps/pipeline/tests/test_browser_review_board_references.py::ReviewBoardReferenceBrowserTests::test_y"
+   ]
+  },
+  {
+   "row": 4,
+   "label": "unregistered",
+   "date": "2026-08-12",
+   "artifact_value": "REFUSE",
+   "fired": true,
+   "detail": [
+    "UNREGISTERED: apps/pipeline/tests/test_browser_review_board_references.py::ReviewBoardReferenceBrowserTests::test_never_seen"
+   ]
+  },
+  {
+   "row": 5,
+   "label": "registered at allowed 0 (known != relief)",
+   "date": "2026-08-12",
+   "artifact_value": "REFUSE",
+   "fired": true,
+   "detail": [
+    "REGISTERED_AT_ZERO: apps/pipeline/tests/test_browser_review_board_references.py::ReviewBoardReferenceBrowserTests::test_z \u2014 being known about is not relief"
+   ]
+  },
+  {
+   "row": "A329 self-test",
+   "label": "tested against its own failure class before being trusted",
+   "date": "2026-08-12",
+   "artifact_value": "REFUSE both directions",
+   "fired": true,
+   "detail": "file-set equality catches disappearance AND accidental gain"
+  }
+ ],
+ "all_five_rows_fired": true,
+ "note": "AMBER is a distinct artifact value, not a pass; a result may not be cited as full-suite-green on AMBER"
+}

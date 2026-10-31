@@ -1,0 +1,79 @@
+{
+ "record_type": "a413_mvc_fwhm_frame_inventory/1.0",
+ "law": "c6902a09d9468d20",
+ "date": "2026-08-12",
+ "declared_before_any_number": true,
+ "A416_outcome_space": {
+  "dimensions": [
+   "D1 computability",
+   "D2 applicability",
+   "D3 adequacy"
+  ],
+  "cells": [
+   "NOT_COMPUTABLE (D2,D3 unreachable)",
+   "COMPUTABLE/INAPPLICABLE (D3 unreachable)",
+   "COMPUTABLE/APPLICABLE/ADEQUATE",
+   "COMPUTABLE/APPLICABLE/INADEQUATE"
+  ],
+  "product_asserted_at_write_time": true
+ },
+ "A414_frame_inventory": {
+  "declared_ensemble": [
+   40,
+   81,
+   82,
+   83,
+   84,
+   99
+  ],
+  "frames_found_by_family_and_seed": {
+   "CREAM": [
+    400,
+    401
+   ],
+   "POWDER_MATTE": [
+    401
+   ],
+   "POWDER_SATIN": [
+    400,
+    401
+   ],
+   "PRESSED_POWDER": [
+    400,
+    401
+   ],
+   "MATTE_CONTROL": [
+    67
+   ]
+  },
+  "frames_at_declared_ensemble_seeds": {
+   "CREAM": [],
+   "POWDER_MATTE": []
+  },
+  "overlap_with_declared_ensemble": "EMPTY for every family",
+  "frame_type_constant_across_compared_tests": "NO",
+  "evidence": "the frames that exist are independence-sweep BASE frames at seeds 400/401 under docs/roadmap/palt_m6/independence_sweeps/frames/, plus one glitter-census MATTE_CONTROL at seed 67. The four existing tests were computed over the 6-seed declared ensemble 40/81/82/83/84/99, whose per-seed CLEARINGS are committed but whose per-family frames are not present as records.",
+  "second_absence": "WITHDRAWN \u2014 FALSE AS WRITTEN. See correction below."
+ },
+ "A415_positive_control": {
+  "exists_at_the_computed_condition": "NO",
+  "basis": "MVS_SHEEN_NO_POSITIVE_CONTROL_AT_COMPUTED_CONDITION is OPEN and no positive control was located for FWHM at the declared ensemble",
+  "qualifier_declared_before_computing": "NEGATIVE_UNINTERPRETABLE_NO_POSITIVE_CONTROL would apply had the cell been computable"
+ },
+ "OUTCOME": "NOT_COMPUTABLE",
+ "D2_D3": "UNREACHABLE \u2014 no per-seed quantity exists to apply recipe 23ef45d0d3521739 to",
+ "reason_class": "INSTRUMENTAL_NOT_PHYSICAL",
+ "A417_inference_quoted": "NOT_COMPUTABLE: the confound remains unbroken and the reason is instrumental rather than physical. Distinguish these two in the record; they have different remedies.",
+ "confound_status": "UNBROKEN \u2014 family, axis and frame-type remain confounded",
+ "what_would_make_it_computable": "render MATTE and CREAM frames at seeds 40/81/82/83/84/99 and measure HIGHLIGHT_FWHM on both; that is a render-spend decision, not a computation",
+ "A419_units": "not reached \u2014 no comparison of margin to dispersion was made, so no units statement was owed",
+ "A420": "no reframing applied; the bar stayed at 0.25 and was never consulted",
+ "CORRECTION_BEFORE_COMMIT": {
+  "withdrawn_claim": "no record carries MATTE per-seed values on HIGHLIGHT_FWHM at all",
+  "why_false": "diffuse_pairs_standing.json /pairs/PRESSED_VS_MATTE reads \"FWHM 0.3091 clears the bar but is rho=1.0 with counted...\" \u2014 a MATTE-containing pair HAS an FWHM reading. It is excluded from standing for R5 INDEPENDENCE (rho=1.0), not for absence.",
+  "how_caught": "I searched by filename, found no MATTE FWHM frames, and wrote an absolute negative. A co-occurrence scan returned 33 records and I checked two of them before shipping the claim. The negative was an artifact of my search extent, which is SILENT_EXTENT_LOSS pointed at a literature search rather than a suite \u2014 third locus for that class.",
+  "what_survives": "the NOT_COMPUTABLE outcome stands on the A414 FRAME grounds alone, which are independently established: no frames exist for CREAM or POWDER_MATTE at any declared-ensemble seed, the only frames present are independence-sweep base frames at seeds 400/401, and frame-type is therefore NOT constant across the tests being compared. A414 orders a stop on exactly that.",
+  "what_does_not_survive": "any implication that MATTE is unmeasurable on FWHM. It is measurable and has been measured at 0.3091 in P_v_M."
+ },
+ "ADDITIONAL_FINDING_R5": "MATTE x FWHM is excluded from standing by R5 independence at rho=1.0 against the counted instrument. If M_v_C x FWHM were rendered, that exclusion would likely apply to it too \u2014 which means the cell may be structurally unable to break the confound even with frames. NOT concluded here; recorded as the first thing the frame decision should check."
+}

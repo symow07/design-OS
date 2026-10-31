@@ -1,0 +1,35 @@
+{
+  "record_type": "driver_completeness_phase1_second_amendment/1.0",
+  "owner_authorization": "M6_DRIVER_COMPLETENESS_PROMPT.md \u2014 transmission is the authorization",
+  "identity_move": {
+    "old": "f2438bcae8b86533",
+    "new": "eb20aad9698e1825",
+    "date": "2026-08-08",
+    "reason": "containment 1e (a NOT_COMMON_DRIVER reading is valid only if the swept range contains the inter-family interval), conservation 1f (the positive control converting null results into bounded claims; UNACCOUNTED_CAUSE residual forces PASS_WITH_UNTESTED_DRIVER), guard 1g (no rank correlation against a zero-variance vector; guard raises)",
+    "diff_proof": "PASS_LAW byte-identical to the first-amendment state (0.25 / 2 axes / supporting_axes_never_count / declared_before_measurement / independence key) \u2014 mechanical comparison, NONE differ; R5 ceiling 0.80 and margin 2.0 frozen in axis_eligibility, untouched; the only change is four additive INDEPENDENCE_LAW keys"
+  },
+  "guard_1g_installed": {
+    "module": "apps/pipeline/services/palette_statistics.py",
+    "defect_class": "DEGENERATE_INPUT_PLAUSIBLE_OUTPUT",
+    "instances": [
+      "N=4 census degeneracy",
+      "silent-zero floor",
+      "constant-vector rank correlation"
+    ],
+    "refactored": {
+      "palette_axis_eligibility.spearman": "delegates to guard; its existing raise semantics preserved (EligibilityError)",
+      "palette_raking_rig.spearman": "the `if den else 0.0` silent fallback WAS a live instance of the defect class \u2014 replaced by the guard, which raises"
+    },
+    "enforcement": "test_palette_statistics.py source-scan: any rank correlation in the services tree outside the guard is a test failure",
+    "mechanism_discovered_by_the_guards_own_test": "the artifact's exact mechanism, found when the guard's first draft failed its own test: np.argsort(np.argsort(v)) assigns a bit-constant vector the ranks 0..n-1 by stable sort order, which correlates PERFECTLY with any monotone companion \u2014 the committed 1.0 was manufactured by the rank transform itself. The guard checks raw-value variance before ranking, and uses true average-rank Spearman (the argsort form also mis-ranked every tied input, not only constants)",
+    "tie_audit": "every standing recorded rho recomputed under the guarded implementation: N=8 census GRAN|SHEEN 0.3571 and GRAN|FWHM 0.1905 byte-equal; all 20 flake sweep pair numbers byte-consistent; no tied inputs exist in any standing record \u2014 the tie-unaware defect moved no committed number"
+  },
+  "pre_commitments_1h": {
+    "cta_valid_and_differing": "compression_texture_amplitude VALID under 1a AND differing for a pair -> that pair FAILS, committed, no substitute channel",
+    "containment_failure": "any NOT_COMMON_DRIVER whose sweep fails containment is re-swept over at least the containing interval; if the counted axes then track above 0.80 on a VALID sweep, that pair FAILS",
+    "conservation_violated": "residual named; pair stays PASS_WITH_UNTESTED_DRIVER with the residual on the record; fencing upgraded from 'no declared driver tracks' to 'the declared drivers cannot account for the separation; the residual is X'",
+    "conservation_and_containment_clean": "the pair's fencing is builder-constants-only, now for a demonstrated reason"
+  },
+  "declared_before_any_phase2_number": true,
+  "owner_approved": false
+}

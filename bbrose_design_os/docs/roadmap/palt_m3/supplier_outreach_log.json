@@ -1,0 +1,124 @@
+{
+ "record_type": "supplier_outreach_log/1.0",
+ "created_at": "2026-08-05",
+ "authorization": "supplier technical-data outreach AUTHORIZED by the owner 2026-08-05, limited to requesting technical data",
+ "CHANNEL_STATUS": "NO_APPROVED_OUTBOUND_COMMUNICATION_CHANNEL_AVAILABLE",
+ "channel_limitation_statement": "This environment has no authorized outbound email, contact-form or messaging capability, and no supplier contact address has been provided or approved. Per the owner instruction, the final recipient list and ready-to-send requests are prepared below and the limitation is reported. NOTHING HAS BEEN SENT. No message left this system.",
+ "requests_sent": 0,
+ "responses_received": 0,
+ "files_received": 0,
+ "prohibitions_observed": [
+  "no order placed",
+  "no quantities promised",
+  "no pricing or commercial terms accepted",
+  "no exclusivity commitment",
+  "no patent clearance claimed",
+  "no confidential BBROSE concept disclosed \u2014 the prepared requests describe only a generic 9-pan eyeshadow design study and name no BBROSE product, silhouette or launch plan"
+ ],
+ "prepared_recipients": [
+  {
+   "id": "S1",
+   "supplier": "APG Packaging",
+   "contact_channel": "public website contact form / sales enquiry (URL known, address NOT verified)",
+   "url": "https://apackaginggroup.com/collections/palettes",
+   "request_status": "PREPARED_NOT_SENT",
+   "request_date": null,
+   "response_status": "NONE",
+   "target_product_codes": [
+    "APG-400008 (2 ml x 9 \u2014 closest 9-pan analogue)",
+    "APG-3009 (2 ml x 12 with mirror)"
+   ],
+   "priority": "HIGHEST \u2014 publishes per-product codes, so a drawing request is specific and answerable",
+   "received_files": [],
+   "provenance_if_received": "MANUFACTURER_TECHNICAL_DRAWING",
+   "usage_restrictions": "design reference only until owner-confirmed; never auto-promoted to a BBROSE specification"
+  },
+  {
+   "id": "S2",
+   "supplier": "Sphere Resources",
+   "contact_channel": "public OEM enquiry page (address NOT verified)",
+   "url": "https://sphere-resources.com/product-category/packaging/cosmetics-packaging/eyeshadow-palette-cases/",
+   "request_status": "PREPARED_NOT_SENT",
+   "request_date": null,
+   "response_status": "NONE",
+   "target_products": [
+    "12-pan 150 x 90 x 15",
+    "15-pan mixed 104 x 61 x 18"
+   ],
+   "priority": "HIGH \u2014 publishes real case dimensions; the pan pitch is the missing link",
+   "received_files": [],
+   "provenance_if_received": "MANUFACTURER_TECHNICAL_DRAWING",
+   "usage_restrictions": "design reference only"
+  },
+  {
+   "id": "S3",
+   "supplier": "MS Makeup (OEM)",
+   "contact_channel": "public product page enquiry (address NOT verified)",
+   "url": "https://www.msmakeupoem.com/products/custom-9-colors-eyeshadow-palette-50pcs",
+   "request_status": "PREPARED_NOT_SENT",
+   "request_date": null,
+   "response_status": "NONE",
+   "target_products": [
+    "9-shade 83 x 83 x 12"
+   ],
+   "priority": "HIGH \u2014 their published 83 x 83 case is smaller than our computed minimum; the drawing would explain why",
+   "open_question": "how is a 3x3 arrangement achieved in 83 mm? (pan size, gaps, wall-integrated mechanisms, mirror presence and listing accuracy are ALL unverified hypotheses)",
+   "received_files": [],
+   "provenance_if_received": "MANUFACTURER_TECHNICAL_DRAWING",
+   "usage_restrictions": "design reference only"
+  },
+  {
+   "id": "S4",
+   "supplier": "Yudong Packaging",
+   "contact_channel": "public website (address NOT verified)",
+   "url": "https://www.yudongpack.com/eyeshadow-pallet-case/",
+   "request_status": "PREPARED_NOT_SENT",
+   "request_date": null,
+   "response_status": "NONE",
+   "target_products": [
+    "ultra-slim 7-pan 78 x 85 x 11.5",
+    "ultra-slim 10-pan 134 x 67 x 13"
+   ],
+   "priority": "MEDIUM \u2014 bounds how thin a mirrored ABS case can go, which tests our 13.85 premium height target",
+   "received_files": [],
+   "provenance_if_received": "MANUFACTURER_TECHNICAL_DRAWING",
+   "usage_restrictions": "design reference only"
+  },
+  {
+   "id": "S5",
+   "supplier": "COLORICH Packaging",
+   "contact_channel": "public website (address NOT verified)",
+   "url": "https://www.colorichpkg.com/custom-makeup-palette-packaging/",
+   "request_status": "PREPARED_NOT_SENT",
+   "request_date": null,
+   "response_status": "NONE",
+   "priority": "MEDIUM \u2014 PCR/sustainable case materials and their minimum wall thicknesses",
+   "received_files": [],
+   "provenance_if_received": "MANUFACTURER_CATALOGUE",
+   "usage_restrictions": "design reference only"
+  }
+ ],
+ "requested_data_scope": [
+  "technical drawings",
+  "overall dimensions",
+  "internal tray dimensions",
+  "pan diameter and depth",
+  "hinge construction",
+  "clasp construction",
+  "wall thickness",
+  "lid/base stack-up",
+  "mirror thickness",
+  "material",
+  "moulding tolerance",
+  "product code",
+  "available CAD formats"
+ ],
+ "explicitly_out_of_scope": [
+  "MOQ",
+  "pricing",
+  "lead time",
+  "tooling cost",
+  "exclusivity"
+ ],
+ "next_action_required_from_owner": "provide or approve an outbound channel (verified supplier email addresses, or authorization to use the published contact forms), then confirm that the prepared messages may be sent verbatim"
+}

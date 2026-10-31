@@ -1,0 +1,139 @@
+{
+  "record_type": "driver_completeness_phase2_A2_ruling/1.0",
+  "protocol_identity": "eb20aad9698e1825",
+  "question_1_valid_or_degenerate": {
+    "answer": "SWEEP_DEGENERATE_UNDER_DRIVER",
+    "was_it_assessed": "MEASURED DEGENERATE at amendment-node Phase 3 (sweep_analysis.json) \u2014 not among the three VALID sweeps because its own matrix contains no divergent pair; it was never dismissed via micronormal. Re-derived here from the raw retained rows under the GUARDED average-rank implementation",
+    "qualifying_axes": [
+      "GRANULARITY_INDEX",
+      "GRAZING_BAND_CONTRAST",
+      "HIGHLIGHT_FWHM",
+      "HIGHLIGHT_PEAK",
+      "SPECULAR_TO_DIFFUSE_RATIO",
+      "SHEEN_REGION_RESPONSE"
+    ],
+    "axis_qualification": {
+      "GRANULARITY_INDEX": {
+        "span": 1.12403,
+        "required": 0.2338,
+        "qualifies": true
+      },
+      "GRAZING_BAND_CONTRAST": {
+        "span": 0.02073,
+        "required": 0.01302,
+        "qualifies": true
+      },
+      "HIGHLIGHT_FWHM": {
+        "span": 0.21489,
+        "required": 0.1827,
+        "qualifies": true
+      },
+      "HIGHLIGHT_PEAK": {
+        "span": 0.03282,
+        "required": 0.01594,
+        "qualifies": true
+      },
+      "SPECULAR_TO_DIFFUSE_RATIO": {
+        "span": 0.04691,
+        "required": 0.01772,
+        "qualifies": true
+      },
+      "GRAZING_RESPONSE": {
+        "span": 0.25209,
+        "required": 0.29912,
+        "qualifies": false
+      },
+      "SHEEN_REGION_RESPONSE": {
+        "span": 0.42329,
+        "required": 0.33138,
+        "qualifies": true
+      },
+      "EDGE_HIGHLIGHT_RESPONSE": {
+        "span": 0.42514,
+        "required": 0.55982,
+        "qualifies": false
+      }
+    },
+    "full_matrix_guarded": {
+      "GRANULARITY_INDEX|GRAZING_BAND_CONTRAST": {
+        "abs_rho": 0.9818,
+        "n": 11
+      },
+      "GRANULARITY_INDEX|HIGHLIGHT_FWHM": {
+        "abs_rho": 0.9909,
+        "n": 11
+      },
+      "GRANULARITY_INDEX|HIGHLIGHT_PEAK": {
+        "abs_rho": 1.0,
+        "n": 11
+      },
+      "GRANULARITY_INDEX|SPECULAR_TO_DIFFUSE_RATIO": {
+        "abs_rho": 1.0,
+        "n": 11
+      },
+      "GRANULARITY_INDEX|SHEEN_REGION_RESPONSE": {
+        "abs_rho": 1.0,
+        "n": 11
+      },
+      "GRAZING_BAND_CONTRAST|HIGHLIGHT_FWHM": {
+        "abs_rho": 0.9727,
+        "n": 11
+      },
+      "GRAZING_BAND_CONTRAST|HIGHLIGHT_PEAK": {
+        "abs_rho": 0.9818,
+        "n": 11
+      },
+      "GRAZING_BAND_CONTRAST|SPECULAR_TO_DIFFUSE_RATIO": {
+        "abs_rho": 0.9818,
+        "n": 11
+      },
+      "GRAZING_BAND_CONTRAST|SHEEN_REGION_RESPONSE": {
+        "abs_rho": 0.9818,
+        "n": 11
+      },
+      "HIGHLIGHT_FWHM|HIGHLIGHT_PEAK": {
+        "abs_rho": 0.993,
+        "n": 12
+      },
+      "HIGHLIGHT_FWHM|SPECULAR_TO_DIFFUSE_RATIO": {
+        "abs_rho": 0.993,
+        "n": 12
+      },
+      "HIGHLIGHT_FWHM|SHEEN_REGION_RESPONSE": {
+        "abs_rho": 0.993,
+        "n": 12
+      },
+      "HIGHLIGHT_PEAK|SPECULAR_TO_DIFFUSE_RATIO": {
+        "abs_rho": 1.0,
+        "n": 12
+      },
+      "HIGHLIGHT_PEAK|SHEEN_REGION_RESPONSE": {
+        "abs_rho": 1.0,
+        "n": 12
+      },
+      "SPECULAR_TO_DIFFUSE_RATIO|SHEEN_REGION_RESPONSE": {
+        "abs_rho": 1.0,
+        "n": 12
+      }
+    },
+    "minimum_abs_rho": 0.9727,
+    "divergent_pairs": []
+  },
+  "question_2_differs": {
+    "MATTE_VS_SATIN": "NO \u2014 neither family has the compaction block",
+    "PRESSED_VS_MATTE": "YES by block presence \u2014 PRESSED_POWDER declares 0.10 (engine FAMILY_PARAMS), POWDER_MATTE has no compaction block (render-effective 0)",
+    "SATIN_VS_CREAM": "NO \u2014 neither family has the compaction block"
+  },
+  "ruling": "the 1h trigger (VALID and differing) does NOT fire: the sweep is measured SWEEP_DEGENERATE_UNDER_DRIVER on its own matrix \u2014 every qualifying pair tracks (minimum 0.9727 unguarded, re-derived under the guard above) \u2014 and a degenerate sweep yields no independence evidence in either direction under hashed 1a. PRESSED_VS_MATTE remains PASS_WITH_UNTESTED_DRIVER. This is NOT a reason the case differs from micronormal \u2014 it is the SAME adjudication: measured degeneracy on its own matrix.",
+  "reason_written_before_acting": "the owner asked that any reason this case differs from micronormal be written down: none is claimed. Both rulings rest on the same measured condition (own-matrix degeneracy), not on inheritance.",
+  "containment_observation_pre_declared": {
+    "gap": "the sweep spans [0.02, 0.30]; the PRESSED_VS_MATTE inter-family interval is [0 (block-absent), 0.10] \u2014 the range does not contain [0, 0.02). 1e attaches to NOT_COMMON readings, not to degeneracy rulings, so this ruling stands on the assessed range; the gap is closed in Phase 3 by extending the sweep with levels 0.0 and 0.01.",
+    "reading_frozen_now": "if the extended matrix turns VALID and the counted axes track above 0.80, the 1h pre-commitment fires and PRESSED_VS_MATTE FAILS, committed; if it turns VALID with counted axes divergent, the driver condition is satisfied for this driver and the pair status does not improve (builder constants still fence it); if it stays degenerate, this ruling stands unchanged."
+  },
+  "owner_approved": false,
+  "ADEQUACY_1i_2026_08_08": {
+    "classification": "the A2 degeneracy margin (0.9727 vs 0.80, margin 0.1727) is ADEQUACY_UNASSESSED \u2014 the no-FAIL ruling carries the mark too; symmetry cuts every direction",
+    "law": "adequacy_1i at 3586022acc972aff (retroactive, symmetric)",
+    "detail": "measurement_adequacy/phase2_retroactive.json"
+  }
+}

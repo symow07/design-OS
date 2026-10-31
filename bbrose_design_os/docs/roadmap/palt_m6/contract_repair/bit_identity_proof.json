@@ -1,0 +1,39 @@
+{
+  "record_type": "contract_repair_bit_identity_proof/1.1",
+  "instrument_correction": {
+    "declared": "EXR byte comparison",
+    "corrected_to": "exact scene-linear pixel equality (np.array_equal, zero tolerance, every channel every pixel)",
+    "reason_proven_not_asserted": "the same-input determinism control (two renders of one unedited spec) is byte-DIFFERENT and pixel-IDENTICAL \u2014 the EXR container embeds nondeterministic header content; the design rule's bit-identity is about the rendered image, and byte-compare of the container was the wrong instrument. Correction made BEFORE reading the pre-vs-post results as a verdict."
+  },
+  "fixtures": "nine families, seed 500, samples 48, lobe rig",
+  "proof": {
+    "POWDER_MATTE": {
+      "pixel_identical": true
+    },
+    "POWDER_SATIN": {
+      "pixel_identical": true
+    },
+    "SHIMMER": {
+      "pixel_identical": true
+    },
+    "POWDER_METALLIC": {
+      "pixel_identical": true
+    },
+    "GLITTER": {
+      "pixel_identical": true
+    },
+    "BAKED": {
+      "pixel_identical": true
+    },
+    "MARBLED": {
+      "pixel_identical": true
+    },
+    "PRESSED_POWDER": {
+      "pixel_identical": true
+    },
+    "CREAM": {
+      "pixel_identical": true
+    }
+  },
+  "all_pixel_identical": true
+}

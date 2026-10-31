@@ -1,0 +1,104 @@
+{
+ "record_type": "axis_eligibility/1.0:noise_floors",
+ "ensemble": {
+  "family": "POWDER_MATTE",
+  "seeds": [
+   40,
+   81,
+   82,
+   83,
+   84,
+   99
+  ]
+ },
+ "separation_margin": 2.0,
+ "pass_bar_unmoved": 0.25,
+ "floors": {
+  "HIGHLIGHT_FWHM": {
+   "instrument": "DIFFUSE_LOBE_RIG",
+   "pairings": 15,
+   "max_seed_only_effect": 0.09135,
+   "mean_seed_only_effect": 0.04049,
+   "floor": 0.09135,
+   "eligible": true,
+   "required_clearing_effect": 0.25
+  },
+  "HIGHLIGHT_PEAK": {
+   "instrument": "DIFFUSE_LOBE_RIG",
+   "pairings": 15,
+   "max_seed_only_effect": 0.00797,
+   "mean_seed_only_effect": 0.00351,
+   "floor": 0.00797,
+   "eligible": true,
+   "required_clearing_effect": 0.25
+  },
+  "SPECULAR_TO_DIFFUSE_RATIO": {
+   "instrument": "DIFFUSE_LOBE_RIG",
+   "pairings": 15,
+   "max_seed_only_effect": 0.00886,
+   "mean_seed_only_effect": 0.00389,
+   "floor": 0.00886,
+   "eligible": true,
+   "required_clearing_effect": 0.25
+  },
+  "GRAZING_RESPONSE": {
+   "instrument": "DIFFUSE_LOBE_RIG",
+   "pairings": 15,
+   "max_seed_only_effect": 0.14956,
+   "mean_seed_only_effect": 0.05433,
+   "floor": 0.14956,
+   "eligible": true,
+   "required_clearing_effect": 0.29912
+  },
+  "SHEEN_REGION_RESPONSE": {
+   "instrument": "DIFFUSE_LOBE_RIG",
+   "pairings": 15,
+   "max_seed_only_effect": 0.16569,
+   "mean_seed_only_effect": 0.08296,
+   "floor": 0.16569,
+   "eligible": true,
+   "required_clearing_effect": 0.33138
+  },
+  "EDGE_HIGHLIGHT_RESPONSE": {
+   "instrument": "DIFFUSE_LOBE_RIG",
+   "pairings": 15,
+   "max_seed_only_effect": 0.27991,
+   "mean_seed_only_effect": 0.11622,
+   "floor": 0.27991,
+   "eligible": false,
+   "required_clearing_effect": 0.55982
+  },
+  "GRANULARITY_INDEX": {
+   "instrument": "MIRROR_SOURCE_TEXTURE_RIG",
+   "pairings": 15,
+   "max_seed_only_effect": 0.1169,
+   "mean_seed_only_effect": 0.0431,
+   "floor": 0.1169,
+   "eligible": true,
+   "required_clearing_effect": 0.25
+  },
+  "GRAZING_BAND_CONTRAST": {
+   "instrument": "MIRROR_SOURCE_TEXTURE_RIG",
+   "pairings": 15,
+   "max_seed_only_effect": 0.00651,
+   "mean_seed_only_effect": 0.00301,
+   "floor": 0.00651,
+   "eligible": true,
+   "required_clearing_effect": 0.25
+  }
+ },
+ "ineligible_axes": [
+  "EDGE_HIGHLIGHT_RESPONSE"
+ ],
+ "ADEQUACY_1i_2026_08_08": {
+  "classification": "the EDGE INELIGIBILITY exclusion (0.27991 vs 0.25, margin 0.030) is ADEQUACY_UNASSESSED \u2014 the floor statistic's own replicate spread was never measured; an exclusion protecting verdicts is as much a threshold verdict as a clearing",
+  "law": "adequacy_1i at 3586022acc972aff (retroactive, symmetric)",
+  "detail": "measurement_adequacy/phase2_retroactive.json"
+ },
+ "A195_kind": {
+  "kind": "BOUND",
+  "why": "each floor is the MAXIMUM seed-only relative effect across the ensemble's 15 pairings \u2014 a worst-excursion bound, whose job is to be cleared",
+  "combining_rule": "WORST_OBSERVED_EXCURSION_ACROSS_ENSEMBLES",
+  "combining_rule_identity": "fd91d08471da03fb"
+ }
+}

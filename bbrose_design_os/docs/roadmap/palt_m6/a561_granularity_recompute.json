@@ -1,0 +1,362 @@
+{
+ "record_type": "a561_granularity_recompute/1.0",
+ "law": "3aa",
+ "date": "2026-08-12",
+ "protocol_identity_at_run": "d7718d0a34f8672d",
+ "law_identity_note": "protocol_identity_at_run is the identity IN FORCE WHEN THE NUMBERS WERE COMPUTED, which is the pre-3aa corpus d7718d0a34f8672d. 3aa is hashed in the SAME COMMIT, after and behind this instrument, so the committing identity is necessarily different \u2014 that is the intended order (A560), not a mismatch.",
+ "cell": "SATIN_VS_CREAM / GRANULARITY_INDEX",
+ "published_cell_value_margin": 0.1923,
+ "published_cross_family_relative_effect": 0.4423,
+ "published_family_values": {
+  "POWDER_SATIN": 0.040564,
+  "CREAM": 0.063597
+ },
+ "published_source": "docs/roadmap/palt_m6/measurement_adequacy/phase0.json \u2014 'SATIN_VS_CREAM PASS leg / GRANULARITY cross-family effect', reading 0.4423, threshold 0.25, margin 0.1923; family values from instrument_repair_phase1.json",
+ "how_recomputed": "by RUNNING measure_texture_axes over the twelve frames the launcher named. Not restated, not reimplemented, nothing rendered. The axis formula, its rounding included, is byte-unchanged from the found derivation.",
+ "A562_PREDICTION": 0.1923,
+ "A562_SCORED": "FAILED",
+ "recomputed_margin": -0.1654326271612297,
+ "recomputed_cross_family_relative_effect": 0.08456737283877029,
+ "divergence_margin": -0.35773262716122967,
+ "divergence_relative_effect": -0.3577326271612297,
+ "ORDER_INVERTED": "the published family values put CREAM ABOVE POWDER_SATIN (0.063597 vs 0.040564). The recomputation puts POWDER_SATIN above CREAM. The divergence is not a magnitude difference alone; the sign of the family ordering is opposite.",
+ "NOT_INVESTIGATED_HERE": "A562 directs that a divergence be reported without adjustment and NOT investigated in this node. Nothing was tuned, rounded, thresholded or selected toward 0.1923; the frames, families and seeds are exactly those the launcher named, measured once.",
+ "denominator_convention_by_name": {
+  "per_axis": {
+   "GRANULARITY_INDEX": "PLANAR_REGION_MEAN",
+   "GRAZING_BAND_CONTRAST": "GRAZING_REGION_MEDIAN"
+  },
+  "pair_relative_effect": "MEAN_OF_THE_TWO_VALUES",
+  "ratified_from": "palette_material_swatch.py, comment adjacent to MINIMUM_RELATIVE_EFFECT"
+ },
+ "aggregation_across_seeds": "ARITHMETIC MEAN, declared before the aggregate was computed. The per-seed clearings are reported whole and need no aggregation, so a reader can check the aggregate rather than take it. The DENOMINATOR_CONVENTION excludes a mean across seeds INSIDE the effect, and this is not one: it is a mean of the axis values, with the effect taken once, afterwards.",
+ "per_seed_axis_values": {
+  "POWDER_SATIN": {
+   "40": 0.025106,
+   "81": 0.025251,
+   "82": 0.025016,
+   "83": 0.025094,
+   "84": 0.02493,
+   "99": 0.024979
+  },
+  "CREAM": {
+   "40": 0.023014,
+   "81": 0.023049,
+   "82": 0.023042,
+   "83": 0.023021,
+   "84": 0.023017,
+   "99": 0.023032
+  }
+ },
+ "family_means": {
+  "POWDER_SATIN": 0.025062666666666667,
+  "CREAM": 0.023029166666666667
+ },
+ "per_seed_clearings": {
+  "40": 0.08694929343308397,
+  "81": 0.09118012422360246,
+  "82": 0.08215073452911066,
+  "83": 0.08616855450483224,
+  "84": 0.07979644190460305,
+  "99": 0.08110641311366149
+ },
+ "cross_family_relative_effect": 0.08456737283877029,
+ "relative_effect_bar": 0.25,
+ "margin": -0.1654326271612297,
+ "A289_dispersion": {
+  "definition": "MAXIMUM PAIRWISE ABSOLUTE DIFFERENCE across seeds",
+  "over": "the six per-seed clearings",
+  "value": 0.011383682318999402,
+  "units": "RELATIVE_EFFECT \u2014 a difference of relative effects, therefore commensurable with the margin (A284)"
+ },
+ "MARK_NOT_DISCHARGED": "SATIN_VS_CREAM/GRANULARITY and the other three cells KEEP PUBLISHED_WITHOUT_RECOVERABLE_INPUTS. This recomputation establishes what THESE twelve frames yield; it does not establish which frames the original read, which remains unrecorded. A non-match is no more a discharge than a match would have been.",
+ "_provenance": {
+  "frames_read_in_order": [
+   "docs/roadmap/palt_m6/combined_manifest/frames/swatch_mens_lobe_POWDER_SATIN_40.exr",
+   "docs/roadmap/palt_m6/combined_manifest/frames/swatch_mens_lobe_POWDER_SATIN_81.exr",
+   "docs/roadmap/palt_m6/combined_manifest/frames/swatch_mens_lobe_POWDER_SATIN_82.exr",
+   "docs/roadmap/palt_m6/combined_manifest/frames/swatch_mens_lobe_POWDER_SATIN_83.exr",
+   "docs/roadmap/palt_m6/combined_manifest/frames/swatch_mens_lobe_POWDER_SATIN_84.exr",
+   "docs/roadmap/palt_m6/combined_manifest/frames/swatch_mens_lobe_POWDER_SATIN_99.exr",
+   "docs/roadmap/palt_m6/combined_manifest/frames/swatch_mens_lobe_CREAM_40.exr",
+   "docs/roadmap/palt_m6/combined_manifest/frames/swatch_mens_lobe_CREAM_81.exr",
+   "docs/roadmap/palt_m6/combined_manifest/frames/swatch_mens_lobe_CREAM_82.exr",
+   "docs/roadmap/palt_m6/combined_manifest/frames/swatch_mens_lobe_CREAM_83.exr",
+   "docs/roadmap/palt_m6/combined_manifest/frames/swatch_mens_lobe_CREAM_84.exr",
+   "docs/roadmap/palt_m6/combined_manifest/frames/swatch_mens_lobe_CREAM_99.exr"
+  ],
+  "frame_identities": [
+   {
+    "path": "docs/roadmap/palt_m6/combined_manifest/frames/swatch_mens_lobe_POWDER_SATIN_40.exr",
+    "family": "POWDER_SATIN",
+    "seed": 40,
+    "pixel_digest": "0dda9d4d5fed0e63",
+    "source_kind": "SCENE_LINEAR_EXR",
+    "shape": [
+     1200,
+     1200
+    ],
+    "dtype": "float64",
+    "region_alignment": "ASSERTED",
+    "measurement_record": {
+     "render_identity": "51dc0430391088ef",
+     "material_identity": "34025dbda3f8da78",
+     "geometry_identity": "720d17daee36e487",
+     "camera_identity": "7288018cf21f5c4b",
+     "lighting_contract_identity": "ba2d457cb68ddff5"
+    },
+    "region_alignment_tolerance": 0.05
+   },
+   {
+    "path": "docs/roadmap/palt_m6/combined_manifest/frames/swatch_mens_lobe_POWDER_SATIN_81.exr",
+    "family": "POWDER_SATIN",
+    "seed": 81,
+    "pixel_digest": "e04ebd701d1630c0",
+    "source_kind": "SCENE_LINEAR_EXR",
+    "shape": [
+     1200,
+     1200
+    ],
+    "dtype": "float64",
+    "region_alignment": "ASSERTED",
+    "measurement_record": {
+     "render_identity": "53fb58bf8afe27b6",
+     "material_identity": "361868ddf6201572",
+     "geometry_identity": "720d17daee36e487",
+     "camera_identity": "7288018cf21f5c4b",
+     "lighting_contract_identity": "ba2d457cb68ddff5"
+    },
+    "region_alignment_tolerance": 0.05
+   },
+   {
+    "path": "docs/roadmap/palt_m6/combined_manifest/frames/swatch_mens_lobe_POWDER_SATIN_82.exr",
+    "family": "POWDER_SATIN",
+    "seed": 82,
+    "pixel_digest": "ca27e021d8d30b75",
+    "source_kind": "SCENE_LINEAR_EXR",
+    "shape": [
+     1200,
+     1200
+    ],
+    "dtype": "float64",
+    "region_alignment": "ASSERTED",
+    "measurement_record": {
+     "render_identity": "dbc544a0c648c552",
+     "material_identity": "65f36539fe0ed1b6",
+     "geometry_identity": "720d17daee36e487",
+     "camera_identity": "7288018cf21f5c4b",
+     "lighting_contract_identity": "ba2d457cb68ddff5"
+    },
+    "region_alignment_tolerance": 0.05
+   },
+   {
+    "path": "docs/roadmap/palt_m6/combined_manifest/frames/swatch_mens_lobe_POWDER_SATIN_83.exr",
+    "family": "POWDER_SATIN",
+    "seed": 83,
+    "pixel_digest": "9340a4300647622f",
+    "source_kind": "SCENE_LINEAR_EXR",
+    "shape": [
+     1200,
+     1200
+    ],
+    "dtype": "float64",
+    "region_alignment": "ASSERTED",
+    "measurement_record": {
+     "render_identity": "0ba19b4b4d82390b",
+     "material_identity": "e625cc4ecb1a7bee",
+     "geometry_identity": "720d17daee36e487",
+     "camera_identity": "7288018cf21f5c4b",
+     "lighting_contract_identity": "ba2d457cb68ddff5"
+    },
+    "region_alignment_tolerance": 0.05
+   },
+   {
+    "path": "docs/roadmap/palt_m6/combined_manifest/frames/swatch_mens_lobe_POWDER_SATIN_84.exr",
+    "family": "POWDER_SATIN",
+    "seed": 84,
+    "pixel_digest": "09f13f6301ce7791",
+    "source_kind": "SCENE_LINEAR_EXR",
+    "shape": [
+     1200,
+     1200
+    ],
+    "dtype": "float64",
+    "region_alignment": "ASSERTED",
+    "measurement_record": {
+     "render_identity": "72471c0547ec4c00",
+     "material_identity": "53b2cca8c70e0612",
+     "geometry_identity": "720d17daee36e487",
+     "camera_identity": "7288018cf21f5c4b",
+     "lighting_contract_identity": "ba2d457cb68ddff5"
+    },
+    "region_alignment_tolerance": 0.05
+   },
+   {
+    "path": "docs/roadmap/palt_m6/combined_manifest/frames/swatch_mens_lobe_POWDER_SATIN_99.exr",
+    "family": "POWDER_SATIN",
+    "seed": 99,
+    "pixel_digest": "0f43f70ba5a2d0fe",
+    "source_kind": "SCENE_LINEAR_EXR",
+    "shape": [
+     1200,
+     1200
+    ],
+    "dtype": "float64",
+    "region_alignment": "ASSERTED",
+    "measurement_record": {
+     "render_identity": "5d379cb8a994da89",
+     "material_identity": "a81bfcab29f4c019",
+     "geometry_identity": "720d17daee36e487",
+     "camera_identity": "7288018cf21f5c4b",
+     "lighting_contract_identity": "ba2d457cb68ddff5"
+    },
+    "region_alignment_tolerance": 0.05
+   },
+   {
+    "path": "docs/roadmap/palt_m6/combined_manifest/frames/swatch_mens_lobe_CREAM_40.exr",
+    "family": "CREAM",
+    "seed": 40,
+    "pixel_digest": "cbed8e92d727c068",
+    "source_kind": "SCENE_LINEAR_EXR",
+    "shape": [
+     1200,
+     1200
+    ],
+    "dtype": "float64",
+    "region_alignment": "ASSERTED",
+    "measurement_record": {
+     "render_identity": "8573a9445006c1f8",
+     "material_identity": "1439e4295f2edf30",
+     "geometry_identity": "720d17daee36e487",
+     "camera_identity": "7288018cf21f5c4b",
+     "lighting_contract_identity": "ba2d457cb68ddff5"
+    },
+    "region_alignment_tolerance": 0.05
+   },
+   {
+    "path": "docs/roadmap/palt_m6/combined_manifest/frames/swatch_mens_lobe_CREAM_81.exr",
+    "family": "CREAM",
+    "seed": 81,
+    "pixel_digest": "b7814891eb758a37",
+    "source_kind": "SCENE_LINEAR_EXR",
+    "shape": [
+     1200,
+     1200
+    ],
+    "dtype": "float64",
+    "region_alignment": "ASSERTED",
+    "measurement_record": {
+     "render_identity": "96584bcb030843df",
+     "material_identity": "8edc749efc36c518",
+     "geometry_identity": "720d17daee36e487",
+     "camera_identity": "7288018cf21f5c4b",
+     "lighting_contract_identity": "ba2d457cb68ddff5"
+    },
+    "region_alignment_tolerance": 0.05
+   },
+   {
+    "path": "docs/roadmap/palt_m6/combined_manifest/frames/swatch_mens_lobe_CREAM_82.exr",
+    "family": "CREAM",
+    "seed": 82,
+    "pixel_digest": "67ae6076e5232cfa",
+    "source_kind": "SCENE_LINEAR_EXR",
+    "shape": [
+     1200,
+     1200
+    ],
+    "dtype": "float64",
+    "region_alignment": "ASSERTED",
+    "measurement_record": {
+     "render_identity": "3eca0de2489ca5a7",
+     "material_identity": "ca2cb9c20ddd4c07",
+     "geometry_identity": "720d17daee36e487",
+     "camera_identity": "7288018cf21f5c4b",
+     "lighting_contract_identity": "ba2d457cb68ddff5"
+    },
+    "region_alignment_tolerance": 0.05
+   },
+   {
+    "path": "docs/roadmap/palt_m6/combined_manifest/frames/swatch_mens_lobe_CREAM_83.exr",
+    "family": "CREAM",
+    "seed": 83,
+    "pixel_digest": "d056a99acf6c65a4",
+    "source_kind": "SCENE_LINEAR_EXR",
+    "shape": [
+     1200,
+     1200
+    ],
+    "dtype": "float64",
+    "region_alignment": "ASSERTED",
+    "measurement_record": {
+     "render_identity": "0a4d8773796a1a48",
+     "material_identity": "a68555cf7e6b3bbc",
+     "geometry_identity": "720d17daee36e487",
+     "camera_identity": "7288018cf21f5c4b",
+     "lighting_contract_identity": "ba2d457cb68ddff5"
+    },
+    "region_alignment_tolerance": 0.05
+   },
+   {
+    "path": "docs/roadmap/palt_m6/combined_manifest/frames/swatch_mens_lobe_CREAM_84.exr",
+    "family": "CREAM",
+    "seed": 84,
+    "pixel_digest": "11ee198d21773e50",
+    "source_kind": "SCENE_LINEAR_EXR",
+    "shape": [
+     1200,
+     1200
+    ],
+    "dtype": "float64",
+    "region_alignment": "ASSERTED",
+    "measurement_record": {
+     "render_identity": "2c998e1d5ca3cbae",
+     "material_identity": "8003490ddafe0a9b",
+     "geometry_identity": "720d17daee36e487",
+     "camera_identity": "7288018cf21f5c4b",
+     "lighting_contract_identity": "ba2d457cb68ddff5"
+    },
+    "region_alignment_tolerance": 0.05
+   },
+   {
+    "path": "docs/roadmap/palt_m6/combined_manifest/frames/swatch_mens_lobe_CREAM_99.exr",
+    "family": "CREAM",
+    "seed": 99,
+    "pixel_digest": "adaff470e2d61840",
+    "source_kind": "SCENE_LINEAR_EXR",
+    "shape": [
+     1200,
+     1200
+    ],
+    "dtype": "float64",
+    "region_alignment": "ASSERTED",
+    "measurement_record": {
+     "render_identity": "6a006b02f58c85ce",
+     "material_identity": "b6362e77707902f2",
+     "geometry_identity": "720d17daee36e487",
+     "camera_identity": "7288018cf21f5c4b",
+     "lighting_contract_identity": "ba2d457cb68ddff5"
+    },
+    "region_alignment_tolerance": 0.05
+   }
+  ],
+  "derivation_code_digest": "1e09561b8ff16a06",
+  "region_masks": {
+   "PLANAR": {
+    "sample_count": 99133,
+    "index_digest": "f28a148f628307f4"
+   },
+   "GRAZING": {
+    "sample_count": 58431,
+    "index_digest": "36b56c7c684fdf69"
+   }
+  },
+  "alignment_tolerance": 0.05,
+  "axis_denominators": {
+   "GRANULARITY_INDEX": "PLANAR_REGION_MEAN",
+   "GRAZING_BAND_CONTRAST": "GRAZING_REGION_MEDIAN"
+  },
+  "pair_relative_effect_denominator": "MEAN_OF_THE_TWO_VALUES",
+  "aggregation_across_seeds": "ARITHMETIC_MEAN_DECLARED",
+  "law": "3aa"
+ }
+}

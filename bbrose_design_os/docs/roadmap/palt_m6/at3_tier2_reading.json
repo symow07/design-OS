@@ -1,0 +1,93 @@
+{
+ "record_type": "at3_tier2_reading/1.0",
+ "date": "2026-08-20",
+ "ruling": "AT3(4), OWNER_BLOCKER_CLEARANCE.md",
+ "why_this_record_exists": "A fresh subagent auditing the WI-3K close named `failures=4` as 'the load-bearing number is the one number I cannot check' — every artifact restated it self-referentially and no gate independently witnessed it, because tools/guarded_commit.sh refuses while TIER_2 is red and was bypassed for the whole tranche. Restating the number again would not answer that. This record instead converts the one 12-minute scalar into checks a reader can run in under 15 seconds, and names what they still do not establish.",
+
+ "the_two_readings": {
+  "before": {
+   "capture": ".tier2_captures/20260820T100053Z_614a6dc.txt",
+   "sha256": "2160c4a2a567596f681c67202a333d29af84273b6c8a1623f3f8d430429f9e98",
+   "head_at_run": "614a6dc",
+   "pytest_summary_verbatim": "5 failed, 7352 passed, 3 skipped, 599 warnings, 41596 subtests passed in 618.58s (0:10:18)",
+   "tier2_verdict": "TIER_2=REFUSE collected=7360 failures=5",
+   "failing_ids": [
+    "apps/pipeline/tests/test_composite_project.py::CreateViewCompositeTests::test_complete_product_creates_project_plus_container_child",
+    "apps/pipeline/tests/test_vq2_billing_probe.py::TestBoardShowsTheProbe::test_api_exposes_the_probe_without_the_key",
+    "apps/accounts/test_authz_policy.py::test_wrapper_parity_when_tools_is_available",
+    "apps/pipeline/tests/test_m7_ai_emitter.py::CommittedEmissionRecordTests::test_the_emission_record_exists_and_binds",
+    "apps/pipeline/tests/test_vq2_final_inspection.py::TestSecretNeverExposed::test_live_key_absent_from_the_review_package"
+   ]
+  },
+  "after": {
+   "capture": ".tier2_captures/20260820T104413Z_2208126.txt",
+   "sha256": "8f692c9fdd6cdb33a45bada4ebaac353ebb6a4ad7268eb47f38e258e5923f62d",
+   "head_at_run": "2208126",
+   "pytest_summary_verbatim": "4 failed, 7356 passed, 3 skipped, 599 warnings, 41596 subtests passed in 600.88s (0:10:00)",
+   "tier2_verdict": "TIER_2=REFUSE collected=7363 failures=4",
+   "failing_ids": [
+    "apps/pipeline/tests/test_composite_project.py::CreateViewCompositeTests::test_complete_product_creates_project_plus_container_child",
+    "apps/pipeline/tests/test_vq2_billing_probe.py::TestBoardShowsTheProbe::test_api_exposes_the_probe_without_the_key",
+    "apps/pipeline/tests/test_m7_ai_emitter.py::CommittedEmissionRecordTests::test_the_emission_record_exists_and_binds",
+    "apps/pipeline/tests/test_vq2_final_inspection.py::TestSecretNeverExposed::test_live_key_absent_from_the_review_package"
+   ]
+  },
+  "note_on_the_capture_files": "Both live under .tier2_captures/, which .gitignore:19 excludes and tools/record_integrity.py:89 classifies ('NOT_A_RECORD_ROOT', 'retained captures, unbound by design'). The digests are recorded here so the files can be bound to this claim after the fact; the files themselves are deliberately not committed and this record does not pretend otherwise."
+ },
+
+ "the_arithmetic_that_closes": {
+  "collected": "7360 -> 7363, +3, because one test function became four",
+  "failed": "5 -> 4, -1, the parity id and only the parity id",
+  "passed": "7352 -> 7356, +4 = 3 new tests + the 1 that stopped failing",
+  "skipped": "3 -> 3",
+  "identity_before": "5 + 7352 + 3 = 7360",
+  "identity_after": "4 + 7356 + 3 = 7363",
+  "why_it_matters": "The four numbers are mutually constraining. A count nudged in one place breaks the identity in another, which is what makes the transcription checkable even though the run is not."
+ },
+
+ "baseline_provenance_honestly": {
+  "capture_head": "614a6dc",
+  "tranche_base": "00dbc61",
+  "commits_between": ["d9efc7d", "d7b1af0", "00dbc61"],
+  "one_test_file_changed_between_them": "bbrose_design_os/apps/pipeline/tests/test_characterization_protocol.py",
+  "measured_not_assumed": "git diff 614a6dc..00dbc61 on that file matches ZERO lines of `^[+-]\\s*def test_`, so no test function was added or removed and the collected count could not have moved. It appears in neither failing set, so it passed on both sides.",
+  "the_admission": "The before-reading was taken three commits before the tranche base, not at it. That was not planned; it is the capture that exists. The check above is what makes it usable, and it is stated here rather than left for a reader to discover."
+ },
+
+ "checks_a_reader_can_run": [
+  {
+   "claim": "the four remaining failures are those four and they are not this tranche's doing",
+   "command": "venv/bin/python -m pytest -q -p no:randomly <the four ids from `after.failing_ids`>",
+   "measured_result": "4 failed, 2 warnings in 3.39s",
+   "cost": "3.4 seconds, no suite"
+  },
+  {
+   "claim": "the repaired parity check survives the binding order that broke the old one",
+   "command": "venv/bin/python -m pytest -q -p no:randomly apps/ire/tests/test_wi3h_reserved_copy.py apps/accounts/test_authz_policy.py",
+   "measured_result": "34 passed in 7.38s",
+   "cost": "7.4 seconds",
+   "why_this_pairing": "AT5 identified apps/ire/tests/test_wi3h_reserved_copy.py:36 as the module-scope `tools` import that binds the name at the pytest root during COLLECTION. Naming it first reproduces the hostile order without the other 7,300 tests."
+  },
+  {
+   "claim": "that recipe is SENSITIVE — it is not a check that would pass either way",
+   "method": "The OLD parity test (git show 1e4db97^:.../test_authz_policy.py) was written to a temporary file under apps/accounts/, run twice, and DELETED in the same shell command.",
+   "measured_result_alone": "1 passed in 0.02s",
+   "measured_result_paired_with_wi3h": "1 failed, 15 passed in 7.26s",
+   "cost": "7.3 seconds",
+   "what_it_establishes": "Alone it passes; in the presence of a module-scope `tools` import it fails. That is the whole of §AT's diagnosis, reproduced in seconds by a reader who trusts none of the above. The temporary file was removed and `git status` confirms it left no trace."
+  }
+ ],
+
+ "what_this_does_NOT_establish": [
+  "That the full suite currently reads 7363/4. Only a full run establishes that, and this record does not re-run it.",
+  "That no OTHER test's outcome changed between the two captures. The failing sets differ by exactly one id, but a test that flipped fail->pass and another that flipped pass->fail would also produce a -1; the +4 in `passed` against +3 in `collected` is what rules that out, and it rules it out arithmetically rather than by inspection.",
+  "That the commit path is open. It is not. TIER_2 refuses on four failures and tools/guarded_commit.sh therefore refused every commit in this tranche; all five were plain `git commit`, disclosed in 1e4db97.",
+  "That an instrument witnessed any of this. The three checks above are cheap and repeatable, which is a different and lesser thing than a gate having run."
+ ],
+
+ "the_four_that_remain": {
+  "count": 4,
+  "none_is_this_tranche_s": "All four appear in the BEFORE capture at 614a6dc, taken before any §AT code existed.",
+  "status": "Not diagnosed here. They are what keeps the sanctioned commit path shut and they are the standing reason guarded_commit.sh cannot be used."
+ }
+}

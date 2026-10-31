@@ -1,0 +1,40 @@
+{
+ "record_type": "contract_repair_design_rule/1.0",
+ "declared_before_the_node_starts": true,
+ "the_rule": {
+  "VALUE_PRESERVING": "declares in the contract the exact value the builder already uses (e.g. 0.48 - 0.10*smoothing moves from shader literal to family definition, unchanged). The render is bit-identical; NOTHING is voided. PROOF REQUIRED: re-render the fixture frames and assert bit-identity against pre-repair frames — a repair that claims to change nothing must demonstrate it changed nothing.",
+  "VALUE_MOVING": "changes what the renderer does (plumbing a dead parameter; changing the marble coefficient form to genuinely chromatic). Voids every verdict resting on the touched families — the void list is attached to every value-moving item BEFORE it is executed."
+ },
+ "sequencing": [
+  "value-preserving half FIRST, as one block, with the bit-identity proof",
+  "value-moving half by blast radius, MOSTLY DEFERRED: marble coefficients are free (MARBLED holds no PASS; its FAIL is already a FAIL); edge_profile is the opposite extreme (dead in all nine families — plumbing voids every M6 verdict at once, deferred); the 49 dead are MARKED and DECLARED (costless) with plumbing deferred to nodes that genuinely need each one, one family at a time, paying the re-run knowingly"
+ ],
+ "classification_requirement": "each of the 25 under-declared and each of the 49 dead classified value-preserving or value-moving, with void lists, IN the node record before execution",
+ "blocked_lift_condition": "PRODUCT_REALIZATION_BLOCKED lifts on the value-preserving half plus the marking — the products need a contract that says what it means, not a contract where every dead parameter has been plumbed",
+ "owner_approved": false,
+ "declaration_identity": "b862941c303588f9",
+ "A8_RELEASE_CONSTRAINT_2026_08_08": {
+  "released": "M6-CONTRACT-INTEGRITY-REPAIR no longer waits on N",
+  "constraint": "it may NOT void the three diffuse verdicts (MATTE_VS_SATIN, PRESSED_VS_MATTE, SATIN_VS_CREAM) and may NOT take any dependency on them — no repair decision may be justified by their standing. Under this constraint the repair may be sequenced whichever way N lands.",
+  "owner_authorization": "M6_MEASUREMENT_ADEQUACY_PROMPT.md A8"
+ },
+ "A12_CONFIRMATION_2026_08_08": "the three diffuse verdicts are now NOT ESTABLISHED under 1j; 'not established' SATISFIES the A8 no-dependency constraint — the repair may not justify any decision by these verdicts' standing, and there is no standing to justify by. The no-void constraint is unchanged: not-established verdicts are still not voided, they await establishment.",
+ "PRODUCT_REALIZATION_LIFT_2026_08_08": {
+  "condition": "value-preserving half plus the marking",
+  "preserving": "proven — 31 constants declared and consumed, 9/9 families pixel-identical (bit_identity_proof.json)",
+  "marking": "done — NOT_REALIZED_IN_RENDER_BY_FAMILY carries all 49 family-scoped dead instances in the engine contract",
+  "status": "PRODUCT_REALIZATION_BLOCKED -> LIFTED: the products get a contract that says what it means — every declared parameter either provably reaches the render or is marked dead in the contract itself",
+  "untouched": "owner_approved false; manufacturing_authority NOT_ESTABLISHED; GATE_2 BLOCKED; the establishment table remains the consultation point and the three diffuse verdicts remain not established",
+  "A19_SCOPE_STATEMENT": "READ THIS BEFORE READING LIFTED AS CLEARANCE. The lift permits ONE thing to begin: product-definition work may consume the powder contract, because every declared parameter now provably reaches the render or is marked dead in the contract itself. A product still CANNOT: ship; be quoted to a client as final; treat any shade as colour authority (every shade is PROVISIONAL_VISUALIZATION_SHADE — owner colours have never been supplied); pass GATE_2 (BLOCKED); claim manufacturing authority (NOT_ESTABLISHED); or rely on the three diffuse pair verdicts (unestablished) or any owner approval (owner_approved: false everywhere). The establishment table remains the sole verdict consultation point."
+ },
+ "DEFERRED_ITEM_DISPLAY_RGB_ALIAS_2026_08_13": {
+  "item": "delete the display_rgb frozen-contract alias",
+  "what_exists_now": "PowderMaterialSpec.realize() emits shader_input_rgb (plus shader_input_colour_space, authored_rgb, authored_colour_space, colour_transform_applied) and ALSO emits display_rgb carrying the identical values. display_rgb is retained ONLY because blender_scripts/powder_materials.py reads spec[\"display_rgb\"] in nine places and is the frozen instrument.",
+  "why_it_is_debt": "the name is wrong. Since beb1fe5 that field carries SCENE_LINEAR values for owner shades, and a field whose name contradicts its contents is the exact shape that produced the colour-space defect in the first place. It was documented where it is CARRIED; this is where it will be PAID.",
+  "what_closing_it_requires": "when the builder unfreezes under this jurisdiction: change the nine reads in powder_materials.py from spec[\"display_rgb\"] to spec[\"shader_input_rgb\"], then delete the alias from realize(). Two other Blender consumers read display_rgb defensively via spec.get() — material_characterization.py:80 and palette_csg_views.py:142 — and must be moved in the same act or they silently fall back to their hard-coded greys.",
+  "classification_under_the_rule": "VALUE_PRESERVING for every PROVISIONAL_VISUALIZATION_SHADE, which is every shade the M6 corpus was measured on: their colour_transform_applied is False, so shader_input_rgb and display_rgb are byte-identical to the pre-repair value and a bit-identity proof should pass. It is VALUE_MOVING only for OWNER_CHOSEN_DESIGN_INTENT shades, which no M6 verdict rests on. Void list: EMPTY.",
+  "blocked_on": "nothing technical — it is blocked only by the freeze itself. It may not start outside this jurisdiction (independence_amendment_phase4.json).",
+  "A19_PARENTHETICAL_NOW_SUPERSEDED": "A19_SCOPE_STATEMENT above says a product cannot 'treat any shade as colour authority (every shade is PROVISIONAL_VISUALIZATION_SHADE — owner colours have never been supplied)'. The parenthetical is STALE as of 6341794: twelve ES3083 shades now carry OWNER_CHOSEN_DESIGN_INTENT. The PROHIBITION IS UNCHANGED AND STILL BINDS — owner-chosen is not manufacturing colour authority — so only its stated reason has moved. Recorded here rather than edited into A19, because rewriting another node's declaration is not this node's to do.",
+  "filed_by": "PALT-D5-RENDER-THE-TWELVE, 2026-08-13"
+ }
+}

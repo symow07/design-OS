@@ -1,0 +1,151 @@
+{
+  "record_type": "palette_thickness_analysis/1.0",
+  "policy": {
+    "version": "moulding_thickness_policy/1.0",
+    "material": "ABS",
+    "nominal_wall_mm": 2.0,
+    "max_thickness_ratio": 2.5,
+    "sink_threshold_ratio_vs_nominal": 1.5,
+    "abrupt_transition_ratio": 2.0,
+    "abrupt_transition_span_mm": 1.0,
+    "minimum_wall_mm": 1.0,
+    "authority": "DESIGN_DEFAULT_NOT_MANUFACTURER_CONFIRMED",
+    "evidence_basis": "SECTION_THICKNESS_ONLY_NO_MOULD_FLOW_SIMULATION"
+  },
+  "regions": {
+    "tray_deck": {
+      "thickness_mm": 4.65,
+      "basis": "deck plane down to the pocket floor plane between pockets \u2014 the full solid land",
+      "kind": "SOLID_LAND"
+    },
+    "pocket_floor": {
+      "thickness_mm": 1.0,
+      "basis": "pocket floor plane to the tray underside",
+      "kind": "WALL"
+    },
+    "pocket_wall_at_mouth": {
+      "thickness_mm": 0.96637,
+      "basis": "half the ligament between two adjacent pocket mouths",
+      "kind": "WALL"
+    },
+    "pocket_wall_at_floor_tangent": {
+      "thickness_mm": 2.287578,
+      "basis": "half-pitch minus the flat floor radius",
+      "kind": "WALL"
+    },
+    "outer_floor": {
+      "thickness_mm": 5.65,
+      "basis": "full tray section outboard of the pan field",
+      "kind": "SOLID_LAND"
+    },
+    "fillet_transition_rim": {
+      "thickness_mm": 0.57906,
+      "basis": "deck plane to the rim fillet's lower tangent",
+      "kind": "TRANSITION"
+    },
+    "fillet_transition_floor": {
+      "thickness_mm": 1.57906,
+      "basis": "floor fillet upper tangent to the underside",
+      "kind": "TRANSITION"
+    },
+    "hinge_interface_local": {
+      "thickness_mm": 6.85,
+      "basis": "full tray section plus the declared hinge reinforcement band (interface is declared, not modelled)",
+      "kind": "INTERFACE"
+    },
+    "clasp_interface_local": {
+      "thickness_mm": 6.65,
+      "basis": "full tray section plus the declared clasp reinforcement band (interface is declared, not modelled)",
+      "kind": "INTERFACE"
+    },
+    "rib_interface_local": {
+      "thickness_mm": 1.0,
+      "basis": "declared rib footprint thickness (not modelled)",
+      "kind": "INTERFACE"
+    }
+  },
+  "ratio_scope": "WALL and SOLID_LAND sections only",
+  "context_sections_excluded_from_ratio": {
+    "fillet_transition_rim": 0.57906,
+    "fillet_transition_floor": 1.57906,
+    "hinge_interface_local": 6.85,
+    "clasp_interface_local": 6.65,
+    "rib_interface_local": 1.0
+  },
+  "thin_walls_below_policy": [
+    "pocket_wall_at_mouth"
+  ],
+  "minimum_thickness_mm": 0.96637,
+  "maximum_thickness_mm": 5.65,
+  "thinnest_region": "pocket_wall_at_mouth",
+  "thickest_region": "outer_floor",
+  "thickness_ratio": 5.8466,
+  "ratio_limit": 2.5,
+  "within_limit": false,
+  "abrupt_transitions": [
+    {
+      "from": "pocket_floor",
+      "to": "tray_deck",
+      "ratio": 4.65,
+      "span_mm": 0.6,
+      "location": "pocket floor into the inter-pocket land"
+    }
+  ],
+  "all_transitions": [
+    {
+      "from": "pocket_floor",
+      "to": "tray_deck",
+      "ratio": 4.65,
+      "span_mm": 0.6,
+      "location": "pocket floor into the inter-pocket land"
+    },
+    {
+      "from": "pocket_wall_at_mouth",
+      "to": "outer_floor",
+      "ratio": 5.8466,
+      "span_mm": 11.0664,
+      "location": "pocket wall into the outer solid margin"
+    }
+  ],
+  "likely_sink_risk_regions": [
+    "outer_floor",
+    "tray_deck"
+  ],
+  "likely_warpage_risk_regions": [
+    "outer_floor",
+    "tray_deck"
+  ],
+  "deck_ligament_mm": 1.932739,
+  "outer_margin_mm": 11.06637,
+  "MOULDING_SINK_RISK": "PROVISIONAL_ENGINEERING_RISK",
+  "evidence_basis": "SECTION_THICKNESS_ONLY_NO_MOULD_FLOW_SIMULATION",
+  "claim_limit": "sink and warpage are RISK CLASSIFICATIONS from section thickness only. No mould-flow simulation was run, so no sink is asserted as fact.",
+  "findings": [
+    {
+      "code": "THIN_WALL_BELOW_POLICY_MINIMUM",
+      "severity": "DECLARED",
+      "message": "pocket_wall_at_mouth is 0.96637 mm, below the 1.0 mm minimum wall policy for ABS. Mouldable but at the low end; it is a consequence of correcting the pocket to the fit datum, which widened the cavity.",
+      "thickness_mm": 0.96637
+    },
+    {
+      "code": "THICKNESS_RATIO_EXCEEDED",
+      "severity": "FAIL",
+      "message": "section thickness ratio 5.85:1 exceeds the 2.5:1 policy limit (thinnest 0.96637 mm in pocket_wall_at_mouth, thickest 5.65 mm in outer_floor). The premium pilot fails until a mitigation is documented.",
+      "ratio": 5.8466
+    },
+    {
+      "code": "ABRUPT_TRANSITION",
+      "severity": "DECLARED",
+      "message": "pocket floor into the inter-pocket land: 4.65:1 over 0.6 mm"
+    }
+  ],
+  "finding_count": 3,
+  "mitigation_options_not_applied": [
+    "coring the underside to a uniform nominal wall",
+    "ribs on the cored underside (only with structural justification \u2014 cosmetic ribs are a defect)",
+    "gradual section transitions at the pocket-to-land boundary",
+    "local floor reduction",
+    "revised fillet radii",
+    "altered pocket seating datum"
+  ]
+}

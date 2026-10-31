@@ -1,0 +1,855 @@
+{
+  "schema": "palt_m4b_a2_contract/1.0",
+  "milestone": "PALT-M4B-A2",
+  "conflict_record": {
+    "record_type": "pocket_diameter_conflict/1.0",
+    "conflict": "two active contracts assigned different meanings to a field both called 'pocket diameter'",
+    "resolution": "NOT_A_VALUE_CONFLICT \u2014 A DATUM CONFLICT. The two numbers measure different things at different datums. Both are retained under explicit names and the ambiguous field name is retired.",
+    "entries": [
+      {
+        "value_mm": 26.6,
+        "source_file": "apps/pipeline/services/palt_p1.py",
+        "field_name": "PaletteLayoutSpec.module_width / module_height",
+        "original_purpose": "the PLAN-VIEW lattice module \u2014 the footprint reserved per pan so the 3x3 pitch can be resolved. It is a spacing reservation, never a cavity wall position at any elevation.",
+        "derivation": "26.0 nominal pan + 2 x 0.30 manufacturing tolerance + 2 x 0.0 retention pocket add",
+        "authority": "CALCULATED_LAYOUT_HEURISTIC",
+        "milestone_introduced": "PALT-M1 / PALT-M2 (layout contract); the owner's M1 review explicitly corrected its class to CALCULATED_LAYOUT_HEURISTIC and NOT an industry or production standard",
+        "status": "ACTIVE_AT_A_DIFFERENT_DATUM",
+        "controls_fit": false,
+        "re_datumed_as": "PAN_MAXIMUM_ENVELOPE_DIAMETER (and, separately, the layout module)",
+        "note": "pocket_module_mm(spec, PALT_P1_MECHANISM) returns exactly 26.6 only because ADHESIVE_FIXED retention adds 0.0. A retention strategy with a non-zero pocket add would move the module without moving any cavity wall \u2014 which is what proves the two quantities are independent."
+      },
+      {
+        "value_mm": 26.8,
+        "source_file": "apps/pipeline/services/palette_moulded_geometry.py",
+        "field_name": "PAN_SYSTEM['pocket_diameter_mm']",
+        "original_purpose": "the moulded CAVITY diameter giving the metal pan radial seating clearance",
+        "derivation": "26.0 nominal pan + 2 x 0.40 seating clearance",
+        "authority": "DESIGN_DEFAULT_NOT_MANUFACTURER_CONFIRMED",
+        "milestone_introduced": "PALT-M4B (the module the owner declared INCOMPLETE)",
+        "status": "ACTIVE_AND_CORRECTLY_DATUMED_FOR_FIT",
+        "controls_fit": true,
+        "re_datumed_as": "POCKET_FUNCTIONAL_DIAMETER_AT_SEATING_DATUM",
+        "note": "adopted as the A2 fit datum as an EXPLICIT DECISION, not inherited silently: it is the only one of the two that was ever defined as a cavity, and it is the value that lets a nominal pan seat. It still originates in an INCOMPLETE module, so it stays DESIGN_DEFAULT / NOT_MANUFACTURER_CONFIRMED."
+      },
+      {
+        "value_mm": 27.758826,
+        "source_file": "derived from the built mesh",
+        "field_name": "pockets[i].opening_radius_mm x 2",
+        "original_purpose": "the visible mouth where the 0.6 mm rim fillet meets the flat deck",
+        "derivation": "sharp wall line at deck + 2 x rim fillet tangent offset",
+        "authority": "DERIVED_FROM_BUILT_MESH",
+        "milestone_introduced": "PALT-M4B-A",
+        "status": "ACTIVE_VISUAL_ONLY",
+        "controls_fit": false,
+        "re_datumed_as": "POCKET_VISIBLE_MOUTH_DIAMETER_AT_RIM",
+        "note": "a caliper on the top view reads this, not the fit datum. Reporting it as a discrepancy would be wrong \u2014 but the distinction has to be explicit and testable, which is what DATUMS provides."
+      }
+    ],
+    "retired_field": {
+      "name": "pocket_diameter_mm",
+      "action": "RETIRED_AS_AMBIGUOUS",
+      "enforced_by": "palette_recessed_tray_geometry.build_recessed_palette_tray raises RecessedTrayError when the key is present",
+      "values_preserved": true
+    },
+    "unresolved": [
+      "the 0.30 mm 'manufacturing tolerance' behind 26.6 is annotated 'pressed-powder pans have WIDE tolerance (R10)' \u2014 that is a POWDER/layout heuristic, not a drawn metal-pan shell tolerance. Using it as PAN_MAXIMUM_ENVELOPE is conservative and probably overstated. A real pan-shell tolerance is NOT_ESTABLISHED and needs a supplier drawing."
+    ]
+  },
+  "pan_contract": {
+    "pan_outside_diameter_mm": {
+      "value": 26.0,
+      "basis": "owner M4B-A preserved value",
+      "authority": "PROVISIONAL_DESIGN_DEFAULT",
+      "manufacturing_authority": "NOT_ESTABLISHED"
+    },
+    "pan_depth_mm": {
+      "value": 3.5,
+      "basis": "owner M4B-A preserved value",
+      "authority": "PROVISIONAL_DESIGN_DEFAULT",
+      "manufacturing_authority": "NOT_ESTABLISHED"
+    },
+    "metal_wall_thickness_mm": {
+      "value": 0.25,
+      "basis": "PAN_SYSTEM drawn-pan wall",
+      "authority": "PROVISIONAL_DESIGN_DEFAULT",
+      "manufacturing_authority": "NOT_ESTABLISHED"
+    },
+    "metal_floor_thickness_mm": {
+      "value": 0.25,
+      "basis": "PAN_SYSTEM drawn-pan floor",
+      "authority": "PROVISIONAL_DESIGN_DEFAULT",
+      "manufacturing_authority": "NOT_ESTABLISHED"
+    },
+    "side_wall_draft_deg": {
+      "value": 0.0,
+      "basis": "drawn pans are near-straight-walled; a non-zero value is available but unestablished",
+      "authority": "PROVISIONAL_DESIGN_DEFAULT",
+      "manufacturing_authority": "NOT_ESTABLISHED"
+    },
+    "base_corner_radius_mm": {
+      "value": 0.4,
+      "basis": "PAN_BASE_CORNER_RADIUS \u2014 selected in M4B-A2 by the flat-seating constraint, not assumed",
+      "authority": "PROVISIONAL_DESIGN_DEFAULT",
+      "manufacturing_authority": "NOT_ESTABLISHED"
+    },
+    "floor_radius_mm": {
+      "value": 0.2,
+      "basis": "inner floor-to-wall radius of the drawn cup",
+      "authority": "PROVISIONAL_DESIGN_DEFAULT",
+      "manufacturing_authority": "NOT_ESTABLISHED"
+    },
+    "upper_wall_terminates_at": {
+      "value": "PAN_TOP_Z",
+      "basis": "the rim is a plain cut edge; no bead or curl is modelled",
+      "authority": "PROVISIONAL_DESIGN_DEFAULT",
+      "manufacturing_authority": "NOT_ESTABLISHED"
+    },
+    "pan_layout_tolerance_mm": {
+      "value": 0.3,
+      "basis": "the palt_p1 layout allowance \u2014 see the datum conflict record; it is NOT a verified shell tolerance",
+      "authority": "PROVISIONAL_DESIGN_DEFAULT",
+      "manufacturing_authority": "NOT_ESTABLISHED"
+    }
+  },
+  "tolerance_stack": {
+    "record_type": "pan_pocket_radial_tolerance_stack/1.0",
+    "contributors": {
+      "pan_shell_radial_tolerance_mm": {
+        "radial_mm": 0.05,
+        "basis": "drawn metal pan shell, provisional; NOT the 0.30 mm palt_p1 layout allowance. A real shell tolerance needs a supplier drawing and is NOT_ESTABLISHED.",
+        "authority": "DESIGN_DEFAULT_NOT_MANUFACTURER_CONFIRMED"
+      },
+      "pocket_moulding_radial_tolerance_mm": {
+        "radial_mm": 0.1,
+        "basis": "half of ALLOWANCES.moulding_tolerance_mm (0.20 diametral)",
+        "authority": "DESIGN_DEFAULT_NOT_MANUFACTURER_CONFIRMED"
+      },
+      "coating_or_plating_radial_mm": {
+        "radial_mm": 0.015,
+        "basis": "decorative plating build, 10-20 um typical",
+        "authority": "DESIGN_DEFAULT_NOT_MANUFACTURER_CONFIRMED"
+      },
+      "assembly_placement_radial_mm": {
+        "radial_mm": 0.1,
+        "basis": "pick-and-place of the pan into an adhesive bed",
+        "authority": "DESIGN_DEFAULT_NOT_MANUFACTURER_CONFIRMED"
+      },
+      "adhesive_placement_radial_mm": {
+        "radial_mm": 0.05,
+        "basis": "adhesive squeeze-out beside the pan base",
+        "authority": "DESIGN_DEFAULT_NOT_MANUFACTURER_CONFIRMED"
+      },
+      "thermal_dimensional_radial_mm": {
+        "radial_mm": 0.036,
+        "basis": "differential expansion over a 40 K excursion: ABS at 9.0e-5/K on a 13.3 mm radius against a metal pan at 2.3e-5/K on 13.0 mm",
+        "authority": "DESIGN_DEFAULT_NOT_MANUFACTURER_CONFIRMED"
+      }
+    },
+    "root_sum_square_mm": 0.162853,
+    "worst_case_mm": 0.351,
+    "governing_method": "ROOT_SUM_SQUARE",
+    "engineering_minimum_radial_mm": 0.162853,
+    "note": "RSS governs because the six contributors are independent and a worst-case stack on a decorative pocket would be unreasonably conservative. The worst-case figure is reported alongside so the owner can overrule."
+  },
+  "clearance_tier_status": {
+    "GEOMETRIC_CLEARANCE": "ESTABLISHABLE_IN_M4B_A2",
+    "ENGINEERING_CLEARANCE": "ESTABLISHABLE_IN_M4B_A2_AS_PROVISIONAL_DESIGN_DEFAULT",
+    "MANUFACTURING_CONFIRMED_CLEARANCE": "NOT_ESTABLISHED"
+  },
+  "fit_datum_decision": {
+    "POCKET_FUNCTIONAL_DIAMETER_AT_SEATING_DATUM": 26.8,
+    "rejected_for_this_role": 26.6,
+    "reason": "26.6 is a plan-view layout module; it was never a cavity dimension. M4B-A used it as one.",
+    "authority": "DESIGN_DEFAULT_NOT_MANUFACTURER_CONFIRMED"
+  },
+  "selection": {
+    "record_type": "palt_m4b_a2_selection/1.0",
+    "selected": "C_ROUNDED_PAN_BASE_0_30",
+    "base_corner_radius_mm": 0.3,
+    "functional_diameter_mm": 26.8,
+    "governing_clearance_mm": 0.249767,
+    "engineering_minimum_radial_mm": 0.162853,
+    "rule": "smallest tested base radius meeting every condition in the owner's decision rule",
+    "decided_by": "all tested radii [0.3, 0.4, 0.5] satisfy every condition, so the rule's own tie-break \u2014 the SMALLEST tested radius \u2014 selects 0.3 mm at 0.249767 mm governing clearance against a 0.162853 mm engineering minimum. A radius is needed at all because the sharp-cornered control reaches only 0.150142 mm, which is BELOW that minimum.",
+    "why_a_radius_is_required": "at the corrected fit datum a sharp-cornered pan does clear (0.150142 mm) and does seat flat, but by 0.012422 mm \u2014 so it establishes GEOMETRIC clearance and fails ENGINEERING clearance. The base radius buys margin, it does not rescue a collision.",
+    "rejected_strategies": [],
+    "not_decided_by": "mesh identity preservation, visual plausibility, or ease of implementation",
+    "conditions": [
+      {
+        "strategy": "C_ROUNDED_PAN_BASE_0_30",
+        "checks": {
+          "positive_clearance": true,
+          "no_external_dimension_change": true,
+          "deck_not_weakened": true,
+          "stable_seating": true,
+          "recess_preserved": true,
+          "tagged_design_default": true,
+          "meets_engineering_minimum": true
+        },
+        "eligible": true
+      },
+      {
+        "strategy": "C_ROUNDED_PAN_BASE_0_40",
+        "checks": {
+          "positive_clearance": true,
+          "no_external_dimension_change": true,
+          "deck_not_weakened": true,
+          "stable_seating": true,
+          "recess_preserved": true,
+          "tagged_design_default": true,
+          "meets_engineering_minimum": true
+        },
+        "eligible": true
+      },
+      {
+        "strategy": "C_ROUNDED_PAN_BASE_0_50",
+        "checks": {
+          "positive_clearance": true,
+          "no_external_dimension_change": true,
+          "deck_not_weakened": true,
+          "stable_seating": true,
+          "recess_preserved": true,
+          "tagged_design_default": true,
+          "meets_engineering_minimum": true
+        },
+        "eligible": true
+      }
+    ],
+    "PAN_EDGE_PROFILE_AUTHORITY": "PROVISIONAL_DESIGN_DEFAULT",
+    "PAN_MANUFACTURING_AUTHORITY": "NOT_ESTABLISHED"
+  },
+  "resolution_matrix": {
+    "record_type": "palt_m4b_a2_resolution_matrix/1.0",
+    "milestone": "PALT-M4B-A2",
+    "engineering_minimum_radial_mm": 0.162853,
+    "tolerance_stack": {
+      "record_type": "pan_pocket_radial_tolerance_stack/1.0",
+      "contributors": {
+        "pan_shell_radial_tolerance_mm": {
+          "radial_mm": 0.05,
+          "basis": "drawn metal pan shell, provisional; NOT the 0.30 mm palt_p1 layout allowance. A real shell tolerance needs a supplier drawing and is NOT_ESTABLISHED.",
+          "authority": "DESIGN_DEFAULT_NOT_MANUFACTURER_CONFIRMED"
+        },
+        "pocket_moulding_radial_tolerance_mm": {
+          "radial_mm": 0.1,
+          "basis": "half of ALLOWANCES.moulding_tolerance_mm (0.20 diametral)",
+          "authority": "DESIGN_DEFAULT_NOT_MANUFACTURER_CONFIRMED"
+        },
+        "coating_or_plating_radial_mm": {
+          "radial_mm": 0.015,
+          "basis": "decorative plating build, 10-20 um typical",
+          "authority": "DESIGN_DEFAULT_NOT_MANUFACTURER_CONFIRMED"
+        },
+        "assembly_placement_radial_mm": {
+          "radial_mm": 0.1,
+          "basis": "pick-and-place of the pan into an adhesive bed",
+          "authority": "DESIGN_DEFAULT_NOT_MANUFACTURER_CONFIRMED"
+        },
+        "adhesive_placement_radial_mm": {
+          "radial_mm": 0.05,
+          "basis": "adhesive squeeze-out beside the pan base",
+          "authority": "DESIGN_DEFAULT_NOT_MANUFACTURER_CONFIRMED"
+        },
+        "thermal_dimensional_radial_mm": {
+          "radial_mm": 0.036,
+          "basis": "differential expansion over a 40 K excursion: ABS at 9.0e-5/K on a 13.3 mm radius against a metal pan at 2.3e-5/K on 13.0 mm",
+          "authority": "DESIGN_DEFAULT_NOT_MANUFACTURER_CONFIRMED"
+        }
+      },
+      "root_sum_square_mm": 0.162853,
+      "worst_case_mm": 0.351,
+      "governing_method": "ROOT_SUM_SQUARE",
+      "engineering_minimum_radial_mm": 0.162853,
+      "note": "RSS governs because the six contributors are independent and a worst-case stack on a decorative pocket would be unreasonably conservative. The worst-case figure is reported alongside so the owner can overrule."
+    },
+    "strategies": [
+      {
+        "strategy": "A_FILLET_REDUCTION",
+        "description": "keep the current pocket functional diameter and a sharp-cornered pan; cut the floor fillet to the calculated non-interference maximum",
+        "inputs": {
+          "functional_diameter_mm": 26.6,
+          "floor_fillet_mm": 0.5063,
+          "base_corner_radius_mm": 0.0,
+          "sharp_wall_diameter_at_deck_mm": 27.200002988
+        },
+        "valid": false,
+        "verdict": "INVALID",
+        "min_radial_clearance_mm": 0.3,
+        "min_normal_clearance_mm": 0.140385,
+        "min_vertical_clearance_mm": 0.15,
+        "governing_clearance_mm": 0.140385,
+        "pan_seating_elevation_mm": 2.65,
+        "pan_recess_mm": 1.0,
+        "seating": {
+          "pocket_flat_floor_radius_mm": 12.948692,
+          "pan_flat_base_radius_mm": 13.0,
+          "flat_seating_margin_mm": -0.051308,
+          "seats_on_flat_base": false,
+          "contact_mode": "RING_CONTACT_ON_FLOOR_FILLET",
+          "adhesive_gap_mm": 0.1499999999999999,
+          "stable": false,
+          "note": "a positive margin means the whole flat base is carried by the flat pocket floor; negative means the base overhangs onto the fillet and the pan is carried on a ring"
+        },
+        "clearance_tiers": {
+          "record_type": "clearance_classification/1.0",
+          "GEOMETRIC_CLEARANCE": {
+            "established": true,
+            "value_mm": 0.140385,
+            "criterion": "governing clearance > 0"
+          },
+          "ENGINEERING_CLEARANCE": {
+            "established": false,
+            "value_mm": 0.140385,
+            "required_mm": 0.162853,
+            "method": "ROOT_SUM_SQUARE",
+            "worst_case_required_mm": 0.351,
+            "survives_worst_case": false,
+            "criterion": "governing clearance >= the RSS tolerance stack AND the pan seats on its flat base"
+          },
+          "MANUFACTURING_CONFIRMED_CLEARANCE": {
+            "established": false,
+            "reason": "no supplier has confirmed the pan shell tolerance, the moulding capability or the plating build",
+            "status": "NOT_ESTABLISHED"
+          },
+          "production_ready": false,
+          "authority": "PROVISIONAL_DESIGN_DEFAULT"
+        },
+        "deck_ligament_mm": 2.24117,
+        "pocket_wall_thickness_mm": 1.120585,
+        "layout_impact_3x3": {
+          "pitch_mm": 30.6,
+          "pitch_changed": false,
+          "field_mm": 91.8,
+          "outer_margin_mm": 11.220585,
+          "note": "no strategy moves the 3x3 pitch; the pan field and the 116 mm external envelope are untouched"
+        },
+        "max_material_pan_check": {
+          "envelope_diameter_mm": 26.6,
+          "min_radial_clearance_mm": 0.0,
+          "fits": false,
+          "note": "the 0.30 mm layout allowance taken literally as a pan shell tolerance; see the datum conflict record \u2014 it is a powder/layout heuristic, so this is a conservative bound, not a verified requirement"
+        },
+        "visual_implications": "a smaller internal fillet is not visible from above, but it sharpens the pocket's internal corner",
+        "moulding_implications": {
+          "thickness_ratio": 5.65,
+          "within_limit": false,
+          "sink_regions": [
+            "outer_floor",
+            "tray_deck"
+          ],
+          "note": "a smaller internal corner radius raises the local stress concentration and makes the cavity harder to polish; internal radii are usually increased, not reduced"
+        },
+        "authority": "PROVISIONAL_DESIGN_DEFAULT",
+        "confidence": "LOW \u2014 trades a moulding-quality feature for fit",
+        "tray_mesh_identity": "cec3e0ef81a633b6",
+        "pan_mesh_identity": "9c576d6cc0138939"
+      },
+      {
+        "strategy": "B_POCKET_ENLARGEMENT",
+        "description": "keep the 0.6 mm floor fillet and a sharp-cornered pan; enlarge the functional pocket diameter to the calculated minimum",
+        "inputs": {
+          "functional_diameter_mm": 26.7084,
+          "floor_fillet_mm": 0.6,
+          "base_corner_radius_mm": 0.0,
+          "sharp_wall_diameter_at_deck_mm": 27.416834213
+        },
+        "valid": false,
+        "verdict": "INVALID",
+        "min_radial_clearance_mm": 0.3542,
+        "min_normal_clearance_mm": 0.143131,
+        "min_vertical_clearance_mm": 0.15,
+        "governing_clearance_mm": 0.143131,
+        "pan_seating_elevation_mm": 2.65,
+        "pan_recess_mm": 1.0,
+        "seating": {
+          "pocket_flat_floor_radius_mm": 12.966622,
+          "pan_flat_base_radius_mm": 13.0,
+          "flat_seating_margin_mm": -0.033378,
+          "seats_on_flat_base": false,
+          "contact_mode": "RING_CONTACT_ON_FLOOR_FILLET",
+          "adhesive_gap_mm": 0.1499999999999999,
+          "stable": false,
+          "note": "a positive margin means the whole flat base is carried by the flat pocket floor; negative means the base overhangs onto the fillet and the pan is carried on a ring"
+        },
+        "clearance_tiers": {
+          "record_type": "clearance_classification/1.0",
+          "GEOMETRIC_CLEARANCE": {
+            "established": true,
+            "value_mm": 0.143131,
+            "criterion": "governing clearance > 0"
+          },
+          "ENGINEERING_CLEARANCE": {
+            "established": false,
+            "value_mm": 0.143131,
+            "required_mm": 0.162853,
+            "method": "ROOT_SUM_SQUARE",
+            "worst_case_required_mm": 0.351,
+            "survives_worst_case": false,
+            "criterion": "governing clearance >= the RSS tolerance stack AND the pan seats on its flat base"
+          },
+          "MANUFACTURING_CONFIRMED_CLEARANCE": {
+            "established": false,
+            "reason": "no supplier has confirmed the pan shell tolerance, the moulding capability or the plating build",
+            "status": "NOT_ESTABLISHED"
+          },
+          "production_ready": false,
+          "authority": "PROVISIONAL_DESIGN_DEFAULT"
+        },
+        "deck_ligament_mm": 2.024339,
+        "pocket_wall_thickness_mm": 1.012169,
+        "layout_impact_3x3": {
+          "pitch_mm": 30.6,
+          "pitch_changed": false,
+          "field_mm": 91.8,
+          "outer_margin_mm": 11.11217,
+          "note": "no strategy moves the 3x3 pitch; the pan field and the 116 mm external envelope are untouched"
+        },
+        "max_material_pan_check": {
+          "envelope_diameter_mm": 26.6,
+          "min_radial_clearance_mm": 0.0542,
+          "fits": true,
+          "note": "the 0.30 mm layout allowance taken literally as a pan shell tolerance; see the datum conflict record \u2014 it is a powder/layout heuristic, so this is a conservative bound, not a verified requirement"
+        },
+        "visual_implications": "a wider pocket narrows the deck ligament to 2.024 mm, which IS visible as a thinner land between pans",
+        "moulding_implications": {
+          "thickness_ratio": 5.65,
+          "within_limit": false,
+          "sink_regions": [
+            "outer_floor",
+            "tray_deck"
+          ],
+          "note": "a wider cavity removes material from the deck land and moves the wall thickness the wrong way"
+        },
+        "authority": "PROVISIONAL_DESIGN_DEFAULT",
+        "confidence": "MODERATE \u2014 dimensionally sound, weakens the deck land",
+        "tray_mesh_identity": "0185b86a5b49975e",
+        "pan_mesh_identity": "9c576d6cc0138939"
+      },
+      {
+        "strategy": "C_ROUNDED_PAN_BASE_0_30",
+        "description": "keep the intended pocket and moulded fillet; give the pan a 0.30 mm drawn base radius",
+        "inputs": {
+          "functional_diameter_mm": 26.8,
+          "floor_fillet_mm": 0.6,
+          "base_corner_radius_mm": 0.3,
+          "sharp_wall_diameter_at_deck_mm": 27.508434213
+        },
+        "valid": true,
+        "verdict": "VALID",
+        "min_radial_clearance_mm": 0.564709,
+        "min_normal_clearance_mm": 0.249767,
+        "min_vertical_clearance_mm": 0.15,
+        "governing_clearance_mm": 0.249767,
+        "pan_seating_elevation_mm": 2.65,
+        "pan_recess_mm": 1.0,
+        "seating": {
+          "pocket_flat_floor_radius_mm": 13.012422,
+          "pan_flat_base_radius_mm": 12.7,
+          "flat_seating_margin_mm": 0.312422,
+          "seats_on_flat_base": true,
+          "contact_mode": "FLAT_FACE_SEATING",
+          "adhesive_gap_mm": 0.1499999999999999,
+          "stable": true,
+          "note": "a positive margin means the whole flat base is carried by the flat pocket floor; negative means the base overhangs onto the fillet and the pan is carried on a ring"
+        },
+        "clearance_tiers": {
+          "record_type": "clearance_classification/1.0",
+          "GEOMETRIC_CLEARANCE": {
+            "established": true,
+            "value_mm": 0.249767,
+            "criterion": "governing clearance > 0"
+          },
+          "ENGINEERING_CLEARANCE": {
+            "established": true,
+            "value_mm": 0.249767,
+            "required_mm": 0.162853,
+            "method": "ROOT_SUM_SQUARE",
+            "worst_case_required_mm": 0.351,
+            "survives_worst_case": false,
+            "criterion": "governing clearance >= the RSS tolerance stack AND the pan seats on its flat base"
+          },
+          "MANUFACTURING_CONFIRMED_CLEARANCE": {
+            "established": false,
+            "reason": "no supplier has confirmed the pan shell tolerance, the moulding capability or the plating build",
+            "status": "NOT_ESTABLISHED"
+          },
+          "production_ready": false,
+          "authority": "PROVISIONAL_DESIGN_DEFAULT"
+        },
+        "deck_ligament_mm": 1.932739,
+        "pocket_wall_thickness_mm": 0.966369,
+        "layout_impact_3x3": {
+          "pitch_mm": 30.6,
+          "pitch_changed": false,
+          "field_mm": 91.8,
+          "outer_margin_mm": 11.06637,
+          "note": "no strategy moves the 3x3 pitch; the pan field and the 116 mm external envelope are untouched"
+        },
+        "max_material_pan_check": {
+          "envelope_diameter_mm": 26.6,
+          "min_radial_clearance_mm": 0.264709,
+          "fits": true,
+          "note": "the 0.30 mm layout allowance taken literally as a pan shell tolerance; see the datum conflict record \u2014 it is a powder/layout heuristic, so this is a conservative bound, not a verified requirement"
+        },
+        "visual_implications": "no visible change to the moulded tray: the pan's own base radius is hidden inside the pocket once seated",
+        "moulding_implications": {
+          "thickness_ratio": 5.8466,
+          "within_limit": false,
+          "sink_regions": [
+            "outer_floor",
+            "tray_deck"
+          ],
+          "note": "no change to the moulded part at all \u2014 the correction is entirely in the pressed metal pan"
+        },
+        "authority": "PROVISIONAL_DESIGN_DEFAULT",
+        "confidence": "MODERATE \u2014 the geometry is exact, but a real drawn-pan base radius is NOT_MANUFACTURER_CONFIRMED",
+        "tray_mesh_identity": "4c98a07777f97968",
+        "pan_mesh_identity": "785018fcf3eb8444"
+      },
+      {
+        "strategy": "C_ROUNDED_PAN_BASE_0_40",
+        "description": "keep the intended pocket and moulded fillet; give the pan a 0.40 mm drawn base radius",
+        "inputs": {
+          "functional_diameter_mm": 26.8,
+          "floor_fillet_mm": 0.6,
+          "base_corner_radius_mm": 0.4,
+          "sharp_wall_diameter_at_deck_mm": 27.508434213
+        },
+        "valid": true,
+        "verdict": "VALID",
+        "min_radial_clearance_mm": 0.600484,
+        "min_normal_clearance_mm": 0.290833,
+        "min_vertical_clearance_mm": 0.15,
+        "governing_clearance_mm": 0.290833,
+        "pan_seating_elevation_mm": 2.65,
+        "pan_recess_mm": 1.0,
+        "seating": {
+          "pocket_flat_floor_radius_mm": 13.012422,
+          "pan_flat_base_radius_mm": 12.6,
+          "flat_seating_margin_mm": 0.412422,
+          "seats_on_flat_base": true,
+          "contact_mode": "FLAT_FACE_SEATING",
+          "adhesive_gap_mm": 0.1499999999999999,
+          "stable": true,
+          "note": "a positive margin means the whole flat base is carried by the flat pocket floor; negative means the base overhangs onto the fillet and the pan is carried on a ring"
+        },
+        "clearance_tiers": {
+          "record_type": "clearance_classification/1.0",
+          "GEOMETRIC_CLEARANCE": {
+            "established": true,
+            "value_mm": 0.290833,
+            "criterion": "governing clearance > 0"
+          },
+          "ENGINEERING_CLEARANCE": {
+            "established": true,
+            "value_mm": 0.290833,
+            "required_mm": 0.162853,
+            "method": "ROOT_SUM_SQUARE",
+            "worst_case_required_mm": 0.351,
+            "survives_worst_case": false,
+            "criterion": "governing clearance >= the RSS tolerance stack AND the pan seats on its flat base"
+          },
+          "MANUFACTURING_CONFIRMED_CLEARANCE": {
+            "established": false,
+            "reason": "no supplier has confirmed the pan shell tolerance, the moulding capability or the plating build",
+            "status": "NOT_ESTABLISHED"
+          },
+          "production_ready": false,
+          "authority": "PROVISIONAL_DESIGN_DEFAULT"
+        },
+        "deck_ligament_mm": 1.932739,
+        "pocket_wall_thickness_mm": 0.966369,
+        "layout_impact_3x3": {
+          "pitch_mm": 30.6,
+          "pitch_changed": false,
+          "field_mm": 91.8,
+          "outer_margin_mm": 11.06637,
+          "note": "no strategy moves the 3x3 pitch; the pan field and the 116 mm external envelope are untouched"
+        },
+        "max_material_pan_check": {
+          "envelope_diameter_mm": 26.6,
+          "min_radial_clearance_mm": 0.300484,
+          "fits": true,
+          "note": "the 0.30 mm layout allowance taken literally as a pan shell tolerance; see the datum conflict record \u2014 it is a powder/layout heuristic, so this is a conservative bound, not a verified requirement"
+        },
+        "visual_implications": "no visible change to the moulded tray: the pan's own base radius is hidden inside the pocket once seated",
+        "moulding_implications": {
+          "thickness_ratio": 5.8466,
+          "within_limit": false,
+          "sink_regions": [
+            "outer_floor",
+            "tray_deck"
+          ],
+          "note": "no change to the moulded part at all \u2014 the correction is entirely in the pressed metal pan"
+        },
+        "authority": "PROVISIONAL_DESIGN_DEFAULT",
+        "confidence": "MODERATE \u2014 the geometry is exact, but a real drawn-pan base radius is NOT_MANUFACTURER_CONFIRMED",
+        "tray_mesh_identity": "4c98a07777f97968",
+        "pan_mesh_identity": "c5fc77caa8317451"
+      },
+      {
+        "strategy": "C_ROUNDED_PAN_BASE_0_50",
+        "description": "keep the intended pocket and moulded fillet; give the pan a 0.50 mm drawn base radius",
+        "inputs": {
+          "functional_diameter_mm": 26.8,
+          "floor_fillet_mm": 0.6,
+          "base_corner_radius_mm": 0.5,
+          "sharp_wall_diameter_at_deck_mm": 27.508434213
+        },
+        "valid": true,
+        "verdict": "VALID",
+        "min_radial_clearance_mm": 0.614621,
+        "min_normal_clearance_mm": 0.331902,
+        "min_vertical_clearance_mm": 0.15,
+        "governing_clearance_mm": 0.331902,
+        "pan_seating_elevation_mm": 2.65,
+        "pan_recess_mm": 1.0,
+        "seating": {
+          "pocket_flat_floor_radius_mm": 13.012422,
+          "pan_flat_base_radius_mm": 12.5,
+          "flat_seating_margin_mm": 0.512422,
+          "seats_on_flat_base": true,
+          "contact_mode": "FLAT_FACE_SEATING",
+          "adhesive_gap_mm": 0.1499999999999999,
+          "stable": true,
+          "note": "a positive margin means the whole flat base is carried by the flat pocket floor; negative means the base overhangs onto the fillet and the pan is carried on a ring"
+        },
+        "clearance_tiers": {
+          "record_type": "clearance_classification/1.0",
+          "GEOMETRIC_CLEARANCE": {
+            "established": true,
+            "value_mm": 0.331902,
+            "criterion": "governing clearance > 0"
+          },
+          "ENGINEERING_CLEARANCE": {
+            "established": true,
+            "value_mm": 0.331902,
+            "required_mm": 0.162853,
+            "method": "ROOT_SUM_SQUARE",
+            "worst_case_required_mm": 0.351,
+            "survives_worst_case": false,
+            "criterion": "governing clearance >= the RSS tolerance stack AND the pan seats on its flat base"
+          },
+          "MANUFACTURING_CONFIRMED_CLEARANCE": {
+            "established": false,
+            "reason": "no supplier has confirmed the pan shell tolerance, the moulding capability or the plating build",
+            "status": "NOT_ESTABLISHED"
+          },
+          "production_ready": false,
+          "authority": "PROVISIONAL_DESIGN_DEFAULT"
+        },
+        "deck_ligament_mm": 1.932739,
+        "pocket_wall_thickness_mm": 0.966369,
+        "layout_impact_3x3": {
+          "pitch_mm": 30.6,
+          "pitch_changed": false,
+          "field_mm": 91.8,
+          "outer_margin_mm": 11.06637,
+          "note": "no strategy moves the 3x3 pitch; the pan field and the 116 mm external envelope are untouched"
+        },
+        "max_material_pan_check": {
+          "envelope_diameter_mm": 26.6,
+          "min_radial_clearance_mm": 0.314621,
+          "fits": true,
+          "note": "the 0.30 mm layout allowance taken literally as a pan shell tolerance; see the datum conflict record \u2014 it is a powder/layout heuristic, so this is a conservative bound, not a verified requirement"
+        },
+        "visual_implications": "no visible change to the moulded tray: the pan's own base radius is hidden inside the pocket once seated",
+        "moulding_implications": {
+          "thickness_ratio": 5.8466,
+          "within_limit": false,
+          "sink_regions": [
+            "outer_floor",
+            "tray_deck"
+          ],
+          "note": "no change to the moulded part at all \u2014 the correction is entirely in the pressed metal pan"
+        },
+        "authority": "PROVISIONAL_DESIGN_DEFAULT",
+        "confidence": "MODERATE \u2014 the geometry is exact, but a real drawn-pan base radius is NOT_MANUFACTURER_CONFIRMED",
+        "tray_mesh_identity": "4c98a07777f97968",
+        "pan_mesh_identity": "4deddce72934b5f8"
+      }
+    ],
+    "controls": [
+      {
+        "strategy": "CONTROL_M4B_A_REPRODUCTION",
+        "description": "CONTROL, not a strategy: the EXACT M4B-A configuration \u2014 26.6 fed in as the sharp wall line at the deck, which is what M4B-A did, with a sharp-cornered pan. Must reproduce the rejected -0.0542 mm radial interference.",
+        "inputs": {
+          "functional_diameter_mm": null,
+          "floor_fillet_mm": 0.6,
+          "base_corner_radius_mm": 0.0,
+          "sharp_wall_diameter_at_deck_mm": 26.6
+        },
+        "valid": false,
+        "verdict": "INVALID",
+        "min_radial_clearance_mm": -0.054217,
+        "min_normal_clearance_mm": -0.037667,
+        "min_vertical_clearance_mm": 0.15,
+        "governing_clearance_mm": -0.054217,
+        "pan_seating_elevation_mm": 2.65,
+        "pan_recess_mm": 1.0,
+        "seating": {
+          "pocket_flat_floor_radius_mm": 12.558205,
+          "pan_flat_base_radius_mm": 13.0,
+          "flat_seating_margin_mm": -0.441795,
+          "seats_on_flat_base": false,
+          "contact_mode": "RING_CONTACT_ON_FLOOR_FILLET",
+          "adhesive_gap_mm": 0.1499999999999999,
+          "stable": false,
+          "note": "a positive margin means the whole flat base is carried by the flat pocket floor; negative means the base overhangs onto the fillet and the pan is carried on a ring"
+        },
+        "clearance_tiers": {
+          "record_type": "clearance_classification/1.0",
+          "GEOMETRIC_CLEARANCE": {
+            "established": false,
+            "value_mm": -0.054217,
+            "criterion": "governing clearance > 0"
+          },
+          "ENGINEERING_CLEARANCE": {
+            "established": false,
+            "value_mm": -0.054217,
+            "required_mm": 0.162853,
+            "method": "ROOT_SUM_SQUARE",
+            "worst_case_required_mm": 0.351,
+            "survives_worst_case": false,
+            "criterion": "governing clearance >= the RSS tolerance stack AND the pan seats on its flat base"
+          },
+          "MANUFACTURING_CONFIRMED_CLEARANCE": {
+            "established": false,
+            "reason": "no supplier has confirmed the pan shell tolerance, the moulding capability or the plating build",
+            "status": "NOT_ESTABLISHED"
+          },
+          "production_ready": false,
+          "authority": "PROVISIONAL_DESIGN_DEFAULT"
+        },
+        "deck_ligament_mm": 2.841173,
+        "pocket_wall_thickness_mm": 1.420586,
+        "layout_impact_3x3": {
+          "pitch_mm": 30.6,
+          "pitch_changed": false,
+          "field_mm": 91.8,
+          "outer_margin_mm": 11.520587,
+          "note": "no strategy moves the 3x3 pitch; the pan field and the 116 mm external envelope are untouched"
+        },
+        "max_material_pan_check": {
+          "envelope_diameter_mm": 26.6,
+          "min_radial_clearance_mm": -0.354217,
+          "fits": false,
+          "note": "the 0.30 mm layout allowance taken literally as a pan shell tolerance; see the datum conflict record \u2014 it is a powder/layout heuristic, so this is a conservative bound, not a verified requirement"
+        },
+        "visual_implications": "a wider pocket narrows the deck ligament to 2.841 mm, which IS visible as a thinner land between pans",
+        "moulding_implications": {
+          "thickness_ratio": 5.65,
+          "within_limit": false,
+          "sink_regions": [
+            "outer_floor",
+            "tray_deck"
+          ],
+          "note": "a wider cavity removes material from the deck land and moves the wall thickness the wrong way"
+        },
+        "authority": "PROVISIONAL_DESIGN_DEFAULT",
+        "confidence": "MODERATE \u2014 dimensionally sound, weakens the deck land",
+        "tray_mesh_identity": "ec65ea9402c16230",
+        "pan_mesh_identity": "9c576d6cc0138939"
+      },
+      {
+        "strategy": "CONTROL_SHARP_PAN_AT_CORRECTED_DATUM",
+        "description": "CONTROL, not a strategy: the M4B-A sharp-cornered pan placed in a pocket built at the CORRECTED fit datum. Demonstrates whether the M4B-A interference was physical or a datum error.",
+        "inputs": {
+          "functional_diameter_mm": 26.8,
+          "floor_fillet_mm": 0.6,
+          "base_corner_radius_mm": 0.0,
+          "sharp_wall_diameter_at_deck_mm": 27.508434213
+        },
+        "valid": true,
+        "verdict": "VALID",
+        "min_radial_clearance_mm": 0.4,
+        "min_normal_clearance_mm": 0.150142,
+        "min_vertical_clearance_mm": 0.15,
+        "governing_clearance_mm": 0.150142,
+        "pan_seating_elevation_mm": 2.65,
+        "pan_recess_mm": 1.0,
+        "seating": {
+          "pocket_flat_floor_radius_mm": 13.012422,
+          "pan_flat_base_radius_mm": 13.0,
+          "flat_seating_margin_mm": 0.012422,
+          "seats_on_flat_base": true,
+          "contact_mode": "FLAT_FACE_SEATING",
+          "adhesive_gap_mm": 0.1499999999999999,
+          "stable": true,
+          "note": "a positive margin means the whole flat base is carried by the flat pocket floor; negative means the base overhangs onto the fillet and the pan is carried on a ring"
+        },
+        "clearance_tiers": {
+          "record_type": "clearance_classification/1.0",
+          "GEOMETRIC_CLEARANCE": {
+            "established": true,
+            "value_mm": 0.150142,
+            "criterion": "governing clearance > 0"
+          },
+          "ENGINEERING_CLEARANCE": {
+            "established": false,
+            "value_mm": 0.150142,
+            "required_mm": 0.162853,
+            "method": "ROOT_SUM_SQUARE",
+            "worst_case_required_mm": 0.351,
+            "survives_worst_case": false,
+            "criterion": "governing clearance >= the RSS tolerance stack AND the pan seats on its flat base"
+          },
+          "MANUFACTURING_CONFIRMED_CLEARANCE": {
+            "established": false,
+            "reason": "no supplier has confirmed the pan shell tolerance, the moulding capability or the plating build",
+            "status": "NOT_ESTABLISHED"
+          },
+          "production_ready": false,
+          "authority": "PROVISIONAL_DESIGN_DEFAULT"
+        },
+        "deck_ligament_mm": 1.932739,
+        "pocket_wall_thickness_mm": 0.966369,
+        "layout_impact_3x3": {
+          "pitch_mm": 30.6,
+          "pitch_changed": false,
+          "field_mm": 91.8,
+          "outer_margin_mm": 11.06637,
+          "note": "no strategy moves the 3x3 pitch; the pan field and the 116 mm external envelope are untouched"
+        },
+        "max_material_pan_check": {
+          "envelope_diameter_mm": 26.6,
+          "min_radial_clearance_mm": 0.1,
+          "fits": true,
+          "note": "the 0.30 mm layout allowance taken literally as a pan shell tolerance; see the datum conflict record \u2014 it is a powder/layout heuristic, so this is a conservative bound, not a verified requirement"
+        },
+        "visual_implications": "a wider pocket narrows the deck ligament to 1.933 mm, which IS visible as a thinner land between pans",
+        "moulding_implications": {
+          "thickness_ratio": 5.8466,
+          "within_limit": false,
+          "sink_regions": [
+            "outer_floor",
+            "tray_deck"
+          ],
+          "note": "a wider cavity removes material from the deck land and moves the wall thickness the wrong way"
+        },
+        "authority": "PROVISIONAL_DESIGN_DEFAULT",
+        "confidence": "MODERATE \u2014 dimensionally sound, weakens the deck land",
+        "tray_mesh_identity": "4c98a07777f97968",
+        "pan_mesh_identity": "9c576d6cc0138939"
+      }
+    ],
+    "datum_error_demonstrated": {
+      "m4b_a_reproduction_governing_clearance_mm": -0.054217,
+      "corrected_datum_governing_clearance_mm": 0.150142,
+      "sharp_pan_clears_at_corrected_datum": true,
+      "sharp_pan_meets_engineering_minimum": false,
+      "conclusion": "the M4B-A interference was a DATUM ERROR, not a physical conflict: the same sharp pan clears once the pocket is built at the fit datum instead of the layout module. It still does not reach the engineering minimum, which is what the pan base radius is for."
+    },
+    "note": "strategy B is evaluated at its own stated minimum (26.7084). At the corrected fit datum of 26.8 the pocket already exceeds that, so 'enlargement' is a no-op \u2014 see the controls."
+  },
+  "authority": {
+    "PALT_M4B_A2_SELECTED_STRATEGY_AUTHORITY": "PROVISIONAL_DESIGN_DEFAULT",
+    "PAN_EDGE_PROFILE_AUTHORITY": "PROVISIONAL_DESIGN_DEFAULT",
+    "PAN_MANUFACTURING_AUTHORITY": "NOT_ESTABLISHED",
+    "PALT_P1_FINAL_DIMENSIONS": "NOT_APPROVED",
+    "PALT_P1_MANUFACTURING_AUTHORITY": "NOT_ESTABLISHED",
+    "PALT_P1_OWNER_APPROVAL": "REJECTED_PENDING_M4B",
+    "PALT_M5": "BLOCKED"
+  }
+}

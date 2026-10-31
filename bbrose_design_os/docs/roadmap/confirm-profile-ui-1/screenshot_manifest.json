@@ -1,0 +1,166 @@
+{
+ "record_type": "confirm_profile_ui1_screenshot_evidence/1.0",
+ "captured_with": "apps/pipeline/tests/ui1_screenshot_capture.py (live-server Playwright harness \u2014 real interface, no mockups)",
+ "screenshots": [
+  {
+   "file": "desktop_bottle_default.png",
+   "viewport": {
+    "width": 1280,
+    "height": 900
+   },
+   "route": "/dashboard/",
+   "task_state": "awaiting_container_profile",
+   "editor_state": {
+    "archetype": "bottle",
+    "variant": "cylindrical",
+    "cap_style": "screw",
+    "height_mm": 110,
+    "width_mm": 40,
+    "neck_ratio": 0.42,
+    "dirty": false
+   },
+   "ui_state": "clean load: bottle/cylindrical/screw from the suggested profile; hints panel visible; reset disabled",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "desktop_jar_variant.png",
+   "viewport": {
+    "width": 1280,
+    "height": 900
+   },
+   "route": "/dashboard/",
+   "task_state": "awaiting_container_profile",
+   "editor_state": {
+    "archetype": "jar",
+    "variant": "standard",
+    "cap_style": "lid",
+    "height_mm": 110,
+    "width_mm": 40,
+    "neck_ratio": 0.42,
+    "dirty": true
+   },
+   "ui_state": "jar + standard variant + lid; preview shows broad body and lid",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "desktop_tube_closure.png",
+   "viewport": {
+    "width": 1280,
+    "height": 900
+   },
+   "route": "/dashboard/",
+   "task_state": "awaiting_container_profile",
+   "editor_state": {
+    "archetype": "tube",
+    "variant": "slim",
+    "cap_style": "flip",
+    "height_mm": 110,
+    "width_mm": 40,
+    "neck_ratio": 0.42,
+    "dirty": true
+   },
+   "ui_state": "tube + slim + flip top; tubular preview",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "desktop_other_profile.png",
+   "viewport": {
+    "width": 1280,
+    "height": 900
+   },
+   "route": "/dashboard/",
+   "task_state": "awaiting_container_profile",
+   "editor_state": {
+    "archetype": "other",
+    "variant": null,
+    "cap_style": null,
+    "height_mm": 110,
+    "width_mm": 40,
+    "neck_ratio": 0.42,
+    "dirty": true
+   },
+   "ui_state": "Other selected: dashed neutral silhouette, empty variant/closure states, confirmation blocked with the custom-form note",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "desktop_dirty_state.png",
+   "viewport": {
+    "width": 1280,
+    "height": 900
+   },
+   "route": "/dashboard/",
+   "task_state": "awaiting_container_profile",
+   "editor_state": {
+    "archetype": "bottle",
+    "variant": "cylindrical",
+    "cap_style": "screw",
+    "height_mm": 170,
+    "width_mm": 40,
+    "neck_ratio": 0.3,
+    "dirty": true
+   },
+   "ui_state": "unsaved-changes status visible; Reset to Suggested Profile enabled",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "desktop_incomplete_state.png",
+   "viewport": {
+    "width": 1280,
+    "height": 900
+   },
+   "route": "/dashboard/",
+   "task_state": "awaiting_container_profile",
+   "editor_state": {
+    "archetype": "jar",
+    "variant": null,
+    "cap_style": "screw",
+    "height_mm": 110,
+    "width_mm": 40,
+    "neck_ratio": 0.42,
+    "dirty": true
+   },
+   "ui_state": "variant cleared visibly on archetype switch; 'Profile selection incomplete' + confirm disabled",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "mobile_bottle_editor.png",
+   "viewport": {
+    "width": 390,
+    "height": 844
+   },
+   "route": "/dashboard/",
+   "task_state": "awaiting_container_profile",
+   "editor_state": {
+    "archetype": "bottle",
+    "variant": "cylindrical",
+    "cap_style": "screw",
+    "height_mm": 110,
+    "width_mm": 40,
+    "neck_ratio": 0.42,
+    "dirty": false
+   },
+   "ui_state": "390px: stacked editor, cards operable, sliders fit",
+   "captured_at": "2026-08-01"
+  },
+  {
+   "file": "mobile_other_profile.png",
+   "viewport": {
+    "width": 390,
+    "height": 844
+   },
+   "route": "/dashboard/",
+   "task_state": "awaiting_container_profile",
+   "editor_state": {
+    "archetype": "other",
+    "variant": null,
+    "cap_style": null,
+    "height_mm": 110,
+    "width_mm": 40,
+    "neck_ratio": 0.42,
+    "dirty": true
+   },
+   "ui_state": "390px: Other with neutral silhouette and custom-form note",
+   "captured_at": "2026-08-01"
+  }
+ ]
+}

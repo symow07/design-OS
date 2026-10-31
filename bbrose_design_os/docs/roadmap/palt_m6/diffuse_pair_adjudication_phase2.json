@@ -1,0 +1,197 @@
+{
+  "record_type": "axis_eligibility/1.0:adjudication",
+  "pass_law_unmoved": "2 independent axes at >= 0.25",
+  "rulings": {
+    "MATTE_VS_SATIN": {
+      "counted_axes": [
+        "GRANULARITY_INDEX",
+        "SHEEN_REGION_RESPONSE"
+      ],
+      "axes": {
+        "GRANULARITY_INDEX": {
+          "effect": 0.6828,
+          "floor": 0.1169,
+          "counts": true,
+          "reasons": []
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "effect": 0.4225,
+          "floor": 0.16569,
+          "counts": true,
+          "reasons": []
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "effect": 0.3604,
+          "floor": 0.27991,
+          "counts": false,
+          "reasons": [
+            "INELIGIBLE_FLOOR_0.27991",
+            "WITHIN_NOISE_MARGIN_0.27991x2.0",
+            "CORRELATED_WITH_COUNTED_AXIS"
+          ]
+        },
+        "GRAZING_RESPONSE": {
+          "effect": 0.1791,
+          "floor": 0.14956,
+          "counts": false,
+          "reasons": [
+            "BELOW_BAR"
+          ]
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "effect": 0.1164,
+          "floor": 0.00886,
+          "counts": false,
+          "reasons": [
+            "BELOW_BAR"
+          ]
+        },
+        "HIGHLIGHT_FWHM": {
+          "effect": 0.0712,
+          "floor": 0.09135,
+          "counts": false,
+          "reasons": [
+            "BELOW_BAR",
+            "CORRELATED_WITH_COUNTED_AXIS"
+          ]
+        },
+        "HIGHLIGHT_PEAK": {
+          "effect": 0.0474,
+          "floor": 0.00797,
+          "counts": false,
+          "reasons": [
+            "BELOW_BAR"
+          ]
+        }
+      },
+      "verdict": "PASS"
+    },
+    "PRESSED_VS_MATTE": {
+      "counted_axes": [
+        "GRANULARITY_INDEX",
+        "SHEEN_REGION_RESPONSE"
+      ],
+      "axes": {
+        "GRANULARITY_INDEX": {
+          "effect": 0.8942,
+          "floor": 0.1169,
+          "counts": true,
+          "reasons": []
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "effect": 0.4471,
+          "floor": 0.16569,
+          "counts": true,
+          "reasons": []
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "effect": 0.4191,
+          "floor": 0.27991,
+          "counts": false,
+          "reasons": [
+            "INELIGIBLE_FLOOR_0.27991",
+            "WITHIN_NOISE_MARGIN_0.27991x2.0",
+            "CORRELATED_WITH_COUNTED_AXIS"
+          ]
+        },
+        "HIGHLIGHT_FWHM": {
+          "effect": 0.3091,
+          "floor": 0.09135,
+          "counts": false,
+          "reasons": [
+            "CORRELATED_WITH_COUNTED_AXIS"
+          ]
+        },
+        "GRAZING_RESPONSE": {
+          "effect": 0.1025,
+          "floor": 0.14956,
+          "counts": false,
+          "reasons": [
+            "BELOW_BAR"
+          ]
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "effect": 0.0473,
+          "floor": 0.00886,
+          "counts": false,
+          "reasons": [
+            "BELOW_BAR"
+          ]
+        },
+        "HIGHLIGHT_PEAK": {
+          "effect": 0.0446,
+          "floor": 0.00797,
+          "counts": false,
+          "reasons": [
+            "BELOW_BAR"
+          ]
+        }
+      },
+      "verdict": "PASS"
+    },
+    "SATIN_VS_CREAM": {
+      "counted_axes": [
+        "GRANULARITY_INDEX",
+        "HIGHLIGHT_FWHM"
+      ],
+      "axes": {
+        "GRANULARITY_INDEX": {
+          "effect": 0.4423,
+          "floor": 0.1169,
+          "counts": true,
+          "reasons": []
+        },
+        "HIGHLIGHT_FWHM": {
+          "effect": 0.2843,
+          "floor": 0.09135,
+          "counts": true,
+          "reasons": []
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "effect": 0.2469,
+          "floor": 0.16569,
+          "counts": false,
+          "reasons": [
+            "BELOW_BAR",
+            "CORRELATED_WITH_COUNTED_AXIS"
+          ]
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "effect": 0.1555,
+          "floor": 0.27991,
+          "counts": false,
+          "reasons": [
+            "INELIGIBLE_FLOOR_0.27991",
+            "BELOW_BAR",
+            "CORRELATED_WITH_COUNTED_AXIS"
+          ]
+        },
+        "GRAZING_RESPONSE": {
+          "effect": 0.1317,
+          "floor": 0.14956,
+          "counts": false,
+          "reasons": [
+            "BELOW_BAR"
+          ]
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "effect": 0.0692,
+          "floor": 0.00886,
+          "counts": false,
+          "reasons": [
+            "BELOW_BAR"
+          ]
+        },
+        "HIGHLIGHT_PEAK": {
+          "effect": 0.0012,
+          "floor": 0.00797,
+          "counts": false,
+          "reasons": [
+            "BELOW_BAR"
+          ]
+        }
+      },
+      "verdict": "PASS"
+    }
+  }
+}

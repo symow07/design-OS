@@ -1,0 +1,56 @@
+{
+ "record_type": "h2_candidate_register/1.0",
+ "request_id": "fb3093_compact_01",
+ "generated_on": "2026-08-15",
+ "generation_executor": "render_candidates.py in this directory — PARAMETRIC ON THE BRIEF (frame 72x72mm PRIOR-tier web measurement; nothing hard-codes a millimetre) with colour/typeface constants from their recorded brand authority (substrate treatment colours, SET_FACE). All geometry computed from scratch; deterministic (B3's stipple uses a fixed seed — re-runs are byte-stable). Two-ink discipline: 'tint' readings achieved by hairline weight and dot density, never a third colour.",
+ "es3083_distinction": "None of the five ES3083 directions is recycled (rose gesture, twelve-rosette, monumental letterform, inverted-ground sprig, corner wordmark). B4, the required quiet_minimal, is symmetric-centered and frameless — the opposite composition of ES3083 A5's asymmetric corner patch. B5's seal is plain-circle at ~13mm device scale, a different genre and scale from A2's lid-filling interleaved rosette.",
+ "vendor_styling_not_carried": "The vendor sheet's Super Stay lockup, COOL! badges, 24H wear claim, and pink colourway are absent by rule. Words are the established set BBROSE / FACE POWDER / POLVOS only.",
+ "first_render_defects_caught": "Visual verification of the first contact sheet caught B2's mesh math: wrong line-endpoint clamping produced converging fan wedges with a dark corner clump instead of a uniform 45-degree mesh. Rewritten as the two correctly-clipped line families x-y=c and x+y=c and re-verified by eye. The other four candidates and assert_text_fits passed first render.",
+ "candidates": [
+  {
+   "candidate_id": "B1",
+   "title": "POWDER-BOX GARLAND — heritage perimeter leaf garland on a hairline frame, centered stack",
+   "svg": "fb3093_lid_B1_powder_box_garland.svg",
+   "png": "fb3093_lid_B1_powder_box_garland.png",
+   "direction": "heritage_border",
+   "inspired_by_ledger_entries": ["e01", "e08", "e12"],
+   "originality_statement": "Takes the vintage powder-box GENRE convention (perimeter garland frame, centered modest words — e01) and the ornament-as-quiet-field discipline (e08/e12). The garland is an original repeating leaf unit drawn parametrically; no vintage box's artwork traced or closely derived."
+  },
+  {
+   "candidate_id": "B2",
+   "title": "VEIL MESH — all-over hairline 45° mesh reading as fabric over skin, calm clearing for the words",
+   "svg": "fb3093_lid_B2_veil_mesh.svg",
+   "png": "fb3093_lid_B2_veil_mesh.png",
+   "direction": "veil_mesh",
+   "inspired_by_ledger_entries": ["e03", "e16", "e21"],
+   "originality_statement": "Takes the abstract veil/scrim texture idea (e03), whole-field micro-grain evenness (e16), and drifting-hairline calm (e21). The mesh is constructed geometrically from scratch at 0.06mm hairline weight — no wallpaper or photo texture sampled; the 'tint' is weight, not a third colour."
+  },
+  {
+   "candidate_id": "B3",
+   "title": "PUFF BLOOM — the ghost of a powder puff pressed once; tone from dot density alone",
+   "svg": "fb3093_lid_B3_puff_bloom.svg",
+   "png": "fb3093_lid_B3_puff_bloom.png",
+   "direction": "powder_bloom",
+   "inspired_by_ledger_entries": ["e17", "e19", "e24"],
+   "originality_statement": "Takes the density-gradient stipple idea (e17), the off-centre pressed-once bloom (e19), and tone-from-density dissolution (e24). The stipple is a deterministic seeded jittered-grid sampling with radial falloff computed in-script — no halftone asset or generator output copied."
+  },
+  {
+   "candidate_id": "B4",
+   "title": "QUIET PLATE — dead-centre micro-stack, equal margins, ground as hero",
+   "svg": "fb3093_lid_B4_quiet_plate.svg",
+   "png": "fb3093_lid_B4_quiet_plate.png",
+   "direction": "quiet_minimal",
+   "inspired_by_ledger_entries": ["e04", "e05", "e07", "e27"],
+   "originality_statement": "Takes ground-as-hero colour economy (e04), spaced-caps hierarchy-by-tracking (e05/e27), and the center-weighted brand plate (e07). Recorded owner taste honoured; composed symmetric and frameless — distinct from ES3083 A5's corner patch. Nothing copied; set fresh in Crimson Text."
+  },
+  {
+   "candidate_id": "B5",
+   "title": "PHARMACY SEAL — small dotted-ring B seal, one hairline rule, formal three-line stack",
+   "svg": "fb3093_lid_B5_pharmacy_seal.svg",
+   "png": "fb3093_lid_B5_pharmacy_seal.png",
+   "direction": "seal_typographic",
+   "inspired_by_ledger_entries": ["e13", "e15", "e22", "e25"],
+   "originality_statement": "Takes the seal-scale device idea (e15/e22), the hairline-rule pharmacy formality (e25), and type-as-ornament stacking (e13). The seal is original plain-circle geometry with the brand's own initial; not the A2 rosette class, and no apothecary label or brand seal reproduced."
+  }
+ ]
+}

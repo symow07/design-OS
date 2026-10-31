@@ -1,0 +1,420 @@
+{
+  "record_type": "material_negative_controls/1.0",
+  "controls": [
+    {
+      "a": "MATTE A",
+      "b": "MATTE B",
+      "axes": {
+        "HIGHLIGHT_FWHM": {
+          "a": 0.216741,
+          "b": 0.216741,
+          "relative_effect": 0.0,
+          "bar": 0.25,
+          "clears": false
+        },
+        "HIGHLIGHT_PEAK": {
+          "a": 43.501155,
+          "b": 43.501155,
+          "relative_effect": 0.0,
+          "bar": 0.25,
+          "clears": false
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "a": 1.440167,
+          "b": 1.440167,
+          "relative_effect": 0.0,
+          "bar": 0.25,
+          "clears": false
+        },
+        "GRAZING_RESPONSE": {
+          "a": 0.083107,
+          "b": 0.083107,
+          "relative_effect": 0.0,
+          "bar": 0.25,
+          "clears": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "a": 0.12881,
+          "b": 0.12881,
+          "relative_effect": 0.0,
+          "bar": 0.25,
+          "clears": false
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "a": 0.197484,
+          "b": 0.197484,
+          "relative_effect": 0.0,
+          "bar": 0.25,
+          "clears": false
+        }
+      },
+      "axes_clearing": [],
+      "axes_required": 2,
+      "measured_in": "SCENE_LINEAR",
+      "normalized": true,
+      "verdict": "FAIL",
+      "pass_law": "a material pair is distinguishable when at least 2 of the 6 independent axes differ by at least 25% relative effect size, AND the negative controls fail",
+      "control": "MATTE_vs_identical_MATTE",
+      "expected": "FAIL",
+      "behaved": true,
+      "note": ""
+    },
+    {
+      "a": "SATIN A",
+      "b": "SATIN B",
+      "axes": {
+        "HIGHLIGHT_FWHM": {
+          "a": 0.044971,
+          "b": 0.044971,
+          "relative_effect": 0.0,
+          "bar": 0.25,
+          "clears": false
+        },
+        "HIGHLIGHT_PEAK": {
+          "a": 47.327848,
+          "b": 47.327848,
+          "relative_effect": 0.0,
+          "bar": 0.25,
+          "clears": false
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "a": 1.532523,
+          "b": 1.532523,
+          "relative_effect": 0.0,
+          "bar": 0.25,
+          "clears": false
+        },
+        "GRAZING_RESPONSE": {
+          "a": 0.037908,
+          "b": 0.037908,
+          "relative_effect": 0.0,
+          "bar": 0.25,
+          "clears": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "a": 0.110284,
+          "b": 0.110284,
+          "relative_effect": 0.0,
+          "bar": 0.25,
+          "clears": false
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "a": 0.09817,
+          "b": 0.09817,
+          "relative_effect": 0.0,
+          "bar": 0.25,
+          "clears": false
+        }
+      },
+      "axes_clearing": [],
+      "axes_required": 2,
+      "measured_in": "SCENE_LINEAR",
+      "normalized": true,
+      "verdict": "FAIL",
+      "pass_law": "a material pair is distinguishable when at least 2 of the 6 independent axes differ by at least 25% relative effect size, AND the negative controls fail",
+      "control": "SATIN_vs_identical_SATIN",
+      "expected": "FAIL",
+      "behaved": true,
+      "note": ""
+    },
+    {
+      "a": "MATTE A",
+      "b": "MATTE B",
+      "axes": {
+        "HIGHLIGHT_FWHM": {
+          "a": 0.216741,
+          "b": 0.216741,
+          "relative_effect": 0.0,
+          "bar": 0.25,
+          "clears": false
+        },
+        "HIGHLIGHT_PEAK": {
+          "a": 43.501155,
+          "b": 43.501155,
+          "relative_effect": 0.0,
+          "bar": 0.25,
+          "clears": false
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "a": 1.440167,
+          "b": 1.440167,
+          "relative_effect": 0.0,
+          "bar": 0.25,
+          "clears": false
+        },
+        "GRAZING_RESPONSE": {
+          "a": 0.083107,
+          "b": 0.083107,
+          "relative_effect": 0.0,
+          "bar": 0.25,
+          "clears": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "a": 0.12881,
+          "b": 0.12881,
+          "relative_effect": 0.0,
+          "bar": 0.25,
+          "clears": false
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "a": 0.197484,
+          "b": 0.197484,
+          "relative_effect": 0.0,
+          "bar": 0.25,
+          "clears": false
+        }
+      },
+      "axes_clearing": [],
+      "axes_required": 2,
+      "measured_in": "SCENE_LINEAR",
+      "normalized": true,
+      "verdict": "FAIL",
+      "pass_law": "a material pair is distinguishable when at least 2 of the 6 independent axes differ by at least 25% relative effect size, AND the negative controls fail",
+      "control": "MATTE_vs_MATTE_renamed",
+      "expected": "FAIL",
+      "behaved": true,
+      "note": "a rename changes nothing about the render"
+    },
+    {
+      "a": "MATTE A",
+      "b": "MATTE B",
+      "axes": {
+        "HIGHLIGHT_FWHM": {
+          "a": 0.216741,
+          "b": 0.21723,
+          "relative_effect": 0.002255,
+          "bar": 0.25,
+          "clears": false
+        },
+        "HIGHLIGHT_PEAK": {
+          "a": 43.501155,
+          "b": 69.248266,
+          "relative_effect": 0.456714,
+          "bar": 0.25,
+          "clears": true
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "a": 1.440167,
+          "b": 1.443526,
+          "relative_effect": 0.00233,
+          "bar": 0.25,
+          "clears": false
+        },
+        "GRAZING_RESPONSE": {
+          "a": 0.083107,
+          "b": 0.082987,
+          "relative_effect": 0.001443,
+          "bar": 0.25,
+          "clears": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "a": 0.12881,
+          "b": 0.12886,
+          "relative_effect": 0.000382,
+          "bar": 0.25,
+          "clears": false
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "a": 0.197484,
+          "b": 0.196912,
+          "relative_effect": 0.0029,
+          "bar": 0.25,
+          "clears": false
+        }
+      },
+      "axes_clearing": [
+        "HIGHLIGHT_PEAK"
+      ],
+      "axes_required": 2,
+      "measured_in": "SCENE_LINEAR",
+      "normalized": true,
+      "verdict": "FAIL",
+      "pass_law": "a material pair is distinguishable when at least 2 of the 6 independent axes differ by at least 25% relative effect size, AND the negative controls fail",
+      "control": "MATTE_vs_MATTE_exposure_only",
+      "expected": "FAIL",
+      "behaved": true,
+      "note": ""
+    },
+    {
+      "a": "MATTE A",
+      "b": "MATTE B",
+      "axes": {
+        "HIGHLIGHT_FWHM": {
+          "a": 0.216741,
+          "b": 0.221144,
+          "relative_effect": 0.020112,
+          "bar": 0.25,
+          "clears": false
+        },
+        "HIGHLIGHT_PEAK": {
+          "a": 43.501155,
+          "b": 58.218299,
+          "relative_effect": 0.289367,
+          "bar": 0.25,
+          "clears": true
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "a": 1.440167,
+          "b": 1.438153,
+          "relative_effect": 0.001399,
+          "bar": 0.25,
+          "clears": false
+        },
+        "GRAZING_RESPONSE": {
+          "a": 0.083107,
+          "b": 0.085845,
+          "relative_effect": 0.032415,
+          "bar": 0.25,
+          "clears": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "a": 0.12881,
+          "b": 0.132801,
+          "relative_effect": 0.03051,
+          "bar": 0.25,
+          "clears": false
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "a": 0.197484,
+          "b": 0.204346,
+          "relative_effect": 0.034156,
+          "bar": 0.25,
+          "clears": false
+        }
+      },
+      "axes_clearing": [
+        "HIGHLIGHT_PEAK"
+      ],
+      "axes_required": 2,
+      "measured_in": "SCENE_LINEAR",
+      "normalized": true,
+      "verdict": "FAIL",
+      "pass_law": "a material pair is distinguishable when at least 2 of the 6 independent axes differ by at least 25% relative effect size, AND the negative controls fail",
+      "control": "MATTE_vs_MATTE_light_intensity",
+      "expected": "FAIL",
+      "behaved": true,
+      "note": ""
+    },
+    {
+      "a": "MATTE A",
+      "b": "MATTE B",
+      "axes": {
+        "HIGHLIGHT_FWHM": {
+          "a": 0.216741,
+          "b": 0.213642,
+          "relative_effect": 0.014399,
+          "bar": 0.25,
+          "clears": false
+        },
+        "HIGHLIGHT_PEAK": {
+          "a": 43.501155,
+          "b": 42.890702,
+          "relative_effect": 0.014132,
+          "bar": 0.25,
+          "clears": false
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "a": 1.440167,
+          "b": 1.468894,
+          "relative_effect": 0.01975,
+          "bar": 0.25,
+          "clears": false
+        },
+        "GRAZING_RESPONSE": {
+          "a": 0.083107,
+          "b": 0.084561,
+          "relative_effect": 0.017352,
+          "bar": 0.25,
+          "clears": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "a": 0.12881,
+          "b": 0.125033,
+          "relative_effect": 0.029762,
+          "bar": 0.25,
+          "clears": false
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "a": 0.197484,
+          "b": 0.211018,
+          "relative_effect": 0.066262,
+          "bar": 0.25,
+          "clears": false
+        }
+      },
+      "axes_clearing": [],
+      "axes_required": 2,
+      "measured_in": "SCENE_LINEAR",
+      "normalized": true,
+      "verdict": "FAIL",
+      "pass_law": "a material pair is distinguishable when at least 2 of the 6 independent axes differ by at least 25% relative effect size, AND the negative controls fail",
+      "control": "MATTE_vs_MATTE_source_moved",
+      "expected": "FAIL",
+      "behaved": true,
+      "note": ""
+    },
+    {
+      "a": "SATIN A",
+      "b": "SATIN B",
+      "axes": {
+        "HIGHLIGHT_FWHM": {
+          "a": 0.044971,
+          "b": 0.044849,
+          "relative_effect": 0.002724,
+          "bar": 0.25,
+          "clears": false
+        },
+        "HIGHLIGHT_PEAK": {
+          "a": 47.327848,
+          "b": 46.914059,
+          "relative_effect": 0.008781,
+          "bar": 0.25,
+          "clears": false
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "a": 1.532523,
+          "b": 1.537831,
+          "relative_effect": 0.003458,
+          "bar": 0.25,
+          "clears": false
+        },
+        "GRAZING_RESPONSE": {
+          "a": 0.037908,
+          "b": 0.010577,
+          "relative_effect": 1.127427,
+          "bar": 0.25,
+          "clears": true
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "a": 0.110284,
+          "b": 0.111089,
+          "relative_effect": 0.007271,
+          "bar": 0.25,
+          "clears": false
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "a": 0.09817,
+          "b": 0.088258,
+          "relative_effect": 0.106339,
+          "bar": 0.25,
+          "clears": false
+        }
+      },
+      "axes_clearing": [
+        "GRAZING_RESPONSE"
+      ],
+      "axes_required": 2,
+      "measured_in": "SCENE_LINEAR",
+      "normalized": true,
+      "verdict": "FAIL",
+      "pass_law": "a material pair is distinguishable when at least 2 of the 6 independent axes differ by at least 25% relative effect size, AND the negative controls fail",
+      "control": "SATIN_vs_SATIN_camera_shifted",
+      "expected": "FAIL",
+      "behaved": true,
+      "note": ""
+    }
+  ],
+  "misbehaved": [],
+  "verdict": "PASS",
+  "why": "a control that PASSES means the discriminator is reading the rig rather than the material"
+}

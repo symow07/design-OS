@@ -1,0 +1,21 @@
+{
+  "record_type": "a87_composed_slope/1.0",
+  "chain": [
+    {
+      "hop": "lid_roof_mm -> lid_roof_underside_z",
+      "slope": -0.9999999999999956,
+      "confirmed": true,
+      "values": "12.4 -> 12.5"
+    },
+    {
+      "hop": "underside -> worst_case_clearance",
+      "slope": 1.0000000000000089,
+      "confirmed": true,
+      "values": "5.35 -> 5.45 (nominal 6.05 -> 6.15; worst stack 0.7 = 0.7 pre, unchanged)"
+    }
+  ],
+  "composed": "delta lid_roof (-0.1) x -0.9999999999999956 x 1.0000000000000089 = +0.1",
+  "residual": 0.0,
+  "residual_zero": true,
+  "signs_independent": "each hop confirmed against its own values \u2014 no cancelling-error path"
+}

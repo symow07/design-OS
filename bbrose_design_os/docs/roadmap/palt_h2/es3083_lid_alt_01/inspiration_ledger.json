@@ -1,0 +1,339 @@
+{
+ "record_type": "h2_inspiration_ledger/1.0",
+ "request_id": "es3083_lid_alt_01",
+ "harvested_on": "2026-08-15",
+ "harvest_executor": "Session workflow wf_c41590fb-a49: five parallel search agents (pinterest / dribbble / behance / github / editorial), each running REAL WebSearch queries (site-scoped) with WebFetch page inspection where pages allowed it; 55 tool uses, 5/5 agents returned, results merged and deduplicated by URL. Agents were instructed to report ONLY URLs that actually appeared in search results, never to invent them, and to observe from result titles/snippets when a page was JS-shelled (each entry says which).",
+ "brief": "brief.json",
+ "search_queries_run": [
+  {
+   "key": "pinterest",
+   "queries": [
+    "site:pinterest.com eyeshadow palette packaging minimal",
+    "site:pinterest.com sage green cosmetic packaging design",
+    "site:pinterest.com botanical rose skincare branding",
+    "site:pinterest.com minimal serif typography packaging quiet luxury cosmetics",
+    "site:pinterest.com rose line art logo packaging single line drawing",
+    "site:pinterest.com geometric pattern packaging design green tin lid"
+   ]
+  },
+  {
+   "key": "dribbble",
+   "queries": [
+    "site:dribbble.com eyeshadow palette packaging design",
+    "site:dribbble.com minimal cosmetics branding sage green packaging",
+    "site:dribbble.com botanical rose logo packaging branding",
+    "site:dribbble.com serif typography cosmetics packaging quiet luxury green",
+    "site:dribbble.com/shots cosmetics packaging pattern green botanical",
+    "site:dribbble.com/shots skincare branding line art floral minimal",
+    "site:dribbble.com/shots packaging typography grid layout beauty brand green",
+    "site:dribbble.com rose pattern packaging design repeat",
+    "site:dribbble.com/shots art deco monogram cosmetics packaging green gold"
+   ]
+  },
+  {
+   "key": "behance",
+   "queries": [
+    "site:behance.net eyeshadow palette packaging design",
+    "site:behance.net minimal cosmetic brand identity sage green packaging",
+    "site:behance.net rose botanical cosmetics packaging",
+    "site:behance.net/gallery green botanical packaging design serif typography",
+    "site:behance.net/gallery eyeshadow palette packaging minimal",
+    "site:behance.net/gallery cosmetics packaging pattern geometric green luxury"
+   ]
+  },
+  {
+   "key": "github",
+   "queries": [
+    "site:github.com generative svg botanical pattern",
+    "site:github.com svg line art generator plants procedural",
+    "site:github.com procedural pattern svg minimal geometric generator",
+    "site:github.com generative typography svg poster experiment",
+    "site:github.com svg engraving hatching line shading generator"
+   ]
+  },
+  {
+   "key": "editorial",
+   "queries": [
+    "eyeshadow palette lid design minimal 2026",
+    "quiet luxury cosmetics packaging trend design",
+    "green monochrome beauty packaging design award botanical",
+    "botanical line illustration cosmetics packaging sage green serif typography",
+    "typographic packaging design trend 2026 oversized type beauty brand",
+    "rose motif minimal packaging design single line drawing luxury"
+   ]
+  }
+ ],
+ "originality_rule": "Each entry contributes an abstract IDEA (composition class, colour feeling, typographic attitude, pattern language) with provenance. No artwork is traced, reproduced, or closely derived — every candidate is drawn from scratch; per-entry originality notes state what is taken and what is not.",
+ "entries": [
+  {
+   "entry_id": "e01",
+   "harvested_via": "pinterest",
+   "source_url": "https://www.pinterest.com/ideas/sage-green-packaging-design/935705344515/",
+   "source_kind": "Pinterest ideas page (search result; direct fetch returned truncated JS shell, observation from result snippet)",
+   "observed": "Search snippet describes Pinterest's collected sage-green packaging inspiration, including 'a modern packaging design for a premium skin oil that stems from the power of wild botanicals', plus matte green, minimalist, and eco-leaning luxury skincare packaging in sage colour schemes.",
+   "idea_contributed": "Tone-on-tone monochrome discipline: treat the whole 65x65mm lid as a flat pale-sage field (621C) carrying exactly one deep-green ink (627C), letting matte texture and the two-green interval do the luxury work — no third colour, no gradient, wild-botanical mood carried by colour restraint alone.",
+   "originality_note": "Only the abstract colour-discipline idea (single deep ink on a pale tonal ground) is taken; no specific pinned design is traced, copied, or closely derived — the BBROSE lid composition, mark, and layout are drawn from scratch in the already-fixed 621C/627C brand colours."
+  },
+  {
+   "entry_id": "e02",
+   "harvested_via": "pinterest",
+   "source_url": "https://pl.pinterest.com/weareowlsome/skincare-luxury-packaging-design/",
+   "source_kind": "Pinterest board ('380 Skincare Luxury Packaging Design ideas in 2026'; observation from result snippet)",
+   "observed": "Search snippet describes minimalist luxury concepts on this board: 'pure white surfaces, subtle embossing and refined typography to express a quiet, nocturnal elegance', including 'modern serif wordmarks on uncoated bone stock with navy-only ink and embossed patch outlines'.",
+   "idea_contributed": "Type-only lid direction: the entire artwork is the serif wordmark plus a hairline keyline 'patch' outline — for BBROSE, the Crimson Text wordmark centred (or offset) in 627C on the 621C ground, with a thin ruled frame or emboss-like keyline as the sole ornament; quiet luxury expressed through typography and blank space, not imagery.",
+   "originality_note": "Takes only the composition class (single-ink serif wordmark + keyline patch on uncoated stock); no board pin's lockup, wordmark, or patch shape is reproduced — BBROSE's own name in its own licensed face, set fresh."
+  },
+  {
+   "entry_id": "e03",
+   "harvested_via": "pinterest",
+   "source_url": "https://www.pinterest.com/ideas/rose-one-line-drawing/934175379149/",
+   "source_kind": "Pinterest ideas page (search result; observation from result snippets of the rose line-art query)",
+   "observed": "Search snippets for this query describe 'one continuous line art decorative rose' designs and 'timeless line art illustrations of a single rose in bloom, with detailed petals and leaves on a slender stem, drawn in fine black lines against a white background', framed as minimalist marks for branding.",
+   "idea_contributed": "Continuous single-line rose glyph: one unbroken fine 627C stroke describing an abstracted rose (nodding to Damascena) floating asymmetrically on the sage ground — a drawn-in-one-gesture botanical mark that stays vector-light, prints in one spot ink, and reads at 65mm as a signature rather than an illustration.",
+   "originality_note": "Only the pattern-language idea (single continuous-line botanical mark) is borrowed; the actual rose glyph would be constructed as an original path in-house — no pinned line drawing is traced, auto-vectorised, or closely imitated."
+  },
+  {
+   "entry_id": "e04",
+   "harvested_via": "pinterest",
+   "source_url": "https://www.pinterest.com/pin/291959988325706368/",
+   "source_kind": "Pinterest pin ('25 Outstanding Geometric Packaging Designs'; observation from result title/snippet)",
+   "observed": "Search result presents a curated pin/article of 'outstanding packaging designs with great use of geometric inspired patterns to instantly grab audience's attention', alongside sibling ideas pages for geometric-pattern packaging and patterned tin packaging (including luxury tea tins).",
+   "idea_contributed": "All-over geometric repeat as the lid's whole surface: a quiet two-green lattice or quadrant grid in 627C on 621C — ideally one whose module count echoes the ES3083 12-pan interior grid — so the lid becomes pattern-first with the wordmark small and centred, a wider-ranging direction than botanical imagery while honouring colour and type.",
+   "originality_note": "Adopts only the composition class (edge-to-edge geometric repeat with a small centred wordmark); no specific pattern from the pin or boards is copied — the repeat unit would be designed natively around BBROSE's own pan geometry and spot-colour pair."
+  },
+  {
+   "entry_id": "e05",
+   "harvested_via": "pinterest",
+   "source_url": "https://www.pinterest.com/pin/skincare-packaging-design-ideas-incorporating-botanical-illustrations-flower-aesthetic--687432330632699734/",
+   "source_kind": "Pinterest pin ('Skincare Packaging Design Ideas Incorporating Botanical Illustrations'; observation from result title/snippet)",
+   "observed": "Search result describes skincare packaging ideas built on botanical illustrations and a 'flower aesthetic', using modern flower illustration sets applied to packaging surfaces; related results include rose-house brand boards (Rue and Rose Botanicals, The Rose Tree) built on garden-grown, remedy-based botanical identities.",
+   "idea_contributed": "Cropped partial-bleed botanical: a larger-than-the-lid rose/foliage engraving-style illustration in 627C entering from one corner and bleeding off two edges, with the opposite diagonal left as open sage negative space for the wordmark — asymmetry and crop give movement while keeping the quiet, apothecary rose-house register (Attar / Petal Veil territory).",
+   "originality_note": "Takes only the compositional idea (oversized botanical cropped at the lid edge, diagonal negative space); no illustration or clipart from the pin is used or redrawn — any botanical would be original BBROSE artwork in the brand's single deep-green ink."
+  },
+  {
+   "entry_id": "e06",
+   "harvested_via": "pinterest",
+   "source_url": "https://www.pinterest.com/ideas/fonts-for-cosmetic-brands/950316309553/",
+   "source_kind": "Pinterest ideas page (search result; observation from result snippet)",
+   "observed": "Search snippet describes this page as showcasing 'quiet luxury branding inspiration, modern serif logo typography, skincare logos ideas, and minimal luxury skincare logo typography' for cosmetic brands.",
+   "idea_contributed": "Typographic play at monumental scale: crop an oversized Crimson Text letterform (a giant 'B', or the shade name 'Moss Garden' run vertically along one edge) so the serif's terminals and counters become the lid's abstract geometry — letter-as-image in 627C on sage, a wider typographic-attitude direction that still uses only the brand face and the two brand greens.",
+   "originality_note": "Borrows only the typographic attitude (letterform cropped to graphic abstraction); no pinned logo, lockup, or brand's letter treatment is imitated — the crop and scale decisions are made fresh on BBROSE's own licensed typeface."
+  },
+  {
+   "entry_id": "e07",
+   "harvested_via": "dribbble",
+   "source_url": "https://dribbble.com/shots/25901895-Minimalist-skincare-branding-branding-cosmetic-packaging-design",
+   "source_kind": "dribbble_shot",
+   "observed": "Search-result title/snippet only (Dribbble shot pages are JS-rendered and returned empty to WebFetch): 'Minimalist skincare branding, cosmetic packaging design by lexielogo' — surfaced by the query 'site:dribbble.com minimal cosmetics branding sage green packaging', i.e. indexed against minimal cosmetics branding in a muted-green register.",
+   "idea_contributed": "Composition class: the near-empty lid. One small deep-green wordmark placed off-centre on an unbroken pale sage field, with all secondary text exiled to the base or back label. For the 65x65mm ES3083 lid this reads as a 'BBROSE' in Crimson Text at small scale, generous 621C negative space doing the luxury work, 627C used only for the mark.",
+   "originality_note": "Only the abstract idea of extreme typographic restraint on a solid muted ground is taken. No layout, logo, lockup, or artwork from the shot is traced, copied, or closely derived; BBROSE's own type, spot colours, and geometry are used."
+  },
+  {
+   "entry_id": "e08",
+   "harvested_via": "dribbble",
+   "source_url": "https://dribbble.com/shots/21903148-Opoke-brand-identity-packaging-design-for-Korean-cosmetic",
+   "source_kind": "dribbble_shot",
+   "observed": "Search-result title/snippet only: 'Opoke | brand identity & packaging design for Korean cosmetic by Marina Zakharova' — snippet describes 'minimalist elements... drawing inspiration from the beauty of nature'. Page itself not renderable via WebFetch.",
+   "idea_contributed": "Composition class: nature abstracted to a single quiet gesture rather than illustrated. One large, cropped, abstracted rose-petal curve — a single 627C arc or petal silhouette bleeding off one edge of the lid — with the brand name kept small and orthogonal. The rose is implied, never drawn literally; the curve doubles as a shade-story cue (Petal Veil).",
+   "originality_note": "Only the idea-class 'abstract single natural gesture + small type' is taken. The Opoke identity, marks, and imagery are not viewed in detail, not traced, and nothing is derived from its actual artwork."
+  },
+  {
+   "entry_id": "e09",
+   "harvested_via": "dribbble",
+   "source_url": "https://dribbble.com/shots/25969541-Premium-Skincare-Packaging-Design-A-Visual-Story-of-Clean-Beauty",
+   "source_kind": "dribbble_shot",
+   "observed": "Search-result title/snippet only: 'Premium Skincare Packaging Design — A Visual Story of Clean Beauty by ANXZONE' — snippet: 'soft floral motifs combined with modern typography to create a balance of natural wellness and clinical trust'.",
+   "idea_contributed": "Pattern-plus-discipline pairing: a soft, low-contrast floral motif layer held under a strict modern typographic layer. For ES3083: a ghosted tone-on-tone rose motif (621C ground with the motif in a slightly deeper tint or the 627C at low coverage/screen) with Crimson Text set in a rigorous aligned block on top — botanical warmth governed by typographic order, 'wellness plus trust' as a two-layer system.",
+   "originality_note": "Only the two-layer principle (quiet motif under disciplined type) is taken. The shot's specific florals, layout, and typography are not copied or closely derived; the motif would be an original BBROSE rose drawing in the locked spot pair."
+  },
+  {
+   "entry_id": "e10",
+   "harvested_via": "dribbble",
+   "source_url": "https://dribbble.com/shots/26518288-Bloom-Studio-Minimal-Floral-Line-Art-Logo",
+   "source_kind": "dribbble_shot",
+   "observed": "Search-result title only: 'Bloom Studio: Minimal Floral Line Art Logo' (Sept 2025 per snippet) — a minimal floral line-art logo, surfaced by 'site:dribbble.com/shots skincare branding line art floral minimal'.",
+   "idea_contributed": "Mark language: the monoline continuous-stroke rose. A single-weight 627C line describing a rose in one or two unbroken strokes, centred on the 621C lid as the sole graphic, sized large (perhaps 30-40mm) so the line itself is the luxury object; 'BBROSE' in Crimson Text beneath at small size. Line weight tuned to survive the 65mm die and spot-ink printing.",
+   "originality_note": "Only the genre 'minimal one-weight floral line art as hero mark' is taken. The Bloom Studio logo itself was not inspected in detail and is not traced or imitated; the rose would be drawn from scratch to BBROSE's own construction."
+  },
+  {
+   "entry_id": "e11",
+   "harvested_via": "dribbble",
+   "source_url": "https://dribbble.com/shots/21685252-Packaging-design-repeat-pattern-and-logo-design",
+   "source_kind": "dribbble_shot",
+   "observed": "Search-result title only: 'Packaging design - repeat pattern and logo design' — a shot pairing an all-over repeat pattern with a logo on packaging, surfaced by 'site:dribbble.com rose pattern packaging design repeat'.",
+   "idea_contributed": "Pattern-language direction: an all-over structured repeat as the lid ground. A small geometricised rose or petal unit tiled edge-to-edge in 627C on 621C (or reversed), with a clear 'window' — a plain square or circle knock-out — holding the BBROSE wordmark. Gives the square lid a textile/wallpaper richness while staying two-colour and die-safe; the repeat unit can also encode the twelve-pan grid rhythm.",
+   "originality_note": "Only the compositional device 'repeat field + clear logo window' is taken. The shot's actual pattern unit and logo are not viewed in detail and nothing is traced; the repeat unit would be an original BBROSE petal/rose geometry."
+  },
+  {
+   "entry_id": "e12",
+   "harvested_via": "dribbble",
+   "source_url": "https://dribbble.com/shots/4526132-La-Vie-En-Rose-Packaging-Design",
+   "source_kind": "dribbble_shot",
+   "observed": "Search-result title only: 'La Vie En Rose - Packaging Design by Nikola Panić' — rose-themed packaging design, surfaced by the rose-pattern packaging query. Page content not fetchable.",
+   "idea_contributed": "Typographic-play direction: the rose name itself as the artwork. Treat language as the lid's image — the four shade names 'Damascena / Attar / Petal Veil / Moss Garden' set in Crimson Text italic as a stacked or ringed typographic composition in 627C on 621C, BBROSE small at an edge. The romance of rose vocabulary carries the botanical mood with zero illustration, and ties the lid directly to the palette's shade story.",
+   "originality_note": "Only the abstract move 'rose romance expressed purely through typography' is prompted by the title. The shot's actual design was not inspected and is not copied; the composition, wording, and type system are BBROSE's own."
+  },
+  {
+   "entry_id": "e13",
+   "harvested_via": "behance",
+   "source_url": "https://www.behance.net/gallery/252439045/The-Rising",
+   "source_kind": "behance_project_page (found via site-scoped WebSearch, verified with WebFetch)",
+   "observed": "Petitmoulin Studio's identity/packaging for The Rising, a mineral SPF skincare line: 'conscious luxury' built from a hand-reworked serif described as 'imperfect and elegant', a single custom spiral emblem (life cycles/movement), matte stony textures, debossed branding on secondary packs, and organic window reveals — quiet grounds carrying one tactile mark.",
+   "idea_contributed": "Composition class: ONE hand-touched emblem + serif wordmark on an otherwise empty quiet ground, with tactile finishing (deboss/blind-emboss feel) doing the luxury work. For the ES3083 lid: a single BBROSE-drawn rose-spiral cipher in 627C centred on the 621C ground, Crimson Text wordmark small beneath — slight deliberate imperfection in the drawn mark as the signature of quiet luxury.",
+   "originality_note": "Taken: the abstract idea of a solitary imperfect-elegant emblem plus tactile restraint. NOT taken: the spiral symbol itself, the pebble forms, the beige/ocean-blue palette, or any artwork — BBROSE would draw its own rose cipher; nothing is traced, copied, or closely derived."
+  },
+  {
+   "entry_id": "e14",
+   "harvested_via": "behance",
+   "source_url": "https://www.behance.net/gallery/232056379/BIORGANIC-Packaging-Visual-Identity",
+   "source_kind": "behance_project_page (found via site-scoped WebSearch, verified with WebFetch)",
+   "observed": "BIORGANIC visual identity (anta petrenco / TRUE AGENCY, Chișinău): a design system 'rooted in symmetry, repetition, and organic forms' anchored by a custom 'stylized botanical burst' motif repeated across packaging, textiles and environments; clean typography paired with hand-crafted botanical elements.",
+   "idea_contributed": "Pattern language: a radially symmetric botanical 'burst' as the single anchoring motif — for the 65x65mm square lid, a centred mandala-like rose burst built from repeated stylised petal strokes in 627C on 621C, symmetry matched to the square format; the same stroke unit could also tile as an all-over lid repeat for a second variant.",
+   "originality_note": "Taken: the idea of symmetry/repetition of one stylised botanical unit as the whole surface system. NOT taken: BIORGANIC's actual burst motif, its geometry, or any of its drawn elements — BBROSE constructs its own petal unit from rose forms; no tracing or close derivation."
+  },
+  {
+   "entry_id": "e15",
+   "harvested_via": "behance",
+   "source_url": "https://www.behance.net/gallery/237729075/Procedura-Brand-Identity-Packaging",
+   "source_kind": "behance_project_page (found via site-scoped WebSearch, verified with WebFetch)",
+   "observed": "Procedura, natural skincare from Turkey's Aegean coast (Stacy Saturday): palette of soft neutrals, sun-warmed tones and DEEP GREENS; botanical/ornamental illustration rooted in traditional Turkish carpet motifs in a 'slightly rustic and naive' style; logo serif with vertically elongated letterforms 'echoing seeds and shoots'; refined serif paired with humanist grotesque.",
+   "idea_contributed": "Two ideas: (a) an ornamental BORDER/FRAME language — a naive-drawn botanical border running the lid's square perimeter with a calm empty centre for the Crimson Text wordmark; (b) typographic attitude — letting serif letterforms stretch vertically so the type itself reads as stems/shoots, turning 'BBROSE' or a shade name (Damascena, Moss Garden) into the botanical gesture in 627C on 621C.",
+   "originality_note": "Taken: border-as-ornament composition and the 'type as plant growth' attitude, both as abstract directions. NOT taken: the Turkish carpet motifs, Procedura's illustrations, letterforms, or palette values — BBROSE keeps Crimson Text and PANTONE 621C/627C and draws its own rose border; nothing traced or copied."
+  },
+  {
+   "entry_id": "e16",
+   "harvested_via": "behance",
+   "source_url": "https://www.behance.net/gallery/157685873/La-Luxxy-Green-Gold-Elegant-Cosmetics-Packaging",
+   "source_kind": "behance_project_page (found via site-scoped WebSearch, verified with WebFetch)",
+   "observed": "Victor Tran's 'La Luxxy' luxury cosmetics packaging (Blender 3D + Illustrator, 130 appreciations): a minimalist-luxury system dominated by green and gold, clean organised layouts across six product mockups — deep green used as the prestige ground with a single accent doing all the ornament.",
+   "idea_contributed": "Colour feeling: the tonal-inversion colourway — instead of pale 621C ground with 627C ink, a variant lid with DEEP 627C ground and 621C (or blind-emboss) type/mark, reading as evening/prestige against the day-fresh original; the pair becomes a two-lid system in the same two spots. Restraint (one mark, generous margins) carries the luxury, no third colour needed.",
+   "originality_note": "Taken: only the abstract feeling of deep-green-as-prestige-ground and single-accent restraint. NOT taken: gold (BBROSE stays two-spot 621C/627C), La Luxxy's layouts, logo, or any rendered artwork; no tracing or close derivation."
+  },
+  {
+   "entry_id": "e17",
+   "harvested_via": "behance",
+   "source_url": "https://www.behance.net/gallery/178252829/Kohl-Cosmetic-Card-Packaging",
+   "source_kind": "behance_project_page (found via site-scoped WebSearch, verified with WebFetch — page yielded limited visual detail)",
+   "observed": "Studio Pistache (Gurgaon) card-based packaging for 'Kohl', an eye-cosmetic brand: pure-vector Illustrator work, multiple card-format mockup variations under one cohesive identity system. The fetch returned structure and tags but little imagery description, so the observation is thinner than the others.",
+   "idea_contributed": "Composition class: treat the 65x65mm lid as a PRINTED CARD rather than a label — flat vector geometry running edge-to-edge (a hard 627C field split by a clean diagonal or quadrant of 621C), with type set flush to the split line; a graphic, modern counterpoint to the botanical directions that still honours the two-spot constraint.",
+   "originality_note": "Taken: only the general idea of flat vector card-graphic composition for an eye-cosmetic format, and honestly noted as loosely grounded since the fetch gave limited detail. NOT taken: any Kohl artwork, layout, or brand element — nothing was even visible enough to copy, and nothing is traced or derived."
+  },
+  {
+   "entry_id": "e18",
+   "harvested_via": "behance",
+   "source_url": "https://www.behance.net/gallery/65226957/botanical-illustration-for-packaging?locale=en_US",
+   "source_kind": "behance_search_result (URL and snippet from WebSearch only; not fetched)",
+   "observed": "Search result titled 'botanical illustration for packaging', described in the result set as botanical illustrations created for beauty-products packaging — hand-drawn botanical line/illustration work intended to sit directly on cosmetic packs.",
+   "idea_contributed": "Surface language: a fine hand-drawn botanical LINE illustration (single-weight linework, engraving-adjacent) as the lid's entire surface — a BBROSE Rosa damascena stem drawn in one continuous 627C line weight across the 621C square, cropped so bloom sits off-centre and stems exit the lid edge, shade-name set small in Crimson Text italic. Line-only botanicals keep it printable in one spot ink.",
+   "originality_note": "Taken: only the abstract direction 'single-weight botanical linework as full lid surface' — the entry is grounded in a search snippet, not a page inspection, and is flagged as such. NOT taken: the project's actual illustrations or compositions; BBROSE would commission/draw its own rose linework from scratch, with no tracing, copying, or close derivation."
+  },
+  {
+   "entry_id": "e19",
+   "harvested_via": "github",
+   "source_url": "https://github.com/lingdong-/nonflowers",
+   "source_kind": "github_repo (fetched and read)",
+   "observed": "Repository 'nonflowers' procedurally generates paintings of nonexistent flowers in the style of Gongbi (traditional Chinese fine-brush painting). Fetched README confirms: each flower is unique and fictional, built from mathematical functions and procedural noise, no pre-made assets; delicate detailed brushwork aesthetic; MIT licensed; browser demo available.",
+   "idea_contributed": "Composition class: a single invented botanical specimen, drawn with fine-line 'brush discipline', placed asymmetrically on a calm ground — ink-on-paper restraint rather than pattern repeat. For the ES3083 lid: one imaginary BBROSE rose specimen in 627C deep-green fine linework floating off-centre on the 621C sage ground, with generous negative space — the Gongbi attitude (precision, quiet, botanical reverence) maps directly onto quiet luxury.",
+   "originality_note": "Only the abstract idea (fictional-specimen composition, fine-line botanical discipline, restrained two-tone ink feeling) is taken. No generated output, path data, or code from nonflowers is traced, copied, or closely derived — the BBROSE rose form would be drawn from scratch as original vector geometry."
+  },
+  {
+   "entry_id": "e20",
+   "harvested_via": "github",
+   "source_url": "https://github.com/days-later/svg-plant",
+   "source_kind": "github_repo (fetched and read)",
+   "observed": "Repository 'svg-plant' generates plants as SVG elements across four genera (BushyPlant, DragonTree, Zamia, Pilea). Fetched README confirms: seeded/reproducible generation, an 'age' parameter (0–1 growth stage), and a silhouette-vs-colour toggle; MIT licensed.",
+   "idea_contributed": "Design-language idea: (a) botanical form as flat SILHOUETTE rather than outline — a solid 627C plant/rose silhouette on 621C reads crisp at 65mm and prints perfectly in one spot colour; (b) a seeded 'growth age' as a design FAMILY axis — the four shade names (Damascena, Attar, Petal Veil, Moss Garden) could each carry the same rose motif at a different growth stage, giving a coherent variant system across future SKUs.",
+   "originality_note": "Taken: the silhouette treatment and the growth-stage-as-variant-family concept only. Not taken: none of svg-plant's genera shapes, path geometry, or code — the silhouettes would be original BBROSE rose/leaf drawings, not outputs of this library."
+  },
+  {
+   "entry_id": "e21",
+   "harvested_via": "github",
+   "source_url": "https://github.com/jasonlong/geo_pattern",
+   "source_kind": "github_repo (from search result title/snippet)",
+   "observed": "Search result: 'geo_pattern — Create beautiful generative geometric background images from a string.' Snippet explains a string is hashed (SHA) and the hash deterministically selects a tiling pattern and colour — quiet, low-contrast, tone-on-tone geometric tiles.",
+   "idea_contributed": "Composition class: an all-over deterministic tiling pattern DERIVED FROM A WORD — e.g. the lid pattern seeded from the string 'DAMASCENA' or 'BBROSE', so the geometry is literally the name made visible. Executed as very low-contrast tone-on-tone tiling (621C ground with a tint/solid 627C tile grid at small scale), it gives a woven-endpaper, monogram-fabric feeling — pattern as texture, wordmark as hidden seed.",
+   "originality_note": "Taken: the abstract mechanism (name-seeded deterministic tiling, low-contrast geometric texture). Not taken: geo_pattern's specific pattern set, tiles, or code output — the tile vocabulary would be designed fresh (rose-quadrant, leaf-lozenge, petal-quarter tiles) as original vectors."
+  },
+  {
+   "entry_id": "e22",
+   "harvested_via": "github",
+   "source_url": "https://github.com/jasonwebb/SuperformulaSVG",
+   "source_kind": "github_repo (from search result title/snippet)",
+   "observed": "Search result: 'SuperformulaSVG — 2D superformula line-art generator built in Processing, with SVG export for use in digital fabrication workflows.' The superformula produces closed petal-like/rosette curves as clean line art.",
+   "idea_contributed": "Composition class: a single centred mathematical rosette — concentric closed curves whose lobed symmetry reads as 'rose' without depicting one. For the lid: 5–8 nested superformula-style petal curves in a fine 627C stroke, centred on the 65mm square, with the Crimson Text wordmark set small beneath. Botanical-by-geometry: abstract, precise, and unmistakably floral in silhouette — a wider, more modern direction than literal rose drawing.",
+   "originality_note": "Taken: the idea of lobed closed-curve rosettes as an abstract floral language. Not taken: any exported curve, parameter preset, or rendering from SuperformulaSVG — the actual curves would be computed/drawn independently as original geometry tuned to the BBROSE brief."
+  },
+  {
+   "entry_id": "e23",
+   "harvested_via": "github",
+   "source_url": "https://github.com/Shiriluz/Word-As-Image",
+   "source_kind": "github_repo (from search result title/snippet)",
+   "observed": "Search result: 'Word-As-Image' — described in results as a semantic typography technique where a word illustration visualises the word's meaning while preserving its readability (letterforms deformed toward the concept they name).",
+   "idea_contributed": "Typographic attitude: let the TYPE be the artwork. A lid direction where one Crimson Text word — 'BBROSE' or a shade name like 'Petal Veil' — is set large in 627C, with one or two letterform terminals gently inflected toward a petal/stem gesture (a serif that resolves into a leaf, a bowl that opens like a petal) while staying fully readable. Typographic play that honours the existing brand face instead of adding imagery beside it.",
+   "originality_note": "Taken: the semantic-typography concept only (meaning expressed inside readable letterforms). Not taken: the repo's model, outputs, or any generated glyphs — the letter modifications would be hand-drawn original vector edits of licensed Crimson Text outlines, within the font licence's modification terms."
+  },
+  {
+   "entry_id": "e24",
+   "harvested_via": "github",
+   "source_url": "https://github.com/FIWAtec/hatchSmith/tree/main",
+   "source_kind": "github_repo (from search result title/snippet)",
+   "observed": "Search result: 'hatchSmith — Convert PNGs into color-layer PNGs and hatch-filled SVGs for pen plotters... real stroke-based filling... vector hatch shading.' The core visible idea: regions are filled with parallel hatch strokes instead of solid fills, producing an etched/engraved plotter aesthetic.",
+   "idea_contributed": "Pattern/texture language: hatch-fill as the ONLY tonal device. A large petal or leaf shape occupying one corner of the lid, rendered not as a solid but as fine parallel 627C hatch lines (single line weight, slight angle rotation per region) on the 621C ground — an engraving/letterpress feeling that keeps everything one spot colour, adds tactile quiet-luxury texture, and stays fully vector for the .ai emitter.",
+   "originality_note": "Taken: the hatch-fill-instead-of-solid rendering idea and its engraved mood only. Explicitly NOT taken: hatchSmith's raster-to-vector conversion purpose or any converted artwork — no image would be traced or converted; the petal region and its hatch ruling would be constructed from scratch as original geometry."
+  },
+  {
+   "entry_id": "e25",
+   "harvested_via": "editorial",
+   "source_url": "https://xactz.com/blogs/news/quiet-luxury-packaging-trends-designing-for-the-modern-consumer",
+   "source_kind": "trend article (search result title + snippet, not fetched)",
+   "observed": "Search result titled 'Quiet Luxury Packaging Trends: Designing for the Modern Consumer'; the aggregated search summary for this query described the quiet-luxury vocabulary these pages cover: soft matte finishes, monochrome tones, replacing logo-heavy branding with tactile detail, choosing a deep blind-debossed brand mark over foil stamping, and heavy uncoated cotton papers — 'designs that whisper luxury rather than shout'.",
+   "idea_contributed": "A tone-on-tone 'whisper' lid direction: near-monochrome composition where the rose mark reads as texture rather than print — e.g. 627C keyline or simulated-deboss rose sunk into the 621C ground at very low contrast, with the wordmark tiny and the surface itself carrying the luxury. Composition class: single quiet mark, generous emptiness, tactility implied graphically.",
+   "originality_note": "Only the abstract quiet-luxury principle (tactile understatement, tone-on-tone, whisper branding) is taken. No specific packaging shown on that site is traced, copied, or closely derived; the lid stays in BBROSE's own 621C/627C palette and Crimson Text."
+  },
+  {
+   "entry_id": "e26",
+   "harvested_via": "editorial",
+   "source_url": "https://www.gvpak.com/blogs/beauty-packaging-trends-2026-top-10-cosmetic-packaging-ideas-graphic-design-trends",
+   "source_kind": "trend article (fetched with WebFetch)",
+   "observed": "Fetched page lists ten named 2026 beauty-packaging graphic trends, including 'Future Medieval & Heritage Etch' (blackletter, ornate borders, 'etching-inspired linework' for timeless luxury), 'Blueprint & Micro-Industrial' (technical drawings, schematic diagrams, barcode art), 'Naive/Hand-Drawn Design' (wobbly lines, playful naive florals), and 'Type Collage & Mixed Media Typography'.",
+   "idea_contributed": "Two rangier directions grounded in a current trend list: (a) a heritage-etch rose — a fine engraving-style hatched rose bloom in 627C on the 621C ground, framed by a thin ruled border, old-botanical-plate attitude but single-ink; (b) a 'blueprint' lid — the palette itself drawn as a light schematic (12-pan grid ghosted as ruled keylines with the rose as one annotated figure), turning technical drawing language into decoration.",
+   "originality_note": "Only the trend categories (etch linework attitude, schematic/blueprint pattern language) are taken as abstract composition ideas. No example artwork from the article is traced or closely derived; all linework would be drawn fresh for BBROSE."
+  },
+  {
+   "entry_id": "e27",
+   "harvested_via": "editorial",
+   "source_url": "https://elements.envato.com/learn/product-packaging-design-trends",
+   "source_kind": "trend article (fetched with WebFetch)",
+   "observed": "Fetched page names 2026 packaging trends: 'Typography Maximalism' — typefaces as 'the main way to express visual style', large bold letters including serif styles becoming the dominant element rather than supporting graphics — and 'Tactile Minimalism' — clean layouts, basic shapes, easy-to-read text with warm colors and soft textures, each element serving a purpose. Also 'Chaos Packaging' (asymmetric, intentionally messy) as the counterpoint.",
+   "idea_contributed": "A typography-led alternate lid: no illustration at all — a shade name (e.g. 'Damascena') or 'BBROSE' set very large in Crimson Text, deliberately cropped by the 65x65mm square edges, 627C on 621C, letterforms doing the entire visual work. Typographic attitude: serif at poster scale on a tiny format, with tactile-minimal spacing discipline keeping it quiet rather than loud.",
+   "originality_note": "Only the abstract idea (type as the sole artwork, edge-cropped oversized serif) is taken from the named trend. No specific design pictured in the article is copied; the execution uses BBROSE's own typeface and colours."
+  },
+  {
+   "entry_id": "e28",
+   "harvested_via": "editorial",
+   "source_url": "https://zarmatype.com/botanical-packaging-design/",
+   "source_kind": "inspiration roundup (search result title + snippet, not fetched)",
+   "observed": "Search result titled '15 Botanical Packaging Design Ideas for Organic Products'; the aggregated summary for this query stated that 'black and white monochrome botanical line art packaging proves that restraint can be powerful — without color, intricate details shine and timeless elegance emerges', suited to luxury skincare seeking understated sophistication.",
+   "idea_contributed": "The monochrome-line-art restraint principle translated to BBROSE's two greens: an intricate but single-weight botanical line drawing (rose stem, leaves, thorns) in 627C only, letting detail—not colour count—carry richness. Colour feeling: one ink on one ground reads as luxury when the drawing is precise; the sage 621C ground substitutes for the white of the observed monochrome examples.",
+   "originality_note": "Only the compositional principle (detailed single-ink botanical line art as luxury restraint) is taken. None of the fifteen roundup examples is traced or closely derived; the rose drawing would be original BBROSE artwork."
+  },
+  {
+   "entry_id": "e29",
+   "harvested_via": "editorial",
+   "source_url": "https://99designs.com/inspiration/packaging/botanical",
+   "source_kind": "inspiration gallery (search result title + snippet, not fetched)",
+   "observed": "Search result titled 'Botanical Packaging Ideas - 28+ Best Botanical Packaging Designs'; the aggregated summary for this query described gallery examples featuring 'sleek, dark green boxes adorned with artistic illustrations of lush green leaves' and green palettes signalling botanical formulas.",
+   "idea_contributed": "An inverted-ground direction: flip the established relationship so the lid ground is deep 627C with the rose/leaf artwork and type in pale 621C — a dark, dense 'evening garden' lid that keeps the exact two-spot system but changes the colour feeling from fresh/pale to deep/enveloping. Composition class: full-bleed dark field with light botanical figure, green-on-green monochrome family.",
+   "originality_note": "Only the abstract idea (dark-green ground with lighter green botanical figure; ground/ink inversion) is taken from the gallery's described direction. No gallery design is copied or closely derived; both colours remain BBROSE's measured 621C/627C spots."
+  },
+  {
+   "entry_id": "e30",
+   "harvested_via": "editorial",
+   "source_url": "https://www.istockphoto.com/illustrations/rose-line-art",
+   "source_kind": "stock illustration aggregate (search result title + snippet, not fetched)",
+   "observed": "Search result titled '28,900+ Rose Line Art Stock Illustrations'; the aggregated summary for this query described the prevailing genre: single continuous-line rose drawings with 'elegant, flowing lines and minimalistic design', plus seamless patterns of minimalist rose buds repeated on dark grounds used for packaging and luxury products.",
+   "idea_contributed": "Two pattern-language directions: (a) one continuous-line rose as a large off-centre gesture, drawn in a single unbroken 627C stroke and cropped by the 65mm square — calligraphic, modern, almost a signature; (b) a quiet all-over micro-repeat of tiny rose buds (a tone-on-tone wallpaper texture) as the ground, with a small centred wordmark — pattern as texture rather than as picture.",
+   "originality_note": "Only the genre conventions (continuous-line gesture; micro rose-bud repeat) are taken as abstract pattern languages. No stock illustration was viewed individually, and none is traced, copied, or closely derived — any line rose or repeat tile would be drawn from scratch for BBROSE."
+  }
+ ]
+}

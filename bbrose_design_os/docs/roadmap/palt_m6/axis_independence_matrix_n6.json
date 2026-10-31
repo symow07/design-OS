@@ -1,0 +1,115 @@
+{
+ "record_type": "axis_eligibility/1.0:independence",
+ "POPULATION_BOUND_2026_08_13": {
+  "READ_THIS_BEFORE_APPLYING_R5": "every correlation in abs_spearman below is a Spearman computed ACROSS THE SIX FAMILIES in census_families, and over nothing else. The ceiling of 0.80 and the over_ceiling_pairs derived from it are therefore statements about how these axes co-move ON THAT POPULATION.",
+  "valid_over": [
+   "CREAM",
+   "POWDER_MATTE",
+   "POWDER_METALLIC",
+   "POWDER_SATIN",
+   "PRESSED_POWDER",
+   "SHIMMER"
+  ],
+  "NOT_valid_over_without_declaring_an_extrapolation": [
+   "MARBLED",
+   "GLITTER",
+   "BAKED"
+  ],
+  "the_rule": "applying R5 to a family outside census_families is an EXTRAPOLATION and must be DECLARED as one at the point of use. It is not forbidden — it may well hold — but an undeclared extrapolation reports a verdict the matrix did not earn.",
+  "why_this_was_added": "at b92521f the R5 constraint was applied to MARBLED, GLITTER and BAKED — all three absent from this census — and produced three FAIL verdicts. Corrected to NEITHER at d5i_adjudication_correction.json. The record carried its census_families all along and nothing stopped a later reader applying it outside them; this makes the bound impossible to miss rather than merely available.",
+  "3aa": "a derived quantity carries the identity of every input it read. The inputs of this matrix are the six families named below."
+ },
+ "census_families": [
+  "CREAM",
+  "POWDER_MATTE",
+  "POWDER_METALLIC",
+  "POWDER_SATIN",
+  "PRESSED_POWDER",
+  "SHIMMER"
+ ],
+ "ceiling": 0.8,
+ "abs_spearman": {
+  "HIGHLIGHT_FWHM|HIGHLIGHT_PEAK": 0.6,
+  "HIGHLIGHT_FWHM|SPECULAR_TO_DIFFUSE_RATIO": 0.8286,
+  "HIGHLIGHT_FWHM|GRAZING_RESPONSE": 0.9429,
+  "HIGHLIGHT_FWHM|SHEEN_REGION_RESPONSE": 1.0,
+  "HIGHLIGHT_FWHM|EDGE_HIGHLIGHT_RESPONSE": 1.0,
+  "HIGHLIGHT_FWHM|GRANULARITY_INDEX": 0.6571,
+  "HIGHLIGHT_PEAK|SPECULAR_TO_DIFFUSE_RATIO": 0.4286,
+  "HIGHLIGHT_PEAK|GRAZING_RESPONSE": 0.4857,
+  "HIGHLIGHT_PEAK|SHEEN_REGION_RESPONSE": 0.6,
+  "HIGHLIGHT_PEAK|EDGE_HIGHLIGHT_RESPONSE": 0.6,
+  "HIGHLIGHT_PEAK|GRANULARITY_INDEX": 0.2571,
+  "SPECULAR_TO_DIFFUSE_RATIO|GRAZING_RESPONSE": 0.9429,
+  "SPECULAR_TO_DIFFUSE_RATIO|SHEEN_REGION_RESPONSE": 0.8286,
+  "SPECULAR_TO_DIFFUSE_RATIO|EDGE_HIGHLIGHT_RESPONSE": 0.8286,
+  "SPECULAR_TO_DIFFUSE_RATIO|GRANULARITY_INDEX": 0.6571,
+  "GRAZING_RESPONSE|SHEEN_REGION_RESPONSE": 0.9429,
+  "GRAZING_RESPONSE|EDGE_HIGHLIGHT_RESPONSE": 0.9429,
+  "GRAZING_RESPONSE|GRANULARITY_INDEX": 0.6,
+  "SHEEN_REGION_RESPONSE|EDGE_HIGHLIGHT_RESPONSE": 1.0,
+  "SHEEN_REGION_RESPONSE|GRANULARITY_INDEX": 0.6571,
+  "EDGE_HIGHLIGHT_RESPONSE|GRANULARITY_INDEX": 0.6571
+ },
+ "over_ceiling_pairs": [
+  [
+   "HIGHLIGHT_FWHM",
+   "SPECULAR_TO_DIFFUSE_RATIO",
+   0.8286
+  ],
+  [
+   "HIGHLIGHT_FWHM",
+   "GRAZING_RESPONSE",
+   0.9429
+  ],
+  [
+   "HIGHLIGHT_FWHM",
+   "SHEEN_REGION_RESPONSE",
+   1.0
+  ],
+  [
+   "HIGHLIGHT_FWHM",
+   "EDGE_HIGHLIGHT_RESPONSE",
+   1.0
+  ],
+  [
+   "SPECULAR_TO_DIFFUSE_RATIO",
+   "GRAZING_RESPONSE",
+   0.9429
+  ],
+  [
+   "SPECULAR_TO_DIFFUSE_RATIO",
+   "SHEEN_REGION_RESPONSE",
+   0.8286
+  ],
+  [
+   "SPECULAR_TO_DIFFUSE_RATIO",
+   "EDGE_HIGHLIGHT_RESPONSE",
+   0.8286
+  ],
+  [
+   "GRAZING_RESPONSE",
+   "SHEEN_REGION_RESPONSE",
+   0.9429
+  ],
+  [
+   "GRAZING_RESPONSE",
+   "EDGE_HIGHLIGHT_RESPONSE",
+   0.9429
+  ],
+  [
+   "SHEEN_REGION_RESPONSE",
+   "EDGE_HIGHLIGHT_RESPONSE",
+   1.0
+  ]
+ ],
+ "note": "two axes above the ceiling may not both count toward one pair's two-axis requirement",
+ "census": {
+  "POWDER_MATTE": 0.082618,
+  "POWDER_SATIN": 0.040564,
+  "PRESSED_POWDER": 0.031566,
+  "CREAM": 0.063597,
+  "SHIMMER": 0.173517,
+  "POWDER_METALLIC": 0.072389
+ }
+}

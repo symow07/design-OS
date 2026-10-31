@@ -1,0 +1,38 @@
+{
+ "record_type": "a393_complement_certification/1.0",
+ "date": "2026-08-12",
+ "result": "ENUMERATION_INCOMPLETE \u2014 the node STOPS here per A399",
+ "enumerated": {
+  "pattern": "docs/roadmap/palt_m6/**/*.json",
+  "count": 1638,
+  "note": "1636 at the prior node plus the two records this node added"
+ },
+ "complement": {
+  "size": 4044,
+  "by_extension": {
+   ".png": 2655,
+   ".exr": 1360,
+   ".md": 20,
+   ".py": 5,
+   ".jsonl": 3,
+   ".pyc": 1
+  },
+  "members_with_the_record_extension": 0,
+  "sample": [
+   "M6_ALLOWLIST_COVERAGE_CLOSURE_PROMPT.md",
+   "M6_CLASS_SCOPE_CLOSURE_PROMPT.md",
+   "M6_CLOSURE_IDENTITY_PROMPT.md"
+  ]
+ },
+ "the_finding": "the complement contains ZERO .json files, so the pattern is complete FOR ITS EXTENSION. It contains THREE .jsonl files, and all three are records of exactly the kind being counted: render_spend/firing_trace.jsonl (6 lines \u2014 the A38 firing-trace instrument's own output), combined_manifest/a92_control_trace.jsonl (1 line \u2014 a CONTROL trace), and combined_manifest/glitter_events.jsonl (4 lines \u2014 per-seed event counts). The enumeration counted an EXTENSION and was read as counting RECORDS.",
+ "why_a_count_could_never_have_caught_it": "1636 and 1639 are equally count-shaped. Only the complement distinguishes them, which is 3r's whole content, established one node before it was needed.",
+ "1636_stands_as": "COMPLETE_FOR_.json / INCOMPLETE_AS_AN_ENUMERATION_OF_RECORDS",
+ "three_records_currently_unbound": [
+  "docs/roadmap/palt_m6/render_spend/firing_trace.jsonl",
+  "docs/roadmap/palt_m6/combined_manifest/a92_control_trace.jsonl",
+  "docs/roadmap/palt_m6/combined_manifest/glitter_events.jsonl"
+ ],
+ "fix_named_not_applied": "widen record_integrity.PATTERN to cover .jsonl and regenerate. NOT applied: that is a change to an instrument, and A398 forbids instrument work beyond A387 in this node. Named for the owner to sequence.",
+ "downstream_not_attempted": "the six terms were NOT examined. A399: there is no point ratifying onto an uncertified manifest.",
+ "irony_recorded": "firing_trace.jsonl is the output of the instrument built at A38 as a POSITIVE CONTROL \u2014 the thing that proves a firing is recorded. It was itself unrecorded by the binding."
+}
