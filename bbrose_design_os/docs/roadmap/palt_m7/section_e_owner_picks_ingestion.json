@@ -1,0 +1,37 @@
+{
+ "record_type": "section_e_owner_picks_ingestion/1.0",
+ "created_at": "2026-08-14",
+ "ingests": "OWNER_BLOCKER_CLEARANCE.md Section E (repository root) — 'Post-M7F owner picks (added 2026-08-14, after reviewing the 3d9f867 artifacts)'",
+ "authorized_by": "NEXT_SESSION_LAUNCHER.md (M7 finalisation session), RECORDING QUOTA item (a) — this is the single Section E ingestion record; both picks below are OWNER DECISIONS recorded as HARD",
+ "picks": {
+  "E1_lid_composition": {
+   "status": "PICKED_AND_LOCKED",
+   "pick": "C3 MINIMAL-CENTRAL (pale 621 C ground) — es3083_lid_C3_minimal_central.* from the 3d9f867 candidate set",
+   "locked": "LOCKED AS-IS — no revision round, no re-exploration, no new candidates. Finalisation is a refinement pass at production-candidate tier only: optical spacing and kerning of the wordmark block, rule weights, Lab-to-output colour verification for the 621 C ground, safe-margin check against the measured 65.00 x 65.00 frame.",
+   "advisor_recommendation_noted_honestly": "the advisor recommended C1 WORDMARK-DOMINANT; the owner picked C3. The owner's pick is the design authority and the override is recorded here without adjustment.",
+   "superseded_not_deleted": "C1, C2, C4 and the contact sheet are retained as the candidate record; they are superseded for the deliverable, not deleted."
+  },
+  "E2_shade_label_alignment": {
+   "status": "PICKED",
+   "pick": "T1 CENTRED — es3083_label_sheet_T1_centred_black.* is the picked sheet (this resolves A1's RENDER_BOTH: the owner has now picked from the artifacts)",
+   "regeneration_rule": "the T1 files stand as picked; they are regenerated ONLY if the C3 finalisation changes a parameter the label sheet shares (substrate geometry, typeface spec, treatment colours). T4 outputs are retained superseded, not deleted.",
+   "downstream_unchanged": "the pick is alignment only. Keyline (T4-vs-T2), ink (T1-vs-T3) and ground (T1-vs-T5) stay DOWNSTREAM of the vendor die/stock answers per es3083_artwork_geometry_substrate.json die_cut_question.treatment_decidability — nothing here advances them."
+  }
+ },
+ "still_owner_side_unchanged": [
+  "caliper numbers (pan cavity + pitch, case heights closed/lid/base) — Route C, OPEN until numbers arrive",
+  "supervised Route A dispatch of ES3083_VENDOR_REQUEST_V2.md (approved, not performed by any session)",
+  "supplier-gated back-label fields (SUPPLIER_DATA) and the owner facts B1 (EAN) / B2 (distributor identity) at placeholder tier"
+ ],
+ "consequences": {
+  "unblocked_this_session": [
+   "C3 finalisation at production-candidate tier (refinement pass only, per E1 lock)",
+   "T1 sheet promotion (record the pick; conditional regeneration only)"
+  ],
+  "still_blocked_and_untouched": [
+   "print-final label-sheet handoff (die + stock, vendor-gated)",
+   "back-label regulatory copy at production tier (SUPPLIER_DATA)",
+   "any measured-tier cavity/height claim (awaiting Route A reply or Route C numbers)"
+  ]
+ }
+}

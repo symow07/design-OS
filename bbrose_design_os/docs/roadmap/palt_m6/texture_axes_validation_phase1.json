@@ -1,0 +1,183 @@
+{
+  "record_type": "powder_texture_axes/1.0",
+  "protocol_identity": "087c7f64317910fb",
+  "repair_identity": "1e198aed8d86ed9c",
+  "declared_before_family_measurement": true,
+  "measured_from": "SCENE_LINEAR_EXR_RGB_ONLY",
+  "effect_bar": 0.25,
+  "realization_floor": 0.002,
+  "axes": {
+    "GRANULARITY_INDEX": {
+      "independent": true,
+      "serves": [
+        "MATTE_vs_SATIN",
+        "PRESSED_vs_MATTE",
+        "SATIN_vs_CREAM"
+      ]
+    },
+    "GRAZING_BAND_CONTRAST": {
+      "independent": true,
+      "serves": [
+        "PRESSED_vs_MATTE",
+        "MATTE_vs_SATIN",
+        "SATIN_vs_CREAM"
+      ]
+    }
+  },
+  "withdrawn_axes": [
+    "SURFACE_AUTOCORRELATION_MM"
+  ],
+  "positive_fixtures": {
+    "GRANULARITY_INDEX": {
+      "fixture": "SURFACE_CONTINUITY",
+      "low": 0.029818,
+      "high": 0.076767,
+      "relative_effect": 0.881,
+      "stimulus": {
+        "rms": 0.11418935,
+        "low_member_mean": 0.574174,
+        "rms_over_mean": 0.19887589,
+        "floor": 0.002,
+        "realized": true
+      },
+      "calibration": {
+        "per_member": {
+          "SURFACE_CONTINUITY_low": {
+            "base_peak": 0.017881579595804213,
+            "iterations": [
+              {
+                "energy": 2778519.6730336966,
+                "peak": 0.8772513015031813,
+                "clipped": 0
+              }
+            ],
+            "energy": 2778519.6730336966
+          },
+          "SURFACE_CONTINUITY_high": {
+            "base_peak": 0.018569294890761374,
+            "iterations": [
+              {
+                "energy": 2392034.2938402486,
+                "peak": 0.8953158134222029,
+                "clipped": 0
+              }
+            ],
+            "energy": 2392034.2938402486
+          }
+        },
+        "why": "normalisation-invariant axes, exposure control mandatory",
+        "window": [
+          0.35,
+          0.92
+        ]
+      },
+      "detects": true
+    },
+    "GRAZING_BAND_CONTRAST": {
+      "fixture": "COMPACTION",
+      "low": 2.717539,
+      "high": 2.399052,
+      "relative_effect": 0.1245,
+      "stimulus": {
+        "rms": 0.08915416,
+        "low_member_mean": 0.574207,
+        "rms_over_mean": 0.15526497,
+        "floor": 0.002,
+        "realized": true
+      },
+      "calibration": {
+        "per_member": {
+          "COMPACTION_low": {
+            "base_peak": 0.01780230219438672,
+            "iterations": [
+              {
+                "energy": 2452582.6056922986,
+                "peak": 0.8820889799952506,
+                "clipped": 0
+              }
+            ],
+            "energy": 2452582.6056922986
+          },
+          "COMPACTION_high": {
+            "base_peak": 0.017763090559467672,
+            "iterations": [
+              {
+                "energy": 1236545.745443455,
+                "peak": 0.8971325144529342,
+                "clipped": 0
+              }
+            ],
+            "energy": 1236545.745443455
+          }
+        },
+        "why": "normalisation-invariant axes, exposure control mandatory",
+        "window": [
+          0.35,
+          0.92
+        ]
+      },
+      "detects": false
+    }
+  },
+  "negative_controls": {
+    "identical_rerun_realization_gate": {
+      "expected": "STIMULUS_NOT_REALIZED",
+      "stimulus": {
+        "rms": 0.0,
+        "low_member_mean": 0.560259,
+        "rms_over_mean": 0.0,
+        "floor": 0.002,
+        "realized": false
+      },
+      "behaved": true
+    },
+    "seed_only": {
+      "effects": {
+        "GRANULARITY_INDEX": 0.038,
+        "GRAZING_BAND_CONTRAST": 0.0058
+      },
+      "stimulus": {
+        "rms": 0.08607232,
+        "low_member_mean": 0.560179,
+        "rms_over_mean": 0.15365148,
+        "floor": 0.002,
+        "realized": true
+      },
+      "behaved": true
+    },
+    "exposure_only": {
+      "effects": {
+        "GRANULARITY_INDEX": 0.0028,
+        "GRAZING_BAND_CONTRAST": 0.0189
+      },
+      "stimulus": {
+        "rms": 0.00523081,
+        "low_member_mean": 0.560259,
+        "rms_over_mean": 0.00933641,
+        "floor": 0.002,
+        "realized": true
+      },
+      "behaved": true
+    },
+    "lighting_perturbation": {
+      "effects": {
+        "GRANULARITY_INDEX": 0.0782,
+        "GRAZING_BAND_CONTRAST": 0.0137
+      },
+      "stimulus": {
+        "rms": 0.03513463,
+        "low_member_mean": 0.560259,
+        "rms_over_mean": 0.06271137,
+        "floor": 0.002,
+        "realized": true
+      },
+      "behaved": true
+    }
+  },
+  "rejected_axes": [
+    "GRAZING_BAND_CONTRAST"
+  ],
+  "unrealized_fixtures": [],
+  "controls_misbehaved": [],
+  "verdict": "PASS"
+}

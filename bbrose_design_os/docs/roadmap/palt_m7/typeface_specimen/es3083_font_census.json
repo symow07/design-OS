@@ -1,0 +1,79 @@
+{
+ "record_type": "es3083_font_census/1.0",
+ "created_at": "2026-08-14",
+ "direction": "old-style / humanist serif per m7_typeface_direction_ruling.json — Garamond, Sabon, Jenson lineage; NOT Didone",
+ "PRESENCE_IS_NOT_A_LICENCE": "materials/Fonts is historical source material harvested from past production work (.gitignore:54 declares materials/ a read-only source library). Nothing below infers a licence from presence, foundry fame, or OS bundling — OS bundling is a licence for OS use, not product packaging.",
+ "extent_A564": {
+  "population": "4,677 font files (.ttf/.otf/.ttc/.pfb/.pfm) under materials/Fonts, walked with os.walk; dip0's own count was 4,883 including files outside this subtree and 4,845 parsed",
+  "predicate_1_filename": "case-insensitive regex over filenames: garamond|garamont|sabon|jenson|bembo|caslon|palatino|antiqua|minion|centaur|goudy|jannon|cormorant|crimson|cardo|junicode|gentium|alegreya|spectral|dante|aldine|plantin|arno — 45 hits",
+  "predicate_2_name_table": "fontTools parse of nameID 16/1 over ALL 4,677 files (0 parse failures), same keyword set — 23 matching families",
+  "predicate_3_licence_first": "nameID 13/14 scanned for OFL over ALL 4,677 — 69 OFL-declaring families, classified for old-style suitability"
+ },
+ "ABSENT_from_the_library": {
+  "families": [
+   "Sabon",
+   "Bembo",
+   "Adobe Jenson",
+   "EB Garamond",
+   "Cormorant",
+   "Cardo",
+   "Junicode",
+   "Gentium",
+   "Arno Pro",
+   "Dante",
+   "Plantin"
+  ],
+  "extent": "predicates 1 and 2 above, jointly"
+ },
+ "shortlist": [
+  {
+   "family": "Crimson Text",
+   "classification": "genuinely old-style — a Garamond-inspired text face (Sebastian Kosch); humanist axis, bracketed serifs, moderate contrast",
+   "files": "12 (Regular/Italic/SemiBold/SemiBoldItalic/Bold/BoldItalic in two locations); format TTF, usable in Illustrator 2026",
+   "glyph_coverage": "FULL for the twelve authored names and BBROSE — checked per codepoint against the cmap",
+   "licence_status": "LICENCE-CLEAR",
+   "licence_evidence": "embedded by the rights holder in CrimsonText-Regular.ttf: nameID14 = http://scripts.sil.org/OFL, fsType 0 (installable), copyright line with OFL Reserved Font Name. The OFL permits commercial use in artwork; the repository itself already quotes the operative OFL sentence in docs/visual_quality/vq2/vq2_governed_web_licensing_evidence.json ('The requirement for fonts to remain under this license does not apply to any document created using the Font Software'). NOTE: the style files (Bold/Italic/SemiBold) carry fsType 0 but no nameID14; their OFL standing is by family provenance, so a deliverable using a style other than Regular should fetch the family fresh from its source with its OFL.txt rather than rely on these loose files."
+  },
+  {
+   "family": "Adobe Garamond Pro",
+   "classification": "genuinely old-style — Slimbach's Garamond revival",
+   "files": "4 OTF (Regular/Italic/Bold/BoldItalic), Illustrator-usable",
+   "glyph_coverage": "FULL for the twelve names and BBROSE",
+   "licence_status": "UNDETERMINED",
+   "licence_evidence": "fsType 8, nameID14 = adobe.com/type/legal.html, no grant anywhere in the repository or library. If BBROSE's Illustrator 2026 is a current Creative Cloud subscription, the family is licensable properly by activating it through Adobe Fonts — the compliant route is activation, not these loose files."
+  },
+  {
+   "family": "Adobe Caslon Pro",
+   "classification": "genuinely old-style — Twombly's Caslon revival",
+   "files": "6 OTF, Illustrator-usable",
+   "glyph_coverage": "FULL for the twelve names and BBROSE",
+   "licence_status": "UNDETERMINED",
+   "licence_evidence": "same footing as Adobe Garamond Pro"
+  },
+  {
+   "family": "Minion Pro",
+   "classification": "old-style/neo-humanist (Slimbach) — inside the ruled direction, at its modern edge",
+   "files": "12 OTF incl. condensed/medium cuts, Illustrator-usable",
+   "glyph_coverage": "FULL for the twelve names and BBROSE",
+   "licence_status": "UNDETERMINED",
+   "licence_evidence": "same footing as Adobe Garamond Pro"
+  }
+ ],
+ "examined_and_not_shortlisted": {
+  "Alegreya": "humanist and OFL, but ONLY the Italic is present — no roman; cannot set the specimen",
+  "Garamond (Monotype, GARA.TTF)": "old-style (Jannon-derived); embedded nameID13 is a Monotype NOTIFICATION OF LICENSE AGREEMENT stating use is governed by a licence you must hold — evidence AGAINST a grant, not for one. UNDETERMINED",
+  "Book Antiqua": "Palatino-derived humanist; same Monotype notification; UNDETERMINED",
+  "Palatino Linotype": "humanist (Zapf); nameID13 says 'Microsoft supplied font… as permitted by the license terms' — an OS licence; UNDETERMINED for packaging",
+  "Goudy Old Style / GoudyOlSt BT": "old-style; Microsoft/URW/Bitstream data, no grant; UNDETERMINED",
+  "Centaur": "humanist (Jenson lineage, Rogers); Monotype data, no grant; UNDETERMINED",
+  "Caslon BT cuts, Goudy display cuts, Uncial Antiqua, Cinzel, Playfair Display, Merriweather, Abhaya Libre": "display cuts, sans cuts, Didone (Playfair — excluded by the ruling), or not old-style text faces"
+ },
+ "THE_ANSWER_TO_THE_LICENCE_QUESTION": "EXACTLY ONE candidate in the library is both suitable and licence-clear: Crimson Text. Every other suitable face is UNDETERMINED. If the owner wants Garamond/Caslon/Minion, the cheap early cost is: activate via Adobe Fonts under a current CC subscription (possibly already held with Illustrator 2026), or buy a desktop licence. Caught now rather than after artwork is built on an unlicensed face.",
+ "dip0_reconciliation": "dip0 recorded license_status UNVERIFIED for all of these ('no licence file in scope') — its scanner looked for licence FILES only and never read embedded name-table licence metadata. This census's embedded-metadata reads are finer-grained and supersede dip0's UNVERIFIED for the files named here; dip0's records are not edited.",
+ "LICENCE_PREDICATE_STATED_2026_08_14": {
+  "which_fields_count": "nameID13 (License Description) and nameID14 (License Info URL), read from the name table; plus fsType from OS/2; plus any licence FILE travelling with the font (none exist in materials/Fonts)",
+  "sufficiency": "EITHER name field alone suffices for LICENCE-CLEAR when it AFFIRMATIVELY declares a known open licence — Crimson Text Regular is clear on nameID14 alone (scripts.sil.org/OFL, no nameID13); Merriweather Bold is clear on nameID13 alone (verbatim OFL 1.1 text with the SIL URL embedded). A field that merely points at a foundry legal page (adobe.com/type/legal.html) is NOT affirmative and yields UNDETERMINED.",
+  "disagreement_between_the_fields": "record BOTH, never cite one. An affirmative verbatim declaration governs over an external URL this repository cannot resolve — Merriweather's nameID14 (sorkintype.com/eula.html) is recorded as a disagreement, not resolved. A disagreement between the fields is D11 occurring inside a font file.",
+  "was_the_predicate_applied_consistently": "as a SWEEP, yes — census predicate 3 matched OFL in nameID 13 OR 14 symmetrically over all 4,677 files. As CITATIONS, no — the per-face records each cited only the field that happened to fire (Crimson: 14 only; Merriweather at 9ef340d: 13 only, omitting the contradicting 14). The sweep result stands; the one-sided citations are corrected here and in the substrate's TEST_FACE entry. NOT re-scanned — this is a statement of the predicate already used."
+ }
+}

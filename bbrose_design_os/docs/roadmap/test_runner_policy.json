@@ -1,0 +1,26 @@
+{
+ "record_type": "test_runner_policy/1.0",
+ "decided_at": "2026-08-04",
+ "decided_by": "owner (review of intake d95d28a + test-health report)",
+ "policy": {
+  "CANONICAL_TEST_RUNNER": "PYTEST",
+  "DJANGO_MANAGE_PY_TEST": "NON_CANONICAL_DIAGNOSTIC_RUNNER"
+ },
+ "reasons": [
+  "pytest.ini defines the repository test configuration",
+  "historical full-suite evidence uses pytest",
+  "pytest fixtures such as tmp_path are unsupported by manage.py test",
+  "the affected files currently pass under isolated pytest",
+  "the docs-only intake introduced no new failures"
+ ],
+ "consequences": [
+  "the proposed manage.py-test repair (baseline_test_repair_proposal.md R1-R4) is NOT begun — owner declined it",
+  "suite health is established and reported from full pytest runs exclusively",
+  "manage.py test results are diagnostic only and never the canonical baseline",
+  "manage.py test compatibility must never be claimed unless later implemented and validated deliberately",
+  "failures that reproduce under full pytest are investigated separately, distinguishing application defect from test-isolation defect, and never mixed into the intake records"
+ ],
+ "invocation": "venv/bin/python -m pytest -m \"not pacdora\" (pacdora marker excluded per pytest.ini — legacy backend needing playwright/network)",
+ "companion_checks": ["ruff (pinned requirements-dev.txt)", "manage.py makemigrations --check --dry-run", "manage.py check"],
+ "baseline_record": "docs/roadmap/canonical_test_baseline_2026_08_04.json"
+}

@@ -1,0 +1,50 @@
+{
+ "record_type": "es3083_back_label_prerequisites/1.1",
+ "corrected_2026_08_14": {
+  "what_1_0_got_wrong_both_halves": "1.0's central claim was 'the geometry is ready and the words do not exist', with 'it cannot be recovered from the vendor file: 0 live text spans'. BOTH halves were wrong. ES3083_DIMENSION_FINDINGS.md:65-78 — at the repository ROOT, a file 1.0 itself CITES for geometry — records product copy READ FROM THE PRINTED LABELS at 200 dpi: the outlined type defeats text EXTRACTION, not LEGIBILITY, and 1.0 conflated the two. And 1.0's absence extent named three palt_* directories, excluding the root file whose line 77 the predicate INCI|ingredient would have matched. This is the same population-choice failure as the 61ddd75 M4C-4 miss; see D13."
+ },
+ "QUESTION_ONE_WHAT_IS_RECOVERED": {
+  "source": "ES3083_DIMENSION_FINDINGS.md:65-78, tier PRODUCT_LABEL_DECLARED",
+  "items": {
+   "net_weight": "NET WT 11 g",
+   "item_no": "ES3083",
+   "ean": "5 061030 636510",
+   "executive_standard": "QB/T 1976-2004 (Chinese standard, pressed eyeshadow)",
+   "approval": "ZHEZHUANG20210006",
+   "supplier": "Yiwu Yibin Trading Company / Yiwu Yibin Trading Co., Ltd",
+   "ingredients_lead": "Mica, Talc, Paraffinum Liquidum, Kaolin, Magnesium Stearate, Polyethylene, Silica, Ethylhexyl Palmitate, Simethicone, Phenoxyethanol — a LEAD, not established as the complete list"
+  },
+  "confidence": "read off a 200 dpi raster: transcription risk is REAL, and a misread INCI name or barcode digit is a regulatory error, not a typo. Two firmings available: (1) DONE HERE — the EAN check digit verifies arithmetically (weights 1/3, computed 0 = printed 0), so the barcode transcription is internally consistent; (2) NOT done — re-render the back-label region from the vector source at 600+ dpi and re-transcribe, which the .ai supports at any resolution."
+ },
+ "QUESTION_TWO_WHAT_MAY_BBROSE_REUSE": {
+  "adjudicated_item_by_item_not_uniformly": {
+   "ingredients_INCI": "CONDITIONAL — a factual declaration of a formulation, not authored copy; BBROSE's to declare ONLY IF BBROSE's product is that formulation, which is a SUPPLIER question",
+   "net_weight_11g": "CONDITIONAL — same footing: a product fact, supplier-confirmed",
+   "executive_standard": "CONDITIONAL AND MARKET-DEPENDENT — a manufacture-compliance fact; also a Chinese-market declaration that neither satisfies nor is required for a UK/EU sale",
+   "approval_ZHEZHUANG20210006": "NO — a registration identifier belonging to its registrant, not BBROSE's to print, whatever the originality ruling says",
+   "supplier_identity": "NO — another party's identity",
+   "item_no_ES3083": "vendor catalogue number: fine as internal reference; printing it on pack is a choice, not a necessity",
+   "ean": "SEE THE QUESTION BELOW — not adjudicable here"
+  }
+ },
+ "EAN_QUESTION_FOR_THE_OWNER": {
+  "the_question": "WHOSE BARCODE IS 5 061030 636510?",
+  "what_is_known": "prefix 506 sits in GS1 UK's 500-509 range, on a label from a Chinese vendor; the check digit verifies. NOTHING is concluded from the prefix.",
+  "why_it_matters": "printing another party's GS1 number is a real problem; printing BBROSE's own is fine; only the owner knows which this is — e.g. whether BBROSE supplied its own GS1-UK number to the vendor",
+  "status": "OPEN QUESTION — deliberately not decided here"
+ },
+ "THE_GATE_RESTATED": {
+  "was": "'copy nobody has written' — wrong",
+  "is": "the back label is gated SUBSTANTIALLY ON THE EXISTING SUPPLIER_DATA BLOCKER the owner already deferred — formulation (hence the INCI list), fill weight, manufacture standard, any market approval — PLUS two OWNER facts no supplier can provide: responsible-person / distributor identity for the sale market, and the EAN ownership answer above. It is NOT a new gate; it is the old blocker wearing the back label's clothes, plus owner facts. No new blocker is opened (the D11 lesson), and SUPPLIER_DATA's entry now names this relationship."
+ },
+ "geometry": "MEASURED, unlike the lid: printed area 49.50 x 49.50 mm with a 2.0 pt keyline, die/bleed 55.00 x 55.00 mm, pitch 58.4 mm, three instances on the vendor sheet (ES3083_DIMENSION_FINDINGS.md). Reachable without a caliper session.",
+ "governing_records": {
+  "exist": [
+   "palette_es3083_intent.py regulatory_zones (HARD)",
+   "m7_artwork_scope_ruling.json (BBROSE-original)",
+   "m7_typeface_face_ruling.json (TARGET/SET face)",
+   "es3083_artwork_geometry_substrate.json (geometry, parametric rule)"
+  ],
+  "do_not_exist": "CORRECTED at 1.1: 1.0's absence claim here was false by population-choice — recovered vendor copy exists at the repository root. What remains genuinely absent, now with the root INCLUDED in the population: any BBROSE-owned responsible-person identity, any BBROSE GS1 confirmation, and any supplier-confirmed formulation record."
+ }
+}

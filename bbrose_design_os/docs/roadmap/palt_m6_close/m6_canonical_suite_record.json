@@ -1,0 +1,14 @@
+{
+ "record_type": "m6_canonical_suite_record/1.0",
+ "written": "2026-08-15",
+ "why_external": "a suite cannot verify itself from inside — the M5 condition-19 convention; outside the palt_m6 digest sweep so the checkpoint cannot be chased by the rebinding it would trigger",
+ "command": "venv/bin/python -m pytest -q (canonical runner per test_runner_policy.json)",
+ "summary_line": "6046 passed, 0 failed, 585 warnings, 41568 subtests passed in 535.60s",
+ "passed": 6046,
+ "failed": 0,
+ "subtests": 41568,
+ "exit_code": 0,
+ "git_head_at_run": "f03003f",
+ "provenance_of_this_run": "the FIRST full run over this session's tree (H1 ingestion + the M7 emitter with its 12 new tests, 6034 -> 6046) — not a re-roll of the attempt-4 close's red runs, which stand recorded in the superseded revision of this file (git) and in the continuation state's runs_this_block: 3-failed and 6-failed, all in the registered browser-flake file, 12/12 green in isolation. The flake remains REGISTERED and OPEN (cause UNESTABLISHED, M6-BROWSER-FLAKE-CAUSE named, not authorized); it did not fire this run.",
+ "state_at_run": "M6 closed over accepted limitations (H1 ingested, gate COMPLETE_OVER_ACCEPTED_LIMITATIONS); M7 emitter built+tested+run, three .ai deliverables emitted and sha256-bound; manifest c275cd37c92e274f; protocol identity 52bffe4a622e3dc0 pinned; working tree at run time carries the close records that land in the close commit — the standing convention"
+}

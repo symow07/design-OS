@@ -1,0 +1,955 @@
+{
+ "record_type": "combined_render_spend_declaration/1.3",
+ "node": "M6-CONTROL-COMPLETION (A119-A126)",
+ "protocol_identity": "4bee12abd596d496",
+ "declared_before_any_frame": true,
+ "a122_down_rederivation": {
+  "supersedes_per_2k": "A115's 'tightest complete cover' formulation for the DOWN side \u2014 superseded, not deleted: one global factor from CAL_TARGET refused 3 of 4 families at the window edge. What these controls establish is a MEASURED validated range with mechanically enforced edges (A115b machinery unchanged): any replicate frame whose peak lands outside its family's validated range does not enter the replicate and comes to the owner",
+  "derivations": {
+   "SHIMMER": {
+    "achieved_reference_peak_ctx700": 0.7688776580452918,
+    "base_peak": 0.014953845001757143,
+    "measured_linearity": 0.98821,
+    "linearity_source": "the refused first-pass down frame: measured peak 0.3110988796174526 / linear prediction 0.31481 from the ACHIEVED ctx reference \u2014 note this recomputation supersedes the boundary report's '6-13% sub-linear' claim, which was measured against the WRONG reference (the 32-sample cal frames); vs the true reference transport is linear within 1.3%",
+    "margin_stated": 0.05,
+    "target_peak": 0.39999999999999997,
+    "retry_target_peak": 0.45
+   },
+   "POWDER_METALLIC": {
+    "achieved_reference_peak_ctx700": 0.8228231400489807,
+    "base_peak": 0.010934900617226958,
+    "measured_linearity": 1.01304,
+    "linearity_source": "the refused first-pass down frame: measured peak 0.3382008445501328 / linear prediction 0.33385 from the ACHIEVED ctx reference \u2014 note this recomputation supersedes the boundary report's '6-13% sub-linear' claim, which was measured against the WRONG reference (the 32-sample cal frames); vs the true reference transport is linear within 1.3%",
+    "margin_stated": 0.05,
+    "target_peak": 0.39999999999999997,
+    "retry_target_peak": 0.45
+   },
+   "BAKED": {
+    "achieved_reference_peak_ctx700": 0.7921985660791396,
+    "base_peak": 0.017488764674961566,
+    "measured_linearity": 0.9974,
+    "linearity_source": "the refused first-pass down frame: measured peak 0.32476648409962655 / linear prediction 0.32561 from the ACHIEVED ctx reference \u2014 note this recomputation supersedes the boundary report's '6-13% sub-linear' claim, which was measured against the WRONG reference (the 32-sample cal frames); vs the true reference transport is linear within 1.3%",
+    "margin_stated": 0.05,
+    "target_peak": 0.39999999999999997,
+    "retry_target_peak": 0.45
+   }
+  },
+  "lines": {
+   "down_redo_SHIMMER": {
+    "frames_min": 1,
+    "frames_max": 2,
+    "factor": 0.51682,
+    "retry_factor": 0.58393,
+    "mechanism": "one frame if the first attempt lands in-window unclipped; the single declared retry only on a refusal; a second refusal STOPS the family and reports (A122); reconciled per 2r by reconcile_down_retry_unit, suite-tested"
+   },
+   "down_redo_POWDER_METALLIC": {
+    "frames_min": 1,
+    "frames_max": 2,
+    "factor": 0.47304,
+    "retry_factor": 0.53383,
+    "mechanism": "one frame if the first attempt lands in-window unclipped; the single declared retry only on a refusal; a second refusal STOPS the family and reports (A122); reconciled per 2r by reconcile_down_retry_unit, suite-tested"
+   },
+   "down_redo_BAKED": {
+    "frames_min": 1,
+    "frames_max": 2,
+    "factor": 0.49504,
+    "retry_factor": 0.55975,
+    "mechanism": "one frame if the first attempt lands in-window unclipped; the single declared retry only on a refusal; a second refusal STOPS the family and reports (A122); reconciled per 2r by reconcile_down_retry_unit, suite-tested"
+   }
+  },
+  "total_frames_min": 3,
+  "total_frames_max": 6,
+  "internally_reconciled_2n_2p": {
+   "list_total_min": 3,
+   "stated_min": 3,
+   "list_total_max": 6,
+   "stated_max": 6,
+   "reconciler_run": true
+  },
+  "a125_contingency": "ZERO frames \u2014 both recovered frames verified INTACT (a125 in queue_results); no re-render line",
+  "marbled": "complete \u2014 no frames; GRAN ENERGY_INVARIANT across achieved [0.35649, 0.90477], GBC stamped NOT_ENERGY_INVARIANT, rows INSIDE the range"
+ },
+ "render_authority": "granted per 2j in M6-CONTROL-COMPLETION ordered-work step 6, for THIS declaration only: the three down-frames plus declared retries; nothing else renders",
+ "superseded_per_2k_prior_declaration_1_2": {
+  "record_type": "combined_render_spend_declaration/1.2",
+  "node": "M6-RECALIBRATION-EXECUTE (A112-A118)",
+  "protocol_identity": "ef4c4dd7baf072ee",
+  "declared_before_any_frame": true,
+  "lines": {
+   "recal_SHIMMER": {
+    "frames_min": 3,
+    "frames_max": 6,
+    "purpose": "A105 branch two: full per-member calibration replacing the INADMISSIBLE derived energy \u2014 probe 1 + base 1 + cal 1-4 (the law's own iteration cap raises beyond 4); calibrated at the replicate subject (seed 700), solved energy applied to both replicate seeds and COMMITTED AS ITSELF per 2q with its iteration list",
+    "seeds": [
+     700
+    ],
+    "samples": 64,
+    "instrument": "characterize_texture_pair's calibration stanza, single subject"
+   },
+   "recal_POWDER_METALLIC": {
+    "frames_min": 3,
+    "frames_max": 6,
+    "purpose": "A105 branch two: full per-member calibration replacing the INADMISSIBLE derived energy \u2014 probe 1 + base 1 + cal 1-4 (the law's own iteration cap raises beyond 4); calibrated at the replicate subject (seed 700), solved energy applied to both replicate seeds and COMMITTED AS ITSELF per 2q with its iteration list",
+    "seeds": [
+     700
+    ],
+    "samples": 64,
+    "instrument": "characterize_texture_pair's calibration stanza, single subject"
+   },
+   "recal_BAKED": {
+    "frames_min": 3,
+    "frames_max": 6,
+    "purpose": "A105 branch two: full per-member calibration replacing the INADMISSIBLE derived energy \u2014 probe 1 + base 1 + cal 1-4 (the law's own iteration cap raises beyond 4); calibrated at the replicate subject (seed 700), solved energy applied to both replicate seeds and COMMITTED AS ITSELF per 2q with its iteration list",
+    "seeds": [
+     700
+    ],
+    "samples": 64,
+    "instrument": "characterize_texture_pair's calibration stanza, single subject"
+   },
+   "recal_MARBLED": {
+    "frames_min": 3,
+    "frames_max": 6,
+    "purpose": "A105 branch two: full per-member calibration replacing the INADMISSIBLE derived energy \u2014 probe 1 + base 1 + cal 1-4 (the law's own iteration cap raises beyond 4); calibrated at the replicate subject (seed 700), solved energy applied to both replicate seeds and COMMITTED AS ITSELF per 2q with its iteration list",
+    "seeds": [
+     700
+    ],
+    "samples": 64,
+    "instrument": "characterize_texture_pair's calibration stanza, single subject"
+   },
+   "ct_texture_POWDER_MATTE": {
+    "frames_min": 2,
+    "frames_max": 2,
+    "purpose": "census-replicate texture row",
+    "seeds": [
+     700,
+     701
+    ],
+    "samples": 64,
+    "energy": 2302449.9932754873,
+    "energy_provenance": "COMMITTED_VALUE family_energies.json@63bb0a9 \u2014 admissible under 2q (committed as itself, not re-derived)",
+    "instrument": "single-subject render at the stated energy; SUBJECT_WINDOW and zero-clip gates enforced per frame; no pair re-render"
+   },
+   "ct_texture_SHIMMER": {
+    "frames_min": 2,
+    "frames_max": 2,
+    "purpose": "census-replicate texture row",
+    "seeds": [
+     700,
+     701
+    ],
+    "samples": 64,
+    "energy": "FROM_RECAL_LINE",
+    "energy_provenance": "the recal line above; committed with the row per 2q",
+    "instrument": "single-subject render at the stated energy; SUBJECT_WINDOW and zero-clip gates enforced per frame; no pair re-render"
+   },
+   "ct_texture_POWDER_METALLIC": {
+    "frames_min": 2,
+    "frames_max": 2,
+    "purpose": "census-replicate texture row",
+    "seeds": [
+     700,
+     701
+    ],
+    "samples": 64,
+    "energy": "FROM_RECAL_LINE",
+    "energy_provenance": "the recal line above; committed with the row per 2q",
+    "instrument": "single-subject render at the stated energy; SUBJECT_WINDOW and zero-clip gates enforced per frame; no pair re-render"
+   },
+   "ct_texture_BAKED": {
+    "frames_min": 2,
+    "frames_max": 2,
+    "purpose": "census-replicate texture row",
+    "seeds": [
+     700,
+     701
+    ],
+    "samples": 64,
+    "energy": "FROM_RECAL_LINE",
+    "energy_provenance": "the recal line above; committed with the row per 2q",
+    "instrument": "single-subject render at the stated energy; SUBJECT_WINDOW and zero-clip gates enforced per frame; no pair re-render"
+   },
+   "ct_texture_MARBLED": {
+    "frames_min": 2,
+    "frames_max": 2,
+    "purpose": "census-replicate texture row",
+    "seeds": [
+     700,
+     701
+    ],
+    "samples": 64,
+    "energy": "FROM_RECAL_LINE",
+    "energy_provenance": "the recal line above; committed with the row per 2q",
+    "instrument": "single-subject render at the stated energy; SUBJECT_WINDOW and zero-clip gates enforced per frame; no pair re-render"
+   },
+   "energy_ctl_SHIMMER": {
+    "frames_min": 2,
+    "frames_max": 3,
+    "purpose": "A104: negative control on the energy axis \u2014 existing negative-control machinery one level over, NOT a new instrument type",
+    "reference_member": "the ct_texture_SHIMMER seed-700 frame at calibrated energy IS the pair's reference member (shared, not re-rendered)",
+    "offsets": {
+     "down_factor": 0.3977272727272727,
+     "up_factor": 1.0454545454545454
+    },
+    "offset_derivation": "A105's tolerance source failed (branch two), so the offset is the only committed bound on the census-vs-replicate energy difference: both exposures are proven in-window (census tx peaks committed 0.727-0.863; replicate gated by the law), and under the law's own declared linear-transport premise the admissible energy span maps to the peak window \u2014 down = W_lo/CAL_TARGET = 0.35/0.88 = 0.39773, up = W_hi/CAL_TARGET = 0.92/0.88 = 1.04545; the pair therefore spans the ENTIRE admissible window [PENDING_OWNER_RULING per 2j \u2014 the offset basis is executor-drafted because A105's pre-committed source died with branch two]",
+    "pass_condition_declared_before_frames": "per family, per statistic the family contributes to the replicate (GRANULARITY_INDEX): the relative shift of the statistic between the calibrated reference and EACH offset frame sits below the relative effect bar over the noise-floor separation margin (0.25 / 2.0 = 0.125). A family whose control does not clear, or whose up-offset frame clips (the law's zero-clip gate refuses at the window edge), DOES NOT ENTER the replicate \u2014 its rows return to the declarer",
+    "seeds": [
+     700
+    ],
+    "samples": 64,
+    "a114_structure": {
+     "measured_axes": [
+      "GRANULARITY_INDEX",
+      "SURFACE_AUTOCORRELATION_MM",
+      "GRAZING_BAND_CONTRAST"
+     ],
+     "per_axis_verdict": "relative shift vs each offset frame, bar 0.25 / margin 2.0 = 0.125",
+     "gate": "GRANULARITY_INDEX failure EXCLUDES the family from the replicate \u2014 the axis the replicate exists for",
+     "stamps": "SURFACE_AUTOCORRELATION_MM / GRAZING_BAND_CONTRAST failure does NOT exclude; the axis value is stamped NOT_ENERGY_INVARIANT_AT_CONDITION; a clearing axis is stamped ENERGY_INVARIANT_AT_CONDITION with the offset range it cleared across per 2m",
+     "citing_path": "palette_energy_recovery.read_stamped_axis \u2014 raises on a NOT_ENERGY_INVARIANT or absent stamp, exactly as read_trace_evidence does; suite-tested both directions (StampedAxisTests) BEFORE the queue"
+    },
+    "offset_basis": "A115 APPROVED per 2j in the complete retransmission \u2014 PENDING_OWNER_RULING LIFTED. Recorded per the ruling as the correct instrument, not a fallback: the perturbation (census-vs-replicate energy difference) is UNBOUNDED since census energies are unrecoverable, so validation runs across the entire space the perturbation can occupy \u2014 the peak window, which gates both census and replicate frames under the same law; offsets 0.35/0.88 = 0.39773 and 0.92/0.88 = 1.04545 are that ratio split about the target: the tightest complete cover available",
+    "a115b_clipping_pre_commitments": {
+     "1_retry": "if the up-frame clips, retry ONCE at reduced offset factor 1.02273 (= 0.90/0.88, target peak 0.90 under linear transport) \u2014 declared here, in writing, before any frame",
+     "2_achieved_bound": "the validated upper bound is the ACHIEVED peak of the frame that succeeded, never the intended one",
+     "3_outside_range": "a replicate frame whose own peak lands above the family's validated upper bound is OUTSIDE the validated range; its rows do not enter the replicate and come to the owner",
+     "4_second_clip": "a second clip stops the family and reports"
+    }
+   },
+   "energy_ctl_POWDER_METALLIC": {
+    "frames_min": 2,
+    "frames_max": 3,
+    "purpose": "A104: negative control on the energy axis \u2014 existing negative-control machinery one level over, NOT a new instrument type",
+    "reference_member": "the ct_texture_POWDER_METALLIC seed-700 frame at calibrated energy IS the pair's reference member (shared, not re-rendered)",
+    "offsets": {
+     "down_factor": 0.3977272727272727,
+     "up_factor": 1.0454545454545454
+    },
+    "offset_derivation": "A105's tolerance source failed (branch two), so the offset is the only committed bound on the census-vs-replicate energy difference: both exposures are proven in-window (census tx peaks committed 0.727-0.863; replicate gated by the law), and under the law's own declared linear-transport premise the admissible energy span maps to the peak window \u2014 down = W_lo/CAL_TARGET = 0.35/0.88 = 0.39773, up = W_hi/CAL_TARGET = 0.92/0.88 = 1.04545; the pair therefore spans the ENTIRE admissible window [PENDING_OWNER_RULING per 2j \u2014 the offset basis is executor-drafted because A105's pre-committed source died with branch two]",
+    "pass_condition_declared_before_frames": "per family, per statistic the family contributes to the replicate (GRANULARITY_INDEX): the relative shift of the statistic between the calibrated reference and EACH offset frame sits below the relative effect bar over the noise-floor separation margin (0.25 / 2.0 = 0.125). A family whose control does not clear, or whose up-offset frame clips (the law's zero-clip gate refuses at the window edge), DOES NOT ENTER the replicate \u2014 its rows return to the declarer",
+    "seeds": [
+     700
+    ],
+    "samples": 64,
+    "a114_structure": {
+     "measured_axes": [
+      "GRANULARITY_INDEX",
+      "SURFACE_AUTOCORRELATION_MM",
+      "GRAZING_BAND_CONTRAST"
+     ],
+     "per_axis_verdict": "relative shift vs each offset frame, bar 0.25 / margin 2.0 = 0.125",
+     "gate": "GRANULARITY_INDEX failure EXCLUDES the family from the replicate \u2014 the axis the replicate exists for",
+     "stamps": "SURFACE_AUTOCORRELATION_MM / GRAZING_BAND_CONTRAST failure does NOT exclude; the axis value is stamped NOT_ENERGY_INVARIANT_AT_CONDITION; a clearing axis is stamped ENERGY_INVARIANT_AT_CONDITION with the offset range it cleared across per 2m",
+     "citing_path": "palette_energy_recovery.read_stamped_axis \u2014 raises on a NOT_ENERGY_INVARIANT or absent stamp, exactly as read_trace_evidence does; suite-tested both directions (StampedAxisTests) BEFORE the queue"
+    },
+    "offset_basis": "A115 APPROVED per 2j in the complete retransmission \u2014 PENDING_OWNER_RULING LIFTED. Recorded per the ruling as the correct instrument, not a fallback: the perturbation (census-vs-replicate energy difference) is UNBOUNDED since census energies are unrecoverable, so validation runs across the entire space the perturbation can occupy \u2014 the peak window, which gates both census and replicate frames under the same law; offsets 0.35/0.88 = 0.39773 and 0.92/0.88 = 1.04545 are that ratio split about the target: the tightest complete cover available",
+    "a115b_clipping_pre_commitments": {
+     "1_retry": "if the up-frame clips, retry ONCE at reduced offset factor 1.02273 (= 0.90/0.88, target peak 0.90 under linear transport) \u2014 declared here, in writing, before any frame",
+     "2_achieved_bound": "the validated upper bound is the ACHIEVED peak of the frame that succeeded, never the intended one",
+     "3_outside_range": "a replicate frame whose own peak lands above the family's validated upper bound is OUTSIDE the validated range; its rows do not enter the replicate and come to the owner",
+     "4_second_clip": "a second clip stops the family and reports"
+    }
+   },
+   "energy_ctl_BAKED": {
+    "frames_min": 2,
+    "frames_max": 3,
+    "purpose": "A104: negative control on the energy axis \u2014 existing negative-control machinery one level over, NOT a new instrument type",
+    "reference_member": "the ct_texture_BAKED seed-700 frame at calibrated energy IS the pair's reference member (shared, not re-rendered)",
+    "offsets": {
+     "down_factor": 0.3977272727272727,
+     "up_factor": 1.0454545454545454
+    },
+    "offset_derivation": "A105's tolerance source failed (branch two), so the offset is the only committed bound on the census-vs-replicate energy difference: both exposures are proven in-window (census tx peaks committed 0.727-0.863; replicate gated by the law), and under the law's own declared linear-transport premise the admissible energy span maps to the peak window \u2014 down = W_lo/CAL_TARGET = 0.35/0.88 = 0.39773, up = W_hi/CAL_TARGET = 0.92/0.88 = 1.04545; the pair therefore spans the ENTIRE admissible window [PENDING_OWNER_RULING per 2j \u2014 the offset basis is executor-drafted because A105's pre-committed source died with branch two]",
+    "pass_condition_declared_before_frames": "per family, per statistic the family contributes to the replicate (GRANULARITY_INDEX): the relative shift of the statistic between the calibrated reference and EACH offset frame sits below the relative effect bar over the noise-floor separation margin (0.25 / 2.0 = 0.125). A family whose control does not clear, or whose up-offset frame clips (the law's zero-clip gate refuses at the window edge), DOES NOT ENTER the replicate \u2014 its rows return to the declarer",
+    "seeds": [
+     700
+    ],
+    "samples": 64,
+    "a114_structure": {
+     "measured_axes": [
+      "GRANULARITY_INDEX",
+      "SURFACE_AUTOCORRELATION_MM",
+      "GRAZING_BAND_CONTRAST"
+     ],
+     "per_axis_verdict": "relative shift vs each offset frame, bar 0.25 / margin 2.0 = 0.125",
+     "gate": "GRANULARITY_INDEX failure EXCLUDES the family from the replicate \u2014 the axis the replicate exists for",
+     "stamps": "SURFACE_AUTOCORRELATION_MM / GRAZING_BAND_CONTRAST failure does NOT exclude; the axis value is stamped NOT_ENERGY_INVARIANT_AT_CONDITION; a clearing axis is stamped ENERGY_INVARIANT_AT_CONDITION with the offset range it cleared across per 2m",
+     "citing_path": "palette_energy_recovery.read_stamped_axis \u2014 raises on a NOT_ENERGY_INVARIANT or absent stamp, exactly as read_trace_evidence does; suite-tested both directions (StampedAxisTests) BEFORE the queue"
+    },
+    "offset_basis": "A115 APPROVED per 2j in the complete retransmission \u2014 PENDING_OWNER_RULING LIFTED. Recorded per the ruling as the correct instrument, not a fallback: the perturbation (census-vs-replicate energy difference) is UNBOUNDED since census energies are unrecoverable, so validation runs across the entire space the perturbation can occupy \u2014 the peak window, which gates both census and replicate frames under the same law; offsets 0.35/0.88 = 0.39773 and 0.92/0.88 = 1.04545 are that ratio split about the target: the tightest complete cover available",
+    "a115b_clipping_pre_commitments": {
+     "1_retry": "if the up-frame clips, retry ONCE at reduced offset factor 1.02273 (= 0.90/0.88, target peak 0.90 under linear transport) \u2014 declared here, in writing, before any frame",
+     "2_achieved_bound": "the validated upper bound is the ACHIEVED peak of the frame that succeeded, never the intended one",
+     "3_outside_range": "a replicate frame whose own peak lands above the family's validated upper bound is OUTSIDE the validated range; its rows do not enter the replicate and come to the owner",
+     "4_second_clip": "a second clip stops the family and reports"
+    }
+   },
+   "energy_ctl_MARBLED": {
+    "frames_min": 2,
+    "frames_max": 3,
+    "purpose": "A104: negative control on the energy axis \u2014 existing negative-control machinery one level over, NOT a new instrument type",
+    "reference_member": "the ct_texture_MARBLED seed-700 frame at calibrated energy IS the pair's reference member (shared, not re-rendered)",
+    "offsets": {
+     "down_factor": 0.3977272727272727,
+     "up_factor": 1.0454545454545454
+    },
+    "offset_derivation": "A105's tolerance source failed (branch two), so the offset is the only committed bound on the census-vs-replicate energy difference: both exposures are proven in-window (census tx peaks committed 0.727-0.863; replicate gated by the law), and under the law's own declared linear-transport premise the admissible energy span maps to the peak window \u2014 down = W_lo/CAL_TARGET = 0.35/0.88 = 0.39773, up = W_hi/CAL_TARGET = 0.92/0.88 = 1.04545; the pair therefore spans the ENTIRE admissible window [PENDING_OWNER_RULING per 2j \u2014 the offset basis is executor-drafted because A105's pre-committed source died with branch two]",
+    "pass_condition_declared_before_frames": "per family, per statistic the family contributes to the replicate (GRANULARITY_INDEX): the relative shift of the statistic between the calibrated reference and EACH offset frame sits below the relative effect bar over the noise-floor separation margin (0.25 / 2.0 = 0.125). A family whose control does not clear, or whose up-offset frame clips (the law's zero-clip gate refuses at the window edge), DOES NOT ENTER the replicate \u2014 its rows return to the declarer",
+    "seeds": [
+     700
+    ],
+    "samples": 64,
+    "a114_structure": {
+     "measured_axes": [
+      "GRANULARITY_INDEX",
+      "SURFACE_AUTOCORRELATION_MM",
+      "GRAZING_BAND_CONTRAST"
+     ],
+     "per_axis_verdict": "relative shift vs each offset frame, bar 0.25 / margin 2.0 = 0.125",
+     "gate": "GRANULARITY_INDEX failure EXCLUDES the family from the replicate \u2014 the axis the replicate exists for",
+     "stamps": "SURFACE_AUTOCORRELATION_MM / GRAZING_BAND_CONTRAST failure does NOT exclude; the axis value is stamped NOT_ENERGY_INVARIANT_AT_CONDITION; a clearing axis is stamped ENERGY_INVARIANT_AT_CONDITION with the offset range it cleared across per 2m",
+     "citing_path": "palette_energy_recovery.read_stamped_axis \u2014 raises on a NOT_ENERGY_INVARIANT or absent stamp, exactly as read_trace_evidence does; suite-tested both directions (StampedAxisTests) BEFORE the queue"
+    },
+    "offset_basis": "A115 APPROVED per 2j in the complete retransmission \u2014 PENDING_OWNER_RULING LIFTED. Recorded per the ruling as the correct instrument, not a fallback: the perturbation (census-vs-replicate energy difference) is UNBOUNDED since census energies are unrecoverable, so validation runs across the entire space the perturbation can occupy \u2014 the peak window, which gates both census and replicate frames under the same law; offsets 0.35/0.88 = 0.39773 and 0.92/0.88 = 1.04545 are that ratio split about the target: the tightest complete cover available",
+    "a115b_clipping_pre_commitments": {
+     "1_retry": "if the up-frame clips, retry ONCE at reduced offset factor 1.02273 (= 0.90/0.88, target peak 0.90 under linear transport) \u2014 declared here, in writing, before any frame",
+     "2_achieved_bound": "the validated upper bound is the ACHIEVED peak of the frame that succeeded, never the intended one",
+     "3_outside_range": "a replicate frame whose own peak lands above the family's validated upper bound is OUTSIDE the validated range; its rows do not enter the replicate and come to the owner",
+     "4_second_clip": "a second clip stops the family and reports"
+    }
+   },
+   "ct_lobe_completion": {
+    "frames_min": 6,
+    "frames_max": 6,
+    "purpose": "census-replicate lobe rows for the three P1 families",
+    "families": [
+     "POWDER_SATIN",
+     "PRESSED_POWDER",
+     "CREAM"
+    ],
+    "seeds": [
+     700,
+     701
+    ],
+    "samples": 64,
+    "instrument": "characterize_powder"
+   },
+   "p5_matte_zero_particle_controls": {
+    "frames_min": 2,
+    "frames_max": 2,
+    "purpose": "the glitter event ensemble's declared per-seed negative control; banking releasable only in the node these render in, control values stated, withdrawn if either exceeds CONTROL_MAX_EVENTS=5",
+    "family": "POWDER_MATTE",
+    "rig": "glitter particle rig",
+    "energy": 92152.58936199959,
+    "seeds": [
+     67,
+     68
+    ],
+    "samples": 64,
+    "status": "A107 APPROVED \u2014 declarer-approved values, non-collision verified (proof below); not a rule-based draw"
+   },
+   "p6_positive_controls": {
+    "frames_min": 8,
+    "frames_max": 8,
+    "purpose": "C3-class positive controls at each counted condition",
+    "composition": [
+     "warm MATTE + warm SATIN on the diffuse/texture condition (2)",
+     "warm PRESSED + warm MATTE on the diffuse/texture condition (2)",
+     "warm SATIN + warm CREAM on the diffuse/texture condition (2)",
+     "warm GLITTER + warm MATTE on the glitter-event condition (2)"
+    ],
+    "shade": "prov_dark_warm_sienna (0.38, 0.22, 0.14)",
+    "seed": 500,
+    "samples": 64,
+    "status": "A107 APPROVED AS STATED \u2014 the executor draft affirmed per 2p/2j; the bare '(8)' that forced the draft is owned by the declarer (A108)",
+    "rig_assignment_declared_before_queue": {
+     "diffuse_pairs": "LOBE rig (characterize_powder, fixed rig config, no per-subject calibration): each pair validated on the lobe axis it counts \u2014 MATTE+SATIN on SHEEN_REGION_RESPONSE, PRESSED+MATTE on SHEEN_REGION_RESPONSE, SATIN+CREAM on HIGHLIGHT_FWHM; known-different pair must separate >= 0.25 at warm",
+     "glitter_pair": "glitter particle rig at the committed calibrated energy: warm GLITTER events >= 25 and warm MATTE events <= 5",
+     "named_open_line": "GRAN-at-warm positive coverage is NOT provided by these 8 frames \u2014 texture-rig warm members would need their own calibration; recorded as an OPEN coverage line, not silently absorbed"
+    }
+   },
+   "floor_replicate_POWDER_MATTE": {
+    "frames_min": 6,
+    "frames_max": 6,
+    "purpose": "FLOOR-STATISTIC-REPLICATE frames only (analysis is the next node's): independent 6-seed ensemble for the SHEEN_REGION_RESPONSE max-pairwise spread (0.16569); identity moves per 2m on completion",
+    "family": "POWDER_MATTE",
+    "seeds": [
+     810,
+     811,
+     812,
+     813,
+     814,
+     815
+    ],
+    "samples": 64
+   },
+   "floor_replicate_POWDER_SATIN": {
+    "frames_min": 6,
+    "frames_max": 6,
+    "purpose": "FLOOR-STATISTIC-REPLICATE frames only (analysis is the next node's): independent 6-seed ensemble for the HIGHLIGHT_FWHM max-pairwise spread (0.04781); identity moves per 2m on completion",
+    "family": "POWDER_SATIN",
+    "seeds": [
+     810,
+     811,
+     812,
+     813,
+     814,
+     815
+    ],
+    "samples": 64
+   },
+   "floor_replicate_CREAM": {
+    "frames_min": 6,
+    "frames_max": 6,
+    "purpose": "FLOOR-STATISTIC-REPLICATE frames only (analysis is the next node's): independent 6-seed ensemble for the HIGHLIGHT_FWHM max-pairwise spread (0.03289); identity moves per 2m on completion",
+    "family": "CREAM",
+    "seeds": [
+     810,
+     811,
+     812,
+     813,
+     814,
+     815
+    ],
+    "samples": 64
+   }
+  },
+  "total_frames_min": 64,
+  "total_frames_max": 80,
+  "total_change_statement": "recomputed from the rows, not carried: 64 min / 80 max. The max CHANGED from 76 to 80: A115b's pre-committed retry adds one declarable contingent frame per recalibrated family (energy control lines 2-3, was 2-2). The min is unchanged at 64.",
+  "reconciliation_law_2r": "reconciliation runs per unit against the realised value AND the mechanism that produced it, never the envelope: calibration units via palette_spend_reconciler.reconcile_calibration_unit (realised == probe+base+len(iterations); every non-final iteration must FAIL the law's gate, the final must PASS it; an envelope-internal unexplained count raises \u2014 suite-tested by test_envelope_internal_unexplained_count_raises); retry units via reconcile_retry_unit (2 frames require an unclipped up-frame, 3 require clipped-then-unclipped); fixed units via reconcile",
+  "mask_handling": "region masks are COPIED from the committed byte-identical mask (sha256 prefix 397ed1ae76b71e30, identical across texture_axes/, glitter_rig/ and combined_manifest/frames/) into the node's frame dirs \u2014 ZERO mask renders in this queue; region_indices renders a mask only when the file is absent, so presence is the guarantee",
+  "runner": "committed at docs/roadmap/palt_m6/render_spend/rs_queue.py (never a scratchpad artifact \u2014 the A91 lesson); first act begin_traced_queue per A98; resumable at unit boundaries; cap 80 enforced; ends with the 2l/2r reconciliation whose output is reported verbatim",
+  "energies_2q": "every solved energy is committed AS ITSELF with its iteration list in the results record \u2014 the census's defect not repeated",
+  "render_authority": "AFFIRMATIVELY GRANTED per 2j in step 4 of the complete M6-RECALIBRATION-EXECUTE retransmission, for this amended declaration exactly as reconciled; order within the queue is the executor's, composition is not",
+  "header_pointer_defect_noted": "the launcher preamble locates the grant 'in step 3 of the ordered work'; the body grants it in step 4 (RENDER). No execution fork: under every reading authority attaches to the render act after the declaration amendment; flagged to the owner in the boundary report rather than resolved by preference",
+  "superseded_per_2k_prior_declaration_at_64_76": {
+   "record_type": "combined_render_spend_declaration/1.1",
+   "node": "M6-RENDER-SPEND-AMENDED (A104-A111)",
+   "protocol_identity": "ca44a5706d270461",
+   "declared_before_any_frame": true,
+   "branch_fired_A105": "BRANCH TWO. The committed solve law states NO convergence tolerance: its only stopping condition is an acceptance window on the rendered scene-linear peak of the FINAL iteration (clipped==0 and 0.35 <= peak <= 0.92) \u2014 a residual bound on a different quantity, not a bound on the per-iteration energy change, which the law leaves unbounded (E_{n+1}/E_n = (0.88-b)/(P_n-b) for an arbitrary out-of-window P_n). The derived energies are INADMISSIBLE and full recalibration replaces them. NOTHING RENDERS in this node; the declaration is one spend and comes back to the declarer whole.",
+   "lines": {
+    "recal_SHIMMER": {
+     "frames_min": 3,
+     "frames_max": 6,
+     "purpose": "A105 branch two: full per-member calibration replacing the INADMISSIBLE derived energy \u2014 probe 1 + base 1 + cal 1-4 (the law's own iteration cap raises beyond 4); calibrated at the replicate subject (seed 700), solved energy applied to both replicate seeds and COMMITTED AS ITSELF per 2q with its iteration list",
+     "seeds": [
+      700
+     ],
+     "samples": 64,
+     "instrument": "characterize_texture_pair's calibration stanza, single subject"
+    },
+    "recal_POWDER_METALLIC": {
+     "frames_min": 3,
+     "frames_max": 6,
+     "purpose": "A105 branch two: full per-member calibration replacing the INADMISSIBLE derived energy \u2014 probe 1 + base 1 + cal 1-4 (the law's own iteration cap raises beyond 4); calibrated at the replicate subject (seed 700), solved energy applied to both replicate seeds and COMMITTED AS ITSELF per 2q with its iteration list",
+     "seeds": [
+      700
+     ],
+     "samples": 64,
+     "instrument": "characterize_texture_pair's calibration stanza, single subject"
+    },
+    "recal_BAKED": {
+     "frames_min": 3,
+     "frames_max": 6,
+     "purpose": "A105 branch two: full per-member calibration replacing the INADMISSIBLE derived energy \u2014 probe 1 + base 1 + cal 1-4 (the law's own iteration cap raises beyond 4); calibrated at the replicate subject (seed 700), solved energy applied to both replicate seeds and COMMITTED AS ITSELF per 2q with its iteration list",
+     "seeds": [
+      700
+     ],
+     "samples": 64,
+     "instrument": "characterize_texture_pair's calibration stanza, single subject"
+    },
+    "recal_MARBLED": {
+     "frames_min": 3,
+     "frames_max": 6,
+     "purpose": "A105 branch two: full per-member calibration replacing the INADMISSIBLE derived energy \u2014 probe 1 + base 1 + cal 1-4 (the law's own iteration cap raises beyond 4); calibrated at the replicate subject (seed 700), solved energy applied to both replicate seeds and COMMITTED AS ITSELF per 2q with its iteration list",
+     "seeds": [
+      700
+     ],
+     "samples": 64,
+     "instrument": "characterize_texture_pair's calibration stanza, single subject"
+    },
+    "ct_texture_POWDER_MATTE": {
+     "frames_min": 2,
+     "frames_max": 2,
+     "purpose": "census-replicate texture row",
+     "seeds": [
+      700,
+      701
+     ],
+     "samples": 64,
+     "energy": 2302449.9932754873,
+     "energy_provenance": "COMMITTED_VALUE family_energies.json@63bb0a9 \u2014 admissible under 2q (committed as itself, not re-derived)",
+     "instrument": "single-subject render at the stated energy; SUBJECT_WINDOW and zero-clip gates enforced per frame; no pair re-render"
+    },
+    "ct_texture_SHIMMER": {
+     "frames_min": 2,
+     "frames_max": 2,
+     "purpose": "census-replicate texture row",
+     "seeds": [
+      700,
+      701
+     ],
+     "samples": 64,
+     "energy": "FROM_RECAL_LINE",
+     "energy_provenance": "the recal line above; committed with the row per 2q",
+     "instrument": "single-subject render at the stated energy; SUBJECT_WINDOW and zero-clip gates enforced per frame; no pair re-render"
+    },
+    "ct_texture_POWDER_METALLIC": {
+     "frames_min": 2,
+     "frames_max": 2,
+     "purpose": "census-replicate texture row",
+     "seeds": [
+      700,
+      701
+     ],
+     "samples": 64,
+     "energy": "FROM_RECAL_LINE",
+     "energy_provenance": "the recal line above; committed with the row per 2q",
+     "instrument": "single-subject render at the stated energy; SUBJECT_WINDOW and zero-clip gates enforced per frame; no pair re-render"
+    },
+    "ct_texture_BAKED": {
+     "frames_min": 2,
+     "frames_max": 2,
+     "purpose": "census-replicate texture row",
+     "seeds": [
+      700,
+      701
+     ],
+     "samples": 64,
+     "energy": "FROM_RECAL_LINE",
+     "energy_provenance": "the recal line above; committed with the row per 2q",
+     "instrument": "single-subject render at the stated energy; SUBJECT_WINDOW and zero-clip gates enforced per frame; no pair re-render"
+    },
+    "ct_texture_MARBLED": {
+     "frames_min": 2,
+     "frames_max": 2,
+     "purpose": "census-replicate texture row",
+     "seeds": [
+      700,
+      701
+     ],
+     "samples": 64,
+     "energy": "FROM_RECAL_LINE",
+     "energy_provenance": "the recal line above; committed with the row per 2q",
+     "instrument": "single-subject render at the stated energy; SUBJECT_WINDOW and zero-clip gates enforced per frame; no pair re-render"
+    },
+    "energy_ctl_SHIMMER": {
+     "frames_min": 2,
+     "frames_max": 2,
+     "purpose": "A104: negative control on the energy axis \u2014 existing negative-control machinery one level over, NOT a new instrument type",
+     "reference_member": "the ct_texture_SHIMMER seed-700 frame at calibrated energy IS the pair's reference member (shared, not re-rendered)",
+     "offsets": {
+      "down_factor": 0.3977272727272727,
+      "up_factor": 1.0454545454545454
+     },
+     "offset_derivation": "A105's tolerance source failed (branch two), so the offset is the only committed bound on the census-vs-replicate energy difference: both exposures are proven in-window (census tx peaks committed 0.727-0.863; replicate gated by the law), and under the law's own declared linear-transport premise the admissible energy span maps to the peak window \u2014 down = W_lo/CAL_TARGET = 0.35/0.88 = 0.39773, up = W_hi/CAL_TARGET = 0.92/0.88 = 1.04545; the pair therefore spans the ENTIRE admissible window [PENDING_OWNER_RULING per 2j \u2014 the offset basis is executor-drafted because A105's pre-committed source died with branch two]",
+     "pass_condition_declared_before_frames": "per family, per statistic the family contributes to the replicate (GRANULARITY_INDEX): the relative shift of the statistic between the calibrated reference and EACH offset frame sits below the relative effect bar over the noise-floor separation margin (0.25 / 2.0 = 0.125). A family whose control does not clear, or whose up-offset frame clips (the law's zero-clip gate refuses at the window edge), DOES NOT ENTER the replicate \u2014 its rows return to the declarer",
+     "seeds": [
+      700
+     ],
+     "samples": 64
+    },
+    "energy_ctl_POWDER_METALLIC": {
+     "frames_min": 2,
+     "frames_max": 2,
+     "purpose": "A104: negative control on the energy axis \u2014 existing negative-control machinery one level over, NOT a new instrument type",
+     "reference_member": "the ct_texture_POWDER_METALLIC seed-700 frame at calibrated energy IS the pair's reference member (shared, not re-rendered)",
+     "offsets": {
+      "down_factor": 0.3977272727272727,
+      "up_factor": 1.0454545454545454
+     },
+     "offset_derivation": "A105's tolerance source failed (branch two), so the offset is the only committed bound on the census-vs-replicate energy difference: both exposures are proven in-window (census tx peaks committed 0.727-0.863; replicate gated by the law), and under the law's own declared linear-transport premise the admissible energy span maps to the peak window \u2014 down = W_lo/CAL_TARGET = 0.35/0.88 = 0.39773, up = W_hi/CAL_TARGET = 0.92/0.88 = 1.04545; the pair therefore spans the ENTIRE admissible window [PENDING_OWNER_RULING per 2j \u2014 the offset basis is executor-drafted because A105's pre-committed source died with branch two]",
+     "pass_condition_declared_before_frames": "per family, per statistic the family contributes to the replicate (GRANULARITY_INDEX): the relative shift of the statistic between the calibrated reference and EACH offset frame sits below the relative effect bar over the noise-floor separation margin (0.25 / 2.0 = 0.125). A family whose control does not clear, or whose up-offset frame clips (the law's zero-clip gate refuses at the window edge), DOES NOT ENTER the replicate \u2014 its rows return to the declarer",
+     "seeds": [
+      700
+     ],
+     "samples": 64
+    },
+    "energy_ctl_BAKED": {
+     "frames_min": 2,
+     "frames_max": 2,
+     "purpose": "A104: negative control on the energy axis \u2014 existing negative-control machinery one level over, NOT a new instrument type",
+     "reference_member": "the ct_texture_BAKED seed-700 frame at calibrated energy IS the pair's reference member (shared, not re-rendered)",
+     "offsets": {
+      "down_factor": 0.3977272727272727,
+      "up_factor": 1.0454545454545454
+     },
+     "offset_derivation": "A105's tolerance source failed (branch two), so the offset is the only committed bound on the census-vs-replicate energy difference: both exposures are proven in-window (census tx peaks committed 0.727-0.863; replicate gated by the law), and under the law's own declared linear-transport premise the admissible energy span maps to the peak window \u2014 down = W_lo/CAL_TARGET = 0.35/0.88 = 0.39773, up = W_hi/CAL_TARGET = 0.92/0.88 = 1.04545; the pair therefore spans the ENTIRE admissible window [PENDING_OWNER_RULING per 2j \u2014 the offset basis is executor-drafted because A105's pre-committed source died with branch two]",
+     "pass_condition_declared_before_frames": "per family, per statistic the family contributes to the replicate (GRANULARITY_INDEX): the relative shift of the statistic between the calibrated reference and EACH offset frame sits below the relative effect bar over the noise-floor separation margin (0.25 / 2.0 = 0.125). A family whose control does not clear, or whose up-offset frame clips (the law's zero-clip gate refuses at the window edge), DOES NOT ENTER the replicate \u2014 its rows return to the declarer",
+     "seeds": [
+      700
+     ],
+     "samples": 64
+    },
+    "energy_ctl_MARBLED": {
+     "frames_min": 2,
+     "frames_max": 2,
+     "purpose": "A104: negative control on the energy axis \u2014 existing negative-control machinery one level over, NOT a new instrument type",
+     "reference_member": "the ct_texture_MARBLED seed-700 frame at calibrated energy IS the pair's reference member (shared, not re-rendered)",
+     "offsets": {
+      "down_factor": 0.3977272727272727,
+      "up_factor": 1.0454545454545454
+     },
+     "offset_derivation": "A105's tolerance source failed (branch two), so the offset is the only committed bound on the census-vs-replicate energy difference: both exposures are proven in-window (census tx peaks committed 0.727-0.863; replicate gated by the law), and under the law's own declared linear-transport premise the admissible energy span maps to the peak window \u2014 down = W_lo/CAL_TARGET = 0.35/0.88 = 0.39773, up = W_hi/CAL_TARGET = 0.92/0.88 = 1.04545; the pair therefore spans the ENTIRE admissible window [PENDING_OWNER_RULING per 2j \u2014 the offset basis is executor-drafted because A105's pre-committed source died with branch two]",
+     "pass_condition_declared_before_frames": "per family, per statistic the family contributes to the replicate (GRANULARITY_INDEX): the relative shift of the statistic between the calibrated reference and EACH offset frame sits below the relative effect bar over the noise-floor separation margin (0.25 / 2.0 = 0.125). A family whose control does not clear, or whose up-offset frame clips (the law's zero-clip gate refuses at the window edge), DOES NOT ENTER the replicate \u2014 its rows return to the declarer",
+     "seeds": [
+      700
+     ],
+     "samples": 64
+    },
+    "ct_lobe_completion": {
+     "frames_min": 6,
+     "frames_max": 6,
+     "purpose": "census-replicate lobe rows for the three P1 families",
+     "families": [
+      "POWDER_SATIN",
+      "PRESSED_POWDER",
+      "CREAM"
+     ],
+     "seeds": [
+      700,
+      701
+     ],
+     "samples": 64,
+     "instrument": "characterize_powder"
+    },
+    "p5_matte_zero_particle_controls": {
+     "frames_min": 2,
+     "frames_max": 2,
+     "purpose": "the glitter event ensemble's declared per-seed negative control; banking releasable only in the node these render in, control values stated, withdrawn if either exceeds CONTROL_MAX_EVENTS=5",
+     "family": "POWDER_MATTE",
+     "rig": "glitter particle rig",
+     "energy": 92152.58936199959,
+     "seeds": [
+      67,
+      68
+     ],
+     "samples": 64,
+     "status": "A107 APPROVED \u2014 declarer-approved values, non-collision verified (proof below); not a rule-based draw"
+    },
+    "p6_positive_controls": {
+     "frames_min": 8,
+     "frames_max": 8,
+     "purpose": "C3-class positive controls at each counted condition",
+     "composition": [
+      "warm MATTE + warm SATIN on the diffuse/texture condition (2)",
+      "warm PRESSED + warm MATTE on the diffuse/texture condition (2)",
+      "warm SATIN + warm CREAM on the diffuse/texture condition (2)",
+      "warm GLITTER + warm MATTE on the glitter-event condition (2)"
+     ],
+     "shade": "prov_dark_warm_sienna (0.38, 0.22, 0.14)",
+     "seed": 500,
+     "samples": 64,
+     "status": "A107 APPROVED AS STATED \u2014 the executor draft affirmed per 2p/2j; the bare '(8)' that forced the draft is owned by the declarer (A108)"
+    },
+    "floor_replicate_POWDER_MATTE": {
+     "frames_min": 6,
+     "frames_max": 6,
+     "purpose": "FLOOR-STATISTIC-REPLICATE frames only (analysis is the next node's): independent 6-seed ensemble for the SHEEN_REGION_RESPONSE max-pairwise spread (0.16569); identity moves per 2m on completion",
+     "family": "POWDER_MATTE",
+     "seeds": [
+      810,
+      811,
+      812,
+      813,
+      814,
+      815
+     ],
+     "samples": 64
+    },
+    "floor_replicate_POWDER_SATIN": {
+     "frames_min": 6,
+     "frames_max": 6,
+     "purpose": "FLOOR-STATISTIC-REPLICATE frames only (analysis is the next node's): independent 6-seed ensemble for the HIGHLIGHT_FWHM max-pairwise spread (0.04781); identity moves per 2m on completion",
+     "family": "POWDER_SATIN",
+     "seeds": [
+      810,
+      811,
+      812,
+      813,
+      814,
+      815
+     ],
+     "samples": 64
+    },
+    "floor_replicate_CREAM": {
+     "frames_min": 6,
+     "frames_max": 6,
+     "purpose": "FLOOR-STATISTIC-REPLICATE frames only (analysis is the next node's): independent 6-seed ensemble for the HIGHLIGHT_FWHM max-pairwise spread (0.03289); identity moves per 2m on completion",
+     "family": "CREAM",
+     "seeds": [
+      810,
+      811,
+      812,
+      813,
+      814,
+      815
+     ],
+     "samples": 64
+    }
+   },
+   "total_frames_min": 64,
+   "total_frames_max": 76,
+   "totals_recomputed_from_rows": "per A108/2p neither the granted 22/28 nor the prior 44 was carried: 4 recal lines (3-6 each) + 10 texture + 8 energy-control + 6 lobe + 2 P5 + 8 P6 + 18 floor = 64 min / 76 max; the range is bounded by the law's own 4-iteration cap, every executed iteration ledger-recorded and reconciled within the declared bound per 2l",
+   "internally_reconciled_2n_2p": {
+    "list_total_min": 64,
+    "stated_min": 64,
+    "list_total_max": 76,
+    "stated_max": 76,
+    "reconciler_run": true
+   },
+   "a107_non_collision_proof": {
+    "instrument": "this script, recorded verbatim in the record",
+    "p5_seeds": [
+     67,
+     68
+    ],
+    "declaration_seeds": [
+     500,
+     700,
+     701,
+     810,
+     811,
+     812,
+     813,
+     814,
+     815
+    ],
+    "controlled_ensemble_seeds": [
+     61,
+     62,
+     63,
+     64,
+     65,
+     66
+    ],
+    "legacy_hygiene_set": [
+     40,
+     81,
+     82,
+     83,
+     84,
+     99,
+     130,
+     131,
+     132,
+     133,
+     134,
+     135,
+     400,
+     500,
+     991,
+     992
+    ],
+    "collisions": [],
+    "verdict": "NON_COLLIDING"
+   },
+   "a98_gate": "every process of this queue OPENS with palette_queue_control.begin_traced_queue (deliberate first-act control stamped into the ledger; a process that cannot prove its trace live renders nothing) and its evidence is readable ONLY through read_trace_evidence, which REJECTS a control-less ledger",
+   "completion_law": "the runner ends with palette_spend_reconciler.reconcile(declared, executed) \u2014 raises both directions per 2l; a completion report without it is 1q-class",
+   "runner_status": "NOT WRITTEN \u2014 branch two stopped the node before render authority attached; built only after the owner rules on this amended declaration",
+   "render_authority": "NOT EXERCISED \u2014 the A111 conditional grant attached to branch one only; branch two fired, so the recalibration enumeration returns to the owner before any frame",
+   "pending_owner_rulings": [
+    "the recalibration enumeration itself (64-76 as enumerated)",
+    "the A104 control-offset basis (window-bound, executor-drafted after A105's tolerance source died with branch two; 2j \u2014 no effect until affirmed)"
+   ],
+   "superseded_per_2k_prior_declaration_at_44": {
+    "record_type": "combined_render_spend_declaration/1.0",
+    "node": "M6-RENDER-SPEND-DECLARATION (A101)",
+    "protocol_identity": "37b2b7aadcc186e5",
+    "declared_before_any_frame": true,
+    "a98_gate": "every process of this queue OPENS with palette_queue_control.begin_traced_queue (deliberate first-act control stamped into the ledger; a process that cannot prove its trace live renders nothing) and its evidence is readable ONLY through read_trace_evidence, which REJECTS a control-less ledger",
+    "completion_law": "the runner ends with palette_spend_reconciler.reconcile(declared, executed) \u2014 raises both directions per 2l; a completion report without it is 1q-class",
+    "runner_status": "NOT WRITTEN \u2014 built in the execution node after owner approval of this declaration, against these lines verbatim",
+    "lines": {
+     "ct_texture_POWDER_MATTE": {
+      "frames": 2,
+      "purpose": "census-replicate texture row (GRANULARITY et al.), single-subject",
+      "seeds": [
+       700,
+       701
+      ],
+      "samples": 64,
+      "energy": 2302449.9932754873,
+      "energy_provenance": "docs/roadmap/palt_m6/independence_sweeps/family_energies.json commit 63bb0a9",
+      "instrument": "single-subject render at the stated energy through the texture module's render+measure path; the law's SUBJECT_WINDOW and zero-clip gates enforced per frame \u2014 a frame outside them refuses to measure; NO pair re-render (the A91 P1 lesson: the hidden base-member cost is declared at zero because the single-subject path has no base member)"
+     },
+     "ct_texture_BAKED": {
+      "frames": 2,
+      "purpose": "census-replicate texture row (GRANULARITY et al.), single-subject",
+      "seeds": [
+       700,
+       701
+      ],
+      "samples": 64,
+      "energy": 426480.461434052,
+      "energy_provenance": "derived by palette_energy_recovery (a100_recoverability.json); EXACT_IFF_SINGLE_ITERATION_CONVERGENCE",
+      "instrument": "single-subject render at the stated energy through the texture module's render+measure path; the law's SUBJECT_WINDOW and zero-clip gates enforced per frame \u2014 a frame outside them refuses to measure; NO pair re-render (the A91 P1 lesson: the hidden base-member cost is declared at zero because the single-subject path has no base member)"
+     },
+     "ct_texture_MARBLED": {
+      "frames": 2,
+      "purpose": "census-replicate texture row (GRANULARITY et al.), single-subject",
+      "seeds": [
+       700,
+       701
+      ],
+      "samples": 64,
+      "energy": 2490018.321880993,
+      "energy_provenance": "derived by palette_energy_recovery (a100_recoverability.json); EXACT_IFF_SINGLE_ITERATION_CONVERGENCE",
+      "instrument": "single-subject render at the stated energy through the texture module's render+measure path; the law's SUBJECT_WINDOW and zero-clip gates enforced per frame \u2014 a frame outside them refuses to measure; NO pair re-render (the A91 P1 lesson: the hidden base-member cost is declared at zero because the single-subject path has no base member)"
+     },
+     "ct_texture_POWDER_METALLIC": {
+      "frames": 2,
+      "purpose": "census-replicate texture row (GRANULARITY et al.), single-subject",
+      "seeds": [
+       700,
+       701
+      ],
+      "samples": 64,
+      "energy": 98951.6815947448,
+      "energy_provenance": "derived by palette_energy_recovery (a100_recoverability.json); EXACT_IFF_SINGLE_ITERATION_CONVERGENCE",
+      "instrument": "single-subject render at the stated energy through the texture module's render+measure path; the law's SUBJECT_WINDOW and zero-clip gates enforced per frame \u2014 a frame outside them refuses to measure; NO pair re-render (the A91 P1 lesson: the hidden base-member cost is declared at zero because the single-subject path has no base member)"
+     },
+     "ct_texture_SHIMMER": {
+      "frames": 2,
+      "purpose": "census-replicate texture row (GRANULARITY et al.), single-subject",
+      "seeds": [
+       700,
+       701
+      ],
+      "samples": 64,
+      "energy": 212740.0676555797,
+      "energy_provenance": "derived by palette_energy_recovery (a100_recoverability.json); EXACT_IFF_SINGLE_ITERATION_CONVERGENCE",
+      "instrument": "single-subject render at the stated energy through the texture module's render+measure path; the law's SUBJECT_WINDOW and zero-clip gates enforced per frame \u2014 a frame outside them refuses to measure; NO pair re-render (the A91 P1 lesson: the hidden base-member cost is declared at zero because the single-subject path has no base member)"
+     },
+     "ct_lobe_completion": {
+      "frames": 6,
+      "purpose": "census-replicate lobe rows for the three P1 families",
+      "families": [
+       "POWDER_SATIN",
+       "PRESSED_POWDER",
+       "CREAM"
+      ],
+      "seeds": [
+       700,
+       701
+      ],
+      "samples": 64,
+      "instrument": "characterize_powder, 1 frame per family-seed"
+     },
+     "p5_matte_zero_particle_controls": {
+      "frames": 2,
+      "purpose": "the event ensemble's declared per-seed negative control \u2014 the two frames the 88-run never rendered; glitter event banking is releasable only in the node these render in (A103), control values stated, withdrawn if either exceeds CONTROL_MAX_EVENTS=5",
+      "family": "POWDER_MATTE",
+      "rig": "glitter particle rig",
+      "energy": 92152.58936199959,
+      "energy_provenance": "glitter_particle_rig_report.json energy_calibration.calibrated_energy (committed)",
+      "seeds": [
+       67,
+       68
+      ],
+      "samples": 64,
+      "drafting_note": "the original declaration said 'at new seeds' without naming them; seeds 67/68 are named HERE so the claim is checkable \u2014 owner strikes or confirms at review"
+     },
+     "p6_positive_controls": {
+      "frames": 8,
+      "purpose": "C3-class positive controls: a known-different warm cross-fixture at each counted condition, proving each counting statistic SENSITIVE at the condition where its reading counts (the C3 blindness lesson)",
+      "composition": [
+       "warm MATTE + warm SATIN on the diffuse/texture condition (2)",
+       "warm PRESSED + warm MATTE on the diffuse/texture condition (2)",
+       "warm SATIN + warm CREAM on the diffuse/texture condition (2)",
+       "warm GLITTER + warm MATTE on the glitter-event condition (2)"
+      ],
+      "shade": "prov_dark_warm_sienna (0.38, 0.22, 0.14)",
+      "seed": 500,
+      "samples": 64,
+      "drafting_note": "the manifest declared only 'C3-class warm/cool cross-fixtures (8)'; this composition is drafted by the executor and REQUIRES owner confirmation \u2014 it is the one line whose content is mine, not inherited"
+     },
+     "floor_replicate_POWDER_MATTE": {
+      "frames": 6,
+      "purpose": "FLOOR-STATISTIC-REPLICATE frames ONLY (analysis prohibited in this node): an independent 6-seed lobe ensemble replicating the SHEEN_REGION_RESPONSE max-pairwise spread whose single measurement (0.16569) the committed FAILs cleared against; on completion the estimate identity moves per 2m and every verdict citing the old identity goes stale by comparison",
+      "family": "POWDER_MATTE",
+      "seeds": [
+       810,
+       811,
+       812,
+       813,
+       814,
+       815
+      ],
+      "samples": 64,
+      "instrument": "characterize_powder; same statistic, same 15-pairing law"
+     },
+     "floor_replicate_POWDER_SATIN": {
+      "frames": 6,
+      "purpose": "FLOOR-STATISTIC-REPLICATE frames ONLY (analysis prohibited in this node): an independent 6-seed lobe ensemble replicating the HIGHLIGHT_FWHM max-pairwise spread whose single measurement (0.04781) the committed FAILs cleared against; on completion the estimate identity moves per 2m and every verdict citing the old identity goes stale by comparison",
+      "family": "POWDER_SATIN",
+      "seeds": [
+       810,
+       811,
+       812,
+       813,
+       814,
+       815
+      ],
+      "samples": 64,
+      "instrument": "characterize_powder; same statistic, same 15-pairing law"
+     },
+     "floor_replicate_CREAM": {
+      "frames": 6,
+      "purpose": "FLOOR-STATISTIC-REPLICATE frames ONLY (analysis prohibited in this node): an independent 6-seed lobe ensemble replicating the HIGHLIGHT_FWHM max-pairwise spread whose single measurement (0.03289) the committed FAILs cleared against; on completion the estimate identity moves per 2m and every verdict citing the old identity goes stale by comparison",
+      "family": "CREAM",
+      "seeds": [
+       810,
+       811,
+       812,
+       813,
+       814,
+       815
+      ],
+      "samples": 64,
+      "instrument": "characterize_powder; same statistic, same 15-pairing law"
+     }
+    },
+    "total_frames": 44,
+    "internally_reconciled_2n": {
+     "list_total_computed": 44,
+     "stated_number": 44,
+     "reconciler_run": true,
+     "note": "the number falls out of the enumeration; nothing was preferred"
+    },
+    "struck_and_returned_to_declarer": {
+     "glitter_texture_rows": "the granted list's 'P4 12 texture-side' included GLITTER x 2 seeds \u2014 but GLITTER was never in the N=8 texture census (a2_firing_result census_n8), so those 2 frames have nothing to replicate. The declared plan carries the 10 replicable frames; whether GLITTER receives a FIRST texture measurement is a new establishment decision that only the declarer can make (2n: the executor does not resolve a list-vs-reality divergence by picking)"
+    },
+    "calibration_ruling_options": {
+     "declared_plan_basis": "the four derived energies are admissible because (i) each is the committed solve re-computed exactly from committed inputs (a100_recoverability.json, EXACT_IFF_SINGLE_ITERATION_CONVERGENCE); (ii) the texture axes are normalisation-invariant, validated by the commissioned exposure-only control; (iii) every frame passes the law's own window/zero-clip gates or refuses to measure; (iv) every replicate row carries its energy inside its 2m estimate identity, so nothing silently compares across energies",
+     "pixel_verification_REMOVED": "verifying the derivation by re-rendering the committed cal frame requires the census frames' spec identity; a bounded mechanical search (two shade tokens x seeds 0-1199) failed to match the committed material_identity hashes, and render_identity does not hash the sample count \u2014 a pixel mismatch would be uninterpretable (wrong samples vs multi-iteration convergence), so this option is removed rather than half-run",
+     "full_recalibration_if_ruled": {
+      "when": "owner rules the derived energies inadmissible",
+      "SHIMMER": "probe 1 + base 1 + cal 1-4 = 3 min, 6 max",
+      "POWDER_METALLIC": "probe 1 + base 1 + cal 1-4 = 3 min, 6 max",
+      "BAKED": "probe 1 + base 1 + cal 1-4 = 3 min, 6 max",
+      "MARBLED": "probe 1 + base 1 + cal 1-4 = 3 min, 6 max",
+      "POWDER_MATTE": 0,
+      "GLITTER": 0,
+      "four_family_total": "12 min, 24 max \u2014 enumerated, not estimated; replaces the four derived energies; the 10 texture frames unchanged"
+     }
+    },
+    "seed_hygiene": "810-815 and 67/68 are fresh \u2014 prior sets: 40/81-84/99 (ensembles), 130-135 (flake), 61-66 (glitter events), 400 (texture base), 500 (warm fixtures), 700/701 (census replicate), 991/992 (ec replicates)",
+    "prohibitions_carried": [
+     "no frame renders before the owner reviews this declaration (step 6 stop)",
+     "floor-statistic analysis does NOT run in this node \u2014 frames only",
+     "glitter event-count not released here; releasable only with its controls' values",
+     "any divergence at execution raises and STOPS \u2014 growth is never absorbed",
+     "the frozen M5 instrument is untouched; .env unread"
+    ],
+    "owner_approved": false
+   },
+   "owner_approved": false
+  },
+  "owner_approved": true,
+  "owner_approval_source": "M6-RECALIBRATION-EXECUTE complete retransmission: A115 offsets approved, A107 P5/P6 approved, render authority granted in ordered-work step 4"
+ },
+ "owner_approved": true,
+ "owner_approval_source": "M6-CONTROL-COMPLETION A122 (per-family re-derivation ordered) + step 6 grant"
+}

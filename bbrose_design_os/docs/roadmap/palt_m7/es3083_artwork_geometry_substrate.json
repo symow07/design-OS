@@ -1,0 +1,197 @@
+{
+ "record_type": "es3083_artwork_geometry_substrate/1.0",
+ "created_at": "2026-08-14",
+ "purpose": "declared BEFORE any artwork is built on it: what the M7 artwork's geometry rests on, tier by tier, and the construction rule that binds later acts",
+ "MEASURED_VECTOR_FROM_SOURCE": {
+  "source": "ES3083_DIMENSION_FINDINGS.md — content-stream walk of materials/historical AI production designs/ES3083吸塑 展盒刀线.ai with the CTM tracked; 10,282 painting ops parsed",
+  "lid_artwork_mm": [
+   65.0,
+   65.0
+  ],
+  "back_label_printed_mm": [
+   49.5,
+   49.5
+  ],
+  "back_label_die_mm": [
+   55.0,
+   55.0
+  ],
+  "shade_name_label_mm": [
+   77.0,
+   16.0
+  ],
+  "shade_label_pitch_mm": [
+   83.0,
+   22.0
+  ],
+  "shade_label_sheet_mm": [
+   263.0,
+   190.0
+  ],
+  "shade_label_count": "24, in 3 columns x 8 rows, all BLANK",
+  "display_box_flat_mm": [
+   637.72,
+   668.48
+  ],
+  "display_box_principal_panel_mm": 275.0,
+  "display_box_front_panel_stack_mm": [
+   43.0,
+   35.0,
+   50.0,
+   35.0,
+   33.5
+  ],
+  "pantone_621C_lab": [
+   87.8431,
+   -7.0,
+   2.0
+  ],
+  "pantone_627C_lab": [
+   18.0392,
+   -14.0,
+   0.0
+  ]
+ },
+ "MEASURED_CALIPER_PHYSICAL_SAMPLE_2026_08_14": {
+  "source": "OWNER_BLOCKER_CLEARANCE.md amended C2 (Route C, CLOSED) — measured on the physical ES3083 sample with a DIGITAL CALIPER by BBrose's coworker, 2026-08-14; filled ES3083_measurement_sheet_ZH(2).docx via the owner's Cowork session. Ingested by caliper_ingestion.json.",
+  "tier": "MEASURED — digital caliper on the physical sample; distinct from MEASURED_VECTOR_FROM_SOURCE (the .ai content stream). Provenance caveats recorded honestly: measurer name/date absent from the sheet (tool confirmed by owner in-chat); item-1 re-measure 2.04 ruled a decimal-slip TYPO for 20.4 by the owner (coheres with width 20.30 and pitch 22.00).",
+  "pan_cavity_measured_mm": [20.40, 20.30, 3.40],
+  "pan_pitch_measured_mm": [22.00, 21.90],
+  "case_height_closed_mm": 15.60,
+  "lid_height_mm": 4.70,
+  "base_height_mm": 10.90,
+  "re_measures_mm": {
+   "pan_cavity": [2.04, 20.33, 3.38],
+   "pan_pitch": [21.90, 21.80],
+   "case_height_closed": 15.70,
+   "lid_height": 4.70,
+   "base_height": 11.00
+  },
+  "consistency_check": "4.70 + 10.90 = 15.60 = closed height — coherent (verified in-chat and re-verified here)",
+  "spread_note": "first-vs-re-measure spreads are <= 0.10 mm everywhere except the ruled typo — consistent with caliper repeatability on moulded plastic"
+ },
+ "DERIVED_BOUNDED_NOT_MEASURED": {
+  "case_footprint_mm": "~65 square (lid artwork + 275/4 slot corroboration) — SUPERSEDED IN PLACE 2026-08-14 (owed since 12b7fa6): CONTRADICTED by measured-pitch arithmetic from MEASURED_CALIPER_PHYSICAL_SAMPLE_2026_08_14 — a 4x3 pan grid at pitch 22.00 x 21.90 spans ~86.4 x 64.1 mm (pitch x (n-1) + cavity), so the sample case cannot be ~65 mm square; it is nearer ~90 x 65-68. WHAT THIS STRENGTHENS: the previously weakest reading of SEVENTY_SEVEN_MM_QUESTION ('the case is wider than the lid decal') — a 77 mm label CAN sit flat on a ~90 mm case. WHAT THIS DOES NOT TOUCH: the 65.00 x 65.00 lid artwork frame is a MEASURED artwork frame from the source vector, not a case footprint — C3 final and the T1 sheet are unaffected and stay locked. Code consumers of this bound: NONE (grep-verified at 12b7fa6-era); the in-file 77mm discussion and the root ES3083_DIMENSION_FINDINGS.md derivation are the only readers, both historical — flagged, not chased.",
+  "pan_cavity_mm": "~14 x 19 at ~15.25 x 20.3 pitch — SUPERSEDED IN PLACE 2026-08-14: CONTRADICTED by the caliper measurement (20.40 x 20.30 at 22.00 x 21.90). The estimate was wrong in both dimensions and both pitches; it was never citable as measured, and the discipline that kept it uncited is why nothing downstream consumed the wrong numbers. Kept as the record of what the bound said.",
+  "fill_depth_mm": "2.3–2.9 from net weight — still an estimate (calipers measured CAVITY depth 3.40, not powder fill); the engine's fill_depth_mm contract default 2.5 sits inside this band and under the measured cavity depth, no contradiction",
+  "rule": "usable, never citable as measured; D3 stands for what remains unmeasured"
+ },
+ "UNRESOLVED": {
+  "pan_cavity": "MEASURED 2026-08-14 — see MEASURED_CALIPER_PHYSICAL_SAMPLE_2026_08_14. D3 / ES3083_DIMENSIONS_UNREADABLE NARROWED, not discharged: the production sheet remains unreadable; the physical sample now carries measured cavity/pitch/heights; footprint, wall thicknesses, and everything else stay derived or unknown.",
+  "label_77_vs_case_65": "see SEVENTY_SEVEN_MM_QUESTION below"
+ },
+ "SEVENTY_SEVEN_MM_QUESTION": {
+  "status": "UNRESOLVED — BOUNDED, not picked",
+  "the_contradiction": "the shade-name label measures 77.00 mm wide; the case is ~65 mm. A 77 mm label cannot sit flat on a 65.00 mm lid, and for the case itself to reach 77 mm it would have to exceed the 68.75 mm display-box slot arithmetic AND leave the 65.00 measured lid decal 12 mm narrower than its own lid — both derived-tier arguments, so this is a STRONG bound, not proof",
+  "evidence_gathered": [
+   "the 24 labels are BLANK rectangles (unit u04 crop, dip0b) — no content ties them to a surface",
+   "the vendor photo shows rectangular white labels stuck on the shipping blister BAG — consistent with 'applied to something else in the pack', but the photo is a raster and nothing may be measured off it",
+   "the display box has five 275 mm-wide panels where a 77 mm label fits trivially",
+   "no annotation in the .ai (all type outlined, 0 text spans) names the labels' destination"
+  ],
+  "the_three_candidate_readings_all_stand": [
+   "not applied to the palette",
+   "applied to something else in the pack",
+   "the case is wider than the lid decal (weakest, per the bound above)"
+  ],
+  "what_DEPENDS_on_resolution": "LID-LAYOUT decisions only: whether shade names appear on-case, on-box, or on these labels. That is a later act's design decision and it may not assume a surface for the 77 mm labels until this resolves.",
+  "what_does_NOT_depend": "shade-name typography at label scale — the 77.00 x 16.00 frame is MEASURED regardless of destination surface, so specimen and label-typography work proceed; the 65.00 lid artwork frame and its typography zones are independent of the label question"
+ },
+ "VQ2_IMBUE_SCOPE_CHECK": {
+  "question": "does the VQ2 Imbue approval reach M7 lid artwork at all?",
+  "answer": "NO",
+  "evidence": "vq2_lettering_owner_approval.json scope field, verbatim: 'VQ-2 concept-front artwork only — not Gate-2, not manufacturability, not production authority'; approved_words exactly ['Rose','Damascena']; typeface Imbue; authoritative lettering VQ2-LF1-R1. It is a bottle-programme approval for two words on one concept front.",
+  "corollary_stated_so_nobody_reads_it_backwards": "'Damascena' appearing in approved_words does NOT put the shade name 'Damascena' under an approved-words regime — that list permits words on the VQ-2 front; it does not govern other deliverables. Nothing in VQ2 constrains or authorizes M7 artwork, and Imbue's approval there is not a brand-typeface ruling (established at 61ddd75 and re-checked here)."
+ },
+ "PARAMETRIC_CONSTRUCTION_RULE": {
+  "rule": "BINDING ON LATER ACTS: all M7 artwork is built PARAMETRIC on this substrate — every dimension consumed by reference to a named field of this record, never hard-coded — so that a caliper session (or the vendor's pan-cavity answer) RE-FLOWS the artwork rather than requiring it to be redrawn. An act that hard-codes a DERIVED_BOUNDED_NOT_MEASURED number has violated this rule even if the number later proves right.",
+  "where_recorded": "here (docs/roadmap/palt_m7/es3083_artwork_geometry_substrate.json), AND referenced from progress_tracker.json's M7 node (geometry_substrate field), which roadmap_status prints — so any act that reads the tracker's M7 entry is pointed at this record",
+  "binding_note": "this file is NOT under the palt_m6 record-digest manifest (its patterns cover palt_m6 only); its bindingness comes from the tracker reference and from this declaration, stated honestly rather than implied by a digest it does not have"
+ },
+ "LABEL_SHEET_CONSTRUCTION_2026_08_14": {
+  "verified_from_the_vendor_file": "24 label rects found at exactly 77.000 x 16.000 mm; column pitches 83.002/82.998, row pitches 21.999-22.003; sheet rect 263.000 x 190.000; margins 10.000 mm on ALL FOUR sides. The brief's arithmetic CONFIRMED against geometry, not against its own sum.",
+  "columns": 3,
+  "rows": 8,
+  "construction": "frames are constructed from pitch x count; margins are DERIVED as (sheet - grid extent)/2 and verified equal to the vendor file's 10.00 — never placed by hand",
+  "allocation_24_labels_12_shades": {
+   "status": "UNDETERMINED",
+   "extent": "the 24 labels are blank in the vendor file (unit u04 crop); no record in docs/ allocates labels to shades; nothing in the .ai annotates them (all type outlined, 0 text spans)",
+   "ASSUMED_FOR_THE_BUILD": "2 labels per shade: the twelve names fill rows 1-4 in grid order, then repeat in rows 5-8. Changing this assumption is ONE field here; the renderer reads it.",
+   "assumption_field": "duplicate_names_fill_second_half",
+   "duplicate_names_fill_second_half": true
+  },
+  "layout_parameters": {
+   "pad_x_mm": 3.0,
+   "pad_y_mm": 2.0,
+   "keyline_weight_pt": 0.25,
+   "note": "pads carry the specimen's fit rule; the keyline weight is a treatment variable, not vendor geometry"
+  },
+  "treatment_colours_sRGB_from_measured_Lab": {
+   "text_black": [
+    20,
+    22,
+    20
+   ],
+   "pantone_627C": [
+    17,
+    50,
+    44
+   ],
+   "pantone_621C": [
+    207,
+    224,
+    216
+   ],
+   "source": "ES3083_DIMENSION_FINDINGS.md measured Lab -> sRGB"
+  },
+  "die_cut_question": {
+   "status": "UNDETERMINED",
+   "extent_A564": "predicate: any die / cut / kiss-cut layer, spot colour, or distinguishing stroke on the 24 label rects; population: every drawing on the vendor page via get_drawings (stroke colour and width per path), plus the dip0b dieline review's line classes. RESULT: the label rects are stroked 'fs' in the same near-black (0.006,0.005,0.006) as the sheet boundary and general linework — NOT in the red (0.90,0.10,0.10) the display box uses for its cut/crease marks; the review counts CUT_LINE_CANDIDATE=1 (the box contour), registration ink unused, and MuPDF flattens layer structure. Nothing in the file distinguishes the label rects as die lines OR as printed keylines.",
+   "consequence": "the 6mm-gutter kiss-cut reading is a PLAUSIBLE INFERENCE (sticker sheets usually are; the vendor photo shows applied labels) but the file does not establish it — and if the near-black rects ARE the cut paths, T2's printed keyline would ride at the die edge and possibly duplicate a cut visual. Discharged by: the VENDOR's die specification, same discharger as the stock parameter.",
+   "treatment_decidability": {
+    "ALIGNMENT_T1_vs_T4": "DECIDABLE NOW — a per-label question (how the name sits in the 77x16 frame) under every die reading; free in ink and tolerance",
+    "KEYLINE_T4_vs_T2": "DOWNSTREAM of the vendor die specification",
+    "INK_T1_vs_T3": "DOWNSTREAM of the stock parameter (contrast against the actual ground; plate-sharing depends on where the labels are printed)",
+    "GROUND_T1_vs_T5": "not a choosable treatment — the stock question made visible; DOWNSTREAM of the vendor stock specification"
+   }
+  }
+ },
+ "TYPEFACE_SPEC_2026_08_14": {
+  "TWO_ROLES_BY_DESIGN_NOT_BY_CAVEAT": "this record's halves disagree ON PURPOSE (the D11 lesson applied in reverse): the face the owner chose and the face the artwork is set in are different until a licence is bought, and each is a named field.",
+  "TARGET_FACE": {
+   "family": "Adobe Caslon Pro",
+   "status": "CHOSEN_BY_OWNER_LICENCE_NOT_HELD",
+   "must_not_be_used": "in any deliverable, working file, or render — the materials/Fonts OTFs are fsType 8 with no grant on record and no CC subscription exists",
+   "becomes_SET_FACE_when": "a purchased desktop licence held by BBROSE is recorded with its evidence (invoice / licence text) in this record"
+  },
+  "SET_FACE": {
+   "family": "Crimson Text",
+   "style": "Regular",
+   "file": "materials/Fonts/CrimsonText-Regular.ttf",
+   "licence": "OFL, declared in-file (nameID14 scripts.sil.org/OFL, fsType 0)",
+   "style_constraint_carried_from_census": "ONLY Regular carries the in-file OFL declaration; Bold/Italic/SemiBold are fsType 0 but undeclared, standing by family provenance only. THE SHEET NEEDS ONLY REGULAR — the cleaner answer — so no fresh fetch is required for this artifact; any future use of another style fetches the family fresh from its source with its OFL.txt."
+  },
+  "TEST_FACE": {
+   "family": "Merriweather",
+   "style": "Bold",
+   "file": "materials/Fonts/Merriweather-Bold.ttf",
+   "licence": "OFL 1.1 by nameID13, which carries the VERBATIM declaration 'This Font Software is licensed under the SIL Open Font License, Version 1.1' with the scripts.sil.org/OFL URL inside the text — self-contained and affirmative. CORRECTED 2026-08-14: the file's OTHER licence field disagrees — nameID14 points to http://sorkintype.com/eula.html, an external URL this repository cannot resolve. Both fields are recorded; the determination rests on the embedded verbatim text, and the disagreement is D11 occurring INSIDE a font file. The previous line cited nameID13 alone, which is the one-sided reading this programme keeps catching.",
+   "role": "substitution PROOF only — renders the identical layout to prove the typeface parameter re-solves; not a deliverable candidate and not old-style"
+  },
+  "fit_rule_as_constraint": "for whatever face is set: the single largest size at which the longest name fits (label_w - 2*pad_x) AND ascent+descent fits (label_h - 2*pad_y), solved against the face's own metrics at render time. NO solved size is ever recorded as a constant.",
+  "no_outlining": "BINDING: no type is outlined in any working file or intermediate. Outlining is a step for a licensed final only. Rasterizing a PNG render is not outlining; converting text to paths in a vector file is."
+ },
+ "STOCK_PARAMETER_2026_08_14": {
+  "status": "UNDETERMINED",
+  "extent_A564": "predicate stock|paper|adhesive|laminat|varnish|gsm|coated|uncoated|self-adh (case-insensitive), population = every file under docs/roadmap/palt_m7/ (12 files) plus ES3083_DIMENSION_FINDINGS.md (193 lines), geometry-record name-collisions on 'substrate' excluded — ZERO mentions. Nothing in the programme declares the label stock.",
+  "ASSUMED_FOR_EVERY_RENDER_SO_FAR": "WHITE",
+  "assumption_field": "assumed_stock_srgb",
+  "assumed_stock_srgb": [
+   255,
+   255,
+   255
+  ],
+  "note": "every treatment judged before this field existed was judged against the white assumption without knowing it. The stock-question cell renders the T1 layout on a 621 C tinted ground so the assumption is VISIBLE; that cell shows a question, not an answer.",
+  "discharged_by": "the VENDOR's stock specification — the label sheet lives in the vendor's production file, so the stock it is printed on is a vendor fact first; the owner may then override it as a design decision. It is not derivable from any measurement."
+ }
+}

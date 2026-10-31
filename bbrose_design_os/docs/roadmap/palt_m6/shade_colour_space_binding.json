@@ -1,0 +1,34 @@
+{
+ "record_type": "shade_colour_space_binding/1.0",
+ "date": "2026-08-13",
+ "why_this_record_exists": "Under recommendation (e) the chain to a rendered frame is material_identity -> authority -> COLOUR_SPACE_BY_AUTHORITY -> shader input. `authority` is digested by material_identity(); the MAPPING was not. An undigested input to a value a frame depends on, editable with no identity move and no gate firing, is a quieter version of the bug being fixed. This record binds it.",
+ "COLOUR_SPACE_BY_AUTHORITY": {
+  "PROVISIONAL_VISUALIZATION_SHADE": "AUTHORED_COLOUR_SPACE_UNDECLARED",
+  "OWNER_CHOSEN_DESIGN_INTENT": "sRGB_IEC_61966_2_1"
+ },
+ "TRANSFORM_TO_SCENE_LINEAR": {
+  "sRGB_IEC_61966_2_1": true,
+  "AUTHORED_COLOUR_SPACE_UNDECLARED": false
+ },
+ "SHADE_AUTHORITIES": [
+  "PROVISIONAL_VISUALIZATION_SHADE",
+  "OWNER_CHOSEN_DESIGN_INTENT"
+ ],
+ "transfer_function": "IEC_61966_2_1_sRGB_EOTF",
+ "constants": {
+  "AUTHORED_SRGB": "sRGB_IEC_61966_2_1",
+  "AUTHORED_COLOUR_SPACE_UNDECLARED": "AUTHORED_COLOUR_SPACE_UNDECLARED",
+  "SCENE_LINEAR": "SCENE_LINEAR"
+ },
+ "code_identity": {
+  "module": "apps/pipeline/services/palette_powder_engine.py",
+  "sha256_16": "0f78def89de84905",
+  "recipe": "sha256 of the module file's bytes, first 16 hex"
+ },
+ "HOW_THE_BINDING_WORKS": {
+  "mechanism_used": "the existing record digest manifest (tools/record_integrity.py), which binds FILES under docs/roadmap/palt_m6/**/*.{json,jsonl} by sha256. It CANNOT bind a Python module-level constant directly — that is not something the mechanism can do, and no parallel mechanism was invented for it.",
+  "nearest_thing_it_can_do": "mirror the mapping into this digest-bound record and assert equality from the suite. The binding is then two-way: editing the MODULE fails ColourSpaceBindingTests.test_the_module_mapping_equals_the_bound_record; editing the RECORD moves the manifest digest, which the corpus stores in EXTENT_DIGESTS, so the gate refuses until it is regenerated and rebound and the diff is recorded.",
+  "what_this_does_NOT_achieve": "it is not a hash of the constant inside protocol_identity(). A determined edit to module AND record AND manifest AND EXTENT_DIGESTS in one commit still lands — as it must, because that is what a legitimate change looks like. What it removes is the SILENT drift: no single edit changes the shader input without something failing or a digest moving."
+ },
+ "not_transformed_and_why": "PROVISIONAL_VISUALIZATION_SHADE triples are passed through UNCHANGED. The reason is that NOTHING IS KNOWN about the space they were authored in, not that they are known to be scene-linear. Transforming them would silently change what every M6 measurement means."
+}

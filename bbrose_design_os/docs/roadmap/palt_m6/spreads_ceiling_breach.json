@@ -1,0 +1,202 @@
+{
+ "record_type": "m6_spreads_ceiling_breach/1.0",
+ "date": "2026-08-29",
+ "authority": "§BH4(a) and §BH4(b), owner-ruled and transcribed 2026-08-29 at OWNER_BLOCKER_CLEARANCE.md §BH4. §BH4(a): 'The spend ceiling of 80 was and is denominated in RENDERS. The declaration's own estimate (\"~54 renders\") is the unit context the bare 80 was written in; the counter's name does not re-denominate my ceiling. I am not choosing the reading that makes the past compliant.' §BH4(b): 'Record it as a ceiling breach finding with the honest numbers.'",
+ "THE_BREACH": {
+  "ceiling_in_renders": 80,
+  "renders_actually_executed": 101,
+  "over_by": 21,
+  "percent_of_cap": 126.2,
+  "what_the_ledger_reported": 66,
+  "what_the_ledger_appeared_to_leave": 14,
+  "the_gap_between_those_two_readings_is_the_defect": "66 against 80 reads as 14 renders of headroom remaining. The true figure was 21 renders past the cap. The counter did not fail to add up; it added up perfectly in an undeclared unit, which is why nothing caught it."
+ },
+ "COUNT_COMPUTED_AT_TRANSCRIPTION_TIME": {
+  "method": "§BH4(b) orders the exact count computed from the records themselves where identity-backed. Every number in this record is recomputed by the script that writes it and asserted before the file is opened for writing, so this record cannot be written if the tree stops matching it.",
+  "identity_backed_auditable_from_the_records": {
+   "per_record": {
+    "sc": 12,
+    "mvs_sheen": 12,
+    "pvm_sheen": 12,
+    "lobe": 24
+   },
+   "total": 60,
+   "disjoint": true,
+   "note": "60 distinct render_identity values, no value shared between records. These 60 are auditable: the identity is in the committed record."
+  },
+  "derivation_only_NOT_auditable": {
+   "raw_glitter.json": {
+    "render_identity_in_record": 0,
+    "renders": 22,
+    "source": "the record's own self-declared 'renders_this_phase'"
+   },
+   "raw_flake.json": {
+    "render_identity_in_record": 0,
+    "renders": 19,
+    "derivation": "18 member-measurements (SHIMMER 6 + POWDER_METALLIC 6 + GLITTER 6) + 1 mirror commissioning",
+    "the_mirrors_RESULT_is_in_the_record_but_its_COST_is_not": "raw_flake.json carries mirror_pattern_contrast = 0.264893, which is the measured output of a render the ledger never charged for. The record proves the render happened. Nothing in the spend path counted it."
+   },
+   "total": 41,
+   "the_owners_words": "'~41 renders (glitter + flake + the uncounted mirror) carry no render_identity and are countable only by derivation, not audit.' Confirmed exactly: 41."
+  },
+  "THE_MIRROR_IS_ONE_RENDER_NOT_FORTY_EIGHT": {
+   "why_it_was_open": "This was the single unresolved question when the stop was reported, and it decided whether the derived total was ~101 or ~148.",
+   "settled_by": "palette_characterization_protocol.measure_under is documented 'One measurement under one sub-rig', and its samples= argument is written into the renderer's own config as cfg['samples'] — it is the sample count INSIDE a single render, not a count of renders.",
+   "consequence": "the flake mirror commissioning contributes exactly 1."
+  },
+  "CORROBORATED_BY_AN_INDEPENDENT_INSTRUMENT": {
+   "the_first_instrument": "reading the driver's control flow",
+   "the_second_instrument": "counting rendered artifacts in the scratch tree",
+   "they_agree_without_adjustment": {
+    "var/m6_spreads_frames/flake_ensembles": "19 .exr = 3 families x 6 seeds + flake_mirror_reference.exr",
+    "var/m6_spreads_frames/glitter_event": "22 .exr = renders_this_phase 22"
+   },
+   "why_this_matters": "the derived 41 is not a guess reconciled against itself; two independent instruments produce the same number."
+  }
+ },
+ "THE_THREE_UNITS_SUMMED_INTO_ONE_INTEGER": {
+  "table": [
+   {
+    "phase": "sc",
+    "counted_as": "6 member-PAIRS",
+    "counted": 6,
+    "rendered": 12
+   },
+   {
+    "phase": "mvs_sheen",
+    "counted_as": "6 member-PAIRS",
+    "counted": 6,
+    "rendered": 12
+   },
+   {
+    "phase": "pvm_sheen",
+    "counted_as": "6 member-PAIRS",
+    "counted": 6,
+    "rendered": 12
+   },
+   {
+    "phase": "lobe",
+    "counted_as": "24 member-MEASUREMENTS (1:1)",
+    "counted": 24,
+    "rendered": 24
+   },
+   {
+    "phase": "glitter",
+    "counted_as": "6 trios",
+    "counted": 6,
+    "rendered": 22
+   },
+   {
+    "phase": "flake",
+    "counted_as": "18 members, mirror uncounted",
+    "counted": 18,
+    "rendered": 19
+   }
+  ],
+  "counted_total": 66,
+  "rendered_total": 101,
+  "both_reconcile_exactly": "6+6+6+24+6+18 = 66 and 12+12+12+24+22+19 = 101. The ledger was internally honest. Every individual increment is defensible against its own phase. The sum is meaningless because no two phases agree on what one unit is."
+ },
+ "THE_HAZARD_WAS_SEEN_AT_LOBE_AND_LEFT_UNFIXED_ELSEWHERE": {
+  "required_by": "§BH4(b), 'alongside the driver docstring evidence that the hazard was seen at lobe and left unfixed elsewhere'",
+  "site": "apps/pipeline/services/palette_m6_spreads_driver.py, run_lobe_ensemble_phase docstring",
+  "verbatim": "24 member-measurements counted (harder than the texture phases' per-pair unit — the ceiling cannot be snuck past).",
+  "what_it_proves": "The hazard was seen, named and reasoned about — at one phase. The author understood that the per-pair unit was the looser one, deliberately chose the stricter unit at lobe, and wrote down why. The defect is not ignorance.",
+  "the_actual_defect": "a hazard identified at one site was corrected only at that site, while the five other phases kept the loose unit and two of them invented further units still. The strictest phase in the campaign is the one that proves the problem was understood."
+ },
+ "THE_CLASS_QUESTION_MEASURED_AND_DELIBERATELY_NOT_DECIDED": {
+  "what_BH4b_said": "'file this under the unit-mismatch defect class (or register the class if it does not exist)'",
+  "THE_FIRST_ANSWER_WAS_WRONG_AND_IS_WITHDRAWN": {
+   "what_was_searched": "grep for UNIT_MISMATCH / unit_mismatch across *.py, *.json and *.md from the git root, and for the ordinal keys class_twenty, class_twenty_one, class_twenty_two in the records",
+   "what_was_concluded": "that no class covers this and, worse, that 'THERE IS NO MASTER REGISTER OF THE NUMBERED CLASSES' — that the taxonomy was scattered across the finding records that minted it",
+   "what_is_actually_true": "there is a canonical register. DEFECT_CLASS_REGISTER, apps/pipeline/services/palette_powder_protocol.py:1445, TWENTY-THREE classes, declared APPEND ONLY ('a correction is a new entry citing the old'), and bound into protocol_identity() as the 'defect_class_register' key of its payload — which is the strongest protection any artifact in this system has.",
+   "why_the_search_missed_it": "the register is keyed by NAME and this executor searched for NUMBERS. Every individual grep was correctly executed and every one of them was looking for the wrong shape. This is TWO_ROOTS_MEASUREMENT's lesson in a third costume: not a wrong path, not a narrow root, but a wrong KEY — and it returned the same clean, confident, false result. 'I found nothing' is not a finding until the shape of the search is stated with it.",
+   "how_it_was_caught": "by reading protocol_identity()'s payload while performing A391's compute step — 'defect_class_register' is one of its nine keys. The chain discipline caught the error, not suspicion. The false claim was on disk in this very record and had not yet been committed."
+  },
+  "THE_ORDINALS_IN_THE_RECORDS_DO_NOT_MATCH_THE_REGISTER": {
+   "measured": "palt_m6_matte_frames_stop.json cites 'thirteen_CAPTURE_WITHOUT_RETENTION', but CAPTURE_WITHOUT_RETENTION is the 21st entry of DEFECT_CLASS_REGISTER; that same record's own 'class_twenty_one' (a shadowed __post_init__) is GUARD_SHADOWED_BY_A_LATER_DEFINITION, the 14th. palt_m4c8's 'class_twenty' is MEASURE_CONFOUNDED_BY_A_PROCESS_VARIABLE, the 15th, and its 'sixteen' is MEASURE_INSENSITIVE_TO_ITS_SUBJECT, the 19th.",
+   "conclusion": "two numbering schemes are in use and they disagree. The register carries no ordinal field; its numbers are positional only.",
+   "consequence_for_this_record": "NO ORDINAL IS ASSIGNED ANYWHERE BELOW. Classes are cited BY NAME, which is unambiguous under both schemes. An earlier draft of this record called the proposed class 'class_twenty_three'; that number was doubly wrong — the register already holds 23 entries, and the ordinal would not have resolved under the records' own scheme.",
+   "this_is_itself_an_instance_of_DANGLING_AUTHORITY_REFERENCE": "a record citing a class by ordinal identifier that does not resolve to the same class in the canonical register. Recorded, not fixed: renumbering existing records is not this commit's act."
+  },
+  "WHAT_THE_COUNTER_DEFECT_IS_FILED_AS": {
+   "class": "MEASURE_CONFOUNDED_BY_A_PROCESS_VARIABLE",
+   "the_registers_own_words": "a measure responds to how the record was produced as well as to what it records, so a change in process is indistinguishable from a change in subject",
+   "the_fit_is_close_to_verbatim": "the spend counter responds to WHICH PHASE produced the record as well as to how many renders were spent. An increment of 6 means twelve renders in a texture phase and twenty-two in the glitter phase. A change in process is exactly indistinguishable from a change in subject, which is the definition."
+  },
+  "WHY_A_NEW_CLASS_IS_NOT_MINTED_HERE": {
+   "A392_near_duplicate_discipline_is_project_law_and_was_not_waived": "the register's own SILENT_EXTENT_LOSS entry files a second, differently-located instance under the SAME class, citing 'A392's register discipline against near-duplicates'. The register also demands distinctness_proved_both_directions.",
+   "the_distinctness_does_NOT_prove_both_directions_on_the_evidence": {
+    "caught_by_15_missed_by_a_unit_class": "the DOUBLED replay case — a measure shifting with production process where no ceiling and no unit comparison exist at all",
+    "caught_by_a_unit_class_missed_by_15": "a PERFECTLY unconfounded counter — say one counting renders 1:1, as the lobe phase actually does — compared against a ceiling denominated in cost or in hours. Class 15 finds nothing there and the comparison is still invalid.",
+    "AND_THAT_SEPARATING_CASE_IS_HYPOTHETICAL": "it does not occur in this campaign. Here the counter IS confounded, so class 15 has a real first_instance and the proposed class would be minted on an imagined one. The register requires first_instance and second_instance fields; this executor cannot fill them honestly."
+   },
+   "the_act_is_also_expensive_and_hard_to_reverse": "DEFECT_CLASS_REGISTER is APPEND ONLY and sits inside protocol_identity()'s payload. Minting moves the protocol identity and cannot be undone by deletion, only by a further appended correction.",
+   "consistency_with_this_session": "one commit earlier this executor declined to mint GATE_AND_COMMIT_MEASURE_DIFFERENT_OBJECTS for a defect it had just caused, on the grounds that minting is a deliberate act under §AC. Minting a different class unilaterally in the very next commit would be incoherent.",
+   "SO_IT_IS_PUT_TO_THE_OWNER": "§BH4(b)'s conditional — 'if it does not exist' — turned out to hinge on a substantive judgment rather than the name search that was actually performed. The name does not exist; a class that covers the instance does. The owner decides whether the unit dimension deserves its own entry or whether this campaign is a second instance of MEASURE_CONFOUNDED_BY_A_PROCESS_VARIABLE. Either way the breach, the numbers and the filing above stand.",
+   "if_the_owner_rules_MINT_the_proposed_entry_is": {
+    "name": "UNIT_MISMATCH",
+    "definition": "a counter that is internally honest in a unit nobody declared, measured against a ceiling denominated in a different unit. Every individual increment is defensible. The sum is meaningless. No arithmetic check can catch it, because the arithmetic is correct; only naming the unit catches it.",
+    "checked_against_the_real_register_by_name_not_by_number": {
+     "against_MEASURE_CONFOUNDED_BY_A_PROCESS_VARIABLE": "the nearest neighbour and the reason this is NOT minted unilaterally — see the both-directions analysis above",
+     "against_MEASURE_INSENSITIVE_TO_ITS_SUBJECT": "the spend counter is not insensitive; render one more pair and it moves. It is a live measure of a quantity nobody denominated.",
+     "against_TRANSCRIBED_PROSE_NUMBER_DIVERGING_FROM_COMPUTED_FIELD": "the 66 is not prose drifting from a computed field; it IS the computed field. The divergence is with the ceiling's unit.",
+     "against_EXTENT_OF_COMPARISON_EXCEEDING_EXTENT_OF_SUBJECT": "the extents match — one campaign, one counter, one ceiling. The UNITS differ, which no extent check inspects.",
+     "against_GUARD_SHADOWED_BY_A_LATER_DEFINITION": "the ceiling guard EXECUTED on all six phases — 'if _spent() + n > CEILING: raise' ran every time and refused nothing, because it compared a number in one unit against a cap in another. An executed guard that is wrong anyway. This is the sharpest contrast in the register: coverage tooling finds a shadowed guard and nothing finds this one.",
+     "against_DANGLING_AUTHORITY_REFERENCE": "every citation here resolves — ledger, declaration and driver all agree with each other, which is precisely why the disagreement with reality survived review.",
+     "NOTE_ON_COMPLETENESS": "the six comparisons above are the SIX register entries this executor judged nearest. They are register entries and were each verified to be, by membership test, not by recollection. The seventh comparison a reader will expect — TWO_ROOTS_MEASUREMENT — is deliberately NOT in this list, because it is not in the register. See THE_REGISTER_IS_NOT_A_COMPLETE_CENSUS below."
+    },
+    "first_instance_if_minted": "this campaign: 66 counted in three units against a ceiling of 80 renders, 101 actually rendered",
+    "second_instance": "NONE KNOWN — and the register asks for one."
+   }
+  },
+  "THE_REGISTER_IS_NOT_A_COMPLETE_CENSUS_OF_THE_CLASSES_IN_USE": {
+   "why_this_sits_inside_the_minting_question": "because it changes what a refusal to mint actually means. If the register were a complete census, 'the name is not in it' would be strong evidence the class is new. It is not a complete census, so that inference does not hold, and the owner should have the measurement before deciding.",
+   "the_measurement": "TWO_ROOTS_MEASUREMENT — the class this arc cites more than any other, the one that has now fired THREE times in three different costumes and once inside this very record — HAS NO ENTRY IN DEFECT_CLASS_REGISTER. Membership tested directly, not recalled: 'TWO_ROOTS_MEASUREMENT' in DEFECT_CLASS_REGISTER is False, against 23 entries.",
+   "where_it_actually_lives": "in prose, in four places, none of them a registration: progress_tracker.json at meta.color_governance_record_correction_2026_08_28 — ONE narrative field, 'the_class', inside a correction note about a different node; OWNER_BLOCKER_CLEARANCE.md (2 mentions); test_characterization_protocol.py (1, a comment, not an assertion); and palette_powder_protocol.py (1) — which is the REGISTER'S OWN HOST FILE, where the class is named in a comment roughly five hundred lines from the register that omits it.",
+   "which_corrects_a_scope_reading_made_one_commit_ago": "§BH4(k)(2), written at commit O, states that 'the one prior defect-class registration (TWO_ROOTS_MEASUREMENT) lives in progress_tracker.json under meta' and reasons from there that UNIT_MISMATCH should be registered alongside it to avoid a registry split across two locations. BOTH HALVES OF THAT ARE NOW MEASURED FALSE. That tracker field is a CITATION, not a registration — one string inside an unrelated correction note, with no definition, no first_instance, no commit and no date, which is what every real entry carries. And the registry is not split in two: there is exactly ONE registry, and this class was never entered in it. The reading is superseded here rather than deleted, per §AZ0(u).",
+   "what_this_is_an_instance_of": "DANGLING_AUTHORITY_REFERENCE, in its strongest form yet found: not a citation resolving to the wrong entry, but a class name used as authority across four files, by both owner and executor, resolving to NO entry at all.",
+   "NOT_FIXED_HERE_AND_WHY": "registering TWO_ROOTS_MEASUREMENT is minting, and minting is the exact act this section declines to perform unilaterally. Correcting §BH4(k)(2) in the register is a §BC act on the owner's own transcription, not a record write. Both are raised, neither is taken.",
+   "and_the_honest_reading_of_how_this_was_found": "it was NOT found by an audit of the register. It was found while preparing the NEXT commit, by checking one citation this record makes — after the gate for this commit had already been started and was running green. The run was stopped and the record corrected. The parallel is exact and unflattering: a record whose subject is a false claim about the register was itself about to ship a false claim about the register, and no instrument in the sanctioned path reads either."
+  }
+ },
+ "AN_INSTANCE_OF_OBSERVATION_WINDOW_NARROWER_THAN_EVENT_FOUND_WHILE_COUNTING": {
+  "class": "OBSERVATION_WINDOW_NARROWER_THAN_EVENT",
+  "the_registers_own_words": "the observation is read through a slice narrower than the event, so part of the event never enters the record and is unrecoverable",
+  "why_that_class_and_not_CAPTURE_WITHOUT_RETENTION": "an earlier draft of this record filed this under CAPTURE_WITHOUT_RETENTION from memory. Reading both definitions in the register settled it against that: nothing here fails to be retained after capture — the ROW-BUILDER, which is the observation, reads a slice (member, seed, axes, subject_peak) narrower than the render event, which also carries a render_identity. The identity never enters the record at all. That is this class close to verbatim.",
+  "why_it_is_recorded_here": "it materially cheapens the build the owner queued at §BH4(d), and he should price that build knowing it.",
+  "the_finding": "render_identity is NOT missing from glitter and flake. It is computed for every one of the 101 renders and then discarded by two of the six phases.",
+  "mechanism": {
+   "computed_for_every_render": "palette_characterization_protocol.py:386, sha256(label + lighting_contract_identity)[:16], inside measure_under — which every phase reaches, flake and glitter included",
+   "retained_by_the_texture_phases": "palette_m6_spreads_driver.py:223, 'render_identity': d.get('render_identity')",
+   "discarded_by_flake_and_glitter": "their row-builders assemble member/seed/axes/subject_peak and let it go"
+  },
+  "consequence_for_the_queued_build": "§BH4(d)'s 'render_identity emitted by every phase' is RETENTION, not instrumentation. The value already exists at the point where the row is built.",
+  "AND_THE_41_HAVE_A_CLOCK_ON_THEM": {
+   "var_is_scratch": "var/ is git-ignored (.gitignore:66), holds zero tracked files, and the driver itself marks it NOT_A_RECORD (A403)",
+   "the_inverse_situation": "the four identity-backed phases have NO frames left on disk — already cleaned — and remain fully auditable, because their identities are in the records. Flake and glitter are the exact inverse: artifacts present, identities absent.",
+   "the_clock": "the moment var/ is cleaned, the honest count of those 41 renders stops being recoverable by any means. The owner's 'countable only by derivation, not audit' is exactly right, and it is not stable."
+  }
+ },
+ "WHAT_THIS_RECORD_DELIBERATELY_DOES_NOT_MOVE": {
+  "the_measurements_STAND": "§BH4(b): 'The measurements themselves STAND — the adjudications already ruled on them and a breach record does not un-measure anything.' No raw record is touched. The six adjudications are not reopened.",
+  "the_ledgers_66_IS_NOT_CORRECTED_HERE": {
+   "it_is_measurably_wrong": "the true figure in the ruled unit is 101",
+   "why_it_is_left_alone": "re-denominating that number in renders IS §BH4(d), which the owner made a BUILD, gave its own commit(s), and said explicitly must never happen inside a record commit (§AC). Correcting the 66 while writing the breach record would do the build's work inside the record act, under cover of the record act.",
+   "so_this_record_states_both_numbers_side_by_side_and_changes_neither": true
+  },
+  "bars": "§BH4(e): no adjudication verdict, no established/not-established row, no bar value. The three unestablished pairs stay unestablished.",
+  "owner_acceptance": "untouched — standing stop condition.",
+  "the_sixteen_owner_approved_false_records": "§BH4(e): 'stay as they are — §BH2 named two and I am not extending it here by implication.' Not touched.",
+  "campaign_spend_closure": "§BH4(c) is a separate act on the declaration and is NOT performed in this commit."
+ },
+ "A_SCOPE_READING_FROM_THE_TRANSCRIPTION_IS_SUPERSEDED_HERE": {
+  "per": "§AZ0(u) — the superseded version stays readable beside its correction.",
+  "what_the_transcription_said": "OWNER_BLOCKER_CLEARANCE.md §BH4(k) reading 2 stated that UNIT_MISMATCH would be registered in progress_tracker.json under meta, following TWO_ROOTS_MEASUREMENT, 'for the plain reason that a class registry split across two locations is not a registry', and flagged that this would make commit P a two-file commit.",
+  "what_measurement_then_showed": "the formal mint practice ('minted': true, with a two-way differential against neighbouring classes) exists three times, at classes 20, 21 and 22, and every one of them lives inside the palt_m6 finding record that discovered the defect — which is exactly where this record lives. The tracker's TWO_ROOTS_MEASUREMENT entry is a named registration, a weaker and different practice.",
+  "the_correction": "the class is minted HERE, in the finding record, per the established practice. The tracker is NOT touched.",
+  "but_the_commit_is_still_two_files_for_a_different_and_mandatory_reason": "all three precedent finding records (palt_m6_matte_frames_stop, palt_m6_frame_inventory, palt_m4c8_act_without_a_route) are registered in record_digest_manifest.json, so this new record must be too. That is A391, not a scope choice: the manifest is regenerated by tools/record_integrity.py --regenerate, whose survey() auto-discovers the file. The transcription predicted two files for a discretionary reason that turned out to be wrong, and it is two files anyway for a required reason that was not yet measured. The prediction was right by accident, which is not the same as being right.",
+  "this_converges_on_the_reversal_that_was_pre_flagged": "the transcription had already written 'If the owner wants the class confined to the finding record, that is one field deleted.' Measurement reached that reversal before implementation did, rather than after — which is the entire purpose of naming a scope reading instead of performing it silently."
+ },
+ "owner_approved": false
+}

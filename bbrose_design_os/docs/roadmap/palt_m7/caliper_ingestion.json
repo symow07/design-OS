@@ -1,0 +1,29 @@
+{
+ "record_type": "caliper_ingestion/1.0",
+ "created_at": "2026-08-14",
+ "ingests": "OWNER_BLOCKER_CLEARANCE.md amended C2 — Route C CLOSED, eight measurements supplied 2026-08-14",
+ "tier": "MEASURED (digital caliper on the physical ES3083 sample)",
+ "values_mm": {
+  "pan_cavity": {"length": 20.40, "width": 20.30, "depth": 3.40},
+  "pan_pitch": {"horizontal": 22.00, "vertical": 21.90},
+  "case_heights": {"closed": 15.60, "lid": 4.70, "base": 10.90}
+ },
+ "provenance_recorded_honestly": {
+  "measurer": "BBrose's coworker — name and date NOT recorded on the sheet; the owner confirmed the tool (digital caliper) in-chat",
+  "source_document": "filled ES3083_measurement_sheet_ZH(2).docx, uploaded to the owner's Cowork session — the blank AR/ZH template files at the repository root are the empty forms this data came from; nothing further to ingest from them",
+  "source_document_CORRECTED_2026_08_24": "The sentence above is quoted rather than replaced, on this file's own SUPERSEDED-IN-PLACE discipline. Its final clause — 'the blank AR/ZH template files at the repository root are the empty forms this data came from; nothing further to ingest from them' — was WRONG about what the root held and therefore wrong about what was left to ingest. A FILLED sheet was there the whole time: ES3083_measurement_sheet_ZH_FILLED.docx, 13,603 bytes, sha256 414b91e3052a687a80ac719e1973be4865e8d358b4c3375fc7383f1c93c4f993, mode 0400. MEASURED 2026-08-24 by reading word/document.xml directly: it carries ALL EIGHT items in BOTH columns — 1) 20.4/2.04, 2) 20.3/20.33, 3) 3.4/3.38, 4) 22/21.9, 5) 21.9/21.8, 6) 15.6/15.7, 7) 4.7/4.7, 8) 10.9/11 — not a partial. Every value_mm in this record is the FIRST column of that sheet, and the name/date/tool line at its foot is blank, which is the direct corroboration of the 'measurer' note above rather than a second-hand recollection of it. WHAT WAS RE-VERIFIED AGAINST IT, not merely restated: 'all first-vs-re-measure spreads <= 0.10 mm except the ruled typo' is TRUE of the sheet (0.03, 0.02, 0.10, 0.10, 0.10, 0.00, 0.10), and item 1's 2.04 is the ruled decimal slip already recorded above — checked, not re-opened. AND THE NAMED SOURCE IS NOT ON DISK: 'ES3083_measurement_sheet_ZH(2).docx' exists NOWHERE in the working tree — searched across both roots 2026-08-24. So this record's source_document pointed at a filename that is not present, while the complete filled sheet sat under a different name, unnamed by any tracked file, at the repository root. The provenance was not merely stale; it was unresolvable. WHAT IS NOT CLAIMED: whether the root file IS the Cowork upload renamed or a copy of it cannot be determined from here, and is not asserted — what IS asserted is that its eight readings are the eight this record ingests. WHY IT WAS INVISIBLE: it sat UNTRACKED at the repository root from 2026-08-14 until 2026-08-24, so every directory-scoped search over docs/ and apps/ excluded it by construction — D13's exact signature (open_defect_inventory.md), firing a third time on the record that names the file. It was committed 2026-08-24 with the other 21 root files on the owner's explicit instruction; the primary evidence for this record is now inside the repository for the first time. The AR sheet is confirmed blank (its only numeral is the '12.35' worked example in the instructions).",
+  "item_1_typo_ruling": "re-measure 2.04 ruled a decimal-slip TYPO for 20.4 BY THE OWNER — recorded as a ruling, not silently corrected; it coheres with width 20.30 and pitch 22.00",
+  "consistency": "4.70 + 10.90 = 15.60 = closed height, verified",
+  "repeatability": "all first-vs-re-measure spreads <= 0.10 mm except the ruled typo"
+ },
+ "substitution_performed": "es3083_artwork_geometry_substrate.json gains MEASURED_CALIPER_PHYSICAL_SAMPLE_2026_08_14 (named fields per the PARAMETRIC_CONSTRUCTION_RULE); the DERIVED pan-cavity estimate (~14 x 19 at ~15.25 x 20.3) is SUPERSEDED IN PLACE as CONTRADICTED — wrong in both dimensions and both pitches; its never-citable discipline is what kept the wrong numbers out of every downstream artifact",
+ "blocker_consequence": "ES3083_DIMENSIONS_UNREADABLE is NARROWED, not discharged: the production sheet still carries no readable mm value, but the physical sample now has measured cavity, pitch, and heights. PALT-P1B provisional design defaults are UNCHANGED — re-dimensioning P1B against the measured sample is an owner-authorized design act, not a side effect of ingestion (PALT_P1_FINAL_DIMENSIONS stays NOT_APPROVED).",
+ "reflow_result": {
+  "code_consumers_of_these_fields": "ZERO today — verified by grep over apps/, blender_scripts/, tools/, docs/roadmap/palt_m7/: the artwork renderers consume lid/label fields only; the powder engine's fill_depth_mm 2.5 is a family-contract default (its own provenance), sits inside the substrate's 2.3-2.9 estimate and under the measured cavity depth 3.40 — no contradiction",
+  "artwork_unchanged_proof": "finalize_lid_C3.py re-run after the substrate edit; C3 final SVG and PNG byte-identical (sha256 compared) — the caliper substitution moved no artwork parameter",
+  "now_unblocked_for_future_acts": [
+   "product-specific tray/cavity context renders (M7F held these at CLASS_TYPICAL_NOT_PRODUCT_SPECIFIC until numbers arrived — the numbers have arrived; producing such a render is a future act, not performed here)",
+   "M6 closed-clearance re-derivation against measured sample heights (currently CLEARS_WORST_CASE_5.35MM_DOUBLE_PROVISIONAL — an M6 act under its own rules, flagged not executed)"
+  ]
+ }
+}

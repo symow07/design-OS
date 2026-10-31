@@ -1,0 +1,10 @@
+== BEFORE (hardcoded 30 ml / 1.01 fl. oz.)
+   NET CONTENT -> {"characters_supplied": 31, "cost": {"5.0": {"line_height_mm": 2.1167, "lines": 2, "measured": true, "mm": 4.233}, "6.0": {"line_height_mm": 2.54, "lines": 2, "measured": true, "mm": 5.08}}, "heading": "NET CONTENT", "index": 6, "mandatory_state": "SOURCE_REQUIRED"}
+   totals: {}
+   fits: {}
+== AFTER  (CONTENT_VERIFICATION_REQUIRED)
+   NET CONTENT -> {"characters_supplied": 40, "cost": {"5.0": {"line_height_mm": 2.1167, "lines": 2, "measured": true, "mm": 4.233}, "6.0": {"line_height_mm": 2.54, "lines": 2, "measured": true, "mm": 5.08}}, "heading": "NET CONTENT", "index": 6, "mandatory_state": "SOURCE_REQUIRED"}
+   totals: {}
+   fits: {}
+
+codes after: ['CONTENT_VERIFICATION_REQUIRED:description', 'CONTENT_VERIFICATION_REQUIRED:ingredients', 'CONTENT_VERIFICATION_REQUIRED:directions', 'CONTENT_VERIFICATION_REQUIRED:warnings', 'CONTENT_VERIFICATION_REQUIRED:manufacturer', 'CONTENT_VERIFICATION_REQUIRED:net_content']

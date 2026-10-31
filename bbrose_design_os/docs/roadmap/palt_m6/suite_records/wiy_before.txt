@@ -1,0 +1,316 @@
+........................................................................ [  9%]
+........................................................................ [ 18%]
+........................................................................ [ 27%]
+........................................................................ [ 36%]
+........................................................................ [ 45%]
+........................................................................ [ 54%]
+........................................................................ [ 63%]
+.........FFFFFF......................................................... [ 72%]
+...................FF........F..........F.F..............FF............. [ 81%]
+........................................................................ [ 90%]
+........................................................................ [ 99%]
+........                                                                 [100%]
+=================================== FAILURES ===================================
+_ TestTheGuardCatchesTheDefectItWasWrittenFor.test_the_defect_and_the_fix_place_the_two_lines_in_the_same_spot[9.0] _
+
+self = <apps.ire.tests.test_wip_leading_units.TestTheGuardCatchesTheDefectItWasWrittenFor object at 0x10c1ee650>
+name_min = 9.0
+
+    @pytest.mark.parametrize("name_min", [HERO_NAME_MIN, FLAT_NAME_MIN])
+    def test_the_defect_and_the_fix_place_the_two_lines_in_the_same_spot(
+            self, name_min):
+        """The zero-effect claim, in the one form that cannot go stale.
+    
+        Comparing against `git show HEAD:` stops meaning anything the moment
+        WI-P is committed. Comparing against the defect kept in this file
+        means the same thing forever: the offset was corrected in units and
+        left alone in size.
+    
+        The two are not bit-identical and this does not pretend they are —
+        3 ULP at 9.0 pt, 0 ULP at 6.5 pt, from multiplying three floats in a
+        different order. 3 ULP of a 9.54 mm offset is 5.3e-15 mm.
+        """
+        defect = leading_mm(self._defective, name_min)
+        fixed = leading_mm(_front_typography, name_min)
+>       assert abs(fixed - defect) <= 4 * math.ulp(defect), (defect, fixed)
+E       AssertionError: (9.540000000000006, 6.349999999999994)
+E       assert 3.190000000000012 <= (4 * 1.7763568394002505e-15)
+E        +  where 3.190000000000012 = abs((6.349999999999994 - 9.540000000000006))
+E        +  and   1.7763568394002505e-15 = <built-in function ulp>(9.540000000000006)
+E        +    where <built-in function ulp> = math.ulp
+
+apps/ire/tests/test_wip_leading_units.py:280: AssertionError
+_ TestTheGuardCatchesTheDefectItWasWrittenFor.test_the_defect_and_the_fix_place_the_two_lines_in_the_same_spot[6.5] _
+
+self = <apps.ire.tests.test_wip_leading_units.TestTheGuardCatchesTheDefectItWasWrittenFor object at 0x10c1ee790>
+name_min = 6.5
+
+    @pytest.mark.parametrize("name_min", [HERO_NAME_MIN, FLAT_NAME_MIN])
+    def test_the_defect_and_the_fix_place_the_two_lines_in_the_same_spot(
+            self, name_min):
+        """The zero-effect claim, in the one form that cannot go stale.
+    
+        Comparing against `git show HEAD:` stops meaning anything the moment
+        WI-P is committed. Comparing against the defect kept in this file
+        means the same thing forever: the offset was corrected in units and
+        left alone in size.
+    
+        The two are not bit-identical and this does not pretend they are —
+        3 ULP at 9.0 pt, 0 ULP at 6.5 pt, from multiplying three floats in a
+        different order. 3 ULP of a 9.54 mm offset is 5.3e-15 mm.
+        """
+        defect = leading_mm(self._defective, name_min)
+        fixed = leading_mm(_front_typography, name_min)
+>       assert abs(fixed - defect) <= 4 * math.ulp(defect), (defect, fixed)
+E       AssertionError: (6.890000000000001, 4.586111111111109)
+E       assert 2.303888888888892 <= (4 * 8.881784197001252e-16)
+E        +  where 2.303888888888892 = abs((4.586111111111109 - 6.890000000000001))
+E        +  and   8.881784197001252e-16 = <built-in function ulp>(6.890000000000001)
+E        +    where <built-in function ulp> = math.ulp
+
+apps/ire/tests/test_wip_leading_units.py:280: AssertionError
+_ TestTheEmRatioIsNowTheOwnersQuestion.test_the_leading_the_artwork_has_is_three_em_not_one _
+
+self = <apps.ire.tests.test_wip_leading_units.TestTheEmRatioIsNowTheOwnersQuestion object at 0x10c1eec10>
+
+    def test_the_leading_the_artwork_has_is_three_em_not_one(self):
+>       assert NAME_LEADING_EM == pytest.approx(
+            DEFECT_FACTOR / (25.4 / 72.0), rel=1e-15)
+E       assert 2.0 == 3.0047244094488192 ± 1.0e-12
+E         
+E         comparison failed
+E         Obtained: 2.0
+E         Expected: 3.0047244094488192 ± 1.0e-12
+
+apps/ire/tests/test_wip_leading_units.py:294: AssertionError
+_ TestTheEmRatioIsNowTheOwnersQuestion.test_the_gap_the_two_panels_draw[9.0-9.54] _
+
+self = <apps.ire.tests.test_wip_leading_units.TestTheEmRatioIsNowTheOwnersQuestion object at 0x10c1ef850>
+name_min = 9.0, expected_mm = 9.54
+
+    @pytest.mark.parametrize("name_min,expected_mm", [(HERO_NAME_MIN, 9.54),
+                                                      (FLAT_NAME_MIN, 6.89)])
+    def test_the_gap_the_two_panels_draw(self, name_min, expected_mm):
+>       assert round(leading_mm(_front_typography, name_min), 9) == expected_mm
+E       assert 6.35 == 9.54
+E        +  where 6.35 = round(6.349999999999994, 9)
+E        +    where 6.349999999999994 = leading_mm(_front_typography, 9.0)
+
+apps/ire/tests/test_wip_leading_units.py:301: AssertionError
+_ TestTheEmRatioIsNowTheOwnersQuestion.test_the_gap_the_two_panels_draw[6.5-6.89] _
+
+self = <apps.ire.tests.test_wip_leading_units.TestTheEmRatioIsNowTheOwnersQuestion object at 0x10c1efad0>
+name_min = 6.5, expected_mm = 6.89
+
+    @pytest.mark.parametrize("name_min,expected_mm", [(HERO_NAME_MIN, 9.54),
+                                                      (FLAT_NAME_MIN, 6.89)])
+    def test_the_gap_the_two_panels_draw(self, name_min, expected_mm):
+>       assert round(leading_mm(_front_typography, name_min), 9) == expected_mm
+E       assert 4.586111111 == 6.89
+E        +  where 4.586111111 = round(4.586111111111109, 9)
+E        +    where 4.586111111111109 = leading_mm(_front_typography, 6.5)
+
+apps/ire/tests/test_wip_leading_units.py:301: AssertionError
+_ TestTheEmRatioIsNowTheOwnersQuestion.test_what_one_point_zero_six_em_would_have_cost _
+
+self = <apps.ire.tests.test_wip_leading_units.TestTheEmRatioIsNowTheOwnersQuestion object at 0x10c1f80d0>
+
+    def test_what_one_point_zero_six_em_would_have_cost(self):
+        """The price of the ruling, measured rather than described.
+    
+        If the owner rules that 1.06 was the intent, `NAME_LEADING_EM` becomes
+        1.06 and the hero gap loses 6.17 mm — 65% of it. That is the size of
+        the design change the units fix deliberately did not make.
+        """
+        mm_per_pt = 25.4 / 72.0
+        for name_min, lost in ((HERO_NAME_MIN, 6.1745),
+                               (FLAT_NAME_MIN, 4.4594)):
+            today = leading_mm(_front_typography, name_min)
+            at_106 = name_min * mm_per_pt * DEFECT_FACTOR
+>           assert round(today - at_106, 4) == lost
+E           assert 2.9845 == 6.1745
+E            +  where 2.9845 = round((6.349999999999994 - 3.3655), 4)
+
+apps/ire/tests/test_wip_leading_units.py:315: AssertionError
+_ TestTheCollisionIsGoneAndTheNameIsUntouched.test_the_name_did_not_shrink_and_did_not_move _
+
+self = <apps.ire.tests.test_wiu_front_collision.TestTheCollisionIsGoneAndTheNameIsUntouched object at 0x10c289910>
+shipped = [('BBROSE', 6.0, [9.885200209087795, 6.236301755905151, 18.11480191548665, 9.119201395246717]), ('Rose', 9.0, [10.3963...56125]), ('30 ml / 1.01 fl. oz.', 3.0, [9.657658380932277, 27.38882132636176, 18.342339706420898, 28.830270809597437])]
+
+    def test_the_name_did_not_shrink_and_did_not_move(self, shipped):
+        """The assertion §AB2(a) actually turns on.
+    
+        Size, both horizontal extents and the baseline, against the pre-WI-U
+        artefact. If the collision had been cleared the forbidden way — a
+        smaller name — every row here would move, and the first one would move
+        most.
+        """
+        for text, (pt, x0, x1, y0) in PRE.items():
+            got = run(shipped, text)
+            assert got[1] == pytest.approx(pt, abs=1e-6), text
+            assert got[2][0] == pytest.approx(x0, abs=1e-3), f"{text} x0"
+            assert got[2][2] == pytest.approx(x1, abs=1e-3), f"{text} x1"
+>           assert got[2][1] == pytest.approx(y0, abs=1e-3), f"{text} top"
+E           AssertionError: Damascena top
+E           assert 18.645930671691893 == 21.836 ± 0.001
+E             
+E             comparison failed
+E             Obtained: 18.645930671691893
+E             Expected: 21.836 ± 0.001
+
+apps/ire/tests/test_wiu_front_collision.py:179: AssertionError
+_ TestTheCollisionIsGoneAndTheNameIsUntouched.test_only_the_two_runs_the_ruling_named_moved _
+
+self = <apps.ire.tests.test_wiu_front_collision.TestTheCollisionIsGoneAndTheNameIsUntouched object at 0x10c289fd0>
+shipped = [('BBROSE', 6.0, [9.885200209087795, 6.236301755905151, 18.11480191548665, 9.119201395246717]), ('Rose', 9.0, [10.3963...56125]), ('30 ml / 1.01 fl. oz.', 3.0, [9.657658380932277, 27.38882132636176, 18.342339706420898, 28.830270809597437])]
+
+    def test_only_the_two_runs_the_ruling_named_moved(self, shipped):
+        """Everything above the support line is byte-identical; the support
+        line and the net content are exactly what §AB2(a) said to move."""
+        assert {t for t in PRE} == {"BBROSE", "Rose", "Damascena"}
+>       assert run(shipped, "N I G")[2][1] > 24.771     # was 24.771
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       assert 24.48842504289415 > 24.771
+
+apps/ire/tests/test_wiu_front_collision.py:185: AssertionError
+_ TestTheMechanismIsGoneAndNotJustItsSymptom.test_restoring_the_fraction_brings_the_collision_straight_back _
+
+self = <apps.ire.tests.test_wiu_front_collision.TestTheMechanismIsGoneAndNotJustItsSymptom object at 0x10c295b10>
+
+    def test_restoring_the_fraction_brings_the_collision_straight_back(self):
+        """A MUTATION, in the shape WI-T used: the real producer's source with
+        the two placement lines put back as they were, executed, measured.
+    
+        This is the negative control the fix has to survive. If this test ever
+        passes with a positive gap it means the collision stopped depending on
+        the thing that caused it, and the explanation above is wrong.
+        """
+        src = pathlib.Path(__file__).parent.parent.joinpath(
+            "compose_dropper.py").read_text()
+        old = ("    support_y = block_top + leading + em_mm * SUPPORT_LEAD_EM\n"
+               "    net_y = support_y + em_mm * NET_LEAD_EM\n")
+>       assert old in src, "the fix's shape changed; update this mutation"
+E       AssertionError: the fix's shape changed; update this mutation
+E       assert '    support_y = block_top + leading + em_mm * SUPPORT_LEAD_EM\n    net_y = support_y + em_mm * NET_LEAD_EM\n' in '"""2C-2E-CORR-2 — the refined serum-dropper concept sheet.\n\nSecond human Gate-2 review: CORR-1\'s closure was top-h...2.3, color=_INK, align="left"))\n    return doc\n\n\n__all__ = ["MATERIALS", "NONPRINTING", "compose_dropper_sheet"]\n'
+
+apps/ire/tests/test_wiu_front_collision.py:264: AssertionError
+_ TestTheHeadroomAb2fAskedFor.test_but_the_front_does_not_render_the_skus_name_at_all _
+
+self = <apps.ire.tests.test_wiu_front_collision.TestTheHeadroomAb2fAskedFor object at 0x10c29d650>
+
+    def test_but_the_front_does_not_render_the_skus_name_at_all(self):
+        """RECORDED, NOT FIXED — §AB4(c).
+    
+        §AB2(f) wants the next SKU to meet a known limit. It cannot yet meet
+        any limit: ``_front_typography`` takes no product-name argument at
+        all, ``product_name`` reaches the document title and nothing else, and
+        the two front lines are the literals "Rose" and "Damascena". The
+        headroom above is a real measurement of a mechanism that does not
+        exist, which is worth knowing BEFORE someone wires the two together
+        and discovers the limit by exceeding it — exactly the outcome §AB2(f)
+        is trying to avoid.
+    
+        AND THE FINDING IS WORSE THAN THE ONE I WROTE DOWN. This test first
+        asserted ``"product_name" not in front`` and failed, on
+        ``place("product_name", 0.29, 0.24)``: the PLACEMENT RECORD — the
+        machine-readable artefact downstream consumers read — names that block
+        "product_name", while the artwork underneath it contains a hard-coded
+        one. The record is not merely silent about the SKU, it asserts a
+        binding that is not there. Recording the weaker version of a finding
+        because the instrument stopped at the first hit is how a defect
+        survives being written down, so the stronger one is pinned here.
+        """
+        path = pathlib.Path(__file__).parent.parent.joinpath(
+            "compose_dropper.py")
+        tree = ast.parse(path.read_text())
+        fn, = [n for n in ast.walk(tree) if isinstance(n, ast.FunctionDef)
+               and n.name == "_front_typography"]
+    
+        # (1) no parameter carries the SKU's name into the front
+        assert "product_name" not in {a.arg for a in fn.args.args}
+        assert not fn.args.kwonlyargs
+    
+        # (2) the drawn name is two string literals
+        literals = {c.value for c in ast.walk(fn)
+                    if isinstance(c, ast.Constant) and isinstance(c.value, str)}
+>       assert {"Rose", "Damascena"} <= literals
+E       AssertionError: assert {'Damascena', 'Rose'} <= {'', '30 ml /....\n    ', ...}
+E         
+E         Extra items in the left set:
+E         'Rose'
+E         'Damascena'
+
+apps/ire/tests/test_wiu_front_collision.py:544: AssertionError
+_ TestTheEmptyLowerBandIsRecordedAndNotRuled.test_the_band_is_measured_before_and_after_the_move _
+
+self = <apps.ire.tests.test_wiu_front_collision.TestTheEmptyLowerBandIsRecordedAndNotRuled object at 0x10c29e550>
+shipped = [('BBROSE', 6.0, [9.885200209087795, 6.236301755905151, 18.11480191548665, 9.119201395246717]), ('Rose', 9.0, [10.3963...56125]), ('30 ml / 1.01 fl. oz.', 3.0, [9.657658380932277, 27.38882132636176, 18.342339706420898, 28.830270809597437])]
+
+    def test_the_band_is_measured_before_and_after_the_move(self, shipped):
+        """Moving the support line down consumed part of the empty band. That
+        is a SIDE EFFECT of clearing the collision, not a response to §AB2(c),
+        and the two numbers are recorded together so it cannot later be read
+        as though the question had been addressed.
+        """
+        zone_bottom = 3.0 + ZONE_H
+        after = zone_bottom - max(r[2][3] for r in shipped)
+>       assert after == pytest.approx(13.280, abs=0.01)
+E       assert 16.46972919040256 == 13.28 ± 0.01
+E         
+E         comparison failed
+E         Obtained: 16.46972919040256
+E         Expected: 13.28 ± 0.01
+
+apps/ire/tests/test_wiu_front_collision.py:592: AssertionError
+_ TestTheIncumbentIsUnmovedByBeingCompared.test_the_module_constant_is_still_the_shipping_value _
+
+self = <apps.ire.tests.test_wiv_leading_comparison.TestTheIncumbentIsUnmovedByBeingCompared object at 0x10c2b7f50>
+
+    def test_the_module_constant_is_still_the_shipping_value(self):
+>       assert compose_dropper.NAME_LEADING_EM == INCUMBENT
+E       assert 2.0 == 3.0047244094488192
+E        +  where 2.0 = compose_dropper.NAME_LEADING_EM
+
+apps/ire/tests/test_wiv_leading_comparison.py:361: AssertionError
+_ TestTheIncumbentIsUnmovedByBeingCompared.test_the_tools_swap_restores_even_when_the_render_raises _
+
+self = <apps.ire.tests.test_wiv_leading_comparison.TestTheIncumbentIsUnmovedByBeingCompared object at 0x10c2c05d0>
+
+    def test_the_tools_swap_restores_even_when_the_render_raises(self):
+        leading = _tool().leading
+        with pytest.raises(RuntimeError):
+            with leading(1.06):
+                assert compose_dropper.NAME_LEADING_EM == 1.06
+                raise RuntimeError("boom")
+>       assert compose_dropper.NAME_LEADING_EM == INCUMBENT
+E       assert 2.0 == 3.0047244094488192
+E        +  where 2.0 = compose_dropper.NAME_LEADING_EM
+
+apps/ire/tests/test_wiv_leading_comparison.py:369: AssertionError
+=============================== warnings summary ===============================
+apps/pipeline/tests/test_wir_zone_surface_spelling.py::TestTheAliasCannotBePersisted::test_a_misspelled_zone_is_rejected_as_a_payload_not_a_crash
+apps/pipeline/tests/test_container_confirmation_2c2e.py::ExtensionConfirmationTests::test_carton_dims_stay_isolated_after_confirmation
+apps/pipeline/tests/test_container_confirmation_2c2e.py::ConfirmationFlowTests::test_confirmation_reconstructs_and_stops_at_gate_2
+apps/pipeline/tests/test_container_confirmation_2c2e.py::ConfirmationFlowTests::test_material_separation_and_concept_fidelity_measured
+apps/pipeline/tests/test_container_confirmation_2c2e.py::ConfirmationFlowTests::test_review_board_presents_gate_2_stage
+apps/pipeline/tests/test_container_confirmation_2c2e.py::Corr2AmendmentTests::test_rejection_survives_the_corrected_rerender
+  /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/django/core/handlers/base.py:61: UserWarning: No directory at: /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/staticfiles/
+    mw_instance = middleware(adapted_handler)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED apps/ire/tests/test_wip_leading_units.py::TestTheGuardCatchesTheDefectItWasWrittenFor::test_the_defect_and_the_fix_place_the_two_lines_in_the_same_spot[9.0]
+FAILED apps/ire/tests/test_wip_leading_units.py::TestTheGuardCatchesTheDefectItWasWrittenFor::test_the_defect_and_the_fix_place_the_two_lines_in_the_same_spot[6.5]
+FAILED apps/ire/tests/test_wip_leading_units.py::TestTheEmRatioIsNowTheOwnersQuestion::test_the_leading_the_artwork_has_is_three_em_not_one
+FAILED apps/ire/tests/test_wip_leading_units.py::TestTheEmRatioIsNowTheOwnersQuestion::test_the_gap_the_two_panels_draw[9.0-9.54]
+FAILED apps/ire/tests/test_wip_leading_units.py::TestTheEmRatioIsNowTheOwnersQuestion::test_the_gap_the_two_panels_draw[6.5-6.89]
+FAILED apps/ire/tests/test_wip_leading_units.py::TestTheEmRatioIsNowTheOwnersQuestion::test_what_one_point_zero_six_em_would_have_cost
+FAILED apps/ire/tests/test_wiu_front_collision.py::TestTheCollisionIsGoneAndTheNameIsUntouched::test_the_name_did_not_shrink_and_did_not_move
+FAILED apps/ire/tests/test_wiu_front_collision.py::TestTheCollisionIsGoneAndTheNameIsUntouched::test_only_the_two_runs_the_ruling_named_moved
+FAILED apps/ire/tests/test_wiu_front_collision.py::TestTheMechanismIsGoneAndNotJustItsSymptom::test_restoring_the_fraction_brings_the_collision_straight_back
+FAILED apps/ire/tests/test_wiu_front_collision.py::TestTheHeadroomAb2fAskedFor::test_but_the_front_does_not_render_the_skus_name_at_all
+FAILED apps/ire/tests/test_wiu_front_collision.py::TestTheEmptyLowerBandIsRecordedAndNotRuled::test_the_band_is_measured_before_and_after_the_move
+FAILED apps/ire/tests/test_wiv_leading_comparison.py::TestTheIncumbentIsUnmovedByBeingCompared::test_the_module_constant_is_still_the_shipping_value
+FAILED apps/ire/tests/test_wiv_leading_comparison.py::TestTheIncumbentIsUnmovedByBeingCompared::test_the_tools_swap_restores_even_when_the_render_raises
+13 failed, 787 passed, 6 warnings in 15.88s
+sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute

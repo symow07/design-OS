@@ -1,0 +1,330 @@
+........................................................................ [  1%]
+........................................................................ [  2%]
+........................................................................ [  3%]
+........................................................................ [  4%]
+........................................................................ [  5%]
+........................................................................ [  6%]
+........................................................................ [  7%]
+........................................................................ [  8%]
+........................................................................ [  9%]
+........................................................................ [ 10%]
+........................................................................ [ 11%]
+........................................................................ [ 12%]
+........................................................................ [ 14%]
+........................................................................ [ 15%]
+........................................................................ [ 16%]
+........................................................................ [ 17%]
+........................................................................ [ 18%]
+.................F...................................................... [ 19%]
+........................................................................ [ 20%]
+........................................................................ [ 21%]
+..................................................................... [ 22%]
+........................................................................ [ 23%]
+........................................................................ [ 24%]
+........................................................................ [ 25%]
+........................................................................ [ 26%]
+........................................................................ [ 27%]
+...............................................F........................ [ 29%]
+........................................................................ [ 30%]
+........................................................................ [ 31%]
+........................................................................ [ 32%]
+........................................................................ [ 33%]
+........................................................................ [ 34%]
+........................................................................ [ 35%]
+........................................................................ [ 36%]
+........................................................................ [ 37%]
+........................................................................ [ 38%]
+........................................................................ [ 39%]
+........................................................................ [ 40%]
+........................................................................ [ 41%]
+........................................................................ [ 43%]
+........................................................................ [ 44%]
+........................................................................ [ 45%]
+........................................................................ [ 46%]
+........................................................................ [ 47%]
+............................... [ 47%]
+........................................................................ [ 48%]
+...................................................................... [ 49%]
+........................................................................ [ 51%]
+........................................................................ [ 52%]
+........................................................................ [ 53%]
+........................................................................ [ 54%]
+........................................................................ [ 55%]
+........................................................................ [ 56%]
+........................................................................ [ 57%]
+........................................................................ [ 58%]
+........................................................................ [ 59%]
+.................................................................................................... [ 61%]
+................................. [ 61%]
+........F.................................................................................................................................... [ 63%]
+..................................................................................................................... [ 65%]
+........................................................................ [ 66%]
+...................................................................... [ 67%]
+...................................................... [ 68%]
+....................................................................................................................F.... [ 70%]
+......................................................................................... [ 71%]
+................................................ [ 72%]
+................. [ 72%]
+........................ [ 72%]
+........................................................................ [ 74%]
+..............................s......................................... [ 75%]
+........................................................................ [ 76%]
+..........s............................................................. [ 77%]
+......................................................s................. [ 78%]
+........................................................................ [ 79%]
+........................................................................ [ 80%]
+........................................................................ [ 81%]
+........................................................................ [ 82%]
+........................................................................ [ 83%]
+........................................................................ [ 84%]
+........................................................................ [ 85%]
+........................................................................ [ 86%]
+........................................................................ [ 88%]
+........................................................................ [ 89%]
+........................................................................ [ 90%]
+........................................................................ [ 91%]
+............................................................F........... [ 92%]
+........................................................................ [ 93%]
+........................................................................ [ 94%]
+........................................................................ [ 95%]
+........................................................................ [ 96%]
+........................................................................ [ 97%]
+........................................................................ [ 98%]
+........................................................................ [ 99%]
+........                                                                 [100%]
+=================================== FAILURES ===================================
+_ CreateViewCompositeTests.test_complete_product_creates_project_plus_container_child _
+
+self = <apps.pipeline.tests.test_composite_project.CreateViewCompositeTests testMethod=test_complete_product_creates_project_plus_container_child>
+
+    def test_complete_product_creates_project_plus_container_child(self):
+        resp, delay = self._create(
+            design_target=DesignTarget.COMPLETE_PRODUCT.value)
+>       assert resp.status_code == 201
+E       assert 409 == 201
+E        +  where 409 = <Response status_code=409, "application/json">.status_code
+
+apps/pipeline/tests/test_composite_project.py:74: AssertionError
+----------------------------- Captured stderr call -----------------------------
+[2026-08-19 01:46:38,329] INFO celery.app.trace rid=fa9f96de8bcb Task apps.pipeline.tasks.report_worker_revision[14d57c78-e89a-4b17-9e36-09262554eef7] succeeded in 8.141700527630746e-05s: 'dcc518c'
+[2026-08-19 01:46:38,330] WARNING django.request rid=- Conflict: /api/tasks/create/
+______ TestBoardShowsTheProbe.test_api_exposes_the_probe_without_the_key _______
+
+self = <apps.pipeline.tests.test_vq2_billing_probe.TestBoardShowsTheProbe object at 0x115e6d110>
+client_in = <django.test.client.Client object at 0x11fcec850>
+
+    def test_api_exposes_the_probe_without_the_key(self, client_in):
+        """The board tracks the LATEST probe; only the fingerprint escapes."""
+        v = client_in.get("/api/visual-quality/vq1/").json()["vq2"]
+        p = v["billing_probe"]
+        assert p["request_id"]
+        assert p["credential_valid"] is True
+        assert len(p["key_fingerprint"]) == 12
+        live = settings.ANTHROPIC_API_KEY or ""
+>       assert live and live not in json.dumps(v)
+E       AssertionError: assert ('')
+
+apps/pipeline/tests/test_vq2_billing_probe.py:135: AssertionError
+____ CommittedEmissionRecordTests.test_the_emission_record_exists_and_binds ____
+
+self = <apps.pipeline.tests.test_m7_ai_emitter.CommittedEmissionRecordTests testMethod=test_the_emission_record_exists_and_binds>
+
+    def test_the_emission_record_exists_and_binds(self):
+        import hashlib
+        rec = self._record()
+        self.assertGreaterEqual(len(rec["emissions"]), 3)
+        self.assertEqual(
+            tuple(e["ai"] for e in rec["emissions"][:3]),
+            self.LOCKED_THREE,
+            "the §I-accepted set no longer leads the record")
+        for e in rec["emissions"]:
+            ai = AI.OUT_DIR / e["ai"]
+            self.assertTrue(ai.exists(), e["ai"])
+>           self.assertEqual(
+                hashlib.sha256(ai.read_bytes()).hexdigest(),
+                e["ai_sha256"], f"{e['ai']} drifted from its record")
+E           AssertionError: 'd13758b8bd8db90640681430bdbe323a20699d0d8eb84378f02e0e9bec129422' != '4fb3541d52acf6c317ba4aeaa6f2117778ca087e9318ffc3609b02ef4b228513'
+E           - d13758b8bd8db90640681430bdbe323a20699d0d8eb84378f02e0e9bec129422
+E           + 4fb3541d52acf6c317ba4aeaa6f2117778ca087e9318ffc3609b02ef4b228513
+E            : fb3093_lid_C1.ai drifted from its record
+
+apps/pipeline/tests/test_m7_ai_emitter.py:215: AssertionError
+________ ComposedGateTests.test_no_new_occurrences_outside_the_baseline ________
+
+self = <apps.pipeline.tests.test_palette_statistics.ComposedGateTests testMethod=test_no_new_occurrences_outside_the_baseline>
+
+    def test_no_new_occurrences_outside_the_baseline(self):
+        base = self._baseline()
+        new = []
+        for path in SERVICES.rglob("*.py"):
+            src = path.read_text()
+            for shape, line in composed_gate(src):
+                key = (path.name, _symbol_of(src, line), shape)
+                if key not in base:
+                    new.append(key)
+        found = sorted(set(new))
+        # Count and per-file tally lead, and nothing is truncated. This message
+        # used to end in `[:8]`; keys sort by filename, so those 8 were all from
+        # the two alphabetically-first files, and a sprint launcher recorded the
+        # failure as "8 occurrences in two files" — hiding half the set for a
+        # sprint.
+        tally = collections.Counter(key[0] for key in found)
+>       self.assertEqual(found, [],
+                         f"{len(found)} new fallback-class occurrences "
+                         f"across {len(tally)} file(s) {dict(tally)}, "
+                         f"in full: {found}")
+E       AssertionError: Lists differ: [('h2_design_request.py', 'request_summary[921 chars]rg')] != []
+E       
+E       First list contains 16 additional elements.
+E       First extra element 0:
+E       ('h2_design_request.py', 'request_summary', 'lookup_default')
+E       
+E       Diff is 1021 characters long. Set self.maxDiff to None to see it. : 16 new fallback-class occurrences across 4 file(s) {'h2_design_request.py': 3, 'rbv3_review_package.py': 6, 'rbv4_claude_review.py': 6, 'rbv5_comparison_gate.py': 1}, in full: [('h2_design_request.py', 'request_summary', 'lookup_default'), ('h2_design_request.py', 'request_summary', 'regex'), ('h2_design_request.py', 'validate_candidates', 'regex'), ('rbv3_review_package.py', '_compose_sheet', 'lookup_default'), ('rbv3_review_package.py', '_compose_sheet', 'or_default'), ('rbv3_review_package.py', '_compose_sheet', 'regex'), ('rbv3_review_package.py', 'build_review_package', 'lookup_default'), ('rbv3_review_package.py', 'build_review_package', 'regex'), ('rbv3_review_package.py', 'load_validation_render', 'regex'), ('rbv4_claude_review.py', 'budget_state', 'lookup_default'), ('rbv4_claude_review.py', 'budget_state', 'regex'), ('rbv4_claude_review.py', 'load_review_package', 'regex'), ('rbv4_claude_review.py', 'review_package', 'lookup_default'), ('rbv4_claude_review.py', 'review_package', 'regex'), ('rbv4_claude_review.py', 'validate_ledger_row', 'except_swallow'), ('rbv5_comparison_gate.py', 'compare', 'numeric_default_arg')]
+
+apps/pipeline/tests/test_palette_statistics.py:360: AssertionError
+_____ TestSecretNeverExposed.test_live_key_absent_from_the_review_package ______
+
+self = <apps.pipeline.tests.test_vq2_final_inspection.TestSecretNeverExposed object at 0x115f42190>
+
+    def test_live_key_absent_from_the_review_package(self):
+        live = settings.ANTHROPIC_API_KEY or ""
+>       assert live
+E       AssertionError: assert ''
+
+apps/pipeline/tests/test_vq2_final_inspection.py:67: AssertionError
+=============================== warnings summary ===============================
+apps/accounts/test_authorization.py: 12 warnings
+apps/core/tests.py: 7 warnings
+apps/dielines/tests/test_api_phase10.py: 22 warnings
+apps/dielines/tests/test_dtuck_integration.py: 3 warnings
+apps/dielines/tests/test_opposed_tuck_qualification.py: 3 warnings
+apps/dielines/tests/test_rte_qualification.py: 1 warning
+apps/dielines/tests/test_skynte_qualification.py: 2 warnings
+apps/dielines/tests/test_ste_12_qualification.py: 1 warning
+apps/dielines/tests/test_ste_qualification.py: 2 warnings
+apps/intelligence/test_artwork_preview.py: 6 warnings
+apps/intelligence/test_asset_identity.py: 1 warning
+apps/intelligence/test_browser.py: 4 warnings
+apps/intelligence/test_dip1b5a.py: 1 warning
+apps/intelligence/test_evidence_integrity.py: 2 warnings
+apps/intelligence/test_evidence_labels.py: 8 warnings
+apps/intelligence/test_governance.py: 1 warning
+apps/intelligence/test_human_semantic_metadata.py: 4 warnings
+apps/intelligence/test_metadata_conflict_resolution.py: 3 warnings
+apps/intelligence/test_metadata_correction_flow.py: 6 warnings
+apps/intelligence/test_projection.py: 1 warning
+apps/intelligence/test_review_browser.py: 21 warnings
+apps/intelligence/test_review_workflow.py: 3 warnings
+apps/intelligence/test_search_browser.py: 12 warnings
+apps/intelligence/test_semantic_browser.py: 5 warnings
+apps/intelligence/test_semantic_query_browser.py: 14 warnings
+apps/pipeline/tests/test_2b3d_readiness.py: 3 warnings
+apps/pipeline/tests/test_2b3v_confirm_resume.py: 4 warnings
+apps/pipeline/tests/test_2b3v_profile_zone_ui.py: 7 warnings
+apps/pipeline/tests/test_2c2a3v_session.py: 2 warnings
+apps/pipeline/tests/test_2c2a_tavily.py: 2 warnings
+apps/pipeline/tests/test_activation_defects.py: 5 warnings
+apps/pipeline/tests/test_b4a_target_selector.py: 20 warnings
+apps/pipeline/tests/test_b4b1_reference_core.py: 35 warnings
+apps/pipeline/tests/test_b4b3a_review_board_references.py: 2 warnings
+apps/pipeline/tests/test_b4b3b_reference_manifest.py: 1 warning
+apps/pipeline/tests/test_complete_product_owner_approval.py: 2 warnings
+apps/pipeline/tests/test_complete_product_review.py: 2 warnings
+apps/pipeline/tests/test_composite_project.py: 3 warnings
+apps/pipeline/tests/test_concept_references.py: 9 warnings
+apps/pipeline/tests/test_confirm_dimensions_errors.py: 1 warning
+apps/pipeline/tests/test_confirm_profile_ui1.py: 15 warnings
+apps/pipeline/tests/test_confirm_profile_ui2a.py: 19 warnings
+apps/pipeline/tests/test_confirm_profile_ui2b1.py: 12 warnings
+apps/pipeline/tests/test_confirm_profile_ui2b2a.py: 11 warnings
+apps/pipeline/tests/test_confirm_profile_ui2b2b.py: 18 warnings
+apps/pipeline/tests/test_container_confirmation_2c2e.py: 5 warnings
+apps/pipeline/tests/test_container_target.py: 6 warnings
+apps/pipeline/tests/test_corr3_dryrun_and_build.py: 7 warnings
+apps/pipeline/tests/test_corr4_html_regeneration.py: 12 warnings
+apps/pipeline/tests/test_create_design_target.py: 4 warnings
+apps/pipeline/tests/test_gate1_checkpoint.py: 1 warning
+apps/pipeline/tests/test_gate1_prompt_schema.py: 1 warning
+apps/pipeline/tests/test_gate1_reference_regeneration.py: 1 warning
+apps/pipeline/tests/test_gate2_readiness.py: 2 warnings
+apps/pipeline/tests/test_gate_a_corr1.py: 5 warnings
+apps/pipeline/tests/test_gate_a_corr2.py: 9 warnings
+apps/pipeline/tests/test_gate_a_final.py: 6 warnings
+apps/pipeline/tests/test_gate_a_roundtrip1.py: 5 warnings
+apps/pipeline/tests/test_h2_views.py: 7 warnings
+apps/pipeline/tests/test_palette_confirmation_flow.py: 19 warnings
+apps/pipeline/tests/test_palette_governance.py: 1 warning
+apps/pipeline/tests/test_palette_intent_confirmation.py: 2 warnings
+apps/pipeline/tests/test_phase11.py: 34 warnings
+apps/pipeline/tests/test_phase12.py: 19 warnings
+apps/pipeline/tests/test_phase13.py: 5 warnings
+apps/pipeline/tests/test_phase14.py: 5 warnings
+apps/pipeline/tests/test_phase2a4.py: 3 warnings
+apps/pipeline/tests/test_phase8.py: 8 warnings
+apps/pipeline/tests/test_print_data_recovery.py: 4 warnings
+apps/pipeline/tests/test_production_authority_preflight.py: 6 warnings
+apps/pipeline/tests/test_project_summary.py: 2 warnings
+apps/pipeline/tests/test_rbv3_views.py: 6 warnings
+apps/pipeline/tests/test_reference_uploads.py: 2 warnings
+apps/pipeline/tests/test_review_board.py: 1 warning
+apps/pipeline/tests/test_structure_gate.py: 6 warnings
+apps/pipeline/tests/test_structure_projection_2a9.py: 3 warnings
+apps/pipeline/tests/test_supplier_dispatch.py: 5 warnings
+apps/pipeline/tests/test_supplier_eml.py: 3 warnings
+apps/pipeline/tests/test_supplier_sent_validation.py: 2 warnings
+apps/pipeline/tests/test_visual_review_packet.py: 1 warning
+apps/pipeline/tests/test_vq1_owner_acceptance.py: 2 warnings
+apps/pipeline/tests/test_vq1_review_ui.py: 5 warnings
+apps/pipeline/tests/test_vq2_a2.py: 2 warnings
+apps/pipeline/tests/test_vq2_a2_r1.py: 2 warnings
+apps/pipeline/tests/test_vq2_a2_r2.py: 2 warnings
+apps/pipeline/tests/test_vq2_billing_probe.py: 3 warnings
+apps/pipeline/tests/test_vq2_final_inspection.py: 3 warnings
+apps/pipeline/tests/test_vq2_owner_approval.py: 2 warnings
+apps/pipeline/tests/test_vq2_preflight1.py: 1 warning
+apps/pipeline/tests/test_vq2_resume_attempt.py: 5 warnings
+apps/pipeline/tests/test_vq3_closeout.py: 2 warnings
+apps/pipeline/tests/test_vq3_material.py: 2 warnings
+apps/pipeline/tests/test_vq3_owner_selection.py: 2 warnings
+apps/pipeline/tests/test_vqr2a_visual_quality_gate.py: 2 warnings
+apps/pipeline/tests/test_vqr6_result_authority.py: 5 warnings
+apps/pipeline/tests/test_browser_gate1.py: 1 warning
+apps/pipeline/tests/test_browser_packaging_omission.py: 1 warning
+apps/pipeline/tests/test_browser_profile_editor.py: 3 warnings
+apps/pipeline/tests/test_browser_recon_result.py: 1 warning
+apps/pipeline/tests/test_browser_recon_status.py: 1 warning
+apps/pipeline/tests/test_browser_reference_errors.py: 1 warning
+apps/pipeline/tests/test_browser_responsive_a11y.py: 1 warning
+apps/pipeline/tests/test_browser_retry_recovery.py: 1 warning
+apps/pipeline/tests/test_browser_review_board_references.py: 1 warning
+apps/pipeline/tests/test_browser_staged_reference_ui.py: 1 warning
+apps/pipeline/tests/test_browser_staged_references.py: 1 warning
+apps/pipeline/tests/test_browser_submission_wire.py: 1 warning
+apps/pipeline/tests/test_browser_target_switching.py: 1 warning
+apps/pipeline/tests/test_browser_vqr2a_quality.py: 1 warning
+apps/pipeline/tests/test_browser_vqr6_authority.py: 1 warning
+  /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/django/core/handlers/base.py:61: UserWarning: No directory at: /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/staticfiles/
+    mw_instance = middleware(adapted_handler)
+
+apps/accounts/test_bootstrap_ceremony.py::test_a_tunnelled_database_on_loopback_is_not_local_without_the_allow_list
+  /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/apps/accounts/test_bootstrap_ceremony.py:146: UserWarning: Overriding setting DATABASES can lead to unexpected behavior.
+    settings.DATABASES = databases
+
+apps/dielines/tests/test_design_preview.py::test_export_service_can_opt_into_components_ai
+apps/pipeline/tests/test_artwork_segments.py::SegmentArtworkTests::test_full_bleed_gradient_returns_empty
+  /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/apps/pipeline/services/artwork_segments.py:123: RuntimeWarning: invalid value encountered in sqrt
+    dist_full = np.sqrt(((rgb_full - bg) ** 2).sum(axis=2))
+
+apps/dielines/tests/test_activation_checks.py: 12 warnings
+  /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/django/test/utils.py:458: UserWarning: Overriding setting DATABASES can lead to unexpected behavior.
+    with self as context:
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED apps/pipeline/tests/test_composite_project.py::CreateViewCompositeTests::test_complete_product_creates_project_plus_container_child
+FAILED apps/pipeline/tests/test_vq2_billing_probe.py::TestBoardShowsTheProbe::test_api_exposes_the_probe_without_the_key
+FAILED apps/pipeline/tests/test_m7_ai_emitter.py::CommittedEmissionRecordTests::test_the_emission_record_exists_and_binds
+FAILED apps/pipeline/tests/test_palette_statistics.py::ComposedGateTests::test_no_new_occurrences_outside_the_baseline
+FAILED apps/pipeline/tests/test_vq2_final_inspection.py::TestSecretNeverExposed::test_live_key_absent_from_the_review_package
+5 failed, 6672 passed, 3 skipped, 598 warnings, 41568 subtests passed in 594.20s (0:09:54)
+sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute

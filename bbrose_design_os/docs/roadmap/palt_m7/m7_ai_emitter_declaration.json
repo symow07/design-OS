@@ -1,0 +1,37 @@
+{
+ "record_type": "m7_ai_emitter_declaration/1.0",
+ "created_at": "2026-08-15",
+ "node": "M7 .AI EMITTER — approach declared BEFORE building (launcher work item 3)",
+ "route": "PDF_COMPATIBLE_AI_STREAM — each deliverable is emitted as a single-artboard PDF 1.6 document written directly by engine code (no external converter, no print pipeline), saved with the .ai extension. Illustrator opens such files as editable vector artwork (with its PDF-format notice); this is the launcher's documented route.",
+ "editability_mechanics": {
+  "vector_only": "path operators (re/m/l/S/f) for every rect/line; zero raster objects anywhere in the file — validated",
+  "live_text": "BT/Tf/Tc/Td/Tj text objects using the embedded SET_FACE; no block is outlined because every character across the three deliverables is WinAnsi-encodable (ASCII + the em-dash at 0x97) — the per-block outline decision the launcher names is therefore LIVE for all blocks, recorded per deliverable in the emission record with the charset proof",
+  "layers": "one OCG (optional content group) per artwork stratum — Ground, Keylines, Type — listed in /OCProperties and wrapped as /OC marked content; Illustrator maps OCGs to named layers"
+ },
+ "font": {
+  "set_face": "materials/Fonts/CrimsonText-Regular.ttf per TYPEFACE_SPEC_2026_08_14 (OFL, fsType 0 — embedding permitted, licence declared in-file)",
+  "embedding": "full TrueType embed (FontFile2), WinAnsiEncoding, widths from the font's own hmtx/cmap scaled 1000/upm",
+  "target_face_untouched": "Adobe Caslon Pro remains CHOSEN_BY_OWNER_LICENCE_NOT_HELD and appears nowhere in any emitted file"
+ },
+ "colour": {
+  "PANTONE_621C": "Separation colorspace named 'PANTONE 621 C', tint transform white -> alternate sRGB (207,224,216) — the D50-Bradford conversion of measured Lab [87.8431, -7.0, 2.0] per the substrate record; a named spot placeholder, no value fabricated",
+  "PANTONE_627C": "Separation 'PANTONE 627 C', alternate (17,50,44), Lab [18.0392, -14.0, 0.0]",
+  "other_inks": "text black (20,22,20), keyline greys and white exactly as the committed SVGs record them, in DeviceRGB"
+ },
+ "artboards_one_per_deliverable": {
+  "es3083_lid_C3.ai": "65.00 x 65.00 mm (C3 MINIMAL-CENTRAL, LOCKED — es3083_lid_C3_final.svg is the byte authority)",
+  "es3083_label_sheet_T1.ai": "263 x 190 mm (T1 CENTRED, promoted — es3083_label_sheet_T1_centred_black.svg)",
+  "es3083_back_label_DRAFT.ai": "55 x 55 mm (draft tier DECLARED ON FACE in the artwork itself; placeholder EAN encodes nothing — B1/B2 stay placeholder-tier by the recorded owner decision)"
+ },
+ "geometry_and_text_metrics": {
+  "units": "artwork mm -> pt at 72/25.4; y flipped (SVG top-left origin -> PDF bottom-left)",
+  "anchor_convention_reproduced": "the committed artwork anchors text at centre - letter_spacing/2 because its renderer includes trailing letter-space in the advance (the C3 anchors 30.875 = 32.5 - 3.25/2 and 32.175 = 32.5 - 0.65/2 prove the convention); PDF's Tc has the same include-trailing model, so the emitter centres on width = sum(glyph advances) + n*Tc at the SVG's own anchor x — the ink lands where the locked artwork put it, no re-centring invented",
+  "font_size_units": "C3/back-label sizes are user units (mm); T1 writes explicit 'mm' suffixes — both parsed, both mm"
+ },
+ "source_authority": "the three committed SVGs read as bytes; C3 final and T1 are LOCKED — the emitter converts, never edits; a source-SVG sha256 is bound into the emission record next to each .ai sha256",
+ "validation_declared": {
+  "programmatic": "pymupdf structural assertions per file: page count 1, MediaBox at the declared mm, embedded FontFile2 present, Separation names present where the deliverable uses spots, live text extracts back with the exact strings, zero image objects",
+  "cannot_prove": "visual fidelity inside Adobe Illustrator (layer mapping, spot-swatch panel, editability in practice) — recorded as the OWNER'S ACCEPTANCE STEP: BBrose opens the emitted files in Illustrator; an emitter built but never run is a FAIL by this session's own verdict"
+ },
+ "owner_approved": false
+}

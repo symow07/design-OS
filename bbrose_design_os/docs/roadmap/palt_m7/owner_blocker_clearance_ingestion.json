@@ -1,0 +1,52 @@
+{
+ "record_type": "owner_blocker_clearance_ingestion/1.0",
+ "created_at": "2026-08-14",
+ "ingests": "OWNER_BLOCKER_CLEARANCE.md (repository root), signed 'BBrose (PROJECT_OWNER, via Cowork question session) DATE: 2026-08-14'",
+ "authorized_by": "NEXT_SESSION_LAUNCHER.md, RECORDING QUOTA item (a) — this is the single ingestion record; every answer below is an OWNER DECISION recorded as HARD",
+ "answers": {
+  "A1_label_alignment": {
+   "status": "ANSWERED",
+   "decision": "RENDER_BOTH — the label sheet is produced in T1 (centred) AND T4 (ranged-left) side by side; the owner picks from the artifacts. The pick is the owner's next answer, not this session's."
+  },
+  "A2_label_application_surface": {
+   "status": "ANSWERED",
+   "decision": "MATCH_THE_VENDOR_SAMPLE — the 77 mm labels apply where the physical ES3083 sample carries them. Recorded owner decision; under m7_artwork_scope_ruling.json this RESOLVES the substrate's 77 mm bound for BBROSE's own product. The vendor-INTENT question stays open as history only.",
+   "allocation_24_labels_12_shades": "CONFIRMED — 24 labels / 12 shades, two per shade (the substrate's duplicate_names_fill_second_half assumption is now an owner decision, not an assumption)"
+  },
+  "A3_lid_artwork_composition_act": {
+   "status": "ANSWERED",
+   "decision": "YES — AUTHORIZED. Four composition candidates plus one contact sheet. The composition is a design act under executor judgment, judged against client-approvable design quality."
+  },
+  "B1_ean_ownership": {
+   "status": "ANSWERED_AS_PLACEHOLDER",
+   "decision": "PLACEHOLDER until confirmed — the back-label draft carries a clearly-marked placeholder EAN; ownership / GS1 registration to be confirmed later. Does not gate artwork. The recovered vendor EAN 5 061030 636510 is NOT printed as BBROSE's."
+  },
+  "B2_responsible_person_distributor": {
+   "status": "ANSWERED_AS_PLACEHOLDER",
+   "decision": "NONE_YET — PLACEHOLDER_TIER. The field renders as a marked placeholder; the owner supplies the identity later."
+  },
+  "C1_typeface_route": {
+   "status": "ANSWERED",
+   "decision": "ACCEPT_SET_FACE — Crimson Text (Regular, OFL) for this deliverable. Adobe Caslon Pro remains the TARGET face; a later purchased desktop licence swaps it in as a build parameter (substrate TYPEFACE_SPEC) without rework. The Caslon must-not-be-used rule stands unchanged."
+  },
+  "C2_vendor_dimensions_route": {
+   "status": "ANSWERED_BOTH_ROUTES",
+   "route_A": "APPROVED — dispatch of ES3083_VENDOR_REQUEST_V2.md to Yiwu Yibin Trading Co. The outreach deferral is re-made and NARROWED for this one ask. Dispatch itself is an owner-supervised act performed outside this session; this record ingests the approval and does not send anything.",
+   "route_C": "OWNER_WILL_CALIPER — pan cavity + pitch, case heights (closed/lid/base), protocol per OWNER_BLOCKER_SESSION.md. Measurements OPEN until numbers arrive; the parametric substrate re-flows the artwork when they do.",
+   "open_residue": "Route C numbers not yet supplied — recorded OPEN. Calipers cannot discharge die, stock, or label intent; only Route A closes those."
+  },
+  "D_explicitly_open_no_action": "SUPPLIER_DATA formulation cluster (INCI, fill weight, standard, market approval) stays inside the deferred workflow — it gates production, not artwork. Print-final label-sheet handoff stays gated on die + stock until C2 Route A resolves."
+ },
+ "consequences_for_this_session": {
+  "unblocked": [
+   "lid artwork composition (A3) — four candidates + contact sheet",
+   "label sheet regenerated in T1 AND T4 in the SET_FACE (A1, C1)",
+   "back-label draft to its honest ceiling with placeholder EAN and distributor (B1, B2)"
+  ],
+  "still_blocked_and_untouched": [
+   "print-final label-sheet handoff (die + stock, vendor-gated)",
+   "back-label regulatory copy at production tier (SUPPLIER_DATA)",
+   "any measured-tier cavity/height claim (awaiting Route A reply or Route C numbers)"
+  ]
+ }
+}

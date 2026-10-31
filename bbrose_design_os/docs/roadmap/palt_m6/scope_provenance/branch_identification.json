@@ -1,0 +1,22 @@
+{
+  "record_type": "branch_identification/1.0",
+  "identifiability_checked_first": {
+    "injective": "underside = lid_top - lid_roof, slope -1, all else fixed at the pinned HEAD",
+    "precision": "branch separation 0.1mm = 2x the stored 0.05mm half-step",
+    "confound_closed": "lid_top_z is the only other input; pinned at the committed HEAD e4a1882 = 14.0"
+  },
+  "arithmetic": {
+    "committed_underside": 12.4,
+    "branch_1_6": 12.4,
+    "branch_1_5": 12.5,
+    "identified": "1.6 FIRED"
+  },
+  "pinned_reevaluation": {
+    "head": "e4a1882",
+    "lid_roof_mm_in_dims": false,
+    "lid_top_z": 14.0,
+    "agreement": "both instruments identify the same branch"
+  },
+  "status": "NOT_ESTABLISHED_FIRED_SUBSTITUTION \u2014 established, degradation side, commits without owner hold",
+  "owner_approved": false
+}

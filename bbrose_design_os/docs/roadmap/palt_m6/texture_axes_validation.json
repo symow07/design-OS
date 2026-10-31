@@ -1,0 +1,191 @@
+{
+  "record_type": "powder_texture_axes/1.0",
+  "protocol_identity": "087c7f64317910fb",
+  "declared_before_family_measurement": true,
+  "effect_bar": 0.25,
+  "axes": {
+    "GRANULARITY_INDEX": {
+      "independent": true,
+      "serves": [
+        "MATTE_vs_SATIN",
+        "PRESSED_vs_MATTE",
+        "SATIN_vs_CREAM"
+      ]
+    },
+    "SURFACE_AUTOCORRELATION_MM": {
+      "independent": true,
+      "serves": [
+        "grain-scale questions"
+      ]
+    },
+    "GRAZING_BAND_CONTRAST": {
+      "independent": true,
+      "serves": [
+        "PRESSED_vs_MATTE",
+        "MATTE_vs_SATIN",
+        "SATIN_vs_CREAM"
+      ]
+    }
+  },
+  "positive_fixtures": {
+    "GRANULARITY_INDEX": {
+      "fixture": "SURFACE_CONTINUITY",
+      "low": 0.018373,
+      "high": 0.029226,
+      "relative_effect": 0.456,
+      "calibration": {
+        "per_member": {
+          "SURFACE_CONTINUITY_low": {
+            "base_peak": 0.017881579595804213,
+            "iterations": [
+              {
+                "energy": 2778519.6730336966,
+                "peak": 0.8772513015031813,
+                "clipped": 0
+              }
+            ],
+            "energy": 2778519.6730336966
+          },
+          "SURFACE_CONTINUITY_high": {
+            "base_peak": 0.018569294890761374,
+            "iterations": [
+              {
+                "energy": 2392034.2938402486,
+                "peak": 0.8953158134222029,
+                "clipped": 0
+              }
+            ],
+            "energy": 2392034.2938402486
+          }
+        },
+        "why": "normalisation-invariant axes, exposure control mandatory",
+        "window": [
+          0.35,
+          0.92
+        ]
+      },
+      "detects": true
+    },
+    "SURFACE_AUTOCORRELATION_MM": {
+      "fixture": "MICRO_NORMAL_CORRELATION",
+      "low": 0.14,
+      "high": 0.14,
+      "relative_effect": 0.0,
+      "calibration": {
+        "per_member": {
+          "MICRO_NORMAL_CORRELATION_low": {
+            "base_peak": 0.017983708925172686,
+            "iterations": [
+              {
+                "energy": 2707291.0967558622,
+                "peak": 0.8813623020172119,
+                "clipped": 0
+              }
+            ],
+            "energy": 2707291.0967558622
+          },
+          "MICRO_NORMAL_CORRELATION_high": {
+            "base_peak": 0.0181458248462528,
+            "iterations": [
+              {
+                "energy": 2380475.962702448,
+                "peak": 0.8770046674489974,
+                "clipped": 0
+              }
+            ],
+            "energy": 2380475.962702448
+          }
+        },
+        "why": "normalisation-invariant axes, exposure control mandatory",
+        "window": [
+          0.35,
+          0.92
+        ]
+      },
+      "detects": false
+    },
+    "GRAZING_BAND_CONTRAST": {
+      "fixture": "COMPACTION",
+      "low": 0.0,
+      "high": 0.0,
+      "relative_effect": 0.0,
+      "calibration": {
+        "per_member": {
+          "COMPACTION_low": {
+            "base_peak": 0.01780230219438672,
+            "iterations": [
+              {
+                "energy": 2452582.6056922986,
+                "peak": 0.8820889799952506,
+                "clipped": 0
+              }
+            ],
+            "energy": 2452582.6056922986
+          },
+          "COMPACTION_high": {
+            "base_peak": 0.017763090559467672,
+            "iterations": [
+              {
+                "energy": 1236545.745443455,
+                "peak": 0.8971325144529342,
+                "clipped": 0
+              }
+            ],
+            "energy": 1236545.745443455
+          }
+        },
+        "why": "normalisation-invariant axes, exposure control mandatory",
+        "window": [
+          0.35,
+          0.92
+        ]
+      },
+      "detects": false
+    }
+  },
+  "negative_controls": {
+    "identical_rerun": {
+      "effects": {
+        "GRANULARITY_INDEX": 0.0,
+        "SURFACE_AUTOCORRELATION_MM": 0.0,
+        "GRAZING_BAND_CONTRAST": 0.0
+      },
+      "behaved": true
+    },
+    "seed_only": {
+      "effects": {
+        "GRANULARITY_INDEX": 0.013,
+        "SURFACE_AUTOCORRELATION_MM": 0.0,
+        "GRAZING_BAND_CONTRAST": 0.0
+      },
+      "behaved": true
+    },
+    "exposure_only": {
+      "effects": {
+        "GRANULARITY_INDEX": 0.0008,
+        "SURFACE_AUTOCORRELATION_MM": 0.0,
+        "GRAZING_BAND_CONTRAST": 0.0
+      },
+      "behaved": true
+    },
+    "lighting_perturbation": {
+      "effects": {
+        "GRANULARITY_INDEX": 0.0512,
+        "SURFACE_AUTOCORRELATION_MM": 0.0,
+        "GRAZING_BAND_CONTRAST": 0.0
+      },
+      "behaved": true
+    }
+  },
+  "rejected_axes": [
+    "SURFACE_AUTOCORRELATION_MM",
+    "GRAZING_BAND_CONTRAST"
+  ],
+  "controls_misbehaved": [],
+  "verdict": "PASS",
+  "SUPERSEDED": {
+    "by": "texture_axes_validation_phase1.json",
+    "reason": "measured through the F2-contaminated PIL reader (alpha averaged into every axis, 16-bit data crushed to 8) and, in its first Phase-1 re-run, through a vertically misoriented EXR load. Superseded in place, never deleted. Its GRANULARITY admission (0.456) and GRAZING_BAND rejection stand only as historical readings of a defective chain.",
+    "at": "2026-08-07 Phase 1"
+  }
+}

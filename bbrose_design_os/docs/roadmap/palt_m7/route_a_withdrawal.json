@@ -1,0 +1,18 @@
+{
+ "record_type": "route_a_withdrawal/1.0",
+ "created_at": "2026-08-14",
+ "ingests": "OWNER_BLOCKER_CLEARANCE.md, amended C2 (2026-08-14, superseding the same-day approval) — cited verbatim: 'Route A is WITHDRAWN … the owner states supplier contact is not possible — no outreach, ever, by anyone.'",
+ "ruling": {
+  "supplier_outreach": "PERMANENTLY WITHDRAWN. No contact, ever, by anyone. No session may raise outreach again — this supersedes every earlier deferral-and-premise-recheck framework (supplier_outreach_deferral.json, supplier_outreach_deferral_d9_check.json): the question is closed, not deferred.",
+  "vendor_request_document": "ES3083_VENDOR_REQUEST_V2.md stays in the repository as a record of what was unknown at the time it was written — history, not anything to send.",
+  "die_stock_label_intent": "RE-ROUTED TO OWNER SPEC under m7_artwork_scope_ruling.json: the deliverable is BBROSE-original artwork, so BBrose decides BBROSE's own label die, stock, and use. Vendor intent is history, not a gate. Print-final die/stock get decided with whatever print shop BBrose eventually chooses — a future owner decision, not a blocker on artwork.",
+  "formulation": "SUPPLIER_DATA stays placeholder-tier until BBrose has a manufacturer relationship — a production matter that never gates artwork and is NOT resolvable by contacting this vendor."
+ },
+ "supersedes_in_place": {
+  "owner_blocker_clearance_ingestion.json C2_vendor_dimensions_route.route_A": "the recorded 'APPROVED — dispatch … owner-supervised' is SUPERSEDED by this withdrawal; the approval existed for part of 2026-08-14 and was withdrawn the same day by the owner. Not deleted — the sequence is the record.",
+  "section_e_owner_picks_ingestion.json still_owner_side_unchanged[1]": "'supervised Route A dispatch … (approved, not performed by any session)' is SUPERSEDED — nothing is pending dispatch; nothing was ever sent (requests_sent remained 0 throughout).",
+  "palt_m7g_close_pending_list": "M7G's close wrongly listed 'supervised Route A dispatch' and vendor die/stock answers as pending owner items; corrected by this record and by the M7 entry in palette_roadmap_continuation_state.json next_independent_nodes."
+ },
+ "what_this_does_not_change": "No artwork, no colour, no typeface, no geometry. C3 final and T1 remain locked and delivered. The die_cut_question / STOCK_PARAMETER fields in es3083_artwork_geometry_substrate.json remain UNDETERMINED — their discharger changes from 'the VENDOR's specification' to 'the OWNER's spec (with a future print shop)'; the T4-vs-T2 keyline and T1-vs-T3 ink decisions stay DOWNSTREAM of those answers exactly as recorded.",
+ "owner_authority": "SIGNED: BBrose (PROJECT_OWNER, via Cowork question session) DATE: 2026-08-14 — amended C2"
+}

@@ -1,0 +1,40 @@
+apps/pipeline/tests/test_browser_retry_recovery.py: 1 warning
+apps/pipeline/tests/test_browser_review_board_references.py: 1 warning
+apps/pipeline/tests/test_browser_staged_reference_ui.py: 1 warning
+apps/pipeline/tests/test_browser_staged_references.py: 1 warning
+apps/pipeline/tests/test_browser_submission_wire.py: 1 warning
+apps/pipeline/tests/test_browser_target_switching.py: 1 warning
+apps/pipeline/tests/test_browser_vqr2a_quality.py: 1 warning
+apps/pipeline/tests/test_browser_vqr6_authority.py: 1 warning
+  /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/django/core/handlers/base.py:61: UserWarning: No directory at: /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/staticfiles/
+    mw_instance = middleware(adapted_handler)
+
+apps/accounts/test_bootstrap_ceremony.py::test_a_tunnelled_database_on_loopback_is_not_local_without_the_allow_list
+  /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/apps/accounts/test_bootstrap_ceremony.py:146: UserWarning: Overriding setting DATABASES can lead to unexpected behavior.
+    settings.DATABASES = databases
+
+apps/dielines/tests/test_design_preview.py::test_export_service_can_opt_into_components_ai
+apps/pipeline/tests/test_artwork_segments.py::SegmentArtworkTests::test_full_bleed_gradient_returns_empty
+  /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/apps/pipeline/services/artwork_segments.py:123: RuntimeWarning: invalid value encountered in sqrt
+    dist_full = np.sqrt(((rgb_full - bg) ** 2).sum(axis=2))
+
+apps/dielines/tests/test_activation_checks.py: 12 warnings
+  /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/django/test/utils.py:458: UserWarning: Overriding setting DATABASES can lead to unexpected behavior.
+    with self as context:
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED apps/pipeline/tests/test_composite_project.py::CreateViewCompositeTests::test_complete_product_creates_project_plus_container_child
+FAILED apps/pipeline/tests/test_vq2_billing_probe.py::TestBoardShowsTheProbe::test_api_exposes_the_probe_without_the_key
+FAILED apps/ire/tests/test_wiv_leading_comparison.py::TestTheFalseCommentIsGoneAndTheProbeCouldHaveCaughtIt::test_the_claim_is_contradicted_by_measurement_not_by_taste
+FAILED apps/ire/tests/test_wiv_leading_comparison.py::TestTheLineBoxAndTheInkAreDifferentQuantities::test_at_the_tight_leading_the_boxes_overlap_and_the_letters_do_not
+FAILED apps/ire/tests/test_wiv_leading_comparison.py::TestTheLineBoxAndTheInkAreDifferentQuantities::test_the_gap_between_them_is_the_face_not_the_render
+FAILED apps/ire/tests/test_wiv_leading_comparison.py::TestTheLineBoxAndTheInkAreDifferentQuantities::test_the_ink_never_actually_touches_at_any_of_the_three[1.06]
+FAILED apps/ire/tests/test_wiv_leading_comparison.py::TestTheLineBoxAndTheInkAreDifferentQuantities::test_the_ink_never_actually_touches_at_any_of_the_three[2.0]
+FAILED apps/ire/tests/test_wiv_leading_comparison.py::TestTheLineBoxAndTheInkAreDifferentQuantities::test_the_ink_never_actually_touches_at_any_of_the_three[3.0047244094488192]
+FAILED apps/ire/tests/test_wiv_leading_comparison.py::TestTheIncumbentIsUnmovedByBeingCompared::test_the_tools_swap_restores_even_when_the_render_raises
+FAILED apps/pipeline/tests/test_m7_ai_emitter.py::CommittedEmissionRecordTests::test_the_emission_record_exists_and_binds
+FAILED apps/pipeline/tests/test_palette_statistics.py::ComposedGateTests::test_no_new_occurrences_outside_the_baseline
+FAILED apps/pipeline/tests/test_vq2_final_inspection.py::TestSecretNeverExposed::test_live_key_absent_from_the_review_package
+12 failed, 7057 passed, 3 skipped, 599 warnings, 41568 subtests passed in 593.50s (0:09:53)
+sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute

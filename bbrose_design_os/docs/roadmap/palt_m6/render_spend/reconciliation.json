@@ -1,0 +1,220 @@
+{
+ "record_type": "spend_reconciliation/1.0",
+ "protocol_identity": "ef4c4dd7baf072ee",
+ "units": {
+  "recal_SHIMMER": {
+   "unit": "recal_SHIMMER",
+   "realised": 4,
+   "iterations": 2,
+   "reconciled": true,
+   "mechanism": [
+    {
+     "peak": 0.928303,
+     "clipped": 0
+    },
+    {
+     "peak": 0.869781,
+     "clipped": 0
+    }
+   ]
+  },
+  "recal_POWDER_METALLIC": {
+   "unit": "recal_POWDER_METALLIC",
+   "realised": 3,
+   "iterations": 1,
+   "reconciled": true,
+   "mechanism": [
+    {
+     "peak": 0.872843,
+     "clipped": 0
+    }
+   ]
+  },
+  "recal_BAKED": {
+   "unit": "recal_BAKED",
+   "realised": 4,
+   "iterations": 2,
+   "reconciled": true,
+   "mechanism": [
+    {
+     "peak": 0.939345,
+     "clipped": 0
+    },
+    {
+     "peak": 0.88189,
+     "clipped": 0
+    }
+   ]
+  },
+  "recal_MARBLED": {
+   "unit": "recal_MARBLED",
+   "realised": 3,
+   "iterations": 1,
+   "reconciled": true,
+   "mechanism": [
+    {
+     "peak": 0.892839,
+     "clipped": 0
+    }
+   ]
+  },
+  "energy_ctl_SHIMMER": {
+   "unit": "energy_ctl_SHIMMER",
+   "realised": 2,
+   "reconciled": true,
+   "mechanism": [
+    {
+     "peak": 0.8017197257757187,
+     "clipped": 0,
+     "factor": 1.04545
+    }
+   ]
+  },
+  "energy_ctl_POWDER_METALLIC": {
+   "unit": "energy_ctl_POWDER_METALLIC",
+   "realised": 2,
+   "reconciled": true,
+   "mechanism": [
+    {
+     "peak": 0.8584718028783798,
+     "clipped": 0,
+     "factor": 1.04545
+    }
+   ]
+  },
+  "energy_ctl_BAKED": {
+   "unit": "energy_ctl_BAKED",
+   "realised": 2,
+   "reconciled": true,
+   "mechanism": [
+    {
+     "peak": 0.826066966342926,
+     "clipped": 0,
+     "factor": 1.04545
+    }
+   ]
+  },
+  "energy_ctl_MARBLED": {
+   "unit": "energy_ctl_MARBLED",
+   "realised": 2,
+   "reconciled": true,
+   "mechanism": [
+    {
+     "peak": 0.904765681552887,
+     "clipped": 0,
+     "factor": 1.04545
+    }
+   ]
+  }
+ },
+ "trace_evidence": {
+  "read_through": "palette_queue_control.read_trace_evidence",
+  "process_controls_stamped": 2,
+  "non_control_firings": 3,
+  "firing_sites": [
+   "palette_powder_rigs.py:particle_census"
+  ]
+ },
+ "fixed_units": {
+  "declared": {
+   "ct_texture_POWDER_MATTE": 2,
+   "ct_texture_SHIMMER": 2,
+   "ct_texture_POWDER_METALLIC": 2,
+   "ct_texture_BAKED": 2,
+   "ct_texture_MARBLED": 2,
+   "ct_lobe_completion": 6,
+   "p5_matte_zero_particle_controls": 2,
+   "p6_positive_controls": 8,
+   "floor_replicate_POWDER_MATTE": 6,
+   "floor_replicate_POWDER_SATIN": 6,
+   "floor_replicate_CREAM": 6
+  },
+  "executed": {
+   "ct_texture_POWDER_MATTE": 2,
+   "ct_texture_SHIMMER": 2,
+   "ct_texture_POWDER_METALLIC": 2,
+   "ct_texture_BAKED": 2,
+   "ct_texture_MARBLED": 2,
+   "ct_lobe_completion": 6,
+   "p5_matte_zero_particle_controls": 2,
+   "p6_positive_controls": 8,
+   "floor_replicate_POWDER_MATTE": 6,
+   "floor_replicate_POWDER_SATIN": 6,
+   "floor_replicate_CREAM": 6
+  },
+  "result": {
+   "reconciled": true,
+   "units": 11
+  }
+ },
+ "totals": {
+  "ledger_total": 66,
+  "unit_sum": 66,
+  "envelope": [
+   64,
+   80
+  ],
+  "consistent": true,
+  "inside_envelope": true
+ },
+ "verdict": "RECONCILED \u2014 every unit against its realised mechanism",
+ "a122_completion": {
+  "units": {
+   "down_redo_SHIMMER": {
+    "unit": "down_redo_SHIMMER",
+    "realised": 1,
+    "reconciled": true,
+    "mechanism": [
+     {
+      "peak": 0.4042858783900738,
+      "clipped": 0,
+      "factor": 0.51682
+     }
+    ]
+   },
+   "down_redo_POWDER_METALLIC": {
+    "unit": "down_redo_POWDER_METALLIC",
+    "realised": 1,
+    "reconciled": true,
+    "mechanism": [
+     {
+      "peak": 0.39788985695838924,
+      "clipped": 0,
+      "factor": 0.47304
+     }
+    ]
+   },
+   "down_redo_BAKED": {
+    "unit": "down_redo_BAKED",
+    "realised": 1,
+    "reconciled": true,
+    "mechanism": [
+     {
+      "peak": 0.3938422871410847,
+      "clipped": 0,
+      "factor": 0.49504
+     }
+    ]
+   }
+  },
+  "trace_evidence": {
+   "process_controls_stamped": 3,
+   "non_control_firings": 3,
+   "firing_sites": [
+    "palette_powder_rigs.py:particle_census"
+   ]
+  },
+  "totals": {
+   "ledger_total": 69,
+   "unit_sum": 69,
+   "consistent": true,
+   "prior_spend": 66,
+   "a122_declared_envelope": [
+    3,
+    6
+   ],
+   "a122_realised": 3
+  },
+  "verdict": "RECONCILED \u2014 every A122 unit against its realised mechanism; prior 66 unchanged"
+ }
+}

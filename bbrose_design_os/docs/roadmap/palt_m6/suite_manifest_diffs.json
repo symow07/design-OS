@@ -1,0 +1,782 @@
+{
+ "record_type": "suite_manifest_diffs/1.0",
+ "diffs": [
+  {
+   "utc": "2026-08-12T01:27:13.837630Z",
+   "added": [
+    "apps/accounts/test_attestation.py",
+    "apps/accounts/test_authorization.py",
+    "apps/accounts/test_authz_policy.py",
+    "apps/accounts/test_bootstrap_ceremony.py",
+    "apps/accounts/test_bootstrap_ceremony_concurrency.py",
+    "apps/accounts/test_chain_verification.py",
+    "apps/accounts/test_decision_chain.py",
+    "apps/accounts/test_decision_chain_concurrency.py",
+    "apps/accounts/test_key_epoch_reset.py",
+    "apps/accounts/test_migration_0003.py",
+    "apps/accounts/test_migration_0006.py",
+    "apps/accounts/test_migration_final.py",
+    "apps/accounts/test_models.py",
+    "apps/accounts/test_reaffirmation_ceremony.py",
+    "apps/accounts/test_role_services.py",
+    "apps/accounts/test_role_services_concurrency.py",
+    "apps/accounts/test_security.py",
+    "apps/accounts/test_temporary_web_reviewer.py",
+    "apps/core/tests.py",
+    "apps/dielines/tests/test_activation_checks.py",
+    "apps/dielines/tests/test_agent.py",
+    "apps/dielines/tests/test_api_phase10.py",
+    "apps/dielines/tests/test_auto_bottom_provisional.py",
+    "apps/dielines/tests/test_customer_dieline.py",
+    "apps/dielines/tests/test_design_preview.py",
+    "apps/dielines/tests/test_dtuck_integration.py",
+    "apps/dielines/tests/test_ecma_ste_archetype.py",
+    "apps/dielines/tests/test_full_surface.py",
+    "apps/dielines/tests/test_gate2_physical_clearance.py",
+    "apps/dielines/tests/test_generic_geometry_correction.py",
+    "apps/dielines/tests/test_geometry.py",
+    "apps/dielines/tests/test_info_panel.py",
+    "apps/dielines/tests/test_measure.py",
+    "apps/dielines/tests/test_opposed_tuck_archetype.py",
+    "apps/dielines/tests/test_opposed_tuck_qualification.py",
+    "apps/dielines/tests/test_physical_pilot_authority.py",
+    "apps/dielines/tests/test_production_pdf.py",
+    "apps/dielines/tests/test_production_readiness.py",
+    "apps/dielines/tests/test_production_validator.py",
+    "apps/dielines/tests/test_qualification_framework.py",
+    "apps/dielines/tests/test_reconciliation.py",
+    "apps/dielines/tests/test_reference_regression.py",
+    "apps/dielines/tests/test_registry.py",
+    "apps/dielines/tests/test_rte_12_qualification.py",
+    "apps/dielines/tests/test_rte_qualification.py",
+    "apps/dielines/tests/test_schema.py",
+    "apps/dielines/tests/test_side_seam.py",
+    "apps/dielines/tests/test_skynte_qualification.py",
+    "apps/dielines/tests/test_ste_12_qualification.py",
+    "apps/dielines/tests/test_ste_qualification.py",
+    "apps/dielines/tests/test_styles.py",
+    "apps/dielines/tests/test_svg.py",
+    "apps/dielines/tests/test_svg_validator.py",
+    "apps/dielines/tests/test_template_registry_agreement.py",
+    "apps/dielines/tests/test_thickness_compensation.py",
+    "apps/dielines/tests/test_version_visibility.py",
+    "apps/intelligence/test_artwork_preview.py",
+    "apps/intelligence/test_asset_identity.py",
+    "apps/intelligence/test_brand_evidence.py",
+    "apps/intelligence/test_browser.py",
+    "apps/intelligence/test_dip1b5a.py",
+    "apps/intelligence/test_evidence_integrity.py",
+    "apps/intelligence/test_evidence_labels.py",
+    "apps/intelligence/test_governance.py",
+    "apps/intelligence/test_governance_projection.py",
+    "apps/intelligence/test_human_semantic_metadata.py",
+    "apps/intelligence/test_locator_schemas.py",
+    "apps/intelligence/test_manifest_import.py",
+    "apps/intelligence/test_metadata_conflict_resolution.py",
+    "apps/intelligence/test_metadata_correction_concurrency.py",
+    "apps/intelligence/test_metadata_correction_flow.py",
+    "apps/intelligence/test_migration_0001.py",
+    "apps/intelligence/test_migration_0002.py",
+    "apps/intelligence/test_migration_0003.py",
+    "apps/intelligence/test_migration_0004.py",
+    "apps/intelligence/test_migration_0005.py",
+    "apps/intelligence/test_migration_0006.py",
+    "apps/intelligence/test_projection.py",
+    "apps/intelligence/test_review_browser.py",
+    "apps/intelligence/test_review_campaign.py",
+    "apps/intelligence/test_review_packet.py",
+    "apps/intelligence/test_review_workflow.py",
+    "apps/intelligence/test_search_browser.py",
+    "apps/intelligence/test_search_contract.py",
+    "apps/intelligence/test_search_service.py",
+    "apps/intelligence/test_semantic_benchmark.py",
+    "apps/intelligence/test_semantic_browser.py",
+    "apps/intelligence/test_semantic_builders.py",
+    "apps/intelligence/test_semantic_document.py",
+    "apps/intelligence/test_semantic_enrichment.py",
+    "apps/intelligence/test_semantic_index.py",
+    "apps/intelligence/test_semantic_metadata_pilot.py",
+    "apps/intelligence/test_semantic_query.py",
+    "apps/intelligence/test_semantic_query_browser.py",
+    "apps/intelligence/test_semantic_rescue.py",
+    "apps/intelligence/test_semantic_v12.py",
+    "apps/intelligence/test_semantic_value_boundary.py",
+    "apps/intelligence/test_source_foundation.py",
+    "apps/ire/tests/test_compose.py",
+    "apps/ire/tests/test_compose_container.py",
+    "apps/ire/tests/test_compose_vector_art.py",
+    "apps/ire/tests/test_container_handoff.py",
+    "apps/ire/tests/test_design_language.py",
+    "apps/ire/tests/test_graph.py",
+    "apps/ire/tests/test_handoff.py",
+    "apps/ire/tests/test_pdf_ai_emitter.py",
+    "apps/pipeline/tests/test_2b3d_readiness.py",
+    "apps/pipeline/tests/test_2b3v_confirm_resume.py",
+    "apps/pipeline/tests/test_2b3v_corr2_routing.py",
+    "apps/pipeline/tests/test_2b3v_corr3_dewdrop.py",
+    "apps/pipeline/tests/test_2b3v_corr4_geometry.py",
+    "apps/pipeline/tests/test_2b3v_correction.py",
+    "apps/pipeline/tests/test_2b3v_gate1_correction.py",
+    "apps/pipeline/tests/test_2b3v_profile_zone_ui.py",
+    "apps/pipeline/tests/test_2b3v_structure_correction.py",
+    "apps/pipeline/tests/test_2c1_composite_activation.py",
+    "apps/pipeline/tests/test_2c2a3v_session.py",
+    "apps/pipeline/tests/test_2c2a_pilot_selection.py",
+    "apps/pipeline/tests/test_2c2a_tavily.py",
+    "apps/pipeline/tests/test_2c2a_web_research.py",
+    "apps/pipeline/tests/test_2c2c_variation_spec.py",
+    "apps/pipeline/tests/test_a3p_evidence.py",
+    "apps/pipeline/tests/test_activation_defects.py",
+    "apps/pipeline/tests/test_activation_smoke.py",
+    "apps/pipeline/tests/test_artwork_segments.py",
+    "apps/pipeline/tests/test_b4a_target_selector.py",
+    "apps/pipeline/tests/test_b4b1_reference_core.py",
+    "apps/pipeline/tests/test_b4b3a_review_board_references.py",
+    "apps/pipeline/tests/test_b4b3b_reference_manifest.py",
+    "apps/pipeline/tests/test_browser_gate1.py",
+    "apps/pipeline/tests/test_browser_packaging_omission.py",
+    "apps/pipeline/tests/test_browser_profile_editor.py",
+    "apps/pipeline/tests/test_browser_recon_result.py",
+    "apps/pipeline/tests/test_browser_recon_status.py",
+    "apps/pipeline/tests/test_browser_reference_errors.py",
+    "apps/pipeline/tests/test_browser_responsive_a11y.py",
+    "apps/pipeline/tests/test_browser_retry_recovery.py",
+    "apps/pipeline/tests/test_browser_review_board_references.py",
+    "apps/pipeline/tests/test_browser_staged_reference_ui.py",
+    "apps/pipeline/tests/test_browser_staged_references.py",
+    "apps/pipeline/tests/test_browser_submission_wire.py",
+    "apps/pipeline/tests/test_browser_target_switching.py",
+    "apps/pipeline/tests/test_browser_vqr2a_quality.py",
+    "apps/pipeline/tests/test_browser_vqr6_authority.py",
+    "apps/pipeline/tests/test_characterization_protocol.py",
+    "apps/pipeline/tests/test_complete_product_owner_approval.py",
+    "apps/pipeline/tests/test_complete_product_review.py",
+    "apps/pipeline/tests/test_composite_golden_fixtures.py",
+    "apps/pipeline/tests/test_composite_orchestration.py",
+    "apps/pipeline/tests/test_composite_project.py",
+    "apps/pipeline/tests/test_concept_prompt_profile.py",
+    "apps/pipeline/tests/test_concept_references.py",
+    "apps/pipeline/tests/test_concept_selection_ceremony.py",
+    "apps/pipeline/tests/test_confirm_dimensions_errors.py",
+    "apps/pipeline/tests/test_confirm_profile_ui1.py",
+    "apps/pipeline/tests/test_confirm_profile_ui2a.py",
+    "apps/pipeline/tests/test_confirm_profile_ui2b1.py",
+    "apps/pipeline/tests/test_confirm_profile_ui2b2a.py",
+    "apps/pipeline/tests/test_confirm_profile_ui2b2b.py",
+    "apps/pipeline/tests/test_container_asset_resolver.py",
+    "apps/pipeline/tests/test_container_confirmation_2c2e.py",
+    "apps/pipeline/tests/test_container_contract.py",
+    "apps/pipeline/tests/test_container_fidelity.py",
+    "apps/pipeline/tests/test_container_font_authority.py",
+    "apps/pipeline/tests/test_container_material_influence.py",
+    "apps/pipeline/tests/test_container_material_realization.py",
+    "apps/pipeline/tests/test_container_motif.py",
+    "apps/pipeline/tests/test_container_motif_fidelity.py",
+    "apps/pipeline/tests/test_container_native_golden.py",
+    "apps/pipeline/tests/test_container_production_method.py",
+    "apps/pipeline/tests/test_container_production_metrics.py",
+    "apps/pipeline/tests/test_container_projection.py",
+    "apps/pipeline/tests/test_container_quant_fidelity.py",
+    "apps/pipeline/tests/test_container_separations.py",
+    "apps/pipeline/tests/test_container_silhouettes.py",
+    "apps/pipeline/tests/test_container_target.py",
+    "apps/pipeline/tests/test_container_visual_graph.py",
+    "apps/pipeline/tests/test_container_wrap_geometry.py",
+    "apps/pipeline/tests/test_corr2_content_semantics.py",
+    "apps/pipeline/tests/test_corr2_observability.py",
+    "apps/pipeline/tests/test_corr2_structural_provenance.py",
+    "apps/pipeline/tests/test_corr3_dryrun_and_build.py",
+    "apps/pipeline/tests/test_corr4_html_regeneration.py",
+    "apps/pipeline/tests/test_create_design_target.py",
+    "apps/pipeline/tests/test_design_context.py",
+    "apps/pipeline/tests/test_design_direction_generator.py",
+    "apps/pipeline/tests/test_design_intent.py",
+    "apps/pipeline/tests/test_dimension_gate_structure.py",
+    "apps/pipeline/tests/test_direction_content_2a6d.py",
+    "apps/pipeline/tests/test_direction_distinctness_2a6c.py",
+    "apps/pipeline/tests/test_direction_retry_2a6c.py",
+    "apps/pipeline/tests/test_display_space_exemptions.py",
+    "apps/pipeline/tests/test_flat_artwork.py",
+    "apps/pipeline/tests/test_full_pipeline.py",
+    "apps/pipeline/tests/test_gate1_checkpoint.py",
+    "apps/pipeline/tests/test_gate1_concept_selection.py",
+    "apps/pipeline/tests/test_gate1_prompt_schema.py",
+    "apps/pipeline/tests/test_gate1_reference_regeneration.py",
+    "apps/pipeline/tests/test_gate2_readiness.py",
+    "apps/pipeline/tests/test_gate_a_corr1.py",
+    "apps/pipeline/tests/test_gate_a_corr2.py",
+    "apps/pipeline/tests/test_gate_a_final.py",
+    "apps/pipeline/tests/test_gate_a_roundtrip1.py",
+    "apps/pipeline/tests/test_image_producer_refs.py",
+    "apps/pipeline/tests/test_instrument_repair.py",
+    "apps/pipeline/tests/test_m4b_b_evidence.py",
+    "apps/pipeline/tests/test_m4b_b_gate.py",
+    "apps/pipeline/tests/test_m4b_b_legibility.py",
+    "apps/pipeline/tests/test_p1_pilot_geometry.py",
+    "apps/pipeline/tests/test_p1a_moulded_regression.py",
+    "apps/pipeline/tests/test_p1b_moulded_assembly.py",
+    "apps/pipeline/tests/test_palette_confirmation_flow.py",
+    "apps/pipeline/tests/test_palette_defect_recurrence.py",
+    "apps/pipeline/tests/test_palette_design_graph_fidelity.py",
+    "apps/pipeline/tests/test_palette_design_intent.py",
+    "apps/pipeline/tests/test_palette_design_target.py",
+    "apps/pipeline/tests/test_palette_es3083_bridge.py",
+    "apps/pipeline/tests/test_palette_evidence_manifest.py",
+    "apps/pipeline/tests/test_palette_face_provenance.py",
+    "apps/pipeline/tests/test_palette_governance.py",
+    "apps/pipeline/tests/test_palette_graph_fidelity_v2.py",
+    "apps/pipeline/tests/test_palette_identity_and_maximum.py",
+    "apps/pipeline/tests/test_palette_intent_confirmation.py",
+    "apps/pipeline/tests/test_palette_layout_kernel.py",
+    "apps/pipeline/tests/test_palette_m4b_a2_fit.py",
+    "apps/pipeline/tests/test_palette_m4b_a3_coring.py",
+    "apps/pipeline/tests/test_palette_m4b_recessed_tray.py",
+    "apps/pipeline/tests/test_palette_material_engine.py",
+    "apps/pipeline/tests/test_palette_mechanism_stackup.py",
+    "apps/pipeline/tests/test_palette_mesh_section.py",
+    "apps/pipeline/tests/test_palette_profile_offset.py",
+    "apps/pipeline/tests/test_palette_rect_pan.py",
+    "apps/pipeline/tests/test_palette_rect_tray.py",
+    "apps/pipeline/tests/test_palette_statistics.py",
+    "apps/pipeline/tests/test_palette_technical_sections.py",
+    "apps/pipeline/tests/test_palette_thickness_authority.py",
+    "apps/pipeline/tests/test_palette_variant_visual_proof.py",
+    "apps/pipeline/tests/test_palt_p1_geometry.py",
+    "apps/pipeline/tests/test_panel_translate.py",
+    "apps/pipeline/tests/test_parameter_realization.py",
+    "apps/pipeline/tests/test_phase11.py",
+    "apps/pipeline/tests/test_phase12.py",
+    "apps/pipeline/tests/test_phase13.py",
+    "apps/pipeline/tests/test_phase14.py",
+    "apps/pipeline/tests/test_phase2a4.py",
+    "apps/pipeline/tests/test_phase2a7_golden_baseline.py",
+    "apps/pipeline/tests/test_phase8.py",
+    "apps/pipeline/tests/test_pilot_closeout.py",
+    "apps/pipeline/tests/test_powder_engine.py",
+    "apps/pipeline/tests/test_print_data.py",
+    "apps/pipeline/tests/test_print_data_recovery.py",
+    "apps/pipeline/tests/test_print_data_snapshot.py",
+    "apps/pipeline/tests/test_product_profile.py",
+    "apps/pipeline/tests/test_production_authority_preflight.py",
+    "apps/pipeline/tests/test_project_summary.py",
+    "apps/pipeline/tests/test_rbv2b_validation_render.py",
+    "apps/pipeline/tests/test_rbv_contracts.py",
+    "apps/pipeline/tests/test_rbv_geometry_core.py",
+    "apps/pipeline/tests/test_reference_anatomy.py",
+    "apps/pipeline/tests/test_reference_index.py",
+    "apps/pipeline/tests/test_reference_uploads.py",
+    "apps/pipeline/tests/test_review_board.py",
+    "apps/pipeline/tests/test_revision_stamp_2a6c.py",
+    "apps/pipeline/tests/test_roadmap_tracker.py",
+    "apps/pipeline/tests/test_selected_concept_fidelity.py",
+    "apps/pipeline/tests/test_standard_pipeline.py",
+    "apps/pipeline/tests/test_structure_gate.py",
+    "apps/pipeline/tests/test_structure_projection_2a9.py",
+    "apps/pipeline/tests/test_supplier_dispatch.py",
+    "apps/pipeline/tests/test_supplier_eml.py",
+    "apps/pipeline/tests/test_supplier_sent_validation.py",
+    "apps/pipeline/tests/test_targets.py",
+    "apps/pipeline/tests/test_visual_input_quality.py",
+    "apps/pipeline/tests/test_visual_review_packet.py",
+    "apps/pipeline/tests/test_vq1_backbone.py",
+    "apps/pipeline/tests/test_vq1_close1.py",
+    "apps/pipeline/tests/test_vq1_closeout.py",
+    "apps/pipeline/tests/test_vq1_corr2.py",
+    "apps/pipeline/tests/test_vq1_corr4.py",
+    "apps/pipeline/tests/test_vq1_corr5.py",
+    "apps/pipeline/tests/test_vq1_it5_audit.py",
+    "apps/pipeline/tests/test_vq1_it6.py",
+    "apps/pipeline/tests/test_vq1_it6_blockers.py",
+    "apps/pipeline/tests/test_vq1_master.py",
+    "apps/pipeline/tests/test_vq1_owner_acceptance.py",
+    "apps/pipeline/tests/test_vq1_reset1.py",
+    "apps/pipeline/tests/test_vq1_reset1a.py",
+    "apps/pipeline/tests/test_vq1_reset1b.py",
+    "apps/pipeline/tests/test_vq1_reset2.py",
+    "apps/pipeline/tests/test_vq1_reset2_corr1.py",
+    "apps/pipeline/tests/test_vq1_review_ui.py",
+    "apps/pipeline/tests/test_vq2_a2.py",
+    "apps/pipeline/tests/test_vq2_a2_r1.py",
+    "apps/pipeline/tests/test_vq2_a2_r2.py",
+    "apps/pipeline/tests/test_vq2_artwork.py",
+    "apps/pipeline/tests/test_vq2_asset_gate.py",
+    "apps/pipeline/tests/test_vq2_baked_distortion_ruling.py",
+    "apps/pipeline/tests/test_vq2_billing_probe.py",
+    "apps/pipeline/tests/test_vq2_converter_fixtures.py",
+    "apps/pipeline/tests/test_vq2_corr1.py",
+    "apps/pipeline/tests/test_vq2_final_inspection.py",
+    "apps/pipeline/tests/test_vq2_handoff_format.py",
+    "apps/pipeline/tests/test_vq2_lettering_commission.py",
+    "apps/pipeline/tests/test_vq2_logo_confirmed.py",
+    "apps/pipeline/tests/test_vq2_owner_approval.py",
+    "apps/pipeline/tests/test_vq2_pending_package.py",
+    "apps/pipeline/tests/test_vq2_preflight1.py",
+    "apps/pipeline/tests/test_vq2_receipt_contract.py",
+    "apps/pipeline/tests/test_vq2_receipt_rejection.py",
+    "apps/pipeline/tests/test_vq2_resume_attempt.py",
+    "apps/pipeline/tests/test_vq2_typeface_gate.py",
+    "apps/pipeline/tests/test_vq3_closeout.py",
+    "apps/pipeline/tests/test_vq3_material.py",
+    "apps/pipeline/tests/test_vq3_owner_selection.py",
+    "apps/pipeline/tests/test_vqr1_m3_integration.py",
+    "apps/pipeline/tests/test_vqr2a_visual_quality_gate.py",
+    "apps/pipeline/tests/test_vqr2b_concept_analysis.py",
+    "apps/pipeline/tests/test_vqr6_result_authority.py"
+   ],
+   "removed": [],
+   "files_after": 318
+  },
+  {
+   "utc": "2026-08-20T09:10:55.832556Z",
+   "added": [
+    "apps/ire/tests/test_back_panel.py",
+    "apps/ire/tests/test_container_composition_metrics.py",
+    "apps/ire/tests/test_container_line_weight.py",
+    "apps/ire/tests/test_container_overlap.py",
+    "apps/ire/tests/test_container_text_floor.py",
+    "apps/ire/tests/test_container_typography_metrics.py",
+    "apps/ire/tests/test_text_metrics.py",
+    "apps/ire/tests/test_wi2a_split_packer.py",
+    "apps/ire/tests/test_wi3h_reserved_copy.py",
+    "apps/ire/tests/test_wig_zone_floor_authority.py",
+    "apps/ire/tests/test_wij_type_size_units.py",
+    "apps/ire/tests/test_wik_back_panel_floor.py",
+    "apps/ire/tests/test_wil_stroke_extent.py",
+    "apps/ire/tests/test_win_method_provenance.py",
+    "apps/ire/tests/test_wio_on_pack_copy.py",
+    "apps/ire/tests/test_wip_leading_units.py",
+    "apps/ire/tests/test_wiq_type_scale_independence.py",
+    "apps/ire/tests/test_wit_unit_analysis.py",
+    "apps/ire/tests/test_wiu_front_collision.py",
+    "apps/ire/tests/test_wiv_leading_comparison.py",
+    "apps/ire/tests/test_wiw_line_ledger.py",
+    "apps/ire/tests/test_wix_label_construction.py",
+    "apps/ire/tests/test_wiy_leading_metric_floor.py",
+    "apps/ire/tests/test_wiz_surface_plan.py",
+    "apps/ire/tests/test_wiz_zone_contract.py",
+    "apps/pipeline/tests/test_brand_component_library.py",
+    "apps/pipeline/tests/test_design_graph_v2.py",
+    "apps/pipeline/tests/test_gate_baseline_registration.py",
+    "apps/pipeline/tests/test_h2_design_request.py",
+    "apps/pipeline/tests/test_h2_views.py",
+    "apps/pipeline/tests/test_m7_ai_emitter.py",
+    "apps/pipeline/tests/test_rbv3_review_package.py",
+    "apps/pipeline/tests/test_rbv3_views.py",
+    "apps/pipeline/tests/test_rbv4_claude_review.py",
+    "apps/pipeline/tests/test_rbv5_comparison_gate.py",
+    "apps/pipeline/tests/test_silhouette_tolerance_separation.py",
+    "apps/pipeline/tests/test_vqr2b_reconstruction_measurement.py",
+    "apps/pipeline/tests/test_vqr3_logo_metrics.py",
+    "apps/pipeline/tests/test_wi0_evidence_is_committed.py",
+    "apps/pipeline/tests/test_wi3a_unique_column_census.py",
+    "apps/pipeline/tests/test_wif_reconstruct_container.py",
+    "apps/pipeline/tests/test_wig_source_string_guards.py",
+    "apps/pipeline/tests/test_wih_y3_branch_reachability.py",
+    "apps/pipeline/tests/test_wir_zone_surface_spelling.py"
+   ],
+   "removed": [],
+   "files_after": 362
+  },
+  {
+   "utc": "2026-08-20T09:41:17.934297Z",
+   "added": [],
+   "removed": [],
+   "files_after": 362
+  },
+  {
+   "utc": "2026-08-20T09:43:44.942875Z",
+   "added": [],
+   "removed": [],
+   "files_after": 362
+  },
+  {
+   "utc": "2026-08-21T03:12:30.220323Z",
+   "added": [
+    "apps/ire/tests/test_av2_brand_strings.py",
+    "apps/ire/tests/test_av3_brand_string_runtime.py"
+   ],
+   "removed": [],
+   "files_after": 364
+  },
+  {
+   "utc": "2026-08-21T04:35:34.199453Z",
+   "added": [
+    "apps/pipeline/tests/test_av5_artefact_withheld.py"
+   ],
+   "removed": [],
+   "files_after": 365
+  },
+  {
+   "utc": "2026-08-21T06:12:35.910602Z",
+   "added": [
+    "apps/ire/tests/test_au3_brand_usage.py",
+    "apps/ire/tests/test_au3_divider_gates.py",
+    "apps/ire/tests/test_aw_emitter_closure.py"
+   ],
+   "removed": [],
+   "files_after": 368
+  },
+  {
+   "utc": "2026-08-21T07:40:53.309046Z",
+   "added": [
+    "apps/pipeline/tests/test_ay1_outbound_guard.py"
+   ],
+   "removed": [],
+   "files_after": 369
+  },
+  {
+   "utc": "2026-08-21T08:16:36.851849Z",
+   "added": [],
+   "removed": [],
+   "files_after": 369
+  },
+  {
+   "utc": "2026-08-22T08:29:51.544286Z",
+   "added": [
+    "apps/pipeline/tests/test_two_roots_collision_guard.py"
+   ],
+   "removed": [],
+   "files_after": 370
+  },
+  {
+   "utc": "2026-08-27T08:37:40.815465Z",
+   "added": [
+    "apps/ire/tests/test_c10_mark_width.py"
+   ],
+   "removed": [],
+   "files_after": 371
+  },
+  {
+   "utc": "2026-09-01T08:49:51.447023Z",
+   "added": [
+    "apps/pipeline/tests/test_container_font_owner_grant.py"
+   ],
+   "removed": [],
+   "files_after": 372
+  },
+  {
+   "utc": "2026-09-26T19:26:39.815045Z",
+   "added": [],
+   "removed": [
+    "apps/pipeline/tests/test_supplier_dispatch.py",
+    "apps/pipeline/tests/test_supplier_eml.py",
+    "apps/pipeline/tests/test_supplier_sent_validation.py"
+   ],
+   "files_after": 369
+  },
+  {
+   "utc": "2026-10-05T00:42:02.679589Z",
+   "added": [
+    "apps/pipeline/tests/test_wiring_check.py"
+   ],
+   "removed": [],
+   "files_after": 370
+  },
+  {
+   "utc": "2026-10-06T19:40:09.739866Z",
+   "added": [
+    "apps/dielines/tests/test_trade_tuck.py"
+   ],
+   "removed": [],
+   "files_after": 371
+  },
+  {
+   "utc": "2026-10-18T08:30:58.323200Z",
+   "added": [
+    "apps/pipeline/tests/test_rescue_day2.py",
+    "apps/pipeline/tests/test_rescue_day2_browser.py"
+   ],
+   "removed": [],
+   "files_after": 375
+  },
+  {
+   "utc": "2026-10-18T11:58:05.594948Z",
+   "added": [
+    "apps/pipeline/tests/test_rescue_day3.py",
+    "apps/pipeline/tests/test_rescue_day3_browser.py"
+   ],
+   "removed": [],
+   "files_after": 377
+  },
+  {
+   "utc": "2026-10-18T15:20:20.792580Z",
+   "added": [
+    "apps/pipeline/tests/test_rescue_day4.py",
+    "apps/pipeline/tests/test_rescue_day4_browser.py"
+   ],
+   "removed": [],
+   "files_after": 379
+  },
+  {
+   "utc": "2026-10-18T19:15:09.019363Z",
+   "added": [
+    "apps/pipeline/tests/test_rescue_day5.py",
+    "apps/pipeline/tests/test_rescue_day5_browser.py"
+   ],
+   "removed": [],
+   "files_after": 381
+  },
+  {
+   "utc": "2026-10-19T08:57:29.558111Z",
+   "added": [
+    "apps/pipeline/tests/test_rescue_day6.py",
+    "apps/pipeline/tests/test_rescue_day6_bottle.py",
+    "apps/pipeline/tests/test_rescue_day6_browser.py",
+    "apps/pipeline/tests/test_rescue_day6_cut_layout.py",
+    "apps/pipeline/tests/test_rescue_day6_native.py",
+    "apps/pipeline/tests/test_rescue_day6_render.py",
+    "apps/pipeline/tests/test_rescue_day6_surface_fidelity.py"
+   ],
+   "removed": [],
+   "floor_delta": 42,
+   "reason": "Day 6 rescue test files (surface fidelity, native, render, bottle, cut layout, Day 6 pages/browser); floors raised by their collected counts; nothing removed"
+  },
+  {
+   "utc": "2026-10-19T11:42:25.819522Z",
+   "added": [
+    "apps/pipeline/tests/test_day7_library_golden.py"
+   ],
+   "removed": [],
+   "floor_delta": 4,
+   "reason": "Day 7 rescue test files (library index retrieval golden checks, font pool, Library page, mockups); floors raised by their collected counts"
+  },
+  {
+   "utc": "2026-10-19T12:00:26.975019Z",
+   "added": [
+    "apps/pipeline/tests/test_day7_fonts.py"
+   ],
+   "removed": [],
+   "floor_delta": 4,
+   "reason": "Day 7 rescue test files (library index retrieval golden checks, font pool, Library page, mockups); floors raised by their collected counts"
+  },
+  {
+   "utc": "2026-10-19T12:10:17.601926Z",
+   "added": [
+    "apps/pipeline/tests/test_day7_library_page.py",
+    "apps/pipeline/tests/test_rescue_day7_browser.py"
+   ],
+   "removed": [],
+   "floor_delta": 4,
+   "reason": "Day 7 rescue test files (library index retrieval golden checks, font pool, Library page, mockups); floors raised by their collected counts"
+  },
+  {
+   "utc": "2026-10-19T12:19:42.324505Z",
+   "added": [
+    "apps/pipeline/tests/test_day7_surfaces.py"
+   ],
+   "removed": [],
+   "floor_delta": 2,
+   "reason": "Day 7 rescue test files (library index retrieval golden checks, font pool, Library page, mockups); floors raised by their collected counts"
+  },
+  {
+   "utc": "2026-10-20T03:18:10.566799Z",
+   "added": [
+    "apps/ire/tests/test_day8_fonts.py",
+    "apps/pipeline/tests/test_day8_concepts.py",
+    "apps/pipeline/tests/test_day8_jury.py",
+    "apps/pipeline/tests/test_day8_library.py"
+   ],
+   "removed": [],
+   "files_after": 397
+  },
+  {
+   "utc": "2026-10-20T12:06:32.948415Z",
+   "added": [
+    "apps/pipeline/tests/test_day9_builds.py",
+    "apps/pipeline/tests/test_day9_orn_a2.py",
+    "apps/pipeline/tests/test_day9_orn_b1.py",
+    "apps/pipeline/tests/test_day9_orn_b2.py",
+    "apps/pipeline/tests/test_day9_orn_c1.py",
+    "apps/pipeline/tests/test_day9_orn_c2.py",
+    "apps/pipeline/tests/test_day9_palette.py"
+   ],
+   "removed": [],
+   "files_after": 404
+  },
+  {
+   "utc": "2026-10-23T04:45:07.136981Z",
+   "added": [
+    "apps/pipeline/tests/test_day10_master.py"
+   ],
+   "removed": [],
+   "files_after": 405
+  },
+  {
+   "utc": "2026-10-23T17:58:34.559908Z",
+   "added": [
+    "apps/pipeline/tests/test_day11_carton.py",
+    "apps/pipeline/tests/test_day11_golden_hour.py",
+    "apps/pipeline/tests/test_day11_lipstick.py",
+    "apps/pipeline/tests/test_day11_pages.py",
+    "apps/pipeline/tests/test_day11_zilal.py",
+    "apps/pipeline/tests/test_day11_zilal_pack.py"
+   ],
+   "removed": [],
+   "files_after": 411
+  },
+  {
+   "utc": "2026-10-24T12:16:31.886831Z",
+   "added": [
+    "apps/dielines/tests/test_counter_tray_header.py",
+    "apps/pipeline/tests/test_day12_balm.py",
+    "apps/pipeline/tests/test_day12_board.py",
+    "apps/pipeline/tests/test_day12_display.py",
+    "apps/pipeline/tests/test_day12_lipstick.py",
+    "apps/pipeline/tests/test_day12_pages.py",
+    "apps/pipeline/tests/test_day12_reader.py"
+   ],
+   "removed": [],
+   "files_after": 418
+  },
+  {
+   "utc": "2026-10-24T17:26:23.370523Z",
+   "added": [
+    "apps/pipeline/tests/test_day13_carton_copy.py",
+    "apps/pipeline/tests/test_day13_creativity.py",
+    "apps/pipeline/tests/test_day13_creativity_page.py",
+    "apps/pipeline/tests/test_day13_demo.py",
+    "apps/pipeline/tests/test_day13_display_faces.py",
+    "apps/pipeline/tests/test_day13_lipstick_carton.py",
+    "apps/pipeline/tests/test_day13_print_pack.py"
+   ],
+   "removed": [],
+   "files_after": 425
+  },
+  {
+   "utc": "2026-10-24T21:43:45.234436Z",
+   "added": [
+    "apps/pipeline/tests/test_day14_faces.py",
+    "apps/pipeline/tests/test_day14_file_door.py",
+    "apps/pipeline/tests/test_day14_print_pack.py",
+    "apps/pipeline/tests/test_day14_wrap.py"
+   ],
+   "removed": [],
+   "files_after": 429
+  },
+  {
+   "utc": "2026-10-25T07:26:55.136586Z",
+   "added": [
+    "apps/pipeline/tests/test_round_balm.py"
+   ],
+   "removed": [],
+   "files_after": 430
+  },
+  {
+   "utc": "2026-10-25T07:29:47.792115Z",
+   "added": [],
+   "removed": [],
+   "files_after": 430
+  },
+  {
+   "utc": "2026-10-25T07:43:12.256667Z",
+   "added": [],
+   "removed": [],
+   "files_after": 430
+  },
+  {
+   "utc": "2026-10-25T07:47:40.609797Z",
+   "added": [],
+   "removed": [],
+   "files_after": 430
+  },
+  {
+   "utc": "2026-10-25T18:13:51.404371Z",
+   "added": [
+    "apps/pipeline/tests/test_balm_leaflet.py",
+    "apps/pipeline/tests/test_hayat_cap_cleanup.py",
+    "apps/pipeline/tests/test_hayat_close.py",
+    "apps/pipeline/tests/test_hayat_derivative_diff.py",
+    "apps/pipeline/tests/test_hayat_master_artifacts.py",
+    "apps/pipeline/tests/test_hayat_master_page.py",
+    "apps/pipeline/tests/test_hayat_review_contract.py",
+    "apps/pipeline/tests/test_hayat_side_repair.py",
+    "apps/pipeline/tests/test_round_balm_preservation.py"
+   ],
+   "removed": [],
+   "files_after": 439
+  },
+  {
+   "utc": "2026-10-25T21:53:21.845816Z",
+   "added": [
+    "apps/pipeline/tests/test_product_round_media.py",
+    "apps/pipeline/tests/test_product_round_page.py",
+    "apps/pipeline/tests/test_round_calls.py",
+    "apps/pipeline/tests/test_round_flow.py"
+   ],
+   "removed": [],
+   "files_after": 443
+  },
+  {
+   "utc": "2026-10-26T16:48:28.671913Z",
+   "added": [
+    "apps/pipeline/tests/test_round_files_art.py",
+    "apps/pipeline/tests/test_round_files_export.py",
+    "apps/pipeline/tests/test_round_files_job.py",
+    "apps/pipeline/tests/test_round_files_page.py"
+   ],
+   "removed": [],
+   "files_after": 447
+  },
+  {
+   "utc": "2026-10-28T06:36:49.506375Z",
+   "added": [
+    "apps/dielines/tests/test_counter_display.py",
+    "apps/pipeline/tests/test_round_files_faces.py"
+   ],
+   "removed": [
+    "apps/pipeline/tests/test_round_files_art.py",
+    "apps/pipeline/tests/test_round_files_job.py"
+   ],
+   "files_after": 447
+  },
+  {
+   "utc": "2026-10-28T20:47:11.922378Z",
+   "added": [],
+   "removed": [
+    "apps/dielines/tests/test_counter_tray_header.py",
+    "apps/pipeline/tests/test_balm_leaflet.py",
+    "apps/pipeline/tests/test_day11_carton.py",
+    "apps/pipeline/tests/test_day11_golden_hour.py",
+    "apps/pipeline/tests/test_day11_lipstick.py",
+    "apps/pipeline/tests/test_day11_zilal.py",
+    "apps/pipeline/tests/test_day11_zilal_pack.py",
+    "apps/pipeline/tests/test_day12_balm.py",
+    "apps/pipeline/tests/test_day12_board.py",
+    "apps/pipeline/tests/test_day12_display.py",
+    "apps/pipeline/tests/test_day12_lipstick.py",
+    "apps/pipeline/tests/test_day12_reader.py",
+    "apps/pipeline/tests/test_day13_carton_copy.py",
+    "apps/pipeline/tests/test_day13_creativity.py",
+    "apps/pipeline/tests/test_day13_creativity_page.py",
+    "apps/pipeline/tests/test_day13_demo.py",
+    "apps/pipeline/tests/test_day13_display_faces.py",
+    "apps/pipeline/tests/test_day13_lipstick_carton.py",
+    "apps/pipeline/tests/test_day13_print_pack.py",
+    "apps/pipeline/tests/test_day14_wrap.py",
+    "apps/pipeline/tests/test_day8_jury.py",
+    "apps/pipeline/tests/test_day9_orn_b1.py",
+    "apps/pipeline/tests/test_day9_orn_b2.py",
+    "apps/pipeline/tests/test_day9_orn_c1.py",
+    "apps/pipeline/tests/test_hayat_cap_cleanup.py",
+    "apps/pipeline/tests/test_hayat_derivative_diff.py",
+    "apps/pipeline/tests/test_hayat_master_artifacts.py",
+    "apps/pipeline/tests/test_hayat_master_page.py",
+    "apps/pipeline/tests/test_hayat_review_contract.py",
+    "apps/pipeline/tests/test_hayat_side_repair.py",
+    "apps/pipeline/tests/test_rescue_day2_browser.py",
+    "apps/pipeline/tests/test_rescue_day3_browser.py",
+    "apps/pipeline/tests/test_rescue_day4_browser.py",
+    "apps/pipeline/tests/test_rescue_day5_browser.py",
+    "apps/pipeline/tests/test_rescue_day6.py",
+    "apps/pipeline/tests/test_rescue_day6_bottle.py",
+    "apps/pipeline/tests/test_rescue_day6_browser.py",
+    "apps/pipeline/tests/test_rescue_day6_cut_layout.py",
+    "apps/pipeline/tests/test_rescue_day6_native.py",
+    "apps/pipeline/tests/test_rescue_day6_render.py",
+    "apps/pipeline/tests/test_rescue_day6_surface_fidelity.py",
+    "apps/pipeline/tests/test_round_balm_preservation.py"
+   ],
+   "files_after": 405
+  }
+ ]
+}
