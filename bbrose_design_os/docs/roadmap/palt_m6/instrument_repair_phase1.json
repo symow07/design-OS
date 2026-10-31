@@ -1,0 +1,50 @@
+{
+  "record_type": "instrument_repair_phase1/1.0",
+  "repair_identity": "1e198aed8d86ed9c",
+  "protocol_identity_unchanged": "087c7f64317910fb",
+  "families_frozen": true,
+  "bars_moved": [],
+  "measured_from": "SCENE_LINEAR_EXR_RGB_ONLY_ALIGNMENT_ASSERTED",
+  "voided_first_attempt": "the first Phase-1 run was voided in full before any number was banked: cv2 delivers the EXR vertically flipped relative to the region indices, caught by comparing region means against the Blender-side authority (unflipped GRAZING 0.0114 vs authority 0.0774). The loader now flips and REGION_ALIGNMENT_ASSERTION runs on every measurement, negative control committed.",
+  "the_four_questions": {
+    "does_granularity_still_admit": "YES \u2014 re-derived, not carried forward: positive-fixture effect 0.881 on the clean chain (0.456 contaminated, 0.7851 misaligned). Stimulus realization 0.1989 against the 0.002 floor.",
+    "does_the_exposure_control_still_read_near_zero": "YES, and cleaner: 0.0028 on clean frames (the contaminated 0.0008 was passing under a constant-add that should have perturbed it). Mean-normalisation is now demonstrated on the frame it claims to normalise \u2014 this strengthens the axis.",
+    "do_the_two_passes_hold": "YES. MATTE_VS_SATIN PASS on SHEEN + EDGE + GRANULARITY (granularity effect 0.6828). PRESSED_VS_MATTE PASS on FWHM + SHEEN + EDGE + GRANULARITY (0.8942). Phase 2 eligibility (EDGE noise floor) still applies before either is final.",
+    "does_satin_vs_cream_still_fail": "NO \u2014 SATIN_VS_CREAM reads PASS on HIGHLIGHT_FWHM + GRANULARITY_INDEX (granularity 0.040564 vs 0.063597, effect 0.4423, two different instruments). The FAIL_MATERIAL_MODEL verdict was an instrument artifact; the prior ruling record is superseded in place with the cause named. FINAL adjudication deliberately deferred to Phase 3 behind Phase 2 eligibility and independence."
+  },
+  "grazing_band_contrast": "now measures real values (2.7175 vs 2.3991) and honestly fails its positive fixture at 0.1245 against the unchanged 0.25 bar \u2014 rejected on a true measurement rather than on a structureless zero. Compaction observability remains an open instrument gap, recorded, not blocking any current pair.",
+  "lobe_sensitivity_study": {
+    "result": "reproduced exactly on re-run; every fixture pair now carries an R2 realization record (all realized, rms/mean 0.0122-0.0613)",
+    "still_blind": [
+      "MICROTEXTURE_VARIANCE",
+      "COMPACTION"
+    ],
+    "note": "the lobe axes read the Blender-side scene-linear JSON and were never touched by the F1/F2 reader defects"
+  },
+  "controls": {
+    "identical_rerun": "STIMULUS_NOT_REALIZED as required (rms 0.0)",
+    "seed_only": {
+      "GRANULARITY_INDEX": 0.038,
+      "GRAZING_BAND_CONTRAST": 0.0058
+    },
+    "exposure_only": {
+      "GRANULARITY_INDEX": 0.0028,
+      "GRAZING_BAND_CONTRAST": 0.0189
+    },
+    "lighting_perturbation": {
+      "GRANULARITY_INDEX": 0.0782,
+      "GRAZING_BAND_CONTRAST": 0.0137
+    }
+  },
+  "superseded_in_place": [
+    "texture_axes_validation.json",
+    "diffuse_pair_rulings.json"
+  ],
+  "what_this_phase_refused_to_conclude": [
+    "no pair is FINAL \u2014 Phase 2 must first measure per-axis noise floors (EDGE at 0.27991 on seed alone is the live concern) and cross-axis independence before any PASS is re-adjudicated",
+    "the satin correction is NOT withdrawn yet \u2014 that is Phase 3, after eligibility",
+    "nothing about the glitter census \u2014 Phase 4"
+  ],
+  "owner_approved": false,
+  "manufacturing_authority": "NOT_ESTABLISHED"
+}

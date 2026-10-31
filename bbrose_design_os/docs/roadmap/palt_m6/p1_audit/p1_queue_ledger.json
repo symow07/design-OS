@@ -1,0 +1,24 @@
+{
+ "record_type": "p1_audit_queue_ledger/1.0",
+ "arc": "P1 \u2014 re-measure PALT-M6 behind \u00a7BH2, audit-first",
+ "governing_rulings": [
+  "\u00a7BH3",
+  "\u00a7BH6(a)",
+  "\u00a7BH7(a)",
+  "\u00a7BH7(c)"
+ ],
+ "identity_namespace": "declaration_identity \u2014 sha256 of the COMMITTED bytes of docs/roadmap/palt_m6/declared_spreads/spreads_campaign_declaration.json, first 16 hex, read through git show. NOT protocol_identity(), which is computed over the protocol payload and is a different register entirely.",
+ "spend": {
+  "renders_this_arc": 0,
+  "note": "P1 opens audit-first. This act spends no renders; the cap that governs renders is untouched by it."
+ },
+ "trace_controls": [
+  {
+   "control_site": "queue_control:first_act",
+   "queue": "p1_audit",
+   "trace_path": "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/docs/roadmap/palt_m6/p1_audit/p1_firing_trace.jsonl",
+   "ts": 1787981855.760652,
+   "declaration_identity": "87893c1264fd232f"
+  }
+ ]
+}

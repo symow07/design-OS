@@ -1,0 +1,55 @@
+{
+  "record_type": "combined_measurement_manifest/1.0",
+  "status": "PLANNED_NOT_EXECUTED \u2014 the manifest is the deliverable",
+  "independent_totals": {
+    "M6-DECLARED-ENSEMBLE-SPREADS": {
+      "renders": 54,
+      "content": "6-seed declared ensembles: SATIN/PRESSED/CREAM on lobe (18) + texture (18), METALLIC/GLITTER on flake (12), glitter event ensemble (6)"
+    },
+    "M6-CENSUS-REPLICATE": {
+      "renders": 48,
+      "content": "the N=8 family census re-measured at 2 further seed sets on both diffuse instruments (8 families x 2 seeds x 2 rigs = 32) + 16 texture calibration/base frames"
+    },
+    "CONTROL-COVERAGE-GAPS (Section D)": {
+      "renders": 42,
+      "content": "per-member negative controls for every PARTIAL/NOT_VALIDATED row: SATIN, PRESSED, CREAM, METALLIC, GLITTER, BAKED, warm-solid MATTE ensembles at their counted conditions (7 members x 6 seeds), plus C3-class positive controls at each counted condition"
+    },
+    "M6-FLAKE-INDEPENDENCE-RE-ADJUDICATION": {
+      "renders": 36,
+      "content": "driver tables + sweeps for the two reflective pairs under the amended law (flake_density, metallic_response, sparkle_intensity, flake_scale over containing intervals)"
+    }
+  },
+  "total_if_run_separately": 180,
+  "total_as_one_manifest": 102,
+  "saving": 78,
+  "saving_pct": 43.3,
+  "shared_frames_producing_the_saving": {
+    "S1_ensemble_IS_the_control": {
+      "saving": 42,
+      "why": "a 6-seed declared ensemble per member IS the per-member negative control 1p demands \u2014 Section D's 42 renders are entirely subsumed by DECLARED-ENSEMBLE-SPREADS once its member list is widened to every counted member (SATIN, PRESSED, CREAM, METALLIC, GLITTER, BAKED, warm-MATTE). Same frames, two obligations discharged."
+    },
+    "S2_census_rows_from_ensemble_members": {
+      "saving": 16,
+      "why": "the census needs one measurement per family per seed set; the ensemble already renders 6 seeds per family on both diffuse rigs. Two of those seeds ARE the census replicate sets \u2014 only the 4 families outside the widened ensemble list need their own frames."
+    },
+    "S3_flake_overlap": {
+      "saving": 12,
+      "why": "the flake node's METALLIC and GLITTER member ensembles are the same frames the widened ensemble renders; only its driver SWEEPS are genuinely new."
+    },
+    "S4_calibration_reuse": {
+      "saving": 8,
+      "why": "texture-rig per-family calibration energies are already cached on disk (family_energies.json); probe/base/cal frames do not re-render per node."
+    }
+  },
+  "the_structural_finding": "Section D did change the plan, and in the direction the owner suspected: 1p requires a declared ensemble per COUNTED MEMBER, not per instrument. That turns the ensemble node from a spread-measuring node into the single node that discharges spreads AND controls AND most of the census \u2014 which is why planning them together saves 78 renders rather than a handful.",
+  "resumable_order": [
+    "1. widened per-member ensembles, family by family (each family is a boundary: 12 renders, closes that member's spread AND its negative control together)",
+    "2. census replicate remainder (4 uncovered families)",
+    "3. C3-class positive controls at each counted condition",
+    "4. flake driver sweeps (the only genuinely separate work)",
+    "5. FLOOR-STATISTIC-REPLICATE last, unchanged",
+    "FROZEN-INSTRUMENT-DEFECT-REGISTER slots anywhere \u2014 zero renders"
+  ],
+  "boundary_property": "every step closes a whole member or a whole family; an interrupted session resumes at the next member with no wasted frames",
+  "owner_approved": false
+}

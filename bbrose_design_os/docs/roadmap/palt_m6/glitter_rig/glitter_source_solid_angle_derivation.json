@@ -1,0 +1,31 @@
+{
+  "record_type": "glitter_source_solid_angle_derivation/1.0",
+  "jitter_distribution": {
+    "shader_law": "(voronoi_colour - 0.5) * jitter_deg/90 added to the normal; per-axis uniform",
+    "per_axis_halfwidth_rad": 0.1944,
+    "orientation_jitter_deg": 35.0
+  },
+  "source_distance_mm": 300.0,
+  "facet_lobe_rad": 0.05,
+  "particle_census": {
+    "planar_area_mm2": 485.8,
+    "cells": 991.0,
+    "coverage": 0.1,
+    "particles": 99.0
+  },
+  "event_threshold": 25,
+  "calculated_source_size_mm": 140.0,
+  "target_angular_halfwidth_deg": 13.13,
+  "predicted_aligned_fraction": 0.4049,
+  "predicted_events": 40.1,
+  "predicted_event_range": [
+    28.1,
+    52.2
+  ],
+  "uncertainty": "\u00b130% on the cell census (region shape, edge cells, lobe-width approximation)",
+  "SOURCE_SIZE_AUTHORITY": "CALCULATED_CHARACTERIZATION_DEFAULT",
+  "not_authority_for": [
+    "MATERIAL_PROPERTY",
+    "MANUFACTURER_STANDARD"
+  ]
+}

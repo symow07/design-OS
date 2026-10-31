@@ -1,0 +1,33 @@
+{
+  "record_type": "control_coverage_section_c_result/1.0",
+  "C3_warm_positive_control": {
+    "declared_before_measurement": "PASSES if effect >= 0.25",
+    "fixture": "warm MARBLED (ens_500) vs warm CREAM (seed 500) \u2014 live, same shade, known chromatically different",
+    "effect": 0.02869,
+    "result": "FAIL",
+    "consequence": "C3 is BLIND at warm: its 0.0638 is INSTRUMENT_NOT_VALIDATED_AT_CONDITION and carries nothing in either direction"
+  },
+  "C2_warm_negative_control": {
+    "marbled_member": "EXISTS and HOLDS \u2014 the floor ensemble is warm-shade MARBLED seeds 500-505 (rig L183-192), floor 0.0548 < 0.25",
+    "solid_member": "PENDING_MEMBER_CONTROL \u2014 no second warm matte seed exists on this rig; 1p every-member clause unmet; manifest item, not dischargeable from retained frames"
+  },
+  "SOLID_VS_MARBLED_re_rule": {
+    "verdict": "FAIL",
+    "qualifier_count": "1-PENDING \u2014 C2 only, pending its solid-member negative control; C3 removed from the qualifier set (blind at warm)",
+    "C2": {
+      "effect": 0.49048,
+      "required": 0.25,
+      "clears": true,
+      "status": "qualifying pending solid-member control"
+    },
+    "C3": {
+      "effect": 0.06384,
+      "required": 0.25,
+      "clears": false,
+      "status": "INSTRUMENT_NOT_VALIDATED_AT_CONDITION"
+    },
+    "law": "two-axis requirement unmet on every branch; every reading NOT_ESTABLISHED_PENDING_SPREAD"
+  },
+  "owner_approved": false,
+  "owner_question_answered": "my escalated question was right and the owner's ruling makes it operable: C3's qualification WAS under-controlled. Its warm positive control FAILS at 0.0287 \u2014 C3 is blind at warm, its 0.0638 is INSTRUMENT_NOT_VALIDATED_AT_CONDITION and carries nothing. The honest qualifier set is C2 alone, itself pending."
+}

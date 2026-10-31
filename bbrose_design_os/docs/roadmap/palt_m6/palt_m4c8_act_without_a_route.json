@@ -1,0 +1,73 @@
+{
+ "record_type": "palt_m4c8_act_without_a_route/1.0",
+ "date": "2026-08-12",
+ "A465": {
+  "v3_DOUBLED": {
+   "columns": 2,
+   "pan_count": 2,
+   "rows": 2
+  },
+  "v4_DOUBLED": {
+   "columns": 2,
+   "pan_count": 2,
+   "rows": 2
+  },
+  "premise": "FAILED \u2014 MY PREMISE WAS WRONG",
+  "statement": "DOUBLED is computed WITHIN one version's action list, not across versions. Version 4 is identical to version 3. My escalation claimed it would grow monotonically with revision count; it does not.",
+  "v1_v3_survive": true
+ },
+ "A466": {
+  "routes": [
+   "BASELINE_REPLAY",
+   "PANEL_ACTION"
+  ],
+  "exhaustive": "ConfirmationAction is constructed in exactly two places \u2014 palette_es3083_owner_confirmation and dashboard/views. No third route exists, so none was invented and there is no catch-all.",
+  "refusals": [
+   "absent route -> MissingRoute",
+   "undeclared route -> MissingRoute"
+  ],
+  "guard_defect_found": "my first __post_init__ was a SECOND definition on the dataclass and silently overrode nothing \u2014 Python kept the LAST one, so the route guard never ran and both refusal probes printed UNPROVEN. Merged into one. A guard defined but shadowed is a guard that does not exist.",
+  "legacy": "versions 1-4 predate 3w and carry no route; read as UNROUTED and excluded from the routed decomposition rather than defaulted"
+ },
+ "A467": {
+  "FLAGGED_SAME_ROUTE_SAME_ATTRIBUTE": {},
+  "predicted": "EMPTY",
+  "result": "HELD",
+  "expected_multiplicity_shown_separately": {
+   "pan_count": "BASELINE_REPLAY CORRECT/value + BASELINE_REPLAY RECLASSIFY/level",
+   "rows": "same",
+   "columns": "same"
+  },
+  "disclosed_modelling_choice": "the key is the PRIMARY attribute of each act. Under a FULL-WRITE-SET key the flagged set is NOT empty \u2014 pan_count|BASELINE_REPLAY|state, rows|..., columns|... each read 2, because CORRECT and RECLASSIFY both co-write state. Both keyings are reported; the prediction held under the primary key and would have FAILED under the full-write-set key."
+ },
+ "class_twenty": {
+  "minted": true,
+  "caught_by_twenty_missed_by_sixteen": "undecomposed DOUBLED moves {} -> {margins:2} when replay is switched on with NO change in what was decided (confounded); and it does respond to a real subject change, so it is not insensitive",
+  "caught_by_sixteen_missed_by_twenty": "a size-only measure over a digest swap reads 25 -> 25 (insensitive); no process variable enters it, so it is not confounded"
+ },
+ "A468": {
+  "route_stripped": "construction REFUSED",
+  "forged_same_route_same_attribute": "{margins|PANEL_ACTION|value: 2} \u2014 decomposed check names it",
+  "OWNER_SUBCLAIM_CORRECTED": "the sub-claim that the undecomposed DOUBLED would read CLEAN on the forged case is FALSE. It reads {margins: 2} for the forged case and {pan_count: 2} for the legitimate case \u2014 the SAME SHAPE. It does not read clean; it reads INDISTINGUISHABLY. That is a stronger statement of the defect than the one predicted, and it is why the decomposition is needed.",
+  "set_difference_reads_clean_on_both": true,
+  "retained": "apps/pipeline/tests/test_characterization_protocol.py::RouteStandingControl (4 assertions)"
+ },
+ "GATE_REFUSED_MY_FIRST_COMMIT": {
+  "test": "ComposedGateTests::test_no_new_occurrences_outside_the_baseline",
+  "occurrences": [
+   "reconcile_decision_surface: PRIMARY_ATTRIBUTE.get(action, action)",
+   "reconcile_decision_surface: PRIMARY_ATTRIBUTE.get(action, \"?\")"
+  ],
+  "why_it_was_right": "an action not in the table would key on ITSELF and quietly form its own bucket, so a new action type could never collide with an existing one and the flagged set would read clean forever \u2014 a silent plausible fallback inside the very check built to expose silent multiplicity",
+  "fix": "refusal instead of default \u2014 ConfirmationError naming the missing action; NOT allowlisted, NOT bypassed",
+  "also_removed": "an earlier .get(k,\"\") / getattr(a,k,\"\") pair in _f, replaced with explicit membership tests",
+  "found_by": "FOUND_BY_FIRING \u2014 the sanctioned commit gate, not by review"
+ },
+ "TIER_2_ALSO_REFUSED": {
+  "failures": 11,
+  "cause": "making route mandatory broke 14 pre-existing ConfirmationAction construction sites across test_palette_intent_confirmation.py and test_palette_confirmation_flow.py",
+  "fix": "routed all 14 as PANEL_ACTION",
+  "my_first_fix_was_a_syntax_error": "I inserted route= as the FIRST argument, producing positional-follows-keyword and a collection error. Rewritten as a trailing kwarg.",
+  "reading": "A466 said an act with no route must be refused at construction. That is a breaking change to a shared constructor and I did not enumerate its callers before making it \u2014 I checked the two PRODUCTION sites and not the test sites. The gate found what my enumeration missed, twice in one node: first the composed gate on shapes, then TIER_2 on callers."
+ }
+}

@@ -1,0 +1,267 @@
+{
+  "record_type": "establishment_closure_phase2_analytic/1.0",
+  "protocol_identity": "3eb1a9b0fe36bfe4",
+  "transfer_method": {
+    "declared_before_application": true,
+    "conditions": [
+      "same instrument",
+      "same statistical functional (relative pairwise effect on the same axis) \u2014 the null distribution of the clearing statistic",
+      "estimator: MAX seed-only effect (conservative; matches the R4 declaration of worst noise excursion; mean rejected as anti-conservative)",
+      "spread taken as the conservative maximum across every family IN THE COMPARISON with a measured spread; a comparison in which NO member family has a measured spread on that instrument is REJECTED by this method \u2014 no transfer from unrelated families"
+    ],
+    "marking": "TRANSFERRED distinctly from DIRECT"
+  },
+  "A11_verdict": {
+    "held": "PARTIALLY \u2014 and precisely where the owner argued: for every CLEARING comparison (the shared relative-effect functional), max_seed_only_effect IS a replicate spread of the same statistic at the null point, and the R4 2x margin was enforcing the 1i condition against floor-derived thresholds all along. It does NOT extend to census rho, 1a min-rho, floor statistics or event counts (different functionals), and family transfer is only valid through a measured member family",
+    "test_1_same_statistic": "HOLDS for clearings (same functional, null-point distribution); FAILS for the four other functionals",
+    "test_2_family_transfer": "valid only via a measured member family; REJECTED for S_V_C (texture+lobe) and MvG \u2014 the two live rejection cases",
+    "test_3_estimator": "MAX \u2014 conservative, and R4 already declared it (worst excursion); mean rejected"
+  },
+  "rows": [
+    {
+      "verdict": "M_V_S GRAN clearing",
+      "statistic": "cross-family effect",
+      "margin": 0.4328,
+      "spread": 0.1169,
+      "route": "TRANSFERRED (MATTE member; texture rig)",
+      "status": "ESTABLISHED",
+      "note": ""
+    },
+    {
+      "verdict": "M_V_S SHEEN clearing",
+      "statistic": "cross-family effect",
+      "margin": 0.0911,
+      "spread": 0.16569,
+      "route": "TRANSFERRED (MATTE member; lobe rig)",
+      "status": "ADEQUACY_PRECONDITION_UNMET",
+      "note": "margin < spread \u2014 the clearing cannot be certified at current resolution; remedy is resolving power"
+    },
+    {
+      "verdict": "P_V_M GRAN clearing",
+      "statistic": "cross-family effect",
+      "margin": 0.6442,
+      "spread": 0.1169,
+      "route": "TRANSFERRED",
+      "status": "ESTABLISHED",
+      "note": ""
+    },
+    {
+      "verdict": "P_V_M SHEEN clearing",
+      "statistic": "cross-family effect",
+      "margin": 0.1157,
+      "spread": 0.16569,
+      "route": "TRANSFERRED",
+      "status": "ADEQUACY_PRECONDITION_UNMET",
+      "note": ""
+    },
+    {
+      "verdict": "S_V_C GRAN clearing",
+      "statistic": "cross-family effect",
+      "margin": 0.1923,
+      "spread": null,
+      "route": "NONE \u2014 no member family (SATIN, CREAM) has a measured texture spread in committed records",
+      "status": "TO_PHASE_3",
+      "note": "DIRECT recompute available from disk (seed-400/401 pairs)"
+    },
+    {
+      "verdict": "S_V_C FWHM clearing",
+      "statistic": "cross-family effect",
+      "margin": 0.0343,
+      "spread": null,
+      "route": "NONE \u2014 no member family has a measured lobe spread",
+      "status": "TO_PHASE_3",
+      "note": "render required (satin+cream lobe s401)"
+    },
+    {
+      "verdict": "S_V_M PATTERN clearing",
+      "statistic": "cross-family effect",
+      "margin": 0.054,
+      "spread": 0.06501,
+      "route": "TRANSFERRED (SHIMMER member)",
+      "status": "ADEQUACY_PRECONDITION_UNMET",
+      "note": ""
+    },
+    {
+      "verdict": "S_V_M COHERENCE clearing",
+      "statistic": "cross-family effect",
+      "margin": 0.235,
+      "spread": 0.03198,
+      "route": "TRANSFERRED",
+      "status": "ESTABLISHED",
+      "note": ""
+    },
+    {
+      "verdict": "S_V_M ENV clearing",
+      "statistic": "cross-family effect",
+      "margin": 0.291,
+      "spread": 0.12492,
+      "route": "TRANSFERRED",
+      "status": "ESTABLISHED",
+      "note": ""
+    },
+    {
+      "verdict": "MvG PATTERN clearing",
+      "statistic": "cross-family effect",
+      "margin": 0.631,
+      "spread": null,
+      "route": "NONE \u2014 neither METALLIC nor GLITTER has a measured spread; transfer REJECTED by the stated conditions",
+      "status": "TO_PHASE_3",
+      "note": "the method rejection case #1"
+    },
+    {
+      "verdict": "MvG ENV clearing",
+      "statistic": "cross-family effect",
+      "margin": 0.447,
+      "spread": null,
+      "route": "NONE \u2014 same rejection",
+      "status": "TO_PHASE_3",
+      "note": ""
+    },
+    {
+      "verdict": "P_V_B SPAN clearing",
+      "statistic": "cross-family effect",
+      "margin": 0.661,
+      "spread": 0.00317,
+      "route": "TRANSFERRED (BAKED member; relief-subject ensemble)",
+      "status": "ESTABLISHED",
+      "note": ""
+    },
+    {
+      "verdict": "P_V_B SHADOW clearing",
+      "statistic": "cross-family effect",
+      "margin": 0.254,
+      "spread": 0.02614,
+      "route": "TRANSFERRED",
+      "status": "ESTABLISHED",
+      "note": ""
+    },
+    {
+      "verdict": "R5 census GRAN|SHEEN",
+      "statistic": "census Spearman (DIFFERENT functional)",
+      "margin": 0.4429,
+      "spread": null,
+      "route": "NONE",
+      "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+      "note": "affirmative independence claim; suspends reliance; remedy = census replicate (named node)"
+    },
+    {
+      "verdict": "R5 census GRAN|FWHM",
+      "statistic": "census Spearman",
+      "margin": 0.6095,
+      "spread": null,
+      "route": "NONE",
+      "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+      "note": ""
+    },
+    {
+      "verdict": "EDGE ineligibility",
+      "statistic": "floor statistic (DIFFERENT functional)",
+      "margin": 0.03,
+      "spread": null,
+      "route": "NONE",
+      "status": "STANDS_EXCLUSION_1j",
+      "note": "using the axis would require positive eligibility evidence \u2014 exactly what is missing"
+    },
+    {
+      "verdict": "marbling chroma-axis ineligibility",
+      "statistic": "floor statistic",
+      "margin": 0.168,
+      "spread": null,
+      "route": "NONE",
+      "status": "STANDS_EXCLUSION_1j",
+      "note": ""
+    },
+    {
+      "verdict": "marbling coherence-axis ineligibility",
+      "statistic": "floor statistic",
+      "margin": 0.447,
+      "spread": null,
+      "route": "NONE",
+      "status": "STANDS_EXCLUSION_1j",
+      "note": ""
+    },
+    {
+      "verdict": "flake EDGE ineligibility",
+      "statistic": "floor statistic",
+      "margin": 0.291,
+      "spread": null,
+      "route": "NONE",
+      "status": "STANDS_EXCLUSION_1j",
+      "note": ""
+    },
+    {
+      "verdict": "SOLID_VS_MARBLED FAIL",
+      "statistic": "chroma span vs bar",
+      "margin": 0.245,
+      "spread": null,
+      "route": "NONE",
+      "status": "STANDS_NOT_CERTIFIED_1j",
+      "note": "refused to certify; re-marked not-certified rather than measured-to-fail"
+    },
+    {
+      "verdict": "A2 degeneracy margin",
+      "statistic": "1a min-rho (DIFFERENT functional)",
+      "margin": 0.1727,
+      "spread": null,
+      "route": "NONE",
+      "status": "STANDS_DEGENERACY_1j",
+      "note": ""
+    },
+    {
+      "verdict": "sheen sweep VALID badge",
+      "statistic": "1a min-rho",
+      "margin": 0.467,
+      "spread": null,
+      "route": "NONE",
+      "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+      "note": "zero downstream reliance: NOT_COMMON readings never used validity; only violations would"
+    },
+    {
+      "verdict": "surface_smoothing sweep VALID badge",
+      "statistic": "1a min-rho",
+      "margin": 0.751,
+      "spread": null,
+      "route": "NONE",
+      "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+      "note": ""
+    },
+    {
+      "verdict": "surface_roughness sweep VALID badge",
+      "statistic": "1a min-rho",
+      "margin": 0.109,
+      "spread": null,
+      "route": "NONE",
+      "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+      "note": ""
+    },
+    {
+      "verdict": "GLITTER event PASS",
+      "statistic": "event count (DIFFERENT functional)",
+      "margin": 88,
+      "spread": null,
+      "route": "NONE",
+      "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+      "note": "affirmative; suspends; remedy = event replicate (Phase 3 if cheap, else named node)"
+    },
+    {
+      "verdict": "glitter control cleanliness",
+      "statistic": "event count",
+      "margin": 5,
+      "spread": null,
+      "route": "NONE",
+      "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+      "note": "reclassified from the Phase-0 NEGATIVE call: a clean control is an affirmative rig-validity claim \u2014 correction recorded"
+    }
+  ],
+  "counts": {
+    "ESTABLISHED": 6,
+    "ADEQUACY_PRECONDITION_UNMET": 3,
+    "TO_PHASE_3": 4,
+    "NOT_ESTABLISHED_PENDING_SPREAD": 7,
+    "STANDS_EXCLUSION_1j": 4,
+    "STANDS_NOT_CERTIFIED_1j": 1,
+    "STANDS_DEGENERACY_1j": 1
+  },
+  "renders_used": 0,
+  "owner_approved": false
+}

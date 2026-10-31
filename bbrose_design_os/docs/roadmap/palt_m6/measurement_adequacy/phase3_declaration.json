@@ -1,0 +1,26 @@
+{
+  "record_type": "measurement_adequacy_phase3_declaration/1.0",
+  "declared_before_any_render": true,
+  "remedy": "rank resolution attacked directly: the counted-instrument sweep refined from 15 to 25 levels at the commissioned anchor seed 400; the SAME 10 added levels rendered at replica seeds 401/402 so the replicate spread of the validity statistic is measured AT THE REFINED DENSITY",
+  "added_levels": [
+    0.035,
+    0.065,
+    0.09,
+    0.12,
+    0.155,
+    0.185,
+    0.215,
+    0.245,
+    0.275,
+    0.305
+  ],
+  "total_levels_per_seed": 25,
+  "readings_frozen": {
+    "margin_exceeds_spread_VALID": "the verdict stands as measured VALID; the counted tracking (already 1i-ADEQUATE) completes the 1h/1d trigger; ALL THREE diffuse pairs FAIL, committed, no substitute channel, N = 0",
+    "margin_exceeds_spread_DEGENERATE": "the sweep is degenerate; it carries no information either direction; the three PASS_WITH_UNTESTED_DRIVER verdicts stand (with their Phase-2 adequacy marks); N = 3",
+    "margin_still_within_spread": "ADEQUACY_PRECONDITION_UNMET stands at the refined density; Phase 4 records the contingency: the three pairs take PASS_CONTINGENT_ON_UNRESOLVED_INSTRUMENT, strictly worse than PASS_WITH_UNTESTED_DRIVER, carried by every downstream reference",
+    "qualification_shift": "axis span qualification is re-checked per seed at 25 levels BEFORE any rho is read; if refinement changes which axes qualify, that is said first and the validity statistic is computed on the refined qualifying set"
+  },
+  "validity_statistic": "min |rho| over qualifying-axis pairs vs the 0.80 ceiling; deciding margin = |min_rho - 0.80| at seed 400; spread = max over replica seeds of |min_rho_seed - min_rho_400| computed on the same qualifying-axis pair as seed 400's minimum",
+  "owner_approved": false
+}

@@ -1,0 +1,48 @@
+{
+  "record_type": "instrument_repair_phase4/1.0",
+  "repair_identity": "1e198aed8d86ed9c",
+  "protocol_identity_unchanged": "087c7f64317910fb",
+  "glitter_census_from_exr": {
+    "measured_from": "the scene-linear EXRs of the SAME commissioned run (frames on disk, deterministic \u2014 no re-render), through the R1 provenance-asserting loader",
+    "law_unchanged": {
+      "bright": "1.8x region median",
+      "area": "4-2000px",
+      "glitter_min": 25,
+      "control_max": 5
+    },
+    "census": {
+      "GLITTER": {
+        "median_luminance": 0.04,
+        "threshold": 0.07,
+        "raw_components": 136,
+        "event_count": 113,
+        "median_event_area_px": 53.0,
+        "bright_pixel_fraction": 0.004387
+      },
+      "MATTE_CONTROL": {
+        "median_luminance": 0.04,
+        "threshold": 0.07,
+        "raw_components": 0,
+        "event_count": 0,
+        "median_event_area_px": 0.0,
+        "bright_pixel_fraction": 0.0
+      },
+      "SHIMMER": {
+        "median_luminance": 0.21,
+        "threshold": 0.38,
+        "raw_components": 0,
+        "event_count": 0,
+        "median_event_area_px": 0.0,
+        "bright_pixel_fraction": 0.0
+      }
+    },
+    "verdict": "GLITTER_PARTICLE_RIG PASS CONFIRMED \u2014 113 discrete events scene-linear (87 display-encoded), median area 53px, MATTE control 0, SHIMMER 0 (specificity holds); event map event_map_GLITTER_exr.png visually verified",
+    "prior_display_encoded_census": "superseded in place as a historical reading; its 87-event verdict happened to be correct but rested on the frame class its own comment called invalidating"
+  },
+  "code_change": "particle_census now measures scene-linear through the R1 loader for every future run; the PNG survives only as the annotation canvas",
+  "what_this_phase_refused_to_conclude": [
+    "nothing beyond the glitter rig \u2014 the flake rig, metallic-vs-glitter cross-check, baked, marbling, products, trace, boards and the 21-condition gate are the declared chain ahead"
+  ],
+  "owner_approved": false,
+  "manufacturing_authority": "NOT_ESTABLISHED"
+}

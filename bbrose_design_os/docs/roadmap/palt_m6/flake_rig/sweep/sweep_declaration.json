@@ -1,0 +1,51 @@
+{
+  "record_type": "reflective_independence_sweep/1.0",
+  "declared_before_measurement": true,
+  "question": "do these axes move together when the physics moves?",
+  "sweeps": {
+    "metallic_response": {
+      "family": "SHIMMER",
+      "seed": 160,
+      "levels": [
+        0.05,
+        0.11,
+        0.17,
+        0.23,
+        0.29,
+        0.35,
+        0.41,
+        0.47,
+        0.53,
+        0.59,
+        0.65,
+        0.71,
+        0.77,
+        0.83,
+        0.89,
+        0.95
+      ]
+    },
+    "flake_density": {
+      "family": "SHIMMER",
+      "seed": 161,
+      "levels": [
+        0.2,
+        0.27,
+        0.34,
+        0.41,
+        0.48,
+        0.55,
+        0.62,
+        0.69,
+        0.76,
+        0.83,
+        0.9,
+        0.97
+      ]
+    }
+  },
+  "statistic": "abs Spearman across sweep levels, every pair of the 5 independent reflective axes",
+  "ceiling": 0.8,
+  "ceiling_reason": "the same declared R5 ceiling; no reason to differ",
+  "asymmetric_reading_declared_in_advance": "DIVERGENCE (|rho| <= 0.80 on at least one sweep) MEASURES independence for that pair. TRACKING above 0.80 on ALL sweeps does NOT prove same-instrument \u2014 two genuinely different instruments both monotone in a strong common driver will rank-track \u2014 but is treated CONSERVATIVELY per the declared consequence: such a pair may not both count toward one verdict, and the affected verdicts stay PENDING until an axis outside the tracking group joins. Declared before any number exists."
+}

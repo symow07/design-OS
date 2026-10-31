@@ -1,0 +1,23 @@
+{
+  "record_type": "frozen_instrument_defect_register_declaration/1.0",
+  "node": "M6-FROZEN-INSTRUMENT-DEFECT-REGISTER",
+  "status": "DECLARED_NOT_EXECUTED",
+  "owner_authorization": "M6_MEASUREMENT_ADEQUACY_PROMPT.md A7",
+  "scope": {
+    "instance_1": {
+      "where": "palette_characterization_protocol.grid_correlation (frozen M5 instrument)",
+      "defect": "returns silent 0.0 when denom <= 1e-12 OR fewer than 16 valid grid pairs \u2014 DEGENERATE_INPUT_PLAUSIBLE_OUTPUT in a Pearson statistic",
+      "what_the_zero_means_in_outputs": "a 0.0 grid correlation reads as 'patterns unrelated' \u2014 the strongest possible independence claim \u2014 precisely when the input could not support any claim",
+      "committed_m5_numbers_to_audit": "every M5 record consuming grid_correlation (reflective/transmission pattern controls, M5 gate rows) \u2014 the register enumerates them and checks whether any committed 0.0 came through the degenerate path",
+      "freeze_break_cost": "M5 protocol identity moves; every M5-pinned record and the 19/19 gate would need re-derivation or explicit supersession \u2014 an owner decision, not a fix"
+    },
+    "instance_2": {
+      "where": "palette_powder_texture_axes.withdrawn_autocorrelation_reference",
+      "defect": "divides by a variance that is 0 on a constant field",
+      "mitigation_in_place": "WITHDRAWN from axis service; retained only so the synthetic-field control can record its failure",
+      "freeze_break_cost": "none if it stays withdrawn; the register documents it so withdrawal is checkable"
+    }
+  },
+  "may_not": "execute here; touch the frozen M5 instrument",
+  "declaration_identity": "ce4124969cf7396c"
+}

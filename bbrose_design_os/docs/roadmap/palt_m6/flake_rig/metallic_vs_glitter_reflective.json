@@ -1,0 +1,144 @@
+{
+  "record_type": "metallic_vs_glitter_route_decision/1.0",
+  "declared_before_measurement": true,
+  "withdrawn": "the census cross-check (POWDER_METALLIC required to FAIL the discrete definition) is WITHDRAWN AS UNINFORMATIVE: metallic flakes are 0.571px against the rig 3px validity floor, so a zero count is guaranteed by sampling regardless of structure \u2014 a required FAIL guaranteed by instrument geometry is not evidence. Route A (raising resolution ~5.25x until 0.040mm clears 3px) was considered and rejected: the event-area law (4-2000px) was declared at 1200px and changes physical meaning under rescale, so that census would not be the commissioned instrument.",
+  "replacement_basis": "composite: (1) GLITTER discreteness stands on its own confirmed census (113 scene-linear events, resolvable 10px, live map); (2) METALLIC vs GLITTER measured NOW on the reflective rig, where the question \"is metallic merely denser glitter\" has a physical observable: what each field does to the reflected environment.",
+  "live_control": "the reflective run includes an identical-measurement control in the same invocation",
+  "floors": "rig-level seed floors from the declared SHIMMER ensemble (flake_reflection_report.json), stated not assumed",
+  "pair": {
+    "REFLECTED_PATTERN_CONTRAST": {
+      "metallic": 0.15458,
+      "glitter": 0.39806,
+      "effect": 0.88117,
+      "counts": true,
+      "reasons": []
+    },
+    "REFLECTION_EDGE_SHARPNESS": {
+      "metallic": 0.17061,
+      "glitter": 0.30946,
+      "effect": 0.57847,
+      "counts": false,
+      "reasons": [
+        "INELIGIBLE",
+        "BELOW_REQUIRED"
+      ]
+    },
+    "REFLECTION_COHERENCE": {
+      "metallic": 0.38892,
+      "glitter": 0.15024,
+      "effect": 0.23868,
+      "counts": false,
+      "reasons": [
+        "BELOW_REQUIRED"
+      ]
+    },
+    "SPECULAR_TO_DIFFUSE_RESPONSE": {
+      "metallic": 1.62218,
+      "glitter": 1.69929,
+      "effect": 0.04643,
+      "counts": false,
+      "reasons": [
+        "BELOW_REQUIRED"
+      ]
+    },
+    "ENVIRONMENT_CORRELATION": {
+      "metallic": 0.5891,
+      "glitter": -0.10764,
+      "effect": 0.69674,
+      "counts": true,
+      "reasons": []
+    },
+    "GRAZING_REFLECTION_RESPONSE": {
+      "metallic": 0.32683,
+      "glitter": 0.37984,
+      "effect": 0.15004,
+      "counts": false,
+      "reasons": [
+        "BELOW_REQUIRED",
+        "SUPPORTING"
+      ]
+    }
+  },
+  "counted_axes": [
+    "REFLECTED_PATTERN_CONTRAST",
+    "ENVIRONMENT_CORRELATION"
+  ],
+  "live_identical_control_behaved": true,
+  "METALLIC_VS_GLITTER": "PASS_PENDING_INDEPENDENCE",
+  "glitter_census_basis": "113 scene-linear discrete events (confirmed, resolvable)",
+  "owner_approved": false,
+  "off_declaration_use_examined": {
+    "finding": "GLITTER is not in SUB_RIGS[FLAKE_REFLECTION_RIG].families \u2014 this was an off-declaration use of a commissioned instrument, examined rather than inferred from silence",
+    "validity_conditions_measured_for_this_subject": {
+      "min_subject_peak_scene_linear": {
+        "required": 0.05,
+        "measured": 0.295712,
+        "met": true
+      },
+      "clipped_subject_samples": {
+        "required_max": 0,
+        "measured": 0,
+        "met": true
+      },
+      "mirror_reference_pattern_contrast": {
+        "required": 0.2,
+        "measured_in_same_series": "flake_mirror_reference (0.2649)",
+        "met": true
+      }
+    },
+    "ruling": "SOUND USE"
+  },
+  "noise_floors_restated": {
+    "REFLECTED_PATTERN_CONTRAST": {
+      "floor": 0.06501,
+      "eligible": true,
+      "required": 0.25
+    },
+    "REFLECTION_EDGE_SHARPNESS": {
+      "floor": 0.54122,
+      "eligible": false,
+      "required": 1.08244
+    },
+    "REFLECTION_COHERENCE": {
+      "floor": 0.03198,
+      "eligible": true,
+      "required": 0.25
+    },
+    "SPECULAR_TO_DIFFUSE_RESPONSE": {
+      "floor": 0.02054,
+      "eligible": true,
+      "required": 0.25
+    },
+    "ENVIRONMENT_CORRELATION": {
+      "floor": 0.12492,
+      "eligible": true,
+      "required": 0.25
+    },
+    "GRAZING_REFLECTION_RESPONSE": {
+      "floor": 0.03727,
+      "eligible": true,
+      "required": 0.25
+    }
+  },
+  "pending_independence_note": "the reflective census is N=2-by-declaration and cannot grow (the rig declares exactly two families); within-rig independence is therefore a hashed declaration, not a measurement \u2014 the exact property R5 exists to stop anyone asserting. Marked PASS_PENDING_INDEPENDENCE until the declared parameter-sweep instrument measures it one way or the other.",
+  "independence_discharged": {
+    "counted": [
+      "REFLECTED_PATTERN_CONTRAST",
+      "ENVIRONMENT_CORRELATION"
+    ],
+    "mutual_independence": "C|ENV MEASURED_DIVERGENT (0.6993 on flake_density)",
+    "verdict": "PASS \u2014 independence MEASURED, pending mark discharged",
+    "instrument": "sweep/sweep_result.json (declared before measurement)"
+  },
+  "A4_REMARK_2026_08_08": {
+    "was": "PASS (independence_discharged above, preserved in place)",
+    "why": "2 of the 3 divergences that discharged the pending mark rest on sub-floor variation (PATTERN_CONTRAST spans: flake_density 0.0933 < required 0.1300) \u2014 the supporting evidence is possibly invalid, and a PASS does not keep its status while the investigation is scheduled. Mark first, diagnose second.",
+    "diagnosis_node": "M6-FLAKE-INDEPENDENCE-RE-ADJUDICATION (declared, not executed)",
+    "owner_authorization": "M6_DRIVER_COMPLETENESS_PROMPT.md A4"
+  },
+  "ADEQUACY_1i_2026_08_08": {
+    "classification": "both counted clearings ADEQUACY_UNASSESSED",
+    "law": "adequacy_1i at 3586022acc972aff (retroactive, symmetric)",
+    "detail": "measurement_adequacy/phase2_retroactive.json"
+  }
+}

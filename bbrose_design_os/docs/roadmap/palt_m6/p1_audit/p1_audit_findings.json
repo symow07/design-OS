@@ -1,0 +1,127 @@
+{
+ "record_type": "p1_audit_findings/1.0",
+ "arc": "P1 — re-measure PALT-M6 behind §BH2, audit-first",
+ "governing_rulings": ["§BH6(b)", "§BH7(b)", "§BH7(c)"],
+ "declaration_identity_of_first_act": "87893c1264fd232f",
+ "authorises_no_correction": "This record contains FINDINGS ONLY. Nothing in it edits a table, a count, a verdict, a bar, an established row, or an owner_acceptance field. §BH6(b) ruled that a correction 'is its own queued item owing the A391 chain and a fresh ruling; nothing here authorizes it', and §BH7 does not authorise it either.",
+
+ "finding_1_stale_counts_block": {
+  "class": "TRANSCRIBED_PROSE_NUMBER_DIVERGING_FROM_COMPUTED_FIELD",
+  "class_disposition": "EXISTING CLASS — no mint. §BH5(a) authorised exactly two mints (UNIT_MISMATCH, TWO_ROOTS_MEASUREMENT, landed at 5bb6f74) and this finding is deliberately filed under a class that already exists so that authorisation is not stretched.",
+  "file": "docs/roadmap/palt_m6/establishment_closure/establishment_table.json",
+  "ruling": "§BH6(b) — the counts block STAYS AS WRITTEN. This is a finding, not a correction.",
+
+  "what_diverges": "The transcribed 'counts' block disagrees with the statuses computed from the file's own 'table' rows, key by key.",
+  "transcribed_counts": {
+   "ESTABLISHED": 10,
+   "ADEQUACY_PRECONDITION_UNMET": 3,
+   "NOT_ESTABLISHED_PENDING_SPREAD": 11,
+   "ESTABLISHED_DEGENERATE": 1,
+   "STANDS_DEGENERACY_1j": 1,
+   "STANDS_EXCLUSION_1j": 4,
+   "STANDS_NOT_CERTIFIED_1j": 1,
+   "_sum": 31
+  },
+  "computed_from_table_rows": {
+   "ESTABLISHED": 14,
+   "ESTABLISHED (new row, own terms — argument in combined_manifest/a86_establishment.json)": 1,
+   "ADEQUACY_PRECONDITION_UNMET_DIRECT": 4,
+   "NOT_ESTABLISHED_PENDING_SPREAD": 5,
+   "NOT_ESTABLISHED_FIRED_SUBSTITUTION": 1,
+   "ESTABLISHED_DEGENERATE": 1,
+   "STANDS_DEGENERACY_1j": 1,
+   "STANDS_EXCLUSION_1j": 4,
+   "STANDS_NOT_CERTIFIED_1j": 1,
+   "_sum": 32
+  },
+  "divergences": [
+   "ESTABLISHED: transcribed 10, computed 14 (15 if the verbose-status row below is folded in)",
+   "NOT_ESTABLISHED_PENDING_SPREAD: transcribed 11, computed 5",
+   "ADEQUACY_PRECONDITION_UNMET: transcribed 3 under that name; the rows now carry ADEQUACY_PRECONDITION_UNMET_DIRECT at 4 — a RENAME as well as a count change",
+   "NOT_ESTABLISHED_FIRED_SUBSTITUTION: a status present in the rows (1) and absent from the transcribed block entirely",
+   "Four keys agree exactly: ESTABLISHED_DEGENERATE 1, STANDS_DEGENERACY_1j 1, STANDS_EXCLUSION_1j 4, STANDS_NOT_CERTIFIED_1j 1"
+  ],
+
+  "the_31_vs_32_arithmetic_RESOLVED_BY_MEASUREMENT": "The transcribed block sums to 31 and the table holds 32 rows. The missing one is NOT an exclusion. One row carries the literal status string 'ESTABLISHED (new row, own terms — argument in combined_manifest/a86_establishment.json)' — a distinct status string, not the bare token ESTABLISHED, so it falls outside every transcribed key. The gap is a status-vocabulary artefact, not a principle.",
+  "why_that_matters_more_than_the_number": "The earlier explanation of the same gap — that a row had been principledly excluded — was a rationalisation. It was accepted because 31 = 32 - 1 is satisfying arithmetic, and it was never checked against the row. §BH6(c) ruled the executor's confession of this stays verbatim in the register; it is not restated here, per §BH7(b)'s instruction not to restate or extend §BH6(c).",
+
+  "history_MEASURED_NOT_INHERITED": {
+   "commits_touching_the_file": 23,
+   "commits_at_which_the_counts_BLOCK_differs": 0,
+   "counts_block_sha256_prefix_at_every_one_of_the_23": "523ee4fba29e",
+   "conclusion": "The counts block was written once, at the file's creation d4e8338 (2026-08-08), and has been byte-identical ever since — including through all seven adjudication commits of 2026-08-15 (51f4381, 19a3299, 08fefa2, 5fd5e98, 4cf4b79, 8d32119, 4815f68) that moved the row statuses underneath it. The block did not go stale gradually; it was never updated at all.",
+   "a_previously_asserted_history_that_was_FALSE": "An earlier claim in this arc held that the counts block last changed at 537beeb (2026-08-10). That is false and was produced by line-based history attribution drifting as line numbers moved. It was caught by recomputing the block's hash at every one of the 23 commits rather than trusting the earlier claim. Recorded here because the register holds what was measured wrong as well as what was measured right."
+  },
+
+  "blast_radius_ZERO_AND_PROVED": {
+   "claim": "ZERO. No consumer of this file reads the counts block.",
+   "readers_of_the_file_in_code": 3,
+   "readers_that_consume_the_counts_VALUES": 0,
+   "per_reader": [
+    "apps/pipeline/services/palette_m6_spreads_adjudication.py:54 — defines the TABLE path. Its own local variable named 'counts' holds GLITTER event counts and has nothing to do with this block.",
+    "apps/pipeline/tests/test_palette_statistics.py:520 — reads exactly one key, ['A143_forward_identities_2026_08_11']['forward_identities'].",
+    "apps/pipeline/services/palette_m6_exit_gate.py:161 — loads the table and serialises the WHOLE object, counts included, into et_text for check 10 (rider A253)."
+   ],
+   "the_one_reader_that_does_touch_the_bytes_examined_rather_than_waved_off": "palette_m6_exit_gate.py check 10 tests ('spread' in et_text or 'dispersion' in et_text) — LOWERCASE tokens. Every counts key is uppercase (NOT_ESTABLISHED_PENDING_SPREAD contains 'SPREAD', not 'spread'), so the block cannot supply either token.",
+   "measured_proof": "counts block alone: 'spread' 0, 'dispersion' 0, predicate False. Full table: 125 and 31, predicate True. Table with counts removed: 125 and 31, predicate True. Deleting the block would not change check 10's outcome.",
+   "tree_wide_control": "62 sites in the tree access a ['counts'] key; not one of them is on this table. They are dieline geometry, container fidelity, histogram and dip0b/dip0c ledger objects."
+  },
+  "disposition": "STAYS AS WRITTEN. Filed, not fixed. A correction is a separate queued item owing the A391 chain and a fresh ruling that does not exist."
+ },
+
+ "finding_2_fifth_self_caught_defect": {
+  "ruling": "§BH7(b) — stands on this ruling alone. §BH6(c) is a ruling about THREE defects and is deliberately not restated or extended.",
+  "ordinal": 5,
+  "what_makes_it_different_from_the_first_four": "The first four were wrong FACTS. This one was a wrong CORRECTION — it took a true value and three correct records and 'corrected' them into a false claim.",
+
+  "the_false_sentence_quoted_exactly": "at the commit where the prose says that bridge was governing the identity was b9272465dbe49f31",
+  "where_it_lives": "The commit message of 15c8b42, and the §BH6 prose transcribed by that same commit.",
+  "immutability": "The commit message of 15c8b42 is immutable history and is NOT rewritten. Per §BH7(b) the supersession lives in the register (§BH7(b)) and in commit U's prose and in this record.",
+  "supersession_reason_quoted_verbatim_from_the_owner": "it named the wrong register",
+
+  "why_it_is_false": "b9272465dbe49f31 is protocol_identity() at a47d24a — a true number read from the WRONG REGISTER. The quantity the identity bridge names is the DECLARATION identity, which is sha256 of the committed bytes of spreads_campaign_declaration.json, first 16 hex.",
+  "the_bridge_chain_measured_at_every_commit_that_touched_the_declaration": [
+   {"commit": "575bc6e", "date": "2026-08-14", "declaration_identity": "c1434e1efdb98a62", "note": "named by all six executed queue-control first acts"},
+   {"commit": "a47d24a", "date": "2026-08-28", "declaration_identity": "fd10bee04a2f9cbe", "note": "CORRECT AT ITS COMMIT — the value the draft wrongly called mislabelled"},
+   {"commit": "4f3d01b", "date": "2026-08-29", "declaration_identity": "87893c1264fd232f", "note": "current; named by P1's first act in this commit"}
+  ],
+  "the_three_sites_that_were_accused_and_are_correct": [
+   "OWNER_BLOCKER_CLEARANCE.md:12983 — says 'identity bridge (c1434e1efdb98a62 -> fd10bee04a2f9cbe)'. Correct.",
+   "OWNER_BLOCKER_CLEARANCE.md:13139 — same bridge. Correct.",
+   "docs/roadmap/palt_m6/declared_spreads/spreads_campaign_declaration.json:54 — superseded_identity fd10bee04a2f9cbe. Correct."
+  ],
+  "none_of_them_says_protocol_identity": "All three say 'identity bridge'. The only thing genuinely mislabelled was the launcher's prose and this executor's own draft, which called the value 'the protocol identity'. That was a NAMING error about a CORRECT value, not a wrong value.",
+
+  "root_cause": "A declaration identity and a protocol identity are both 16-hex sha256 prefixes and NEITHER CARRIES ITS NAMESPACE IN ITS OWN TEXT. Having correctly noticed that fd10bee04a2f9cbe was a record digest, the executor inferred it was therefore the wrong KIND of value — without reading line 46 of the declaration, which states in plain text that the declaration identity and that record's manifest digest are the SAME STRING BY CONSTRUCTION.",
+
+  "why_the_existing_disciplines_did_not_catch_it": "Every procedural discipline fired correctly and none of them could help. The gate was STOPPED rather than raced; superseded drafts were quoted rather than deleted; the finding was reported to the owner before being acted on. All of those govern HOW a correction is made. NONE of them tests WHETHER the finding is true.",
+  "what_actually_caught_it": "Implementation. The defect was caught only when the executor went to perform P1's first act and had to read line 34 to do so — at which point line 46 contradicted the finding outright. A FINDING THAT IS NEVER IMPLEMENTED IS NEVER TESTED. This one survived a full transcription, an owner ruling, and a landed commit without being contradicted.",
+  "what_prevented_the_damage": "§BH6(f) reading 3 left the three flagged sites untouched, on the restraint precedent set at §BH6(b): findings, not corrections, absent a fresh ruling. That restraint was adopted for an unrelated reason and it is the only thing that stopped three correct records from being overwritten with a false one. Restraint held under a WRONG PREMISE and still produced the RIGHT OUTCOME.",
+  "what_it_would_have_cost": "Had the executor acted on reading B, dfc98caf984055e3 — a protocol identity — would have been stamped into the declaration_identity field of P1's first act. begin_traced_queue takes that value as a parameter and its only check is falsiness, so NO GUARD ANYWHERE WOULD HAVE FIRED, and the bridge that six executed first acts depend on would have been silently broken."
+ },
+
+ "finding_3_silent_acceptance_hole": {
+  "ruling": "§BH7(a) — recorded as a FINDING. Any guard is a SEPARATE PROPOSED BUILD and is not begun here or by implication.",
+  "site": "apps/pipeline/services/palette_queue_control.py — begin_traced_queue(queue_name, trace_path, ledger, declaration_identity)",
+  "defect": "The identity is a caller-supplied parameter, never computed by the function. Its only validation is falsiness. Any non-empty 16-hex string passes, including a protocol identity, a record digest of an unrelated file, or a value from a stale commit.",
+  "not_fixed_here": true
+ },
+
+ "finding_4_search_key_shape_false_negatives_this_sitting": {
+  "class": "TWO_ROOTS_MEASUREMENT",
+  "class_disposition": "EXISTING CLASS as of 5bb6f74 — filed as FIRINGS, not a mint, per the §BH5(a) limb that says a class already registered takes firings.",
+  "firings": [
+   "A path-limited git command was issued with a git-root-relative pathspec from inside the pytest root. It returned EMPTY WITH EXIT 0 — 'not here' presented as 'clean'. Cause: a 'cd X && python ...' whose python was missing reported exit 1, and the executor read the failure as 'nothing happened' when the cd had already succeeded and moved the shell.",
+   "The §BC letter-collision search for 'BH7' was first run across all tracked paths and reported 460 matching files. Every hit was inside a binary or ASCII85-encoded artefact; a PDF's ASCII85 payload defeats git grep -I's binary detection. Re-run scoped to .md/.py/.json/.sh/.txt: 0 hits, with a negative control (§BH6 = 31 hits) proving the query had power.",
+   "The establishment table's rows were first sought under the guessed keys 'rows' and 'conditions'. Both are absent; the container is 'table'. The query returned 0 rows and a clean TOTAL of 0 rather than an error.",
+   "Blast radius was first tested with a bare grep for the word 'counts', which matched two files on an unrelated local variable and a docstring. The precise query — access to a counts KEY on this table — returns zero."
+  ],
+  "common_shape": "In all four the ROOT or the KEY SHAPE was wrong and the result was clean, confident and false. None raised. Each was caught by re-running with a stated root and shape, or by a negative control.",
+  "not_fixed_here": true
+ },
+
+ "related_records_not_restated_here": {
+  "§BH6(c)_three_self_caught_defects": "Recorded in OWNER_BLOCKER_CLEARANCE.md at §BH6(c), including the sentence the owner ruled stays verbatim. §BH7(b) instructs that §BH6(c) is not to be restated or extended, so this record does not reproduce them.",
+  "spreads_ceiling_breach.json": "Contains claims superseded by 5bb6f74. NOT edited — §AZ0(u) supersedes rather than deletes, and those sentences were true when written."
+ }
+}

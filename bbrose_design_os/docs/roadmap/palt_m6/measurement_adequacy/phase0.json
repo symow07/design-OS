@@ -1,0 +1,593 @@
+{
+  "record_type": "measurement_adequacy_phase0/1.0",
+  "law_verbatim": {
+    "identity_at_entry": "eb20aad9698e1825",
+    "sweep_validity_1a": "a sweep over a single driver is VALID as an independence instrument only if its pairwise |rho| matrix contains at least one pair reading at or below the R5 ceiling of 0.80. A sweep in which every measured pair tracks above the ceiling is recorded as SWEEP_DEGENERATE_UNDER_DRIVER and yields no independence evidence in either direction \u2014 it may not disturb a verdict and may not support one. Rationale, declared before any matrix was read: rank correlation along a monotone driver is 1.0 by construction for any two monotonically-responding axes; divergence somewhere in the matrix is the only demonstration that the instrument resolves difference rather than restating the driver's own ordering \u2014 the sweep-space analogue of the documented N=4 census degeneracy. This condition is SYMMETRIC: it can void the number that threatens three verdicts and it can equally void a number that would have rescued one.",
+    "containment_1e": "a NOT_COMMON_DRIVER conclusion \u2014 reached because a counted axis's response to a driver falls under its qualification threshold \u2014 is valid ONLY if the swept range contains the interval between the two families' values of that driver for that pair (render-effective values where a side declares but never arrives; for a block absent by structure, the interval runs from the block-absent effective value to the block-present value, and the sweep must span it; a scale or shape member of an absent block has no absent-side value \u2014 its containment is governed by the block's amplitude member). If the range contains the interval, the reading stands and a wider sweep adds nothing: wider sweeps measure products that do not exist. If it does not, the reading is UNTESTED_AT_SEPARATING_STIMULUS, not NOT_COMMON_DRIVER, and the driver must be re-swept over at least the containing interval before the pair may be ruled. The criterion is containment, not width \u2014 checkable geometry, not judgment.",
+    "conservation_1f": "for each pair and each counted axis, the axis's measured inter-family effect must be accountable by the union of the swept drivers' measured spans over their inter-family intervals. If the measured effect materially exceeds what every enumerated driver can produce across the interval that actually separates the families, the driver enumeration is proven incomplete and the residual must be named \u2014 a specific parameter, a specific builder constant, or UNACCOUNTED_CAUSE. A pair carrying an UNACCOUNTED_CAUSE residual may not be a clean PASS: its honest status is PASS_WITH_UNTESTED_DRIVER with the residual magnitude stated, because an unenumerated cause is by definition an untested driver. Rationale declared before the numbers: NOT_COMMON_DRIVER is a null result discharging a safety condition, and this project has been wrong three times in exactly that pattern (the sub-pixel zero, the silent zero on RAKING_SHADOW_FRACTION, the constant-vector rank correlation). Conservation converts 'we found nothing' into a bounded claim about how much there was to find.",
+    "guard_1g": "no rank correlation may be computed in this codebase against a zero-variance vector \u2014 the guard RAISES rather than returning a number. Defect class registered as DEGENERATE_INPUT_PLAUSIBLE_OUTPUT (third of its kind after the N=4 census degeneracy and the silent-zero floor), alongside DECLARED_BUT_UNREALIZED and BUILDER_CONSTANT. The guarded implementation (palette_statistics.guarded_spearman) is the only path by which a correlation may be computed."
+  },
+  "frozen_declaration_restated": {
+    "record_type": "driver_completeness_validity_precision_declaration/1.0",
+    "the_marginal_verdict": {
+      "statistic": "1a validity of the counted-instrument micronormal sweep \u2014 carried ONLY by GRANULARITY|GRAZING_BAND 0.7978 and GRAZING_BAND|GRAZING 0.7890 vs ceiling 0.80 (margins 0.0022 and 0.0110); every other qualifying pair tracks. GRAZING_BAND_CONTRAST is the weakest qualifier in the matrix (span 0.0227 vs required 0.0130) and its low-half level ordering is jitter on a slow trend",
+      "stakes": "VALID + counted tracking (0.9956/0.9956/0.9824, all differing) FAILS all three diffuse pairs per hashed 1d/1h -> N = 0; DEGENERATE carries no information -> standing rulings stand -> N = 3",
+      "why_not_ruled_now": "the owner's A3 ruling in this same brief: a verdict decided by a margin smaller than the statistic's noise is decided by noise and is resolved by precision, never by bar. The margin here is 0.0022. Ruling either way on it would be committing a coin flip. This scrutiny is SYMMETRIC: a rho of 0.8022 (degenerate by 0.0022) would get the identical treatment."
+    },
+    "precision_instrument": "the sweep repeated at seeds 401 and 402, same 15 levels, same commissioned chokepoints (A3's 'more seeds on the existing rig'); the seed spread of the deciding statistic = max over replica seeds of |rho_seed - rho_400| for GRANULARITY|GRAZING_BAND and GRAZING_BAND|GRAZING",
+    "readings_declared_before_measuring": {
+      "valid_by_margin": "min replica-consistent rho <= 0.80 with |margin| > seed spread on the deciding pair -> VALID decided -> all three diffuse pairs FAIL per 1h, committed, no substitute channel, N = 0",
+      "degenerate_by_margin": "deciding rho > 0.80 with |margin| > seed spread -> SWEEP_DEGENERATE_UNDER_DRIVER -> no information either direction -> standing PASS_WITH_UNTESTED_DRIVER rulings stand -> N = 3",
+      "within_spread": "UNRESOLVED_MARGINAL \u2014 committed as such, escalated to the owner, NOTHING ruled; N stays provisional"
+    },
+    "conservation_note_independent_of_this": "Phase 4 conservation HOLDS for all six pair-axis rows regardless of this resolution \u2014 the owner's prediction (MATTE_VS_SATIN SHEEN violation) did NOT hold: the containing-interval extensions revealed the missing response (sheen span over [0, 0.45] accounts for SHEEN's 0.4225)",
+    "owner_approved": false
+  },
+  "phase5_N_restated": {
+    "record_type": "driver_completeness_phase5_N/1.0",
+    "protocol_identity": "eb20aad9698e1825",
+    "replica_measurement": {
+      "deciding_pair_GRAN_GRAZING_BAND_by_seed": {
+        "400": 0.7978,
+        "401": 0.9648,
+        "402": 0.8945
+      },
+      "second_divergent_pair_by_seed": {
+        "400": 0.789,
+        "401": 0.8769,
+        "402": 0.8242
+      },
+      "seed_spread_of_deciding_statistic": 0.167,
+      "margin_of_the_seed400_reading_to_ceiling": 0.0022,
+      "counted_tracking_by_seed_SEED_STABLE": {
+        "GRAN|SHEEN": [
+          0.9956,
+          1.0,
+          0.9868
+        ],
+        "GRAN|FWHM": [
+          0.9824,
+          0.9824,
+          0.9956
+        ]
+      },
+      "validity_by_seed": {
+        "400": "VALID",
+        "401": "DEGENERATE",
+        "402": "DEGENERATE"
+      }
+    },
+    "frozen_reading_applied": "bullet 3 of validity_precision_declaration.json: the seed-400 margin (0.0022) sits inside the seed spread (0.167) and neither decisive bullet fires -> UNRESOLVED_MARGINAL, committed as such, NOTHING ruled",
+    "drafting_defect_surfaced_not_redrafted": {
+      "defect": "the frozen readings deadlock: 'valid_by_margin' keys on the minimum rho across seeds, which is anchored at 0.7978 with a fixed 0.0022 margin no amount of seed replication can grow; 'degenerate_by_margin' says 'deciding rho > 0.80' without naming WHICH rho (the commissioned seed-400 reading is <= 0.80 forever; the replica consensus is > 0.80 already). As written, no additional seed can ever resolve either decisive bullet.",
+      "why_not_silently_fixed": "re-drafting a frozen reading after seeing which interpretation produces which verdict is the rescue pattern this whole arc exists to prevent",
+      "the_two_interpretations_and_their_precision_instruments": {
+        "commissioned_anchor": "the law's sweep is the seed-400 commissioned instrument; its rho is refined by MORE LEVELS at seed 400 (A3: 'more levels') until its own margin to 0.80 exceeds the level-resampling sensitivity \u2014 resolvable, ~25-level refinement",
+        "ensemble_consensus": "the statistic is the seed-ensemble reading; seeds 401/402 already sit 0.1648/0.0945 above the ceiling and two more seeds would likely decide DEGENERATE by margin"
+      },
+      "escalated": "the choice of interpretation decides N and is the owner's, not mine"
+    },
+    "N": "UNRESOLVED \u2014 conditional per pair below",
+    "per_pair_conditional_justification": {
+      "MATTE_VS_SATIN": "census 0.3571 holds; every declared sweepable driver NOT_COMMON (1e-valid) or degenerate; fenced by 5 builder constants; conservation HOLDS. Stands as PASS_WITH_UNTESTED_DRIVER iff the micronormal sweep is ruled degenerate; FAILS on seed-stable counted tracking 0.9956 iff ruled valid",
+      "PRESSED_VS_MATTE": "census 0.3571; same structure (A2 driver adjudicated degenerate on its own matrix; fenced by 5 builder constants; conservation HOLDS); stands iff degenerate, FAILS at 0.9956 iff valid",
+      "SATIN_VS_CREAM": "census 0.1905; same structure (4 builder constants; conservation HOLDS); stands iff degenerate, FAILS at 0.9824 iff valid"
+    },
+    "what_the_question_reduces_to": "is GRAZING_BAND_CONTRAST's seed-400 divergence instrument-resolving or noise? It is the weakest qualifying axis (span 1.7x floor), its divergence vanishes at both replica seeds, and the counted tracking it would activate is seed-stable at 0.98-1.0",
+    "owner_approved": false
+  },
+  "counted_instrument_sweep": {
+    "driver": "milling.micronormal_amplitude",
+    "family_seed": "POWDER_MATTE, commissioned anchor 400, replicas 401/402",
+    "levels": [
+      0.0,
+      0.01,
+      0.02,
+      0.05,
+      0.08,
+      0.1,
+      0.14,
+      0.17,
+      0.2,
+      0.23,
+      0.26,
+      0.29,
+      0.32,
+      0.34,
+      0.35
+    ],
+    "level_count": 15,
+    "per_seed": {
+      "400": {
+        "axis_span_qualification": {
+          "GRANULARITY_INDEX": {
+            "span": 1.11104,
+            "required": 0.2338,
+            "qualifies": true
+          },
+          "GRAZING_BAND_CONTRAST": {
+            "span": 0.02281,
+            "required": 0.01302,
+            "qualifies": true
+          },
+          "HIGHLIGHT_FWHM": {
+            "span": 0.26862,
+            "required": 0.1827,
+            "qualifies": true
+          },
+          "HIGHLIGHT_PEAK": {
+            "span": 0.04368,
+            "required": 0.01594,
+            "qualifies": true
+          },
+          "SPECULAR_TO_DIFFUSE_RATIO": {
+            "span": 0.07099,
+            "required": 0.01772,
+            "qualifies": true
+          },
+          "GRAZING_RESPONSE": {
+            "span": 0.45917,
+            "required": 0.29912,
+            "qualifies": true
+          },
+          "SHEEN_REGION_RESPONSE": {
+            "span": 0.52949,
+            "required": 0.33138,
+            "qualifies": true
+          },
+          "EDGE_HIGHLIGHT_RESPONSE": {
+            "span": 0.31868,
+            "required": 0.55982,
+            "qualifies": false
+          }
+        },
+        "full_pairwise_matrix": {
+          "GRANULARITY_INDEX|GRAZING_BAND_CONTRAST": 0.7978,
+          "GRANULARITY_INDEX|HIGHLIGHT_FWHM": 0.9824,
+          "GRANULARITY_INDEX|HIGHLIGHT_PEAK": 0.9956,
+          "GRANULARITY_INDEX|SPECULAR_TO_DIFFUSE_RATIO": 0.9956,
+          "GRANULARITY_INDEX|GRAZING_RESPONSE": 0.9692,
+          "GRANULARITY_INDEX|SHEEN_REGION_RESPONSE": 0.9956,
+          "GRAZING_BAND_CONTRAST|HIGHLIGHT_FWHM": 0.8066,
+          "GRAZING_BAND_CONTRAST|HIGHLIGHT_PEAK": 0.8154,
+          "GRAZING_BAND_CONTRAST|SPECULAR_TO_DIFFUSE_RATIO": 0.8154,
+          "GRAZING_BAND_CONTRAST|GRAZING_RESPONSE": 0.789,
+          "GRAZING_BAND_CONTRAST|SHEEN_REGION_RESPONSE": 0.8154,
+          "HIGHLIGHT_FWHM|HIGHLIGHT_PEAK": 0.9893,
+          "HIGHLIGHT_FWHM|SPECULAR_TO_DIFFUSE_RATIO": 0.9893,
+          "HIGHLIGHT_FWHM|GRAZING_RESPONSE": 0.9429,
+          "HIGHLIGHT_FWHM|SHEEN_REGION_RESPONSE": 0.9893,
+          "HIGHLIGHT_PEAK|SPECULAR_TO_DIFFUSE_RATIO": 1.0,
+          "HIGHLIGHT_PEAK|GRAZING_RESPONSE": 0.9536,
+          "HIGHLIGHT_PEAK|SHEEN_REGION_RESPONSE": 1.0,
+          "SPECULAR_TO_DIFFUSE_RATIO|GRAZING_RESPONSE": 0.9536,
+          "SPECULAR_TO_DIFFUSE_RATIO|SHEEN_REGION_RESPONSE": 1.0,
+          "GRAZING_RESPONSE|SHEEN_REGION_RESPONSE": 0.9536
+        }
+      },
+      "401": {
+        "axis_span_qualification": {
+          "GRANULARITY_INDEX": {
+            "span": 1.17954,
+            "required": 0.2338,
+            "qualifies": true
+          },
+          "GRAZING_BAND_CONTRAST": {
+            "span": 0.02245,
+            "required": 0.01302,
+            "qualifies": true
+          },
+          "HIGHLIGHT_FWHM": {
+            "span": 0.238,
+            "required": 0.1827,
+            "qualifies": true
+          },
+          "HIGHLIGHT_PEAK": {
+            "span": 0.04103,
+            "required": 0.01594,
+            "qualifies": true
+          },
+          "SPECULAR_TO_DIFFUSE_RATIO": {
+            "span": 0.06899,
+            "required": 0.01772,
+            "qualifies": true
+          },
+          "GRAZING_RESPONSE": {
+            "span": 0.51772,
+            "required": 0.29912,
+            "qualifies": true
+          },
+          "SHEEN_REGION_RESPONSE": {
+            "span": 0.5468,
+            "required": 0.33138,
+            "qualifies": true
+          },
+          "EDGE_HIGHLIGHT_RESPONSE": {
+            "span": 0.29779,
+            "required": 0.55982,
+            "qualifies": false
+          }
+        },
+        "full_pairwise_matrix": {
+          "GRANULARITY_INDEX|GRAZING_BAND_CONTRAST": 0.9648,
+          "GRANULARITY_INDEX|HIGHLIGHT_FWHM": 0.9824,
+          "GRANULARITY_INDEX|HIGHLIGHT_PEAK": 1.0,
+          "GRANULARITY_INDEX|SPECULAR_TO_DIFFUSE_RATIO": 1.0,
+          "GRANULARITY_INDEX|GRAZING_RESPONSE": 0.9516,
+          "GRANULARITY_INDEX|SHEEN_REGION_RESPONSE": 1.0,
+          "GRAZING_BAND_CONTRAST|HIGHLIGHT_FWHM": 0.9385,
+          "GRAZING_BAND_CONTRAST|HIGHLIGHT_PEAK": 0.9648,
+          "GRAZING_BAND_CONTRAST|SPECULAR_TO_DIFFUSE_RATIO": 0.9648,
+          "GRAZING_BAND_CONTRAST|GRAZING_RESPONSE": 0.8769,
+          "GRAZING_BAND_CONTRAST|SHEEN_REGION_RESPONSE": 0.9648,
+          "HIGHLIGHT_FWHM|HIGHLIGHT_PEAK": 0.9857,
+          "HIGHLIGHT_FWHM|SPECULAR_TO_DIFFUSE_RATIO": 0.9857,
+          "HIGHLIGHT_FWHM|GRAZING_RESPONSE": 0.95,
+          "HIGHLIGHT_FWHM|SHEEN_REGION_RESPONSE": 0.9857,
+          "HIGHLIGHT_PEAK|SPECULAR_TO_DIFFUSE_RATIO": 1.0,
+          "HIGHLIGHT_PEAK|GRAZING_RESPONSE": 0.9571,
+          "HIGHLIGHT_PEAK|SHEEN_REGION_RESPONSE": 1.0,
+          "SPECULAR_TO_DIFFUSE_RATIO|GRAZING_RESPONSE": 0.9571,
+          "SPECULAR_TO_DIFFUSE_RATIO|SHEEN_REGION_RESPONSE": 1.0,
+          "GRAZING_RESPONSE|SHEEN_REGION_RESPONSE": 0.9571
+        }
+      },
+      "402": {
+        "axis_span_qualification": {
+          "GRANULARITY_INDEX": {
+            "span": 1.13308,
+            "required": 0.2338,
+            "qualifies": true
+          },
+          "GRAZING_BAND_CONTRAST": {
+            "span": 0.02212,
+            "required": 0.01302,
+            "qualifies": true
+          },
+          "HIGHLIGHT_FWHM": {
+            "span": 0.32246,
+            "required": 0.1827,
+            "qualifies": true
+          },
+          "HIGHLIGHT_PEAK": {
+            "span": 0.05119,
+            "required": 0.01594,
+            "qualifies": true
+          },
+          "SPECULAR_TO_DIFFUSE_RATIO": {
+            "span": 0.07313,
+            "required": 0.01772,
+            "qualifies": true
+          },
+          "GRAZING_RESPONSE": {
+            "span": 0.57645,
+            "required": 0.29912,
+            "qualifies": true
+          },
+          "SHEEN_REGION_RESPONSE": {
+            "span": 0.4946,
+            "required": 0.33138,
+            "qualifies": true
+          },
+          "EDGE_HIGHLIGHT_RESPONSE": {
+            "span": 0.45945,
+            "required": 0.55982,
+            "qualifies": false
+          }
+        },
+        "full_pairwise_matrix": {
+          "GRANULARITY_INDEX|GRAZING_BAND_CONTRAST": 0.8945,
+          "GRANULARITY_INDEX|HIGHLIGHT_FWHM": 0.9956,
+          "GRANULARITY_INDEX|HIGHLIGHT_PEAK": 1.0,
+          "GRANULARITY_INDEX|SPECULAR_TO_DIFFUSE_RATIO": 1.0,
+          "GRANULARITY_INDEX|GRAZING_RESPONSE": 0.9385,
+          "GRANULARITY_INDEX|SHEEN_REGION_RESPONSE": 0.9868,
+          "GRAZING_BAND_CONTRAST|HIGHLIGHT_FWHM": 0.8989,
+          "GRAZING_BAND_CONTRAST|HIGHLIGHT_PEAK": 0.8945,
+          "GRAZING_BAND_CONTRAST|SPECULAR_TO_DIFFUSE_RATIO": 0.8945,
+          "GRAZING_BAND_CONTRAST|GRAZING_RESPONSE": 0.8242,
+          "GRAZING_BAND_CONTRAST|SHEEN_REGION_RESPONSE": 0.9165,
+          "HIGHLIGHT_FWHM|HIGHLIGHT_PEAK": 0.9964,
+          "HIGHLIGHT_FWHM|SPECULAR_TO_DIFFUSE_RATIO": 0.9964,
+          "HIGHLIGHT_FWHM|GRAZING_RESPONSE": 0.9179,
+          "HIGHLIGHT_FWHM|SHEEN_REGION_RESPONSE": 0.9857,
+          "HIGHLIGHT_PEAK|SPECULAR_TO_DIFFUSE_RATIO": 1.0,
+          "HIGHLIGHT_PEAK|GRAZING_RESPONSE": 0.925,
+          "HIGHLIGHT_PEAK|SHEEN_REGION_RESPONSE": 0.9893,
+          "SPECULAR_TO_DIFFUSE_RATIO|GRAZING_RESPONSE": 0.925,
+          "SPECULAR_TO_DIFFUSE_RATIO|SHEEN_REGION_RESPONSE": 0.9893,
+          "GRAZING_RESPONSE|SHEEN_REGION_RESPONSE": 0.925
+        }
+      }
+    }
+  },
+  "threshold_comparison_inventory": [
+    {
+      "committed_verdict": "MATTE_VS_SATIN PASS leg",
+      "statistic": "GRANULARITY cross-family effect",
+      "reading": 0.6828,
+      "threshold": 0.25,
+      "margin": 0.4328,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "cross-family effect never replicated across seeds; the MATTE seed-only floor (0.1169) is a spread of a DIFFERENT statistic"
+    },
+    {
+      "committed_verdict": "MATTE_VS_SATIN PASS leg",
+      "statistic": "SHEEN cross-family effect",
+      "reading": 0.4225,
+      "threshold": 0.33138,
+      "margin": 0.09112,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "thinnest lobe clearing in the pair"
+    },
+    {
+      "committed_verdict": "PRESSED_VS_MATTE PASS leg",
+      "statistic": "GRANULARITY cross-family effect",
+      "reading": 0.8942,
+      "threshold": 0.25,
+      "margin": 0.6442,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": ""
+    },
+    {
+      "committed_verdict": "PRESSED_VS_MATTE PASS leg",
+      "statistic": "SHEEN cross-family effect",
+      "reading": 0.4471,
+      "threshold": 0.33138,
+      "margin": 0.11572,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": ""
+    },
+    {
+      "committed_verdict": "SATIN_VS_CREAM PASS leg",
+      "statistic": "GRANULARITY cross-family effect",
+      "reading": 0.4423,
+      "threshold": 0.25,
+      "margin": 0.1923,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": ""
+    },
+    {
+      "committed_verdict": "SATIN_VS_CREAM PASS leg",
+      "statistic": "FWHM cross-family effect",
+      "reading": 0.2843,
+      "threshold": 0.25,
+      "margin": 0.0343,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "margin 0.0343 \u2014 the thinnest committed clearing margin in the diffuse set"
+    },
+    {
+      "committed_verdict": "SHIMMER_VS_METALLIC leg",
+      "statistic": "PATTERN_CONTRAST effect",
+      "reading": 0.30398,
+      "threshold": 0.25,
+      "margin": 0.05398,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "margin 0.054"
+    },
+    {
+      "committed_verdict": "SHIMMER_VS_METALLIC leg",
+      "statistic": "COHERENCE effect",
+      "reading": 0.48488,
+      "threshold": 0.25,
+      "margin": 0.23488,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": ""
+    },
+    {
+      "committed_verdict": "SHIMMER_VS_METALLIC leg",
+      "statistic": "ENV_CORRELATION effect",
+      "reading": 0.54136,
+      "threshold": 0.25,
+      "margin": 0.29136,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": ""
+    },
+    {
+      "committed_verdict": "METALLIC_VS_GLITTER leg",
+      "statistic": "PATTERN_CONTRAST effect",
+      "reading": 0.88117,
+      "threshold": 0.25,
+      "margin": 0.63117,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": ""
+    },
+    {
+      "committed_verdict": "METALLIC_VS_GLITTER leg",
+      "statistic": "ENV_CORRELATION effect",
+      "reading": 0.69674,
+      "threshold": 0.25,
+      "margin": 0.44674,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": ""
+    },
+    {
+      "committed_verdict": "PRESSED_VS_BAKED PASS leg",
+      "statistic": "RAKING_SPAN effect",
+      "reading": 0.91093,
+      "threshold": 0.25,
+      "margin": 0.66093,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "relief floors are same-subject seed-only proxies, not spreads of the cross-family effect"
+    },
+    {
+      "committed_verdict": "PRESSED_VS_BAKED PASS leg",
+      "statistic": "RAKING_SHADOW effect",
+      "reading": 0.50406,
+      "threshold": 0.25,
+      "margin": 0.25406,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": ""
+    },
+    {
+      "committed_verdict": "EDGE INELIGIBLE (exclusion)",
+      "statistic": "EDGE seed-only floor",
+      "reading": 0.27991,
+      "threshold": 0.25,
+      "margin": 0.02991,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "the floor statistic itself was measured once on one 6-seed ensemble; its own replicate spread (across ensembles) was never measured"
+    },
+    {
+      "committed_verdict": "MARBLING axis INELIGIBLE",
+      "statistic": "chroma-axis floor",
+      "reading": 0.418,
+      "threshold": 0.25,
+      "margin": 0.168,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": ""
+    },
+    {
+      "committed_verdict": "MARBLING axis INELIGIBLE",
+      "statistic": "coherence-axis floor",
+      "reading": 0.697,
+      "threshold": 0.25,
+      "margin": 0.447,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": ""
+    },
+    {
+      "committed_verdict": "FLAKE EDGE_SHARPNESS INELIGIBLE",
+      "statistic": "edge-sharpness floor",
+      "reading": 0.54122,
+      "threshold": 0.25,
+      "margin": 0.29122,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": ""
+    },
+    {
+      "committed_verdict": "R5 census (all three pairs)",
+      "statistic": "GRAN|SHEEN census |rho| N=8",
+      "reading": 0.3571,
+      "threshold": 0.8,
+      "margin": 0.4429,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "single census; no replicate"
+    },
+    {
+      "committed_verdict": "R5 census (SATIN_VS_CREAM)",
+      "statistic": "GRAN|FWHM census |rho| N=8",
+      "reading": 0.1905,
+      "threshold": 0.8,
+      "margin": 0.6095,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": ""
+    },
+    {
+      "committed_verdict": "counted-instrument micronormal 1a",
+      "statistic": "min qualifying |rho|",
+      "reading": 0.7978,
+      "threshold": 0.8,
+      "margin": 0.0022,
+      "replicate_spread": 0.167,
+      "note": "SPREAD MEASURED (seeds 400/401/402: 0.7978/0.9648/0.8945) \u2014 margin 0.0022 vs spread 0.167: THE FOUNDING UNMET CASE"
+    },
+    {
+      "committed_verdict": "compression_texture_amplitude 1a (A2)",
+      "statistic": "min qualifying |rho|",
+      "reading": 0.9727,
+      "threshold": 0.8,
+      "margin": 0.1727,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "degenerate-side margin 0.1727; no replicate spread"
+    },
+    {
+      "committed_verdict": "sheen sweep 1a VALID",
+      "statistic": "min qualifying |rho|",
+      "reading": 0.3333,
+      "threshold": 0.8,
+      "margin": 0.4667,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "margin 0.467"
+    },
+    {
+      "committed_verdict": "surface_smoothing sweep 1a VALID",
+      "statistic": "min qualifying |rho|",
+      "reading": 0.049,
+      "threshold": 0.8,
+      "margin": 0.751,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "margin 0.751"
+    },
+    {
+      "committed_verdict": "surface_roughness sweep 1a VALID",
+      "statistic": "min qualifying |rho|",
+      "reading": 0.6909,
+      "threshold": 0.8,
+      "margin": 0.1091,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "margin 0.109"
+    },
+    {
+      "committed_verdict": "counted tracking GRAN|SHEEN",
+      "statistic": "sweep |rho|",
+      "reading": 0.9956,
+      "threshold": 0.8,
+      "margin": 0.1956,
+      "replicate_spread": 0.0132,
+      "note": "SPREAD MEASURED across 3 seeds (0.9868..1.0) \u2014 margin 0.1956 >> spread: ADEQUATE; the Phase 5 negative-control case"
+    },
+    {
+      "committed_verdict": "counted tracking GRAN|FWHM",
+      "statistic": "sweep |rho|",
+      "reading": 0.9824,
+      "threshold": 0.8,
+      "margin": 0.1824,
+      "replicate_spread": 0.0132,
+      "note": "margin 0.1024 > spread"
+    },
+    {
+      "committed_verdict": "A3 grain-scale GRANULARITY qualification",
+      "statistic": "span",
+      "reading": 0.2338,
+      "threshold": 0.2338,
+      "margin": 0.0,
+      "replicate_spread": "measured per A3",
+      "note": "resolved QUALIFIES with margin > measured seed spread of the same statistic \u2014 1i-adequate by construction (exact numbers in phase34_analysis.json)"
+    },
+    {
+      "committed_verdict": "BAKED clearance",
+      "statistic": "CLEARS_AT_WORST_CASE mm",
+      "reading": 5.35,
+      "threshold": 0.0,
+      "margin": 5.35,
+      "replicate_spread": "SPREAD_INAPPLICABLE_DETERMINISTIC",
+      "note": "geometry computation, bit-identical on rebuild; no seed ensemble exists"
+    },
+    {
+      "committed_verdict": "GLITTER_PARTICLE_RIG PASS",
+      "statistic": "event count",
+      "reading": 113,
+      "threshold": 25,
+      "margin": 88,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "margin 88; event count replicate spread across seeds never measured on the repaired EXR chain"
+    },
+    {
+      "committed_verdict": "glitter controls",
+      "statistic": "control event count (MATTE, SHIMMER)",
+      "reading": 0,
+      "threshold": 5,
+      "margin": 5,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "margin 5 in the safe direction; same absence"
+    },
+    {
+      "committed_verdict": "SOLID_VS_MARBLED FAIL",
+      "statistic": "chroma span",
+      "reading": 0.005,
+      "threshold": 0.25,
+      "margin": 0.245,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "FAIL-direction margin 0.245; additionally grounded in ineligible axes and the two-owner diagnosis"
+    }
+  ],
+  "inventory_findings": {
+    "n_rows": 31,
+    "spread_measured": 4,
+    "spread_inapplicable_deterministic": 1,
+    "no_replicate_spread_ever_measured": 26,
+    "the_finding": "for the overwhelming majority of committed threshold verdicts \u2014 including every cross-family effect clearing behind every committed pair PASS \u2014 no replicate spread of the deciding statistic has ever been measured. The seed-only floors are spreads of a DIFFERENT statistic (same-family noise), used as proxies. This is a finding, not a gap filled by assumption."
+  },
+  "owner_approved": false
+}

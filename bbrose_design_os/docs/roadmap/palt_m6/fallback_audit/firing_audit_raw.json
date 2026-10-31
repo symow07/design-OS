@@ -1,0 +1,36 @@
+{
+  "record_type": "fallback_firing_audit/1.0",
+  "guard_threshold": 1e-09,
+  "near_firing_band": [
+    1e-09,
+    0.001
+  ],
+  "method": "denominators recomputed exactly from retained per-axis values (the operands of every committed _effect call); zero renders",
+  "by_consumer_class": {
+    "1_FLOOR_AND_SEED_ONLY_priority": {
+      "FIRED": 0,
+      "NEAR_FIRING": 0,
+      "SAFE": 90,
+      "min_denominator": 0.0736338587393678,
+      "fired_details": [],
+      "near_details": []
+    },
+    "2_CLEARING_COMPARISONS": {
+      "FIRED": 0,
+      "NEAR_FIRING": 0,
+      "SAFE": 21,
+      "min_denominator": 0.0520805,
+      "fired_details": [],
+      "near_details": []
+    },
+    "3_CENSUS_RANK_ENTRIES": {
+      "FIRED": 0,
+      "NEAR_FIRING": 0,
+      "SAFE": 62,
+      "min_denominator": 0.024585151058017694,
+      "fired_details": [],
+      "near_details": []
+    }
+  },
+  "owner_approved": false
+}

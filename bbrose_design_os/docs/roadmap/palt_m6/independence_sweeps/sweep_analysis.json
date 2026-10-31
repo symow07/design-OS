@@ -1,0 +1,1468 @@
+{
+  "record_type": "independence_sweep_analysis/1.0",
+  "law": {
+    "ceiling": 0.8,
+    "margin": 2.0,
+    "operationalization": "axis-span qualification, selected by the 1a negative control (negative_control_1a.json)"
+  },
+  "sweeps": {
+    "compaction.compaction_level": {
+      "parameter": "compaction.compaction_level",
+      "family": "PRESSED_POWDER",
+      "instrument_notes": {
+        "texture_levels_refused": [],
+        "texture_levels_unrealized": [],
+        "lobe_levels_refused": [],
+        "lobe_levels_clipped": []
+      },
+      "axis_qualification": {
+        "GRANULARITY_INDEX": {
+          "span_effect": 0.13389,
+          "required": 0.2338,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "GRAZING_BAND_CONTRAST": {
+          "span_effect": 0.04205,
+          "required": 0.01302,
+          "n_levels": 12,
+          "qualifies": true
+        },
+        "HIGHLIGHT_FWHM": {
+          "span_effect": 0.01417,
+          "required": 0.1827,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "HIGHLIGHT_PEAK": {
+          "span_effect": 0.01466,
+          "required": 0.01594,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "span_effect": 0.00915,
+          "required": 0.01772,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "GRAZING_RESPONSE": {
+          "span_effect": 0.13271,
+          "required": 0.29912,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "span_effect": 0.00945,
+          "required": 0.33138,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "span_effect": 0.0239,
+          "required": 0.55982,
+          "n_levels": 12,
+          "qualifies": false
+        }
+      },
+      "matrix_over_qualifying_axes": {},
+      "divergent_pairs_establishing_validity": [],
+      "validity_1a": "SWEEP_DEGENERATE_UNDER_DRIVER",
+      "counted_axis_readings": {
+        "PRESSED_VS_MATTE": {
+          "status": "NOT_COMMON_DRIVER",
+          "sentence": "compaction.compaction_level does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+        }
+      }
+    },
+    "compaction.compression_texture_amplitude": {
+      "parameter": "compaction.compression_texture_amplitude",
+      "family": "PRESSED_POWDER",
+      "instrument_notes": {
+        "texture_levels_refused": [],
+        "texture_levels_unrealized": [
+          0.09636
+        ],
+        "lobe_levels_refused": [],
+        "lobe_levels_clipped": []
+      },
+      "axis_qualification": {
+        "GRANULARITY_INDEX": {
+          "span_effect": 1.12403,
+          "required": 0.2338,
+          "n_levels": 11,
+          "qualifies": true
+        },
+        "GRAZING_BAND_CONTRAST": {
+          "span_effect": 0.02073,
+          "required": 0.01302,
+          "n_levels": 11,
+          "qualifies": true
+        },
+        "HIGHLIGHT_FWHM": {
+          "span_effect": 0.21489,
+          "required": 0.1827,
+          "n_levels": 12,
+          "qualifies": true
+        },
+        "HIGHLIGHT_PEAK": {
+          "span_effect": 0.03282,
+          "required": 0.01594,
+          "n_levels": 12,
+          "qualifies": true
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "span_effect": 0.04691,
+          "required": 0.01772,
+          "n_levels": 12,
+          "qualifies": true
+        },
+        "GRAZING_RESPONSE": {
+          "span_effect": 0.25209,
+          "required": 0.29912,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "span_effect": 0.42329,
+          "required": 0.33138,
+          "n_levels": 12,
+          "qualifies": true
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "span_effect": 0.42514,
+          "required": 0.55982,
+          "n_levels": 12,
+          "qualifies": false
+        }
+      },
+      "matrix_over_qualifying_axes": {
+        "GRANULARITY_INDEX|GRAZING_BAND_CONTRAST": {
+          "abs_rho": 0.9818,
+          "n": 11
+        },
+        "GRANULARITY_INDEX|HIGHLIGHT_FWHM": {
+          "abs_rho": 0.9909,
+          "n": 11
+        },
+        "GRANULARITY_INDEX|HIGHLIGHT_PEAK": {
+          "abs_rho": 1.0,
+          "n": 11
+        },
+        "GRANULARITY_INDEX|SPECULAR_TO_DIFFUSE_RATIO": {
+          "abs_rho": 1.0,
+          "n": 11
+        },
+        "GRANULARITY_INDEX|SHEEN_REGION_RESPONSE": {
+          "abs_rho": 1.0,
+          "n": 11
+        },
+        "GRAZING_BAND_CONTRAST|HIGHLIGHT_FWHM": {
+          "abs_rho": 0.9727,
+          "n": 11
+        },
+        "GRAZING_BAND_CONTRAST|HIGHLIGHT_PEAK": {
+          "abs_rho": 0.9818,
+          "n": 11
+        },
+        "GRAZING_BAND_CONTRAST|SPECULAR_TO_DIFFUSE_RATIO": {
+          "abs_rho": 0.9818,
+          "n": 11
+        },
+        "GRAZING_BAND_CONTRAST|SHEEN_REGION_RESPONSE": {
+          "abs_rho": 0.9818,
+          "n": 11
+        },
+        "HIGHLIGHT_FWHM|HIGHLIGHT_PEAK": {
+          "abs_rho": 0.993,
+          "n": 12
+        },
+        "HIGHLIGHT_FWHM|SPECULAR_TO_DIFFUSE_RATIO": {
+          "abs_rho": 0.993,
+          "n": 12
+        },
+        "HIGHLIGHT_FWHM|SHEEN_REGION_RESPONSE": {
+          "abs_rho": 0.993,
+          "n": 12
+        },
+        "HIGHLIGHT_PEAK|SPECULAR_TO_DIFFUSE_RATIO": {
+          "abs_rho": 1.0,
+          "n": 12
+        },
+        "HIGHLIGHT_PEAK|SHEEN_REGION_RESPONSE": {
+          "abs_rho": 1.0,
+          "n": 12
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO|SHEEN_REGION_RESPONSE": {
+          "abs_rho": 1.0,
+          "n": 12
+        }
+      },
+      "divergent_pairs_establishing_validity": [],
+      "validity_1a": "SWEEP_DEGENERATE_UNDER_DRIVER",
+      "counted_axis_readings": {
+        "PRESSED_VS_MATTE": {
+          "abs_rho": 1.0,
+          "n": 11,
+          "sweep_validity": "SWEEP_DEGENERATE_UNDER_DRIVER",
+          "status": "DEGENERATE_CARRIES_NO_INFORMATION"
+        }
+      }
+    },
+    "compaction.compression_texture_scale_mm": {
+      "parameter": "compaction.compression_texture_scale_mm",
+      "family": "PRESSED_POWDER",
+      "instrument_notes": {
+        "texture_levels_refused": [],
+        "texture_levels_unrealized": [
+          0.25
+        ],
+        "lobe_levels_refused": [],
+        "lobe_levels_clipped": []
+      },
+      "axis_qualification": {
+        "GRANULARITY_INDEX": {
+          "span_effect": 0.07595,
+          "required": 0.2338,
+          "n_levels": 11,
+          "qualifies": false
+        },
+        "GRAZING_BAND_CONTRAST": {
+          "span_effect": 0.00792,
+          "required": 0.01302,
+          "n_levels": 11,
+          "qualifies": false
+        },
+        "HIGHLIGHT_FWHM": {
+          "span_effect": 0.0985,
+          "required": 0.1827,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "HIGHLIGHT_PEAK": {
+          "span_effect": 0.01848,
+          "required": 0.01594,
+          "n_levels": 12,
+          "qualifies": true
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "span_effect": 0.01886,
+          "required": 0.01772,
+          "n_levels": 12,
+          "qualifies": true
+        },
+        "GRAZING_RESPONSE": {
+          "span_effect": 0.17908,
+          "required": 0.29912,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "span_effect": 0.19643,
+          "required": 0.33138,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "span_effect": 0.25516,
+          "required": 0.55982,
+          "n_levels": 12,
+          "qualifies": false
+        }
+      },
+      "matrix_over_qualifying_axes": {
+        "HIGHLIGHT_PEAK|SPECULAR_TO_DIFFUSE_RATIO": {
+          "abs_rho": 0.965,
+          "n": 12
+        }
+      },
+      "divergent_pairs_establishing_validity": [],
+      "validity_1a": "SWEEP_DEGENERATE_UNDER_DRIVER",
+      "counted_axis_readings": {
+        "PRESSED_VS_MATTE": {
+          "status": "NOT_COMMON_DRIVER",
+          "sentence": "compaction.compression_texture_scale_mm does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+        }
+      }
+    },
+    "compaction.surface_flatness": {
+      "parameter": "compaction.surface_flatness",
+      "family": "PRESSED_POWDER",
+      "instrument_notes": {
+        "texture_levels_refused": [],
+        "texture_levels_unrealized": [
+          0.64091,
+          0.71818,
+          0.79545,
+          0.87273,
+          0.95
+        ],
+        "lobe_levels_refused": [],
+        "lobe_levels_clipped": []
+      },
+      "axis_qualification": {
+        "GRANULARITY_INDEX": {
+          "span_effect": 0.0005,
+          "required": 0.2338,
+          "n_levels": 7,
+          "qualifies": false
+        },
+        "GRAZING_BAND_CONTRAST": {
+          "span_effect": 0.0008,
+          "required": 0.01302,
+          "n_levels": 7,
+          "qualifies": false
+        },
+        "HIGHLIGHT_FWHM": {
+          "span_effect": 0.00291,
+          "required": 0.1827,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "HIGHLIGHT_PEAK": {
+          "span_effect": 0.01275,
+          "required": 0.01594,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "span_effect": 0.00092,
+          "required": 0.01772,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "GRAZING_RESPONSE": {
+          "span_effect": 0.02732,
+          "required": 0.29912,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "span_effect": 0.00925,
+          "required": 0.33138,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "span_effect": 0.00704,
+          "required": 0.55982,
+          "n_levels": 12,
+          "qualifies": false
+        }
+      },
+      "matrix_over_qualifying_axes": {},
+      "divergent_pairs_establishing_validity": [],
+      "validity_1a": "SWEEP_DEGENERATE_UNDER_DRIVER",
+      "counted_axis_readings": {
+        "PRESSED_VS_MATTE": {
+          "status": "NOT_COMMON_DRIVER",
+          "sentence": "compaction.surface_flatness does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+        }
+      }
+    },
+    "compression_texture.scale_mm": {
+      "parameter": "compression_texture.scale_mm",
+      "family": "POWDER_MATTE",
+      "instrument_notes": {
+        "texture_levels_refused": [],
+        "texture_levels_unrealized": [],
+        "lobe_levels_refused": [],
+        "lobe_levels_clipped": []
+      },
+      "axis_qualification": {
+        "GRANULARITY_INDEX": {
+          "span_effect": 0.11101,
+          "required": 0.2338,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "GRAZING_BAND_CONTRAST": {
+          "span_effect": 0.00936,
+          "required": 0.01302,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "HIGHLIGHT_FWHM": {
+          "span_effect": 0.04531,
+          "required": 0.1827,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "HIGHLIGHT_PEAK": {
+          "span_effect": 0.00847,
+          "required": 0.01594,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "span_effect": 0.01083,
+          "required": 0.01772,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "GRAZING_RESPONSE": {
+          "span_effect": 0.06316,
+          "required": 0.29912,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "span_effect": 0.06704,
+          "required": 0.33138,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "span_effect": 0.08562,
+          "required": 0.55982,
+          "n_levels": 12,
+          "qualifies": false
+        }
+      },
+      "matrix_over_qualifying_axes": {},
+      "divergent_pairs_establishing_validity": [],
+      "validity_1a": "SWEEP_DEGENERATE_UNDER_DRIVER",
+      "counted_axis_readings": {
+        "MATTE_VS_SATIN": {
+          "status": "NOT_COMMON_DRIVER",
+          "sentence": "compression_texture.scale_mm does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+        },
+        "PRESSED_VS_MATTE": {
+          "status": "NOT_COMMON_DRIVER",
+          "sentence": "compression_texture.scale_mm does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+        }
+      }
+    },
+    "compression_texture.strength": {
+      "parameter": "compression_texture.strength",
+      "family": "POWDER_MATTE",
+      "instrument_notes": {
+        "texture_levels_refused": [],
+        "texture_levels_unrealized": [
+          0.12182
+        ],
+        "lobe_levels_refused": [],
+        "lobe_levels_clipped": []
+      },
+      "axis_qualification": {
+        "GRANULARITY_INDEX": {
+          "span_effect": 0.14149,
+          "required": 0.2338,
+          "n_levels": 11,
+          "qualifies": false
+        },
+        "GRAZING_BAND_CONTRAST": {
+          "span_effect": 0.0067,
+          "required": 0.01302,
+          "n_levels": 11,
+          "qualifies": false
+        },
+        "HIGHLIGHT_FWHM": {
+          "span_effect": 0.03554,
+          "required": 0.1827,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "HIGHLIGHT_PEAK": {
+          "span_effect": 0.0105,
+          "required": 0.01594,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "span_effect": 0.01673,
+          "required": 0.01772,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "GRAZING_RESPONSE": {
+          "span_effect": 0.08007,
+          "required": 0.29912,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "span_effect": 0.07448,
+          "required": 0.33138,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "span_effect": 0.04712,
+          "required": 0.55982,
+          "n_levels": 12,
+          "qualifies": false
+        }
+      },
+      "matrix_over_qualifying_axes": {},
+      "divergent_pairs_establishing_validity": [],
+      "validity_1a": "SWEEP_DEGENERATE_UNDER_DRIVER",
+      "counted_axis_readings": {
+        "MATTE_VS_SATIN": {
+          "status": "NOT_COMMON_DRIVER",
+          "sentence": "compression_texture.strength does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+        },
+        "PRESSED_VS_MATTE": {
+          "status": "NOT_COMMON_DRIVER",
+          "sentence": "compression_texture.strength does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+        }
+      }
+    },
+    "continuity.soft_specular_roughness": {
+      "parameter": "continuity.soft_specular_roughness",
+      "family": "CREAM",
+      "instrument_notes": {
+        "texture_levels_refused": [],
+        "texture_levels_unrealized": [],
+        "lobe_levels_refused": [],
+        "lobe_levels_clipped": []
+      },
+      "axis_qualification": {
+        "GRANULARITY_INDEX": {
+          "span_effect": 1.19052,
+          "required": 0.2338,
+          "n_levels": 12,
+          "qualifies": true
+        },
+        "GRAZING_BAND_CONTRAST": {
+          "span_effect": 0.53062,
+          "required": 0.01302,
+          "n_levels": 12,
+          "qualifies": true
+        },
+        "HIGHLIGHT_FWHM": {
+          "span_effect": 0.03744,
+          "required": 0.1827,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "HIGHLIGHT_PEAK": {
+          "span_effect": 0.02344,
+          "required": 0.01594,
+          "n_levels": 12,
+          "qualifies": true
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "span_effect": 0.01166,
+          "required": 0.01772,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "GRAZING_RESPONSE": {
+          "span_effect": 0.11349,
+          "required": 0.29912,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "span_effect": 0.02543,
+          "required": 0.33138,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "span_effect": 0.08696,
+          "required": 0.55982,
+          "n_levels": 12,
+          "qualifies": false
+        }
+      },
+      "matrix_over_qualifying_axes": {
+        "GRANULARITY_INDEX|GRAZING_BAND_CONTRAST": {
+          "abs_rho": 0.9371,
+          "n": 12
+        },
+        "GRANULARITY_INDEX|HIGHLIGHT_PEAK": {
+          "abs_rho": 0.9371,
+          "n": 12
+        },
+        "GRAZING_BAND_CONTRAST|HIGHLIGHT_PEAK": {
+          "abs_rho": 0.986,
+          "n": 12
+        }
+      },
+      "divergent_pairs_establishing_validity": [],
+      "validity_1a": "SWEEP_DEGENERATE_UNDER_DRIVER",
+      "counted_axis_readings": {
+        "SATIN_VS_CREAM": {
+          "status": "NOT_COMMON_DRIVER",
+          "sentence": "continuity.soft_specular_roughness does not move HIGHLIGHT_FWHM beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+        }
+      }
+    },
+    "macrotexture.scale_mm": {
+      "parameter": "macrotexture.scale_mm",
+      "family": "POWDER_SATIN",
+      "instrument_notes": {
+        "texture_levels_refused": [],
+        "texture_levels_unrealized": [
+          1.0,
+          1.27273,
+          1.54545,
+          1.81818,
+          2.09091,
+          2.36364,
+          2.63636,
+          2.90909,
+          3.18182,
+          3.45455,
+          3.72727,
+          4.0
+        ],
+        "lobe_levels_refused": [],
+        "lobe_levels_clipped": []
+      },
+      "axis_qualification": {
+        "GRANULARITY_INDEX": {
+          "qualifies": false,
+          "reason": "only 0 measured levels"
+        },
+        "GRAZING_BAND_CONTRAST": {
+          "qualifies": false,
+          "reason": "only 0 measured levels"
+        },
+        "HIGHLIGHT_FWHM": {
+          "span_effect": 0.02484,
+          "required": 0.1827,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "HIGHLIGHT_PEAK": {
+          "span_effect": 0.00352,
+          "required": 0.01594,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "span_effect": 0.00274,
+          "required": 0.01772,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "GRAZING_RESPONSE": {
+          "span_effect": 0.03924,
+          "required": 0.29912,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "span_effect": 0.05829,
+          "required": 0.33138,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "span_effect": 0.03612,
+          "required": 0.55982,
+          "n_levels": 12,
+          "qualifies": false
+        }
+      },
+      "matrix_over_qualifying_axes": {},
+      "divergent_pairs_establishing_validity": [],
+      "validity_1a": "SWEEP_DEGENERATE_UNDER_DRIVER",
+      "counted_axis_readings": {
+        "SATIN_VS_CREAM": {
+          "status": "NOT_COMMON_DRIVER",
+          "sentence": "macrotexture.scale_mm does not move GRANULARITY_INDEX or HIGHLIGHT_FWHM beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+        }
+      }
+    },
+    "macrotexture.strength": {
+      "parameter": "macrotexture.strength",
+      "family": "POWDER_SATIN",
+      "instrument_notes": {
+        "texture_levels_refused": [],
+        "texture_levels_unrealized": [
+          0.04455,
+          0.06182,
+          0.07909
+        ],
+        "lobe_levels_refused": [],
+        "lobe_levels_clipped": []
+      },
+      "axis_qualification": {
+        "GRANULARITY_INDEX": {
+          "span_effect": 0.00562,
+          "required": 0.2338,
+          "n_levels": 9,
+          "qualifies": false
+        },
+        "GRAZING_BAND_CONTRAST": {
+          "span_effect": 0.01417,
+          "required": 0.01302,
+          "n_levels": 9,
+          "qualifies": true
+        },
+        "HIGHLIGHT_FWHM": {
+          "span_effect": 0.02016,
+          "required": 0.1827,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "HIGHLIGHT_PEAK": {
+          "span_effect": 0.04803,
+          "required": 0.01594,
+          "n_levels": 12,
+          "qualifies": true
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "span_effect": 0.007,
+          "required": 0.01772,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "GRAZING_RESPONSE": {
+          "span_effect": 0.06517,
+          "required": 0.29912,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "span_effect": 0.01646,
+          "required": 0.33138,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "span_effect": 0.04968,
+          "required": 0.55982,
+          "n_levels": 12,
+          "qualifies": false
+        }
+      },
+      "matrix_over_qualifying_axes": {
+        "GRAZING_BAND_CONTRAST|HIGHLIGHT_PEAK": {
+          "abs_rho": 1.0,
+          "n": 9
+        }
+      },
+      "divergent_pairs_establishing_validity": [],
+      "validity_1a": "SWEEP_DEGENERATE_UNDER_DRIVER",
+      "counted_axis_readings": {
+        "SATIN_VS_CREAM": {
+          "status": "NOT_COMMON_DRIVER",
+          "sentence": "macrotexture.strength does not move GRANULARITY_INDEX or HIGHLIGHT_FWHM beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+        }
+      }
+    },
+    "milling.microparticle_scale_mm": {
+      "parameter": "milling.microparticle_scale_mm",
+      "family": "POWDER_MATTE",
+      "instrument_notes": {
+        "texture_levels_refused": [],
+        "texture_levels_unrealized": [],
+        "lobe_levels_refused": [],
+        "lobe_levels_clipped": []
+      },
+      "axis_qualification": {
+        "GRANULARITY_INDEX": {
+          "span_effect": 0.22596,
+          "required": 0.2338,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "GRAZING_BAND_CONTRAST": {
+          "span_effect": 0.00902,
+          "required": 0.01302,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "HIGHLIGHT_FWHM": {
+          "span_effect": 0.16941,
+          "required": 0.1827,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "HIGHLIGHT_PEAK": {
+          "span_effect": 0.03664,
+          "required": 0.01594,
+          "n_levels": 12,
+          "qualifies": true
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "span_effect": 0.04652,
+          "required": 0.01772,
+          "n_levels": 12,
+          "qualifies": true
+        },
+        "GRAZING_RESPONSE": {
+          "span_effect": 0.03867,
+          "required": 0.29912,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "span_effect": 0.20949,
+          "required": 0.33138,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "span_effect": 0.21763,
+          "required": 0.55982,
+          "n_levels": 12,
+          "qualifies": false
+        }
+      },
+      "matrix_over_qualifying_axes": {
+        "HIGHLIGHT_PEAK|SPECULAR_TO_DIFFUSE_RATIO": {
+          "abs_rho": 0.993,
+          "n": 12
+        }
+      },
+      "divergent_pairs_establishing_validity": [],
+      "validity_1a": "SWEEP_DEGENERATE_UNDER_DRIVER",
+      "counted_axis_readings": {
+        "MATTE_VS_SATIN": {
+          "status": "NOT_COMMON_DRIVER",
+          "sentence": "milling.microparticle_scale_mm does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+        },
+        "PRESSED_VS_MATTE": {
+          "status": "NOT_COMMON_DRIVER",
+          "sentence": "milling.microparticle_scale_mm does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+        },
+        "SATIN_VS_CREAM": {
+          "status": "NOT_COMMON_DRIVER",
+          "sentence": "milling.microparticle_scale_mm does not move GRANULARITY_INDEX or HIGHLIGHT_FWHM beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+        }
+      }
+    },
+    "milling.microparticle_variance": {
+      "parameter": "milling.microparticle_variance",
+      "family": "POWDER_MATTE",
+      "instrument_notes": {
+        "texture_levels_refused": [],
+        "texture_levels_unrealized": [
+          0.62273
+        ],
+        "lobe_levels_refused": [],
+        "lobe_levels_clipped": []
+      },
+      "axis_qualification": {
+        "GRANULARITY_INDEX": {
+          "span_effect": 0.03591,
+          "required": 0.2338,
+          "n_levels": 11,
+          "qualifies": false
+        },
+        "GRAZING_BAND_CONTRAST": {
+          "span_effect": 0.01033,
+          "required": 0.01302,
+          "n_levels": 11,
+          "qualifies": false
+        },
+        "HIGHLIGHT_FWHM": {
+          "span_effect": 0.03161,
+          "required": 0.1827,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "HIGHLIGHT_PEAK": {
+          "span_effect": 0.008,
+          "required": 0.01594,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "span_effect": 0.00683,
+          "required": 0.01772,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "GRAZING_RESPONSE": {
+          "span_effect": 0.05177,
+          "required": 0.29912,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "span_effect": 0.01381,
+          "required": 0.33138,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "span_effect": 0.07447,
+          "required": 0.55982,
+          "n_levels": 12,
+          "qualifies": false
+        }
+      },
+      "matrix_over_qualifying_axes": {},
+      "divergent_pairs_establishing_validity": [],
+      "validity_1a": "SWEEP_DEGENERATE_UNDER_DRIVER",
+      "counted_axis_readings": {
+        "MATTE_VS_SATIN": {
+          "status": "NOT_COMMON_DRIVER",
+          "sentence": "milling.microparticle_variance does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+        },
+        "PRESSED_VS_MATTE": {
+          "status": "NOT_COMMON_DRIVER",
+          "sentence": "milling.microparticle_variance does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+        },
+        "SATIN_VS_CREAM": {
+          "status": "NOT_COMMON_DRIVER",
+          "sentence": "milling.microparticle_variance does not move GRANULARITY_INDEX or HIGHLIGHT_FWHM beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+        }
+      }
+    },
+    "milling.surface_smoothing": {
+      "parameter": "milling.surface_smoothing",
+      "family": "POWDER_SATIN",
+      "instrument_notes": {
+        "texture_levels_refused": [],
+        "texture_levels_unrealized": [],
+        "lobe_levels_refused": [],
+        "lobe_levels_clipped": []
+      },
+      "axis_qualification": {
+        "GRANULARITY_INDEX": {
+          "span_effect": 0.55723,
+          "required": 0.2338,
+          "n_levels": 12,
+          "qualifies": true
+        },
+        "GRAZING_BAND_CONTRAST": {
+          "span_effect": 0.08161,
+          "required": 0.01302,
+          "n_levels": 12,
+          "qualifies": true
+        },
+        "HIGHLIGHT_FWHM": {
+          "span_effect": 0.01084,
+          "required": 0.1827,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "HIGHLIGHT_PEAK": {
+          "span_effect": 0.00435,
+          "required": 0.01594,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "span_effect": 0.00056,
+          "required": 0.01772,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "GRAZING_RESPONSE": {
+          "span_effect": 0.0234,
+          "required": 0.29912,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "span_effect": 0.00745,
+          "required": 0.33138,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "span_effect": 0.02726,
+          "required": 0.55982,
+          "n_levels": 12,
+          "qualifies": false
+        }
+      },
+      "matrix_over_qualifying_axes": {
+        "GRANULARITY_INDEX|GRAZING_BAND_CONTRAST": {
+          "abs_rho": 0.049,
+          "n": 12
+        }
+      },
+      "divergent_pairs_establishing_validity": [
+        {
+          "pair": "GRANULARITY_INDEX|GRAZING_BAND_CONTRAST",
+          "abs_rho": 0.049,
+          "n": 12
+        }
+      ],
+      "validity_1a": "VALID",
+      "counted_axis_readings": {
+        "MATTE_VS_SATIN": {
+          "status": "NOT_COMMON_DRIVER",
+          "sentence": "milling.surface_smoothing does not move SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+        },
+        "SATIN_VS_CREAM": {
+          "status": "NOT_COMMON_DRIVER",
+          "sentence": "milling.surface_smoothing does not move HIGHLIGHT_FWHM beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+        }
+      }
+    },
+    "press.ring_radius_frac": {
+      "parameter": "press.ring_radius_frac",
+      "family": "PRESSED_POWDER",
+      "instrument_notes": {
+        "texture_levels_refused": [],
+        "texture_levels_unrealized": [],
+        "lobe_levels_refused": [],
+        "lobe_levels_clipped": []
+      },
+      "axis_qualification": {
+        "GRANULARITY_INDEX": {
+          "span_effect": 0.0153,
+          "required": 0.2338,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "GRAZING_BAND_CONTRAST": {
+          "span_effect": 0.00471,
+          "required": 0.01302,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "HIGHLIGHT_FWHM": {
+          "span_effect": 0.00765,
+          "required": 0.1827,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "HIGHLIGHT_PEAK": {
+          "span_effect": 0.0,
+          "required": 0.01594,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "span_effect": 0.00365,
+          "required": 0.01772,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "GRAZING_RESPONSE": {
+          "span_effect": 0.05048,
+          "required": 0.29912,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "span_effect": 0.05294,
+          "required": 0.33138,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "span_effect": 0.01678,
+          "required": 0.55982,
+          "n_levels": 12,
+          "qualifies": false
+        }
+      },
+      "matrix_over_qualifying_axes": {},
+      "divergent_pairs_establishing_validity": [],
+      "validity_1a": "SWEEP_DEGENERATE_UNDER_DRIVER",
+      "counted_axis_readings": {
+        "PRESSED_VS_MATTE": {
+          "status": "NOT_COMMON_DRIVER",
+          "sentence": "press.ring_radius_frac does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+        }
+      }
+    },
+    "press.ring_strength": {
+      "parameter": "press.ring_strength",
+      "family": "PRESSED_POWDER",
+      "instrument_notes": {
+        "texture_levels_refused": [],
+        "texture_levels_unrealized": [],
+        "lobe_levels_refused": [],
+        "lobe_levels_clipped": []
+      },
+      "axis_qualification": {
+        "GRANULARITY_INDEX": {
+          "span_effect": 0.75439,
+          "required": 0.2338,
+          "n_levels": 12,
+          "qualifies": true
+        },
+        "GRAZING_BAND_CONTRAST": {
+          "span_effect": 0.30181,
+          "required": 0.01302,
+          "n_levels": 12,
+          "qualifies": true
+        },
+        "HIGHLIGHT_FWHM": {
+          "span_effect": 0.01503,
+          "required": 0.1827,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "HIGHLIGHT_PEAK": {
+          "span_effect": 3e-05,
+          "required": 0.01594,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "span_effect": 0.00577,
+          "required": 0.01772,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "GRAZING_RESPONSE": {
+          "span_effect": 0.07498,
+          "required": 0.29912,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "span_effect": 0.12459,
+          "required": 0.33138,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "span_effect": 0.03387,
+          "required": 0.55982,
+          "n_levels": 12,
+          "qualifies": false
+        }
+      },
+      "matrix_over_qualifying_axes": {
+        "GRANULARITY_INDEX|GRAZING_BAND_CONTRAST": {
+          "abs_rho": 0.979,
+          "n": 12
+        }
+      },
+      "divergent_pairs_establishing_validity": [],
+      "validity_1a": "SWEEP_DEGENERATE_UNDER_DRIVER",
+      "counted_axis_readings": {
+        "PRESSED_VS_MATTE": {
+          "status": "NOT_COMMON_DRIVER",
+          "sentence": "press.ring_strength does not move SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+        }
+      }
+    },
+    "sheen_response.sheen": {
+      "parameter": "sheen_response.sheen",
+      "family": "POWDER_SATIN",
+      "instrument_notes": {
+        "texture_levels_refused": [],
+        "texture_levels_unrealized": [
+          0.41364,
+          0.48636
+        ],
+        "lobe_levels_refused": [],
+        "lobe_levels_clipped": []
+      },
+      "axis_qualification": {
+        "GRANULARITY_INDEX": {
+          "span_effect": 0.09122,
+          "required": 0.2338,
+          "n_levels": 10,
+          "qualifies": false
+        },
+        "GRAZING_BAND_CONTRAST": {
+          "span_effect": 0.0384,
+          "required": 0.01302,
+          "n_levels": 10,
+          "qualifies": true
+        },
+        "HIGHLIGHT_FWHM": {
+          "span_effect": 1.41865,
+          "required": 0.1827,
+          "n_levels": 12,
+          "qualifies": true
+        },
+        "HIGHLIGHT_PEAK": {
+          "span_effect": 0.28421,
+          "required": 0.01594,
+          "n_levels": 12,
+          "qualifies": true
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "span_effect": 0.21482,
+          "required": 0.01772,
+          "n_levels": 12,
+          "qualifies": true
+        },
+        "GRAZING_RESPONSE": {
+          "span_effect": 0.07717,
+          "required": 0.29912,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "span_effect": 0.22142,
+          "required": 0.33138,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "span_effect": 1.49168,
+          "required": 0.55982,
+          "n_levels": 12,
+          "qualifies": true
+        }
+      },
+      "matrix_over_qualifying_axes": {
+        "GRAZING_BAND_CONTRAST|HIGHLIGHT_FWHM": {
+          "abs_rho": 0.9636,
+          "n": 10
+        },
+        "GRAZING_BAND_CONTRAST|HIGHLIGHT_PEAK": {
+          "abs_rho": 1.0,
+          "n": 10
+        },
+        "GRAZING_BAND_CONTRAST|SPECULAR_TO_DIFFUSE_RATIO": {
+          "abs_rho": 0.3333,
+          "n": 10
+        },
+        "GRAZING_BAND_CONTRAST|EDGE_HIGHLIGHT_RESPONSE": {
+          "abs_rho": 1.0,
+          "n": 10
+        },
+        "HIGHLIGHT_FWHM|HIGHLIGHT_PEAK": {
+          "abs_rho": 0.979,
+          "n": 12
+        },
+        "HIGHLIGHT_FWHM|SPECULAR_TO_DIFFUSE_RATIO": {
+          "abs_rho": 0.1818,
+          "n": 12
+        },
+        "HIGHLIGHT_FWHM|EDGE_HIGHLIGHT_RESPONSE": {
+          "abs_rho": 0.979,
+          "n": 12
+        },
+        "HIGHLIGHT_PEAK|SPECULAR_TO_DIFFUSE_RATIO": {
+          "abs_rho": 0.2028,
+          "n": 12
+        },
+        "HIGHLIGHT_PEAK|EDGE_HIGHLIGHT_RESPONSE": {
+          "abs_rho": 1.0,
+          "n": 12
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO|EDGE_HIGHLIGHT_RESPONSE": {
+          "abs_rho": 0.2028,
+          "n": 12
+        }
+      },
+      "divergent_pairs_establishing_validity": [
+        {
+          "pair": "GRAZING_BAND_CONTRAST|SPECULAR_TO_DIFFUSE_RATIO",
+          "abs_rho": 0.3333,
+          "n": 10
+        },
+        {
+          "pair": "HIGHLIGHT_FWHM|SPECULAR_TO_DIFFUSE_RATIO",
+          "abs_rho": 0.1818,
+          "n": 12
+        },
+        {
+          "pair": "HIGHLIGHT_PEAK|SPECULAR_TO_DIFFUSE_RATIO",
+          "abs_rho": 0.2028,
+          "n": 12
+        },
+        {
+          "pair": "SPECULAR_TO_DIFFUSE_RATIO|EDGE_HIGHLIGHT_RESPONSE",
+          "abs_rho": 0.2028,
+          "n": 12
+        }
+      ],
+      "validity_1a": "VALID",
+      "counted_axis_readings": {
+        "MATTE_VS_SATIN": {
+          "status": "NOT_COMMON_DRIVER",
+          "sentence": "sheen_response.sheen does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+        },
+        "SATIN_VS_CREAM": {
+          "status": "NOT_COMMON_DRIVER",
+          "sentence": "sheen_response.sheen does not move GRANULARITY_INDEX beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+        }
+      }
+    },
+    "sheen_response.tint": {
+      "parameter": "sheen_response.tint",
+      "family": "POWDER_SATIN",
+      "instrument_notes": {
+        "texture_levels_refused": [],
+        "texture_levels_unrealized": [
+          0.07273,
+          0.12545,
+          0.17818,
+          0.23091
+        ],
+        "lobe_levels_refused": [],
+        "lobe_levels_clipped": []
+      },
+      "axis_qualification": {
+        "GRANULARITY_INDEX": {
+          "span_effect": 0.03687,
+          "required": 0.2338,
+          "n_levels": 8,
+          "qualifies": false
+        },
+        "GRAZING_BAND_CONTRAST": {
+          "span_effect": 0.01303,
+          "required": 0.01302,
+          "n_levels": 8,
+          "qualifies": true
+        },
+        "HIGHLIGHT_FWHM": {
+          "span_effect": 0.24372,
+          "required": 0.1827,
+          "n_levels": 12,
+          "qualifies": true
+        },
+        "HIGHLIGHT_PEAK": {
+          "span_effect": 0.00301,
+          "required": 0.01594,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "span_effect": 0.06996,
+          "required": 0.01772,
+          "n_levels": 12,
+          "qualifies": true
+        },
+        "GRAZING_RESPONSE": {
+          "span_effect": 0.02773,
+          "required": 0.29912,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "span_effect": 0.07631,
+          "required": 0.33138,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "span_effect": 0.15134,
+          "required": 0.55982,
+          "n_levels": 12,
+          "qualifies": false
+        }
+      },
+      "matrix_over_qualifying_axes": {
+        "GRAZING_BAND_CONTRAST|HIGHLIGHT_FWHM": {
+          "abs_rho": 0.9524,
+          "n": 8
+        },
+        "GRAZING_BAND_CONTRAST|SPECULAR_TO_DIFFUSE_RATIO": {
+          "abs_rho": 0.9524,
+          "n": 8
+        },
+        "HIGHLIGHT_FWHM|SPECULAR_TO_DIFFUSE_RATIO": {
+          "abs_rho": 1.0,
+          "n": 12
+        }
+      },
+      "divergent_pairs_establishing_validity": [],
+      "validity_1a": "SWEEP_DEGENERATE_UNDER_DRIVER",
+      "counted_axis_readings": {
+        "MATTE_VS_SATIN": {
+          "status": "NOT_COMMON_DRIVER",
+          "sentence": "sheen_response.tint does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+        },
+        "SATIN_VS_CREAM": {
+          "status": "NOT_COMMON_DRIVER",
+          "sentence": "sheen_response.tint does not move GRANULARITY_INDEX beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+        }
+      }
+    },
+    "surface_roughness": {
+      "parameter": "surface_roughness",
+      "family": "POWDER_MATTE",
+      "instrument_notes": {
+        "texture_levels_refused": [],
+        "texture_levels_unrealized": [
+          0.85
+        ],
+        "lobe_levels_refused": [],
+        "lobe_levels_clipped": []
+      },
+      "axis_qualification": {
+        "GRANULARITY_INDEX": {
+          "span_effect": 0.24029,
+          "required": 0.2338,
+          "n_levels": 11,
+          "qualifies": true
+        },
+        "GRAZING_BAND_CONTRAST": {
+          "span_effect": 0.13632,
+          "required": 0.01302,
+          "n_levels": 11,
+          "qualifies": true
+        },
+        "HIGHLIGHT_FWHM": {
+          "span_effect": 0.01931,
+          "required": 0.1827,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "HIGHLIGHT_PEAK": {
+          "span_effect": 0.0144,
+          "required": 0.01594,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SPECULAR_TO_DIFFUSE_RATIO": {
+          "span_effect": 0.02021,
+          "required": 0.01772,
+          "n_levels": 12,
+          "qualifies": true
+        },
+        "GRAZING_RESPONSE": {
+          "span_effect": 0.01628,
+          "required": 0.29912,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "SHEEN_REGION_RESPONSE": {
+          "span_effect": 0.01598,
+          "required": 0.33138,
+          "n_levels": 12,
+          "qualifies": false
+        },
+        "EDGE_HIGHLIGHT_RESPONSE": {
+          "span_effect": 0.06015,
+          "required": 0.55982,
+          "n_levels": 12,
+          "qualifies": false
+        }
+      },
+      "matrix_over_qualifying_axes": {
+        "GRANULARITY_INDEX|GRAZING_BAND_CONTRAST": {
+          "abs_rho": 0.6909,
+          "n": 11
+        },
+        "GRANULARITY_INDEX|SPECULAR_TO_DIFFUSE_RATIO": {
+          "abs_rho": 1.0,
+          "n": 11
+        },
+        "GRAZING_BAND_CONTRAST|SPECULAR_TO_DIFFUSE_RATIO": {
+          "abs_rho": 0.6909,
+          "n": 11
+        }
+      },
+      "divergent_pairs_establishing_validity": [
+        {
+          "pair": "GRANULARITY_INDEX|GRAZING_BAND_CONTRAST",
+          "abs_rho": 0.6909,
+          "n": 11
+        },
+        {
+          "pair": "GRAZING_BAND_CONTRAST|SPECULAR_TO_DIFFUSE_RATIO",
+          "abs_rho": 0.6909,
+          "n": 11
+        }
+      ],
+      "validity_1a": "VALID",
+      "counted_axis_readings": {
+        "MATTE_VS_SATIN": {
+          "status": "NOT_COMMON_DRIVER",
+          "sentence": "surface_roughness does not move SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+        }
+      }
+    }
+  },
+  "owner_approved": false,
+  "ADEQUACY_1i_2026_08_08": {
+    "classification": "the three VALID sweeps' validity margins (0.751/0.467/0.109) and all degenerate margins are ADEQUACY_UNASSESSED",
+    "law": "adequacy_1i at 3586022acc972aff (retroactive, symmetric)",
+    "detail": "measurement_adequacy/phase2_retroactive.json"
+  }
+}

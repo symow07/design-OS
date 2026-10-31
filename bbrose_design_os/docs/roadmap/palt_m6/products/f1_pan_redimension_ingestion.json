@@ -1,0 +1,23 @@
+{
+ "record_type": "f1_pan_redimension_ingestion/1.0",
+ "created_at": "2026-08-14",
+ "ingests": "OWNER_BLOCKER_CLEARANCE.md §F1 — 'ADOPT MEASURED CAVITY', signed BBrose (PROJECT_OWNER, via Cowork question session) 2026-08-14",
+ "owner_decision_HARD": "the pan contract re-dimensions to the calipered values: cavity 20.40 x 20.30 x 3.40 mm, pitch 22.00 x 21.90 mm, source MEASURED_CALIPER_PHYSICAL_SAMPLE_2026_08_14 (MEASURED tier). This is the recorded owner decision the board-1 flag asked for.",
+ "datum_translation_stated_before_the_edit": {
+  "what_the_calipers_measured": "the CAVITY (pocket) at its opening, plus centre-to-centre pitch. Caliper jaws seat below the rim fillet, so the measured span is the SHARP-WALL-AT-DECK datum — the tray kernel's own construction input, named exactly to avoid the 26.6-vs-26.8 class of datum confusion the module retired keys over.",
+  "how_the_pan_follows": "the pan is NEVER assigned a pocket number. The pan dims were SOLVED through the module's own chain — pan -> pocket_envelope (pan + 2 x 0.40 tolerance, FUNCTIONAL_CLEARANCE_AT_SEATING_DATUM) -> solve_rect_sharp_wall_for_functional (draft 3.0 deg, rim/floor fillets 0.35, pocket depth 3.40) — iterated until the DERIVED sharp wall at deck equals the measurement exactly.",
+  "solved_pan_mm": [19.278392, 19.178392],
+  "derived_sharp_wall_at_deck_mm": [20.4, 20.3],
+  "residual": "0.000000 both axes (solver fixed point)",
+  "pan_depth_mapping": "pan_depth_mm 3.5 -> 3.40: §F1 adopts the cavity DEPTH into the pan contract's depth field — the drawn pan fills the measured cavity depth; the sample's own pan depth was not separately measured and none is invented. Interpretation recorded, not silent.",
+  "pitch": "pitch_x 26.8 -> 22.00, pitch_y 20.8 -> 21.90 (pitch is centre-to-centre — datum-unambiguous). Inter-pocket land becomes 0.935724 mm both axes at the deck opening — POSITIVE, and tighter than the previous 1.18 land, consistent with the intent's 'tight margins'.",
+  "hidden_construction_moved_with_it": "deck_z 3.0 -> 4.4 and pocket_floor_z 1.2 -> 1.0 so the tray can carry a 3.40 pocket depth (the old elevations cap depth at 1.8; floor 1.0 keeps a positive floor thickness). These remain HIDDEN generic construction values per the module's visible/hidden provenance split — the MEASURED facts are the cavity, depth, and pitch."
+ },
+ "consequences_declared_before_execution": {
+  "identities_that_move": "rect tray default identity (frozen as 999db34286f2b789 in the continuation state), the P1B assembly identity, every scene identity derived from it, and every product render — the affected phases of the products node RE-RUN, no PASS inherited",
+  "pins_follow_the_decision": "regression pins on the old provisional dims are updated citing THIS record — a pin exists to catch silent movement, and this movement is loud, owner-ordered, and recorded",
+  "board_1_fit_table": "the fit table's purpose is served — geometry now MATCHES the measured sample; the accepted fcd1d11 board 1 remains visible in git as the accepted original (F2), and the re-rendered board supersedes its imagery per §F2's own note",
+  "authority_tier": "the re-dimensioned fields carry MEASURED (owner-adopted) provenance; PALT_P1_FINAL_DIMENSIONS remains NOT_APPROVED (this is a pan/pitch adoption, not a case-level final-dimension approval), manufacturing authority remains NOT_ESTABLISHED, GATE_2 remains BLOCKED"
+ },
+ "owner_approved_scope": "the F1 decision itself is owner-signed; nothing here grants product approval beyond it"
+}

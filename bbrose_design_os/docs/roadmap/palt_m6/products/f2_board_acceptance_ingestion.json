@@ -1,0 +1,19 @@
+{
+ "record_type": "f2_board_acceptance_ingestion/1.0",
+ "created_at": "2026-08-14",
+ "ingests": "OWNER_BLOCKER_CLEARANCE.md §F2 — 'ALL FIVE BOARDS ACCEPTED', owner verdict 'accept all', 2026-08-14 via Cowork session, signed BBrose (PROJECT_OWNER)",
+ "owner_decision_HARD": {
+  "boards_accepted": ["board_1_es3083_product.png", "board_2_fb3093_product.png",
+                      "board_3_observability.png", "board_4_trace.png",
+                      "board_5_census.png"],
+  "owner_approved": true,
+  "acceptance_basis": "the fcd1d11 boards as reviewed by the owner"
+ },
+ "scope_exactly_as_f2_states": {
+  "board_3": "acceptance means the owner accepts the EVIDENCE AS HONEST — the two product-level FAILs (PRESSED_vs_MATTE, MARBLED_vs_MATTE) remain FAIL; nothing is upgraded",
+  "board_2": "acceptance accepts FB3093's honest ceiling (pan dimensions unsourced; case not built)",
+  "not_granted": "board acceptance is NOT manufacturing authority and does not by itself unblock GATE_2; owner_approved on the underlying realization records stays false because those records never self-approve — THIS record is the owner approval of the boards"
+ },
+ "board_1_supersession_note": "board 1 was accepted WITH the F1 re-dimensioning flagged on its own face. The F1 execution (same day) re-rendered the product surfaces from the adopted geometry, superseding board 1's imagery. Per repo convention the ACCEPTED ORIGINAL remains visible in git at fcd1d11 (no silent replacement); the re-rendered board 1 carries the F1-adopted fit table on its face.",
+ "f1_cross_reference": "f1_pan_redimension_ingestion.json — the decision board 1's flag asked for, recorded separately as ordered"
+}

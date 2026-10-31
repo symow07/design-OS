@@ -1,0 +1,1196 @@
+{
+  "record_type": "independence_amendment_phase2_drivers/1.0",
+  "protocol_identity": "f2438bcae8b86533",
+  "sources": {
+    "engine": "palette_powder_engine FAMILY_PARAMS + COMMON_PARAMS + FAMILY_COMMON_OVERRIDES (read live, not memory)",
+    "audit": "docs/roadmap/palt_m6/realization_audit/realization_audit.json",
+    "census": "docs/roadmap/palt_m6/builder_constant_census.json"
+  },
+  "other_standing_verdicts_on_these_rigs": "none \u2014 PRESSED_VS_BAKED counts raking-rig axes, the flake pairs count reflected-environment axes, GLITTER counts event-census axes, MARBLED holds no standing verdict (FAIL). Only the three diffuse pairs count lobe/texture axes.",
+  "micronormal_amplitude_differs": {
+    "MATTE_VS_SATIN": "YES by value \u2014 0.34 vs 0.10, REALIZED both sides",
+    "PRESSED_VS_MATTE": "YES by presence \u2014 matte 0.34 REALIZED, PRESSED_POWDER has no milling block",
+    "SATIN_VS_CREAM": "YES by presence \u2014 satin 0.10 REALIZED, CREAM has no milling block",
+    "consequence": "the alarming sweep number is ON POINT for all three pairs: micronormal_amplitude is a realized differing driver of every standing diffuse verdict"
+  },
+  "sweep_scope_reading": {
+    "reading": "1b(ii) binds the PARAMETER on the rig carrying the counted axes; one sweep per parameter suffices, hosted on a family where the audit proves it REALIZED. It is not re-swept per family.",
+    "status": "MY READING of the law's wording, not owner text \u2014 listed in the Phase 5 self-approval check"
+  },
+  "floors_application_note": {
+    "floors": "standing axis_noise_floors.json (POWDER_MATTE seed-only ensembles) applied to all sweep levels regardless of hosting family",
+    "caveat": "floors are subject-dependent (the SHADOW_FRACTION lesson); satin/pressed/cream sweeps borrow the matte floors as the only standing floors \u2014 listed in the Phase 5 self-approval check"
+  },
+  "pairs": {
+    "MATTE_VS_SATIN": {
+      "families": [
+        "POWDER_MATTE",
+        "POWDER_SATIN"
+      ],
+      "counted_axes": [
+        "GRANULARITY_INDEX",
+        "SHEEN_REGION_RESPONSE"
+      ],
+      "drivers": [
+        {
+          "parameter": "compression_texture.scale_mm",
+          "a": 0.6,
+          "b": 0.6,
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "POWDER_MATTE": "REALIZED",
+            "POWDER_SATIN": "DECLARED_NOT_REALIZED"
+          },
+          "realization_class_driver": true,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "POWDER_MATTE",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "compression_texture.strength",
+          "a": 0.12,
+          "b": 0.1,
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "POWDER_MATTE": "REALIZED",
+            "POWDER_SATIN": "DECLARED_NOT_REALIZED"
+          },
+          "realization_class_driver": false,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "POWDER_MATTE",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "milling.micronormal_amplitude",
+          "a": 0.34,
+          "b": 0.1,
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "POWDER_MATTE": "REALIZED",
+            "POWDER_SATIN": "REALIZED"
+          },
+          "realization_class_driver": false,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "POWDER_MATTE",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "milling.microparticle_scale_mm",
+          "a": 0.35,
+          "b": 0.21,
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "POWDER_MATTE": "REALIZED",
+            "POWDER_SATIN": "REALIZED"
+          },
+          "realization_class_driver": false,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "POWDER_MATTE",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "milling.microparticle_variance",
+          "a": 0.6,
+          "b": 0.2,
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "POWDER_MATTE": "REALIZED",
+            "POWDER_SATIN": "REALIZED"
+          },
+          "realization_class_driver": false,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "POWDER_MATTE",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "milling.surface_smoothing",
+          "a": 0.0,
+          "b": 0.5,
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "POWDER_MATTE": "DECLARED_NOT_REALIZED",
+            "POWDER_SATIN": "REALIZED"
+          },
+          "realization_class_driver": false,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "POWDER_SATIN",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "sheen_response.sheen",
+          "a": "<ABSENT>",
+          "b": 0.45,
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "POWDER_MATTE": "ABSENT_FROM_FAMILY",
+            "POWDER_SATIN": "REALIZED"
+          },
+          "realization_class_driver": false,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "POWDER_SATIN",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "sheen_response.tint",
+          "a": "<ABSENT>",
+          "b": 0.15,
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "POWDER_MATTE": "ABSENT_FROM_FAMILY",
+            "POWDER_SATIN": "REALIZED"
+          },
+          "realization_class_driver": false,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "POWDER_SATIN",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "surface_roughness",
+          "a": 0.85,
+          "b": 0.85,
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "POWDER_MATTE": "REALIZED",
+            "POWDER_SATIN": "DECLARED_NOT_REALIZED"
+          },
+          "realization_class_driver": true,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "POWDER_MATTE",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "builder:specular_ior_level",
+          "a": "0.18 (L208 matte override)",
+          "b": "0.28 (L166 base)",
+          "class": "BUILDER_CONSTANT_REALIZED_BUT_UNDECLARED",
+          "census_lines": [
+            208,
+            166
+          ],
+          "driver": true,
+          "sweepable": false,
+          "non_sweepable_reason": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+        },
+        {
+          "parameter": "builder:roughness_construction",
+          "a": "base surface_roughness + variation 0.08*(1+variance) (L206)",
+          "b": "ROUGHNESS = 0.48 - 0.10*surface_smoothing (L229; surface_roughness unused)",
+          "class": "BUILDER_CONSTANT_REALIZED_BUT_UNDECLARED",
+          "census_lines": [
+            206,
+            229
+          ],
+          "driver": true,
+          "sweepable": false,
+          "non_sweepable_reason": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+        },
+        {
+          "parameter": "builder:noise_detail",
+          "a": "3 + 3*variance (L194)",
+          "b": "2 + 2*variance (L224)",
+          "class": "BUILDER_CONSTANT_REALIZED_BUT_UNDECLARED",
+          "census_lines": [
+            194,
+            224
+          ],
+          "driver": true,
+          "sweepable": false,
+          "non_sweepable_reason": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+        },
+        {
+          "parameter": "builder:compression_noise_detail",
+          "a": "2.0 (L196)",
+          "b": "none (satin compression texture never built)",
+          "class": "BUILDER_CONSTANT_REALIZED_BUT_UNDECLARED",
+          "census_lines": [
+            196
+          ],
+          "driver": true,
+          "sweepable": false,
+          "non_sweepable_reason": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+        },
+        {
+          "parameter": "builder:mottle_construction",
+          "a": "black-mix base strength (L173)",
+          "b": "satin mottle strength *0.5 (L238)",
+          "class": "BUILDER_CONSTANT_REALIZED_BUT_UNDECLARED",
+          "census_lines": [
+            173,
+            238
+          ],
+          "driver": true,
+          "sweepable": false,
+          "non_sweepable_reason": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+        }
+      ],
+      "excluded": [
+        {
+          "parameter": "milling.micronormal_correlation_mm",
+          "a": 0.35,
+          "b": 0.21,
+          "class": "DECLARED_BUT_NEVER_ARRIVES",
+          "evidence": "realization_audit families[POWDER_MATTE][milling.micronormal_correlation_mm]=DECLARED_NOT_REALIZED, families[POWDER_SATIN][milling.micronormal_correlation_mm]=DECLARED_NOT_REALIZED \u2014 arrives on neither side, cannot cause a correlated response"
+        }
+      ],
+      "builder_constants_identical_both_sides": [
+        "L116 bump physical-height law (ALL bump users)",
+        "L46 instrument machinery (ALL)"
+      ],
+      "n_drivers": 14,
+      "n_sweepable": 9,
+      "n_non_sweepable": 5
+    },
+    "PRESSED_VS_MATTE": {
+      "families": [
+        "PRESSED_POWDER",
+        "POWDER_MATTE"
+      ],
+      "counted_axes": [
+        "GRANULARITY_INDEX",
+        "SHEEN_REGION_RESPONSE"
+      ],
+      "drivers": [
+        {
+          "parameter": "compaction.compaction_level",
+          "a": 0.8,
+          "b": "<ABSENT>",
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "PRESSED_POWDER": "REALIZED",
+            "POWDER_MATTE": "ABSENT_FROM_FAMILY"
+          },
+          "realization_class_driver": false,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "PRESSED_POWDER",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "compaction.compression_texture_amplitude",
+          "a": 0.1,
+          "b": "<ABSENT>",
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "PRESSED_POWDER": "REALIZED",
+            "POWDER_MATTE": "ABSENT_FROM_FAMILY"
+          },
+          "realization_class_driver": false,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "PRESSED_POWDER",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "compaction.compression_texture_scale_mm",
+          "a": 0.25,
+          "b": "<ABSENT>",
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "PRESSED_POWDER": "REALIZED",
+            "POWDER_MATTE": "ABSENT_FROM_FAMILY"
+          },
+          "realization_class_driver": false,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "PRESSED_POWDER",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "compaction.surface_flatness",
+          "a": 0.85,
+          "b": "<ABSENT>",
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "PRESSED_POWDER": "REALIZED",
+            "POWDER_MATTE": "ABSENT_FROM_FAMILY"
+          },
+          "realization_class_driver": false,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "PRESSED_POWDER",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "compression_texture.scale_mm",
+          "a": "<ABSENT>",
+          "b": 0.6,
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "PRESSED_POWDER": "ABSENT_FROM_FAMILY",
+            "POWDER_MATTE": "REALIZED"
+          },
+          "realization_class_driver": false,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "POWDER_MATTE",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "compression_texture.strength",
+          "a": "<ABSENT>",
+          "b": 0.12,
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "PRESSED_POWDER": "ABSENT_FROM_FAMILY",
+            "POWDER_MATTE": "REALIZED"
+          },
+          "realization_class_driver": false,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "POWDER_MATTE",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "milling.micronormal_amplitude",
+          "a": "<ABSENT>",
+          "b": 0.34,
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "PRESSED_POWDER": "ABSENT_FROM_FAMILY",
+            "POWDER_MATTE": "REALIZED"
+          },
+          "realization_class_driver": false,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "POWDER_MATTE",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "milling.microparticle_scale_mm",
+          "a": "<ABSENT>",
+          "b": 0.35,
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "PRESSED_POWDER": "ABSENT_FROM_FAMILY",
+            "POWDER_MATTE": "REALIZED"
+          },
+          "realization_class_driver": false,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "POWDER_MATTE",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "milling.microparticle_variance",
+          "a": "<ABSENT>",
+          "b": 0.6,
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "PRESSED_POWDER": "ABSENT_FROM_FAMILY",
+            "POWDER_MATTE": "REALIZED"
+          },
+          "realization_class_driver": false,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "POWDER_MATTE",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "press.ring_radius_frac",
+          "a": 0.88,
+          "b": "<ABSENT>",
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "PRESSED_POWDER": "REALIZED",
+            "POWDER_MATTE": "ABSENT_FROM_FAMILY"
+          },
+          "realization_class_driver": false,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "PRESSED_POWDER",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "press.ring_strength",
+          "a": 0.1,
+          "b": "<ABSENT>",
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "PRESSED_POWDER": "REALIZED",
+            "POWDER_MATTE": "ABSENT_FROM_FAMILY"
+          },
+          "realization_class_driver": false,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "PRESSED_POWDER",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "builder:specular_ior_level",
+          "a": "0.28 (L166 base)",
+          "b": "0.18 (L208 matte override)",
+          "class": "BUILDER_CONSTANT_REALIZED_BUT_UNDECLARED",
+          "census_lines": [
+            166,
+            208
+          ],
+          "driver": true,
+          "sweepable": false,
+          "non_sweepable_reason": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+        },
+        {
+          "parameter": "builder:roughness_construction",
+          "a": "packed = surface_roughness*(1-0.35*compaction_level) (census 'pressed')",
+          "b": "base surface_roughness + variation 0.08*(1+variance) (L206)",
+          "class": "BUILDER_CONSTANT_REALIZED_BUT_UNDECLARED",
+          "census_lines": [
+            "pressed",
+            206
+          ],
+          "driver": true,
+          "sweepable": false,
+          "non_sweepable_reason": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+        },
+        {
+          "parameter": "builder:noise_detail",
+          "a": "compressed-texture construction (no milling noise)",
+          "b": "3 + 3*variance (L194) + compression noise detail 2.0 (L196)",
+          "class": "BUILDER_CONSTANT_REALIZED_BUT_UNDECLARED",
+          "census_lines": [
+            194,
+            196
+          ],
+          "driver": true,
+          "sweepable": false,
+          "non_sweepable_reason": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+        },
+        {
+          "parameter": "builder:ring_gaussian_falloff",
+          "a": "-250 ('pressed ring')",
+          "b": "none",
+          "class": "BUILDER_CONSTANT_REALIZED_BUT_UNDECLARED",
+          "census_lines": [
+            "pressed ring"
+          ],
+          "driver": true,
+          "sweepable": false,
+          "non_sweepable_reason": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+        },
+        {
+          "parameter": "builder:mottle_construction",
+          "a": "base *(1-0.5*surface_flatness) ('pressed mottle')",
+          "b": "black-mix base strength (L173)",
+          "class": "BUILDER_CONSTANT_REALIZED_BUT_UNDECLARED",
+          "census_lines": [
+            "pressed mottle",
+            173
+          ],
+          "driver": true,
+          "sweepable": false,
+          "non_sweepable_reason": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+        }
+      ],
+      "excluded": [
+        {
+          "parameter": "compaction.edge_packing",
+          "a": 0.9,
+          "b": "<ABSENT>",
+          "class": "DECLARED_BUT_NEVER_ARRIVES",
+          "evidence": "realization_audit families[PRESSED_POWDER][compaction.edge_packing]=DECLARED_NOT_REALIZED, families[POWDER_MATTE][compaction.edge_packing]=ABSENT_FROM_FAMILY \u2014 arrives on neither side, cannot cause a correlated response"
+        },
+        {
+          "parameter": "compaction.surface_density",
+          "a": 0.9,
+          "b": "<ABSENT>",
+          "class": "DECLARED_BUT_NEVER_ARRIVES",
+          "evidence": "realization_audit families[PRESSED_POWDER][compaction.surface_density]=DECLARED_NOT_REALIZED, families[POWDER_MATTE][compaction.surface_density]=ABSENT_FROM_FAMILY \u2014 arrives on neither side, cannot cause a correlated response"
+        },
+        {
+          "parameter": "milling.micronormal_correlation_mm",
+          "a": "<ABSENT>",
+          "b": 0.35,
+          "class": "DECLARED_BUT_NEVER_ARRIVES",
+          "evidence": "realization_audit families[PRESSED_POWDER][milling.micronormal_correlation_mm]=ABSENT_FROM_FAMILY, families[POWDER_MATTE][milling.micronormal_correlation_mm]=DECLARED_NOT_REALIZED \u2014 arrives on neither side, cannot cause a correlated response"
+        },
+        {
+          "parameter": "milling.surface_smoothing",
+          "a": "<ABSENT>",
+          "b": 0.0,
+          "class": "DECLARED_BUT_NEVER_ARRIVES",
+          "evidence": "realization_audit families[PRESSED_POWDER][milling.surface_smoothing]=ABSENT_FROM_FAMILY, families[POWDER_MATTE][milling.surface_smoothing]=DECLARED_NOT_REALIZED \u2014 arrives on neither side, cannot cause a correlated response"
+        },
+        {
+          "parameter": "press.compressed_scale_mm",
+          "a": 0.25,
+          "b": "<ABSENT>",
+          "class": "DECLARED_BUT_NEVER_ARRIVES",
+          "evidence": "realization_audit families[PRESSED_POWDER][press.compressed_scale_mm]=DECLARED_NOT_REALIZED, families[POWDER_MATTE][press.compressed_scale_mm]=ABSENT_FROM_FAMILY \u2014 arrives on neither side, cannot cause a correlated response"
+        },
+        {
+          "parameter": "press.compressed_strength",
+          "a": 0.22,
+          "b": "<ABSENT>",
+          "class": "DECLARED_BUT_NEVER_ARRIVES",
+          "evidence": "realization_audit families[PRESSED_POWDER][press.compressed_strength]=DECLARED_NOT_REALIZED, families[POWDER_MATTE][press.compressed_strength]=ABSENT_FROM_FAMILY \u2014 arrives on neither side, cannot cause a correlated response"
+        }
+      ],
+      "builder_constants_identical_both_sides": [
+        "L116 (ALL)",
+        "L46 (ALL)"
+      ],
+      "n_drivers": 16,
+      "n_sweepable": 11,
+      "n_non_sweepable": 5
+    },
+    "SATIN_VS_CREAM": {
+      "families": [
+        "POWDER_SATIN",
+        "CREAM"
+      ],
+      "counted_axes": [
+        "GRANULARITY_INDEX",
+        "HIGHLIGHT_FWHM"
+      ],
+      "drivers": [
+        {
+          "parameter": "continuity.soft_specular_roughness",
+          "a": "<ABSENT>",
+          "b": 0.32,
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "POWDER_SATIN": "ABSENT_FROM_FAMILY",
+            "CREAM": "REALIZED"
+          },
+          "realization_class_driver": false,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "CREAM",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "macrotexture.scale_mm",
+          "a": 2.4,
+          "b": 2.4,
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "POWDER_SATIN": "REALIZED",
+            "CREAM": "DECLARED_NOT_REALIZED"
+          },
+          "realization_class_driver": true,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "POWDER_SATIN",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "macrotexture.strength",
+          "a": 0.06,
+          "b": 0.06,
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "POWDER_SATIN": "REALIZED",
+            "CREAM": "DECLARED_NOT_REALIZED"
+          },
+          "realization_class_driver": true,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "POWDER_SATIN",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "milling.micronormal_amplitude",
+          "a": 0.1,
+          "b": "<ABSENT>",
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "POWDER_SATIN": "REALIZED",
+            "CREAM": "ABSENT_FROM_FAMILY"
+          },
+          "realization_class_driver": false,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "POWDER_SATIN",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "milling.microparticle_scale_mm",
+          "a": 0.21,
+          "b": "<ABSENT>",
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "POWDER_SATIN": "REALIZED",
+            "CREAM": "ABSENT_FROM_FAMILY"
+          },
+          "realization_class_driver": false,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "POWDER_SATIN",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "milling.microparticle_variance",
+          "a": 0.2,
+          "b": "<ABSENT>",
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "POWDER_SATIN": "REALIZED",
+            "CREAM": "ABSENT_FROM_FAMILY"
+          },
+          "realization_class_driver": false,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "POWDER_SATIN",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "milling.surface_smoothing",
+          "a": 0.5,
+          "b": "<ABSENT>",
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "POWDER_SATIN": "REALIZED",
+            "CREAM": "ABSENT_FROM_FAMILY"
+          },
+          "realization_class_driver": false,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "POWDER_SATIN",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "sheen_response.sheen",
+          "a": 0.45,
+          "b": "<ABSENT>",
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "POWDER_SATIN": "REALIZED",
+            "CREAM": "ABSENT_FROM_FAMILY"
+          },
+          "realization_class_driver": false,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "POWDER_SATIN",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "sheen_response.tint",
+          "a": 0.15,
+          "b": "<ABSENT>",
+          "class": "DECLARED_AND_REALIZED",
+          "audit": {
+            "POWDER_SATIN": "REALIZED",
+            "CREAM": "ABSENT_FROM_FAMILY"
+          },
+          "realization_class_driver": false,
+          "driver": true,
+          "sweepable": true,
+          "sweep_family": "POWDER_SATIN",
+          "non_sweepable_reason": null
+        },
+        {
+          "parameter": "builder:roughness_construction",
+          "a": "ROUGHNESS = 0.48 - 0.10*surface_smoothing (L229)",
+          "b": "declared continuity.soft_specular_roughness (REALIZED declared param on the cream side)",
+          "class": "BUILDER_CONSTANT_REALIZED_BUT_UNDECLARED",
+          "census_lines": [
+            229
+          ],
+          "driver": true,
+          "sweepable": false,
+          "non_sweepable_reason": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+        },
+        {
+          "parameter": "builder:noise_detail",
+          "a": "2 + 2*variance (L224)",
+          "b": "none (no milling)",
+          "class": "BUILDER_CONSTANT_REALIZED_BUT_UNDECLARED",
+          "census_lines": [
+            224
+          ],
+          "driver": true,
+          "sweepable": false,
+          "non_sweepable_reason": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+        },
+        {
+          "parameter": "builder:mottle_construction",
+          "a": "satin mottle strength *0.5 (L238)",
+          "b": "none (CREAM not in the L173 mottle family list)",
+          "class": "BUILDER_CONSTANT_REALIZED_BUT_UNDECLARED",
+          "census_lines": [
+            238,
+            173
+          ],
+          "driver": true,
+          "sweepable": false,
+          "non_sweepable_reason": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+        },
+        {
+          "parameter": "builder:cream_swell",
+          "a": "none",
+          "b": "swell scale 6.0mm / amplitude 0.015 ('cream')",
+          "class": "BUILDER_CONSTANT_REALIZED_BUT_UNDECLARED",
+          "census_lines": [
+            "cream"
+          ],
+          "driver": true,
+          "sweepable": false,
+          "non_sweepable_reason": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+        }
+      ],
+      "excluded": [
+        {
+          "parameter": "compression_texture.scale_mm",
+          "a": 0.6,
+          "b": "<ABSENT>",
+          "class": "DECLARED_BUT_NEVER_ARRIVES",
+          "evidence": "realization_audit families[POWDER_SATIN][compression_texture.scale_mm]=DECLARED_NOT_REALIZED, families[CREAM][compression_texture.scale_mm]=ABSENT_FROM_FAMILY \u2014 arrives on neither side, cannot cause a correlated response"
+        },
+        {
+          "parameter": "compression_texture.strength",
+          "a": 0.1,
+          "b": "<ABSENT>",
+          "class": "DECLARED_BUT_NEVER_ARRIVES",
+          "evidence": "realization_audit families[POWDER_SATIN][compression_texture.strength]=DECLARED_NOT_REALIZED, families[CREAM][compression_texture.strength]=ABSENT_FROM_FAMILY \u2014 arrives on neither side, cannot cause a correlated response"
+        },
+        {
+          "parameter": "continuity.granularity_forbidden",
+          "a": "<ABSENT>",
+          "b": true,
+          "class": "DECLARED_BUT_NEVER_ARRIVES",
+          "evidence": "realization_audit families[POWDER_SATIN][continuity.granularity_forbidden]=ABSENT_FROM_FAMILY, families[CREAM][continuity.granularity_forbidden]=VALIDATOR_REALIZED_NOT_RENDER \u2014 arrives on neither side, cannot cause a correlated response"
+        },
+        {
+          "parameter": "microtexture.strength",
+          "a": 0.3,
+          "b": 0.0,
+          "class": "DECLARED_BUT_NEVER_ARRIVES",
+          "evidence": "realization_audit families[POWDER_SATIN][microtexture.strength]=DECLARED_NOT_REALIZED, families[CREAM][microtexture.strength]=DECLARED_NOT_REALIZED \u2014 arrives on neither side, cannot cause a correlated response"
+        },
+        {
+          "parameter": "milling.micronormal_correlation_mm",
+          "a": 0.21,
+          "b": "<ABSENT>",
+          "class": "DECLARED_BUT_NEVER_ARRIVES",
+          "evidence": "realization_audit families[POWDER_SATIN][milling.micronormal_correlation_mm]=DECLARED_NOT_REALIZED, families[CREAM][milling.micronormal_correlation_mm]=ABSENT_FROM_FAMILY \u2014 arrives on neither side, cannot cause a correlated response"
+        },
+        {
+          "parameter": "surface_roughness",
+          "a": 0.85,
+          "b": 0.32,
+          "class": "DECLARED_BUT_NEVER_ARRIVES",
+          "evidence": "realization_audit families[POWDER_SATIN][surface_roughness]=DECLARED_NOT_REALIZED, families[CREAM][surface_roughness]=DECLARED_NOT_REALIZED \u2014 arrives on neither side, cannot cause a correlated response"
+        }
+      ],
+      "builder_constants_identical_both_sides": [
+        "L166 Specular IOR 0.28 base BOTH sides (neither family overrides it)",
+        "L116 (ALL)",
+        "L46 (ALL)"
+      ],
+      "n_drivers": 13,
+      "n_sweepable": 9,
+      "n_non_sweepable": 4
+    }
+  },
+  "sweep_plan": [
+    {
+      "parameter": "milling.microparticle_scale_mm",
+      "family": "POWDER_MATTE",
+      "lo": 0.22,
+      "hi": 0.55,
+      "range_reason": "above the 0.21mm resolvable limit (3px at 14.3px/mm), spanning satin-adjacent to coarse",
+      "levels": [
+        0.22,
+        0.25,
+        0.28,
+        0.31,
+        0.34,
+        0.37,
+        0.4,
+        0.43,
+        0.46,
+        0.49,
+        0.52,
+        0.55
+      ],
+      "seed": 400,
+      "n_levels": 12
+    },
+    {
+      "parameter": "milling.microparticle_variance",
+      "family": "POWDER_MATTE",
+      "lo": 0.05,
+      "hi": 0.95,
+      "range_reason": "full declared 0..1 span",
+      "levels": [
+        0.05,
+        0.13182,
+        0.21364,
+        0.29545,
+        0.37727,
+        0.45909,
+        0.54091,
+        0.62273,
+        0.70455,
+        0.78636,
+        0.86818,
+        0.95
+      ],
+      "seed": 400,
+      "n_levels": 12
+    },
+    {
+      "parameter": "compression_texture.strength",
+      "family": "POWDER_MATTE",
+      "lo": 0.02,
+      "hi": 0.3,
+      "range_reason": "0 is a null stimulus; 2.5x the family value on the high side",
+      "levels": [
+        0.02,
+        0.04545,
+        0.07091,
+        0.09636,
+        0.12182,
+        0.14727,
+        0.17273,
+        0.19818,
+        0.22364,
+        0.24909,
+        0.27455,
+        0.3
+      ],
+      "seed": 400,
+      "n_levels": 12
+    },
+    {
+      "parameter": "compression_texture.scale_mm",
+      "family": "POWDER_MATTE",
+      "lo": 0.25,
+      "hi": 1.2,
+      "range_reason": "above resolvable limit to 2x family value",
+      "levels": [
+        0.25,
+        0.33636,
+        0.42273,
+        0.50909,
+        0.59545,
+        0.68182,
+        0.76818,
+        0.85455,
+        0.94091,
+        1.02727,
+        1.11364,
+        1.2
+      ],
+      "seed": 400,
+      "n_levels": 12
+    },
+    {
+      "parameter": "surface_roughness",
+      "family": "POWDER_MATTE",
+      "lo": 0.4,
+      "hi": 0.95,
+      "range_reason": "realized on matte only; span below/at family 0.85",
+      "levels": [
+        0.4,
+        0.45,
+        0.5,
+        0.55,
+        0.6,
+        0.65,
+        0.7,
+        0.75,
+        0.8,
+        0.85,
+        0.9,
+        0.95
+      ],
+      "seed": 400,
+      "n_levels": 12
+    },
+    {
+      "parameter": "milling.surface_smoothing",
+      "family": "POWDER_SATIN",
+      "lo": 0.05,
+      "hi": 0.95,
+      "range_reason": "full declared 0..1 span",
+      "levels": [
+        0.05,
+        0.13182,
+        0.21364,
+        0.29545,
+        0.37727,
+        0.45909,
+        0.54091,
+        0.62273,
+        0.70455,
+        0.78636,
+        0.86818,
+        0.95
+      ],
+      "seed": 400,
+      "n_levels": 12
+    },
+    {
+      "parameter": "sheen_response.sheen",
+      "family": "POWDER_SATIN",
+      "lo": 0.05,
+      "hi": 0.85,
+      "range_reason": "full structural span of the satin sheen block",
+      "levels": [
+        0.05,
+        0.12273,
+        0.19545,
+        0.26818,
+        0.34091,
+        0.41364,
+        0.48636,
+        0.55909,
+        0.63182,
+        0.70455,
+        0.77727,
+        0.85
+      ],
+      "seed": 400,
+      "n_levels": 12
+    },
+    {
+      "parameter": "sheen_response.tint",
+      "family": "POWDER_SATIN",
+      "lo": 0.02,
+      "hi": 0.6,
+      "range_reason": "family 0.15 to 4x",
+      "levels": [
+        0.02,
+        0.07273,
+        0.12545,
+        0.17818,
+        0.23091,
+        0.28364,
+        0.33636,
+        0.38909,
+        0.44182,
+        0.49455,
+        0.54727,
+        0.6
+      ],
+      "seed": 400,
+      "n_levels": 12
+    },
+    {
+      "parameter": "macrotexture.scale_mm",
+      "family": "POWDER_SATIN",
+      "lo": 1.0,
+      "hi": 4.0,
+      "range_reason": "realized satin-side driver for SATIN_VS_CREAM; spans family 2.4",
+      "levels": [
+        1.0,
+        1.27273,
+        1.54545,
+        1.81818,
+        2.09091,
+        2.36364,
+        2.63636,
+        2.90909,
+        3.18182,
+        3.45455,
+        3.72727,
+        4.0
+      ],
+      "seed": 400,
+      "n_levels": 12
+    },
+    {
+      "parameter": "macrotexture.strength",
+      "family": "POWDER_SATIN",
+      "lo": 0.01,
+      "hi": 0.2,
+      "range_reason": "family 0.06 to 3.3x",
+      "levels": [
+        0.01,
+        0.02727,
+        0.04455,
+        0.06182,
+        0.07909,
+        0.09636,
+        0.11364,
+        0.13091,
+        0.14818,
+        0.16545,
+        0.18273,
+        0.2
+      ],
+      "seed": 400,
+      "n_levels": 12
+    },
+    {
+      "parameter": "compaction.compaction_level",
+      "family": "PRESSED_POWDER",
+      "lo": 0.1,
+      "hi": 0.95,
+      "range_reason": "full declared 0..1 span",
+      "levels": [
+        0.1,
+        0.17727,
+        0.25455,
+        0.33182,
+        0.40909,
+        0.48636,
+        0.56364,
+        0.64091,
+        0.71818,
+        0.79545,
+        0.87273,
+        0.95
+      ],
+      "seed": 400,
+      "n_levels": 12
+    },
+    {
+      "parameter": "compaction.surface_flatness",
+      "family": "PRESSED_POWDER",
+      "lo": 0.1,
+      "hi": 0.95,
+      "range_reason": "full declared 0..1 span",
+      "levels": [
+        0.1,
+        0.17727,
+        0.25455,
+        0.33182,
+        0.40909,
+        0.48636,
+        0.56364,
+        0.64091,
+        0.71818,
+        0.79545,
+        0.87273,
+        0.95
+      ],
+      "seed": 400,
+      "n_levels": 12
+    },
+    {
+      "parameter": "compaction.compression_texture_amplitude",
+      "family": "PRESSED_POWDER",
+      "lo": 0.02,
+      "hi": 0.3,
+      "range_reason": "family 0.10 to 3x",
+      "levels": [
+        0.02,
+        0.04545,
+        0.07091,
+        0.09636,
+        0.12182,
+        0.14727,
+        0.17273,
+        0.19818,
+        0.22364,
+        0.24909,
+        0.27455,
+        0.3
+      ],
+      "seed": 400,
+      "n_levels": 12
+    },
+    {
+      "parameter": "compaction.compression_texture_scale_mm",
+      "family": "PRESSED_POWDER",
+      "lo": 0.25,
+      "hi": 1.2,
+      "range_reason": "above resolvable limit",
+      "levels": [
+        0.25,
+        0.33636,
+        0.42273,
+        0.50909,
+        0.59545,
+        0.68182,
+        0.76818,
+        0.85455,
+        0.94091,
+        1.02727,
+        1.11364,
+        1.2
+      ],
+      "seed": 400,
+      "n_levels": 12
+    },
+    {
+      "parameter": "press.ring_radius_frac",
+      "family": "PRESSED_POWDER",
+      "lo": 0.55,
+      "hi": 0.95,
+      "range_reason": "ring stays on the pan",
+      "levels": [
+        0.55,
+        0.58636,
+        0.62273,
+        0.65909,
+        0.69545,
+        0.73182,
+        0.76818,
+        0.80455,
+        0.84091,
+        0.87727,
+        0.91364,
+        0.95
+      ],
+      "seed": 400,
+      "n_levels": 12
+    },
+    {
+      "parameter": "press.ring_strength",
+      "family": "PRESSED_POWDER",
+      "lo": 0.02,
+      "hi": 0.35,
+      "range_reason": "family 0.10 to 3.5x",
+      "levels": [
+        0.02,
+        0.05,
+        0.08,
+        0.11,
+        0.14,
+        0.17,
+        0.2,
+        0.23,
+        0.26,
+        0.29,
+        0.32,
+        0.35
+      ],
+      "seed": 400,
+      "n_levels": 12
+    },
+    {
+      "parameter": "continuity.soft_specular_roughness",
+      "family": "CREAM",
+      "lo": 0.1,
+      "hi": 0.7,
+      "range_reason": "spans family 0.32 both directions",
+      "levels": [
+        0.1,
+        0.15455,
+        0.20909,
+        0.26364,
+        0.31818,
+        0.37273,
+        0.42727,
+        0.48182,
+        0.53636,
+        0.59091,
+        0.64545,
+        0.7
+      ],
+      "seed": 400,
+      "n_levels": 12
+    }
+  ],
+  "already_measured": {
+    "milling.micronormal_amplitude": {
+      "family": "POWDER_MATTE",
+      "seed": 400,
+      "granularity_and_raking": "raking_rig/sweep/sweep_result.json rows",
+      "lobe_axes": "a2_sweep/swatch_a2sw_*.json (all six lobe axes retained per level \u2014 the full matrix is computable without re-rendering)"
+    }
+  },
+  "owner_approved": false,
+  "sweep_plan_hash_declared_before_any_render": "a25e86372a5aa99b"
+}

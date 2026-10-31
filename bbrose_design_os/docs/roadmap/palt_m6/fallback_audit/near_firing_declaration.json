@@ -1,0 +1,14 @@
+{
+  "record_type": "near_firing_factor_declaration/1.0",
+  "declared_before_any_denominator_was_computed": true,
+  "guard_threshold": 1e-09,
+  "NEAR_FIRING_factor": 1000000.0,
+  "near_firing_band": "denominator in (1e-9, 1e-3]",
+  "justification_before_the_numbers": [
+    "the factor must be scale-aware, not arbitrary: the axes consuming _effect are normalized responses whose committed values run 1e-3 to 4e1 (GRANULARITY 0.02-0.08, SHEEN 0.08-0.17, PEAK ~38), so a denominator at 1e-3 is already three orders below the smallest routinely-measured axis value \u2014 the point at which the axis has stopped responding rather than merely reading low",
+    "the fragility criterion the owner names is one-seed distance: seed-to-seed variation on these axes is a few percent to tens of percent of value, so a denominator that would need to fall by six orders of magnitude to fire cannot be moved there by one seed. 1e-3 is therefore the tightest band that still captures anything a seed could plausibly push into the guard",
+    "chosen for symmetry with the existing REALIZATION gate: the R2 stimulus floor is rms/mean >= 0.002 \u2014 the same order, and a denominator below 1e-3 sits under the value the protocol already treats as the threshold of a realized signal",
+    "the factor is a single number applied to every consumer class identically; no per-class tuning, so no class can be exempted by choosing its band after seeing its denominators"
+  ],
+  "owner_approved": false
+}

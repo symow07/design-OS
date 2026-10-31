@@ -1,0 +1,21 @@
+{
+  "record_type": "marbling_statistic_candidates_declaration/1.0",
+  "declared_before_any_number": true,
+  "hypothesis_under_test": "owner B2: the registered statistics measure vein PLACEMENT (seed-controlled), not material chromaticity (family-controlled); a placement-invariant distributional statistic should collapse the seed-only floor. Tested, not adopted: if invariance does not collapse the floor the diagnosis is wrong and gets said plainly.",
+  "chroma_definition_fixed": "per-pixel chroma c = (max(R,G,B) - min(R,G,B)) / (max(R,G,B) + min(R,G,B) + 1e-9) on scene-linear RGB (exposure-invariant saturation); hue = standard hue angle; all statistics over the POWDER region mask only",
+  "candidates_all_named_now": {
+    "C1_CHROMA_QUANTILE_SPREAD": "p95(c) - p5(c) over the field \u2014 distributional, placement-invariant",
+    "C2_CHROMA_HISTOGRAM_L1": "pairwise: L1 distance between 64-bin normalized histograms of c (field vs field) \u2014 placement-invariant",
+    "C3_HUE_CIRCULAR_STD": "chroma-weighted circular standard deviation of hue over the field (weights = c, no threshold knob) \u2014 placement-invariant",
+    "C4_MEAN_CHROMA": "field mean of c \u2014 first moment, placement-invariant",
+    "C5_REGISTERED_REFERENCE": "the standing MARBLE_CHROMA_SPAN \u2014 kept as the diagnosed-defective comparator for the hypothesis test; not a candidate for counting"
+  },
+  "controls_mandatory_both": {
+    "negative": "seed-only floor over the 6-seed marbled ensemble (15 pairings, max estimator): the statistic must FAIL to distinguish same-material seed variants \u2014 eligibility bar floor < 0.25, required clearing max(0.25, 2x floor)",
+    "positive": "LIVE fixture: cool-shade MARBLED vs cool-shade solid (POWDER_MATTE) must show effect >= 0.25 \u2014 a pair known chromatically different by construction post-C6"
+  },
+  "choice_criterion_before_numbers": "among candidates passing BOTH controls: the TWO with the lowest seed-only floors; ties broken by larger positive-control effect; discards reported with their numbers. If fewer than two qualify, the re-rule proceeds with what qualifies and reports the two-axis law consequence honestly.",
+  "re_rule_terms": "SOLID_VS_MARBLED re-ruled (never restored) on the warm pair (ens_500 vs mb_solid_warm) under the FULL amended law; all readings start NOT_ESTABLISHED_PENDING_SPREAD (a new instrument inherits neither verdict nor establishment); pairwise statistics (C2) read with the same member roles on both sides",
+  "zero_renders": "all inputs are retained frames from the post-repair commissioning run",
+  "owner_approved": false
+}

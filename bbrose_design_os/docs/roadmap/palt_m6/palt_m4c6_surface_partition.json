@@ -1,0 +1,93 @@
+{
+ "record_type": "palt_m4c6_surface_partition/1.0",
+ "date": "2026-08-12",
+ "A445_UNOFFERED": {
+  "count": 10,
+  "members": [
+   "alignment",
+   "apparent_material",
+   "corner_radius_impression",
+   "ornament",
+   "pattern",
+   "perceived_thickness",
+   "playful",
+   "powder_finish_intent",
+   "regulatory_zones",
+   "youthful"
+  ],
+  "populations": {
+   "di.ALL_FIELDS": 70,
+   "intent_populated": 24,
+   "panel_surfaced_before": 18
+  },
+  "no_expectation_was_stated": "owner declined under A299; none is offered retrospectively"
+ },
+ "A446_vocabulary": {
+  "OUTSIDE_OWNER_SCOPE": "not part of VISIBLE_COMPOSITION_ONLY \u2014 material, formulation, dimensional impression",
+  "NOT_READABLE_FROM_THIS_RENDER": "in the schema but not shown by this render; any reading would be invention",
+  "DERIVED_NOT_OBSERVED": "inferred character rather than measured from the image",
+  "SUPERSEDED_BY_ANOTHER_FIELD": "already ruled through a surfaced field; a second row would let the owner rule the same thing twice"
+ },
+ "A446_assignment": {
+  "OUTSIDE_OWNER_SCOPE": [
+   "apparent_material",
+   "powder_finish_intent",
+   "perceived_thickness"
+  ],
+  "DERIVED_NOT_OBSERVED": [
+   "playful",
+   "youthful"
+  ],
+  "SUPERSEDED_BY_ANOTHER_FIELD": [
+   "alignment",
+   "corner_radius_impression",
+   "ornament",
+   "pattern"
+  ],
+  "NOT_READABLE_FROM_THIS_RENDER": []
+ },
+ "A446_vocabulary_term_covering_nothing": "NOT_READABLE_FROM_THIS_RENDER covers ZERO members here. All ten were read from the render. The term is retained because a future intent will populate a field this render cannot show, but it is reported as currently empty rather than quietly carried.",
+ "A446_could_not_assign_without_inventing": {
+  "field": "regulatory_zones",
+  "reading": "BACK_PANEL_WITH_BARCODE, confidence 0.9, HARD_VISIBLE_CONSTRAINT",
+  "why_no_reason_fits": "it is visible, it is composition, and it is exactly what VISIBLE_COMPOSITION_ONLY covers. Every candidate reason would have been invented to fit the omission.",
+  "disposition": "SURFACED, not withheld \u2014 added to REQUIRED_PANEL_ROWS",
+  "flagged_as_executor_judgement": true,
+  "reversible_by_owner": true,
+  "not_a_bulk_surfacing": "the other nine remain withheld with reasons; A449 forbids emptying UNOFFERED by surfacing it"
+ },
+ "A447": {
+  "mutation": "a real ALL_FIELDS member ('symmetry') populated, in neither the tuple nor NOT_SURFACED",
+  "class_seventeen": "UNSURFACED = [] -> EXHIBITED, blind by construction",
+  "class_eighteen": "CAUGHT -> UndeclaredField naming ['symmetry']",
+  "classes_distinct": "YES \u2014 not a duplicate mint",
+  "retained_mutation": "apps/pipeline/tests/test_characterization_protocol.py::SurfacePartitionStandingControl::test_the_check_fires_on_an_undeclared_field",
+  "distinctness_also_retained": "...::test_class_seventeen_is_blind_to_it",
+  "bound_discovered": "di.ALL_FIELDS is 70 and the schema REFUSES any name outside it (DesignIntentError: unknown intent field). The population is CLOSED at 70, so class eighteen's exposure is bounded at 70 minus surfaced minus withheld, not unbounded."
+ },
+ "A448": {
+  "version_2_action_count": 21,
+  "owner_prediction": 21,
+  "prediction": "HELD",
+  "shade_names_actions": [
+   "CONFIRM",
+   "CONFIRM"
+  ],
+  "DUPLICATE_REPORTED": "shade_names now carries TWO CONFIRM actions \u2014 one from the ES3083 baseline, one from the panel. A448 instructed action_shade_names=CONFIRM and shade_names is ALSO a baseline field, so apply()'s missing duplicate guard doubled it. The instruction was applied exactly as written and this is its consequence, not a deviation. The two actions are identical CONFIRMs so the meaning is unchanged, but the record now attributes two decisions where the owner made one.",
+  "version_1_untouched": {
+   "confirmation_identity": "e2e81bcd60d7f35f",
+   "confirmed_intent_identity": "eab983b1c86fba22",
+   "draft_identity": "9b3603e17e85746c",
+   "actions": 20,
+   "superseded_by": 3,
+   "verified_after_write": true
+  },
+  "version_2": {
+   "confirmation_identity": "ad8dc32c8987f953",
+   "confirmed_intent_identity": "eab983b1c86fba22",
+   "scope": "VISIBLE_COMPOSITION_ONLY",
+   "gate_decision": 58
+  },
+  "flags": "all four unchanged \u2014 NOT_APPROVED / NOT_ESTABLISHED / NOT_GRANTED / BLOCKED (prediction HELD)"
+ }
+}

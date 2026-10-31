@@ -1,0 +1,60 @@
+{
+ "record_type": "palt_m6_matte_frames_stop/1.0",
+ "date": "2026-08-12",
+ "A472": {
+  "write_set_table_executed_not_reasoned": {
+   "CONFIRM": [
+    "confirmation_state"
+   ],
+   "CORRECT": [
+    "confirmation_state",
+    "value"
+   ],
+   "RECLASSIFY": [
+    "confirmation_state",
+    "constraint_level"
+   ],
+   "MARK_UNRESOLVED": [
+    "note"
+   ],
+   "DELETE": [
+    "confirmation_state"
+   ],
+   "NOTE": [
+    "note"
+   ]
+  },
+  "branch": "(b)",
+  "finding": "RECLASSIFY DOES write confirmation_state, so the full-write-set claim at A467 is correct and CORRECT/RECLASSIFY genuinely contend for one attribute. BUT both write the SAME VALUE, OWNER_CORRECTED, so forward and reverse order produce identical results. A471 and A457 are BOTH TRUE.",
+  "class_ten_on_the_ES3083_record": "LATENT_BY_COINCIDENCE, not LATENT_BY_ABSENCE",
+  "why_weaker": "order-invariance holds by VALUE COINCIDENCE, not by structure. Any future change to the state constant written by either action breaks it silently, and no test would fail because the primary-attribute key cannot see the contention.",
+  "A464_disposition_corrected": "latent-by-absence -> latent-by-coincidence",
+  "incidental": "MARK_UNRESOLVED writes only note, because di.PENDING equals the baseline state \u2014 a second coincidence, recorded",
+  "my_first_probe_was_confounded": "I used new_value=12, equal to the baseline, so CORRECT appeared not to write value. Re-run with 99."
+ },
+ "A475_STOP": {
+  "result": "STOPPED \u2014 A275's text does not exist in the record",
+  "searched": [
+   "docs/ all file types",
+   "git log --all --grep",
+   "apps/ and tools/",
+   "'six MATTE' / 'MATTE texture frame' / 'texture_frames'"
+  ],
+  "only_references_found": [
+   "a274_cell_declaration.json: 'six_MATTE_texture_frames: NOT requested, NOT rendered \u2014 trigger named in A275'",
+   "a262_empty_cell_declaration.json: the M_v_C x GRANULARITY corroborator cell"
+  ],
+  "a275_itself": "ABSENT. Only pointers to it exist. Its trigger condition and what it obliges cannot be quoted.",
+  "paraphrase_check": "the owner's 'six MATTE texture frames' matches the COUNT and SUBJECT in a262 \u2014 '6 new MATTE texture renders' \u2014 but a262 scopes them to M_v_C x GRANULARITY as a CORROBORATOR, not as a standalone discriminator. Purpose diverges from the paraphrase.",
+  "SECOND_AND_LARGER_DIVERGENCE": "a262 records 'M_v_C x FWHM: frames PRESENT 6/6 both families, computable_now: true'. My M6-MVC-FWHM node MEASURED no frames at any declared-ensemble seed for CREAM or POWDER_MATTE and returned NOT_COMPUTABLE. These directly contradict. One of them is wrong and the corroborator's value is conditional on M_v_C being computable at all.",
+  "not_rendered": "A479 forbids rendering before A475 reports; A475 reports STOP"
+ },
+ "class_twenty_one": {
+  "minted": true,
+  "vs_thirteen_CAPTURE_WITHOUT_RETENTION": {
+   "caught_by_21_missed_by_13": "a shadowed __post_init__ \u2014 nothing is captured, nothing is overwritten, retention is irrelevant; the code simply never runs",
+   "caught_by_13_missed_by_21": ".tier2_gate_output overwritten each run \u2014 the capture code EXECUTES correctly and is not shadowed by anything"
+  },
+  "no_existing_class_covers_unexecuted_controls": "checked against all twenty entries"
+ }
+}

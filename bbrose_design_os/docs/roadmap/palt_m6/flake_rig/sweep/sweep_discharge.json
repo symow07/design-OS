@@ -1,0 +1,25 @@
+{
+  "sweep_read_against_declared_asymmetry": {
+    "divergent_pairs": 9,
+    "tracking_pairs": 1,
+    "tracking_pair": "SPECULAR_TO_DIFFUSE_RESPONSE|ENVIRONMENT_CORRELATION (0.9794/0.8601) \u2014 per the pre-declared conservative rule these two may not both count toward one verdict; restriction recorded for all future reflective rulings (it affects NO banked verdict: S2D was below-required everywhere)",
+    "note": "tracking under metallic_response with divergence under flake_density is precisely the common-cause pattern the asymmetric declaration anticipated \u2014 the flake_density sweep is what did the measuring"
+  },
+  "SHIMMER_VS_POWDER_METALLIC": {
+    "counted": [
+      "REFLECTED_PATTERN_CONTRAST",
+      "REFLECTION_COHERENCE",
+      "ENVIRONMENT_CORRELATION"
+    ],
+    "mutual_independence": "C|COH 0.6853, C|ENV 0.6993, COH|ENV 0.3916 on flake_density \u2014 all MEASURED_DIVERGENT",
+    "verdict": "PASS \u2014 independence MEASURED, pending mark discharged"
+  },
+  "METALLIC_VS_GLITTER": {
+    "counted": [
+      "REFLECTED_PATTERN_CONTRAST",
+      "ENVIRONMENT_CORRELATION"
+    ],
+    "mutual_independence": "C|ENV MEASURED_DIVERGENT (0.6993 on flake_density)",
+    "verdict": "PASS \u2014 independence MEASURED, pending mark discharged"
+  }
+}

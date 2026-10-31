@@ -1,0 +1,161 @@
+{
+  "record_type": "control_coverage_table/1.0",
+  "law": "1p at c56a57b82bc3e36e; burden rule 1j applied",
+  "rows": [
+    {
+      "verdict": "MATTE_VS_SATIN",
+      "axis": "GRANULARITY_INDEX",
+      "condition_of_reading": "matte+satin pair",
+      "negative_control_condition": "POWDER_MATTE ensemble (seeds 40, 81-84, 99)",
+      "positive_control_condition": "clearing reading self-validates sensitivity (0.6828)",
+      "coverage": "PARTIAL",
+      "note": "negative control covers the MATTE member only; SATIN member uncovered \u2014 1p every-member clause"
+    },
+    {
+      "verdict": "MATTE_VS_SATIN",
+      "axis": "SHEEN_REGION_RESPONSE",
+      "condition_of_reading": "matte+satin pair",
+      "negative_control_condition": "POWDER_MATTE ensemble (seeds 40, 81-84, 99)",
+      "positive_control_condition": "clearing 0.4225 self-validates sensitivity",
+      "coverage": "PARTIAL",
+      "note": "SATIN member uncovered"
+    },
+    {
+      "verdict": "PRESSED_VS_MATTE",
+      "axis": "GRANULARITY_INDEX",
+      "condition_of_reading": "pressed+matte pair",
+      "negative_control_condition": "POWDER_MATTE ensemble (seeds 40, 81-84, 99)",
+      "positive_control_condition": "clearing 0.8942",
+      "coverage": "PARTIAL",
+      "note": "PRESSED member uncovered"
+    },
+    {
+      "verdict": "PRESSED_VS_MATTE",
+      "axis": "SHEEN_REGION_RESPONSE",
+      "condition_of_reading": "pressed+matte pair",
+      "negative_control_condition": "POWDER_MATTE ensemble (seeds 40, 81-84, 99)",
+      "positive_control_condition": "clearing 0.4471",
+      "coverage": "PARTIAL",
+      "note": "PRESSED member uncovered"
+    },
+    {
+      "verdict": "SATIN_VS_CREAM",
+      "axis": "GRANULARITY_INDEX",
+      "condition_of_reading": "satin+cream pair",
+      "negative_control_condition": "POWDER_MATTE ensemble (seeds 40, 81-84, 99)",
+      "positive_control_condition": "clearing 0.4423",
+      "coverage": "INSTRUMENT_NOT_VALIDATED_AT_CONDITION",
+      "note": "NEITHER member covered \u2014 the same shape A11 rejected"
+    },
+    {
+      "verdict": "SATIN_VS_CREAM",
+      "axis": "HIGHLIGHT_FWHM",
+      "condition_of_reading": "satin+cream pair",
+      "negative_control_condition": "POWDER_MATTE ensemble (seeds 40, 81-84, 99)",
+      "positive_control_condition": "clearing 0.2843",
+      "coverage": "INSTRUMENT_NOT_VALIDATED_AT_CONDITION",
+      "note": "neither member covered; also the thinnest clearing margin"
+    },
+    {
+      "verdict": "SHIMMER_VS_METALLIC",
+      "axis": "REFLECTED_PATTERN_CONTRAST",
+      "condition_of_reading": "shimmer+metallic",
+      "negative_control_condition": "SHIMMER ensemble (130-135)",
+      "positive_control_condition": "clearing 0.30398",
+      "coverage": "PARTIAL",
+      "note": "METALLIC member uncovered"
+    },
+    {
+      "verdict": "SHIMMER_VS_METALLIC",
+      "axis": "REFLECTION_COHERENCE",
+      "condition_of_reading": "shimmer+metallic",
+      "negative_control_condition": "SHIMMER ensemble",
+      "positive_control_condition": "clearing 0.48488",
+      "coverage": "PARTIAL",
+      "note": "METALLIC member uncovered"
+    },
+    {
+      "verdict": "SHIMMER_VS_METALLIC",
+      "axis": "ENVIRONMENT_CORRELATION",
+      "condition_of_reading": "shimmer+metallic",
+      "negative_control_condition": "SHIMMER ensemble",
+      "positive_control_condition": "clearing 0.54136",
+      "coverage": "PARTIAL",
+      "note": "METALLIC member uncovered"
+    },
+    {
+      "verdict": "METALLIC_VS_GLITTER",
+      "axis": "REFLECTED_PATTERN_CONTRAST",
+      "condition_of_reading": "metallic+glitter",
+      "negative_control_condition": "SHIMMER ensemble \u2014 NEITHER member",
+      "positive_control_condition": "clearing 0.88117",
+      "coverage": "INSTRUMENT_NOT_VALIDATED_AT_CONDITION",
+      "note": "the control was established on a family in neither position"
+    },
+    {
+      "verdict": "METALLIC_VS_GLITTER",
+      "axis": "ENVIRONMENT_CORRELATION",
+      "condition_of_reading": "metallic+glitter",
+      "negative_control_condition": "SHIMMER ensemble \u2014 NEITHER member",
+      "positive_control_condition": "clearing 0.69674",
+      "coverage": "INSTRUMENT_NOT_VALIDATED_AT_CONDITION",
+      "note": ""
+    },
+    {
+      "verdict": "PRESSED_VS_BAKED",
+      "axis": "RAKING_DIRECTIONAL_SPAN",
+      "condition_of_reading": "pressed+baked",
+      "negative_control_condition": "BAKED relief ensemble",
+      "positive_control_condition": "clearing 0.91093",
+      "coverage": "PARTIAL",
+      "note": "PRESSED member uncovered"
+    },
+    {
+      "verdict": "PRESSED_VS_BAKED",
+      "axis": "RAKING_SHADOW_FRACTION",
+      "condition_of_reading": "pressed+baked",
+      "negative_control_condition": "BAKED relief ensemble",
+      "positive_control_condition": "clearing 0.50406",
+      "coverage": "PARTIAL",
+      "note": "PRESSED member uncovered"
+    },
+    {
+      "verdict": "SOLID_VS_MARBLED",
+      "axis": "C2_CHROMA_HISTOGRAM_L1",
+      "condition_of_reading": "warm pair",
+      "negative_control_condition": "warm MARBLED ensemble (500-505)",
+      "positive_control_condition": "clearing 0.49048",
+      "coverage": "PARTIAL",
+      "note": "solid member uncovered"
+    },
+    {
+      "verdict": "SOLID_VS_MARBLED",
+      "axis": "C3_HUE_CIRCULAR_STD",
+      "condition_of_reading": "warm pair",
+      "negative_control_condition": "warm MARBLED ensemble",
+      "positive_control_condition": "FAILED at warm (0.0287)",
+      "coverage": "INSTRUMENT_NOT_VALIDATED_AT_CONDITION",
+      "note": "the null reading carries nothing \u2014 measured, not inferred"
+    },
+    {
+      "verdict": "GLITTER_PARTICLE_RIG",
+      "axis": "event count",
+      "condition_of_reading": "glitter fixture",
+      "negative_control_condition": "none \u2014 single-seed census",
+      "positive_control_condition": "MATTE/SHIMMER controls at 0 events",
+      "coverage": "PARTIAL",
+      "note": "no seed-varied negative control"
+    }
+  ],
+  "counts": {
+    "PARTIAL": 11,
+    "INSTRUMENT_NOT_VALIDATED_AT_CONDITION": 5
+  },
+  "burden_rule_application": {
+    "affirmative_claims_suspend": "every row above is an affirmative clearing claim; PARTIAL and NOT_VALIDATED rows may not be relied upon \u2014 they join the establishment table's not-established set rather than forming a new one",
+    "refusals_and_exclusions_stand": "floor-ineligibility exclusions (EDGE, marbling registered axes, flake EDGE) and the marbling FAIL stand \u2014 a refusal needs no positive control",
+    "net_effect": "NO verdict improves; the diffuse and flake pairs were already not established, and this adds a second independent reason for the same status"
+  },
+  "no_measurements_taken": true,
+  "owner_approved": false
+}

@@ -1,0 +1,387 @@
+{
+ "record_type": "es3083_shade_authority/1.3",
+ "target": "palette / ES3083",
+ "decided_by": "owner",
+ "decided_on": "2026-08-13",
+ "revision_1_2": "1.2 — the transform described below as NOT applied IS applied as of beb1fe5: realize() resolves the space through COLOUR_SPACE_BY_AUTHORITY and emits shader_input_rgb in SCENE_LINEAR for these twelve, with display_rgb retained as a frozen-contract alias of it. The twelve were rendered on the commissioned rig on 2026-08-13 and composed for owner review at docs/roadmap/palt_m6/owner_swatches/. Colours, hexes, families, roles and authorities UNCHANGED across 1.0, 1.1 and 1.2.",
+ "revision": "1.1 — 1.0 landed at 6341794 with the colour-space error's DIRECTION inverted and the deferral's justification wrong. Both are corrected here and both withdrawals are stated in place. The twelve shades, their hexes, families, roles and authorities are UNCHANGED; no colour moved.",
+ "not_manufacturing_authority": true,
+ "upgrade_path": "replace hex with a Pantone number or a measured Lab value and raise that shade's authority field; names, grid positions and finish families do not change when the colour does",
+ "shades": [
+  {
+   "pan": 1,
+   "grid_pos": "R1C1",
+   "name": "Petal Veil",
+   "hex": "#F2E3D8",
+   "rgb": [
+    0.949,
+    0.8902,
+    0.8471
+   ],
+   "colour_space": "sRGB_IEC_61966_2_1_NONLINEAR",
+   "rgb_linear": [
+    0.887882,
+    0.768159,
+    0.686761
+   ],
+   "rgb_linear_colour_space": "SCENE_LINEAR_BT709_PRIMARIES",
+   "family": "POWDER_MATTE",
+   "role": "brow-bone / all-over base",
+   "authority": "OWNER_CHOSEN_DESIGN_INTENT",
+   "owner_colour_authority": "OWNER_DESIGN_INTENT_NOT_MEASURED",
+   "material_identity": "cf453f50d0cf8821"
+  },
+  {
+   "pan": 2,
+   "grid_pos": "R1C2",
+   "name": "First Light",
+   "hex": "#E9CBAE",
+   "rgb": [
+    0.9137,
+    0.7961,
+    0.6824
+   ],
+   "colour_space": "sRGB_IEC_61966_2_1_NONLINEAR",
+   "rgb_linear": [
+    0.814795,
+    0.597238,
+    0.423333
+   ],
+   "rgb_linear_colour_space": "SCENE_LINEAR_BT709_PRIMARIES",
+   "family": "POWDER_SATIN",
+   "role": "inner corner, warm wash",
+   "authority": "OWNER_CHOSEN_DESIGN_INTENT",
+   "owner_colour_authority": "OWNER_DESIGN_INTENT_NOT_MEASURED",
+   "material_identity": "0bb669c8bc29fa54"
+  },
+  {
+   "pan": 3,
+   "grid_pos": "R1C3",
+   "name": "Dew",
+   "hex": "#E4D8D4",
+   "rgb": [
+    0.8941,
+    0.8471,
+    0.8314
+   ],
+   "colour_space": "sRGB_IEC_61966_2_1_NONLINEAR",
+   "rgb_linear": [
+    0.775788,
+    0.686761,
+    0.658424
+   ],
+   "rgb_linear_colour_space": "SCENE_LINEAR_BT709_PRIMARIES",
+   "family": "SHIMMER",
+   "role": "warm pearl highlight",
+   "authority": "OWNER_CHOSEN_DESIGN_INTENT",
+   "owner_colour_authority": "OWNER_DESIGN_INTENT_NOT_MEASURED",
+   "material_identity": "5c1958b87e36401a"
+  },
+  {
+   "pan": 4,
+   "grid_pos": "R1C4",
+   "name": "Damascena",
+   "hex": "#D9A2A6",
+   "rgb": [
+    0.851,
+    0.6353,
+    0.651
+   ],
+   "colour_space": "sRGB_IEC_61966_2_1_NONLINEAR",
+   "rgb_linear": [
+    0.693908,
+    0.361314,
+    0.381351
+   ],
+   "rgb_linear_colour_space": "SCENE_LINEAR_BT709_PRIMARIES",
+   "family": "POWDER_MATTE",
+   "role": "soft rose transition",
+   "authority": "OWNER_CHOSEN_DESIGN_INTENT",
+   "owner_colour_authority": "OWNER_DESIGN_INTENT_NOT_MEASURED",
+   "material_identity": "0fbabda62796e634"
+  },
+  {
+   "pan": 5,
+   "grid_pos": "R2C1",
+   "name": "Blush Hour",
+   "hex": "#C57E82",
+   "rgb": [
+    0.7725,
+    0.4941,
+    0.5098
+   ],
+   "colour_space": "sRGB_IEC_61966_2_1_NONLINEAR",
+   "rgb_linear": [
+    0.558261,
+    0.208621,
+    0.223224
+   ],
+   "rgb_linear_colour_space": "SCENE_LINEAR_BT709_PRIMARIES",
+   "family": "POWDER_SATIN",
+   "role": "mid rose lid",
+   "authority": "OWNER_CHOSEN_DESIGN_INTENT",
+   "owner_colour_authority": "OWNER_DESIGN_INTENT_NOT_MEASURED",
+   "material_identity": "cdef405be5f3a688"
+  },
+  {
+   "pan": 6,
+   "grid_pos": "R2C2",
+   "name": "Attar",
+   "hex": "#C9916B",
+   "rgb": [
+    0.7882,
+    0.5686,
+    0.4196
+   ],
+   "colour_space": "sRGB_IEC_61966_2_1_NONLINEAR",
+   "rgb_linear": [
+    0.58402,
+    0.283119,
+    0.147021
+   ],
+   "rgb_linear_colour_space": "SCENE_LINEAR_BT709_PRIMARIES",
+   "family": "BAKED",
+   "role": "antique rose-gold lid",
+   "authority": "OWNER_CHOSEN_DESIGN_INTENT",
+   "owner_colour_authority": "OWNER_DESIGN_INTENT_NOT_MEASURED",
+   "material_identity": "40e337533247a857"
+  },
+  {
+   "pan": 7,
+   "grid_pos": "R2C3",
+   "name": "Copper Leaf",
+   "hex": "#A85B33",
+   "rgb": [
+    0.6588,
+    0.3569,
+    0.2
+   ],
+   "colour_space": "sRGB_IEC_61966_2_1_NONLINEAR",
+   "rgb_linear": [
+    0.391542,
+    0.104639,
+    0.033105
+   ],
+   "rgb_linear_colour_space": "SCENE_LINEAR_BT709_PRIMARIES",
+   "family": "POWDER_METALLIC",
+   "role": "copper statement",
+   "authority": "OWNER_CHOSEN_DESIGN_INTENT",
+   "owner_colour_authority": "OWNER_DESIGN_INTENT_NOT_MEASURED",
+   "material_identity": "dbe60ac195e7104c"
+  },
+  {
+   "pan": 8,
+   "grid_pos": "R2C4",
+   "name": "Sage Stem",
+   "hex": "#7F846E",
+   "rgb": [
+    0.498,
+    0.5176,
+    0.4314
+   ],
+   "colour_space": "sRGB_IEC_61966_2_1_NONLINEAR",
+   "rgb_linear": [
+    0.212195,
+    0.230695,
+    0.155948
+   ],
+   "rgb_linear_colour_space": "SCENE_LINEAR_BT709_PRIMARIES",
+   "family": "POWDER_MATTE",
+   "role": "olive-taupe, ties to the case",
+   "authority": "OWNER_CHOSEN_DESIGN_INTENT",
+   "owner_colour_authority": "OWNER_DESIGN_INTENT_NOT_MEASURED",
+   "material_identity": "59aee44c3d5a1fdd"
+  },
+  {
+   "pan": 9,
+   "grid_pos": "R3C1",
+   "name": "Old Rose",
+   "hex": "#8D5459",
+   "rgb": [
+    0.5529,
+    0.3294,
+    0.349
+   ],
+   "colour_space": "sRGB_IEC_61966_2_1_NONLINEAR",
+   "rgb_linear": [
+    0.266312,
+    0.088649,
+    0.099887
+   ],
+   "rgb_linear_colour_space": "SCENE_LINEAR_BT709_PRIMARIES",
+   "family": "PRESSED_POWDER",
+   "role": "crease depth",
+   "authority": "OWNER_CHOSEN_DESIGN_INTENT",
+   "owner_colour_authority": "OWNER_DESIGN_INTENT_NOT_MEASURED",
+   "material_identity": "9a93235d6b010351"
+  },
+  {
+   "pan": 10,
+   "grid_pos": "R3C2",
+   "name": "Thorn",
+   "hex": "#5D3A42",
+   "rgb": [
+    0.3647,
+    0.2275,
+    0.2588
+   ],
+   "colour_space": "sRGB_IEC_61966_2_1_NONLINEAR",
+   "rgb_linear": [
+    0.109458,
+    0.042329,
+    0.05447
+   ],
+   "rgb_linear_colour_space": "SCENE_LINEAR_BT709_PRIMARIES",
+   "family": "POWDER_MATTE",
+   "role": "outer-V plum brown",
+   "authority": "OWNER_CHOSEN_DESIGN_INTENT",
+   "owner_colour_authority": "OWNER_DESIGN_INTENT_NOT_MEASURED",
+   "material_identity": "64d020884b8502a7"
+  },
+  {
+   "pan": 11,
+   "grid_pos": "R3C3",
+   "name": "Moss Garden",
+   "hex": "#48583F",
+   "rgb": [
+    0.2824,
+    0.3451,
+    0.2471
+   ],
+   "colour_space": "sRGB_IEC_61966_2_1_NONLINEAR",
+   "rgb_linear": [
+    0.064825,
+    0.097588,
+    0.049723
+   ],
+   "rgb_linear_colour_space": "SCENE_LINEAR_BT709_PRIMARIES",
+   "family": "MARBLED",
+   "role": "deep olive hero pan",
+   "authority": "OWNER_CHOSEN_DESIGN_INTENT",
+   "owner_colour_authority": "OWNER_DESIGN_INTENT_NOT_MEASURED",
+   "material_identity": "f16682b607e0fae4",
+   "finish_note": "MARBLED here means RESTRAINED OLIVE-ON-OLIVE VEIN STRUCTURE — a darker olive vein through an olive base. NOT antique-gold, and not gold veining of any kind. A renderer that reads the family without this note will look for a hue the builder never computes.",
+   "finish_note_superseded_1_2": "MARBLED here means restrained antique-gold and olive marbling, NOT bright gold veining. A renderer that reads the family without this note will produce the thing the owner rejected.",
+   "note_correction_2026_08_13": {
+    "decided_by": "PROJECT_OWNER",
+    "struck": "'restrained antique-gold and olive marbling' — the antique-gold half is withdrawn",
+    "why_in_terms_of_the_builder_not_taste": "MARBLED's components are PER-CHANNEL MULTIPLICATIVE of the base (darker = rgb x [0.45, 0.55, 0.70]), and marbling.components is 2, so the mix is [base, darker] and the additive offsets that could shift hue never enter. Chroma (R-B)/(R+G+B) is scale-invariant under a per-channel multiplication, so the two components are chroma-separated by a FIXED amount that neither grows nor collapses with lightness: MEASURED 0.119085 at Moss Garden's authored depth and 0.119085 at 6.35x lighter. Gold requires a hue the derivation never computes from an olive base. The note was asking for something the builder cannot produce, at any lightness.",
+    "what_the_pan_DOES_deliver": "chroma spread 0.015150 against a POWDER_MATTE control at the same colour and seed of 0.001547 — 9.8x. Confirmed at 9de3457 as unaffected by the region and retired-scalar defects that invalidated the luminance readings: MARBLED is albedo-derived, chroma is the right axis for it, and PLANAR is a legitimate region to read chroma on.",
+    "scope": "a NOTE correction. NOT a family change, NOT a colour change, and not a change to any other shade.",
+    "lobe_axis_standing_stated_in_the_same_breath": "on the lobe axes and under the programme's own eligibility and R5 rules, MARBLED clears ONE countable axis against POWDER_MATTE at this colour (SHEEN 0.286) where PASS_LAW requires two, so it does not certify as a distinguishable family on those axes. Its chroma reading is a different instrument and is not a substitute for that. Recorded here so the 9.8x figure is never read as a family verdict."
+   }
+  },
+  {
+   "pan": 12,
+   "grid_pos": "R3C4",
+   "name": "Midnight Bloom",
+   "hex": "#4A2E3B",
+   "rgb": [
+    0.2902,
+    0.1804,
+    0.2314
+   ],
+   "colour_space": "sRGB_IEC_61966_2_1_NONLINEAR",
+   "rgb_linear": [
+    0.06848,
+    0.027323,
+    0.043745
+   ],
+   "rgb_linear_colour_space": "SCENE_LINEAR_BT709_PRIMARIES",
+   "family": "POWDER_METALLIC",
+   "role": "deep plum depth shade",
+   "authority": "OWNER_CHOSEN_DESIGN_INTENT",
+   "owner_colour_authority": "OWNER_DESIGN_INTENT_NOT_MEASURED",
+   "material_identity": "4dfb3281c2aee351",
+   "finish_note": "POWDER_METALLIC, chosen by the owner over SHIMMER because #4A2E3B is dark enough that a soft pearl load disappears into its own base. Shares its family with Copper Leaf (pan 7); they sit at opposite ends of the depth run. The duplication is recorded, not hidden."
+  }
+ ],
+ "COLOUR_SPACE_FINDING": {
+  "question": "the hexes are sRGB. Is PowderShade.rgb consumed as sRGB or as scene-linear?",
+  "answer": "THE_CONSUMER_IS_LINEAR_REFERRED",
+  "what_settles_it": [
+   "apps/pipeline/services/palette_powder_engine.py:524 — PowderMaterialSpec.realize() emits display_rgb = list(self.shade.rgb), untransformed",
+   "apps/pipeline/services/blender_scripts/powder_materials.py:168 — _base() assigns that triple straight to the Principled BSDF socket: b.inputs['Base Color'].default_value = (rgb[0], rgb[1], rgb[2], 1.0). A Blender node socket colour default_value is scene-linear.",
+   "apps/pipeline/services/blender_scripts/powder_materials.py:492 and the seven _mottle_colour call sites — same triple, same socket, no transform on any path",
+   "apps/pipeline/services/blender_scripts/material_characterization.py:49-51 — view_transform = 'Standard', view_settings.gamma = 1.0. That is a DISPLAY-side encode of a scene-linear render; it is not an input transfer and does not convert display_rgb.",
+   "the frame records the rig writes carry measured_in = SCENE_LINEAR and source = 'Blender float Render Result before display conversion', confirming the pipeline is scene-linear internally"
+  ],
+  "no_conversion_exists_extent_A564": {
+   "predicate": "any occurrence of srgb, sRGB, to_linear, linear_to, gamma, 2.4, 1.055 or 0.0031308",
+   "population": "every .py under apps/pipeline/services/blender_scripts/ plus palette_powder_engine.py",
+   "result": "the only hits are view_settings.gamma = 1.0 in eight render scripts, which is display-side, and a 2.4 that is a macrotexture scale_mm. NO sRGB-to-linear transfer exists anywhere on the path from PowderShade.rgb to Base Color."
+  },
+  "DIRECTION_CORRECTED_2026_08_13": {
+   "withdrawn": "the 1.0 revision of this record said these render 'DARKER and less saturated than the chosen colour'. That was INVERTED and is withdrawn.",
+   "true_direction": "srgb_to_linear is strictly BELOW the identity on the open interval (0,1), so an sRGB value handed to a linear socket sets an albedo that is too HIGH and every pan arrives LIGHTER and less saturated. Never darker.",
+   "proven_not_asserted": "TransferDirectionTests in test_powder_engine.py — 20001 samples across (0,1) in each direction, endpoints fixed as equalities, segment knee pinned at 0.04045 / 0.0031308",
+   "error_is_NOT_uniform": "negligible at the light end, severe at the deep end: Petal Veil's lightest channel gains 0.0282, Midnight Bloom's green gains 0.2814 — an order of magnitude apart",
+   "what_actually_degrades": "the palette's own STRUCTURE, not merely its brightness. The depth run Damascena -> Blush Hour -> Old Rose -> Thorn retains only 68.3% of its intended spread (0.4288 -> 0.2930) because its pale members arrive nearly correct while its deep members do not. A uniform shift could be dialled out downstream; a compressed depth run cannot, and the run is what the palette was designed around.",
+   "worked_example_midnight_bloom": {
+    "intended_hex": "#4A2E3B",
+    "intended_srgb": [
+     0.2902,
+     0.1804,
+     0.2314
+    ],
+    "correct_linear_albedo": [
+     0.06848,
+     0.027323,
+     0.043745
+    ],
+    "albedo_actually_fed": [
+     0.2902,
+     0.1804,
+     0.2314
+    ],
+    "arrival_srgb": [
+     0.5751,
+     0.4618,
+     0.5183
+    ],
+    "arrival_hex": "#937684",
+    "reads_as": "a pale dusty mauve where a deep plum was chosen",
+    "owner_figure_differed": "the owner's brief gave #93768A; recomputed here the blue channel is 0x84, not 0x8A. The owner's own triple 0.518 -> round(0.518*255) = 132 = 0x84 agrees with this, so the brief's hex was internally inconsistent with the brief's own triple. Per the brief's instruction the computed value stands.",
+    "bound_on_this_figure": "arrival is the ALBEDO ROUND-TRIP under neutral unit illumination, not a render prediction — lighting, BSDF and roughness all intervene in a real frame. The DIRECTION is unconditional because the albedo is unconditionally too high; the MAGNITUDE is the flat-lit figure."
+   }
+  },
+  "what_this_record_does": "keeps the sRGB hex as the stored authority per Step 4(b), and carries rgb_linear beside it as a DERIVED field with the transfer named. A renderer targeting the scene-linear socket must read rgb_linear; a renderer targeting an sRGB-referred surface must read rgb.",
+  "what_this_record_does_NOT_do": "SUPERSEDED AT 1.2. When this record was written the engine did not change the shader: PowderShade.rgb held the sRGB triple and realize() emitted it as display_rgb untransformed. Since beb1fe5 realize() applies the transfer at the engine boundary — the frozen builder is still untouched and every material identity is still unmoved, because the space rides on the already-digested authority.",
+  "WHY_DEFERRED_JUSTIFICATION_CORRECTED_2026_08_13": {
+   "withdrawn": "the 1.0 revision said fixing the shader 'would move every material_identity in the programme'. That was WRONG. material_identity() at palette_powder_engine.py:510-516 digests schema, version, family, seed, shade.to_dict() and params; powder_materials.py is not among its inputs, so editing the builder moves NO material identity.",
+   "the_real_constraint": "powder_materials.py is the FROZEN INSTRUMENT. Every M6 measurement was taken through it and its repair is M6-CONTRACT-INTEGRITY-REPAIR's named jurisdiction, recorded at independence_amendment_phase4.json against builder:specular_ior_level and the other builder drivers: 'varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node.'",
+   "the_refusal_stands": "only its justification changes. The fix is still not taken here."
+  },
+  "applies_equally_to_the_provisional_fixture": "es3083_provisional_shade_set() reaches the same socket by the same path. The finding is about the boundary, not about the owner shades.",
+  "transfer_function": "IEC_61966_2_1_sRGB_EOTF",
+  "transfer_implementation": "palette_powder_engine.srgb_to_linear — c/12.92 for c <= 0.04045, else ((c + 0.055)/1.055) ** 2.4"
+ },
+ "families_used": [
+  "BAKED",
+  "MARBLED",
+  "POWDER_MATTE",
+  "POWDER_METALLIC",
+  "POWDER_SATIN",
+  "PRESSED_POWDER",
+  "SHIMMER"
+ ],
+ "glitter_and_cream": "GLITTER and CREAM are not used by this palette. Stated as a plain fact. A palette is designed for commerce, not to exercise the engine.",
+ "source_document": {
+  "path": "SHADE_AUTHORITY_PROPOSAL.md",
+  "sha256": "612dd0aa608a48f02e9ce972d5523c6c1e4550b87eecdae70c5a36facb9bf7c6"
+ },
+ "code_identity": {
+  "module": "apps/pipeline/services/palette_powder_engine.py",
+  "sha256_16": "eed1fc5522436f72",
+  "recipe": "sha256 of the module file's bytes, first 16 hex — the same digest convention the programme's other code identities use",
+  "derivations": {
+   "rgb": "hex_to_srgb_triple: round(channel/255, 4)",
+   "rgb_linear": "srgb_to_linear applied per channel, 6dp"
+  }
+ },
+ "what_does_not_come_from_this_record": {
+  "pantone_621_C_and_627_C": "CASE colours, not pan shades. Governed by SPOT_COLOUR_AUTHORITY in palette_design_graph.py where they remain UNRESOLVED_SPOT_COLOUR. This record does not touch that.",
+  "FB3090": "remains UNSOURCED — this record is ES3083 only"
+ },
+ "revision_1_3": "1.3 — Moss Garden (pan 11) NOTE CORRECTION ONLY, on owner ruling of 2026-08-13. Family MARBLED unchanged, hex #48583F unchanged, rgb unchanged, authority unchanged. THE OTHER ELEVEN SHADES ARE UNTOUCHED and were not restamped — per-shade stamping exists so one shade can move alone, and it is used here as intended."
+}

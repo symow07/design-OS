@@ -1,0 +1,31 @@
+{
+  "record_type": "reflexive_validation/1.0",
+  "per_instrument": {
+    "regex_detector": {
+      "corpus_misses": [
+        "ratio_guard_linebreak",
+        "except_swallow",
+        "kwonly_default",
+        "or_default"
+      ],
+      "verdict": "FAILS ALONE \u2014 as ruled, kept only in union"
+    },
+    "ast_reference_detector": {
+      "corpus_misses": [],
+      "verdict": "PASSES"
+    },
+    "composed_gate": {
+      "corpus_misses": [],
+      "verdict": "PASSES \u2014 the enforcing instrument covers its class"
+    },
+    "firing_trace_writer": {
+      "verdict": "PASSES \u2014 both controls in suite: a deliberate firing records; an unset destination RAISES (empty trace cannot mean recorder failure)"
+    },
+    "import_resolver": {
+      "verdict": "PASSES \u2014 raises on non-constant __import__ (positive control) and on eval/exec; its own live firing (empty-edge graph) was caught pre-use and the condition is now structural"
+    },
+    "census_tool": {
+      "verdict": "PASSES NOW \u2014 kw_defaults corpus member catches the false-zero shape that FIRED LIVE; readings before the fix were restated in the same node"
+    }
+  }
+}

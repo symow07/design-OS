@@ -1,0 +1,235 @@
+{
+ "instrument": "palette_m5_evidence (bars as declared)",
+ "probe_shade": "Petal Veil (pan 1)",
+ "pairs_exercised": [
+  {
+   "a": "POWDER_MATTE",
+   "b": "POWDER_SATIN",
+   "axes": {
+    "mean_luminance": {
+     "a": 209.0655,
+     "b": 211.177,
+     "delta": 2.1115,
+     "bar": 6.0,
+     "clears": false
+    },
+    "highlight_fraction": {
+     "a": 0.188378,
+     "b": 0.118599,
+     "delta": 0.069779,
+     "bar": 0.01,
+     "clears": true
+    },
+    "highlight_p99": {
+     "a": 223.3333,
+     "b": 221.3333,
+     "delta": 2.0,
+     "bar": 10.0,
+     "clears": false
+    },
+    "specular_spread": {
+     "a": 16.2501,
+     "b": 15.972,
+     "delta": 0.2781,
+     "bar": 4.0,
+     "clears": false
+    }
+   },
+   "axes_clearing_the_bar": [
+    "highlight_fraction"
+   ],
+   "verdict": "PASS",
+   "why": "two renders are distinguishable when they differ by at least the predeclared bar on at least one measured axis; differing JSON is not evidence",
+   "required_by_rig": "DIFFUSE_MICROTEXTURE_RIG"
+  },
+  {
+   "a": "PRESSED_POWDER",
+   "b": "POWDER_MATTE",
+   "axes": {
+    "mean_luminance": {
+     "a": 211.5791,
+     "b": 209.0655,
+     "delta": 2.5136,
+     "bar": 6.0,
+     "clears": false
+    },
+    "highlight_fraction": {
+     "a": 0.147665,
+     "b": 0.188378,
+     "delta": 0.040713,
+     "bar": 0.01,
+     "clears": true
+    },
+    "highlight_p99": {
+     "a": 221.3333,
+     "b": 223.3333,
+     "delta": 2.0,
+     "bar": 10.0,
+     "clears": false
+    },
+    "specular_spread": {
+     "a": 16.0672,
+     "b": 16.2501,
+     "delta": 0.1829,
+     "bar": 4.0,
+     "clears": false
+    }
+   },
+   "axes_clearing_the_bar": [
+    "highlight_fraction"
+   ],
+   "verdict": "PASS",
+   "why": "two renders are distinguishable when they differ by at least the predeclared bar on at least one measured axis; differing JSON is not evidence",
+   "required_by_rig": "DIFFUSE_MICROTEXTURE_RIG"
+  },
+  {
+   "a": "SHIMMER",
+   "b": "POWDER_METALLIC",
+   "axes": {
+    "mean_luminance": {
+     "a": 185.7217,
+     "b": 102.8748,
+     "delta": 82.8469,
+     "bar": 6.0,
+     "clears": true
+    },
+    "highlight_fraction": {
+     "a": 0.15971,
+     "b": 0.078947,
+     "delta": 0.080763,
+     "bar": 0.01,
+     "clears": true
+    },
+    "highlight_p99": {
+     "a": 221.3333,
+     "b": 180.0,
+     "delta": 41.3333,
+     "bar": 10.0,
+     "clears": true
+    },
+    "specular_spread": {
+     "a": 16.4549,
+     "b": 19.2135,
+     "delta": 2.7586,
+     "bar": 4.0,
+     "clears": false
+    }
+   },
+   "axes_clearing_the_bar": [
+    "mean_luminance",
+    "highlight_fraction",
+    "highlight_p99"
+   ],
+   "verdict": "PASS",
+   "why": "two renders are distinguishable when they differ by at least the predeclared bar on at least one measured axis; differing JSON is not evidence",
+   "required_by_rig": "FLAKE_REFLECTION_RIG"
+  },
+  {
+   "a": "BAKED",
+   "b": "PRESSED_POWDER",
+   "axes": {
+    "mean_luminance": {
+     "a": 208.2404,
+     "b": 211.5791,
+     "delta": 3.3387,
+     "bar": 6.0,
+     "clears": false
+    },
+    "highlight_fraction": {
+     "a": 0.135301,
+     "b": 0.147665,
+     "delta": 0.012364,
+     "bar": 0.01,
+     "clears": true
+    },
+    "highlight_p99": {
+     "a": 221.3333,
+     "b": 221.3333,
+     "delta": 0.0,
+     "bar": 10.0,
+     "clears": false
+    },
+    "specular_spread": {
+     "a": 15.801,
+     "b": 16.0672,
+     "delta": 0.2662,
+     "bar": 4.0,
+     "clears": false
+    }
+   },
+   "axes_clearing_the_bar": [
+    "highlight_fraction"
+   ],
+   "verdict": "PASS",
+   "why": "two renders are distinguishable when they differ by at least the predeclared bar on at least one measured axis; differing JSON is not evidence",
+   "required_by_rig": "BAKED_GEOMETRY_RIG"
+  },
+  {
+   "a": "MARBLED",
+   "b": "POWDER_MATTE",
+   "axes": {
+    "mean_luminance": {
+     "a": 210.3474,
+     "b": 209.0655,
+     "delta": 1.2819,
+     "bar": 6.0,
+     "clears": false
+    },
+    "highlight_fraction": {
+     "a": 0.140978,
+     "b": 0.188378,
+     "delta": 0.0474,
+     "bar": 0.01,
+     "clears": true
+    },
+    "highlight_p99": {
+     "a": 224.3333,
+     "b": 223.3333,
+     "delta": 1.0,
+     "bar": 10.0,
+     "clears": false
+    },
+    "specular_spread": {
+     "a": 17.7997,
+     "b": 16.2501,
+     "delta": 1.5496,
+     "bar": 4.0,
+     "clears": false
+    }
+   },
+   "axes_clearing_the_bar": [
+    "highlight_fraction"
+   ],
+   "verdict": "PASS",
+   "why": "two renders are distinguishable when they differ by at least the predeclared bar on at least one measured axis; differing JSON is not evidence",
+   "required_by_rig": "MARBLING_STRUCTURE_RIG"
+  }
+ ],
+ "pairs_not_exercised": [
+  {
+   "pair": [
+    "POWDER_SATIN",
+    "CREAM"
+   ],
+   "rig": "DIFFUSE_MICROTEXTURE_RIG",
+   "status": "NOT_EXERCISED_BY_THESE_PRODUCTS",
+   "why": "at least one family appears in neither product"
+  },
+  {
+   "pair": [
+    "SHIMMER",
+    "GLITTER"
+   ],
+   "rig": "GLITTER_PARTICLE_RIG",
+   "status": "NOT_EXERCISED_BY_THESE_PRODUCTS",
+   "why": "at least one family appears in neither product"
+  }
+ ],
+ "verdicts": {
+  "POWDER_MATTE_vs_POWDER_SATIN": "PASS",
+  "PRESSED_POWDER_vs_POWDER_MATTE": "PASS",
+  "SHIMMER_vs_POWDER_METALLIC": "PASS",
+  "BAKED_vs_PRESSED_POWDER": "PASS",
+  "MARBLED_vs_POWDER_MATTE": "PASS"
+ }
+}

@@ -1,0 +1,60 @@
+{
+ "record_type": "palt_m4c5_decision_surface/1.0",
+ "date": "2026-08-12",
+ "A434_mark": {
+  "task": 9,
+  "version": 1,
+  "field": "shade_names",
+  "mark": "CONFIRMED_WITHOUT_REVIEW_SURFACE",
+  "withdrawn": false,
+  "reason": "the value may well be right; deleting a correct decision to tidy a defect is the cure carrying the disease",
+  "blocks": "M7 consumption until A436 is discharged by version 2",
+  "version_1_untouched": "the DB row was NOT edited \u2014 it is the honest record of what was confirmed blind and must survive. The mark lives here."
+ },
+ "A436": {
+  "UNSURFACED": [
+   "shade_names"
+  ],
+  "UNDECIDED": [
+   "selected_source_image"
+  ],
+  "owner_prediction_UNSURFACED": "HELD",
+  "undecided_expectation": "none stated (A299)",
+  "undecided_reading": "selected_source_image is the read-only SOURCE row, actionable=False \u2014 shown but not decidable, which is not a 3t violation"
+ },
+ "A437": {
+  "panel_rows_before": 17,
+  "panel_rows_after": 18,
+  "actionable_before": 16,
+  "actionable_after": 17,
+  "shade_names_row": {
+   "understood": "SHADE_LABEL_STRIP_SHEET_PRESENT",
+   "confidence": 0.85,
+   "level": "HARD_VISIBLE_CONSTRAINT",
+   "state": "PROVISIONAL_VISIBLE_CONSTRAINT",
+   "actionable": true
+  },
+  "root_cause": "the intent carried shade_names in full the whole time; only REQUIRED_PANEL_ROWS omitted it",
+  "version_2": "NOT POSTED \u2014 held for the owner to rule the shade_names action"
+ },
+ "A438": {
+  "EXHIBITED": {
+   "condition": "shade_names row removed from the panel",
+   "UNSURFACED": [
+    "shade_names"
+   ]
+  },
+  "CAUGHT": {
+   "condition": "repaired panel",
+   "UNSURFACED": []
+  },
+  "mutation_retained": "apps/pipeline/tests/test_characterization_protocol.py::DecisionSurfaceStandingControl::test_the_check_fires_when_a_row_is_removed",
+  "standing_control": "DecisionSurfaceStandingControl::test_no_decision_lacks_a_review_surface",
+  "control_takes": "a record and a panel, never a task id (A440)"
+ },
+ "A439": {
+  "verdict": "RETIRED_AS_AUTHOR_ERROR",
+  "mechanism": "ic.record RAISES AttributeError correctly. My line was rec = ic.record if hasattr(ic,\"record\") else None; hasattr returned False so ic.record was NEVER EVALUATED, rec became None, and my own downstream guard turned None into an empty action list. The zero was mine, not the system's.",
+  "class_eighteen": "NOT MINTED"
+ }
+}

@@ -1,0 +1,30 @@
+{
+  "record_type": "a23_pixel_identity_proof/1.0",
+  "proof": {
+    "POWDER_MATTE": true,
+    "POWDER_SATIN": true,
+    "SHIMMER": true,
+    "POWDER_METALLIC": true,
+    "GLITTER": true,
+    "BAKED": true,
+    "MARBLED": false,
+    "PRESSED_POWDER": true,
+    "CREAM": true
+  },
+  "all_identical": "A23-scope TRUE (8/8 non-C6 families)",
+  "MARBLED_attribution": {
+    "differs": true,
+    "attributed_to": "the VALUE_MOVING chromatic derivation (ab1304b, census L305) \u2014 NOT A23: bitfix_pre predates C6 and MARBLED is the only family C6 touched",
+    "evidence": {
+      "mean_abs_delta_RGB": [
+        0.0002703,
+        1.3e-06,
+        0.0003134
+      ],
+      "per_channel_asymmetry_R_over_B": 0.863,
+      "max_delta": 0.055784,
+      "reading": "strongly per-channel ASYMMETRIC \u2014 the signature of per-channel coefficients; a luminance-only or noise-path change would move the channels proportionally"
+    },
+    "a23_verdict": "8 of 8 C6-untouched families PIXEL-IDENTICAL; MARBLED excluded with named attribution \u2014 A23 changed nothing, proven under the 1n instrument (exact pixel equality)"
+  }
+}

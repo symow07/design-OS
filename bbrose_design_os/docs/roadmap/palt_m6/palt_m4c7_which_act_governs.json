@@ -1,0 +1,84 @@
+{
+ "record_type": "palt_m4c7_which_act_governs/1.0",
+ "date": "2026-08-12",
+ "A455": {
+  "determined": "EMPIRICALLY, by running both orders \u2014 not read off the function",
+  "rule_named": "LAST_WRITE_PER_ATTRIBUTE_WINS_EXCEPT_DELETE_WHICH_DOMINATES",
+  "not_supersession": "the rule is NOT 'panel supersedes baseline'; that framing was wrong in my own escalation",
+  "evidence": [
+   "CORRECT 7 then CORRECT 8 -> 8; CORRECT 8 then CORRECT 7 -> 7 (last value wins)",
+   "CORRECT then CONFIRM -> HUMAN_CONFIRMED_DESIGN_INTENT; CONFIRM then CORRECT -> OWNER_CORRECTED (same two acts, different outcome, decided by loop order alone)",
+   "CORRECT then RECLASSIFY -> value 12 AND level HARD_VISIBLE_CONSTRAINT both survive (different attributes COMPOSE, they do not supersede)",
+   "DELETE then CONFIRM and CONFIRM then DELETE both -> OWNER_REMOVED (DELETE is position-independent via any())"
+  ],
+  "behaviour_unchanged": "A459 \u2014 named, not altered",
+  "test": "ResolutionOrderStandingControl, 5 assertions"
+ },
+ "A456_DOUBLED_on_version_2": {
+  "columns": [
+   "CORRECT",
+   "RECLASSIFY"
+  ],
+  "pan_count": [
+   "CORRECT",
+   "RECLASSIFY"
+  ],
+  "rows": [
+   "CORRECT",
+   "RECLASSIFY"
+  ],
+  "shade_names": [
+   "CONFIRM",
+   "CONFIRM"
+  ]
+ },
+ "A457": {
+  "class_ten": {
+   "mutation": "for a in acts -> for a in reversed(acts), inside apply_confirmations only",
+   "pre_existing_tests_under_mutation": "38 passed, 0 failed \u2014 the claim HOLDS, no pre-existing test catches it",
+   "new_control_under_mutation": "FAILED at test_last_write_wins_on_the_same_attribute \u2014 the assertion catches it",
+   "CONFIRMED_INTENT_DID_NOT_CHANGE": "identity 59d20e35f04554fd under mutation AND unmutated. The owner's A457 expectation that the confirmed intent would change is NOT met for the ES3083 record, and the reason is substantive: every doubled field in that record is either CORRECT+RECLASSIFY (different attributes, order-independent) or CONFIRM+CONFIRM (idempotent). The ordering dependence is REAL and currently LATENT \u2014 it is demonstrated on constructed records and dormant on the live one.",
+   "retained": "apps/pipeline/tests/test_characterization_protocol.py::ResolutionOrderStandingControl"
+  },
+  "class_nineteen": {
+   "mutation": "a record with margins tripled",
+   "set_difference": "UNSURFACED = [] \u2014 reads clean",
+   "DOUBLED": "{'margins': ['CONFIRM','CONFIRM','CONFIRM']} \u2014 names it",
+   "retained": "apps/pipeline/tests/test_characterization_protocol.py::MultiplicityStandingControl"
+  }
+ },
+ "A458_version_3": {
+  "action_count": 21,
+  "predicted": 21,
+  "HELD": true,
+  "DOUBLED": {
+   "columns": [
+    "CORRECT",
+    "RECLASSIFY"
+   ],
+   "pan_count": [
+    "CORRECT",
+    "RECLASSIFY"
+   ],
+   "rows": [
+    "CORRECT",
+    "RECLASSIFY"
+   ]
+  },
+  "predicted_DOUBLED": "pan_count, rows, columns only; shade_names drops out",
+  "HELD_2": true,
+  "flags": "all four unchanged",
+  "HELD_3": true,
+  "v1": {
+   "confirmation_identity": "e2e81bcd60d7f35f",
+   "actions": 20,
+   "survived": true
+  },
+  "v2": {
+   "confirmation_identity": "ad8dc32c8987f953",
+   "actions": 21,
+   "survived": true
+  },
+  "regulatory_caveat_stored_verbatim": true
+ }
+}

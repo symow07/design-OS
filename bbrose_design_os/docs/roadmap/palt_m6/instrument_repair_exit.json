@@ -1,0 +1,88 @@
+{
+  "record_type": "instrument_repair_exit/1.0",
+  "git_sha": "a23c49000141f5b939f4a85d63423e5290cf4652",
+  "repair_identity": "1e198aed8d86ed9c",
+  "protocol_identity_unchanged": "087c7f64317910fb",
+  "exit_conditions": {
+    "every R1..R6 assertion exists and its negative control is recorded as having FAILED CORRECTLY \u2014 an assertion with no demonstrated failure mode does not count": {
+      "satisfied": true,
+      "evidence": [
+        "docs/roadmap/palt_m6/instrument_repair_phase0.json",
+        "apps/pipeline/tests/test_instrument_repair.py"
+      ],
+      "negative_controls": "R1: committed PNG refused (uint8 branch on synthetic arrays, genuine-16-bit file refused as non-float); R2: identical frames report STIMULUS_NOT_REALIZED rms 0.0; R3: withdrawn formula recovers 0.28mm for a 0.56mm field; R6: black region raises; plus the orientation guard's unflipped-frame refusal (33002e6). Each failure demonstrated, not asserted."
+    },
+    "the axis sensitivity study is re-run on the repaired instrument with the families UNCHANGED, and its record carries the frozen family identities to prove they did not move": {
+      "satisfied": true,
+      "evidence": [
+        "docs/roadmap/palt_m6/axis_sensitivity_matrix.json"
+      ],
+      "frozen_family_identities": {
+        "POWDER_MATTE": "44b930cbf279da23",
+        "POWDER_SATIN": "5740bef6b166eb53",
+        "PRESSED_POWDER": "7219563e4e184489",
+        "CREAM": "4f641dfba9fa4ae9"
+      },
+      "note": "reproduced exactly; every fixture pair carries an R2 realization record"
+    },
+    "the three diffuse pairs are re-ruled on the repaired instrument; whatever verdict results is recorded, PASS or FAIL": {
+      "satisfied": true,
+      "evidence": [
+        "docs/roadmap/palt_m6/diffuse_pair_rulings_phase1.json",
+        "docs/roadmap/palt_m6/diffuse_pair_adjudication_phase2.json",
+        "docs/roadmap/palt_m6/diffuse_pairs_standing.json"
+      ],
+      "note": "all three PASS post-eligibility and post-independence; the standing record names exactly which two axes each rests on"
+    },
+    "MATTE_vs_SATIN's prior PASS is explicitly re-adjudicated and the prior record is superseded in place rather than deleted": {
+      "satisfied": true,
+      "evidence": [
+        "docs/roadmap/palt_m6/diffuse_pair_rulings.json",
+        "docs/roadmap/palt_m6/instrument_repair_phase2.json"
+      ],
+      "note": "re-adjudicated with EDGE ineligible (floor 0.27991): holds on GRANULARITY 0.6828 + SHEEN 0.4225; the declared negative control demonstrated on the 67151ef axis set flips it to FAIL"
+    },
+    "the GLITTER_PARTICLE_RIG census is re-measured from the EXR and its 87-event PASS is either confirmed or withdrawn": {
+      "satisfied": true,
+      "evidence": [
+        "docs/roadmap/palt_m6/instrument_repair_phase4.json",
+        "docs/roadmap/palt_m6/glitter_particle_rig_report.json"
+      ],
+      "note": "CONFIRMED: 113 scene-linear events (87 display-encoded), controls quiet, map visually verified"
+    },
+    "texture_axes_validation.json is regenerated; the stale FAIL is superseded with its reason recorded": {
+      "satisfied": true,
+      "evidence": [
+        "docs/roadmap/palt_m6/texture_axes_validation.json",
+        "docs/roadmap/palt_m6/texture_axes_validation_phase1.json"
+      ],
+      "note": "superseded in place with the reason recorded; GRANULARITY re-admitted at 0.881, GRAZING_BAND honestly rejected at 0.1245"
+    },
+    "the full canonical pytest suite passes, and the exit record is written externally with the git SHA pinned inside it \u2014 the suite does not verify itself": {
+      "satisfied": true,
+      "evidence": [
+        "this record"
+      ],
+      "suite_result": "5913 passed, 0 failed, 1 deselected (pacdora), 401 subtests, 530.89s, exit 0",
+      "suite_command": "venv/bin/python -m pytest -q -m 'not pacdora'",
+      "note": "run at the SHA pinned below; the suite does not verify itself \u2014 this record does"
+    },
+    "owner_approved remains false; this repair may not approve itself": {
+      "satisfied": true,
+      "evidence": [
+        "every phase record"
+      ],
+      "note": "owner_approved false in all of phase0-phase4, the standing record and this record"
+    }
+  },
+  "gate_a_corrections": {
+    "A1": "satin cause narrowed to GRANULARITY_INDEX admission; lobe rig never contaminated (records amended in place)",
+    "A2": "N=4 Spearman degeneracy made precise; five 0.80 pairs listed; SATIN_VS_CREAM at rho=0.4 not exposed; enlarged-census re-adjudication written as a SCHEDULED_OBLIGATION with trigger",
+    "A3": "repair_status() now derives REALIZED from this record and raises when it is absent, incomplete or written against a different declaration",
+    "A4": "diffuse_pairs_standing.json states exactly which two axes each pair stands on"
+  },
+  "families_frozen_throughout": true,
+  "bars_moved": [],
+  "owner_approved": false,
+  "manufacturing_authority": "NOT_ESTABLISHED"
+}

@@ -1,0 +1,461 @@
+{
+  "record_type": "establishment_closure_phase0/1.0",
+  "entry_identity": "3586022acc972aff",
+  "law_1i_verbatim": "ADEQUACY PRECONDITION. Every comparison of a measured statistic against a threshold in this protocol has a precondition: the reading must be a measurement of which side of the threshold it falls on. It is such a measurement only if the absolute margin between reading and threshold EXCEEDS the replicate spread of that same statistic under the same instrument, measured across the instrument's declared seed ensemble. Margin not exceeding spread yields ADEQUACY_PRECONDITION_UNMET \u2014 not a verdict in either direction, never readable as one; no conditional keyed on the comparison applies, because its precondition failed. The response is to increase resolving power and re-measure \u2014 never to move the threshold, never to pick the side that suits, never to commit and challenge afterward. Where no replicate spread has ever been measured for a statistic the comparison is ADEQUACY_UNASSESSED until one is. A spread of a DIFFERENT statistic is not a spread; a deterministic computation with no seed ensemble is spread-inapplicable and adequate at any positive margin. Rationale, declared before the retroactive sweep: a committed verdict acquires inertia and everything downstream reasons from it \u2014 the cost of staying an unreproducible reading is a delay; the cost of committing one is a load-bearing number nobody can dislodge. Retroactive application is mandatory and symmetric: a PASS found unmet is re-marked exactly as a FAIL would be.",
+  "rows_with_affirmative_side": [
+    {
+      "committed_verdict": "MATTE_VS_SATIN PASS leg",
+      "statistic": "GRANULARITY cross-family effect",
+      "reading": 0.6828,
+      "threshold": 0.25,
+      "margin": 0.4328,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "cross-family effect never replicated across seeds; the MATTE seed-only floor (0.1169) is a spread of a DIFFERENT statistic",
+      "classification_1i": "ADEQUACY_UNASSESSED",
+      "affirmative_side": "AFFIRMATIVE (asserts a bar was cleared \u2014 suspends if unestablished)"
+    },
+    {
+      "committed_verdict": "MATTE_VS_SATIN PASS leg",
+      "statistic": "SHEEN cross-family effect",
+      "reading": 0.4225,
+      "threshold": 0.33138,
+      "margin": 0.09112,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "thinnest lobe clearing in the pair",
+      "classification_1i": "ADEQUACY_UNASSESSED",
+      "affirmative_side": "AFFIRMATIVE (asserts a bar was cleared \u2014 suspends if unestablished)"
+    },
+    {
+      "committed_verdict": "PRESSED_VS_MATTE PASS leg",
+      "statistic": "GRANULARITY cross-family effect",
+      "reading": 0.8942,
+      "threshold": 0.25,
+      "margin": 0.6442,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "",
+      "classification_1i": "ADEQUACY_UNASSESSED",
+      "affirmative_side": "AFFIRMATIVE (asserts a bar was cleared \u2014 suspends if unestablished)"
+    },
+    {
+      "committed_verdict": "PRESSED_VS_MATTE PASS leg",
+      "statistic": "SHEEN cross-family effect",
+      "reading": 0.4471,
+      "threshold": 0.33138,
+      "margin": 0.11572,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "",
+      "classification_1i": "ADEQUACY_UNASSESSED",
+      "affirmative_side": "AFFIRMATIVE (asserts a bar was cleared \u2014 suspends if unestablished)"
+    },
+    {
+      "committed_verdict": "SATIN_VS_CREAM PASS leg",
+      "statistic": "GRANULARITY cross-family effect",
+      "reading": 0.4423,
+      "threshold": 0.25,
+      "margin": 0.1923,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "",
+      "classification_1i": "ADEQUACY_UNASSESSED",
+      "affirmative_side": "AFFIRMATIVE (asserts a bar was cleared \u2014 suspends if unestablished)"
+    },
+    {
+      "committed_verdict": "SATIN_VS_CREAM PASS leg",
+      "statistic": "FWHM cross-family effect",
+      "reading": 0.2843,
+      "threshold": 0.25,
+      "margin": 0.0343,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "margin 0.0343 \u2014 the thinnest committed clearing margin in the diffuse set",
+      "classification_1i": "ADEQUACY_UNASSESSED",
+      "affirmative_side": "AFFIRMATIVE (asserts a bar was cleared \u2014 suspends if unestablished)"
+    },
+    {
+      "committed_verdict": "SHIMMER_VS_METALLIC leg",
+      "statistic": "PATTERN_CONTRAST effect",
+      "reading": 0.30398,
+      "threshold": 0.25,
+      "margin": 0.05398,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "margin 0.054",
+      "classification_1i": "ADEQUACY_UNASSESSED",
+      "affirmative_side": "AFFIRMATIVE (asserts a bar was cleared \u2014 suspends if unestablished)"
+    },
+    {
+      "committed_verdict": "SHIMMER_VS_METALLIC leg",
+      "statistic": "COHERENCE effect",
+      "reading": 0.48488,
+      "threshold": 0.25,
+      "margin": 0.23488,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "",
+      "classification_1i": "ADEQUACY_UNASSESSED",
+      "affirmative_side": "AFFIRMATIVE (asserts a bar was cleared \u2014 suspends if unestablished)"
+    },
+    {
+      "committed_verdict": "SHIMMER_VS_METALLIC leg",
+      "statistic": "ENV_CORRELATION effect",
+      "reading": 0.54136,
+      "threshold": 0.25,
+      "margin": 0.29136,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "",
+      "classification_1i": "ADEQUACY_UNASSESSED",
+      "affirmative_side": "AFFIRMATIVE (asserts a bar was cleared \u2014 suspends if unestablished)"
+    },
+    {
+      "committed_verdict": "METALLIC_VS_GLITTER leg",
+      "statistic": "PATTERN_CONTRAST effect",
+      "reading": 0.88117,
+      "threshold": 0.25,
+      "margin": 0.63117,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "",
+      "classification_1i": "ADEQUACY_UNASSESSED",
+      "affirmative_side": "AFFIRMATIVE (asserts a bar was cleared \u2014 suspends if unestablished)"
+    },
+    {
+      "committed_verdict": "METALLIC_VS_GLITTER leg",
+      "statistic": "ENV_CORRELATION effect",
+      "reading": 0.69674,
+      "threshold": 0.25,
+      "margin": 0.44674,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "",
+      "classification_1i": "ADEQUACY_UNASSESSED",
+      "affirmative_side": "AFFIRMATIVE (asserts a bar was cleared \u2014 suspends if unestablished)"
+    },
+    {
+      "committed_verdict": "PRESSED_VS_BAKED PASS leg",
+      "statistic": "RAKING_SPAN effect",
+      "reading": 0.91093,
+      "threshold": 0.25,
+      "margin": 0.66093,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "relief floors are same-subject seed-only proxies, not spreads of the cross-family effect",
+      "classification_1i": "ADEQUACY_UNASSESSED",
+      "affirmative_side": "AFFIRMATIVE (asserts a bar was cleared \u2014 suspends if unestablished)"
+    },
+    {
+      "committed_verdict": "PRESSED_VS_BAKED PASS leg",
+      "statistic": "RAKING_SHADOW effect",
+      "reading": 0.50406,
+      "threshold": 0.25,
+      "margin": 0.25406,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "",
+      "classification_1i": "ADEQUACY_UNASSESSED",
+      "affirmative_side": "AFFIRMATIVE (asserts a bar was cleared \u2014 suspends if unestablished)"
+    },
+    {
+      "committed_verdict": "EDGE INELIGIBLE (exclusion)",
+      "statistic": "EDGE seed-only floor",
+      "reading": 0.27991,
+      "threshold": 0.25,
+      "margin": 0.02991,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "the floor statistic itself was measured once on one 6-seed ensemble; its own replicate spread (across ensembles) was never measured",
+      "classification_1i": "ADEQUACY_UNASSESSED",
+      "affirmative_side": "EXCLUSION (keeps axis out \u2014 stands)"
+    },
+    {
+      "committed_verdict": "MARBLING axis INELIGIBLE",
+      "statistic": "chroma-axis floor",
+      "reading": 0.418,
+      "threshold": 0.25,
+      "margin": 0.168,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "",
+      "classification_1i": "ADEQUACY_UNASSESSED",
+      "affirmative_side": "EXCLUSION (keeps axis out \u2014 stands)"
+    },
+    {
+      "committed_verdict": "MARBLING axis INELIGIBLE",
+      "statistic": "coherence-axis floor",
+      "reading": 0.697,
+      "threshold": 0.25,
+      "margin": 0.447,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "",
+      "classification_1i": "ADEQUACY_UNASSESSED",
+      "affirmative_side": "EXCLUSION (keeps axis out \u2014 stands)"
+    },
+    {
+      "committed_verdict": "FLAKE EDGE_SHARPNESS INELIGIBLE",
+      "statistic": "edge-sharpness floor",
+      "reading": 0.54122,
+      "threshold": 0.25,
+      "margin": 0.29122,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "",
+      "classification_1i": "ADEQUACY_UNASSESSED",
+      "affirmative_side": "EXCLUSION (keeps axis out \u2014 stands)"
+    },
+    {
+      "committed_verdict": "R5 census (all three pairs)",
+      "statistic": "GRAN|SHEEN census |rho| N=8",
+      "reading": 0.3571,
+      "threshold": 0.8,
+      "margin": 0.4429,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "single census; no replicate",
+      "classification_1i": "ADEQUACY_UNASSESSED",
+      "affirmative_side": "AFFIRMATIVE (asserts a bar was cleared \u2014 suspends if unestablished)"
+    },
+    {
+      "committed_verdict": "R5 census (SATIN_VS_CREAM)",
+      "statistic": "GRAN|FWHM census |rho| N=8",
+      "reading": 0.1905,
+      "threshold": 0.8,
+      "margin": 0.6095,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "",
+      "classification_1i": "ADEQUACY_UNASSESSED",
+      "affirmative_side": "AFFIRMATIVE (asserts a bar was cleared \u2014 suspends if unestablished)"
+    },
+    {
+      "committed_verdict": "counted-instrument micronormal 1a",
+      "statistic": "min qualifying |rho|",
+      "reading": 0.7978,
+      "threshold": 0.8,
+      "margin": 0.0022,
+      "replicate_spread": 0.167,
+      "note": "SPREAD MEASURED (seeds 400/401/402: 0.7978/0.9648/0.8945) \u2014 margin 0.0022 vs spread 0.167: THE FOUNDING UNMET CASE",
+      "classification_1i": "ADEQUACY_PRECONDITION_UNMET",
+      "affirmative_side": "DEGENERACY (refusal to extract \u2014 stands)"
+    },
+    {
+      "committed_verdict": "compression_texture_amplitude 1a (A2)",
+      "statistic": "min qualifying |rho|",
+      "reading": 0.9727,
+      "threshold": 0.8,
+      "margin": 0.1727,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "degenerate-side margin 0.1727; no replicate spread",
+      "classification_1i": "ADEQUACY_UNASSESSED",
+      "affirmative_side": "DEGENERACY (refusal to extract \u2014 stands)"
+    },
+    {
+      "committed_verdict": "sheen sweep 1a VALID",
+      "statistic": "min qualifying |rho|",
+      "reading": 0.3333,
+      "threshold": 0.8,
+      "margin": 0.4667,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "margin 0.467",
+      "classification_1i": "ADEQUACY_UNASSESSED",
+      "affirmative_side": "AFFIRMATIVE (validity asserts divergence exists)"
+    },
+    {
+      "committed_verdict": "surface_smoothing sweep 1a VALID",
+      "statistic": "min qualifying |rho|",
+      "reading": 0.049,
+      "threshold": 0.8,
+      "margin": 0.751,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "margin 0.751",
+      "classification_1i": "ADEQUACY_UNASSESSED",
+      "affirmative_side": "AFFIRMATIVE (validity asserts divergence exists)"
+    },
+    {
+      "committed_verdict": "surface_roughness sweep 1a VALID",
+      "statistic": "min qualifying |rho|",
+      "reading": 0.6909,
+      "threshold": 0.8,
+      "margin": 0.1091,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "margin 0.109",
+      "classification_1i": "ADEQUACY_UNASSESSED",
+      "affirmative_side": "AFFIRMATIVE (validity asserts divergence exists)"
+    },
+    {
+      "committed_verdict": "counted tracking GRAN|SHEEN",
+      "statistic": "sweep |rho|",
+      "reading": 0.9956,
+      "threshold": 0.8,
+      "margin": 0.1956,
+      "replicate_spread": 0.0132,
+      "note": "SPREAD MEASURED across 3 seeds (0.9868..1.0) \u2014 margin 0.1956 >> spread: ADEQUATE; the Phase 5 negative-control case",
+      "classification_1i": "ADEQUATE",
+      "affirmative_side": "AFFIRMATIVE (asserts a bar was cleared \u2014 suspends if unestablished)"
+    },
+    {
+      "committed_verdict": "counted tracking GRAN|FWHM",
+      "statistic": "sweep |rho|",
+      "reading": 0.9824,
+      "threshold": 0.8,
+      "margin": 0.1824,
+      "replicate_spread": 0.0132,
+      "note": "margin 0.1024 > spread",
+      "classification_1i": "ADEQUATE",
+      "affirmative_side": "AFFIRMATIVE (asserts a bar was cleared \u2014 suspends if unestablished)"
+    },
+    {
+      "committed_verdict": "A3 grain-scale GRANULARITY qualification",
+      "statistic": "span",
+      "reading": 0.2338,
+      "threshold": 0.2338,
+      "margin": 0.0,
+      "replicate_spread": "measured per A3",
+      "note": "resolved QUALIFIES with margin > measured seed spread of the same statistic \u2014 1i-adequate by construction (exact numbers in phase34_analysis.json)",
+      "classification_1i": "ADEQUATE",
+      "affirmative_side": "AFFIRMATIVE (asserts a bar was cleared \u2014 suspends if unestablished)"
+    },
+    {
+      "committed_verdict": "BAKED clearance",
+      "statistic": "CLEARS_AT_WORST_CASE mm",
+      "reading": 5.35,
+      "threshold": 0.0,
+      "margin": 5.35,
+      "replicate_spread": "SPREAD_INAPPLICABLE_DETERMINISTIC",
+      "note": "geometry computation, bit-identical on rebuild; no seed ensemble exists",
+      "classification_1i": "ADEQUATE",
+      "affirmative_side": "AFFIRMATIVE (asserts a bar was cleared \u2014 suspends if unestablished)"
+    },
+    {
+      "committed_verdict": "GLITTER_PARTICLE_RIG PASS",
+      "statistic": "event count",
+      "reading": 113,
+      "threshold": 25,
+      "margin": 88,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "margin 88; event count replicate spread across seeds never measured on the repaired EXR chain",
+      "classification_1i": "ADEQUACY_UNASSESSED",
+      "affirmative_side": "AFFIRMATIVE (asserts a bar was cleared \u2014 suspends if unestablished)"
+    },
+    {
+      "committed_verdict": "glitter controls",
+      "statistic": "control event count (MATTE, SHIMMER)",
+      "reading": 0,
+      "threshold": 5,
+      "margin": 5,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "margin 5 in the safe direction; same absence",
+      "classification_1i": "ADEQUACY_UNASSESSED",
+      "affirmative_side": "NEGATIVE (control asserts absence \u2014 stands)"
+    },
+    {
+      "committed_verdict": "SOLID_VS_MARBLED FAIL",
+      "statistic": "chroma span",
+      "reading": 0.005,
+      "threshold": 0.25,
+      "margin": 0.245,
+      "replicate_spread": "NO_REPLICATE_SPREAD_EVER_MEASURED",
+      "note": "FAIL-direction margin 0.245; additionally grounded in ineligible axes and the two-owner diagnosis",
+      "classification_1i": "ADEQUACY_UNASSESSED",
+      "affirmative_side": "NEGATIVE (refused to certify \u2014 stands not-certified)"
+    }
+  ],
+  "statuses_at_entry": {
+    "diffuse": "three PASS_WITH_UNTESTED_DRIVER, clearing legs unassessed",
+    "flake": "two PASS_PENDING_INDEPENDENCE (A4), clearing legs unassessed",
+    "raking": "PRESSED_VS_BAKED PASS, clearing legs unassessed",
+    "glitter": "GLITTER_PARTICLE_RIG PASS, event comparisons unassessed"
+  },
+  "statistic_precision_note": "every clearing comparison uses the SAME functional: relative pairwise effect |a-b|/mean(|a|,|b|) on one axis under one instrument. max_seed_only_effect is that SAME functional computed between same-family seed variants \u2014 the null distribution of the clearing statistic. Census rho, 1a min-rho, floor statistics and event counts are DIFFERENT functionals and cannot inherit R4 spreads.",
+  "axis_noise_floors_in_full": {
+    "record_type": "axis_eligibility/1.0:noise_floors",
+    "ensemble": {
+      "family": "POWDER_MATTE",
+      "seeds": [
+        40,
+        81,
+        82,
+        83,
+        84,
+        99
+      ]
+    },
+    "separation_margin": 2.0,
+    "pass_bar_unmoved": 0.25,
+    "floors": {
+      "HIGHLIGHT_FWHM": {
+        "instrument": "DIFFUSE_LOBE_RIG",
+        "pairings": 15,
+        "max_seed_only_effect": 0.09135,
+        "mean_seed_only_effect": 0.04049,
+        "floor": 0.09135,
+        "eligible": true,
+        "required_clearing_effect": 0.25
+      },
+      "HIGHLIGHT_PEAK": {
+        "instrument": "DIFFUSE_LOBE_RIG",
+        "pairings": 15,
+        "max_seed_only_effect": 0.00797,
+        "mean_seed_only_effect": 0.00351,
+        "floor": 0.00797,
+        "eligible": true,
+        "required_clearing_effect": 0.25
+      },
+      "SPECULAR_TO_DIFFUSE_RATIO": {
+        "instrument": "DIFFUSE_LOBE_RIG",
+        "pairings": 15,
+        "max_seed_only_effect": 0.00886,
+        "mean_seed_only_effect": 0.00389,
+        "floor": 0.00886,
+        "eligible": true,
+        "required_clearing_effect": 0.25
+      },
+      "GRAZING_RESPONSE": {
+        "instrument": "DIFFUSE_LOBE_RIG",
+        "pairings": 15,
+        "max_seed_only_effect": 0.14956,
+        "mean_seed_only_effect": 0.05433,
+        "floor": 0.14956,
+        "eligible": true,
+        "required_clearing_effect": 0.29912
+      },
+      "SHEEN_REGION_RESPONSE": {
+        "instrument": "DIFFUSE_LOBE_RIG",
+        "pairings": 15,
+        "max_seed_only_effect": 0.16569,
+        "mean_seed_only_effect": 0.08296,
+        "floor": 0.16569,
+        "eligible": true,
+        "required_clearing_effect": 0.33138
+      },
+      "EDGE_HIGHLIGHT_RESPONSE": {
+        "instrument": "DIFFUSE_LOBE_RIG",
+        "pairings": 15,
+        "max_seed_only_effect": 0.27991,
+        "mean_seed_only_effect": 0.11622,
+        "floor": 0.27991,
+        "eligible": false,
+        "required_clearing_effect": 0.55982
+      },
+      "GRANULARITY_INDEX": {
+        "instrument": "MIRROR_SOURCE_TEXTURE_RIG",
+        "pairings": 15,
+        "max_seed_only_effect": 0.1169,
+        "mean_seed_only_effect": 0.0431,
+        "floor": 0.1169,
+        "eligible": true,
+        "required_clearing_effect": 0.25
+      },
+      "GRAZING_BAND_CONTRAST": {
+        "instrument": "MIRROR_SOURCE_TEXTURE_RIG",
+        "pairings": 15,
+        "max_seed_only_effect": 0.00651,
+        "mean_seed_only_effect": 0.00301,
+        "floor": 0.00651,
+        "eligible": true,
+        "required_clearing_effect": 0.25
+      }
+    },
+    "ineligible_axes": [
+      "EDGE_HIGHLIGHT_RESPONSE"
+    ],
+    "ADEQUACY_1i_2026_08_08": {
+      "classification": "the EDGE INELIGIBILITY exclusion (0.27991 vs 0.25, margin 0.030) is ADEQUACY_UNASSESSED \u2014 the floor statistic's own replicate spread was never measured; an exclusion protecting verdicts is as much a threshold verdict as a clearing",
+      "law": "adequacy_1i at 3586022acc972aff (retroactive, symmetric)",
+      "detail": "measurement_adequacy/phase2_retroactive.json"
+    }
+  },
+  "on_disk_seed_data_per_family": {
+    "texture_rig": "all four families have seed-400 AND seed-401 base measurements on disk (swatch_tx_{family}_base[_s401].json) \u2014 per-family seed-only effects recomputable WITHOUT renders",
+    "lobe_rig": "POWDER_MATTE only: 6-seed eligibility ensemble + seeds 400/401/402 sweep bases; SATIN/PRESSED/CREAM have no multi-seed lobe data \u2014 renders required (cheapest class)",
+    "raking_rig": "BAKED 6-seed relief ensemble (relief floors)",
+    "flake_rig": "6-seed floor ensemble (flake_floor_131..135)",
+    "glitter_rig": "single-seed census only \u2014 no event-count replicate"
+  },
+  "owner_approved": false
+}

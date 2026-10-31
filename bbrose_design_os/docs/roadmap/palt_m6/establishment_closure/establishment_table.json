@@ -1,0 +1,780 @@
+{
+ "record_type": "establishment_table/1.0",
+ "protocol_identity": "3eb1a9b0fe36bfe4",
+ "strict_ruling_declared": "only spreads measured across an instrument's DECLARED seed ensemble (or better) establish; partial 2-seed estimates are recorded as progress, never as establishment \u2014 this node exists because under-measured statistics were the defect, and it does not finish by committing one",
+ "table": [
+  {
+   "verdict": "M_V_S GRAN clearing",
+   "affirmative_side": "affirmative",
+   "statistic": "cross-family effect",
+   "reading": 0.6828,
+   "threshold": 0.25,
+   "margin": 0.4328,
+   "spread": 0.10485,
+   "spread_source": "DIRECT: 6-member declared-ensemble pairs (raw_mvs_sheen.json), clearing_dispersion recipe 23ef45d0d3521739",
+   "status": "ESTABLISHED",
+   "note": "established 2026-08-15 by direct declared-ensemble measurement: margin 0.4328 > clearing_dispersion 0.10485 [cleared_against=aa2554926b6ed3ff]",
+   "superseded_2026_08_15": {
+    "spread": 0.1169,
+    "spread_source": "TRANSFER: MATTE 6-seed declared ensemble",
+    "status": "ESTABLISHED",
+    "note": ""
+   }
+  },
+  {
+   "verdict": "M_V_S SHEEN clearing",
+   "affirmative_side": "affirmative",
+   "statistic": "cross-family effect",
+   "reading": 0.4225,
+   "threshold": 0.33138,
+   "margin": 0.0911,
+   "spread": 0.15693,
+   "spread_source": "DIRECT: 6-member declared-ensemble pairs (raw_lobe.json), clearing_dispersion recipe 23ef45d0d3521739",
+   "status": "ADEQUACY_PRECONDITION_UNMET_DIRECT",
+   "note": "honest FAIL 2026-08-15: margin 0.0911 <= clearing_dispersion 0.15693 measured directly on the declared ensembles [cleared_against=532cd8de650ff5cc]",
+   "proxy_named": "max_seed_only_effect \u2014 the clearing functional at the NULL point (instrument response to nothing), from the member family declared ensemble",
+   "direct_quantity_named": "the cross-family clearing itself recomputed at each seed of the declared ensemble, and its dispersion \u2014 never yet measured for this row",
+   "superseded_2026_08_15": {
+    "spread": 0.16569,
+    "spread_source": "TRANSFER: MATTE 6-seed",
+    "status": "UNMET_BY_CONSERVATIVE_PROXY",
+    "note": "remedy: resolving power on the clearing measurement"
+   }
+  },
+  {
+   "verdict": "P_V_M GRAN clearing",
+   "affirmative_side": "affirmative",
+   "statistic": "cross-family effect",
+   "reading": 0.8942,
+   "threshold": 0.25,
+   "margin": 0.6442,
+   "spread": 0.12916,
+   "spread_source": "DIRECT: 6-member declared-ensemble pairs (raw_pvm_sheen.json), clearing_dispersion recipe 23ef45d0d3521739",
+   "status": "ESTABLISHED",
+   "note": "established 2026-08-15 by direct declared-ensemble measurement: margin 0.6442 > clearing_dispersion 0.12916 [cleared_against=ca3f5fedd8a4cf6f]",
+   "superseded_2026_08_15": {
+    "spread": 0.1169,
+    "spread_source": "TRANSFER: MATTE 6-seed",
+    "status": "ESTABLISHED",
+    "note": ""
+   }
+  },
+  {
+   "verdict": "P_V_M SHEEN clearing",
+   "affirmative_side": "affirmative",
+   "statistic": "cross-family effect",
+   "reading": 0.4471,
+   "threshold": 0.33138,
+   "margin": 0.1157,
+   "spread": 0.14883,
+   "spread_source": "DIRECT: 6-member declared-ensemble pairs (raw_lobe.json), clearing_dispersion recipe 23ef45d0d3521739",
+   "status": "ADEQUACY_PRECONDITION_UNMET_DIRECT",
+   "note": "honest FAIL 2026-08-15: margin 0.1157 <= clearing_dispersion 0.14883 measured directly on the declared ensembles [cleared_against=1c1c2013f19a9f61]",
+   "proxy_named": "max_seed_only_effect \u2014 the clearing functional at the NULL point (instrument response to nothing), from the member family declared ensemble",
+   "direct_quantity_named": "the cross-family clearing itself recomputed at each seed of the declared ensemble, and its dispersion \u2014 never yet measured for this row",
+   "superseded_2026_08_15": {
+    "spread": 0.16569,
+    "spread_source": "TRANSFER: MATTE 6-seed",
+    "status": "UNMET_BY_CONSERVATIVE_PROXY",
+    "note": ""
+   }
+  },
+  {
+   "verdict": "S_V_C GRAN clearing",
+   "affirmative_side": "affirmative",
+   "statistic": "cross-family effect",
+   "reading": 0.4423,
+   "threshold": 0.25,
+   "margin": 0.1923,
+   "spread": 0.02925,
+   "spread_source": "DIRECT: 6-member declared-ensemble pairs (raw_sc.json), clearing_dispersion recipe 23ef45d0d3521739",
+   "status": "ESTABLISHED",
+   "note": "established 2026-08-15 by direct declared-ensemble measurement: margin 0.1923 > clearing_dispersion 0.02925 [cleared_against=dd2bd5559b98bc8a]",
+   "superseded_2026_08_15": {
+    "spread": 0.08064,
+    "spread_source": "PARTIAL: satin/cream 2-seed direct (1 pairing) \u2014 NOT a declared-ensemble spread",
+    "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+    "note": "margin exceeds the partial estimate 2.4x; completion in M6-DECLARED-ENSEMBLE-SPREADS"
+   }
+  },
+  {
+   "verdict": "S_V_C FWHM clearing",
+   "affirmative_side": "affirmative",
+   "statistic": "cross-family effect",
+   "reading": 0.2843,
+   "threshold": 0.25,
+   "margin": 0.0343,
+   "spread": 0.05409,
+   "spread_source": "DIRECT: 6-member declared-ensemble pairs (raw_lobe.json), clearing_dispersion recipe 23ef45d0d3521739",
+   "status": "ADEQUACY_PRECONDITION_UNMET_DIRECT",
+   "note": "honest FAIL 2026-08-15: margin 0.0343 <= clearing_dispersion 0.05409 measured directly on the declared ensembles [cleared_against=8bc1c031a89b038e]",
+   "superseded_2026_08_15": {
+    "spread": 0.02431,
+    "spread_source": "PARTIAL: satin/cream 2-seed direct",
+    "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+    "note": "margin exceeds the partial estimate only 1.4x \u2014 the weakest open clearing in the protocol"
+   }
+  },
+  {
+   "verdict": "S_V_M PATTERN clearing",
+   "affirmative_side": "affirmative",
+   "statistic": "cross-family effect",
+   "reading": 0.30398,
+   "threshold": 0.25,
+   "margin": 0.054,
+   "spread": 0.14121,
+   "spread_source": "DIRECT: 6-member declared flake ensembles (raw_flake.json), axis kind relative, A289 max-pairwise-|delta| dispersion",
+   "status": "ADEQUACY_PRECONDITION_UNMET_DIRECT",
+   "note": "honest FAIL 2026-08-15: margin 0.054 <= dispersion 0.14121 [cleared_against=49bbdcd0e90cddaf]",
+   "proxy_named": "max_seed_only_effect \u2014 the clearing functional at the NULL point (instrument response to nothing), from the member family declared ensemble",
+   "direct_quantity_named": "the cross-family clearing itself recomputed at each seed of the declared ensemble, and its dispersion \u2014 never yet measured for this row",
+   "superseded_2026_08_15": {
+    "reading": 0.30398,
+    "margin": 0.054,
+    "spread": 0.06501,
+    "spread_source": "TRANSFER: SHIMMER 6-seed",
+    "status": "UNMET_BY_CONSERVATIVE_PROXY",
+    "note": ""
+   }
+  },
+  {
+   "verdict": "S_V_M COHERENCE clearing",
+   "affirmative_side": "affirmative",
+   "statistic": "cross-family effect",
+   "reading": 0.48488,
+   "threshold": 0.25,
+   "margin": 0.235,
+   "spread": 0.05421,
+   "spread_source": "DIRECT: 6-member declared flake ensembles (raw_flake.json), axis kind absolute, A289 max-pairwise-|delta| dispersion",
+   "status": "ESTABLISHED",
+   "note": "established 2026-08-15 by direct ensemble measurement: margin 0.235 > dispersion 0.05421 [cleared_against=3c85e8be3595155f]",
+   "superseded_2026_08_15": {
+    "reading": 0.48488,
+    "margin": 0.235,
+    "spread": 0.03198,
+    "spread_source": "TRANSFER: SHIMMER 6-seed",
+    "status": "ESTABLISHED",
+    "note": ""
+   }
+  },
+  {
+   "verdict": "S_V_M ENV clearing",
+   "affirmative_side": "affirmative",
+   "statistic": "cross-family effect",
+   "reading": 0.54136,
+   "threshold": 0.25,
+   "margin": 0.291,
+   "spread": 0.13481,
+   "spread_source": "DIRECT: 6-member declared flake ensembles (raw_flake.json), axis kind absolute, A289 max-pairwise-|delta| dispersion",
+   "status": "ESTABLISHED",
+   "note": "established 2026-08-15 by direct ensemble measurement: margin 0.291 > dispersion 0.13481 [cleared_against=47aa6405622cf31c]",
+   "superseded_2026_08_15": {
+    "reading": 0.54136,
+    "margin": 0.291,
+    "spread": 0.12492,
+    "spread_source": "TRANSFER: SHIMMER 6-seed",
+    "status": "ESTABLISHED",
+    "note": ""
+   }
+  },
+  {
+   "verdict": "MvG PATTERN clearing",
+   "affirmative_side": "affirmative",
+   "statistic": "cross-family effect",
+   "reading": 0.88117,
+   "threshold": 0.25,
+   "margin": 0.63117,
+   "spread": 0.18605,
+   "spread_source": "DIRECT: 6-member declared flake ensembles (raw_flake.json), axis kind relative, A289 max-pairwise-|delta| dispersion",
+   "status": "ESTABLISHED",
+   "note": "established 2026-08-15 by direct ensemble measurement \u2014 re-based on declared member 0, new terms, inheriting nothing: margin 0.63117 > dispersion 0.18605 [cleared_against=efe828d0d48c10cd]",
+   "superseded_2026_08_15": {
+    "reading": 0.88117,
+    "margin": 0.631,
+    "spread": 0.07089,
+    "spread_source": "PARTIAL: glitter member 1 pairing (transfer rejected \u2014 no declared-ensemble member)",
+    "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+    "note": ""
+   }
+  },
+  {
+   "verdict": "MvG ENV clearing",
+   "affirmative_side": "affirmative",
+   "statistic": "cross-family effect",
+   "reading": 0.69674,
+   "threshold": 0.25,
+   "margin": 0.44674,
+   "spread": 0.1836,
+   "spread_source": "DIRECT: 6-member declared flake ensembles (raw_flake.json), axis kind absolute, A289 max-pairwise-|delta| dispersion",
+   "status": "ESTABLISHED",
+   "note": "established 2026-08-15 by direct ensemble measurement \u2014 re-based on declared member 0, new terms, inheriting nothing: margin 0.44674 > dispersion 0.18360 [cleared_against=65f1169b831ad52b]",
+   "superseded_2026_08_15": {
+    "reading": 0.69674,
+    "margin": 0.447,
+    "spread": 0.29584,
+    "spread_source": "PARTIAL: glitter member 1 pairing",
+    "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+    "note": ""
+   }
+  },
+  {
+   "verdict": "P_V_B SPAN clearing",
+   "affirmative_side": "affirmative",
+   "statistic": "cross-family effect",
+   "reading": 0.91093,
+   "threshold": 0.25,
+   "margin": 0.661,
+   "spread": 0.00317,
+   "spread_source": "TRANSFER: BAKED 6-seed relief ensemble",
+   "status": "ESTABLISHED",
+   "note": ""
+  },
+  {
+   "verdict": "P_V_B SHADOW clearing",
+   "affirmative_side": "affirmative",
+   "statistic": "cross-family effect",
+   "reading": 0.50406,
+   "threshold": 0.25,
+   "margin": 0.254,
+   "spread": 0.02614,
+   "spread_source": "TRANSFER: BAKED 6-seed relief",
+   "status": "ESTABLISHED",
+   "note": ""
+  },
+  {
+   "verdict": "R5 census GRAN|SHEEN",
+   "affirmative_side": "affirmative",
+   "statistic": "census Spearman",
+   "reading": 0.3571,
+   "threshold": 0.8,
+   "margin": 0.4429,
+   "spread": null,
+   "spread_source": "NONE \u2014 single census",
+   "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+   "note": "M6-CENSUS-REPLICATE named"
+  },
+  {
+   "verdict": "R5 census GRAN|FWHM",
+   "affirmative_side": "affirmative",
+   "statistic": "census Spearman",
+   "reading": 0.1905,
+   "threshold": 0.8,
+   "margin": 0.6095,
+   "spread": null,
+   "spread_source": "NONE",
+   "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+   "note": ""
+  },
+  {
+   "verdict": "counted-instrument 1a validity",
+   "affirmative_side": "affirmative",
+   "statistic": "min qualifying rho",
+   "reading": 0.8504,
+   "threshold": 0.8,
+   "margin": 0.0504,
+   "spread": 0.0321,
+   "spread_source": "DIRECT: 3-seed at refined density",
+   "status": "ESTABLISHED_DEGENERATE",
+   "note": "the one comparison RESOLVED by this arc: degenerate, margin > spread"
+  },
+  {
+   "verdict": "counted tracking GRAN|SHEEN",
+   "affirmative_side": "affirmative",
+   "statistic": "sweep rho",
+   "reading": 0.9991,
+   "threshold": 0.8,
+   "margin": 0.1991,
+   "spread": 0.0132,
+   "spread_source": "DIRECT: 3-seed",
+   "status": "ESTABLISHED",
+   "note": "adequate AND uninformative (degenerate sweep)"
+  },
+  {
+   "verdict": "counted tracking GRAN|FWHM",
+   "affirmative_side": "affirmative",
+   "statistic": "sweep rho",
+   "reading": 0.9939,
+   "threshold": 0.8,
+   "margin": 0.1939,
+   "spread": 0.0132,
+   "spread_source": "DIRECT: 3-seed",
+   "status": "ESTABLISHED",
+   "note": ""
+  },
+  {
+   "verdict": "A3 grain-scale qualification",
+   "affirmative_side": "affirmative",
+   "statistic": "span",
+   "reading": null,
+   "threshold": 0.2338,
+   "margin": null,
+   "spread": null,
+   "spread_source": "DIRECT: A3 seed probes",
+   "status": "ESTABLISHED",
+   "note": "resolved by its own protocol"
+  },
+  {
+   "verdict": "BAKED clearance (SUPERSEDED, computed under the defect)",
+   "affirmative_side": "affirmative",
+   "statistic": "worst-case mm",
+   "reading": 5.35,
+   "threshold": 0.0,
+   "margin": 5.35,
+   "spread": null,
+   "spread_source": "SPREAD_INAPPLICABLE_DETERMINISTIC",
+   "status": "NOT_ESTABLISHED_FIRED_SUBSTITUTION",
+   "note": "PERMANENT record of what was committed under the fired 1.6 substitution (underside 12.4); nothing lifts it \u2014 the arc product per 2k"
+  },
+  {
+   "verdict": "BAKED clearance (REPAIRED, new record)",
+   "affirmative_side": "affirmative",
+   "statistic": "worst-case mm",
+   "reading": 5.45,
+   "threshold": 0.0,
+   "margin": 5.45,
+   "spread": null,
+   "spread_source": "SPREAD_INAPPLICABLE_DETERMINISTIC",
+   "status": "ESTABLISHED (new row, own terms \u2014 argument in combined_manifest/a86_establishment.json)",
+   "note": "underside 12.5, map-confirmed; adjacent to the superseded row per 2k; inherits nothing"
+  },
+  {
+   "verdict": "A2 degeneracy margin",
+   "affirmative_side": "degeneracy \u2014 stands",
+   "statistic": "1a min-rho",
+   "reading": 0.9727,
+   "threshold": 0.8,
+   "margin": 0.1727,
+   "spread": null,
+   "spread_source": "NONE",
+   "status": "STANDS_DEGENERACY_1j",
+   "note": ""
+  },
+  {
+   "verdict": "sheen sweep VALID badge",
+   "affirmative_side": "affirmative",
+   "statistic": "1a min-rho",
+   "reading": 0.3333,
+   "threshold": 0.8,
+   "margin": 0.467,
+   "spread": null,
+   "spread_source": "NONE",
+   "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+   "note": "zero downstream reliance"
+  },
+  {
+   "verdict": "smoothing sweep VALID badge",
+   "affirmative_side": "affirmative",
+   "statistic": "1a min-rho",
+   "reading": 0.049,
+   "threshold": 0.8,
+   "margin": 0.751,
+   "spread": null,
+   "spread_source": "NONE",
+   "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+   "note": ""
+  },
+  {
+   "verdict": "roughness sweep VALID badge",
+   "affirmative_side": "affirmative",
+   "statistic": "1a min-rho",
+   "reading": 0.6909,
+   "threshold": 0.8,
+   "margin": 0.109,
+   "spread": null,
+   "spread_source": "NONE",
+   "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+   "note": ""
+  },
+  {
+   "verdict": "GLITTER event PASS",
+   "affirmative_side": "affirmative",
+   "statistic": "event count",
+   "reading": 113,
+   "threshold": 25,
+   "margin": 88,
+   "spread": 45,
+   "spread_source": "DIRECT: 6-member declared event-ensemble trios (raw_glitter.json)",
+   "status": "ESTABLISHED",
+   "note": "established 2026-08-15: counts [113, 119, 147, 104, 129, 149], every member >= 25; margin 88 > replicate spread 45 [cleared_against=2b2f67422a65afd9]",
+   "superseded_2026_08_15": {
+    "spread": 31,
+    "spread_source": "PARTIAL: 1 replicate pairing (s66: 144 events; no declared event ensemble exists)",
+    "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+    "note": "partial data favorable (both >= 25, control 0 at both seeds); needs an ensemble DECLARATION first"
+   }
+  },
+  {
+   "verdict": "glitter control cleanliness",
+   "affirmative_side": "affirmative",
+   "statistic": "event count",
+   "reading": 0,
+   "threshold": 5,
+   "margin": 5,
+   "spread": 0,
+   "spread_source": "DIRECT: 6-member declared event-ensemble trios (raw_glitter.json)",
+   "status": "ESTABLISHED",
+   "note": "established 2026-08-15: controls [0, 0, 0, 0, 0, 0], every member <= 5; margin 5 > replicate spread 0 [cleared_against=95e1cc4f7eacca77]",
+   "superseded_2026_08_15": {
+    "spread": 0,
+    "spread_source": "PARTIAL: replicate control also 0",
+    "status": "NOT_ESTABLISHED_PENDING_SPREAD",
+    "note": ""
+   }
+  },
+  {
+   "verdict": "EDGE ineligibility",
+   "affirmative_side": "exclusion \u2014 stands",
+   "statistic": "floor statistic",
+   "reading": 0.27991,
+   "threshold": 0.25,
+   "margin": 0.03,
+   "spread": null,
+   "spread_source": "NONE",
+   "status": "STANDS_EXCLUSION_1j",
+   "note": ""
+  },
+  {
+   "verdict": "marbling chroma ineligibility",
+   "affirmative_side": "exclusion \u2014 stands",
+   "statistic": "floor statistic",
+   "reading": 0.418,
+   "threshold": 0.25,
+   "margin": 0.168,
+   "spread": null,
+   "spread_source": "NONE",
+   "status": "STANDS_EXCLUSION_1j",
+   "note": ""
+  },
+  {
+   "verdict": "marbling coherence ineligibility",
+   "affirmative_side": "exclusion \u2014 stands",
+   "statistic": "floor statistic",
+   "reading": 0.697,
+   "threshold": 0.25,
+   "margin": 0.447,
+   "spread": null,
+   "spread_source": "NONE",
+   "status": "STANDS_EXCLUSION_1j",
+   "note": ""
+  },
+  {
+   "verdict": "flake EDGE ineligibility",
+   "affirmative_side": "exclusion \u2014 stands",
+   "statistic": "floor statistic",
+   "reading": 0.54122,
+   "threshold": 0.25,
+   "margin": 0.291,
+   "spread": null,
+   "spread_source": "NONE",
+   "status": "STANDS_EXCLUSION_1j",
+   "note": ""
+  },
+  {
+   "verdict": "SOLID_VS_MARBLED FAIL",
+   "affirmative_side": "negative \u2014 stands",
+   "statistic": "chroma span",
+   "reading": 0.005,
+   "threshold": 0.25,
+   "margin": 0.245,
+   "spread": null,
+   "spread_source": "NONE",
+   "status": "STANDS_NOT_CERTIFIED_1j",
+   "note": ""
+  }
+ ],
+ "counts": {
+  "ESTABLISHED": 10,
+  "ADEQUACY_PRECONDITION_UNMET": 3,
+  "NOT_ESTABLISHED_PENDING_SPREAD": 11,
+  "ESTABLISHED_DEGENERATE": 1,
+  "STANDS_DEGENERACY_1j": 1,
+  "STANDS_EXCLUSION_1j": 4,
+  "STANDS_NOT_CERTIFIED_1j": 1
+ },
+ "pair_level_status_downstream_consultation_point": {
+  "MATTE_VS_SATIN": "NOT ESTABLISHED \u2014 M_V_S GRAN clearing: ESTABLISHED; M_V_S SHEEN clearing: ADEQUACY_PRECONDITION_UNMET_DIRECT; census leg (R5 census GRAN|SHEEN) NOT_ESTABLISHED_PENDING_SPREAD [restated 2026-08-15 by the spreads adjudication act from the rows in place]",
+  "PRESSED_VS_MATTE": "NOT ESTABLISHED \u2014 P_V_M GRAN clearing: ESTABLISHED; P_V_M SHEEN clearing: ADEQUACY_PRECONDITION_UNMET_DIRECT; census leg (R5 census GRAN|SHEEN) NOT_ESTABLISHED_PENDING_SPREAD [restated 2026-08-15 by the spreads adjudication act from the rows in place]",
+  "SATIN_VS_CREAM": "NOT ESTABLISHED \u2014 S_V_C GRAN clearing: ESTABLISHED; S_V_C FWHM clearing: ADEQUACY_PRECONDITION_UNMET_DIRECT [restated 2026-08-15 by the spreads adjudication act from the rows in place]",
+  "PRESSED_VS_BAKED": "ESTABLISHED \u2014 both legs on the BAKED declared relief ensemble; the one fully-established pair PASS in the protocol (restored to its pre-1i status, not improved)",
+  "SHIMMER_VS_METALLIC": "ESTABLISHED \u2014 2 counted axes established (REFLECTION_COHERENCE, ENVIRONMENT_CORRELATION) with independence DISCHARGED by measurement: |rho| ENVIRONMENT_CORRELATION|REFLECTION_COHERENCE=0.00722 vs ceiling 0.8 across the declared N=18 flake-ensemble population (POPULATION_BOUND: the three flake families' declared members; binds nothing outside it); REFLECTED_PATTERN_CONTRAST: ADEQUACY_PRECONDITION_UNMET_DIRECT; REFLECTION_COHERENCE: ESTABLISHED; ENVIRONMENT_CORRELATION: ESTABLISHED [cleared_against=fb508e9b57cec3b5; restated 2026-08-15 by the A4 discharge act]",
+  "METALLIC_VS_GLITTER": "ESTABLISHED \u2014 2 counted axes established (REFLECTED_PATTERN_CONTRAST, ENVIRONMENT_CORRELATION) with independence DISCHARGED by measurement: |rho| ENVIRONMENT_CORRELATION|REFLECTED_PATTERN_CONTRAST=0.00516 vs ceiling 0.8 across the declared N=18 flake-ensemble population (POPULATION_BOUND: the three flake families' declared members; binds nothing outside it); REFLECTED_PATTERN_CONTRAST: ESTABLISHED; ENVIRONMENT_CORRELATION: ESTABLISHED [cleared_against=5ae616f63fd77158; restated 2026-08-15 by the A4 discharge act]",
+  "GLITTER_RIG": "ESTABLISHED \u2014 event ensemble measured at the declared six trios: GLITTER counts [113, 119, 147, 104, 129, 149] (all >= 25, replicate spread 45 < margin 88); controls [0, 0, 0, 0, 0, 0] and SHIMMER [0, 0, 0, 0, 0, 0] all quiet at every member; median event areas [53.0, 54.0, 48.0, 47.5, 44.0, 43.0] all resolve (bar 4.5); both census axes clear at every member \u2014 the favorable partial replicate is cited as favorable-partial and inherited nothing [cleared_against=f9367fe5c015a373; restated 2026-08-15]"
+ },
+ "named_nodes_not_started": {
+  "M6-DECLARED-ENSEMBLE-SPREADS": "6-seed declared ensembles for SATIN/PRESSED/CREAM (lobe+texture), METALLIC/GLITTER (flake), + glitter event-ensemble declaration; ~54 renders; completes 8 pending rows",
+  "M6-CENSUS-REPLICATE": "the N=8 census re-measured at 2+ seed sets (~32-48 renders); completes both census rows and the diffuse pairs' condition-(i) establishment",
+  "M6-FLOOR-STATISTIC-REPLICATE": "ensemble-of-ensembles for floor statistics (expensive; the exclusions stand meanwhile per 1j)"
+ },
+ "A12_confirmation": "written into contract_repair_design_rule.json: NOT-ESTABLISHED satisfies NO-DEPENDENCY \u2014 there is now no standing to justify by",
+ "owner_approved": false,
+ "A13_remark_2026_08_08": "both SHEEN legs and the flake PATTERN leg re-marked UNMET_BY_CONSERVATIVE_PROXY per the owner ruling: they remain unestablished and unusable, the pairs remain suspended; what is corrected is what has been SHOWN \u2014 failure against a conservative surrogate, not the named test",
+ "A13_candidate_framing_correction": {
+  "wrong_framing_withdrawn": "the only other eligible lobe axis (FWHM) is rho-1.0 with SHEEN under R5 and may not join",
+  "three_properties_per_candidate": {
+   "floor_eligible": [
+    "HIGHLIGHT_FWHM",
+    "HIGHLIGHT_PEAK",
+    "SPECULAR_TO_DIFFUSE_RATIO",
+    "GRAZING_RESPONSE",
+    "SHEEN_REGION_RESPONSE"
+   ],
+   "R5_permitted_in_SHEENs_absence": "FWHM|GRANULARITY 0.1905 at N=8; PEAK, SPECULAR, GRAZING vs GRANULARITY likewise under the ceiling \u2014 FWHM is barred only ALONGSIDE SHEEN",
+   "clears_its_bar_on_this_pair": "unmeasured for most candidates \u2014 the measured claim, if substitution goes live under 1l, is decided then, all candidates named first"
+  }
+ },
+ "A37_SUSPENSION_2026_08_08": "BAKED clearance suspended \u2014 the one ESTABLISHED deterministic row contained a fired silent substitution its determinism proof could never see",
+ "A95_verdict_estimate_identities_2m": {
+  "MATTE_VS_SATIN": "FAIL[cleared_against=MATTE_SHEEN_spread@a2b626e6522f]",
+  "PRESSED_VS_MATTE": "FAIL[cleared_against=MATTE_SHEEN_spread@a2b626e6522f]",
+  "SATIN_VS_CREAM": "FAIL[cleared_against=SATIN_CREAM_FWHM_spread@50c33e7c3f36]",
+  "S_V_C_GRANULARITY_established_BANKED": "ESTABLISHED[cleared_against=SATIN_CREAM_GRAN_spread@2d0289310a16] \u2014 GRANTED explicitly by the owner (A96); margin 0.1923 = 4.6x spread; negative controls held; ensemble rendered as declared",
+  "mechanism": "when FLOOR-STATISTIC-REPLICATE remeasures, these identities move and every verdict citing the old identity is stale by comparison \u2014 re-opened mechanically, not by memory"
+ },
+ "GLITTER_EVENT_ENSEMBLE_RELEASED_2026_08_10": {
+  "supersedes_adjacent": "the 'GLITTER_RIG suspended pending a declared event ensemble' row below stands as the record of what was claimed at the time",
+  "status": "ESTABLISHED[cleared_against=glitter_event_ensemble_61_66+matte_controls_67_68@d8016b3a3fec2c26]",
+  "ensemble": {
+   "61": 113,
+   "66": 144,
+   "62": 136,
+   "63": 145,
+   "64": 161,
+   "65": 121
+  },
+  "controls": {
+   "67": 0,
+   "68": 0
+  },
+  "record": "render_spend/glitter_banking_release.json"
+ },
+ "A143_forward_identities_2026_08_11": {
+  "original_markers_stamped": {
+   "a2b626e6522f": "NON_RECOMPUTABLE[coverage=UNDETERMINABLE] \u2014 evidence: bounded reconstruction 360 payload shapes x 2 truncations (a140), no payload or recipe committed at 73e996a; the field cleared_against is NOT replaced",
+   "50c33e7c3f36": "NON_RECOMPUTABLE[coverage=UNDETERMINABLE] \u2014 same evidence",
+   "2d0289310a16": "NON_RECOMPUTABLE[coverage=UNDETERMINABLE] \u2014 same evidence"
+  },
+  "forward_identities": {
+   "MATTE_SHEEN_spread_fw": {
+    "payload": {
+     "family": "POWDER_MATTE",
+     "statistic": "SHEEN_REGION_RESPONSE max_seed_only_effect",
+     "value": 0.16569,
+     "ensemble_seeds": [
+      40,
+      81,
+      82,
+      83,
+      84,
+      99
+     ],
+     "pairings": 15,
+     "instrument": "DIFFUSE_LOBE_RIG",
+     "source_row": "axis_noise_floors.json floors.SHEEN_REGION_RESPONSE"
+    },
+    "value_identity": "0ff0d2baa16012ba",
+    "provenance_identity": "f4ae50564a75af49",
+    "provenance_payload": {
+     "measuring_code_commit": "036a280",
+     "rig_source_sha": "39778d27d6b224ef",
+     "protocol_identity_at_measurement": "NOT_STATED_IN_RECORD"
+    }
+   },
+   "SATIN_CREAM_FWHM_spread_fw": {
+    "payload": {
+     "members": {
+      "POWDER_SATIN": 0.04781,
+      "CREAM": 0.03289
+     },
+     "statistic": "HIGHLIGHT_FWHM max_pairwise",
+     "ensemble_seeds": [
+      40,
+      81,
+      82,
+      83,
+      84,
+      99
+     ],
+     "n_seeds": 6,
+     "binding_member": "POWDER_SATIN",
+     "source_row": "combined_manifest/analysis_spreads.json member_lobe_spreads"
+    },
+    "value_identity": "c7254009ff8dc82c",
+    "provenance_identity": "ea9336214a046da2",
+    "provenance_payload": {
+     "measuring_code_commit": "0f316e2",
+     "rig_source_sha": "8aacd226372eeda4",
+     "protocol_identity_at_measurement": "NOT_STATED_IN_RECORD"
+    }
+   },
+   "SATIN_CREAM_GRAN_spread_fw": {
+    "payload": {
+     "members": {
+      "POWDER_SATIN": 0.04201,
+      "CREAM": 0.00179
+     },
+     "statistic": "GRANULARITY_INDEX max_pairwise",
+     "ensemble_seeds": [
+      40,
+      81,
+      82,
+      83,
+      84,
+      99
+     ],
+     "n_seeds": 6,
+     "binding_member": "POWDER_SATIN",
+     "source_row": "combined_manifest/analysis_spreads.json member_texture_spreads"
+    },
+    "value_identity": "989b6f72fc3df8d5",
+    "provenance_identity": "ea9336214a046da2",
+    "provenance_payload": {
+     "measuring_code_commit": "0f316e2",
+     "rig_source_sha": "8aacd226372eeda4",
+     "protocol_identity_at_measurement": "NOT_STATED_IN_RECORD"
+    }
+   }
+  },
+  "recipe": "sha256(json.dumps(payload, sort_keys=True)).hexdigest()[:16] over the payload as written in this record",
+  "authority": "STALENESS AUTHORITY BEGINS AT MINTING (2026-08-11) AND DOES NOT REACH BACKWARD. These identities make NO claim about what the verdicts were cleared against in 2026-08; they claim only what will count as a move from now on: when FLOOR-STATISTIC-REPLICATE (or any remeasurement) produces a new value for a covered quantity, recompute the payload and the identity moves mechanically. Minted over the a144-recovered committed rows; the recovered basis is evidence about the computation, not a reconstruction of the opaque identities",
+  "A150_two_identities_2x": {
+   "citing_path": "apps/pipeline/services/palette_verdict_identity.py evaluate() \u2014 reports WHICH identity moved and raises on a record carrying only one",
+   "states": [
+    "FRESH",
+    "STALE[value_moved]",
+    "AGREEMENT_ACROSS_INSTRUMENT_CHANGE (requires adjudication)",
+    "STALE[value_moved+provenance_moved]"
+   ],
+   "provenance_recipe": "mint() over {measuring_code_commit, rig_source_sha, protocol_identity_at_measurement}; the commit from git, the rig source hash by sha256 of that commit's committed rig module, and the protocol identity from the measuring record",
+   "honest_field": "protocol_identity_at_measurement is NOT_STATED_IN_RECORD for all three: neither axis_noise_floors.json nor analysis_spreads.json records one. That is the checked value, not a guess, and supplying it later MOVES the provenance identity \u2014 which is correct, because it would mean the instrument's description changed",
+   "authority": "as with the value identities, authority begins at minting and reaches nothing backward"
+  }
+ },
+ "FLOOR_STATISTIC_REPLICATE_2026_08_11": {
+  "result": "ALL THREE FAILs STAND under replication; the three estimates moved and the forward markers went STALE[value_moved] mechanically \u2014 the A95 mechanism firing for the first time",
+  "replicated_estimates": {
+   "MATTE_SHEEN_spread": 0.14703,
+   "SATIN_FWHM_spread": 0.06227,
+   "CREAM_FWHM_spread": 0.04457
+  },
+  "verdicts_restated_2m": {
+   "MATTE_VS_SATIN": "FAIL[cleared_against=MATTE_SHEEN_spread_2meas@2871dee260b97865] \u2014 margin 0.09112 < replicated spread 0.14703",
+   "PRESSED_VS_MATTE": "FAIL[cleared_against=MATTE_SHEEN_spread_2meas@2871dee260b97865] \u2014 margin 0.11572 < 0.14703, the closest to flipping (gap 0.03131)",
+   "SATIN_VS_CREAM": "FAIL[cleared_against=SATIN_FWHM_spread_2meas@c69947635baa8ea6] \u2014 margin 0.0343 < replicated spread 0.06227"
+  },
+  "detail": "docs/roadmap/palt_m6/floor_statistic_replicate_result.json",
+  "residual": "M_v_S additionally carries MVS_SHEEN_NO_POSITIVE_CONTROL_AT_COMPUTED_CONDITION \u2014 replication retires the spread doubt, not the absent-positive-control doubt",
+  "identity_recipe_co_located": "palette_verdict_identity.mint() over {family, statistic, measurements, ensembles} as recorded in floor_statistic_replicate_result.json"
+ },
+ "A205_post_hoc_combining_rule_2026_08_11": {
+  "combining_rule": "WORST_OBSERVED_EXCURSION_ACROSS_ENSEMBLES",
+  "combining_rule_declared": "POST_HOC",
+  "combining_rule_identity": "fd91d08471da03fb",
+  "admissible_because": "THIRD_CANDIDATE_EXCLUDED_BY_LAW_PREDATING_CHOICE",
+  "excluding_law": {
+   "ruling": "1i (adequacy_1i)",
+   "commit": "8f6cb81",
+   "commit_date": "2026-08-08",
+   "sentence": "A spread of a DIFFERENT statistic is not a spread.",
+   "why_it_excludes": "dispersion-of-dispersion is the replicate spread of the PROXY statistic (max_seed_only_effect), not of the compared statistic (the clearing) \u2014 a spread of a different statistic",
+   "not_A203": "the exclusion is definitional and makes no appeal to the direction of movement, so it is not the reasoning A212 barred"
+  },
+  "legally_available_candidates": {
+   "worst": 0.16569,
+   "latest": 0.14703
+  },
+  "candidate_named_but_NOT_available": {
+   "dispersion_of_dispersion": 0.01866
+  },
+  "dispositions_across_the_AVAILABLE_set": {
+   "worst": "FAIL",
+   "latest": "FAIL"
+  },
+  "agreement_across_available_set": true,
+  "struck_per_A213": "the prior field admissible_because=ALL_CANDIDATE_RULES_AGREE_ON_DISPOSITION is STRUCK \u2014 false as a matter of arithmetic, not amended, not qualified, not carried as a footnote",
+  "referent_ambiguity": "RAISED_AND_RESOLVED",
+  "raised_by": "EXECUTOR",
+  "alternative_reading": "that same statistic = the threshold quantity",
+  "foreclosed_by": "SAMPLING_UNIT_NOT_COMPUTABLE_ACROSS_SEED_ENSEMBLE",
+  "adjudicated": "M6-PROXY-VS-TEST / A219",
+  "grounds_ranked": {
+   "1_decisive_arithmetic": "1i fixes its sampling unit \u2014 'measured across the instrument's declared seed ensemble'. max_seed_only_effect has ONE value per ensemble (a maximum over the seeds), so it does not vary within one and its dispersion is not computable under the clause's own recipe. The alternative reading fails to produce a computable quantity",
+   "2_lexical": "1i names two objects with two nouns \u2014 'a measured statistic' and 'a threshold' \u2014 then reuses exactly one of them",
+   "3_corroborative_weakest": "1k names the quantity directly; ranked last because cross-clause harmony is weaker than the clause's own recipe (3d)"
+  }
+ },
+ "A251_proxy_labelling_2026_08_11": {
+  "applies_to": [
+   "MATTE_VS_SATIN",
+   "PRESSED_VS_MATTE",
+   "SATIN_VS_CREAM"
+  ],
+  "disposition": "UNMET_UNDER_PROXY \u2014 and now also UNMET under the named quantity (a245_tests_1_3_result)",
+  "adequacy_under_named_quantity": "COMPUTED 2026-08-11, unchanged in direction",
+  "comparator_used": "max_seed_only_effect",
+  "comparator_named_by_1k": "clearing_dispersion",
+  "proxy_bounds_test": "REFUTED_AT_4_OF_4_MEASURED_INSTANCES",
+  "sayable_form_A254": "the proxy sat below the named quantity in all four instances where both were computed, by factors of 2.28 to 4.53"
+ },
+ "withdrawn_2026_08_11_A293": {
+  "phrasings_withdrawn": [
+   "the proxy is lenient",
+   "the programme has been using too low a bar",
+   "the FAILs were measured against too low a bar and still failed",
+   "the proxy sat below the named quantity by factors of 2.28 to 4.53",
+   "PROXY_BOUNDS_TEST REFUTED_AT_4_OF_4",
+   "clearing varies by 2.3x to 4.5x"
+  ],
+  "why": "all downstream of the units defect established at A284",
+  "replacement_sentence_the_only_sayable_one": "the proxy sat between 0.96 and 1.26 times the named quantity across the four instances where both were computed",
+  "premise_status": "UNRESOLVED_AT_PARITY \u2014 and per 3f the converse is not concluded either",
+  "sweep_scope": "5815 tracked files scanned; 46 carry the phrasings, 94 instances",
+  "instances_by_file": {
+   "apps/dielines/docs/28x28x120_engine_reference.json": 2,
+   "apps/pipeline/services/image_checks.py": 1,
+   "docs/complete_product/pilot_authorization_packet.json": 1,
+   "docs/qualification/reverse_tuck_end_carton_1_1/qualification_matrix.json": 1,
+   "docs/qualification/straight_tuck_end_carton_1_1/qualification_matrix.json": 1,
+   "docs/roadmap/palt_m4b_a2/palt_m4b_a2_thickness_report.json": 1,
+   "docs/roadmap/palt_m6/a233_test4_result.json": 4,
+   "docs/roadmap/palt_m6/a245_tests_1_3_result.json": 9,
+   "docs/roadmap/palt_m6/a284_units_recomputation.json": 10,
+   "docs/roadmap/palt_m6/axis_instrument_forensics.json": 1,
+   "docs/roadmap/palt_m6/axis_instrument_forensics_at_head.json": 1,
+   "docs/roadmap/palt_m6/controls_independence_audit_inbox.json": 2,
+   "docs/roadmap/palt_m6/establishment_closure/establishment_table.json": 3,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_POWDER_SATIN_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_PRESSED_POWDER_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_compaction_compaction_level_L11_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_continuity_soft_specular_roughness_L00.json": 2,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_milling_surface_smoothing_L11_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_press_ring_strength_L05.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_press_ring_strength_L05_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_press_ring_strength_L06.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_press_ring_strength_L06_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_press_ring_strength_L07_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_press_ring_strength_L08_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_press_ring_strength_L09_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_press_ring_strength_L10_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_probe_recal_press_ring_strength_L11_base.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_tx_tex_compression_texture_strength_ext_0p0.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_tx_tex_macrotexture_strength_L07.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_tx_tex_milling_microparticle_scale_mm_L03.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_tx_tex_milling_microparticle_scale_mm_L06.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_tx_tex_milling_microparticle_scale_mm_ext_0p215.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_tx_tex_sheen_response_tint_L06.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/frames/swatch_tx_tex_surface_roughness_L10.json": 1,
+   "docs/roadmap/palt_m6/independence_sweeps/sweep_press_ring_strength.json": 1,
+   "docs/roadmap/palt_m6/measurement_adequacy/phase2_retroactive.json": 17,
+   "docs/roadmap/palt_m6/raking_rig/sweep/swatch_sw_tx_0p02.json": 1,
+   "docs/roadmap/palt_m6/raking_rig/sweep/swatch_sw_tx_0p08.json": 1,
+   "docs/roadmap/palt_m6/raking_rig/sweep/swatch_tx_sw_tx_cal_a.json": 1,
+   "docs/roadmap/palt_m6/raking_rig/sweep/swatch_tx_sw_tx_cal_b.json": 1,
+   "docs/roadmap/palt_m6/texture_axes/swatch_probe_census_SHIMMER.json": 2,
+   "docs/roadmap/palt_m6/texture_axes/swatch_tx_SURFACE_CONTINUITY_low.json": 1,
+   "docs/visual_quality/vq1_master/vq1_neck_shoulder_dense_confirmation.json": 1,
+   "docs/visual_quality/vq2/received/Rose_Damascena_Custom_Lettering_manifest.json": 6,
+   "docs/visual_quality/vq2/vq2_authoritative_bbrose_logo.json": 2,
+   "docs/visual_quality/vq2/vq2_typography_manifest.json": 1
+  }
+ }
+}

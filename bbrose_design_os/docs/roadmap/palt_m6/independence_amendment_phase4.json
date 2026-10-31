@@ -1,0 +1,356 @@
+{
+  "record_type": "independence_amendment_phase4_adjudication/1.0",
+  "protocol_identity": "f2438bcae8b86533",
+  "owner_authorization": "M6_INDEPENDENCE_AMENDMENT_PROMPT.md",
+  "pairs": {
+    "MATTE_VS_SATIN": {
+      "counted_axes": [
+        "GRANULARITY_INDEX",
+        "SHEEN_REGION_RESPONSE"
+      ],
+      "census_condition_i": {
+        "pair": "GRANULARITY_INDEX|SHEEN_REGION_RESPONSE",
+        "abs_rho_n8": 0.3571,
+        "ceiling": 0.8,
+        "holds": true,
+        "caveat": "N=8 census attainable-set caveat stands as recorded in the axis independence matrix"
+      },
+      "driver_condition_ii": {
+        "drivers": [
+          {
+            "driver": "compression_texture.scale_mm",
+            "sweep_validity": "SWEEP_DEGENERATE_UNDER_DRIVER",
+            "disposition": "NOT_COMMON_DRIVER",
+            "detail": "compression_texture.scale_mm does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+          },
+          {
+            "driver": "compression_texture.strength",
+            "sweep_validity": "SWEEP_DEGENERATE_UNDER_DRIVER",
+            "disposition": "NOT_COMMON_DRIVER",
+            "detail": "compression_texture.strength does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+          },
+          {
+            "driver": "milling.micronormal_amplitude",
+            "disposition": "SWEEP_DEGENERATE_UNDER_DRIVER",
+            "detail": "retained sweep; 0/36 divergent pairs unfiltered \u2014 degeneracy invariant to floor operationalization; per the owner's pre-committed 1d the counted-axis 1.0 carries no information"
+          },
+          {
+            "driver": "milling.microparticle_scale_mm",
+            "sweep_validity": "SWEEP_DEGENERATE_UNDER_DRIVER",
+            "disposition": "NOT_COMMON_DRIVER",
+            "detail": "milling.microparticle_scale_mm does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+          },
+          {
+            "driver": "milling.microparticle_variance",
+            "sweep_validity": "SWEEP_DEGENERATE_UNDER_DRIVER",
+            "disposition": "NOT_COMMON_DRIVER",
+            "detail": "milling.microparticle_variance does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+          },
+          {
+            "driver": "milling.surface_smoothing",
+            "sweep_validity": "VALID",
+            "disposition": "NOT_COMMON_DRIVER",
+            "detail": "milling.surface_smoothing does not move SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+          },
+          {
+            "driver": "sheen_response.sheen",
+            "sweep_validity": "VALID",
+            "disposition": "NOT_COMMON_DRIVER",
+            "detail": "sheen_response.sheen does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+          },
+          {
+            "driver": "sheen_response.tint",
+            "sweep_validity": "SWEEP_DEGENERATE_UNDER_DRIVER",
+            "disposition": "NOT_COMMON_DRIVER",
+            "detail": "sheen_response.tint does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+          },
+          {
+            "driver": "surface_roughness",
+            "sweep_validity": "VALID",
+            "disposition": "NOT_COMMON_DRIVER",
+            "detail": "surface_roughness does not move SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+          },
+          {
+            "driver": "builder:specular_ior_level",
+            "disposition": "NON_SWEEPABLE_DRIVER",
+            "detail": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+          },
+          {
+            "driver": "builder:roughness_construction",
+            "disposition": "NON_SWEEPABLE_DRIVER",
+            "detail": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+          },
+          {
+            "driver": "builder:noise_detail",
+            "disposition": "NON_SWEEPABLE_DRIVER",
+            "detail": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+          },
+          {
+            "driver": "builder:compression_noise_detail",
+            "disposition": "NON_SWEEPABLE_DRIVER",
+            "detail": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+          },
+          {
+            "driver": "builder:mottle_construction",
+            "disposition": "NON_SWEEPABLE_DRIVER",
+            "detail": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+          }
+        ],
+        "violations": [],
+        "holds": true
+      },
+      "verdict": "PASS_WITH_UNTESTED_DRIVER",
+      "verdict_basis": "census condition holds with wide margin; no VALID sweep shows the counted axes tracking \u2014 every sweepable driver is either NOT_COMMON (one counted axis stays under its noise floor, spans recorded), or its sweep is SWEEP_DEGENERATE_UNDER_DRIVER (carries no information per the owner's 1d); the pair is fenced, not clean, because its builder-constant drivers cannot be swept through any declared input",
+      "untested_drivers_fencing": [
+        "builder:specular_ior_level",
+        "builder:roughness_construction",
+        "builder:noise_detail",
+        "builder:compression_noise_detail",
+        "builder:mottle_construction"
+      ],
+      "degradation_committed_immediately": true
+    },
+    "PRESSED_VS_MATTE": {
+      "counted_axes": [
+        "GRANULARITY_INDEX",
+        "SHEEN_REGION_RESPONSE"
+      ],
+      "census_condition_i": {
+        "pair": "GRANULARITY_INDEX|SHEEN_REGION_RESPONSE",
+        "abs_rho_n8": 0.3571,
+        "ceiling": 0.8,
+        "holds": true,
+        "caveat": "N=8 census attainable-set caveat stands as recorded in the axis independence matrix"
+      },
+      "driver_condition_ii": {
+        "drivers": [
+          {
+            "driver": "compaction.compaction_level",
+            "sweep_validity": "SWEEP_DEGENERATE_UNDER_DRIVER",
+            "disposition": "NOT_COMMON_DRIVER",
+            "detail": "compaction.compaction_level does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+          },
+          {
+            "driver": "compaction.compression_texture_amplitude",
+            "sweep_validity": "SWEEP_DEGENERATE_UNDER_DRIVER",
+            "disposition": "DEGENERATE_CARRIES_NO_INFORMATION",
+            "abs_rho": 1.0,
+            "n": 11
+          },
+          {
+            "driver": "compaction.compression_texture_scale_mm",
+            "sweep_validity": "SWEEP_DEGENERATE_UNDER_DRIVER",
+            "disposition": "NOT_COMMON_DRIVER",
+            "detail": "compaction.compression_texture_scale_mm does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+          },
+          {
+            "driver": "compaction.surface_flatness",
+            "sweep_validity": "SWEEP_DEGENERATE_UNDER_DRIVER",
+            "disposition": "NOT_COMMON_DRIVER",
+            "detail": "compaction.surface_flatness does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+          },
+          {
+            "driver": "compression_texture.scale_mm",
+            "sweep_validity": "SWEEP_DEGENERATE_UNDER_DRIVER",
+            "disposition": "NOT_COMMON_DRIVER",
+            "detail": "compression_texture.scale_mm does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+          },
+          {
+            "driver": "compression_texture.strength",
+            "sweep_validity": "SWEEP_DEGENERATE_UNDER_DRIVER",
+            "disposition": "NOT_COMMON_DRIVER",
+            "detail": "compression_texture.strength does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+          },
+          {
+            "driver": "milling.micronormal_amplitude",
+            "disposition": "SWEEP_DEGENERATE_UNDER_DRIVER",
+            "detail": "retained sweep; 0/36 divergent pairs unfiltered \u2014 degeneracy invariant to floor operationalization; per the owner's pre-committed 1d the counted-axis 1.0 carries no information"
+          },
+          {
+            "driver": "milling.microparticle_scale_mm",
+            "sweep_validity": "SWEEP_DEGENERATE_UNDER_DRIVER",
+            "disposition": "NOT_COMMON_DRIVER",
+            "detail": "milling.microparticle_scale_mm does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+          },
+          {
+            "driver": "milling.microparticle_variance",
+            "sweep_validity": "SWEEP_DEGENERATE_UNDER_DRIVER",
+            "disposition": "NOT_COMMON_DRIVER",
+            "detail": "milling.microparticle_variance does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+          },
+          {
+            "driver": "press.ring_radius_frac",
+            "sweep_validity": "SWEEP_DEGENERATE_UNDER_DRIVER",
+            "disposition": "NOT_COMMON_DRIVER",
+            "detail": "press.ring_radius_frac does not move GRANULARITY_INDEX or SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+          },
+          {
+            "driver": "press.ring_strength",
+            "sweep_validity": "SWEEP_DEGENERATE_UNDER_DRIVER",
+            "disposition": "NOT_COMMON_DRIVER",
+            "detail": "press.ring_strength does not move SHEEN_REGION_RESPONSE beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+          },
+          {
+            "driver": "builder:specular_ior_level",
+            "disposition": "NON_SWEEPABLE_DRIVER",
+            "detail": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+          },
+          {
+            "driver": "builder:roughness_construction",
+            "disposition": "NON_SWEEPABLE_DRIVER",
+            "detail": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+          },
+          {
+            "driver": "builder:noise_detail",
+            "disposition": "NON_SWEEPABLE_DRIVER",
+            "detail": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+          },
+          {
+            "driver": "builder:ring_gaussian_falloff",
+            "disposition": "NON_SWEEPABLE_DRIVER",
+            "detail": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+          },
+          {
+            "driver": "builder:mottle_construction",
+            "disposition": "NON_SWEEPABLE_DRIVER",
+            "detail": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+          }
+        ],
+        "violations": [],
+        "holds": true
+      },
+      "verdict": "PASS_WITH_UNTESTED_DRIVER",
+      "verdict_basis": "census condition holds with wide margin; no VALID sweep shows the counted axes tracking \u2014 every sweepable driver is either NOT_COMMON (one counted axis stays under its noise floor, spans recorded), or its sweep is SWEEP_DEGENERATE_UNDER_DRIVER (carries no information per the owner's 1d); the pair is fenced, not clean, because its builder-constant drivers cannot be swept through any declared input",
+      "untested_drivers_fencing": [
+        "builder:specular_ior_level",
+        "builder:roughness_construction",
+        "builder:noise_detail",
+        "builder:ring_gaussian_falloff",
+        "builder:mottle_construction"
+      ],
+      "degradation_committed_immediately": true
+    },
+    "SATIN_VS_CREAM": {
+      "counted_axes": [
+        "GRANULARITY_INDEX",
+        "HIGHLIGHT_FWHM"
+      ],
+      "census_condition_i": {
+        "pair": "GRANULARITY_INDEX|HIGHLIGHT_FWHM",
+        "abs_rho_n8": 0.1905,
+        "ceiling": 0.8,
+        "holds": true,
+        "caveat": "N=8 census attainable-set caveat stands as recorded in the axis independence matrix"
+      },
+      "driver_condition_ii": {
+        "drivers": [
+          {
+            "driver": "continuity.soft_specular_roughness",
+            "sweep_validity": "SWEEP_DEGENERATE_UNDER_DRIVER",
+            "disposition": "NOT_COMMON_DRIVER",
+            "detail": "continuity.soft_specular_roughness does not move HIGHLIGHT_FWHM beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+          },
+          {
+            "driver": "macrotexture.scale_mm",
+            "sweep_validity": "SWEEP_DEGENERATE_UNDER_DRIVER",
+            "disposition": "NOT_COMMON_DRIVER",
+            "detail": "macrotexture.scale_mm does not move GRANULARITY_INDEX or HIGHLIGHT_FWHM beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+          },
+          {
+            "driver": "macrotexture.strength",
+            "sweep_validity": "SWEEP_DEGENERATE_UNDER_DRIVER",
+            "disposition": "NOT_COMMON_DRIVER",
+            "detail": "macrotexture.strength does not move GRANULARITY_INDEX or HIGHLIGHT_FWHM beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+          },
+          {
+            "driver": "milling.micronormal_amplitude",
+            "disposition": "SWEEP_DEGENERATE_UNDER_DRIVER",
+            "detail": "retained sweep; 0/36 divergent pairs unfiltered \u2014 degeneracy invariant to floor operationalization; per the owner's pre-committed 1d the counted-axis 1.0 carries no information"
+          },
+          {
+            "driver": "milling.microparticle_scale_mm",
+            "sweep_validity": "SWEEP_DEGENERATE_UNDER_DRIVER",
+            "disposition": "NOT_COMMON_DRIVER",
+            "detail": "milling.microparticle_scale_mm does not move GRANULARITY_INDEX or HIGHLIGHT_FWHM beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+          },
+          {
+            "driver": "milling.microparticle_variance",
+            "sweep_validity": "SWEEP_DEGENERATE_UNDER_DRIVER",
+            "disposition": "NOT_COMMON_DRIVER",
+            "detail": "milling.microparticle_variance does not move GRANULARITY_INDEX or HIGHLIGHT_FWHM beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+          },
+          {
+            "driver": "milling.surface_smoothing",
+            "sweep_validity": "VALID",
+            "disposition": "NOT_COMMON_DRIVER",
+            "detail": "milling.surface_smoothing does not move HIGHLIGHT_FWHM beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+          },
+          {
+            "driver": "sheen_response.sheen",
+            "sweep_validity": "VALID",
+            "disposition": "NOT_COMMON_DRIVER",
+            "detail": "sheen_response.sheen does not move GRANULARITY_INDEX beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+          },
+          {
+            "driver": "sheen_response.tint",
+            "sweep_validity": "SWEEP_DEGENERATE_UNDER_DRIVER",
+            "disposition": "NOT_COMMON_DRIVER",
+            "detail": "sheen_response.tint does not move GRANULARITY_INDEX beyond its noise floor on the counted rig (span vs required in axis_qualification), so it cannot be a common cause of both counted axes \u2014 the driver condition holds for this pair"
+          },
+          {
+            "driver": "builder:roughness_construction",
+            "disposition": "NON_SWEEPABLE_DRIVER",
+            "detail": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+          },
+          {
+            "driver": "builder:noise_detail",
+            "disposition": "NON_SWEEPABLE_DRIVER",
+            "detail": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+          },
+          {
+            "driver": "builder:mottle_construction",
+            "disposition": "NON_SWEEPABLE_DRIVER",
+            "detail": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+          },
+          {
+            "driver": "builder:cream_swell",
+            "disposition": "NON_SWEEPABLE_DRIVER",
+            "detail": "hard-coded in the frozen builder (powder_materials.py) \u2014 no declared input path exists to vary it; varying it means editing the frozen instrument, which is M6-CONTRACT-INTEGRITY-REPAIR's jurisdiction and may not start inside this node. NON_SWEEPABLE_DRIVER per 1b."
+          }
+        ],
+        "violations": [],
+        "holds": true
+      },
+      "verdict": "PASS_WITH_UNTESTED_DRIVER",
+      "verdict_basis": "census condition holds with wide margin; no VALID sweep shows the counted axes tracking \u2014 every sweepable driver is either NOT_COMMON (one counted axis stays under its noise floor, spans recorded), or its sweep is SWEEP_DEGENERATE_UNDER_DRIVER (carries no information per the owner's 1d); the pair is fenced, not clean, because its builder-constant drivers cannot be swept through any declared input",
+      "untested_drivers_fencing": [
+        "builder:roughness_construction",
+        "builder:noise_detail",
+        "builder:mottle_construction",
+        "builder:cream_swell"
+      ],
+      "degradation_committed_immediately": true
+    }
+  },
+  "N_for_contract_repair": {
+    "N": 3,
+    "line": "the number of standing diffuse verdicts that M6-CONTRACT-INTEGRITY-REPAIR must not void is N = 3 \u2014 MATTE_VS_SATIN, PRESSED_VS_MATTE and SATIN_VS_CREAM all stand as PASS_WITH_UNTESTED_DRIVER: census 0.3571/0.3571/0.1905 all far under 0.80, no VALID driver sweep shows counted-axis tracking, and each is fenced by its named non-sweepable builder-constant drivers, which are exactly what the contract repair declares \u2014 repairing them must not void the verdicts they fence"
+  },
+  "amendment_induced_improvements_HELD": [
+    {
+      "candidate": "raking third-channel un-voiding",
+      "basis": "the raking sweep re-read under 1a is SWEEP_DEGENERATE_UNDER_DRIVER (and its SHADOW leg was a constant-vector artifact), so the void was built on a degenerate reading",
+      "status": "HELD FOR OWNER, NOT COMMITTED \u2014 the void stands; un-voiding is an improvement and improvements are never committed by this node"
+    }
+  ],
+  "d1_execution": {
+    "what": "STANDING_WITH_A_MATERIAL_QUESTION_FLAGGED cleared from the a2 record and replaced by the recorded reason, exactly as the owner pre-committed in 1d",
+    "reason_recorded": "the micronormal sweep is SWEEP_DEGENERATE_UNDER_DRIVER under 1a \u2014 no pair of responding axes diverges (0/36 unfiltered), so the counted-axis 1.0 carries no information in either direction; the census is the governing evidence"
+  },
+  "prominent_findings_not_softened": [
+    "compaction.compression_texture_amplitude reproduces the micronormal signature exactly: all three counted axes qualify (spans 1.124/0.423/0.215) and GRANULARITY|SHEEN tracks at 1.0 over n=11 \u2014 a SECOND relief-class driver in perfect lockstep, carrying no adjudicative weight only because its sweep is degenerate under 1a",
+    "SHEEN_REGION_RESPONSE clears its floor under NO new driver \u2014 not even its own sheen_response.sheen (span 0.221 < 0.331); the only driver ever measured to move SHEEN beyond noise is relief (micronormal 0.343) \u2014 SHEEN's status as an independent second axis rests entirely on the census",
+    "GRANULARITY under milling.microparticle_scale_mm spans 0.2260 vs required 0.2338 \u2014 a borderline miss recorded, not rounded up"
+  ],
+  "owner_approved": false
+}

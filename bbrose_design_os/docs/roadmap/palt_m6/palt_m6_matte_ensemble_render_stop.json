@@ -1,0 +1,47 @@
+{
+ "record_type": "palt_m6_matte_ensemble_render_stop/1.0",
+ "date": "2026-08-12",
+ "outcome": "STOPPED at A496 \u2014 nothing rendered",
+ "A496": {
+  "question": "which frame set did the already-computed cells consume",
+  "method": "searched apps/pipeline/services for any code naming the frame prefixes",
+  "result": "NO SERVICE NAMES swatch_mens_lobe, swatch_tx_mens_tex, swatch_fr OR fens",
+  "consequence": "the requirement cannot be DERIVED FROM PRECEDENT as A496 orders. The two ensemble campaigns (mens_lobe and tx_mens_tex) are byte-identical in structure \u2014 same five regions, same frame keys, and for CREAM the SAME material_identity 1439e4295f2edf30 \u2014 so nothing in the artifacts distinguishes which one feeds GRANULARITY and which feeds FWHM either.",
+  "six_and_six": "NEITHER CONFIRMED NOR REFUTED \u2014 and A496 says stop in that case",
+  "what_would_settle_it": "the code or record that maps a campaign to an axis; it was not found in services"
+ },
+ "A497": {
+  "render_authority_in_force": "granted per 2j in M6-CONTROL-COMPLETION step 6, FOR THIS DECLARATION ONLY: the three down-frames plus declared retries; nothing else renders",
+  "reading": "the standing grant does NOT cover twelve new MATTE frames. A495 authorizes them at launcher level, but the render_spend declaration that carries authority is scoped to a different set and would have to be superseded, not silently reused.",
+  "prior_campaign_scale": "queue_ledger frames_rendered = 69 across recal units",
+  "gate": "NOT REACHED \u2014 A496 stopped first, so no spend estimate was computed and none is offered"
+ },
+ "A498": {
+  "declaration": "NOT PUBLISHED",
+  "reason": "A502 forbids rendering before A496 reports; A496 reports STOP. Publishing a pinned declaration for frames that may be the wrong set is a declaration made to be discarded \u2014 the same error A475 caught last time.",
+  "owner_predictions": "UNSCORED. M_v_C x GRANULARITY (predicted MET), M_v_C x FWHM (no prediction), M_v_C overall (predicted no certified PASS) were never measured against anything."
+ },
+ "A500": {
+  "manifest": "NOT WRITTEN \u2014 no frames were produced. The A500 obligation stands for whichever node does render."
+ },
+ "A485": {
+  "amendment_minted": false,
+  "forced": false,
+  "statement": "no prediction was scored FAILED and no gate refused this node, so A485 permits no amendment and none was minted"
+ },
+ "A492_marked": "a262 FWHM claim marked WRONG_ON_THE_MATTE_SIDE in place, not deleted",
+ "A493_marked": "NOT_COMPUTABLE stays labelled RIGHT_BY_ACCIDENT",
+ "GATE_REFUSAL_RECORDED": {
+  "tier2": "REFUSE, 4 failures, all four the registered browser-flake family",
+  "ids": [
+   "test_duplicate_filenames_both_display",
+   "test_groups_render_in_fixed_order_with_owner_labels",
+   "test_no_dieline_or_confirmed_profile_language",
+   "test_packaging_without_references_renders_no_section"
+  ],
+  "disposition": "REFUSE was CORRECT \u2014 two are registered with invocations SPENT, two at invocations_allowed 0. Being known about is not relief (3m).",
+  "read_from": ".tier2_captures/20260812T070445Z_eb388db.txt \u2014 A369 retention is what made the ids readable at all; under the old fixed-path capture this run would have been overwritten by the next",
+  "reran_green": "5990 passed, 0 failed on an independent full run. A green run does not retire the red one; both stand.",
+  "A485_note": "this IS a gate refusal, which under A485 would PERMIT an amendment. None is minted, because nothing in the refusal calls for new law \u2014 the flake register already governs it correctly and the refusal is the register working."
+ }
+}

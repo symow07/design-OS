@@ -1,0 +1,82 @@
+{
+  "record_type": "marbling_instrument_repair_ruling/1.0",
+  "protocol_identity": "950499d757b8d368",
+  "hypothesis_verdict": {
+    "owner_B2": "PARTIALLY CONFIRMED, with a refinement the data forces: placement-invariance COLLAPSES the floor where the statistic is genuinely distributional (C2 0.0548, C3 0.0236, C4 0.0088 against the registered 0.8123 \u2014 15x to 90x), so the registered instrument WAS measuring vein placement. But invariance is NECESSARY, NOT SUFFICIENT: C1 (quantile spread) is nominally distributional yet floor-INELIGIBLE at 0.4224 \u2014 seed-to-seed vein-area fluctuation reaches it through the distribution tails; and C4 passes the negative control while failing the positive (invariant AND blind). The diagnosis stands corrected-and-sharpened, not adopted wholesale."
+  },
+  "all_candidates_all_numbers": {
+    "_measurement_correction": {
+      "what": "the first computation consumed the mask-mode measurement as an index list and fell through to WHOLE-FRAME statistics \u2014 background dilution invalidated every number. Caught before any verdict was committed; corrected to the rig's own POWDER index derivation (red-region threshold on the mask rgb rows). Consistent with 1n: null-style catch, scope narrowed to the declared region, zero tolerance unchanged, declared before the verdict is read.",
+      "n_powder_pixels": 159007
+    },
+    "C1_CHROMA_QUANTILE_SPREAD": {
+      "floor": 0.4224,
+      "floor_eligible": false,
+      "required": 0.8448,
+      "positive_control_effect": 0.25089,
+      "positive_passes": true,
+      "warm_pair_effect": 0.45968,
+      "warm_clears": false
+    },
+    "C3_HUE_CIRCULAR_STD": {
+      "floor": 0.02359,
+      "floor_eligible": true,
+      "required": 0.25,
+      "positive_control_effect": 0.66929,
+      "positive_passes": true,
+      "warm_pair_effect": 0.06384,
+      "warm_clears": false
+    },
+    "C4_MEAN_CHROMA": {
+      "floor": 0.0088,
+      "floor_eligible": true,
+      "required": 0.25,
+      "positive_control_effect": 0.02704,
+      "positive_passes": false,
+      "warm_pair_effect": 0.0346,
+      "warm_clears": false
+    },
+    "C2_CHROMA_HISTOGRAM_L1": {
+      "floor": 0.05483,
+      "floor_eligible": true,
+      "required": 0.25,
+      "positive_control_effect": 0.29275,
+      "positive_passes": true,
+      "warm_pair_effect": 0.49048,
+      "warm_clears": true
+    },
+    "C5_REGISTERED_REFERENCE": {
+      "floor": 0.8123,
+      "note": "diagnosed-defective comparator"
+    }
+  },
+  "controls_outcome": {
+    "C1_CHROMA_QUANTILE_SPREAD": "DISCARDED \u2014 fails the negative control (floor 0.4224: it separates same-material seed variants)",
+    "C4_MEAN_CHROMA": "DISCARDED \u2014 fails the positive control (0.027 on a pair known chromatically different)",
+    "C3_HUE_CIRCULAR_STD": "QUALIFIES (floor 0.0236, positive 0.669)",
+    "C2_CHROMA_HISTOGRAM_L1": "QUALIFIES (floor 0.0548, positive 0.293)"
+  },
+  "choice_by_declared_criterion": "the two lowest-floor qualifiers: C3 (0.0236) and C2 (0.0548) \u2014 exactly the declared rule, no outcome peeking (C3 is chosen although it does NOT clear the warm pair)",
+  "re_rule_SOLID_VS_MARBLED": {
+    "pair": "warm MARBLED (ens_500) vs warm solid (POWDER_MATTE s500), retained frames",
+    "C2_CHROMA_HISTOGRAM_L1": {
+      "effect": 0.49048,
+      "required": 0.25,
+      "clears": true
+    },
+    "C3_HUE_CIRCULAR_STD": {
+      "effect": 0.06384,
+      "required": 0.25,
+      "clears": false
+    },
+    "verdict": "FAIL \u2014 re-ruled, not restored: ONE qualifying axis clears and the two-axis law requires two. No substitute is invented; the discards stay discarded.",
+    "establishment": "every reading NOT_ESTABLISHED_PENDING_SPREAD from birth per B4 \u2014 the cross-family clearing has no per-seed replicate (solid exists at seed 500 only), and a new instrument inherits nothing",
+    "rig_suite_fact": "the marbling family is currently distinguishable on ONE commissioned qualifying axis. The two-axis law is unsatisfiable for this pair on the present statistic suite \u2014 a fact about the rig suite, recorded as one; the law does not bend, and extending the suite is a declared commissioning if anyone later chooses"
+  },
+  "measurement_correction_first_class": {
+    "what": "the first computation consumed the mask-mode measurement as an index list and fell through to WHOLE-FRAME statistics \u2014 background dilution invalidated every number. Caught before any verdict was committed; corrected to the rig's own POWDER index derivation (red-region threshold on the mask rgb rows). Consistent with 1n: null-style catch, scope narrowed to the declared region, zero tolerance unchanged, declared before the verdict is read.",
+    "n_powder_pixels": 159007
+  },
+  "anti_reroll": "FAIL to FAIL \u2014 nothing improved, nothing to attribute or bank",
+  "owner_approved": false
+}

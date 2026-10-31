@@ -1,0 +1,49 @@
+{
+  "record_type": "fallback_firing_audit_result/1.0",
+  "protocol_identity": "eaa03824272b1075",
+  "zero_renders": true,
+  "near_firing_band_declared_in_advance": [
+    1e-09,
+    0.001
+  ],
+  "by_consumer_class": {
+    "1_FLOOR_AND_SEED_ONLY (priority \u2014 the PASS-manufacturing direction)": {
+      "computations_audited": 300,
+      "FIRED": 0,
+      "NEAR_FIRING": 0,
+      "SAFE": 300,
+      "ensembles_covered": "lobe (6 seeds), texture (6, recomputed from retained EXRs), marbling pre AND post (6 each, recomputed), flake (5 members), raking flat (6), BAKED relief (6)"
+    },
+    "2_CLEARING_COMPARISONS": {
+      "computations_audited": 21,
+      "FIRED": 0,
+      "NEAR_FIRING": 0,
+      "SAFE": 21,
+      "covered": "all three diffuse pairs on both instruments, both flake pairs, all counted axes"
+    },
+    "3_CENSUS_RANK_ENTRIES": {
+      "computations_audited": 62,
+      "FIRED": 0,
+      "NEAR_FIRING": 0,
+      "SAFE": 62,
+      "covered": "every family x every counted axis in the N=8 census"
+    }
+  },
+  "headline": "NOTHING FIRED ANYWHERE. 383 committed computations audited across all three consumer classes; zero FIRED, zero NEAR_FIRING. Global minimum denominator 0.004656 \u2014 4.6 MILLION times the 1e-9 guard and 4.6x above the declared near-firing ceiling. The maximum-over-15-pairings argument predicted the floors would be safe; they are, and so is everything else.",
+  "the_small_floors_settled_by_data": {
+    "owner_concern": "GRAZING_BAND_CONTRAST 0.00651, HIGHLIGHT_PEAK 0.00797, SPECULAR_TO_DIFFUSE_RATIO 0.00886 are the shape a heavily-firing denominator would produce; innocent and guilty explanations predict the same floor",
+    "settled": "the denominators discriminate where the floors could not: GRAZING_BAND_CONTRAST's minimum denominator is 2.720405 \u2014 a LARGE operand pair. Its tiny floor is genuine axis stability, not a firing artifact. The guilty explanation required near-zero denominators and the data shows the opposite."
+  },
+  "allowlist_dispositions": {
+    "INERT_PROVEN": 60,
+    "FIRED": 0,
+    "NOT_ASSESSED": 2,
+    "not_assessed_detail": "two exception handlers \u2014 firing leaves no trace in retained values, so no record can establish inertness; they stay NOT_ASSESSED rather than being waved through on my reading of the surrounding code, and a firing-trace instrument is a repair-node item"
+  },
+  "section_D_consequences_applied": {
+    "nothing_fired": "the pre-committed \"nothing fired anywhere\" branch executes: no verdict moves, nothing suspends, nothing is held. The establishment table HARDENS \u2014 every committed number is now known to have been computed on a live denominator, which is one fewer unverified link in every chain.",
+    "no_near_firing_found": "the fragility branch does not fire either; no computation sat within six orders of the guard"
+  },
+  "manifest_gating": "Section C closes clean: NO floor computation fired, so the eligibility set is unchanged and the manifest does NOT need re-planning. The 102-render combined manifest STANDS as planned, with its per-member resumable boundary \u2014 it is the next node, and it awaits the owner.",
+  "owner_approved": false
+}

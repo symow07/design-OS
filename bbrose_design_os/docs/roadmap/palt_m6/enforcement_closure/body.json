@@ -1,0 +1,100 @@
+{
+  "record_type": "enforcement_body/1.0",
+  "A54_deferral_verified": [
+    {
+      "site": "palette_characterization_protocol.py:307",
+      "key": "samples",
+      "evidence": "the default EXPRESSION is a contract reference, not a literal: 'r[\"samples\"]' \u2014 the fallback defers to the declared value by construction",
+      "deferral_verified": "the deferred-to record is the M5 REFLECTIVE/characterization rig contract dict r \u2014 a DECLARED contract in the protocol module, not another builder dict; condition 2c satisfied"
+    },
+    {
+      "site": "palette_characterization_rig.py:127",
+      "key": "samples",
+      "evidence": "the default EXPRESSION is a contract reference, not a literal: 'rig[\"samples\"]' \u2014 the fallback defers to the declared value by construction",
+      "deferral_verified": "the deferred-to record is the M5 REFLECTIVE/characterization rig contract dict r \u2014 a DECLARED contract in the protocol module, not another builder dict; condition 2c satisfied"
+    }
+  ],
+  "the_49_dispositioned_as_bound": {
+    "counts": {
+      "FROZEN_M5_A7_REGISTER": 6,
+      "MEASUREMENT_NOT_ASSESSED": 7,
+      "REACHABLE_NON_MEASUREMENT_RECORDS": 36
+    },
+    "detail": {
+      "FROZEN_M5_A7_REGISTER": [
+        "palette_characterization_protocol.py:414:ifexp_default_0.0",
+        "palette_characterization_protocol.py:482:ifexp_default_0.0",
+        "palette_characterization_protocol.py:500:ifexp_default_0.0",
+        "palette_characterization_protocol.py:471:ifexp_default_0.0",
+        "palette_characterization_protocol.py:563:ifexp_default_0.0",
+        "palette_characterization_protocol.py:433:ifexp_default_0.0"
+      ],
+      "MEASUREMENT_NOT_ASSESSED": [
+        "palette_characterization_rig.py:315:ifexp_default_0.0",
+        "palette_material_characterization.py:176:ifexp_default_255.0",
+        "palette_material_characterization.py:266:ifexp_default_0.0",
+        "palette_powder_axis_diagnosis.py:118:ifexp_default_0.0",
+        "palette_powder_rigs.py:289:ifexp_default_61",
+        "palette_powder_rigs.py:234:ifexp_default_0.0",
+        "palette_raking_rig.py:293:except_swallow"
+      ],
+      "REACHABLE_NON_MEASUREMENT_RECORDS": [
+        "m4b_a_tray_views.py:149:ifexp_default_0.9",
+        "material_characterization.py:367:ifexp_default_0.0",
+        "material_characterization.py:387:ifexp_default_0.0",
+        "material_characterization.py:388:ifexp_default_0.0",
+        "material_characterization.py:354:ifexp_default_0.0",
+        "p1_material_studio.py:178:ifexp_default_58.0",
+        "palette_csg_views.py:155:ifexp_default_0.32",
+        "palette_csg_views.py:302:except_swallow",
+        "concept_analysis.py:217:ifexp_default_0.0",
+        "concept_analysis.py:276:ifexp_default_1.0",
+        "palette_baked_geometry.py:59:ifexp_default_0.0",
+        "palette_contracts.py:149:ifexp_default_0.0",
+        "palette_layout_kernel.py:100:ifexp_default_0.0",
+        "palette_layout_kernel.py:102:ifexp_default_0.0",
+        "palette_layout_kernel.py:104:ifexp_default_0.0",
+        "palette_layout_kernel.py:118:ifexp_default_0.0",
+        "palette_moulded_geometry.py:443:ifexp_default_0.3",
+        "palette_moulded_rect.py:498:ifexp_default_0.0",
+        "palette_recessed_tray_geometry.py:147:ifexp_default_0.0",
+        "palette_stackup_engine.py:79:ifexp_default_0.0",
+        "palette_stackup_engine.py:260:except_swallow",
+        "palette_stackup_engine.py:117:ifexp_default_0.0",
+        "palette_stackup_engine.py:119:ifexp_default_0.0",
+        "palette_stackup_engine.py:195:ifexp_default_0.0",
+        "palette_stackup_engine.py:197:ifexp_default_0.0",
+        "palette_stackup_engine.py:199:ifexp_default_0.0",
+        "palette_stackup_engine.py:201:ifexp_default_0.0",
+        "palette_stackup_engine.py:204:ifexp_default_0.0",
+        "palette_stackup_engine.py:205:ifexp_default_0.0",
+        "palette_stackup_engine.py:206:ifexp_default_0.0",
+        "palette_stackup_engine.py:207:ifexp_default_0.0",
+        "palette_stackup_engine.py:216:ifexp_default_0.0",
+        "palette_stackup_engine.py:217:ifexp_default_0.0",
+        "palette_stackup_engine.py:219:ifexp_default_0.0",
+        "palette_stackup_engine.py:220:ifexp_default_0.0",
+        "palette_stackup_engine.py:93:ifexp_default_0.0"
+      ]
+    },
+    "bound_statement": "49 is a conservative UPPER BOUND \u2014 module-reachable, not proven committed-number-touching; frozen-M5 sites route to the A7 register; measurement sites stay NOT_ASSESSED pending the trace instrument at the manifest; reachable non-measurement sites feed layout/mechanism records outside the powder establishment table"
+  },
+  "A55_restatements_for_25": {
+    "builder_constant_census.json (count: 25 + 2 machinery)": "restated 35 builder-scope (25+7+3), floor per 1x",
+    "contract_repair/section_c_declarations.json (classification 25 preserving)": "the 25 preserved stand; the CLASS count restates",
+    "A11/A42 prose citing 25 under-declared": "floors per 1x; the class enumeration is 35 builder + 28 system lookup-defaults",
+    "frozen_instrument_defect_register / programme finding": "cites the class narratively \u2014 restatement noted, text preserved"
+  },
+  "lid_roof_next_node": "M6-LID-ROOF-REPAIR declared NEXT per A56: VALUE_MOVING, explicit void list, pre-repair snapshot, separate commits, anti-reroll guard; the clearance row already suspended",
+  "section_E_four_part": {
+    "enumeration": "COMPLETE (AST, corpus-proven detector)",
+    "gate_enforcing_what_corpus_proves": "DONE THIS NODE \u2014 composed union gate, corpus green against it, 813-key stable baseline, new-occurrence demonstration in suite",
+    "behaviour_dispositions_outstanding": {
+      "FROZEN_M5_A7_REGISTER": 6,
+      "MEASUREMENT_NOT_ASSESSED": 7,
+      "REACHABLE_NON_MEASUREMENT_RECORDS": 36
+    },
+    "corpus": "in place, 9 shapes, versioned",
+    "distance_number": 7
+  }
+}

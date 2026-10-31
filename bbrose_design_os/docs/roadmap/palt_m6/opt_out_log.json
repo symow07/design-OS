@@ -1,0 +1,18 @@
+{
+ "record_type": "extent_opt_out_log/1.0",
+ "uses": [
+  {
+   "utc": "2026-08-12T02:32:29.711711Z",
+   "reason": "hostile re-run A356",
+   "dry_run": false
+  },
+  {
+   "utc": "2026-08-12T02:32:56.455564Z",
+   "reason": "probe",
+   "dry_run": false
+  }
+ ],
+ "count_total": 2,
+ "count_committing": 2,
+ "reset_note": "reset 2026-08-12. The 12 entries this file carried were ALL harness invocations from the A137 exit-code tests, written by my own defective A328 implementation: the suite mutated this tracked record on every run, so the count grew with test runs and A328's 'expected zero' signal was buried. Dry-run uses now write .opt_out_harness_log (ignored). This file counts only uses that could have produced a commit."
+}

@@ -1,0 +1,50 @@
+{
+  "record_type": "flake_parameter_plumbing_audit/1.0",
+  "method": "each declared flake parameter varied ALONE at fixed seed, frame delta measured scene-linear over PLANAR through the R2 machinery \u2014 one level deeper than the pair gate, so an unplumbed parameter is found before it can shape a verdict",
+  "results": {
+    "flake_scale_mm": {
+      "rms_over_mean": 0.23505446,
+      "plumbed": true
+    },
+    "flake_density": {
+      "rms_over_mean": 0.29838447,
+      "plumbed": true
+    },
+    "flake_orientation": {
+      "rms_over_mean": 0.0,
+      "plumbed": false
+    },
+    "metallic_response": {
+      "rms_over_mean": 1.42968248,
+      "plumbed": true
+    },
+    "sparkle_intensity": {
+      "rms_over_mean": 0.06587999,
+      "plumbed": true
+    },
+    "sparkle_distribution": {
+      "rms_over_mean": 0.0,
+      "plumbed": false
+    }
+  },
+  "findings": {
+    "PLUMBED": {
+      "flake_scale_mm": 0.235054,
+      "flake_density": 0.298384,
+      "metallic_response": 1.429682,
+      "sparkle_intensity": 0.06588
+    },
+    "DECLARED_NOT_REALIZED": {
+      "flake_orientation": 0.0,
+      "sparkle_distribution": 0.0,
+      "code_confirmation": "_flake_field reads exactly flake_scale_mm, flake_density, metallic_response and sparkle_intensity \u2014 the two dead parameters never reach a node"
+    }
+  },
+  "consequences": [
+    "the flake rig MAY NOT claim orientation or distribution sensitivity; any candidate axis resting on either is rejected at declaration",
+    "plumbing them is a family-shader realization change: it would void the glitter rig SHIMMER specificity control (banked at 113-event census) and require the full pair re-run \u2014 it is a DECLARED FUTURE NODE flagged to the owner, not a silent fix",
+    "SHIMMER vs POWDER_METALLIC differences rest on the four plumbed parameters, which is sufficient for the declared reflected-environment question"
+  ],
+  "shared_node_groups": "_flake_field is a separate builder; it shares only helper FUNCTIONS (_coords/_noise/_voronoi/_math) with the diffuse families, not node groups, and no modification is made here \u2014 the three banked diffuse PASSes are untouched, established before anything was touched",
+  "owner_approved": false
+}

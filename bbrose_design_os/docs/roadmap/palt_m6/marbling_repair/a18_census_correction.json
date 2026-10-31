@@ -1,0 +1,26 @@
+{
+  "record_type": "a18_census_method_correction/1.0",
+  "count_correction": "the supplement was SEVEN constants in six clauses (marbled carried three); the preserving commit prose said six \u2014 corrected here",
+  "root_cause_mechanism": "all seven misses are literals inside HELPER-CALL ARGUMENT EXPRESSIONS (detail=4.0, seed=spec[seed]+11, scale_mm=p[vein_scale_mm]*0.6). The original census enumerated node-input assignments, named-variable formulas and statement-level multipliers \u2014 it never walked call-argument expressions. A selection bias compounded it: where the same keyword was a FORMULA in one family (matte detail=3+3*var) it was censused, while plain-literal analogues elsewhere matched no pattern. The mechanism, not the instances: the scan's pattern set keyed on assignment shapes; call-argument expression trees were structurally invisible.",
+  "corrected_instrument": "AST whole-expression walk of every family function plus reachable helpers; every numeric literal enumerated regardless of syntactic position; exemptions declared (arithmetic identities 0/1/0.5/2, numeric guards, the degree-radian MATH_CONSTANT); params reads collected with dotted paths",
+  "under_declared_rescan": {
+    "raw_flags": 17,
+    "disposition": {
+      "DEAD_DEFAULT": "_noise detail=3.0 and _bump scale_mm=0.3 \u2014 every call site overrides them; unreachable values, recorded as dead code, not realized constants",
+      "DEFAULT_IDENTITY_ZERO": "_noise distortion=0.0 relied on at seven call sites \u2014 the identity/absence value, same class as an absent block contributing zero; judged exemption, recorded and listed in self-approval",
+      "MATH_CONSTANT": "3.14159/180.0 degree-radian conversion",
+      "STRUCTURAL": "components == 3 branch (on a DECLARED parameter), vector centering constants, socket indices",
+      "INSTRUMENT_MACHINERY": "_w 0.7311 (census L46, already exempt)"
+    },
+    "verdict": "ZERO new realized undeclared material constants \u2014 the preserving half is COMPLETE under the corrected instrument; the seven-constant supplement plus this zero-result closes the under-declared side"
+  },
+  "dead_rescan": {
+    "first_pass_artifact": "the loose matcher (block/leaf-name cross-matching) produced 25 false candidates \u2014 an instrument artifact of the corrected scan itself, tightened to exact dotted-path matching before any conclusion was drawn",
+    "exact_path_result": {
+      "candidate_moves": [],
+      "dnr_confirmed_unreferenced": 49
+    },
+    "immunity": "REALIZED classes carrying empirical probe evidence (recorded rms/varied) and geometry/validator-consumed leaves are outside shader-scan reachability by design",
+    "verdict": "49 DOES NOT MOVE \u2014 every DECLARED_NOT_REALIZED leaf is exact-unreferenced in its family graph and no static-only REALIZED leaf is unreferenced. The result HARDENS the 49."
+  }
+}

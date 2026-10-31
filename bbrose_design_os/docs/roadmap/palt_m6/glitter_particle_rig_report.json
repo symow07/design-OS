@@ -1,0 +1,347 @@
+{
+  "record_type": "glitter_particle_rig/1.0",
+  "protocol_identity": "087c7f64317910fb",
+  "source_placement": {
+    "surface_point": [
+      0.0,
+      35.781,
+      -8.651
+    ],
+    "surface_normal": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "camera_vector_surface_to_camera": [
+      0.441474,
+      -0.764655,
+      0.469472
+    ],
+    "reflection_vector": [
+      -0.441474,
+      0.764655,
+      0.469472
+    ],
+    "source_position": [
+      -132.442,
+      265.177,
+      132.19
+    ],
+    "source_orientation_deg": [
+      62.0,
+      0.0,
+      210.0
+    ],
+    "source_dimensions_mm": [
+      14.0,
+      14.0
+    ],
+    "source_intensity": 900000.0,
+    "source_spherical": {
+      "azimuth": 210.0,
+      "elevation": 28.0,
+      "distance": 300.0
+    },
+    "camera_identity": "7288018cf21f5c4b",
+    "measurement_region": "PLANAR",
+    "mirror_law": "horizontal surface: elevation preserved, azimuth +180 \u2014 the M5 closed-lid law in the characterization script's spherical convention",
+    "sanity": {
+      "elevations_equal": true,
+      "azimuth_delta_deg": 180.0,
+      "reflection_z_positive": true
+    }
+  },
+  "source_solid_angle": {
+    "record_type": "glitter_source_solid_angle_derivation/1.0",
+    "jitter_distribution": {
+      "shader_law": "(voronoi_colour - 0.5) * jitter_deg/90 added to the normal; per-axis uniform",
+      "per_axis_halfwidth_rad": 0.1944,
+      "orientation_jitter_deg": 35.0
+    },
+    "source_distance_mm": 300.0,
+    "facet_lobe_rad": 0.05,
+    "particle_census": {
+      "planar_area_mm2": 485.8,
+      "cells": 991.0,
+      "coverage": 0.1,
+      "particles": 99.0
+    },
+    "event_threshold": 25,
+    "calculated_source_size_mm": 140.0,
+    "target_angular_halfwidth_deg": 13.13,
+    "predicted_aligned_fraction": 0.4049,
+    "predicted_events": 40.1,
+    "predicted_event_range": [
+      28.1,
+      52.2
+    ],
+    "uncertainty": "\u00b130% on the cell census (region shape, edge cells, lobe-width approximation)",
+    "SOURCE_SIZE_AUTHORITY": "CALCULATED_CHARACTERIZATION_DEFAULT",
+    "not_authority_for": [
+      "MATERIAL_PROPERTY",
+      "MANUFACTURER_STANDARD"
+    ]
+  },
+  "predicted_vs_observed_events": {
+    "predicted": 40.1,
+    "observed_scene_linear": 113,
+    "observed_display_encoded_superseded": 87,
+    "prediction_model": "UNDERCALIBRATED, recorded, non-blocking (see prediction_model)"
+  },
+  "energy_calibration": {
+    "reference_energy": 900000.0,
+    "calibration_fixture": "GLITTER (measured brightest of {'SHIMMER': 3.3119802907466886, 'GLITTER': 8.803372479438782})",
+    "base_peak_specular_off": 0.018607145446166394,
+    "target_linear": 0.92,
+    "iterations": [
+      {
+        "energy": 92152.58936199959,
+        "peak": 0.9044773518323899,
+        "clipped": 0
+      }
+    ],
+    "calibrated_energy": 92152.58936199959,
+    "law": "E_{n+1} = E_n * (target - base_peak) / peak_n iterated to the fixed predeclared target"
+  },
+  "axes": {
+    "DISCRETE_EVENT_COUNT": {
+      "independent": true
+    },
+    "MEDIAN_EVENT_AREA_PX": {
+      "independent": true
+    },
+    "EVENT_LUMINANCE_DOMINANCE": {
+      "independent": false,
+      "why": "derived from the same bright mask as the count"
+    }
+  },
+  "predeclared": {
+    "EVENT_LUMINANCE_FACTOR": 1.8,
+    "EVENT_MIN_AREA_PX": 4,
+    "EVENT_MAX_AREA_PX": 2000,
+    "GLITTER_MIN_EVENTS": 25,
+    "CONTROL_MAX_EVENTS": 5
+  },
+  "commissioning": {
+    "particle_resolves": true,
+    "particle_px": 10.0,
+    "positive_fixture_events": 87,
+    "zero_particle_control_events": 0,
+    "positive_has_signal": true,
+    "control_is_quiet": true
+  },
+  "GLITTER_PARTICLE_RIG": "PASS",
+  "census": {
+    "GLITTER": {
+      "median_luminance": 0.04,
+      "threshold": 0.07,
+      "raw_components": 136,
+      "event_count": 113,
+      "median_event_area_px": 53.0,
+      "bright_pixel_fraction": 0.004387,
+      "png": "docs/roadmap/palt_m6/glitter_rig/swatch_census_GLITTER.png",
+      "material_identity": "08e4d02b00a91fcc"
+    },
+    "MATTE_CONTROL": {
+      "median_luminance": 0.04,
+      "threshold": 0.07,
+      "raw_components": 0,
+      "event_count": 0,
+      "median_event_area_px": 0.0,
+      "bright_pixel_fraction": 0.0,
+      "png": "docs/roadmap/palt_m6/glitter_rig/swatch_census_MATTE_CONTROL.png",
+      "material_identity": "7419cada9674255a"
+    },
+    "SHIMMER": {
+      "median_luminance": 0.21,
+      "threshold": 0.38,
+      "raw_components": 0,
+      "event_count": 0,
+      "median_event_area_px": 0.0,
+      "bright_pixel_fraction": 0.0,
+      "png": "docs/roadmap/palt_m6/glitter_rig/swatch_census_SHIMMER.png",
+      "material_identity": "e2a57fe09a82a1d5"
+    }
+  },
+  "SHIMMER_is_continuous": true,
+  "GLITTER_is_discrete": true,
+  "axes_clearing": [
+    "DISCRETE_EVENT_COUNT",
+    "MEDIAN_EVENT_AREA_PX"
+  ],
+  "SHIMMER_VS_GLITTER": "PASS",
+  "measured_in": "resolved pixel events, never particle metadata",
+  "prediction_model": {
+    "PREDICTION_MODEL_STATUS": "UNDERCALIBRATED",
+    "predicted_range": [
+      28.1,
+      52.2
+    ],
+    "observed": 87,
+    "blocking": false,
+    "candidate_factors": [
+      "the aligned-fraction integral treated the source as a point set at its half-angle; finite-area integration over a 140mm panel admits facets aligned anywhere within the full angular support, roughly doubling acceptance at the margins",
+      "the per-axis-uniform tilt model ignores the dz component of the shader jitter, which widens the acceptance disc for facets tilted toward the camera",
+      "one Voronoi cell can present multiple bright pixels split by the 4-connected labeller into more than one event when partially occluded by neighbouring cell edges",
+      "the planar cell census used a square-cell approximation; Chebychev Voronoi cells vary in visible area, biasing the count of resolvable particles upward"
+    ],
+    "not_done": "the model was NOT refit to 87 and is NOT called validated; the census classifier itself was visually verified against the annotated event map, which is the blocking question, and it is sound"
+  },
+  "exr_re_measurement_phase4": {
+    "measured_from": "the scene-linear EXRs of the SAME commissioned run (frames on disk, deterministic \u2014 no re-render), through the R1 provenance-asserting loader",
+    "law_unchanged": {
+      "bright": "1.8x region median",
+      "area": "4-2000px",
+      "glitter_min": 25,
+      "control_max": 5
+    },
+    "census": {
+      "GLITTER": {
+        "median_luminance": 0.04,
+        "threshold": 0.07,
+        "raw_components": 136,
+        "event_count": 113,
+        "median_event_area_px": 53.0,
+        "bright_pixel_fraction": 0.004387,
+        "png": "docs/roadmap/palt_m6/glitter_rig/swatch_census_GLITTER.png",
+        "material_identity": "08e4d02b00a91fcc"
+      },
+      "MATTE_CONTROL": {
+        "median_luminance": 0.04,
+        "threshold": 0.07,
+        "raw_components": 0,
+        "event_count": 0,
+        "median_event_area_px": 0.0,
+        "bright_pixel_fraction": 0.0,
+        "png": "docs/roadmap/palt_m6/glitter_rig/swatch_census_MATTE_CONTROL.png",
+        "material_identity": "7419cada9674255a"
+      },
+      "SHIMMER": {
+        "median_luminance": 0.21,
+        "threshold": 0.38,
+        "raw_components": 0,
+        "event_count": 0,
+        "median_event_area_px": 0.0,
+        "bright_pixel_fraction": 0.0,
+        "png": "docs/roadmap/palt_m6/glitter_rig/swatch_census_SHIMMER.png",
+        "material_identity": "e2a57fe09a82a1d5"
+      }
+    },
+    "verdict": "GLITTER_PARTICLE_RIG PASS CONFIRMED \u2014 113 discrete events scene-linear (87 display-encoded), median area 53px, MATTE control 0, SHIMMER 0 (specificity holds); event map event_map_GLITTER_exr.png visually verified",
+    "prior_display_encoded_census": "superseded in place as a historical reading; its 87-event verdict happened to be correct but rested on the frame class its own comment called invalidating"
+  },
+  "census_display_encoded_SUPERSEDED": {
+    "reason": "read from display-encoded frames \u2014 superseded in place by the scene-linear census below (Phase 4); kept as history, not as a number to quote. 26 of 113 events were invisible at 8 bits.",
+    "census": {
+      "GLITTER": {
+        "median_luminance": 104.25,
+        "threshold": 187.65,
+        "raw_components": 109,
+        "event_count": 87,
+        "median_event_area_px": 38.0,
+        "bright_pixel_fraction": 0.00231,
+        "event_map": "docs/roadmap/palt_m6/glitter_rig/event_map_GLITTER.png",
+        "png": "docs/roadmap/palt_m6/glitter_rig/swatch_census_GLITTER.png",
+        "material_identity": "08e4d02b00a91fcc",
+        "scene_linear_peak": 0.9044773518323899,
+        "clipped_sample_count": 0
+      },
+      "MATTE_CONTROL": {
+        "median_luminance": 104.75,
+        "threshold": 188.55,
+        "raw_components": 0,
+        "event_count": 0,
+        "median_event_area_px": 0.0,
+        "bright_pixel_fraction": 0.0,
+        "event_map": "docs/roadmap/palt_m6/glitter_rig/event_map_MATTE_CONTROL.png",
+        "png": "docs/roadmap/palt_m6/glitter_rig/swatch_census_MATTE_CONTROL.png",
+        "material_identity": "7419cada9674255a",
+        "scene_linear_peak": 0.04359489768743515,
+        "clipped_sample_count": 0
+      },
+      "SHIMMER": {
+        "median_luminance": 156.75,
+        "threshold": 282.15,
+        "raw_components": 0,
+        "event_count": 0,
+        "median_event_area_px": 0.0,
+        "bright_pixel_fraction": 0.0,
+        "event_map": "docs/roadmap/palt_m6/glitter_rig/event_map_SHIMMER.png",
+        "png": "docs/roadmap/palt_m6/glitter_rig/swatch_census_SHIMMER.png",
+        "material_identity": "e2a57fe09a82a1d5",
+        "scene_linear_peak": 0.35959745910167695,
+        "clipped_sample_count": 0
+      }
+    }
+  },
+  "particle_resolvability_table": {
+    "min_resolvable_particle_px": 3,
+    "px_per_mm": 14.2857,
+    "families": {
+      "GLITTER": {
+        "particle_scale_mm": 0.7,
+        "particle_scale_px": 10.0,
+        "resolvable_at_3px": true
+      },
+      "SHIMMER": {
+        "particle_scale_mm": 0.055,
+        "particle_scale_px": 0.786,
+        "resolvable_at_3px": false
+      },
+      "POWDER_METALLIC": {
+        "particle_scale_mm": 0.04,
+        "particle_scale_px": 0.571,
+        "resolvable_at_3px": false
+      },
+      "POWDER_MATTE": {
+        "particle_scale_mm": null,
+        "particle_scale_px": null,
+        "resolvable_at_3px": null,
+        "note": "declares no particulate scale \u2014 a zero census count is informative (no particles declared), not a resolution artifact"
+      },
+      "POWDER_SATIN": {
+        "particle_scale_mm": null,
+        "particle_scale_px": null,
+        "resolvable_at_3px": null,
+        "note": "declares no particulate scale \u2014 a zero census count is informative (no particles declared), not a resolution artifact"
+      },
+      "PRESSED_POWDER": {
+        "particle_scale_mm": null,
+        "particle_scale_px": null,
+        "resolvable_at_3px": null,
+        "note": "declares no particulate scale \u2014 a zero census count is informative (no particles declared), not a resolution artifact"
+      },
+      "CREAM": {
+        "particle_scale_mm": null,
+        "particle_scale_px": null,
+        "resolvable_at_3px": null,
+        "note": "declares no particulate scale \u2014 a zero census count is informative (no particles declared), not a resolution artifact"
+      },
+      "BAKED": {
+        "particle_scale_mm": null,
+        "particle_scale_px": null,
+        "resolvable_at_3px": null,
+        "note": "declares no particulate scale \u2014 a zero census count is informative (no particles declared), not a resolution artifact"
+      },
+      "MARBLED": {
+        "particle_scale_mm": null,
+        "particle_scale_px": null,
+        "resolvable_at_3px": null,
+        "note": "declares no particulate scale \u2014 a zero census count is informative (no particles declared), not a resolution artifact"
+      }
+    },
+    "reading": "a zero event count is evidence of CONTINUITY only for a family whose declared particulate scale resolves; for a sub-pixel family it is evidence of nothing beyond sampling"
+  },
+  "SHIMMER_negative_contrast_SUPERSEDED": {
+    "prior_claim": "SHIMMER as the discriminating negative contrast: \"its event count must stay at the control level while GLITTER's must not\" \u2014 and SHIMMER_VS_GLITTER PASS was partly rested on SHIMMER = 0",
+    "what_it_over_reached": "SHIMMER flakes are 0.786px \u2014 below the rig's own 3px validity floor. Its zero cannot distinguish \"continuous, therefore no discrete events\" from \"too small to resolve, therefore no discrete events\". The same zero was ALSO cited as proof flakes are unresolvable at this resolution; both readings cannot be load-bearing at once.",
+    "weaker_claim_that_stands": "SHIMMER produces no resolvable discrete events at this resolution \u2014 true, and all the census establishes about shimmer",
+    "unaffected": "the GLITTER census PASS itself: 0.70mm = 10px, comfortably resolvable, 113 scene-linear events with a live map; and POWDER_MATTE's zero, which declares no particles at all",
+    "consequence": "SHIMMER-vs-GLITTER discreteness discrimination now rests on GLITTER's positive discreteness plus the reflective rig's measured SHIMMER-vs-METALLIC separation; the shimmer-continuity CLAIM is carried by the flake rig (coherence/correlation axes), not by the census zero"
+  },
+  "ADEQUACY_1i_2026_08_08": {
+    "classification": "the event-count PASS (113 vs 25) and control comparisons are ADEQUACY_UNASSESSED on the repaired chain",
+    "law": "adequacy_1i at 3586022acc972aff (retroactive, symmetric)",
+    "detail": "measurement_adequacy/phase2_retroactive.json"
+  }
+}

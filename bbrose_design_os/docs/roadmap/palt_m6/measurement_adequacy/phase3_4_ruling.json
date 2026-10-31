@@ -1,0 +1,84 @@
+{
+ "record_type": "measurement_adequacy_phase3_4_ruling/1.0",
+ "protocol_identity": "3586022acc972aff",
+ "phase3_ruling": {
+  "qualification_first": "the qualifying set is IDENTICAL at all three seeds and identical to the 15-level set (7 axes) \u2014 refinement changed no qualification; said before any rho was read",
+  "per_seed": {
+   "400": {
+    "n_levels": 25,
+    "qualifying_axes": [
+     "GRANULARITY_INDEX",
+     "GRAZING_BAND_CONTRAST",
+     "HIGHLIGHT_FWHM",
+     "HIGHLIGHT_PEAK",
+     "SPECULAR_TO_DIFFUSE_RATIO",
+     "GRAZING_RESPONSE",
+     "SHEEN_REGION_RESPONSE"
+    ],
+    "min_pair": "GRAZING_BAND_CONTRAST|GRAZING_RESPONSE",
+    "min_rho": 0.8504,
+    "counted": {
+     "GRANULARITY_INDEX|SHEEN_REGION_RESPONSE": 0.9991,
+     "GRANULARITY_INDEX|HIGHLIGHT_FWHM": 0.9939
+    },
+    "validity": "DEGENERATE"
+   },
+   "401": {
+    "n_levels": 25,
+    "qualifying_axes": [
+     "GRANULARITY_INDEX",
+     "GRAZING_BAND_CONTRAST",
+     "HIGHLIGHT_FWHM",
+     "HIGHLIGHT_PEAK",
+     "SPECULAR_TO_DIFFUSE_RATIO",
+     "GRAZING_RESPONSE",
+     "SHEEN_REGION_RESPONSE"
+    ],
+    "min_pair": "GRAZING_BAND_CONTRAST|GRAZING_RESPONSE",
+    "min_rho": 0.88,
+    "counted": {
+     "GRANULARITY_INDEX|SHEEN_REGION_RESPONSE": 1.0,
+     "GRANULARITY_INDEX|HIGHLIGHT_FWHM": 0.9817
+    },
+    "validity": "DEGENERATE"
+   },
+   "402": {
+    "n_levels": 25,
+    "qualifying_axes": [
+     "GRANULARITY_INDEX",
+     "GRAZING_BAND_CONTRAST",
+     "HIGHLIGHT_FWHM",
+     "HIGHLIGHT_PEAK",
+     "SPECULAR_TO_DIFFUSE_RATIO",
+     "GRAZING_RESPONSE",
+     "SHEEN_REGION_RESPONSE"
+    ],
+    "min_pair": "GRAZING_BAND_CONTRAST|GRAZING_RESPONSE",
+    "min_rho": 0.8183,
+    "counted": {
+     "GRANULARITY_INDEX|SHEEN_REGION_RESPONSE": 0.9939,
+     "GRANULARITY_INDEX|HIGHLIGHT_FWHM": 0.9957
+    },
+    "validity": "DEGENERATE"
+   }
+  },
+  "deciding_statistic": "min qualifying-pair |rho| at seed 400 = 0.8504 on GRAZING_BAND|GRAZING_RESPONSE (25 levels); replicas 0.8800 / 0.8183 on the same pair",
+  "margin": 0.0504,
+  "spread": 0.03214,
+  "adequacy": "margin 0.0504 EXCEEDS spread 0.0321 \u2014 the 1i precondition is MET and the verdict stands as measured",
+  "verdict": "SWEEP_DEGENERATE_UNDER_DRIVER at every seed",
+  "what_refinement_showed": "the 15-level divergence (0.789 GB|GRAZING and 0.7978 GRAN|GB \u2014 both carried validity; the precision declaration emphasized the second, recorded here honestly) was rank-resolution noise: at 25 levels no pair at any seed reads at or below the ceiling. The owner's held observation stands: the counted tracking (0.9991/1.0/0.9939 and 0.9939/0.9817/0.9957 at refined density) is real AND uninformative \u2014 a stable 1.0 is exactly what a degenerate instrument produces."
+ },
+ "phase4_N": {
+  "N": 3,
+  "ruled_by": "the frozen margin_exceeds_spread_DEGENERATE reading of phase3_declaration.json \u2014 no further interpretation",
+  "per_pair": {
+   "MATTE_VS_SATIN": "PASS_WITH_UNTESTED_DRIVER stands \u2014 census 0.3571 holds; every sweepable driver NOT_COMMON (1e-valid) or degenerate; fenced by 5 named builder constants; conservation HOLDS; carries its Phase-2 ADEQUACY_UNASSESSED marks on both clearing legs",
+   "PRESSED_VS_MATTE": "PASS_WITH_UNTESTED_DRIVER stands \u2014 census 0.3571; A2 driver degenerate on its own matrix; 5 builder constants; conservation HOLDS; adequacy marks carried",
+   "SATIN_VS_CREAM": "PASS_WITH_UNTESTED_DRIVER stands \u2014 census 0.1905; 4 builder constants; conservation HOLDS; adequacy marks carried, including the thinnest committed clearing margin in the diffuse set (FWHM 0.0343)"
+  },
+  "binding": "M6-CONTRACT-INTEGRITY-REPAIR must not void these three verdicts (its A8 constraint is independent of N and already applied)"
+ },
+ "owner_approved": false,
+ "A136_QUALIFIED_2026_08_11": "SWEEP_DEGENERATE_UNDER_DRIVER stands, QUALIFIED [deciding_statistic=GBC_pair_withdrawn; conclusion_rests_on_min_bound_not_on_a_recomputed_deciding_statistic; 1i_adequacy_margin_NOT_RECOMPUTABLE_full_matrix_never_committed]"
+}

@@ -1,0 +1,16 @@
+{
+  "record_type": "instrument_repair_phase3/1.0",
+  "repair_identity": "1e198aed8d86ed9c",
+  "protocol_identity_unchanged": "087c7f64317910fb",
+  "the_satin_question": {
+    "read": "SATIN_VS_CREAM: PASS \u2014 GRANULARITY_INDEX 0.4423 (floor 0.1169, clean two-instrument axis) + HIGHLIGHT_FWHM 0.2843 (floor 0.0914), uncorrelated, both above the unmoved 0.25 bar, adjudicated with eligibility and measured independence applied (diffuse_pair_adjudication_phase2.json)",
+    "decision": "M6-SATIN-STRUCTURE-CORRECTION IS WITHDRAWN",
+    "cause_named": "NARROWED CAUSE (Gate A1): the flip is carried ENTIRELY by GRANULARITY_INDEX's admission \u2014 the pair went from one clearing axis to two, and the new one is the texture axis. HIGHLIGHT_FWHM reads 0.2843 both pre- and post-repair, identical to four decimals, because the lobe rig was NEVER contaminated: palette_characterization_rig.py axes_from() computes the lobe axes from the Blender-side scene-linear measurement JSON (scene_linear_p999/peak, measured_in SCENE_LINEAR) and never read png16. Satin's grain was destroyed specifically by palette_powder_texture_axes.py's frame reader (the _region_image PIL path at lines 79-81 of c375264: 16-bit RGBA silently crushed to uint8, alpha averaged into luminance). The lobe rig needed no repair and received none.",
+    "satin_declared_structure": "UNTOUCHED \u2014 micronormal_amplitude stays 0.10 at 0.21mm",
+    "cause_named_history": "the first Phase-3 record attributed the flip to \"the measurement chain\" broadly \u2014 corrected at Gate A1 because a cause recorded more broadly than the evidence supports would leave a future reader believing the lobe rig had been repaired when it never needed to be"
+  },
+  "families_frozen_throughout": true,
+  "bars_moved": [],
+  "owner_approved": false,
+  "manufacturing_authority": "NOT_ESTABLISHED"
+}

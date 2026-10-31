@@ -1,0 +1,122 @@
+{
+  "record_type": "independence_1a_negative_control/1.0",
+  "why_run_before_phase5": "the control DISCRIMINATES between two operationalizations of the per-level floor rule; it was run before any new-sweep adjudication so the reading is selected by the control, not by the verdicts it produces",
+  "known_good_case": "flake_density \u2014 REFLECTION_COHERENCE and ENVIRONMENT_CORRELATION are different instruments on physical grounds (spatial pattern statistic vs environment-matching statistic) and both clear their floors by span",
+  "result": {
+    "metallic_response": {
+      "axis_qualification": {
+        "REFLECTED_PATTERN_CONTRAST": {
+          "span_effect": 0.7304,
+          "required": 0.13002,
+          "qualifies": true
+        },
+        "REFLECTION_EDGE_SHARPNESS": {
+          "span_effect": 0.5947,
+          "required": 1.08244,
+          "qualifies": false
+        },
+        "REFLECTION_COHERENCE": {
+          "span_effect": 1.09975,
+          "required": 0.06396,
+          "qualifies": true
+        },
+        "SPECULAR_TO_DIFFUSE_RESPONSE": {
+          "span_effect": 0.14969,
+          "required": 0.04108,
+          "qualifies": true
+        },
+        "ENVIRONMENT_CORRELATION": {
+          "span_effect": 2.0,
+          "required": 0.24984,
+          "qualifies": true
+        }
+      },
+      "qualifying_axes": [
+        "REFLECTED_PATTERN_CONTRAST",
+        "REFLECTION_COHERENCE",
+        "SPECULAR_TO_DIFFUSE_RESPONSE",
+        "ENVIRONMENT_CORRELATION"
+      ],
+      "matrix_over_qualifying_axes": {
+        "REFLECTED_PATTERN_CONTRAST|REFLECTION_COHERENCE": {
+          "abs_rho": 0.9235,
+          "n": 16
+        },
+        "REFLECTED_PATTERN_CONTRAST|SPECULAR_TO_DIFFUSE_RESPONSE": {
+          "abs_rho": 0.8882,
+          "n": 16
+        },
+        "REFLECTED_PATTERN_CONTRAST|ENVIRONMENT_CORRELATION": {
+          "abs_rho": 0.9088,
+          "n": 16
+        },
+        "REFLECTION_COHERENCE|SPECULAR_TO_DIFFUSE_RESPONSE": {
+          "abs_rho": 0.9588,
+          "n": 16
+        },
+        "REFLECTION_COHERENCE|ENVIRONMENT_CORRELATION": {
+          "abs_rho": 0.9794,
+          "n": 16
+        },
+        "SPECULAR_TO_DIFFUSE_RESPONSE|ENVIRONMENT_CORRELATION": {
+          "abs_rho": 0.9794,
+          "n": 16
+        }
+      },
+      "divergent_pairs": [],
+      "validity_1a": "SWEEP_DEGENERATE_UNDER_DRIVER"
+    },
+    "flake_density": {
+      "axis_qualification": {
+        "REFLECTED_PATTERN_CONTRAST": {
+          "span_effect": 0.09329,
+          "required": 0.13002,
+          "qualifies": false
+        },
+        "REFLECTION_EDGE_SHARPNESS": {
+          "span_effect": 0.73531,
+          "required": 1.08244,
+          "qualifies": false
+        },
+        "REFLECTION_COHERENCE": {
+          "span_effect": 0.09297,
+          "required": 0.06396,
+          "qualifies": true
+        },
+        "SPECULAR_TO_DIFFUSE_RESPONSE": {
+          "span_effect": 0.03283,
+          "required": 0.04108,
+          "qualifies": false
+        },
+        "ENVIRONMENT_CORRELATION": {
+          "span_effect": 2.0,
+          "required": 0.24984,
+          "qualifies": true
+        }
+      },
+      "qualifying_axes": [
+        "REFLECTION_COHERENCE",
+        "ENVIRONMENT_CORRELATION"
+      ],
+      "matrix_over_qualifying_axes": {
+        "REFLECTION_COHERENCE|ENVIRONMENT_CORRELATION": {
+          "abs_rho": 0.3916,
+          "n": 12
+        }
+      },
+      "divergent_pairs": [
+        {
+          "pair": "REFLECTION_COHERENCE|ENVIRONMENT_CORRELATION",
+          "abs_rho": 0.3916
+        }
+      ],
+      "validity_1a": "VALID"
+    }
+  },
+  "confirmation": "flake_density is VALID under B with divergent pair COHERENCE|ENV_CORRELATION 0.3916 \u2014 1a IS discriminating under B; under the per-level gate A the same sweep reads NOT_COMPUTABLE, so A is rejected as over-strict",
+  "discovered_exposure_NOT_adjudicated_here": {
+    "finding": "8 of the 10 originally recorded MEASURED_DIVERGENT flake pairs rest on axis variation UNDER the seed-noise floor (e.g. flake_density spans: PATTERN_CONTRAST 0.0933 < required 0.1300, SPECULAR 0.0328 < 0.0411) \u2014 divergence carried by noise ranks; only COHERENCE|ENV under flake_density is floor-clearing divergence; metallic_response is DEGENERATE under 1a (every qualifying axis tracks 0.88-0.98)",
+    "scope": "the flake pairs' counted axes are reflective-rig axes \u2014 outside this node's Phase 4 scope (diffuse lobe/texture rigs only); the amended law now applies to them but re-ruling them requires their own Phase-2 driver tables \u2014 REPORTED to the owner as a standing exposure, deliberately not adjudicated inside this node"
+  },
+  "owner_approved": false
+}

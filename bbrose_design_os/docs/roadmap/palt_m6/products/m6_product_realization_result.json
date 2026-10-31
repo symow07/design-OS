@@ -1,0 +1,153 @@
+{
+ "record_type": "m6_product_realization/1.0",
+ "declaration_identity": "7cf4098c8b0db156",
+ "protocol_items_realized": {
+  "ES3083_twelve_pan_multi_shade_application": "REALIZED \u2014 renders + board 1; geometry provisional, shades owner-chosen, case neutral",
+  "FB3093_pressed_powder_application": {
+   "status": "HONEST_CEILING",
+   "note": "FB3093_PAN_DIMENSIONS_UNSOURCED \u2014 the P2A intent carries no numeric pan dimensions; the pressed-powder application therefore renders on the PRODUCT rect pan geometry (the only real pan geometry in the programme), and building a round pan would have invented dimensions. Recorded as the honest ceiling; a sourced FB3093 drawing lifts it.",
+   "material": "PRESSED_POWDER on the product rect pan via the probe render probe_PRESSED_POWDER_top.png"
+  },
+  "product_observability_on_real_pan_geometry": {
+   "POWDER_MATTE_vs_POWDER_SATIN": "PASS",
+   "PRESSED_POWDER_vs_POWDER_MATTE": "PASS",
+   "SHIMMER_vs_POWDER_METALLIC": "PASS",
+   "BAKED_vs_PRESSED_POWDER": "PASS",
+   "MARBLED_vs_POWDER_MATTE": "PASS"
+  },
+  "workflow_trace_with_production_identifiers": {
+   "task_id": 59,
+   "artifacts": 12
+  }
+ },
+ "pan_map": [
+  {
+   "pan": 1,
+   "component": "powder_1",
+   "shade": "Petal Veil",
+   "family": "POWDER_MATTE",
+   "material_identity_product_seed": "6f80987914c986c5",
+   "material_identity_shade_record": "cf453f50d0cf8821"
+  },
+  {
+   "pan": 2,
+   "component": "powder_2",
+   "shade": "First Light",
+   "family": "POWDER_SATIN",
+   "material_identity_product_seed": "10c583cbf953332c",
+   "material_identity_shade_record": "0bb669c8bc29fa54"
+  },
+  {
+   "pan": 3,
+   "component": "powder_3",
+   "shade": "Dew",
+   "family": "SHIMMER",
+   "material_identity_product_seed": "ad67ec8cfe0d2d57",
+   "material_identity_shade_record": "5c1958b87e36401a"
+  },
+  {
+   "pan": 4,
+   "component": "powder_4",
+   "shade": "Damascena",
+   "family": "POWDER_MATTE",
+   "material_identity_product_seed": "7d268e4f3cc03f7a",
+   "material_identity_shade_record": "0fbabda62796e634"
+  },
+  {
+   "pan": 5,
+   "component": "powder_5",
+   "shade": "Blush Hour",
+   "family": "POWDER_SATIN",
+   "material_identity_product_seed": "7b634685da18764f",
+   "material_identity_shade_record": "cdef405be5f3a688"
+  },
+  {
+   "pan": 6,
+   "component": "powder_6",
+   "shade": "Attar",
+   "family": "BAKED",
+   "material_identity_product_seed": "1c8b0988963bf436",
+   "material_identity_shade_record": "40e337533247a857"
+  },
+  {
+   "pan": 7,
+   "component": "powder_7",
+   "shade": "Copper Leaf",
+   "family": "POWDER_METALLIC",
+   "material_identity_product_seed": "27c9c9d9922e4e23",
+   "material_identity_shade_record": "dbe60ac195e7104c"
+  },
+  {
+   "pan": 8,
+   "component": "powder_8",
+   "shade": "Sage Stem",
+   "family": "POWDER_MATTE",
+   "material_identity_product_seed": "627541936c535bba",
+   "material_identity_shade_record": "59aee44c3d5a1fdd"
+  },
+  {
+   "pan": 9,
+   "component": "powder_9",
+   "shade": "Old Rose",
+   "family": "PRESSED_POWDER",
+   "material_identity_product_seed": "28819f97c57b582d",
+   "material_identity_shade_record": "9a93235d6b010351"
+  },
+  {
+   "pan": 10,
+   "component": "powder_10",
+   "shade": "Thorn",
+   "family": "POWDER_MATTE",
+   "material_identity_product_seed": "a887bef9f0bf2080",
+   "material_identity_shade_record": "64d020884b8502a7"
+  },
+  {
+   "pan": 11,
+   "component": "powder_11",
+   "shade": "Moss Garden",
+   "family": "MARBLED",
+   "material_identity_product_seed": "e533ed43f3ac23c6",
+   "material_identity_shade_record": "f16682b607e0fae4"
+  },
+  {
+   "pan": 12,
+   "component": "powder_12",
+   "shade": "Midnight Bloom",
+   "family": "POWDER_METALLIC",
+   "material_identity_product_seed": "af6971f21d7e1bb7",
+   "material_identity_shade_record": "4dfb3281c2aee351"
+  }
+ ],
+ "boards": [
+  "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/docs/roadmap/palt_m6/products/board_1_es3083_product.png",
+  "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/docs/roadmap/palt_m6/products/board_2_fb3093_product.png",
+  "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/docs/roadmap/palt_m6/products/board_3_observability.png",
+  "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/docs/roadmap/palt_m6/products/board_4_trace.png",
+  "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/docs/roadmap/palt_m6/products/board_5_census.png"
+ ],
+ "renders_sha256": {
+  "board_1_es3083_product.png": "b71be115858d07b581f41ed8e150a0c361c873d9791dee8c0634dbd1c8afc8c8",
+  "board_2_fb3093_product.png": "9f6c146a2f62f2dbc5959c4745148ed4d136a4c894c69856ccff1463a9136760",
+  "board_3_observability.png": "e08ecd037e1f15d4bbe7b297802a33b0620448c1c8886041492ad1d6233f2d3a",
+  "board_4_trace.png": "3d49e41545ce9b194acf558b4d4becfee264686c47a9d0a0fc2d40d2250b3d13",
+  "board_5_census.png": "f35c2f465546dddc1154729d3aaca4ca9867581966608d5f7e3a751cf6841076",
+  "es3083_closed_three_quarter.png": "c5991443cb5b4321e9885639e9a2c4f06b3a10bf1e44a525b5a5bcb849176f6a",
+  "es3083_open_three_quarter.png": "acafb383c90c1f0d838427a2a5fa2f6cc0e3c1b3a8e83a1b85f2003c0df79548",
+  "es3083_open_top.png": "0a772930f74afa8866928c6c66e306a41334d04fca0cb9882d4dc4962e25b036",
+  "probe_BAKED_top.png": "15996af1d74892357cdbd15ac816dd1545552b39b1973ab1050f88053dc8aede",
+  "probe_MARBLED_top.png": "568654cf5e93347d614c002558a19a8266cff510e3998f1b0b8e692e2de057aa",
+  "probe_POWDER_MATTE_top.png": "ea402e90372c562ece5e713d5851bd072d545563d317c6a0cc2dd3039b3706c2",
+  "probe_POWDER_METALLIC_top.png": "f86afeb0f3e7a6c5bea104abbe75d2fbc16b00a1a6ffbef49012679d0a9f8f91",
+  "probe_POWDER_SATIN_top.png": "8c92052e477ebd9165e0f08be920b6d38db2e29c07f7536324ba4495c2c930f5",
+  "probe_PRESSED_POWDER_top.png": "46869a7249a83ced12ae2cc2f1d5e23a5b396894e09ae517393fd7d1a57c0ff5",
+  "probe_SHIMMER_top.png": "fe49141d0f7552ae03be7b23d9905501adc811f8fef2eb4698b7066a5b100dd2"
+ },
+ "not_done_and_said_so": [
+  "FB3093 case geometry (no sourced dimensions)",
+  "any geometry move toward the measured caliper numbers (owner decision, fit table on board 1)",
+  "any re-adjudication of rig-level M6 verdicts"
+ ],
+ "owner_approved": false,
+ "manufacturing_authority": "NOT_ESTABLISHED",
+ "GATE_2": "BLOCKED"
+}

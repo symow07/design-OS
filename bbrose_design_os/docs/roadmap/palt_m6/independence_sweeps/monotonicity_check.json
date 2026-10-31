@@ -1,0 +1,8 @@
+{
+  "record_type": "independence_amendment_monotonicity_check/1.0",
+  "currently_failing_pairs": {
+    "SOLID_VS_MARBLED": "FAIL \u2014 chroma span 0.005 (a luminance marble, not a colour marble) and both counted axes floor-ineligible (0.418/0.697); the FAIL rests on effect bars and floor eligibility, neither touched by the amendment"
+  },
+  "reasoning": "condition (ii) is conjunctive \u2014 it can only remove a previously-counting axis pair, never add one; a pair that fails on bars or floors cannot be rescued by a condition that only subtracts. No FAIL flips to PASS.",
+  "verdict": "STRICTLY_ADDITIVE_CONFIRMED"
+}

@@ -1,0 +1,46 @@
+{
+  "_measurement_correction": {
+    "what": "the first computation consumed the mask-mode measurement as an index list and fell through to WHOLE-FRAME statistics \u2014 background dilution invalidated every number. Caught before any verdict was committed; corrected to the rig's own POWDER index derivation (red-region threshold on the mask rgb rows). Consistent with 1n: null-style catch, scope narrowed to the declared region, zero tolerance unchanged, declared before the verdict is read.",
+    "n_powder_pixels": 159007
+  },
+  "C1_CHROMA_QUANTILE_SPREAD": {
+    "floor": 0.4224,
+    "floor_eligible": false,
+    "required": 0.8448,
+    "positive_control_effect": 0.25089,
+    "positive_passes": true,
+    "warm_pair_effect": 0.45968,
+    "warm_clears": false
+  },
+  "C3_HUE_CIRCULAR_STD": {
+    "floor": 0.02359,
+    "floor_eligible": true,
+    "required": 0.25,
+    "positive_control_effect": 0.66929,
+    "positive_passes": true,
+    "warm_pair_effect": 0.06384,
+    "warm_clears": false
+  },
+  "C4_MEAN_CHROMA": {
+    "floor": 0.0088,
+    "floor_eligible": true,
+    "required": 0.25,
+    "positive_control_effect": 0.02704,
+    "positive_passes": false,
+    "warm_pair_effect": 0.0346,
+    "warm_clears": false
+  },
+  "C2_CHROMA_HISTOGRAM_L1": {
+    "floor": 0.05483,
+    "floor_eligible": true,
+    "required": 0.25,
+    "positive_control_effect": 0.29275,
+    "positive_passes": true,
+    "warm_pair_effect": 0.49048,
+    "warm_clears": true
+  },
+  "C5_REGISTERED_REFERENCE": {
+    "floor": 0.8123,
+    "note": "diagnosed-defective comparator"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "record_type": "instrument_repair_phase0/1.0",
+  "repair_identity": "1e198aed8d86ed9c",
+  "protocol_identity_unchanged": "087c7f64317910fb",
+  "scope": "R1, R2, R6 realized; R3 formal withdrawal completed with its synthetic control. R4/R5 deliberately held for Phase 2.",
+  "families_frozen": true,
+  "bars_moved": [],
+  "realized": {
+    "R1": "every texture measurement loads the scene-linear EXR through FRAME_PROVENANCE_ASSERTION (float, >=3 channels, alpha dropped explicitly, uint8 raises); both PNGs are human-review artifacts no texture measurement reads",
+    "R2": "stimulus_realization runs at the single pair chokepoint BEFORE any axis; below the 0.002 floor the pair reports STIMULUS_NOT_REALIZED with no axis values \u2014 detects:false is unreachable for an unrealized stimulus; the identical-rerun render control now EXPECTS the gate to fire",
+    "R3": "SURFACE_AUTOCORRELATION_MM removed from the registry and from the measurement; the formula survives only as withdrawn_autocorrelation_reference for the synthetic control; grain scale is recorded as unmeasured",
+    "R6": "zero-median and zero-mean branches raise DegenerateRegionError; the never-crossing branch died with the withdrawn axis; no return path is mistakable for a measurement of zero"
+  },
+  "negative_controls_failed_correctly": {
+    "R1": {
+      "artifact": "swatch_base_COMPACTION_high_16bit.png",
+      "artifact_class": "a genuine 16-bit RGBA PNG \u2014 refused as non-float (uint16); the uint8 refusal branch is separately proven in the unit tests on synthetic arrays",
+      "raised": "FrameProvenanceError",
+      "behaved": true
+    },
+    "R1_positive": {
+      "exr": "swatch_tx_COMPACTION_high.exr",
+      "dtype": "float64",
+      "shape": [
+        1200,
+        1200
+      ]
+    },
+    "R2": {
+      "identical_frames": {
+        "rms": 0.0,
+        "low_member_mean": 0.497155,
+        "rms_over_mean": 0.0,
+        "floor": 0.002,
+        "realized": false
+      },
+      "behaved": true
+    },
+    "R3": {
+      "true_correlation_length_mm": 0.56,
+      "withdrawn_formula_recovered_mm": 0.28,
+      "behaved": true,
+      "reading": "kernel-bounded; cannot recover the field length"
+    },
+    "R6": {
+      "raised": "DegenerateRegionError",
+      "message": "PLANAR region mean is zero \u2014 refusing to measure",
+      "behaved": true
+    }
+  },
+  "tests": "apps/pipeline/tests/test_instrument_repair.py \u2014 12 passed",
+  "what_this_phase_refused_to_conclude": [
+    "no family verdict \u2014 every ruling number stays suspended until Phase 1 re-measures on this repaired chain",
+    "no claim that GRANULARITY_INDEX still admits \u2014 its 0.456 was read through the contaminated reader and is re-derived in Phase 1",
+    "no claim about the glitter census \u2014 Phase 4"
+  ],
+  "owner_approved": false,
+  "manufacturing_authority": "NOT_ESTABLISHED",
+  "discovered_during_control": {
+    "png_headers": "all 62 _16bit.png files are genuine 16-bit RGBA (IHDR bit_depth=16 colour_type=6)",
+    "f1_amended": "the writer was fine; PIL downconverts 16-bit RGBA to uint8 on load, so both the instrument AND the original forensic provenance check measured 8-bit data from 16-bit files. The R1 negative control still behaves: cv2 loads the true uint16, and the assertion refuses it as non-float \u2014 no PNG of any depth is a measurement input."
+  }
+}

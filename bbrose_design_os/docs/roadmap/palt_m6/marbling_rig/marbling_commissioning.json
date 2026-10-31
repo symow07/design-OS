@@ -1,0 +1,115 @@
+{
+  "record_type": "marbling_structure_rig/1.0",
+  "commissioning": {
+    "illumination_uniformity_deviation": 0.02419,
+    "gate": 0.08,
+    "frames": [
+      "mb_uniform_reference.png"
+    ]
+  },
+  "floors": {
+    "MARBLE_CHROMA_SPAN": {
+      "floor": 0.41825,
+      "eligible": false,
+      "required": 0.83651
+    },
+    "MARBLE_CHROMA_COHERENCE": {
+      "floor": 0.69749,
+      "eligible": false,
+      "required": 1.39499
+    }
+  },
+  "derived_coefficients_in_the_verdict": "component colours derived by x0.55 (darker) and x1.35+0.05 (lighter) \u2014 undeclared builder coefficients, the source of every chroma number below",
+  "colour_authority": "every shade PROVISIONAL_VISUALIZATION_SHADE, NO_AUTHORITATIVE_SOURCE \u2014 this verdict is about spatial structure and is never readable as a palette decision",
+  "pair_warm": {
+    "MARBLE_CHROMA_SPAN": {
+      "marbled": 0.004965,
+      "solid": 0.003788,
+      "effect": 0.26894,
+      "counts": false,
+      "reasons": [
+        "INELIGIBLE_0.41825",
+        "BELOW_REQUIRED"
+      ]
+    },
+    "MARBLE_CHROMA_COHERENCE": {
+      "marbled": 0.154208,
+      "solid": 0.160493,
+      "effect": 0.03994,
+      "counts": false,
+      "reasons": [
+        "INELIGIBLE_0.69749",
+        "BELOW_REQUIRED"
+      ]
+    }
+  },
+  "verdict_warm": "FAIL",
+  "pair_cool_shade_swap": {
+    "MARBLE_CHROMA_SPAN": {
+      "marbled": 0.001165,
+      "solid": 0.001073,
+      "effect": 0.08222,
+      "counts": false,
+      "reasons": [
+        "INELIGIBLE_0.41825",
+        "BELOW_REQUIRED"
+      ]
+    },
+    "MARBLE_CHROMA_COHERENCE": {
+      "marbled": 0.147189,
+      "solid": 0.152945,
+      "effect": 0.03836,
+      "counts": false,
+      "reasons": [
+        "INELIGIBLE_0.69749",
+        "BELOW_REQUIRED"
+      ]
+    }
+  },
+  "verdict_cool": "FAIL",
+  "shade_invariance": "FAILS \u2014 the distinction is a fact about one placeholder pair; recorded before M7 could inherit it",
+  "SOLID_VS_MARBLED": "FAIL",
+  "microtexture_block_discharge": {
+    "pre_committed": "live -> engine count stands at 49/123; dead -> rises",
+    "audit_rows": {
+      "microtexture.scale_mm": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.05718556,
+        "varied": "0.16 -> 0.256"
+      },
+      "microtexture.strength": {
+        "class": "REALIZED",
+        "rms_over_mean": 0.02258238,
+        "varied": "0.3 -> 0.48"
+      }
+    },
+    "outcome": "LIVE_FOR_ITS_ONLY_CONSUMER \u2014 the count stands at 49 of 123"
+  },
+  "owner_approved": false,
+  "manufacturing_authority": "NOT_ESTABLISHED",
+  "FAIL_diagnosis": {
+    "committed_as": "FAIL \u2014 measured, not softened",
+    "component_1_realization": "the marble components are CHROMA-IDENTICAL BY CONSTRUCTION: the x0.55 darker derivation is multiplicative, preserving R:G:B ratios exactly, so (R-B)/(R+G+B) is invariant; only the +0.05 additive term in the lighter derivation shifts chroma, weakly. The declared \"two colour components\" realize as a LUMINANCE marble. The rig question \u2014 is COLOUR spatially structured? \u2014 receives a true answer: it is not. This is the under-declared-coefficient finding biting: the coefficients do not merely lack declaration, their multiplicative FORM forfeits the declared colour structure. Owner of the fix: M6-CONTRACT-INTEGRITY-REPAIR (next in chain) \u2014 a colour-component declaration with genuinely chromatic components is family realization work, not rig work, and is NOT done here to make a rig pass.",
+    "component_2_instrument": "both axes are INELIGIBLE on their own seed floors (SPAN 0.418, COHERENCE 0.697): the block-coherence formula is pattern-LAYOUT sensitive rather than structure-AMOUNT sensitive, so seed changes swamp it. R4 worked \u2014 the axes were disqualified before they could carry anything. Any redesigned axis (e.g. luminance-marble structure, layout-invariant statistics) is a new declared instrument with its own fixtures and floors.",
+    "what_stands": [
+      "illumination uniformity 0.0242 <= 0.08 \u2014 the lighting is commissioned and boring",
+      "shade-invariance behaved consistently (both assignments FAIL \u2014 no placeholder-pair artifact)",
+      "microtexture block LIVE for its only consumer \u2014 engine count stands at 49/123 per the pre-commitment",
+      "the FAIL cost nothing downstream: the family realization is known defective BEFORE products or M7 could inherit it"
+    ]
+  },
+  "ADEQUACY_1i_2026_08_08": {
+    "classification": "both ineligibility exclusions and the FAIL-direction chroma comparison are ADEQUACY_UNASSESSED; the FAIL additionally stands on the two-owner structural diagnosis, which is not a threshold comparison",
+    "law": "adequacy_1i at 3586022acc972aff (retroactive, symmetric)",
+    "detail": "measurement_adequacy/phase2_retroactive.json"
+  },
+  "VOIDED_BY_REPAIR_2026_08_08": {
+    "what": "SOLID_VS_MARBLED FAIL voided by the VALUE_MOVING chromatic derivation (census L305) \u2014 the verdict characterized the pre-repair luminance-only derivation; re-adjudicated on the repaired engine per C3, pre/post side by side in contract_repair/marble_readjudication.json; prior text intact",
+    "attribution": "shader.component_derivation \u2014 the named parameter whose realization changed (anti-reroll guard satisfied by name)"
+  },
+  "INSTRUMENT_REPAIR_2026_08_08": {
+    "registered_axes_superseded": "MARBLE_CHROMA_SPAN and MARBLE_CHROMA_COHERENCE are superseded as counted axes \u2014 diagnosed placement-measuring (floors 0.81/1.13 post-C6); text preserved above",
+    "new_qualifying_axes": "C2_CHROMA_HISTOGRAM_L1 (floor 0.0548), C3_HUE_CIRCULAR_STD (floor 0.0236) \u2014 dual-control qualified, declared before measurement",
+    "re_rule": "SOLID_VS_MARBLED FAIL under the full amended law (one clearing axis of two required) \u2014 marbling_repair/repair_ruling.json"
+  }
+}

@@ -1,0 +1,619 @@
+{
+  "record_type": "independence_retained_micronormal_matrix/1.0",
+  "source": {
+    "raking_rows": "raking_rig/sweep/sweep_result.json (12 levels, POWDER_MATTE seed 400)",
+    "lobe_files": [
+      "swatch_a2sw_0p02.json",
+      "swatch_a2sw_0p05.json",
+      "swatch_a2sw_0p08.json",
+      "swatch_a2sw_0p11.json",
+      "swatch_a2sw_0p14.json",
+      "swatch_a2sw_0p17.json",
+      "swatch_a2sw_0p2.json",
+      "swatch_a2sw_0p23.json",
+      "swatch_a2sw_0p26.json",
+      "swatch_a2sw_0p29.json",
+      "swatch_a2sw_0p32.json",
+      "swatch_a2sw_0p35.json"
+    ],
+    "no_rerender": "frames deterministic; full lobe measurements were retained per level \u2014 the Phase 0 MISSING item is computed, not re-measured"
+  },
+  "levels": [
+    0.02,
+    0.05,
+    0.08,
+    0.11,
+    0.14,
+    0.17,
+    0.2,
+    0.23,
+    0.26,
+    0.29,
+    0.32,
+    0.35
+  ],
+  "values": {
+    "GRANULARITY_INDEX": [
+      0.030871,
+      0.032432,
+      0.035164,
+      0.038802,
+      0.043115,
+      0.047898,
+      0.053005,
+      0.058345,
+      0.063825,
+      0.069385,
+      0.074977,
+      0.080557
+    ],
+    "HIGHLIGHT_FWHM": [
+      0.225874,
+      0.223794,
+      0.219513,
+      0.213071,
+      0.209157,
+      0.205366,
+      0.201166,
+      0.193623,
+      0.190729,
+      0.184776,
+      0.177315,
+      0.173075
+    ],
+    "HIGHLIGHT_PEAK": [
+      37.85346,
+      37.910496,
+      38.011563,
+      38.187903,
+      38.26302,
+      38.393008,
+      38.499579,
+      38.717302,
+      38.815114,
+      39.001394,
+      39.187085,
+      39.326806
+    ],
+    "SPECULAR_TO_DIFFUSE_RATIO": [
+      1.435812,
+      1.438929,
+      1.443657,
+      1.452764,
+      1.457599,
+      1.465113,
+      1.472346,
+      1.485558,
+      1.493978,
+      1.505643,
+      1.516675,
+      1.527586
+    ],
+    "GRAZING_RESPONSE": [
+      0.089867,
+      0.089593,
+      0.088566,
+      0.084596,
+      0.079136,
+      0.075867,
+      0.075388,
+      0.073574,
+      0.072342,
+      0.07176,
+      0.072136,
+      0.072684
+    ],
+    "SHEEN_REGION_RESPONSE": [
+      0.118151,
+      0.114128,
+      0.110416,
+      0.10695,
+      0.10383,
+      0.100611,
+      0.09731,
+      0.09345,
+      0.0912,
+      0.088359,
+      0.084368,
+      0.083613
+    ],
+    "EDGE_HIGHLIGHT_RESPONSE": [
+      0.211209,
+      0.221311,
+      0.220358,
+      0.210637,
+      0.202059,
+      0.192718,
+      0.191575,
+      0.182615,
+      0.17785,
+      0.164697,
+      0.164506,
+      0.15021
+    ],
+    "RAKING_DIRECTIONAL_SPAN": [
+      0.539032,
+      0.539791,
+      0.540467,
+      0.541719,
+      0.543303,
+      0.544557,
+      0.54614,
+      0.547631,
+      0.548932,
+      0.549905,
+      0.550534,
+      0.551402
+    ],
+    "RAKING_SHADOW_FRACTION": [
+      0.089844,
+      0.089844,
+      0.089844,
+      0.089844,
+      0.089844,
+      0.089844,
+      0.089844,
+      0.089844,
+      0.089844,
+      0.089844,
+      0.089844,
+      0.089844
+    ]
+  },
+  "floor_rule": "response vs reference L0 must clear floor x 2.0; under-floor levels are not levels; pairs with < 3 surviving common levels are NOT_COMPUTABLE and cannot carry 1a validity (a noise axis diverges for free \u2014 that is not evidence)",
+  "caveats": [
+    "raking axes borrow the BAKED relief-subject floors on a flat matte subject \u2014 the flat SHADOW floor was FLOOR_NOT_MEASURABLE; subject mismatch recorded",
+    "EDGE_HIGHLIGHT_RESPONSE is floor-ineligible (0.27991) \u2014 its pairs can only appear where levels genuinely clear 2x that floor",
+    "GRANULARITY here is measured on the RAKING rig frames (as the original sweep did), not the mirror-source texture rig that carries the counted GRANULARITY axis \u2014 the new Phase 3 sweeps measure GRANULARITY on the counted instrument"
+  ],
+  "full_matrix": {
+    "label": "micronormal_amplitude full matrix (9 axes)",
+    "axes": [
+      "GRANULARITY_INDEX",
+      "HIGHLIGHT_FWHM",
+      "HIGHLIGHT_PEAK",
+      "SPECULAR_TO_DIFFUSE_RATIO",
+      "GRAZING_RESPONSE",
+      "SHEEN_REGION_RESPONSE",
+      "EDGE_HIGHLIGHT_RESPONSE",
+      "RAKING_DIRECTIONAL_SPAN",
+      "RAKING_SHADOW_FRACTION"
+    ],
+    "floors": {
+      "GRANULARITY_INDEX": {
+        "floor": 0.1169,
+        "required_response": 0.2338,
+        "surviving_levels": 9,
+        "of": 12
+      },
+      "HIGHLIGHT_FWHM": {
+        "floor": 0.09135,
+        "required_response": 0.1827,
+        "surviving_levels": 4,
+        "of": 12
+      },
+      "HIGHLIGHT_PEAK": {
+        "floor": 0.00797,
+        "required_response": 0.01594,
+        "surviving_levels": 7,
+        "of": 12
+      },
+      "SPECULAR_TO_DIFFUSE_RATIO": {
+        "floor": 0.00886,
+        "required_response": 0.01772,
+        "surviving_levels": 8,
+        "of": 12
+      },
+      "GRAZING_RESPONSE": {
+        "floor": 0.14956,
+        "required_response": 0.29912,
+        "surviving_levels": 1,
+        "of": 12
+      },
+      "SHEEN_REGION_RESPONSE": {
+        "floor": 0.16569,
+        "required_response": 0.33138,
+        "surviving_levels": 3,
+        "of": 12
+      },
+      "EDGE_HIGHLIGHT_RESPONSE": {
+        "floor": 0.27991,
+        "required_response": 0.55982,
+        "surviving_levels": 1,
+        "of": 12
+      },
+      "RAKING_DIRECTIONAL_SPAN": {
+        "floor": 0.00317,
+        "required_response": 0.00634,
+        "surviving_levels": 9,
+        "of": 12
+      },
+      "RAKING_SHADOW_FRACTION": {
+        "floor": 0.02614,
+        "required_response": 0.05228,
+        "surviving_levels": 1,
+        "of": 12
+      }
+    },
+    "matrix": {
+      "GRANULARITY_INDEX|HIGHLIGHT_FWHM": {
+        "rho": 1.0,
+        "n": 4
+      },
+      "GRANULARITY_INDEX|HIGHLIGHT_PEAK": {
+        "rho": 1.0,
+        "n": 7
+      },
+      "GRANULARITY_INDEX|SPECULAR_TO_DIFFUSE_RATIO": {
+        "rho": 1.0,
+        "n": 8
+      },
+      "GRANULARITY_INDEX|GRAZING_RESPONSE": {
+        "rho": null,
+        "n": 1,
+        "NOT_COMPUTABLE": "fewer than 3 surviving common levels \u2014 cannot carry validity"
+      },
+      "GRANULARITY_INDEX|SHEEN_REGION_RESPONSE": {
+        "rho": 1.0,
+        "n": 3
+      },
+      "GRANULARITY_INDEX|EDGE_HIGHLIGHT_RESPONSE": {
+        "rho": null,
+        "n": 1,
+        "NOT_COMPUTABLE": "fewer than 3 surviving common levels \u2014 cannot carry validity"
+      },
+      "GRANULARITY_INDEX|RAKING_DIRECTIONAL_SPAN": {
+        "rho": 1.0,
+        "n": 9
+      },
+      "GRANULARITY_INDEX|RAKING_SHADOW_FRACTION": {
+        "rho": null,
+        "n": 1,
+        "NOT_COMPUTABLE": "fewer than 3 surviving common levels \u2014 cannot carry validity"
+      },
+      "HIGHLIGHT_FWHM|HIGHLIGHT_PEAK": {
+        "rho": 1.0,
+        "n": 4
+      },
+      "HIGHLIGHT_FWHM|SPECULAR_TO_DIFFUSE_RATIO": {
+        "rho": 1.0,
+        "n": 4
+      },
+      "HIGHLIGHT_FWHM|GRAZING_RESPONSE": {
+        "rho": null,
+        "n": 1,
+        "NOT_COMPUTABLE": "fewer than 3 surviving common levels \u2014 cannot carry validity"
+      },
+      "HIGHLIGHT_FWHM|SHEEN_REGION_RESPONSE": {
+        "rho": 1.0,
+        "n": 3
+      },
+      "HIGHLIGHT_FWHM|EDGE_HIGHLIGHT_RESPONSE": {
+        "rho": null,
+        "n": 1,
+        "NOT_COMPUTABLE": "fewer than 3 surviving common levels \u2014 cannot carry validity"
+      },
+      "HIGHLIGHT_FWHM|RAKING_DIRECTIONAL_SPAN": {
+        "rho": 1.0,
+        "n": 4
+      },
+      "HIGHLIGHT_FWHM|RAKING_SHADOW_FRACTION": {
+        "rho": null,
+        "n": 1,
+        "NOT_COMPUTABLE": "fewer than 3 surviving common levels \u2014 cannot carry validity"
+      },
+      "HIGHLIGHT_PEAK|SPECULAR_TO_DIFFUSE_RATIO": {
+        "rho": 1.0,
+        "n": 7
+      },
+      "HIGHLIGHT_PEAK|GRAZING_RESPONSE": {
+        "rho": null,
+        "n": 1,
+        "NOT_COMPUTABLE": "fewer than 3 surviving common levels \u2014 cannot carry validity"
+      },
+      "HIGHLIGHT_PEAK|SHEEN_REGION_RESPONSE": {
+        "rho": 1.0,
+        "n": 3
+      },
+      "HIGHLIGHT_PEAK|EDGE_HIGHLIGHT_RESPONSE": {
+        "rho": null,
+        "n": 1,
+        "NOT_COMPUTABLE": "fewer than 3 surviving common levels \u2014 cannot carry validity"
+      },
+      "HIGHLIGHT_PEAK|RAKING_DIRECTIONAL_SPAN": {
+        "rho": 1.0,
+        "n": 7
+      },
+      "HIGHLIGHT_PEAK|RAKING_SHADOW_FRACTION": {
+        "rho": null,
+        "n": 1,
+        "NOT_COMPUTABLE": "fewer than 3 surviving common levels \u2014 cannot carry validity"
+      },
+      "SPECULAR_TO_DIFFUSE_RATIO|GRAZING_RESPONSE": {
+        "rho": null,
+        "n": 1,
+        "NOT_COMPUTABLE": "fewer than 3 surviving common levels \u2014 cannot carry validity"
+      },
+      "SPECULAR_TO_DIFFUSE_RATIO|SHEEN_REGION_RESPONSE": {
+        "rho": 1.0,
+        "n": 3
+      },
+      "SPECULAR_TO_DIFFUSE_RATIO|EDGE_HIGHLIGHT_RESPONSE": {
+        "rho": null,
+        "n": 1,
+        "NOT_COMPUTABLE": "fewer than 3 surviving common levels \u2014 cannot carry validity"
+      },
+      "SPECULAR_TO_DIFFUSE_RATIO|RAKING_DIRECTIONAL_SPAN": {
+        "rho": 1.0,
+        "n": 8
+      },
+      "SPECULAR_TO_DIFFUSE_RATIO|RAKING_SHADOW_FRACTION": {
+        "rho": null,
+        "n": 1,
+        "NOT_COMPUTABLE": "fewer than 3 surviving common levels \u2014 cannot carry validity"
+      },
+      "GRAZING_RESPONSE|SHEEN_REGION_RESPONSE": {
+        "rho": null,
+        "n": 1,
+        "NOT_COMPUTABLE": "fewer than 3 surviving common levels \u2014 cannot carry validity"
+      },
+      "GRAZING_RESPONSE|EDGE_HIGHLIGHT_RESPONSE": {
+        "rho": null,
+        "n": 1,
+        "NOT_COMPUTABLE": "fewer than 3 surviving common levels \u2014 cannot carry validity"
+      },
+      "GRAZING_RESPONSE|RAKING_DIRECTIONAL_SPAN": {
+        "rho": null,
+        "n": 1,
+        "NOT_COMPUTABLE": "fewer than 3 surviving common levels \u2014 cannot carry validity"
+      },
+      "GRAZING_RESPONSE|RAKING_SHADOW_FRACTION": {
+        "rho": null,
+        "n": 1,
+        "NOT_COMPUTABLE": "fewer than 3 surviving common levels \u2014 cannot carry validity"
+      },
+      "SHEEN_REGION_RESPONSE|EDGE_HIGHLIGHT_RESPONSE": {
+        "rho": null,
+        "n": 1,
+        "NOT_COMPUTABLE": "fewer than 3 surviving common levels \u2014 cannot carry validity"
+      },
+      "SHEEN_REGION_RESPONSE|RAKING_DIRECTIONAL_SPAN": {
+        "rho": 1.0,
+        "n": 3
+      },
+      "SHEEN_REGION_RESPONSE|RAKING_SHADOW_FRACTION": {
+        "rho": null,
+        "n": 1,
+        "NOT_COMPUTABLE": "fewer than 3 surviving common levels \u2014 cannot carry validity"
+      },
+      "EDGE_HIGHLIGHT_RESPONSE|RAKING_DIRECTIONAL_SPAN": {
+        "rho": null,
+        "n": 1,
+        "NOT_COMPUTABLE": "fewer than 3 surviving common levels \u2014 cannot carry validity"
+      },
+      "EDGE_HIGHLIGHT_RESPONSE|RAKING_SHADOW_FRACTION": {
+        "rho": null,
+        "n": 1,
+        "NOT_COMPUTABLE": "fewer than 3 surviving common levels \u2014 cannot carry validity"
+      },
+      "RAKING_DIRECTIONAL_SPAN|RAKING_SHADOW_FRACTION": {
+        "rho": null,
+        "n": 1,
+        "NOT_COMPUTABLE": "fewer than 3 surviving common levels \u2014 cannot carry validity"
+      }
+    },
+    "divergent_pairs_establishing_validity": [],
+    "validity_1a": "SWEEP_DEGENERATE_UNDER_DRIVER"
+  },
+  "raking_sweep_1a_rerun": {
+    "label": "raking sweep as originally read (3 axes)",
+    "axes": [
+      "GRANULARITY_INDEX",
+      "RAKING_DIRECTIONAL_SPAN",
+      "RAKING_SHADOW_FRACTION"
+    ],
+    "floors": {
+      "GRANULARITY_INDEX": {
+        "floor": 0.1169,
+        "required_response": 0.2338,
+        "surviving_levels": 9,
+        "of": 12
+      },
+      "RAKING_DIRECTIONAL_SPAN": {
+        "floor": 0.00317,
+        "required_response": 0.00634,
+        "surviving_levels": 9,
+        "of": 12
+      },
+      "RAKING_SHADOW_FRACTION": {
+        "floor": 0.02614,
+        "required_response": 0.05228,
+        "surviving_levels": 1,
+        "of": 12
+      }
+    },
+    "matrix": {
+      "GRANULARITY_INDEX|RAKING_DIRECTIONAL_SPAN": {
+        "rho": 1.0,
+        "n": 9
+      },
+      "GRANULARITY_INDEX|RAKING_SHADOW_FRACTION": {
+        "rho": null,
+        "n": 1,
+        "NOT_COMPUTABLE": "fewer than 3 surviving common levels \u2014 cannot carry validity"
+      },
+      "RAKING_DIRECTIONAL_SPAN|RAKING_SHADOW_FRACTION": {
+        "rho": null,
+        "n": 1,
+        "NOT_COMPUTABLE": "fewer than 3 surviving common levels \u2014 cannot carry validity"
+      }
+    },
+    "divergent_pairs_establishing_validity": [],
+    "validity_1a": "SWEEP_DEGENERATE_UNDER_DRIVER"
+  },
+  "owner_approved": false,
+  "floor_operationalization": {
+    "A_per_level_gate_vs_reference_L0": "the analysis in full_matrix \u2014 levels gated individually; FAILS the negative control (the known-good flake_density divergence collapses to NOT_COMPUTABLE because a mid-range reference hides genuine response)",
+    "B_axis_span_qualification": "an axis joins the matrix only if its total sweep response clears floor x 2.0; rho over all levels for qualifying axes; PASSES the negative control (the genuine flake divergence COHERENCE|ENV 0.3916 survives, the sub-floor divergences are correctly excluded)",
+    "selected": "B \u2014 selected BY the negative control, not by outcome: the micronormal verdict is INVARIANT to the choice (SWEEP_DEGENERATE_UNDER_DRIVER under A, under B, and with no floor filtering at all: 0/36 divergent pairs unfiltered)",
+    "self_approval_flag": "the operationalization is my reading of the owner's floor sentence \u2014 listed in the Phase 5 self-approval check"
+  },
+  "full_matrix_span_B": {
+    "axis_qualification": {
+      "GRANULARITY_INDEX": {
+        "span_effect": 0.8918,
+        "required": 0.2338,
+        "qualifies": true
+      },
+      "HIGHLIGHT_FWHM": {
+        "span_effect": 0.26469,
+        "required": 0.1827,
+        "qualifies": true
+      },
+      "HIGHLIGHT_PEAK": {
+        "span_effect": 0.03818,
+        "required": 0.01594,
+        "qualifies": true
+      },
+      "SPECULAR_TO_DIFFUSE_RATIO": {
+        "span_effect": 0.06194,
+        "required": 0.01772,
+        "qualifies": true
+      },
+      "GRAZING_RESPONSE": {
+        "span_effect": 0.22406,
+        "required": 0.29912,
+        "qualifies": false
+      },
+      "SHEEN_REGION_RESPONSE": {
+        "span_effect": 0.34236,
+        "required": 0.33138,
+        "qualifies": true
+      },
+      "EDGE_HIGHLIGHT_RESPONSE": {
+        "span_effect": 0.38276,
+        "required": 0.55982,
+        "qualifies": false
+      },
+      "RAKING_DIRECTIONAL_SPAN": {
+        "span_effect": 0.02269,
+        "required": 0.00634,
+        "qualifies": true
+      },
+      "RAKING_SHADOW_FRACTION": {
+        "span_effect": 0.0,
+        "required": 0.05228,
+        "qualifies": false
+      }
+    },
+    "qualifying_axes": [
+      "GRANULARITY_INDEX",
+      "HIGHLIGHT_FWHM",
+      "HIGHLIGHT_PEAK",
+      "SPECULAR_TO_DIFFUSE_RATIO",
+      "SHEEN_REGION_RESPONSE",
+      "RAKING_DIRECTIONAL_SPAN"
+    ],
+    "matrix_over_qualifying_axes": {
+      "GRANULARITY_INDEX|HIGHLIGHT_FWHM": {
+        "abs_rho": 1.0,
+        "n": 12
+      },
+      "GRANULARITY_INDEX|HIGHLIGHT_PEAK": {
+        "abs_rho": 1.0,
+        "n": 12
+      },
+      "GRANULARITY_INDEX|SPECULAR_TO_DIFFUSE_RATIO": {
+        "abs_rho": 1.0,
+        "n": 12
+      },
+      "GRANULARITY_INDEX|SHEEN_REGION_RESPONSE": {
+        "abs_rho": 1.0,
+        "n": 12
+      },
+      "GRANULARITY_INDEX|RAKING_DIRECTIONAL_SPAN": {
+        "abs_rho": 1.0,
+        "n": 12
+      },
+      "HIGHLIGHT_FWHM|HIGHLIGHT_PEAK": {
+        "abs_rho": 1.0,
+        "n": 12
+      },
+      "HIGHLIGHT_FWHM|SPECULAR_TO_DIFFUSE_RATIO": {
+        "abs_rho": 1.0,
+        "n": 12
+      },
+      "HIGHLIGHT_FWHM|SHEEN_REGION_RESPONSE": {
+        "abs_rho": 1.0,
+        "n": 12
+      },
+      "HIGHLIGHT_FWHM|RAKING_DIRECTIONAL_SPAN": {
+        "abs_rho": 1.0,
+        "n": 12
+      },
+      "HIGHLIGHT_PEAK|SPECULAR_TO_DIFFUSE_RATIO": {
+        "abs_rho": 1.0,
+        "n": 12
+      },
+      "HIGHLIGHT_PEAK|SHEEN_REGION_RESPONSE": {
+        "abs_rho": 1.0,
+        "n": 12
+      },
+      "HIGHLIGHT_PEAK|RAKING_DIRECTIONAL_SPAN": {
+        "abs_rho": 1.0,
+        "n": 12
+      },
+      "SPECULAR_TO_DIFFUSE_RATIO|SHEEN_REGION_RESPONSE": {
+        "abs_rho": 1.0,
+        "n": 12
+      },
+      "SPECULAR_TO_DIFFUSE_RATIO|RAKING_DIRECTIONAL_SPAN": {
+        "abs_rho": 1.0,
+        "n": 12
+      },
+      "SHEEN_REGION_RESPONSE|RAKING_DIRECTIONAL_SPAN": {
+        "abs_rho": 1.0,
+        "n": 12
+      }
+    },
+    "divergent_pairs": [],
+    "validity_1a": "SWEEP_DEGENERATE_UNDER_DRIVER"
+  },
+  "no_floor_sensitivity": {
+    "divergent_pairs_all_12_levels_no_filter": 0,
+    "of": 36,
+    "meaning": "the degeneracy is not an artifact of any floor rule"
+  },
+  "raking_sweep_1c_reexam_span_B": {
+    "axis_qualification": {
+      "GRANULARITY_INDEX": {
+        "span_effect": 0.8918,
+        "required": 0.2338,
+        "qualifies": true
+      },
+      "RAKING_DIRECTIONAL_SPAN": {
+        "span_effect": 0.02269,
+        "required": 0.00634,
+        "qualifies": true
+      },
+      "RAKING_SHADOW_FRACTION": {
+        "span_effect": 0.0,
+        "required": 0.05228,
+        "qualifies": false
+      }
+    },
+    "qualifying_axes": [
+      "GRANULARITY_INDEX",
+      "RAKING_DIRECTIONAL_SPAN"
+    ],
+    "matrix": {
+      "GRANULARITY_INDEX|RAKING_DIRECTIONAL_SPAN": 1.0
+    },
+    "divergent_pairs": [],
+    "validity_1a": "SWEEP_DEGENERATE_UNDER_DRIVER",
+    "consequence_1c": "the raking third-channel void was built on a DEGENERATE reading: no qualifying pair diverges under the single monotone driver, so the 1.0 that voided the channel carries no information under the amended law. UN-VOIDING the channel is an AMENDMENT_INDUCED_IMPROVEMENT \u2014 held for the owner, NOT committed; the void STANDS until the owner rules."
+  },
+  "constant_vector_defect": {
+    "RAKING_SHADOW_FRACTION": "bit-constant 0.089844 across all 12 levels \u2014 the original record's 1.0 vs GRANULARITY was an undefined-correlation artifact, superseded in place in raking_rig/sweep/sweep_result.json; generalizes Phase 5's silent-zero check: a bit-CONSTANT axis is a non-response of the same class as an all-zero axis"
+  }
+}

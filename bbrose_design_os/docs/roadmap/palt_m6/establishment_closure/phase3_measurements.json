@@ -1,0 +1,106 @@
+{
+  "record_type": "establishment_closure_phase3_measurements/1.0",
+  "running_count": [
+    "lobe pair POWDER_SATIN (2 renders)",
+    "lobe pair PRESSED_POWDER (2 renders)",
+    "lobe pair CREAM (2 renders)",
+    "flake pair POWDER_METALLIC (1 render)",
+    "flake pair GLITTER (1 render)",
+    "glitter census GLITTER_s66 (1 render)",
+    "glitter census MATTE_CONTROL_s67 (1 render)",
+    "glitter replicate complete"
+  ],
+  "lobe": {
+    "POWDER_SATIN": {
+      "seed_effects": {
+        "HIGHLIGHT_FWHM": 0.01056,
+        "HIGHLIGHT_PEAK": 0.00217,
+        "SPECULAR_TO_DIFFUSE_RATIO": 0.00401,
+        "GRAZING_RESPONSE": 0.04312,
+        "SHEEN_REGION_RESPONSE": 0.05651,
+        "EDGE_HIGHLIGHT_RESPONSE": 0.06573
+      },
+      "pairings": 1,
+      "seeds": [
+        400,
+        401
+      ]
+    },
+    "PRESSED_POWDER": {
+      "seed_effects": {
+        "HIGHLIGHT_FWHM": 0.01796,
+        "HIGHLIGHT_PEAK": 0.00454,
+        "SPECULAR_TO_DIFFUSE_RATIO": 0.00553,
+        "GRAZING_RESPONSE": 0.03338,
+        "SHEEN_REGION_RESPONSE": 0.00843,
+        "EDGE_HIGHLIGHT_RESPONSE": 0.06221
+      },
+      "pairings": 1,
+      "seeds": [
+        400,
+        401
+      ]
+    },
+    "CREAM": {
+      "seed_effects": {
+        "HIGHLIGHT_FWHM": 0.02431,
+        "HIGHLIGHT_PEAK": 0.00937,
+        "SPECULAR_TO_DIFFUSE_RATIO": 0.00927,
+        "GRAZING_RESPONSE": 0.04808,
+        "SHEEN_REGION_RESPONSE": 0.02657,
+        "EDGE_HIGHLIGHT_RESPONSE": 0.02239
+      },
+      "pairings": 1,
+      "seeds": [
+        400,
+        401
+      ]
+    }
+  },
+  "flake": {
+    "POWDER_METALLIC": {
+      "seed_effects": {
+        "REFLECTED_PATTERN_CONTRAST": 0.00095,
+        "REFLECTION_EDGE_SHARPNESS": 0.46754,
+        "REFLECTION_COHERENCE": 0.05655,
+        "SPECULAR_TO_DIFFUSE_RESPONSE": 0.021,
+        "ENVIRONMENT_CORRELATION": 0.13513,
+        "GRAZING_REFLECTION_RESPONSE": 0.00171
+      },
+      "pairings": 1,
+      "seeds": [
+        "committed member",
+        992
+      ]
+    },
+    "GLITTER": {
+      "seed_effects": {
+        "REFLECTED_PATTERN_CONTRAST": 0.07089,
+        "REFLECTION_EDGE_SHARPNESS": 0.05098,
+        "REFLECTION_COHERENCE": 0.30624,
+        "SPECULAR_TO_DIFFUSE_RESPONSE": 0.00502,
+        "ENVIRONMENT_CORRELATION": 0.29584,
+        "GRAZING_REFLECTION_RESPONSE": 0.11413
+      },
+      "pairings": 1,
+      "seeds": [
+        "committed member",
+        991
+      ]
+    }
+  },
+  "glitter": {
+    "GLITTER_s66": {
+      "event_count": 144,
+      "clipped": 0
+    },
+    "MATTE_CONTROL_s67": {
+      "event_count": 0,
+      "clipped": 0
+    },
+    "committed": {
+      "GLITTER_s61": 113,
+      "MATTE_CONTROL_s62": 0
+    }
+  }
+}

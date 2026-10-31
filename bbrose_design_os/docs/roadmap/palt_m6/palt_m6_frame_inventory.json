@@ -1,0 +1,135 @@
+{
+ "record_type": "palt_m6_frame_inventory/1.0",
+ "date": "2026-08-12",
+ "A486_four_populations": {
+  "P1_ARTIFACTS_by_content": {
+   "method": "files whose schema is material_scene_linear_measurement/1.0, grouped by name prefix + family + trailing seed",
+   "swatch_mens_lobe": {
+    "CREAM": [
+     40,
+     81,
+     82,
+     83,
+     84,
+     99
+    ],
+    "POWDER_SATIN": [
+     40,
+     81,
+     82,
+     83,
+     84,
+     99
+    ],
+    "PRESSED_POWDER": [
+     40,
+     81,
+     82,
+     83,
+     84,
+     99
+    ],
+    "POWDER_MATTE": "ABSENT"
+   },
+   "swatch_tx_mens_tex": {
+    "CREAM": [
+     40,
+     81,
+     82,
+     83,
+     84,
+     99
+    ],
+    "POWDER_SATIN": [
+     40,
+     81,
+     82,
+     83,
+     84,
+     99
+    ],
+    "PRESSED_POWDER": [
+     40,
+     81,
+     82,
+     83,
+     84,
+     99
+    ],
+    "POWDER_MATTE": "ABSENT"
+   },
+   "swatch_fr": {
+    "CREAM": [
+     810,
+     811,
+     812,
+     813,
+     814,
+     815
+    ],
+    "POWDER_MATTE": [
+     810,
+     811,
+     812,
+     813,
+     814,
+     815
+    ],
+    "POWDER_SATIN": [
+     810,
+     811,
+     812,
+     813,
+     814,
+     815
+    ]
+   },
+   "fens": {
+    "GLITTER": [
+     40,
+     81,
+     82,
+     83,
+     84,
+     99
+    ],
+    "POWDER_METALLIC": [
+     40,
+     81,
+     82,
+     83,
+     84,
+     99
+    ]
+   }
+  },
+  "P2_MANIFEST": "NO renderer manifest enumerating frames by family and seed exists. render_spend/queue_results.json is keyed by campaign (recal, ct_texture, energy_ctl, lobe, p5, p6) and carries no per-frame rows. P1 vs P2 CANNOT be compared because P2 does not exist in the required form \u2014 that is itself a finding under A486.",
+  "P3_a262": "M_v_C x FWHM frames PRESENT 6/6 both families; texture frames exist only for CREAM, POWDER_SATIN, PRESSED_POWDER",
+  "P4_my_inventory": "no frames at any declared-ensemble seed for any family; NOT_COMPUTABLE"
+ },
+ "AGREEMENT_MAP": {
+  "a262_CORRECT_on_texture_frames": "P1 confirms swatch_tx_mens_tex exists for CREAM, POWDER_SATIN, PRESSED_POWDER and NOT for POWDER_MATTE \u2014 a262 verbatim",
+  "a262_WRONG_on_M_v_C_x_FWHM": "P1 shows POWDER_MATTE has NO frames at any declared-ensemble seed in either the lobe or tex campaign. 'PRESENT 6/6 both families' is false for the MATTE side.",
+  "my_inventory_RIGHT_CONCLUSION_WRONG_EVIDENCE": "NOT_COMPUTABLE stands, but not for the reason I gave. I reported no frames for EITHER family; in fact CREAM has all six and POWDER_MATTE has none. The cell is uncomputable because of the MATTE side alone.",
+  "which_population_is_true": "P1. P2 does not exist, P3 is half true, P4 is right by accident."
+ },
+ "A487_predicate": {
+  "mine": "re.search(r'_s(\\d+)\\.json$|seed(\\d+)', basename)",
+  "truth": "ensemble frames are '<prefix>_<FAMILY>_<SEED>.json' with the seed as a TRAILING number and no 's' prefix",
+  "why_it_missed": "'_s(\\d+)' requires an s; 'seed(\\d+)' requires the literal word seed. Neither matches _40. My predicate matched ONLY the _s-suffixed sweep frames (400/401) and the glitter census (66/67) \u2014 a different campaign that by construction contains no ensemble seeds. I then reported the absence of ensemble frames in a population that could not contain any.",
+  "frames_missed": "36 across swatch_mens_lobe and swatch_tx_mens_tex, plus 12 fens"
+ },
+ "A488_A275": {
+  "status": "ABSENT_FROM_THE_RECORD",
+  "searched": "docs/ all types, git log --all --grep, apps/, tools/, subject phrases",
+  "a274_obligation": "UNSUPPORTED_BY_ITS_CITATION",
+  "not_reconstructed": true
+ },
+ "class_twenty_two": {
+  "minted": true,
+  "vs_13": "a274->A275 captures nothing and overwrites nothing; retention is irrelevant",
+  "vs_21": "no guard is shadowed; the citation is syntactically fine and simply points at nothing",
+  "13_and_21_miss_it": "neither inspects whether a cited identifier resolves",
+  "22_misses_theirs": "a dangling-citation scan says nothing about an overwritten capture or a shadowed definition"
+ }
+}

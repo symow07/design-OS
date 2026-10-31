@@ -1,0 +1,36 @@
+{
+  "record_type": "instrument_repair_phase2/1.0",
+  "repair_identity": "1e198aed8d86ed9c",
+  "protocol_identity_unchanged": "087c7f64317910fb",
+  "families_frozen": true,
+  "bars_moved": [],
+  "R4_noise_floors": {
+    "ensemble": "POWDER_MATTE seeds (40, 81, 82, 83, 84, 99) \u2014 15 seed-only pairings per axis; seed 99 is REQUIRED membership because its recorded excursion (EDGE 0.27991) is data, and a floor computed on an ensemble omitting a known excursion would be selected by seed choice (the first 5-seed ensemble measured EDGE at 0.189 and was discarded for exactly that reason)",
+    "floor_definition": "MAX seed-only relative effect across the ensemble; clearing requires exceeding max(bar, floor x 2.0)",
+    "ineligible": {
+      "EDGE_HIGHLIGHT_RESPONSE": 0.27991
+    },
+    "negative_control": "DEMONSTRATED: on the 67151ef axis set (before granularity existed), applying EDGE_HIGHLIGHT_RESPONSE's floor flips MATTE_VS_SATIN from PASS to FAIL (one counted axis) \u2014 the control fires exactly as the declaration predicted against the state it was declared on. On the current clean axis set the pair holds on other axes; both facts recorded."
+  },
+  "R5_independence": {
+    "method": "absolute Spearman rank correlation across the 4-family diffuse census, ceiling 0.80 declared before computation",
+    "confirmed_groups": [
+      "HIGHLIGHT_FWHM / SHEEN_REGION_RESPONSE / EDGE_HIGHLIGHT_RESPONSE mutually |rho|=1.0 \u2014 F5's shared-scalar group, now MEASURED rather than argued",
+      "HIGHLIGHT_PEAK / SPECULAR_TO_DIFFUSE_RATIO |rho|=1.0"
+    ],
+    "granularity_independent": "GRANULARITY_INDEX correlates with no axis above the ceiling \u2014 two-instrument independence, measured",
+    "caveat": "N=4 census; rank correlation over four points is coarse and the record says so"
+  },
+  "adjudication": {
+    "MATTE_VS_SATIN": "PASS on GRANULARITY_INDEX 0.6828 + SHEEN_REGION_RESPONSE 0.4225 (> its 0.3314 required); EDGE excluded on three grounds (ineligible, within noise margin, correlated with counted SHEEN) \u2014 shown, not assumed",
+    "PRESSED_VS_MATTE": "PASS on GRANULARITY_INDEX 0.8942 + SHEEN 0.4471; FWHM cleared the bar but is excluded as correlated with counted SHEEN \u2014 the grouping working as declared",
+    "SATIN_VS_CREAM": "PASS on GRANULARITY_INDEX 0.4423 + HIGHLIGHT_FWHM 0.2843 \u2014 two instruments, uncorrelated; SHEEN at 0.2469 sits honestly below the bar and does not count"
+  },
+  "what_this_phase_refused_to_conclude": [
+    "the satin question is still not closed \u2014 Phase 3 makes the final read and the withdrawal decision",
+    "nothing about the glitter census \u2014 Phase 4",
+    "the N=4 independence census is not claimed to generalize beyond the diffuse families it measured"
+  ],
+  "owner_approved": false,
+  "manufacturing_authority": "NOT_ESTABLISHED"
+}

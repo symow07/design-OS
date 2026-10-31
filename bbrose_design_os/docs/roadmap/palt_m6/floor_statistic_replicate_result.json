@@ -1,0 +1,162 @@
+{
+ "record_type": "floor_statistic_replicate_result/1.0",
+ "protocol_identity": "a229810ce00ff35c",
+ "frames": "18 already rendered at seeds 810-815 (no new spend)",
+ "replicate_spreads": {
+  "POWDER_MATTE": {
+   "axis": "SHEEN_REGION_RESPONSE",
+   "max_pairwise": 0.14703,
+   "mean_pairwise": 0.05886,
+   "prior": 0.16569,
+   "ratio": 0.887,
+   "per_seed": {
+    "810": 0.08134607804493496,
+    "811": 0.08716003153330705,
+    "812": 0.08658520562343976,
+    "813": 0.09425502562081198,
+    "814": 0.08399027723032453,
+    "815": 0.08801405859939561
+   }
+  },
+  "POWDER_SATIN": {
+   "axis": "HIGHLIGHT_FWHM",
+   "max_pairwise": 0.06227,
+   "mean_pairwise": 0.02413,
+   "prior": 0.04781,
+   "ratio": 1.302,
+   "per_seed": {
+    "810": 0.1807803644962694,
+    "811": 0.18701838789905004,
+    "812": 0.17572471154238187,
+    "813": 0.1814734782076895,
+    "814": 0.18216659191910956,
+    "815": 0.17935336567863985
+   }
+  },
+  "CREAM": {
+   "axis": "HIGHLIGHT_FWHM",
+   "max_pairwise": 0.04457,
+   "mean_pairwise": 0.01934,
+   "prior": 0.03289,
+   "ratio": 1.355,
+   "per_seed": {
+    "810": 0.23753414604313614,
+    "811": 0.24124434296897296,
+    "812": 0.23651486117340073,
+    "813": 0.23366086353814164,
+    "814": 0.2307253231133037,
+    "815": 0.23321237819545806
+   }
+  }
+ },
+ "headline": "ALL THREE COMMITTED FAILs STAND under replication. The estimates each moved \u2014 MATTE SHEEN 0.16569 -> 0.14703 (x0.89, LOWER, the direction that could have flipped a verdict), SATIN FWHM 0.04781 -> 0.06227 (x1.30), CREAM FWHM 0.03289 -> 0.04457 (x1.36) \u2014 and in every case the clearing margin remains below the member spread, so the 1i adequacy precondition is UNMET on the replicate as it was on the original",
+ "per_verdict": {
+  "MATTE_VS_SATIN": {
+   "axis": "SHEEN_REGION_RESPONSE",
+   "reading": 0.4225,
+   "clearing_margin": 0.09112,
+   "member": "POWDER_MATTE",
+   "prior_spread": 0.16569,
+   "replicate_spread": 0.14703,
+   "1i_met_against_prior": false,
+   "1i_met_against_replicate": false,
+   "1i_met_against_worst_of_both": false,
+   "verdict_after_replication": "FAIL STANDS \u2014 the clearing margin remains below the member spread under BOTH measurements",
+   "distance_to_flipping": 0.05591
+  },
+  "PRESSED_VS_MATTE": {
+   "axis": "SHEEN_REGION_RESPONSE",
+   "reading": 0.4471,
+   "clearing_margin": 0.11572,
+   "member": "POWDER_MATTE",
+   "prior_spread": 0.16569,
+   "replicate_spread": 0.14703,
+   "1i_met_against_prior": false,
+   "1i_met_against_replicate": false,
+   "1i_met_against_worst_of_both": false,
+   "verdict_after_replication": "FAIL STANDS \u2014 the clearing margin remains below the member spread under BOTH measurements",
+   "distance_to_flipping": 0.03131
+  },
+  "SATIN_VS_CREAM": {
+   "axis": "HIGHLIGHT_FWHM",
+   "reading": 0.2843,
+   "clearing_margin": 0.0343,
+   "member": "POWDER_SATIN (binding)",
+   "prior_spread": 0.04781,
+   "replicate_spread": 0.06227,
+   "1i_met_against_prior": false,
+   "1i_met_against_replicate": false,
+   "1i_met_against_worst_of_both": false,
+   "verdict_after_replication": "FAIL STANDS \u2014 the clearing margin remains below the member spread under BOTH measurements",
+   "distance_to_flipping": 0.02797
+  }
+ },
+ "closest_to_flipping": "PRESSED_VS_MATTE: margin 0.11572 against a replicated spread of 0.14703 \u2014 a gap of 0.03131. It did not flip, and it is the one a third measurement could move; stated so the closeness is on the record rather than discovered later",
+ "2m_identities_moved": {
+  "new_value_identities": {
+   "MATTE_SHEEN": "2871dee260b97865",
+   "SATIN_FWHM": "c69947635baa8ea6",
+   "CREAM_FWHM": "8b0539246b9ffd10"
+  },
+  "superseded_forward_identities": {
+   "MATTE_SHEEN": "0ff0d2baa16012ba",
+   "SATIN_FWHM": "c7254009ff8dc82c",
+   "CREAM_FWHM": "989b6f72fc3df8d5"
+  },
+  "citing_path_states": {
+   "MATTE_SHEEN": "STALE[value_moved]",
+   "SATIN_FWHM": "STALE[value_moved]",
+   "CREAM_FWHM": "STALE[value_moved]"
+  },
+  "reading": "every forward marker moved to STALE[value_moved], which is the A95 mechanism firing MECHANICALLY for the first time \u2014 the verdicts citing the prior identity are stale by comparison, not by recollection. They are restated here against the two-measurement estimate and their direction is unchanged"
+ },
+ "what_this_does_not_establish": "the M_v_S FAIL still carries MVS_SHEEN_NO_POSITIVE_CONTROL_AT_COMPUTED_CONDITION \u2014 replication addresses the spread, not the absent positive control at the condition the FAIL was computed at (A130). Two independent doubts; this node retires one of them",
+ "owner_approved": false,
+ "A195_kind": {
+  "kind": "BOUND",
+  "combining_rule": "WORST_OBSERVED_EXCURSION_ACROSS_ENSEMBLES",
+  "combining_rule_identity": "fd91d08471da03fb",
+  "combined_values_under_the_rule": {
+   "MATTE_SHEEN": 0.16569,
+   "SATIN_FWHM": 0.06227,
+   "CREAM_FWHM": 0.04457
+  }
+ },
+ "A205_post_hoc_combining_rule_2026_08_11": {
+  "combining_rule": "WORST_OBSERVED_EXCURSION_ACROSS_ENSEMBLES",
+  "combining_rule_declared": "POST_HOC",
+  "combining_rule_identity": "fd91d08471da03fb",
+  "admissible_because": "THIRD_CANDIDATE_EXCLUDED_BY_LAW_PREDATING_CHOICE",
+  "excluding_law": {
+   "ruling": "1i (adequacy_1i)",
+   "commit": "8f6cb81",
+   "commit_date": "2026-08-08",
+   "sentence": "A spread of a DIFFERENT statistic is not a spread.",
+   "why_it_excludes": "dispersion-of-dispersion is the replicate spread of the PROXY statistic (max_seed_only_effect), not of the compared statistic (the clearing) \u2014 a spread of a different statistic",
+   "not_A203": "the exclusion is definitional and makes no appeal to the direction of movement, so it is not the reasoning A212 barred"
+  },
+  "legally_available_candidates": {
+   "worst": 0.16569,
+   "latest": 0.14703
+  },
+  "candidate_named_but_NOT_available": {
+   "dispersion_of_dispersion": 0.01866
+  },
+  "dispositions_across_the_AVAILABLE_set": {
+   "worst": "FAIL",
+   "latest": "FAIL"
+  },
+  "agreement_across_available_set": true,
+  "struck_per_A213": "the prior field admissible_because=ALL_CANDIDATE_RULES_AGREE_ON_DISPOSITION is STRUCK \u2014 false as a matter of arithmetic, not amended, not qualified, not carried as a footnote",
+  "referent_ambiguity": "RAISED_AND_RESOLVED",
+  "raised_by": "EXECUTOR",
+  "alternative_reading": "that same statistic = the threshold quantity",
+  "foreclosed_by": "SAMPLING_UNIT_NOT_COMPUTABLE_ACROSS_SEED_ENSEMBLE",
+  "adjudicated": "M6-PROXY-VS-TEST / A219",
+  "grounds_ranked": {
+   "1_decisive_arithmetic": "1i fixes its sampling unit \u2014 'measured across the instrument's declared seed ensemble'. max_seed_only_effect has ONE value per ensemble (a maximum over the seeds), so it does not vary within one and its dispersion is not computable under the clause's own recipe. The alternative reading fails to produce a computable quantity",
+   "2_lexical": "1i names two objects with two nouns \u2014 'a measured statistic' and 'a threshold' \u2014 then reuses exactly one of them",
+   "3_corroborative_weakest": "1k names the quantity directly; ranked last because cross-clause harmony is weaker than the clause's own recipe (3d)"
+  }
+ }
+}

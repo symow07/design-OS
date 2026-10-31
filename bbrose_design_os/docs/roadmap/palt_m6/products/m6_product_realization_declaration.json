@@ -1,0 +1,65 @@
+{
+ "record_type": "m6_product_realization_declaration/1.0",
+ "declared_before_realization": true,
+ "a19_scope": "product-definition work consumes the repaired powder contract; nothing ships; owner_approved false; GATE_2 BLOCKED; manufacturing_authority NOT_ESTABLISHED; shades are OWNER_CHOSEN_DESIGN_INTENT, not colour authority",
+ "products": {
+  "ES3083": {
+   "geometry": "P1B rect moulded assembly, PROVISIONAL_DESIGN_DEFAULT dimensions, existing build, identities untouched",
+   "materials": "twelve owner shades from es3083_shade_authority.json, realized at their recorded families, seeds 700+pan",
+   "pan_mapping": "pan N (record order) -> powder_N (component order); the mapping is VISIBLE on the product board captions so a misorder cannot hide",
+   "case_colour": "NEUTRAL CLAY \u2014 PANTONE 621C/627C remain UNRESOLVED_SPOT_COLOUR; no case colour is fabricated",
+   "views": [
+    "three_quarter OPEN_REVIEW_ANGLE",
+    "top OPEN_REVIEW_ANGLE",
+    "three_quarter CLOSED"
+   ]
+  },
+  "FB3093": {
+   "family": "PRESSED_POWDER",
+   "shade": "PROVISIONAL_VISUALIZATION_SHADE (no owner shade exists for FB3093; none is invented)",
+   "geometry_rule": "contracted pan dimensions where the P2A intent sources them; otherwise the honest ceiling is recorded",
+   "views": [
+    "three_quarter"
+   ]
+  }
+ },
+ "observability": {
+  "instrument": "palette_m5_evidence.optical_signature + discriminate, bars AS DECLARED there (MINIMUM_DISCRIMINATION) \u2014 reused, not moved",
+  "probe": "the PRODUCT's own pan (metal_pan_1 + powder_1 from the assembly), shade held constant at Petal Veil (the lightest owner shade \u2014 the depth window honesty from D8), family swapped across the product census",
+  "pairs": "REQUIRED_DISTINCTIONS filtered to pairs both of whose families the products exercise; the rest recorded NOT_EXERCISED_BY_THESE_PRODUCTS",
+  "limit_stated": "measurement is on the production script's 8-bit display PNGs because that is what the M5 instrument declares it reads; no scene-linear claim is made for it"
+ },
+ "spend": {
+  "resolution": [
+   1100,
+   1100
+  ],
+  "samples": 48,
+  "max_renders": 14,
+  "families_in_census": [
+   "BAKED",
+   "MARBLED",
+   "POWDER_MATTE",
+   "POWDER_METALLIC",
+   "POWDER_SATIN",
+   "PRESSED_POWDER",
+   "SHIMMER",
+   "PRESSED_POWDER"
+  ]
+ },
+ "trace": {
+  "queue": "m6_products",
+  "task_marker": "M6-PRODUCT-TRACE ES3083 twelve-pan + FB3093",
+  "first_act": "palette_queue_control.begin_traced_queue with this declaration's identity"
+ },
+ "boards": [
+  "es3083_product_board",
+  "fb3093_product_board",
+  "observability_board",
+  "trace_board",
+  "census_board"
+ ],
+ "amendment_1_1_class_23_correction": "v1 constructed owner shades RAW from the shade record's 4-decimal-rounded rgb; the class-23 guard fired (correctly, twice over: construction belongs to the engine's one sanctioned site, and the engine's hex-derived sRGB differs from the record's rounded triples in the 5th decimal). Construction now goes through es3083_owner_shade_set(seed_base=700). Every phase was RE-RUN from the corrected specs \u2014 renders, observability, trace, boards; nothing inherited from v1. Spend: a second 10-render run, cause named here; v1 outputs overwritten in place as the superseded realization of the same declared views.",
+ "owner_approved": false,
+ "declaration_identity": "7cf4098c8b0db156"
+}

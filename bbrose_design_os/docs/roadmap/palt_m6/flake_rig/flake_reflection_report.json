@@ -1,0 +1,241 @@
+{
+  "record_type": "flake_reflection_rig/1.0",
+  "declaration_identity": "c0377cdba4712eac",
+  "declaration": {
+    "record_type": "flake_reflection_rig/1.0",
+    "flake_scale_px": {
+      "SHIMMER": 0.786,
+      "POWDER_METALLIC": 0.571,
+      "GLITTER_reference": 10.0
+    },
+    "route": "ROUTE_1_REFLECTED_ENVIRONMENT_STRUCTURE",
+    "rejection_rule": "axes that depend on resolving individual flakes are rejected at declaration",
+    "axes": {
+      "REFLECTED_PATTERN_CONTRAST": {
+        "kind": "relative",
+        "bar": 0.25,
+        "formula": "(p95-p5)/median of the PLANAR region grid",
+        "independent": true
+      },
+      "REFLECTION_EDGE_SHARPNESS": {
+        "kind": "relative",
+        "bar": 0.25,
+        "formula": "p95 of adjacent-cell gradient of the CONTRAST-NORMALISED planar grid",
+        "independent": true,
+        "note": "normalising by contrast decorrelates it from amplitude"
+      },
+      "REFLECTION_COHERENCE": {
+        "kind": "absolute",
+        "bar": 0.25,
+        "formula": "fraction of planar-grid variance captured by an 8x8 low-frequency downsample \u2014 coherent bands score high, speckle scores low",
+        "independent": true
+      },
+      "SPECULAR_TO_DIFFUSE_RESPONSE": {
+        "kind": "relative",
+        "bar": 0.25,
+        "formula": "scene-linear p99.9/median on the QUARTER_CYLINDER",
+        "independent": true
+      },
+      "ENVIRONMENT_CORRELATION": {
+        "kind": "absolute",
+        "bar": 0.25,
+        "formula": "Pearson correlation of the normalised planar grid with the MIRROR REFERENCE planar grid",
+        "independent": true
+      },
+      "GRAZING_REFLECTION_RESPONSE": {
+        "kind": "relative",
+        "bar": 0.25,
+        "formula": "(p95-p5)/median of the GRAZING region grid",
+        "independent": false,
+        "note": "same formula as REFLECTED_PATTERN_CONTRAST on another region; counted as SUPPORTING, never as the second independent axis"
+      }
+    },
+    "pass_law": {
+      "required_independent_axes": 2,
+      "bar": 0.25
+    },
+    "pair_seeds": {
+      "SHIMMER": 130,
+      "POWDER_METALLIC": 140
+    },
+    "floor_seeds": [
+      130,
+      131,
+      132,
+      133,
+      134,
+      135
+    ],
+    "separation_margin": 2.0,
+    "unplumbed_parameters_not_claimed": [
+      "flake_orientation",
+      "sparkle_distribution"
+    ],
+    "protocol_identity_untouched": "087c7f64317910fb"
+  },
+  "commissioning": {
+    "mirror_pattern_contrast": 0.264893,
+    "gate": 0.2,
+    "mirror_frames": [
+      "flake_mirror_reference.png",
+      "flake_mirror_reference.exr"
+    ],
+    "clipped": 0,
+    "SHIMMER_subject_peak": 0.200294,
+    "POWDER_METALLIC_subject_peak": 0.135936
+  },
+  "stimulus": {
+    "rms": 0.09107629,
+    "low_member_mean": 0.028224,
+    "rms_over_mean": 3.2269125,
+    "floor": 0.002,
+    "realized": true
+  },
+  "noise_floors": {
+    "REFLECTED_PATTERN_CONTRAST": {
+      "floor": 0.06501,
+      "pairings": 15,
+      "eligible": true,
+      "required": 0.25
+    },
+    "REFLECTION_EDGE_SHARPNESS": {
+      "floor": 0.54122,
+      "pairings": 15,
+      "eligible": false,
+      "required": 1.08244
+    },
+    "REFLECTION_COHERENCE": {
+      "floor": 0.03198,
+      "pairings": 15,
+      "eligible": true,
+      "required": 0.25
+    },
+    "SPECULAR_TO_DIFFUSE_RESPONSE": {
+      "floor": 0.02054,
+      "pairings": 15,
+      "eligible": true,
+      "required": 0.25
+    },
+    "ENVIRONMENT_CORRELATION": {
+      "floor": 0.12492,
+      "pairings": 15,
+      "eligible": true,
+      "required": 0.25
+    },
+    "GRAZING_REFLECTION_RESPONSE": {
+      "floor": 0.03727,
+      "pairings": 15,
+      "eligible": true,
+      "required": 0.25
+    }
+  },
+  "pair": {
+    "REFLECTED_PATTERN_CONTRAST": {
+      "shimmer": 0.11379,
+      "metallic": 0.15458,
+      "effect": 0.30398,
+      "floor": 0.06501,
+      "counts": true,
+      "reasons": []
+    },
+    "REFLECTION_EDGE_SHARPNESS": {
+      "shimmer": 0.12775,
+      "metallic": 0.17061,
+      "effect": 0.28729,
+      "floor": 0.54122,
+      "counts": false,
+      "reasons": [
+        "INELIGIBLE_FLOOR_0.54122",
+        "BELOW_REQUIRED"
+      ]
+    },
+    "REFLECTION_COHERENCE": {
+      "shimmer": 0.8738,
+      "metallic": 0.38892,
+      "effect": 0.48488,
+      "floor": 0.03198,
+      "counts": true,
+      "reasons": []
+    },
+    "SPECULAR_TO_DIFFUSE_RESPONSE": {
+      "shimmer": 1.60029,
+      "metallic": 1.62218,
+      "effect": 0.01359,
+      "floor": 0.02054,
+      "counts": false,
+      "reasons": [
+        "BELOW_REQUIRED"
+      ]
+    },
+    "ENVIRONMENT_CORRELATION": {
+      "shimmer": 0.04774,
+      "metallic": 0.5891,
+      "effect": 0.54136,
+      "floor": 0.12492,
+      "counts": true,
+      "reasons": []
+    },
+    "GRAZING_REFLECTION_RESPONSE": {
+      "shimmer": 0.22934,
+      "metallic": 0.32683,
+      "effect": 0.35056,
+      "floor": 0.03727,
+      "counts": false,
+      "reasons": [
+        "SUPPORTING_NEVER_COUNTS"
+      ]
+    }
+  },
+  "counted_axes": [
+    "REFLECTED_PATTERN_CONTRAST",
+    "REFLECTION_COHERENCE",
+    "ENVIRONMENT_CORRELATION"
+  ],
+  "not_one_axis_concentration": true,
+  "negative_controls": {
+    "identical_measurement": {
+      "effects_all_zero": true,
+      "behaved": true
+    },
+    "seed_only_pair_law": {
+      "clearing_axes": [],
+      "behaved": true
+    },
+    "exposure_only_pair_law": {
+      "clearing_axes": [],
+      "behaved": true
+    }
+  },
+  "controls_misbehaved": [],
+  "SHIMMER_VS_POWDER_METALLIC": "PASS_PENDING_INDEPENDENCE",
+  "independence_note": "independence on this rig is measured by the DECLARED parameter-sweep instrument (sweep/sweep_declaration.json): metallic_response and flake_density swept within SHIMMER, abs Spearman across levels, ceiling 0.80, with the asymmetric reading declared in advance \u2014 divergence measures independence; tracking on all sweeps is treated conservatively as not-both-countable.",
+  "owner_approved": false,
+  "manufacturing_authority": "NOT_ESTABLISHED",
+  "pending_independence_note": "the reflective census is N=2-by-declaration and cannot grow (the rig declares exactly two families); within-rig independence is therefore a hashed declaration, not a measurement \u2014 the exact property R5 exists to stop anyone asserting. Marked PASS_PENDING_INDEPENDENCE until the declared parameter-sweep instrument measures it one way or the other.",
+  "independence_note_SUPERSEDED": {
+    "prior": "within-rig mutual independence rests on the protocol's hashed per-axis declarations (different formulas on different normalisations, supporting axes never counted); cross-rig Spearman needs a reflective census of N>=4 and is a recorded obligation, not claimable at N=2",
+    "why": "the prior note promised discharge \"as the reflective census grows\" \u2014 but SUB_RIGS[FLAKE_REFLECTION_RIG].families declares exactly two families, so that census cannot grow. An obligation whose trigger is unreachable is a verdict with a note attached.",
+    "replacement": "independence on this rig is measured by the DECLARED parameter-sweep instrument (sweep/sweep_declaration.json): metallic_response and flake_density swept within SHIMMER, abs Spearman across levels, ceiling 0.80, with the asymmetric reading declared in advance \u2014 divergence measures independence; tracking on all sweeps is treated conservatively as not-both-countable."
+  },
+  "independence_discharged": {
+    "counted": [
+      "REFLECTED_PATTERN_CONTRAST",
+      "REFLECTION_COHERENCE",
+      "ENVIRONMENT_CORRELATION"
+    ],
+    "mutual_independence": "C|COH 0.6853, C|ENV 0.6993, COH|ENV 0.3916 on flake_density \u2014 all MEASURED_DIVERGENT",
+    "verdict": "PASS \u2014 independence MEASURED, pending mark discharged",
+    "instrument": "sweep/sweep_result.json (declared before measurement)"
+  },
+  "A4_REMARK_2026_08_08": {
+    "was": "PASS (independence_discharged above, preserved in place)",
+    "why": "2 of the 3 divergences that discharged the pending mark rest on sub-floor variation (PATTERN_CONTRAST spans: flake_density 0.0933 < required 0.1300) \u2014 the supporting evidence is possibly invalid, and a PASS does not keep its status while the investigation is scheduled. Mark first, diagnose second.",
+    "diagnosis_node": "M6-FLAKE-INDEPENDENCE-RE-ADJUDICATION (declared, not executed)",
+    "owner_authorization": "M6_DRIVER_COMPLETENESS_PROMPT.md A4"
+  },
+  "ADEQUACY_1i_2026_08_08": {
+    "classification": "all three counted clearings ADEQUACY_UNASSESSED (margins 0.054/0.235/0.291); compounds the A4 PASS_PENDING_INDEPENDENCE",
+    "law": "adequacy_1i at 3586022acc972aff (retroactive, symmetric)",
+    "detail": "measurement_adequacy/phase2_retroactive.json"
+  }
+}
