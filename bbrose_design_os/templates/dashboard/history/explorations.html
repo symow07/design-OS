@@ -1,0 +1,20 @@
+{% extends "dashboard/history/base.html" %}
+{% load plain_words %}
+{% block title %}Explorations{% endblock %}
+{% block content %}
+<h1>Explorations</h1>
+<div class="exploration-band" role="note"><p><span class="words">{{ status }}</span><br>
+  §BH51(a): an exploration is ungoverned and disposable — no commit, no gate, no register entry, no prediction. §BH53(c): the store persists past the session, because a picture he cannot come back to is no use to him — kept until he discards it, ungoverned, outside the repository, never evidence, and served by its own view. These pictures are not outputs, not decisions and not evidence, and nothing here accepts or rejects anything.</p></div>
+{% if not outside %}<p class="pill withheld">The exploration store sits inside a governed root, so nothing is shown.</p>{% endif %}
+<div class="rows">
+{% for s in studies %}
+  <article class="block">
+    <a href="{% url 'dashboard:history_exploration_study' s.slug %}">{{ s.slug }}</a>
+    {% if s.refused %}<span class="pill withheld">{{ s.refused|plain }}</span>{% else %}
+    <span class="pill withheld">exploration</span>
+    <span class="dim">{{ s.pictures|length }} picture{{ s.pictures|length|pluralize }} · made {{ s.index.made_at|when }}{% if s.tasks %} · task{{ s.tasks|length|pluralize }} {% for t in s.tasks %}<a href="{% url 'dashboard:history_task' t %}">#{{ t }}</a> {% endfor %}{% endif %}</span>
+    {% endif %}
+  </article>
+{% empty %}<p class="dim">No explorations in the store.</p>{% endfor %}
+</div>
+{% endblock %}

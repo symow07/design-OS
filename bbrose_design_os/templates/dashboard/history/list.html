@@ -1,0 +1,50 @@
+{% extends "dashboard/history/base.html" %}
+{% comment %}DESIGNS — C's (his pick of the executor's options, a691f56: "starting a design, the library and history are C's"): every design, newest first, by month,
+each a tile saying where it stands and opening its own page. Since the owner's goal of 2026-10-29 the designs are the
+chain's rounds (apps/dashboard/views.py, round_card): found by their words — the search reaches into the whole brief — or
+where they stand; by date or order under "More ways to find". Read-only: nothing here decides, approves or spends.{% endcomment %}
+{% block title %}Designs{% endblock %}
+{% block content %}
+<h1 class="h1">Designs</h1>
+<p class="lead designs-lead">Everything you have designed, {% if order == "oldest" %}oldest{% else %}newest{% endif %} first — {{ shown }} design{{ shown|pluralize }}{% if q %} matching “{{ q }}”{% endif %}. Find a design by its words or by where it stands.</p>
+<form class="hfilters" method="get" action="{% url 'dashboard:history' %}" role="search">
+  <label class="field find-field"><svg class="i i-sm" aria-hidden="true"><use href="#i-search"/></svg><span class="sr">Find by its words</span>
+    <input type="search" id="q" name="q" value="{{ q }}" placeholder="Find by its name, product, shade or anything in its brief"></label>
+  <label><span class="sr">Where it stands</span>
+    <select id="state" name="state" class="field"><option value="">Any state</option>
+      {% for value, words in state_filters %}<option value="{{ value }}"{% if state == value %} selected{% endif %}>{{ words }}</option>{% endfor %}
+    </select></label>
+  <label class="toggle"><input type="checkbox" name="mine" value="1"{% if params.mine == "1" %} checked{% endif %}><span class="sw2" aria-hidden="true"></span>Only the designs I started</label>
+  <details class="more"{% if more_open %} open{% endif %}><summary>More ways to find</summary>
+    <div class="more-row">
+      <label>From <input type="date" id="from" name="from" value="{{ params.from }}" class="field"></label>
+      <label>To <input type="date" id="to" name="to" value="{{ params.to }}" class="field"></label>
+      <label>Order
+        <select id="order" name="order" class="field"><option value="newest">newest first</option><option value="oldest"{% if order == "oldest" %} selected{% endif %}>oldest first</option></select></label>
+    </div>
+  </details>
+  <button type="submit" class="btn">Show</button>
+</form>
+{% for m in months %}
+<section class="month" aria-labelledby="m-{{ forloop.counter }}">
+  <div class="month-hd"><h2 id="m-{{ forloop.counter }}">{{ m.month }}</h2><span>{{ m.tiles|length }} design{{ m.tiles|length|pluralize }}</span></div>
+  <div class="tgrid">
+    {% for c in m.tiles %}
+    <article class="tcard {{ c.state }}">
+      <a class="frame" href="{{ c.url }}">
+        {% if c.picture %}<img src="{{ c.picture }}" alt="" loading="lazy"{% if "/dielines/" in c.picture %} class="sheet"{% endif %}>
+        {% elif c.state == "attention" or c.state == "stuck" %}<span class="ph-fill attn"><svg class="i" aria-hidden="true"><use href="#{{ c.icon }}"/></svg><span>{{ c.reason|default:c.next_words }}</span></span>
+        {% else %}<span class="ph-fill wait"><svg class="i" aria-hidden="true"><use href="#{{ c.icon }}"/></svg><span>{{ c.next_words }}</span></span>{% endif %}
+        <span class="tag {{ c.tag_class }}"><svg class="i i-sm" aria-hidden="true"><use href="#{{ c.icon }}"/></svg>{{ c.tag }}</span>
+      </a>
+      <div class="cap"><a class="nm" href="{{ c.url }}">{{ c.title }}</a>
+        <span>{{ c.what }} · {{ c.created|date:"j M" }}</span>
+        {% if c.files_url %}<a class="rec" href="{{ c.files_url }}">Its faces and files</a>{% endif %}</div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% empty %}
+<p class="lead none">No design matches.</p>
+{% endfor %}
+{% endblock %}

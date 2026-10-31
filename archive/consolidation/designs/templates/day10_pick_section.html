@@ -1,0 +1,34 @@
+{% comment %}Day 10 §6 — the master of the owner's pick, above Day 9's section (included by day8_pick.html). Its whole context is
+the one key `day10` (apps/dashboard/day8_views.py::_day10), read from docs/audit/day-10/master/publication.json with every
+file re-hashed (apps/pipeline/services/day10_master.py). Every picture opens full size (click to enlarge); each piece's
+Download offers its layered file, the other formats in a small menu. No inline style.{% endcomment %}
+<section class="d10" id="day10" aria-labelledby="d10-title">
+<header><p class="eyebrow">ENCHANTED ROSE · EYESHADOW PALETTE 124 · DAY 10 · THE MASTER OF YOUR PICK</p><h1 id="d10-title">The master of your pick · Day 10</h1>
+{% if day10.state == 'being built' %}<p class="d10-state">The master of your pick is being built. Day 9's round is below, as it was.</p>
+{% elif day10.state == 'changed' %}<p class="d10-state">Day 10's publication no longer matches its files: {{ day10.why }}. Nothing of Day 10 is shown until it is published again.</p>
+{% elif day10.state == 'unreadable' %}<p class="d10-state">Day 10's publication could not be read ({{ day10.why }}). Nothing of Day 10 is shown until it is published again.</p>
+{% else %}{% with f=day10.facts %}
+<p>You picked sketch {{ day10.pick.sketch }} ({{ day10.pick.idea }}) from the history below: it is recorded as {{ day10.pick.kind }}. The master is that sketch made printable, nothing redrawn: its own picture at twice the resolution, the small words set live where it draws them, the name traced from its own letters as the gold-foil plate, the approved logo in place.</p>
+<p class="d10-verdict"><strong>{% if f.fidelity_holds %}The designer's eye reads the master as your pick: {{ f.fidelity_said }}{% else %}The designer's eye does not yet read the master as your pick.{% endif %}</strong></p>
+{% endwith %}{% endif %}</header>
+{% if day10.state == 'published' %}{% with f=day10.facts %}
+<div class="d10-pair">
+<figure><a href="{{ day10.pick_url }}" target="_blank" rel="noopener"><img src="{{ day10.pick_url }}" alt="Your pick, sketch {{ day10.pick.sketch }}, the lid as drawn"></a><figcaption>Your pick, the lid as drawn</figcaption></figure>
+<figure><a href="{{ day10.lid.picture_url }}" target="_blank" rel="noopener"><img src="{{ day10.lid.picture_url }}" alt="The lid master as it prints, 190 by 120 millimetres"></a><figcaption>The lid master as it prints, 190 × 120 mm</figcaption>
+<div class="d10-get"><a class="button" href="{{ day10.lid.layered_url }}">Download</a><details class="download-more"><summary>Other formats</summary><ul>{% for o in day10.lid.others %}<li><a href="{{ o.url }}">{{ o.words }}</a></li>{% endfor %}</ul></details></div></figure>
+</div>
+<ul class="d10-facts pick-small">
+<li>Picture: {{ f.upscale.ppi }} PPI, the sketch's own detail (about {{ f.upscale.effective_ppi }} PPI); against your pick its colour differs by {{ f.upscale.mean }} on average (most {{ f.upscale.max }}, on the lettering's edges) and its structure matches at {{ f.upscale.ssim }}.</li>
+<li>Gold foil on the name and the BBROSE letters, {{ f.foil_pct|floatformat:2 }} % of the lid; no relief (the bars are painted light).</li>
+<li>Small lines in {{ f.faces.descriptor_en }}, {{ f.faces.shades }}, {{ f.faces.net }}; the Arabic in {{ f.faces.descriptor_ar }}.</li>
+<li>The jury's number, for the record only: {{ f.jury_for_the_record.stricter }} (J1 {{ f.jury_for_the_record.J1 }}, J2 {{ f.jury_for_the_record.J2 }}).</li>
+<li>The back sticker at {{ f.sticker.body_pt }} pt, nothing shrunk or dropped; {{ f.sticker.for_review }} translated lines marked for your review.</li>
+<li>The tray: {{ f.tray.counts.shimmer }} shimmer, {{ f.tray.counts.matte }} matte, {{ f.tray.counts.glitter }} glitter pans; {{ f.tray.flagged }} pans flagged for your eye.</li>
+<li>The box: {% if f.box.inside_safe %}every panel's type inside its safe area{% else %}a panel's type outside its safe area{% endif %}, the die {% if f.box.die_untouched %}untouched{% else %}moved{% endif %}.</li>
+</ul>
+<div class="d10-pieces">{% for p in day10.pieces %}
+<figure id="d10-{{ p.key }}"><a href="{{ p.picture_url }}" target="_blank" rel="noopener"><img src="{{ p.picture_url }}" alt="{{ p.title }}"></a><figcaption>{{ p.title }}</figcaption>
+<div class="d10-get"><a class="button" href="{{ p.layered_url }}">Download</a>{% if p.others %}<details class="download-more"><summary>Other formats</summary><ul>{% for o in p.others %}<li><a href="{{ o.url }}">{{ o.words }}</a></li>{% endfor %}</ul></details>{% endif %}</div></figure>
+{% endfor %}</div>
+{% endwith %}{% endif %}
+</section>

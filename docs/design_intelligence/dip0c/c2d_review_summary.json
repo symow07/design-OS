@@ -1,0 +1,153 @@
+{
+  "slice": "DIP-0C2d",
+  "manifest_rows": 48,
+  "groups_by_type": {
+    "EXACT_DUPLICATE_GROUP": 1,
+    "COLLECTION_GROUP": 6,
+    "CROSS_FORMAT_SOURCE_FAMILY": 2,
+    "SOURCE_PACKAGE_FAMILY": 5
+  },
+  "unknown_relationship_totals": {
+    "edges": 49,
+    "by_reason": {
+      "CONFLICTING_HASH_EVIDENCE": 24,
+      "EPS_VISUAL_CAPABILITY_UNAVAILABLE": 24,
+      "CANDIDATE_VS_WHOLE_SHEET_MISMATCH": 1
+    }
+  },
+  "eps_visual_comparison_unavailable": 6,
+  "canonical_candidate_reviews": 6,
+  "priority_totals": {
+    "HIGH": 24,
+    "LOW": 4,
+    "MEDIUM": 19,
+    "OPTIONAL": 1
+  },
+  "estimated_human_review_workload": {
+    "manifest_rows": 48,
+    "high": 24,
+    "medium": 19,
+    "low": 4,
+    "optional": 1,
+    "batchable_queues": 6,
+    "estimated_decisions_if_batched": 38,
+    "estimated_decisions_if_one_by_one": 88
+  },
+  "queues": [
+    {
+      "queue": "A_EXACT_DUPLICATES",
+      "items": 1,
+      "priority": "HIGH",
+      "shared_review_reason": "byte-identical FILES exist in more than one location",
+      "recommended_reviewer_action": "Choose which copy is canonical. Originals are never deleted by the system; nothing is consolidated automatically.",
+      "one_decision_may_apply_to_group": true,
+      "batch_decision_applied": false
+    },
+    {
+      "queue": "B_COLLECTION_GROUPS",
+      "items": 6,
+      "priority": "MEDIUM",
+      "shared_review_reason": "candidates segmented from ONE source surface",
+      "recommended_reviewer_action": "Review the sheet together, then confirm/split/merge/relabel/exclude each candidate. NOTE: these are independent assets reviewed together — they are NOT duplicates and NOT substitutes for one another.",
+      "one_decision_may_apply_to_group": false,
+      "batch_decision_applied": false
+    },
+    {
+      "queue": "C_CROSS_FORMAT_SOURCE_FAMILIES",
+      "items": 2,
+      "priority": "HIGH",
+      "shared_review_reason": "one artwork carried in several FORMATS",
+      "recommended_reviewer_action": "Confirm the source relationship. Each member keeps its OWN technical readiness, capabilities and rights — no member inherits another's.",
+      "one_decision_may_apply_to_group": false,
+      "batch_decision_applied": false
+    },
+    {
+      "queue": "D_UNKNOWN_RELATIONSHIPS/CANDIDATE_VS_WHOLE_SHEET_MISMATCH",
+      "items": 1,
+      "priority": "MEDIUM",
+      "shared_review_reason": "UNKNOWN_RELATIONSHIP — CANDIDATE_VS_WHOLE_SHEET_MISMATCH. A comparison WAS generated; the available evidence was insufficient. This is a review queue, NOT positive family evidence.",
+      "recommended_reviewer_action": "A whole-file candidate is being compared with a crop from a segmented sheet — the units are not comparable. Decide whether the SOURCES are related instead.",
+      "one_decision_may_apply_to_group": true,
+      "batch_decision_applied": false
+    },
+    {
+      "queue": "D_UNKNOWN_RELATIONSHIPS/CONFLICTING_HASH_EVIDENCE",
+      "items": 24,
+      "priority": "MEDIUM",
+      "shared_review_reason": "UNKNOWN_RELATIONSHIP — CONFLICTING_HASH_EVIDENCE. A comparison WAS generated; the available evidence was insufficient. This is a review queue, NOT positive family evidence.",
+      "recommended_reviewer_action": "dHash and pHash disagree. Look at the pair and decide.",
+      "one_decision_may_apply_to_group": true,
+      "batch_decision_applied": false
+    },
+    {
+      "queue": "D_UNKNOWN_RELATIONSHIPS/EPS_VISUAL_CAPABILITY_UNAVAILABLE",
+      "items": 24,
+      "priority": "MEDIUM",
+      "shared_review_reason": "UNKNOWN_RELATIONSHIP — EPS_VISUAL_CAPABILITY_UNAVAILABLE. A comparison WAS generated; the available evidence was insufficient. This is a review queue, NOT positive family evidence.",
+      "recommended_reviewer_action": "Do NOT read these as visually unrelated. Confirm the source/package relationship, and defer any visual judgement until Ghostscript lands.",
+      "one_decision_may_apply_to_group": true,
+      "batch_decision_applied": false
+    },
+    {
+      "queue": "E_CANONICAL_CANDIDATE_NOMINATIONS",
+      "items": 6,
+      "priority": "HIGH",
+      "shared_review_reason": "a technical CANONICAL_CANDIDATE was nominated",
+      "recommended_reviewer_action": "Select (or reject) the canonical asset. The machine only nominates; rights evidence contributed ZERO to the nomination score.",
+      "one_decision_may_apply_to_group": false,
+      "batch_decision_applied": false
+    },
+    {
+      "queue": "F_EPS_COMPARISON_UNAVAILABLE",
+      "items": 6,
+      "priority": "MEDIUM",
+      "shared_review_reason": "VISUAL_COMPARISON_UNAVAILABLE: no perceptual hash could be computed",
+      "recommended_reviewer_action": "Do NOT read these as visually unrelated — the comparison could not be made. Source/package relationships still apply. Visual judgement waits for Ghostscript.",
+      "one_decision_may_apply_to_group": true,
+      "batch_decision_applied": false
+    },
+    {
+      "queue": "G_LOW_INFORMATION_VISUAL_EVIDENCE",
+      "items": 0,
+      "priority": "MEDIUM",
+      "shared_review_reason": "the image carries too little visual information for a hash to be trusted",
+      "recommended_reviewer_action": "Judge by eye, or exclude from the reusable library.",
+      "one_decision_may_apply_to_group": true,
+      "batch_decision_applied": false
+    },
+    {
+      "queue": "H_WEAK_BRIDGES",
+      "items": 0,
+      "priority": "HIGH",
+      "shared_review_reason": "a low-confidence edge was the SOLE connector between two halves of a component; the component was split there",
+      "recommended_reviewer_action": "Confirm whether the two halves are really one family, or correctly split.",
+      "one_decision_may_apply_to_group": false,
+      "batch_decision_applied": false
+    },
+    {
+      "queue": "I_RIGHTS_OWNERSHIP_BLOCKED",
+      "items": 18,
+      "priority": "HIGH",
+      "shared_review_reason": "technically strong, but ownership is unconfirmed and licence unverified",
+      "recommended_reviewer_action": "Confirm ownership/licence. Until then the asset is UNUSABLE regardless of how technically clean it is.",
+      "one_decision_may_apply_to_group": false,
+      "batch_decision_applied": false
+    }
+  ],
+  "blocking_coverage_limitation": {
+    "max_bucket_members": 400,
+    "skipped_bucket_count": 0,
+    "skipped_buckets": [],
+    "coverage_note": "complete for this pilot (no bucket exceeded the limit)",
+    "reason_for_the_limit": "an unbounded bucket explodes into O(n^2) pairs; the limit keeps candidate generation tractable without returning to naive all-pairs comparison"
+  },
+  "reconciles_with_c2c": {
+    "candidates": true,
+    "c2c_candidates": 48,
+    "c2d_manifest_rows": 48,
+    "exact_duplicate_edges": 1,
+    "c2c_components": 6,
+    "c2d_candidate_groups": 6
+  },
+  "note": "machine and human sections are separate; every human field is blank; no batch decision is applied automatically"
+}

@@ -1,0 +1,50 @@
+{
+ "id": "flat_tray_testers",
+ "version": "1.0",
+ "label": "Flat tray with testers",
+ "status": "working",
+ "build_order": 6,
+ "one_line": "The house's flat counter tray: every product at one height, a tester at the front of each column, a slot-in sign behind.",
+ "for": "Lip gloss, lipstick, nail polish in shades: each column one shade, its tester showing the colour.",
+ "suits": {"products": ["bottle", "stick", "small jar"], "counts": [4, 48], "rows": [1, 4]},
+ "testers": true,
+ "panels": ["floor", "front panel", "front cap", "front inner", "back panel", "back cap", "back inner", "left side", "right side", "front left flap", "front right flap", "back left flap", "back right flap", "header front", "header back", "deck tread 1", "deck leg", "left liner", "right liner"],
+ "folds": [
+  {"fold": "floor / front", "angle": 90, "kind": "crease"}, {"fold": "floor / back", "angle": 90, "kind": "crease"},
+  {"fold": "floor / left", "angle": 90, "kind": "crease"}, {"fold": "floor / right", "angle": 90, "kind": "crease"},
+  {"fold": "front / cap", "angle": 90, "kind": "crease"}, {"fold": "back / cap", "angle": 90, "kind": "crease"},
+  {"fold": "deck leg fold", "angle": 90, "kind": "crease"}, {"fold": "header fold", "angle": 180, "kind": "half-cut"}
+ ],
+ "locks": [
+  {"kind": "barbed", "what": "the header's two leaves, by barbed tongues through the back wall's rim"},
+  {"kind": "flush", "what": "each inner leaf and the deck's feet through the floor, and the deck's side tabs through each liner"},
+  {"kind": "through", "what": "the deck's rear tabs through the back wall's inner leaf"}
+ ],
+ "allowances": {
+  "crease_centres": "outside − one caliper (FEFCO Rec. 101, C1)",
+  "panel_ends": "half a caliper + fit gap short of the surface met",
+  "corner_folds": "one caliper + fit gap, so a flap lies on the panel's inner face",
+  "liners": "a fit gap off its wall, off each inner leaf and off the floor; the deck a fit gap off each liner"
+ },
+ "limits": {
+  "tester_clearance_total_mm": 2.0,
+  "web_mm": 8.5,
+  "tester_web_mm": 9.0,
+  "front_lip_mm": 25,
+  "tester_pitch": "one tester per column at the column's pitch (E3, E13)",
+  "tester_seat": "on the floor, in the same deck as the sealed rows: raising a tester moves its seat and its deck together, so no more of its window is seen, and it hides more of the row behind. Measured in the qualification's shades"
+ },
+ "reinforcement": ["front and back walls rolled double", "a liner doubles each side wall", "the deck ties all four walls"],
+ "glue": "none",
+ "faces_to_shopper": ["header front", "front panel", "the deck, ground and pattern", "the inner leaves and liners, ground and pattern"],
+ "failures": ["a tester tipping or smearing the print (E1, E6, E7)", "the front lip hiding the product (E9)", "a raw edge in view (E16)", "stock in a column not the shade of its tester (E7)", "an empty opening shows the floor's board: only when a product is out"],
+ "codes": "No board tester well, ledge or slot with dimensions was found: every tester holder with numbers is plastic, acrylic or wire (E1, E2, E3, E8, E13). Doubled walls and hidden raw edges are US4753341 (E16). A plain hole in a board deck is our own.",
+ "sources": ["E1", "E2", "E3", "E7", "E9", "E12", "E13", "E14", "E16", "house FL-2029", "house LP-2015", "house BL-2050"],
+ "provisional": [
+  "Tester clearance 2 mm, our rule (no source gave one): as the tester unit's.",
+  "A tester's lean in its opening is clearance ÷ the deck's height, about 5.7°; plastic fixtures slope 5–10° (E2), and a sample decides it.",
+  "A liner is held at its foot by the deck's two tabs and between the inner leaves; its top stands free against the wall, and a sample decides whether it needs more.",
+  "The tester zone's coating: no wipe data was found; a sample decides between UV, laminate and aqueous (E5).",
+  "Webs are the house's, measured: 8.5 mm between openings (LP-2015, BL-2050) and 9 mm from the tester row to the first sealed row (FL-2029 9.1). Its boards are not stated, so a sample on E-flute decides them."
+ ]
+}

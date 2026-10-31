@@ -1,0 +1,42 @@
+{
+ "record_type": "supplier_outreach_deferral/1.0",
+ "created_at": "2026-07-31",
+ "SUPPLIER_OUTREACH": "DEFERRED_UNTIL_REAL_SUPPLIER_ENGAGEMENT",
+ "PRODUCTION_AUTHORITY_GATES_B_TO_E": "DEFERRED_NON_BLOCKING_FOR_PLATFORM_DEVELOPMENT",
+ "decided_by": "PROJECT_OWNER",
+ "reason": "the owner has decided not to contact generic external suppliers during the current Design OS development phase",
+ "supplier_requests_sent": 0,
+ "emails_sent": 0,
+ "stopped": [
+  "sending supplier email",
+  "requesting sent-message evidence",
+  "asking for Message-IDs",
+  "configuring SMTP",
+  "dispatch validation",
+  "creating further .eml files"
+ ],
+ "preserved_unchanged": {
+  "classification": "OPTIONAL_FUTURE_MANUFACTURING_WORKFLOW",
+  "deleted": false,
+  "artefacts": [
+   "docs/production_authority/production_supplier_request_drafts.json",
+   "docs/production_authority/supplier_dispatch_manifest.json",
+   "docs/production_authority/supplier_dispatch_manifest.pdf",
+   "docs/production_authority/supplier_dispatch_manifest.png",
+   "docs/production_authority/supplier_emails/ (5 .eml files)",
+   "docs/production_authority/supplier_evidence_request_dispatch.json",
+   "docs/production_authority/supplier_evidence_request_dispatch_pack.txt",
+   "docs/production_authority/supplier_sent_evidence_validation.json",
+   "docs/production_authority/supplier_sent_evidence/README.txt",
+   "apps/pipeline/services/supplier_dispatch.py",
+   "apps/pipeline/services/supplier_eml.py",
+   "apps/pipeline/services/supplier_sent_validation.py"
+  ],
+  "why_kept": "it will be useful when a real supplier is selected; the validator in particular encodes what qualified evidence must prove and took several rounds to get right"
+ },
+ "gates_b_to_e_still_blocked": true,
+ "deferral_is_not_a_pass": "deferring the outreach does not pass Gates B to E and does not grant any production authority. They are simply no longer the active blocker for platform development.",
+ "gate_a_unaffected": "PASSED",
+ "packaging_production_work": "NOT_STARTED",
+ "removed_from_owner_actions": true
+}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}{% load static %}
+{% block title %}New design{% endblock %}
+{% block head %}<link rel="stylesheet" href="{% static 'css/product-round.css' %}">{% endblock %}
+{% block page_class %}page wide round-page{% endblock %}
+{% block content %}
+<header class="page-hd"><div><p class="over">BBROSE · Product and stand</p><h1 class="h1">Start a new design</h1>
+<p class="lead">Enter the product and its stand. The app researches the category, brings you three mood boards — one bold, one refined, one unexpected — and then three designs from the board you pick. You choose one design and give your reason; then you can build its files.</p>
+<p><a href="{% url 'dashboard:round_list' %}">Your rounds</a> · <a href="?preset=lip_gloss">Use the lip gloss brief</a> · <a href="?preset=blank">Enter another product</a></p>
+<p class="small">Measurements can be provisional or left empty. These facts belong to this round.</p></div></header>
+<form method="post" class="round-intake" id="round-intake">
+{% csrf_token %}{{ form.request_key }}{{ form.request_key.errors }}
+{% if form.errors or shades.errors or shades.non_form_errors %}<div class="round-error" role="alert"><strong>Please check the product facts below.</strong>{{ form.non_field_errors }}{{ shades.non_form_errors }}</div>{% endif %}
+{% for title, fields in form.sections %}<section class="round-section"><h2>{{ title }}</h2>{% if title == 'Words on the design' %}<p>Only the brand, product words, and shade names are lettering. The other facts guide the ideas.</p>{% endif %}<div class="round-fields">
+{% for field in fields %}<div class="round-field"><label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} <span aria-label="required">*</span>{% endif %}</label>{{ field }}{{ field.errors }}{% if field.help_text %}<p class="small">{{ field.help_text }}</p>{% endif %}</div>{% endfor %}
+</div></section>{% endfor %}
+<section class="round-section" id="stand-type" data-preview-url="{% url 'dashboard:round_new_stand' %}"><h2>The stand's type</h2>
+<p>The engine suggests one for your products and count; you choose. The sizes above stay yours to change, and the engine lists anything it must change to make every product and the header seen.</p>
+{{ form.stand_type }}
+<div class="stand-types">{% for card in stand_cards %}{% if card.working %}<button type="button" class="stand-type{% if card.id == stand_preview.type %} chosen{% endif %}" data-stand-type="{{ card.id }}" aria-pressed="{% if card.id == stand_preview.type %}true{% else %}false{% endif %}"><img src="{% static card.drawing %}" alt="" width="150" height="150"><strong>{{ card.label }}</strong><span>{{ card.line }}</span><em class="stand-suggested"{% if card.id != stand_preview.suggested %} hidden{% endif %}>The engine suggests this</em></button>{% endif %}{% endfor %}</div>
+<p class="small" id="stand-why">{% if stand_preview.why %}The engine suggests {{ stand_preview.suggested_label }}: {{ stand_preview.why }}.{% endif %}</p>
+<div id="stand-solved" aria-live="polite">{% include 'dashboard/_stand_solved.html' with preview=stand_preview %}</div>
+<p class="small">Recorded for later, researched and not built yet: {% for card in stand_cards %}{% if not card.working %}{{ card.label }}{% if not forloop.last %}, {% endif %}{% endif %}{% endfor %}.</p>
+</section>
+<section class="round-section"><h2>Shades and colours</h2><p>Shade names are the exact words to use. Colours describe the product; for clear containers, the liquid remains visible.</p>
+{{ shades.management_form }}<div id="shade-rows" class="round-formrows">{% for row in shades %}<div class="round-formrow">{{ row.non_field_errors }}{% for field in row %}<div class="round-field"><label for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}{{ field.errors }}</div>{% endfor %}</div>{% endfor %}</div>
+<button type="button" class="btn" data-add-round-row="shades">Add a shade</button>
+<template id="shades-empty"><div class="round-formrow">{% for field in shades.empty_form %}<div class="round-field"><label for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}{{ field.errors }}</div>{% endfor %}</div></template>
+</section>
+<section class="round-start" id="round-estimate"><h2>Start</h2>
+<p><strong>What this round will cost, all in, before you press Start: about ${{ estimate.expected_usd|floatformat:2 }}, and never more than ${{ estimate.cap_usd|floatformat:2 }}.</strong> From the brief to Make my files; each step's real cost is shown on its page as it is made.</p>
+<table class="round-table round-estimate"><thead><tr><th scope="col">Step</th><th scope="col">What is made</th><th scope="col">Expected</th></tr></thead><tbody>
+<tr><th scope="row">Research</th><td>Six Tavily web searches and the house library, read by one written reading</td><td>about ${{ estimate.expected.research|floatformat:2 }}</td></tr>
+<tr><th scope="row">Three mood boards</th><td>A plan and three pictures at medium quality, each drawn from up to three house-library pictures</td><td>about ${{ estimate.expected.boards|floatformat:2 }}</td></tr>
+<tr><th scope="row">Three designs</th><td>A plan, three sketches at medium quality on the stand's flat die, each design's bottle painted on its own net at medium quality, and the quick check</td><td>about ${{ estimate.expected.designs|floatformat:2 }}</td></tr>
+<tr><th scope="row">Your files</th><td>Your pick installed at no cost; one sheet of {{ estimate.motifs.pictures }} picture motifs at medium (about ${{ estimate.motifs.usd|floatformat:2 }}), each painted alone and reused on every face; every band, sprig, frame and rosette a vector the engine draws at no cost; every face placed by the engine.</td><td>about ${{ estimate.expected.files|floatformat:2 }}</td></tr>
+</tbody></table>
+{% if estimate.over_cap %}<p class="note-box"><strong>At the prices round 4 really paid, a whole round comes to about ${{ estimate.expected_usd|floatformat:2 }}, above the ${{ estimate.cap_usd|floatformat:2 }} cap:</strong> the round stops before the call that would pass the cap, so its last faces are not drawn.</p>{% endif %}
+<p><strong>Hard cap: ${{ estimate.cap_usd|floatformat:2 }}.</strong> Before each paid call the app holds the most that call could cost (released to its real cost when it comes back); a call that would take the round past ${{ estimate.cap_usd|floatformat:2 }} is never made — the round stops there and tells you. “None of these” at a pick makes that step again and counts toward the same cap. Start queues the work; each pick waits for you.{% if estimate.taste %} The boards will use your {{ estimate.taste }} past pick{{ estimate.taste|pluralize }} as guidance.{% endif %}</p>
+<button class="btn primary lg" type="submit">Start</button><p class="small">Nothing is queued until you press Start.</p></section>
+</form>{% endblock %}
+{% block scripts %}<script src="{% static 'js/product-round.js' %}"></script>{% endblock %}

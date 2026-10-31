@@ -1,0 +1,57 @@
+§AD0(a) PREDICTION — commit B (§BH26(b): the join producer goes live),
+SEALED BEFORE git add, the diff shapes measured on the applied
+worktree (pred_b_draft.txt fixed the shape-independent legs first).
+Base HEAD 662d937 (commit A); the clean corroborating three-leg run at
+that HEAD is GREEN (full_suite_at_headA.txt). §BH26(a) authority already SPENT; (b)
+carries no authority of its own.
+
+L1 WRITE SET: exactly THREE tracked paths —
+   MOD  bbrose_design_os/apps/ire/container_font_evidence_join.py
+        (docstring :16-22 corrected by measurement; join_document_fonts
+        added; __all__ extended)
+   MOD  bbrose_design_os/apps/pipeline/targets/container/__init__.py
+        (the wiring before build_font_authority; the P2-b docstring
+        paragraph corrected)
+   MOD  bbrose_design_os/apps/pipeline/tests/test_wif_reconstruct_container.py
+        (three tests + two helpers in ConfirmedFontsReachTheProductionGateTests)
+   Plus the gate-staged ledger line. NO new test file (no manifest
+   regeneration, (i)(4)); container_font_authority.py and
+   container_font_owner_grant.py NOT in the write set.
+L2 DIFF SHAPE (measured vs HEAD on the worktree, pre-add):
+   container_font_evidence_join.py +28 −8; container/__init__.py +21
+   −9; test_wif_reconstruct_container.py +102 −0.
+L3 MANIFEST / A391 / (i)(4): manifest UNTOUCHED (fe4199bc421b7454; 372
+   files, all three edited files already declared); no record moves
+   (.py only); ppp untouched; protocol_identity UNCHANGED at
+   c7924c5a4215f3cf; check_manifest silent; floors 52/52, 66/66
+   (Tier-1 files untouched), total collected rises 7690 → 7693 ≥ 7690,
+   dip0c 671, dip0 135. Records step: ledger 437 → 438 APPEND_ONLY.
+L4 STAGED == DECLARED: exactly the THREE rows of L2.
+L5 COMMIT CONTENTS: 4 files (three + ledger); insertions
+   28+21+102+1 = 152; deletions 8+9+0 = 17.
+L6 SUITE LINE + REFUSAL TREE: GREEN with the THREE new tests —
+   TIER_2=GREEN collected=8499 failures=0 apps=7693 dip0c=671 dip0=135.
+   Pre-gate targeted THIS configuration: 84 passed in 10.50s — the wif
+   file IN FULL (31 collected: 28 + the 3 new) +
+   test_container_font_authority.py IN FULL (the producer's own
+   cap/enumeration tests) + the 6 grant tests + test_container_target.py;
+   the three new tests run verbosely by name. Structural checks on the
+   applied tree: collected 7693 (== forecast), check_manifest [],
+   join_document_fonts exported, cfa/grant/ppp/tcp/docs untouched. The live c4c evidence is PRESENT on this
+   machine, so the default production path joins both faces beneath
+   the grant; the record for the two named faces is unchanged (the
+   grant overrides every field the join sets), so every existing
+   assertion on that record holds. No refusal expected; §BH24 0/3.
+L7 LEDGER FOLD: 437 → 438, the +1 in THIS commit.
+L8 PROTOCOL IDENTITIES / APPS DIFF: apps diff = exactly THREE apps
+   paths; docs diff = the ledger only; protected regions
+   byte-identical at scoring (GATE 7fbeb8f1fe10b0fb; TEST
+   b32030dc827263e4, exact recipe); protocol_identity UNCHANGED
+   c7924c5a4215f3cf (git grep: still exactly one live hit, tcp:617).
+   Neither machine guard's refusal behaviour and no ceiling moved: the
+   wiring feeds the seam a MACHINE_DERIVED / LICENCE_REVIEW_REQUIRED
+   mapping produced through the guards; nothing here confers a state.
+
+DIVERGENCES RIDING: all prior; plus the producer docstring's :24-31
+"all 3,966 rows" (not named by (b)) re-measured 3,969, left standing
+and recorded in the message.

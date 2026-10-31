@@ -1,0 +1,67 @@
+{
+ "schema": "chain_moves/1",
+ "goal": "the owner's goal of 2026-10-29, \u00a72: the four engines the chain imported, moved into it and measured on the same inputs, $0",
+ "library_retrieval": {
+  "into": "round_designer.library_matches (library_rows, library_preview, _library_score)",
+  "inputs": "the gloss brief and round 3's brief (the same brief) against the Day 7 index",
+  "before": {
+   "n": 12,
+   "with_words": 12,
+   "within_12": 12,
+   "both": 12,
+   "word_hits": 32,
+   "may_reference": 1
+  },
+  "after": {
+   "n": 12,
+   "with_words": 12,
+   "within_12": 12,
+   "both": 12,
+   "word_hits": 37,
+   "may_reference": 3
+  },
+  "verdict": "BETTER",
+  "why": "one ranking over words and colours within the old order of tiers (words and a colour first): word hits 32 \u2192 37 in the top twelve, still 12 of 12 with both; the best referenceable rows keep up to three places, 1 \u2192 3 a board may take as a reference picture"
+ },
+ "font_pool": {
+  "into": "round_files_export.granted_faces / font_records",
+  "before": {
+   "pinned faces found GRANTED": 2,
+   "checks per face": 3
+  },
+  "after": {
+   "pinned faces found GRANTED": 2,
+   "checks per face": 5,
+   "same licence evidence": true
+  },
+  "verdict": "SAME",
+  "why": "the writer sets two pinned faces, found before and after; the check is stricter \u2014 each face's census PostScript name (the name the live type sets) and weight 400 \u2014 but no more fonts are found: the writer needs no other"
+ },
+ "web_research": {
+  "into": "round_designer.WebPolicyError (the one name the chain used)",
+  "inputs": "round 3's saved Tavily results (6 searches, 30 results)",
+  "before": {
+   "results": 30,
+   "unique after dedupe": 26,
+   "naming the product": 23
+  },
+  "after": {
+   "results": 30,
+   "unique after dedupe": 26,
+   "naming the product": 23
+  },
+  "verdict": "SAME",
+  "why": "the chain already keeps one result per URL; most saved results carry a title and no snippet (Tavily basic), so a relevance filter at $0 has only titles to judge and would drop on-topic pages (Cosmetic Packaging Finishes, Packaging Trends 2026); judging snippets needs a paid search"
+ },
+ "carton_choosers": {
+  "into": "the dieline engine (ecma_ste, opposed_tuck, side_seam listed as its files; engine.py uses each whole)",
+  "before": {
+   "reference_opposed_tuck_carton/0.1": "12/17 fixtures, 0 sweep failures",
+   "skynte_foundation_tuck_carton/1.0": "10/13 fixtures, 0 sweep failures",
+   "ecma_a20_20_01_01_ste_carton": "no qualification adapter"
+  },
+  "after": "the same code, the same qualification",
+  "verdict": "SAME",
+  "why": "qualified die styles with no sweep failure; the fixtures they do not support lie outside each style's declared range, and widening it is new geometry that needs qualifying against physical samples, not a move"
+ }
+}

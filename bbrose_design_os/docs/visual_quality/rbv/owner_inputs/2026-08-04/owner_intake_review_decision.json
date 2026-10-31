@@ -1,0 +1,60 @@
+{
+ "record_type": "rbv_owner_intake_review_decision/1.0",
+ "decided_at": "2026-08-04",
+ "reviews": "intake commit 407a5d0 (docs/visual_quality/rbv/owner_inputs/2026-08-04/)",
+ "decision": {
+  "OWNER_REFERENCE_INTAKE": "IMPLEMENTED",
+  "OWNER_REFERENCE_INTAKE_REGRESSION_IMPACT": "NO_NEW_FAILURES_DETECTED",
+  "P1": ["PRIMARY_REAL_BOTTLE_PILOT", "REFERENCE_PACK_PARTIAL"],
+  "P1_GEOMETRY_READINESS": "BLOCKED_PENDING_OWNER_CLARIFICATIONS_AND_CALIBRATED_PHOTOS"
+ },
+ "prohibitions_in_force": [
+  "no P1 geometry construction",
+  "no P1 Blender render",
+  "no material/finish inference from photography — await explicit owner values"
+ ],
+ "p1_clarifications_owner_will_provide": [
+  "whether 66 mm is the straight-wall end / shoulder-begin point",
+  "whether 69 mm is the shoulder-end / neck-begin point or another shoulder landmark",
+  "how the 18.11 mm neck height was measured",
+  "whether the 105 mm dropper assembly height is measured from bulb top to pipette tip"
+ ],
+ "pilot_scope_rulings": {
+  "thread_pitch": "REMAINS_UNKNOWN — NOT required for the first external-shape validation pilot",
+  "bottom_glass_thickness": "REMAINS_UNKNOWN — NOT required for the first external-shape validation pilot",
+  "artwork_bounds": "MAY_REMAIN_PENDING until the artwork-composition phase",
+  "material_finish": "AWAIT_EXPLICIT_OWNER_VALUES — never inferred from photography"
+ },
+ "calibrated_p1_photographs_required": [
+  "straight front with ruler in the same plane",
+  "straight side with ruler in the same plane",
+  "direct top",
+  "closure close-up with ruler",
+  "neck/collar close-up with ruler"
+ ],
+ "calibration_rules": [
+  "preserve uncropped originals",
+  "the existing 23 perspective photographs are NEVER classified as calibrated orthographic evidence"
+ ],
+ "test_health_record": {
+  "BRANCH_TEST_HEALTH": "DEGRADED",
+  "observed_baseline_runner": "manage.py test (unittest discovery) — 1,316 tests",
+  "observed_baseline": {"failures": 6, "errors": 8},
+  "INTAKE_INTRODUCED_NEW_FAILURES": false,
+  "evidence": "identical failure set before and after the docs-only intake commit",
+  "honesty_note": "the full repository is NOT declared green; the canonical pytest suite was last recorded green at 644a44c (5,120 tests) and the four affected files pass 70/70 under isolated pytest today — the degradation manifests under the unittest runner / full-run ordering; diagnosis in docs/roadmap/baseline_test_repair_proposal.md",
+  "repair_status": "PROPOSAL_PREPARED_AWAITING_OWNER_AUTHORIZATION — no repair begun; no fix inside any intake commit"
+ },
+ "state_preservation_confirmed": [
+  "received.zip unchanged (sha256 cfceb952754553e437fa7856a7fafe711e862ea57358aff0b69cdf75e432d71c)",
+  "all original photograph hashes unchanged (23/23)",
+  "no geometry created",
+  "no Blender pilot render",
+  "no reconstruction change",
+  "no task or GateDecision change",
+  "no provider/image-generation/OCR call",
+  "Gate 2 blocked",
+  "Packaging production not started"
+ ],
+ "stop_point": "STOPPED for the owner's P1 clarifications and calibrated photographs"
+}

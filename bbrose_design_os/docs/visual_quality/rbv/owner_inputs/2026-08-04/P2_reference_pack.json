@@ -1,0 +1,34 @@
+{
+ "record_type": "rbv_owner_reference_pack/1.0",
+ "product": "P2",
+ "name": "Rectangular Foundation Bottle (BBROSE ZAROX Liquid Foundation, Luxurious matte cover)",
+ "created_at": "2026-08-04",
+ "status": ["REFERENCE_PACK_PARTIAL", "REMEASUREMENT_REQUIRED_FOR_HEIGHTS_AND_PUMP"],
+ "authority": {
+  "images": "OWNER_SUPPLIED_PHOTOGRAPHY / MEDIUM_VISUAL_AUTHORITY / NOT_CAD / NOT_TECHNICAL_DRAWING",
+  "measurements": "OWNER_MEASURED_DIMENSIONAL_EVIDENCE"
+ },
+ "images": [
+  {"file": "IMG_3116.jpg", "view": "FRONT"},
+  {"file": "IMG_3117.jpg", "view": "CLOSURE_DETAIL"},
+  {"file": "IMG_3118.jpg", "view": "TOP"},
+  {"file": "IMG_3119.jpg", "view": "THREE_QUARTER"}
+ ],
+ "photo_verified_identity": {
+  "front_artwork": "BBROSE® LIQUID FOUNDATION Luxurious matte cover ZAROX (rose-gold foil)",
+  "body": "frosted glass, square cross-section with rounded corners (top-view evidence, qualitative)",
+  "closure": "white pump with side nozzle; white cylindrical overcap with rose-gold collar ring (circular profile photo-confirmed)"
+ },
+ "interpretation_rules_applied": [
+  "30.8 provisionally = overcap cylindrical OUTSIDE DIAMETER (photo-supported), not rectangular width/depth — owner to confirm",
+  "'projection from the centre 1.7 beneath the top of the pump' held as AMBIGUOUS until split into horizontal projection + vertical hole position"
+ ],
+ "measurements": "see normalized_measurements.json → products.P2; raw text in raw_measurements.json",
+ "validated_summary": {
+  "accepted": ["front width 34.6", "side depth 35.38"],
+  "ambiguous_heights": ["assembled 110", "body 104", "overcap 41.52 — set overlaps by ≈35.5 and cannot be reconciled without landmarks"],
+  "missing": ["corner radius", "base width/depth as separate reads", "capacity", "pump nozzle split", "supplier/product code", "calibrated views"]
+ },
+ "geometry_construction": "BLOCKED — no authoritative geometry from the present ambiguous height set",
+ "checklist": "missing_information_checklist.md § P2"
+}

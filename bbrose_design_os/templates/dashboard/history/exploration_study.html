@@ -1,0 +1,27 @@
+{% extends "dashboard/history/base.html" %}
+{% block title %}{{ study.slug }} · exploration{% endblock %}
+{% block content %}
+<p class="dim"><a href="{% url 'dashboard:history_explorations' %}">Explorations</a> › {{ study.slug }}</p>
+<h1>{{ study.slug }}</h1>
+<div class="exploration-band" role="note"><p><span class="words">{{ status }}</span><br>
+  Disposable pictures for looking. Not outputs, not decisions, not evidence; none is committed, gated, registered or predicted, and each record says so. A choice made by looking lands as a governed ruling, never here.</p></div>
+{% if study.refused %}<p><span class="pill withheld">{{ study.refused }}</span></p>{% else %}
+<p class="dim">Drawn from HEAD {{ study.index.drawn_from_head }} · made {{ study.index.made_at }}{% if study.tasks %} · task{{ study.tasks|length|pluralize }} {% for t in study.tasks %}<a href="{% url 'dashboard:history_task' t %}">#{{ t }}</a> {% endfor %}{% endif %}</p>
+<div class="grid">
+{% for p in study.pictures %}
+  <div class="card exploration" id="{{ p.picture }}">
+    {% if p.refused %}
+      <div class="mono">{{ p.picture }}</div><span class="pill withheld">{{ p.refused }}</span>
+    {% else %}
+      <a href="{{ p.url }}" target="_blank" rel="noopener"><img src="{{ p.url }}" alt="Exploration {{ p.picture }}: {{ p.record.what_changed }}" loading="lazy"></a>
+      <div><span class="pill withheld">exploration · {{ p.picture }}</span></div>
+      <div><b>{{ p.record.what_changed }}</b></div>
+      {% if p.record.where_it_draws %}<div class="dim">{{ p.record.where_it_draws }}</div>{% endif %}
+      <details><summary>Its record</summary><pre>{% for k, v in p.record.items %}{{ k }}: {{ v }}
+{% endfor %}</pre></details>
+    {% endif %}
+  </div>
+{% endfor %}
+</div>
+{% endif %}
+{% endblock %}

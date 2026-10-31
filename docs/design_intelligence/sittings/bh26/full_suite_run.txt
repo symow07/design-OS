@@ -1,0 +1,21 @@
+START 2026-09-02T06:35:20Z git=/usr/bin/git
+PORCELAIN_BEFORE_IDENTICAL
+LEDGER_BEFORE      435
+PYTEST=['venv/bin/python', '-m', 'pytest', 'apps', '-q', '-p', 'no:randomly'] ROOT=/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os
+DIP0C_PYTEST=['/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/bin/python', '-m', 'pytest', 'tools/dip0c/tests', '-q', '-p', 'no:randomly']
+DIP0_PYTEST=['/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/bin/python', '-m', 'pytest', 'tools/dip0/tests', '-q', '-p', 'no:randomly']
+PYTEST_ADDOPTS=-p no:cacheprovider
+LEG1 apps rc=0 secs=768
+LEG1 tail:  | -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html | 7687 passed, 3 skipped, 606 warnings, 41596 subtests passed in 764.45s (0:12:44)
+LEG1 failed_ids=[]
+LEG1 stderr tail: sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+LEG2 dip0c rc=0 secs=74 failures=[]
+LEG2 tail:  | -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html | 671 passed, 5 warnings in 73.94s (0:01:13)
+LEG3 dip0 rc=0 secs=2 failures=[]
+LEG3 tail: ........................................................................ [ 53%] | ...............................................................          [100%] | 135 passed in 1.56s
+DRIVER_DONE
+DRIVER_RC=0
+PORCELAIN_AFTER_IDENTICAL
+LEDGER_AFTER      435
+SHA_AFTER_IDENTICAL
+END 2026-09-02T06:49:24Z

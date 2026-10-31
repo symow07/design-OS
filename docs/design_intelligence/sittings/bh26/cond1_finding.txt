@@ -1,0 +1,61 @@
+§BH26(d) CONDITION (1) FINDING — regenerate_manifest() read IN FULL,
+write set established by construction, preview measured. STOPPED before
+applying, per the condition's own sentence. Nothing written: porcelain
+after the preview = exactly the five WIP paths.
+
+THE READING (tools/tier2_gate.py:313-358 + collected_counts :114 +
+sweep_manifest.py build_manifest/writable in full):
+  apply_it=False → collected_counts() (pytest --collect-only, no file
+    writes) + print diff + return (added, removed). TRUE ZERO-WRITE
+    PREVIEW.
+  apply_it=True → additionally writes THREE things:
+    W1 MANIFEST rewrite: files=sorted(counts) (set 371→372), generated
+       stamp, tier1_floors=raised_floors(old, counts) (MONOTONIC
+       RE-MEASURE — §AR3(d)/AR4(3), values move UP when measured
+       exceeds floor), total_floor=max(old, sum(counts)).
+    W2 DIFF_LOG append — docs/roadmap/palt_m6/suite_manifest_diffs.json,
+       a TRACKED file (git ls-files verified), gains one record
+       {utc, added, removed, files_after}.
+    W3 probe .manifest_regen_candidates.json at bbrose_design_os root —
+       EXISTS already (2026-08-27, from the last regen), IGNORED
+       (check-ignore verified); the apply OVERWRITES it.
+
+THE PREVIEW, MEASURED (apply_it=False, collect rc=0):
+  added   (1): apps/pipeline/tests/test_container_font_owner_grant.py
+  removed (0): — the FILES SET is purely additive. 371→372.
+  sum(counts) = 7690  ⇒ total_floor WOULD MOVE 7643→7690.
+  tier1_floors: test_palette_statistics.py 51→52 WOULD RISE (the file
+    grew at some prior landing; floor stale-low since);
+    test_characterization_protocol.py 66→66 unchanged.
+
+WHY THE STOP FIRES — BOTH CONDITIONS, ON MEASUREMENT:
+  Condition (1): the apply would write OTHER than the one-entry
+    addition plus timestamp — two floor values move (floors included),
+    a second TRACKED file is appended (W2), an ignored probe is
+    overwritten (W3). STOP AND REPORT BEFORE APPLYING.
+  Condition (2) §AR4(1) "one new file entry plus timestamp; any
+    deletion or mutation of an existing entry is a hard stop": the tool
+    CANNOT produce that diff — by construction it also mutates
+    total_floor and one tier1 floor, and appends W2. The condition's
+    allowed shape and the tool's output are mutually exclusive TODAY.
+  Condition (3) knock-on: a tool-run apply forces DIFF_LOG into commit
+    A's write set ⇒ SEVEN paths, falsifying the ruled "six-path write
+    set" before it is sealed.
+
+MEASURED FACTS THAT BOUND THE LAWFUL EXITS (no choice made):
+  - A HAND-EDIT adding only the sorted files entry + fresh generated
+    timestamp, floors and DIFF_LOG untouched, satisfies every guard BY
+    MEASUREMENT TODAY: the extent guard checks the files SET; the
+    floors guard forbids RETREAT only (suite is green right now with
+    floor 51 vs measured 52 and total_floor 7643 vs live 7690 — proof
+    stale-low floors pass); the diff-log guard asserts no entry ever
+    absorbed a removal and every ever-added file stays declared — a
+    manifest addition without a log entry violates neither. Preserves
+    the six-path write set exactly as ruled.
+  - A TOOL-RUN apply keeps the tool's own report-before-classify
+    machinery and the diff-log history complete, at the cost of: floors
+    7643→7690 and 51→52 (both lawful under the MONOTONIC design, both
+    outside condition (2)'s sentence), W2 joining the commit (seven
+    paths), W3 overwritten.
+  The guard's failure message names the tool; the owner's condition
+  names a diff the tool cannot emit. UNRULED — reported, not resolved.

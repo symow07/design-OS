@@ -1,0 +1,141 @@
+{
+ "schema": "geometry_validation_render_manifest/1.0",
+ "statement": "GEOMETRY VALIDATION FIXTURE \u2014 NOT A REAL BOTTLE COMPARISON",
+ "fixture_id": "A_circular",
+ "geometry_schema": "container_geometry/1.0",
+ "geometry_class": "AXISYMMETRIC_REVOLUTION",
+ "authority_class": "VERSIONED_CONTAINER_GEOMETRY",
+ "cross_section_family": "CIRCULAR",
+ "dimensions": {
+  "height_mm": 95,
+  "front_width_mm": 35
+ },
+ "mesh_identities": {
+  "body": "3af111088557f5a1"
+ },
+ "mesh_statistics": {
+  "body": {
+   "params_version": "mesh_diagnostics_params/1.0",
+   "vertex_count": 6146,
+   "edge_count": 18432,
+   "face_count": 12288,
+   "duplicate_vertices": 0,
+   "zero_area_faces": 0,
+   "non_manifold_edges": 0,
+   "components": 1,
+   "signed_volume_mm3": 80403.35,
+   "codes": []
+  }
+ },
+ "assembly_relations": {
+  "facts": {
+   "body": {
+    "z_min": 0.0,
+    "z_max": 95.0,
+    "cx": 0.0,
+    "cy": 0.0,
+    "width": 35.0
+   }
+  },
+  "codes": []
+ },
+ "blender_version": "Blender 4.5.12 LTS (pinned)",
+ "render_engine": "CYCLES CPU \u00b7 seed 0 \u00b7 12 samples",
+ "camera_standard": "real_bottle_camera_standard/1.0",
+ "lighting_standard": "real_bottle_lighting_standard/1.0 ",
+ "material_override": {
+  "version": "validation_clay/1.0",
+  "base_colour": [
+   0.69,
+   0.667,
+   0.65,
+   1.0
+  ],
+  "roughness": 0.9,
+  "specular": 0.1,
+  "alpha": 1.0,
+  "normals": "geometry normals unmodified",
+  "colour_management": "Cycles CPU \u00b7 Standard view transform \u00b7 exposure 0 \u00b7 gamma 1 \u00b7 sRGB \u00b7 8-bit PNG"
+ },
+ "render_params": {
+  "version": "geometry_validation_render_params/1.0",
+  "resolution": [
+   1600,
+   2200
+  ],
+  "samples": 12,
+  "ortho_scale_factor": 1.12,
+  "scale_tolerance": 0.03,
+  "center_tolerance": 0.03
+ },
+ "views": {
+  "front": "front.png",
+  "side": "side.png",
+  "top": "top.png",
+  "closure_detail": "closure_detail.png",
+  "three_quarter_diagnostic": "three_quarter_diagnostic.png",
+  "wireframe": "wireframe.png",
+  "normals": "normals.png",
+  "bounds_dimensions": "bounds_dimensions.png"
+ },
+ "pixel_dimensions": [
+  1600,
+  2200
+ ],
+ "physical_scale_mm_per_px": 0.04836,
+ "pixel_hashes": {
+  "front": "1854f8f2c1368e35",
+  "side": "44aa5d76585a1e98",
+  "top": "699ce0473abb654e",
+  "closure_detail": "769c9e3e8f67677f",
+  "three_quarter_diagnostic": "4f966a6b57682bce",
+  "wireframe": "64587268a7760b28",
+  "normals": "0618f76b939387e9",
+  "bounds_dimensions": "1e544e6d76e0068b"
+ },
+ "measurements": {
+  "expected_mm_per_px": 0.04836,
+  "front": {
+   "bounds_px": {
+    "x0": 438,
+    "x1": 1161,
+    "y0": 118,
+    "y1": 2081,
+    "touches_frame": false
+   },
+   "rendered_extent_mm": 35.02,
+   "contract_extent_mm": 35,
+   "rendered_height_mm": 94.99
+  },
+  "side": {
+   "bounds_px": {
+    "x0": 438,
+    "x1": 1161,
+    "y0": 118,
+    "y1": 2081,
+    "touches_frame": false
+   },
+   "rendered_extent_mm": 35.02,
+   "contract_extent_mm": 35,
+   "rendered_height_mm": 94.99
+  },
+  "top": {
+   "bounds_px": {
+    "x0": 438,
+    "x1": 1160,
+    "y0": 738,
+    "y1": 1460,
+    "touches_frame": false
+   }
+  },
+  "closure_detail": {
+   "note": "detail crop fills frame \u2014 silhouette segmentation not applicable; content verified by variance",
+   "luminance_std": 11.21
+  }
+ },
+ "warnings": [],
+ "uncertainty": [
+  "synthetic geometry fixture \u2014 no real-bottle reference available (pack INCOMPLETE)"
+ ],
+ "reference_availability": "NONE \u2014 real reference pack incomplete"
+}

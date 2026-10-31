@@ -1,0 +1,93 @@
+{% extends "dashboard/history/base.html" %}
+{% load plain_words %}
+{% load static %}
+{% block title %}Design loop · Task #{{ task.pk }}{% endblock %}
+{% block content %}
+<p class="dim"><a href="{% url 'dashboard:history' %}">Designs</a> › <a href="{% url 'dashboard:history_task' task.pk %}">Design #{{ task.pk }}</a> › Design loop</p>
+<h1>Design loop · Design #{{ task.pk }}{% if task.product %} · {{ task.product.name }}{% endif %}</h1>
+<div class="exploration-band" role="note"><p><span class="words">{{ status }}</span><br>
+  Try a design: turn a knob, render, look at the pictures side by side. Every picture here is an exploration — no commit, no gate, no register entry, no spend — and none is a decision. Nothing on this page changes the task's record.</p></div>
+
+{% if refusal %}<p><span class="pill withheld">cannot render</span> {{ refusal_words }}</p>
+<details class="tech"><summary>What the record says</summary><p>{{ refusal }}</p></details>{% else %}
+<h2 id="knobs">Adjust and re-render</h2>
+<form method="post" action="{% url 'dashboard:history_task_explore' task.pk %}" class="explore knobs" data-room-url="{% url 'dashboard:history_task_copy_room' task.pk %}">{% csrf_token %}
+  <input type="hidden" name="from_loop" value="1">
+  <fieldset><legend>Front zone — mm <span class="dim">(stands at {{ standing.zones.front.width }} × {{ standing.zones.front.height }} at {{ standing.zones.front.x }}, {{ standing.zones.front.y }})</span></legend>
+    <label>x <input name="front_x" inputmode="decimal" value="{{ filled.front_zone.x|default_if_none:'' }}" placeholder="{{ standing.zones.front.x }}"></label>
+    <label>y <input name="front_y" inputmode="decimal" value="{{ filled.front_zone.y|default_if_none:'' }}" placeholder="{{ standing.zones.front.y }}"></label>
+    <label>width <input name="front_width" inputmode="decimal" value="{{ filled.front_zone.width|default_if_none:'' }}" placeholder="{{ standing.zones.front.width }}"></label>
+    <label>height <input name="front_height" inputmode="decimal" value="{{ filled.front_zone.height|default_if_none:'' }}" placeholder="{{ standing.zones.front.height }}"></label></fieldset>
+  <fieldset><legend>Back zone — mm <span class="dim">(stands at {{ standing.zones.back.width }} × {{ standing.zones.back.height }} at {{ standing.zones.back.x }}, {{ standing.zones.back.y }})</span></legend>
+    <label>x <input name="back_x" inputmode="decimal" value="{{ filled.back_zone.x|default_if_none:'' }}" placeholder="{{ standing.zones.back.x }}"></label>
+    <label>y <input name="back_y" inputmode="decimal" value="{{ filled.back_zone.y|default_if_none:'' }}" placeholder="{{ standing.zones.back.y }}"></label>
+    <label>width <input name="back_width" inputmode="decimal" value="{{ filled.back_zone.width|default_if_none:'' }}" placeholder="{{ standing.zones.back.width }}"></label>
+    <label>height <input name="back_height" inputmode="decimal" value="{{ filled.back_zone.height|default_if_none:'' }}" placeholder="{{ standing.zones.back.height }}"></label></fieldset>
+  <fieldset><legend>Product name</legend>
+    <label class="wide">name <input name="product_name" value="{{ filled.product_name|default_if_none:'' }}" placeholder="{{ standing.product_name }}"></label></fieldset>
+  {% if standing.form == "face" %}<p class="dim">No glass knobs here: the four glass fields are a bottle's, and a lid's design is drawn from its concept's own arrangement — a render with them is refused on a lid.</p>{% else %}
+  <fieldset><legend>Glass — the four retained appearance fields</legend>
+    {% for f in appearance %}<label>{{ f.label }} <input name="{{ f.name }}" inputmode="decimal" value="{{ f.filled|default_if_none:'' }}" placeholder="{{ f.standing }}"> <span class="dim">{{ f.low }}–{{ f.high }}</span></label>{% endfor %}</fieldset>{% endif %}
+  <fieldset class="copy" id="copy"><legend>Back copy — the six pieces <span class="dim">(blank = the piece stays as the product stands)</span></legend>
+    <p class="dim">"Render this exploration" draws the words you type as DRAFT — never verified, never copy, nothing saved. "Save these words as my copy" shows you exactly the words and their fingerprint, and your click there lands them in the product as your act. Each piece's room is measured by the back panel's own layout, in this task's back zone — or the back zone typed above — as you type. Over its room a piece is still saved: the line tells you, it never refuses.</p>
+    {% if standing.form == "face" %}<p class="dim">On a lid's design these boxes keep your words in the product — "Save these words as my copy" works as it does everywhere — but a render with words typed here is refused: the panel that draws draft words is a bottle's back panel.</p>{% endif %}
+    <p id="room-total" class="room{% if rooms.fits == False %} over{% endif %}">{{ rooms.total_line }}</p>
+    {% for c in copy %}<label class="wide">{{ c.piece }} <span class="room{% if c.room.over and c.room.state != "unwritten" %} over{% endif %}" data-piece="{{ c.piece }}">{{ c.room.line }}</span>
+      {% if c.written %}<span class="dim">your words of {{ c.written.when|date:"j F Y, H:i" }} UTC · {{ c.written.verification|plain }}</span>{% endif %}
+      <textarea name="{{ c.name }}" rows="2" data-piece="{{ c.piece }}" placeholder="{{ c.placeholder }}">{{ c.filled|default_if_none:'' }}</textarea></label>{% endfor %}</fieldset>
+  <fieldset><legend>Raster</legend>
+    <label>dpi <input name="dpi" inputmode="numeric" value="{{ filled.dpi|default_if_none:'' }}" placeholder="200"> <span class="dim">72–300</span></label></fieldset>
+  <p><button type="submit">Render this exploration</button>
+    <button type="submit" formaction="{% url 'dashboard:history_task_copy' task.pk %}">Save these words as my copy…</button>
+    <span class="dim">about 5 seconds · spends nothing · blank fields stay as the task stands · a number outside its range refuses the whole render by name</span></p>
+</form>
+{% endif %}
+
+<h2 id="words">Your words in this product</h2>
+<p class="dim">The copy of {{ task.product.name|default:"this product" }} is what you typed and nothing else: your account, the server's time at your click, a fingerprint of exactly the words. Each piece is checked against its fingerprint every time it is read — here, and wherever a sheet is drawn; words that no longer match are marked void and are not printed. A piece you have not typed prints a note that its words still need checking, and holds the back.</p>
+{% if words %}<div class="tablewrap"><table><thead><tr><th>Piece</th><th>When</th><th>By</th><th>Checked again now</th><th>The words</th></tr></thead><tbody>
+{% for w in words %}<tr><td>{{ w.row.piece }}</td><td>{{ w.when|date:"j F Y, H:i:s" }} UTC</td><td>{{ w.who }}</td>
+  <td>{% if w.void %}<span class="pill withheld">{{ w.verification|plain }}</span>{% else %}{{ w.verification|plain }}{% endif %}</td><td>{{ w.text|truncatechars:160 }}</td></tr>{% endfor %}
+</tbody></table></div>
+<details class="tech"><summary>Each piece's fingerprint</summary><ul>{% for w in words %}<li>{{ w.row.piece }} — sha256 {{ w.sha256 }} · {{ w.verification }}</li>{% endfor %}</ul></details>{% else %}<p class="dim">No piece typed yet.</p>{% endif %}
+
+<h2 id="side-by-side">Side by side{% if shown %} — {{ shown|length }} picture{{ shown|length|pluralize }} at {{ size_label }}{% endif %}</h2>
+{% if not study %}<p class="dim">No exploration of this task yet. Render one above.</p>{% else %}
+<form method="get" class="filters pick">
+  {% for p in study.pictures %}{% if not p.refused %}<label><input type="checkbox" name="show" value="{{ p.picture }}"{% if p.picture in shown_ids %} checked{% endif %}> {{ p.picture }} <span class="dim">{{ p.record.what_changed|truncatechars:70 }}</span></label>{% endif %}{% endfor %}
+  <label>size <select name="size"><option value="full"{% if size == "full" %} selected{% endif %}>full size</option><option value="fit"{% if size == "fit" %} selected{% endif %}>fit the row</option></select></label>
+  <button type="submit">Show</button>
+</form>
+<div class="strip {{ size }}">
+  {% for p in shown %}
+  <figure class="card exploration" id="{{ p.picture }}">
+    <a href="{{ p.url }}" target="_blank" rel="noopener"><img src="{{ p.url }}" alt="Exploration {{ p.picture }}: {{ p.record.what_changed }}" width="{{ p.record.picture_px.0 }}" height="{{ p.record.picture_px.1 }}"></a>
+    <figcaption><span class="pill withheld">exploration · {{ p.picture }}</span> <b>{{ p.record.what_changed }}</b>
+      <div class="dim">{{ p.record.made_at|when }} · {{ p.record.picture_px.0 }} × {{ p.record.picture_px.1 }} px at {{ p.record.dpi }} dpi</div>
+      {% if p.codes %}<details class="tech"><summary>What this drawing carries — information, never a verdict ({{ p.codes|length }})</summary><ul class="codes">{% for c in p.codes %}<li>{{ c|plain }}</li>{% endfor %}</ul></details>{% else %}<div class="dim">The drawing carries no front-copy or back-panel code.</div>{% endif %}
+      <div class="dim">Its colours as they stand today (§BH54(j)) — {{ p.record.fallback_literals_still_drawn|length }} still drawn in the drawing's own fallback colours; the sheet's status line and three fixed texts print on every exploration.</div>
+      <a href="?from={{ p.picture }}{% for s in shown_ids %}&amp;show={{ s }}{% endfor %}#knobs">Adjust from this one</a>
+      <form method="post" action="{% url 'dashboard:history_task_accept' task.pk %}" class="explore accept">{% csrf_token %}
+        <input type="hidden" name="study" value="{{ study.slug }}"><input type="hidden" name="picture" value="{{ p.picture }}">
+        <input type="hidden" name="picture_sha256" value="{{ p.record.picture_sha256 }}">
+        <span class="dim">What you accept is exactly this picture: its fingerprint is recorded with your act.</span>
+        <input name="note" placeholder="a note, if you want one" aria-label="A note on this act">
+        <button type="submit" name="decision" value="ACCEPTED">Accept this picture</button>
+        <button type="submit" name="decision" value="REJECTED">Reject this picture</button>
+      </form>
+    </figcaption>
+  </figure>
+  {% endfor %}
+</div>
+<h2 id="acts">Your acts on this task</h2>
+<p class="dim">Acceptance is your act alone: your account, the server's time at your click, and a fingerprint of exactly the picture you looked at. Each act is checked against the picture again every time this page is read. It records your decision on a picture; carrying an accepted design into the task's governed record is a separate, gated step.</p>
+{% if acts %}<div class="tablewrap"><table><thead><tr><th>When</th><th>Act</th><th>Picture</th><th>By</th><th>Checked again now</th></tr></thead><tbody>
+{% for a in acts %}<tr><td>{{ a.row.decided_at|date:"j F Y, H:i:s" }} UTC</td><td><span class="pill {% if a.row.decision == "REJECTED" %}reject{% else %}status{% endif %}">{{ a.row.decision|lower }}</span></td>
+  <td>{{ a.row.study }}/{{ a.row.picture }}</td><td>{{ a.who }}</td>
+  <td>{% if a.void %}<span class="pill withheld">{{ a.verification|plain }}</span>{% else %}{{ a.verification|plain }}{% endif %}{% if a.row.note %}<div class="dim">{{ a.row.note }}</div>{% endif %}</td></tr>{% endfor %}
+</tbody></table></div>
+<details class="tech"><summary>Each act's fingerprint</summary><ul>{% for a in acts %}<li>{{ a.row.study }}/{{ a.row.picture }} — {{ a.row.decision }} · sha256 {{ a.row.picture_sha256 }} · {{ a.verification }}</li>{% endfor %}</ul></details>{% else %}<p class="dim">No act yet.</p>{% endif %}
+<p class="dim">Study <a href="{% url 'dashboard:history_exploration_study' study.slug %}">{{ study.slug }}</a>{% if earlier %} · earlier: {% for e in earlier %}<a href="?study={{ e }}">{{ e }}</a> {% endfor %}{% endif %}</p>
+{% endif %}
+{% endblock %}
+{% block scripts %}<script src="{% static 'js/loop.js' %}" defer></script>{% endblock %}

@@ -1,0 +1,237 @@
+{
+ "record_type": "illustrator_execution_verification_receipts/1.0",
+ "created_at": "2026-07-30",
+ "gate": "A_illustrator_execution",
+ "gate_state": "PASSED",
+ "verification_state": "PASSED",
+ "verification_complete": true,
+ "passed": true,
+ "receipts": [
+  {
+   "n": 1,
+   "received_at": "2026-07-30",
+   "reported_by": "owner",
+   "submitted_sha256": "f3707618edf98c87ceb86e03c9ca8d5d42c52c52f708807e335a02794d5a54c1",
+   "accepted_source_sha256": "f3707618edf98c87ceb86e03c9ca8d5d42c52c52f708807e335a02794d5a54c1",
+   "equals_accepted_source": true,
+   "is_new_verification_copy": false,
+   "codes": [
+    "ILLUSTRATOR_ORIGINAL_SOURCE_REUPLOADED",
+    "ILLUSTRATOR_VERIFICATION_COPY_NOT_RECEIVED",
+    "ILLUSTRATOR_EXECUTION_VERIFICATION_INCOMPLETE"
+   ],
+   "gate_a_effect": "NONE — Gate A remains BLOCKED",
+   "finding": "The submitted file hashes exactly to the frozen accepted source, so it is byte-identical to the original and cannot be the product of an open/save/reopen cycle in Illustrator. A verification copy necessarily differs from the source it was saved from.",
+   "corroboration": "digest equality against docs/visual_quality/vq2/vq2_a2_r2_final.ai on disk; the submitted file itself was not present in this environment and was not re-hashed here",
+   "accepted_source_modified": false
+  },
+  {
+   "n": 2,
+   "received_at": "2026-07-30",
+   "reported_by": "owner",
+   "subject": "docs/visual_quality/vq2/vq2_a2_r2_final.ai",
+   "subject_sha256": "f3707618edf98c87ceb86e03c9ca8d5d42c52c52f708807e335a02794d5a54c1",
+   "performed_in": "Adobe Illustrator",
+   "result": "FAILED",
+   "observed": "the complete product opened as one solid black silhouette",
+   "codes": [
+    "ILLUSTRATOR_EXECUTION_VERIFICATION_FAILED",
+    "ILLUSTRATOR_AI8_ALL_OBJECTS_EMITTED_BLACK",
+    "ILLUSTRATOR_DOCUMENT_PROCESS_COLORS_BLACK_ONLY",
+    "ILLUSTRATOR_SOURCE_PROOF_COLOR_DIVERGENCE",
+    "ILLUSTRATOR_PRODUCTION_SOURCE_REGENERATION_REQUIRED"
+   ],
+   "is_display_preference": false,
+   "is_source_emission_defect": true,
+   "corroborated_in_repo": {
+    "document_process_colors": "Black",
+    "every_visible_object_operator": "0.0000 0.0000 0.0000 Xa",
+    "visible_objects_resolving_to_black": 40,
+    "accepted_pdf_proof_carried_correct_colors": true
+   },
+   "gate_a_effect": "NONE — Gate A remains BLOCKED; the source is superseded by a corrected one that is itself not yet verified",
+   "finding": "This is a real Illustrator execution result, and it FAILED. The cause is a source colour-emission defect, not an Illustrator display preference: every visible object in the accepted .ai was written as 0.0000 0.0000 0.0000 Xa and the document declared Black only, while the accepted PDF and PNG proofs committed alongside it carried the four correct colours. The source and the proofs were therefore not equivalent in colour. A corrected source has been generated from the same geometry and awaits a new human round trip; it is NOT itself verified, and Gate A has not moved.",
+   "accepted_source_modified": false,
+   "accepted_design_modified": false
+  },
+  {
+   "n": 3,
+   "received_at": "2026-07-31",
+   "reported_by": "owner",
+   "subject": "docs/visual_quality/vq2/vq2_a2_r2_final_gate_a_r1.ai",
+   "subject_sha256": "0555c9f68d10bbd0369bcf191791f5b74366f5f74b3ed8453f4b254ad96400e2",
+   "performed_in": "Adobe Illustrator 2026 / macOS",
+   "result": "FAILED",
+   "observed": "body, collar and closure rendered in their approved colours; logo, registered symbol, divider, Rose, Damascena and NIGHT REPAIR OIL all absent from the visible result",
+   "visible_objects": 3,
+   "missing_objects": 37,
+   "codes": [
+    "ILLUSTRATOR_EXECUTION_VERIFICATION_FAILED",
+    "ILLUSTRATOR_GATE_A_R1_ARTWORK_NOT_RENDERED",
+    "ILLUSTRATOR_LOGO_NOT_RENDERED",
+    "ILLUSTRATOR_DIVIDER_NOT_RENDERED",
+    "ILLUSTRATOR_PRODUCT_NAME_NOT_RENDERED",
+    "ILLUSTRATOR_SUPPORTING_COPY_NOT_RENDERED",
+    "ILLUSTRATOR_SOURCE_PROOF_DIVERGENCE_PERSISTS",
+    "GATE_A_R2_SOURCE_REQUIRED"
+   ],
+   "colour_defect_resolved": true,
+   "finding": "The R1 colour repair worked - the three visible objects carry their approved colours, which R0 did not. A different defect remains: 37 of 40 objects do not reach the visible result. Measured in the repo, all 37 missing objects lie fully inside the body's bounding box and the 3 survivors are exactly those the body does not cover. That fits two explanations equally well - the body stacking above the artwork, or Illustrator discarding content after the third layer block - and this environment cannot separate them, so neither is recorded as the cause. R2 removes layer blocks and inherited state entirely, so it does not depend on which is true.",
+   "gate_a_effect": "NONE - Gate A remains BLOCKED",
+   "accepted_source_modified": false,
+   "accepted_design_modified": false,
+   "human_screenshot_received": false
+  },
+  {
+   "n": 4,
+   "received_at": "2026-07-31",
+   "reported_by": "owner",
+   "subject": "docs/visual_quality/vq2/vq2_a2_r2_final_gate_a_r2.ai",
+   "subject_sha256": "6ae00f726ddefda4adad93325735c489e3fe987452f9c1a2f603236c73e4c49a",
+   "performed_in": "Adobe Illustrator 2026 / macOS",
+   "result": "INITIAL_OPEN_PASSED",
+   "observed": "body, collar, closure, BBROSE logo, medallion and registered symbol, divider, Rose, Damascena and NIGHT REPAIR OIL all visible in approved colours, as separate Path and Compound Path objects",
+   "codes": [
+    "ILLUSTRATOR_GATE_A_R2_INITIAL_OPEN_PASSED",
+    "ILLUSTRATOR_GATE_A_R1_ARTWORK_LOSS_RESOLVED",
+    "ILLUSTRATOR_R2_FULL_VISIBLE_ARTWORK_PRESENT",
+    "ILLUSTRATOR_R2_VECTOR_PATHS_PRESENT"
+   ],
+   "artwork_loss_resolved": true,
+   "colour_defect_resolved": true,
+   "submitted_sha256": "6ae00f726ddefda4adad93325735c489e3fe987452f9c1a2f603236c73e4c49a",
+   "equals_accepted_source": true,
+   "is_new_verification_copy": false,
+   "roundtrip_performed": false,
+   "verification_result_json_received": false,
+   "finding": "This is the first Illustrator run of this artwork that lost nothing, and it closes the second defect: R1 rendered 3 of 40 objects, R2 renders all of them. Illustrator also built real vector objects rather than embedding the EPS - the owner reports separate Path and Compound Path items, so the compound paths carrying the counters and the medallion survived as objects. What it does NOT establish is Gate A. The returned .ai hashes exactly to the R2 source, so it is the original re-uploaded and nothing was saved, closed or reopened; a verification copy necessarily differs from the file it was saved from. Any uploaded PDF/PNG that matches this repository's own R2 proofs is likewise a re-upload and carries no Illustrator provenance. Neither upload reached this environment, so neither was hashed here.",
+   "does_not_isolate_r1_mechanism": "R2 changed several things at once, so this does not say whether R1 lost its artwork to stacking or to a dropped layer boundary. Fixture A would still separate them; that is now forensic, not blocking.",
+   "gate_a_effect": "NONE - Gate A remains BLOCKED",
+   "accepted_source_modified": false,
+   "accepted_design_modified": false
+  },
+  {
+   "n": 5,
+   "received_at": "2026-07-31",
+   "reported_by": "owner",
+   "subject": "vq2_a2_r2_final_illustrator_verified.ai (as submitted)",
+   "subject_sha256": "547f55b8f6a71e9b85236d185b0fdc977497374ebf96fc50339388c8660967c0",
+   "performed_in": "Adobe Illustrator 30.0 (Macintosh)",
+   "result": "ARTWORK_PASSED_ARTBOARD_FAILED",
+   "codes": [
+    "ILLUSTRATOR_R2_SAVE_COMPLETED",
+    "ILLUSTRATOR_R2_FULL_ARTWORK_PRESERVED",
+    "ILLUSTRATOR_R2_COLOURS_PRESERVED",
+    "ILLUSTRATOR_R2_VECTOR_OBJECTS_PRESERVED",
+    "ILLUSTRATOR_GATE_A_PAGE_SIZE_DRIFT",
+    "ILLUSTRATOR_GATE_A_ARTBOARD_NOT_PRESERVED",
+    "ILLUSTRATOR_ROUNDTRIP_PARTIAL_PASS",
+    "ILLUSTRATOR_EXECUTION_VERIFICATION_INCOMPLETE"
+   ],
+   "is_new_verification_copy": true,
+   "roundtrip_performed": true,
+   "verified_here": {
+    "page_pt": [
+     763.654,
+     983.225
+    ],
+    "expected_page_pt": [
+     207.1627,
+     493.2283
+    ],
+    "drawing_objects": 40,
+    "filled": 39,
+    "stroked": 1,
+    "raster_images": 0,
+    "live_text_characters": 0,
+    "colours": [
+     "#D9BDB5",
+     "#705242",
+     "#493034",
+     "#502525"
+    ]
+   },
+   "finding": "The first genuinely different file to come back, and a native Illustrator document rather than our EPS - a save really happened. Measured here from the file itself: 40 vector objects, 39 filled plus the divider stroke, all four approved colours and nothing else, zero rasters, zero live text. The artwork passed. The page did not: 763.654 x 983.225 pt against the accepted 207.1627 x 493.2283. The ink measures the same physical height as the source, so the artwork was translated, never resized. This is a defect in the automation script, not in the artwork.",
+   "second_finding": "The result JSON on disk came from a DIFFERENT, aborted run in which the .jsx was selected instead of the .ai; it records FAIL with save, reopen and both exports false, and it overwrote the record belonging to the run that produced this copy. The copy is still genuine, but its script-written provenance was destroyed. Both script defects are now fixed.",
+   "gate_a_effect": "NONE - Gate A remains BLOCKED",
+   "accepted_artwork_modified": false,
+   "r2_source_modified": false
+  },
+  {
+   "n": 6,
+   "received_at": "2026-07-31",
+   "reported_by": "owner",
+   "subject": "vq2_a2_r2_final_illustrator_verified.ai",
+   "subject_sha256": "ae287712de97798e9fa91efbb4fe3bb093f5950b8f55931441af71d7b00c13c0",
+   "performed_in": "Adobe Illustrator 30.0.0 / macOS",
+   "result": "PASSED",
+   "codes": [
+    "ILLUSTRATOR_EXECUTION_VERIFICATION_PASSED",
+    "PRODUCTION_AUTHORITY_GATE_A_PASSED",
+    "ILLUSTRATOR_SAVE_REOPEN_EXPORT_CONFIRMED",
+    "ILLUSTRATOR_ARTBOARD_PRESERVED",
+    "ILLUSTRATOR_VECTOR_EDITABILITY_CONFIRMED"
+   ],
+   "is_new_verification_copy": true,
+   "roundtrip_performed": true,
+   "verified_here": {
+    "artboard_pt": [
+     207.162994,
+     493.227997
+    ],
+    "logical_drawings": 40,
+    "path_items": 67,
+    "filled": 39,
+    "stroked": 1,
+    "raster_images": 0,
+    "live_text_characters": 0,
+    "colours": [
+     "#D9BDB5",
+     "#705242",
+     "#493034",
+     "#502525"
+    ],
+    "divider_stroke_width_pt": 0.362384
+   },
+   "finding": "The round trip completed and every figure was re-measured here from the returned files rather than taken from the report: all four hashes match, the artboard is 207.162994 x 493.227997 pt, there are 40 logical drawings, 39 filled plus the divider stroke, only the four approved colours, no raster and no live text. The submitted JSON records human_result PASS with save, reopen and both exports true, no warning, and both nine-item human confirmations answered. Gate A passes.",
+   "gate_a_effect": "GATE A PASSED",
+   "accepted_artwork_modified": false
+  }
+ ],
+ "verification_copy_received": true,
+ "awaiting": [],
+ "acceptance_rules": [
+  "the verification .ai must be produced from vq2_a2_r2_final_gate_a_r2.ai",
+  "a submission whose sha256 equals the corrected source is a re-upload, never a verification copy - it must differ from 6ae00f726ddefda4adad93325735c489e3fe987452f9c1a2f603236c73e4c49a",
+  "the R2 source must still hash to 6ae00f726ddefda4adad93325735c489e3fe987452f9c1a2f603236c73e4c49a afterwards",
+  "R1 must still hash to 0555c9f68d10bbd0369bcf191791f5b74366f5f74b3ed8453f4b254ad96400e2 and R0 to f3707618edf98c87ceb86e03c9ca8d5d42c52c52f708807e335a02794d5a54c1",
+  "all four artefacts are required before Gate A can be evaluated",
+  "human_result must be PASS; save, reopen, PDF export and PNG export must all be true",
+  "a null or absent check result is not a pass",
+  "colour AND presence must be confirmed visually in Illustrator; automated checks on the bytes are not evidence of what Illustrator renders",
+  "a successful OPEN is not a round trip: Gate A needs the file saved, closed and reopened in Illustrator, with exports taken from the REOPENED copy",
+  "an uploaded PDF or PNG identical to this repository's own R2 proofs is a re-upload of our own output and is not Illustrator evidence",
+  "automated evidence was wrong twice before a human opened the file; a human open that succeeds is still not provenance",
+  "a successful OPEN is not a round trip: Gate A needs the file saved, closed and reopened in Illustrator, with exports taken from the REOPENED copy",
+  "an uploaded PDF or PNG identical to this repository's own R2 proofs is a re-upload of our own output and is not Illustrator evidence",
+  "automated evidence was wrong twice before a human opened the file; a human open that succeeds is still not provenance",
+  "a successful OPEN is not a round trip: Gate A needs the file saved, closed and reopened in Illustrator, with exports taken from the REOPENED copy",
+  "an uploaded PDF or PNG identical to this repository's own R2 proofs is a re-upload of our own output and is not Illustrator evidence",
+  "automated evidence was wrong twice before a human opened the file; a human open that succeeds is still not provenance",
+  "the verified .ai must differ from the preserved artboard-drift copy 547f55b8f6a71e9b85236d185b0fdc977497374ebf96fc50339388c8660967c0",
+  "the verified page must be 207.1627 x 493.2283 pt; artwork preserved on the wrong page size is not a pass",
+  "the result JSON must belong to the run that produced the files - an aborted run's record is not provenance for someone else's output"
+ ],
+ "eps_text_is_not_evidence": true,
+ "eps_text_note": "Successful Illustrator execution must NOT be inferred from reading the EPS/PostScript text inside the .ai. The file being parseable, well-formed, or containing the expected operators says nothing about whether Illustrator opened it without repair, preserved editability, or survived a save/reopen cycle. Only a human performing the checks in Illustrator can establish that.",
+ "automated_pass_possible_here": false,
+ "accepted_assets_changed": false,
+ "packaging_started": false,
+ "required_input": "vq2_a2_r2_final_gate_a_r2.ai",
+ "required_input_sha256": "6ae00f726ddefda4adad93325735c489e3fe987452f9c1a2f603236c73e4c49a",
+ "roundtrip_script": "illustrator_gate_a_roundtrip.jsx",
+ "initial_open_passed": true,
+ "roundtrip_performed": true,
+ "remaining_blocker_is_procedural_not_a_defect": true,
+ "roundtrip_passed": true
+}

@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %}Creativity check{% endblock %}
+{% block page_class %}page wide{% endblock %}
+{% block content %}
+{# Day 13 §2e (apps/dashboard/day13_views.py): the sheet unlabelled, the nine files by their K names, a text field for #}
+{# the owner's own ranking; nothing of the map reaches this template until his ranking is written and verified. #}
+<header class="page-hd"><div>
+<h1 class="h1">Creativity check</h1>
+<p class="lead">Nine pieces on one sheet, each under a letter and a number and nothing else. Rank them in your own words first. What each one is, and where it comes from, stays sealed on this page until your ranking is written.</p>
+</div></header>
+{% if refused %}<p class="note-box attn" role="status">{{ refused }}</p>{% endif %}
+{% if state == 'not ready' %}
+<p class="note-box">The sheet is not ready yet. It appears on this page as soon as it is made.</p>
+{% elif state == 'changed' %}
+<p class="note-box attn">The sheet is not shown: {{ why }}.</p>
+{% elif state == 'unreadable' %}
+<p class="note-box attn">The sheet's record cannot be read, so nothing is shown: {{ why }}.</p>
+{% elif ready %}
+<section class="section" id="sheet">
+<div class="sec-hd"><h2 class="h2">The sheet</h2><a class="more" href="{{ sheet_url }}" target="_blank" rel="noopener">Open at full size</a></div>
+<div class="card pad"><a href="{{ sheet_url }}" target="_blank" rel="noopener"><img src="{{ sheet_url }}" alt="The sheet: nine pieces labelled K1 to K9"></a></div>
+</section>
+<section class="section" id="files">
+<div class="sec-hd"><h2 class="h2">The nine files</h2><span class="note">Each as it was made, its bytes unchanged.</span></div>
+<div class="grid">{% for tile in tiles %}
+<div class="card"><a href="{{ tile.url }}" target="_blank" rel="noopener"><img src="{{ tile.url }}" alt="{{ tile.label }}" loading="lazy"></a>
+<p class="small"><b>{{ tile.label }}</b> · <a href="{{ tile.url }}" target="_blank" rel="noopener">open</a></p></div>{% endfor %}
+</div>
+</section>
+<section class="section" id="ranking">
+<div class="sec-hd"><h2 class="h2">Your ranking</h2></div>
+{% if seal == 'open' %}
+<p class="small">Written by {{ ranking.user }} at {{ ranking.at }} · sha256 <span class="mono">{{ ranking.sha256 }}</span></p>
+<pre>{{ ranking.text }}</pre>
+{% elif seal == 'held' %}
+<p class="note-box attn">A ranking is stored, but the map stays sealed: {{ why }}.</p>
+{% elif not is_owner %}
+<p class="small">Only the owner's account writes the ranking here. The map opens on this page once it is written.</p>
+{% else %}
+{% if confirm %}
+<div class="card pad">
+<p>These are the words that will be written, exactly. Their sha256 is <span class="mono">{{ confirm.sha256 }}</span>. Once written they are kept as they are and never overwritten, and the map opens below.</p>
+<pre>{{ confirm.words }}</pre>
+<form method="post" action="{% url 'dashboard:creativity_ranking' %}">{% csrf_token %}
+<textarea name="ranking" hidden readonly>{{ confirm.words }}</textarea>
+<input type="hidden" name="sha256" value="{{ confirm.sha256 }}"><input type="hidden" name="confirm" value="yes">
+<button class="btn primary" type="submit">Write my ranking</button></form>
+<p class="small">Or change the words below and show them again.</p>
+</div>
+{% endif %}
+<form method="post" action="{% url 'dashboard:creativity_ranking' %}">{% csrf_token %}
+<label class="lbl" for="creativity-ranking">The nine in your order, with a line on each if you like. You see exactly what will be written before it is.</label>
+<textarea class="field" id="creativity-ranking" name="ranking" maxlength="{{ max_characters }}" required>{{ typed|default:'' }}</textarea>
+<p><button class="btn{% if not confirm %} primary{% endif %}" type="submit">Show what will be written</button></p>
+</form>
+{% endif %}
+</section>
+<section class="section" id="map">
+<div class="sec-hd"><h2 class="h2">The map</h2></div>
+{% if seal == 'open' %}
+<div class="tablewrap"><table>
+<thead><tr><th>Label</th><th>Piece</th><th>Day</th><th>Record file</th><th>Record still these bytes</th></tr></thead>
+<tbody>{% for row in map.rows %}<tr><td>{{ row.label }}</td><td>{{ row.piece }}</td><td>{% if row.day %}Day {{ row.day }}{% else %}not in its path{% endif %}</td><td class="mono">{{ row.file }}</td><td>{{ row.record_holds }}</td></tr>{% endfor %}</tbody>
+</table></div>
+<h3>The order the nine were listed in</h3>
+<ol class="small">{% for file in map.order %}<li class="mono">{{ file }}</li>{% endfor %}</ol>
+<h3>How the labels were shuffled</h3>
+{% for name, words in map.seed %}<div class="kv"><span>{{ name }}</span><b>{{ words }}</b></div>{% endfor %}
+<h3>The verdict rule</h3>
+{% for name, words in map.verdict_rule %}<div class="kv"><span>{{ name }}</span><b>{{ words }}</b></div>{% endfor %}
+<p class="small">The map was written at {{ map.written_at }}.</p>
+{% else %}
+<p class="note-box">The map is sealed. It opens here once your ranking is written.</p>
+{% endif %}
+</section>
+{% endif %}
+{% endblock %}

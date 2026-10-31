@@ -1,0 +1,104 @@
+{
+ "record_type": "vq2_lf1_hard_stop/1.0",
+ "created_at": "2026-07-29",
+ "state": "VQ2_LF1_HARD_STOP_REVIEW_REQUIRED",
+ "candidate_offered": false,
+ "stop_cause": "OUTLINE_CONVERSION_DEFECT_IN_OUR_PEN_HANDLER_NOT_THE_FONT",
+ "acquisition": {
+  "family": "Imbue",
+  "designer": "Etcetera Type Co",
+  "source": "https://github.com/google/fonts/tree/main/ofl/imbue",
+  "upstream": "https://github.com/Etcetera-Type-Co/Imbue",
+  "file": "Imbue[opsz,wght].ttf",
+  "font_sha256": "bf45ff1dc01974acedf4f11bcbfa7365053d97f4d598ddafe189d238ac80a534",
+  "ofl_sha256": "6bedaf6a91cc0f23c61b1be288107e7aab97913447575c6f59f395e4e04b4588",
+  "metadata_sha256": "636580edcb3137709c96fb8e981a3a4c69efe0144b98481cd017c44d93d2cc1c",
+  "license": "SIL_OPEN_FONT_LICENSE_1_1",
+  "mirror_used": false,
+  "commercial_font_purchased": false,
+  "units_per_em": 2000,
+  "cap_height_units": 1400,
+  "fs_type": 0,
+  "axes": {
+   "wght": [
+    100,
+    900
+   ],
+   "opsz": [
+    10,
+    100
+   ]
+  },
+  "width_axis": null,
+  "glyph_coverage_rose_damascena": true,
+  "verified": true,
+  "stored_internally": "vendor/fonts/imbue/",
+  "redistributed_to_user": false
+ },
+ "trial_results": {
+  "A": {
+   "weight": 300,
+   "opsz": 100,
+   "rose_natural_advance": 128.06,
+   "rose_target": 134,
+   "rose_width_err": 0.0443,
+   "dam_natural_advance": 259.25,
+   "dam_target": 281,
+   "dam_width_err": 0.0774,
+   "rose_tracking_needed_px": 1.979,
+   "dam_tracking_needed_px": 2.719
+  },
+  "B": {
+   "weight": 400,
+   "opsz": 100,
+   "rose_natural_advance": 134.27,
+   "rose_target": 134,
+   "rose_width_err": 0.002,
+   "dam_natural_advance": 273.24,
+   "dam_target": 281,
+   "dam_width_err": 0.0276,
+   "rose_tracking_needed_px": -0.089,
+   "dam_tracking_needed_px": 0.97
+  },
+  "C": {
+   "weight": 500,
+   "opsz": 100,
+   "rose_natural_advance": 140.58,
+   "rose_target": 134,
+   "rose_width_err": 0.0491,
+   "dam_natural_advance": 287.27,
+   "dam_target": 281,
+   "dam_width_err": 0.0223,
+   "rose_tracking_needed_px": -2.192,
+   "dam_tracking_needed_px": -0.783
+  }
+ },
+ "selected_instance": {
+  "trial": "B",
+  "opsz": 100,
+  "wght": 400,
+  "why": "Natural advance widths match the reference almost exactly at the measured cap heights: Rose 134.3 vs 134 (error 0.002) and Damascena 273.2 vs 281 (error 0.028), needing only +0.97 px positive tracking per gap. Positive tracking cannot cause collisions. No distortion of any kind is required.",
+  "rejected_A": "wght 300 too narrow \u2014 Rose error 0.044, Damascena 0.077",
+  "rejected_C": "wght 500 too wide \u2014 Rose error 0.049, and it would need NEGATIVE tracking"
+ },
+ "headline_finding": "Imbue at opsz 100 / wght 400 is a natural width match for both words without any horizontal scaling, per-glyph forcing or colliding tracking. This is the first candidate in the whole workstream to meet the composition targets by construction rather than by distortion.",
+ "what_failed": "My outline-conversion step is defective. The Qu2CuPen recording handler only accepted curveTo calls carrying exactly three points, so every call emitting more was silently dropped. The emitted glyphs are fragments \u2014 o came out with 4 nodes and c with 3, which is far too few for real outlines \u2014 and the raster proof shows shards rather than letterforms. The font is not at fault; the converter is.",
+ "evidence_of_the_bug": {
+  "o_nodes": 4,
+  "c_nodes": 3,
+  "expected_order": "8-14 for a Didone o"
+ },
+ "not_produced": [
+  "valid 13-object outlined artwork",
+  "composition gate metrics from outlines",
+  "dual typography inspections (gated behind validation)",
+  "vq2_imbue_lf1_review package"
+ ],
+ "artifacts_are_provisional": true,
+ "lf2_generated": false,
+ "vq2_a2_generated": false,
+ "glyph_outline_modified": false,
+ "nonuniform_scaling_applied": false,
+ "font_binary_embedded_in_artwork": false,
+ "next_step": "Fix the pen handler to accept multi-segment curveTo, re-run conversion, then validate and inspect. The acquisition, licence provenance and instance selection above all stand and do not need repeating."
+}

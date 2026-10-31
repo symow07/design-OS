@@ -1,0 +1,63 @@
+§BH30(e) HARD STOP — THE REGEN SWEPT IN MATERIAL NO RULING ADMITTED
+Reported 2026-09-03 immediately after the regen ran and BEFORE any commit of its outputs.
+
+THE DECLARATION (sealed before the regen, regen_declaration.md 5e42379dfb800966) predicted
+the intake's effect: E1 inventory 7,590 → 7,641 (+51), E2 FONT +35 / LICENSE_EVIDENCE +15,
+E3 faces 3,969 → 4,004 (+35). MEASURED (regen_measured.json):
+  E1  rows 16,574          (+8,984)                       FALSIFIED
+  E2  FONT 9,296; LICENSE_EVIDENCE 264                    FALSIFIED (the 51 brand2026 rows
+      themselves classified exactly as declared: 35 FONT, 15 LICENSE_EVIDENCE, 1 UNKNOWN =
+      PROVENANCE.json — recorded)
+  E3  C4a/C4c faces 4,486 (+517); brand2026 faces 35      FALSIFIED (the brand part held)
+  E4  the two Noto face rows byte-identical in content, same face ids   HELD
+  E6  exactly the eight declared tracked records moved; tree seals now dip0c ad6099f8a374bba3,
+      dip0a a101596ab535609b                              HELD (shape), values as measured
+  E7  no record under docs/roadmap moved; no apps/ path; protocol_identity unchanged;
+      no suite-manifest regeneration                     HELD
+  E8  not yet run (no gate launched)
+  E9  Noto pair VERIFIED_FOR_PRODUCTION under Django at 87091c1 — to be re-measured after
+      any commit                                          HELD at the last commit
+  materials/ untouched (runner snapshot "source tree unchanged: True"; FONTS 2026 mtime
+      2026-09-01 15:02:40); hashes stable; no output under source.
+
+WHERE THE +8,984 CAME FROM (inventory rows by depth-2 prefix, every row a distinct path):
+  materials/Fonts/FONTS 2026          4,084   the §BH27 drop (born 2026-09-01) — the owner's
+                                              §BH28 sentence: "the library stays outside the
+                                              governed corpus … (no DIP-0A regen)"
+  materials/17-10-2024                1,735   born 2026-09-03, 39,973,518,583 bytes — no ruling
+  materials/ALL..MOCKUP               1,702*  born 2026-09-03, 42,893,378,452 bytes — no ruling
+  materials/ADOBE STOCK               1,490*  born 2026-09-03, 10,171,050,622 bytes — no ruling
+  materials/FONTS 2026 (the alias)        1   ruled "anything else" at §BH27(a)
+  bbrose_design_os/static/fonts/brand2026 51  the intake — as declared
+  (* inventory rows 1,624 / 1,489 after junk exclusion; 189 junk now vs 109)
+  Indexed bytes 29.90 GB → 124.47 GB; duplicate groups 1,017 → 4,015.
+  The walk (tools/dip0/config.py:55) skips only __MACOSX/.git/.svn/node_modules/__pycache__
+  and dot-names; materials/ is one root. The regen governed everything under it.
+
+WHY THIS IS A STOP, not a fold: §BH30(e) says the cascade is pre-authorized BY METHOD and
+"a pin class the census does not predict is a hard stop"; the census (this declaration)
+predicted the intake's +51 and nothing else. Committing these records would admit the
+§BH27 library and ~93 GB of material dropped today into DIP-0A, C4a and the C4c review
+queue under a ruling that named only the theme; pass 2 would then rewrite the corpus
+constants to values that include it. That is a ruling, not a maintenance consequence.
+
+STATE, frozen: HEAD 87091c1 (the intake). Eight tracked records MODIFIED in the worktree,
+UNCOMMITTED (the four dip0a/dip0c pairs listed at E6); var/design_intelligence/audits
+regenerated (untracked, git-ignored); nothing staged. Reverting the eight files restores
+HEAD exactly (git checkout); re-running the regen is deterministic (logs kept:
+regen_dip0a.log, regen_c4a.log, regen_c4c.log).
+
+OPTIONS FOR THE OWNER'S WORD (presented, not chosen):
+ (1) COMMIT AS MEASURED — the regen governs all of materials/ as it stands; the docs commit
+     carries 16,574 rows / 4,486 faces; pass 2 rewrites every moved constant to those values;
+     the library and today's three folders are thereby in the governed corpus.
+ (2) NARROW THE WALK BY RULING — exclude, by config (a ruled edit to tools/dip0/config.py's
+     skip rule or roots), materials/Fonts/FONTS 2026 and/or the three folders born today;
+     revert the eight records; re-run the regen; re-declare; then the docs commit and pass 2
+     at the narrowed values.
+ (3) HOLD — revert the eight records to HEAD, leave var/ as regenerated, proceed to (d) the
+     grants WITHOUT the regen (the grants do not depend on DIP-0A rows), and rule the regen
+     separately after the new material is itself ruled.
+ (4) Anything else the owner words.
+Under every option the Noto pair, the protected regions, the record chain and
+protocol_identity are unaffected (measured).

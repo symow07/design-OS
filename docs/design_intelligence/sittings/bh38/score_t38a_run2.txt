@@ -1,0 +1,21 @@
+§AD0(a) SCORE — T38a RUN 2 (relaunch under pred_t38a_b 1437076f27d26b8f).
+REFUSED by the first-tier suite gate at 2026-09-07T14:15:26Z, GEXIT=1, no
+commit, no ledger line added (worktree ledger stays at 473 = HEAD 472 + the
+run-1 orphan line). Scored as HISTORY. §BH24 refusal budget: 2/3 (T35 run 1,
+T38a run 2).
+
+Cause, measured: the machine rebooted (uptime 1:02 at 14:16Z); Homebrew's
+postgresql@16 launch agent is in state "error 1"; localhost:5432 refuses
+connections; the three WorkflowTraceTests of
+apps/pipeline/tests/test_characterization_protocol.py error at setup on
+psycopg2 OperationalError (connection refused); the other 115 tests of the
+suite gate pass. Nothing in the staged change touches a database, a test
+or any apps/ path — the register only (133/0, proved). Environmental, not
+a code refusal; the same cause would refuse tier 2 (the Django suite needs
+the test database). Remedy: the project's database service brought back
+up (a runtime dependency, as the memory's run commands record), the suite
+gate's two files run alone to green, THEN one relaunch under a new sealed
+prediction (run 3); no third refusal is affordable.
+
+Run 1 (pred_t38a d55930e60ea72688): killed by the session teardown ~45 s
+in — history; its orphan ledger line stays (append-only).

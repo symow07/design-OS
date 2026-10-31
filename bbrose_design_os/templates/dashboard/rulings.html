@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load plain_words %}
+{% comment %}§BH55 Phase 3 — THE RULINGS: the owner's register and his review queue, newest first, searchable by words,
+each section's text a click away; beside each ruling the status the brain measured, labelled as derived.{% endcomment %}
+{% block title %}{{ title }}{% endblock %}
+{% block before %}
+<nav class="seg subnav" aria-label="Rulings">
+  <a href="{% url 'dashboard:status' %}">Status</a>
+  <a href="{% url 'dashboard:rulings' %}"{% if source == "register" %} aria-current="page"{% endif %}>The register of rulings</a>
+  <a href="{% url 'dashboard:rulings' %}?source=queue"{% if source == "queue" %} aria-current="page"{% endif %}>The review queue</a>
+</nav>
+{% endblock %}
+{% block content %}
+<h1>{{ title }}</h1>
+{% if source == "register" %}
+<p class="lede">Every ruling of the owner's, newest first — the text every rule of this system cites. Beside each, what
+  the brain measured it to be, live or superseded and by what: derived{% if brain.built_at %}, at its rebuild of
+  {{ brain.built_at|when }}{% endif %} — the ruling's own text is the truth.{% if not brain %} The brain is not on this
+  machine, so no status is shown.{% endif %}</p>
+{% else %}
+<p class="lede">The owner's review queue, newest first — what waits for his eye, and what he has read.</p>
+{% endif %}
+{% if sections is None %}
+<p class="warn">This file is not on this machine.</p>
+{% else %}
+<form class="filters" method="get" action="{% url 'dashboard:rulings' %}" role="search">
+  <input type="hidden" name="source" value="{{ source }}">
+  <label>Search<input type="search" name="q" value="{{ q }}" placeholder="a word, a § or a code…"></label>
+  <button type="submit">Search</button>
+</form>
+<p class="count">{% if q %}{{ shown|length }} section{{ shown|length|pluralize }} hold{{ shown|length|pluralize:"s," }} “{{ q }}”.{% else %}{{ sections|length }} sections.{% endif %}</p>
+<ul class="rulings">
+{% for s in shown %}
+  <li><a href="{% url 'dashboard:ruling' source s.line %}">{% if s.id %}<strong>{{ s.id }}</strong> — {% endif %}{{ s.title|truncatechars:180 }}</a>
+    <span class="dim">{% if s.date %}{{ s.date }}{% endif %}{% if s.status %} · {{ s.status }}{% endif %}</span>
+    {% if s.snippet %}<br><span class="dim">{{ s.snippet }}</span>{% endif %}</li>
+{% empty %}
+  <li class="dim">No section matches.</li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,289 @@
+{
+  "evaluated_at": "2026-07-14T13:00:00+00:00",
+  "queues": {
+    "A": {
+      "queue": "A",
+      "title": "canonical candidates awaiting dual-control review",
+      "count": 1,
+      "priority": "HIGH",
+      "shared_reason": "nominated by machine; awaiting two human attestations",
+      "required_reviewer_roles": [
+        "BRAND_ADMIN",
+        "DESIGN_REVIEWER",
+        "LEGAL_REVIEWER"
+      ],
+      "items": [
+        {
+          "asset": "logo.pdf",
+          "machine_state": "BRAND_MASTER_CANDIDATE",
+          "reason": "machine NOMINATION only — a nomination confers nothing until two humans attest to it",
+          "blocking": "no canonical approval exists"
+        }
+      ],
+      "evidence_status": "not yet reviewed",
+      "recommended_next_action": "run the 15-item checklist under dual control",
+      "batch_review_allowed": false
+    },
+    "B": {
+      "queue": "B",
+      "title": "active canonical conflicts",
+      "count": 1,
+      "priority": "CRITICAL",
+      "shared_reason": "two ACTIVE canonical masters cover one scope. Both are unusable as canonical for the affected scope until a human resolves it — no winner is chosen by machine.",
+      "required_reviewer_roles": [
+        "BRAND_ADMIN",
+        "LEGAL_REVIEWER"
+      ],
+      "items": [
+        {
+          "assets": [
+            "TEST_ONLY_master_eu.ai",
+            "TEST_ONLY_master_fr.ai"
+          ],
+          "events": [
+            "evt-2989004882df5afe8308",
+            "evt-4b26e26c7036a572c923"
+          ],
+          "relation": "SCOPE_OVERLAPPING",
+          "proven": true,
+          "reason": "markets: EU vs FR: EU is an ancestor of FR",
+          "affected_scope": {
+            "brand": "BBROSE",
+            "lockup": {
+              "mode": "LIST",
+              "tokens": [
+                "PRIMARY"
+              ]
+            },
+            "products": {
+              "mode": "ALL",
+              "tokens": [],
+              "submitted": null
+            },
+            "markets": {
+              "mode": "LIST",
+              "tokens": [
+                "EU",
+                "FR"
+              ]
+            },
+            "variant_role": {
+              "mode": "LIST",
+              "tokens": [
+                "MASTER"
+              ]
+            },
+            "uncertain_axes": [],
+            "note": "the conflict blocks THIS scope. A master approved for a provably disjoint scope is unaffected."
+          },
+          "permitted_resolutions": [
+            "DEPRECATE_INCUMBENT",
+            "SUPERSEDE_INCUMBENT",
+            "NARROW_INCUMBENT_SCOPE",
+            "NARROW_NEW_SCOPE",
+            "RECLASSIFY_AS_VARIANT",
+            "REJECT_NEW_CANDIDATE",
+            "QUARANTINE_BOTH_PENDING_REVIEW"
+          ]
+        }
+      ],
+      "evidence_status": "varies",
+      "recommended_next_action": "choose ONE of the seven resolution actions",
+      "batch_review_allowed": false
+    },
+    "C": {
+      "queue": "C",
+      "title": "replacement requests",
+      "count": 0,
+      "priority": "HIGH",
+      "shared_reason": "a replacement activation — full dual control applies",
+      "required_reviewer_roles": [
+        "BRAND_ADMIN",
+        "LEGAL_REVIEWER"
+      ],
+      "items": [],
+      "evidence_status": "attestations required",
+      "recommended_next_action": "confirm both attestations and the resulting scopes",
+      "batch_review_allowed": false
+    },
+    "D": {
+      "queue": "D",
+      "title": "scope-overlap uncertainty",
+      "count": 3,
+      "priority": "MEDIUM",
+      "shared_reason": "the taxonomy cannot say whether these scopes intersect. This FAILS CLOSED: uncertainty is treated as a conflict.",
+      "required_reviewer_roles": [
+        "BRAND_ADMIN",
+        "BUSINESS_OWNER"
+      ],
+      "items": [
+        {
+          "assets": [
+            "TEST_ONLY_master_atlantis.ai",
+            "TEST_ONLY_master_eu.ai"
+          ],
+          "events": [
+            "evt-333f39e7b8edf528fff7",
+            "evt-4b26e26c7036a572c923"
+          ],
+          "reason": "markets: 'ATLANTIS' is not registered in the 'markets' taxonomy — the machine will not guess what it means",
+          "uncertain_axes": [
+            "markets"
+          ],
+          "resolution": "register the unknown token in scope_taxonomy.json, or narrow one scope so the two are provably disjoint"
+        },
+        {
+          "assets": [
+            "TEST_ONLY_master_atlantis.ai",
+            "TEST_ONLY_master_fr.ai"
+          ],
+          "events": [
+            "evt-2989004882df5afe8308",
+            "evt-333f39e7b8edf528fff7"
+          ],
+          "reason": "markets: 'ATLANTIS' is not registered in the 'markets' taxonomy — the machine will not guess what it means",
+          "uncertain_axes": [
+            "markets"
+          ],
+          "resolution": "register the unknown token in scope_taxonomy.json, or narrow one scope so the two are provably disjoint"
+        },
+        {
+          "assets": [
+            "TEST_ONLY_master_atlantis.ai",
+            "TEST_ONLY_master_us.ai"
+          ],
+          "events": [
+            "evt-333f39e7b8edf528fff7",
+            "evt-d10b96dfbde1988a5c4c"
+          ],
+          "reason": "markets: 'ATLANTIS' is not registered in the 'markets' taxonomy — the machine will not guess what it means",
+          "uncertain_axes": [
+            "markets"
+          ],
+          "resolution": "register the unknown token in scope_taxonomy.json, or narrow one scope so the two are provably disjoint"
+        }
+      ],
+      "evidence_status": "taxonomy incomplete",
+      "recommended_next_action": "register the token, or narrow a scope to make them disjoint",
+      "batch_review_allowed": true
+    },
+    "E": {
+      "queue": "E",
+      "title": "deprecated or superseded masters",
+      "count": 0,
+      "priority": "LOW",
+      "shared_reason": "retired masters — kept for the historical record",
+      "required_reviewer_roles": [
+        "BRAND_ADMIN"
+      ],
+      "items": [],
+      "evidence_status": "historical",
+      "recommended_next_action": "confirm the retirement is correctly recorded",
+      "batch_review_allowed": true
+    },
+    "F": {
+      "queue": "F",
+      "title": "technically strong but ownership/licence-blocked",
+      "count": 0,
+      "priority": "HIGH",
+      "shared_reason": "technically strong, but rights are unconfirmed. Technical readiness and rights are separate axes and never collapse.",
+      "required_reviewer_roles": [
+        "LEGAL_REVIEWER"
+      ],
+      "items": [],
+      "evidence_status": "ownership/licence unverified",
+      "recommended_next_action": "confirm ownership and licence, or quarantine",
+      "batch_review_allowed": true
+    },
+    "G": {
+      "queue": "G",
+      "title": "contradictory business assertion vs file evidence",
+      "count": 1,
+      "priority": "HIGH",
+      "shared_reason": "the business asserts one thing and the file says another",
+      "required_reviewer_roles": [
+        "LEGAL_REVIEWER",
+        "BRAND_ADMIN"
+      ],
+      "items": [
+        {
+          "asset": "LOGO6.ai",
+          "reason": "live text reads 'global logistics services'"
+        }
+      ],
+      "evidence_status": "contradictory",
+      "recommended_next_action": "acknowledge the contradiction WITH a reason, or reject",
+      "batch_review_allowed": true
+    },
+    "H": {
+      "queue": "H",
+      "title": "missing or expired review evidence",
+      "count": 0,
+      "priority": "CRITICAL",
+      "shared_reason": "an ACTIVE canonical master whose evidence has expired",
+      "required_reviewer_roles": [
+        "LEGAL_REVIEWER"
+      ],
+      "items": [],
+      "evidence_status": "expired",
+      "recommended_next_action": "re-review the evidence or revoke the canonical status",
+      "batch_review_allowed": true
+    },
+    "I": {
+      "queue": "I",
+      "title": "permission grants requiring re-review",
+      "count": 0,
+      "priority": "CRITICAL",
+      "shared_reason": "a permission passed its review date. It is ALREADY denied — this queue restores service, it does not stop a leak.",
+      "required_reviewer_roles": [
+        "LEGAL_REVIEWER",
+        "BRAND_ADMIN"
+      ],
+      "items": [],
+      "evidence_status": "expired",
+      "recommended_next_action": "re-review and issue a NEW grant, or leave it denied",
+      "batch_review_allowed": true
+    },
+    "J": {
+      "queue": "J",
+      "title": "third-party brand materials",
+      "count": 1,
+      "priority": "HIGH",
+      "shared_reason": "third-party brand material sitting inside BBROSE folders. Folder location has never implied ownership.",
+      "required_reviewer_roles": [
+        "LEGAL_REVIEWER"
+      ],
+      "items": [
+        {
+          "asset": "JOJIA LOGO.ai",
+          "reason": "third-party mark in BBROSE folders"
+        }
+      ],
+      "evidence_status": "third-party",
+      "recommended_next_action": "confirm third-party status; keep every permission false",
+      "batch_review_allowed": true
+    }
+  },
+  "totals": {
+    "A": 1,
+    "B": 1,
+    "C": 0,
+    "D": 3,
+    "E": 0,
+    "F": 0,
+    "G": 1,
+    "H": 0,
+    "I": 0,
+    "J": 1
+  },
+  "total_items": 7,
+  "critical": [
+    "B"
+  ],
+  "never_batch_approved": [
+    "A",
+    "B",
+    "C"
+  ],
+  "parser": "dip0c.review_c3b4/0.1.0"
+}

@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% comment %}Design intelligence — the reviewer's pages, in the one shell (the owner's goal of 2026-09-25: one visual system everywhere); their notices keep their words.{% endcomment %}
+{% block title %}Reviewer candidate search{% endblock %}
+{% block page_class %}page wide intel{% endblock %}
+{% block before %}
+<nav class="seg subnav" aria-label="Design intelligence">
+  <a href="{% url 'intelligence:review-queue' %}">Review queue</a>
+  <a href="{% url 'intelligence:corpus-list' %}">Candidate corpus</a>
+  <a href="{% url 'intelligence:search' %}">Candidate search</a>
+</nav>
+{% endblock %}
+{% block content %}
+  <section class="notice"><strong>CANDIDATE SEARCH DOES NOT AUTHORIZE OPERATIONAL USE.</strong><p>This is internal candidate search for authenticated reviewers. A result being findable here means a human may examine it — nothing more. It does not mean the item may be retrieved, used automatically, exported, or put into production.</p></section>
+  <section class="notice"><strong>SEMANTIC SIMILARITY DOES NOT AUTHORIZE OPERATIONAL USE.</strong></section>
+  {% if search %}
+  {% if search.ranking_is_semantic %}
+  <section class="notice"><strong>SEMANTIC INDEX: {{ search.semantic_index_status }} · {{ search.ranking_engaged }}.</strong><p>{% if search.ranking_engaged == 'SEMANTIC' %}Ranking is cosine similarity over the published embedding index alone ({{ search.hybrid_ranker_version }}); the lexical score is shown as a diagnostic and does not affect this ordering.{% else %}Ranking blends deterministic lexical matching ({{ search.ranker_version }}) with cosine similarity over the published embedding index ({{ search.hybrid_ranker_version }}).{% endif %} Lexical and semantic scores are shown separately below.</p></section>
+  {% else %}
+  <section class="notice"><strong>RESULTS ARE {{ search.result_label }} — LEXICAL AND METADATA MATCHING, NOT SEMANTIC.</strong><p>Ranking is deterministic keyword, label and metadata matching ({{ search.ranker_version }}). {% if search.ranking_requested != 'LEXICAL' %}A semantic ranking was requested, but the semantic index is {{ search.semantic_index_status }}, so these are lexical results and are labelled as such — never presented as semantic.{% else %}No embeddings, no vector index, no model call.{% endif %} Semantic retrieval requires a separately built, published embedding index.</p></section>
+  {% endif %}
+  {% endif %}
+  {% if search.campaign_scope_error %}<section class="notice"><strong>CAMPAIGN SCOPE UNAVAILABLE — MEMBERSHIP NOT SHOWN.</strong><p>{{ search.campaign_scope_error }}</p></section>{% endif %}
+
+  {% if semantic_failure_code %}<section class="notice"><strong>SEMANTIC SEARCH DID NOT RUN · {{ semantic_failure_code }}</strong><p>{% if semantic_failure_code == 'SEMANTIC_INDEX_UNAVAILABLE' %}No production semantic index is published. Lexical search below remains available; no query was sent anywhere.{% elif semantic_failure_code == 'SEMANTIC_INDEX_STALE' %}The published index no longer matches the corpus. Semantic search fails closed rather than compare a current query against stale documents. No query was sent.{% elif semantic_failure_code == 'EXTERNAL_TRANSFER_NOT_CONFIRMED' %}You did not confirm the external transfer, so nothing was sent. Confirmation is required on every semantic request.{% elif semantic_failure_code == 'PROVIDER_CONFIGURATION_MISSING' %}The embedding provider is not configured. No query was sent.{% elif semantic_failure_code == 'MODEL_MISMATCH' %}The published index was built with a different provider or model, so a query vector would not be comparable. No query was sent.{% elif semantic_failure_code == 'DIMENSION_MISMATCH' %}The returned embedding had an unexpected dimension and was discarded.{% elif semantic_failure_code == 'PROVIDER_ERROR' %}The embedding provider request failed. The published index is unchanged and lexical search remains available.{% else %}{{ semantic_failure_code }}{% endif %}</p></section>{% endif %}
+
+  <section aria-label="Semantic index state"><h2>SEMANTIC INDEX</h2>
+    <dl class="detail-list">
+      <div><dt>Status</dt><dd>{{ semantic_index.status }}</dd></div>
+      <div><dt>Provider / model</dt><dd>{{ semantic_index.provider|default:'—' }} / {{ semantic_index.model_identifier|default:'—' }}</dd></div>
+      <div><dt>Generation</dt><dd><code>{{ semantic_index.generation_id|default:'NONE PUBLISHED' }}</code></dd></div>
+      <div><dt>Corpus hash</dt><dd><code>{{ semantic_index.corpus_manifest_hash|default:'—' }}</code></dd></div>
+      <div><dt>Vector dimension</dt><dd>{{ semantic_index.vector_dimension|default:'—' }}</dd></div>
+    </dl>
+    {% if not semantic_index.available %}<p class="denied">Interactive semantic search is unavailable until a production index is built and published. Lexical search is unaffected.</p>{% endif %}
+  </section>
+
+  <form method="post" action="{% url 'intelligence:semantic-search' %}" class="filters" aria-label="Semantic search">
+    {% csrf_token %}
+    <h2>SEMANTIC / HYBRID SEARCH</h2>
+    <p>This query text will be sent to OpenAI to calculate an embedding. No source files, images, evidence documents, paths, secrets, reviewer identity, or DecisionEvent data will be sent.</p>
+    <label>Semantic query<input name="query_text" maxlength="200" value="" placeholder="e.g. luxury floral cosmetic packaging"></label>
+    <label>Facet<select name="facet">{% for value in facets %}<option value="{{ value }}">{{ value }}</option>{% endfor %}</select></label>
+    <label>Ranking<select name="ranking"><option value="SEMANTIC">SEMANTIC</option><option value="HYBRID">HYBRID</option></select></label>
+    <label>Scope<select name="scope">{% for value in scopes %}<option value="{{ value }}">{{ value }}</option>{% endfor %}</select></label>
+    <input type="hidden" name="generation_id" value="{{ semantic_index.generation_id }}">
+    <input type="hidden" name="expected_corpus_hash" value="{{ semantic_index.corpus_manifest_hash }}">
+    <label><input type="checkbox" name="confirm_external_query_transfer" value="true"> I confirm this query text will be sent to OpenAI for embedding.</label>
+    <button type="submit"{% if not semantic_index.available %} disabled{% endif %}>Run semantic search</button>
+  </form>
+  <p class="count">The confirmation is unchecked by default and required on every semantic request. Accepting the offline index build is not standing consent for future queries. Raw queries and query vectors are never stored or logged.</p>
+
+  <form method="get" class="filters" aria-label="Search filters">
+    <h2>LEXICAL SEARCH (no external call)</h2>
+    <label>Query<input name="query" maxlength="200" value="{{ filters.query|default:'' }}" placeholder="stable key, display label, or token"></label>
+    <label>Search mode<select name="mode">{% for value in modes %}<option value="{{ value }}"{% if query.mode == value %} selected{% endif %}>{{ value }}</option>{% endfor %}</select></label>
+    <label>Scope<select name="scope">{% for value in scopes %}<option value="{{ value }}"{% if query.scope == value %} selected{% endif %}>{{ value }}</option>{% endfor %}</select></label>
+    <label>Ranking<select name="ranking">{% for value in rankings %}<option value="{{ value }}"{% if query.ranking == value %} selected{% endif %}>{{ value }}</option>{% endfor %}</select></label>
+    <label>Item kind<select name="item_kind"><option value="">All</option>{% for value in item_kinds %}<option value="{{ value }}"{% if value in query.item_kinds %} selected{% endif %}>{{ value }}</option>{% endfor %}</select></label>
+    <label>Dataset lineage<select name="dataset_identifier"><option value="">All</option>{% for value in dataset_identifiers %}<option value="{{ value }}"{% if value in query.dataset_identifiers %} selected{% endif %}>{{ value }}</option>{% endfor %}</select></label>
+    <label>Review wave<select name="wave"><option value="">All</option>{% for value in waves %}<option value="{{ value }}"{% if value in query.waves %} selected{% endif %}>{{ value }}</option>{% endfor %}</select></label>
+    <label>Readiness<select name="readiness"><option value="">All</option>{% for value in readiness_states %}<option value="{{ value }}"{% if value in query.readiness_states %} selected{% endif %}>{{ value }}</option>{% endfor %}</select></label>
+    <label>Blocker<select name="blocker"><option value="">All</option>{% for value in readiness_blockers %}<option value="{{ value }}"{% if value in query.blocker_codes %} selected{% endif %}>{{ value }}</option>{% endfor %}</select></label>
+    <label>Rights<select name="rights"><option value="">All</option>{% for value in rights_states %}<option value="{{ value }}"{% if value in query.rights_states %} selected{% endif %}>{{ value }}</option>{% endfor %}</select></label>
+    <label>Evidence integrity<select name="integrity"><option value="">All</option>{% for value in integrity_states %}<option value="{{ value }}"{% if value in query.integrity_states %} selected{% endif %}>{{ value }}</option>{% endfor %}</select></label>
+    <label>Technical state<select name="technical"><option value="">All</option>{% for value in technical_states %}<option value="{{ value }}"{% if value in query.technical_states %} selected{% endif %}>{{ value }}</option>{% endfor %}</select></label>
+    <button type="submit">Search candidates</button>
+  </form>
+
+  {% if search %}
+  <div class="count">{{ search.total_results }} result{{ search.total_results|pluralize }} · mode {{ search.mode }} · scope {{ search.scope }} · page {{ search.page }}{% if search.withheld_identity_count %} · {{ search.withheld_identity_count }} withheld for unresolved identity{% endif %}{% if search.test_only_excluded_count %} · {{ search.test_only_excluded_count }} test-only excluded{% endif %}</div>
+  <p class="count">Campaign and corpus scopes are counted separately and are never blended. Grants operational permission: {{ search.grants_operational_permission }} · implies approval: {{ search.implies_approval }} · implies rights clearance: {{ search.implies_rights_clearance }}.</p>
+
+  <div class="cards">{% for result in search.results %}
+  <article class="card">
+    <div class="eyebrow">{{ result.item_kind }} · {{ result.campaign_membership }}{% if result.wave %} · {{ result.wave }}{% endif %} · SCORE {{ result.match_score }}</div>
+    <h2><a href="{{ result.detail_url }}">{{ result.display_label }}</a></h2>
+    <code>{{ result.corpus_item_id }} · {{ result.external_key }}</code>
+    <section class="status-grid">
+      <div><span>REVIEWER CANDIDATE</span><strong>VISIBLE FOR REVIEW</strong><small>Internal review only</small></div>
+      <div><span>RETRIEVAL</span><strong class="denied">{% if result.retrieval.allowed %}ALLOWED{% else %}DENIED{% endif %}</strong><small>{{ result.retrieval.reason_code }}</small></div>
+      <div><span>AUTOMATIC USE</span><strong class="denied">{% if result.automatic_use.allowed %}ALLOWED{% else %}DENIED{% endif %}</strong><small>{{ result.automatic_use.reason_code }}</small></div>
+    </section>
+    <dl>
+      <div><dt>Dataset lineage</dt><dd>{{ result.dataset_identifier|default:'NONE' }}</dd></div>
+      <div><dt>Match reasons</dt><dd>{{ result.match_reasons|join:', ' }}</dd></div>
+      <div><dt>Lexical score</dt><dd>{{ result.lexical_score }}</dd></div>
+      <div><dt>Semantic score</dt><dd>{% if result.semantic_score is not None %}{{ result.semantic_score|floatformat:4 }}{% else %}—{% endif %}</dd></div>
+      <div><dt>Review readiness</dt><dd>{{ result.readiness_state|default:'NOT IN CAMPAIGN' }} <small>(not approval)</small></dd></div>
+      <div><dt>Blockers</dt><dd>{{ result.blocker_codes|join:', '|default:'None' }}</dd></div>
+      <div><dt>Rights</dt><dd>{{ result.rights_state|default:'UNKNOWN' }}</dd></div>
+      <div><dt>Identity</dt><dd>{{ result.identity_state|default:'UNKNOWN' }}</dd></div>
+      <div><dt>Evidence integrity</dt><dd>{{ result.evidence_integrity_state|default:'UNKNOWN' }}</dd></div>
+      <div><dt>Technical state</dt><dd>{{ result.technical_state|default:'UNKNOWN' }}</dd></div>
+      <div><dt>Human assertions</dt><dd>{{ result.human_assertion_status }}</dd></div>
+      <div><dt>Governance</dt><dd>{{ result.governance_status }}</dd></div>
+      <div><dt>Source hashes</dt><dd>{{ result.source_hash_summary.source_hash_count }} recorded</dd></div>
+      <div><dt>Legacy signals</dt><dd>{{ result.legacy_signals.classification }} · grants {{ result.legacy_signals.grants }} · affects ranking: {{ result.legacy_signals.affects_ranking }}</dd></div>
+    </dl>
+    <p class="denied">{{ result.prohibited_use_warnings|join:' · ' }}</p>
+  </article>
+  {% empty %}
+  <p class="empty">{% if search.result_label == 'SEMANTIC_UNAVAILABLE' %}A semantic-only search was requested with lexical fallback disabled, but no semantic index is published. No results are returned rather than lexical results mislabelled as semantic. Build and publish an OpenAI index, or allow lexical fallback.{% elif search.mode == 'OPERATIONAL_RETRIEVAL' %}No item currently holds a valid RETRIEVAL permission. This is the expected fail-closed result: no permission has been granted, so nothing is operationally retrievable.{% elif search.mode == 'AUTOMATIC_USE' %}No item currently holds a valid AUTOMATIC_USE permission. This is the expected fail-closed result: automatic use requires its own permission and is never implied by retrieval, governance, human classification, or technical readiness.{% else %}No candidate matches this query and these filters.{% endif %}</p>
+  {% endfor %}</div>
+  {% endif %}
+{% endblock %}

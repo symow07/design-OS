@@ -1,0 +1,135 @@
+{
+ "record_type": "production_authority_gate_a_final_verification/1.0",
+ "created_at": "2026-07-31",
+ "ruling": "PASSED",
+ "codes": [
+  "ILLUSTRATOR_EXECUTION_VERIFICATION_PASSED",
+  "PRODUCTION_AUTHORITY_GATE_A_PASSED",
+  "ILLUSTRATOR_SAVE_REOPEN_EXPORT_CONFIRMED",
+  "ILLUSTRATOR_ARTBOARD_PRESERVED",
+  "ILLUSTRATOR_VECTOR_EDITABILITY_CONFIRMED"
+ ],
+ "ruled_by": "PROJECT_OWNER",
+ "validated_here": "every figure below is measured from the returned files, not read from the report",
+ "illustrator": {
+  "version": "30.0.0",
+  "operating_system": "Macintosh OS 26.5.2/64",
+  "warning_state": "NONE_REPORTED",
+  "source_opened": true,
+  "verification_copy_saved": true,
+  "closed_and_reopened": true,
+  "pdf_exported": true,
+  "png_exported": true,
+  "first_human_confirmation": "PASSED",
+  "second_human_confirmation": "PASSED",
+  "human_result": "PASS"
+ },
+ "identities": {
+  "verified_ai_sha256": "ae287712de97798e9fa91efbb4fe3bb093f5950b8f55931441af71d7b00c13c0",
+  "verified_pdf_sha256": "1ea6e44863e50ce54596aba6880a2dd3ab182912c0565c8107fa513a7afa2066",
+  "verified_png_sha256": "ebd96ac4fe88c0b08610611e89380787dc3c73d156df89991eff5236f63b5460",
+  "verification_json_sha256": "110d205d04712d44af79f86838a04de9bd3a4165d465e5ca6d4cc7e18c350cb3",
+  "all_match_owner_report": true,
+  "r2_source_sha256": "6ae00f726ddefda4adad93325735c489e3fe987452f9c1a2f603236c73e4c49a",
+  "artboard_drift_copy_sha256": "547f55b8f6a71e9b85236d185b0fdc977497374ebf96fc50339388c8660967c0"
+ },
+ "artboard": {
+  "measured_pt": [
+   207.162994,
+   493.227997
+  ],
+  "nominal_pt": [
+   207.1627,
+   493.2283
+  ],
+  "deviation_pt": [
+   0.000294,
+   -0.000303
+  ],
+  "tolerance_pt": 0.001,
+  "within_tolerance": true,
+  "artboards": 1,
+  "note": "the measured page is a few ten-thousandths of a point off nominal, which is the float residue of rebuilding the artboard from measured bounds. It is recorded as measured rather than rounded to the nominal figure.",
+  "no_oversized_white_margin_drift": true,
+  "ink_bbox_pt": [
+   34.0342,
+   35.237,
+   173.1092,
+   459.2264
+  ]
+ },
+ "structure": {
+  "logical_vector_drawings": 40,
+  "illustrator_path_items": 67,
+  "filled_drawings": 39,
+  "stroked_drawings": 1,
+  "raster_substitutions": 0,
+  "live_text_characters": 0,
+  "reconciliation": "docs/visual_quality/vq2/illustrator_execution_verification_result_reconciliation.json"
+ },
+ "colours": {
+  "fills": {
+   "#D9BDB5": 1,
+   "#705242": 1,
+   "#493034": 1,
+   "#502525": 36
+  },
+  "strokes": {
+   "#502525": 1
+  },
+  "stroke_widths_pt": [
+   0.362
+  ],
+  "divider_width_nominal_pt": 0.362384,
+  "all_four_approved_present": true,
+  "any_unapproved_colour": false
+ },
+ "checks": {
+  "verified_ai_hash_matches_report": true,
+  "verified_pdf_hash_matches_report": true,
+  "verified_png_hash_matches_report": true,
+  "verification_json_hash_matches_report": true,
+  "differs_from_r2_source": true,
+  "differs_from_artboard_drift_copy": true,
+  "r2_source_unchanged": true,
+  "artboard_within_tolerance": true,
+  "single_artboard": true,
+  "forty_logical_drawings": true,
+  "path_items_reconciled": true,
+  "thirty_nine_filled_one_stroked": true,
+  "all_four_approved_colours": true,
+  "no_unapproved_colour": true,
+  "divider_stroke_width_preserved": true,
+  "zero_raster_images": true,
+  "zero_live_text": true,
+  "human_result_is_pass": true,
+  "save_completed": true,
+  "reopen_completed": true,
+  "pdf_export_completed": true,
+  "png_export_completed": true,
+  "no_warning_reported": true,
+  "first_confirmation_complete": true,
+  "second_confirmation_complete": true,
+  "artboard_survived_reopen": true,
+  "source_unmodified_by_the_run": true
+ },
+ "all_checks_passed": true,
+ "failed_checks": [],
+ "gate_a": "PASSED",
+ "gate_a_grants": [
+  "Illustrator execution verification only"
+ ],
+ "gate_a_does_not_grant": [
+  "production geometry authority",
+  "supplier compatibility",
+  "print-wrap authority",
+  "colour-separation authority",
+  "material specification",
+  "manufacturability",
+  "packaging authorization"
+ ],
+ "accepted_artwork_modified": false,
+ "closed_workstreams_reopened": false,
+ "next_required_owner_action": "AUTHORIZE SUPPLIER EVIDENCE REQUESTS",
+ "next_required_owner_action_superseded_by": "§BH46 — the system never contacts suppliers; the live next owner action is production_authority_gate.json's next_required_owner_action: place the spec pack"
+}

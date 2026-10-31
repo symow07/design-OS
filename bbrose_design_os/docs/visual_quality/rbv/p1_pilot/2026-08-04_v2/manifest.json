@@ -1,0 +1,201 @@
+{
+ "schema": "geometry_validation_render_manifest/1.0",
+ "statement": "GEOMETRY VALIDATION FIXTURE \u2014 NOT A REAL BOTTLE COMPARISON",
+ "fixture_id": "P1_provisional_pilot",
+ "geometry_schema": "container_geometry/1.0",
+ "geometry_class": "AXISYMMETRIC_REVOLUTION",
+ "authority_class": "PROVISIONAL_OWNER_MEASURED_PLUS_INFERRED",
+ "cross_section_family": "CIRCULAR",
+ "dimensions": {
+  "height_mm": 114.3,
+  "front_width_mm": 37.4,
+  "side_depth_mm": 37.4
+ },
+ "mesh_identities": {
+  "body": "b301a10969b4e943",
+  "collar": "0c0b5a6edcd33875",
+  "bulb": "edfac8571aea80b8"
+ },
+ "mesh_statistics": {
+  "body": {
+   "params_version": "mesh_diagnostics_params/1.0",
+   "vertex_count": 6146,
+   "edge_count": 18432,
+   "face_count": 12288,
+   "duplicate_vertices": 0,
+   "zero_area_faces": 0,
+   "non_manifold_edges": 0,
+   "components": 1,
+   "signed_volume_mm3": 80496.131,
+   "codes": []
+  },
+  "collar": {
+   "params_version": "mesh_diagnostics_params/1.0",
+   "vertex_count": 6146,
+   "edge_count": 18432,
+   "face_count": 12288,
+   "duplicate_vertices": 0,
+   "zero_area_faces": 0,
+   "non_manifold_edges": 0,
+   "components": 1,
+   "signed_volume_mm3": 5904.302,
+   "codes": []
+  },
+  "bulb": {
+   "params_version": "mesh_diagnostics_params/1.0",
+   "vertex_count": 6146,
+   "edge_count": 18432,
+   "face_count": 12288,
+   "duplicate_vertices": 0,
+   "zero_area_faces": 0,
+   "non_manifold_edges": 0,
+   "components": 1,
+   "signed_volume_mm3": 1526.593,
+   "codes": []
+  }
+ },
+ "assembly_relations": {
+  "facts": {
+   "body": {
+    "z_min": 0.0,
+    "z_max": 91.6,
+    "cx": 0.0,
+    "cy": 0.0,
+    "width": 37.4
+   },
+   "collar": {
+    "z_min": 78.6,
+    "z_max": 95.1,
+    "cx": 0.0,
+    "cy": 0.0,
+    "width": 21.4
+   },
+   "bulb": {
+    "z_min": 95.1,
+    "z_max": 114.3,
+    "cx": 0.0,
+    "cy": 0.0,
+    "width": 10.57
+   }
+  },
+  "codes": []
+ },
+ "blender_version": "Blender 4.5.12 LTS (pinned)",
+ "render_engine": "CYCLES CPU \u00b7 seed 0 \u00b7 64 samples",
+ "camera_standard": "real_bottle_camera_standard/1.0",
+ "lighting_standard": "real_bottle_lighting_standard/1.0 ",
+ "material_override": {
+  "version": "validation_clay/1.0",
+  "base_colour": [
+   0.69,
+   0.667,
+   0.65,
+   1.0
+  ],
+  "roughness": 0.9,
+  "specular": 0.1,
+  "alpha": 1.0,
+  "normals": "geometry normals unmodified",
+  "colour_management": "Cycles CPU \u00b7 Standard view transform \u00b7 exposure 0 \u00b7 gamma 1 \u00b7 sRGB \u00b7 8-bit PNG"
+ },
+ "render_params": {
+  "version": "geometry_validation_render_params/1.0",
+  "resolution": [
+   1600,
+   2200
+  ],
+  "samples": 12,
+  "ortho_scale_factor": 1.12,
+  "scale_tolerance": 0.03,
+  "center_tolerance": 0.03
+ },
+ "views": {
+  "front": "front.png",
+  "side": "side.png",
+  "top": "top.png",
+  "closure_detail": "closure_detail.png",
+  "three_quarter_diagnostic": "three_quarter_diagnostic.png",
+  "wireframe": "wireframe.png",
+  "normals": "normals.png",
+  "bounds_dimensions": "bounds_dimensions.png",
+  "neck_detail": "neck_detail.png",
+  "measurement_overlay": "measurement_overlay.png",
+  "material_reference_preview": "material_reference_preview.png"
+ },
+ "pixel_dimensions": [
+  1600,
+  2200
+ ],
+ "physical_scale_mm_per_px": 0.05819,
+ "pixel_hashes": {
+  "front": "61cc8043b206ab2f",
+  "side": "197fb096c0842b87",
+  "top": "47fc9bad48a0dbeb",
+  "closure_detail": "aba45be2b5e172d8",
+  "three_quarter_diagnostic": "7ef14cd1264fd3fa",
+  "wireframe": "468a35c397a5d2e6",
+  "normals": "c46f7be47841b699",
+  "bounds_dimensions": "0033a4c2cb872f8c",
+  "neck_detail": "0219de66e24bce00"
+ },
+ "measurements": {
+  "expected_mm_per_px": 0.05819,
+  "front": {
+   "bounds_px": {
+    "x0": 479,
+    "x1": 1120,
+    "y0": 130,
+    "y1": 2081,
+    "touches_frame": false
+   },
+   "rendered_extent_mm": 37.36,
+   "contract_extent_mm": 37.4,
+   "rendered_height_mm": 113.59
+  },
+  "side": {
+   "bounds_px": {
+    "x0": 479,
+    "x1": 1120,
+    "y0": 120,
+    "y1": 2081,
+    "touches_frame": false
+   },
+   "rendered_extent_mm": 37.36,
+   "contract_extent_mm": 37.4,
+   "rendered_height_mm": 114.17
+  },
+  "top": {
+   "bounds_px": {
+    "x0": 479,
+    "x1": 1120,
+    "y0": 779,
+    "y1": 1412,
+    "touches_frame": false
+   }
+  },
+  "closure_detail": {
+   "bounds_px": {
+    "x0": 106,
+    "x1": 1226,
+    "y0": 436,
+    "y1": 2199,
+    "touches_frame": true
+   },
+   "closure_view_coverage": 0.561
+  }
+ },
+ "warnings": [
+  "RENDER_OFF_CENTER:closure_detail"
+ ],
+ "uncertainty": [
+  "PROVISIONAL geometry: owner hand measurements + inferred values (assumptions A1-A4, simplifications S1-S5 in the contract)",
+  "no calibrated orthographic photography \u2014 visual comparison confidence LIMITED_BY_NON_CALIBRATED_PHOTOGRAPHY",
+  "NOT manufacturing geometry \u2014 never send to a supplier"
+ ],
+ "reference_availability": "PARTIAL \u2014 owner measurements + 23 uncalibrated owner photographs (reference pack REFERENCE_PACK_PARTIAL; no CAD, no technical drawing)",
+ "warning_analysis": {
+  "RENDER_OFF_CENTER:closure_detail": "segmentation artifact of the smooth-shaded highlight in the tight detail crop - the render is pixel-symmetric (mean mirror diff ~3.613) and the mesh is an axisymmetric revolution; geometry is centered by construction",
+  "front_rendered_height_113.59": "same artifact class: the bright dome apex blends into the background for the topmost rows under smooth shading; front-height check passed within tolerance (0.62%% < 3%%); geometry apex is at exactly 114.3 (mesh z_max)"
+ },
+ "revision": "V2"
+}

@@ -1,0 +1,291 @@
+{
+ "record_type": "vq2_product_name_lettering_validation_spec/3.1",
+ "created_at": "2026-07-29",
+ "classification": "CUSTOM_REFERENCE_DERIVED_WORD_LETTERING",
+ "is_not": [
+  "a complete font",
+  "the original commercial typeface",
+  "a reusable alphabet",
+  "a supplier-confirmed production wordmark"
+ ],
+ "required_words": [
+  "Rose",
+  "Damascena"
+ ],
+ "required_line_order": [
+  "Rose",
+  "Damascena"
+ ],
+ "A_deterministic_composition_gates": {
+  "exact_text": "PASS_REQUIRED",
+  "capitalization": "PASS_REQUIRED",
+  "line_count": 2,
+  "rose_apparent_width_err_max": 0.025,
+  "damascena_apparent_width_err_max": 0.025,
+  "word_centerline_err_max_of_body_width": 0.01,
+  "cap_height_err_max": 0.02,
+  "baseline_angle_err_max_deg": 0.5,
+  "line_spacing_err_max": 0.02,
+  "glyph_collisions_max": 0,
+  "self_intersections_max": 0,
+  "open_unintended_paths_max": 0,
+  "raster_objects_max": 0,
+  "live_font_objects_max": 0,
+  "horizontally_scaled_font_outlines_max": 0,
+  "unresolved_visible_glyphs_max": 0,
+  "vertical_scaled_font_outlines_max": 0,
+  "nonuniform_scaled_objects_max": 0,
+  "scaled_word_groups_max": 0,
+  "invalid_counters_max": 0,
+  "invalid_fill_rules_max": 0,
+  "native_illustrator_source_required": true,
+  "missing_required_layers_max": 0,
+  "glyphs_only_in_imported_reference_max": 0
+ },
+ "B_human_form_review": {
+  "reviewer": "OWNER",
+  "criteria": [
+   "overall Didone character",
+   "serif construction",
+   "stroke contrast",
+   "counter forms",
+   "terminals",
+   "optical spacing",
+   "word rhythm",
+   "fidelity to the visible reference",
+   "compatibility with the approved BBROSE logo"
+  ],
+  "automated_gate": false
+ },
+ "hairline_pixels_used_as_hard_gates": false,
+ "pixel_perfect_identity_required": false,
+ "measurement_space": "APPARENT_PROJECTED_REFERENCE_PIXELS",
+ "targets": {
+  "Rose": {
+   "word": "Rose",
+   "reference_left_px": 527,
+   "apparent_width_px": 134,
+   "baseline_px": 1021.0,
+   "cap_height_px": 73.0
+  },
+  "Damascena": {
+   "word": "Damascena",
+   "reference_left_px": 527,
+   "apparent_width_px": 281,
+   "baseline_px": 1091.0,
+   "cap_height_px": 61.0
+  }
+ },
+ "canonical_baseline": "STRAIGHT",
+ "projection_baked_into_source_paths": false,
+ "is_production_flat_specification": false,
+ "contract_version": "3.1",
+ "updated_at": "2026-07-29",
+ "supersedes": "vq2_product_name_lettering_validation_spec/3.0",
+ "mandatory_checks": [
+  "exact_wording",
+  "exact_capitalization",
+  "correct_line_order",
+  "vector_only_construction",
+  "one_independently_editable_object_per_glyph",
+  "no_raster_content",
+  "no_unresolved_live_fonts",
+  "no_horizontal_scaling",
+  "no_vertical_scaling",
+  "no_nonuniform_scaling",
+  "no_scaled_word_groups",
+  "no_colliding_glyphs",
+  "no_self_intersections",
+  "no_unintended_open_paths",
+  "valid_counters_and_fill_rules",
+  "clean_cubic_bezier_construction",
+  "clean_layer_structure",
+  "straight_canonical_baselines",
+  "apparent_front_width_compliance",
+  "centerline_compliance",
+  "cap_height_compliance",
+  "line_spacing_compliance",
+  "owner_approval",
+  "native_illustrator_source_provenance",
+  "native_layer_inventory_present",
+  "required_layer_names_present",
+  "rose_and_damascena_in_designated_layers",
+  "reference_template_isolated_locked_nonprinting",
+  "no_final_glyphs_only_in_imported_reference",
+  "pdf_compatible_file_not_accepted_as_source",
+  "no_geometry_expanded_after_distortion"
+ ],
+ "finding_for_check": {
+  "exact_wording": "VQ2_PRODUCT_NAME_WORDING_MISMATCH",
+  "exact_capitalization": "VQ2_PRODUCT_NAME_CAPITALIZATION_MISMATCH",
+  "correct_line_order": "VQ2_PRODUCT_NAME_LINE_ORDER_MISMATCH",
+  "vector_only_construction": "VQ2_RASTER_CONTENT_DETECTED",
+  "one_independently_editable_object_per_glyph": "VQ2_GLYPH_NOT_INDEPENDENTLY_EDITABLE",
+  "no_raster_content": "VQ2_RASTER_CONTENT_DETECTED",
+  "no_unresolved_live_fonts": "VQ2_UNRESOLVED_LIVE_FONT_DETECTED",
+  "no_horizontal_scaling": "VQ2_HORIZONTAL_GLYPH_SCALING_DETECTED",
+  "no_vertical_scaling": "VQ2_VERTICAL_GLYPH_SCALING_DETECTED",
+  "no_nonuniform_scaling": "VQ2_NONUNIFORM_GLYPH_SCALING_DETECTED",
+  "no_scaled_word_groups": "VQ2_WORD_GROUP_SCALING_DETECTED",
+  "no_colliding_glyphs": "VQ2_GLYPH_COLLISION_DETECTED",
+  "no_self_intersections": "VQ2_SELF_INTERSECTION_DETECTED",
+  "no_unintended_open_paths": "VQ2_UNINTENDED_OPEN_PATH_DETECTED",
+  "valid_counters_and_fill_rules": "VQ2_GLYPH_COUNTER_COLLAPSED",
+  "clean_cubic_bezier_construction": "VQ2_BEZIER_CONSTRUCTION_INVALID",
+  "clean_layer_structure": "VQ2_LAYER_STRUCTURE_INVALID",
+  "straight_canonical_baselines": "VQ2_CANONICAL_BASELINE_NOT_STRAIGHT",
+  "apparent_front_width_compliance": "VQ2_APPARENT_WIDTH_OUT_OF_TOLERANCE",
+  "centerline_compliance": "VQ2_CENTERLINE_OUT_OF_TOLERANCE",
+  "cap_height_compliance": "VQ2_CAP_HEIGHT_OUT_OF_TOLERANCE",
+  "line_spacing_compliance": "VQ2_LINE_SPACING_OUT_OF_TOLERANCE",
+  "owner_approval": "VQ2_OWNER_APPROVAL_MISSING",
+  "native_illustrator_source_provenance": "VQ2_NATIVE_ILLUSTRATOR_SOURCE_REQUIRED",
+  "native_layer_inventory_present": "VQ2_REQUIRED_NATIVE_LAYER_MISSING",
+  "required_layer_names_present": "VQ2_REQUIRED_NATIVE_LAYER_MISSING",
+  "rose_and_damascena_in_designated_layers": "VQ2_REQUIRED_NATIVE_LAYER_MISSING",
+  "reference_template_isolated_locked_nonprinting": "VQ2_DESIGNER_OUTPUT_FOUND_ONLY_IN_IMPORTED_REFERENCE",
+  "no_final_glyphs_only_in_imported_reference": "VQ2_DESIGNER_OUTPUT_FOUND_ONLY_IN_IMPORTED_REFERENCE",
+  "pdf_compatible_file_not_accepted_as_source": "VQ2_PDF_COMPATIBLE_FILE_NOT_AUTHORITATIVE_AI_SOURCE",
+  "no_geometry_expanded_after_distortion": "VQ2_GEOMETRY_EXPANDED_AFTER_DISTORTION"
+ },
+ "proportion_rule": {
+  "A_NATIVE_DRAWN_GEOMETRY": {
+   "permitted": true,
+   "description": "Bezier outlines authored directly at their intended proportions, object transform normalized, no post-construction horizontal or vertical compression.",
+   "narrow_proportions_alone_are_a_defect": false
+  },
+  "B_TRANSFORMED_OR_DISTORTED_GEOMETRY": {
+   "permitted": false,
+   "description": "A font or outline scaled horizontally or vertically, a non-uniform transform applied to a glyph, word or group, or geometry expanded only after distortion to conceal the transform."
+  },
+  "rule": "A correctly drawn condensed letterform must NOT be rejected merely because its visual proportions are narrow. What is prohibited is a TRANSFORM, not a proportion."
+ },
+ "counter_letters_minimum": [
+  "R",
+  "o",
+  "e",
+  "D",
+  "a"
+ ],
+ "capitalization_requirements": {
+  "required_strings": [
+   "Rose",
+   "Damascena"
+  ],
+  "uppercase_R_in_Rose": true,
+  "lowercase_ose": true,
+  "uppercase_D_in_Damascena": true,
+  "lowercase_amascena": true,
+  "all_caps_conversion": false,
+  "lowercase_initial": false,
+  "alternate_spelling": false,
+  "added_punctuation": false,
+  "omitted_character": false,
+  "finding": "VQ2_PRODUCT_NAME_CAPITALIZATION_MISMATCH"
+ },
+ "counter_integrity_requirements": {
+  "counters_open_and_coherent": true,
+  "counter_collapse": false,
+  "accidental_filled_hole": false,
+  "duplicated_inner_contour": false,
+  "reversed_fill_rule": false,
+  "self_intersecting_counter": false,
+  "clipping_mask_simulating_counter": false,
+  "compound_path_winding_valid": true,
+  "authority_for_which_letters": "the actual delivered glyph construction",
+  "findings": [
+   "VQ2_GLYPH_COUNTER_COLLAPSED",
+   "VQ2_GLYPH_COUNTER_MISSING",
+   "VQ2_GLYPH_COUNTER_DUPLICATED",
+   "VQ2_GLYPH_FILL_RULE_INVALID"
+  ]
+ },
+ "scaling_requirements": {
+  "horizontal_glyph_scale": "100%",
+  "vertical_glyph_scale": "100%",
+  "nonuniform_scaling": false,
+  "word_group_scaling_to_force_metrics": false,
+  "residual_transform_scale_other_than_canonical_placement": false,
+  "expanded_appearance_from_distorted_source": false,
+  "unity_tolerance": 0.005,
+  "findings": [
+   "VQ2_HORIZONTAL_GLYPH_SCALING_DETECTED",
+   "VQ2_VERTICAL_GLYPH_SCALING_DETECTED",
+   "VQ2_NONUNIFORM_GLYPH_SCALING_DETECTED",
+   "VQ2_WORD_GROUP_SCALING_DETECTED"
+  ]
+ },
+ "required_designer_layers": [
+  "00_REFERENCE_NONPRINTING",
+  "01_M3_STRUCTURE_LOCKED",
+  "02_APPROVED_BBROSE_LOGO_LOCKED",
+  "03_ARTWORK_ZONE_GUIDES_NONPRINTING",
+  "04_ROSE_LETTERING",
+  "05_DAMASCENA_LETTERING",
+  "06_SUPPORTING_COPY_LOCKED",
+  "07_DIVIDER_RULE_LOCKED",
+  "08_MEASUREMENT_GUIDES_NONPRINTING",
+  "09_DESIGNER_NOTES_NONPRINTING",
+  "10_AUDIT_METADATA_NONPRINTING"
+ ],
+ "word_layer_placement": {
+  "Rose": "04_ROSE_LETTERING",
+  "Damascena": "05_DAMASCENA_LETTERING"
+ },
+ "asset_authority_requirements": {
+  "authoritative_source": "NEW native Adobe Illustrator document authored by the designer",
+  "pdf_or_eps": "SUPPLEMENTAL_DOES_NOT_REPLACE_NATIVE_AI",
+  "native_illustrator_source_provenance": true,
+  "native_layer_inventory": true,
+  "required_layer_names": true,
+  "words_in_designated_layers": true,
+  "reference_template_locked_nonprinting": true,
+  "final_glyphs_only_in_imported_reference": false,
+  "pdf_compatible_rename_accepted": false,
+  "findings": [
+   "VQ2_NATIVE_ILLUSTRATOR_SOURCE_REQUIRED",
+   "VQ2_REQUIRED_NATIVE_LAYER_MISSING",
+   "VQ2_DESIGNER_OUTPUT_FOUND_ONLY_IN_IMPORTED_REFERENCE",
+   "VQ2_PDF_COMPATIBLE_FILE_NOT_AUTHORITATIVE_AI_SOURCE"
+  ]
+ },
+ "binary_structure_rule": "A valid native designer file must NOT be rejected merely because its binary structure differs from the ReportLab-emitted template. Only the recorded provenance facts are judged: native source, native layer inventory, required layer names, word placement, reference isolation.",
+ "template_classification": {
+  "classification": [
+   "DESIGNER_REFERENCE_TEMPLATE",
+   "PDF_COMPATIBLE",
+   "NOT_AUTHORITATIVE_NATIVE_AI_SOURCE"
+  ],
+  "designer_may_use_as": "REFERENCE_AND_PLACEMENT_GUIDE",
+  "designer_must_edit_it_directly": false,
+  "may_be_placed_as": "locked, non-printing reference layer",
+  "delete_rename_or_overwrite": false,
+  "codes": [
+   "VQ2_HANDOFF_AI_IS_PDF_COMPATIBLE_NOT_NATIVE_LAYERED_AI",
+   "VQ2_TEMPLATE_AI_AND_PDF_BYTES_IDENTICAL",
+   "VQ2_EXISTING_DESIGNER_OUTPUT_LAYER_NOT_TECHNICALLY_ENFORCEABLE"
+  ]
+ },
+ "derivation_rule": {
+  "permitted": [
+   "ordinary UNIFORM conversion from font design units to a working size (any magnitude, sx == sy)",
+   "native human-drawn condensed geometry",
+   "a genuinely condensed licensed typeface used without non-uniform distortion",
+   "glyph paths authored directly at their intended final proportions"
+  ],
+  "prohibited": [
+   "horizontal compression of an existing font outline",
+   "vertical distortion of an existing font outline",
+   "unequal x/y scaling",
+   "different compression factors applied per glyph",
+   "word-group scaling used to force composition",
+   "expanding or baking distorted geometry to remove visible transform matrices"
+  ],
+  "applies_to": [
+   "active transforms",
+   "distortion expanded or baked into the final paths"
+  ],
+  "zero_active_transforms_proves": "only that the submitted files contain NORMALIZED paths. It does not prove those paths were natively authored at their final proportions.",
+  "vertical_finding_clarification": "A non-unit sy is NOT prohibited by itself. VQ2_VERTICAL_GLYPH_SCALING_DETECTED fires only on evidence of vertical distortion independent of canonical uniform size conversion."
+ }
+}

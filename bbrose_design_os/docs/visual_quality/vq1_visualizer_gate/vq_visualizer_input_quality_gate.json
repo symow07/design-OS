@@ -1,0 +1,130 @@
+{
+  "record_type": "vq_visualizer_corr2_gate_record/1.0",
+  "created_at": "2026-07-28",
+  "quality_schema": "visual_inspector_input_quality/1.0",
+  "manifest_schema": "visual_inspector_input_manifest/1.0",
+  "legibility_floors": {
+    "FULL_ASSEMBLY": {
+      "min_height_px": 512,
+      "min_width_px": 180
+    },
+    "CLOSURE": {
+      "min_height_px": 420,
+      "min_width_px": 180
+    },
+    "DARK_CLOSURE": {
+      "min_height_px": 300,
+      "min_width_px": 100
+    },
+    "DOME_APEX": {
+      "min_height_px": 120,
+      "min_width_px": 60,
+      "min_distinguishable_top_rows": 20
+    },
+    "COLLAR": {
+      "min_height_px": 160,
+      "min_width_px": 180
+    },
+    "NECK_VISIBLE": {
+      "min_height_px": 80,
+      "min_width_px": 60
+    },
+    "SHOULDER": {
+      "min_height_px": 80,
+      "min_width_px": 300
+    }
+  },
+  "floors_are": "MODEL_INPUT_LEGIBILITY_ONLY_NOT_PRODUCTION_DIMENSIONS",
+  "codes": [
+    "VQ_VISUALIZER_TARGET_COMPONENT_TOO_SMALL",
+    "VQ_VISUALIZER_COMPONENT_LEGIBILITY_FAILED",
+    "VQ_VISUALIZER_EVIDENCE_PACKET_INCOMPLETE",
+    "VQ_VISUALIZER_VERDICT_NOT_ACTIONABLE",
+    "VQ_VISUALIZER_INPUT_QUALITY_GATE_MISSING"
+  ],
+  "retroactive_it5_original_inspection": {
+    "annotation": "INVALIDATED_INPUT_QUALITY_INSUFFICIENT",
+    "preserved_at": "docs/visual_quality/vq1_reset2/vision_iteration_5.json",
+    "replayed_gate_result": "FAILED",
+    "would_be_verdict_today": "INSPECTION_NOT_PERFORMED_INPUT_QUALITY_FAILED",
+    "measured_target": {
+      "component": "DOME_APEX",
+      "found": true,
+      "image_size": [
+        307,
+        709
+      ],
+      "bbox": [
+        119,
+        28,
+        187,
+        63
+      ],
+      "width_px": 69,
+      "height_px": 36,
+      "percent_of_image": 1.141,
+      "touches_image_edge": false,
+      "truncated_sides": false,
+      "truncated_top": false,
+      "continues_below_frame": false,
+      "assembly_top_px": 28,
+      "assembly_bottom_px": 680
+    },
+    "findings": [
+      "VQ_VISUALIZER_COMPONENT_LEGIBILITY_FAILED",
+      "VQ_VISUALIZER_INPUT_RESOLUTION_INSUFFICIENT",
+      "VQ_VISUALIZER_REFERENCE_CANDIDATE_SCALE_MISMATCH",
+      "VQ_VISUALIZER_REQUIRED_CROP_MISSING",
+      "VQ_VISUALIZER_TARGET_COMPONENT_TOO_SMALL"
+    ],
+    "deleted": false
+  },
+  "bounded_replay": {
+    "annotation": "VALID_DIAGNOSTIC_REPLAY",
+    "preserved_at": "docs/visual_quality/vq1_it5_audit/visualizer_replay.json",
+    "gate_result": "PASSED",
+    "apex_appearance": "rounded",
+    "constitutes_human_acceptance": false,
+    "deleted": false
+  },
+  "verdict_authority": {
+    "deterministic_output_pixel_analysis_governs": [
+      "apex topology",
+      "contour coordinates",
+      "pixel width",
+      "pixel height",
+      "numeric ratios",
+      "clipping",
+      "symmetry",
+      "component bounds"
+    ],
+    "multimodal_inspection_governs": [
+      "semantic resemblance",
+      "perceived form",
+      "qualitative proportional balance",
+      "generic-versus-reference character",
+      "visual improvement or regression"
+    ],
+    "human_governs": [
+      "final structural acceptance",
+      "semantic approval",
+      "whether another correction is authorized"
+    ],
+    "multimodal_may_override_deterministic_pixel_topology": false
+  },
+  "collar_neck": {
+    "finding": "VQ_COLLAR_NECK_JUNCTION_DEVIATION",
+    "max_contour_distance": 0.18223,
+    "permitted_maximum": 0.07,
+    "location": "collar/neck junction (y_norm 0.356)",
+    "qualitative": "the reference closure narrows then flares; IT5 is more uniformly bell-shaped",
+    "resolved": false,
+    "geometry_changed_this_slice": false
+  },
+  "geometry_changed": false,
+  "it6_generated": false,
+  "supplier_requests_sent": false,
+  "image_generation_calls": 0,
+  "multimodal_calls_this_slice": 0,
+  "next_required_human_action": "HUMAN REVIEW OF IT5 COLLAR, NECK AND COMPLETE CLOSURE"
+}

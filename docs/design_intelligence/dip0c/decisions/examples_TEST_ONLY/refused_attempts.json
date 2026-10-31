@@ -1,0 +1,12 @@
+[
+  {
+    "attempt": "DESIGN_REVIEWER confirms ownership",
+    "refused_because": "NotAuthorized",
+    "reason": "role 'DESIGN_REVIEWER' may NOT 'confirm_ownership'. Permitted roles: ['LEGAL_REVIEWER', 'BRAND_ADMIN']. (Git authorship is provenance, not authorisation.)"
+  },
+  {
+    "attempt": "SYSTEM_ADMIN approves a licence",
+    "refused_because": "NotAuthorized",
+    "reason": "role 'SYSTEM_ADMIN' may NOT 'approve_license'. Permitted roles: ['LEGAL_REVIEWER']. (Git authorship is provenance, not authorisation.)"
+  }
+]

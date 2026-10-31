@@ -1,0 +1,37 @@
+{% extends "dashboard/library/base.html" %}
+{% comment %}FINISHED DESIGNS — part of the Library (C's: "one library, with finished designs part of it"): since the owner's goal
+of 2026-10-29 every round whose files are made, with its picture and its files, found by words or by the day it was made,
+each opening its faces and files (apps/dashboard/views.py, _made_rounds). It was a page of its own outside the one shell,
+dark, its cards drawn by a script (templates/library/index.html, retired — history keeps it). Seen by a member of the
+team, as the Library's API was (removed in the clean-up of 2026-10-04).
+{% endcomment %}
+{% block title %}Finished designs{% endblock %}
+{% block content %}
+<h1 class="h1">Finished designs</h1>
+<p class="lead">Every design whose files are made, with its files. Open one to see its faces, as you accepted them, and
+  everything Make my files wrote.</p>
+{% if not can_see_finished %}
+<p class="warn" role="alert">Your account has no role — ask an admin to add you to a team role.</p>
+{% else %}
+<form class="hfilters" method="get" action="{% url 'dashboard:finished_designs' %}" role="search">
+  <label class="field find-field"><svg class="i i-sm" aria-hidden="true"><use href="#i-search"/></svg><span class="sr">Find by its words</span>
+    <input type="search" name="q" value="{{ params.q }}" placeholder="Its name, product, shade or anything in its brief"></label>
+  <details class="more"{% if more_open %} open{% endif %}><summary>More ways to find</summary>
+    <div class="more-row">
+      <label>Made from <input type="date" name="date_from" value="{{ params.date_from }}" class="field"></label>
+      <label>To <input type="date" name="date_to" value="{{ params.date_to }}" class="field"></label>
+    </div>
+  </details>
+  <button type="submit" class="btn">Show</button>
+</form>
+<p class="small fin-count">{{ count }} finished design{{ count|pluralize }}{% if query %} found{% endif %}.</p>
+<div class="lib-fins">{% for f in finished %}{% include "dashboard/library/_finished_card.html" %}{% empty %}<p class="small">No finished design matches — a design appears here once its files are made.</p>{% endfor %}</div>
+{% if pages > 1 %}
+<nav class="pager" aria-label="Pages">
+  {% if page > 1 %}<a href="?{% if query %}{{ query }}&amp;{% endif %}page={{ page|add:"-1" }}">← Earlier</a>{% endif %}
+  <span class="dim">Page {{ page }} of {{ pages }}</span>
+  {% if page < pages %}<a href="?{% if query %}{{ query }}&amp;{% endif %}page={{ page|add:"1" }}">Next →</a>{% endif %}
+</nav>
+{% endif %}
+{% endif %}
+{% endblock %}

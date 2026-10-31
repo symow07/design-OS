@@ -1,0 +1,411 @@
+{
+  "schema_version": "review_queue/1.0",
+  "evaluated_at": "2026-07-14T13:00:00+00:00",
+  "permission_flags": [
+    "approved_for_bbrose",
+    "approved_for_other_brands",
+    "automatic_use_allowed",
+    "embedding_allowed",
+    "modification_allowed",
+    "production_use_allowed",
+    "public_export_allowed",
+    "redistribution_allowed",
+    "retrieval_allowed"
+  ],
+  "permission_flag_count": 9,
+  "queues": {
+    "POSSIBLE_BRAND_MASTER": {
+      "schema_version": "review_queue/1.0",
+      "queue_id": "POSSIBLE_BRAND_MASTER",
+      "display_label": "A",
+      "title": "Possible BBROSE logo masters",
+      "count": 1,
+      "priority": "HIGH",
+      "shared_reason": "machine NOMINATION only — a nomination confers nothing",
+      "required_reviewer_roles": [
+        "BRAND_ADMIN",
+        "DESIGN_REVIEWER"
+      ],
+      "items": [
+        {
+          "asset": "logo.pdf"
+        }
+      ],
+      "evidence_status": "not reviewed",
+      "recommended_next_action": "run the 15-item canonical checklist under dual control",
+      "batch_review_allowed": true
+    },
+    "COMPOSITION_MISLABELLED_AS_MASTER": {
+      "schema_version": "review_queue/1.0",
+      "queue_id": "COMPOSITION_MISLABELLED_AS_MASTER",
+      "display_label": "B",
+      "title": "Brand compositions incorrectly labelled as masters",
+      "count": 0,
+      "priority": "MEDIUM",
+      "shared_reason": "a composition is not a master merely because it contains the logo",
+      "required_reviewer_roles": [
+        "BRAND_ADMIN",
+        "DESIGN_REVIEWER"
+      ],
+      "items": [],
+      "evidence_status": "machine inference",
+      "recommended_next_action": "reclassify as DESIGN_COMPOSITION / REFERENCE_ONLY",
+      "batch_review_allowed": true
+    },
+    "OUTLINED_WORDMARK_IDENTIFICATION": {
+      "schema_version": "review_queue/1.0",
+      "queue_id": "OUTLINED_WORDMARK_IDENTIFICATION",
+      "display_label": "C",
+      "title": "Outlined wordmarks needing human identification",
+      "count": 1,
+      "priority": "MEDIUM",
+      "shared_reason": "the text is outlined: no machine can read what it says",
+      "required_reviewer_roles": [
+        "BRAND_ADMIN",
+        "DESIGN_REVIEWER"
+      ],
+      "items": [
+        {
+          "asset": "BBROSE.pdf"
+        }
+      ],
+      "evidence_status": "REQUIRES_HUMAN",
+      "recommended_next_action": "a human must identify the wordmark",
+      "batch_review_allowed": true
+    },
+    "THIRD_PARTY_LOGO_IN_BBROSE_FOLDER": {
+      "schema_version": "review_queue/1.0",
+      "queue_id": "THIRD_PARTY_LOGO_IN_BBROSE_FOLDER",
+      "display_label": "D",
+      "title": "Third-party logos inside BBROSE folders",
+      "count": 1,
+      "priority": "HIGH",
+      "shared_reason": "folder location has never implied ownership",
+      "required_reviewer_roles": [
+        "LEGAL_REVIEWER"
+      ],
+      "items": [
+        {
+          "asset": "JOJIA LOGO.ai"
+        }
+      ],
+      "evidence_status": "third-party",
+      "recommended_next_action": "confirm third-party status; keep every permission false",
+      "batch_review_allowed": true
+    },
+    "TECHNICALLY_STRONG_OWNERSHIP_BLOCKED": {
+      "schema_version": "review_queue/1.0",
+      "queue_id": "TECHNICALLY_STRONG_OWNERSHIP_BLOCKED",
+      "display_label": "E",
+      "title": "Technically strong but ownership-blocked assets",
+      "count": 0,
+      "priority": "HIGH",
+      "shared_reason": "technical readiness and rights are separate axes and never collapse",
+      "required_reviewer_roles": [
+        "LEGAL_REVIEWER"
+      ],
+      "items": [],
+      "evidence_status": "ownership unverified",
+      "recommended_next_action": "confirm ownership and licence, or quarantine",
+      "batch_review_allowed": true
+    },
+    "MISSING_BRAND_LICENSE_EVIDENCE": {
+      "schema_version": "review_queue/1.0",
+      "queue_id": "MISSING_BRAND_LICENSE_EVIDENCE",
+      "display_label": "F",
+      "title": "Missing brand-asset licence evidence",
+      "count": 0,
+      "priority": "HIGH",
+      "shared_reason": "no licence evidence is on file for this brand asset",
+      "required_reviewer_roles": [
+        "LEGAL_REVIEWER"
+      ],
+      "items": [],
+      "evidence_status": "missing",
+      "recommended_next_action": "obtain and review licence evidence",
+      "batch_review_allowed": true
+    },
+    "CANONICAL_MASTER_NOMINATION": {
+      "schema_version": "review_queue/1.0",
+      "queue_id": "CANONICAL_MASTER_NOMINATION",
+      "display_label": "G",
+      "title": "Canonical-master nominations",
+      "count": 1,
+      "priority": "HIGH",
+      "shared_reason": "nominated by machine; awaiting TWO human attestations",
+      "required_reviewer_roles": [
+        "BRAND_ADMIN",
+        "DESIGN_REVIEWER",
+        "LEGAL_REVIEWER"
+      ],
+      "items": [
+        {
+          "asset": "logo.pdf"
+        }
+      ],
+      "evidence_status": "not reviewed",
+      "recommended_next_action": "dual-control canonical approval",
+      "batch_review_allowed": false
+    },
+    "CANONICAL_CONFLICT": {
+      "schema_version": "review_queue/1.0",
+      "queue_id": "CANONICAL_CONFLICT",
+      "display_label": "H",
+      "title": "Canonical conflicts and replacements",
+      "count": 1,
+      "priority": "CRITICAL",
+      "shared_reason": "two ACTIVE authorities cover one scope IN THE SAME DOMAIN. A brand palette and a logo master never conflict with each other — they answer different questions.",
+      "required_reviewer_roles": [
+        "BRAND_ADMIN",
+        "LEGAL_REVIEWER"
+      ],
+      "items": [
+        {
+          "state": "CANONICAL_CONFLICT",
+          "authority_domain": "BRAND_PALETTE",
+          "assets": [
+            "TEST_ONLY_bbrose_palette.ase",
+            "TEST_ONLY_other_palette.ase"
+          ],
+          "events": [
+            "evt-8285493da0cf45211328",
+            "evt-c5dfbbb34a92e02e6be9"
+          ],
+          "relation": "SCOPE_IDENTICAL",
+          "proven": true,
+          "uncertain": false,
+          "reason": "every axis is identical",
+          "per_axis": {
+            "brand": "SCOPE_IDENTICAL",
+            "lockup": "SCOPE_IDENTICAL",
+            "products": "SCOPE_IDENTICAL",
+            "markets": "SCOPE_IDENTICAL",
+            "media": "SCOPE_IDENTICAL",
+            "variant_role": "SCOPE_IDENTICAL",
+            "period": "SCOPE_IDENTICAL"
+          },
+          "affected_scope": {
+            "brand": "BBROSE",
+            "lockup": {
+              "mode": "LIST",
+              "tokens": [
+                "PRIMARY"
+              ]
+            },
+            "products": {
+              "mode": "ALL",
+              "tokens": [],
+              "submitted": null
+            },
+            "markets": {
+              "mode": "LIST",
+              "tokens": [
+                "EU"
+              ]
+            },
+            "variant_role": {
+              "mode": "LIST",
+              "tokens": [
+                "MASTER"
+              ]
+            },
+            "uncertain_axes": [],
+            "note": "the conflict blocks THIS scope. A master approved for a provably disjoint scope is unaffected."
+          },
+          "resolution_is_human_only": true,
+          "permitted_resolutions": [
+            "DEPRECATE_INCUMBENT",
+            "SUPERSEDE_INCUMBENT",
+            "NARROW_INCUMBENT_SCOPE",
+            "NARROW_NEW_SCOPE",
+            "RECLASSIFY_AS_VARIANT",
+            "REJECT_NEW_CANDIDATE",
+            "QUARANTINE_BOTH_PENDING_REVIEW"
+          ]
+        }
+      ],
+      "evidence_status": "varies",
+      "recommended_next_action": "choose ONE of the seven resolution actions",
+      "batch_review_allowed": false
+    },
+    "PALETTE_ASSOCIATION_REVIEW": {
+      "schema_version": "review_queue/1.0",
+      "queue_id": "PALETTE_ASSOCIATION_REVIEW",
+      "display_label": "I",
+      "title": "Palette association review",
+      "count": 1,
+      "priority": "MEDIUM",
+      "shared_reason": "is this palette BBROSE's at all? The filename does not say so.",
+      "required_reviewer_roles": [
+        "BRAND_ADMIN",
+        "BUSINESS_OWNER"
+      ],
+      "items": [
+        {
+          "asset": "Pantone_3519C.ase",
+          "reason": "brand association REQUIRES_HUMAN"
+        }
+      ],
+      "evidence_status": "REQUIRES_HUMAN",
+      "recommended_next_action": "confirm or deny brand association",
+      "batch_review_allowed": true
+    },
+    "PALETTE_OWNERSHIP_LICENSE_REVIEW": {
+      "schema_version": "review_queue/1.0",
+      "queue_id": "PALETTE_OWNERSHIP_LICENSE_REVIEW",
+      "display_label": "J",
+      "title": "Palette ownership / licence review",
+      "count": 1,
+      "priority": "HIGH",
+      "shared_reason": "ownership unconfirmed and licence unverified; third-party naming may be present",
+      "required_reviewer_roles": [
+        "LEGAL_REVIEWER"
+      ],
+      "items": [
+        {
+          "asset": "Pantone_3519C.ase",
+          "reason": "PANTONE naming; ownership unknown"
+        }
+      ],
+      "evidence_status": "unverified",
+      "recommended_next_action": "confirm ownership and record a licence decision",
+      "batch_review_allowed": true
+    },
+    "PALETTE_APPROVAL_DUAL_CONTROL": {
+      "schema_version": "review_queue/1.0",
+      "queue_id": "PALETTE_APPROVAL_DUAL_CONTROL",
+      "display_label": "K",
+      "title": "Palette approval and dual-control review",
+      "count": 1,
+      "priority": "HIGH",
+      "shared_reason": "a brand palette needs TWO attestations from TWO people, and grants no permission even then",
+      "required_reviewer_roles": [
+        "BRAND_ADMIN",
+        "DESIGN_REVIEWER",
+        "LEGAL_REVIEWER"
+      ],
+      "items": [
+        {
+          "asset": "Pantone_3519C.ase",
+          "reason": "needs two attestations"
+        }
+      ],
+      "evidence_status": "attestations required",
+      "recommended_next_action": "colour/brand attestation + rights/use attestation, then activation",
+      "batch_review_allowed": false
+    },
+    "EXPIRED_OR_REVOKED_APPROVAL": {
+      "schema_version": "review_queue/1.0",
+      "queue_id": "EXPIRED_OR_REVOKED_APPROVAL",
+      "display_label": "L",
+      "title": "Expired or revoked brand/palette approvals",
+      "count": 0,
+      "priority": "CRITICAL",
+      "shared_reason": "an approval or permission has expired or been revoked. Expiry fails closed: it is ALREADY denied — this queue restores service, it does not stop a leak.",
+      "required_reviewer_roles": [
+        "LEGAL_REVIEWER",
+        "BRAND_ADMIN"
+      ],
+      "items": [],
+      "evidence_status": "expired",
+      "recommended_next_action": "re-review and issue a NEW grant, or leave it denied",
+      "batch_review_allowed": true
+    },
+    "ASSERTION_CONTRADICTS_EVIDENCE": {
+      "schema_version": "review_queue/1.0",
+      "queue_id": "ASSERTION_CONTRADICTS_EVIDENCE",
+      "display_label": "M",
+      "title": "Contradictory business assertion and file evidence",
+      "count": 1,
+      "priority": "HIGH",
+      "shared_reason": "the business asserts one thing and the file says another",
+      "required_reviewer_roles": [
+        "LEGAL_REVIEWER",
+        "BRAND_ADMIN"
+      ],
+      "items": [
+        {
+          "asset": "LOGO6.ai",
+          "reason": "live text reads 'global logistics services'"
+        }
+      ],
+      "evidence_status": "contradictory",
+      "recommended_next_action": "acknowledge the contradiction WITH a reason, or reject",
+      "batch_review_allowed": true
+    },
+    "RIGHTS_BLOCKED_PERMISSION": {
+      "schema_version": "review_queue/1.0",
+      "queue_id": "RIGHTS_BLOCKED_PERMISSION",
+      "display_label": "N",
+      "title": "Rights-blocked operational permissions",
+      "count": 2,
+      "priority": "HIGH",
+      "shared_reason": "every operational permission is false until granted by name",
+      "required_reviewer_roles": [
+        "LEGAL_REVIEWER"
+      ],
+      "items": [
+        {
+          "asset": "TEST_ONLY_logo.ai",
+          "blocked_flags": [
+            "approved_for_bbrose",
+            "approved_for_other_brands",
+            "automatic_use_allowed",
+            "embedding_allowed",
+            "modification_allowed",
+            "production_use_allowed",
+            "public_export_allowed",
+            "redistribution_allowed",
+            "retrieval_allowed"
+          ],
+          "reason": "no authorised human has granted any permission"
+        },
+        {
+          "asset": "TEST_ONLY_other_palette.ase",
+          "blocked_flags": [
+            "approved_for_bbrose",
+            "approved_for_other_brands",
+            "automatic_use_allowed",
+            "embedding_allowed",
+            "modification_allowed",
+            "production_use_allowed",
+            "public_export_allowed",
+            "redistribution_allowed",
+            "retrieval_allowed"
+          ],
+          "reason": "no authorised human has granted any permission"
+        }
+      ],
+      "evidence_status": "unverified",
+      "recommended_next_action": "grant individually, or leave denied",
+      "batch_review_allowed": true
+    }
+  },
+  "totals": {
+    "POSSIBLE_BRAND_MASTER": 1,
+    "COMPOSITION_MISLABELLED_AS_MASTER": 0,
+    "OUTLINED_WORDMARK_IDENTIFICATION": 1,
+    "THIRD_PARTY_LOGO_IN_BBROSE_FOLDER": 1,
+    "TECHNICALLY_STRONG_OWNERSHIP_BLOCKED": 0,
+    "MISSING_BRAND_LICENSE_EVIDENCE": 0,
+    "CANONICAL_MASTER_NOMINATION": 1,
+    "CANONICAL_CONFLICT": 1,
+    "PALETTE_ASSOCIATION_REVIEW": 1,
+    "PALETTE_OWNERSHIP_LICENSE_REVIEW": 1,
+    "PALETTE_APPROVAL_DUAL_CONTROL": 1,
+    "EXPIRED_OR_REVOKED_APPROVAL": 0,
+    "ASSERTION_CONTRADICTS_EVIDENCE": 1,
+    "RIGHTS_BLOCKED_PERMISSION": 2
+  },
+  "total_items": 11,
+  "critical": [
+    "CANONICAL_CONFLICT"
+  ],
+  "never_batch_approved": [
+    "CANONICAL_MASTER_NOMINATION",
+    "CANONICAL_CONFLICT",
+    "PALETTE_APPROVAL_DUAL_CONTROL"
+  ],
+  "note": "queue_id is IDENTITY; display_label is presentation and may change without changing what a queue means.",
+  "parser": "dip0c.review_c3/0.1.0"
+}

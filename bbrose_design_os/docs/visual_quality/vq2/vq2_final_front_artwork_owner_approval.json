@@ -1,0 +1,118 @@
+{
+ "record_type": "vq2_final_front_artwork_owner_approval/1.0",
+ "created_at": "2026-07-29",
+ "decided_by": "PROJECT_OWNER",
+ "decision": "APPROVED",
+ "codes": [
+  "VQ2_FINAL_FRONT_ARTWORK_OWNER_APPROVED",
+  "VQ2_FINAL_FRONT_ARTWORK_ACCEPTED",
+  "VQ2_WORKSTREAM_CLOSED_IF_NO_FURTHER_VQ2_TASKS_REMAIN"
+ ],
+ "approved_candidate": "VQ2-A2-R2-FINAL",
+ "approved_on_commit": "b5dd2cf",
+ "approval_basis": "direct owner visual review of the clean preview",
+ "reviewed_artefact": {
+  "path": "docs/visual_quality/vq2/vq2_a2_r2_final_clean.png",
+  "sha256_16": "94ec944326889c20"
+ },
+ "scope": "the front artwork COMPOSITION shown in the clean preview",
+ "scope_excludes": [
+  "Complete Product Review",
+  "packaging integration",
+  "VQ-3 material realization",
+  "production flat artwork",
+  "production geometry",
+  "CMYK / Pantone / spot separation",
+  "manufacturability",
+  "production authority"
+ ],
+ "advisory_notes_nonblocking": [
+  {
+   "n": 1,
+   "note": "the bottle silhouette still reads slightly schematic at the shoulder/body transition and the lower body corners",
+   "blocking": false,
+   "artwork_changed_in_response": false
+  },
+  {
+   "n": 2,
+   "note": "collar/body contrast is visually strong but acceptable",
+   "blocking": false,
+   "artwork_changed_in_response": false
+  },
+  {
+   "n": 3,
+   "note": "supporting copy is acceptable and approved, though still the weakest typographic line stylistically",
+   "blocking": false,
+   "artwork_changed_in_response": false
+  }
+ ],
+ "advisory_notes_preserved_verbatim": true,
+ "artwork_modified_by_this_approval": false,
+ "frozen_identities": {
+  "m3": "4ecc8e9df1d1",
+  "lf1_r1": "fcd8003994d52028",
+  "font_unit_contour_hash": "5db4403984ba6f75",
+  "approved_logo_canonical": "a2b2a82969389ac2"
+ },
+ "frozen_outputs": {
+  "vq2_a2_r2_final.ai": "f3707618edf98c87",
+  "vq2_a2_r2_final.pdf": "a95d6d63d0e45871",
+  "vq2_a2_r2_final_clean.png": "94ec944326889c20",
+  "vq2_a2_r2_final_guides.png": "6186e4e7669758af",
+  "vq2_a2_r2_final_audit.json": "94517c3e4086cf40",
+  "vq2_a2_r2_final_review.pdf": "edeafb10c5b72d8d",
+  "vq2_a2_r2_final_review.png": "a9b9629369a0d8f0",
+  "vq2_a2_r2_final_review.json": "5d9142e024824322",
+  "vq2_complete_product_handoff.json": "f19e9b08f069e512"
+ },
+ "preserved_properties": {
+  "symmetry_mirror_mm": {
+   "GLASS": 0.0,
+   "COLLAR": 0.0,
+   "DARK_CLOSURE": 0.0
+  },
+  "cubic_segments": {
+   "GLASS": 114,
+   "COLLAR": 36,
+   "DARK_CLOSURE": 36
+  },
+  "logo_ratio": 0.8133,
+  "logo_uniform_scale": 0.970431,
+  "supporting_face": "Jost 300 (SIL OFL 1.1)",
+  "flat_colours": {
+   "body": "#D9BDB5",
+   "collar": "#705242",
+   "closure": "#493034",
+   "artwork_ink": "#502525"
+  }
+ },
+ "workstream_closure_evaluation": {
+  "condition": "VQ2_WORKSTREAM_CLOSED_IF_NO_FURTHER_VQ2_TASKS_REMAIN",
+  "further_vq2_build_tasks_remaining": 0,
+  "carried_items_assessed": [
+   {
+    "item": "ILLUSTRATOR_EXECUTION_VERIFICATION_REQUIRED",
+    "is_vq2_build_task": false,
+    "why": "external verification on a machine with Illustrator; cannot be performed here and is a production-authority precondition"
+   },
+   {
+    "item": "PRODUCTION_COLOR_SEPARATION_BLOCKED_PENDING_SUPPLIER_EVIDENCE",
+    "is_vq2_build_task": false,
+    "why": "needs supplier evidence; VQ-2 is sRGB concept colour by scope"
+   },
+   {
+    "item": "PRODUCTION_FLAT_ARTWORK / PRODUCTION_GEOMETRY blocked pending wrap + supplier evidence",
+    "is_vq2_build_task": false,
+    "why": "VQ-2 authority is CONCEPT_FRONT_APPEARANCE_ARTWORK only"
+   }
+  ],
+  "result": "VQ2_WORKSTREAM_CLOSED",
+  "closure_is_not": "production authority, Gate-2, manufacturability, or permission to start any downstream stage"
+ },
+ "downstream_unchanged": {
+  "COMPLETE_PRODUCT_REVIEW": "PREPARED_NOT_STARTED",
+  "PACKAGING": "NOT_STARTED",
+  "VQ_3": "NOT_STARTED"
+ },
+ "starts_nothing_automatically": true
+}

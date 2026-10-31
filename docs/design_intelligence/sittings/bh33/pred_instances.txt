@@ -1,0 +1,55 @@
+§AD0(a) PREDICTION — §BH33(2) VARIABLE INSTANCE PIN, sealed BEFORE git add.
+Base HEAD 04faa08 ((1), scored 8/8).
+
+L1 WRITE SET: exactly FIVE tracked paths, all under apps/ —
+   apps/ire/font_roles.py, apps/ire/emitters/pdf_ai.py,
+   apps/ire/container_font_authority.py, apps/ire/tests/test_pdf_ai_emitter.py,
+   apps/pipeline/tests/test_container_font_authority.py. Plus the gate-staged
+   ledger line. NO other path; the exemption list, the legacy branch and the
+   chains untouched; nothing written into static/.
+L2 DIFF SHAPE (insertions/deletions):
+   apps/ire/font_roles.py 159/27 — INSTANCE_WEIGHT_BY_ROLE {heading 700,
+   body 400}, UNPINNED_VERDICT; the catalogue measures `variable` + `axes`
+   from fvar; `_accept` (a VERIFIED variable candidate only at its pinned
+   instance, else skipped with the verdict); instance_for / _instantiate
+   (fontTools instancer on the granted file, recalcTimestamp off,
+   deterministic bytes under the OS temp dir); instances_registered;
+   instance_for_record; record_role_map factored out of record_faces, which
+   hands the GRANTED path to the record; theme_family reads an instance's
+   family; __all__.
+   apps/ire/emitters/pdf_ai.py 16/7 — the usage record counts an instance
+   under the embedded name with the derived sha256 and `instance_of`.
+   apps/ire/container_font_authority.py 22/2 — the two-line call in
+   build_font_authority folded LINE-NEUTRALLY into `_with_instance(...)`;
+   `_with_instance` appended BELOW the protected grouping (file 573 → 593).
+   apps/ire/tests/test_pdf_ai_emitter.py 93/0 — FIVE tests added.
+   apps/pipeline/tests/test_container_font_authority.py 32/0 — ONE test added.
+L3 MANIFEST / A391: suite manifest untouched (no new test FILE); records
+   untouched; ledger at 461 passes the APPEND_ONLY prefix rule. Census-first:
+   records none; identity none; WIT denominator 863 and its REGISTER keys
+   hold (the analyser's test green on the patched tree, 287 + 158 targeted
+   passed); corpus constants none.
+L4 STAGED == DECLARED: exactly the FIVE numstat rows of L2.
+L5 COMMIT CONTENTS: 6 files (5 + ledger), insertions 323, deletions 36.
+L6 SUITE LINE + REFUSAL TREE: GREEN — TIER_2=GREEN collected=8548
+   failures=0 apps=7736 dip0c=671 dip0=141 (8542 + the six tests). No
+   refusal expected; §BH24 0/3.
+L7 LEDGER FOLD: 461 → 462, the +1 in THIS commit.
+L8 PROTOCOL IDENTITIES / APPS DIFF / AUTHORITY: apps diff = exactly the
+   five paths; GATE 7fbeb8f1fe10b0fb at [514:541] (measured on the patched
+   tree, file 593 lines) and TEST b32030dc827263e4 byte-identical; tree
+   seals unchanged; protocol_identity unchanged; neither ceiling nor guard
+   moved; the eight M7 artefacts == baseline; the catalogue 38 with exactly
+   FIVE variable faces (Montserrat[wght], Montserrat-Italic[wght],
+   Quicksand[wght], PlayfairDisplay[wght], PlayfairDisplay-Italic[wght]);
+   under Django at scoring: heading → Montserrat-Bold (wght 700, derived
+   sha 90cd4f1a7d9b707f…) with the granted Montserrat[wght] sha256
+   verifying VERIFIED_FOR_PRODUCTION / USER_CONFIRMED; body pin 400 →
+   Montserrat-Regular; display / caption unpinned → None; the four other
+   variable faces pinned by the same rule with their STAT names
+   (MontserratItalic-BoldItalic / -Italic, Quicksand-Bold / -Regular,
+   PlayfairDisplayRoman-Bold / -Regular, PlayfairDisplayItalic-BoldItalic
+   / -Italic); a themed Latin document's artefact embeds "Montserrat-Bold"
+   and never "Montserrat-Thin" with counter == artefact; exempt surfaces
+   resolve as at 41604ac; the Noto trio VERIFIED_FOR_PRODUCTION and the 35
+   at their PROVENANCE hashes; no authority involved.

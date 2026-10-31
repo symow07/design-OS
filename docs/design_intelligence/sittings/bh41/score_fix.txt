@@ -1,0 +1,36 @@
+§AD0(a) SCORE — (3) THE DRAINED LIVE SERVER, ATTEMPT 4 (the launched one),
+against pred_fix4.txt (sealed fac124672a9f42ab before git add). Gate GREEN,
+GEXIT=0. LANDED 6ad65f0 (launched 2026-09-08T08:14:49Z, finished 08:29:03Z).
+8/8. Launched once; services checked up; nothing beside it.
+
+L1 HELD: 21 paths under bbrose_design_os/apps/pipeline/tests/ (20 M + 1 A) +
+   the gate-staged ledger; outside apps + register + ledger NONE.
+L2 HELD: 20 modified +160 −42 (18 files 2+/2−, test_browser_profile_editor.py
+   4+/4−, test_browser_staged_reference_ui.py 120+/2−); browser_live_server.py
+   +212; every swap import + base lines only.
+L3 HELD: suite manifest untouched; manifest/records/identity in commit NONE;
+   the ledger APPEND_ONLY (HEAD~1 a byte-prefix of HEAD); WIT 864
+   (test_wit_unit_analysis.py 52 passed at 6ad65f0); corpus constants, dip1b,
+   the exclusion list, the materials record untouched; no new test file; the
+   two-roots guard's three names unchanged.
+L4 HELD: staged == declared, 21 rows (measured before launch: [1 A 20 M],
+   +160/−42, +212, nothing outside the tests directory).
+L5 HELD: 22 files, 373 insertions, 42 deletions.
+L6 HELD: "TIER_2=GREEN collected=8594 failures=0 apps=7782 dip0c=671
+   dip0=141" — exact. No flush deadlock on this gate.
+L7 HELD: ledger 486 → 487 (utc 2026-09-08T08:15:24Z, verdict OK,
+   refusal_count 0).
+L8 HELD: apps diff = the 21 paths; GATE 7fbeb8f1fe10b0fb at [514:541] (593
+   lines); TEST b32030dc827263e4; tree seals dip0c c22592930c75001c / dip0a
+   d72072760ab20a6a unchanged; protocol_identity untouched; the eight M7
+   artefacts == baseline; the register 20,213 lines db241ccf0b258e35; under
+   Django at 6ad65f0 the Noto trio VERIFIED_FOR_PRODUCTION, the 35 (+ licence
+   texts, 50 files) at their PROVENANCE hashes, Warm Gold #CBA87D a Ground
+   swatch in CS-001 and CS-002 (six swatches each); the DIP-0A inventory
+   3b3cfdc2bf4fc6c0 unchanged; the stash's 298 entries identical after the
+   landing; porcelain clean. THE NEGATIVE CONTROL as sealed: BEFORE 75 events
+   / 10 runs (8 refusing); AFTER (E4_after_fix, this content) 0 events / 10
+   runs / 460 tests, 10 green, 0 LiveServerNotDrained, the drain median
+   0.088 s, p90 0.101 s, max 1.893 s over 460 teardowns.
+Next, in the ruled order: (5) the apps leg under the reproducing load, the
+stash restored byte-verified, the goal report.

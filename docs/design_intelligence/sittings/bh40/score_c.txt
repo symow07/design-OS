@@ -1,0 +1,31 @@
+§AD0(a) SCORE — (c) THE SERVER (§BH40(c)), against pred_c.txt (sealed
+c166351e04251535 before the copy and before git add). Gate GREEN, GEXIT=0.
+LANDED c00f2b3 (launched 2026-09-08T09:17:40Z, finished 09:32:00Z). 8/8.
+Launched once; services checked up; nothing beside it (the fresh-session
+proof ran BEFORE the launch).
+
+L1 HELD: exactly 3 new paths — tools/brain/server.py (185), tools/brain/
+   README.md (42), .mcp.json (9) at the OUTER root — + the gate-staged
+   ledger; no inner .mcp.json; nothing under var/ tracked.
+L2 HELD: 3 added +236, 0 modified, 0 deleted.
+L3 HELD: manifest/records/identity in commit NONE; the ledger APPEND_ONLY;
+   WIT 864; corpus constants, dip1b, the exclusion list, the materials
+   record untouched; the two-roots guard's three names unchanged.
+L4 HELD: 3 rows "A" (proved before launch).
+L5 HELD: 4 files, 237 insertions, 0 deletions.
+L6 HELD: "TIER_2=GREEN collected=8594 failures=0 apps=7782 dip0c=671
+   dip0=141" — exact.
+L7 HELD: ledger 489 → 490 (utc 2026-09-08T09:18:16Z, verdict OK).
+L8 HELD: apps diff EMPTY; GATE 7fbeb8f1fe10b0fb / TEST b32030dc827263e4;
+   tree seals dip0c c22592930c75001c / dip0a d72072760ab20a6a unchanged; M7
+   artefacts == baseline; the register 20,213 lines db241ccf0b258e35; the
+   DIP-0A inventory 3b3cfdc2bf4fc6c0; under Django at c00f2b3 the Noto trio
+   VERIFIED_FOR_PRODUCTION (3) and Warm Gold in both systems (2); no
+   register hash in the three files (git grep at HEAD: 0); the server
+   writes nothing (the sources' hashes unchanged across the smoke test's
+   calls, measured). THE PROOFS as sealed: the four goal calls over stdio
+   answered from the index; a fresh non-interactive Claude Code session over
+   the tracked .mcp.json (--strict-mcp-config) made all four calls itself (6
+   turns, no denials) and every answer matched the register by hand
+   (c_proof_fresh_session.json).
+Next, in the ruled order: (d) the freshness gate.

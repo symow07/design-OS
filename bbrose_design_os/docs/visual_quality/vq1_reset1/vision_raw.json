@@ -1,0 +1,39 @@
+{
+  "reference_description": "Close-up photograph of a dropper closure assembly. The top component is a large, smooth, rounded rubber pipette bulb in deep aubergine/dark purple-brown color with a domed top and flared skirt base that sits over the collar. The collar/ferrule is a tall, polished rose-gold metallic cylinder with a mirror finish. The bulb is notably large relative to the collar, approximately 1.3x the collar width, with a soft matte texture and generous proportions.",
+  "output_description": "Full-bottle render showing a tall cylindrical white bottle with a dropper closure. The top component is a small, dark purple-grey shape that resembles a flame or teardrop/finial \u2014 pointed at the top with a narrow waist and slight bulge, unlike a rounded bulb. The collar beneath it is a short, beige/cream-colored cylinder (not metallic, not rose-gold). The overall bulb is tiny relative to the bottle and collar, and has a pointed tip rather than a smooth dome.",
+  "top_component_observed_shape": "Flame/teardrop finial with pointed apex and narrow waist \u2014 not a rounded bulb dome",
+  "component_semantics": {
+    "classification": "EXPOSED_RUBBER_PIPETTE_BULB",
+    "confidence": 0.25,
+    "evidence": "The intent appears to be a pipette bulb but the rendered shape is a pointed flame-like finial rather than the smooth rounded dome seen in the reference. The shape does not match an exposed rubber bulb morphology."
+  },
+  "same_component_type": false,
+  "same_structural_family": false,
+  "closure_proportions_physically_coherent": false,
+  "output_appears_generic": true,
+  "failing_component": "BULB",
+  "per_component_score": {
+    "closure": 1,
+    "shoulder": 4,
+    "body": 5,
+    "silhouette": 2
+  },
+  "reference_preservation_score": 2,
+  "visual_findings": [
+    "Bulb shape is a pointed flame/finial rather than smooth rounded dome \u2014 critical shape mismatch",
+    "Collar is beige/cream plastic, not polished rose-gold metallic as in reference",
+    "Bulb is disproportionately small relative to collar and bottle; reference bulb is large and dominant",
+    "No flared skirt visible on the rendered bulb \u2014 it terminates abruptly into the collar",
+    "Collar height is very short compared to the tall, prominent rose-gold ferrule in reference",
+    "Color of bulb is slightly lighter grey-purple vs the deep aubergine in reference",
+    "Improvement over previous iteration: bulb now has a slight pointed top rather than flat dome, but this moves further from reference not closer",
+    "Previous iteration had a flatter, more dome-like top which was arguably closer to correct shape than current pointed version"
+  ],
+  "critical_blockers": [
+    "Bulb morphology is wrong \u2014 pointed flame shape instead of rounded dome",
+    "Collar material and color incorrect \u2014 must be polished rose-gold metallic",
+    "Bulb size severely undersized relative to collar width",
+    "Flared skirt at bulb base absent"
+  ],
+  "confidence": 0.92
+}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load plain_words %}
+{% block title %}{% if s.id %}{{ s.id }}{% else %}{{ s.date }}{% endif %} · {{ title }}{% endblock %}
+{% block before %}
+<nav class="seg subnav" aria-label="Rulings">
+  <a href="{% url 'dashboard:status' %}">Status</a>
+  <a href="{% url 'dashboard:rulings' %}"{% if source == "register" %} aria-current="page"{% endif %}>The register of rulings</a>
+  <a href="{% url 'dashboard:rulings' %}?source=queue"{% if source == "queue" %} aria-current="page"{% endif %}>The review queue</a>
+</nav>
+{% endblock %}
+{% block content %}
+<p class="dim">{{ title }}{% if s.date %} · {{ s.date }}{% endif %} · from line {{ s.line }}{% if status %} · the brain measured it {{ status }}{% if brain.built_at %} at its rebuild of {{ brain.built_at|when }}{% endif %}{% endif %}</p>
+<pre class="ruling-text">{{ s.text }}</pre>
+<nav class="pager" aria-label="Sections">
+  {% if s.prev %}<a href="{% url 'dashboard:ruling' source s.prev.line %}">← {% if s.prev.id %}{{ s.prev.id }}{% else %}the one before{% endif %}</a>{% endif %}
+  <a href="{% url 'dashboard:rulings' %}{% if source == "queue" %}?source=queue{% endif %}">All of {{ title|lower }}</a>
+  {% if s.next %}<a href="{% url 'dashboard:ruling' source s.next.line %}">{% if s.next.id %}{{ s.next.id }}{% else %}the one after{% endif %} →</a>{% endif %}
+</nav>
+{% endblock %}

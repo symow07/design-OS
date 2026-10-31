@@ -1,0 +1,367 @@
+{
+  "slice": "DIP-0C3b3",
+  "c3b2_commit": "bcac12fbf4ee2d35eca4215a72c9b15d5e90bd1e",
+  "canonical_states": {
+    "human_only": [
+      "CANONICAL_BRAND_MASTER",
+      "ALTERNATE_LOCKUP",
+      "MONOCHROME_VARIANT",
+      "COLOR_VARIANT",
+      "PRODUCT_SPECIFIC_VARIANT",
+      "DEPRECATED_VERSION",
+      "REJECTED_CANDIDATE"
+    ],
+    "machine_allowed": [
+      "BRAND_MASTER_CANDIDATE",
+      "POSSIBLE_VARIANT",
+      "POSSIBLE_CONFLICT",
+      "REQUIRES_HUMAN"
+    ]
+  },
+  "canonical_checklist_items": [
+    "brand_identity_confirmed",
+    "technical_readiness_appropriate",
+    "editable_vector_confirmed",
+    "official_proportions_confirmed",
+    "symbol_wordmark_relationship_confirmed",
+    "approved_lockup_type",
+    "approved_color_variants",
+    "version_or_date_recorded",
+    "ownership_or_permitted_use_confirmed",
+    "reviewed_accepted_evidence_present",
+    "license_status_confirmed",
+    "restrictions_and_attribution_recorded",
+    "approved_product_scope",
+    "approved_market_scope",
+    "review_expiry_or_no_expiry_reason"
+  ],
+  "dual_control": {
+    "applies_to": [
+      "CANONICAL_MASTER_APPROVED",
+      "CANONICAL_MASTER_REPLACED"
+    ],
+    "technical_attestation": {
+      "items": [
+        "brand_identity_confirmed",
+        "technical_readiness_appropriate",
+        "editable_vector_confirmed",
+        "official_proportions_confirmed",
+        "symbol_wordmark_relationship_confirmed",
+        "approved_lockup_type",
+        "approved_color_variants",
+        "version_or_date_recorded"
+      ],
+      "roles": [
+        "DESIGN_REVIEWER",
+        "BRAND_ADMIN"
+      ]
+    },
+    "legal_attestation": {
+      "items": [
+        "ownership_or_permitted_use_confirmed",
+        "reviewed_accepted_evidence_present",
+        "license_status_confirmed",
+        "restrictions_and_attribution_recorded",
+        "approved_product_scope",
+        "approved_market_scope",
+        "review_expiry_or_no_expiry_reason"
+      ],
+      "roles": [
+        "LEGAL_REVIEWER"
+      ]
+    },
+    "final_activation_roles": [
+      "BRAND_ADMIN"
+    ],
+    "rule": "technical_reviewer_id != legal_reviewer_id — separation is by ACTOR IDENTITY, not by role"
+  },
+  "permission_flags": [
+    "retrieval_allowed",
+    "automatic_use_allowed",
+    "production_use_allowed",
+    "modification_allowed",
+    "embedding_allowed",
+    "redistribution_allowed",
+    "public_export_allowed",
+    "approved_for_bbrose",
+    "approved_for_other_brands"
+  ],
+  "permission_prerequisites": {
+    "retrieval_allowed": {
+      "requires_ownership": [
+        "BBROSE_OWNED_CONFIRMED",
+        "LICENSED_FOR_LIMITED_USE",
+        "JOINT_OR_CONTRACTED_USE",
+        "THIRD_PARTY_CONFIRMED"
+      ],
+      "requires_license": [],
+      "legal_only": false
+    },
+    "automatic_use_allowed": {
+      "requires_ownership": [
+        "BBROSE_OWNED_CONFIRMED",
+        "LICENSED_FOR_LIMITED_USE",
+        "JOINT_OR_CONTRACTED_USE"
+      ],
+      "requires_license": [
+        "LICENSE_APPROVED",
+        "INTERNAL_USE_ONLY"
+      ],
+      "legal_only": false
+    },
+    "production_use_allowed": {
+      "requires_ownership": [
+        "BBROSE_OWNED_CONFIRMED",
+        "LICENSED_FOR_LIMITED_USE",
+        "JOINT_OR_CONTRACTED_USE"
+      ],
+      "requires_license": [
+        "LICENSE_APPROVED"
+      ],
+      "legal_only": false
+    },
+    "modification_allowed": {
+      "requires_ownership": [
+        "BBROSE_OWNED_CONFIRMED",
+        "LICENSED_FOR_LIMITED_USE"
+      ],
+      "requires_license": [
+        "LICENSE_APPROVED",
+        "INTERNAL_USE_ONLY"
+      ],
+      "legal_only": false
+    },
+    "embedding_allowed": {
+      "requires_ownership": [
+        "BBROSE_OWNED_CONFIRMED",
+        "LICENSED_FOR_LIMITED_USE"
+      ],
+      "requires_license": [
+        "LICENSE_APPROVED"
+      ],
+      "legal_only": false
+    },
+    "redistribution_allowed": {
+      "requires_ownership": [
+        "BBROSE_OWNED_CONFIRMED"
+      ],
+      "requires_license": [
+        "LICENSE_APPROVED"
+      ],
+      "legal_only": true
+    },
+    "public_export_allowed": {
+      "requires_ownership": [
+        "BBROSE_OWNED_CONFIRMED"
+      ],
+      "requires_license": [
+        "LICENSE_APPROVED"
+      ],
+      "legal_only": true
+    },
+    "approved_for_bbrose": {
+      "requires_ownership": [
+        "BBROSE_OWNED_CONFIRMED",
+        "LICENSED_FOR_LIMITED_USE",
+        "JOINT_OR_CONTRACTED_USE"
+      ],
+      "requires_license": [],
+      "legal_only": false
+    },
+    "approved_for_other_brands": {
+      "requires_ownership": [
+        "BBROSE_OWNED_CONFIRMED"
+      ],
+      "requires_license": [
+        "LICENSE_APPROVED"
+      ],
+      "legal_only": true
+    }
+  },
+  "authorization_policy": {
+    "submit_assertion": [
+      "BUSINESS_OWNER",
+      "BRAND_ADMIN"
+    ],
+    "withdraw_assertion": [
+      "BUSINESS_OWNER",
+      "BRAND_ADMIN"
+    ],
+    "submit_evidence": [
+      "BUSINESS_OWNER",
+      "BRAND_ADMIN",
+      "LEGAL_REVIEWER",
+      "DESIGN_REVIEWER"
+    ],
+    "review_evidence": [
+      "LEGAL_REVIEWER",
+      "BRAND_ADMIN",
+      "DESIGN_REVIEWER"
+    ],
+    "confirm_ownership": [
+      "LEGAL_REVIEWER",
+      "BRAND_ADMIN"
+    ],
+    "confirm_third_party": [
+      "LEGAL_REVIEWER",
+      "BRAND_ADMIN"
+    ],
+    "approve_license": [
+      "LEGAL_REVIEWER"
+    ],
+    "approve_limited_use": [
+      "LEGAL_REVIEWER"
+    ],
+    "revoke_decision": [
+      "LEGAL_REVIEWER",
+      "BRAND_ADMIN",
+      "SYSTEM_ADMIN"
+    ],
+    "require_re_review": [
+      "LEGAL_REVIEWER",
+      "BRAND_ADMIN",
+      "SYSTEM_ADMIN",
+      "DESIGN_REVIEWER"
+    ],
+    "approve_canonical_master": [
+      "BRAND_ADMIN"
+    ],
+    "attest_canonical_technical": [
+      "DESIGN_REVIEWER",
+      "BRAND_ADMIN"
+    ],
+    "attest_canonical_legal": [
+      "LEGAL_REVIEWER"
+    ],
+    "classify_variant": [
+      "BRAND_ADMIN",
+      "DESIGN_REVIEWER"
+    ],
+    "deprecate_canonical": [
+      "BRAND_ADMIN",
+      "BUSINESS_OWNER"
+    ],
+    "confirm_brand_identity": [
+      "BRAND_ADMIN",
+      "BUSINESS_OWNER"
+    ],
+    "confirm_design_quality": [
+      "DESIGN_REVIEWER",
+      "BRAND_ADMIN"
+    ],
+    "approve_business_scope": [
+      "BUSINESS_OWNER",
+      "BRAND_ADMIN"
+    ],
+    "grant_permission": [
+      "LEGAL_REVIEWER",
+      "BRAND_ADMIN"
+    ],
+    "grant_legal_permission": [
+      "LEGAL_REVIEWER"
+    ],
+    "revoke_permission": [
+      "LEGAL_REVIEWER",
+      "BRAND_ADMIN",
+      "SYSTEM_ADMIN"
+    ],
+    "execute_expiry": [
+      "SYSTEM_ADMIN",
+      "LEGAL_REVIEWER",
+      "BRAND_ADMIN"
+    ],
+    "quarantine_asset": [
+      "SYSTEM_ADMIN",
+      "LEGAL_REVIEWER",
+      "BRAND_ADMIN"
+    ]
+  },
+  "system_admin_forbidden": [
+    "confirm_ownership",
+    "confirm_third_party",
+    "approve_license",
+    "approve_limited_use",
+    "approve_canonical_master",
+    "attest_canonical_technical",
+    "attest_canonical_legal",
+    "classify_variant",
+    "grant_permission",
+    "grant_legal_permission",
+    "confirm_brand_identity",
+    "approve_business_scope"
+  ],
+  "ledger_event_types": 23,
+  "real_ledger": {
+    "events": 0,
+    "note": "EMPTY. No real canonical approval, no real permission grant."
+  },
+  "ledger_valid": true,
+  "pilot": {
+    "logo_pdf_nominated_not_approved": true,
+    "logo6_canonical_refused": true,
+    "logo6_allowed_once_acknowledged": true,
+    "incomplete_checklist_blocks": true,
+    "canonical_grants_no_permission": true,
+    "dual_control": {
+      "one_brand_admin_alone_refused": true,
+      "technical_only_refused": true,
+      "legal_only_refused": true,
+      "two_distinct_actors_allowed": true
+    },
+    "third_party_confirmed_grants_no_permission": true,
+    "third_party_not_canonical_for_bbrose": true,
+    "grant_allowed": true,
+    "retrieval_before_expiry": {
+      "retrieval": true,
+      "status": "GRANTED"
+    },
+    "retrieval_after_expiry": {
+      "retrieval": false,
+      "status": "RE_REVIEW_REQUIRED"
+    },
+    "out_of_scope_denied": {
+      "retrieval": false,
+      "status": "DENIED_SCOPE_MISMATCH"
+    },
+    "second_canonical_refused": true,
+    "conflict_flag": "POSSIBLE_CONFLICT"
+  },
+  "refused_attempts": [
+    {
+      "attempt": "SYSTEM_ADMIN selects the canonical master",
+      "reason": "role 'SYSTEM_ADMIN' may NOT 'approve_canonical_master'. Permitted roles: ['BRAND_ADMIN']. (Git authorship is provenance, not authorisation.)"
+    },
+    {
+      "attempt": "SYSTEM_ADMIN grants a permission",
+      "reason": "role 'SYSTEM_ADMIN' may NOT 'grant_permission'. Permitted roles: ['LEGAL_REVIEWER', 'BRAND_ADMIN']. (Git authorship is provenance, not authorisation.)"
+    },
+    {
+      "attempt": "BRAND_ADMIN grants redistribution",
+      "reason": "role 'BRAND_ADMIN' may NOT 'grant_legal_permission'. Permitted roles: ['LEGAL_REVIEWER']. (Git authorship is provenance, not authorisation.)"
+    },
+    {
+      "attempt": "LEDGER records a canonical approval attested by ONE person",
+      "reason": "CANONICAL_MASTER_APPROVED is under DUAL CONTROL: its attestations name only {'TEST_ONLY_brand_admin'} — the two attestations must come from two DIFFERENT people. Holding both roles does not make one person two reviewers."
+    },
+    {
+      "attempt": "machine declares CANONICAL_BRAND_MASTER",
+      "reason": "'CANONICAL_BRAND_MASTER' is HUMAN-ONLY: deciding which file is authoritative (or how it relates to the master) is a human judgement. A machine may only say one of ['BRAND_MASTER_CANDIDATE', 'POSSIBLE_VARIANT', 'POSSIBLE_CONFLICT', 'REQUIRES_HUMAN']"
+    },
+    {
+      "attempt": "machine turns a permission false->true",
+      "reason": "machine may NOT turn a permission from false to true — granting is a human decision"
+    }
+  ],
+  "integrity": {
+    "materials": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "modified": [],
+      "file_count_before": 7695,
+      "file_count_after": 7695
+    }
+  },
+  "runtime_seconds": 0.12,
+  "output_bytes": 11457
+}

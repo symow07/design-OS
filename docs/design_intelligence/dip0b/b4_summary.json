@@ -1,0 +1,61 @@
+{
+ "files": 14,
+ "pages": 15,
+ "units": 173,
+ "bucket_totals": {
+  "artwork": 382701,
+  "dieline_technical": 168,
+  "embedded_raster": 31,
+  "swatch_reference": 64,
+  "canvas_background": 2,
+  "unresolved_or_ambiguous": 753
+ },
+ "bucket_area_pt2": {
+  "artwork": 1876312618.96,
+  "dieline_technical": 8037996.73,
+  "embedded_raster": 1452019.27,
+  "swatch_reference": 214585.02,
+  "canvas_background": 15358249.14,
+  "unresolved_or_ambiguous": 39512284.3
+ },
+ "ambiguous_colour_entries": 24609,
+ "technical_paths_excluded": 168,
+ "structural_unresolved_not_excluded": 1972,
+ "unit_types": {
+  "SURFACE_ARTWORK": 53,
+  "TECHNICAL_NOTES": 35,
+  "PRODUCT_PHOTO": 31,
+  "DIELINE_CANDIDATE": 22,
+  "SPEC_TABLE": 20,
+  "LEGAL_TEXT": 6,
+  "UNKNOWN": 3,
+  "COLOR_PALETTE_STRIP": 2,
+  "BARCODE": 1
+ },
+ "typography_candidates": 1037,
+ "units_requiring_review": 80,
+ "pages_with_registration_ink": 10,
+ "path_association_status": "UNAVAILABLE",
+ "dieline_outcomes": {
+  "LIKELY_DIELINE_STRUCTURE": 11,
+  "REJECTED_NO_DIELINE_EVIDENCE": 3,
+  "BORDERLINE_REVIEW_REQUIRED": 1
+ },
+ "level_b": "unavailable — no OCR, no font-family inference",
+ "b4_handoff_notes": {
+  "structural_is_not_technical": "A thin structural stroke is NOT technical ink. Keep two sets: (A) structural-geometry evidence — thin strokes, dashed strokes, panel contours, shared edges, folds, glue-flap topology; (B) technical-colour evidence — directly associated spot/registration inks, high-confidence technical-colour candidates, ambiguous RGB-to-spot matches. A stroke may belong to one set, both, or neither. Never exclude a colour from artwork intelligence merely because its path is thin.",
+  "registration_black_ambiguity": "Path-level spot association is UNAVAILABLE on this pilot, so an RGB-converted black path must never be mapped to /Separation /All as a fact. Allow multiple candidate explanations, record delta-E to every plausible spot/process black, mark ambiguity, cap confidence, and place unresolved cases in `unresolved_or_ambiguous`. Document-level /All presence must not automatically remove ordinary black artwork from the artwork palette.",
+  "dimension_marks": "no geometric dimension-mark candidates detected under the current rule",
+  "dimension_mark_spot_check_pages": [
+   "ES3083吸塑 展盒刀线.ai",
+   "FB-2060 白卡.ai",
+   "HL5503高光液.ai",
+   "YB-1025(LP5870)...ai"
+  ],
+  "dimension_mark_open_questions": [
+   "are dimension annotations genuinely absent from these designs?",
+   "are dimensions drawn as outlined glyphs rather than geometry?",
+   "is the current detector too narrow?"
+  ]
+ }
+}

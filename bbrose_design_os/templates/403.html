@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% comment %}A PAGE NOT OPEN TO THIS ACCOUNT, said in words and in the one shell (the owner's goal of 2026-09-25, (d) "Plain
+words everywhere"; it was Django's bare "403 Forbidden"). Who a page is open to is unchanged: this page only says so.{% endcomment %}
+{% block title %}Not open to your account{% endblock %}
+{% block content %}
+<h1 class="h1">This page is not open to your account</h1>
+{% if "REVIEWER" in exception or "reviewer" in exception %}
+<p class="lead">It is for a design-intelligence reviewer, and your account has no reviewer standing. An admin gives an
+  account that standing; this site never gives it by itself.</p>
+{% else %}
+<p class="lead">Your account's role does not reach it. An admin decides who a page is open to.</p>
+{% endif %}
+<p><a class="btn" href="{% url 'dashboard:index' %}">Back to the board</a></p>
+{% if exception %}<details class="tech"><summary>What the record says</summary><p>{{ exception }}</p></details>{% endif %}
+{% endblock %}

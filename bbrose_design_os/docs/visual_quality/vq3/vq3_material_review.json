@@ -1,0 +1,1088 @@
+{
+ "record_type": "vq3_material_review/1.0",
+ "created_at": "2026-07-29",
+ "state": "MATERIAL_TRIALS_IN_PROGRESS",
+ "result_classification": "VQ3_MATERIAL_CANDIDATES_PENDING_OWNER_SELECTION",
+ "upstream": {
+  "VQ_1": "CLOSED",
+  "VQ_2": "CLOSED",
+  "COMPLETE_PRODUCT_REVIEW": "CLOSED"
+ },
+ "frozen": {
+  "m3": "4ecc8e9df1d1",
+  "lf1_r1": "fcd8003994d52028",
+  "font_unit_contour_hash": "5db4403984ba6f75",
+  "approved_logo": "a2b2a82969389ac2",
+  "clean_preview": "94ec944326889c20",
+  "logo_to_rose_ratio": 0.8133,
+  "logo_uniform_scale": 0.970431,
+  "left_datum_px": 528,
+  "flat_colours": {
+   "body": "#D9BDB5",
+   "collar": "#705242",
+   "closure": "#493034",
+   "artwork_ink": "#502525"
+  },
+  "symmetry_mirror_mm": {
+   "GLASS": 0.0,
+   "COLLAR": 0.0,
+   "DARK_CLOSURE": 0.0
+  },
+  "vq2_frozen_outputs": {
+   "vq2_a2_r2_final.ai": "f3707618edf98c87",
+   "vq2_a2_r2_final.pdf": "a95d6d63d0e45871",
+   "vq2_a2_r2_final_clean.png": "94ec944326889c20",
+   "vq2_a2_r2_final_guides.png": "6186e4e7669758af",
+   "vq2_a2_r2_final_audit.json": "94517c3e4086cf40",
+   "vq2_a2_r2_final_review.pdf": "edeafb10c5b72d8d",
+   "vq2_a2_r2_final_review.png": "a9b9629369a0d8f0",
+   "vq2_a2_r2_final_review.json": "5d9142e024824322",
+   "vq2_complete_product_handoff.json": "f19e9b08f069e512"
+  }
+ },
+ "frozen_verified": true,
+ "render_method": {
+  "stage_a": "DETERMINISTIC_MATERIAL_COMPOSITOR",
+  "stage_a_is_geometry_authority": true,
+  "stage_b_image_model_enhancement": "NOT_USED",
+  "stage_b_reason": "Stage B is optional and may not determine any geometry. Every geometry and artwork gate is already met exactly by the deterministic compositor, so no image-model call was needed and the authorised budget of 3 was left unspent. Authorising it remains available to the owner.",
+  "image_generation_calls": 0,
+  "image_generation_budget": 3
+ },
+ "codes": [
+  "VQ3_RENDER_IS_VISUALIZATION_ONLY",
+  "VQ2_AI_REMAINS_ARTWORK_SOURCE_OF_TRUTH",
+  "VQ3_NOT_PRODUCTION_MATERIAL_AUTHORITY"
+ ],
+ "masks": {
+  "mask_sha": {
+   "BODY": "1ce3057cf3bc2f80",
+   "COLLAR": "4e666b3cf6841ef9",
+   "DARK_CLOSURE": "a05982ac563865a4",
+   "LOGO": "cb4b4c5ad2f24904",
+   "DIVIDER": "152bc61d7fbf3fdb",
+   "ROSE": "54cd2ead9beb64a2",
+   "DAMASCENA": "5cc66f125ec63e0a",
+   "SUPPORTING_COPY": "95b20e7ce6463080"
+  },
+  "shape": [
+   2330,
+   979
+  ],
+  "dpi": 340,
+  "artwork_spill_outside_product": 0,
+  "font_unit_contour_hash": "5db4403984ba6f75",
+  "derived_from": "accepted vector geometry re-emitted per component and rasterised; no mask was drawn by hand"
+ },
+ "candidates": {
+  "M1": {
+   "name": "REFERENCE_BALANCED",
+   "path": "docs/visual_quality/vq3/vq3_m1_reference_balanced.png",
+   "sha256_16": "cfba6016eb4ac40f",
+   "size": [
+    979,
+    2330
+   ],
+   "params": {
+    "name": "REFERENCE_BALANCED",
+    "body_gloss": 0.1,
+    "body_sigma": 0.26,
+    "body_edge": 0.2,
+    "body_grain": 0.02,
+    "collar_warm": 0.0,
+    "collar_contrast": 1.0,
+    "closure_gloss": 0.075
+   },
+   "deterministic_render": true,
+   "image_model_enhanced": false,
+   "differs_from_m1_in": []
+  },
+  "M2": {
+   "name": "SOFTER_FROSTED_GLASS",
+   "path": "docs/visual_quality/vq3/vq3_m2_soft_frosted.png",
+   "sha256_16": "26ed49546edbea48",
+   "size": [
+    979,
+    2330
+   ],
+   "params": {
+    "name": "SOFTER_FROSTED_GLASS",
+    "body_gloss": 0.065,
+    "body_sigma": 0.4,
+    "body_edge": 0.28,
+    "body_grain": 0.03,
+    "collar_warm": 0.0,
+    "collar_contrast": 1.0,
+    "closure_gloss": 0.075
+   },
+   "deterministic_render": true,
+   "image_model_enhanced": false,
+   "differs_from_m1_in": [
+    "body_gloss",
+    "body_sigma",
+    "body_edge",
+    "body_grain"
+   ]
+  },
+  "M3": {
+   "name": "WARMER_ROSE_GOLD_METAL",
+   "path": "docs/visual_quality/vq3/vq3_m3_warm_rose_gold.png",
+   "sha256_16": "fbdedc5b23e31745",
+   "size": [
+    979,
+    2330
+   ],
+   "params": {
+    "name": "WARMER_ROSE_GOLD_METAL",
+    "body_gloss": 0.1,
+    "body_sigma": 0.26,
+    "body_edge": 0.2,
+    "body_grain": 0.02,
+    "collar_warm": 0.13,
+    "collar_contrast": 1.1,
+    "closure_gloss": 0.075
+   },
+   "deterministic_render": true,
+   "image_model_enhanced": false,
+   "differs_from_m1_in": [
+    "collar_warm",
+    "collar_contrast"
+   ]
+  }
+ },
+ "gates": {
+  "M1": {
+   "silhouette_iou": 1.0,
+   "centerline_drift_px": 0.0,
+   "body_width_drift_px": 0,
+   "collar_width_drift_px": 0,
+   "closure_width_drift_px": 0,
+   "artwork_pixel_coverage": 1.0,
+   "artwork_anchor_drift_px": 0,
+   "logo_drift": 0,
+   "glyph_drift": 0,
+   "mask_spill": 0,
+   "clipping": 0,
+   "unsupported_objects": 0,
+   "internal_mechanism_visible": 0,
+   "line_break_identity": "EXACT",
+   "spelling_identity": "EXACT",
+   "measurement_note": "silhouette compared against the emitted background-only frame, so antialiasing and the contact shadow cannot masquerade as drift",
+   "materials": {
+    "body_mean": [
+     207.7,
+     181.3,
+     174.3
+    ],
+    "body_local_variation": 32.57,
+    "collar_mean": [
+     134.7,
+     98.6,
+     84.0
+    ],
+    "collar_variation": 36.3,
+    "closure_mean": [
+     81.6,
+     57.5,
+     61.3
+    ],
+    "closure_variation": 5.12,
+    "collar_blown_highlight_px": 0,
+    "collar_warmer_than_body": true,
+    "collar_more_reflective_than_body": true,
+    "closure_not_metallic": true,
+    "body_frosted_not_flat": true
+   },
+   "pass": true
+  },
+  "M2": {
+   "silhouette_iou": 1.0,
+   "centerline_drift_px": 0.0,
+   "body_width_drift_px": 0,
+   "collar_width_drift_px": 0,
+   "closure_width_drift_px": 0,
+   "artwork_pixel_coverage": 1.0,
+   "artwork_anchor_drift_px": 0,
+   "logo_drift": 0,
+   "glyph_drift": 0,
+   "mask_spill": 0,
+   "clipping": 0,
+   "unsupported_objects": 0,
+   "internal_mechanism_visible": 0,
+   "line_break_identity": "EXACT",
+   "spelling_identity": "EXACT",
+   "measurement_note": "silhouette compared against the emitted background-only frame, so antialiasing and the contact shadow cannot masquerade as drift",
+   "materials": {
+    "body_mean": [
+     200.5,
+     174.8,
+     168.0
+    ],
+    "body_local_variation": 31.96,
+    "collar_mean": [
+     134.7,
+     98.6,
+     84.0
+    ],
+    "collar_variation": 36.3,
+    "closure_mean": [
+     81.6,
+     57.5,
+     61.3
+    ],
+    "closure_variation": 5.12,
+    "collar_blown_highlight_px": 0,
+    "collar_warmer_than_body": true,
+    "collar_more_reflective_than_body": true,
+    "closure_not_metallic": true,
+    "body_frosted_not_flat": true
+   },
+   "pass": true
+  },
+  "M3": {
+   "silhouette_iou": 1.0,
+   "centerline_drift_px": 0.0,
+   "body_width_drift_px": 0,
+   "collar_width_drift_px": 0,
+   "closure_width_drift_px": 0,
+   "artwork_pixel_coverage": 1.0,
+   "artwork_anchor_drift_px": 0,
+   "logo_drift": 0,
+   "glyph_drift": 0,
+   "mask_spill": 0,
+   "clipping": 0,
+   "unsupported_objects": 0,
+   "internal_mechanism_visible": 0,
+   "line_break_identity": "EXACT",
+   "spelling_identity": "EXACT",
+   "measurement_note": "silhouette compared against the emitted background-only frame, so antialiasing and the contact shadow cannot masquerade as drift",
+   "materials": {
+    "body_mean": [
+     207.7,
+     181.3,
+     174.3
+    ],
+    "body_local_variation": 32.57,
+    "collar_mean": [
+     141.3,
+     101.8,
+     85.8
+    ],
+    "collar_variation": 38.88,
+    "closure_mean": [
+     81.6,
+     57.5,
+     61.3
+    ],
+    "closure_variation": 5.12,
+    "collar_blown_highlight_px": 0,
+    "collar_warmer_than_body": true,
+    "collar_more_reflective_than_body": true,
+    "closure_not_metallic": true,
+    "body_frosted_not_flat": true
+   },
+   "pass": true
+  }
+ },
+ "all_geometry_gates_pass": true,
+ "inspections": {
+  "M1": {
+   "A": {
+    "identity": "VQ3_REFERENCE_MATERIAL_FIDELITY_CRITIC",
+    "status": "COMPLETED",
+    "request_id": "req_011CdXhUjiE4MyXYdTH4L8XW",
+    "usage": {
+     "in": 2768,
+     "out": 1225
+    },
+    "raw_output": "```json\n{\n  \"findings\": [\n    {\n      \"area\": \"body_frosted_glass\",\n      \"observation\": \"Body mean RGB (207.7, 181.3, 174.3) with local variation 32.57 confirms a soft dusty-rose tone with gentle luminosity gradient consistent with frosted glass. The subtle edge brightening and centre-to-edge falloff reads as light passing through a semi-opaque frosted surface rather than flat plastic. Gate flag body_frosted_not_flat=true corroborates. No transmission depth is visible (oil inside not implied), but frosted cosmetic dropper bottles commonly omit fill visibility at this opacity level.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"body_frosted_glass\",\n      \"observation\": \"The body reads very close to opaque soft-touch at a casual glance because there is no sub-surface scatter halo or glass-edge refraction rim. The material is accepted as frosted glass per gate data, but a thin bright refraction rim along the left and right silhouette edges would sharpen the glass read without altering geometry.\",\n      \"actionable\": true\n    },\n    {\n      \"area\": \"collar_rose_gold_metal\",\n      \"observation\": \"Collar mean RGB (134.7, 98.6, 84.0) with variation 36.3, warmer than body, more reflective than body, zero blown highlights. The gradient sweep from warm highlight to mid-shadow reads convincingly as polished rose-gold metal. The hue sits in a correct copper-rose band. No graininess or plastic flatness detected.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"collar_rose_gold_metal\",\n      \"observation\": \"The collar reads slightly more copper-bronze than a canonical rose-gold (which would sit slightly pinker / less red-shifted). Within luxury cosmetics tolerance, this is acceptable, but nudging the hue toward a higher R, lower B ratio would tighten rose-gold fidelity.\",\n      \"actionable\": true\n    },\n    {\n      \"area\": \"closure_soft_touch_rubber\",\n      \"observation\": \"Closure mean RGB (81.6, 57.5, 61.3) with very low variation 5.12, confirmed non-metallic. The deep-wine colour, near-zero specularity, and smooth matte surface read correctly as a soft-touch rubber bulb. The colour matches the deep-wine brief. The low variation confirms no unwanted gloss.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"collar_body_integration\",\n      \"observation\": \"The collar-to-body transition shows a clean seam with the collar base overlapping the bottle neck appropriately. No z-fighting, colour bleed, or gap artefacts. The warm metal against the cool-pink frosted glass creates the expected material contrast that reads as premium assembly.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"artwork_legibility\",\n      \"observation\": \"BBROSE logotype with embedded rose icon, ruled separator line, 'Rose Damascena' headline in a high-contrast serif, and 'NIGHT REPAIR OIL' subline are all fully legible at render size and in the native-res crop. Ink colour is deep wine on dusty rose \u2014 contrast ratio is sufficient. No registration error, smearing, or mask spill detected.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"luxury_cosmetics_character\",\n      \"observation\": \"The combination of frosted blush body, polished rose-gold collar, matte wine rubber closure, and refined serif typography produces a coherent high-end facial oil aesthetic consistent with premium European cosmetics positioning. The restrained palette and clean composition reinforce luxury character.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"studio_lighting\",\n      \"observation\": \"A soft top-left key light with a gentle right-side fill is implied by the body gradient and collar highlight sweep. No harsh cast shadows or blown regions. Lighting feels appropriate for a neutral-background studio beauty shot.\",\n      \"actionable\": false\n    }\n  ],\n  \"body_frosted_glass\": \"PASS\",\n  \"collar_rose_gold_metal\": \"PASS\",\n  \"closure_satin_rubber\": \"PASS\",\n  \"collar_body_integration\": \"PASS\",\n  \"artwork_legible\": true,\n  \"reads_as_luxury_cosmetics\": true,\n  \"looks_like_brown_plastic_collar\": false,\n  \"looks_like_opaque_plastic_body\": false,\n  \"actionable_defect_count\": 2,\n  \"scores\": {\n    \"reference_fidelity\": 9,\n    \"material_clarity\": 8,\n    \"collar_body_integration\": 9,\n    \"body_realism\": 8,\n    \"collar_realism\": 8,\n    \"closure_realism\": 9,\n    \"artwork_legibility\": 9,\n    \"luxury_character\": 9,\n    \"overall_coherence\": 9\n  },\n  \"verdict\": \"MATERIAL_CANDIDATE_ACCEPTABLE\"\n}\n```",
+    "raw_sha": "034bee7b40356810",
+    "result": {
+     "findings": [
+      {
+       "area": "body_frosted_glass",
+       "observation": "Body mean RGB (207.7, 181.3, 174.3) with local variation 32.57 confirms a soft dusty-rose tone with gentle luminosity gradient consistent with frosted glass. The subtle edge brightening and centre-to-edge falloff reads as light passing through a semi-opaque frosted surface rather than flat plastic. Gate flag body_frosted_not_flat=true corroborates. No transmission depth is visible (oil inside not implied), but frosted cosmetic dropper bottles commonly omit fill visibility at this opacity level.",
+       "actionable": false
+      },
+      {
+       "area": "body_frosted_glass",
+       "observation": "The body reads very close to opaque soft-touch at a casual glance because there is no sub-surface scatter halo or glass-edge refraction rim. The material is accepted as frosted glass per gate data, but a thin bright refraction rim along the left and right silhouette edges would sharpen the glass read without altering geometry.",
+       "actionable": true
+      },
+      {
+       "area": "collar_rose_gold_metal",
+       "observation": "Collar mean RGB (134.7, 98.6, 84.0) with variation 36.3, warmer than body, more reflective than body, zero blown highlights. The gradient sweep from warm highlight to mid-shadow reads convincingly as polished rose-gold metal. The hue sits in a correct copper-rose band. No graininess or plastic flatness detected.",
+       "actionable": false
+      },
+      {
+       "area": "collar_rose_gold_metal",
+       "observation": "The collar reads slightly more copper-bronze than a canonical rose-gold (which would sit slightly pinker / less red-shifted). Within luxury cosmetics tolerance, this is acceptable, but nudging the hue toward a higher R, lower B ratio would tighten rose-gold fidelity.",
+       "actionable": true
+      },
+      {
+       "area": "closure_soft_touch_rubber",
+       "observation": "Closure mean RGB (81.6, 57.5, 61.3) with very low variation 5.12, confirmed non-metallic. The deep-wine colour, near-zero specularity, and smooth matte surface read correctly as a soft-touch rubber bulb. The colour matches the deep-wine brief. The low variation confirms no unwanted gloss.",
+       "actionable": false
+      },
+      {
+       "area": "collar_body_integration",
+       "observation": "The collar-to-body transition shows a clean seam with the collar base overlapping the bottle neck appropriately. No z-fighting, colour bleed, or gap artefacts. The warm metal against the cool-pink frosted glass creates the expected material contrast that reads as premium assembly.",
+       "actionable": false
+      },
+      {
+       "area": "artwork_legibility",
+       "observation": "BBROSE logotype with embedded rose icon, ruled separator line, 'Rose Damascena' headline in a high-contrast serif, and 'NIGHT REPAIR OIL' subline are all fully legible at render size and in the native-res crop. Ink colour is deep wine on dusty rose \u2014 contrast ratio is sufficient. No registration error, smearing, or mask spill detected.",
+       "actionable": false
+      },
+      {
+       "area": "luxury_cosmetics_character",
+       "observation": "The combination of frosted blush body, polished rose-gold collar, matte wine rubber closure, and refined serif typography produces a coherent high-end facial oil aesthetic consistent with premium European cosmetics positioning. The restrained palette and clean composition reinforce luxury character.",
+       "actionable": false
+      },
+      {
+       "area": "studio_lighting",
+       "observation": "A soft top-left key light with a gentle right-side fill is implied by the body gradient and collar highlight sweep. No harsh cast shadows or blown regions. Lighting feels appropriate for a neutral-background studio beauty shot.",
+       "actionable": false
+      }
+     ],
+     "body_frosted_glass": "PASS",
+     "collar_rose_gold_metal": "PASS",
+     "closure_satin_rubber": "PASS",
+     "collar_body_integration": "PASS",
+     "artwork_legible": true,
+     "reads_as_luxury_cosmetics": true,
+     "looks_like_brown_plastic_collar": false,
+     "looks_like_opaque_plastic_body": false,
+     "actionable_defect_count": 2,
+     "scores": {
+      "reference_fidelity": 9,
+      "material_clarity": 8,
+      "collar_body_integration": 9,
+      "body_realism": 8,
+      "collar_realism": 8,
+      "closure_realism": 9,
+      "artwork_legibility": 9,
+      "luxury_character": 9,
+      "overall_coherence": 9
+     },
+     "verdict": "MATERIAL_CANDIDATE_ACCEPTABLE"
+    }
+   },
+   "B": {
+    "identity": "VQ3_ADVERSARIAL_RENDER_DEFECT_FINDER",
+    "status": "COMPLETED",
+    "request_id": "req_011CdXhXCJBuWCC6vsVaEtRs",
+    "usage": {
+     "in": 2829,
+     "out": 1797
+    },
+    "raw_output": "```json\n{\n  \"findings\": [\n    {\n      \"area\": \"Body \u2014 frosted glass character\",\n      \"observation\": \"Body mean RGB (207.7, 181.3, 174.3) with local variation 32.57 confirms a soft, diffuse gradient consistent with frosted dusty-rose glass. The gentle limb-darkening on both flanks reads as subsurface scatter through a matte-etched surface rather than flat paint. No specular blow-out. PASS.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Body \u2014 opaque vs translucent read\",\n      \"observation\": \"The body reads as a correctly frosted, semi-opaque glass with no interior content visible, which is appropriate for a filled serum dropper bottle with frosted coating. It does not read as clear or excessively transparent, nor as thick plastic. The soft tonal gradient around the cylinder is the primary depth cue \u2014 sufficient for this material call.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Collar \u2014 rose-gold polished metal\",\n      \"observation\": \"Collar mean RGB (134.7, 98.6, 84.0) is warmer than the body and shows variation 36.3, confirming a genuine reflective gradient \u2014 darker at top transitioning to a warm copper-bronze highlight band at mid-section. Gate confirms collar_more_reflective_than_body = true and collar_warmer_than_body = true. No blown highlights (0 clipped pixels). The read is polished rose-gold metal. PASS.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Collar \u2014 brown-plastic risk assessment\",\n      \"observation\": \"At full-render scale the collar could be mistaken for dark brown plastic because the highlight band is relatively narrow and the overall tone is quite deep. However, the continuous tonal sweep from shadow to highlight and the warm RGB bias (R>>G>>B) distinguish it from a flat brown plastic. Risk is low but the highlight bandwidth could be widened slightly to reinforce the metallic read at small reproduction sizes.\",\n      \"actionable\": true\n    },\n    {\n      \"area\": \"Closure \u2014 deep-wine soft-touch rubber\",\n      \"observation\": \"Closure mean RGB (81.6, 57.5, 61.3) is dark wine with extremely low variation (5.12), confirming closure_not_metallic = true. The near-uniform matte surface with a softly rounded bulb silhouette reads correctly as a satin/soft-touch rubber pipette bulb. No sheen, no specularity. PASS.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Closure \u2014 variation too flat\",\n      \"observation\": \"Variation of 5.12 is very low \u2014 the bulb surface shows almost no ambient occlusion darkening at its base where it contacts the collar neck, and no subtle rim highlight on the rounded top. A real soft-touch rubber bulb would show a faint diffuse highlight at the crown and slight AO darkening at the squeeze point. This is a minor realism gap that does not break the luxury read but could be refined.\",\n      \"actionable\": true\n    },\n    {\n      \"area\": \"Collar / body integration\",\n      \"observation\": \"The transition between collar bottom and bottle shoulder is clean with no colour contamination bleed from the rose-gold into the dusty-rose body. The collar sits flush without floating. The slight warmth of the collar reflects a very faint warm tint onto the upper shoulder of the body, which is physically plausible and adds integration. PASS.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Shadow and grounding\",\n      \"observation\": \"A soft, correctly diffused drop shadow is visible beneath the bottle base, grounding it to the surface plane. No floating artefact. Shadow penumbra is consistent with a soft overhead studio light. PASS.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Studio lighting \u2014 highlights and hotspots\",\n      \"observation\": \"No blown highlights detected on collar (gate: 0 px). Body limb-light is gentle. Lighting reads as a clean soft-box overhead with a subtle fill from the left \u2014 consistent with luxury cosmetic photography norms. No harsh or uncontrolled specular artefacts.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Artwork \u2014 BBROSE logotype\",\n      \"observation\": \"In Image 2, 'BBROSE' reads clearly. The 'O' has been replaced by the rose icon glyph, which is legible at this resolution. The registered trademark \u00ae is present and correctly positioned. No font corruption or letter spacing anomaly detected.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Artwork \u2014 'Rose Damascena' headline\",\n      \"observation\": \"Serif headline is crisp, correctly weighted, and the deep-wine ink colour reads with strong contrast against the dusty-rose body. No glyph corruption, no tracking anomaly. 'NIGHT REPAIR OIL' sub-text is legible and correctly spaced.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Artwork \u2014 rule line\",\n      \"observation\": \"The thin horizontal rule between the logo and the headline is present, clean, and correctly weighted. No artefact or break.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Colour contamination\",\n      \"observation\": \"No rose-gold colour bleed from collar onto body face panels. No warm spill from background. Ink colours are contained within their designated artwork zones.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Generic AI-render / pasted-on appearance\",\n      \"observation\": \"The render does not exhibit telltale AI-generation artefacts (no texture hallucination, no symmetry glitch, no soft-focus halo). The compositing feels deliberate and deterministic. Minor flatness in the body gradient (could benefit from a fractionally stronger limb darkening to push the glass curvature) but this does not rise to a defect.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Luxury cosmetics character\",\n      \"observation\": \"The combination of frosted pastel body, polished warm-metal collar, matte wine rubber closure, and elegant serif typography coheres as a premium facial-oil dropper. The restrained palette and clean negative space on the label read as high-end positioning. No off-brand element detected.\",\n      \"actionable\": false\n    }\n  ],\n  \"body_frosted_glass\": \"PASS\",\n  \"collar_rose_gold_metal\": \"PASS\",\n  \"closure_satin_rubber\": \"PASS\",\n  \"collar_body_integration\": \"PASS\",\n  \"artwork_legible\": true,\n  \"reads_as_luxury_cosmetics\": true,\n  \"looks_like_brown_plastic_collar\": false,\n  \"looks_like_opaque_plastic_body\": false,\n  \"actionable_defect_count\": 2,\n  \"scores\": {\n    \"reference_fidelity\": 9,\n    \"material_clarity\": 8,\n    \"collar_body_integration\": 9,\n    \"body_realism\": 8,\n    \"collar_realism\": 8,\n    \"closure_realism\": 7,\n    \"artwork_legibility\": 9,\n    \"luxury_character\": 9,\n    \"overall_coherence\": 9\n  },\n  \"verdict\": \"MATERIAL_CANDIDATE_ACCEPTABLE\"\n}\n```",
+    "raw_sha": "79bdc9f36e8e8ffc",
+    "result": {
+     "findings": [
+      {
+       "area": "Body \u2014 frosted glass character",
+       "observation": "Body mean RGB (207.7, 181.3, 174.3) with local variation 32.57 confirms a soft, diffuse gradient consistent with frosted dusty-rose glass. The gentle limb-darkening on both flanks reads as subsurface scatter through a matte-etched surface rather than flat paint. No specular blow-out. PASS.",
+       "actionable": false
+      },
+      {
+       "area": "Body \u2014 opaque vs translucent read",
+       "observation": "The body reads as a correctly frosted, semi-opaque glass with no interior content visible, which is appropriate for a filled serum dropper bottle with frosted coating. It does not read as clear or excessively transparent, nor as thick plastic. The soft tonal gradient around the cylinder is the primary depth cue \u2014 sufficient for this material call.",
+       "actionable": false
+      },
+      {
+       "area": "Collar \u2014 rose-gold polished metal",
+       "observation": "Collar mean RGB (134.7, 98.6, 84.0) is warmer than the body and shows variation 36.3, confirming a genuine reflective gradient \u2014 darker at top transitioning to a warm copper-bronze highlight band at mid-section. Gate confirms collar_more_reflective_than_body = true and collar_warmer_than_body = true. No blown highlights (0 clipped pixels). The read is polished rose-gold metal. PASS.",
+       "actionable": false
+      },
+      {
+       "area": "Collar \u2014 brown-plastic risk assessment",
+       "observation": "At full-render scale the collar could be mistaken for dark brown plastic because the highlight band is relatively narrow and the overall tone is quite deep. However, the continuous tonal sweep from shadow to highlight and the warm RGB bias (R>>G>>B) distinguish it from a flat brown plastic. Risk is low but the highlight bandwidth could be widened slightly to reinforce the metallic read at small reproduction sizes.",
+       "actionable": true
+      },
+      {
+       "area": "Closure \u2014 deep-wine soft-touch rubber",
+       "observation": "Closure mean RGB (81.6, 57.5, 61.3) is dark wine with extremely low variation (5.12), confirming closure_not_metallic = true. The near-uniform matte surface with a softly rounded bulb silhouette reads correctly as a satin/soft-touch rubber pipette bulb. No sheen, no specularity. PASS.",
+       "actionable": false
+      },
+      {
+       "area": "Closure \u2014 variation too flat",
+       "observation": "Variation of 5.12 is very low \u2014 the bulb surface shows almost no ambient occlusion darkening at its base where it contacts the collar neck, and no subtle rim highlight on the rounded top. A real soft-touch rubber bulb would show a faint diffuse highlight at the crown and slight AO darkening at the squeeze point. This is a minor realism gap that does not break the luxury read but could be refined.",
+       "actionable": true
+      },
+      {
+       "area": "Collar / body integration",
+       "observation": "The transition between collar bottom and bottle shoulder is clean with no colour contamination bleed from the rose-gold into the dusty-rose body. The collar sits flush without floating. The slight warmth of the collar reflects a very faint warm tint onto the upper shoulder of the body, which is physically plausible and adds integration. PASS.",
+       "actionable": false
+      },
+      {
+       "area": "Shadow and grounding",
+       "observation": "A soft, correctly diffused drop shadow is visible beneath the bottle base, grounding it to the surface plane. No floating artefact. Shadow penumbra is consistent with a soft overhead studio light. PASS.",
+       "actionable": false
+      },
+      {
+       "area": "Studio lighting \u2014 highlights and hotspots",
+       "observation": "No blown highlights detected on collar (gate: 0 px). Body limb-light is gentle. Lighting reads as a clean soft-box overhead with a subtle fill from the left \u2014 consistent with luxury cosmetic photography norms. No harsh or uncontrolled specular artefacts.",
+       "actionable": false
+      },
+      {
+       "area": "Artwork \u2014 BBROSE logotype",
+       "observation": "In Image 2, 'BBROSE' reads clearly. The 'O' has been replaced by the rose icon glyph, which is legible at this resolution. The registered trademark \u00ae is present and correctly positioned. No font corruption or letter spacing anomaly detected.",
+       "actionable": false
+      },
+      {
+       "area": "Artwork \u2014 'Rose Damascena' headline",
+       "observation": "Serif headline is crisp, correctly weighted, and the deep-wine ink colour reads with strong contrast against the dusty-rose body. No glyph corruption, no tracking anomaly. 'NIGHT REPAIR OIL' sub-text is legible and correctly spaced.",
+       "actionable": false
+      },
+      {
+       "area": "Artwork \u2014 rule line",
+       "observation": "The thin horizontal rule between the logo and the headline is present, clean, and correctly weighted. No artefact or break.",
+       "actionable": false
+      },
+      {
+       "area": "Colour contamination",
+       "observation": "No rose-gold colour bleed from collar onto body face panels. No warm spill from background. Ink colours are contained within their designated artwork zones.",
+       "actionable": false
+      },
+      {
+       "area": "Generic AI-render / pasted-on appearance",
+       "observation": "The render does not exhibit telltale AI-generation artefacts (no texture hallucination, no symmetry glitch, no soft-focus halo). The compositing feels deliberate and deterministic. Minor flatness in the body gradient (could benefit from a fractionally stronger limb darkening to push the glass curvature) but this does not rise to a defect.",
+       "actionable": false
+      },
+      {
+       "area": "Luxury cosmetics character",
+       "observation": "The combination of frosted pastel body, polished warm-metal collar, matte wine rubber closure, and elegant serif typography coheres as a premium facial-oil dropper. The restrained palette and clean negative space on the label read as high-end positioning. No off-brand element detected.",
+       "actionable": false
+      }
+     ],
+     "body_frosted_glass": "PASS",
+     "collar_rose_gold_metal": "PASS",
+     "closure_satin_rubber": "PASS",
+     "collar_body_integration": "PASS",
+     "artwork_legible": true,
+     "reads_as_luxury_cosmetics": true,
+     "looks_like_brown_plastic_collar": false,
+     "looks_like_opaque_plastic_body": false,
+     "actionable_defect_count": 2,
+     "scores": {
+      "reference_fidelity": 9,
+      "material_clarity": 8,
+      "collar_body_integration": 9,
+      "body_realism": 8,
+      "collar_realism": 8,
+      "closure_realism": 7,
+      "artwork_legibility": 9,
+      "luxury_character": 9,
+      "overall_coherence": 9
+     },
+     "verdict": "MATERIAL_CANDIDATE_ACCEPTABLE"
+    }
+   }
+  },
+  "M2": {
+   "A": {
+    "identity": "VQ3_REFERENCE_MATERIAL_FIDELITY_CRITIC",
+    "status": "COMPLETED",
+    "request_id": "req_011CdXhaChq5DGJapeh3KSF6",
+    "usage": {
+     "in": 2773,
+     "out": 1520
+    },
+    "raw_output": "```json\n{\n  \"findings\": [\n    {\n      \"area\": \"body_frosted_glass\",\n      \"observation\": \"Body mean RGB (200.5, 174.8, 168.0) with local variation 31.96 confirms a soft dusty-rose frosted appearance. Subtle tonal gradient from shoulder to base is visible, conveying depth without transparency. The 'softer' frosting reads as a slightly milky, satin-diffuse surface rather than a sharp etch \u2014 consistent with SOFTER_FROSTED_GLASS intent. No flat-plastic uniformity; micro-variation is present.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"body_frosted_glass\",\n      \"observation\": \"The body lacks any visible sub-surface edge brightening or translucency cue at the shoulder/neck transition that would firmly read as glass rather than opaque ceramic or resin. The frosting is convincing but the glass substrate beneath it is only weakly implied. This is a minor concern at luxury tier.\",\n      \"actionable\": true\n    },\n    {\n      \"area\": \"collar_rose_gold_metal\",\n      \"observation\": \"Collar mean RGB (134.7, 98.6, 84.0) with variation 36.3 and confirmed warmer-than-body and more-reflective-than-body flags. The specular highlight band is clearly rendered, no blown pixels, and the warm copper-rose gradient reads convincingly as polished rose-gold metal. Material is well-differentiated from the body.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"collar_rose_gold_metal\",\n      \"observation\": \"The collar's warm tone skews slightly toward deeper copper-brown rather than the brighter champagne-pink that premium rose-gold typically exhibits. The mean channel ratio (R:G:B \u2248 1.61:1.17:1.00) suggests a moderate copper bias. Still reads as rose-gold but is at the darker end of the reference range.\",\n      \"actionable\": true\n    },\n    {\n      \"area\": \"closure_satin_rubber\",\n      \"observation\": \"Closure mean RGB (81.6, 57.5, 61.3) with very low variation (5.12) and confirmed non-metallic flag. The deep-wine matte bulb reads as a soft-touch rubber with near-zero specularity, which is exactly correct for the brief. Colour sits in the deep wine/aubergine range consistent with spec.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"closure_satin_rubber\",\n      \"observation\": \"Variation of 5.12 is extremely low \u2014 the closure surface is near-uniformly flat with no subtle form shading on the dome curvature. A real soft-touch rubber bulb would retain gentle diffuse shading across its convex geometry. The current render could benefit from a touch more diffuse wrap to avoid reading as a stamped flat disc at reduced sizes.\",\n      \"actionable\": true\n    },\n    {\n      \"area\": \"collar_body_integration\",\n      \"observation\": \"The collar sits cleanly on the shoulder with no colour bleed or halo artefact. The transition from warm metallic collar to soft frosted body is crisp and the value contrast is appropriate, maintaining material hierarchy (metal > glass > rubber from most to least reflective).\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"collar_body_integration\",\n      \"observation\": \"There is no ambient contact shadow or ground-contact occlusion line between the collar base and the bottle shoulder. Adding a subtle darkening at that seam would reinforce that the collar is a separate fitted component resting on the glass neck rather than painted onto it.\",\n      \"actionable\": true\n    },\n    {\n      \"area\": \"artwork_legibility\",\n      \"observation\": \"All text elements \u2014 BBROSE logotype with rose icon, rule line, 'Rose Damascena' display type and 'NIGHT REPAIR OIL' descriptor \u2014 are fully legible at full render scale and in the native-resolution crop. Deep-wine ink on dusty-rose frosted ground provides adequate contrast. No aliasing, smearing or colour-bleeding artefacts observed.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"artwork_legibility\",\n      \"observation\": \"In the legibility crop, the BBROSE logotype at small size approaches the minimum comfortable contrast threshold due to the very close value proximity of deep-wine ink and dusty-rose body. Legible, but no further contrast reduction in future iterations should be permitted.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"luxury_cosmetics_character\",\n      \"observation\": \"The overall composition \u2014 elongated dropper silhouette, restrained palette, serif display typeface, polished metal collar against soft frosted body \u2014 reads clearly as a premium night-oil serum in the luxury cosmetics segment. Material hierarchy and colour palette are coherent.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"studio_lighting\",\n      \"observation\": \"Lighting is soft, centred and neutral. There is no strong directional highlight suggesting a single hard studio key, which slightly softens the impression of the glass body. A subtle left-edge rim light or specular gradient on the body would reinforce the glass reading and add luxury depth.\",\n      \"actionable\": true\n    }\n  ],\n  \"body_frosted_glass\": \"PASS\",\n  \"collar_rose_gold_metal\": \"PASS\",\n  \"closure_satin_rubber\": \"PASS\",\n  \"collar_body_integration\": \"PASS\",\n  \"artwork_legible\": true,\n  \"reads_as_luxury_cosmetics\": true,\n  \"looks_like_brown_plastic_collar\": false,\n  \"looks_like_opaque_plastic_body\": false,\n  \"actionable_defect_count\": 5,\n  \"scores\": {\n    \"reference_fidelity\": 8,\n    \"material_clarity\": 7,\n    \"collar_body_integration\": 8,\n    \"body_realism\": 7,\n    \"collar_realism\": 8,\n    \"closure_realism\": 7,\n    \"artwork_legibility\": 9,\n    \"luxury_character\": 8,\n    \"overall_coherence\": 8\n  },\n  \"verdict\": \"MATERIAL_CANDIDATE_ACCEPTABLE\"\n}\n```",
+    "raw_sha": "054822538003f205",
+    "result": {
+     "findings": [
+      {
+       "area": "body_frosted_glass",
+       "observation": "Body mean RGB (200.5, 174.8, 168.0) with local variation 31.96 confirms a soft dusty-rose frosted appearance. Subtle tonal gradient from shoulder to base is visible, conveying depth without transparency. The 'softer' frosting reads as a slightly milky, satin-diffuse surface rather than a sharp etch \u2014 consistent with SOFTER_FROSTED_GLASS intent. No flat-plastic uniformity; micro-variation is present.",
+       "actionable": false
+      },
+      {
+       "area": "body_frosted_glass",
+       "observation": "The body lacks any visible sub-surface edge brightening or translucency cue at the shoulder/neck transition that would firmly read as glass rather than opaque ceramic or resin. The frosting is convincing but the glass substrate beneath it is only weakly implied. This is a minor concern at luxury tier.",
+       "actionable": true
+      },
+      {
+       "area": "collar_rose_gold_metal",
+       "observation": "Collar mean RGB (134.7, 98.6, 84.0) with variation 36.3 and confirmed warmer-than-body and more-reflective-than-body flags. The specular highlight band is clearly rendered, no blown pixels, and the warm copper-rose gradient reads convincingly as polished rose-gold metal. Material is well-differentiated from the body.",
+       "actionable": false
+      },
+      {
+       "area": "collar_rose_gold_metal",
+       "observation": "The collar's warm tone skews slightly toward deeper copper-brown rather than the brighter champagne-pink that premium rose-gold typically exhibits. The mean channel ratio (R:G:B \u2248 1.61:1.17:1.00) suggests a moderate copper bias. Still reads as rose-gold but is at the darker end of the reference range.",
+       "actionable": true
+      },
+      {
+       "area": "closure_satin_rubber",
+       "observation": "Closure mean RGB (81.6, 57.5, 61.3) with very low variation (5.12) and confirmed non-metallic flag. The deep-wine matte bulb reads as a soft-touch rubber with near-zero specularity, which is exactly correct for the brief. Colour sits in the deep wine/aubergine range consistent with spec.",
+       "actionable": false
+      },
+      {
+       "area": "closure_satin_rubber",
+       "observation": "Variation of 5.12 is extremely low \u2014 the closure surface is near-uniformly flat with no subtle form shading on the dome curvature. A real soft-touch rubber bulb would retain gentle diffuse shading across its convex geometry. The current render could benefit from a touch more diffuse wrap to avoid reading as a stamped flat disc at reduced sizes.",
+       "actionable": true
+      },
+      {
+       "area": "collar_body_integration",
+       "observation": "The collar sits cleanly on the shoulder with no colour bleed or halo artefact. The transition from warm metallic collar to soft frosted body is crisp and the value contrast is appropriate, maintaining material hierarchy (metal > glass > rubber from most to least reflective).",
+       "actionable": false
+      },
+      {
+       "area": "collar_body_integration",
+       "observation": "There is no ambient contact shadow or ground-contact occlusion line between the collar base and the bottle shoulder. Adding a subtle darkening at that seam would reinforce that the collar is a separate fitted component resting on the glass neck rather than painted onto it.",
+       "actionable": true
+      },
+      {
+       "area": "artwork_legibility",
+       "observation": "All text elements \u2014 BBROSE logotype with rose icon, rule line, 'Rose Damascena' display type and 'NIGHT REPAIR OIL' descriptor \u2014 are fully legible at full render scale and in the native-resolution crop. Deep-wine ink on dusty-rose frosted ground provides adequate contrast. No aliasing, smearing or colour-bleeding artefacts observed.",
+       "actionable": false
+      },
+      {
+       "area": "artwork_legibility",
+       "observation": "In the legibility crop, the BBROSE logotype at small size approaches the minimum comfortable contrast threshold due to the very close value proximity of deep-wine ink and dusty-rose body. Legible, but no further contrast reduction in future iterations should be permitted.",
+       "actionable": false
+      },
+      {
+       "area": "luxury_cosmetics_character",
+       "observation": "The overall composition \u2014 elongated dropper silhouette, restrained palette, serif display typeface, polished metal collar against soft frosted body \u2014 reads clearly as a premium night-oil serum in the luxury cosmetics segment. Material hierarchy and colour palette are coherent.",
+       "actionable": false
+      },
+      {
+       "area": "studio_lighting",
+       "observation": "Lighting is soft, centred and neutral. There is no strong directional highlight suggesting a single hard studio key, which slightly softens the impression of the glass body. A subtle left-edge rim light or specular gradient on the body would reinforce the glass reading and add luxury depth.",
+       "actionable": true
+      }
+     ],
+     "body_frosted_glass": "PASS",
+     "collar_rose_gold_metal": "PASS",
+     "closure_satin_rubber": "PASS",
+     "collar_body_integration": "PASS",
+     "artwork_legible": true,
+     "reads_as_luxury_cosmetics": true,
+     "looks_like_brown_plastic_collar": false,
+     "looks_like_opaque_plastic_body": false,
+     "actionable_defect_count": 5,
+     "scores": {
+      "reference_fidelity": 8,
+      "material_clarity": 7,
+      "collar_body_integration": 8,
+      "body_realism": 7,
+      "collar_realism": 8,
+      "closure_realism": 7,
+      "artwork_legibility": 9,
+      "luxury_character": 8,
+      "overall_coherence": 8
+     },
+     "verdict": "MATERIAL_CANDIDATE_ACCEPTABLE"
+    }
+   },
+   "B": {
+    "identity": "VQ3_ADVERSARIAL_RENDER_DEFECT_FINDER",
+    "status": "COMPLETED",
+    "request_id": "req_011CdXhcoZNtGLwAmSEGC1FU",
+    "usage": {
+     "in": 2834,
+     "out": 1495
+    },
+    "raw_output": "```json\n{\n  \"findings\": [\n    {\n      \"area\": \"Glass body \u2014 frosted material read\",\n      \"observation\": \"Body mean RGB (200.5, 174.8, 168.0) with local variation 31.96 confirms a soft dusty-rose frosted surface. The gradient shading from left-edge highlight to right-side shadow reads as diffuse sub-surface scatter consistent with frosted glass rather than flat plastic. SOFTER_FROSTED_GLASS candidate is achieving its intent.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Glass body \u2014 depth / translucency cue\",\n      \"observation\": \"The frosted surface is convincing but the body reads as fully opaque with no suggestion of glass wall thickness or interior liquid column. For a dropper oil bottle at luxury tier, a faint darker tonal blush near the bottom third (simulating oil fill visible through frosted glass) would reinforce the glass-not-plastic reading without conflicting with the frosted treatment.\",\n      \"actionable\": true\n    },\n    {\n      \"area\": \"Collar \u2014 rose-gold metal\",\n      \"observation\": \"Collar mean RGB (134.7, 98.6, 84.0) with variation 36.3; gate confirms warmer than body and more reflective than body, zero blown highlights. The gradient band across the cylindrical collar clearly reads as polished rose-gold metal. No brown-plastic collapse observed at this exposure.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Collar \u2014 highlight band tightness\",\n      \"observation\": \"The specular band is broad and even, appropriate for a lathe-turned cylinder. It does not resolve to a crisp linear specular streak that would further separate polished metal from satin finishes. A slightly narrower, brighter central highlight line would push the read unambiguously toward polished rose-gold rather than brushed or anodised.\",\n      \"actionable\": true\n    },\n    {\n      \"area\": \"Collar / body integration \u2014 contact seam\",\n      \"observation\": \"The collar base meets the glass shoulder cleanly with no z-fighting, colour bleed or halo artefact. The warm rose-gold sits against the cooler dusty-rose glass and the contrast is harmonious. Integration reads correctly.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Closure \u2014 soft-touch rubber bulb\",\n      \"observation\": \"Closure mean RGB (81.6, 57.5, 61.3) with variation only 5.12, confirmed non-metallic. The very low variation is correct for a deep-wine soft-touch rubber: it is matte, absorbs light and shows almost no specular. The rounded dome form reinforces tactile softness. Reads as intended.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Closure \u2014 micro-shading at collar junction\",\n      \"observation\": \"The transition from rubber bulb to metal collar neck shows a slight tonal jump but no physical gap or halo. Acceptable at this scale; no action required.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Shadow / grounding\",\n      \"observation\": \"A soft elliptical drop shadow is present beneath the bottle base and is correctly colour-matched to the warm off-white background. The bottle is grounded; no floating artefact.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Lighting \u2014 blown highlights\",\n      \"observation\": \"Gate confirms 0 blown collar highlight pixels. Full-image inspection agrees: no clipped-white hotspots anywhere on collar, body or closure.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Artwork \u2014 BBROSE logotype\",\n      \"observation\": \"In the native-resolution crop the word-mark renders as 'BBROSE' with the rose-icon glyph replacing the second 'O'. All characters are sharp, deep-wine ink, no aliasing or smearing. Fully legible.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Artwork \u2014 'Rose Damascena' headline\",\n      \"observation\": \"High-contrast serif headline in deep-wine reads cleanly at all viewed scales. Letterforms are crisp; no colour contamination from the background gradient.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Artwork \u2014 'NIGHT REPAIR OIL' sub-line\",\n      \"observation\": \"Spaced-cap sub-line is legible at product scale. At the native crop it is partially off-frame but character spacing and weight appear correct.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Colour contamination\",\n      \"observation\": \"No hue bleed between collar rose-gold and glass body observed. The warm-cool adjacency is clean.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Generic AI-render / plastic appearance risk\",\n      \"observation\": \"The body surface avoids the typical smooth-gradient plastic look due to the frosted variation (31.96). The overall composition reads as a deterministic cosmetic render, not a generic AI output. The main residual risk is the fully-opaque body noted above.\",\n      \"actionable\": false\n    }\n  ],\n  \"body_frosted_glass\": \"PASS\",\n  \"collar_rose_gold_metal\": \"PASS\",\n  \"closure_satin_rubber\": \"PASS\",\n  \"collar_body_integration\": \"PASS\",\n  \"artwork_legible\": true,\n  \"reads_as_luxury_cosmetics\": true,\n  \"looks_like_brown_plastic_collar\": false,\n  \"looks_like_opaque_plastic_body\": false,\n  \"actionable_defect_count\": 2,\n  \"scores\": {\n    \"reference_fidelity\": 9,\n    \"material_clarity\": 8,\n    \"collar_body_integration\": 9,\n    \"body_realism\": 7,\n    \"collar_realism\": 8,\n    \"closure_realism\": 9,\n    \"artwork_legibility\": 9,\n    \"luxury_character\": 8,\n    \"overall_coherence\": 8\n  },\n  \"verdict\": \"MATERIAL_CANDIDATE_ACCEPTABLE\"\n}\n```",
+    "raw_sha": "ea50c32b54e89652",
+    "result": {
+     "findings": [
+      {
+       "area": "Glass body \u2014 frosted material read",
+       "observation": "Body mean RGB (200.5, 174.8, 168.0) with local variation 31.96 confirms a soft dusty-rose frosted surface. The gradient shading from left-edge highlight to right-side shadow reads as diffuse sub-surface scatter consistent with frosted glass rather than flat plastic. SOFTER_FROSTED_GLASS candidate is achieving its intent.",
+       "actionable": false
+      },
+      {
+       "area": "Glass body \u2014 depth / translucency cue",
+       "observation": "The frosted surface is convincing but the body reads as fully opaque with no suggestion of glass wall thickness or interior liquid column. For a dropper oil bottle at luxury tier, a faint darker tonal blush near the bottom third (simulating oil fill visible through frosted glass) would reinforce the glass-not-plastic reading without conflicting with the frosted treatment.",
+       "actionable": true
+      },
+      {
+       "area": "Collar \u2014 rose-gold metal",
+       "observation": "Collar mean RGB (134.7, 98.6, 84.0) with variation 36.3; gate confirms warmer than body and more reflective than body, zero blown highlights. The gradient band across the cylindrical collar clearly reads as polished rose-gold metal. No brown-plastic collapse observed at this exposure.",
+       "actionable": false
+      },
+      {
+       "area": "Collar \u2014 highlight band tightness",
+       "observation": "The specular band is broad and even, appropriate for a lathe-turned cylinder. It does not resolve to a crisp linear specular streak that would further separate polished metal from satin finishes. A slightly narrower, brighter central highlight line would push the read unambiguously toward polished rose-gold rather than brushed or anodised.",
+       "actionable": true
+      },
+      {
+       "area": "Collar / body integration \u2014 contact seam",
+       "observation": "The collar base meets the glass shoulder cleanly with no z-fighting, colour bleed or halo artefact. The warm rose-gold sits against the cooler dusty-rose glass and the contrast is harmonious. Integration reads correctly.",
+       "actionable": false
+      },
+      {
+       "area": "Closure \u2014 soft-touch rubber bulb",
+       "observation": "Closure mean RGB (81.6, 57.5, 61.3) with variation only 5.12, confirmed non-metallic. The very low variation is correct for a deep-wine soft-touch rubber: it is matte, absorbs light and shows almost no specular. The rounded dome form reinforces tactile softness. Reads as intended.",
+       "actionable": false
+      },
+      {
+       "area": "Closure \u2014 micro-shading at collar junction",
+       "observation": "The transition from rubber bulb to metal collar neck shows a slight tonal jump but no physical gap or halo. Acceptable at this scale; no action required.",
+       "actionable": false
+      },
+      {
+       "area": "Shadow / grounding",
+       "observation": "A soft elliptical drop shadow is present beneath the bottle base and is correctly colour-matched to the warm off-white background. The bottle is grounded; no floating artefact.",
+       "actionable": false
+      },
+      {
+       "area": "Lighting \u2014 blown highlights",
+       "observation": "Gate confirms 0 blown collar highlight pixels. Full-image inspection agrees: no clipped-white hotspots anywhere on collar, body or closure.",
+       "actionable": false
+      },
+      {
+       "area": "Artwork \u2014 BBROSE logotype",
+       "observation": "In the native-resolution crop the word-mark renders as 'BBROSE' with the rose-icon glyph replacing the second 'O'. All characters are sharp, deep-wine ink, no aliasing or smearing. Fully legible.",
+       "actionable": false
+      },
+      {
+       "area": "Artwork \u2014 'Rose Damascena' headline",
+       "observation": "High-contrast serif headline in deep-wine reads cleanly at all viewed scales. Letterforms are crisp; no colour contamination from the background gradient.",
+       "actionable": false
+      },
+      {
+       "area": "Artwork \u2014 'NIGHT REPAIR OIL' sub-line",
+       "observation": "Spaced-cap sub-line is legible at product scale. At the native crop it is partially off-frame but character spacing and weight appear correct.",
+       "actionable": false
+      },
+      {
+       "area": "Colour contamination",
+       "observation": "No hue bleed between collar rose-gold and glass body observed. The warm-cool adjacency is clean.",
+       "actionable": false
+      },
+      {
+       "area": "Generic AI-render / plastic appearance risk",
+       "observation": "The body surface avoids the typical smooth-gradient plastic look due to the frosted variation (31.96). The overall composition reads as a deterministic cosmetic render, not a generic AI output. The main residual risk is the fully-opaque body noted above.",
+       "actionable": false
+      }
+     ],
+     "body_frosted_glass": "PASS",
+     "collar_rose_gold_metal": "PASS",
+     "closure_satin_rubber": "PASS",
+     "collar_body_integration": "PASS",
+     "artwork_legible": true,
+     "reads_as_luxury_cosmetics": true,
+     "looks_like_brown_plastic_collar": false,
+     "looks_like_opaque_plastic_body": false,
+     "actionable_defect_count": 2,
+     "scores": {
+      "reference_fidelity": 9,
+      "material_clarity": 8,
+      "collar_body_integration": 9,
+      "body_realism": 7,
+      "collar_realism": 8,
+      "closure_realism": 9,
+      "artwork_legibility": 9,
+      "luxury_character": 8,
+      "overall_coherence": 8
+     },
+     "verdict": "MATERIAL_CANDIDATE_ACCEPTABLE"
+    }
+   }
+  },
+  "M3": {
+   "A": {
+    "identity": "VQ3_REFERENCE_MATERIAL_FIDELITY_CRITIC",
+    "status": "COMPLETED",
+    "request_id": "req_011CdXhfUahcnjLJwzEC1KmV",
+    "usage": {
+     "in": 2775,
+     "out": 1000
+    },
+    "raw_output": "```json\n{\n  \"findings\": [\n    {\n      \"area\": \"body_frosted_glass\",\n      \"observation\": \"Body mean RGB [207.7, 181.3, 174.3] with local variation 32.57 confirms a soft, diffuse dusty-rose surface. Subtle tonal gradient visible across the cylinder reads convincingly as frosted glass rather than flat paint. Translucency cues are modest but sufficient for the matte-frosted glass brief.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"collar_rose_gold_metal\",\n      \"observation\": \"Collar mean RGB [141.3, 101.8, 85.8] is warmer and darker-toned than prior candidates; collar_warmer_than_body and collar_more_reflective_than_body both confirmed true. The specular gradient reads as polished metal. The tone sits at the copper-leaning edge of rose-gold but remains within acceptable warm rose-gold territory. No blown highlights (0 px). This is the warmest candidate reviewed and is acceptable.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"closure_satin_rubber\",\n      \"observation\": \"Closure mean RGB [81.6, 57.5, 61.3] is a deep wine-plum. Variation 5.12 confirms a very low-gloss, near-matte surface consistent with soft-touch rubber. closure_not_metallic confirmed. The bulb silhouette and sheen level read as the specified deep-wine soft-touch rubber closure.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"collar_body_integration\",\n      \"observation\": \"The transition from frosted-rose body to polished rose-gold collar is clean with no bleed, halo or compositing artefact. The warmer collar creates good material contrast against the cooler dusty-rose body, reinforcing the luxury dropper bottle hierarchy. The collar-to-closure junction is crisp.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"body_glass_depth\",\n      \"observation\": \"The body reads primarily as a frosted soft surface; subtle internal depth or subsurface scatter that would strengthen the glass read over opaque ceramic is minimal. The gate confirms body_frosted_not_flat=true, so this is a marginal note rather than a defect. Acceptable at this stage.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"artwork_legibility\",\n      \"observation\": \"BBROSE logotype, decorative rule, Rose Damascena headline and NIGHT REPAIR OIL sub-caption are all clearly legible in both full render and native-resolution crop. Deep-wine ink on dusty-rose body provides strong contrast. No aliasing or smearing detected.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"luxury_cosmetics_character\",\n      \"observation\": \"The combination of warm polished rose-gold collar, deep-wine matte closure, frosted body and deep-wine serif typography presents a coherent, premium night-oil aesthetic consistent with luxury cosmetics positioning.\",\n      \"actionable\": false\n    }\n  ],\n  \"body_frosted_glass\": \"PASS\",\n  \"collar_rose_gold_metal\": \"PASS\",\n  \"closure_satin_rubber\": \"PASS\",\n  \"collar_body_integration\": \"PASS\",\n  \"artwork_legible\": true,\n  \"reads_as_luxury_cosmetics\": true,\n  \"looks_like_brown_plastic_collar\": false,\n  \"looks_like_opaque_plastic_body\": false,\n  \"actionable_defect_count\": 0,\n  \"scores\": {\n    \"reference_fidelity\": 9,\n    \"material_clarity\": 9,\n    \"collar_body_integration\": 9,\n    \"body_realism\": 8,\n    \"collar_realism\": 9,\n    \"closure_realism\": 9,\n    \"artwork_legibility\": 10,\n    \"luxury_character\": 9,\n    \"overall_coherence\": 9\n  },\n  \"verdict\": \"MATERIAL_CANDIDATE_ACCEPTABLE\"\n}\n```",
+    "raw_sha": "2ccc6b21a0a762ae",
+    "result": {
+     "findings": [
+      {
+       "area": "body_frosted_glass",
+       "observation": "Body mean RGB [207.7, 181.3, 174.3] with local variation 32.57 confirms a soft, diffuse dusty-rose surface. Subtle tonal gradient visible across the cylinder reads convincingly as frosted glass rather than flat paint. Translucency cues are modest but sufficient for the matte-frosted glass brief.",
+       "actionable": false
+      },
+      {
+       "area": "collar_rose_gold_metal",
+       "observation": "Collar mean RGB [141.3, 101.8, 85.8] is warmer and darker-toned than prior candidates; collar_warmer_than_body and collar_more_reflective_than_body both confirmed true. The specular gradient reads as polished metal. The tone sits at the copper-leaning edge of rose-gold but remains within acceptable warm rose-gold territory. No blown highlights (0 px). This is the warmest candidate reviewed and is acceptable.",
+       "actionable": false
+      },
+      {
+       "area": "closure_satin_rubber",
+       "observation": "Closure mean RGB [81.6, 57.5, 61.3] is a deep wine-plum. Variation 5.12 confirms a very low-gloss, near-matte surface consistent with soft-touch rubber. closure_not_metallic confirmed. The bulb silhouette and sheen level read as the specified deep-wine soft-touch rubber closure.",
+       "actionable": false
+      },
+      {
+       "area": "collar_body_integration",
+       "observation": "The transition from frosted-rose body to polished rose-gold collar is clean with no bleed, halo or compositing artefact. The warmer collar creates good material contrast against the cooler dusty-rose body, reinforcing the luxury dropper bottle hierarchy. The collar-to-closure junction is crisp.",
+       "actionable": false
+      },
+      {
+       "area": "body_glass_depth",
+       "observation": "The body reads primarily as a frosted soft surface; subtle internal depth or subsurface scatter that would strengthen the glass read over opaque ceramic is minimal. The gate confirms body_frosted_not_flat=true, so this is a marginal note rather than a defect. Acceptable at this stage.",
+       "actionable": false
+      },
+      {
+       "area": "artwork_legibility",
+       "observation": "BBROSE logotype, decorative rule, Rose Damascena headline and NIGHT REPAIR OIL sub-caption are all clearly legible in both full render and native-resolution crop. Deep-wine ink on dusty-rose body provides strong contrast. No aliasing or smearing detected.",
+       "actionable": false
+      },
+      {
+       "area": "luxury_cosmetics_character",
+       "observation": "The combination of warm polished rose-gold collar, deep-wine matte closure, frosted body and deep-wine serif typography presents a coherent, premium night-oil aesthetic consistent with luxury cosmetics positioning.",
+       "actionable": false
+      }
+     ],
+     "body_frosted_glass": "PASS",
+     "collar_rose_gold_metal": "PASS",
+     "closure_satin_rubber": "PASS",
+     "collar_body_integration": "PASS",
+     "artwork_legible": true,
+     "reads_as_luxury_cosmetics": true,
+     "looks_like_brown_plastic_collar": false,
+     "looks_like_opaque_plastic_body": false,
+     "actionable_defect_count": 0,
+     "scores": {
+      "reference_fidelity": 9,
+      "material_clarity": 9,
+      "collar_body_integration": 9,
+      "body_realism": 8,
+      "collar_realism": 9,
+      "closure_realism": 9,
+      "artwork_legibility": 10,
+      "luxury_character": 9,
+      "overall_coherence": 9
+     },
+     "verdict": "MATERIAL_CANDIDATE_ACCEPTABLE"
+    }
+   },
+   "B": {
+    "identity": "VQ3_ADVERSARIAL_RENDER_DEFECT_FINDER",
+    "status": "COMPLETED",
+    "request_id": "req_011CdXhhFTiQwDKi5pscidXb",
+    "usage": {
+     "in": 2836,
+     "out": 1351
+    },
+    "raw_output": "```json\n{\n  \"findings\": [\n    {\n      \"area\": \"Body \u2014 frosted glass material\",\n      \"observation\": \"Body mean RGB (207.7, 181.3, 174.3) with local variation 32.57 confirms a soft, diffuse dusty-rose surface. The gradient shading from centre to edge reads as shallow cylindrical form with frosted diffusion, not flat paint. No plastic sheen or specular hotspot visible. Frosted glass character is convincing.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Collar \u2014 rose-gold metal\",\n      \"observation\": \"Collar mean RGB (141.3, 101.8, 85.8) is warm copper-bronze; variation 38.88 indicates a clear specular gradient consistent with polished metal. Gate confirms collar_warmer_than_body and collar_more_reflective_than_body. The warm rose-gold reads correctly for WARMER_ROSE_GOLD_METAL candidate. No blown highlights (0 blown pixels). Metal identity is unambiguous.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Closure \u2014 satin rubber bulb\",\n      \"observation\": \"Closure mean RGB (81.6, 57.5, 61.3) is a deep wine-brown; variation 5.12 is very low, confirming a matte/satin soft-touch surface with minimal specularity. Gate confirms closure_not_metallic. The bulb reads as deep-wine soft rubber, well differentiated from the metal collar. No plastic sheen detected.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Collar / body material integration\",\n      \"observation\": \"The transition between polished rose-gold collar and frosted glass body is clean. The collar base sits flush on the bottle shoulder with no visible seam gap, z-fighting or colour bleeding into the body. The material contrast (warm reflective metal over diffuse soft glass) is well separated and reads as a proper two-part dropper assembly.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Closure / collar integration\",\n      \"observation\": \"The dark rubber bulb seats naturally on top of the collar with a subtle overlap. The matte-to-metal transition is sharp and believable. No pasted-on or floating artefact detected.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Shadow / grounding\",\n      \"observation\": \"A soft, correctly shaped contact shadow is present beneath the bottle base, grounding the product on the surface plane. No floating bottle artefact.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Studio lighting\",\n      \"observation\": \"Lighting is soft and directional from upper-left, producing gentle gradients on the body and a clean specular sweep on the collar. No harsh blown highlights (gate: 0 blown pixels). Overall lighting is consistent with a controlled cosmetics studio setup.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Artwork legibility \u2014 BBROSE logotype\",\n      \"observation\": \"In the native-resolution crop, 'BBROSE' and the rose-icon glyph substituting the 'O' are clearly readable. All letterforms are sharp, dark-wine ink on frosted-rose ground with strong contrast. No corruption, aliasing or bleed detected.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Artwork legibility \u2014 Rose Damascena headline\",\n      \"observation\": \"Serif display type 'Rose Damascena' is fully legible at native resolution. Letterforms are crisp with no rasterisation artefacts. 'NIGHT REPAIR OIL' subtext is clean and readable.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Body opacity / transparency\",\n      \"observation\": \"The body reads as an opaque frosted glass (no background bleed-through, no excessive transparency). This is correct for a filled dropper bottle; no concern.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Luxury cosmetics character\",\n      \"observation\": \"The combination of warm rose-gold metal collar, deep-wine matte rubber closure, frosted blush-pink glass body and elegant serif typography coheres as a premium night-oil product. No generic AI-render flatness or mismatched material tiers detected.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Colour contamination\",\n      \"observation\": \"No colour bleeding from collar into body or from closure into collar detected. Each material zone retains its own hue identity.\",\n      \"actionable\": false\n    }\n  ],\n  \"body_frosted_glass\": \"PASS\",\n  \"collar_rose_gold_metal\": \"PASS\",\n  \"closure_satin_rubber\": \"PASS\",\n  \"collar_body_integration\": \"PASS\",\n  \"artwork_legible\": true,\n  \"reads_as_luxury_cosmetics\": true,\n  \"looks_like_brown_plastic_collar\": false,\n  \"looks_like_opaque_plastic_body\": false,\n  \"actionable_defect_count\": 0,\n  \"scores\": {\n    \"reference_fidelity\": 9,\n    \"material_clarity\": 9,\n    \"collar_body_integration\": 9,\n    \"body_realism\": 8,\n    \"collar_realism\": 9,\n    \"closure_realism\": 9,\n    \"artwork_legibility\": 9,\n    \"luxury_character\": 9,\n    \"overall_coherence\": 9\n  },\n  \"verdict\": \"MATERIAL_CANDIDATE_ACCEPTABLE\"\n}\n```",
+    "raw_sha": "3a8756ebfa8def59",
+    "result": {
+     "findings": [
+      {
+       "area": "Body \u2014 frosted glass material",
+       "observation": "Body mean RGB (207.7, 181.3, 174.3) with local variation 32.57 confirms a soft, diffuse dusty-rose surface. The gradient shading from centre to edge reads as shallow cylindrical form with frosted diffusion, not flat paint. No plastic sheen or specular hotspot visible. Frosted glass character is convincing.",
+       "actionable": false
+      },
+      {
+       "area": "Collar \u2014 rose-gold metal",
+       "observation": "Collar mean RGB (141.3, 101.8, 85.8) is warm copper-bronze; variation 38.88 indicates a clear specular gradient consistent with polished metal. Gate confirms collar_warmer_than_body and collar_more_reflective_than_body. The warm rose-gold reads correctly for WARMER_ROSE_GOLD_METAL candidate. No blown highlights (0 blown pixels). Metal identity is unambiguous.",
+       "actionable": false
+      },
+      {
+       "area": "Closure \u2014 satin rubber bulb",
+       "observation": "Closure mean RGB (81.6, 57.5, 61.3) is a deep wine-brown; variation 5.12 is very low, confirming a matte/satin soft-touch surface with minimal specularity. Gate confirms closure_not_metallic. The bulb reads as deep-wine soft rubber, well differentiated from the metal collar. No plastic sheen detected.",
+       "actionable": false
+      },
+      {
+       "area": "Collar / body material integration",
+       "observation": "The transition between polished rose-gold collar and frosted glass body is clean. The collar base sits flush on the bottle shoulder with no visible seam gap, z-fighting or colour bleeding into the body. The material contrast (warm reflective metal over diffuse soft glass) is well separated and reads as a proper two-part dropper assembly.",
+       "actionable": false
+      },
+      {
+       "area": "Closure / collar integration",
+       "observation": "The dark rubber bulb seats naturally on top of the collar with a subtle overlap. The matte-to-metal transition is sharp and believable. No pasted-on or floating artefact detected.",
+       "actionable": false
+      },
+      {
+       "area": "Shadow / grounding",
+       "observation": "A soft, correctly shaped contact shadow is present beneath the bottle base, grounding the product on the surface plane. No floating bottle artefact.",
+       "actionable": false
+      },
+      {
+       "area": "Studio lighting",
+       "observation": "Lighting is soft and directional from upper-left, producing gentle gradients on the body and a clean specular sweep on the collar. No harsh blown highlights (gate: 0 blown pixels). Overall lighting is consistent with a controlled cosmetics studio setup.",
+       "actionable": false
+      },
+      {
+       "area": "Artwork legibility \u2014 BBROSE logotype",
+       "observation": "In the native-resolution crop, 'BBROSE' and the rose-icon glyph substituting the 'O' are clearly readable. All letterforms are sharp, dark-wine ink on frosted-rose ground with strong contrast. No corruption, aliasing or bleed detected.",
+       "actionable": false
+      },
+      {
+       "area": "Artwork legibility \u2014 Rose Damascena headline",
+       "observation": "Serif display type 'Rose Damascena' is fully legible at native resolution. Letterforms are crisp with no rasterisation artefacts. 'NIGHT REPAIR OIL' subtext is clean and readable.",
+       "actionable": false
+      },
+      {
+       "area": "Body opacity / transparency",
+       "observation": "The body reads as an opaque frosted glass (no background bleed-through, no excessive transparency). This is correct for a filled dropper bottle; no concern.",
+       "actionable": false
+      },
+      {
+       "area": "Luxury cosmetics character",
+       "observation": "The combination of warm rose-gold metal collar, deep-wine matte rubber closure, frosted blush-pink glass body and elegant serif typography coheres as a premium night-oil product. No generic AI-render flatness or mismatched material tiers detected.",
+       "actionable": false
+      },
+      {
+       "area": "Colour contamination",
+       "observation": "No colour bleeding from collar into body or from closure into collar detected. Each material zone retains its own hue identity.",
+       "actionable": false
+      }
+     ],
+     "body_frosted_glass": "PASS",
+     "collar_rose_gold_metal": "PASS",
+     "closure_satin_rubber": "PASS",
+     "collar_body_integration": "PASS",
+     "artwork_legible": true,
+     "reads_as_luxury_cosmetics": true,
+     "looks_like_brown_plastic_collar": false,
+     "looks_like_opaque_plastic_body": false,
+     "actionable_defect_count": 0,
+     "scores": {
+      "reference_fidelity": 9,
+      "material_clarity": 9,
+      "collar_body_integration": 9,
+      "body_realism": 8,
+      "collar_realism": 9,
+      "closure_realism": 9,
+      "artwork_legibility": 9,
+      "luxury_character": 9,
+      "overall_coherence": 9
+     },
+     "verdict": "MATERIAL_CANDIDATE_ACCEPTABLE"
+    }
+   }
+  }
+ },
+ "ranking": {
+  "M1": {
+   "name": "REFERENCE_BALANCED",
+   "criteria": {
+    "reference_fidelity": 9.0,
+    "material_clarity": 8.0,
+    "collar_body_integration": 9.0,
+    "body_realism": 8.0,
+    "collar_realism": 8.0,
+    "closure_realism": 8.0,
+    "artwork_legibility": 9.0,
+    "luxury_character": 9.0,
+    "overall_coherence": 9.0
+   },
+   "mean": 8.556,
+   "actionable_total": 4,
+   "geometry_pass": true,
+   "rank": 2
+  },
+  "M2": {
+   "name": "SOFTER_FROSTED_GLASS",
+   "criteria": {
+    "reference_fidelity": 8.5,
+    "material_clarity": 7.5,
+    "collar_body_integration": 8.5,
+    "body_realism": 7.0,
+    "collar_realism": 8.0,
+    "closure_realism": 8.0,
+    "artwork_legibility": 9.0,
+    "luxury_character": 8.0,
+    "overall_coherence": 8.0
+   },
+   "mean": 8.056,
+   "actionable_total": 7,
+   "geometry_pass": true,
+   "rank": 3
+  },
+  "M3": {
+   "name": "WARMER_ROSE_GOLD_METAL",
+   "criteria": {
+    "reference_fidelity": 9.0,
+    "material_clarity": 9.0,
+    "collar_body_integration": 9.0,
+    "body_realism": 8.0,
+    "collar_realism": 9.0,
+    "closure_realism": 9.0,
+    "artwork_legibility": 9.5,
+    "luxury_character": 9.0,
+    "overall_coherence": 9.0
+   },
+   "mean": 8.944,
+   "actionable_total": 0,
+   "geometry_pass": true,
+   "rank": 1
+  }
+ },
+ "rank_order": [
+  "M3",
+  "M1",
+  "M2"
+ ],
+ "collar_body_integration": {
+  "carried_item": "VQ3_COLLAR_BODY_MATERIAL_INTEGRATION_REQUIRED",
+  "resolved_code": "VQ3_COLLAR_BODY_MATERIAL_INTEGRATION_RESOLVED",
+  "resolved": true,
+  "evidence": "both inspectors returned collar_body_integration PASS on all three candidates; the collar is measurably warmer and more reflective than the body while remaining a distinct metal",
+  "collar_base_shift": "accepted flat #705242 shifted 0.52 toward rose-gold #C08A78; the flat value is a starting point per section 5B and reads bronze-brown if used literally",
+  "collar_material_base": "#996F5E"
+ },
+ "material_targets": {
+  "BODY": "FROSTED_DUSTY_ROSE_GLASS",
+  "COLLAR": "POLISHED_ROSE_GOLD_METAL",
+  "DARK_CLOSURE": "DEEP_WINE_SOFT_TOUCH_RUBBER",
+  "PRINTED_ARTWORK": "FLAT_DARK_WINE_INK"
+ },
+ "research": {
+  "record_type": "vq3_governed_material_research/1.0",
+  "created_at": "2026-07-29",
+  "domains_used": [
+   "www.anodizing.org",
+   "www.piramalglass.com",
+   "www.stoelzle.com",
+   "www.verescence.com"
+  ],
+  "domain_cap": 6,
+  "pages_fetched": 5,
+  "page_cap": 24,
+  "pdfs_fetched": 0,
+  "pdf_cap": 10,
+  "sources": [
+   {
+    "url": "https://www.stoelzle.com/beauty/customization/decoration/",
+    "publisher": "Stoelzle Glass Group",
+    "title": "Glass Decoration Techniques \u2014 Beauty & Perfumery",
+    "accessed": "2026-07-29",
+    "category": "official glass-container manufacturer",
+    "visible_finish": "frosting listed among decoration techniques",
+    "colour_family": "n/a",
+    "printing_relevance": "screen printing, digital printing, tampo print, decals on glass",
+    "rights": "public marketing/technical page, cited not reproduced",
+    "confidence": "MEDIUM",
+    "note": "the page lists Frosting without stating satin/opacity variants"
+   },
+   {
+    "url": "https://www.stoelzle.com/services/decoration/",
+    "publisher": "Stoelzle Glass Group",
+    "title": "Glass Decoration Techniques for Product Branding",
+    "accessed": "2026-07-29",
+    "category": "official glass-container manufacturer",
+    "visible_finish": "light-rinsing = soft transparent satin; heavy-rinsing = rougher, more opaque; masking allows partial frosting",
+    "colour_family": "n/a",
+    "gloss_roughness": "satin-like appearance, silky-smooth surface",
+    "translucency": "light rinsing stays transparent; heavy rinsing more opaque",
+    "printing_relevance": "CMYK screen printing capable of photorealistic artwork",
+    "rights": "public technical page",
+    "confidence": "HIGH"
+   },
+   {
+    "url": "https://www.piramalglass.com/decoration-services/",
+    "publisher": "Piramal Glass",
+    "title": "Decoration Services",
+    "accessed": "2026-07-29",
+    "category": "official glass-container manufacturer",
+    "visible_finish": "coating/lacquering in any colour with gloss, satin, matte finishes",
+    "colour_family": "any",
+    "printing_relevance": "integrated decoration service",
+    "rights": "public page",
+    "confidence": "MEDIUM"
+   },
+   {
+    "url": "https://www.verescence.com/en/glassmaking-glossary/",
+    "publisher": "Verescence",
+    "title": "Glassmaking Glossary",
+    "accessed": "2026-07-29",
+    "category": "official glass-container manufacturer",
+    "visible_finish": "acid etching = chemical attack on glass by immersion in an acid bath",
+    "colour_family": "n/a",
+    "rights": "public glossary",
+    "confidence": "HIGH"
+   },
+   {
+    "url": "https://www.anodizing.org/anodized-aluminum-finishes/",
+    "publisher": "Aluminum Anodizers Council",
+    "title": "Anodized Finishes: Requirements & Reference Materials",
+    "accessed": "2026-07-29",
+    "category": "recognised technical material reference / official anodizing body",
+    "visible_finish": "appearance driven by alloy, temper, gloss, surface structure and colouring process",
+    "colour_family": "metallic golds achievable by organic dyeing / electrolytic colouring",
+    "rights": "public technical bulletin",
+    "confidence": "HIGH",
+    "note": "no rose-gold-specific specification is published; treated as a metallic-gold family finish"
+   }
+  ],
+  "prohibited_actions_taken": {
+   "login_bypass": false,
+   "captcha_bypass": false,
+   "quote_forms_submitted": false,
+   "private_catalogues": false,
+   "pinterest_as_authority": false,
+   "marketplace_as_authority": false,
+   "cad_downloaded": false,
+   "supplier_compatibility_inferred": false,
+   "manufacturability_inferred": false,
+   "supplier_requests_sent": false
+  },
+  "establishes_production_authority": false,
+  "informs": "visual material treatment only"
+ },
+ "production_boundary": {
+  "PRODUCTION_GEOMETRY": "BLOCKED_PENDING_SUPPLIER_EVIDENCE",
+  "PRODUCTION_FLAT_ARTWORK": "BLOCKED_PENDING_WRAP_AND_SUPPLIER_EVIDENCE",
+  "PRODUCTION_COLOR_SEPARATION": "BLOCKED_PENDING_SUPPLIER_EVIDENCE",
+  "PRODUCTION_MATERIAL_SPECIFICATION": "BLOCKED_PENDING_SUPPLIER_EVIDENCE",
+  "ILLUSTRATOR_EXECUTION_VERIFICATION": "REQUIRED_BEFORE_PRODUCTION_AUTHORITY"
+ },
+ "not_claimed": [
+  "exact glass formulation",
+  "exact anodized colour",
+  "exact rubber compound",
+  "exact Pantone",
+  "exact CMYK",
+  "tooling readiness",
+  "supplier compatibility",
+  "production feasibility"
+ ],
+ "candidate_count": 3,
+ "fourth_candidate_created": false,
+ "accepted_geometry_changed": false,
+ "accepted_artwork_changed": false,
+ "packaging_started": false,
+ "supplier_requests_sent": 0,
+ "provider_calls": 6,
+ "human_accepted": false,
+ "owner_selection_required": true,
+ "pdf": {
+  "path": "docs/visual_quality/vq3/vq3_material_review.pdf",
+  "sections": 22,
+  "size_bytes": 1462491
+ },
+ "png": {
+  "path": "docs/visual_quality/vq3/vq3_material_review.png",
+  "size": [
+   1500,
+   773
+  ]
+ },
+ "section_titles": [
+  "What this is",
+  "1. VQ-1 closeout",
+  "2. VQ-2 closeout",
+  "3. Complete Product closeout",
+  "4. Frozen identities",
+  "5. Governed web-source inventory",
+  "6. Material targets",
+  "7. Deterministic mask architecture",
+  "8. M1 \u2014 REFERENCE BALANCED",
+  "9. M2 \u2014 SOFTER FROSTED GLASS",
+  "10. M3 \u2014 WARMER ROSE-GOLD METAL",
+  "11. Body-material comparison",
+  "12. Collar-material comparison",
+  "13. Closure-material comparison",
+  "14. Collar/body integration",
+  "15. Artwork legibility",
+  "16. Geometry preservation",
+  "17. Inspector A findings",
+  "18. Inspector B findings",
+  "19. Candidate ranking",
+  "20. Production-material blockers",
+  "21. OWNER SELECTION REQUIRED"
+ ],
+ "sections": 22
+}

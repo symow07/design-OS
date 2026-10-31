@@ -1,0 +1,71 @@
+{
+ "record_type": "vq2_artwork_review/1.0",
+ "created_at": "2026-07-28",
+ "candidate": "VQ2-A1",
+ "state": "VQ2_HARD_STOP_REVIEW_REQUIRED",
+ "stop_grounds": [
+  "VQ2_BRAND_MARK_SOURCE_CONFLICT",
+  "VQ2_CONDENSED_DIDONE_UNAVAILABLE",
+  "DETERMINISTIC_GATES_FAILED"
+ ],
+ "inspections_run": 0,
+ "inspections_skipped_reason": "\u00a718 \u2014 the two independent artwork inspections run ONLY after the deterministic gates pass. They did not, so no inspection was performed and no provider call was made.",
+ "candidates_created": 1,
+ "vq2_a2_created": false,
+ "m3_identity": "4ecc8e9df1d1",
+ "m3_modified": false,
+ "ai_path": "docs/visual_quality/vq2/vq2_a1.ai",
+ "ai_sha256": "f12b5d1df048e510",
+ "preview_png": "docs/visual_quality/vq2/vq2_a1.png",
+ "gates_all_pass": false,
+ "gate_failures": [
+  {
+   "role": "PRODUCT_NAME_LINE_1",
+   "gate": "text_centerline_err",
+   "value": 0.08747
+  },
+  {
+   "role": "PRODUCT_NAME_LINE_1",
+   "gate": "artwork_width_err",
+   "value": 0.40617
+  },
+  {
+   "role": "PRODUCT_NAME_LINE_2",
+   "gate": "text_centerline_err",
+   "value": 0.1431
+  },
+  {
+   "role": "PRODUCT_NAME_LINE_2",
+   "gate": "artwork_width_err",
+   "value": 0.33341
+  },
+  {
+   "role": "document",
+   "gate": "print_zone_violations",
+   "value": 1
+  }
+ ],
+ "unresolved_copy_count": 1,
+ "material_realization_added": false,
+ "image_generation_calls": 0,
+ "provider_calls": 0,
+ "vq3_started": false,
+ "packaging_started": false,
+ "supplier_requests_sent": false,
+ "production_geometry": "BLOCKED_PENDING_SUPPLIER_EVIDENCE",
+ "is_production_artwork": false,
+ "human_accepted": false,
+ "owner_decision_required": "Three named grounds require an owner decision.\n\n1 BRAND MARK \u2014 concept #97 does NOT depict the approved BBROSE asset. The approved asset is a tight SERIF wordmark with a FILLED rose medallion and a registered mark, raster-only. The concept shows a letterspaced geometric SANS with an OUTLINED line-art medallion and no registered mark. No authoritative VECTOR logo exists and Image Trace is prohibited, so no third mark may be synthesized. Choose: (A) reconstruct what #97 shows, (B) reconstruct the approved mark and accept deviation from #97, or (C) supply an authoritative vector logo.\n\n2 PRODUCT-NAME TYPEFACE \u2014 the reference product name is a CONDENSED high-contrast Didone. At the measured cap heights every locally available Didone is far wider: Bodoni 72 is 1.41x on Rose and 1.33x on Damascena, Didot 1.61x and 1.54x. Matching the reference width would need negative tracking (-18.1 px, -11.7 px apparent), which collides glyphs, or scaling to ~0.71-0.75, which stretches them. Both are blocking defects under \u00a715, so neither was used: natural tracking is set and the width error is reported. A licensed condensed Didone is required.\n\n3 ROSE MEDALLION \u2014 not invented. Its measured bounds are parked as a non-printing guide and the glyph slot is empty while still consuming its advance.\n\nNo VQ2-A2 was generated and none will be without instruction.",
+ "pdf": {
+  "path": "docs/visual_quality/vq2/vq2_artwork_review.pdf",
+  "sections": 19,
+  "size_bytes": 7666954
+ },
+ "png": {
+  "path": "docs/visual_quality/vq2/vq2_artwork_review.png",
+  "size": [
+   1500,
+   735
+  ]
+ }
+}

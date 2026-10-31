@@ -1,0 +1,79 @@
+{% extends "base.html" %}{% load static %}
+{% block title %}Enchanted Rose · the palette pick · Day 10 · Day 9 · Day 8{% endblock %}
+{% block page_class %}page wide{% endblock %}
+{% block head %}<link rel="stylesheet" href="{% static 'css/fidelity-master.css' %}">
+<style>
+.pick-lid{width:100%;max-width:1140px;aspect-ratio:190/120;display:block;border:1px solid #d9d4cf}
+.pick-grid{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:24px;align-items:start}
+.pick-crops img{display:block;margin:6px 0 12px;border:1px solid #e6e1dc}
+.pick-scores td,.pick-scores th{padding:2px 8px;text-align:left}
+.pick-small{font-size:13px;color:#555}
+.pick-sketches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.pick-sketches figure{margin:0}.pick-sketches img{width:100%;aspect-ratio:190/120;border:1px solid #e6e1dc}
+.went-on{outline:3px solid #2e7d32}.below{background:#fff4e5;border:1px solid #f0c27b;padding:10px 14px}
+@media (max-width:900px){.pick-grid{grid-template-columns:1fr}.pick-sketches{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* Day 10 §6: the master of the pick on top (day10_pick_section.html) */
+.d10{border-bottom:3px double #d9d4cf;padding-bottom:16px;margin-bottom:32px}
+.d10-state{background:#eef3f6;border:1px solid #c9d6de;padding:10px 14px}.d10-verdict{font-size:17px}
+.d10-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+.d10-pair figure,.d10-pieces figure{margin:0}.d10-pair img,.d10-pieces img{width:100%;height:auto;border:1px solid #d9d4cf}
+.d10-pieces{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:start}
+.d10-get{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;margin:6px 0 0}.d10-get details{font-size:13px}
+.d10-get summary{cursor:pointer}.d10-facts li{margin:2px 0}
+@media (max-width:900px){.d10-pieces{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){.d10-pair,.d10-pieces{grid-template-columns:1fr}}
+/* Day 9 §6: Day 9's section on top (day9_pick_section.html) */
+.d9{border-bottom:3px double #d9d4cf;padding-bottom:16px;margin-bottom:32px}
+.d9-state{background:#eef3f6;border:1px solid #c9d6de;padding:10px 14px}.d9-proof{font-size:17px}
+.d9-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+.d9-pair figure{margin:0}.d9-pair img{width:100%;height:auto;border:1px solid #d9d4cf}
+.d9-grid{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:24px;align-items:start}
+.d9-sketch{width:100%;height:auto;aspect-ratio:auto 190/120;border:1px solid #e6e1dc}
+.d9-sketches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.d9-sketches figure{margin:0}
+.d9-sketches img{width:100%;height:auto;aspect-ratio:auto 190/120;border:1px solid #e6e1dc}
+.d9-true{overflow-x:auto;padding:2px}.d9-true img{max-width:none;margin:6px 0 2px;outline:1px solid #e6e1dc}
+.d9-history summary{cursor:pointer;font-weight:600;padding:8px 0}.d9-scroll{overflow-x:auto}
+@media (max-width:900px){.d9-sketches{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){.d9-grid{grid-template-columns:1fr}.d9-pair{gap:8px}}
+</style>{% endblock %}
+{% block content %}<main class="fidelity">
+{% include "dashboard/day10_pick_section.html" %}
+{% include "dashboard/day9_pick_section.html" %}
+<header id="day8"><p class="eyebrow">ENCHANTED ROSE · EYESHADOW PALETTE 124 · DAY 8</p><h1>The palette pick</h1>
+<p>Each lid below is the truthful build: the logo, every word and the device are our vectors in their exact places; the picture layer (where the direction has one) was painted by the image model around them and cleaned under them. What you pick is what prints. Gate: {{ record.gate }}.</p>
+{% if none_pass %}<p class="below"><strong>Below the bar.</strong> No concept passed the jury. The best build of each direction is shown with the jury's findings (the three highest scores overall are {{ record.top_three_overall|join:', ' }}); you may still pick any build by naming it — recorded as an override and a calibration datum.</p>{% endif %}</header>
+<nav aria-label="Pick views">{% for name in tabs %}<a href="?tab={{ name }}#day8">{{ name|capfirst }}</a>{% endfor %}</nav>
+{% if tab == 'pick' %}{% for c in shown %}
+<section><h2>{{ c.id }} · {{ c.name }} <span class="pick-small">({{ c.role }}){% if not c.passes %} · below the bar{% endif %}</span></h2>
+<p><strong>{{ c.idea }}</strong></p><p class="pick-small">{{ c.story }}</p>
+<a href="{{ c.urls.truthful }}" target="_blank" rel="noopener"><img class="pick-lid" src="{{ c.urls.truthful }}" alt="{{ c.id }} truthful lid at 190 by 120 millimetres"></a>
+<div class="pick-grid"><div>
+<h3>Jury · stricter juror per dimension</h3>
+<p>Raw means J1 {{ c.raw_means.J1 }} · J2 {{ c.raw_means.J2 }} · stricter {{ c.stricter_mean }} · after the caps {{ c.capped_mean }} · {{ c.status }}</p>
+<table class="pick-scores"><thead><tr><th>Dimension</th><th>J1</th><th>J2</th><th>Stands</th></tr></thead><tbody>{% for n, s in c.scores.items %}<tr><td>{{ n }}</td><td>{{ s.J1 }}</td><td>{{ s.J2 }}</td><td>{{ s.stands }}</td></tr>{% endfor %}</tbody></table>
+{% if c.caps %}<p class="pick-small">Caps: {{ c.caps|join:"; " }}</p>{% endif %}{% if c.hard_failures %}<p class="pick-small">Hard failures: {{ c.hard_failures|join:"; " }}</p>{% endif %}
+<h3>Top findings</h3><ol>{% for i in c.top_issues %}<li>{{ i.observation }} <span class="pick-small">({{ i.location }})</span> — {{ i.repair }}</li>{% endfor %}</ol>
+<p class="pick-small">Read first, second, third at 2 m — J1: {{ c.reads.J1|join:" · " }}; J2: {{ c.reads.J2|join:" · " }}</p>
+<p class="pick-small">The idea as read — J1: {{ c.idea_read.J1 }} · J2: {{ c.idea_read.J2 }}</p>
+</div><div class="pick-crops">
+<h3>The name and the Arabic at 1 : 1</h3>
+<img src="{{ c.urls.name }}" style="width:{{ c.name_crop_width_mm }}mm" alt="the name at actual size">
+<img src="{{ c.urls.arabic }}" style="width:{{ c.arabic_crop_width_mm }}mm" alt="the Arabic line at actual size">
+<h3>The sketch it came from</h3>{% for s in sketches %}{% if s.id == c.sketch %}<img src="{{ s.url }}" style="width:100%" alt="sketch {{ s.id }}"><p class="pick-small">Sketch {{ s.id }} · J1 rank {{ s.rank }} · {{ s.score }} — {{ s.why }}</p>{% endif %}{% endfor %}
+<h3>Finishes</h3><img src="{{ c.urls.finishes }}" style="width:100%" alt="finish sheet">
+<ul class="pick-small">{% for f in c.finishes %}<li>{{ f.finish }} — {{ f.on }}</li>{% endfor %}{% for p in c.proposals_flagged %}<li>Flagged proposal, not the spec: {{ p }}</li>{% endfor %}</ul>
+</div></div>
+<h3>Fonts and licences</h3><ul class="pick-small">{% for f in c.fonts %}<li>{{ f.role }}: {{ f.family }} ({{ f.stem }}) — {{ f.licence }}</li>{% endfor %}</ul>
+<h3>What it takes from the house, the board and the WATCH notes</h3><ul class="pick-small">{% for k, v in c.takes.items %}<li><strong>{{ k }}</strong>: {{ v }}</li>{% endfor %}</ul>
+<h3>How the language extends (in words; the tray picture comes after the pick)</h3><ul class="pick-small">{% for k, v in c.extends.items %}<li><strong>{{ k }}</strong>: {{ v }}</li>{% endfor %}</ul>
+<h3>Measured checks</h3><ul class="pick-small">{% for r in c.checks.checks %}<li>{{ r.check }}{% if r.line %} — {{ r.line }}{% endif %}: {{ r.value }} {% if r.holds %}✓{% else %}<strong>not met</strong>{% endif %}</li>{% endfor %}{% for i in c.checks.issues %}<li>Issue: {{ i }}</li>{% endfor %}</ul>
+<h3>Designer's eye — the build against its sketch</h3><ul class="pick-small">{% for d in c.designer_eye %}<li>{{ d }}</li>{% endfor %}</ul>
+<p class="pick-small">Files: <a href="{{ c.urls.ai }}">layered .ai</a> · <a href="{{ c.urls.pdf }}">PDF</a> · <a href="{{ c.urls.svg }}">SVG</a> · <a href="{{ c.urls.media }}">media map</a> · <a href="{{ c.urls.checks }}">checks</a> · <a href="{{ c.urls.verdict }}">verdict</a></p>
+</section><hr>{% endfor %}
+{% elif tab == 'history' %}<h2>Every sketch · J1's ranking (green: went on to a build)</h2>
+<div class="pick-sketches">{% for s in sketches %}<figure><img class="{% if s.went_on %}went-on{% endif %}" src="{{ s.url }}" alt="sketch {{ s.id }}"><figcaption class="pick-small">{{ s.id }} · rank {{ s.rank }} · {{ s.score }} · {{ s.why }}</figcaption></figure>{% endfor %}</div>
+<h2>Every build · its verdict</h2><table class="pick-scores"><thead><tr><th>Build</th><th>Sketch</th><th>Raw J1</th><th>Raw J2</th><th>Stricter</th><th>Capped</th><th>Status</th></tr></thead><tbody>{% for c in concepts %}<tr><td><a href="{{ c.urls.truthful }}">{{ c.id }}</a></td><td>{{ c.sketch }}</td><td>{{ c.raw_means.J1 }}</td><td>{{ c.raw_means.J2 }}</td><td>{{ c.stricter_mean }}</td><td>{{ c.capped_mean }}</td><td>{{ c.status }}</td></tr>{% endfor %}</tbody></table>
+{% else %}<h2>The jury</h2><table class="pick-scores"><tbody>{% for k, val in calibration_rows %}<tr><th>{{ k }}</th><td>{{ val }}</td></tr>{% endfor %}</tbody></table><h3>Judged beside these launched lids (links only; their pictures are research and never placed)</h3><ul>{% for a in record.anchors %}<li>{{ a.brand }} — <a href="{{ a.page }}" rel="noopener">{{ a.product }}</a> ({{ a.role }})</li>{% endfor %}</ul>
+<p>And two rejected anchors: concept 153 and concept 142 (a floor to clear, never the bar).</p>{% endif %}
+<footer><p><a href="{% url 'dashboard:index' %}">Home</a></p></footer>
+</main>{% endblock %}

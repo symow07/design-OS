@@ -1,0 +1,42 @@
+§AD0(a) SCORE — T38a (§BH38(a) transcription, pure append, its own commit
+BEFORE any act). LANDED 0295fcc at run 3 (finished 2026-09-07T14:33:00Z),
+scored against pred_t38a_c (sealed d429efb42c45c0f4 before the relaunch;
+pred_t38a d55930e60ea72688 sealed before git add on 2026-09-05, pred_t38a_b
+1437076f27d26b8f before run 2). 8/8 against pred_t38a_c. HISTORY: run 1
+killed by the session teardown ~45 s in (orphan ledger line kept); run 2
+REFUSED by the suite gate — PostgreSQL 16 down after the Mac's reboot behind
+a stale pre-reboot postmaster.pid (recycled PID) — §BH24 budget 2/3; the
+service restored, the suite-gate files green alone (118), run 3 launched
+once.
+
+L1 HELD: exactly ONE path + the gate-staged ledger; no apps/, docs/
+   design_intelligence, tools/ or static/ path; nothing under materials/,
+   var/ or ~/ touched; the quarantine's 16 files (8,136,268,896 B) and the
+   evidence copy present at the landing — nothing deleted before it.
+L2 HELD: register +133 −0; the 19,516-line prefix bf3b57768546d0cb at HEAD;
+   the tail 9e991adad250d1a4 == ~/bh38_work/t38a_block.md; the 31 owner
+   lines round-trip byte-identical (8fd0bac74aa01694); 19,649 lines.
+L3 HELD: suite manifest untouched; records none; identity none; WIT 863
+   untouched; corpus constants, dip1b, the exclusion list, the materials
+   record + summary untouched; the ledger passes APPEND_ONLY (HEAD~1 a
+   byte-prefix of HEAD).
+L4 HELD: staged == declared, one row 133 0 (measured 2026-09-05 before the
+   first launch; unchanged through the three runs).
+L5 HELD (as re-declared): 2 files, 135 insertions, 0 deletions — 133 +
+   TWO ledger lines.
+L6 HELD: "TIER_2=GREEN collected=8569 failures=0 apps=7757 dip0c=671
+   dip0=141" — exact.
+L7 HELD (as re-declared): ledger 472 → 474; both new lines verdict OK,
+   refusal_count 0 (utc 2026-09-05T11:28:32Z — the run-1 orphan — and
+   2026-09-07T14:19:29Z).
+L8 HELD: apps diff EMPTY; GATE 7fbeb8f1fe10b0fb at [514:541] (593 lines);
+   TEST b32030dc827263e4; tree seals dip0c c22592930c75001c / dip0a
+   c378ee88026e1223 unchanged; protocol_identity untouched; the eight M7
+   artefacts == baseline; under Django at 0295fcc the Noto trio
+   VERIFIED_FOR_PRODUCTION, the 35 (+ licence texts, 50 files) at their
+   PROVENANCE hashes, catalogue 38; the DIP-0A inventory 3b3cfdc2bf4fc6c0
+   (31,026,591 B) unchanged; the three folders 1,728 / 1,693 / 1,490.
+   Porcelain clean. No authority involved. Divergence recorded: the block's
+   TRANSCRIBED date is 2026-09-05 (the transcription's date), the landing
+   2026-09-07.
+Next: the owner's act (3) by the owner's hand; then verify38.py for (3)+(4).

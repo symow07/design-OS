@@ -1,0 +1,81 @@
+{
+ "record_type": "illustrator_execution_failed_source/1.0",
+ "created_at": "2026-07-30",
+ "file": "docs/visual_quality/vq2/vq2_a2_r2_final.ai",
+ "sha256": "f3707618edf98c87ceb86e03c9ca8d5d42c52c52f708807e335a02794d5a54c1",
+ "sha256_unchanged_since_gate_a_receipt": true,
+ "overwritten": false,
+ "renamed": false,
+ "classification": [
+  "ILLUSTRATOR_EXECUTION_FAILED_SOURCE",
+  "BLACK_ONLY_AI8_EMISSION",
+  "NOT_PRODUCTION_AUTHORITY",
+  "PRESERVED_FOR_AUDIT"
+ ],
+ "gate_a_failure_codes": [
+  "ILLUSTRATOR_EXECUTION_VERIFICATION_FAILED",
+  "ILLUSTRATOR_AI8_ALL_OBJECTS_EMITTED_BLACK",
+  "ILLUSTRATOR_DOCUMENT_PROCESS_COLORS_BLACK_ONLY",
+  "ILLUSTRATOR_SOURCE_PROOF_COLOR_DIVERGENCE",
+  "ILLUSTRATOR_PRODUCTION_SOURCE_REGENERATION_REQUIRED"
+ ],
+ "human_result": "FAILED — opened in Adobe Illustrator as one solid black silhouette",
+ "human_screenshot_received": false,
+ "screenshot_note": "the owner reported the black result in writing; no screenshot file was supplied to this environment, so none is claimed as held",
+ "black_only_color_declarations": {
+  "document": {
+   "process": "Black",
+   "rgb": [],
+   "usage": "Color"
+  },
+  "every_visible_object_operator": "0.0000 0.0000 0.0000 Xa"
+ },
+ "visible_objects": 40,
+ "visible_objects_resolving_to_black": 40,
+ "all_visible_objects_black": true,
+ "empty_prolog": true,
+ "prolog_note": "the prolog was empty, so no AI operator had any PostScript definition; the file could not render outside Illustrator and its colour could not be checked by execution at all",
+ "geometry_digest": "e3c3c62673e38d770daa2682a1e0d7cf09ac5ad5504ec781d0117ae2e7c65ccf",
+ "superseded_by": "vq2_a2_r2_final_gate_a_r1.ai",
+ "superseded_by_is_illustrator_verified": false,
+ "root_cause": {
+  "record_type": "ai8_black_emission_root_cause/1.0",
+  "finding": "the AI source and the PDF proof were written by two different, unshared implementations, and only the PDF's was ever inspected",
+  "evidence": [
+   "the accepted PDF proof committed in the same commit carries the four correct colours as PDF `rg`/`RG` operators",
+   "the accepted PNG proof rasterises those same four colours",
+   "the same commit's .ai carries 0.0000 0.0000 0.0000 Xa for all 40 objects",
+   "no emitter for the .ai exists anywhere in the repository, so the colour it should have written was never in tested code"
+  ],
+  "accepted_pdf_colors": {
+   "fills": {
+    "#D9BDB5": 1,
+    "#705242": 1,
+    "#493034": 1,
+    "#502525": 36
+   },
+   "strokes": {
+    "#502525": 1
+   },
+   "widths": [
+    0.362384
+   ],
+   "fill_ops": {
+    "f*": 39
+   },
+   "page_pt": [
+    207.16270446777344,
+    493.2283020019531
+   ]
+  },
+  "mechanism": "the AI writer emitted a constant zero RGB triple in place of each object's colour. Because %%DocumentProcessColors declared Black only, the resulting file was internally consistent and looked plausible as text.",
+  "why_it_was_not_caught": "the reviewed artefacts were the PDF and PNG, which were correct; the .ai was checked for structure, object count and geometry, none of which reads colour",
+  "second_divergence": {
+   "finding": "the AI declared no stroke width for the divider, so it would draw at the PostScript default 1 pt while the accepted proof strokes it at 0.362384 pt",
+   "corrected_to_pt": 0.362384,
+   "source_of_value": "read from the accepted PDF proof's content stream, not chosen here"
+  },
+  "fix": "one object/colour model now emits the AI, the PDF and the PNG; colour is written from the object's role at emission time and an unassigned colour raises instead of defaulting to black",
+  "fix_is_post_emission_text_patch": false
+ }
+}

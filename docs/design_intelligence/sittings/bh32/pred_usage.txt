@@ -1,0 +1,49 @@
+§AD0(a) PREDICTION — §BH32(f) usage measured, not assumed, sealed BEFORE
+git add. Base HEAD 88ee894 ((e) narrowed, scored 8/8).
+
+L1 WRITE SET: exactly FIVE tracked paths, all under apps/ —
+   apps/ire/emitters/pdf_ai.py, apps/ire/tests/test_pdf_ai_emitter.py,
+   apps/pipeline/targets/container/__init__.py,
+   apps/pipeline/tests/test_container_target.py,
+   apps/pipeline/tests/test_wif_reconstruct_container.py. Plus the
+   gate-staged ledger line. NO static/, docs/, tools/, register; NO
+   container_font_authority.py; NO test_wit_unit_analysis.py.
+L2 DIFF SHAPE (insertions/deletions):
+   apps/ire/emitters/pdf_ai.py 169/4
+   apps/ire/tests/test_pdf_ai_emitter.py 54/0
+   apps/pipeline/targets/container/__init__.py 12/2
+   apps/pipeline/tests/test_container_target.py 24/0
+   apps/pipeline/tests/test_wif_reconstruct_container.py 4/0
+   pdf_ai: USAGE_SCHEMA + the two codes; emit_pdf_ai(usage_out=); _Ctx.usage
+   + count() recording POSTSCRIPT names (a TrueType face's name decoded from
+   bytes); both drawers count; the EAN-13 widget's Helvetica counted at the
+   widget; the sticker bridge's canvas strings counted under "sticker"
+   (instance methods shadowed for the call, restored after);
+   font_usage_record(): faces (postscript, sha256, runs, chars, roles,
+   scripts, outside_layer), refused (roles + chunks), reconciliation over
+   the faces that DREW text (span reader) with declared_without_glyphs
+   beside it, codes FONT_USAGE_ARTEFACT_DISAGREEMENT /
+   FONT_USAGE_UNRECONCILED. Container target: font_usage initialised
+   ARTEFACT_WITHHELD, filled by the emitter, persisted as
+   spec["container_font_usage/1.0"], its codes appended to
+   readiness["font"]. Tests appended to existing files (emitter 3,
+   container target 1); PERSISTED_RECORDS extended by the usage record.
+L3 MANIFEST / A391: suite_file_manifest untouched (no new test file; total
+   floor 7,690 ≤ apps); records untouched; ledger at 457 passes the
+   APPEND_ONLY prefix rule. Census-first: records none; identity none; WIT
+   denominator 863 and its register keys hold (class 6 passed on the patched
+   tree); corpus constants none.
+L4 STAGED == DECLARED: exactly the FIVE numstat rows of L2.
+L5 COMMIT CONTENTS: 6 files (5 + ledger), insertions 264, deletions 6.
+L6 SUITE LINE + REFUSAL TREE: GREEN — TIER_2=GREEN collected=8542
+   failures=0 apps=7730 dip0c=671 dip0=141 (8,538 + the four tests). No
+   refusal expected; §BH24 0/3. Targeted before the gate: 6,811 passed / 0 failed / 4 skipped over apps/ire, apps/dielines,
+   apps/pipeline alone; the targeted 150 green; apps collects 7,730.
+L7 LEDGER FOLD: 457 → 458, the +1 in THIS commit.
+L8 PROTOCOL IDENTITIES / APPS DIFF / AUTHORITY: apps diff = exactly the
+   five paths; GATE 7fbeb8f1fe10b0fb at [514:541] and TEST b32030dc827263e4
+   byte-identical; tree seals unchanged; protocol_identity unchanged;
+   neither ceiling nor guard moved; the eight M7 artefacts == baseline; on
+   the live container path the persisted record reconciles with no usage
+   code in the font readiness; Naskh and the Noto pair
+   VERIFIED_FOR_PRODUCTION under Django at scoring; no authority involved.

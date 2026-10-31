@@ -1,0 +1,21 @@
+{
+ "schema": "real_bottle_lighting_standard/1.0",
+ "status": "ACTIVE",
+ "approval_provenance": "APPROVED by the PROJECT_OWNER on 2026-08-17 (OWNER_BLOCKER_CLEARANCE.md §R2, Cowork question session). Approving the STANDARD approves no RENDER: no render, package or node gains visual-quality percentage from this ruling (§R2a), and it does NOT unblock mode B — an approved presentation-lighting standard is a standard waiting for a mode, never permission to badge a geometry render as presentation; CLIENT_PRESENTATION packaging stays ABSENT_BLOCKED on rbv2c + the owner geometry gate (§R2b, §1 two-mode principle untouched). Amendable later through the clearance sheet; a superseding amendment stays visible on the record (§R2d).",
+ "superseded_status": "PROPOSED_PENDING_OWNER_APPROVAL (in force until 2026-08-17)",
+ "filename_note": "the file keeps its proposal filename because other records reference it by name; it is a STANDARD now, not a proposal",
+ "GEOMETRY_VALIDATION_LIGHTING": {
+  "model": "flat neutral (ambient-dominant); single frontal fill at 10% for surface readability",
+  "reflections": "suppressed (roughness-forced matte preview material)",
+  "material_override": "uniform neutral grey clay + silhouette outline",
+  "purpose": "silhouette clarity \u2014 lighting must never conceal geometry defects"
+ },
+ "CLIENT_PRESENTATION_LIGHTING": {
+  "model": "three-point studio: key softbox 45/30 (az/el), fill softbox -60/15 at 40% key, rim at 150/25 at 25% key",
+  "environment": "neutral studio HDRI equivalent, fixed rotation",
+  "highlights": "consistent vertical softbox reflections on glass/metal",
+  "materials": "true PBR (glass IOR 1.5, frosted roughness band, metal collar, rubber bulb)",
+  "purpose": "premium cosmetic presentation with readable materials"
+ },
+ "invariant": "identical lighting between compared images; geometry verdicts NEVER made from presentation renders"
+}

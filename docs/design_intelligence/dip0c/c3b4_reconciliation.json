@@ -1,0 +1,128 @@
+{
+  "slice": "DIP-0C3b4",
+  "c3b3_commit": "8685f3f",
+  "taxonomy": {
+    "schema_version": "scope_taxonomy/1.0",
+    "taxonomy_version": "1.0.0",
+    "tokens_per_axis": {
+      "markets": 9,
+      "products": 12,
+      "lockups": 6,
+      "variant_roles": 5
+    },
+    "closed_world": {
+      "markets": true,
+      "products": true,
+      "lockups": true,
+      "variant_roles": true
+    }
+  },
+  "scope_relations": [
+    "SCOPE_IDENTICAL",
+    "SCOPE_OVERLAPPING",
+    "SCOPE_DISJOINT",
+    "SCOPE_UNKNOWN_OVERLAP"
+  ],
+  "resolution_actions": [
+    "DEPRECATE_INCUMBENT",
+    "SUPERSEDE_INCUMBENT",
+    "NARROW_INCUMBENT_SCOPE",
+    "NARROW_NEW_SCOPE",
+    "RECLASSIFY_AS_VARIANT",
+    "REJECT_NEW_CANDIDATE",
+    "QUARANTINE_BOTH_PENDING_REVIEW"
+  ],
+  "lifecycle_states": [
+    "ACTIVE",
+    "DEPRECATED",
+    "SUPERSEDED",
+    "REJECTED",
+    "QUARANTINED"
+  ],
+  "pilot": {
+    "disjoint_masters_coexist": true,
+    "proven_conflict_detected": true,
+    "conflict_is_scope_local": true,
+    "unknown_token_fails_closed": true,
+    "supersession_atomic": true,
+    "supersession_post_state": [
+      [
+        "TEST_ONLY_master_eu.ai",
+        "SUPERSEDED"
+      ],
+      [
+        "TEST_ONLY_master_eu_v2.ai",
+        "ACTIVE"
+      ],
+      [
+        "TEST_ONLY_master_us.ai",
+        "ACTIVE"
+      ]
+    ],
+    "narrowing_reduces": true,
+    "nothing_written_on_failure": true,
+    "no_permission_granted": true,
+    "queues_deterministic": true,
+    "queue_totals": {
+      "A": 1,
+      "B": 1,
+      "C": 0,
+      "D": 3,
+      "E": 0,
+      "F": 0,
+      "G": 1,
+      "H": 0,
+      "I": 0,
+      "J": 1
+    }
+  },
+  "refused_attempts": [
+    {
+      "attempt": "supersede with no legal attestation",
+      "reason": "CANONICAL_MASTER_REPLACED is under DUAL CONTROL and must carry BOTH a technical/brand attestation and a rights/ownership attestation"
+    },
+    {
+      "attempt": "supersede where one person attests both halves",
+      "reason": "CANONICAL_MASTER_REPLACED is under DUAL CONTROL: its attestations name only {'TEST_ONLY_brand_admin'} — the two attestations must come from two DIFFERENT people. Holding both roles does not make one person two reviewers."
+    },
+    {
+      "attempt": "widening disguised as a narrowing",
+      "reason": "- this WIDENS the scope on ['markets'] — widening is a NEW canonical approval and must pass the complete dual-control process. It may not be recorded as a scope reduction."
+    },
+    {
+      "attempt": "SYSTEM_ADMIN supersedes a master",
+      "reason": "- unauthorized: role 'SYSTEM_ADMIN' may NOT 'approve_canonical_master'. Permitted roles: ['BRAND_ADMIN']. (Git authorship is provenance, not authorisation.)"
+    },
+    {
+      "attempt": "a variant reclassified INTO the canonical master",
+      "reason": "a variant reclassification may not make something the canonical master — that is an activation, and it takes full dual control"
+    },
+    {
+      "attempt": "a resolution with no reason",
+      "reason": "- a resolution must record an explicit reason"
+    },
+    {
+      "attempt": "a machine resolving a conflict",
+      "reason": "a canonical conflict is resolved by a human. Machine code may raise POSSIBLE_CONFLICT and enumerate the permitted resolutions; choosing between two masters is a judgement about the brand, and it is not reachable from here."
+    }
+  ],
+  "real_ledger": {
+    "events": 0,
+    "compound_events": 0,
+    "note": "EMPTY. No real conflict was resolved."
+  },
+  "ledger_valid": true,
+  "compound_valid": true,
+  "integrity": {
+    "materials": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "modified": [],
+      "file_count_before": 7695,
+      "file_count_after": 7695
+    }
+  },
+  "runtime_seconds": 0.12,
+  "output_bytes": 10792
+}

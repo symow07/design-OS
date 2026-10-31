@@ -1,0 +1,280 @@
+{
+  "record_type": "vq1_raster_stability_report/1.0",
+  "version": 2,
+  "candidate": "M3",
+  "source_sha256": "432fe7b0b970c397974b4566b0256e35c989f17f2c2dd7bb42d95b0df0c0331f",
+  "geometry_changed": false,
+  "capability": {
+    "schema_version": "pdf_rasterizer_capability/1.0",
+    "backend": "pymupdf",
+    "page_geometry": {
+      "page_width_pt": 283.4646,
+      "page_height_pt": 170.0787,
+      "rotation": 0,
+      "page_count": 1
+    },
+    "renders": [
+      {
+        "dpi": 72,
+        "width": 284,
+        "height": 171,
+        "expected": [
+          283,
+          170
+        ],
+        "effective_dpi_x": 72.14,
+        "dimensions_match": true,
+        "sha256_16": "21673a673fd01f7e"
+      },
+      {
+        "dpi": 144,
+        "width": 567,
+        "height": 341,
+        "expected": [
+          567,
+          340
+        ],
+        "effective_dpi_x": 144.02,
+        "dimensions_match": true,
+        "sha256_16": "6da923663032ad78"
+      },
+      {
+        "dpi": 288,
+        "width": 1134,
+        "height": 681,
+        "expected": [
+          1134,
+          680
+        ],
+        "effective_dpi_x": 288.04,
+        "dimensions_match": true,
+        "sha256_16": "c89886d5796209a3"
+      },
+      {
+        "dpi": 576,
+        "width": 2268,
+        "height": 1361,
+        "expected": [
+          2268,
+          1361
+        ],
+        "effective_dpi_x": 576.07,
+        "dimensions_match": true,
+        "sha256_16": "da9a650e3b2df1ae"
+      }
+    ],
+    "distinct_dimensions_per_dpi": true,
+    "all_dimensions_match_prediction": true,
+    "dpi_capable": true,
+    "note": "identical hashes alone can never certify stability; pixel dimensions and effective DPI are the evidence",
+    "certified_at": "2026-07-28T07:53:25.511817+00:00"
+  },
+  "sweep": {
+    "1x": {
+      "requested_dpi": 150,
+      "manifest": {
+        "schema_version": "pdf_rasterization_manifest/1.0",
+        "source_pdf": "docs/visual_quality/vq1_master/master_it3.ai",
+        "source_sha256": "432fe7b0b970c397974b4566b0256e35c989f17f2c2dd7bb42d95b0df0c0331f",
+        "page": 0,
+        "page_geometry": {
+          "page_width_pt": 331.4603,
+          "page_height_pt": 737.0079,
+          "rotation": 0,
+          "page_count": 1
+        },
+        "requested_dpi": 150,
+        "expected_dimensions": [
+          691,
+          1535
+        ],
+        "actual_dimensions": [
+          691,
+          1536
+        ],
+        "width_error_px": 0,
+        "height_error_px": 1,
+        "effective_dpi_x": 150.099,
+        "effective_dpi_y": 150.055,
+        "backend": "pymupdf",
+        "output_png": "docs/visual_quality/vq1_master/raster/m3_valid_1x.png",
+        "output_sha256": "e2d7934e0317cf3942377b28ab4b36e884a1675062b71107548a2e805cb2084c",
+        "dimension_verification": "PASSED",
+        "capability_certification": true,
+        "rendered_at": "2026-07-28T07:54:07.562981+00:00"
+      },
+      "metrics": {
+        "whole_iou": 0.98977,
+        "collar_iou": 0.99241,
+        "dark_iou": 0.99248,
+        "shoulder_iou": 0.99112,
+        "junction_mean": 0.00103,
+        "junction_p95": 0.00256,
+        "junction_max": 0.00548,
+        "aspect": 0.32767,
+        "foreground_rows": 1414
+      }
+    },
+    "2x": {
+      "requested_dpi": 300,
+      "manifest": {
+        "schema_version": "pdf_rasterization_manifest/1.0",
+        "source_pdf": "docs/visual_quality/vq1_master/master_it3.ai",
+        "source_sha256": "432fe7b0b970c397974b4566b0256e35c989f17f2c2dd7bb42d95b0df0c0331f",
+        "page": 0,
+        "page_geometry": {
+          "page_width_pt": 331.4603,
+          "page_height_pt": 737.0079,
+          "rotation": 0,
+          "page_count": 1
+        },
+        "requested_dpi": 300,
+        "expected_dimensions": [
+          1381,
+          3071
+        ],
+        "actual_dimensions": [
+          1382,
+          3071
+        ],
+        "width_error_px": 1,
+        "height_error_px": 0,
+        "effective_dpi_x": 300.199,
+        "effective_dpi_y": 300.013,
+        "backend": "pymupdf",
+        "output_png": "docs/visual_quality/vq1_master/raster/m3_valid_2x.png",
+        "output_sha256": "273d5b698be93b5a511ab8606019644cc29528f63e3a4c1927046c53c3016be9",
+        "dimension_verification": "PASSED",
+        "capability_certification": true,
+        "rendered_at": "2026-07-28T07:54:07.637550+00:00"
+      },
+      "metrics": {
+        "whole_iou": 0.99006,
+        "collar_iou": 0.99396,
+        "dark_iou": 0.99245,
+        "shoulder_iou": 0.99019,
+        "junction_mean": 0.00055,
+        "junction_p95": 0.00207,
+        "junction_max": 0.00208,
+        "aspect": 0.32767,
+        "foreground_rows": 2827
+      }
+    },
+    "4x": {
+      "requested_dpi": 600,
+      "manifest": {
+        "schema_version": "pdf_rasterization_manifest/1.0",
+        "source_pdf": "docs/visual_quality/vq1_master/master_it3.ai",
+        "source_sha256": "432fe7b0b970c397974b4566b0256e35c989f17f2c2dd7bb42d95b0df0c0331f",
+        "page": 0,
+        "page_geometry": {
+          "page_width_pt": 331.4603,
+          "page_height_pt": 737.0079,
+          "rotation": 0,
+          "page_count": 1
+        },
+        "requested_dpi": 600,
+        "expected_dimensions": [
+          2762,
+          6142
+        ],
+        "actual_dimensions": [
+          2763,
+          6142
+        ],
+        "width_error_px": 1,
+        "height_error_px": 0,
+        "effective_dpi_x": 600.18,
+        "effective_dpi_y": 600.026,
+        "backend": "pymupdf",
+        "output_png": "docs/visual_quality/vq1_master/raster/m3_valid_4x.png",
+        "output_sha256": "db633771c626235a99d2bd38e3483bf2ab38bf1526aaae66f4b5ddef674ebc03",
+        "dimension_verification": "PASSED",
+        "capability_certification": true,
+        "rendered_at": "2026-07-28T07:54:07.916884+00:00"
+      },
+      "metrics": {
+        "whole_iou": 0.99006,
+        "collar_iou": 0.99398,
+        "dark_iou": 0.99302,
+        "shoulder_iou": 0.99022,
+        "junction_mean": 0.00044,
+        "junction_p95": 0.0018,
+        "junction_max": 0.0018,
+        "aspect": 0.32761,
+        "foreground_rows": 5654
+      }
+    },
+    "8x": {
+      "requested_dpi": 1200,
+      "manifest": {
+        "schema_version": "pdf_rasterization_manifest/1.0",
+        "source_pdf": "docs/visual_quality/vq1_master/master_it3.ai",
+        "source_sha256": "432fe7b0b970c397974b4566b0256e35c989f17f2c2dd7bb42d95b0df0c0331f",
+        "page": 0,
+        "page_geometry": {
+          "page_width_pt": 331.4603,
+          "page_height_pt": 737.0079,
+          "rotation": 0,
+          "page_count": 1
+        },
+        "requested_dpi": 1200,
+        "expected_dimensions": [
+          5524,
+          12283
+        ],
+        "actual_dimensions": [
+          5525,
+          12284
+        ],
+        "width_error_px": 1,
+        "height_error_px": 1,
+        "effective_dpi_x": 1200.144,
+        "effective_dpi_y": 1200.052,
+        "backend": "pymupdf",
+        "output_png": "docs/visual_quality/vq1_master/raster/m3_valid_8x.png",
+        "output_sha256": "6ba16e0ec3d8905cac618c25294e82bd7ba891435a610510a8fc18cec785aadd",
+        "dimension_verification": "PASSED",
+        "capability_certification": true,
+        "rendered_at": "2026-07-28T07:54:09.003851+00:00"
+      },
+      "metrics": {
+        "whole_iou": 0.98998,
+        "collar_iou": 0.99403,
+        "dark_iou": 0.99313,
+        "shoulder_iou": 0.9898,
+        "junction_mean": 0.00042,
+        "junction_p95": 0.00189,
+        "junction_max": 0.00189,
+        "aspect": 0.3277,
+        "foreground_rows": 11307
+      }
+    }
+  },
+  "high_res_variation": {
+    "mean": 0.00013,
+    "p95": 0.00027,
+    "max": 0.00028
+  },
+  "gates": {
+    "mean_within_gate": true,
+    "p95_within_gate": true,
+    "max_within_gate": true,
+    "variation_bounded": true,
+    "aspect_stable": true,
+    "global_gates_hold": true,
+    "distinct_resolutions": true,
+    "source_geometry_identical": true,
+    "all_manifests_verified": true
+  },
+  "gates_pass": true,
+  "supersedes": "the INVALIDATED sweep is preserved in vq1_raster_stability_report_invalid.json",
+  "rasterizer_identity": {
+    "backends_available": [
+      "pymupdf",
+      "sips"
+    ],
+    "preferred": "pymupdf",
+    "pymupdf_version": "PyMuPDF 1.28.0: Python bindings for the MuPDF 1.29.0 library.\nPython 3.11 running on darwin (64-bit).\n"
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "record_type": "vq1_master_hard_stop/1.0",
+  "created_at": "2026-07-28",
+  "status": "VQ1_MASTER_HARD_STOP_REVIEW_REQUIRED",
+  "vq1_state": "REVISION_REQUIRED",
+  "final_status_never": "HUMAN_ACCEPTED",
+  "what_was_completed": [
+    "\u00a75 high-resolution reference crops, all minimums met",
+    "\u00a76 occlusion recorded; right contour is the authority; mirror is concept-only",
+    "\u00a716 reference-contour-driven cubic fit \u2014 the root-cause fix. The reference edge is now the model; residuals are measured in source pixels",
+    "3 master iterations (M1, M2, M3), each preserved with metrics"
+  ],
+  "what_was_NOT_completed": [
+    "\u00a718 two independent multimodal inspections (Reference Fidelity Critic and Adversarial Defect Finder) \u2014 NOT RUN",
+    "\u00a719 dual visualizer scorecards \u2014 NOT PRODUCED",
+    "\u00a720 the full six-iteration loop \u2014 3 of 6 used",
+    "\u00a725 the twenty-panel review package \u2014 NOT PRODUCED",
+    "\u00a727 the full test list \u2014 only a reduced set added",
+    "\u00a78/\u00a723 the web-grounded physical evidence pass \u2014 NOT RUN this slice"
+  ],
+  "scorecard_reported": "NOT_SCORED \u2014 no category may be scored without both independent inspections; reporting 10/10 from deterministic gates alone is exactly the self-certification this mandate forbids",
+  "hard_stop_conditions_met": [
+    "deterministic improvement below 3% across M2->M3 on the failing metric (junction max 0.06765 -> 0.06539)",
+    "execution budget exhausted before the dual-inspection stage"
+  ],
+  "deterministic_results": {
+    "M2": {
+      "whole": {
+        "iou": 0.9888,
+        "mean": 0.00446,
+        "p95": 0.00805,
+        "max": 0.37479
+      },
+      "dark_closure": {
+        "iou": 0.97952,
+        "mean": 0.00317,
+        "p95": 0.0115,
+        "max": 0.04411
+      },
+      "collar": {
+        "iou": 0.99192,
+        "mean": 0.00253,
+        "p95": 0.0026,
+        "max": 0.00485
+      },
+      "junction": {
+        "iou": 0.94155,
+        "mean": 0.01526,
+        "p95": 0.06765,
+        "max": 0.06765
+      },
+      "shoulder": {
+        "iou": 0.98121,
+        "mean": 0.00771,
+        "p95": 0.03143,
+        "max": 0.03807
+      },
+      "body": {
+        "iou": 0.99473,
+        "mean": 0.00264,
+        "p95": 0.00292,
+        "max": 0.00517
+      }
+    },
+    "M3": {
+      "whole": {
+        "iou": 0.9889,
+        "mean": 0.00442,
+        "p95": 0.00805,
+        "max": 0.37479
+      },
+      "dark_closure": {
+        "iou": 0.97966,
+        "mean": 0.00314,
+        "p95": 0.0115,
+        "max": 0.04411
+      },
+      "collar": {
+        "iou": 0.99183,
+        "mean": 0.00256,
+        "p95": 0.0026,
+        "max": 0.00485
+      },
+      "junction": {
+        "iou": 0.94784,
+        "mean": 0.01353,
+        "p95": 0.06539,
+        "max": 0.06539
+      },
+      "shoulder": {
+        "iou": 0.98121,
+        "mean": 0.00771,
+        "p95": 0.03143,
+        "max": 0.03807
+      },
+      "body": {
+        "iou": 0.99473,
+        "mean": 0.00264,
+        "p95": 0.00292,
+        "max": 0.00517
+      }
+    }
+  },
+  "gates_M3": {
+    "collar_iou": true,
+    "collar_mean": true,
+    "collar_p95": true,
+    "collar_max": true,
+    "junction_max": false,
+    "shoulder_iou": true,
+    "dark_closure_iou": true,
+    "visible_object_count": true
+  },
+  "gates_pass": false,
+  "unresolved_blockers": [
+    {
+      "code": "VQ_DARK_CLOSURE_LOWER_INTERFACE_FAILED",
+      "region": "dark-flare / collar junction",
+      "metric": "local max contour distance",
+      "value": 0.06539,
+      "gate": 0.045,
+      "passes": false,
+      "note": "improved from 0.162 (IT6) to 0.065 but still above the 0.045 limit"
+    }
+  ],
+  "improvement_vs_it6": {
+    "collar_iou": "0.972 -> 0.992",
+    "collar_mean": "0.0088 -> 0.0026",
+    "collar_max": "0.162 -> 0.0048",
+    "junction_max": "0.162 -> 0.0654",
+    "whole_iou": "n/a -> 0.9889"
+  },
+  "fit_residuals_px": {
+    "DARK_CLOSURE": {
+      "segments": 18,
+      "mean": 0.3395,
+      "max": 1.3916
+    },
+    "COLLAR": {
+      "segments": 18,
+      "mean": 0.2028,
+      "max": 1.25
+    },
+    "GLASS": {
+      "segments": 57,
+      "mean": 0.343,
+      "max": 5.1
+    }
+  },
+  "production_geometry": "BLOCKED_PENDING_SUPPLIER_EVIDENCE",
+  "supplier_requests_sent": false,
+  "image_generation_calls": 0,
+  "multimodal_calls_this_slice": 0,
+  "it7_generated": false,
+  "prior_fixtures": "HUMAN_REJECTED_STRUCTURAL_REGRESSION_FIXTURES, preserved"
+}

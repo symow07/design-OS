@@ -1,0 +1,45 @@
+{
+ "record_type": "rbv_owner_reference_pack/1.0",
+ "product": "P6",
+ "name": "Rectangular/Faceted Lip-Gloss Tube (BBROSE ZAROX Lip Gloss 24.h, shade 11)",
+ "created_at": "2026-08-04",
+ "status": ["REFERENCE_PACK_INVALID_FIELD", "FACETED_GEOMETRY_REQUIRES_TOP_VIEW_AND_REMEASUREMENT"],
+ "authority": {
+  "images": "OWNER_SUPPLIED_PHOTOGRAPHY / MEDIUM_VISUAL_AUTHORITY / NOT_CAD / NOT_TECHNICAL_DRAWING",
+  "measurements": "OWNER_MEASURED_DIMENSIONAL_EVIDENCE"
+ },
+ "images": [
+  {"file": "IMG_3106.jpg", "view": "FRONT"},
+  {"file": "IMG_3107.jpg", "view": "BACK"},
+  {"file": "IMG_3108.jpg", "view": "OPEN"},
+  {"file": "IMG_3109.jpg", "view": "TOP"}
+ ],
+ "photo_verified_identity": {
+  "reservoir_artwork": "ZAROX / BBROSE® / LIP GLOSS / 24.h",
+  "sticker": "LIP GLOSS ITEM NO: LG5855; EAN 5 061030 636268; shade patch X 11",
+  "body": "transparent faceted reservoir (chamfered long edges), nude/terracotta gloss",
+  "closure": "cream/ivory cap sleeve with rose-gold end cap; cap top reads as rounded square with chamfered corner",
+  "applicator": "thin white stem + doe-foot applicator"
+ },
+ "invalid_field": {
+  "stem_diameter": {
+   "submitted": 56.07,
+   "states": ["PHYSICALLY_IMPLAUSIBLE", "REMEASUREMENT_REQUIRED"],
+   "handling": "preserved verbatim; NOT reinterpreted as 5.607; photo IMG_3108 shows a stem of a few millimetres passing a 6.6 mm opening"
+  }
+ },
+ "cross_section_evidence_required": [
+  "facet count", "width across flats", "width across corners",
+  "depth across flats", "depth across corners",
+  "reservoir top-view geometry", "cap top-view geometry (calibrated)"
+ ],
+ "wand_split_required": ["cap+wand total", "underside-of-cap → tip", "stem-only", "applicator tip"],
+ "cap_decoration_distinction_required": "CAP_DECORATION_INTENTIONALLY_UNUSED vs NO_USABLE_DECORATION_AREA",
+ "measurements": "see normalized_measurements.json → products.P6; raw text in raw_measurements.json",
+ "validated_summary": {
+  "accepted": ["closed 122 (= wand 117 + clearance 5, exact)", "reservoir front 20 / depth 19.15", "cap h 45.68", "neck OD 12", "opening ID 6.6", "wiper 4.3", "applicator 15 × 4 × 4"],
+  "missing": ["capacity", "supplier/factory identity", "separate cap width/depth", "separate base width/depth", "calibrated views incl. reservoir top view"]
+ },
+ "geometry_construction": "BLOCKED until stem and cross-section data are corrected",
+ "checklist": "missing_information_checklist.md § P6"
+}

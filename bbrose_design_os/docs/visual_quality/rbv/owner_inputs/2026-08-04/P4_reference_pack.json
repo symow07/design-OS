@@ -1,0 +1,41 @@
+{
+ "record_type": "rbv_owner_reference_pack/1.0",
+ "product": "P4",
+ "name": "Face-Cream Jar (BBROSE Face Cream Moisturizing, Hyaluronic acid)",
+ "created_at": "2026-08-04",
+ "status": ["REFERENCE_PACK_PARTIAL", "GEOMETRY_PLAUSIBLE_PENDING_HEIGHT_DEFINITION"],
+ "authority": {
+  "images": "OWNER_SUPPLIED_PHOTOGRAPHY / MEDIUM_VISUAL_AUTHORITY / NOT_CAD / NOT_TECHNICAL_DRAWING",
+  "measurements": "OWNER_MEASURED_DIMENSIONAL_EVIDENCE"
+ },
+ "images": [
+  {"file": "IMG_3110.jpg", "view": "FRONT"},
+  {"file": "IMG_3111.jpg", "view": "TOP"},
+  {"file": "IMG_3112.jpg", "view": "BACK"},
+  {"file": "IMG_3113.jpg", "view": "INTERIOR"},
+  {"file": "IMG_3114.jpg", "view": "OPEN"},
+  {"file": "IMG_3115.jpg", "view": "CLOSURE_DETAIL"}
+ ],
+ "photo_verified_identity": {
+  "front_artwork": "FACE CREAM MOISTURIZING / Hyaluronic acid / BBROSE® / Crema facial hidratante",
+  "back_label": "INGREDIENTS list; ITEM NO: R-133-H; NET: 50 ML (+ Arabic)",
+  "body": "teal/mint translucent jar, white cream visible through the wall; ribbed decorative rim moulding",
+  "closure": "mirror-chrome metallized screw lid with white threaded liner; plain (undecorated) lid top",
+  "internal_sealing_disc": "PRESENT, white with pull tab — dimensions unmeasured"
+ },
+ "height_decomposition_required": [
+  "1. jar base → top of threaded neck",
+  "2. visible main jar body height below the neck",
+  "3. threaded-neck height",
+  "4. lid external height",
+  "5. fully assembled height"
+ ],
+ "measurements": "see normalized_measurements.json → products.P4; raw text in raw_measurements.json",
+ "validated_summary": {
+  "accepted": ["jar 42.3", "max Ø 56.56 / base Ø 56.5", "opening OD 49.4 / ID 42.09", "thread Ø 50.5", "neck h 10.77", "lid Ø 55.5 / h 14.42", "NET 50 ML (photo-corroborated)"],
+  "pending": ["assembled 44.7 (overlap definition)", "wall 1.56 landmark", "base thickness 6.7", "internal depth 24.74", "printable height 20.8"],
+  "missing": ["lid-top printable diameter", "bottom diameter if ≠ max", "sealing-disc dimensions", "supplier/factory identity", "calibrated front/side views"]
+ },
+ "geometry_construction": "BLOCKED pending the five-value height decomposition",
+ "checklist": "missing_information_checklist.md § P4"
+}

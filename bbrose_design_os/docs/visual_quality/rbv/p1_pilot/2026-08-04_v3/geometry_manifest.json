@@ -1,0 +1,488 @@
+{
+ "schema": "p1_provisional_geometry/1.0",
+ "revision": "V3",
+ "v1_mesh_identities": {
+  "body": "e7b0236deb66715e",
+  "collar": "7175cb33d5cd7375",
+  "bulb": "491a134981dd9506"
+ },
+ "v2_mesh_identities": {
+  "body": "b301a10969b4e943",
+  "collar": "0c0b5a6edcd33875",
+  "bulb": "edfac8571aea80b8"
+ },
+ "review_history": {
+  "V1": "owner visual review: pipeline PASS / dimensional PASS_PROVISIONAL / visual FAIL / material FAIL",
+  "V2": "owner visual review: bulb PASS_WITH_MINOR_REVISION / shoulder FAIL / material FAIL / REJECTED_PENDING_V3"
+ },
+ "product": "P1 \u2014 Dropper Serum Bottle (BBROSE Vitamin C Facial Serum 50 ml)",
+ "pilot_mode": "PROVISIONAL_BEST_EFFORT_GEOMETRY_PILOT",
+ "owner_measurements": {
+  "total_assembled_height_mm": {
+   "value": 114.3,
+   "unit": "mm",
+   "authority": "OWNER_MEASURED",
+   "provenance": "owner intake 2026-08-04 (raw_measurements.json)"
+  },
+  "bottle_height_mm": {
+   "value": 91.6,
+   "unit": "mm",
+   "authority": "OWNER_MEASURED",
+   "provenance": "owner intake 2026-08-04 (raw_measurements.json)"
+  },
+  "straight_wall_end_mm": {
+   "value": 66.0,
+   "unit": "mm",
+   "authority": "OWNER_MEASURED",
+   "provenance": "owner intake 2026-08-04 (raw_measurements.json)"
+  },
+  "shoulder_landmark_69_mm": {
+   "value": 69.0,
+   "unit": "mm",
+   "authority": "OWNER_MEASURED",
+   "provenance": "owner intake 2026-08-04 (raw_measurements.json)"
+  },
+  "body_diameter_mm": {
+   "value": 37.4,
+   "unit": "mm",
+   "authority": "OWNER_MEASURED",
+   "provenance": "owner intake 2026-08-04 (raw_measurements.json)"
+  },
+  "base_diameter_mm": {
+   "value": 37.35,
+   "unit": "mm",
+   "authority": "OWNER_MEASURED",
+   "provenance": "owner intake 2026-08-04 (raw_measurements.json)"
+  },
+  "neck_height_mm": {
+   "value": 18.11,
+   "unit": "mm",
+   "authority": "OWNER_MEASURED",
+   "provenance": "owner intake 2026-08-04 (raw_measurements.json)"
+  },
+  "neck_outside_diameter_mm": {
+   "value": 15.6,
+   "unit": "mm",
+   "authority": "OWNER_MEASURED",
+   "provenance": "owner intake 2026-08-04 (raw_measurements.json)"
+  },
+  "opening_inside_diameter_mm": {
+   "value": 10.3,
+   "unit": "mm",
+   "authority": "OWNER_MEASURED",
+   "provenance": "owner intake 2026-08-04 (raw_measurements.json)"
+  },
+  "thread_outside_diameter_mm": {
+   "value": 17.4,
+   "unit": "mm",
+   "authority": "OWNER_MEASURED",
+   "provenance": "owner intake 2026-08-04 (raw_measurements.json)"
+  },
+  "thread_turns_visible": {
+   "value": 3,
+   "unit": "turns",
+   "authority": "OWNER_MEASURED",
+   "provenance": "owner intake 2026-08-04 (raw_measurements.json)"
+  },
+  "dropper_assembly_height_mm": {
+   "value": 105.0,
+   "unit": "mm",
+   "authority": "OWNER_MEASURED",
+   "provenance": "owner intake 2026-08-04 (raw_measurements.json)"
+  },
+  "collar_outside_diameter_mm": {
+   "value": 21.4,
+   "unit": "mm",
+   "authority": "OWNER_MEASURED",
+   "provenance": "owner intake 2026-08-04 (raw_measurements.json)"
+  },
+  "collar_height_mm": {
+   "value": 16.5,
+   "unit": "mm",
+   "authority": "OWNER_MEASURED",
+   "provenance": "owner intake 2026-08-04 (raw_measurements.json)"
+  },
+  "bulb_max_diameter_mm": {
+   "value": 10.57,
+   "unit": "mm",
+   "authority": "OWNER_MEASURED",
+   "provenance": "owner intake 2026-08-04 (raw_measurements.json)"
+  },
+  "bulb_height_mm": {
+   "value": 19.2,
+   "unit": "mm",
+   "authority": "OWNER_MEASURED",
+   "provenance": "owner intake 2026-08-04 (raw_measurements.json)"
+  },
+  "pipette_length_mm": {
+   "value": 88.74,
+   "unit": "mm",
+   "authority": "OWNER_MEASURED",
+   "provenance": "owner intake 2026-08-04 (raw_measurements.json)"
+  },
+  "pipette_outside_diameter_mm": {
+   "value": 6.9,
+   "unit": "mm",
+   "authority": "OWNER_MEASURED",
+   "provenance": "owner intake 2026-08-04 (raw_measurements.json)"
+  },
+  "pipette_tip_to_base_mm": {
+   "value": 9.16,
+   "unit": "mm",
+   "authority": "OWNER_MEASURED",
+   "provenance": "owner intake 2026-08-04 (raw_measurements.json)"
+  }
+ },
+ "owner_confirmed_materials": {
+  "bottle": {
+   "material": "GLASS",
+   "finish": "MATTE_FROSTED_EXTERIOR",
+   "colour": "ORANGE_TINTED_AMBER",
+   "transparency": "TRANSPARENT_NOT_OPAQUE"
+  },
+  "collar": {
+   "material": "PLASTIC",
+   "finish": "GLOSSY",
+   "colour": "ORANGE"
+  },
+  "bulb": {
+   "material": "PLASTIC",
+   "finish": "GLOSSY",
+   "colour": "ORANGE",
+   "transparency": "OPAQUE"
+  },
+  "pipette": {
+   "material": "CLEAR_GLASS",
+   "finish": null,
+   "colour": null
+  },
+  "authority": "OWNER_CONFIRMED_MATERIAL_EVIDENCE",
+  "correction_2026_08_04": "bulb corrected CLEAR/TRANSPARENT -> GLOSSY/ORANGE/OPAQUE by owner review of the photographs (deviation D1 resolved)",
+  "clarification_v3": "bottle = TRANSPARENT orange-tinted glass with matte/frosted exterior; V2 opaque rendering owner-REJECTED"
+ },
+ "derived_and_inferred": {
+  "neck_base_z_mm": {
+   "value": 73.49,
+   "unit": "mm",
+   "authority": "CALCULATED_FROM_OWNER_DATA",
+   "provenance": "neck starts where the bottle height minus neck height ends",
+   "confidence": "HIGH",
+   "formula": "91.6 - 18.11 = 73.49"
+  },
+  "collar_top_z_mm": {
+   "value": 95.1,
+   "unit": "mm",
+   "authority": "CALCULATED_FROM_OWNER_DATA",
+   "provenance": "bulb sits fully proud of the collar (intake: visible height = removed height)",
+   "confidence": "HIGH",
+   "formula": "114.3 - 19.2 = 95.1"
+  },
+  "collar_bottom_z_mm": {
+   "value": 78.6,
+   "unit": "mm",
+   "authority": "CALCULATED_FROM_OWNER_DATA",
+   "provenance": "collar top minus collar height",
+   "confidence": "HIGH",
+   "formula": "95.1 - 16.5 = 78.6"
+  },
+  "collar_above_glass_mm": {
+   "value": 3.5,
+   "unit": "mm",
+   "authority": "CALCULATED_FROM_OWNER_DATA",
+   "provenance": "collar standing proud of the glass mouth",
+   "confidence": "HIGH",
+   "formula": "95.1 - 91.6 = 3.5"
+  },
+  "collar_neck_engagement_mm": {
+   "value": 13.0,
+   "unit": "mm",
+   "authority": "CALCULATED_FROM_OWNER_DATA",
+   "provenance": "neck length covered by the collar",
+   "confidence": "HIGH",
+   "formula": "91.6 - 78.6 = 13.0"
+  },
+  "pipette_top_z_mm": {
+   "value": 97.9,
+   "unit": "mm",
+   "authority": "CALCULATED_FROM_OWNER_DATA",
+   "provenance": "assembled pipette top position",
+   "confidence": "HIGH",
+   "formula": "9.16 + 88.74 = 97.9"
+  },
+  "bottom_glass_thickness_mm": {
+   "value": 3.0,
+   "unit": "mm",
+   "authority": "GENERIC_RENDERING_DEFAULT",
+   "provenance": "owner value UNKNOWN; typical moulded 50 ml glass base 2\u20134 mm; used for clearance math + visualization-only inner floor",
+   "confidence": "LOW"
+  },
+  "pipette_tip_interior_clearance_mm": {
+   "value": 6.16,
+   "unit": "mm",
+   "authority": "CALCULATED_FROM_OWNER_DATA",
+   "provenance": "tip height above the PROVISIONAL interior floor",
+   "confidence": "MEDIUM",
+   "formula": "9.16 - 3.0 = 6.16"
+  },
+  "neck_finish_classification": {
+   "value": "GL18 / DIN 18 (DIN 168 knuckle thread)",
+   "unit": null,
+   "authority": "ONLINE_ANALOGOUS_REFERENCE",
+   "provenance": "owner thread OD 17.4 (\u00b10.2) vs GL18 external thread 17.50\u201318.00; owner neck OD 15.6 vs GL18 bolt-minor 15.48\u201315.98; 3 visible turns \u00d7 3 mm pitch \u2248 9 mm thread band fits the 18.11 mm neck; NOT an exact-product match",
+   "confidence": "MEDIUM",
+   "source_url": "https://www.gewinde-normen.de/en/knuckle-thread-din-168.html"
+  },
+  "thread_pitch_mm": {
+   "value": 3.0,
+   "unit": "mm",
+   "authority": "ONLINE_ANALOGOUS_REFERENCE",
+   "provenance": "DIN 168 GL18 pitch \u2014 analogous standard value; owner value remains UNKNOWN and is not overwritten",
+   "confidence": "MEDIUM",
+   "source_url": "https://www.gewinde-normen.de/en/knuckle-thread-din-168.html"
+  },
+  "analogous_bottle_check": {
+   "value": "50 ml GL18 dropper bottle \u2248 H 92 \u00d7 \u00d8 37, pipette 87",
+   "unit": null,
+   "authority": "ONLINE_ANALOGOUS_REFERENCE",
+   "provenance": "commodity 50 ml GL18/DIN18 serum bottles corroborate the owner set (owner: 91.6 \u00d7 37.4, pipette 88.74) \u2014 sanity check only, no owner value replaced",
+   "confidence": "MEDIUM",
+   "source_url": "https://www.cwynnejones.com/gl18-clear-bottles/699-50ml-clear-bottle-90.html"
+  },
+  "shoulder_curve_model": {
+   "value": "V3 authored clamped cubic spline through visually estimated control points (C2; convex; wall + neck tangents clamped horizontal)",
+   "unit": null,
+   "authority": "VISUAL_ESTIMATE_FROM_PHOTO",
+   "provenance": "V1 cosine and V2 smootherstep owner-REJECTED \u2014 mathematical smoothness alone is not visual correctness; V3 control points authored from IMG_3120/3121 (A1/A2 provisional); NOT_MANUFACTURING_AUTHORITATIVE",
+   "confidence": "LOW",
+   "formula": "clamped natural cubic spline, s(66)=0, s(73.49)=0, control points in SHOULDER_CONTROL_POINTS_V3"
+  },
+  "shoulder_r_at_69_mm": {
+   "value": 17.9,
+   "unit": "mm",
+   "authority": "CALCULATED_FROM_OWNER_DATA",
+   "provenance": "model radius at the owner's 69 mm landmark (A2 provisional)",
+   "confidence": "MEDIUM",
+   "formula": "r(69) via the V3 shoulder spline"
+  },
+  "base_bottom_radius_mm": {
+   "value": 2.5,
+   "unit": "mm",
+   "authority": "GENERIC_RENDERING_DEFAULT",
+   "provenance": "soft external bottom round + weighted-glass settle to 6.0; embossing/dot ring still NOT modelled; owner base diameter 37.35 read just above the radius",
+   "confidence": "LOW"
+  },
+  "collar_edge_radius_mm": {
+   "value": 0.8,
+   "unit": "mm",
+   "authority": "GENERIC_RENDERING_DEFAULT",
+   "provenance": "subtle collar top/bottom edge rounding (physically plausible small radius; owner diameter/height unchanged)",
+   "confidence": "LOW"
+  },
+  "bulb_profile_model": {
+   "value": "V3 spline capsule: narrowed collar entry (r 4.60) + fillet + max-diameter hold + slightly fuller upper body + rounded dome, apex ring 0.5",
+   "unit": null,
+   "authority": "VISUAL_ESTIMATE_FROM_PHOTO",
+   "provenance": "V2 perfect capsule owner-noted as too mathematical; V3 per owner minor revision from IMG_3120/3123",
+   "confidence": "LOW"
+  },
+  "glass_wall_body_mm": {
+   "value": 1.8,
+   "unit": "mm",
+   "authority": "VISUALIZATION_ONLY_GEOMETRY",
+   "provenance": "hollow-glass wall for material renders ONLY \u2014 never measured, never manufacturing geometry",
+   "confidence": "LOW"
+  },
+  "glass_wall_neck_mm": {
+   "value": 2.65,
+   "unit": "mm",
+   "authority": "CALCULATED_FROM_OWNER_DATA",
+   "provenance": "neck wall from owner ODs \u2014 used only to shape the visualization glass shell",
+   "confidence": "MEDIUM",
+   "formula": "(15.6 - 10.3) / 2 = 2.65"
+  }
+ },
+ "shoulder_control_points_v3": [
+  {
+   "z_mm": 66.0,
+   "r_mm": 18.7,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "MEDIUM",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 67.6,
+   "r_mm": 18.52,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 69.0,
+   "r_mm": 17.9,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 70.4,
+   "r_mm": 16.55,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 71.6,
+   "r_mm": 14.3,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 72.7,
+   "r_mm": 11.2,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 73.1,
+   "r_mm": 9.45,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 73.49,
+   "r_mm": 7.8,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "MEDIUM",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  }
+ ],
+ "bulb_control_points_v3": [
+  {
+   "z_mm": 0.0,
+   "r_mm": 4.6,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 0.9,
+   "r_mm": 4.98,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 2.5,
+   "r_mm": 5.18,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 5.5,
+   "r_mm": 5.285,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "MEDIUM",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 8.5,
+   "r_mm": 5.285,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "MEDIUM",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 11.0,
+   "r_mm": 5.16,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 13.5,
+   "r_mm": 4.75,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 15.6,
+   "r_mm": 4.05,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 17.3,
+   "r_mm": 3.05,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 18.5,
+   "r_mm": 1.85,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 19.2,
+   "r_mm": 0.5,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  }
+ ],
+ "provisional_assumptions": {
+  "A1": "66 mm treated as the straight-wall-end landmark (owner clarification pending)",
+  "A2": "69 mm treated as a point ON the shoulder curve, not a profile control anchor (owner clarification pending)",
+  "A3": "18.11 mm neck height treated as shoulder/neck junction \u2192 glass mouth (owner clarification pending)",
+  "A4": "105 mm dropper height treated as bulb top \u2192 pipette tip (definition pending)"
+ },
+ "modelling_simplifications": {
+  "S1": "GL18-class thread NOT modelled (pitch from DIN 168, turns owner-counted; silhouette shows neck \u00d815.6)",
+  "S2": "collar knurling/ribs NOT modelled",
+  "S3": "base embossing ('50ml', '46', dot ring) NOT modelled",
+  "S4": "label artwork NOT modelled (deferred to artwork phase per owner)",
+  "S5": "pipette EXCLUDED from the rendered assembly (hidden interior component; clearances proven in contract math)",
+  "S6": "hollow glass interior is VISUALIZATION_ONLY_GEOMETRY (material renders only; never measured, never manufacturing authority)"
+ },
+ "consistency_findings": [],
+ "consistency_status": "PASS",
+ "mesh_identities": {
+  "body": "3d81bf24ac44bfea",
+  "collar": "0c0b5a6edcd33875",
+  "bulb": "931cb17e89f86322"
+ },
+ "glass_solid_identity": "e3bf976cabe0fcc5",
+ "geometry_class": "AXISYMMETRIC_REVOLUTION",
+ "assembly": {
+  "assembly_height_mm": 114.3,
+  "closure_center_mm": 96.45,
+  "closure_height_mm": 35.7,
+  "neck_detail_center_mm": 76.0,
+  "neck_detail_height_mm": 24.0,
+  "shoulder_detail_center_mm": 70.0,
+  "shoulder_detail_height_mm": 20.0,
+  "bulb_detail_center_mm": 104.7,
+  "bulb_detail_height_mm": 24.0,
+  "base_detail_center_mm": 6.0,
+  "base_detail_height_mm": 20.0
+ },
+ "accuracy_status": {
+  "P1_GEOMETRY_AUTHORITY": "PROVISIONAL_OWNER_MEASURED_PLUS_INFERRED",
+  "P1_MATERIAL_AUTHORITY": "OWNER_CONFIRMED_EXTERNAL_MATERIALS_PLUS_VISUALIZATION_PARAMETERS",
+  "P1_INTERNAL_GLASS_AUTHORITY": "VISUALIZATION_ONLY_GEOMETRY",
+  "P1_MANUFACTURING_AUTHORITY": "NOT_ESTABLISHED",
+  "P1_VISUAL_COMPARISON_CONFIDENCE": "LIMITED_BY_NON_CALIBRATED_PHOTOGRAPHY",
+  "P1_OWNER_APPROVAL": "PENDING_VISUAL_REVIEW",
+  "GATE_2": "BLOCKED",
+  "PACKAGING_PRODUCTION": "NOT_STARTED"
+ },
+ "usage_restriction": "visual review and pipeline validation only \u2014 NEVER supplier/manufacturing geometry"
+}

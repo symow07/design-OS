@@ -1,0 +1,145 @@
+{
+ "record_type": "vq2_owner_ruling_baked_nonuniform_compression/1.0",
+ "created_at": "2026-07-29",
+ "decided_by": "PROJECT_OWNER",
+ "accepted_commit": "c4801ca",
+ "receipt_result": "FAILED",
+ "codes": [
+  "VQ2_NONUNIFORM_GLYPH_SCALING_DETECTED",
+  "VQ2_HORIZONTAL_GLYPH_SCALING_DETECTED",
+  "VQ2_GEOMETRY_EXPANDED_AFTER_DISTORTION"
+ ],
+ "ruling": "The submitted Rose and Damascena lettering does not satisfy the frozen VQ-2 receipt-validation contract. Baked non-uniform compression of an existing font outline is prohibited derivation, and the absence of active transform operators does not cure it.",
+ "decisive_evidence": {
+  "scaffold": "GFS Didot",
+  "sx_differs_from_sy": true,
+  "sx_varies_per_glyph": true,
+  "declared_compression_factors": "approximately 0.58-0.69",
+  "purpose": "to force glyphs and words into the measured target widths",
+  "baked_into_final_paths": true,
+  "per_glyph_sx_over_sy": {
+   "Rose": [
+    {
+     "char": "R",
+     "sx_over_sy": 0.6303
+    },
+    {
+     "char": "o",
+     "sx_over_sy": 0.6303
+    },
+    {
+     "char": "s",
+     "sx_over_sy": 0.6795
+    },
+    {
+     "char": "e",
+     "sx_over_sy": 0.65
+    }
+   ],
+   "Damascena": [
+    {
+     "char": "D",
+     "sx_over_sy": 0.6962
+    },
+    {
+     "char": "a",
+     "sx_over_sy": 0.6751
+    },
+    {
+     "char": "m",
+     "sx_over_sy": 0.6118
+    },
+    {
+     "char": "a",
+     "sx_over_sy": 0.6751
+    },
+    {
+     "char": "s",
+     "sx_over_sy": 0.7278
+    },
+    {
+     "char": "c",
+     "sx_over_sy": 0.7173
+    },
+    {
+     "char": "e",
+     "sx_over_sy": 0.6962
+    },
+    {
+     "char": "n",
+     "sx_over_sy": 0.654
+    },
+    {
+     "char": "a",
+     "sx_over_sy": 0.6751
+    }
+   ]
+  }
+ },
+ "zero_active_transforms_proves": "only that the submitted files contain NORMALIZED paths. It does not prove those paths were natively authored at their final proportions.",
+ "must_not_classify_as": "VQ2_PRODUCT_NAME_LETTERING_VALIDATED_PENDING_OWNER_APPROVAL",
+ "vq2_a2_constructed": false,
+ "asset_classification": [
+  "PROGRAMMATIC_CONDENSED_DIDONE_SCAFFOLD",
+  "DIAGNOSTIC_ONLY",
+  "VISUALLY_USEFUL_REFERENCE",
+  "NOT_APPROVED_FOR_FINAL_VQ2_ARTWORK",
+  "NOT_APPROVED_FOR_PRINT",
+  "NOT_APPROVED_FOR_VQ2_A2"
+ ],
+ "preserved_positive_evidence": [
+  "genuinely new submission",
+  "real EPS/PostScript vector geometry",
+  "13 independently identified glyph objects",
+  "repeated a glyphs remain separate",
+  "cubic paths",
+  "zero raster lettering",
+  "zero live text",
+  "zero active transforms",
+  "zero unintended open paths",
+  "correct wording",
+  "correct capitalization",
+  "correct layer naming",
+  "visually coherent condensed Didone character"
+ ],
+ "strengths_do_not_override_derivation": true,
+ "derivation_rule": {
+  "permitted": [
+   "ordinary UNIFORM conversion from font design units to a working size (any magnitude, sx == sy)",
+   "native human-drawn condensed geometry",
+   "a genuinely condensed licensed typeface used without non-uniform distortion",
+   "glyph paths authored directly at their intended final proportions"
+  ],
+  "prohibited": [
+   "horizontal compression of an existing font outline",
+   "vertical distortion of an existing font outline",
+   "unequal x/y scaling",
+   "different compression factors applied per glyph",
+   "word-group scaling used to force composition",
+   "expanding or baking distorted geometry to remove visible transform matrices"
+  ],
+  "applies_to": [
+   "active transforms",
+   "distortion expanded or baked into the final paths"
+  ],
+  "zero_active_transforms_proves": "only that the submitted files contain NORMALIZED paths. It does not prove those paths were natively authored at their final proportions.",
+  "vertical_finding_clarification": "A non-unit sy is NOT prohibited by itself. VQ2_VERTICAL_GLYPH_SCALING_DETECTED fires only on evidence of vertical distortion independent of canonical uniform size conversion."
+ },
+ "vertical_finding_clarification": "A non-unit sy is NOT prohibited by itself. VQ2_VERTICAL_GLYPH_SCALING_DETECTED fires only on evidence of vertical distortion independent of canonical uniform size conversion.",
+ "ai8_source_authority": {
+  "is_editable_vector": true,
+  "is_eps_compatible": true,
+  "rejected_for_being_eps": false,
+  "rejected_because": "the frozen handoff contract requires a NEW native designer-authored Illustrator document with native layer and designer provenance",
+  "code": "VQ2_NATIVE_ILLUSTRATOR_SOURCE_REQUIRED"
+ },
+ "owner_approval": "VQ2_OWNER_APPROVAL_MISSING — approval cannot occur while the asset is contractually invalid",
+ "acceptable_next_asset": {
+  "A": "ORIGINAL AUTHORITATIVE VECTOR LETTERING",
+  "B": "COMPLETE LICENSED NATIVELY CONDENSED TYPEFACE (no non-uniform scaling, no colliding tracking, no expanded-after-distortion geometry, rights documented)",
+  "C": "HUMAN REDRAW — current submission usable only as LOCKED_NONPRINTING_VISUAL_SCAFFOLD; final glyph paths newly authored at their intended proportions, new native Illustrator document, Rose in 04_ROSE_LETTERING, Damascena in 05_DAMASCENA_LETTERING, no inherited active or baked non-uniform scaling, designer notes naming the scaffold and redraw process, explicit owner approval",
+  "not_accepted": "a resave, expansion or path cleanup of the current compressed outlines"
+ },
+ "files_modified": false,
+ "glyphs_regenerated": false
+}

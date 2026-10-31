@@ -1,0 +1,275 @@
+{
+ "record_type": "vq2_deterministic_artwork_gates/1.0",
+ "measurement_space": "APPARENT_PROJECTED_REFERENCE_PIXELS",
+ "projection_note": "The reference is a photograph of a cylinder. Every width measured from it is an APPARENT (projected) width, compressed towards the flanks. The flat artwork width needed to reproduce it when wrapped is a different quantity and is NOT derived here: no wrap model has visible evidence to support it (\u00a77). VQ-2 therefore compares candidate against reference in APPARENT space only \u2014 the candidate is rendered with the same front-facing projection as the reference, so like is compared with like.",
+ "limits": {
+  "text_centerline_err": 0.01,
+  "artwork_width_err": 0.025,
+  "artwork_vertical_err": 0.02,
+  "line_spacing_err": 0.02,
+  "baseline_angle_deg": 0.5,
+  "print_zone_violations": 0,
+  "raster_typography_objects": 0,
+  "unsupported_visible_objects": 0
+ },
+ "per_line": [
+  {
+   "role": "BRAND_MARK",
+   "text": "BBR\u25cbSE",
+   "reference": {
+    "left": 528,
+    "right": 636,
+    "width": 109,
+    "top": 835,
+    "centre": 582.0
+   },
+   "candidate": {
+    "left": 530.51,
+    "right": 639.51,
+    "width": 109.0,
+    "top": 834.74,
+    "centre": 585.01
+   },
+   "centerline_offset_err": 0.00879,
+   "width_err": 0.0,
+   "vertical_err": 0.00025,
+   "baseline_angle_deg": 0.0,
+   "measurement_space": "APPARENT_PROJECTED_REFERENCE_PIXELS"
+  },
+  {
+   "role": "PRODUCT_NAME_LINE_1",
+   "text": "Rose",
+   "reference": {
+    "left": 527,
+    "right": 660,
+    "width": 134,
+    "top": 947,
+    "centre": 593.5
+   },
+   "candidate": {
+    "left": 529.29,
+    "right": 717.72,
+    "width": 188.43,
+    "top": 948.73,
+    "centre": 623.5
+   },
+   "centerline_offset_err": 0.08747,
+   "width_err": 0.40617,
+   "vertical_err": 0.00164,
+   "baseline_angle_deg": 0.0,
+   "measurement_space": "APPARENT_PROJECTED_REFERENCE_PIXELS"
+  },
+  {
+   "role": "PRODUCT_NAME_LINE_2",
+   "text": "Damascena",
+   "reference": {
+    "left": 527,
+    "right": 807,
+    "width": 281,
+    "top": 1029,
+    "centre": 667.0
+   },
+   "candidate": {
+    "left": 528.74,
+    "right": 903.43,
+    "width": 374.69,
+    "top": 1030.61,
+    "centre": 716.08
+   },
+   "centerline_offset_err": 0.1431,
+   "width_err": 0.33341,
+   "vertical_err": 0.00152,
+   "baseline_angle_deg": 0.0,
+   "measurement_space": "APPARENT_PROJECTED_REFERENCE_PIXELS"
+  },
+  {
+   "role": "SUPPORTING_COPY",
+   "text": "NIGHT REPAIR OIL",
+   "reference": {
+    "left": 572,
+    "right": 782,
+    "width": 211,
+    "top": 1141,
+    "centre": 677.0
+   },
+   "candidate": {
+    "left": 573.63,
+    "right": 784.63,
+    "width": 211.0,
+    "top": 1142.82,
+    "centre": 679.13
+   },
+   "centerline_offset_err": 0.00621,
+   "width_err": 0.0,
+   "vertical_err": 0.00172,
+   "baseline_angle_deg": 0.0,
+   "measurement_space": "APPARENT_PROJECTED_REFERENCE_PIXELS"
+  },
+  {
+   "role": "DIVIDER_RULE",
+   "text": null,
+   "reference": {
+    "left": 527,
+    "right": 661,
+    "width": 135,
+    "top": 922,
+    "centre": 594.0
+   },
+   "candidate": {
+    "left": 527,
+    "right": 661,
+    "width": 135,
+    "top": 922,
+    "centre": 594.0
+   },
+   "centerline_offset_err": 0.0,
+   "width_err": 0.0,
+   "vertical_err": 0.0,
+   "baseline_angle_deg": 0.0,
+   "measurement_space": "APPARENT_PROJECTED_REFERENCE_PIXELS"
+  }
+ ],
+ "spacing": [
+  {
+   "between": "brand_to_rule",
+   "reference_px": 70.0,
+   "candidate_px": 70.0,
+   "err": 0.0
+  },
+  {
+   "between": "rule_to_product_line_1",
+   "reference_px": 97.5,
+   "candidate_px": 97.5,
+   "err": 0.0
+  },
+  {
+   "between": "product_line_1_to_line_2",
+   "reference_px": 70.0,
+   "candidate_px": 70.0,
+   "err": 0.0
+  },
+  {
+   "between": "product_line_2_to_supporting",
+   "reference_px": 64.0,
+   "candidate_px": 64.0,
+   "err": 0.0
+  }
+ ],
+ "counts": {
+  "artwork_objects": 36,
+  "nonprinting_objects": 2,
+  "raster_typography_objects": 0,
+  "text_runs": 0,
+  "image_nodes": 0,
+  "by_layer": {
+   "00_REFERENCE_NONPRINTING": 0,
+   "01_M3_STRUCTURE_LOCKED": 3,
+   "02_PRINT_ZONE_GUIDES_NONPRINTING": 1,
+   "03_BRAND_MARK": 5,
+   "04_PRODUCT_NAME": 13,
+   "05_SUPPORTING_COPY": 14,
+   "06_DECORATIVE_VECTORS": 1,
+   "07_FLAT_ARTWORK_COLOURS": 0,
+   "08_CLIPPING_AND_MASKS": 0,
+   "09_MEASUREMENT_GUIDES_NONPRINTING": 1,
+   "10_AUDIT_METADATA_NONPRINTING": 0
+  },
+  "print_zone_violations": 1,
+  "unsupported_visible_objects": 0,
+  "glyph_collisions": 1
+ },
+ "failures": [
+  {
+   "role": "PRODUCT_NAME_LINE_1",
+   "gate": "text_centerline_err",
+   "value": 0.08747
+  },
+  {
+   "role": "PRODUCT_NAME_LINE_1",
+   "gate": "artwork_width_err",
+   "value": 0.40617
+  },
+  {
+   "role": "PRODUCT_NAME_LINE_2",
+   "gate": "text_centerline_err",
+   "value": 0.1431
+  },
+  {
+   "role": "PRODUCT_NAME_LINE_2",
+   "gate": "artwork_width_err",
+   "value": 0.33341
+  },
+  {
+   "role": "document",
+   "gate": "print_zone_violations",
+   "value": 1
+  }
+ ],
+ "all_pass": false,
+ "per_line_not_aggregated": "Every line is gated individually; no local artwork error can hide inside an overall similarity score.",
+ "tracking_solutions": [
+  {
+   "role": "BRAND_MARK",
+   "tracking": 0.6159679781003312,
+   "clamped": false,
+   "natural_width": 12.40311465495289,
+   "applied_width": 15.482954545454547,
+   "width_ratio": 0.8010819006501683,
+   "code": null,
+   "collisions": 0
+  },
+  {
+   "role": "PRODUCT_NAME_LINE_1",
+   "tracking": 0.0,
+   "clamped": true,
+   "natural_width": 26.765248640248647,
+   "applied_width": 26.765248640248647,
+   "width_ratio": 1.4062,
+   "refused_tracking": -2.5771,
+   "code": "VQ2_NEGATIVE_TRACKING_REFUSED_WOULD_COLLIDE",
+   "reason": "the fallback face is intrinsically wider than the reference face at the measured cap height; the negative tracking needed to match the reference width would overlap adjacent glyphs",
+   "collisions": 0
+  },
+  {
+   "role": "PRODUCT_NAME_LINE_2",
+   "tracking": 0.0,
+   "clamped": true,
+   "natural_width": 53.222934472934476,
+   "applied_width": 53.222934472934476,
+   "width_ratio": 1.3334,
+   "refused_tracking": -1.6635,
+   "code": "VQ2_NEGATIVE_TRACKING_REFUSED_WOULD_COLLIDE",
+   "reason": "the fallback face is intrinsically wider than the reference face at the measured cap height; the negative tracking needed to match the reference width would overlap adjacent glyphs",
+   "collisions": 1
+  },
+  {
+   "role": "SUPPORTING_COPY",
+   "tracking": 0.6374936338171633,
+   "clamped": false,
+   "natural_width": 20.409186401833466,
+   "applied_width": 29.97159090909091,
+   "width_ratio": 0.680951053407145,
+   "code": null,
+   "collisions": 0
+  }
+ ],
+ "condensed_face_finding": {
+  "code": "VQ2_CONDENSED_DIDONE_UNAVAILABLE",
+  "detail": "At the measured cap heights every locally available Didone is far wider than the reference face: Bodoni 72 is 1.41x on Rose and 1.33x on Damascena; Didot is 1.61x and 1.54x. The reference product name is therefore set in a CONDENSED high-contrast Didone that is not available here.",
+  "why_the_width_gate_fails": "Matching the reference width would need negative tracking (-18.1 px and -11.7 px apparent), which collides glyphs, or horizontal scaling to ~0.71-0.75, which is stretching. Both are \u00a715 blocking defects, so neither was used: natural tracking is set and the width error is reported.",
+  "rejected_alternatives": [
+   "negative tracking (collides glyphs)",
+   "horizontal scaling (stretched glyphs)"
+  ],
+  "glyph_collisions": 1
+ },
+ "print_zone_violations_detail": [
+  {
+   "role": "PRODUCT_NAME_LINE_2",
+   "side": "right",
+   "x_px": 903.43,
+   "row_px": 1031,
+   "limit_half_px": 154.5
+  }
+ ]
+}

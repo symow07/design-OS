@@ -1,0 +1,161 @@
+{
+  "record_type": "vq1_master_cont1_hard_stop/1.0",
+  "created_at": "2026-07-28",
+  "status": "VQ1_MASTER_HARD_STOP_REVIEW_REQUIRED",
+  "vq1_state": "REVISION_REQUIRED",
+  "final_status_never": "HUMAN_ACCEPTED",
+  "stopped_at_iteration": "M4",
+  "hard_stop_condition": "candidate became worse than M3 (\u00a711)",
+  "best_candidate_remains": "M3",
+  "metric_progression_junction_max": {
+    "IT6": 0.16176,
+    "M1": 0.13598,
+    "M2": 0.06765,
+    "M3": 0.06539,
+    "M4": 0.12697,
+    "gate": 0.045
+  },
+  "why_further_automatic_correction_is_prohibited": "\u00a711 stops on a worse-than-M3 candidate. M4 changed only the contact manifold and every protected region verified byte-identical, so the regression is intrinsic to the exact-meeting model, not drift. \u00a710 permits M5 only after a >=3% improvement, which M4 did not deliver. A third contact model would be a new model, not a bounded correction.",
+  "root_cause_found": "the reference handoff is NOT a step. Rows 495-508 ramp from 69.5 to 108.5 px half-width \u2014 that ramp IS the collar's rounded rim. M3's overlapping bands flattened it (max 0.065). M4 met the components at one row so the collar contour would own the ramp, but a closed mirrored contour beginning at the contact overshoots through it and doubled the error (0.127).",
+  "unresolved_local_rows": {
+    "source_rows": "y=495..508",
+    "reference_half_widths": [
+      69.5,
+      84.5,
+      88.5,
+      95.5,
+      99.5,
+      102.5,
+      104.5,
+      105.5,
+      106.5,
+      106.5,
+      107.5,
+      107.5,
+      107.5,
+      108.5
+    ],
+    "normalized_band": [
+      0.192,
+      0.205
+    ]
+  },
+  "protected_geometry_verified_byte_identical": {
+    "GLASS": true,
+    "DARK_CLOSURE_above_contact": true,
+    "COLLAR_below_ramp": true
+  },
+  "m3_regions": {
+    "whole": {
+      "iou": 0.9889,
+      "mean": 0.00442,
+      "p95": 0.00805,
+      "max": 0.37479
+    },
+    "dark_closure": {
+      "iou": 0.97966,
+      "mean": 0.00314,
+      "p95": 0.0115,
+      "max": 0.04411
+    },
+    "collar": {
+      "iou": 0.99183,
+      "mean": 0.00256,
+      "p95": 0.0026,
+      "max": 0.00485
+    },
+    "junction": {
+      "iou": 0.94784,
+      "mean": 0.01353,
+      "p95": 0.06539,
+      "max": 0.06539
+    },
+    "shoulder": {
+      "iou": 0.98121,
+      "mean": 0.00771,
+      "p95": 0.03143,
+      "max": 0.03807
+    },
+    "body": {
+      "iou": 0.99473,
+      "mean": 0.00264,
+      "p95": 0.00292,
+      "max": 0.00517
+    }
+  },
+  "m4_regions": {
+    "whole": {
+      "iou": 0.98815,
+      "mean": 0.00472,
+      "p95": 0.00871,
+      "max": 0.37479
+    },
+    "dark_closure": {
+      "iou": 0.97861,
+      "mean": 0.00331,
+      "p95": 0.01243,
+      "max": 0.04411
+    },
+    "collar": {
+      "iou": 0.99183,
+      "mean": 0.00256,
+      "p95": 0.0026,
+      "max": 0.00485
+    },
+    "junction": {
+      "iou": 0.90157,
+      "mean": 0.02548,
+      "p95": 0.12697,
+      "max": 0.12697
+    },
+    "shoulder": {
+      "iou": 0.98121,
+      "mean": 0.00771,
+      "p95": 0.03143,
+      "max": 0.03807
+    },
+    "body": {
+      "iou": 0.99473,
+      "mean": 0.00264,
+      "p95": 0.00292,
+      "max": 0.00517
+    }
+  },
+  "m3_gates": {
+    "collar_iou": true,
+    "collar_mean": true,
+    "collar_p95": true,
+    "collar_max": true,
+    "junction_max": false,
+    "shoulder_iou": true,
+    "dark_closure_iou": true,
+    "visible_object_count": true
+  },
+  "m4_gates": {
+    "nonregress_collar": true,
+    "nonregress_body": true,
+    "nonregress_shoulder": true,
+    "nonregress_dark_closure": true,
+    "nonregress_whole": true,
+    "junction_iou": false,
+    "junction_mean": false,
+    "junction_p95": false,
+    "junction_max": false,
+    "protected_geometry": true
+  },
+  "what_was_NOT_done": [
+    "\u00a713 two independent visual inspections \u2014 NOT RUN (\u00a713 requires a candidate that passes every deterministic gate first; none did)",
+    "\u00a714 dual 10/10 scorecards \u2014 NOT PRODUCED",
+    "\u00a717 the 22-section final review package \u2014 NOT PRODUCED",
+    "\u00a718 the bounded technical-reference web pass \u2014 NOT RUN",
+    "M5 and M6 \u2014 not permitted after a worse-than-M3 result"
+  ],
+  "scorecard_reported": "NOT_SCORED",
+  "release_status": "NOT VQ1_MASTER_CANDIDATE_PENDING_HUMAN_REVIEW",
+  "production_geometry": "BLOCKED_PENDING_SUPPLIER_EVIDENCE",
+  "supplier_requests_sent": false,
+  "image_generation_calls": 0,
+  "multimodal_calls_this_slice": 0,
+  "m7_generated": false,
+  "suggested_next_model": "treat rows 495-508 as a THIRD fitted element owned by neither component \u2014 a dedicated rim contour joining flare terminal to collar wall \u2014 rather than assigning the ramp to one side. That is a new model and needs authorization."
+}

@@ -1,0 +1,92 @@
+{% load static %}<!DOCTYPE html>
+{% comment %}THE ONE SHELL (the owner's goal of 2026-09-25, "THE UI, DESIGNED THIS TIME"; his pick, B's board with C's design
+page in C's look). Every page extends this template: one top bar — the mark, Home, Designs, Library, Status, New design,
+one search field and the three counts his rule (d) keeps always visible ("What is running, what is waiting for me, and
+what failed are always visible"), each opening its short list. No inline style and no inline script: the counts are
+drawn by the server (apps/dashboard/context_processors.py, from apps/dashboard/board.py) and refreshed by shell.js.{% endcomment %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}BBROSE Design OS{% endblock %} · BBROSE Design OS</title>
+<link rel="stylesheet" href="{% static 'css/bbrose.css' %}?v={{ FRONTEND_BUILD }}">
+{% block head %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+{% include "_icons.html" %}
+<header class="bar" role="banner">
+  <a class="brand" href="{% url 'dashboard:index' %}" aria-label="BBROSE — home">{% if user.is_authenticated %}<span class="mark" aria-hidden="true"></span>{% else %}<span class="wordmark">BBROSE</span>{% endif %}</a>
+  {% if user.is_authenticated %}
+  <nav class="nav" aria-label="Main">
+    <a href="{% url 'dashboard:index' %}" class="{% if shell.nav == 'home' %}on{% endif %}"{% if shell.nav == 'home' %} aria-current="page"{% endif %}>Home</a>
+    <a href="{% url 'dashboard:history' %}" class="{% if shell.nav == 'designs' %}on{% endif %}"{% if shell.nav == 'designs' %} aria-current="page"{% endif %}>Designs</a>
+    <a href="{% url 'dashboard:round_list' %}" class="{% if shell.nav == 'rounds' %}on{% endif %}"{% if shell.nav == 'rounds' %} aria-current="page"{% endif %}>Rounds</a>
+    <a href="{{ shell.library_url }}" class="{% if shell.nav == 'library' %}on{% endif %}"{% if shell.nav == 'library' %} aria-current="page"{% endif %}>Library</a>
+    <a href="{% url 'dashboard:status' %}" class="{% if shell.nav == 'status' %}on{% endif %}"{% if shell.nav == 'status' %} aria-current="page"{% endif %}>Status</a>
+  </nav>
+  {# [his goal of 2026-10-13, (5): "ONE clear primary button per step"] the step's own action is its page's primary; New design is the home's #}
+  <a class="btn {% if shell.nav == 'home' %}primary{% else %}soft{% endif %} sm new-btn" href="{{ shell.new_url }}"><svg class="i i-sm"><use href="#i-plus"/></svg>New design</a>
+  <form class="find" action="{{ shell.find_url }}" method="get" role="search">
+    <svg class="i" aria-hidden="true"><use href="#i-search"/></svg>
+    <label class="sr" for="shell-find">Find a design, a colour, a material or a product</label>
+    <input id="shell-find" name="q" type="search" autocomplete="off" value="{{ shell.q }}"
+           placeholder="Find a design, a colour, a material — or start a new design">
+    <kbd aria-hidden="true">/</kbd>
+  </form>
+  <div class="pills" id="shell-pills">
+    {% for p in shell.pills %}
+    <button type="button" class="pill {{ p.key }}{% if not p.count %} zero{% endif %}" aria-expanded="false"
+            aria-controls="drop-{{ p.key }}" data-pill="{{ p.key }}">
+      <svg class="i" aria-hidden="true"><use href="#{{ p.icon }}"/></svg>{{ p.words }} <span class="n" data-count="{{ p.key }}">{{ p.count }}</span>
+    </button>
+    <div class="drop" id="drop-{{ p.key }}" hidden>
+      <div class="hd"><b>{{ p.words }}</b><span>{{ p.count }} design{{ p.count|pluralize }}</span></div>
+      {% block shell_object_rows %}{% for c in p.cards %}
+      <a class="row" href="{{ c.url }}">
+        {% if c.picture %}<img class="pic" src="{{ c.picture }}" alt="">{% else %}<span class="pic ph-pic {{ p.key }}"><svg class="i" aria-hidden="true"><use href="#{{ p.icon }}"/></svg></span>{% endif %}
+        <span class="t"><b>{{ c.title }}</b><span>{% if c.reason %}{{ c.reason }}{% else %}{{ c.next_words }}{% endif %}</span></span>
+      </a>
+      {% empty %}
+      <p class="none">{{ p.none }}</p>
+      {% endfor %}{% endblock %}
+      <div class="ft"><a href="{{ p.all_url }}">{{ p.all_words }}</a>{% if p.round_count %}<a href="{{ p.round_url }}">Your rounds · {{ p.round_count }}</a>{% else %}<span class="quiet">{{ p.order_words }}</span>{% endif %}</div>
+    </div>
+    {% endfor %}
+    {# the bell — the old dashboard's, reached again: what happened to your designs, newest first, unread counted #}
+    <button type="button" class="pill note{% if not shell.notes.unread %} zero{% endif %}" aria-expanded="false"
+            aria-controls="drop-note" data-pill="note" title="Notifications">
+      <svg class="i" aria-hidden="true"><use href="#i-bell"/></svg><span class="sr">Notifications — unread:</span> <span class="n" data-unread>{{ shell.notes.unread }}</span>
+    </button>
+    <div class="drop" id="drop-note" hidden>
+      <div class="hd"><b>Notifications</b><span>{{ shell.notes.unread }} unread</span></div>
+      {% block shell_notification_rows %}{% for n in shell.notes.rows %}
+      <a class="row note-row{% if n.new %} new{% endif %}" href="{{ n.url|default:'#' }}" data-note="{{ n.id }}">
+        <span class="t"><b>{{ n.title }}</b><span>{{ n.words|capfirst }} · {{ n.when|date:"j M, H:i" }}{% if n.new %} · <span class="new-tag">new</span>{% endif %}</span></span>
+      </a>
+      {% empty %}
+      <p class="none">Nothing has happened to your designs yet.</p>
+      {% endfor %}{% endblock %}
+      <div class="ft">{% if shell.notes.unread %}<button type="button" class="linkish" data-notes-read>Mark all read</button>{% else %}<span></span>{% endif %}<span class="quiet">Newest first</span></div>
+    </div>
+  </div>
+  <details class="me">
+    <summary title="Signed in as {{ user.get_username }}"><span class="who" aria-hidden="true">{{ user.get_username|slice:":1"|upper }}</span><span class="sr">Your account</span></summary>
+    <div class="me-menu">
+      <p class="small">Signed in as <b>{{ user.get_username }}</b></p>
+      <a class="btn sm" href="{% url 'accounts:logout' %}">Sign out</a>
+    </div>
+  </details>
+  {% endif %}
+</header>
+<main id="main" class="{% block page_class %}page{% endblock %}">
+{% block before %}{% endblock %}
+{% block content %}{% endblock %}
+</main>
+<div id="toast-stack" aria-live="polite"></div>
+{# [his goal of 2026-10-13, (4) and (6)] the in-page question and the drawings' viewer, on every page #}
+<script src="{% static 'js/ask.js' %}?v={{ FRONTEND_BUILD }}"></script>
+<script src="{% static 'js/viewer.js' %}?v={{ FRONTEND_BUILD }}"></script>
+{% if user.is_authenticated %}<script src="{% static 'js/shell.js' %}?v={{ FRONTEND_BUILD }}"></script>{% endif %}
+{% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,343 @@
+samples: 834 | relmap entries: 71
+--- backends seen: 77
+  pid 28150 app='' 14:59:04.185..14:59:46.561 states={('idle in transaction', 'Client'): 10, ('active', None): 5, ('idle', 'Client'): 408, ('active', 'IO'): 1}
+       403× 'SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "djan'
+         4× 'COMMIT'
+         2× '\n            SELECT\n                c.relname,\n                CASE\n                    WHEN c.relispartition '
+         1× 'ALTER TABLE "accounts_reviewerroleassignment" ADD CONSTRAINT "rra_revoked_not_before_granted" CHECK (("revoked'
+  pid 28175 app='' 14:59:06.686..14:59:07.585 states={('idle', 'Client'): 9, ('active', None): 1}
+         8× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+         1× 'SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "djan'
+  pid 28186 app='' 14:59:07.285..14:59:07.285 states={('active', None): 1}
+         1× 'SELECT "core_colorsystem"."id", "core_colorsystem"."brand_id", "core_colorsystem"."name", "core_colorsystem"."'
+  pid 28193 app='' 14:59:07.486..14:59:07.486 states={('active', None): 1}
+         1× 'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_u'
+  pid 28194 app='' 14:59:07.685..14:59:07.884 states={('idle', 'Client'): 2, ('active', 'IO'): 1}
+         2× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28210 app='' 14:59:08.085..14:59:08.285 states={('idle', 'Client'): 2, ('active', None): 1}
+         2× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28219 app='' 14:59:08.485..14:59:08.685 states={('idle', 'Client'): 2, ('active', 'IO'): 1}
+         2× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28226 app='' 14:59:08.585..14:59:08.585 states={('idle', 'Client'): 1}
+         1× 'SELECT "pipeline_gatedecision"."id", "pipeline_gatedecision"."task_id", "pipeline_gatedecision"."gate", "pipel'
+  pid 28227 app='' 14:59:08.884..14:59:09.185 states={('idle', 'Client'): 3, ('active', None): 1}
+         3× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28248 app='' 14:59:09.283..14:59:09.485 states={('idle', 'Client'): 2, ('active', None): 1}
+         2× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28260 app='' 14:59:09.684..14:59:09.883 states={('idle', 'Client'): 2, ('active', None): 1}
+         2× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28267 app='' 14:59:09.785..14:59:09.785 states={('idle', 'Client'): 1}
+         1× 'SELECT "pipeline_packagingoutput"."id", "pipeline_packagingoutput"."task_id", "pipeline_packagingoutput"."appr'
+  pid 28279 app='' 14:59:10.085..14:59:10.284 states={('idle', 'Client'): 2, ('active', None): 1}
+         2× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28290 app='' 14:59:10.485..14:59:10.685 states={('idle', 'Client'): 1, ('active', None): 2}
+         2× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28299 app='' 14:59:10.785..14:59:11.085 states={('idle', 'Client'): 2, ('active', None): 2}
+         2× 'COMMIT'
+         1× 'INSERT INTO "pipeline_notification" ("recipient_id", "task_id", "kind", "message", "is_read", "created_at") VA'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28316 app='' 14:59:11.184..14:59:11.485 states={('idle', 'Client'): 3, ('active', None): 1}
+         2× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+         1× 'SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "djan'
+  pid 28325 app='' 14:59:11.585..14:59:13.485 states={('idle', 'Client'): 8, ('active', 'Lock'): 11, ('active', None): 1}
+        11× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+         6× 'ROLLBACK'
+         3× 'COMMIT'
+  pid 28334 app='' 14:59:11.786..14:59:12.886 states={('active', 'Lock'): 11, ('active', None): 1}
+        12× 'SELECT "pipeline_taskreference"."id", "pipeline_taskreference"."task_id", "pipeline_taskreference"."kind", "pi'
+  pid 28353 app='' 14:59:13.684..14:59:13.985 states={('idle', 'Client'): 3, ('active', None): 1}
+         3× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28368 app='' 14:59:14.183..14:59:14.485 states={('idle', 'Client'): 2, ('active', None): 2}
+         3× 'COMMIT'
+         1× '\n            SELECT\n                c.relname,\n                CASE\n                    WHEN c.relispartition '
+  pid 28376 app='' 14:59:14.585..14:59:14.885 states={('idle', 'Client'): 3, ('active', 'IO'): 1}
+         3× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28385 app='' 14:59:15.085..14:59:15.285 states={('idle', 'Client'): 2, ('active', None): 1}
+         2× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28398 app='' 14:59:15.184..14:59:15.184 states={('idle', 'Client'): 1}
+         1× 'SELECT "pipeline_creativebrief"."id", "pipeline_creativebrief"."task_id", "pipeline_creativebrief"."retrieved_'
+  pid 28399 app='' 14:59:15.485..14:59:15.685 states={('idle', 'Client'): 2, ('active', None): 1}
+         2× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28406 app='' 14:59:15.585..14:59:15.585 states={('idle', 'Client'): 1}
+         1× 'SELECT "pipeline_generatedimage"."id", "pipeline_generatedimage"."task_id", "pipeline_generatedimage"."directi'
+  pid 28407 app='' 14:59:15.885..14:59:16.085 states={('idle', 'Client'): 2, ('active', 'IO'): 1}
+         2× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28414 app='' 14:59:15.985..14:59:15.985 states={('active', None): 1}
+         1× 'SELECT "pipeline_gate1regenerationjob"."id", "pipeline_gate1regenerationjob"."task_id", "pipeline_gate1regener'
+  pid 28422 app='' 14:59:16.283..14:59:16.485 states={('idle', 'Client'): 2, ('active', None): 1}
+         2× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28430 app='' 14:59:16.685..14:59:16.884 states={('idle', 'Client'): 2, ('active', None): 1}
+         2× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28432 app='' 14:59:16.685..14:59:16.785 states={(None, None): 2}
+         2× '<insufficient privilege>'
+  pid 28439 app='' 14:59:17.084..14:59:17.385 states={('idle', 'Client'): 3, ('active', None): 1}
+         2× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+         1× 'SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "djan'
+  pid 28443 app='' 14:59:17.084..14:59:17.084 states={('idle', None): 1}
+         1× 'SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_u'
+  pid 28454 app='' 14:59:17.485..14:59:17.684 states={('idle', 'Client'): 2, ('active', None): 1}
+         2× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28462 app='' 14:59:17.884..14:59:18.085 states={('idle', 'Client'): 2, ('active', None): 1}
+         2× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28479 app='' 14:59:18.283..14:59:18.484 states={('idle', 'Client'): 2, ('active', 'IO'): 1}
+         2× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28486 app='' 14:59:18.384..14:59:18.384 states={('active', None): 1}
+         1× 'SELECT "pipeline_generatedimage"."id", "pipeline_generatedimage"."task_id", "pipeline_generatedimage"."directi'
+  pid 28487 app='' 14:59:18.684..14:59:18.983 states={('idle', 'Client'): 3, ('active', None): 1}
+         2× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+         1× 'SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "dj'
+  pid 28494 app='' 14:59:18.784..14:59:18.784 states={('idle', 'Client'): 1}
+         1× 'SELECT "pipeline_creativebrief"."id", "pipeline_creativebrief"."task_id", "pipeline_creativebrief"."retrieved_'
+  pid 28495 app='' 14:59:19.084..14:59:19.461 states={('idle', 'Client'): 2, ('active', None): 2}
+         3× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28510 app='' 14:59:19.561..14:59:19.961 states={('idle', 'Client'): 4, ('active', 'IO'): 1}
+         3× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+         1× 'SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "djan'
+  pid 28518 app='' 14:59:20.061..14:59:20.361 states={('idle', 'Client'): 3, ('active', None): 1}
+         3× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28537 app='' 14:59:20.961..14:59:21.261 states={('idle', 'Client'): 3, ('active', 'IO'): 1}
+         2× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+         1× 'SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "djan'
+  pid 28552 app='' 14:59:21.361..14:59:21.661 states={('idle', 'Client'): 2, ('active', None): 2}
+         3× 'COMMIT'
+         1× '\n            SELECT\n                c.relname,\n                CASE\n                    WHEN c.relispartition '
+  pid 28560 app='' 14:59:21.761..14:59:22.161 states={('active', None): 2, ('idle', 'Client'): 2, ('active', 'IO'): 1}
+         2× 'COMMIT'
+         1× 'SELECT "auth_group"."id", "auth_group"."name" FROM "auth_group" WHERE "auth_group"."name" = \'Designer\' LIMIT 2'
+         1× '\n            SELECT\n                c.relname,\n                CASE\n                    WHEN c.relispartition '
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28568 app='' 14:59:22.361..14:59:22.560 states={('idle', 'Client'): 2, ('active', None): 1}
+         2× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28580 app='' 14:59:22.361..14:59:22.361 states={('idle', 'Client'): 1}
+         1× 'SELECT "pipeline_designtask"."status", COUNT("pipeline_designtask"."id") AS "n" FROM "pipeline_designtask" GRO'
+  pid 28582 app='' 14:59:22.461..14:59:22.461 states={('active', None): 1}
+         1× 'SELECT "pipeline_designtask"."id", "pipeline_designtask"."brand_id", "pipeline_designtask"."product_id", "pipe'
+  pid 28583 app='' 14:59:22.761..14:59:22.960 states={('idle', 'Client'): 2, ('active', None): 1}
+         2× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28590 app='' 14:59:22.861..14:59:22.861 states={('idle', 'Client'): 1}
+         1× 'SELECT "pipeline_packagingoutput"."id", "pipeline_packagingoutput"."task_id", "pipeline_packagingoutput"."appr'
+  pid 28591 app='' 14:59:23.161..14:59:23.361 states={('idle', 'Client'): 2, ('active', None): 1}
+         2× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28598 app='' 14:59:23.261..14:59:23.261 states={('idle', 'Client'): 1}
+         1× 'SELECT "pipeline_generatedimage"."id", "pipeline_generatedimage"."task_id", "pipeline_generatedimage"."directi'
+  pid 28606 app='' 14:59:23.560..14:59:23.761 states={('idle', 'Client'): 2, ('active', None): 1}
+         2× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28618 app='' 14:59:24.361..14:59:24.759 states={('idle', 'Client'): 4, ('active', 'IO'): 1}
+         4× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28630 app='' 14:59:24.462..14:59:24.462 states={('active', None): 1}
+         1× "SELECT set_config('TimeZone', 'UTC', false)"
+  pid 28631 app='' 14:59:24.462..14:59:24.462 states={('active', None): 1}
+         1× "SELECT set_config('TimeZone', 'UTC', false)"
+  pid 28634 app='' 14:59:24.960..14:59:25.259 states={('idle', 'Client'): 3, ('active', None): 1}
+         3× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28642 app='' 14:59:25.461..14:59:25.759 states={('idle', 'Client'): 2, ('active', None): 2}
+         2× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+         1× 'INSERT INTO "auth_permission" ("name", "content_type_id", "codename") VALUES (\'Can add corpus item\', 2589, \'ad'
+  pid 28654 app='' 14:59:25.461..14:59:25.461 states={('idle', 'Client'): 1}
+         1× 'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "d'
+  pid 28655 app='' 14:59:25.461..14:59:25.461 states={('idle', 'Client'): 1}
+         1× 'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "d'
+  pid 28658 app='' 14:59:25.860..14:59:26.461 states={('idle', 'Client'): 6, ('active', None): 1}
+         5× 'COMMIT'
+         1× 'SELECT COUNT(*) AS "__count" FROM "pipeline_gatedecision" WHERE ("pipeline_gatedecision"."gate" = \'container_p'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28666 app='' 14:59:26.262..14:59:26.262 states={('active', None): 1}
+         1× 'UPDATE "pipeline_packagingoutput" SET "spec_sheet" = \'{"backend": "container", "container_profile": {"variant"'
+  pid 28668 app='' 14:59:26.361..14:59:27.260 states={('idle', 'Client'): 10}
+        10× 'SELECT "pipeline_agentlog"."id", "pipeline_agentlog"."agent_name", "pipeline_agentlog"."action", "pipeline_age'
+  pid 28669 app='' 14:59:26.361..14:59:26.361 states={('idle', 'Client'): 1}
+         1× 'SELECT "pipeline_packagingoutput"."id", "pipeline_packagingoutput"."task_id", "pipeline_packagingoutput"."appr'
+  pid 28671 app='' 14:59:26.361..14:59:26.361 states={('active', None): 1}
+         1× 'SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "d'
+  pid 28683 app='' 14:59:26.659..14:59:26.961 states={('idle', 'Client'): 3, ('active', 'IO'): 1}
+         3× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28690 app='' 14:59:26.760..14:59:26.760 states={('active', None): 1}
+         1× 'SELECT "core_product"."id", "core_product"."brand_id", "core_product"."product_id", "core_product"."name", "co'
+  pid 28691 app='' 14:59:27.159..14:59:27.461 states={('idle', 'Client'): 3, ('active', None): 1}
+         3× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28696 app='' 14:59:27.159..14:59:27.159 states={('active', None): 1}
+         1× "SELECT set_config('TimeZone', 'UTC', false)"
+  pid 28697 app='' 14:59:27.159..14:59:27.159 states={('active', None): 1}
+         1× "SELECT set_config('TimeZone', 'UTC', false)"
+  pid 28700 app='' 14:59:27.362..14:59:27.362 states={('idle', 'Client'): 1}
+         1× 'SELECT COUNT(*) AS "__count" FROM "pipeline_agentlog" WHERE ("pipeline_agentlog"."action"::text LIKE \'%reconst'
+  pid 28709 app='' 14:59:27.659..14:59:27.961 states={('idle', 'Client'): 2, ('active', None): 2}
+         2× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+         1× 'INSERT INTO "auth_permission" ("name", "content_type_id", "codename") VALUES (\'Can add design project\', 2829, '
+  pid 28717 app='' 14:59:28.061..14:59:28.461 states={('idle', 'Client'): 4, ('active', None): 1}
+         3× 'COMMIT'
+         1× 'SELECT COUNT(*) AS "__count" FROM "pipeline_gatedecision" WHERE "pipeline_gatedecision"."task_id" = 43'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28733 app='' 14:59:28.661..14:59:28.861 states={('idle', 'Client'): 2, ('active', 'IO'): 1}
+         2× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+  pid 28741 app='' 14:59:29.060..14:59:46.261 states={('idle', 'Client'): 172, ('active', 'IO'): 1}
+       171× 'COMMIT'
+         1× 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pi'
+         1× 'SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "djan'
+  pid 28748 app='' 14:59:29.161..14:59:29.161 states={('active', 'Client'): 1}
+         1× 'SELECT "pipeline_generatedimage"."id", "pipeline_generatedimage"."task_id", "pipeline_generatedimage"."directi'
+  pid 28771 app='psql' 14:59:32.762..14:59:32.762 states={('active', None): 1}
+         1× "select oid || ' ' || relname from pg_class where relkind = 'r' and relnamespace = 'public'::regnamespace"
+  pid 28853 app='psql' 14:59:44.462..14:59:44.462 states={('active', None): 1}
+         1× "select oid || ' ' || relname from pg_class where relkind = 'r' and relnamespace = 'public'::regnamespace"
+--- lock waits (a backend with wait_event_type == 'Lock'):
+@2026-09-08T14:59:11.786
+  WAITS pid 28325 state=active xact_start=14:59:11.735 query_start=14:59:11.735
+        query: 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pipeline_gatedecision", "intelligence_reviewcandidat'
+        WANTS: ['pipeline_taskreference:AccessExclusive']
+        holds: ['intelligence_historicaldesignprofile:AccessExclusive', 'intelligence_operationalpermissionprojection:AccessExclusive', 'intelligence_reviewcandidate:AccessExclusive', 'django_content_type:AccessExclusive', 'pipeline_agentlog:AccessExclusive', 'pipeline_designtask:AccessExclusive', 'intelligence_fontfaceprofile:AccessExclusive', 'accounts_authorizationaudit:AccessExclusive', 'dielines_dielinejob:AccessExclusive', 'pipeline_creativebrief:AccessExclusive', 'auth_user:AccessExclusive', 'accounts_reviewerroleassignment:AccessExclusive', 'core_product:AccessExclusive', 'django_admin_log:AccessExclusive'] …
+        pid 28150 state=idle xact_start= query_start=14:59:06.321
+        query: 'SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_'
+  WAITS pid 28334 state=active xact_start=14:59:11.736 query_start=14:59:11.736
+        query: 'SELECT "pipeline_taskreference"."id", "pipeline_taskreference"."task_id", "pipeline_taskreference"."kind", "pipeline_taskreference"."image", "pipeline_taskrefer'
+        WANTS: ['pipeline_designtask:AccessShare']
+        holds: ['pipeline_taskreference:AccessShare']
+@2026-09-08T14:59:11.886
+  WAITS pid 28325 state=active xact_start=14:59:11.735 query_start=14:59:11.735
+        query: 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pipeline_gatedecision", "intelligence_reviewcandidat'
+        WANTS: ['pipeline_taskreference:AccessExclusive']
+        holds: ['intelligence_historicaldesignprofile:AccessExclusive', 'intelligence_operationalpermissionprojection:AccessExclusive', 'intelligence_reviewcandidate:AccessExclusive', 'django_content_type:AccessExclusive', 'pipeline_agentlog:AccessExclusive', 'pipeline_designtask:AccessExclusive', 'intelligence_fontfaceprofile:AccessExclusive', 'accounts_authorizationaudit:AccessExclusive', 'dielines_dielinejob:AccessExclusive', 'pipeline_creativebrief:AccessExclusive', 'auth_user:AccessExclusive', 'accounts_reviewerroleassignment:AccessExclusive', 'core_product:AccessExclusive', 'django_admin_log:AccessExclusive'] …
+        pid 28150 state=idle xact_start= query_start=14:59:06.321
+        query: 'SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_'
+  WAITS pid 28334 state=active xact_start=14:59:11.736 query_start=14:59:11.736
+        query: 'SELECT "pipeline_taskreference"."id", "pipeline_taskreference"."task_id", "pipeline_taskreference"."kind", "pipeline_taskreference"."image", "pipeline_taskrefer'
+        WANTS: ['pipeline_designtask:AccessShare']
+        holds: ['pipeline_taskreference:AccessShare']
+@2026-09-08T14:59:11.986
+  WAITS pid 28325 state=active xact_start=14:59:11.735 query_start=14:59:11.735
+        query: 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pipeline_gatedecision", "intelligence_reviewcandidat'
+        WANTS: ['pipeline_taskreference:AccessExclusive']
+        holds: ['intelligence_historicaldesignprofile:AccessExclusive', 'intelligence_operationalpermissionprojection:AccessExclusive', 'intelligence_reviewcandidate:AccessExclusive', 'django_content_type:AccessExclusive', 'pipeline_agentlog:AccessExclusive', 'pipeline_designtask:AccessExclusive', 'intelligence_fontfaceprofile:AccessExclusive', 'accounts_authorizationaudit:AccessExclusive', 'dielines_dielinejob:AccessExclusive', 'pipeline_creativebrief:AccessExclusive', 'auth_user:AccessExclusive', 'accounts_reviewerroleassignment:AccessExclusive', 'core_product:AccessExclusive', 'django_admin_log:AccessExclusive'] …
+        pid 28150 state=idle xact_start= query_start=14:59:06.321
+        query: 'SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_'
+  WAITS pid 28334 state=active xact_start=14:59:11.736 query_start=14:59:11.736
+        query: 'SELECT "pipeline_taskreference"."id", "pipeline_taskreference"."task_id", "pipeline_taskreference"."kind", "pipeline_taskreference"."image", "pipeline_taskrefer'
+        WANTS: ['pipeline_designtask:AccessShare']
+        holds: ['pipeline_taskreference:AccessShare']
+@2026-09-08T14:59:12.086
+  WAITS pid 28325 state=active xact_start=14:59:11.735 query_start=14:59:11.735
+        query: 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pipeline_gatedecision", "intelligence_reviewcandidat'
+        WANTS: ['pipeline_taskreference:AccessExclusive']
+        holds: ['intelligence_historicaldesignprofile:AccessExclusive', 'intelligence_operationalpermissionprojection:AccessExclusive', 'intelligence_reviewcandidate:AccessExclusive', 'django_content_type:AccessExclusive', 'pipeline_agentlog:AccessExclusive', 'pipeline_designtask:AccessExclusive', 'intelligence_fontfaceprofile:AccessExclusive', 'accounts_authorizationaudit:AccessExclusive', 'dielines_dielinejob:AccessExclusive', 'pipeline_creativebrief:AccessExclusive', 'auth_user:AccessExclusive', 'accounts_reviewerroleassignment:AccessExclusive', 'core_product:AccessExclusive', 'django_admin_log:AccessExclusive'] …
+        pid 28150 state=idle xact_start= query_start=14:59:06.321
+        query: 'SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_'
+  WAITS pid 28334 state=active xact_start=14:59:11.736 query_start=14:59:11.736
+        query: 'SELECT "pipeline_taskreference"."id", "pipeline_taskreference"."task_id", "pipeline_taskreference"."kind", "pipeline_taskreference"."image", "pipeline_taskrefer'
+        WANTS: ['pipeline_designtask:AccessShare']
+        holds: ['pipeline_taskreference:AccessShare']
+@2026-09-08T14:59:12.186
+  WAITS pid 28325 state=active xact_start=14:59:11.735 query_start=14:59:11.735
+        query: 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pipeline_gatedecision", "intelligence_reviewcandidat'
+        WANTS: ['pipeline_taskreference:AccessExclusive']
+        holds: ['intelligence_historicaldesignprofile:AccessExclusive', 'intelligence_operationalpermissionprojection:AccessExclusive', 'intelligence_reviewcandidate:AccessExclusive', 'django_content_type:AccessExclusive', 'pipeline_agentlog:AccessExclusive', 'pipeline_designtask:AccessExclusive', 'intelligence_fontfaceprofile:AccessExclusive', 'accounts_authorizationaudit:AccessExclusive', 'dielines_dielinejob:AccessExclusive', 'pipeline_creativebrief:AccessExclusive', 'auth_user:AccessExclusive', 'accounts_reviewerroleassignment:AccessExclusive', 'core_product:AccessExclusive', 'django_admin_log:AccessExclusive'] …
+        pid 28150 state=idle xact_start= query_start=14:59:06.321
+        query: 'SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_'
+  WAITS pid 28334 state=active xact_start=14:59:11.736 query_start=14:59:11.736
+        query: 'SELECT "pipeline_taskreference"."id", "pipeline_taskreference"."task_id", "pipeline_taskreference"."kind", "pipeline_taskreference"."image", "pipeline_taskrefer'
+        WANTS: ['pipeline_designtask:AccessShare']
+        holds: ['pipeline_taskreference:AccessShare']
+@2026-09-08T14:59:12.286
+  WAITS pid 28325 state=active xact_start=14:59:11.735 query_start=14:59:11.735
+        query: 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pipeline_gatedecision", "intelligence_reviewcandidat'
+        WANTS: ['pipeline_taskreference:AccessExclusive']
+        holds: ['intelligence_historicaldesignprofile:AccessExclusive', 'intelligence_operationalpermissionprojection:AccessExclusive', 'intelligence_reviewcandidate:AccessExclusive', 'django_content_type:AccessExclusive', 'pipeline_agentlog:AccessExclusive', 'pipeline_designtask:AccessExclusive', 'intelligence_fontfaceprofile:AccessExclusive', 'accounts_authorizationaudit:AccessExclusive', 'dielines_dielinejob:AccessExclusive', 'pipeline_creativebrief:AccessExclusive', 'auth_user:AccessExclusive', 'accounts_reviewerroleassignment:AccessExclusive', 'core_product:AccessExclusive', 'django_admin_log:AccessExclusive'] …
+        pid 28150 state=idle xact_start= query_start=14:59:06.321
+        query: 'SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_'
+  WAITS pid 28334 state=active xact_start=14:59:11.736 query_start=14:59:11.736
+        query: 'SELECT "pipeline_taskreference"."id", "pipeline_taskreference"."task_id", "pipeline_taskreference"."kind", "pipeline_taskreference"."image", "pipeline_taskrefer'
+        WANTS: ['pipeline_designtask:AccessShare']
+        holds: ['pipeline_taskreference:AccessShare']
+@2026-09-08T14:59:12.386
+  WAITS pid 28325 state=active xact_start=14:59:11.735 query_start=14:59:11.735
+        query: 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pipeline_gatedecision", "intelligence_reviewcandidat'
+        WANTS: ['pipeline_taskreference:AccessExclusive']
+        holds: ['intelligence_historicaldesignprofile:AccessExclusive', 'intelligence_operationalpermissionprojection:AccessExclusive', 'intelligence_reviewcandidate:AccessExclusive', 'django_content_type:AccessExclusive', 'pipeline_agentlog:AccessExclusive', 'pipeline_designtask:AccessExclusive', 'intelligence_fontfaceprofile:AccessExclusive', 'accounts_authorizationaudit:AccessExclusive', 'dielines_dielinejob:AccessExclusive', 'pipeline_creativebrief:AccessExclusive', 'auth_user:AccessExclusive', 'accounts_reviewerroleassignment:AccessExclusive', 'core_product:AccessExclusive', 'django_admin_log:AccessExclusive'] …
+        pid 28150 state=idle xact_start= query_start=14:59:06.321
+        query: 'SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_'
+  WAITS pid 28334 state=active xact_start=14:59:11.736 query_start=14:59:11.736
+        query: 'SELECT "pipeline_taskreference"."id", "pipeline_taskreference"."task_id", "pipeline_taskreference"."kind", "pipeline_taskreference"."image", "pipeline_taskrefer'
+        WANTS: ['pipeline_designtask:AccessShare']
+        holds: ['pipeline_taskreference:AccessShare']
+@2026-09-08T14:59:12.486
+  WAITS pid 28325 state=active xact_start=14:59:11.735 query_start=14:59:11.735
+        query: 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pipeline_gatedecision", "intelligence_reviewcandidat'
+        WANTS: ['pipeline_taskreference:AccessExclusive']
+        holds: ['intelligence_historicaldesignprofile:AccessExclusive', 'intelligence_operationalpermissionprojection:AccessExclusive', 'intelligence_reviewcandidate:AccessExclusive', 'django_content_type:AccessExclusive', 'pipeline_agentlog:AccessExclusive', 'pipeline_designtask:AccessExclusive', 'intelligence_fontfaceprofile:AccessExclusive', 'accounts_authorizationaudit:AccessExclusive', 'dielines_dielinejob:AccessExclusive', 'pipeline_creativebrief:AccessExclusive', 'auth_user:AccessExclusive', 'accounts_reviewerroleassignment:AccessExclusive', 'core_product:AccessExclusive', 'django_admin_log:AccessExclusive'] …
+        pid 28150 state=idle xact_start= query_start=14:59:06.321
+        query: 'SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_'
+  WAITS pid 28334 state=active xact_start=14:59:11.736 query_start=14:59:11.736
+        query: 'SELECT "pipeline_taskreference"."id", "pipeline_taskreference"."task_id", "pipeline_taskreference"."kind", "pipeline_taskreference"."image", "pipeline_taskrefer'
+        WANTS: ['pipeline_designtask:AccessShare']
+        holds: ['pipeline_taskreference:AccessShare']
+@2026-09-08T14:59:12.584
+  WAITS pid 28325 state=active xact_start=14:59:11.735 query_start=14:59:11.735
+        query: 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pipeline_gatedecision", "intelligence_reviewcandidat'
+        WANTS: ['pipeline_taskreference:AccessExclusive']
+        holds: ['intelligence_historicaldesignprofile:AccessExclusive', 'intelligence_operationalpermissionprojection:AccessExclusive', 'intelligence_reviewcandidate:AccessExclusive', 'django_content_type:AccessExclusive', 'pipeline_agentlog:AccessExclusive', 'pipeline_designtask:AccessExclusive', 'intelligence_fontfaceprofile:AccessExclusive', 'accounts_authorizationaudit:AccessExclusive', 'dielines_dielinejob:AccessExclusive', 'pipeline_creativebrief:AccessExclusive', 'auth_user:AccessExclusive', 'accounts_reviewerroleassignment:AccessExclusive', 'core_product:AccessExclusive', 'django_admin_log:AccessExclusive'] …
+@2026-09-08T14:59:12.585
+        pid 28150 state=idle xact_start= query_start=14:59:06.321
+        query: 'SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_'
+  WAITS pid 28334 state=active xact_start=14:59:11.736 query_start=14:59:11.736
+        query: 'SELECT "pipeline_taskreference"."id", "pipeline_taskreference"."task_id", "pipeline_taskreference"."kind", "pipeline_taskreference"."image", "pipeline_taskrefer'
+        WANTS: ['pipeline_designtask:AccessShare']
+        holds: ['pipeline_taskreference:AccessShare']
+@2026-09-08T14:59:12.686
+  WAITS pid 28325 state=active xact_start=14:59:11.735 query_start=14:59:11.735
+        query: 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pipeline_gatedecision", "intelligence_reviewcandidat'
+        WANTS: ['pipeline_taskreference:AccessExclusive']
+        holds: ['intelligence_historicaldesignprofile:AccessExclusive', 'intelligence_operationalpermissionprojection:AccessExclusive', 'intelligence_reviewcandidate:AccessExclusive', 'django_content_type:AccessExclusive', 'pipeline_agentlog:AccessExclusive', 'pipeline_designtask:AccessExclusive', 'intelligence_fontfaceprofile:AccessExclusive', 'accounts_authorizationaudit:AccessExclusive', 'dielines_dielinejob:AccessExclusive', 'pipeline_creativebrief:AccessExclusive', 'auth_user:AccessExclusive', 'accounts_reviewerroleassignment:AccessExclusive', 'core_product:AccessExclusive', 'django_admin_log:AccessExclusive'] …
+        pid 28150 state=idle xact_start= query_start=14:59:06.321
+        query: 'SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_'
+  WAITS pid 28334 state=active xact_start=14:59:11.736 query_start=14:59:11.736
+        query: 'SELECT "pipeline_taskreference"."id", "pipeline_taskreference"."task_id", "pipeline_taskreference"."kind", "pipeline_taskreference"."image", "pipeline_taskrefer'
+        WANTS: ['pipeline_designtask:AccessShare']
+        holds: ['pipeline_taskreference:AccessShare']
+@2026-09-08T14:59:12.786
+  WAITS pid 28325 state=active xact_start=14:59:11.735 query_start=14:59:11.735
+        query: 'TRUNCATE "auth_permission", "pipeline_batchrun", "accounts_reviewerroleassignment", "pipeline_designtask", "pipeline_gatedecision", "intelligence_reviewcandidat'
+        WANTS: ['pipeline_taskreference:AccessExclusive']
+        holds: ['intelligence_historicaldesignprofile:AccessExclusive', 'intelligence_operationalpermissionprojection:AccessExclusive', 'intelligence_reviewcandidate:AccessExclusive', 'django_content_type:AccessExclusive', 'pipeline_agentlog:AccessExclusive', 'pipeline_designtask:AccessExclusive', 'intelligence_fontfaceprofile:AccessExclusive', 'accounts_authorizationaudit:AccessExclusive', 'dielines_dielinejob:AccessExclusive', 'pipeline_creativebrief:AccessExclusive', 'auth_user:AccessExclusive', 'accounts_reviewerroleassignment:AccessExclusive', 'core_product:AccessExclusive', 'django_admin_log:AccessExclusive'] …
+        pid 28150 state=idle xact_start= query_start=14:59:06.321
+        query: 'SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_'
+  WAITS pid 28334 state=active xact_start=14:59:11.736 query_start=14:59:11.736
+        query: 'SELECT "pipeline_taskreference"."id", "pipeline_taskreference"."task_id", "pipeline_taskreference"."kind", "pipeline_taskreference"."image", "pipeline_taskrefer'
+        WANTS: ['pipeline_designtask:AccessShare']
+        holds: ['pipeline_taskreference:AccessShare']
+lock-wait moments: 12

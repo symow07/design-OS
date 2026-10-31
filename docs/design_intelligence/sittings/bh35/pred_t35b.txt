@@ -1,0 +1,28 @@
+§AD0(a) PREDICTION — T35 run 2 (relaunch after the run-1 refusal scored in
+score_t35_run1.txt), sealed BEFORE launch. The register was staged before
+pred_t35.txt's launch and is unchanged (135/0); nothing is added by me —
+the only difference from pred_t35.txt is the refused run's own unstaged
+ledger line, which the gate stages with its own. Base HEAD 5898035.
+
+L1 WRITE SET: exactly ONE path — OWNER_BLOCKER_CLEARANCE.md. Plus the ledger
+   (TWO lines: the refused run's record-integrity line + this run's). NO
+   other path.
+L2 DIFF SHAPE: register +135 −0; prefix 5dc8b04482cb08c3; tail ==
+   t35_block.md 7ef34d5fea0dc8e9; the owner's 67 lines aaffa4320d6f3269;
+   total 19,238 lines.
+L3 MANIFEST / A391: untouched; ledger append-only (465-line HEAD a
+   byte-prefix of the 467-line result). Census-first: records none,
+   identity none, WIT 863 untouched, corpus constants none, exclusion
+   list untouched.
+L4 STAGED == DECLARED: one row 135 0 OWNER_BLOCKER_CLEARANCE.md (the ledger
+   is the gate's own staging).
+L5 COMMIT CONTENTS: 2 files, insertions 137, deletions 0.
+L6 SUITE LINE + REFUSAL TREE: GREEN — TIER_2=GREEN collected=8555
+   failures=0 apps=7743 dip0c=671 dip0=141, nothing running beside the
+   gate. §BH24 1/3 after run 1.
+L7 LEDGER FOLD: 465 → 467 (+2: the refused run's line and this landing's).
+L8 PROTOCOL IDENTITIES / APPS DIFF: apps diff EMPTY; GATE 7fbeb8f1fe10b0fb
+   at [514:541] and TEST b32030dc827263e4 byte-identical; tree seals
+   unchanged; protocol_identity UNCHANGED; the eight M7 artefacts ==
+   baseline; the Noto trio VERIFIED_FOR_PRODUCTION under Django at
+   scoring; the 35 at their PROVENANCE hashes; nothing censused yet.

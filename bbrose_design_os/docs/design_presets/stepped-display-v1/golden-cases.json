@@ -1,0 +1,14 @@
+{
+  "schema": "assembly_adversarial_cases/1.0",
+  "cases": [
+    {"name": "eight-instead-of-twelve", "input": {"count": 8}, "expected": "schema refusal"},
+    {"name": "zero-clearance", "input": {"hole": 29}, "expected_failed_check": "clearance"},
+    {"name": "impossible-envelope", "input": {"dimensions": [100, 100, 200]}, "expected_failed_check": "width"},
+    {"name": "occluding-riser", "input": {"riser": 20}, "expected_failed_check": "sightline"},
+    {"name": "stale-parent", "input": {"expected_hash": "previous revision"}, "expected_http": 409},
+    {"name": "eleven-exported-instances", "expected": "export count refusal"},
+    {"name": "thirteen-exported-instances", "expected": "export count refusal"}
+  ],
+  "tests": "apps/pipeline/tests/test_rescue_day3.py",
+  "legacy_workflow_golden_tests": "apps/pipeline/tests/test_rescue_day1.py::test_ten_golden_acceptance_contracts"
+}

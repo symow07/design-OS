@@ -1,0 +1,23 @@
+{% comment %}§BH69(2) — THE BOX ON A DESIGN'S ADJUST PANEL (the owner's goal of 2026-09-26: "An upload box on New design
+(and on a design's Adjust panel)"). It sits outside the Adjust form: a try posts that form to the design loop, which never
+pays and never reads a picture (§BH51(a)), so a picture is never part of a try. Each picture is read at once into words
+and kept with this design; what a read costs, and whether anything drawn from here can still take its words, is said
+before the click.{% endcomment %}
+{% if inspiration.left > 0 %}
+<fieldset class="inspire" id="inspiration-box" data-max="{{ inspiration.left }}" data-kind="inspiration_picture"
+          data-task="{{ task.pk }}">
+  <legend>Add an inspiration picture <span>optional</span></legend>
+  <p class="small">Read into words at once — layout, colours, mood, finish, type style — and kept with this design.
+    Reading is reserved within the rescue budget when you add a picture ({{ inspiration.cost_words }}){% if adjust.available %}; a try above stays free and never uses
+    it{% endif %}. {{ inspiration.box_words }} The picture itself is never drawn from, and another brand's logo, name or
+    words are never copied.</p>
+  <label class="ref-zone inspire-zone" for="inspiration-input">
+    <span class="ref-zone-title">Add inspiration pictures</span>
+    <span class="ref-zone-drop">Drop pictures here or browse — PNG, JPEG or WEBP, {{ inspiration.left }} more at most</span>
+  </label>
+  <input id="inspiration-input" class="ref-input" type="file" multiple accept=".png,.jpg,.jpeg,.webp">
+  <ul class="inspire-list" id="inspiration-list" aria-live="polite"></ul>
+</fieldset>
+{% else %}
+<p class="why inspire-full">This design keeps {{ inspiration.rows|length }} inspiration pictures, the most a design takes.</p>
+{% endif %}

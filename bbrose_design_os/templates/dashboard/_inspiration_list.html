@@ -1,0 +1,24 @@
+{% comment %}§BH69(2) — a design's kept inspiration pictures, each with what was taken from it, in words (the design's
+page and its record draw the same list: apps/dashboard/views.py _inspiration_kept).{% endcomment %}
+<ul class="inspire-list">
+  {% for r in inspiration.rows %}
+  <li class="inspire-item{% if r.taken %} read{% endif %}{% if not r.url %} words-only{% endif %}">
+    {% if r.url %}<a class="inspire-open" href="{{ r.url }}" target="_blank" rel="noopener"><img class="inspire-pic" src="{{ r.url }}" alt="{{ r.name }}" loading="lazy"></a>{% endif %}
+    <div class="inspire-words">
+      <b class="inspire-name">{{ r.name }}</b>
+      {% if r.taken %}
+      <dl class="inspire-read">
+        {% if r.taken.layout %}<dt>Layout</dt><dd>{{ r.taken.layout }}</dd>{% endif %}
+        {% if r.taken.colour_words %}<dt>Colours</dt><dd>{{ r.taken.colour_words }}</dd>{% endif %}
+        {% if r.taken.mood %}<dt>Mood</dt><dd>{{ r.taken.mood }}</dd>{% endif %}
+        {% if r.taken.finish %}<dt>Finish</dt><dd>{{ r.taken.finish }}</dd>{% endif %}
+        {% if r.taken.type_style %}<dt>Type</dt><dd>{{ r.taken.type_style }}</dd>{% endif %}
+      </dl>
+      {% if r.taken.take %}<p class="inspire-take">What the design takes: {{ r.taken.take }}</p>{% endif %}
+      {% if r.seen %}<p class="inspire-seen">Seen, and never copied: {{ r.seen|join:" · " }}</p>{% endif %}
+      {% else %}<p class="inspire-state">{{ r.unread }}</p>{% endif %}
+      {% if not r.url %}<p class="inspire-state">The picture is shown to the person who started this design.</p>{% endif %}
+    </div>
+  </li>
+  {% endfor %}
+</ul>

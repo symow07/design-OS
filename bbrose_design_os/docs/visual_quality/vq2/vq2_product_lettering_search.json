@@ -1,0 +1,90 @@
+{
+ "record_type": "vq2_product_lettering_search/1.0",
+ "created_at": "2026-07-29",
+ "method": "CONTENT_BASED_NOT_FILENAME_BASED",
+ "filename_matching_used_as_evidence": false,
+ "scope": {
+  "vector_ai_pdf_scanned": 253,
+  "unreadable": 0,
+  "large_brand_pdfs_scanned": [
+   "BBROSE.pdf",
+   "BBROSE-1.pdf"
+  ],
+  "raw_byte_scan_extensions": [
+   ".eps",
+   ".ai",
+   ".pdf",
+   ".svg"
+  ],
+  "font_files_in_inventory": 4845
+ },
+ "query_terms": [
+  "Damascena",
+  "Rose Damascena",
+  "NIGHT REPAIR OIL",
+  "serum"
+ ],
+ "results": {
+  "live_text_damascena_hits": 0,
+  "raw_byte_damascena_hits": 0,
+  "outlined_lettering_candidates": 0,
+  "note": "A text search cannot find OUTLINED lettering, so a raw byte scan across every .eps/.ai/.pdf/.svg under materials/ was run as well. Neither found the string anywhere. BBROSE.pdf and BBROSE-1.pdf contain \"rose\" only inside prose, never \"damascena\"."
+ },
+ "font_candidates": [
+  {
+   "family": "MOXA Bestine",
+   "style": "Regular",
+   "role": "brand display serif",
+   "source": "named in BBROSE.pdf TYPOGRAPHY/FONT",
+   "complete_file_found": false,
+   "files_in_inventory": 0,
+   "only_embedded_subset": true,
+   "embedded_as": "TLPEXG+MOXABestineRegular (Type1)",
+   "glyph_coverage": "SUBSET_INCOMPLETE_BY_CONSTRUCTION",
+   "licence_evidence": "NONE",
+   "permitted_project_use": "UNRESOLVED",
+   "supports_rose_and_damascena": "UNKNOWN — no complete file to test",
+   "recommendation": "REJECT_FOR_USE — licence and completeness both unresolved"
+  },
+  {
+   "family": "MAREGY",
+   "style": "Regular",
+   "role": "brand deco sans",
+   "source": "named in BBROSE.pdf TYPOGRAPHY/FONT",
+   "complete_file_found": false,
+   "files_in_inventory": 0,
+   "only_embedded_subset": true,
+   "embedded_as": "VGQVZC+MAREGY-Regular (Type1)",
+   "glyph_coverage": "SUBSET_INCOMPLETE_BY_CONSTRUCTION",
+   "licence_evidence": "NONE",
+   "permitted_project_use": "UNRESOLVED",
+   "supports_rose_and_damascena": "UNKNOWN — no complete file to test",
+   "recommendation": "REJECT_FOR_USE — licence and completeness both unresolved"
+  },
+  {
+   "family": "Figerona",
+   "style": "VF",
+   "role": "secondary guideline face",
+   "complete_file_found": true,
+   "files_in_inventory": 2,
+   "paths": [
+    "materials/Fonts/FontsFree-Net-Figerona-VF(1).ttf",
+    "materials/Fonts/3333/FontsFree-Net-Figerona-VF(1).ttf"
+   ],
+   "only_embedded_subset": false,
+   "licence_evidence": "NONE — filename indicates a free-font redistribution site, which is not licence evidence",
+   "permitted_project_use": "UNRESOLVED",
+   "is_the_product_name_face": false,
+   "recommendation": "REJECT_FOR_PRODUCT_NAME — not the reference letterform class and licence unresolved"
+  }
+ ],
+ "embedded_subsets_treated_as_complete_licensed_fonts": false,
+ "font_binaries_extracted": false,
+ "licence_inferred_from_pdf_embedding": false,
+ "rejected_reasons": {
+  "no_original_vector_product_artwork": "no asset anywhere contains the word Damascena",
+  "no_complete_licensed_matching_typeface": "MOXA Bestine and MAREGY Regular are absent from all 4,845 inventoried font files; only embedded subsets exist",
+  "automated_trace_not_reconsidered": "prohibited by the owner ruling and independently below gate (all 13 glyphs 0.639-0.920)"
+ },
+ "outcome": "NO_AUTHORITATIVE_PRODUCT_NAME_SOURCE_FOUND"
+}

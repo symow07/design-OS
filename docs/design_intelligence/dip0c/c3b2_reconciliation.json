@@ -1,0 +1,235 @@
+{
+  "slice": "DIP-0C3b2",
+  "c3b1_commit": "4e67309e5ded48a7720985a32e7a87434c24d17c",
+  "schema_version": "ledger/1.0",
+  "pilot": [
+    "logo.pdf",
+    "LOGO6.ai",
+    "BBROSE.pdf",
+    "BBROSE-1.pdf",
+    "ATC LOGO.ai",
+    "JOJIA LOGO.ai"
+  ],
+  "ledger_root": "docs/design_intelligence/dip0c/decisions",
+  "real_ledger": {
+    "events": 0,
+    "evidence": 0,
+    "assertions": 0,
+    "note": "EMPTY BY DESIGN. No ownership is confirmed, no licence is approved, nothing is granted. Fabricating a real approval would be worse than having none."
+  },
+  "ledger_valid": true,
+  "validator_findings": {
+    "modified_records": 0,
+    "deleted_records": 0,
+    "duplicate_ids": 0,
+    "broken_supersedes": 0,
+    "missing_evidence_refs": 0,
+    "missing_assertion_refs": 0,
+    "invalid_actor_roles": 0,
+    "unauthorized_actions": 0,
+    "illegal_state_transitions": 0,
+    "invalid_timestamps": 0,
+    "hash_mismatches": 0,
+    "index_divergence": 0,
+    "unknown_event_types": 0,
+    "overlapping_active_masters": 0,
+    "invalid_compound_events": 0
+  },
+  "event_types": 33,
+  "evidence_types": 15,
+  "evidence_statuses": [
+    "SUBMITTED",
+    "REVIEWED_ACCEPTED",
+    "REVIEWED_REJECTED",
+    "EXPIRED",
+    "SUPERSEDED",
+    "QUARANTINED"
+  ],
+  "roles": [
+    "BUSINESS_OWNER",
+    "BRAND_ADMIN",
+    "LEGAL_REVIEWER",
+    "DESIGN_REVIEWER",
+    "SYSTEM_ADMIN",
+    "OBSERVER"
+  ],
+  "actions": [
+    "submit_assertion",
+    "withdraw_assertion",
+    "submit_evidence",
+    "review_evidence",
+    "confirm_ownership",
+    "confirm_third_party",
+    "approve_license",
+    "approve_limited_use",
+    "revoke_decision",
+    "require_re_review",
+    "approve_canonical_master",
+    "attest_canonical_technical",
+    "attest_canonical_legal",
+    "classify_variant",
+    "deprecate_canonical",
+    "confirm_brand_identity",
+    "confirm_design_quality",
+    "approve_business_scope",
+    "grant_permission",
+    "grant_legal_permission",
+    "revoke_permission",
+    "execute_expiry",
+    "quarantine_asset",
+    "attest_palette_color",
+    "attest_palette_rights",
+    "approve_brand_palette",
+    "confirm_palette_association",
+    "deprecate_palette"
+  ],
+  "authorization_policy": {
+    "submit_assertion": [
+      "BUSINESS_OWNER",
+      "BRAND_ADMIN"
+    ],
+    "withdraw_assertion": [
+      "BUSINESS_OWNER",
+      "BRAND_ADMIN"
+    ],
+    "submit_evidence": [
+      "BUSINESS_OWNER",
+      "BRAND_ADMIN",
+      "LEGAL_REVIEWER",
+      "DESIGN_REVIEWER"
+    ],
+    "review_evidence": [
+      "LEGAL_REVIEWER",
+      "BRAND_ADMIN",
+      "DESIGN_REVIEWER"
+    ],
+    "confirm_ownership": [
+      "LEGAL_REVIEWER",
+      "BRAND_ADMIN"
+    ],
+    "confirm_third_party": [
+      "LEGAL_REVIEWER",
+      "BRAND_ADMIN"
+    ],
+    "approve_license": [
+      "LEGAL_REVIEWER"
+    ],
+    "approve_limited_use": [
+      "LEGAL_REVIEWER"
+    ],
+    "revoke_decision": [
+      "LEGAL_REVIEWER",
+      "BRAND_ADMIN",
+      "SYSTEM_ADMIN"
+    ],
+    "require_re_review": [
+      "LEGAL_REVIEWER",
+      "BRAND_ADMIN",
+      "SYSTEM_ADMIN",
+      "DESIGN_REVIEWER"
+    ],
+    "approve_canonical_master": [
+      "BRAND_ADMIN"
+    ],
+    "attest_canonical_technical": [
+      "DESIGN_REVIEWER",
+      "BRAND_ADMIN"
+    ],
+    "attest_canonical_legal": [
+      "LEGAL_REVIEWER"
+    ],
+    "classify_variant": [
+      "BRAND_ADMIN",
+      "DESIGN_REVIEWER"
+    ],
+    "deprecate_canonical": [
+      "BRAND_ADMIN",
+      "BUSINESS_OWNER"
+    ],
+    "confirm_brand_identity": [
+      "BRAND_ADMIN",
+      "BUSINESS_OWNER"
+    ],
+    "confirm_design_quality": [
+      "DESIGN_REVIEWER",
+      "BRAND_ADMIN"
+    ],
+    "approve_business_scope": [
+      "BUSINESS_OWNER",
+      "BRAND_ADMIN"
+    ],
+    "grant_permission": [
+      "LEGAL_REVIEWER",
+      "BRAND_ADMIN"
+    ],
+    "grant_legal_permission": [
+      "LEGAL_REVIEWER"
+    ],
+    "revoke_permission": [
+      "LEGAL_REVIEWER",
+      "BRAND_ADMIN",
+      "SYSTEM_ADMIN"
+    ],
+    "execute_expiry": [
+      "SYSTEM_ADMIN",
+      "LEGAL_REVIEWER",
+      "BRAND_ADMIN"
+    ],
+    "quarantine_asset": [
+      "SYSTEM_ADMIN",
+      "LEGAL_REVIEWER",
+      "BRAND_ADMIN"
+    ],
+    "attest_palette_color": [
+      "BRAND_ADMIN",
+      "DESIGN_REVIEWER"
+    ],
+    "attest_palette_rights": [
+      "LEGAL_REVIEWER"
+    ],
+    "approve_brand_palette": [
+      "BRAND_ADMIN"
+    ],
+    "confirm_palette_association": [
+      "BRAND_ADMIN",
+      "BUSINESS_OWNER"
+    ],
+    "deprecate_palette": [
+      "BRAND_ADMIN",
+      "BUSINESS_OWNER"
+    ]
+  },
+  "transition_matrix_is_authoritative": true,
+  "machine_legal_transitions": {
+    "ownership": 18,
+    "license": 21
+  },
+  "examples_TEST_ONLY": {
+    "assertions": 1,
+    "evidence": 2,
+    "events": 1,
+    "refused_attempts": 2,
+    "logo6_confirmation_refused": true,
+    "logo6_problems": [
+      "no REVIEWED_ACCEPTED evidence: a confirmation needs evidence a reviewer has actually accepted. A business assertion is a BELIEF, not evidence, and can never on its own support a confirmation.",
+      "a contradiction is present and has NOT been acknowledged. The reviewer must explicitly acknowledge it, with a reason, before confirming."
+    ],
+    "jojia_confirmation_allowed": true
+  },
+  "permissions_still_all_false": true,
+  "integrity": {
+    "materials": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "modified": [],
+      "file_count_before": 7695,
+      "file_count_after": 7695
+    },
+    "no_output_under_source": {
+      "ok": true
+    }
+  },
+  "runtime_seconds": 0.12,
+  "output_bytes": 14527
+}

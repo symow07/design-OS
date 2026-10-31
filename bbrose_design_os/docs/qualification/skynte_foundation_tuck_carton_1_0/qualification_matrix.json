@@ -1,0 +1,1315 @@
+{
+  "schema": "dieline_qualification_matrix/1.0",
+  "template_key": "skynte_foundation_tuck_carton/1.0",
+  "rows": [
+    {
+      "case": "small_shallow",
+      "input": {
+        "width_mm": 22.0,
+        "depth_mm": 12.0,
+        "height_mm": 65.0,
+        "board_thickness_mm": 0.3,
+        "glue_tab_mm": 6.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "SUPPORTED",
+      "violations": [],
+      "invariant_failures": [],
+      "geometry_hash": "14680a2df5f0311ed59ce2620b71f355",
+      "content_hashes": {
+        "cut_path_hash": "98fde1ca8dc706bd2639dc6a555f72827532fe8dca8f535b93b4137c46810e76",
+        "crease_path_hash": "6b053410b50d5d1df73b9a645075623a44363d6e607cb1347b3ecb1afc277af1",
+        "bleed_path_hash": "2e77abaa65945044c80b2997f2b4b081b9e5f839249eb43bfc6fd338318f897c"
+      },
+      "dimensions": {
+        "inner_mm": [
+          21.4,
+          11.4,
+          64.4
+        ],
+        "manufacture_mm": [
+          22.0,
+          12.0,
+          65.0
+        ],
+        "outer_mm": [
+          22.6,
+          12.6,
+          65.6
+        ],
+        "board_compensation": [],
+        "closure_stack_allowance_mm": 0.6,
+        "score_compression_mm": "not modelled in 0.1 \u2014 physical-sample assumption",
+        "headspace_mm": 0.0
+      },
+      "derived": {
+        "closure_face_mm": 11.4,
+        "major_tuck_reach_mm": 28.0,
+        "dust_flap_depth_mm": 7.572,
+        "locking_ear_mm": null,
+        "flat_mm": [
+          75.2,
+          121.0
+        ]
+      },
+      "folded_all_ok": true,
+      "folded_checks": [
+        {
+          "name": "side_seam_attachment_preserved",
+          "ok": true,
+          "detail": "top tuck on back, bottom on front"
+        },
+        {
+          "name": "tuck_is_depth_derived",
+          "ok": true,
+          "detail": "tuck 28 mm == D + lip = 28 mm (DECISION-019)"
+        },
+        {
+          "name": "folded_dust_flap_pair_clearance",
+          "ok": true,
+          "detail": "dust reach 7.572 mm each across the 22 mm opening -> 6.86 mm gap"
+        },
+        {
+          "name": "dust_below_tuck_zone",
+          "ok": true,
+          "detail": "tuck 28 mm vs dust 7.572 mm"
+        },
+        {
+          "name": "lip_vs_height",
+          "ok": true,
+          "detail": "fixed lip 16 mm vs H/2 = 32.5 mm"
+        },
+        {
+          "name": "shoulder_fits_lip",
+          "ok": true,
+          "detail": "shoulder curve 4.796 mm < lip 16 mm"
+        },
+        {
+          "name": "friction_slits_present",
+          "ok": true,
+          "detail": "2 stadium friction slits"
+        },
+        {
+          "name": "entry_slits_present",
+          "ok": true,
+          "detail": "4 DECISION-020 entry-slit cut segments"
+        },
+        {
+          "name": "slit_unreduced",
+          "ok": true,
+          "detail": "friction slit 7.194 mm at nominal width"
+        },
+        {
+          "name": "lock_notches_when_compensated",
+          "ok": true,
+          "detail": "lock notch 0.6 mm (2t)"
+        },
+        {
+          "name": "component_area_overlap",
+          "ok": true,
+          "detail": "largest pairwise flat overlap 0.00000000 mm^2"
+        },
+        {
+          "name": "cut_contour_closed_valid",
+          "ok": true,
+          "detail": "cut contour is one valid closed region"
+        },
+        {
+          "name": "bleed_contour_complete",
+          "ok": true,
+          "detail": "bleed offset outward on every side (min growth 3.000 mm)"
+        }
+      ],
+      "renders": {
+        "preview_svg": "docs/qualification/skynte_foundation_tuck_carton_1_0/renders/small_shallow.svg",
+        "folded_diagnostic": "docs/qualification/skynte_foundation_tuck_carton_1_0/renders/small_shallow_folded.png"
+      }
+    },
+    {
+      "case": "small_deep",
+      "input": {
+        "width_mm": 30.0,
+        "depth_mm": 22.0,
+        "height_mm": 80.0,
+        "board_thickness_mm": 0.3,
+        "glue_tab_mm": 10.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "SUPPORTED",
+      "violations": [],
+      "invariant_failures": [],
+      "geometry_hash": "8f663c6b9b0ddcdb37130d358752200f",
+      "content_hashes": {
+        "cut_path_hash": "806bc058c1a03b4e56686f8cf47c21eaa7dac54c28c10d6fb0f52fbe8ee3d2b8",
+        "crease_path_hash": "2b9b56b4cdc476112f951cbbae6fd6ba284cc7e40a8e9404d245c87afb52e413",
+        "bleed_path_hash": "fb705e7d6e1eb0345a3a1fd6bcb47dab37db6132ca518d991c0f3901a13e2840"
+      },
+      "dimensions": {
+        "inner_mm": [
+          29.4,
+          21.4,
+          79.4
+        ],
+        "manufacture_mm": [
+          30.0,
+          22.0,
+          80.0
+        ],
+        "outer_mm": [
+          30.6,
+          22.6,
+          80.6
+        ],
+        "board_compensation": [],
+        "closure_stack_allowance_mm": 0.6,
+        "score_compression_mm": "not modelled in 0.1 \u2014 physical-sample assumption",
+        "headspace_mm": 0.0
+      },
+      "derived": {
+        "closure_face_mm": 21.4,
+        "major_tuck_reach_mm": 38.0,
+        "dust_flap_depth_mm": 13.882,
+        "locking_ear_mm": null,
+        "flat_mm": [
+          115.2,
+          156.0
+        ]
+      },
+      "folded_all_ok": true,
+      "folded_checks": [
+        {
+          "name": "side_seam_attachment_preserved",
+          "ok": true,
+          "detail": "top tuck on back, bottom on front"
+        },
+        {
+          "name": "tuck_is_depth_derived",
+          "ok": true,
+          "detail": "tuck 38 mm == D + lip = 38 mm (DECISION-019)"
+        },
+        {
+          "name": "folded_dust_flap_pair_clearance",
+          "ok": true,
+          "detail": "dust reach 13.882 mm each across the 30 mm opening -> 2.24 mm gap"
+        },
+        {
+          "name": "dust_below_tuck_zone",
+          "ok": true,
+          "detail": "tuck 38 mm vs dust 13.882 mm"
+        },
+        {
+          "name": "lip_vs_height",
+          "ok": true,
+          "detail": "fixed lip 16 mm vs H/2 = 40 mm"
+        },
+        {
+          "name": "shoulder_fits_lip",
+          "ok": true,
+          "detail": "shoulder curve 6.54 mm < lip 16 mm"
+        },
+        {
+          "name": "friction_slits_present",
+          "ok": true,
+          "detail": "2 stadium friction slits"
+        },
+        {
+          "name": "entry_slits_present",
+          "ok": true,
+          "detail": "4 DECISION-020 entry-slit cut segments"
+        },
+        {
+          "name": "slit_unreduced",
+          "ok": true,
+          "detail": "friction slit 9.81 mm at nominal width"
+        },
+        {
+          "name": "lock_notches_when_compensated",
+          "ok": true,
+          "detail": "lock notch 0.6 mm (2t)"
+        },
+        {
+          "name": "component_area_overlap",
+          "ok": true,
+          "detail": "largest pairwise flat overlap 0.00000000 mm^2"
+        },
+        {
+          "name": "cut_contour_closed_valid",
+          "ok": true,
+          "detail": "cut contour is one valid closed region"
+        },
+        {
+          "name": "bleed_contour_complete",
+          "ok": true,
+          "detail": "bleed offset outward on every side (min growth 3.000 mm)"
+        }
+      ],
+      "renders": {
+        "preview_svg": "docs/qualification/skynte_foundation_tuck_carton_1_0/renders/small_deep.svg",
+        "folded_diagnostic": "docs/qualification/skynte_foundation_tuck_carton_1_0/renders/small_deep_folded.png"
+      }
+    },
+    {
+      "case": "medium_shallow",
+      "input": {
+        "width_mm": 55.0,
+        "depth_mm": 20.0,
+        "height_mm": 130.0,
+        "board_thickness_mm": 0.5,
+        "glue_tab_mm": 10.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "SUPPORTED",
+      "violations": [],
+      "invariant_failures": [],
+      "geometry_hash": "a5a9bea5ac9d5c7f266dc235dbca0d14",
+      "content_hashes": {
+        "cut_path_hash": "e5b8c0fbfcc3331a8d801919aead5c22f7f95503674e3d52008d6c9bb5814196",
+        "crease_path_hash": "e27046acac553c32e7ba91c9571324b37ceaac20074217971db710debe09feaa",
+        "bleed_path_hash": "a713a733786bbaa39c3de8d9a8260ad9249a67ec8728c6238486839b12fe7016"
+      },
+      "dimensions": {
+        "inner_mm": [
+          54.0,
+          19.0,
+          129.0
+        ],
+        "manufacture_mm": [
+          55.0,
+          20.0,
+          130.0
+        ],
+        "outer_mm": [
+          56.0,
+          21.0,
+          131.0
+        ],
+        "board_compensation": [],
+        "closure_stack_allowance_mm": 1.0,
+        "score_compression_mm": "not modelled in 0.1 \u2014 physical-sample assumption",
+        "headspace_mm": 0.0
+      },
+      "derived": {
+        "closure_face_mm": 19.0,
+        "major_tuck_reach_mm": 36.0,
+        "dust_flap_depth_mm": 12.620000000000001,
+        "locking_ear_mm": null,
+        "flat_mm": [
+          162.0,
+          202.0
+        ]
+      },
+      "folded_all_ok": true,
+      "folded_checks": [
+        {
+          "name": "side_seam_attachment_preserved",
+          "ok": true,
+          "detail": "top tuck on back, bottom on front"
+        },
+        {
+          "name": "tuck_is_depth_derived",
+          "ok": true,
+          "detail": "tuck 36 mm == D + lip = 36 mm (DECISION-019)"
+        },
+        {
+          "name": "folded_dust_flap_pair_clearance",
+          "ok": true,
+          "detail": "dust reach 12.62 mm each across the 55 mm opening -> 29.76 mm gap"
+        },
+        {
+          "name": "dust_below_tuck_zone",
+          "ok": true,
+          "detail": "tuck 36 mm vs dust 12.62 mm"
+        },
+        {
+          "name": "lip_vs_height",
+          "ok": true,
+          "detail": "fixed lip 16 mm vs H/2 = 65 mm"
+        },
+        {
+          "name": "shoulder_fits_lip",
+          "ok": true,
+          "detail": "shoulder curve 11.99 mm < lip 16 mm"
+        },
+        {
+          "name": "friction_slits_present",
+          "ok": true,
+          "detail": "2 stadium friction slits"
+        },
+        {
+          "name": "entry_slits_present",
+          "ok": true,
+          "detail": "4 DECISION-020 entry-slit cut segments"
+        },
+        {
+          "name": "slit_unreduced",
+          "ok": true,
+          "detail": "friction slit 17.985 mm at nominal width"
+        },
+        {
+          "name": "lock_notches_when_compensated",
+          "ok": true,
+          "detail": "lock notch 1.0 mm (2t)"
+        },
+        {
+          "name": "component_area_overlap",
+          "ok": true,
+          "detail": "largest pairwise flat overlap 0.00000000 mm^2"
+        },
+        {
+          "name": "cut_contour_closed_valid",
+          "ok": true,
+          "detail": "cut contour is one valid closed region"
+        },
+        {
+          "name": "bleed_contour_complete",
+          "ok": true,
+          "detail": "bleed offset outward on every side (min growth 3.000 mm)"
+        }
+      ],
+      "renders": {
+        "preview_svg": "docs/qualification/skynte_foundation_tuck_carton_1_0/renders/medium_shallow.svg",
+        "folded_diagnostic": "docs/qualification/skynte_foundation_tuck_carton_1_0/renders/medium_shallow_folded.png"
+      }
+    },
+    {
+      "case": "medium_deep",
+      "input": {
+        "width_mm": 60.0,
+        "depth_mm": 45.0,
+        "height_mm": 150.0,
+        "board_thickness_mm": 0.5,
+        "glue_tab_mm": 10.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "SUPPORTED",
+      "violations": [],
+      "invariant_failures": [],
+      "geometry_hash": "b901d80c263aac168ae6b2cf2f5e17cf",
+      "content_hashes": {
+        "cut_path_hash": "532e9766334bfc6e41560368157c6abf4019908e3503a5faf4ecd82fba487ea8",
+        "crease_path_hash": "f074d31904487f587188545e452b9ef8e2d90fc6caafde27827755c48634bbb1",
+        "bleed_path_hash": "33f1507453a8a2741e99231174c5a83c83289f9b92d6ea39e40b975ac88ccc4b"
+      },
+      "dimensions": {
+        "inner_mm": [
+          59.0,
+          44.0,
+          149.0
+        ],
+        "manufacture_mm": [
+          60.0,
+          45.0,
+          150.0
+        ],
+        "outer_mm": [
+          61.0,
+          46.0,
+          151.0
+        ],
+        "board_compensation": [],
+        "closure_stack_allowance_mm": 1.0,
+        "score_compression_mm": "not modelled in 0.1 \u2014 physical-sample assumption",
+        "headspace_mm": 0.0
+      },
+      "derived": {
+        "closure_face_mm": 44.0,
+        "major_tuck_reach_mm": 61.0,
+        "dust_flap_depth_mm": 28.395,
+        "locking_ear_mm": null,
+        "flat_mm": [
+          222.0,
+          272.0
+        ]
+      },
+      "folded_all_ok": true,
+      "folded_checks": [
+        {
+          "name": "side_seam_attachment_preserved",
+          "ok": true,
+          "detail": "top tuck on back, bottom on front"
+        },
+        {
+          "name": "tuck_is_depth_derived",
+          "ok": true,
+          "detail": "tuck 61 mm == D + lip = 61 mm (DECISION-019)"
+        },
+        {
+          "name": "folded_dust_flap_pair_clearance",
+          "ok": true,
+          "detail": "dust reach 28.395 mm each across the 60 mm opening -> 3.21 mm gap"
+        },
+        {
+          "name": "dust_below_tuck_zone",
+          "ok": true,
+          "detail": "tuck 61 mm vs dust 28.395 mm"
+        },
+        {
+          "name": "lip_vs_height",
+          "ok": true,
+          "detail": "fixed lip 16 mm vs H/2 = 75 mm"
+        },
+        {
+          "name": "shoulder_fits_lip",
+          "ok": true,
+          "detail": "shoulder curve 13.08 mm < lip 16 mm"
+        },
+        {
+          "name": "friction_slits_present",
+          "ok": true,
+          "detail": "2 stadium friction slits"
+        },
+        {
+          "name": "entry_slits_present",
+          "ok": true,
+          "detail": "4 DECISION-020 entry-slit cut segments"
+        },
+        {
+          "name": "slit_unreduced",
+          "ok": true,
+          "detail": "friction slit 19.62 mm at nominal width"
+        },
+        {
+          "name": "lock_notches_when_compensated",
+          "ok": true,
+          "detail": "lock notch 1.0 mm (2t)"
+        },
+        {
+          "name": "component_area_overlap",
+          "ok": true,
+          "detail": "largest pairwise flat overlap 0.00000000 mm^2"
+        },
+        {
+          "name": "cut_contour_closed_valid",
+          "ok": true,
+          "detail": "cut contour is one valid closed region"
+        },
+        {
+          "name": "bleed_contour_complete",
+          "ok": true,
+          "detail": "bleed offset outward on every side (min growth 3.000 mm)"
+        }
+      ],
+      "renders": {
+        "preview_svg": "docs/qualification/skynte_foundation_tuck_carton_1_0/renders/medium_deep.svg",
+        "folded_diagnostic": "docs/qualification/skynte_foundation_tuck_carton_1_0/renders/medium_deep_folded.png"
+      }
+    },
+    {
+      "case": "wide_near_cap",
+      "input": {
+        "width_mm": 72.0,
+        "depth_mm": 40.0,
+        "height_mm": 200.0,
+        "board_thickness_mm": 0.5,
+        "glue_tab_mm": 12.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "SUPPORTED",
+      "violations": [],
+      "invariant_failures": [],
+      "geometry_hash": "6192ce8be48ce280a102b84e49b89e2a",
+      "content_hashes": {
+        "cut_path_hash": "06fb7922e73f830f6e6e7ecc77bc873acb19c386ced276e85e13ce6b5631f1f0",
+        "crease_path_hash": "478c11e6d626899e45d1c192d9dd60ecea8ef9e651924a80cd94ce4e4eb2d88d",
+        "bleed_path_hash": "abbeb3b545f26385d22fc6e1ec802b815c8d445357ed3f250417b0a83eb464da"
+      },
+      "dimensions": {
+        "inner_mm": [
+          71.0,
+          39.0,
+          199.0
+        ],
+        "manufacture_mm": [
+          72.0,
+          40.0,
+          200.0
+        ],
+        "outer_mm": [
+          73.0,
+          41.0,
+          201.0
+        ],
+        "board_compensation": [],
+        "closure_stack_allowance_mm": 1.0,
+        "score_compression_mm": "not modelled in 0.1 \u2014 physical-sample assumption",
+        "headspace_mm": 0.0
+      },
+      "derived": {
+        "closure_face_mm": 39.0,
+        "major_tuck_reach_mm": 56.0,
+        "dust_flap_depth_mm": 25.240000000000002,
+        "locking_ear_mm": null,
+        "flat_mm": [
+          238.0,
+          312.0
+        ]
+      },
+      "folded_all_ok": true,
+      "folded_checks": [
+        {
+          "name": "side_seam_attachment_preserved",
+          "ok": true,
+          "detail": "top tuck on back, bottom on front"
+        },
+        {
+          "name": "tuck_is_depth_derived",
+          "ok": true,
+          "detail": "tuck 56 mm == D + lip = 56 mm (DECISION-019)"
+        },
+        {
+          "name": "folded_dust_flap_pair_clearance",
+          "ok": true,
+          "detail": "dust reach 25.24 mm each across the 72 mm opening -> 21.52 mm gap"
+        },
+        {
+          "name": "dust_below_tuck_zone",
+          "ok": true,
+          "detail": "tuck 56 mm vs dust 25.24 mm"
+        },
+        {
+          "name": "lip_vs_height",
+          "ok": true,
+          "detail": "fixed lip 16 mm vs H/2 = 100 mm"
+        },
+        {
+          "name": "shoulder_fits_lip",
+          "ok": true,
+          "detail": "shoulder curve 15.696 mm < lip 16 mm"
+        },
+        {
+          "name": "friction_slits_present",
+          "ok": true,
+          "detail": "2 stadium friction slits"
+        },
+        {
+          "name": "entry_slits_present",
+          "ok": true,
+          "detail": "4 DECISION-020 entry-slit cut segments"
+        },
+        {
+          "name": "slit_unreduced",
+          "ok": true,
+          "detail": "friction slit 23.544 mm at nominal width"
+        },
+        {
+          "name": "lock_notches_when_compensated",
+          "ok": true,
+          "detail": "lock notch 1.0 mm (2t)"
+        },
+        {
+          "name": "component_area_overlap",
+          "ok": true,
+          "detail": "largest pairwise flat overlap 0.00000000 mm^2"
+        },
+        {
+          "name": "cut_contour_closed_valid",
+          "ok": true,
+          "detail": "cut contour is one valid closed region"
+        },
+        {
+          "name": "bleed_contour_complete",
+          "ok": true,
+          "detail": "bleed offset outward on every side (min growth 3.000 mm)"
+        }
+      ],
+      "renders": {
+        "preview_svg": "docs/qualification/skynte_foundation_tuck_carton_1_0/renders/wide_near_cap.svg",
+        "folded_diagnostic": "docs/qualification/skynte_foundation_tuck_carton_1_0/renders/wide_near_cap_folded.png"
+      }
+    },
+    {
+      "case": "tall_narrow",
+      "input": {
+        "width_mm": 20.0,
+        "depth_mm": 14.0,
+        "height_mm": 300.0,
+        "board_thickness_mm": 0.3,
+        "glue_tab_mm": 8.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "SUPPORTED",
+      "violations": [],
+      "invariant_failures": [],
+      "geometry_hash": "daba295c260100b8c3ca557a9523f911",
+      "content_hashes": {
+        "cut_path_hash": "f04ddf95d5e2a8e0e0dd17c9ac74273610f8810a5ae16a6419425385bc28a019",
+        "crease_path_hash": "6b5d2da49740471f8f71cdd2afbe70b19a4fee385c1ff5991df2bf54b28decf1",
+        "bleed_path_hash": "95dc831bf0657daf2be4958c22da0f97c462443ee2a958bcf7c942f0cfbf7095"
+      },
+      "dimensions": {
+        "inner_mm": [
+          19.4,
+          13.4,
+          299.4
+        ],
+        "manufacture_mm": [
+          20.0,
+          14.0,
+          300.0
+        ],
+        "outer_mm": [
+          20.6,
+          14.6,
+          300.6
+        ],
+        "board_compensation": [],
+        "closure_stack_allowance_mm": 0.6,
+        "score_compression_mm": "not modelled in 0.1 \u2014 physical-sample assumption",
+        "headspace_mm": 0.0
+      },
+      "derived": {
+        "closure_face_mm": 13.4,
+        "major_tuck_reach_mm": 30.0,
+        "dust_flap_depth_mm": 8.834,
+        "locking_ear_mm": null,
+        "flat_mm": [
+          77.2,
+          360.0
+        ]
+      },
+      "folded_all_ok": true,
+      "folded_checks": [
+        {
+          "name": "side_seam_attachment_preserved",
+          "ok": true,
+          "detail": "top tuck on back, bottom on front"
+        },
+        {
+          "name": "tuck_is_depth_derived",
+          "ok": true,
+          "detail": "tuck 30 mm == D + lip = 30 mm (DECISION-019)"
+        },
+        {
+          "name": "folded_dust_flap_pair_clearance",
+          "ok": true,
+          "detail": "dust reach 8.834 mm each across the 20 mm opening -> 2.33 mm gap"
+        },
+        {
+          "name": "dust_below_tuck_zone",
+          "ok": true,
+          "detail": "tuck 30 mm vs dust 8.834 mm"
+        },
+        {
+          "name": "lip_vs_height",
+          "ok": true,
+          "detail": "fixed lip 16 mm vs H/2 = 150 mm"
+        },
+        {
+          "name": "shoulder_fits_lip",
+          "ok": true,
+          "detail": "shoulder curve 4.36 mm < lip 16 mm"
+        },
+        {
+          "name": "friction_slits_present",
+          "ok": true,
+          "detail": "2 stadium friction slits"
+        },
+        {
+          "name": "entry_slits_present",
+          "ok": true,
+          "detail": "4 DECISION-020 entry-slit cut segments"
+        },
+        {
+          "name": "slit_unreduced",
+          "ok": true,
+          "detail": "friction slit 6.54 mm at nominal width"
+        },
+        {
+          "name": "lock_notches_when_compensated",
+          "ok": true,
+          "detail": "lock notch 0.6 mm (2t)"
+        },
+        {
+          "name": "component_area_overlap",
+          "ok": true,
+          "detail": "largest pairwise flat overlap 0.00000000 mm^2"
+        },
+        {
+          "name": "cut_contour_closed_valid",
+          "ok": true,
+          "detail": "cut contour is one valid closed region"
+        },
+        {
+          "name": "bleed_contour_complete",
+          "ok": true,
+          "detail": "bleed offset outward on every side (min growth 3.000 mm)"
+        }
+      ],
+      "renders": {
+        "preview_svg": "docs/qualification/skynte_foundation_tuck_carton_1_0/renders/tall_narrow.svg",
+        "folded_diagnostic": "docs/qualification/skynte_foundation_tuck_carton_1_0/renders/tall_narrow_folded.png"
+      }
+    },
+    {
+      "case": "nearly_square_capped",
+      "input": {
+        "width_mm": 60.0,
+        "depth_mm": 47.0,
+        "height_mm": 62.0,
+        "board_thickness_mm": 0.5,
+        "glue_tab_mm": 10.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "SUPPORTED",
+      "violations": [],
+      "invariant_failures": [],
+      "geometry_hash": "fe992fe43a3900471a2874ae756c28f7",
+      "content_hashes": {
+        "cut_path_hash": "b51796e4e7f5c15aec8524a2fa81768d493ec9937c0ad30df112cd20c939438d",
+        "crease_path_hash": "a56dc06d2c47efb40cbcde4694776d7657a7cfb4d00ddbc108c7fcdd9d05fd1d",
+        "bleed_path_hash": "5e636be74f17cfd9a4492b7726d74b1d3cf08f211a3ab9e3d737cc9346778080"
+      },
+      "dimensions": {
+        "inner_mm": [
+          59.0,
+          46.0,
+          61.0
+        ],
+        "manufacture_mm": [
+          60.0,
+          47.0,
+          62.0
+        ],
+        "outer_mm": [
+          61.0,
+          48.0,
+          63.0
+        ],
+        "board_compensation": [],
+        "closure_stack_allowance_mm": 1.0,
+        "score_compression_mm": "not modelled in 0.1 \u2014 physical-sample assumption",
+        "headspace_mm": 0.0
+      },
+      "derived": {
+        "closure_face_mm": 46.0,
+        "major_tuck_reach_mm": 63.0,
+        "dust_flap_depth_mm": 29.657,
+        "locking_ear_mm": null,
+        "flat_mm": [
+          226.0,
+          188.0
+        ]
+      },
+      "folded_all_ok": true,
+      "folded_checks": [
+        {
+          "name": "side_seam_attachment_preserved",
+          "ok": true,
+          "detail": "top tuck on back, bottom on front"
+        },
+        {
+          "name": "tuck_is_depth_derived",
+          "ok": true,
+          "detail": "tuck 63 mm == D + lip = 63 mm (DECISION-019)"
+        },
+        {
+          "name": "folded_dust_flap_pair_clearance",
+          "ok": true,
+          "detail": "dust reach 29.657 mm each across the 60 mm opening -> 0.69 mm gap"
+        },
+        {
+          "name": "dust_below_tuck_zone",
+          "ok": true,
+          "detail": "tuck 63 mm vs dust 29.657 mm"
+        },
+        {
+          "name": "lip_vs_height",
+          "ok": true,
+          "detail": "fixed lip 16 mm vs H/2 = 31 mm"
+        },
+        {
+          "name": "shoulder_fits_lip",
+          "ok": true,
+          "detail": "shoulder curve 13.08 mm < lip 16 mm"
+        },
+        {
+          "name": "friction_slits_present",
+          "ok": true,
+          "detail": "2 stadium friction slits"
+        },
+        {
+          "name": "entry_slits_present",
+          "ok": true,
+          "detail": "4 DECISION-020 entry-slit cut segments"
+        },
+        {
+          "name": "slit_unreduced",
+          "ok": true,
+          "detail": "friction slit 19.62 mm at nominal width"
+        },
+        {
+          "name": "lock_notches_when_compensated",
+          "ok": true,
+          "detail": "lock notch 1.0 mm (2t)"
+        },
+        {
+          "name": "component_area_overlap",
+          "ok": true,
+          "detail": "largest pairwise flat overlap 0.00000000 mm^2"
+        },
+        {
+          "name": "cut_contour_closed_valid",
+          "ok": true,
+          "detail": "cut contour is one valid closed region"
+        },
+        {
+          "name": "bleed_contour_complete",
+          "ok": true,
+          "detail": "bleed offset outward on every side (min growth 3.000 mm)"
+        }
+      ],
+      "renders": {
+        "preview_svg": "docs/qualification/skynte_foundation_tuck_carton_1_0/renders/nearly_square_capped.svg",
+        "folded_diagnostic": "docs/qualification/skynte_foundation_tuck_carton_1_0/renders/nearly_square_capped_folded.png"
+      }
+    },
+    {
+      "case": "task_47_reference_42x32x140",
+      "input": {
+        "width_mm": 42.0,
+        "depth_mm": 32.0,
+        "height_mm": 140.0,
+        "board_thickness_mm": 0.3,
+        "glue_tab_mm": 10.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "SUPPORTED",
+      "violations": [],
+      "invariant_failures": [],
+      "geometry_hash": "2be58c7bdb0afcc5728d700789c3e1e7",
+      "content_hashes": {
+        "cut_path_hash": "10578abcbbffb631e3d7a0c731baa480e37c1a062c344fea968a7de49e733936",
+        "crease_path_hash": "8590f5ebeb05815c4c2f043bc6804c9b7f05be206f8e362c00f439d2f90c06fb",
+        "bleed_path_hash": "ea3fb0370bd9c7dc7e3c070b4b724166ef10b2de64c0a75876700c79637d4797"
+      },
+      "dimensions": {
+        "inner_mm": [
+          41.4,
+          31.4,
+          139.4
+        ],
+        "manufacture_mm": [
+          42.0,
+          32.0,
+          140.0
+        ],
+        "outer_mm": [
+          42.6,
+          32.6,
+          140.6
+        ],
+        "board_compensation": [],
+        "closure_stack_allowance_mm": 0.6,
+        "score_compression_mm": "not modelled in 0.1 \u2014 physical-sample assumption",
+        "headspace_mm": 0.0
+      },
+      "derived": {
+        "closure_face_mm": 31.4,
+        "major_tuck_reach_mm": 48.0,
+        "dust_flap_depth_mm": 20.192,
+        "locking_ear_mm": null,
+        "flat_mm": [
+          159.2,
+          236.0
+        ]
+      },
+      "folded_all_ok": true,
+      "folded_checks": [
+        {
+          "name": "side_seam_attachment_preserved",
+          "ok": true,
+          "detail": "top tuck on back, bottom on front"
+        },
+        {
+          "name": "tuck_is_depth_derived",
+          "ok": true,
+          "detail": "tuck 48 mm == D + lip = 48 mm (DECISION-019)"
+        },
+        {
+          "name": "folded_dust_flap_pair_clearance",
+          "ok": true,
+          "detail": "dust reach 20.192 mm each across the 42 mm opening -> 1.62 mm gap"
+        },
+        {
+          "name": "dust_below_tuck_zone",
+          "ok": true,
+          "detail": "tuck 48 mm vs dust 20.192 mm"
+        },
+        {
+          "name": "lip_vs_height",
+          "ok": true,
+          "detail": "fixed lip 16 mm vs H/2 = 70 mm"
+        },
+        {
+          "name": "shoulder_fits_lip",
+          "ok": true,
+          "detail": "shoulder curve 9.156 mm < lip 16 mm"
+        },
+        {
+          "name": "friction_slits_present",
+          "ok": true,
+          "detail": "2 stadium friction slits"
+        },
+        {
+          "name": "entry_slits_present",
+          "ok": true,
+          "detail": "4 DECISION-020 entry-slit cut segments"
+        },
+        {
+          "name": "slit_unreduced",
+          "ok": true,
+          "detail": "friction slit 13.734 mm at nominal width"
+        },
+        {
+          "name": "lock_notches_when_compensated",
+          "ok": true,
+          "detail": "lock notch 0.6 mm (2t)"
+        },
+        {
+          "name": "component_area_overlap",
+          "ok": true,
+          "detail": "largest pairwise flat overlap 0.00000000 mm^2"
+        },
+        {
+          "name": "cut_contour_closed_valid",
+          "ok": true,
+          "detail": "cut contour is one valid closed region"
+        },
+        {
+          "name": "bleed_contour_complete",
+          "ok": true,
+          "detail": "bleed offset outward on every side (min growth 3.000 mm)"
+        }
+      ],
+      "renders": {
+        "preview_svg": "docs/qualification/skynte_foundation_tuck_carton_1_0/renders/task_47_reference_42x32x140.svg",
+        "folded_diagnostic": "docs/qualification/skynte_foundation_tuck_carton_1_0/renders/task_47_reference_42x32x140_folded.png"
+      }
+    },
+    {
+      "case": "inside_width_cap",
+      "input": {
+        "width_mm": 73.3,
+        "depth_mm": 40.0,
+        "height_mm": 200.0,
+        "board_thickness_mm": 0.5,
+        "glue_tab_mm": 12.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "SUPPORTED",
+      "violations": [],
+      "invariant_failures": [],
+      "geometry_hash": "8f094a7fe37cfb9b7447b99882e0e4c7",
+      "content_hashes": {
+        "cut_path_hash": "19c52e1d69ec884f6273bf0f031cb752fd96ceed2c49a5323cadc399f3ff5ae3",
+        "crease_path_hash": "f10d73346cdf8f591bf45fa02c9cc3a34ac3699facd44fc427f3c89bda284a7c",
+        "bleed_path_hash": "bb70c9929209b9a80aae09f26491c956cc2b8ed201e6a6bf069d3c7eaf8ebc3a"
+      },
+      "dimensions": {
+        "inner_mm": [
+          72.3,
+          39.0,
+          199.0
+        ],
+        "manufacture_mm": [
+          73.3,
+          40.0,
+          200.0
+        ],
+        "outer_mm": [
+          74.3,
+          41.0,
+          201.0
+        ],
+        "board_compensation": [],
+        "closure_stack_allowance_mm": 1.0,
+        "score_compression_mm": "not modelled in 0.1 \u2014 physical-sample assumption",
+        "headspace_mm": 0.0
+      },
+      "derived": {
+        "closure_face_mm": 39.0,
+        "major_tuck_reach_mm": 56.0,
+        "dust_flap_depth_mm": 25.240000000000002,
+        "locking_ear_mm": null,
+        "flat_mm": [
+          240.6,
+          312.0
+        ]
+      },
+      "folded_all_ok": true,
+      "folded_checks": [
+        {
+          "name": "side_seam_attachment_preserved",
+          "ok": true,
+          "detail": "top tuck on back, bottom on front"
+        },
+        {
+          "name": "tuck_is_depth_derived",
+          "ok": true,
+          "detail": "tuck 56 mm == D + lip = 56 mm (DECISION-019)"
+        },
+        {
+          "name": "folded_dust_flap_pair_clearance",
+          "ok": true,
+          "detail": "dust reach 25.24 mm each across the 73.3 mm opening -> 22.82 mm gap"
+        },
+        {
+          "name": "dust_below_tuck_zone",
+          "ok": true,
+          "detail": "tuck 56 mm vs dust 25.24 mm"
+        },
+        {
+          "name": "lip_vs_height",
+          "ok": true,
+          "detail": "fixed lip 16 mm vs H/2 = 100 mm"
+        },
+        {
+          "name": "shoulder_fits_lip",
+          "ok": true,
+          "detail": "shoulder curve 15.9794 mm < lip 16 mm"
+        },
+        {
+          "name": "friction_slits_present",
+          "ok": true,
+          "detail": "2 stadium friction slits"
+        },
+        {
+          "name": "entry_slits_present",
+          "ok": true,
+          "detail": "4 DECISION-020 entry-slit cut segments"
+        },
+        {
+          "name": "slit_unreduced",
+          "ok": true,
+          "detail": "friction slit 23.9691 mm at nominal width"
+        },
+        {
+          "name": "lock_notches_when_compensated",
+          "ok": true,
+          "detail": "lock notch 1.0 mm (2t)"
+        },
+        {
+          "name": "component_area_overlap",
+          "ok": true,
+          "detail": "largest pairwise flat overlap 0.00000000 mm^2"
+        },
+        {
+          "name": "cut_contour_closed_valid",
+          "ok": true,
+          "detail": "cut contour is one valid closed region"
+        },
+        {
+          "name": "bleed_contour_complete",
+          "ok": true,
+          "detail": "bleed offset outward on every side (min growth 3.000 mm)"
+        }
+      ],
+      "renders": {
+        "preview_svg": "docs/qualification/skynte_foundation_tuck_carton_1_0/renders/inside_width_cap.svg",
+        "folded_diagnostic": "docs/qualification/skynte_foundation_tuck_carton_1_0/renders/inside_width_cap_folded.png"
+      }
+    },
+    {
+      "case": "outside_width_cap",
+      "input": {
+        "width_mm": 73.5,
+        "depth_mm": 40.0,
+        "height_mm": 200.0,
+        "board_thickness_mm": 0.5,
+        "glue_tab_mm": 12.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "REJECTED_BY_DOMAIN",
+      "violations": [
+        "SHOULDER_FITS_LIP: shoulder curve 16.02 mm >= lip 16 mm (W must be < 73.4 mm)"
+      ],
+      "invariant_failures": [],
+      "geometry_hash": "",
+      "content_hashes": {},
+      "dimensions": {},
+      "derived": {},
+      "folded_all_ok": null,
+      "folded_checks": []
+    },
+    {
+      "case": "inside_dust_pair_boundary",
+      "input": {
+        "width_mm": 50.5,
+        "depth_mm": 40.0,
+        "height_mm": 130.0,
+        "board_thickness_mm": 0.5,
+        "glue_tab_mm": 10.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "SUPPORTED",
+      "violations": [],
+      "invariant_failures": [],
+      "geometry_hash": "86e9c724f8331925e714cc6f85104716",
+      "content_hashes": {
+        "cut_path_hash": "7688aee6a33140378145eee1e8dac966b250dc0c38d58aae0db3b0c56a042b04",
+        "crease_path_hash": "de4fc52b5f8ef494ee2a3b9b5a7c10e8bd44cd54ccdf0341024a1a745ecca334",
+        "bleed_path_hash": "454d8a3717d958d4b0f485a035e27de81ab75a0007466787f83c55f5d91594fb"
+      },
+      "dimensions": {
+        "inner_mm": [
+          49.5,
+          39.0,
+          129.0
+        ],
+        "manufacture_mm": [
+          50.5,
+          40.0,
+          130.0
+        ],
+        "outer_mm": [
+          51.5,
+          41.0,
+          131.0
+        ],
+        "board_compensation": [],
+        "closure_stack_allowance_mm": 1.0,
+        "score_compression_mm": "not modelled in 0.1 \u2014 physical-sample assumption",
+        "headspace_mm": 0.0
+      },
+      "derived": {
+        "closure_face_mm": 39.0,
+        "major_tuck_reach_mm": 56.0,
+        "dust_flap_depth_mm": 25.240000000000002,
+        "locking_ear_mm": null,
+        "flat_mm": [
+          193.0,
+          242.0
+        ]
+      },
+      "folded_all_ok": true,
+      "folded_checks": [
+        {
+          "name": "side_seam_attachment_preserved",
+          "ok": true,
+          "detail": "top tuck on back, bottom on front"
+        },
+        {
+          "name": "tuck_is_depth_derived",
+          "ok": true,
+          "detail": "tuck 56 mm == D + lip = 56 mm (DECISION-019)"
+        },
+        {
+          "name": "folded_dust_flap_pair_clearance",
+          "ok": true,
+          "detail": "dust reach 25.24 mm each across the 50.5 mm opening -> 0.02 mm gap"
+        },
+        {
+          "name": "dust_below_tuck_zone",
+          "ok": true,
+          "detail": "tuck 56 mm vs dust 25.24 mm"
+        },
+        {
+          "name": "lip_vs_height",
+          "ok": true,
+          "detail": "fixed lip 16 mm vs H/2 = 65 mm"
+        },
+        {
+          "name": "shoulder_fits_lip",
+          "ok": true,
+          "detail": "shoulder curve 11.009 mm < lip 16 mm"
+        },
+        {
+          "name": "friction_slits_present",
+          "ok": true,
+          "detail": "2 stadium friction slits"
+        },
+        {
+          "name": "entry_slits_present",
+          "ok": true,
+          "detail": "4 DECISION-020 entry-slit cut segments"
+        },
+        {
+          "name": "slit_unreduced",
+          "ok": true,
+          "detail": "friction slit 16.5135 mm at nominal width"
+        },
+        {
+          "name": "lock_notches_when_compensated",
+          "ok": true,
+          "detail": "lock notch 1.0 mm (2t)"
+        },
+        {
+          "name": "component_area_overlap",
+          "ok": true,
+          "detail": "largest pairwise flat overlap 0.00000000 mm^2"
+        },
+        {
+          "name": "cut_contour_closed_valid",
+          "ok": true,
+          "detail": "cut contour is one valid closed region"
+        },
+        {
+          "name": "bleed_contour_complete",
+          "ok": true,
+          "detail": "bleed offset outward on every side (min growth 3.000 mm)"
+        }
+      ],
+      "renders": {
+        "preview_svg": "docs/qualification/skynte_foundation_tuck_carton_1_0/renders/inside_dust_pair_boundary.svg",
+        "folded_diagnostic": "docs/qualification/skynte_foundation_tuck_carton_1_0/renders/inside_dust_pair_boundary_folded.png"
+      }
+    },
+    {
+      "case": "outside_dust_pair_boundary",
+      "input": {
+        "width_mm": 50.4,
+        "depth_mm": 40.0,
+        "height_mm": 130.0,
+        "board_thickness_mm": 0.5,
+        "glue_tab_mm": 10.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "REJECTED_BY_DOMAIN",
+      "violations": [
+        "DUST_PAIR_CLEARANCE: folded dust clearance = -0.08 mm < 0 (needs W >= 1.262 x D)"
+      ],
+      "invariant_failures": [],
+      "geometry_hash": "",
+      "content_hashes": {},
+      "dimensions": {},
+      "derived": {},
+      "folded_all_ok": null,
+      "folded_checks": []
+    },
+    {
+      "case": "outside_height_rule",
+      "input": {
+        "width_mm": 60.0,
+        "depth_mm": 40.0,
+        "height_mm": 60.0,
+        "board_thickness_mm": 0.5,
+        "glue_tab_mm": 10.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "REJECTED_BY_DOMAIN",
+      "violations": [
+        "HEIGHT_GT_WIDTH: H = 60 must exceed W = 60"
+      ],
+      "invariant_failures": [],
+      "geometry_hash": "",
+      "content_hashes": {},
+      "dimensions": {},
+      "derived": {},
+      "folded_all_ok": null,
+      "folded_checks": []
+    }
+  ]
+}

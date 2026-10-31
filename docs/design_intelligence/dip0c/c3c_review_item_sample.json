@@ -1,0 +1,165 @@
+{
+  "schema_version": "c3c_review_item/1.0",
+  "queue": "K",
+  "title": "colour palette awaiting ownership and brand review",
+  "priority": "HIGH",
+  "required_reviewer_roles": [
+    "LEGAL_REVIEWER",
+    "BRAND_ADMIN"
+  ],
+  "batch_review_allowed": false,
+  "machine": {
+    "source_filename": "Pantone_3519C.ase",
+    "source_folder": "materials/DOWNLOADE 2026/نماذج عامة من  01الانترنيت",
+    "source_sha256": "82f415be8b47d92f700d50cfefffeee9cf82a0ff5a2bf641158fb2d972521c4f",
+    "parse_status": "PARTIAL_PARSE",
+    "capability": "REQUIRES_HUMAN",
+    "layout": [
+      "NON_STANDARD_NAME_ENCODING"
+    ],
+    "fallback_used": true,
+    "parser_warnings": [
+      "NAME_LENGTH_FIELD_ABSENT"
+    ],
+    "parser_confidence": 1.0,
+    "groups": 0,
+    "swatches": 1,
+    "color_models": [
+      "RGB"
+    ],
+    "color_types": [
+      "GLOBAL"
+    ],
+    "swatch_summary": [
+      {
+        "name": "Pantone 3519 C",
+        "model": "RGB",
+        "raw_channels": [
+          0.47843137383461,
+          0.18039216101169586,
+          0.3803921639919281
+        ],
+        "color_type": "GLOBAL",
+        "srgb_preview_8bit": [
+          122,
+          46,
+          97
+        ],
+        "preview_is_derivative": true,
+        "conversion_method": "sRGB_to_LAB_D65"
+      }
+    ],
+    "third_party_naming": [
+      "PANTONE"
+    ],
+    "naming_findings": [
+      "PANTONE naming detected — third-party, trademarked",
+      "the file declares NO spot colour: every swatch is GLOBAL or NORMAL. It therefore contains no authoritative spot definition, whatever its name says.",
+      "the file carries RGB only — no CMYK, no LAB, no ICC profile. There is nothing here from which a print-accurate or licensed conversion could be derived, and none may be fabricated from a generic formula.",
+      "CONCLUSION: PANTONE exists only in a NAME STRING. This is third-party naming evidence, not a colour definition and not a licence."
+    ],
+    "ownership_status": "OWNERSHIP_UNCONFIRMED",
+    "license_status": "LICENSE_UNVERIFIED",
+    "brand_association": "REQUIRES_HUMAN",
+    "restrictions": [
+      "no proprietary colour library may be bundled or redistributed",
+      "only the single source file supplied in materials/ has been audited",
+      "third-party naming does not grant any right to expose or export third-party reference data",
+      "no commercial approval is implied by the presence of this file"
+    ],
+    "conversion_warnings": []
+  },
+  "required_human_action": "Confirm (or deny) BBROSE ownership or permitted use, confirm brand association, and decide whether this palette may be retrieved at all. Until then every permission stays false.",
+  "human": {
+    "category": null,
+    "license_status": null,
+    "ownership_status": null,
+    "reviewed_by": null,
+    "reviewed_at": null,
+    "notes": "",
+    "ownership_confirmation": null,
+    "brand_association": null,
+    "palette_approval": null,
+    "approved_brands": [],
+    "approved_products": [],
+    "approved_markets": [],
+    "allowed_uses": [],
+    "restrictions": [],
+    "review_expiry": null
+  },
+  "approval_contract": {
+    "brand_association_confirmed": {
+      "result": null,
+      "confirmed_by": null,
+      "confirmed_at": null,
+      "notes": ""
+    },
+    "ownership_or_permitted_use_confirmed": {
+      "result": null,
+      "confirmed_by": null,
+      "confirmed_at": null,
+      "notes": ""
+    },
+    "intended_product_families": {
+      "result": null,
+      "confirmed_by": null,
+      "confirmed_at": null,
+      "notes": ""
+    },
+    "intended_markets": {
+      "result": null,
+      "confirmed_by": null,
+      "confirmed_at": null,
+      "notes": ""
+    },
+    "intended_print_or_digital_use": {
+      "result": null,
+      "confirmed_by": null,
+      "confirmed_at": null,
+      "notes": ""
+    },
+    "source_color_model_confirmed": {
+      "result": null,
+      "confirmed_by": null,
+      "confirmed_at": null,
+      "notes": ""
+    },
+    "approved_conversion_behavior": {
+      "result": null,
+      "confirmed_by": null,
+      "confirmed_at": null,
+      "notes": ""
+    },
+    "spot_or_process_interpretation_confirmed": {
+      "result": null,
+      "confirmed_by": null,
+      "confirmed_at": null,
+      "notes": ""
+    },
+    "official_swatch_names_confirmed": {
+      "result": null,
+      "confirmed_by": null,
+      "confirmed_at": null,
+      "notes": ""
+    },
+    "version_or_date_recorded": {
+      "result": null,
+      "confirmed_by": null,
+      "confirmed_at": null,
+      "notes": ""
+    },
+    "review_expiry_or_no_expiry_reason": {
+      "result": null,
+      "confirmed_by": null,
+      "confirmed_at": null,
+      "notes": ""
+    },
+    "restrictions_recorded": {
+      "result": null,
+      "confirmed_by": null,
+      "confirmed_at": null,
+      "notes": ""
+    }
+  },
+  "parser": "dip0c.run_c3c/0.1.0"
+}

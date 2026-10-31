@@ -1,0 +1,125 @@
+{
+ "schema": "rbv4_call_budget/1.0",
+ "sprint": "build sprint 2 (2026-08-17)",
+ "authorized_calls": 10,
+ "authorized_by": "PROJECT_OWNER \u2014 OWNER_BLOCKER_CLEARANCE.md \u00a7R1, 2026-08-17, Cowork question session",
+ "rollover": false,
+ "conditions": [
+  "\u00a7R1a \u2014 every call is cost-ledgered with the ledger committed as evidence; an unledgered call is a defect",
+  "\u00a7R1b \u2014 the budget is per-sprint and does NOT roll over; at exhaustion the harness records BUDGET_EXHAUSTED and continues offline, and never silently degrades to fixtures while still labelling output as live",
+  "\u00a7R1c \u2014 the deterministic offline path stays REQUIRED; the live budget exists to prove the live path works, not to replace the fixture path",
+  "\u00a7R1d \u2014 the budget authorizes EXECUTION only. It does not authorize a review to approve anything: 'Claude must not self-approve any gate' and 'the OWNER remains final authority' stay binding, and a live finding is evidence feeding the fail-closed gate, never a verdict"
+ ],
+ "ledger_of_record": "THIS FILE. cost_ledger.ApiCallRecord is keyed to a pipeline Task and record_claude() is a documented no-op without one; a roadmap-level visual review has no Task, so the committed per-call entries below are the ledger \u00a7R1a requires. Costs are computed with the same cost_ledger.claude_cost_usd pricing table used for task-attached calls.",
+ "calls": [
+  {
+   "recorded_at": "2026-08-17T15:00:00+08:00",
+   "package_id": "p1_v4",
+   "model": "claude-opus-5",
+   "provider_request_id": "IDENTITY_LOST_TO_AN_EXECUTOR_DEFECT",
+   "input_tokens": 0,
+   "output_tokens": 0,
+   "cost_usd": "UNKNOWN",
+   "image_transmitted": {
+    "path": "docs/visual_quality/rbv/review_packages/p1_v4/review_contact_sheet.png",
+    "pixel_hash": "d6a752cb655cc2d3",
+    "note": "sent at native 3840x3370; provider downscales above its 2576px long-edge tier"
+   },
+   "DEFECT": "THIS CALL WAS SPENT AND IS NOT PROPERLY LEDGERED. The first live invocation reached the provider and returned a response, but the command parsed the JSON payload BEFORE writing the ledger entry, and the parse raised (the reply was truncated at max_tokens=4096 mid-JSON), so the response object \u2014 and with it the request id, token counts and cost \u2014 was lost before it was recorded. \u00a7R1a calls an unledgered call a defect; this entry records the defect rather than hiding the spend. The counted spend is therefore CORRECT (one call consumed, 9 remaining) while this row's identity fields are honestly UNKNOWN and can never be recovered. Fixed forward: the ledger write now happens immediately after the call returns and before any parsing, and max_tokens was raised to 16000. Recorded against class 'derived quantity published without recoverable inputs' \u2014 the same shape as the four marked PALT-M6 cells."
+  },
+  {
+   "recorded_at": "2026-08-17T07:24:49.973984+00:00",
+   "package_id": "p1_v4",
+   "model": "claude-opus-5",
+   "provider_request_id": "req_011Ce7vK9W58YKue3dLAnZuj",
+   "input_tokens": 6471,
+   "output_tokens": 4112,
+   "cost_usd": "0.135155",
+   "image_transmitted": {
+    "path": "docs/visual_quality/rbv/review_packages/p1_v4/review_contact_sheet.png",
+    "pixel_hash": "d6a752cb655cc2d3",
+    "note": "sent at native 3840x3370; provider downscales above its 2576px long-edge tier"
+   }
+  },
+  {
+   "recorded_at": "2026-08-17T07:27:31.808046+00:00",
+   "package_id": "p1_v4",
+   "model": "claude-opus-5",
+   "provider_request_id": "req_011Ce7vY2dBsvNN3iaBqWjZW",
+   "input_tokens": 6471,
+   "output_tokens": 4407,
+   "cost_usd": "0.142530",
+   "image_transmitted": {
+    "path": "docs/visual_quality/rbv/review_packages/p1_v4/review_contact_sheet.png",
+    "pixel_hash": "d6a752cb655cc2d3",
+    "note": "sent at native 3840x3370; provider downscales above its 2576px long-edge tier"
+   }
+  },
+  {
+   "recorded_at": "2026-08-17T07:57:22.537958+00:00",
+   "package_id": "p1_v4",
+   "model": "claude-opus-5",
+   "provider_request_id": "req_011Ce7xmfjDHHmmF1LRPkwZv",
+   "input_tokens": 24811,
+   "output_tokens": 6176,
+   "cost_usd": "0.278455",
+   "image_transmitted": [
+    {
+     "role": "contact_sheet",
+     "path": "docs/visual_quality/rbv/review_packages/p1_v4/review_contact_sheet.png",
+     "pixel_hash": "c8af548d789b12ff",
+     "pixel_size": [
+      3840,
+      3370
+     ],
+     "provider_downscale": 0.6708,
+     "downscaled_by_provider": true
+    },
+    {
+     "role": "view:front",
+     "path": "docs/visual_quality/rbv/p1_pilot/2026-08-04_v4/neutral_front.png",
+     "pixel_hash": "c97b59c3c090083a",
+     "pixel_size": [
+      1600,
+      2200
+     ],
+     "provider_downscale": 1.0,
+     "downscaled_by_provider": false
+    },
+    {
+     "role": "view:side",
+     "path": "docs/visual_quality/rbv/p1_pilot/2026-08-04_v4/neutral_side.png",
+     "pixel_hash": "55bcf238cec41a83",
+     "pixel_size": [
+      1600,
+      2200
+     ],
+     "provider_downscale": 1.0,
+     "downscaled_by_provider": false
+    },
+    {
+     "role": "view:closure_detail",
+     "path": "docs/visual_quality/rbv/p1_pilot/2026-08-04_v4/closure_detail.png",
+     "pixel_hash": "e2e378c2470fac68",
+     "pixel_size": [
+      1600,
+      2200
+     ],
+     "provider_downscale": 1.0,
+     "downscaled_by_provider": false
+    },
+    {
+     "role": "view:bounds_dimensions",
+     "path": "docs/visual_quality/rbv/p1_pilot/2026-08-04_v4/bounds_dimensions.png",
+     "pixel_hash": "91a8d69a83f650cc",
+     "pixel_size": [
+      1600,
+      2200
+     ],
+     "provider_downscale": 1.0,
+     "downscaled_by_provider": false
+    }
+   ]
+  }
+ ]
+}

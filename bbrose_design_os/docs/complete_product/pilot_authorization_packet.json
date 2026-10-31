@@ -1,0 +1,872 @@
+{
+  "schema_version": "complete_product_pilot_authorization_packet/1.0",
+  "recommended_product": {
+    "evidence": {
+      "product_id": "BBR-SK-201",
+      "name": "Rose Damascena Night Repair Oil",
+      "category": "SK",
+      "brand_id": 1,
+      "record_dims_mm": [
+        40.0,
+        40.0,
+        110.0
+      ],
+      "dims_source": "PRODUCT_RECORD",
+      "dims_referent_ambiguous": true,
+      "dims_referent_note": "40 x 40 x 110 mm carton, 30 ml amber-glass dropper bottle",
+      "inferred_container_archetype": "bottle",
+      "archetype_source": "INFERRED_FROM_PRODUCT_TYPE — human confirms",
+      "copy_fields": {
+        "description": true,
+        "ingredients": true,
+        "how_to_use": true,
+        "notes": true
+      },
+      "copy_complete": true,
+      "exact_container_reference": false,
+      "exact_reference_source": "full-corpus resolver product_container_asset_resolution/1.0 (2B-3V-PRE): exact_asset_found=False",
+      "supported_archetype": true
+    },
+    "scores": {
+      "exact_container_reference": 0,
+      "confirmed_dimensions_profile": 9,
+      "reference_authority": 12,
+      "product_copy_completeness": 10,
+      "container_pipeline_compatibility": 10,
+      "packaging_pipeline_compatibility": 10,
+      "qualified_structural_path": 10,
+      "visual_simplicity": 4,
+      "production_data_completeness": 3
+    },
+    "total": 68,
+    "hard_exclusions": [],
+    "recommendable": true
+  },
+  "alternate_product": {
+    "evidence": {
+      "product_id": "BBR-CO-410",
+      "name": "Rosé Nectar Lip Gloss",
+      "category": "CO",
+      "brand_id": 1,
+      "record_dims_mm": [
+        35.0,
+        25.0,
+        95.0
+      ],
+      "dims_source": "PRODUCT_RECORD",
+      "dims_referent_ambiguous": true,
+      "dims_referent_note": "35 x 95 x 25 mm (tall tuck-end carton, gloss tube inside)",
+      "inferred_container_archetype": "tube",
+      "archetype_source": "INFERRED_FROM_PRODUCT_TYPE — human confirms",
+      "copy_fields": {
+        "description": true,
+        "ingredients": true,
+        "how_to_use": true,
+        "notes": true
+      },
+      "copy_complete": true,
+      "exact_container_reference": false,
+      "exact_reference_source": "full-corpus resolver product_container_asset_resolution/1.0 (2B-3V-PRE): exact_asset_found=False",
+      "supported_archetype": true
+    },
+    "scores": {
+      "exact_container_reference": 0,
+      "confirmed_dimensions_profile": 9,
+      "reference_authority": 12,
+      "product_copy_completeness": 10,
+      "container_pipeline_compatibility": 10,
+      "packaging_pipeline_compatibility": 10,
+      "qualified_structural_path": 10,
+      "visual_simplicity": 2,
+      "production_data_completeness": 3
+    },
+    "total": 66,
+    "hard_exclusions": [],
+    "recommendable": true
+  },
+  "rejected_or_deferred_example": {
+    "evidence": {
+      "product_id": "BBR-SK-100",
+      "name": "Velvet Bloom Serum Carton",
+      "category": "SK",
+      "brand_id": 1,
+      "record_dims_mm": [
+        35.0,
+        35.0,
+        100.0
+      ],
+      "dims_source": "PRODUCT_RECORD",
+      "dims_referent_ambiguous": false,
+      "dims_referent_note": "",
+      "inferred_container_archetype": "bottle",
+      "archetype_source": "INFERRED_FROM_PRODUCT_TYPE — human confirms",
+      "copy_fields": {
+        "description": false,
+        "ingredients": false,
+        "how_to_use": false,
+        "notes": false
+      },
+      "copy_complete": false,
+      "exact_container_reference": false,
+      "exact_reference_source": "full-corpus resolver product_container_asset_resolution/1.0 (2B-3V-PRE): exact_asset_found=False",
+      "supported_archetype": true
+    },
+    "scores": {
+      "exact_container_reference": 0,
+      "confirmed_dimensions_profile": 15,
+      "reference_authority": 12,
+      "product_copy_completeness": 0,
+      "container_pipeline_compatibility": 10,
+      "packaging_pipeline_compatibility": 10,
+      "qualified_structural_path": 10,
+      "visual_simplicity": 4,
+      "production_data_completeness": 1
+    },
+    "total": 62,
+    "hard_exclusions": [
+      "PILOT_PRODUCT_COPY_INCOMPLETE"
+    ],
+    "recommendable": false
+  },
+  "provider_call_proposal": {
+    "minimum_expected_calls": 16,
+    "maximum_authorized_calls": 32,
+    "estimated_ceiling_usd": 4.9,
+    "pricing_note": "estimates from configured pricing; non-authoritative",
+    "regeneration_cap": "1 complete set per stage (container, packaging); partial repair sequences may not bypass the cap",
+    "budget_state": "ACTIVE — ceiling 32; direction slice max 4",
+    "ledger_baseline": 215
+  },
+  "expected_human_gates": [
+    "direction selection (container)",
+    "Gate-1 concept (container)",
+    "profile + decoration-zone confirmation",
+    "human design acceptance (container)",
+    "Gate-2 (container)",
+    "direction selection (packaging)",
+    "Gate-1 concept (packaging)",
+    "dimension/structure confirmation",
+    "Gate-2 (packaging)"
+  ],
+  "expected_external_blockers": [
+    "MISSING_OUTPUT_INTENT (production ICC)",
+    "font licence confirmation",
+    "manufacturer production-method evidence",
+    "verified regulatory data"
+  ],
+  "success_criteria": "per 2C-2A §9 (persisted verbatim in the report)",
+  "abort_criteria": "per 2C-2A §10 (persisted verbatim in the report)",
+  "proposed_project_name": "Complete Product — Rose Damascena Night Repair Oil",
+  "proposed_recipe": "complete_product/1.0",
+  "preflight": {
+    "result": "BLOCKED",
+    "schema_version": "complete_product_preflight/1.0"
+  },
+  "authorization_status": "AUTHORIZED_FOR_LIVE_PILOT — WEB_GROUNDED_NEW_PRODUCT_MODE",
+  "required_human_decisions": [
+    "1. product selection",
+    "2. reference approval (incl. supplying/confirming a container reference or explicitly accepting LIBRARY_GROUNDED mode)",
+    "3. provider-call budget",
+    "4. regeneration allowance",
+    "5. permission to create the DesignProject"
+  ],
+  "human_decisions/2026-07-24": {
+    "1_product_selection": "PROVISIONALLY APPROVED — BBR-SK-201 (does not authorize creation or spend)",
+    "2_reference_approval": "NOT APPROVED — exact physical bottle reference required",
+    "3_provider_budget": "CONDITIONALLY APPROVED — max 32 calls / ~USD 4.90; INACTIVE until creation authorized; ledger stays 215",
+    "4_regeneration_allowance": "APPROVED — 1 complete set per stage; no partial-repair bypass; more requires new authorization",
+    "5_project_creation": "NOT GRANTED"
+  },
+  "blocking_codes": [],
+  "candidate_readiness": "READY_FOR_LIVE_PILOT — WEB_GROUNDED_NEW_PRODUCT_MODE",
+  "environment_readiness": "READY_FOR_LIVE_PILOT (distinct scope)",
+  "required_reference_evidence": [
+    "front photograph of the actual bottle",
+    "back photograph",
+    "side photograph",
+    "cap/closure close-up",
+    "complete bottle silhouette image",
+    "explicit task-scoped reference-use approval"
+  ],
+  "required_technical_facts": [
+    "bottle width",
+    "bottle depth",
+    "bottle height excluding cap",
+    "bottle height including cap",
+    "cap dimensions",
+    "closure type",
+    "bottle material",
+    "transparency/opacity",
+    "front/back orientation",
+    "printable/decoration surfaces",
+    "product fill appearance (where relevant)",
+    "reference-use authority"
+  ],
+  "dimension_classification": "40×40×110mm = CARTON dimensions (never bottle dimensions); CO-410 35×95×25 likewise carton-referent",
+  "pilot_policy": "AMENDED (2C-2A-CORR-2 §19): EXACT_WEB_REFERENCE_MODE (exact product found + geometry evidence + human-approved reference) OR WEB_GROUNDED_NEW_PRODUCT_MODE (>=3 approved physical analogs + >=3 approved inspiration refs + human-selected archetype + concept-only dims + explicit human approval of the web-reference packet + per-item provider-input permission). Task #51 stays excluded. No silent mode switching.",
+  "decided_at": "2026-07-24T09:15:12.815427+00:00",
+  "web_research": {
+    "session_id": 1,
+    "session_hash_prefix": "84bfc3aeab9b4ca9",
+    "status": "BLOCKED",
+    "code": "WEB_RESEARCH_NOT_CONFIGURED",
+    "needed_config": [
+      "WEB_SEARCH_PROVIDER",
+      "WEB_SEARCH_API_KEY"
+    ],
+    "note": "gateway implemented + tested; session re-runs once a search provider credential is supplied",
+    "tavily": {
+      "connector": "tavily_connector/1.0 (implemented + tested)",
+      "session_id": 2,
+      "status": "BLOCKED",
+      "code": "WEB_RESEARCH_NOT_CONFIGURED",
+      "needed_env": [
+        "WEB_SEARCH_PROVIDER=tavily",
+        "WEB_SEARCH_API_KEY=<key>"
+      ],
+      "planner_fix": "SOURCE_PRODUCT_TYPE_NOT_CONTAINER_ARCHETYPE — carton no longer pollutes container queries",
+      "live_session": {
+        "session_id": 3,
+        "session_hash_prefix": "c0aeae2e44245666",
+        "status": "AWAITING_HUMAN_REVIEW",
+        "replacement_of": [
+          1,
+          2
+        ],
+        "source_counts": {
+          "EXACT_PRODUCT_DISCOVERY": 28,
+          "CATEGORY_ANALOG_DISCOVERY": 12,
+          "VISUAL_INSPIRATION_DISCOVERY": 10
+        },
+        "exact_candidate_source_ids": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          1,
+          8,
+          7,
+          10,
+          9
+        ],
+        "analog_candidate_source_ids": [
+          15,
+          11,
+          12,
+          13,
+          14,
+          17,
+          18,
+          19,
+          20,
+          16
+        ],
+        "inspiration_candidate_source_ids": [
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "image_candidate_source_ids": [
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50
+        ],
+        "fact_candidate_count": 12,
+        "conflicts": [],
+        "blocked_source_codes": [
+          "WEB_EXACT_PRODUCT_NOT_FOUND"
+        ],
+        "duplicate_groups": 2,
+        "tavily_credits_reported": 0,
+        "web_access_record_range": [
+          4,
+          48
+        ],
+        "rights_summary": "all sources RIGHTS_UNKNOWN; every use permission default-deny",
+        "review_endpoints": [
+          "GET /api/web-research/sessions/3/",
+          "POST /api/web-research/sources/<id>/decision/"
+        ]
+      },
+      "curation": {
+        "temporary_reviewer_grant_event": "284820ebb71a41d9b810e0797844348b",
+        "grant_assignment_id": 2,
+        "grant_expires_at": "2026-08-08 06:35:06.289979+00:00",
+        "rejected_irrelevant_source_ids": [
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "primary_analog_source_ids": [
+          18,
+          19,
+          20
+        ],
+        "alternate_analog_source_ids": [
+          48,
+          50
+        ],
+        "primary_inspiration_source_ids": [
+          22,
+          29,
+          30
+        ],
+        "alternate_inspiration_source_ids": [
+          45,
+          47
+        ],
+        "reference_view_granted_source_ids": [
+          18,
+          19,
+          20,
+          48,
+          50,
+          22,
+          29,
+          30,
+          45,
+          47
+        ],
+        "reference_view_decision_record": "one approve_reference_view decision per source via /api/web-research/sources/<id>/decision/",
+        "archetype_options": [
+          "dropper_bottle",
+          "treatment_pump",
+          "airless_pump",
+          "screw_cap_treatment_bottle"
+        ],
+        "third_party_trademark_flag": "source 44 — third-party BBROSE(R) brand; NEEDS_VERIFICATION",
+        "remaining_required_human_decisions": [
+          "classify shortlisted sources (approve_analog / approve_inspiration / approve_fact_source per recommendations)",
+          "select the container archetype (human decision — not chosen by ARIA)",
+          "web-reference packet sufficiency decision (>=3 approved analogs + >=3 approved inspiration for WEB_GROUNDED_NEW_PRODUCT_MODE)",
+          "per-item provider-input permission (rights review first)",
+          "DesignProject creation grant (still NOT GRANTED)"
+        ]
+      },
+      "visual_review": {
+        "schema_version": "web_reference_visual_review_packet/1.0",
+        "pdf_sha256": "07d227082582e8c4d8726c48c1722143b9dcc58c704ec1c03825ffa47e228846",
+        "png_sha256": "8a018ef6de7c56ada7e2a9046c0be9e207c977ef5410353cc9ea017bf28fcefb",
+        "download_urls": [
+          "/api/web-research/sessions/3/visual-review/pdf/",
+          "/api/web-research/sessions/3/visual-review/png/",
+          "/api/web-research/sessions/3/visual-review/json/"
+        ],
+        "represented_source_ids": [
+          19,
+          48,
+          50,
+          22,
+          45,
+          47,
+          44
+        ],
+        "missing_visual_source_ids": [
+          18,
+          20,
+          29,
+          30
+        ],
+        "archetype_comparison": "included (dropper / pump / screw-cap; airless = insufficient retained evidence); NOT selected",
+        "next_required_human_action": "review the PDF/PNG and decide per source (+ archetype choice) via the decision endpoint or the JSON template",
+        "status": "VISUAL_REVIEW_PACKET_PARTIALLY_COMPLETE (v1.0 — superseded by corr1)"
+      },
+      "visual_review_corr1": {
+        "schema_version": "web_reference_visual_review_packet/1.1",
+        "status": "VISUAL_REVIEW_PACKET_COMPLETE",
+        "counts": {
+          "requested_candidates": 10,
+          "visually_reviewable_analogs": 5,
+          "visually_reviewable_inspirations": 5,
+          "usable_pilot_candidate_visuals": 10,
+          "excluded_warning_visuals": 1,
+          "text_only_sources": 4,
+          "missing_visual_evidence": 0
+        },
+        "pdf_sha256": "571e086f4b061a91eac431c332374dcd55b3d872184a4fa0dd0ea9ca62b4bbcf",
+        "png_sha256": "5927fecf4b7a785be24f691f97f943d6398082bb435f3bb068e8b14869849868",
+        "download_urls": [
+          "/api/web-research/sessions/3/visual-review-corr1/pdf/",
+          "/api/web-research/sessions/3/visual-review-corr1/png/",
+          "/api/web-research/sessions/3/visual-review-corr1/json/"
+        ],
+        "visually_reviewable_analog_ids": [
+          19,
+          48,
+          50,
+          53,
+          54
+        ],
+        "visually_reviewable_inspiration_ids": [
+          22,
+          45,
+          47,
+          55,
+          56
+        ],
+        "text_only_source_ids": [
+          18,
+          20,
+          29,
+          30
+        ],
+        "excluded_warning_source_ids": [
+          44
+        ],
+        "rejected_source_ids": [
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "continuation_identity": "session_3_continuation_1",
+        "next_required_human_action": "review corr1 PDF/PNG; decide per source and choose the archetype"
+      }
+    }
+  },
+  "preserved": {
+    "provisional_product": "BBR-SK-201",
+    "conditional_budget": "32 calls / ~USD 4.90 — INACTIVE",
+    "regeneration_cap": "1 set per stage",
+    "project_creation": "NOT GRANTED",
+    "api_call_ledger_baseline": 215
+  },
+  "updated_at": "2026-07-27T02:18:41.825234+00:00",
+  "web_reference_review_available": true,
+  "human_decisions/2026-07-25": {
+    "1_product_selection": "APPROVED — BBR-SK-201 Rose Damascena Night Repair Oil",
+    "2_reference_approval": "APPROVED — WEB_GROUNDED_NEW_PRODUCT_MODE: analogs 50/53/54 (53/54 provider geometry-only), inspiration 22/45/55 (textual only), archetype DROPPER_BOTTLE (human-selected)",
+    "3_provider_budget": "ACTIVE — pilot ceiling 32 calls; direction slice max 4; one regeneration set per stage; Gate-1 images NOT authorized this slice",
+    "4_regeneration_allowance": "1 complete set per stage (unchanged)",
+    "5_project_creation": "GRANTED — exactly one DesignProject (Complete Product — Rose Damascena Night Repair) + exactly one initial PRODUCT_CONTAINER task"
+  },
+  "selected_archetype": "DROPPER_BOTTLE",
+  "live_pilot": {
+    "created_at": "2026-07-25T08:21:31.219081+00:00",
+    "project_id": 7,
+    "container_task_id": 52,
+    "project_name": "Complete Product — Rose Damascena Night Repair",
+    "mode": "WEB_GROUNDED_NEW_PRODUCT_MODE",
+    "archetype": "DROPPER_BOTTLE",
+    "directions": [
+      {
+        "id": "d1",
+        "name": "Damascena Nocturne",
+        "axis": "Material/structural-led — the amber glass and velvet-black carton ARE the primary design statement; typography and a sin"
+      },
+      {
+        "id": "d2",
+        "name": "Golden Elixir",
+        "axis": "Vector-illustration-led — a purpose-built radial oil-drop lattice field (drawn Bézier tear-drops in a sunburst arrangeme"
+      },
+      {
+        "id": "d3",
+        "name": "Glacial Serif",
+        "axis": "Typography-led — 'ROSE DAMASCENA' in monumental condensed high-contrast serif IS the design. The hexagonal crystal latti"
+      }
+    ],
+    "provider_calls_direction_slice": 9,
+    "ledger_after": 226,
+    "raw_provider_images_passed": [],
+    "raw_provider_images_staged_for_gate1": [
+      53,
+      54
+    ],
+    "textual_influence_sources": [
+      22,
+      45,
+      55
+    ],
+    "state": "LIVE_PILOT_CONTAINER_STAGE_FAILED_VISUAL_FIDELITY",
+    "direction_selected": {
+      "id": "d1",
+      "name": "Damascena Nocturne",
+      "selected_by": "admin (owner, live UI)",
+      "at": "2026-07-25T08:42:54Z",
+      "rejected_unselected": [
+        "d2 — Golden Elixir",
+        "d3 — Glacial Serif"
+      ]
+    },
+    "gate1_attempt_1": {
+      "outcome": "FAILED_EXTERNAL — OpenAI account billing limit reached; image generation refused before any spend",
+      "pe_call_ledger_id": 218,
+      "pe_contract_note": "the owner selection raced ahead of the 2C-2C configuration: this PE call used the legacy 2B-3V variation constants, ungrounded — its plan was never rendered (0 images) and will be superseded by a correctly-specified retry",
+      "images_generated": 0,
+      "openai_spend": 0
+    },
+    "gate1_retry_configuration_ready": {
+      "variation_spec": "container_gate1_variation_spec/1.0 — A_AMBER_NOCTURNE / B_ROSE_SMOKE / C_NOCTURNE_APOTHECARY, max_prompt_attempts 1",
+      "approved_references": "ConceptReference 36 (web 53) + 37 (web 54), geometry-only, influence plan 7a67929d59b2"
+    },
+    "provider_calls_total_pilot": 11,
+    "blockers": [],
+    "next_human_action": "review the pilot closeout; authorize Phase 2C-3 when ready",
+    "gate1_retry_2026_07_25": {
+      "authorized": "owner: +1 slice allowance (slice cap 8); billing reported resolved",
+      "pre_spend_validation": "18/18 checks passed (task/direction/spec/refs/budgets/exclusions)",
+      "outcome": "PE contract PASSED (call 219, 1 attempt, 0 codes, identities A_AMBER_NOCTURNE/B_ROSE_SMOKE/C_NOCTURNE_APOTHECARY, zero legacy-constant leakage — petal appears only in the authorized newly-designed carton contour-rose description and in a prohibition sentence); FIRST IMAGE CALL refused by OpenAI: billing limit still reported by the API for the configured key",
+      "raw_images_in_refused_attempt": [
+        53,
+        54
+      ],
+      "images_generated": 0,
+      "qa_calls": 0,
+      "slice_calls_used": 2,
+      "slice_cap": 8,
+      "pilot_calls_used": 4,
+      "pilot_ceiling": 32,
+      "budget_arithmetic": "a full retry costs 7 (1 PE + 3 images + 3 QA); remaining slice allowance is 6 — stopped before exceeding; next retry needs +1 slice allowance (slice cap 9) or a fresh slice authorization",
+      "provider_side_causes_to_check": [
+        "credits added to a different OpenAI org/project than the API key",
+        "a monthly usage HARD LIMIT still set at a reached threshold (separate from credits)",
+        "propagation delay after adding credits"
+      ],
+      "passed_plan_note": "the validated Nocturne prompt plan is preserved in the task audit log (contract result payload) for comparison against the next run"
+    },
+    "checkpoint_correction_2c2c_corr1": {
+      "machinery": "container_gate1_prompt_plan/1.0 — checkpoint reuse contract, per-variation production states, billing classification + owner acknowledgement gate, slice budget guard, and the direction-selection race gate (GATE1_GENERATION_PREREQUISITES_READY)",
+      "call_219_promotion": "GATE1_CHECKPOINT_SOURCE_UNRECOVERABLE",
+      "call_219_detail": "the only persisted copy of the call-219 plan (the audit log payload) was truncated at exactly 20000 characters — the C_NOCTURNE_APOTHECARY prompt tail is lost; promoting a partial plan would rewrite it, which is forbidden",
+      "next_retry_requires": [
+        "OPENAI_IMAGE_BILLING_CONFIRMED_BY_OWNER",
+        "owner slice allowance (+1, cap 9) OR fresh slice authorization — one PE call is unavoidable and will auto-checkpoint verbatim"
+      ]
+    },
+    "gate1_retry_2026_07_27": {
+      "pre_spend": "15/15 owner checks passed; billing acknowledgement recorded",
+      "pe_call": 220,
+      "pe_outcome": "PASSED on the single permitted attempt — plan CHECKPOINTED verbatim (container_gate1_prompt_plan/1.0, hash ff0235fe…), zero legacy-constant leakage",
+      "image_outcome": "first image (A_AMBER_NOCTURNE, refs 53/54 attached) refused: HTTP 400 billing_limit_user_error / billing_hard_limit_reached — IDENTICAL to both prior occurrences, after the owner reports raising project AND organization limits",
+      "stopped": "immediately per mandate — no B, no C, no QA; checkpoint preserved (A=PROVIDER_BILLING_BLOCKED, B/C=PENDING)",
+      "slice_calls_used": 3,
+      "slice_cap": 9,
+      "pilot_used": 5,
+      "next_retry_cost": "6 calls (3 images + 3 QA) — PE SKIPPED via checkpoint; fits the remaining slice exactly; no new allowance needed",
+      "next_retry_requires": "a fresh OPENAI_IMAGE_BILLING_CONFIRMED_BY_OWNER (the gate re-armed on the new block)",
+      "owner_guidance": [
+        "on platform.openai.com, open the API-keys page and identify WHICH project this key belongs to (each key row names its owning project) — then raise THAT project's budget/limit",
+        "if the org uses legacy billing, also check the account-level Hard limit under Billing → Limits (separate from project budgets)",
+        "limit changes occasionally take a few minutes to propagate"
+      ]
+    },
+    "gate1_success_2026_07_27": {
+      "resolution": "owner created a NEW OpenAI API key directly inside the Default project and saved it in .env; web+worker restarted; verified: worker loaded the key after the .env change (MATCH), no organization/project override headers anywhere, checkpoint ff0235fe… still valid",
+      "billing_acknowledgement": "recorded 2026-07-27 per the owner's \"Resume task #52\" instruction (gate had re-armed on the third block)",
+      "resume_path": "POST /api/tasks/52/retry/ → checkpoint reuse — Prompt Engineer SKIPPED (attempts=0, zero anthropic PE ApiCallRecords)",
+      "calls": {
+        "images": [
+          221,
+          222,
+          223
+        ],
+        "qa": [
+          224,
+          225,
+          226
+        ],
+        "total": 6,
+        "slice": "9 of 9 (exactly at cap)",
+        "pilot": "11 of 32"
+      },
+      "images": {
+        "A_AMBER_NOCTURNE": {
+          "generated_image_id": 96,
+          "qa_passed": false,
+          "qa_score": 4,
+          "qa_reason": "palette: velvet-black carton + very dark amber read as dark/masculine vs canonical BBROSE blush/cream/nude carton colours; contract fidelity itself confirmed"
+        },
+        "B_ROSE_SMOKE": {
+          "generated_image_id": 97,
+          "qa_passed": true,
+          "qa_score": 8,
+          "qa_note": "minor accepted deviation: Rose Damascena stacked on two lines instead of one editorial line"
+        },
+        "C_NOCTURNE_APOTHECARY": {
+          "generated_image_id": 98,
+          "qa_passed": false,
+          "qa_score": 4,
+          "qa_reason": "palette: deep charcoal-brown/tobacco mood flagged outside the canonical BBROSE colour world; apothecary contract elements (batch/INCI/30ml) all present"
+        }
+      },
+      "qa_context_note": "QA judges against canonical brand carton colours; the Damascena Nocturne direction is deliberately nocturnal by the owner's d1 selection — QA verdicts are recorded facts for the human selector, not an auto-rejection; MAX_REVISION_PASSES=0 so no regeneration was spent (allowance untouched)",
+      "reference_routing": "exact-set verified per variation: opened == passed == concept == approved == assigned == [36, 37]; visual files = official logo + source-53 (penghuang) + source-54 (jypackaging) geometry-only; no other reference touched; source 44 never present",
+      "personal_visual_validation": "all three read as 30 ml dropper bottles with correct collar+bulb architecture, match their checkpointed contracts (A amber/rose-gold foil/blind-emboss contour-rose; B frosted blush-rose light-world; C taupe apothecary with batch notation), are mutually distinct, show the BBROSE rose-in-O wordmark on bottle and carton, and lift no styling from the provider reference photos",
+      "checkpoint_final_state": "VALIDATED_READY_FOR_IMAGE_PRODUCTION; all variations GENERATED",
+      "task_status": "awaiting_gate_1"
+    },
+    "gate1_selection_2026_07_27": {
+      "decision": "SELECT_CONTAINER_CONCEPT (human)",
+      "selected": {
+        "image_id": 97,
+        "variation_identity": "B_ROSE_SMOKE"
+      },
+      "unselected_preserved": [
+        {
+          "image_id": 96,
+          "variation_identity": "A_AMBER_NOCTURNE",
+          "why_not": "black carton + very dark environment: too heavy, severe, fragrance-like"
+        },
+        {
+          "image_id": 98,
+          "variation_identity": "C_NOCTURNE_APOTHECARY",
+          "why_not": "charcoal-brown apothecary treatment: generic, masculine, medicinal, typographically crowded"
+        }
+      ],
+      "selection_record": {
+        "where": "project 7 metadata 'gate1_concept_selection'",
+        "record_hash": "7a9d14803caa9974d608f95bd258981a7a391da45d782dacf1aba8171c63a217",
+        "gate_decision_row": "gate_1/approve by admin 2026-07-27T03:29:59Z",
+        "signing_note": "the DecisionEvent chain has no pipeline concept-selection action in authz/1.4; recorded as immutable GateDecision + sha256-hashed metadata record — extending the canonical action registry is an owner policy decision"
+      },
+      "visual_contract": {
+        "schema": "container_selected_concept_visual_contract/1.0",
+        "hash": "5215b2b34cd68b4ad2ddd286cbb03906cf126a0521b2b8aff0a0fd2343897796",
+        "where": "project 7 metadata 'selected_concept_visual_contract'",
+        "contents": "bottle form / body material / closure / front decoration / carton relationship + prohibited photographic interpretations (PHOTOGRAPHIC_STYLING_NOT_PRINTED_ARTWORK) + 8 persisted visual-quality warnings + 18 bounded measurements (frame-fraction/palette only, every one with confidence/source/tolerance/verification state, CONCEPT_ONLY_UNVERIFIED, never mm)"
+      },
+      "profile_proposal": {
+        "state": "UNCONFIRMED — INFERRED_NONAUTHORITATIVE only",
+        "profile_hash": "bcde1c7bf5d3",
+        "summary": "bottle · cylindrical · pipette dropper (rose-gold collar, dark-plum bulb) · frosted translucent dusty-rose glass · flat/restrained shoulder · product record dims 40×110 mm AS RECORDED (unverified) · ~30 ml concept-only",
+        "confirmation_fields_note": "base thickness, bulb height, total height, capacity, frost intensity have no container_profile/1.0 field — the confirmation mandate must decide their placement (schema decision)"
+      },
+      "decoration_zones_proposed": {
+        "state": "PROPOSED — none confirmed",
+        "zone_set_hash": "4437fb06187b",
+        "zones": [
+          "FRONT_PRINT_ZONE @ BODY_FRONT (direct print)",
+          "BACK_PRINT_ZONE @ BODY_BACK (regulatory copy)",
+          "NECK_BAND_ZONE @ NECK (OPTIONAL collar accent, hot-stamp/pad-print, coverage ≤0.3; not confirmable without collar dimensions)",
+          "BOTTOM_CODE_ZONE @ BOTTOM (inkjet batch/date code only, coverage ≤0.2)"
+        ],
+        "validation": "validate_zone_set clean"
+      },
+      "live_defect_corrected": {
+        "defect": "CONTAINER_ARCHETYPE_SUBSTRING_MISMATCH — \"apothecary\" in the brief matched \"pot\" and inferred a JAR (wrap-label proposal + invalid collar zone)",
+        "fix": "word-boundary keywords + the contract archetype supersedes the heuristic (commit 0498ce2); defective PackagingOutput replaced, AgentLog records the replacement; human decision unchanged",
+        "also": "stale project.status 'failed' (billing-era) corrected to 'container' with a metadata note"
+      },
+      "budget_preserved": {
+        "ledger": 226,
+        "provider_calls_this_phase": 0,
+        "pilot": "11 of 32",
+        "regeneration_allowance": "untouched",
+        "gate1_images_and_qa": "preserved"
+      },
+      "boundary": "STOPPED at awaiting_container_profile (AWAITING_CONTAINER_PROFILE_CONFIRMATION) — no profile confirmation, no zone confirmation, no reconstruction, no Packaging task, no Gate-2"
+    },
+    "corr2_2026_07_27": {
+      "signed_selection_event": {
+        "action": "pipeline.container_concept.select",
+        "schema": "pipeline_container_concept_selection/1.0",
+        "event_id": "00b9ae36900542d4a8be849f8f77ed19",
+        "sequence_number": 8,
+        "signing_epoch": "epoch2-20260725",
+        "lineage": "GateDecision #41 → DecisionEvent #8",
+        "verification": "verify_event VERIFIED; ceremony semantics clean; whole chain ok (8 events, 3 pre-epoch legacy notices as expected)",
+        "authority": "RECORD ONLY — action absent from authz.ACTIONS (no policy bump, no role granted); signed non-authorization list covers profile confirmation, zone confirmation, reconstruction, HDA, Gate 2, Packaging creation, production authority",
+        "idempotency": "second invocation returned the same event (ALREADY_RECORDED); duplicate impossible",
+        "preserved_unchanged": [
+          "GateDecision #41 gate_1/approve",
+          "metadata record 7a9d1480…",
+          "visual contract 5215b2b3…",
+          "images 96/97/98 states"
+        ]
+      },
+      "carton_dimension_classification": {
+        "codes": [
+          "CONTAINER_PROFILE_CARTON_DIMENSION_CONTAMINATION",
+          "CONTAINER_DIMENSION_REFERENT_MISMATCH",
+          "CARTON_DIMENSIONS_NOT_CONTAINER_DIMENSIONS"
+        ],
+        "resolution": "40×40×110 mm now lives ONLY under known_secondary_packaging_dimensions {referent: OUTER_CARTON, source: PRODUCT_RECORD, AS_RECORDED_NOT_MANUFACTURER_VERIFIED}; every container profile dimension field is MISSING; product record untouched"
+      },
+      "corrected_profile_proposal": {
+        "profile_hash": "c06a11783f40",
+        "state": "UNCONFIRMED — every dimensional value editable",
+        "qualitative": "BOTTLE · SERUM_DROPPER_BOTTLE · CYLINDRICAL · FLAT_OR_RESTRAINED · FROSTED_TRANSLUCENT_GLASS · DUSTY_ROSE/SMOKY_BLUSH · PIPETTE_DROPPER · POLISHED_ROSE_GOLD collar · SMOOTH_DARK_PLUM bulb · ~30 ml CONCEPT_ONLY"
+      },
+      "concept_dimension_proposal": {
+        "schema": "container_concept_dimension_proposal/1.0",
+        "ranges": {
+          "nominal_capacity": "30 ml (owner concept)",
+          "total_height": "99–109 mm (source-50 analog ≈104; closure inclusion UNSPECIFIED in source — flagged)",
+          "body_height": "61.9–72.6 mm (analog × image ratio)",
+          "body_diameter": "30.5–36.5 mm (analog + image aspect)",
+          "neck_diameter": "9–11 mm (analog mouth)",
+          "collar_height": "11.8–17.7 mm (image ratio)",
+          "bulb_height": "18.1–27.2 mm (image ratio)",
+          "base_thickness": "3.0–4.5 mm (agent visual)",
+          "collar_diameter": "NONE — manufacturer data required"
+        },
+        "authority": "CONCEPT_ONLY_UNVERIFIED; source-50 values disclaimed as NOT BBR-SK-201 production facts; manufacturer confirmation required on every value",
+        "extensions_record": "container_profile_extensions/1.0 — 12 editable fields, UNCONFIRMED, zero migration"
+      },
+      "decoration_zones": {
+        "proposed": [
+          "BODY_FRONT_PRINT_ZONE (direct print)",
+          "BODY_BACK_PRINT_ZONE (regulatory copy)",
+          "BOTTOM_CODE_ZONE (batch/date code only)"
+        ],
+        "excluded": "OPTIONAL_COLLAR_ZONE — EXCLUDE_FROM_CONFIRMABLE_ZONE_SET (no collar dimensions; no required artwork; metallic collar is the accent; review only after manufacturer data)",
+        "zone_set_hash": "fb32f9ab633a",
+        "validation": "clean"
+      },
+      "warnings": "8 base (contract 5215b2b3 unchanged) + 3 addendum (selected_concept_warnings_addendum/1.0) = 11 on the review board",
+      "budget": {
+        "ledger": 226,
+        "provider_calls_this_phase": 0,
+        "pilot": "11 of 32",
+        "regeneration_allowance": "untouched"
+      },
+      "boundary": "STOPPED at awaiting_container_profile — no confirmation, no reconstruction, no Packaging, no Gate-2"
+    },
+    "gate2_reconstruction_2026_07_27": {
+      "confirmation": {
+        "authority": "HUMAN_CONFIRMED_CONCEPT_ONLY — NOT_MANUFACTURER_VERIFIED, every value editable, manufacturer confirmation required",
+        "profile": "BOTTLE · SERUM_DROPPER_BOTTLE · CYLINDRICAL · FLAT_OR_RESTRAINED · FROSTED_TRANSLUCENT_GLASS · DUSTY_ROSE/SMOKY_BLUSH · PIPETTE_DROPPER · POLISHED_ROSE_GOLD · SMOOTH_DARK_PLUM · 30 ml",
+        "dimensions": "104 total (INCLUDES_DROPPER_CLOSURE) · body 68 (BOTTOM_BASE_TO_TOP_OF_SHOULDER) × Ø33 · base 3.5 · shoulder r3 · neck Ø10 (never double-counted) · collar Ø28×14 · bulb 22 · frost 70/100 · translucency 35/100",
+        "zones_confirmed": [
+          "BODY_FRONT 22×40 @ (5.5,10)",
+          "BODY_BACK 22×36 @ (5.5,12)",
+          "BOTTOM_CODE 14×5 centered"
+        ],
+        "collar_zone": "remains EXCLUDED_FROM_CONFIRMABLE_ZONE_SET — no collar artwork emitted",
+        "combined_confirmation_hash": "30936088f9827d24b3937062795cf859",
+        "decisions_record": "container_confirmation_decisions/1.0 — six decisions referencing contract 5215b2b3, signed event #8 (00b9ae36), confirmed hashes; non-authorizations signed in",
+        "secondary_packaging": "40×40×110 stays OUTER_CARTON only"
+      },
+      "reconstruction": {
+        "status": "RECONSTRUCTED — zero blockers",
+        "commits": "2a92be8 + 25d51e9 (single-rule motif correction after actual-preview review)",
+        "outputs": "native concept sheet .ai + png preview (container_task_52_qJ5Rt23.ai / _IP5TcxT.png), Design Graph census, all reports persisted",
+        "material_objects": "10 independent (GLASS_OUTER_WALL, FROST_TREATMENT, PRODUCT_FILL_APPEARANCE, GLASS_BASE_THICKNESS, GLASS_HIGHLIGHT [NONPRINTING], COLLAR_ROSE_GOLD, BULB_DARK_PLUM, FRONT_DIRECT_PRINT, BACK_DIRECT_PRINT, BOTTOM_TECHNICAL_CODE)",
+        "typography": "live 4-tier hierarchy (Rose Damascena dominant, BBROSE, Night Repair Oil, 30 ml / 1.01 fl. oz.); no outlining; controlled raster logo fallback",
+        "census": "live_text 27 · vector_paths 30 · decorative rasters 0 · reference raster 1 (labelled) · logo raster 1 (controlled fallback)",
+        "concept_fidelity": "11 axes MEASURED_PASS (aspect 3.12/3.15, body 2.06/2.06, base band, bulb/collar 1.49/1.57, collar Ø 0.85/0.85, wall<fill opacity ordering, transparency ranges, no label fallback, front share 0.39≤0.60)",
+        "live_defects_fixed": [
+          "identity loader now checkpoint-first (reuse-marker log broke log-based resolution)",
+          "motif classifier negation-blind: \"no botanical or floral element\" classified FLORAL_ABSTRACT — now stripped; live signature → EDITORIAL_RULE_SYSTEM",
+          "direct-print motif = the concept's SINGLE fine rule (first render painted diagonal pinstripes)",
+          "eager-mode spec clobber in the confirm view resume-record write"
+        ]
+      },
+      "production_readiness_blockers": {
+        "note": "Gate-2/production concerns, NOT reconstruction blockers",
+        "content": "CONTENT_VERIFICATION_REQUIRED: description, ingredients, directions, warnings, manufacturer",
+        "font": "CONTAINER_FONT_CONFIRMATION_REQUIRED + FALLBACK_DETECTED",
+        "others": "white underbase, technique verification, line weight, trapping, wrap seam — per persisted readiness codes"
+      },
+      "budget": {
+        "ledger": 226,
+        "provider_calls_this_phase": 0,
+        "pilot": "11 of 32"
+      },
+      "boundary": "STOPPED at awaiting_gate_2 — no Gate-2 approval, no Human Design Acceptance, no Packaging task; composite coordinator remains on the container stage"
+    },
+    "gate2_rejection_and_correction_2026_07_27": {
+      "human_rejection": {
+        "decision": "HUMAN_GATE2_VISUAL_REJECTION — SELECTED_CONTAINER_CONCEPT_NOT_PRESERVED",
+        "recorded": "GateDecision gate_2/reject + container_gate2_rejection/1.0 (17 codes, 14 exact visual failures, full snapshot of the rejected output container_task_52_qJ5Rt23.ai / _IP5TcxT.png)",
+        "invalidation": "automated MEASURED_PASS invalidated by human visual inspection",
+        "hda_state": "REJECTED / REVISION_REQUIRED — never cleared automatically"
+      },
+      "root_cause": "the dropper rendered through the generic container composer: rounded-rectangle body, flat fills, block collar, egg bulb, straight highlight bars — nominal dimensions matched, believable shape did not; fidelity measured labels/boxes, not form",
+      "correction": {
+        "commits": "85bf7f7 (compose_dropper.py + real-shape fidelity axes + hierarchy-validator fix)",
+        "corrected_output": "container_task_52_3raQ6aB.png + matching .ai",
+        "geometry": "narrow Ø10 neck · restrained shoulder with elliptical rim · straight cylinder walls · elliptical base · 3.5 mm translucent glass base band · Ø28×14 metallic rose-gold collar (gradient + separate highlight/shadow) · slim rounded 22 mm plum bulb (0.55×collar)",
+        "materials": "11 independent editable objects; all sheens/shades NONPRINTING visualization",
+        "sheet": "12 sections incl. glass + closure close-ups, readable structured back, bottom Ø33 code diagram, material system with authority states, census, rejection/correction status",
+        "fidelity": "19 axes measured on EMITTED geometry — all pass; block-degradation test proves the new codes fire on generic shapes at identical nominal dimensions"
+      },
+      "boundary": "task remains awaiting_gate_2; HDA remains REJECTED/REVISION_REQUIRED; no Gate-2 approval; no Packaging; zero provider calls (ledger 226)"
+    },
+    "gate2_corr2_2026_07_27": {
+      "human_rejection_2": "HUMAN_GATE2_VISUAL_REJECTION_STILL_ACTIVE — 11 codes; CORR-1 output preserved as immutable review artifact (container_reconstruction_rejected_..._gate2_corr1); GateDecision gate_2/reject #2",
+      "dimension_amendment": {
+        "identity": "59637dae16123c1d",
+        "extensions_hash": "2da37fbf4339cef2",
+        "revised": "collar Ø24×11.5 · bulb 13×21.5 · visible neck 3 (68+3+11.5+21.5=104); previous values preserved in the amendment entry; authority HUMAN_CONFIRMED_CONCEPT_ONLY / NOT_MANUFACTURER_VERIFIED"
+      },
+      "correction_commit": "d650e94",
+      "corrected_output": "container_task_52_oeWjCvc.png + matching .ai",
+      "measured_ratios": {
+        "collar_body_width": 0.727,
+        "collar_body_height": 0.185,
+        "bulb_collar_width": 0.542,
+        "closure_assembly": "connected (neck+collar+bulb)",
+        "fill_level": "absent (gradient tint)",
+        "name_block": "unified (leading 10.62/9.0)"
+      },
+      "census": "62 live text · 97 vector paths · 3 reference + 2 logo rasters · 0 decorative",
+      "boundary": "awaiting_gate_2; HDA REJECTED/REVISION_REQUIRED; zero provider calls (ledger 226); no Packaging"
+    },
+    "gate2_corr3_2026_07_27": {
+      "human_rejection_3": "11 codes; CORR-2 output preserved (container_reconstruction_rejected_..._gate2_corr2); GateDecision gate_2/reject #3",
+      "final_proportion_amendment": {
+        "identity": "667d550fb036b918",
+        "revised": "body Ø31.5×70.5 · neck Ø9×2.5 · collar Ø21.5×9.5 · bulb 11×21.5 (=104); amendments ×2 on record, all prior values preserved"
+      },
+      "correction_commit": "478d54e",
+      "corrected_output": "container_task_52_SmTqI0A.png + matching .ai",
+      "measured": {
+        "collar_body": 0.683,
+        "bulb_collar": 0.512,
+        "body_aspect": 2.28,
+        "total_aspect": 3.32,
+        "wall_opacity": 0.5,
+        "name_leading": "9.54/9.0"
+      },
+      "boundary": "awaiting_gate_2; HDA REJECTED/REVISION_REQUIRED; ledger 226; no Packaging"
+    },
+    "closeout_2026_07_27": {
+      "final_human_decision": "HUMAN_GATE2_VISUAL_REJECTION_FINAL — 9 codes incl TASK_SPECIFIC_CORRECTION_LIMIT_REACHED; 10 persisted visual findings; HDA REJECTED; revision DEFERRED_TO_FINAL_VISUAL_QUALITY_PROGRAM; production BLOCKED",
+      "states": "task 52 = container_stage_visually_rejected (terminal, reviewable, not retryable); project 7 = container_rejected",
+      "stage_result": "complete_product_live_pilot_stage_result/1.0 — orchestration/governance/budgeting/gates/native infra PASS; automated validation PASS-TECHNICALLY-INVALIDATED-VISUALLY; human fidelity FAIL; Packaging CORRECTLY PREVENTED; result CONTAINER_STAGE_FAILED_VISUAL_FIDELITY (a valid live-pilot finding)",
+      "preserved_outputs": [
+        "qJ5Rt23 (original)",
+        "3raQ6aB (CORR-1)",
+        "oeWjCvc (CORR-2)",
+        "SmTqI0A (CORR-3)",
+        "4 rejection records, 4 GateDecisions, all reports/sheets/amendments/signed lineage"
+      ],
+      "fixtures": "tasks #51 + #52 (image 97) registered as mandatory visual-regression fixtures (services/visual_quality_program.py); task 52 = REJECTED live-pilot fixture, never an accepted fixture",
+      "deferred": "FINAL VISUAL QUALITY AND CREATIVE PERFORMANCE PROGRAM (10-item engine backlog) — NOT implemented",
+      "next_roadmap_action": "Phase 2C-3 — Complete Product composite golden fixtures + closeout (synthetic accepted-stage fixtures; task 52 stays the rejected fixture)",
+      "budget_final": {
+        "ledger": 226,
+        "pilot_calls": "11 of 32"
+      }
+    }
+  }
+}

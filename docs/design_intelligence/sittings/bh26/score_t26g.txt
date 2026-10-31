@@ -1,0 +1,44 @@
+§AD0(a) SCORE — T26g (§BH26(g) transcription), commit 8bbe57e. Gate
+GREEN, hand-captured exit=0 (GEXIT=0). 8/8 legs HELD.
+
+L1 HELD: register + gate-staged ledger line only; no apps path, no
+   docs/roadmap path beyond the gate's own ledger; seven WIP paths in
+   stash (all seven re-verified OK before the push — five apps vs
+   sha256s.txt, docs pair vs sha256s_docs.txt fe4199bc…/065b33fc…;
+   after the push both new files verified absent, five tracked paths
+   verified HEAD-identical, porcelain register-only).
+L2 HELD: register 75+0; 17,349-line prefix byte-identical (hash
+   e1b14464… proved at append AND re-proved at HEAD post-commit);
+   seam blank at 17,350; appended tail byte-identical to the block
+   file (86446f0e…); total 17,424.
+L3 HELD: manifest untouched at HEAD (no manifest row in the commit);
+   extent guard green against the 371-declared disk state; records
+   chain digest-consistent — the three attempt-2 refusers PASSED in
+   this configuration (GREEN line, failures=0).
+L4 HELD: one staged row 75 0 (measured pre-launch).
+L5 HELD: 2 files, 76 insertions(+), 0 deletions (numstat: 75+0
+   register, 1+0 ledger).
+L6 HELD: suite line EXACT — TIER_2=GREEN collected=8490 failures=0
+   apps=7684 dip0c=671 dip0=135. No refusal; §BH24 0/3.
+L7 HELD: ledger 433 → 434, +1 in this commit (HEAD~1=433, HEAD=434,
+   worktree=434, checked exits).
+L8 HELD: apps diff EMPTY (checked exit, tracked-path guard first);
+   both protected regions re-verified at scoring (GATE
+   7fbeb8f1fe10b0fb @ cfa worktree [514:541]; TEST b32030dc827263e4 @
+   a76242c^ blob [82:98], cwd-correct pathspec, checked exit).
+   protocol_identity untouched this commit (ead892658e3323a8);
+   §BH26(a) authority UNSPENT.
+
+Transcriber note, recorded: the block's TRANSCRIBED line carries
+2026-09-02 — the landing date; drafting was 2026-09-01 in the ruling
+session and the append landed 2026-09-02 after a session
+interruption. Every owner-blockquoted word and the ruling's DATE:
+2026-09-01 are untouched.
+
+Post-commit: HEAD 8bbe57e; porcelain EMPTY; stash restore next,
+byte-verified against BOTH sha256 records from the outer root; then
+THE PREVIEW — the zero-write recompute over the post-T26g tree
+(ledger 434) minting the binding pair, recorded verbatim in pred_a3's
+seal before git add; then R1–R3 verified against it, targeted sweep
+including the refuser file, fresh 8-leg over EIGHT paths, relaunch
+with NOTHING landing between preview and launch.

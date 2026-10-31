@@ -1,0 +1,32 @@
+§AD0(a) SCORE — (a) THE SITTING-REPORT IMPORT, ATTEMPT 3 (the launched one
+after §BH41), against pred_a3.txt (sealed 55453e824168e786 before the gate,
+the same 298-file content as the sealed preview c4f7f7c896ceb377 of attempt
+2). Gate GREEN, GEXIT=0. LANDED da56c06 (launched 2026-09-08T08:44:02Z,
+finished 08:58:18Z). 8/8. Launched once; services checked up; nothing beside.
+
+L1 HELD: 298 new paths under docs/design_intelligence/sittings/ + the
+   gate-staged ledger; outside sittings + ledger 0.
+L2 HELD: 298 added (9 binary), 0 modified, 0 deleted; INDEX.json at HEAD ==
+   the preview but for {preview_of, imported_at} (sha 7ee60b263e820543, the
+   write-time value); all 297 content files re-hashed at HEAD == their
+   manifest sha256_copy (0 mismatches).
+L3 HELD: manifest/records/identity in commit NONE; the ledger APPEND_ONLY;
+   WIT 864 (unchanged tree); no test file; the two-roots guard's three names.
+L4 HELD: 298 rows "A" (proved before launch).
+L5 HELD: 299 files, 564,839 insertions, 0 deletions.
+L6 HELD: "TIER_2=GREEN collected=8594 failures=0 apps=7782 dip0c=671
+   dip0=141" — exact (the tree at 6ad65f0 + the import). No flush deadlock.
+L7 HELD: ledger 487 → 488 (utc 2026-09-08T08:44:38Z, verdict OK).
+L8 HELD: apps diff EMPTY; GATE 7fbeb8f1fe10b0fb [514:541] / TEST
+   b32030dc827263e4; tree seals dip0c c22592930c75001c / dip0a
+   d72072760ab20a6a unchanged; M7 artefacts == baseline; the register 20,213
+   lines db241ccf0b258e35; the DIP-0A inventory 3b3cfdc2bf4fc6c0; under
+   Django at da56c06 the Noto trio VERIFIED_FOR_PRODUCTION (3 rows) and Warm
+   Gold #CBA87D in both systems (2 rows); porcelain clean; no stash. The
+   import hard-stop proofs stand as measured before the write (0 forbidden
+   extensions, 0 quarantine-content lines, 0 register-hash hits).
+History of this commit: attempt 1 scored 6/8 unlaunched (the .gitignore rule
+and one report row); attempt 2 REFUSED by the flush deadlock (the §BH40 hard
+stop that opened §BH41); attempt 3 landed after the cause was removed.
+Next, in the ruled order: (b) the index and the rebuild script (with the
+rebuild time measured), then (c) the server.

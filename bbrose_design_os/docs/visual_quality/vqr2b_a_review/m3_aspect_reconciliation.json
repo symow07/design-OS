@@ -1,0 +1,77 @@
+{
+ "record_type": "m3_aspect_reconciliation/1.0",
+ "created_at": "2026-08-03",
+ "difference_explained": "VQR-1 (3.0787) and VQR-2B-A (3.0606) used two different WIDTH definitions over the same frozen fit; a third definition exists in production sizing. All three are traced below; ONE canonical definition is now established.",
+ "definitions": {
+  "vqr1_record_3_0787": {
+   "source_asset": "vq2_m3_geometry_freeze.json nominal body_width_px",
+   "mask_or_contour": "original band measurement (nominal body width 343 px)",
+   "closure_included_in_height": true,
+   "bounding_box": "assembly span 1056 px x nominal body width 343 px",
+   "crop_policy": "none",
+   "threshold_policy": "n/a (recorded nominal)",
+   "anti_alias_handling": "n/a",
+   "width_px": 343.0,
+   "height_px": 1056.0,
+   "aspect": 3.0787,
+   "status": "HISTORICAL \u2014 superseded for policy use by the canonical definition"
+  },
+  "vqr2b_a_calibration_3_0606": {
+   "source_asset": "master_fit_m3.json GLASS cubics",
+   "mask_or_contour": "dense curve evaluation (per_seg converged 120/240/480: max half-width 172.5125 px)",
+   "closure_included_in_height": true,
+   "bounding_box": "assembly span 1056 px x 2*172.5125 = 345.025 px",
+   "crop_policy": "none",
+   "threshold_policy": "n/a (vector)",
+   "anti_alias_handling": "n/a (vector)",
+   "width_px": 345.025,
+   "height_px": 1056.0,
+   "aspect": 3.0606,
+   "status": "CANONICAL (m3_canonical_proportion_bounds/1.0)"
+  },
+  "production_sizing_3_0573": {
+   "source_asset": "m3_backbone.build_m3_dropper_backbone normalization",
+   "mask_or_contour": "max over cubic CONTROL POINTS (172.7 px \u2014 control points lie off-curve)",
+   "closure_included_in_height": true,
+   "bounding_box": "assembly span x 2*172.7 = 345.4 px",
+   "crop_policy": "none",
+   "threshold_policy": "n/a",
+   "anti_alias_handling": "n/a",
+   "width_px": 345.4,
+   "height_px": 1056.0,
+   "aspect": 3.0573,
+   "status": "PRODUCTION SIZING NOTE \u2014 conservative 0.11% width undershoot vs canonical; flagged for VQR-2B-B alignment; NOT a proportion-policy basis"
+  },
+  "raster_fixture_measurement_3_0586": {
+   "source_asset": "master_it3.png (identity 4ecc8e9df1d1) via concept-analysis pixel mask",
+   "mask_or_contour": "background-segmentation mask bbox of the RENDER",
+   "closure_included_in_height": true,
+   "bounding_box": "pixel bbox incl. anti-aliased edges",
+   "crop_policy": "none",
+   "threshold_policy": "bg_distance_threshold 30.0",
+   "anti_alias_handling": "AA edge pixels beyond threshold join the mask",
+   "aspect": 3.0586,
+   "status": "MEASUREMENT-SPACE VARIANT \u2014 golden expectation range covers it; never a policy basis"
+  }
+ },
+ "canonical": {
+  "schema": "m3_canonical_proportion_bounds/1.0",
+  "source_asset": "docs/visual_quality/vq1_master/master_fit_m3.json (sha a407ef385d40a462)",
+  "contour": "frozen GLASS cubic component, dense-evaluated at per_seg=240 (converged 120/240/480)",
+  "closure_included_in_height": true,
+  "bounding_box": "assembly span 292..1348 px (height) x 2*max GLASS half-width (width), centerline-symmetric",
+  "crop_policy": "none \u2014 fit measurement space",
+  "threshold_policy": "not applicable \u2014 vector fit, no pixels",
+  "anti_alias_handling": "not applicable \u2014 vector fit, no raster",
+  "height_px": 1056.0,
+  "width_px": 345.025,
+  "max_halfwidth_px": 172.5125,
+  "aspect_h_over_w": 3.0606
+ },
+ "ratio_restatement": {
+  "recorded_1_1244_basis": "production control-point sizing vs confirmed 35x95 (historical decision records keep it)",
+  "canonical_ratio_35x95": 1.1276,
+  "classification_unchanged": "both exceed the provisional 1.05 \u2014 FAIL_REQUIRES_OWNER_DECISION stands"
+ },
+ "policy_note": "1.05 remains PROVISIONAL_PENDING_VQR_2B_CALIBRATION; not activated, not calibrated \u2014 reconciliation only"
+}

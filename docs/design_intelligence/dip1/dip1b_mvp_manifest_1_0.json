@@ -1,0 +1,4033 @@
+{
+  "schema_version": "dip1b_mvp_manifest/1.0",
+  "manifest_id": "dip1b_mvp_manifest/1.0",
+  "importer": {
+    "identifier": "bbrose.intelligence.import_dip0_mvp",
+    "version": "1.0"
+  },
+  "datasets": {
+    "dip0b_historical_design_memory/1.0": {
+      "semantic_role": "FROZEN_HISTORICAL_REFERENCE_MEMORY"
+    },
+    "dip0c1_reusable_source_audit/1.0": {
+      "semantic_role": "FROZEN_TECHNICAL_SOURCE_AUDIT"
+    },
+    "dip0c2_asset_candidate_pilot/1.0": {
+      "semantic_role": "AUTHORITATIVE_ASSET_CANDIDATE_PILOT"
+    },
+    "dip0c3_brand_candidates/1.0": {
+      "semantic_role": "FROZEN_BRAND_CANDIDATE_EVIDENCE"
+    },
+    "dip0c3_palette_audit/1.0": {
+      "semantic_role": "FROZEN_NON_AUTHORITATIVE_PALETTE_AUDIT"
+    },
+    "dip0c4_curated_starter_candidates/1.0": {
+      "semantic_role": "FROZEN_TECHNICAL_FONT_CANDIDATES"
+    }
+  },
+  "expected_counts": {
+    "historical_designs": 14,
+    "design_units": 173,
+    "c1_overlap_audit_records": 10,
+    "c2_manifest_entries": 20,
+    "c2_unique_sources": 19,
+    "c2_content_identities": 18,
+    "asset_candidates": 48,
+    "semantic_asset_candidates": 47,
+    "font_candidates": 34,
+    "brand_candidates": 21,
+    "palette_candidates": 1
+  },
+  "entries": [
+    {
+      "stable_source_key": "dip0b-history:00:BL-2050 STAND",
+      "dataset_id": "dip0b_historical_design_memory/1.0",
+      "record_type": "HISTORICAL_DESIGN",
+      "source": {
+        "root": "repository",
+        "path": "materials/historical AI production designs/BL-2050 STAND.ai",
+        "sha256": "e57211a5e858f150abf99a3b81fad7f77537484616d537acdfeefb04f41b7806",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0b_historical_memory/1.0",
+      "parser_identifier": "dip0b.historical_memory",
+      "parser_version": "b5-0.1.0",
+      "display_label": "BL-2050 STAND",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+          "sha256": "37e25920da2287ba0fe6eb2099afff497d76fb39b99c73399af33a8f526fbe6a",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+            "segments": [
+              "rows"
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "historical_period": ""
+      }
+    },
+    {
+      "stable_source_key": "dip0b-history:01:EP416-E",
+      "dataset_id": "dip0b_historical_design_memory/1.0",
+      "record_type": "HISTORICAL_DESIGN",
+      "source": {
+        "root": "repository",
+        "path": "materials/historical AI production designs/EP416-E.ai",
+        "sha256": "b580c1c355f0a6920d64470c3435abcb4bd3875886ae57d4234fd370f603a4fa",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0b_historical_memory/1.0",
+      "parser_identifier": "dip0b.historical_memory",
+      "parser_version": "b5-0.1.0",
+      "display_label": "EP416-E",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+          "sha256": "37e25920da2287ba0fe6eb2099afff497d76fb39b99c73399af33a8f526fbe6a",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+            "segments": [
+              "rows"
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "historical_period": ""
+      }
+    },
+    {
+      "stable_source_key": "dip0b-history:02:ES3083吸塑 展盒刀线",
+      "dataset_id": "dip0b_historical_design_memory/1.0",
+      "record_type": "HISTORICAL_DESIGN",
+      "source": {
+        "root": "repository",
+        "path": "materials/historical AI production designs/ES3083吸塑 展盒刀线.ai",
+        "sha256": "6a13d2d45197d26d82bc21800a031a6a427e81a7258eeadb3ca7129c2635ed8b",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0b_historical_memory/1.0",
+      "parser_identifier": "dip0b.historical_memory",
+      "parser_version": "b5-0.1.0",
+      "display_label": "ES3083吸塑 展盒刀线",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+          "sha256": "37e25920da2287ba0fe6eb2099afff497d76fb39b99c73399af33a8f526fbe6a",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+            "segments": [
+              "rows"
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "historical_period": ""
+      }
+    },
+    {
+      "stable_source_key": "dip0b-history:03:FB-2060 白卡",
+      "dataset_id": "dip0b_historical_design_memory/1.0",
+      "record_type": "HISTORICAL_DESIGN",
+      "source": {
+        "root": "repository",
+        "path": "materials/historical AI production designs/FB-2060 白卡.ai",
+        "sha256": "1bcba86f28d0d3bef7025ddb00898c3e43fcd1325feec7f6fe34075d94a11115",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0b_historical_memory/1.0",
+      "parser_identifier": "dip0b.historical_memory",
+      "parser_version": "b5-0.1.0",
+      "display_label": "FB-2060 白卡",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+          "sha256": "37e25920da2287ba0fe6eb2099afff497d76fb39b99c73399af33a8f526fbe6a",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+            "segments": [
+              "rows"
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "historical_period": ""
+      }
+    },
+    {
+      "stable_source_key": "dip0b-history:04:FL-3098 - STAND",
+      "dataset_id": "dip0b_historical_design_memory/1.0",
+      "record_type": "HISTORICAL_DESIGN",
+      "source": {
+        "root": "repository",
+        "path": "materials/historical AI production designs/FL-3098 - STAND.ai",
+        "sha256": "958ce60f6ef89c4118fd55f26807ade1cdbf4df4c1d9d5562fe33dac64cddd29",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0b_historical_memory/1.0",
+      "parser_identifier": "dip0b.historical_memory",
+      "parser_version": "b5-0.1.0",
+      "display_label": "FL-3098 - STAND",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+          "sha256": "37e25920da2287ba0fe6eb2099afff497d76fb39b99c73399af33a8f526fbe6a",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+            "segments": [
+              "rows"
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "historical_period": ""
+      }
+    },
+    {
+      "stable_source_key": "dip0b-history:05:HL5503高光液",
+      "dataset_id": "dip0b_historical_design_memory/1.0",
+      "record_type": "HISTORICAL_DESIGN",
+      "source": {
+        "root": "repository",
+        "path": "materials/historical AI production designs/HL5503高光液.ai",
+        "sha256": "51d47e920adb8e736cc9ecc8534d1413d668c4f9200f7b0229efa9240e019ac3",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0b_historical_memory/1.0",
+      "parser_identifier": "dip0b.historical_memory",
+      "parser_version": "b5-0.1.0",
+      "display_label": "HL5503高光液",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+          "sha256": "37e25920da2287ba0fe6eb2099afff497d76fb39b99c73399af33a8f526fbe6a",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+            "segments": [
+              "rows"
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "historical_period": ""
+      }
+    },
+    {
+      "stable_source_key": "dip0b-history:06:LP-2018",
+      "dataset_id": "dip0b_historical_design_memory/1.0",
+      "record_type": "HISTORICAL_DESIGN",
+      "source": {
+        "root": "repository",
+        "path": "materials/historical AI production designs/LP-2018.ai",
+        "sha256": "826093fc59988e7201b0c6dd06deefeb45b445f158e3096b7c05935896f7feb4",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0b_historical_memory/1.0",
+      "parser_identifier": "dip0b.historical_memory",
+      "parser_version": "b5-0.1.0",
+      "display_label": "LP-2018",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+          "sha256": "37e25920da2287ba0fe6eb2099afff497d76fb39b99c73399af33a8f526fbe6a",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+            "segments": [
+              "rows"
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "historical_period": ""
+      }
+    },
+    {
+      "stable_source_key": "dip0b-history:07:LP-2044",
+      "dataset_id": "dip0b_historical_design_memory/1.0",
+      "record_type": "HISTORICAL_DESIGN",
+      "source": {
+        "root": "repository",
+        "path": "materials/historical AI production designs/LP-2044.ai",
+        "sha256": "72ea14b84ebc68adcf2789836388e7a46b6061838ab2961dc9d3b53695de53d8",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0b_historical_memory/1.0",
+      "parser_identifier": "dip0b.historical_memory",
+      "parser_version": "b5-0.1.0",
+      "display_label": "LP-2044",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+          "sha256": "37e25920da2287ba0fe6eb2099afff497d76fb39b99c73399af33a8f526fbe6a",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+            "segments": [
+              "rows"
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "historical_period": ""
+      }
+    },
+    {
+      "stable_source_key": "dip0b-history:08:YB-1025(LP5870)..",
+      "dataset_id": "dip0b_historical_design_memory/1.0",
+      "record_type": "HISTORICAL_DESIGN",
+      "source": {
+        "root": "repository",
+        "path": "materials/historical AI production designs/YB-1025(LP5870)...ai",
+        "sha256": "7ebd1ba9d6cc28734578f1840204b1e76e72ac0dfd547ad4dbadd2be7e2047a7",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0b_historical_memory/1.0",
+      "parser_identifier": "dip0b.historical_memory",
+      "parser_version": "b5-0.1.0",
+      "display_label": "YB-1025(LP5870)..",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+          "sha256": "37e25920da2287ba0fe6eb2099afff497d76fb39b99c73399af33a8f526fbe6a",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+            "segments": [
+              "rows"
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "historical_period": ""
+      }
+    },
+    {
+      "stable_source_key": "dip0b-history:09:YB-1031(LG5861).",
+      "dataset_id": "dip0b_historical_design_memory/1.0",
+      "record_type": "HISTORICAL_DESIGN",
+      "source": {
+        "root": "repository",
+        "path": "materials/historical AI production designs/YB-1031(LG5861)..ai",
+        "sha256": "092fa910faeb9c85aea668b34a33edb6f62f2e04ecea8ff121c4277283200707",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0b_historical_memory/1.0",
+      "parser_identifier": "dip0b.historical_memory",
+      "parser_version": "b5-0.1.0",
+      "display_label": "YB-1031(LG5861).",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+          "sha256": "37e25920da2287ba0fe6eb2099afff497d76fb39b99c73399af33a8f526fbe6a",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+            "segments": [
+              "rows"
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "historical_period": ""
+      }
+    },
+    {
+      "stable_source_key": "dip0b-history:10:YB-1035(LH5851)",
+      "dataset_id": "dip0b_historical_design_memory/1.0",
+      "record_type": "HISTORICAL_DESIGN",
+      "source": {
+        "root": "repository",
+        "path": "materials/historical AI production designs/YB-1035(LH5851).ai",
+        "sha256": "9ec934685ae7c2d833a9488cde5b720259527026cc2758b1fcd10b0853464094",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0b_historical_memory/1.0",
+      "parser_identifier": "dip0b.historical_memory",
+      "parser_version": "b5-0.1.0",
+      "display_label": "YB-1035(LH5851)",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+          "sha256": "37e25920da2287ba0fe6eb2099afff497d76fb39b99c73399af33a8f526fbe6a",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+            "segments": [
+              "rows"
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "historical_period": ""
+      }
+    },
+    {
+      "stable_source_key": "dip0b-history:11:YB-1036(LH5852)",
+      "dataset_id": "dip0b_historical_design_memory/1.0",
+      "record_type": "HISTORICAL_DESIGN",
+      "source": {
+        "root": "repository",
+        "path": "materials/historical AI production designs/YB-1036(LH5852).ai",
+        "sha256": "66ccdf2804150c377ca7fa209c563d07473504644a32045d84240c9758b48936",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0b_historical_memory/1.0",
+      "parser_identifier": "dip0b.historical_memory",
+      "parser_version": "b5-0.1.0",
+      "display_label": "YB-1036(LH5852)",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+          "sha256": "37e25920da2287ba0fe6eb2099afff497d76fb39b99c73399af33a8f526fbe6a",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+            "segments": [
+              "rows"
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "historical_period": ""
+      }
+    },
+    {
+      "stable_source_key": "dip0b-history:12:YB-BB-202509-1241(LP5924) (2)",
+      "dataset_id": "dip0b_historical_design_memory/1.0",
+      "record_type": "HISTORICAL_DESIGN",
+      "source": {
+        "root": "repository",
+        "path": "materials/historical AI production designs/YB-BB-202509-1241(LP5924) (2).ai",
+        "sha256": "ce14c801c5d5e2b708d8acff64986b9db9c1f30c9961dbf56baad5b6daa052a6",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0b_historical_memory/1.0",
+      "parser_identifier": "dip0b.historical_memory",
+      "parser_version": "b5-0.1.0",
+      "display_label": "YB-BB-202509-1241(LP5924) (2)",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+          "sha256": "37e25920da2287ba0fe6eb2099afff497d76fb39b99c73399af33a8f526fbe6a",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+            "segments": [
+              "rows"
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "historical_period": ""
+      }
+    },
+    {
+      "stable_source_key": "dip0b-history:13:ZYG2052 PVC",
+      "dataset_id": "dip0b_historical_design_memory/1.0",
+      "record_type": "HISTORICAL_DESIGN",
+      "source": {
+        "root": "repository",
+        "path": "materials/historical AI production designs/ZYG2052 PVC.ai",
+        "sha256": "b0d89105733eecaf042ffdee0e24391c89bfc869d16d92b35ceab01a50f137ff",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0b_historical_memory/1.0",
+      "parser_identifier": "dip0b.historical_memory",
+      "parser_version": "b5-0.1.0",
+      "display_label": "ZYG2052 PVC",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+          "sha256": "37e25920da2287ba0fe6eb2099afff497d76fb39b99c73399af33a8f526fbe6a",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0b/manifest/review_manifest.json",
+            "segments": [
+              "rows"
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "historical_period": ""
+      }
+    },
+    {
+      "stable_source_key": "dip0c1-source-audit-overlap:00",
+      "dataset_id": "dip0c1_reusable_source_audit/1.0",
+      "record_type": "SOURCE_AUDIT_EVIDENCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/24-hours-day-concept-clock-face-with-dial-arrow-around-day-night-interface-icon-use-web-design/icsinto_499.eps",
+        "sha256": "04f2c3015ad5ec68233d616082cbf1e77bd4663e22f345b3ab4b23e0c5d8c270",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0c1_source_audit/1.0",
+      "parser_identifier": "dip0c.source_audit",
+      "parser_version": "0.1.0",
+      "display_label": "icsinto_499.eps",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "docs/design_intelligence/dip0c/pilot_manifest.json",
+          "sha256": "ea4af7d06415f130b1b8b042092ed8f8d6d0b1dd975671b400c48dd6a83ea0d8",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "docs/design_intelligence/dip0c/pilot_manifest.json",
+            "segments": [
+              "entries",
+              9
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "import_scope": "OVERLAP_LINEAGE_ONLY",
+        "candidate_list_authority": false
+      }
+    },
+    {
+      "stable_source_key": "dip0c1-source-audit-overlap:01",
+      "dataset_id": "dip0c1_reusable_source_audit/1.0",
+      "record_type": "SOURCE_AUDIT_EVIDENCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/24-hours-day-service-availability-fluid-background/SL-041222-49680-07.jpg",
+        "sha256": "49f82cc9ffbe33efe8a6b6efb55abd28f539afda25c879239a629bc4cf7f9e8d",
+        "source_type": "FILE",
+        "media_type": "image/jpeg"
+      },
+      "source_schema_version": "dip0c1_source_audit/1.0",
+      "parser_identifier": "dip0c.source_audit",
+      "parser_version": "0.1.0",
+      "display_label": "SL-041222-49680-07.jpg",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "docs/design_intelligence/dip0c/pilot_manifest.json",
+          "sha256": "ea4af7d06415f130b1b8b042092ed8f8d6d0b1dd975671b400c48dd6a83ea0d8",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "docs/design_intelligence/dip0c/pilot_manifest.json",
+            "segments": [
+              "entries",
+              11
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "import_scope": "OVERLAP_LINEAGE_ONLY",
+        "candidate_list_authority": false
+      }
+    },
+    {
+      "stable_source_key": "dip0c1-source-audit-overlap:02",
+      "dataset_id": "dip0c1_reusable_source_audit/1.0",
+      "record_type": "SOURCE_AUDIT_EVIDENCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/247-services-full-time-support-your-business-logo-design-full-vector-illustration-art-work/2e19e85b-ebd3-49fd-a259-bd3cd25bc3dd.eps",
+        "sha256": "93fe94a0d62508cb56f6ccc0a5d20603b4ba8a7d07671c716cfa34cd300c2640",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0c1_source_audit/1.0",
+      "parser_identifier": "dip0c.source_audit",
+      "parser_version": "0.1.0",
+      "display_label": "2e19e85b-ebd3-49fd-a259-bd3cd25bc3dd.eps",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "docs/design_intelligence/dip0c/pilot_manifest.json",
+          "sha256": "ea4af7d06415f130b1b8b042092ed8f8d6d0b1dd975671b400c48dd6a83ea0d8",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "docs/design_intelligence/dip0c/pilot_manifest.json",
+            "segments": [
+              "entries",
+              7
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "import_scope": "OVERLAP_LINEAGE_ONLY",
+        "candidate_list_authority": false
+      }
+    },
+    {
+      "stable_source_key": "dip0c1-source-audit-overlap:03",
+      "dataset_id": "dip0c1_reusable_source_audit/1.0",
+      "record_type": "SOURCE_AUDIT_EVIDENCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/5955567.ai",
+        "sha256": "a45b5dd0f10176a9bd01b6976e90bdda5625d9965352cceec4d3347f3f171866",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0c1_source_audit/1.0",
+      "parser_identifier": "dip0c.source_audit",
+      "parser_version": "0.1.0",
+      "display_label": "5955567.ai",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "docs/design_intelligence/dip0c/pilot_manifest.json",
+          "sha256": "ea4af7d06415f130b1b8b042092ed8f8d6d0b1dd975671b400c48dd6a83ea0d8",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "docs/design_intelligence/dip0c/pilot_manifest.json",
+            "segments": [
+              "entries",
+              2
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "import_scope": "OVERLAP_LINEAGE_ONLY",
+        "candidate_list_authority": false
+      }
+    },
+    {
+      "stable_source_key": "dip0c1-source-audit-overlap:04",
+      "dataset_id": "dip0c1_reusable_source_audit/1.0",
+      "record_type": "SOURCE_AUDIT_EVIDENCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/9993170.ai",
+        "sha256": "b0a6cfcb6a4d331e6a08832840c030081fd44a88d6485b4ccbb72fc9c8368e63",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0c1_source_audit/1.0",
+      "parser_identifier": "dip0c.source_audit",
+      "parser_version": "0.1.0",
+      "display_label": "9993170.ai",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "docs/design_intelligence/dip0c/pilot_manifest.json",
+          "sha256": "ea4af7d06415f130b1b8b042092ed8f8d6d0b1dd975671b400c48dd6a83ea0d8",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "docs/design_intelligence/dip0c/pilot_manifest.json",
+            "segments": [
+              "entries",
+              1
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "import_scope": "OVERLAP_LINEAGE_ONLY",
+        "candidate_list_authority": false
+      }
+    },
+    {
+      "stable_source_key": "dip0c1-source-audit-overlap:05",
+      "dataset_id": "dip0c1_reusable_source_audit/1.0",
+      "record_type": "SOURCE_AUDIT_EVIDENCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/abstract-background-with-rounded-shapes/344195-PC2FZA-950.ai",
+        "sha256": "b1af3c923e10180b592ed15a1757408d5c05dd7d8fe1bbe36f779f67f135b404",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0c1_source_audit/1.0",
+      "parser_identifier": "dip0c.source_audit",
+      "parser_version": "0.1.0",
+      "display_label": "344195-PC2FZA-950.ai",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "docs/design_intelligence/dip0c/pilot_manifest.json",
+          "sha256": "ea4af7d06415f130b1b8b042092ed8f8d6d0b1dd975671b400c48dd6a83ea0d8",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "docs/design_intelligence/dip0c/pilot_manifest.json",
+            "segments": [
+              "entries",
+              6
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "import_scope": "OVERLAP_LINEAGE_ONLY",
+        "candidate_list_authority": false
+      }
+    },
+    {
+      "stable_source_key": "dip0c1-source-audit-overlap:06",
+      "dataset_id": "dip0c1_reusable_source_audit/1.0",
+      "record_type": "SOURCE_AUDIT_EVIDENCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/acid-cosmetics-make-up-stickers-collection/9347862.ai",
+        "sha256": "624453b69289152ecaa6131aadefaffc3b6dfeeb4e4e58d07ea32e15afeddba4",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0c1_source_audit/1.0",
+      "parser_identifier": "dip0c.source_audit",
+      "parser_version": "0.1.0",
+      "display_label": "9347862.ai",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "docs/design_intelligence/dip0c/pilot_manifest.json",
+          "sha256": "ea4af7d06415f130b1b8b042092ed8f8d6d0b1dd975671b400c48dd6a83ea0d8",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "docs/design_intelligence/dip0c/pilot_manifest.json",
+            "segments": [
+              "entries",
+              10
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "import_scope": "OVERLAP_LINEAGE_ONLY",
+        "candidate_list_authority": false
+      }
+    },
+    {
+      "stable_source_key": "dip0c1-source-audit-overlap:07",
+      "dataset_id": "dip0c1_reusable_source_audit/1.0",
+      "record_type": "SOURCE_AUDIT_EVIDENCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/baby-pattern-collection-four/260107-P4T7LC-198.ai",
+        "sha256": "4c1aa90ddcc85e753dc22a9d3b857706707f1aa3423579a2635bc6b5b404fbeb",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0c1_source_audit/1.0",
+      "parser_identifier": "dip0c.source_audit",
+      "parser_version": "0.1.0",
+      "display_label": "260107-P4T7LC-198.ai",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "docs/design_intelligence/dip0c/pilot_manifest.json",
+          "sha256": "ea4af7d06415f130b1b8b042092ed8f8d6d0b1dd975671b400c48dd6a83ea0d8",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "docs/design_intelligence/dip0c/pilot_manifest.json",
+            "segments": [
+              "entries",
+              5
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "import_scope": "OVERLAP_LINEAGE_ONLY",
+        "candidate_list_authority": false
+      }
+    },
+    {
+      "stable_source_key": "dip0c1-source-audit-overlap:08",
+      "dataset_id": "dip0c1_reusable_source_audit/1.0",
+      "record_type": "SOURCE_AUDIT_EVIDENCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/LOGO6.ai",
+        "sha256": "4475663c1debfbba4f132e0458f4045e057f6d473854d16ebc3100c8b630af0a",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0c1_source_audit/1.0",
+      "parser_identifier": "dip0c.source_audit",
+      "parser_version": "0.1.0",
+      "display_label": "LOGO6.ai",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "docs/design_intelligence/dip0c/pilot_manifest.json",
+          "sha256": "ea4af7d06415f130b1b8b042092ed8f8d6d0b1dd975671b400c48dd6a83ea0d8",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "docs/design_intelligence/dip0c/pilot_manifest.json",
+            "segments": [
+              "entries",
+              17
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "import_scope": "OVERLAP_LINEAGE_ONLY",
+        "candidate_list_authority": false
+      }
+    },
+    {
+      "stable_source_key": "dip0c1-source-audit-overlap:09",
+      "dataset_id": "dip0c1_reusable_source_audit/1.0",
+      "record_type": "SOURCE_AUDIT_EVIDENCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/نماذج عامة من  01الانترنيت/1_5061030170064.svg",
+        "sha256": "49e9e52c47a862e6e312d571fd7884c50013bf18d4c5602310f08e1a4f7301b0",
+        "source_type": "FILE",
+        "media_type": "image/svg+xml"
+      },
+      "source_schema_version": "dip0c1_source_audit/1.0",
+      "parser_identifier": "dip0c.source_audit",
+      "parser_version": "0.1.0",
+      "display_label": "1_5061030170064.svg",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "docs/design_intelligence/dip0c/pilot_manifest.json",
+          "sha256": "ea4af7d06415f130b1b8b042092ed8f8d6d0b1dd975671b400c48dd6a83ea0d8",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "docs/design_intelligence/dip0c/pilot_manifest.json",
+            "segments": [
+              "entries",
+              15
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "import_scope": "OVERLAP_LINEAGE_ONLY",
+        "candidate_list_authority": false
+      }
+    },
+    {
+      "stable_source_key": "dip0c2-asset-source:00",
+      "dataset_id": "dip0c2_asset_candidate_pilot/1.0",
+      "record_type": "ASSET_SOURCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/acid-cosmetics-make-up-stickers-collection/9347862.ai",
+        "sha256": "624453b69289152ecaa6131aadefaffc3b6dfeeb4e4e58d07ea32e15afeddba4",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "assetcandidate/1.0",
+      "parser_identifier": "dip0c.asset_candidate",
+      "parser_version": "0.1.0",
+      "display_label": "9347862.ai",
+      "test_only_state": "NON_TEST_SOURCE",
+      "metadata": {
+        "pilot_role": "collection_sheet_vector",
+        "inventory_category": "MOTIF"
+      },
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__DOWNLOADS 12-2025__acid-cosmetics-make-up-stickers-collection__9347862.ai.c2b.json",
+          "sha256": "b21fbb70a00ef63ebcb768710ad6d01ba331fc01d453f4046a2a1372a298b265",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__DOWNLOADS 12-2025__acid-cosmetics-make-up-stickers-collection__9347862.ai.c2b.json",
+            "segments": [
+              "candidates"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "stable_source_key": "dip0c2-asset-source:01",
+      "dataset_id": "dip0c2_asset_candidate_pilot/1.0",
+      "record_type": "ASSET_SOURCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/LOGO6.ai",
+        "sha256": "4475663c1debfbba4f132e0458f4045e057f6d473854d16ebc3100c8b630af0a",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "assetcandidate/1.0",
+      "parser_identifier": "dip0c.asset_candidate",
+      "parser_version": "0.1.0",
+      "display_label": "LOGO6.ai",
+      "test_only_state": "NON_TEST_SOURCE",
+      "metadata": {
+        "pilot_role": "single_asset_vector_fallback",
+        "inventory_category": "LOGO"
+      },
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__محفوظات شغل  02 المكتب__LOGO6.ai.c2b.json",
+          "sha256": "d2196871574979832c60a44c80a54c8e2797ab540b0f0d6206b8d86d69334ebb",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__محفوظات شغل  02 المكتب__LOGO6.ai.c2b.json",
+            "segments": [
+              "candidates"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "stable_source_key": "dip0c2-asset-source:02",
+      "dataset_id": "dip0c2_asset_candidate_pilot/1.0",
+      "record_type": "ASSET_SOURCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/abstract-background-with-rounded-shapes/344195-PC2FZA-950.ai",
+        "sha256": "b1af3c923e10180b592ed15a1757408d5c05dd7d8fe1bbe36f779f67f135b404",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "assetcandidate/1.0",
+      "parser_identifier": "dip0c.asset_candidate",
+      "parser_version": "0.1.0",
+      "display_label": "344195-PC2FZA-950.ai",
+      "test_only_state": "NON_TEST_SOURCE",
+      "metadata": {
+        "pilot_role": "multi_artboard_vector",
+        "inventory_category": "BACKGROUND"
+      },
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__DOWNLOADS 12-2025__abstract-background-with-rounded-shapes__344195-PC2FZA-950.ai.c2b.json",
+          "sha256": "921c5f7cde6405acc516f56eedb97c6c730002a107c6d7ea327f92c1ca2e23ea",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__DOWNLOADS 12-2025__abstract-background-with-rounded-shapes__344195-PC2FZA-950.ai.c2b.json",
+            "segments": [
+              "candidates"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "stable_source_key": "dip0c2-asset-source:03",
+      "dataset_id": "dip0c2_asset_candidate_pilot/1.0",
+      "record_type": "ASSET_SOURCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/9993170.ai",
+        "sha256": "b0a6cfcb6a4d331e6a08832840c030081fd44a88d6485b4ccbb72fc9c8368e63",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "assetcandidate/1.0",
+      "parser_identifier": "dip0c.asset_candidate",
+      "parser_version": "0.1.0",
+      "display_label": "9993170.ai",
+      "test_only_state": "NON_TEST_SOURCE",
+      "metadata": {
+        "pilot_role": "multi_candidate_vector",
+        "inventory_category": "REUSABLE_VECTOR_ASSET"
+      },
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__DOWNLOADS 12-2025__9993170.ai.c2b.json",
+          "sha256": "4c577a17d714d2e81706b5c014382a6219a53e28a4435cc3836768f5b8037bbc",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__DOWNLOADS 12-2025__9993170.ai.c2b.json",
+            "segments": [
+              "candidates"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "stable_source_key": "dip0c2-asset-source:04",
+      "dataset_id": "dip0c2_asset_candidate_pilot/1.0",
+      "record_type": "ASSET_SOURCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/5955567.ai",
+        "sha256": "a45b5dd0f10176a9bd01b6976e90bdda5625d9965352cceec4d3347f3f171866",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "assetcandidate/1.0",
+      "parser_identifier": "dip0c.asset_candidate",
+      "parser_version": "0.1.0",
+      "display_label": "5955567.ai",
+      "test_only_state": "NON_TEST_SOURCE",
+      "metadata": {
+        "pilot_role": "jpeg_shell_vector",
+        "inventory_category": "REUSABLE_VECTOR_ASSET"
+      },
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__DOWNLOADS 12-2025__5955567.ai.c2b.json",
+          "sha256": "da6d4a5c427e01458df7fa14500f2700870ca8e9bc4d09c8d089dd50db420af3",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__DOWNLOADS 12-2025__5955567.ai.c2b.json",
+            "segments": [
+              "candidates"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "stable_source_key": "dip0c2-asset-source:05",
+      "dataset_id": "dip0c2_asset_candidate_pilot/1.0",
+      "record_type": "ASSET_SOURCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/نماذج عامة من  01الانترنيت/1_5061030170064.svg",
+        "sha256": "49e9e52c47a862e6e312d571fd7884c50013bf18d4c5602310f08e1a4f7301b0",
+        "source_type": "FILE",
+        "media_type": "image/svg+xml"
+      },
+      "source_schema_version": "assetcandidate/1.0",
+      "parser_identifier": "dip0c.asset_candidate",
+      "parser_version": "0.1.0",
+      "display_label": "1_5061030170064.svg",
+      "test_only_state": "NON_TEST_SOURCE",
+      "metadata": {
+        "pilot_role": "safe_svg",
+        "inventory_category": "REUSABLE_VECTOR_ASSET"
+      },
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__نماذج عامة من  01الانترنيت__1_5061030170064.svg.c2b.json",
+          "sha256": "3460ebffc56a66d5429b4d1fd0c3155b0f94aa6d95c5ac1fcef5606d1bf355e6",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__نماذج عامة من  01الانترنيت__1_5061030170064.svg.c2b.json",
+            "segments": [
+              "candidates"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "stable_source_key": "dip0c2-asset-source:06",
+      "dataset_id": "dip0c2_asset_candidate_pilot/1.0",
+      "record_type": "ASSET_SOURCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/background-remover(1)/Weixin Image_20250919141742_67_18.png",
+        "sha256": "3406388bca7717167c05869f43520bc3aff856ba457afe2a7ae35f74a8b090fd",
+        "source_type": "FILE",
+        "media_type": "image/png"
+      },
+      "source_schema_version": "assetcandidate/1.0",
+      "parser_identifier": "dip0c.asset_candidate",
+      "parser_version": "0.1.0",
+      "display_label": "Weixin Image_20250919141742_67_18.png",
+      "test_only_state": "NON_TEST_SOURCE",
+      "metadata": {
+        "pilot_role": "raster_cutout_single",
+        "inventory_category": "BACKGROUND"
+      },
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__DOWNLOADS 12-2025__background-remover(1)__Weixin Image_20250919141742_67_18.png.c2b.json",
+          "sha256": "fbf3b3bf62ea38c0f3dd6e206fa54eae665f7cc410e375e2357f80b9016ec046",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__DOWNLOADS 12-2025__background-remover(1)__Weixin Image_20250919141742_67_18.png.c2b.json",
+            "segments": [
+              "candidates"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "stable_source_key": "dip0c2-asset-source:07",
+      "dataset_id": "dip0c2_asset_candidate_pilot/1.0",
+      "record_type": "ASSET_SOURCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/background-remover(1)/Weixin Image_20250918113158_44_18.png",
+        "sha256": "dc6dfff9f06bdef2921532baa82877a670760eb001a7206c9690da110e7270f9",
+        "source_type": "FILE",
+        "media_type": "image/png"
+      },
+      "source_schema_version": "assetcandidate/1.0",
+      "parser_identifier": "dip0c.asset_candidate",
+      "parser_version": "0.1.0",
+      "display_label": "Weixin Image_20250918113158_44_18.png",
+      "test_only_state": "NON_TEST_SOURCE",
+      "metadata": {
+        "pilot_role": "raster_cutout_lowres",
+        "inventory_category": "BACKGROUND"
+      },
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__DOWNLOADS 12-2025__background-remover(1)__Weixin Image_20250918113158_44_18.png.c2b.json",
+          "sha256": "d37b1bb7d7c97d58981d152f3b3d830790d1b100fd1a1de40e73abe090e817ef",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__DOWNLOADS 12-2025__background-remover(1)__Weixin Image_20250918113158_44_18.png.c2b.json",
+            "segments": [
+              "candidates"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "stable_source_key": "dip0c2-asset-source:08",
+      "dataset_id": "dip0c2_asset_candidate_pilot/1.0",
+      "record_type": "ASSET_SOURCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/flat-black-friday-stickers-collection/5955566.jpg",
+        "sha256": "914d421b2ee3f717d1f9893e7bca517e973016b090c216903602778ba8ac5f0f",
+        "source_type": "FILE",
+        "media_type": "image/jpeg"
+      },
+      "source_schema_version": "assetcandidate/1.0",
+      "parser_identifier": "dip0c.asset_candidate",
+      "parser_version": "0.1.0",
+      "display_label": "5955566.jpg",
+      "test_only_state": "NON_TEST_SOURCE",
+      "metadata": {
+        "pilot_role": "raster_sticker_sheet",
+        "inventory_category": "MOTIF"
+      },
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__flat-black-friday-stickers-collection__5955566.jpg.c2b.json",
+          "sha256": "2af6f582752c99140853723a1078fa03521c63cc2727a6a5bf92e51930e3b979",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__flat-black-friday-stickers-collection__5955566.jpg.c2b.json",
+            "segments": [
+              "candidates"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "stable_source_key": "dip0c2-asset-source:09",
+      "dataset_id": "dip0c2_asset_candidate_pilot/1.0",
+      "record_type": "ASSET_SOURCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/24-hours-day-service-availability-fluid-background/SL-041222-49680-07.jpg",
+        "sha256": "49f82cc9ffbe33efe8a6b6efb55abd28f539afda25c879239a629bc4cf7f9e8d",
+        "source_type": "FILE",
+        "media_type": "image/jpeg"
+      },
+      "source_schema_version": "assetcandidate/1.0",
+      "parser_identifier": "dip0c.asset_candidate",
+      "parser_version": "0.1.0",
+      "display_label": "SL-041222-49680-07.jpg",
+      "test_only_state": "NON_TEST_SOURCE",
+      "metadata": {
+        "pilot_role": "raster_full_bleed",
+        "inventory_category": "BACKGROUND"
+      },
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__24-hours-day-service-availability-fluid-background__SL-041222-49680-07.jpg.c2b.json",
+          "sha256": "43aa6a5020d230d4ba5b62b5bc4a3916fbd0f0971a5b4e399d2ec7e28074453f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__24-hours-day-service-availability-fluid-background__SL-041222-49680-07.jpg.c2b.json",
+            "segments": [
+              "candidates"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "stable_source_key": "dip0c2-asset-source:10",
+      "dataset_id": "dip0c2_asset_candidate_pilot/1.0",
+      "record_type": "ASSET_SOURCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/247-services-full-time-support-your-business-logo-design-full-vector-illustration-art-work/2e19e85b-ebd3-49fd-a259-bd3cd25bc3dd.eps",
+        "sha256": "93fe94a0d62508cb56f6ccc0a5d20603b4ba8a7d07671c716cfa34cd300c2640",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "assetcandidate/1.0",
+      "parser_identifier": "dip0c.asset_candidate",
+      "parser_version": "0.1.0",
+      "display_label": "2e19e85b-ebd3-49fd-a259-bd3cd25bc3dd.eps",
+      "test_only_state": "NON_TEST_SOURCE",
+      "metadata": {
+        "pilot_role": "eps_with_preview_undecodable",
+        "inventory_category": "REUSABLE_VECTOR_ASSET"
+      },
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__247-services-full-time-support-your-business-logo-design-full-vector-illustration-art-work__2e19e85b-ebd3-49fd-a259-bd3cd25bc3dd.eps.c2b.json",
+          "sha256": "7acc259bfd551b8437ee41887c4329885020a8a97a300ee7c5fb850011f60af2",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__247-services-full-time-support-your-business-logo-design-full-vector-illustration-art-work__2e19e85b-ebd3-49fd-a259-bd3cd25bc3dd.eps.c2b.json",
+            "segments": [
+              "candidates"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "stable_source_key": "dip0c2-asset-source:11",
+      "dataset_id": "dip0c2_asset_candidate_pilot/1.0",
+      "record_type": "ASSET_SOURCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/24-hours-day-concept-clock-face-with-dial-arrow-around-day-night-interface-icon-use-web-design/icsinto_499.eps",
+        "sha256": "04f2c3015ad5ec68233d616082cbf1e77bd4663e22f345b3ab4b23e0c5d8c270",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "assetcandidate/1.0",
+      "parser_identifier": "dip0c.asset_candidate",
+      "parser_version": "0.1.0",
+      "display_label": "icsinto_499.eps",
+      "test_only_state": "NON_TEST_SOURCE",
+      "metadata": {
+        "pilot_role": "eps_without_preview",
+        "inventory_category": "ICON"
+      },
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__24-hours-day-concept-clock-face-with-dial-arrow-around-day-night-interface-icon-use-web-design__icsinto_499.eps.c2b.json",
+          "sha256": "276bedece16966ff8977219437a300107f1ef6a110483311ff938ea7b78ea1b9",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__24-hours-day-concept-clock-face-with-dial-arrow-around-day-night-interface-icon-use-web-design__icsinto_499.eps.c2b.json",
+            "segments": [
+              "candidates"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "stable_source_key": "dip0c2-asset-source:12",
+      "dataset_id": "dip0c2_asset_candidate_pilot/1.0",
+      "record_type": "ASSET_SOURCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/24-hours-day-service-availability-fluid-background/SL-041222-49680-07.eps",
+        "sha256": "b27fc36e23aecdf2aea620b1628f339d60f26d8b6a3ba0eadc0ad98745b240df",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "assetcandidate/1.0",
+      "parser_identifier": "dip0c.asset_candidate",
+      "parser_version": "0.1.0",
+      "display_label": "SL-041222-49680-07.eps",
+      "test_only_state": "NON_TEST_SOURCE",
+      "metadata": {
+        "pilot_role": "process_cmyk_eps",
+        "inventory_category": "BACKGROUND"
+      },
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__24-hours-day-service-availability-fluid-background__SL-041222-49680-07.eps.c2b.json",
+          "sha256": "e70732c4014cb905a80e0dd6f8e8e2450c21e75b5b72f63929bc55855b657c1a",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__24-hours-day-service-availability-fluid-background__SL-041222-49680-07.eps.c2b.json",
+            "segments": [
+              "candidates"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "stable_source_key": "dip0c2-asset-source:13",
+      "dataset_id": "dip0c2_asset_candidate_pilot/1.0",
+      "record_type": "ASSET_SOURCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/baby-pattern-collection-four/260107-P4T7LC-198.ai",
+        "sha256": "4c1aa90ddcc85e753dc22a9d3b857706707f1aa3423579a2635bc6b5b404fbeb",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "assetcandidate/1.0",
+      "parser_identifier": "dip0c.asset_candidate",
+      "parser_version": "0.1.0",
+      "display_label": "260107-P4T7LC-198.ai",
+      "test_only_state": "NON_TEST_SOURCE",
+      "metadata": {
+        "pilot_role": "vector_pattern",
+        "inventory_category": "PATTERN"
+      },
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__DOWNLOADS 12-2025__baby-pattern-collection-four__260107-P4T7LC-198.ai.c2b.json",
+          "sha256": "6c2f4c6fdf87f8bf71566112c43556e161ab292f97d8c2f153a3292144f03180",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__DOWNLOADS 12-2025__baby-pattern-collection-four__260107-P4T7LC-198.ai.c2b.json",
+            "segments": [
+              "candidates"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "stable_source_key": "dip0c2-asset-source:14",
+      "dataset_id": "dip0c2_asset_candidate_pilot/1.0",
+      "record_type": "ASSET_SOURCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/abstract-graphical-seamless-pattern-vector-illustration/00b8725f-e97e-4e94-91ac-e0f1f8b82b7c.jpg",
+        "sha256": "986cd5c1144ba62e96030c1cbc508687bccde73fdec542f19b1855bd300016b5",
+        "source_type": "FILE",
+        "media_type": "image/jpeg"
+      },
+      "source_schema_version": "assetcandidate/1.0",
+      "parser_identifier": "dip0c.asset_candidate",
+      "parser_version": "0.1.0",
+      "display_label": "00b8725f-e97e-4e94-91ac-e0f1f8b82b7c.jpg",
+      "test_only_state": "NON_TEST_SOURCE",
+      "metadata": {
+        "pilot_role": "raster_pattern_tile",
+        "inventory_category": "PATTERN"
+      },
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__DOWNLOADS 12-2025__abstract-graphical-seamless-pattern-vector-illustration__00b8725f-e97e-4e94-91ac-e0f1f8b82b7c.jpg.c2b.json",
+          "sha256": "9da0a03f1ba3c517c3a733809965a67a65d47c18895b3ac2428f3c1408caddc7",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__DOWNLOADS 12-2025__abstract-graphical-seamless-pattern-vector-illustration__00b8725f-e97e-4e94-91ac-e0f1f8b82b7c.jpg.c2b.json",
+            "segments": [
+              "candidates"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "stable_source_key": "dip0c2-asset-source:15",
+      "dataset_id": "dip0c2_asset_candidate_pilot/1.0",
+      "record_type": "ASSET_SOURCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/5955564.eps",
+        "sha256": "6ecf3b0c95a11b4b3505907b2a4068cd4ce88f421ff55f124e34e96634fb40f3",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "assetcandidate/1.0",
+      "parser_identifier": "dip0c.asset_candidate",
+      "parser_version": "0.1.0",
+      "display_label": "5955564.eps",
+      "test_only_state": "NON_TEST_SOURCE",
+      "metadata": {
+        "pilot_role": "cross_format_family_eps",
+        "inventory_category": "REUSABLE_VECTOR_ASSET"
+      },
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__DOWNLOADS 12-2025__5955564.eps.c2b.json",
+          "sha256": "085f90b8a19a99a341058db4844d35d9a121466bae48d67de3cf3eb204a24c16",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__DOWNLOADS 12-2025__5955564.eps.c2b.json",
+            "segments": [
+              "candidates"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "stable_source_key": "dip0c2-asset-source:16",
+      "dataset_id": "dip0c2_asset_candidate_pilot/1.0",
+      "record_type": "ASSET_SOURCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/5955567.ai",
+        "sha256": "a45b5dd0f10176a9bd01b6976e90bdda5625d9965352cceec4d3347f3f171866",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "assetcandidate/1.0",
+      "parser_identifier": "dip0c.asset_candidate",
+      "parser_version": "0.1.0",
+      "display_label": "5955567.ai",
+      "test_only_state": "NON_TEST_SOURCE",
+      "metadata": {
+        "pilot_role": "cross_format_family_ai",
+        "inventory_category": "REUSABLE_VECTOR_ASSET"
+      },
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__DOWNLOADS 12-2025__5955567.ai.c2b.json",
+          "sha256": "da6d4a5c427e01458df7fa14500f2700870ca8e9bc4d09c8d089dd50db420af3",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__DOWNLOADS 12-2025__5955567.ai.c2b.json",
+            "segments": [
+              "candidates"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "stable_source_key": "dip0c2-asset-source:17",
+      "dataset_id": "dip0c2_asset_candidate_pilot/1.0",
+      "record_type": "ASSET_SOURCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/flat-black-friday-stickers-collection/5955564.eps",
+        "sha256": "6ecf3b0c95a11b4b3505907b2a4068cd4ce88f421ff55f124e34e96634fb40f3",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "assetcandidate/1.0",
+      "parser_identifier": "dip0c.asset_candidate",
+      "parser_version": "0.1.0",
+      "display_label": "5955564.eps",
+      "test_only_state": "NON_TEST_SOURCE",
+      "metadata": {
+        "pilot_role": "exact_duplicate_sibling",
+        "inventory_category": "MOTIF"
+      },
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__flat-black-friday-stickers-collection__5955564.eps.c2b.json",
+          "sha256": "67746b2698695d311806175b4d80929bcdc2f2ae1f4cc48fddd769d792d94748",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__flat-black-friday-stickers-collection__5955564.eps.c2b.json",
+            "segments": [
+              "candidates"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "stable_source_key": "dip0c2-asset-source:18",
+      "dataset_id": "dip0c2_asset_candidate_pilot/1.0",
+      "record_type": "ASSET_SOURCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/خدمات لوجستيه وشركات شحن/transport-logistic-manager-checking-control-logistic-network-distribution-customer.jpg",
+        "sha256": "675c3f33abbb9a32b2bb28dc8c446ea355616f7fc08bef7b779556259e8fd0e2",
+        "source_type": "FILE",
+        "media_type": "image/jpeg"
+      },
+      "source_schema_version": "assetcandidate/1.0",
+      "parser_identifier": "dip0c.asset_candidate",
+      "parser_version": "0.1.0",
+      "display_label": "transport-logistic-manager-checking-control-logistic-network-distribution-customer.jpg",
+      "test_only_state": "NON_TEST_SOURCE",
+      "metadata": {
+        "pilot_role": "colorway_version_family_a",
+        "inventory_category": "RASTER_DESIGN_ASSET"
+      },
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__خدمات لوجستيه وشركات شحن__transport-logistic-manager-checking-control-logistic-network-distribution-customer.jpg.c2b.json",
+          "sha256": "54d5fa754de3d39229d8000dde156e2e4f6ee4d444cbb0218969f449ec0a72a7",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__خدمات لوجستيه وشركات شحن__transport-logistic-manager-checking-control-logistic-network-distribution-customer.jpg.c2b.json",
+            "segments": [
+              "candidates"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "stable_source_key": "dip0c2-asset-source:19",
+      "dataset_id": "dip0c2_asset_candidate_pilot/1.0",
+      "record_type": "ASSET_SOURCE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/خدمات لوجستيه وشركات شحن/transport-logistic-manager-checking-control-logistic-network-distribution-customer(1).jpg",
+        "sha256": "9b4c92b89e41f409af490eaa3b496111cc0f0416ae6793ea8338dfe0c3aa4bd3",
+        "source_type": "FILE",
+        "media_type": "image/jpeg"
+      },
+      "source_schema_version": "assetcandidate/1.0",
+      "parser_identifier": "dip0c.asset_candidate",
+      "parser_version": "0.1.0",
+      "display_label": "transport-logistic-manager-checking-control-logistic-network-distribution-customer(1).jpg",
+      "test_only_state": "NON_TEST_SOURCE",
+      "metadata": {
+        "pilot_role": "colorway_version_family_b",
+        "inventory_category": "RASTER_DESIGN_ASSET"
+      },
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__خدمات لوجستيه وشركات شحن__transport-logistic-manager-checking-control-logistic-network-distribution-customer(1).jpg.c2b.json",
+          "sha256": "b80c1201bde0d7287759e2603fa75c9199b97628e26329402643a7534b89ecf1",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/candidates/materials__DOWNLOADE 2026__خدمات لوجستيه وشركات شحن__transport-logistic-manager-checking-control-logistic-network-distribution-customer(1).jpg.c2b.json",
+            "segments": [
+              "candidates"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-cddf1a1ad2230edf",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/qurova-font-family/QurovaDEMO-Bold-BF67a5c637eed62.otf",
+        "sha256": "eee0060974ec2e8a0104de435181d337584d10bc295597e4c16ad1bc2af497b8",
+        "source_type": "FONT",
+        "media_type": "font/otf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "qurova demo",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              108
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-cddf1a1ad2230edf",
+        "family": "qurova demo",
+        "capabilities": [
+          "latin_body"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-2678588cbff58abf",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/Almarai/Almarai-Bold.ttf",
+        "sha256": "353c525f8afc461ca6213ee210e77b865f2969ad1222a2cfc634680f1f4621d9",
+        "source_type": "FONT",
+        "media_type": "font/ttf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "almarai",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              0
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-2678588cbff58abf",
+        "family": "almarai",
+        "capabilities": [
+          "arabic_body",
+          "latin_body",
+          "multilingual_utility"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-77cc78782ef24160",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/yellow-ramen/YellowRamen-Oblique.otf",
+        "sha256": "21b33e203011b1682070306b9490684037b07644506f725056b7578c9a6f06a4",
+        "source_type": "FONT",
+        "media_type": "font/otf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "yellow ramen",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              17
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-77cc78782ef24160",
+        "family": "yellow ramen",
+        "capabilities": [
+          "latin_body"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-96c04b480f2cfe5e",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/drink-south-demo-version/Drink South DEMO VERSION.otf",
+        "sha256": "000b22279f75dde6396aa249f8733776ff822076a649f11f19960b17644a6f5b",
+        "source_type": "FONT",
+        "media_type": "font/otf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "drink south demo version",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              51
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-96c04b480f2cfe5e",
+        "family": "drink south demo version",
+        "capabilities": [
+          "latin_body"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-3253d16f9401c8e8",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/front_page_neue/Front Page Neue.otf",
+        "sha256": "de6f4e5226af4a4f6f8321b6856ac11cf6f5264f61d5e4ab05c429b978599696",
+        "source_type": "FONT",
+        "media_type": "font/otf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "front page neue",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              72
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-3253d16f9401c8e8",
+        "family": "front page neue",
+        "capabilities": [
+          "latin_body"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-f3afbe8c4b6d0239",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/gobold/Gobold Regular Italic.otf",
+        "sha256": "b550ab7dcce1bab40510b46c1d538dd667f365e4b75f6b7f7b75da8f29c2a170",
+        "source_type": "FONT",
+        "media_type": "font/otf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "gobold",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              96
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-f3afbe8c4b6d0239",
+        "family": "gobold",
+        "capabilities": [
+          "latin_body"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-2e61874894ec4ebb",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/gobold/Gobold Bold Italic.otf",
+        "sha256": "a5d9301de0e36aad62ba1bf2c898a10768911d0d7d3efa51df05c1e17cdb7667",
+        "source_type": "FONT",
+        "media_type": "font/otf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "gobold bold",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              74
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-2e61874894ec4ebb",
+        "family": "gobold bold",
+        "capabilities": [
+          "latin_body"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-3abe6e2b6a98a3ff",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/gobold/Gobold CUTS Italic.otf",
+        "sha256": "0de013fc7afd4eb4a623eed2fd6b742c3b80846241af7991f0daa6be1f35d296",
+        "source_type": "FONT",
+        "media_type": "font/otf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "gobold cuts",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              76
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-3abe6e2b6a98a3ff",
+        "family": "gobold cuts",
+        "capabilities": [
+          "latin_body"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-e4ef69f9e43cc196",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/gobold/Gobold Extra1 Italic.otf",
+        "sha256": "d2851f84d2059fd1fc57e1807b9bada570fb7d8909b0d890c6380024441465c5",
+        "source_type": "FONT",
+        "media_type": "font/otf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "gobold extra1",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              78
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-e4ef69f9e43cc196",
+        "family": "gobold extra1",
+        "capabilities": [
+          "latin_body"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-afe1cefecb5cd7a7",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/gobold/Gobold Extra2 Italic.otf",
+        "sha256": "cd5bc569497f1dd7ae029bc538e85bb70db903df29d268da1644025bf577789a",
+        "source_type": "FONT",
+        "media_type": "font/otf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "gobold extra2",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              80
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-afe1cefecb5cd7a7",
+        "family": "gobold extra2",
+        "capabilities": [
+          "latin_body"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-3665cade82374aac",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/gobold/Gobold High Italic.otf",
+        "sha256": "b01889b3dafdf7ccb1dd26d113c5f207b364e694cfef2bc6d500d98a280e281a",
+        "source_type": "FONT",
+        "media_type": "font/otf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "gobold high",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              84
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-3665cade82374aac",
+        "family": "gobold high",
+        "capabilities": [
+          "latin_body"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-ac595619ba040ba9",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/gobold/Gobold High Bold Italic.otf",
+        "sha256": "17044c17bc7cf613ce72b39e7ad92cf6e0199b2096aa1c3599c8d904489ffcd4",
+        "source_type": "FONT",
+        "media_type": "font/otf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "gobold high bold",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              82
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-ac595619ba040ba9",
+        "family": "gobold high bold",
+        "capabilities": [
+          "latin_body"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-54825b928d0ab260",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/gobold/Gobold High Thin Italic.otf",
+        "sha256": "e2d57851a56fc40cd31cfbfe21451dcd39e921128c840691979dcd5dc850e85c",
+        "source_type": "FONT",
+        "media_type": "font/otf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "gobold high thin",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              85
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-54825b928d0ab260",
+        "family": "gobold high thin",
+        "capabilities": [
+          "latin_body"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-58e60882aa6ef467",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/gobold/Gobold Hollow Italic.otf",
+        "sha256": "c4f1e4bbcddf9e41ae1a8f25d8902b709b04d22bfad5744b051e42a1b088c8d3",
+        "source_type": "FONT",
+        "media_type": "font/otf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "gobold hollow",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              90
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-58e60882aa6ef467",
+        "family": "gobold hollow",
+        "capabilities": [
+          "latin_body"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-0f626d6817ba2f3e",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/gobold/Gobold Hollow Bold Italic.otf",
+        "sha256": "4eac5e174e8af0e24efb3847fab79e86b46549786dceb64829708a7312aed315",
+        "source_type": "FONT",
+        "media_type": "font/otf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "gobold hollow bold",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              88
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-0f626d6817ba2f3e",
+        "family": "gobold hollow bold",
+        "capabilities": [
+          "latin_body"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-81db14c5f340de66",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/gobold/Gobold Lowplus Italic.otf",
+        "sha256": "16764b8f70b2b10c843433c940fba97edeec71b5dc039f44680eeb8fdb3a8a29",
+        "source_type": "FONT",
+        "media_type": "font/otf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "gobold lowplus",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              94
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-81db14c5f340de66",
+        "family": "gobold lowplus",
+        "capabilities": [
+          "latin_body"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-abda863283b7645c",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/gobold/Gobold Thin Italic.otf",
+        "sha256": "6dcc4b1a2dcc7e3825a115a68b17a4197fec1d09e801b5ec1c1e7d8005f0b39b",
+        "source_type": "FONT",
+        "media_type": "font/otf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "gobold thin",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              98
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-abda863283b7645c",
+        "family": "gobold thin",
+        "capabilities": [
+          "latin_body"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-85c2b9c4bfe64ea0",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/gobold/Gobold Light Italic.otf",
+        "sha256": "dec914605e92723a78b5925a87cdd93f3083840ee7d84bb3f846cb8fa3b783e4",
+        "source_type": "FONT",
+        "media_type": "font/otf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "gobold thin light",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              92
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-85c2b9c4bfe64ea0",
+        "family": "gobold thin light",
+        "capabilities": [
+          "latin_body"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-146ef63408abc1a6",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/gobold/Gobold Uplow Italic.otf",
+        "sha256": "32c6ec4168ac8ccb2e5336e79e997857d903819dfa4e07f81100cc13a4ca33a5",
+        "source_type": "FONT",
+        "media_type": "font/otf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "gobold uplow",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              100
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-146ef63408abc1a6",
+        "family": "gobold uplow",
+        "capabilities": [
+          "latin_body"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-1c1218d84b05ce91",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/acidrop/Acidrop/Acidrop_Solid_Demo.ttf",
+        "sha256": "270eae4e42027befecc4ec3711fddadba63c1bdd4704b86e2abfa61620b6cca2",
+        "source_type": "FONT",
+        "media_type": "font/ttf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "acidrop solid demo",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              34
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-1c1218d84b05ce91",
+        "family": "acidrop solid demo",
+        "capabilities": [
+          "latin_body"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-872adccad56f7dc6",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/alqalam-mehwish-ali-regular/AlQalam Mehwish Ali Regular/AlQalam Mehwish Ali Regular.ttf",
+        "sha256": "47cd428bdfa7a4e518a322ce633ed9aade3a1a02921a7ba6aadee850e5dee13f",
+        "source_type": "FONT",
+        "media_type": "font/ttf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "alqalam mehwish ali",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              35
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-872adccad56f7dc6",
+        "family": "alqalam mehwish ali",
+        "capabilities": [
+          "arabic_body",
+          "multilingual_utility"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-62e4ab25a6e1b3ae",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/aonic/Aonic-Medium.ttf",
+        "sha256": "b93853240a3dba43bccc275e69913d6f22ad6c6056268c4b77e1c80734189943",
+        "source_type": "FONT",
+        "media_type": "font/ttf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "aonic",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              36
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-62e4ab25a6e1b3ae",
+        "family": "aonic",
+        "capabilities": [
+          "latin_body",
+          "multilingual_utility"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-dcb554d4ba89af1d",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/chicken_butt/Chicken Butt.ttf",
+        "sha256": "3e24c541f99c7b3482eb1defd3eaabdebe520139328780732f08a78d5ced186e",
+        "source_type": "FONT",
+        "media_type": "font/ttf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "chicken butt",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              43
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-dcb554d4ba89af1d",
+        "family": "chicken butt",
+        "capabilities": [
+          "latin_body"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-71e37c04afd4edea",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/damavand-heavy_F2lJS/Damavand-Heavy _/Damavand-Heavy _.ttf",
+        "sha256": "d67f0d72d8c80375cfb641ff9b0bcc9d76eb89eae6608a5899a3758c65113417",
+        "source_type": "FONT",
+        "media_type": "font/ttf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "damavand heavy",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              14
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-71e37c04afd4edea",
+        "family": "damavand heavy",
+        "capabilities": [
+          "arabic_body",
+          "latin_body",
+          "multilingual_utility"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-96229ede9f2a075d",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/firlands-house-demo/FirlandsHouseDemoRegular.ttf",
+        "sha256": "a4e786f4442b89d5f6c2597f4dc8ce72657cf8996013ea54f0693afe89c73559",
+        "source_type": "FONT",
+        "media_type": "font/ttf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "firlands house demo",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              71
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-96229ede9f2a075d",
+        "family": "firlands house demo",
+        "capabilities": [
+          "latin_display"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-c9b7b9861af7de33",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/great-vibes/GreatVibes-Regular.ttf",
+        "sha256": "f61866de92053395112c959f87459f6be835e3214a02578424b3cf001c2b0d30",
+        "source_type": "FONT",
+        "media_type": "font/ttf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "great vibes",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              15
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-c9b7b9861af7de33",
+        "family": "great vibes",
+        "capabilities": [
+          "latin_body"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-728c82e87443557b",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/janda_apple_cobbler(1)/Janda_Apple_Cobbler/JandaAppleCobblerSolid.ttf",
+        "sha256": "fa61b8970ec7197a851849204ad69139d72e1c1c7cfdf2f399b3c62a1c5881b2",
+        "source_type": "FONT",
+        "media_type": "font/ttf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "janda apple cobbler solid",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              103
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-728c82e87443557b",
+        "family": "janda apple cobbler solid",
+        "capabilities": [
+          "latin_body"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-8161151bdf620b99",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/madame_karoline/Madame_Karoline/Madame_Karoline_Demo_Regular.otf",
+        "sha256": "484ac7a17b0aa071d0b6bad3d6ba3b8bf9b80ab2a3f8af2a8b6d26ea3eb7d74d",
+        "source_type": "FONT",
+        "media_type": "font/otf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "madame karoline demo",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              105
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-8161151bdf620b99",
+        "family": "madame karoline demo",
+        "capabilities": [
+          "latin_display"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-023e33d897408ed9",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/maghribi-assile_h762h/Maghribi Assile/Maghribi Assile Regular/Maghribi Assile Regular.ttf",
+        "sha256": "2380acd6a230c7703e34551e340dfbe9b728ba0e104ec388ff72a468e3605728",
+        "source_type": "FONT",
+        "media_type": "font/ttf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "maghribi assile",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              16
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-023e33d897408ed9",
+        "family": "maghribi assile",
+        "capabilities": [
+          "arabic_body",
+          "latin_body",
+          "multilingual_utility"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-e72fb261705e0d4d",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/Playwrite_US_Trad_Guides,Zen_Dots/Playwrite_US_Trad_Guides/PlaywriteUSTradGuides-Regular.ttf",
+        "sha256": "ef50f9628aad22d9b64ccbc3ed4bba5587e4f05a8a9e84ee46f8350809cb601e",
+        "source_type": "FONT",
+        "media_type": "font/ttf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "playwrite us trad guides",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              30
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-e72fb261705e0d4d",
+        "family": "playwrite us trad guides",
+        "capabilities": [
+          "latin_body"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-6c9946ff63662398",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/pumpkin_soup/Pumpkin_Soup/Pumpkin_Soup.ttf",
+        "sha256": "1abb74a89975927c6b2f39d21f37f676e2dc80ae5cd1f64ea8ffd382e0f4743d",
+        "source_type": "FONT",
+        "media_type": "font/ttf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "pumpkin soup",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              107
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-6c9946ff63662398",
+        "family": "pumpkin soup",
+        "capabilities": [
+          "handwritten_display",
+          "latin_display"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-100546fe66abb998",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/Shadows_Into_Light_Two/ShadowsIntoLightTwo-Regular.ttf",
+        "sha256": "2794e63b651f594ef980edde9a6d57223bd89afdcac7abe3c82cd11f61792e22",
+        "source_type": "FONT",
+        "media_type": "font/ttf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "shadows into light two",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              33
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-100546fe66abb998",
+        "family": "shadows into light two",
+        "capabilities": [
+          "latin_body"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-81165540b40317f7",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/snacktime/Snacktime/Snacktime.ttf",
+        "sha256": "d1bd18495ca19af6c8af9be4dbc5d2c388755377476a14fb93ab05a974eb2a3a",
+        "source_type": "FONT",
+        "media_type": "font/ttf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "snacktime",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              132
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-81165540b40317f7",
+        "family": "snacktime",
+        "capabilities": [
+          "latin_body"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c4-font:fam-5815ab5c1a35ec7e",
+      "dataset_id": "dip0c4_curated_starter_candidates/1.0",
+      "record_type": "FONT_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/Playwrite_US_Trad_Guides,Zen_Dots/Zen_Dots/ZenDots-Regular.ttf",
+        "sha256": "5a4b5e4c9ea9716078a0e4f2daf1be1f1462e3731c6d2f6240de2995a7a49cab",
+        "source_type": "FONT",
+        "media_type": "font/ttf"
+      },
+      "source_schema_version": "font_face_manifest/1.0",
+      "parser_identifier": "dip0c.font_views",
+      "parser_version": "0.1.0",
+      "display_label": "zen dots",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+          "sha256": "9697b040eae2622b977ba05f85de55c699a842fe8c0601a3a0501672549f153f",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c4c/face_manifest.json",
+            "segments": [
+              31
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "curated_group_id": "fam-5815ab5c1a35ec7e",
+        "family": "zen dots",
+        "capabilities": [
+          "latin_body"
+        ]
+      }
+    },
+    {
+      "stable_source_key": "dip0c3-brand:00",
+      "dataset_id": "dip0c3_brand_candidates/1.0",
+      "record_type": "BRAND_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/BBROSE.pdf",
+        "sha256": "9417d05f8c81abfdd0e724d402557accab4e5bf0ab7639640b97003c5841e954",
+        "source_type": "FILE",
+        "media_type": "application/pdf"
+      },
+      "source_schema_version": "dip0c_brand_candidate/1.0",
+      "parser_identifier": "dip0c.brand",
+      "parser_version": "0.1.0",
+      "display_label": "BBROSE.pdf",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+          "sha256": "dfccbad26e98744e78d606fec85a301a9d3d2357ff17cf8ece5fcbe7a2d9e62b",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+            "segments": [
+              0
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "c3_test_role": "brand_master_mislabelled"
+      }
+    },
+    {
+      "stable_source_key": "dip0c3-brand:01",
+      "dataset_id": "dip0c3_brand_candidates/1.0",
+      "record_type": "BRAND_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/BBROSE-1.pdf",
+        "sha256": "7a63f38b93fcf9789e338465025fe0dc4f70ce726dca16937eeba331617cb7d9",
+        "source_type": "FILE",
+        "media_type": "application/pdf"
+      },
+      "source_schema_version": "dip0c_brand_candidate/1.0",
+      "parser_identifier": "dip0c.brand",
+      "parser_version": "0.1.0",
+      "display_label": "BBROSE-1.pdf",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+          "sha256": "dfccbad26e98744e78d606fec85a301a9d3d2357ff17cf8ece5fcbe7a2d9e62b",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+            "segments": [
+              1
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "c3_test_role": "brand_master_mislabelled"
+      }
+    },
+    {
+      "stable_source_key": "dip0c3-brand:02",
+      "dataset_id": "dip0c3_brand_candidates/1.0",
+      "record_type": "BRAND_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/logo.pdf",
+        "sha256": "3076e98742139c0e0d1e4b1c38be3378109de85c0e30b6994aadb91abe7e87e6",
+        "source_type": "FILE",
+        "media_type": "application/pdf"
+      },
+      "source_schema_version": "dip0c_brand_candidate/1.0",
+      "parser_identifier": "dip0c.brand",
+      "parser_version": "0.1.0",
+      "display_label": "logo.pdf",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+          "sha256": "dfccbad26e98744e78d606fec85a301a9d3d2357ff17cf8ece5fcbe7a2d9e62b",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+            "segments": [
+              2
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "c3_test_role": "logo_candidate_outlined"
+      }
+    },
+    {
+      "stable_source_key": "dip0c3-brand:03",
+      "dataset_id": "dip0c3_brand_candidates/1.0",
+      "record_type": "BRAND_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/LOGO6.ai",
+        "sha256": "4475663c1debfbba4f132e0458f4045e057f6d473854d16ebc3100c8b630af0a",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0c_brand_candidate/1.0",
+      "parser_identifier": "dip0c.brand",
+      "parser_version": "0.1.0",
+      "display_label": "LOGO6.ai",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+          "sha256": "dfccbad26e98744e78d606fec85a301a9d3d2357ff17cf8ece5fcbe7a2d9e62b",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+            "segments": [
+              3
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "c3_test_role": "logo_candidate_live_text"
+      }
+    },
+    {
+      "stable_source_key": "dip0c3-brand:04",
+      "dataset_id": "dip0c3_brand_candidates/1.0",
+      "record_type": "BRAND_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/ATC LOGO.ai",
+        "sha256": "f7b9afec5e1cafe90eecbf813a908393fa963f958fe78f22e8be71a565d5a423",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0c_brand_candidate/1.0",
+      "parser_identifier": "dip0c.brand",
+      "parser_version": "0.1.0",
+      "display_label": "ATC LOGO.ai",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+          "sha256": "dfccbad26e98744e78d606fec85a301a9d3d2357ff17cf8ece5fcbe7a2d9e62b",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+            "segments": [
+              4
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "c3_test_role": "third_party_logo"
+      }
+    },
+    {
+      "stable_source_key": "dip0c3-brand:05",
+      "dataset_id": "dip0c3_brand_candidates/1.0",
+      "record_type": "BRAND_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/JOJIA LOGO.ai",
+        "sha256": "3b24f51ce69dfb7de0c0d55e1fa2508f675c2e0607311ecda9e0cf1f7a0c17e2",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0c_brand_candidate/1.0",
+      "parser_identifier": "dip0c.brand",
+      "parser_version": "0.1.0",
+      "display_label": "JOJIA LOGO.ai",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+          "sha256": "dfccbad26e98744e78d606fec85a301a9d3d2357ff17cf8ece5fcbe7a2d9e62b",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+            "segments": [
+              5
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "c3_test_role": "third_party_logo_live_text"
+      }
+    },
+    {
+      "stable_source_key": "dip0c3-brand:06",
+      "dataset_id": "dip0c3_brand_candidates/1.0",
+      "record_type": "BRAND_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/LOGO ATC.ai",
+        "sha256": "67bf6ba247732c3f5ce88b561d1e166fcd01c1788bdfd9c1c9a39c9ff54d97c3",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0c_brand_candidate/1.0",
+      "parser_identifier": "dip0c.brand",
+      "parser_version": "0.1.0",
+      "display_label": "LOGO ATC.ai",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+          "sha256": "dfccbad26e98744e78d606fec85a301a9d3d2357ff17cf8ece5fcbe7a2d9e62b",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+            "segments": [
+              6
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "c3_test_role": "third_party_logo_misshelved"
+      }
+    },
+    {
+      "stable_source_key": "dip0c3-brand:07",
+      "dataset_id": "dip0c3_brand_candidates/1.0",
+      "record_type": "BRAND_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/ATC PRESENTATION.pdf",
+        "sha256": "a624d9e8629b8a0592c02e3b3de345030da8ca3f3c992ae92c4ebdbb67c5a6ef",
+        "source_type": "FILE",
+        "media_type": "application/pdf"
+      },
+      "source_schema_version": "dip0c_brand_candidate/1.0",
+      "parser_identifier": "dip0c.brand",
+      "parser_version": "0.1.0",
+      "display_label": "ATC PRESENTATION.pdf",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+          "sha256": "dfccbad26e98744e78d606fec85a301a9d3d2357ff17cf8ece5fcbe7a2d9e62b",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+            "segments": [
+              7
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "c3_test_role": "third_party_deck"
+      }
+    },
+    {
+      "stable_source_key": "dip0c3-brand:08",
+      "dataset_id": "dip0c3_brand_candidates/1.0",
+      "record_type": "BRAND_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/ATC PRESENTATION-1.pdf",
+        "sha256": "9dd75754f80b30d7a979703fdf4dc7fef65f9f321e5a7441db649cd3367951ab",
+        "source_type": "FILE",
+        "media_type": "application/pdf"
+      },
+      "source_schema_version": "dip0c_brand_candidate/1.0",
+      "parser_identifier": "dip0c.brand",
+      "parser_version": "0.1.0",
+      "display_label": "ATC PRESENTATION-1.pdf",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+          "sha256": "dfccbad26e98744e78d606fec85a301a9d3d2357ff17cf8ece5fcbe7a2d9e62b",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+            "segments": [
+              8
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "c3_test_role": "third_party_deck"
+      }
+    },
+    {
+      "stable_source_key": "dip0c3-brand:09",
+      "dataset_id": "dip0c3_brand_candidates/1.0",
+      "record_type": "BRAND_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/ATC PRESENTATION-2.pdf",
+        "sha256": "9dd75754f80b30d7a979703fdf4dc7fef65f9f321e5a7441db649cd3367951ab",
+        "source_type": "FILE",
+        "media_type": "application/pdf"
+      },
+      "source_schema_version": "dip0c_brand_candidate/1.0",
+      "parser_identifier": "dip0c.brand",
+      "parser_version": "0.1.0",
+      "display_label": "ATC PRESENTATION-2.pdf",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+          "sha256": "dfccbad26e98744e78d606fec85a301a9d3d2357ff17cf8ece5fcbe7a2d9e62b",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+            "segments": [
+              9
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "c3_test_role": "third_party_deck"
+      }
+    },
+    {
+      "stable_source_key": "dip0c3-brand:10",
+      "dataset_id": "dip0c3_brand_candidates/1.0",
+      "record_type": "BRAND_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/ATC PRESENTATION-3.pdf",
+        "sha256": "0af5fc0f486407a8824d9ab79c2fe3d1f1d623d090045b1355ebb4bb9a28d038",
+        "source_type": "FILE",
+        "media_type": "application/pdf"
+      },
+      "source_schema_version": "dip0c_brand_candidate/1.0",
+      "parser_identifier": "dip0c.brand",
+      "parser_version": "0.1.0",
+      "display_label": "ATC PRESENTATION-3.pdf",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+          "sha256": "dfccbad26e98744e78d606fec85a301a9d3d2357ff17cf8ece5fcbe7a2d9e62b",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+            "segments": [
+              10
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "c3_test_role": "third_party_deck"
+      }
+    },
+    {
+      "stable_source_key": "dip0c3-brand:11",
+      "dataset_id": "dip0c3_brand_candidates/1.0",
+      "record_type": "BRAND_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/Color Obsession_ BBROSE® Flair.png",
+        "sha256": "699d20aa6884051b666d49d4502ac44edea5018aca250ada1a21dabeca22934a",
+        "source_type": "FILE",
+        "media_type": "image/png"
+      },
+      "source_schema_version": "dip0c_brand_candidate/1.0",
+      "parser_identifier": "dip0c.brand",
+      "parser_version": "0.1.0",
+      "display_label": "Color Obsession_ BBROSE® Flair.png",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+          "sha256": "dfccbad26e98744e78d606fec85a301a9d3d2357ff17cf8ece5fcbe7a2d9e62b",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+            "segments": [
+              11
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "c3_test_role": "bbrose_product_render"
+      }
+    },
+    {
+      "stable_source_key": "dip0c3-brand:12",
+      "dataset_id": "dip0c3_brand_candidates/1.0",
+      "record_type": "BRAND_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/Peach Perfection_ BBROSE Nail Polish.png",
+        "sha256": "674c2afda72dbad7f79f144653c612e04a8ecbc9691a2cc8cbacd531d6647577",
+        "source_type": "FILE",
+        "media_type": "image/png"
+      },
+      "source_schema_version": "dip0c_brand_candidate/1.0",
+      "parser_identifier": "dip0c.brand",
+      "parser_version": "0.1.0",
+      "display_label": "Peach Perfection_ BBROSE Nail Polish.png",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+          "sha256": "dfccbad26e98744e78d606fec85a301a9d3d2357ff17cf8ece5fcbe7a2d9e62b",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+            "segments": [
+              12
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "c3_test_role": "bbrose_product_render"
+      }
+    },
+    {
+      "stable_source_key": "dip0c3-brand:13",
+      "dataset_id": "dip0c3_brand_candidates/1.0",
+      "record_type": "BRAND_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/نماذج عامة من  01الانترنيت/BBROSE_palette.png",
+        "sha256": "6ef961c5bd05044690be2ff643f6544a4c1755eaf26b74e43da8b07467041b2a",
+        "source_type": "FILE",
+        "media_type": "image/png"
+      },
+      "source_schema_version": "dip0c_brand_candidate/1.0",
+      "parser_identifier": "dip0c.brand",
+      "parser_version": "0.1.0",
+      "display_label": "BBROSE_palette.png",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+          "sha256": "dfccbad26e98744e78d606fec85a301a9d3d2357ff17cf8ece5fcbe7a2d9e62b",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+            "segments": [
+              13
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "c3_test_role": "bbrose_palette_raster"
+      }
+    },
+    {
+      "stable_source_key": "dip0c3-brand:14",
+      "dataset_id": "dip0c3_brand_candidates/1.0",
+      "record_type": "BRAND_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/نماذج عامة من  01الانترنيت/Pantone_3519C.ase",
+        "sha256": "82f415be8b47d92f700d50cfefffeee9cf82a0ff5a2bf641158fb2d972521c4f",
+        "source_type": "FILE",
+        "media_type": "application/octet-stream"
+      },
+      "source_schema_version": "dip0c_brand_candidate/1.0",
+      "parser_identifier": "dip0c.brand",
+      "parser_version": "0.1.0",
+      "display_label": "Pantone_3519C.ase",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+          "sha256": "dfccbad26e98744e78d606fec85a301a9d3d2357ff17cf8ece5fcbe7a2d9e62b",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+            "segments": [
+              14
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "c3_test_role": "color_palette_ase"
+      }
+    },
+    {
+      "stable_source_key": "dip0c3-brand:15",
+      "dataset_id": "dip0c3_brand_candidates/1.0",
+      "record_type": "BRAND_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/9993170.ai",
+        "sha256": "b0a6cfcb6a4d331e6a08832840c030081fd44a88d6485b4ccbb72fc9c8368e63",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0c_brand_candidate/1.0",
+      "parser_identifier": "dip0c.brand",
+      "parser_version": "0.1.0",
+      "display_label": "9993170.ai",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+          "sha256": "dfccbad26e98744e78d606fec85a301a9d3d2357ff17cf8ece5fcbe7a2d9e62b",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+            "segments": [
+              15
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "c3_test_role": "queue_i_rights_blocked"
+      }
+    },
+    {
+      "stable_source_key": "dip0c3-brand:16",
+      "dataset_id": "dip0c3_brand_candidates/1.0",
+      "record_type": "BRAND_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/abstract-background-with-rounded-shapes/344195-PC2FZA-950.ai",
+        "sha256": "b1af3c923e10180b592ed15a1757408d5c05dd7d8fe1bbe36f779f67f135b404",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0c_brand_candidate/1.0",
+      "parser_identifier": "dip0c.brand",
+      "parser_version": "0.1.0",
+      "display_label": "344195-PC2FZA-950.ai",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+          "sha256": "dfccbad26e98744e78d606fec85a301a9d3d2357ff17cf8ece5fcbe7a2d9e62b",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+            "segments": [
+              16
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "c3_test_role": "queue_i_rights_blocked"
+      }
+    },
+    {
+      "stable_source_key": "dip0c3-brand:17",
+      "dataset_id": "dip0c3_brand_candidates/1.0",
+      "record_type": "BRAND_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/acid-cosmetics-make-up-stickers-collection/9347862.ai",
+        "sha256": "624453b69289152ecaa6131aadefaffc3b6dfeeb4e4e58d07ea32e15afeddba4",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0c_brand_candidate/1.0",
+      "parser_identifier": "dip0c.brand",
+      "parser_version": "0.1.0",
+      "display_label": "9347862.ai",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+          "sha256": "dfccbad26e98744e78d606fec85a301a9d3d2357ff17cf8ece5fcbe7a2d9e62b",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+            "segments": [
+              17
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "c3_test_role": "queue_i_rights_blocked"
+      }
+    },
+    {
+      "stable_source_key": "dip0c3-brand:18",
+      "dataset_id": "dip0c3_brand_candidates/1.0",
+      "record_type": "BRAND_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/baby-pattern-collection-four/260107-P4T7LC-198.ai",
+        "sha256": "4c1aa90ddcc85e753dc22a9d3b857706707f1aa3423579a2635bc6b5b404fbeb",
+        "source_type": "FILE",
+        "media_type": "application/postscript"
+      },
+      "source_schema_version": "dip0c_brand_candidate/1.0",
+      "parser_identifier": "dip0c.brand",
+      "parser_version": "0.1.0",
+      "display_label": "260107-P4T7LC-198.ai",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+          "sha256": "dfccbad26e98744e78d606fec85a301a9d3d2357ff17cf8ece5fcbe7a2d9e62b",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+            "segments": [
+              18
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "c3_test_role": "queue_i_rights_blocked"
+      }
+    },
+    {
+      "stable_source_key": "dip0c3-brand:19",
+      "dataset_id": "dip0c3_brand_candidates/1.0",
+      "record_type": "BRAND_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/background-remover(1)/Weixin Image_20250919141742_67_18.png",
+        "sha256": "3406388bca7717167c05869f43520bc3aff856ba457afe2a7ae35f74a8b090fd",
+        "source_type": "FILE",
+        "media_type": "image/png"
+      },
+      "source_schema_version": "dip0c_brand_candidate/1.0",
+      "parser_identifier": "dip0c.brand",
+      "parser_version": "0.1.0",
+      "display_label": "Weixin Image_20250919141742_67_18.png",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+          "sha256": "dfccbad26e98744e78d606fec85a301a9d3d2357ff17cf8ece5fcbe7a2d9e62b",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+            "segments": [
+              19
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "c3_test_role": "queue_i_rights_blocked"
+      }
+    },
+    {
+      "stable_source_key": "dip0c3-brand:20",
+      "dataset_id": "dip0c3_brand_candidates/1.0",
+      "record_type": "BRAND_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/نماذج عامة من  01الانترنيت/1_5061030170064.svg",
+        "sha256": "49e9e52c47a862e6e312d571fd7884c50013bf18d4c5602310f08e1a4f7301b0",
+        "source_type": "FILE",
+        "media_type": "image/svg+xml"
+      },
+      "source_schema_version": "dip0c_brand_candidate/1.0",
+      "parser_identifier": "dip0c.brand",
+      "parser_version": "0.1.0",
+      "display_label": "1_5061030170064.svg",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+          "sha256": "dfccbad26e98744e78d606fec85a301a9d3d2357ff17cf8ece5fcbe7a2d9e62b",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "var/design_intelligence/audits/dip0c/c3a/brand_candidates.json",
+            "segments": [
+              20
+            ]
+          }
+        }
+      },
+      "metadata": {
+        "c3_test_role": "queue_i_rights_blocked"
+      }
+    },
+    {
+      "stable_source_key": "dip0c3-palette:pantone-3519-c",
+      "dataset_id": "dip0c3_palette_audit/1.0",
+      "record_type": "PALETTE_CANDIDATE",
+      "source": {
+        "root": "repository",
+        "path": "materials/DOWNLOADE 2026/نماذج عامة من  01الانترنيت/Pantone_3519C.ase",
+        "sha256": "82f415be8b47d92f700d50cfefffeee9cf82a0ff5a2bf641158fb2d972521c4f",
+        "source_type": "FILE",
+        "media_type": "application/octet-stream"
+      },
+      "source_schema_version": "dip0c_palette_candidate/1.0",
+      "parser_identifier": "dip0c.palette_rights",
+      "parser_version": "0.1.0",
+      "display_label": "Pantone 3519 C (unapproved candidate)",
+      "test_only_state": "NON_TEST_SOURCE",
+      "data_source": {
+        "source": {
+          "root": "repository",
+          "path": "docs/design_intelligence/dip0c/c3c_palette_summary.json",
+          "sha256": "8e9eab1c1a344c4d0493500b336f254aa40cd354d734c1fda9909095c701fd5a",
+          "source_type": "JSON",
+          "media_type": "application/json"
+        },
+        "locator": {
+          "schema_version": "json_path/1.0",
+          "value": {
+            "path": "docs/design_intelligence/dip0c/c3c_palette_summary.json",
+            "segments": []
+          }
+        }
+      },
+      "metadata": {
+        "non_authoritative_partial_parse": true
+      }
+    }
+  ],
+  "notes": [
+    "Candidate-review corpus only; no record grants approval or operational permission.",
+    "DIP-0C2 is the authoritative asset-candidate dataset: 20 manifest entries, 19 unique logical sources, 18 SHA-256 content identities, and 48 candidates.",
+    "DIP-0C1 remains a separate 24-entry source-audit dataset; only its 10 C2-overlap lineages are represented here and no C1-only source becomes a DesignAssetProfile.",
+    "Font entries select one deterministic technical face from each of the 34 curated family candidates; no licence or usage conclusion is imported.",
+    "Historical layouts, dielines and artwork remain reference memory and are never reusable templates."
+  ]
+}

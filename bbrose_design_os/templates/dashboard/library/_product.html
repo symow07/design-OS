@@ -1,0 +1,23 @@
+{% comment %}A PRODUCT, as the products page lists it: what a design reads from it, its size and what its size decides, the
+form a designer sets it with, and what its carton prints about it.{% endcomment %}
+  <article class="product" id="product-{{ r.p.pk }}">
+    <h2>{{ r.p.name }} <span class="dim mono">{{ r.p.product_id }}</span></h2>
+    <p class="dim">{% if r.category %}{{ r.category }} · {% endif %}{{ r.p.year }}{% if r.p.product_type %} · {{ r.p.product_type }}{% endif %}</p>
+    <p>{% if r.size %}Size: <strong>{{ r.size }}</strong> <span class="dim">(width × depth × height) — a carton for it is sized from this</span>{% else %}<span class="warn">{{ no_size }}</span>{% endif %}</p>
+    {% if r.structure %}<p class="dim">Its carton's structure: {{ r.structure }} — set by the brand's record; each design confirms its own at its size step.</p>{% endif %}
+    {% if can_edit %}
+    <form class="size-form" method="post" action="{% url 'dashboard:product_size' r.p.pk %}">
+      {% csrf_token %}
+      <label>Width, mm<input type="text" inputmode="decimal" name="width_mm" value="{{ r.p.width_mm|default_if_none:'' }}" size="7"></label>
+      <label>Depth, mm<input type="text" inputmode="decimal" name="depth_mm" value="{{ r.p.depth_mm|default_if_none:'' }}" size="7"></label>
+      <label>Height, mm<input type="text" inputmode="decimal" name="height_mm" value="{{ r.p.height_mm|default_if_none:'' }}" size="7"></label>
+      <label>What it is<input type="text" name="product_type" value="{{ r.p.product_type }}" size="16" maxlength="100" placeholder="carton, serum, lip gloss…"></label>
+      <button type="submit">Save its size</button>
+    </form>
+    {% endif %}
+    {% if r.printed %}
+    <details><summary>What its carton prints about it</summary>
+      <dl class="unused">{% for label, value in r.printed %}<dt>{{ label }}</dt><dd>{{ value|linebreaksbr }}</dd>{% endfor %}</dl>
+    </details>
+    {% endif %}
+  </article>

@@ -1,0 +1,26 @@
+{
+ "record_type": "process_defect_disclosure/1.0",
+ "created_at": "2026-07-28",
+ "code": "PROJECT_MEMORY_WRITE_STALE_ANCHOR_NOOP",
+ "severity": "NON_BLOCKING",
+ "affected_vq1_evidence": false,
+ "affected_acceptance": false,
+ "evidence": [
+  "two attempted writes silently no-op-ed against a stale anchor",
+  "the failure was detected",
+  "the final closeout was subsequently written correctly",
+  "project_bbrose_v2_build.md contains the verified closeout",
+  "the index hook was updated"
+ ],
+ "future_correction_required": {
+  "status": "DECLARED_NOT_IMPLEMENTED",
+  "authorized_in_this_transition": false,
+  "requirements": [
+   "verify the target anchor exists",
+   "verify content changed",
+   "fail loudly when no mutation occurs",
+   "return the written location and resulting content hash"
+  ]
+ },
+ "implemented_here": false
+}

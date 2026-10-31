@@ -1,0 +1,200 @@
+§BH30(h)(3) HARD STOP — RESIDUAL DELTA IN THE FACE COUNT
+Reported 2026-09-04, repo FROZEN at HEAD 87091c1. Every measurement
+below was zero-write; no constant applied, no pin written, nothing
+staged beyond the §BH30(h) register block already staged.
+
+THE RULE, owner's words at §BH30(h)(3): "expected shape is HEAD's
+corpus plus exactly the 51 brand2026 rows / 35 faces — a residual
+delta beyond that is a hard stop, not a rounding." Reconfirmed at
+(i)(3): "the fresh sealed declaration governs … Preview is the
+prediction on every constant, every record, every digest."
+
+WHAT FIRED. The fresh sealed declaration (regen_declaration_2.md,
+5b5cedaa0c4f8de6) legs, measured against the re-run under the
+exclusion:
+  E1  inventory rows       7,641  declared 7,641   HELD (+51 exactly)
+  E2  FONT                 4,921  declared 4,921   HELD (+35)
+      LICENSE_EVIDENCE       101  declared   101   HELD (+15)
+      brand2026 rows 51 = 35 FONT + 15 LICENSE_EVIDENCE + 1 UNKNOWN
+      (PROVENANCE.json, recorded as measured per the declaration)
+  E3  C4a/C4c faces        3,998  declared 4,004   FALSIFIED (−6)
+      brand2026-sourced face rows: 35 (as declared) — but the total
+      moved +29, not +35
+  E4  the two Noto face rows byte-identical, same face ids  HELD
+  E6  the eight tracked records move; seals dip0c 5ae44035bd03bae1,
+      dip0a 4fe747b806ed71bd                                HELD
+  E7  no docs/roadmap record, no identity, no apps path moved (the
+      one unstaged ledger row is the T30h refusing gate's own
+      append, carried)                                       HELD
+  E9  Noto pair under manage.py shell: bold VERIFIED_FOR_PRODUCTION /
+      USER_CONFIRMED, regular VERIFIED_FOR_PRODUCTION /
+      USER_CONFIRMED, all_production_verified True          HELD
+  E10 five excluded entries printed by the snapshot with bytes:
+      materials/Fonts/FONTS 2026 [dir] 4,084 files 1,524,268,923
+      materials/FONTS 2026 [file] 1 file 1,040
+      materials/17-10-2024 [dir] 1,735 files 39,973,518,583
+      materials/ALL..MOCKUP [dir] 1,702 files 42,893,378,452
+      materials/ADOBE STOCK [dir] 1,490 files 10,171,050,622
+      0 inventory rows under any of them                    HELD
+  E8  sweeps not run (constants unapplied by this stop); dip0 leg
+      141 passed under the exclusion patch.
+  Protected regions: GATE 7fbeb8f1fe10b0fb, TEST b32030dc827263e4,
+  both byte-identical. materials/ mtime unchanged (2026-09-01
+  15:02:40). No spend. No fetch.
+
+THE MECHANISM, measured, not inferred.
+  1. face_id is CONTENT-derived: tools/dip0c/fontinfo.py:130-138,
+     key = f"{sha256}:{index}:{postscript}" — "identical for two
+     copies of the same file".
+  2. The six HASH-MATCHED library copies under brand2026 are
+     byte-identical to files ALREADY in the governed roots:
+       Montserrat-Regular.ttf  = materials/Fonts/3333/Montserrat-Regular.ttf
+       Cairo-Bold.ttf          = materials/Fonts/3333/Cairo-Bold(1).ttf
+                               = materials/Fonts/Cairo-Bold(1).ttf
+       Raleway-Light.ttf       = materials/Fonts/3333/Raleway-Light.ttf
+                               = materials/Fonts/Raleway-Light.ttf
+       Rubik-Bold.ttf          = materials/Fonts/3333/Rubik-Bold.ttf
+                               = materials/Fonts/Rubik-Bold.ttf
+       Lato-Black.ttf          = materials/Fonts/3333/lato-black(1).ttf
+                               = materials/Fonts/lato-black(1).ttf
+       OpenSans-Semibold.ttf   = materials/Fonts/3333/OpenSans-Semibold.ttf
+                               = materials/Fonts/OpenSans-Semibold.ttf
+     (inventory.jsonl, same sha256 per row). So those six faces were
+     already IN HEAD's 3,969 — they are not new faces.
+  3. The face manifest keeps ONE row per face_id (run_c4c.py:35,
+     dict assignment). Each of the six sha256s now has exactly one
+     row, attributed to the brand2026 path; ZERO rows remain
+     attributed to the older-folder copies. Six of HEAD's rows were
+     RE-ATTRIBUTED (same face_id, source_path moved); 29 face ids are
+     new. 3,969 + 29 = 3,998. 35 brand-sourced rows = 29 new + 6
+     re-attributed.
+  4. The §BH26 join matches evidence by file sha256
+     (container_font_authority.py:337/406), not by path — the six
+     re-attributed rows stay reachable by the brand2026 grants either
+     way. The Noto rows have no duplicates and did not move.
+
+SECOND MEASURED CONTEXT (not the stop; declared here so the preview
+is complete). The tracked docs/ records at HEAD lag HEAD's own test
+pins by the four §BH26 static/fonts rows (NotoNaskhArabic-Regular,
+NotoSans-Bold, NotoSans-Regular, OFL.txt) that were never
+milestone-written: HEAD's summary.md says 7,586 rows / 4,883 fonts /
+109 junk while the pins say 7,590 / 4,886. The atomic commit's record
+diff therefore reads +55 rows / +38 fonts / +1 junk against HEAD —
++51 / +35 / 0 against HEAD's corpus (the swept run already counted
+110 junk outside the five entries; none under static/). Knock-on
+numbers in the regenerated records (all measured): files_unique
+3,941→3,973 (records) / 3,944→3,973 (pins); duplicate_groups
+941→942; files_in_duplicate_groups 1,883→1,890; family_groups
+2,832→2,837 (pins 2,834→2,837); FAMILY_GROUPED 2,640→2,637;
+FAMILY_RELATIONSHIP_REVIEW_REQUIRED 190→198; source_packages 47→62;
+provenance_rights_subgroups 1,880→1,887; proposed_human_decisions
+6,921→6,937.
+
+THE CONSTANTS THAT WOULD MOVE (preview; NOT applied): 11 literals —
+  test_c4a.py:311 4886→4921  :313 3944→3973  :314 941→942  :315 1883→1890
+  test_c4c.py:265 4886→4921  :266 3944→3973  :267 3969→3998
+              :268 2834→2837  :270 941→942
+  test_c5.py:307 3969→3998   :308 1880→1887   (:309 = 3 holds)
+  test_c4b.py:481/482 706/130 HOLD (computed live by run_c4b.audit()).
+
+THE PINS (census-predicted, both classes; no unpredicted class — no
+stop there): 34 frozen-manifest entries → face_manifest.json
+28f0cf310361a6806ec1b494b2c0cd990638bc9d1b03c3a9cd7cb91835e31ad3 /
+11,719,703 bytes; manifest sha 88630af7…→7759ee01…; registry
+root_of_trust current_frozen_manifest_sha256 moves with it (registry
+would become bffdc976…). Preview minted, NOT written.
+
+WHY THIS IS A STOP AND NOT A FOLD. The declared shape "HEAD's corpus
+plus exactly … 35 faces" is not met: the face set is HEAD's set plus
+29, with six of HEAD's rows re-homed. My E3 was worded "+35 IF every
+new file yields exactly one face record"; six did not. The owner's
+rule names a residual as a hard stop "not a rounding", and deciding
+that six re-attributions are inside the shape is an unruled decision.
+So: stopped; nothing applied.
+
+OPTIONS FOR THE OWNER'S WORD (presented, not chosen):
+(1) RULE THE SIX RE-ATTRIBUTIONS INSIDE THE SHAPE: E3 re-declared as
+    3,998 with the six enumerated above; the (i) sequence resumes
+    unchanged — 11 constants, two pin classes by preview, sweeps,
+    8-leg seal, gate. No code beyond (h)(2). (The manifest then says
+    the brand2026 folder is the canonical home of those six faces;
+    the join is unaffected.)
+(2) RULE materials/ CANONICAL FOR COLLISIONS: a change to the
+    collision rule in the C4c runner so the older-folder path wins —
+    a NEW concern beyond (h)(2)'s scope, then a re-run and a fresh
+    declaration; the six brand rows would then NOT appear in the
+    manifest at all (35 brand-sourced rows become 29).
+(3) UNWIND THE SIX COPIES from the walk (exclude brand2026's six
+    hash-matched files) — contradicts §BH30(c)'s intake and "six
+    hash-matched faces activate"; recorded, not recommended.
+(4) Anything else the owner words.
+
+FROZEN STATE. HEAD 87091c1. Worktree: register (h) block STAGED
+(0bfa496f275fffda) + (i) block appended UNSTAGED (19ecd4f0dad267a0);
+tools/dip0 four files UNSTAGED (exclusion, 141 passed); eight
+records UNSTAGED (re-run bytes); ledger UNSTAGED (refusing-gate row).
+No constants touched, no manifest/registry touched. §BH30(i)'s
+single-use entry-44 authority UNSPENT. §BH24 budget 0/3 (no gate was
+launched for this attempt; nothing to score — the stop fired at the
+measurement, before the seal). Attempt 1 of T30h stands as history.
+Nothing further happens in the repo until the owner rules.
+
+================================================================
+§BH30(j) RULED 2026-09-04 — THE SIX ARE INSIDE THE SHAPE. E3 RE-DECLARED.
+================================================================
+E3 = 3,998 = 3,969 (HEAD's faces) + 29 new face ids. The six
+HASH-MATCHED brand2026 copies are six faces the corpus already
+governed, re-homed under brand2026, not added. Enumeration by face id,
+old path, new path. OLD PATH: the 2026-08-31 manifest bytes are
+unrecoverable ((i)(4)); the old path is the older-folder copy the
+manifest's collision rule selects — measured over the 934 depth-1 vs
+3333 pairs without a brand copy in the current manifest, the
+materials/Fonts/3333 copy wins in 930 (last assignment wins at
+run_c4c.py:35; the walk reaches 3333 after depth-1). Every older-folder
+copy is listed; the rule-selected one is marked (*).
+
+  face-1e4eff28e9914fde6ac6
+     old: materials/Fonts/3333/Montserrat-Regular.ttf (*)  [only copy]
+     new: bbrose_design_os/static/fonts/brand2026/Montserrat/Montserrat-Regular.ttf
+  face-516f89f4f466b2cd2010
+     old: materials/Fonts/3333/Cairo-Bold(1).ttf (*) ; materials/Fonts/Cairo-Bold(1).ttf
+     new: bbrose_design_os/static/fonts/brand2026/Cairo/Cairo-Bold.ttf
+  face-b7f2458153013106a431
+     old: materials/Fonts/3333/Raleway-Light.ttf (*) ; materials/Fonts/Raleway-Light.ttf
+     new: bbrose_design_os/static/fonts/brand2026/Raleway/Raleway-Light.ttf
+  face-a5c9e8a8dd02d1924487
+     old: materials/Fonts/3333/Rubik-Bold.ttf (*) ; materials/Fonts/Rubik-Bold.ttf
+     new: bbrose_design_os/static/fonts/brand2026/Rubik/Rubik-Bold.ttf
+  face-e8a5d696cc35208b1f5e
+     old: materials/Fonts/3333/lato-black(1).ttf (*) ; materials/Fonts/lato-black(1).ttf
+     new: bbrose_design_os/static/fonts/brand2026/Lato/Lato-Black.ttf
+  face-50e687472db5ce806210
+     old: materials/Fonts/3333/OpenSans-Semibold.ttf (*) ; materials/Fonts/OpenSans-Semibold.ttf
+     new: bbrose_design_os/static/fonts/brand2026/Open_Sans/OpenSans-Semibold.ttf
+
+The record-level +55 rows / +38 fonts / +1 junk against HEAD's tracked
+records (the four §BH26 static/fonts rows never milestone-written) is
+recorded as the same lag — expected, not a stop.
+
+RECORDED DIVERGENCE (recorded, not resolved). The ruling says "the
+eleven constants move to the previewed values in the table you
+printed". Measured after the ruling, by running the C4c real-corpus
+audit to completion, a TWELFTH corpus constant moves: test_c4c.py:269
+`len(a["packages"]) == 48` measures 62 (+14 = the fourteen brand2026
+family folders as source packages; HEAD's record shows 47 → 62, the
+48 being 47 + the §BH26 static/fonts package). It was absent from the
+printed table only because that test halts at its first failing line
+(265) and never reached 269. Its class is in the pin census (test_c4c
+:265-270 lists 48 at :269) and §BH30(i)(1) rules "the corpus constants
+rewritten to the values the re-run measures", which (j) leaves standing
+("All else stands"). It is therefore previewed here (48 → 62) and
+written with the eleven, under (i)(1). If the owner meant eleven only,
+the remedy is a one-literal revert of :269 and a re-gate.
+
+COMPLETE CONSTANTS PREVIEW (12 literals), sealed before the write:
+  test_c4a.py:311 4886→4921  :313 3944→3973  :314 941→942  :315 1883→1890
+  test_c4c.py:265 4886→4921  :266 3944→3973  :267 3969→3998
+              :268 2834→2837  :269 48→62     :270 941→942
+  test_c5.py:307 3969→3998   :308 1880→1887
+  Holding: test_c5.py:309 (3), test_c4b.py:481/482 (706/130, live),
+  test_c4c.py:271 (0 rights_batchable).

@@ -1,0 +1,198 @@
+{
+  "_README": "BLANK canonical-master approval. Every field is a HUMAN decision. An unanswered checklist item is NOT a pass \u2014 it blocks approval.",
+  "_DUAL_CONTROL": {
+    "rule": "TWO attestations from TWO DIFFERENT PEOPLE. technical_reviewer_id != legal_reviewer_id. Holding both roles does not make one person two reviewers.",
+    "TECHNICAL_AND_BRAND": {
+      "roles": [
+        "DESIGN_REVIEWER",
+        "BRAND_ADMIN"
+      ],
+      "covers": [
+        "brand_identity_confirmed",
+        "technical_readiness_appropriate",
+        "editable_vector_confirmed",
+        "official_proportions_confirmed",
+        "symbol_wordmark_relationship_confirmed",
+        "approved_lockup_type",
+        "approved_color_variants",
+        "version_or_date_recorded"
+      ]
+    },
+    "RIGHTS_AND_OWNERSHIP": {
+      "roles": [
+        "LEGAL_REVIEWER"
+      ],
+      "covers": [
+        "ownership_or_permitted_use_confirmed",
+        "reviewed_accepted_evidence_present",
+        "license_status_confirmed",
+        "restrictions_and_attribution_recorded",
+        "approved_product_scope",
+        "approved_market_scope",
+        "review_expiry_or_no_expiry_reason"
+      ]
+    },
+    "final_activation": {
+      "roles": [
+        "BRAND_ADMIN"
+      ],
+      "note": "may also be the technical attester, but NEVER the legal one"
+    }
+  },
+  "event_type": "CANONICAL_MASTER_APPROVED",
+  "asset": null,
+  "actor_id": "the BRAND_ADMIN performing final activation",
+  "actor_role": "BRAND_ADMIN",
+  "occurred_at": "ISO-8601 UTC",
+  "decision_reason": "REQUIRED \u2014 why this file, and why now",
+  "evidence_refs": [
+    "evidence_id of at least one REVIEWED_ACCEPTED record"
+  ],
+  "canonical": {
+    "canonical_state": "one of: CANONICAL_BRAND_MASTER, ALTERNATE_LOCKUP, MONOCHROME_VARIANT, COLOR_VARIANT, PRODUCT_SPECIFIC_VARIANT, DEPRECATED_VERSION, REJECTED_CANDIDATE",
+    "scope": {
+      "brand": null,
+      "lockup": "PRIMARY",
+      "products": [],
+      "markets": [],
+      "effective_from": null,
+      "effective_to": null
+    },
+    "_scope_note": "an EMPTY products/markets list means ALL of them \u2014 the BROADEST claim, and it conflicts with every other scope",
+    "version_or_date": null,
+    "attestations": [
+      {
+        "category": "TECHNICAL_AND_BRAND",
+        "actor_id": null,
+        "actor_role": null,
+        "attested_at": null,
+        "notes": "",
+        "covers_items": [
+          "brand_identity_confirmed",
+          "technical_readiness_appropriate",
+          "editable_vector_confirmed",
+          "official_proportions_confirmed",
+          "symbol_wordmark_relationship_confirmed",
+          "approved_lockup_type",
+          "approved_color_variants",
+          "version_or_date_recorded"
+        ]
+      },
+      {
+        "category": "RIGHTS_AND_OWNERSHIP",
+        "actor_id": null,
+        "actor_role": "LEGAL_REVIEWER",
+        "attested_at": null,
+        "notes": "",
+        "covers_items": [
+          "ownership_or_permitted_use_confirmed",
+          "reviewed_accepted_evidence_present",
+          "license_status_confirmed",
+          "restrictions_and_attribution_recorded",
+          "approved_product_scope",
+          "approved_market_scope",
+          "review_expiry_or_no_expiry_reason"
+        ]
+      }
+    ],
+    "checklist": {
+      "brand_identity_confirmed": {
+        "result": null,
+        "confirmed_by": null,
+        "confirmed_at": null,
+        "notes": ""
+      },
+      "technical_readiness_appropriate": {
+        "result": null,
+        "confirmed_by": null,
+        "confirmed_at": null,
+        "notes": ""
+      },
+      "editable_vector_confirmed": {
+        "result": null,
+        "confirmed_by": null,
+        "confirmed_at": null,
+        "notes": ""
+      },
+      "official_proportions_confirmed": {
+        "result": null,
+        "confirmed_by": null,
+        "confirmed_at": null,
+        "notes": ""
+      },
+      "symbol_wordmark_relationship_confirmed": {
+        "result": null,
+        "confirmed_by": null,
+        "confirmed_at": null,
+        "notes": ""
+      },
+      "approved_lockup_type": {
+        "result": null,
+        "confirmed_by": null,
+        "confirmed_at": null,
+        "notes": ""
+      },
+      "approved_color_variants": {
+        "result": null,
+        "confirmed_by": null,
+        "confirmed_at": null,
+        "notes": ""
+      },
+      "version_or_date_recorded": {
+        "result": null,
+        "confirmed_by": null,
+        "confirmed_at": null,
+        "notes": ""
+      },
+      "ownership_or_permitted_use_confirmed": {
+        "result": null,
+        "confirmed_by": null,
+        "confirmed_at": null,
+        "notes": ""
+      },
+      "reviewed_accepted_evidence_present": {
+        "result": null,
+        "confirmed_by": null,
+        "confirmed_at": null,
+        "notes": ""
+      },
+      "license_status_confirmed": {
+        "result": null,
+        "confirmed_by": null,
+        "confirmed_at": null,
+        "notes": ""
+      },
+      "restrictions_and_attribution_recorded": {
+        "result": null,
+        "confirmed_by": null,
+        "confirmed_at": null,
+        "notes": ""
+      },
+      "approved_product_scope": {
+        "result": null,
+        "confirmed_by": null,
+        "confirmed_at": null,
+        "notes": ""
+      },
+      "approved_market_scope": {
+        "result": null,
+        "confirmed_by": null,
+        "confirmed_at": null,
+        "notes": ""
+      },
+      "review_expiry_or_no_expiry_reason": {
+        "result": null,
+        "confirmed_by": null,
+        "confirmed_at": null,
+        "notes": ""
+      }
+    },
+    "_checklist_note": "each item must be confirmed_by the attester of ITS half \u2014 you may only sign for what you personally confirmed"
+  },
+  "contradiction": {
+    "contradiction_present": false,
+    "contradiction_acknowledged": false,
+    "acknowledgement_reason": null
+  },
+  "review_expiry": "ISO-8601, or null WITH a recorded reason in the checklist"
+}

@@ -1,0 +1,214 @@
+{
+ "record_type": "rbv_a1_closeout/1.0",
+ "created_at": "2026-08-27",
+ "closes": "A1 — P1 bottle reference pack: calibrated capture + four landmark questions",
+ "supersedes_nothing": "the 2026-08-04 intake records stand unaltered; this record resolves the items they left OWNER_CLARIFICATION_PENDING",
+
+ "authority_law": {
+  "dimensional_authority": "OWNER_CALIPER_RECORD — raw_measurements.json 2026-08-04, verbatim-preserved",
+  "photograph_authority": "CORROBORATING_EVIDENCE_ONLY",
+  "prohibition": "no pixel-derived quantity in this record may be promoted to OWNER_MEASURED, at any later date, by any process",
+  "precision_regime": "every pixel-derived quantity is DERIVED_INDICATIVE and carries a stated error bar; comparison gates must consume the error bars, not false precision",
+  "owner_ruling_basis": "typed by the owner in the sitting of 2026-08-27; a relayed decision is not a ruling"
+ },
+
+ "owner_rulings": {
+  "R1_canonical_path": {
+   "ruling": "canonical path for all RBV captures is bbrose_design_os/docs/visual_quality/rbv/captures/",
+   "state": "SATISFIED",
+   "evidence": "13 files IMG_3332..IMG_3344 present at the canonical path; git-root docs/visual_quality/rbv/captures/ absent (two-roots hazard avoided)"
+  },
+
+  "Q1_66mm": {
+   "question": "66 mm — is that the straight-wall end?",
+   "ruling": "66 = body_height_before_shoulder_begins. A distinct caliper landmark. Stands on caliper authority.",
+   "history": "an earlier ruling this sitting retired 66 as the wall-end landmark on the strength of a photogrammetric tangent at 69; that retirement was REVERSED by the owner in the same sitting after the measurement's error bar was corrected upward",
+   "photographs_contribution": "corroborate within +/-3.5 mm; do not separate 66 from 69"
+  },
+
+  "Q2_69mm": {
+   "question": "69 mm — is that the shoulder-curve point?",
+   "ruling": "69 = shoulder_start_height_from_base. A distinct caliper landmark, separate from 66. Stands on caliper authority.",
+   "photographs_contribution": "corroborate within +/-3.5 mm; do not separate 69 from 66"
+  },
+
+  "Q3_18_11mm": {
+   "question": "18.11 mm neck height — measured from where to where?",
+   "ruling": "18.11 mm is a HEIGHT — the owner's own 2026-08-04 caliper submission, verbatim-preserved. Assumption A3 is CONFIRMED: neck height runs shoulder/neck junction -> glass mouth.",
+   "finish_ruling": "the neck finish is GL18 / DIN 168 as the record already held; raised from MEDIUM to OWNER_CONFIRMED on the thread-OD / pitch corroboration",
+   "prohibition": "do NOT record any 'neck height 15.6' entry — it would collide with neck_outside_diameter 15.6 and reproduce exactly the field confusion this ruling removes",
+   "derived_permission": "rim -> support-bead 15.59 may be kept ONLY in the derived layer, ONLY under an explicit landmark-pair name",
+   "layering_ruling": "the raw file stays untouched per its own preservation_rule; all interpretation lives in the normalized layer"
+  },
+
+  "Q4_105mm": {
+   "question": "105 mm — is that bulb top to pipette tip?",
+   "ruling": "CONFIRMED — 105 mm is the overall dropper assembly length, bulb top to pipette tip.",
+   "photographs_contribution": "independently corroborated at 105.77 mm table-plane scale; no other span in the assembly is within 35 mm of 105"
+  },
+
+  "side_view": {
+   "ruling": "SATISFIED_BY_SYMMETRY",
+   "basis": "owner's conditional ruling (satisfied unless measurement finds asymmetry), discharged by the 0.96% circularity result below",
+   "consequence": "no side frame required; the view key binds to the symmetry ruling, not to an image"
+  },
+
+  "scale_question": {
+   "ruling": "UNRESOLVED_ACCEPTABLE",
+   "basis": "nothing now depends on pixel-derived heights; no further frames",
+   "closed_without": "an explanation for the 4-5% length excess described under derived_evidence.open_systematic"
+  },
+
+  "a1_closure": {
+   "ruling": "A1 CLOSES — photos complete at the canonical path, all four questions answered, caliper record remains the dimensional authority, photographs recorded as corroborating evidence with stated precision"
+  }
+ },
+
+ "capture_register": {
+  "path": "docs/visual_quality/rbv/captures/",
+  "count": 13,
+  "view_key_bindings": {
+   "front": {"frame": "IMG_3341.jpg", "supersedes": "IMG_3339.jpg", "calibration": "COMPLIANT"},
+   "side": {"frame": null, "state": "SATISFIED_BY_SYMMETRY", "cites": "IMG_3338.jpg circularity"},
+   "top": {"frame": "IMG_3338.jpg", "calibration": "COMPLIANT", "note": "ruler raised to cap height on a roll — in the plane of the closure top face"},
+   "closure_detail": {"frame": "IMG_3344.jpg", "calibration": "NON_COMPLIANT", "note": "owner ruled the separated closure with ruler beats a mounted close-up"},
+   "three_quarter_diagnostic": {"frame": "IMG_3342.jpg", "calibration": "NOT_ASSESSED"}
+  },
+  "secondary_or_superseded": {
+   "IMG_3332.jpg": "lying, length — superseded",
+   "IMG_3333.jpg": "secondary",
+   "IMG_3334.jpg": "early top attempt, parallax — secondary only per owner",
+   "IMG_3335.jpg": "secondary",
+   "IMG_3336.jpg": "secondary",
+   "IMG_3337.jpg": "early top attempt, parallax — used only for the calibration-free circularity cross-check",
+   "IMG_3339.jpg": "upright front — superseded by IMG_3341",
+   "IMG_3340.jpg": "upright back, 50 ML label — superseded by IMG_3343",
+   "IMG_3343.jpg": "upright back, re-shot"
+  },
+  "calibration_rule_verbatim": "A rule or scale lying in the same plane as the surface being measured, in shot, in focus, at the same distance from the lens as that surface. A ruler beside the bottle rather than in its plane does not calibrate anything.",
+  "calibration_assessment": {
+   "IMG_3341": "COMPLIANT for the front silhouette — the ruler stands in the bottle's axis plane, and a cylinder's silhouette tangent points lie in the axis plane",
+   "IMG_3344": "NON_COMPLIANT — both rulers lie flat in the table plane while the bottle axis sits ~18.7 mm and the dropper axis ~11 mm above it; every 3344 quantity carries a depth correction",
+   "IMG_3338": "COMPLIANT for the closure top face; the circularity result taken from it is calibration-free regardless"
+  }
+ },
+
+ "derived_evidence": {
+  "class": "DERIVED_INDICATIVE",
+  "prohibition": "never OWNER_MEASURED",
+
+  "circularity": {
+   "method": "second-moment ellipse fit — covariance eigenvalues of the filled mask; calibration-free, immune to cross-frame scale error",
+   "IMG_3338": {"axis_ratio": 0.9904, "major_axis_deg": -80.1, "threshold": 60},
+   "IMG_3337": {"axis_ratio": 0.9904, "major_axis_deg": -33.2, "threshold": 60},
+   "finding": "0.96% out of round; two frames at ~47 deg different major-axis orientations agree",
+   "residual_caveat": "camera tilt could in principle cancel real ovality; the differing major-axis orientations weaken but do not eliminate this",
+   "discharges": "the owner's conditional side-view ruling — no asymmetry found"
+  },
+
+  "Q4_dropper_spans": {
+   "frame": "IMG_3344",
+   "scale_model": "planar s(x,y) = 17.736950 + 4.2086e-04*x + 1.1870e-04*y px/mm; rms 0.0633 px/mm (0.35%), n=56 long-tick marks over 3 ruler bands",
+   "integration": "arc length along the assembly axis, ds/s(x,y)",
+   "spans_table_plane_mm": {
+    "bulb_tip_to_closure_near_face": 18.92,
+    "closure_axial_height": 18.39,
+    "closure_far_face_to_pipette_tip": 68.47,
+    "glass_tube_visible": 67.16,
+    "bulb_tip_to_pipette_tip": 105.77
+   },
+   "endpoint_sensitivity_mm": 0.32,
+   "endpoint_sensitivity_basis": "+/-6 px on the rounded tip",
+   "depth_corrected_range_mm": [99, 102],
+   "corroborates": "owner value 105 = overall assembly length",
+   "discriminating_power": "no other span in the assembly is within 35 mm of 105"
+  },
+
+  "Q3_neck": {
+   "frame": "IMG_3344",
+   "depth_correction": {
+    "factor": 0.9480,
+    "derivation": "table-plane body width measured 39.450 mm against the caliper 37.4 mm; the bottle axis (and hence the silhouette tangent points) sits ~18.7 mm above the rulers' plane",
+    "implied_working_distance_mm": 368,
+    "implied_working_distance_state": "INFERRED_NOT_MEASURED — EXIF is stripped on all 13 frames"
+   },
+   "rim_to_support_bead_bottom_mm": {
+    "landmark_pair": "glass mouth rim -> support bead, lower face",
+    "value_table_plane": 15.59,
+    "value_depth_corrected": 14.8,
+    "error_bar_mm": 0.8,
+    "class": "DERIVED_INDICATIVE",
+    "MUST_NOT_BE_CONFLATED_WITH": "neck_outside_diameter = 15.6 mm (a DIAMETER, owner caliper) — the numeric coincidence is a trap, not a corroboration",
+    "is_not": "the neck height; the neck height is 18.11 mm over a different landmark pair"
+   },
+   "neck_thread_outside_diameter_mm": {"value_depth_corrected_range": [17.9, 18.2], "corroborates": "GL18/DIN 168 external thread 17.50-18.00 and the owner caliper thread_outside_diameter 17.4"},
+   "thread_pitch_mm": {"value_measured": 3.0, "corroborates": "GL18/DIN 168 pitch 3.00", "excludes": "18/415, whose pitch is 3.175"},
+   "shoulder_neck_junction_to_rim_mm": {
+    "value_depth_corrected_range": [19, 20],
+    "endpoint_quality": "rim endpoint SOFT — the neck is clear glass, where the R-B discriminator fails; the measured value is biased long",
+    "consistency": "compatible with the owner's 18.11 under the stated bias and the open scale systematic",
+    "confirms": "assumption A3 — neck height runs shoulder/neck junction -> glass mouth"
+   }
+  },
+
+  "Q1_Q2_wall_departure": {
+   "frame": "IMG_3341",
+   "detection_method": "calibration-free — quadratic fit to the SILHOUETTE PIXEL WIDTH over the known-straight band, extrapolated upward; departure is where the real edge leaves the fit. rms 0.278 px over 499 rows. The scale model only converts the departure row to mm.",
+   "heights_above_base_mm": {
+    "ruler_calibrated": {"0.5px": 68.11, "1px": 68.72, "2px": 69.60, "3px": 70.22, "5px": 71.27},
+    "self_calibrated": {"0.5px": 68.57, "1px": 69.20, "2px": 70.10, "3px": 70.73, "5px": 71.81},
+    "self_calibration_method": "the wall is physically straight, so s(y) = w(y)/W with W = 37.4 mm; discards the ruler entirely"
+   },
+   "IMG_3344_equivalent_raw_mm": {"0.5px": 67.42, "5px": 70.46},
+   "shading_transition_mm": {
+    "range": [63, 65],
+    "signal": "R-B rises 66 -> 87 and luminance drops as the specular band ends",
+    "reading": "where the surface visibly begins to turn, ~4 mm below where the outline measurably departs",
+    "state": "OBSERVATION_ONLY — not a landmark, not a candidate landmark; the owner reversed the retirement of 66 and no new named landmark was created"
+   },
+   "stated_error_bar_mm": 3.5,
+   "error_bar_basis": "the open 4-5% length systematic below; a tighter bar was stated earlier in the sitting and was wrong",
+   "conclusion": "corroborates both 66 and 69 within the bar; separates neither"
+  },
+
+  "open_systematic": {
+   "name": "4-5% length excess",
+   "state": "UNRESOLVED_ACCEPTABLE",
+   "observations": {
+    "IMG_3341_assembled_height_mm": {"ruler_calibrated": 118.36, "self_calibrated": 120.24, "caliper": 114.3, "excess_percent": [3.6, 5.2]},
+    "IMG_3344_bare_bottle_height_mm": {"depth_corrected": 95.0, "caliper": 91.6, "excess_percent": 3.7}
+   },
+   "partial_explanation": "a screw-on dropper's assembled height depends on seating; 118.4 - 114.3 = 4.1 mm is about 1.3 turns at the GL18 3 mm pitch. This does NOT explain the bare-bottle excess, which has no seating freedom.",
+   "blocked_by": "EXIF stripped on all 13 captures — no focal length, no subject distance, so the working distance cannot be determined independently",
+   "closed_because": "no further frames; nothing now depends on pixel-derived heights"
+  },
+
+  "intra_frame_scale_gradients": {
+   "IMG_3344": "5.5% across x",
+   "IMG_3341": "10% across y",
+   "consequence": "single-number px/mm calibrations are unsafe away from frame centre",
+   "retired_values": {
+    "note": "these eight frame-average px/mm values were derived earlier in the sitting and are RETIRED as unsafe; superseded by the gradient models above",
+    "IMG_3332": 14.298, "IMG_3333": 19.73, "IMG_3338": 22.83, "IMG_3339": 27.74,
+    "IMG_3340": 26.32, "IMG_3341": 22.09, "IMG_3342": 20.84, "IMG_3343": 19.71
+   }
+  }
+ },
+
+ "corrections_to_derived_claims": [
+  {"claim": "18.11 is a diameter misfiled in a height field", "verdict": "WRONG", "why": "raw_measurements.json already carries neck_outside_diameter 15.6 and thread_outside_diameter 17.4 as separately populated fields; a diameter cannot be misfiled into a height field whose sibling diameter fields are already filled"},
+  {"claim": "the finish is 18/415", "verdict": "WRONG", "why": "the record already classified it GL18/DIN 168; measured pitch ~3.0 matches GL18's 3.00 and excludes 18/415's 3.175. The measurement was right; the classification was proposed without reading the existing record."},
+  {"claim": "66 should be retired as the wall-end landmark", "verdict": "WRONG", "why": "66 and 69 are two separately named caliper landmarks in the raw record, not two candidate answers to one question"},
+  {"claim": "the wall departure is 69 mm +/- 1 mm", "verdict": "BAR_TOO_TIGHT", "why": "the 4-5% length systematic was not isolated when the bar was stated; the honest bar is +/-3.5 mm and contains 66"}
+ ],
+
+ "state_after_closure": {
+  "P1_REFERENCE_PACK": "COMPLETE",
+  "P1_LANDMARK_CLARIFICATIONS": "ANSWERED (4/4)",
+  "P1_CALIBRATED_PHOTOGRAPHS": "COMPLETE — 4 view keys bound to frames, side bound to the symmetry ruling",
+  "P1_DIMENSIONAL_AUTHORITY": "OWNER_CALIPER_RECORD (unchanged)",
+  "P1_GEOMETRY_READINESS": "LANDMARK_DEFINITIONS_RESOLVED",
+  "GATE_2": "BLOCKED (unchanged by this record)",
+  "P1_MANUFACTURING_AUTHORITY": "NOT_ESTABLISHED (unchanged by this record)"
+ }
+}

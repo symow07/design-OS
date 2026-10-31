@@ -1,0 +1,121 @@
+{
+  "record_type": "vq1_structural_scorecard_consistency/1.0",
+  "created_at": "2026-07-28",
+  "scope_enforced": true,
+  "material_excluded_by_A": [
+    "Candidate closure crop (Image 6) uses a flat muted purple-grey fill; reference uses a dark plum with subtle gloss highlight \u2014 colour and surface finish differences are excluded from scoring.",
+    "Candidate neck and shoulder crops (Images 8, 10) use a warm beige gradient; reference uses a frosted cool-grey glass with specular roll highlights \u2014 these are material/finish differences and are excluded from scoring.",
+    "Candidate collar (Image 5) uses a mid-grey diagnostic fill versus reference rose-gold metallic \u2014 material difference, excluded.",
+    "Gradient present in Images 8 and 10 may represent a lighting pass rather than a structural feature; assessed as non-structural fill and excluded."
+  ],
+  "material_excluded_by_B": [
+    "Candidate uses flat diagnostic grey fills by design; no metallic, rose-gold, gloss or specular properties are present \u2014 this is expected and has not influenced any score.",
+    "Image 8 and Image 10 crop evidence is largely gradient fill with no photographic texture; inability to distinguish structural detail in these crops may partly be a render-fill limitation rather than purely a geometric omission \u2014 noted but scores reflect structural geometry only."
+  ],
+  "contamination_removed": true,
+  "score_shift_after_scope_normalization": {
+    "rounded_dome": {
+      "before_A": 7,
+      "after_A": 9,
+      "before_B": 5,
+      "after_B": 8
+    },
+    "dark_shaft": {
+      "before_A": 6,
+      "after_A": 9,
+      "before_B": 4,
+      "after_B": 9
+    },
+    "lower_flare": {
+      "before_A": 5,
+      "after_A": 9,
+      "before_B": 3,
+      "after_B": 7
+    },
+    "flare_symmetry": {
+      "before_A": 6,
+      "after_A": 9,
+      "before_B": 5,
+      "after_B": 8
+    },
+    "collar_sleeve": {
+      "before_A": 2,
+      "after_A": 9,
+      "before_B": 2,
+      "after_B": 8
+    },
+    "collar_closure_junction": {
+      "before_A": 2,
+      "after_A": 9,
+      "before_B": 2,
+      "after_B": 9
+    },
+    "neck_transition": {
+      "before_A": 3,
+      "after_A": 7,
+      "before_B": 3,
+      "after_B": 6
+    },
+    "shoulder_transition": {
+      "before_A": 5,
+      "after_A": 7,
+      "before_B": 4,
+      "after_B": 6
+    },
+    "complete_closure_coherence": {
+      "before_A": 3,
+      "after_A": 9,
+      "before_B": 2,
+      "after_B": 8
+    },
+    "overall": {
+      "before_A": 3,
+      "after_A": 8,
+      "before_B": 2,
+      "after_B": 7
+    }
+  },
+  "A": {
+    "verdict": "PASSES_STRUCTURAL_INSPECTION_PENDING_HUMAN_REVIEW",
+    "scores": {
+      "rounded_dome": 9,
+      "dark_shaft": 9,
+      "lower_flare": 9,
+      "flare_symmetry": 9,
+      "collar_sleeve": 9,
+      "collar_closure_junction": 9,
+      "neck_transition": 7,
+      "shoulder_transition": 7,
+      "complete_closure_coherence": 9,
+      "overall": 8
+    },
+    "all_ten": false
+  },
+  "B": {
+    "verdict": "STRUCTURALLY_IMPROVED_BUT_INSUFFICIENT",
+    "scores": {
+      "rounded_dome": 8,
+      "dark_shaft": 9,
+      "lower_flare": 7,
+      "flare_symmetry": 8,
+      "collar_sleeve": 8,
+      "collar_closure_junction": 9,
+      "neck_transition": 6,
+      "shoulder_transition": 6,
+      "complete_closure_coherence": 8,
+      "overall": 7
+    },
+    "all_ten": false
+  },
+  "inspectors_agree": false,
+  "convergent_lowest_categories": [
+    "neck_transition",
+    "shoulder_transition"
+  ],
+  "convergence_evidence": "A scored neck 7 shoulder 7; B scored neck 6 shoulder 6. Independently, both rank these two lowest, matching the blockers the owner identified before the inspections ran.",
+  "release_blocked_because": [
+    "no category reached 10/10 in either scorecard",
+    "the inspectors disagree on verdict (A passes, B insufficient)"
+  ],
+  "no_geometry_correction_implemented": true
+}

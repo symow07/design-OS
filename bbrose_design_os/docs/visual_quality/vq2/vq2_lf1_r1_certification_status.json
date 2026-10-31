@@ -1,0 +1,68 @@
+{
+ "record_type": "vq2_lf1_r1_certification_status/1.0",
+ "created_at": "2026-07-29",
+ "state": "VQ2_LF1_HARD_STOP_REVIEW_REQUIRED",
+ "candidate": "VQ2-LF1-R1",
+ "geometry_unchanged_during_certification": true,
+ "raster_certification": {
+  "result": "PASS",
+  "glyphs": 13,
+  "of": 13,
+  "gate": "IoU >= 0.995 at cap 2048 and 4096",
+  "observed_2048": "0.9958 - 0.9995",
+  "observed_4096": "0.9961 - 0.9996",
+  "observed_1024": "0.9949 - 0.9994",
+  "contour_counts_match": true,
+  "counters_preserved": true,
+  "area_difference_pct": "0.0004 - 0.1444 (gate 0.15) \u2014 all inside"
+ },
+ "low_resolution_finding": {
+  "code": "VQ2_LOW_RESOLUTION_IOU_UNDERSTATED_EQUIVALENCE",
+  "supported": true,
+  "evidence": "Under the SHARED adaptive flattener the same glyphs measure 0.9949-0.9994 at cap 1024, where the earlier mixed-flattener comparison measured 0.942-0.996 at 61-73 px. The deficit was flattening and rasterisation, not conversion damage.",
+  "superseded_numbers": "0.942 - 0.996 (preserved, no longer equivalence authority)"
+ },
+ "vector_gate": {
+  "result": "NOT_PASSED_AS_MEASURED",
+  "glyphs_passing": 1,
+  "of": 13,
+  "max_distance_observed_units": "0.897 - 6.455 against a 1.25 gate",
+  "mean_distance_units": "0.212 - 0.822",
+  "p95_units": "0.728 - 3.302",
+  "MY_MEASUREMENT_IS_AT_FAULT": true,
+  "defect": "nearest_dists() measures point-to-VERTEX distance between two independently sampled polylines. Adaptive flattening places vertices at different arc positions on the two representations, so a vertex can sit several units from the nearest opposing VERTEX while lying essentially on the opposing SEGMENT. The gate wants point-to-SEGMENT (Hausdorff to the curve), which I did not implement.",
+  "corroboration": "Enclosed-area difference is 0.0004-0.1444 percent and every raster IoU is at or above 0.995 \u2014 both impossible if the outlines really deviated by 4-6 font units.",
+  "honest_status": "INCONCLUSIVE_PENDING_POINT_TO_SEGMENT_METRIC"
+ },
+ "repeated_error_note": "This is the second time in this workstream that a distance metric of mine produced a false negative \u2014 first SAME_ROW versus LOCAL_NORMAL in VQ-1, now point-to-vertex versus point-to-segment here. The pattern is measuring against sampled points instead of against the curve.",
+ "inspections_run": 0,
+ "why_no_inspections": "Section 11 gates inspection behind full deterministic certification. The vector gate is unresolved, so the two inspections were correctly not run.",
+ "not_produced": [
+  "point-to-segment vector re-measurement",
+  "converter fixture suite",
+  "dual typography inspections",
+  "vq2_imbue_lf1_r1_review package"
+ ],
+ "composition": {
+  "Rose": {
+   "ink_width": 128.85,
+   "target": 134,
+   "width_err": 0.038,
+   "code": "VQ2_NATIVE_FONT_WIDTH_DIFFERS_FROM_REFERENCE",
+   "distortion_applied": false
+  },
+  "Damascena": {
+   "ink_width": 278.29,
+   "target": 281,
+   "width_err": 0.0096
+  }
+ },
+ "axes_unchanged": true,
+ "font_reacquired": false,
+ "glyph_outline_modified": false,
+ "nonuniform_scaling_applied": false,
+ "font_binary_embedded": false,
+ "lf2_generated": false,
+ "vq2_a2_generated": false,
+ "next_step": "Replace nearest-vertex with point-to-segment distance, re-run the vector gate, then fixtures, inspections and package. No geometry change is expected or authorised."
+}

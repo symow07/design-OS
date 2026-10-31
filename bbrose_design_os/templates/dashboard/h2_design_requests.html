@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load plain_words %}
+{% comment %}H2 — THE DESIGN REQUESTS, read-only, in the one shell (the owner's goal of 2026-09-25: "One clean visual system",
+"Plain words everywhere"). Their state is derived from the committed run trees and the emission record; the owner's
+decisions land only through the register — this page has no decision control, by rule (CORR-1). Each code, id and
+fingerprint the record writes is folded under "What the record says".{% endcomment %}
+{% block title %}The design requests{% endblock %}
+{% block content %}
+<h1 class="h1">The design requests</h1>
+<p class="lead">Each request's pictures, the candidates drawn for it and what was decided — read from the committed records.
+  This page only shows them: your decisions are recorded in the register, never here.</p>
+<details class="tech"><summary>What the record says</summary><p>Read-only review surface. State is derived from the committed run trees and the emission record. Owner decisions land ONLY through OWNER_BLOCKER_CLEARANCE.md — this page has no decision controls, by rule (CORR-1: committed files are not a review boundary; a parallel decision channel would be worse).</p></details>
+{% for r in index.requests %}
+<section class="card pad prog-panel" aria-label="{{ r.request_id }}">
+  <div class="prog-hd"><h2 class="h3">{{ r.product|default:r.request_id }}</h2><span class="tag line">{{ r.stage|plain }}</span></div>
+  <p class="small">Measurements: {{ r.brief_measurement_tiers|join:", "|plain }} · {{ r.ledger_entries }} entr{{ r.ledger_entries|pluralize:"y,ies" }} on record</p>
+  {% if r.contact_sheet %}
+  <h3 class="over">The contact sheet</h3>
+  <img class="prog-img" src="/api/design-requests/{{ r.request_id }}/contact-sheet/" alt="The contact sheet of {{ r.product|default:r.request_id }}" loading="lazy">
+  {% endif %}
+  {% if r.candidates %}
+  <h3 class="over">The candidates</h3>
+  <div class="prog-cands">
+    {% for c in r.candidates %}
+    <figure class="prog-cand"><img src="/api/design-requests/{{ r.request_id }}/candidate-{{ c.candidate_id|lower }}/" alt="{{ c.title|default:c.candidate_id }}" loading="lazy">
+      <figcaption><b>{{ c.direction|plain }}</b>{% if c.title %} — {{ c.title }}{% endif %}</figcaption></figure>
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% if r.emissions %}
+  <h3 class="over">The files it made</h3>
+  <ul class="prog-list">{% for e in r.emissions %}<li>{% if e.owner_approved %}<span class="tag done">accepted</span>{% elif e.superseded %}<span class="tag wait">replaced — to be checked again</span>{% else %}<span class="tag wait">awaiting acceptance</span>{% endif %}</li>{% endfor %}</ul>
+  {% endif %}
+  {% if r.owner_decisions %}
+  <h3 class="over">What you decided</h3>
+  <ul class="prog-list">{% for d in r.owner_decisions %}<li><b>{{ d.verdict|plain }}</b> — “{{ d.verdict_verbatim }}”{% if d.date %}, {{ d.date }}{% endif %}</li>{% endfor %}</ul>
+  {% endif %}
+  <details class="tech"><summary>What the record says</summary>
+    <p>{{ r.request_id }} · {{ r.stage }}</p>
+    {% if r.candidates %}<ul>{% for c in r.candidates %}<li>{{ c.candidate_id }} · {{ c.direction }}</li>{% endfor %}</ul>{% endif %}
+    {% if r.emissions %}<ul>{% for e in r.emissions %}<li>{{ e.ai }} · sha256 {{ e.ai_sha256|slice:":16" }}…{% if e.owner_approved %} · ACCEPTED{% elif e.superseded %} · SUPERSEDED{% endif %}</li>{% endfor %}</ul>{% endif %}
+    {% if r.owner_decisions %}<ul>{% for d in r.owner_decisions %}<li>{{ d.record }} · {{ d.verdict }} · {{ d.authority }}</li>{% endfor %}</ul>{% endif %}
+  </details>
+</section>
+{% empty %}
+<p class="small">No design request is on record.</p>
+{% endfor %}
+{% endblock %}

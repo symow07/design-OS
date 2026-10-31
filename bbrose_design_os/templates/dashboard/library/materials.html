@@ -1,0 +1,75 @@
+{% extends "dashboard/library/base.html" %}
+{% block title %}Materials{% endblock %}
+{% block content %}
+<h1>Materials</h1>
+<p class="lede">Every unique file of the materials library, from its index: what each shows, its tags and measured colours, the
+  surfaces it suits and its rights. Under D-D7-1 the non-font library is the house's, licensed for generation; fonts are set
+  only from the granted pool, and the fonts without licence evidence are listed, not deleted.</p>
+{% if not record %}
+<p class="warn">The library index is not on this machine, so no material can be listed here.</p>
+{% else %}
+<p class="count">{{ counts.all }} files · {{ counts.captioned }} described · {{ counts.previews }} pictured ·
+  <a href="{% url 'dashboard:materials_library' %}?tier=GRANTED">{{ granted_count }} granted fonts</a> ·
+  <a href="{% url 'dashboard:materials_library' %}?tier=excluded">{{ excluded_count }} excluded fonts</a></p>
+<nav class="seg kinds" aria-label="Kinds">
+  <a href="{% url 'dashboard:materials_library' %}"{% if not kind %} aria-current="page"{% endif %}>All ({{ counts.all }})</a>
+  {% for k, n in counts.kinds %}<a href="?kind={{ k }}{% if tier %}&amp;tier={{ tier }}{% endif %}"{% if kind == k %} aria-current="page"{% endif %}>{{ k }} ({{ n }})</a>{% endfor %}
+</nav>
+<form class="filters" method="get" action="{% url 'dashboard:materials_library' %}" role="search">
+  {% if kind %}<input type="hidden" name="kind" value="{{ kind }}">{% endif %}
+  <label>Rights
+    <select name="tier">
+      <option value=""{% if not tier %} selected{% endif %}>Any</option>
+      <option value="house"{% if tier == "house" %} selected{% endif %}>House library (D-D7-1)</option>
+      <option value="GRANTED"{% if tier == "GRANTED" %} selected{% endif %}>Granted fonts</option>
+      <option value="excluded"{% if tier == "excluded" %} selected{% endif %}>Excluded fonts (no licence evidence)</option>
+    </select>
+  </label>
+  <label>Suits
+    <select name="surface">
+      <option value=""{% if not surface %} selected{% endif %}>Any surface</option>
+      {% for key, words in surfaces %}<option value="{{ key }}"{% if surface == key %} selected{% endif %}>{{ words }}</option>{% endfor %}
+    </select>
+  </label>
+  <label>What it shows<input type="search" name="q" value="{{ q }}" placeholder="art deco, gold foil, botanical…"></label>
+  <label>A colour<input type="text" name="colour" value="{{ colour }}" placeholder="#CBA87D" size="9"></label>
+  <button type="submit">Show</button>
+</form>
+{% if colour_bad %}<p class="warn">“{{ colour }}” is not a colour — write it as six hex digits, like #CBA87D.</p>{% endif %}
+{% if tier == "excluded" %}<h2 id="excluded">{{ excluded_heading }}</h2>
+<p class="dim">{{ excluded_count }} font files the Day 6 census left UNVERIFIED or BLOCKED. Excluded from every concept and artwork, never
+  deleted (D-D7-1); a font leaves this list only when its licence evidence is added.</p>{% endif %}
+<p class="count">{{ found.n }} shown{% if found.words %} for “{{ q }}”{% endif %}{% if found.colour %}{% if found.words %} and{% endif %} near #{{ found.colour }}{% endif %}{% if kind %} · {{ kind }}{% endif %}{% if surface %} · suits {{ surface }}{% endif %}.
+  Words search the captions, tags, style and text seen; a file name counts for little.</p>
+<div class="materials">
+{% for m in shown %}
+  <article class="material{% if m.excluded %} excluded{% endif %}">
+    {% if m.preview %}<a href="{% url 'dashboard:material_detail' m.sha %}"><img class="material-picture" src="{% url 'dashboard:material_preview' m.sha %}" alt="{{ m.subject|default:m.name }}" loading="lazy"></a>
+    {% elif m.preview_blank %}<div class="material-nopic">Preview rendered blank — the file's page is empty or its content is outside the page</div>
+    {% else %}<div class="material-nopic">No preview — the preview job could not render this file</div>{% endif %}
+    <div class="material-facts">
+      <strong><a href="{% url 'dashboard:material_detail' m.sha %}">{{ m.name }}</a></strong> <span class="dim">· {{ m.kind }}{% if m.faces %} · {{ m.faces }} face{{ m.faces|pluralize }}{% endif %}{% if m.arabic %} · Arabic{% endif %}</span><br><span class="dim">{{ m.folder }}</span>
+      <p class="{% if m.excluded %}warn{% else %}ok{% endif %}">{{ m.tier_words }}</p>
+      {% if m.subject %}<p>{{ m.subject }}</p>{% endif %}
+      {% if m.tags %}<p class="dim">{{ m.tags|join:" · " }}</p>{% endif %}
+      {% if m.surfaces %}<p class="dim">Suits: {{ m.surfaces|join:", " }}</p>{% endif %}
+      {% if m.text_seen %}<p class="dim">Text on it: {{ m.text_seen|join:" | " }}</p>{% endif %}
+      {% if m.colours %}<p class="material-palette">{% for p in m.colours %}<span><svg class="dot" viewBox="0 0 14 14" aria-hidden="true"><rect width="14" height="14" fill="{{ p.hex }}"/></svg> {{ p.hex }} {{ p.share }}%</span>{% endfor %}</p>{% endif %}
+    </div>
+  </article>
+{% empty %}
+  <p class="dim">No material matches.</p>
+{% endfor %}
+</div>
+{% if pages > 1 %}
+<nav class="pager" aria-label="Pages">
+  {% if page > 1 %}<a href="?{{ query }}&amp;page={{ page|add:"-1" }}">← Earlier</a>{% endif %}
+  <span class="dim">Page {{ page }} of {{ pages }}</span>
+  {% if page < pages %}<a href="?{{ query }}&amp;page={{ page|add:"1" }}">Next →</a>{% endif %}
+</nav>
+{% endif %}
+{% if tier != "excluded" %}<h2 id="excluded">{{ excluded_heading }}</h2>
+<p class="dim">{{ excluded_count }} font files the Day 6 census left UNVERIFIED or BLOCKED are excluded from every concept and artwork and
+  never deleted (D-D7-1). <a href="{% url 'dashboard:materials_library' %}?tier=excluded">List them</a>.</p>{% endif %}
+{% endif %}
+{% endblock %}

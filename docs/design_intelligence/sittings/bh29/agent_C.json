@@ -1,0 +1,282 @@
+[
+ {
+  "family": "Adobe Arabic",
+  "upstream": "Adobe Inc. — Adobe Originals; commissioned from Tiro Typeworks (designers Tim Holloway and Robert Slimbach per fonts.adobe.com). Library file AdobeArabic-Regular.otf: Version 2.006, manufacturer string \"Tiro Typeworks for Adobe Syste[ms]\", copyright 2000, 2002, 2004, 2011 Adobe Systems Incorporated, licence_url http://www.adobe.com/type/legal.html.",
+  "how_identified": "Name-table manufacturer/copyright strings from families.json; Adobe Fonts product page (fonts.adobe.com/fonts/adobe-arabic) credits \"Designed by Robert Slimbach and Tim Holloway. From Adobe Originals.\"; bundling identified from Adobe's own AEM Forms Designer documentation (help.adobe.com) which lists Adobe Arabic among fonts available in Acrobat/Reader.",
+  "confidence_class": "FAMILY-MATCHED",
+  "licence_status": "BUNDLED — VENDOR TERMS PAGE STORED (reportage)",
+  "stored": [
+   {
+    "path": "/Users/symow/bh29_work/evidence/Adobe_Arabic/adobe-arabic.html",
+    "url": "https://fonts.adobe.com/fonts/adobe-arabic",
+    "sha256": "b243c81763bed33ea547e52f5d1a04c5ae0777c57ca0f503a673a7b493503df4",
+    "kind": "PRODUCT_PAGE"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Adobe_Arabic/aem_designer_choosing_fonts.html",
+    "url": "https://help.adobe.com/en_US/AEMForms/6.1/DesignerHelp/WS92d06802c76abadb-728f46ac129b395660c-7ef5.2.html",
+    "sha256": "9e674e84f8a6ae7a84c11584356ac602ba532318f28d1ff75e735569d6556a19",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "note": "Adobe AEM Forms Designer help 'Choosing fonts for performance': Adobe Arabic 4 styles available in Acrobat, and in Adobe Reader when the Extended Language Package is installed — bundling evidence, not licence terms"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Adobe_Arabic/helpx_font-licensing.html",
+    "url": "https://helpx.adobe.com/fonts/using/font-licensing.html",
+    "sha256": "100795f4b033db166a6a7f6fe5c5a91c00307be183d92f5f13a63380352afa8d",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "note": "Live Adobe Fonts licensing FAQ (redirects to /fonts/web/font-licensing/font-licensing.html)"
+   }
+  ],
+  "bundling_product": "Adobe Acrobat (all 4 styles always available, per Adobe AEM Forms Designer help); Adobe Reader when the \"Extended Language Package\" (Reader font pack) is installed; also served through Adobe Fonts to Creative Cloud subscribers (\"Subscribe to Creative Cloud to use more fonts\" on the product page). Which of these installed the library copy is not determinable from the pages.",
+  "reportage": "REPORTAGE (quoted, not assessed): fonts.adobe.com product page: \"The full Adobe Fonts library is cleared for both personal and commercial use.\" and \"Visit the Adobe Fonts Licensing FAQ for full details\". Adobe AEM Forms Designer help 'Choosing fonts for performance': \"the following fonts are always available in Acrobat and Adobe Reader, and do not need to be embedded\" — list includes \"Myriad Pro Bold, Myriad Pro Bold It, Myriad Pro It, Myriad Pro Regular\" and \"Adobe Arabic/Hebrew/Thai with all 4 styles (Bold, BoldItalic, Italic, and Regular). Available in Adobe Reader when the Extended Language Package is installed\". helpx FAQ 'Note' (Last updated on Mar 27, 2026): \"Fonts installed in the Fonts folder on your computer are licensed under their own end-user agreements. These FAQs don't apply to those fonts. Contact the font foundry directly for license questions.\"",
+  "notes": "Declared licence_url http://www.adobe.com/type/legal.html no longer serves a legal page: WebFetch reports it redirects to https://www.adobe.com/products/type.html (\"Buy, download typography fonts | Adobe Type\"); no vendor page naming Version 2.006 was found, hence FAMILY-MATCHED. The Adobe Fonts product page speaks to the subscription (Adobe Fonts) copy of the family; the helpx FAQ explicitly says its FAQs do not apply to fonts installed in the computer's Fonts folder (see reportage) — so the terms for the copy installed by Acrobat/Reader are the respective product EULAs, which were not hunted here. Network notes: adobe.com hosts (www/helpx) are Akamai-fronted; through the environment proxy, curl with a spoofed Chrome User-Agent fails (HTTP/2 'stream 1 was not closed cleanly: INTERNAL_ERROR (err 2)', curl rc=92) and HTTP/1.1 times out with 0 bytes (curl rc=28); curl's default User-Agent succeeds (HTTP 200). Pages were therefore stored with store_ua.py (same store()/meta/index code path, -A removed). Search-engine snippet (community.adobe.com, not vendor terms, not stored) also describes Adobe Arabic as available in Acrobat and, in Reader, only with the Arabic/Extended language font package."
+ },
+ {
+  "family": "Myriad Pro",
+  "upstream": "Adobe Inc. (Adobe Originals; Myriad by Robert Slimbach and Carol Twombly). Library file \"Myriad Pro Regular.ttf\": Version 2.007;PS 002.000;Core..., copyright © 2000, 2004 Adobe Systems Incorporated, licence_url http://www.adobe.com/type/legal.html.",
+  "how_identified": "Name-table copyright/version strings from families.json; bundling identified from Adobe's AEM Forms Designer documentation listing Myriad Pro Regular/Bold/It/Bold It among fonts \"always available in Acrobat and Adobe Reader\"; Adobe's Font Licensing FAQ and CC bundled-fonts pages fetched as instructed (both now redirect — see notes).",
+  "confidence_class": "FAMILY-MATCHED",
+  "licence_status": "BUNDLED — VENDOR TERMS PAGE STORED (reportage)",
+  "stored": [
+   {
+    "path": "/Users/symow/bh29_work/evidence/Myriad_Pro/aem_designer_choosing_fonts.html",
+    "url": "https://help.adobe.com/en_US/AEMForms/6.1/DesignerHelp/WS92d06802c76abadb-728f46ac129b395660c-7ef5.2.html",
+    "sha256": "9e674e84f8a6ae7a84c11584356ac602ba532318f28d1ff75e735569d6556a19",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "note": "Adobe AEM Forms Designer help 'Choosing fonts for performance': lists Myriad Pro (4 styles) among fonts always available in Acrobat and Adobe Reader — bundling evidence, not licence terms"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Myriad_Pro/creative-cloud-fonts.html",
+    "url": "https://www.adobe.com/products/type/creative-cloud-fonts.html",
+    "sha256": "b5616392c049b010980d972dad2d429e92933c7ef2b6fc567493351e67e5a158",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "note": "Declared target 'CC bundled fonts page'; see effective URL recorded in agent_C.json notes"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Myriad_Pro/font-licensing_redirect_target.html",
+    "url": "https://www.adobe.com/products/type/font-licensing.html",
+    "sha256": "e3598ac3d0b81da4095bc6581a5717b7f8519dba65e12b3c25ad24771c0ce787",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "note": "Declared target 'Font Licensing FAQ'; the URL now redirects (curl -L) to https://www.adobe.com/products/type.html — stored bytes are the redirect target"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Myriad_Pro/helpx_font-licensing.html",
+    "url": "https://helpx.adobe.com/fonts/using/font-licensing.html",
+    "sha256": "100795f4b033db166a6a7f6fe5c5a91c00307be183d92f5f13a63380352afa8d",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "note": "Live Adobe Fonts licensing FAQ (redirects to /fonts/web/font-licensing/font-licensing.html)"
+   }
+  ],
+  "bundling_product": "Adobe Acrobat and Adobe Reader (Myriad Pro Regular, Italic, Bold, Bold Italic are listed by Adobe as \"always available in Acrobat and Adobe Reader\"); Adobe Creative Cloud / former Creative Suite desktop apps ship it as an application font (the family is also in the Adobe Fonts subscription library). Note the library file is a .ttf whereas Acrobat/Reader install MyriadPro-Regular.otf — the library copy's provenance is not established by any stored page.",
+  "reportage": "REPORTAGE (quoted, not assessed): Adobe AEM Forms Designer help 'Choosing fonts for performance': \"the following fonts are always available in Acrobat and Adobe Reader, and do not need to be embedded\" — list includes \"Myriad Pro Bold, Myriad Pro Bold It, Myriad Pro It, Myriad Pro Regular\" and \"Adobe Arabic/Hebrew/Thai with all 4 styles (Bold, BoldItalic, Italic, and Regular). Available in Adobe Reader when the Extended Language Package is installed\". helpx FAQ 'Note' (Last updated on Mar 27, 2026): \"Fonts installed in the Fonts folder on your computer are licensed under their own end-user agreements. These FAQs don't apply to those fonts. Contact the font foundry directly for license questions.\" fonts.adobe.com/about (the page that https://www.adobe.com/products/type/creative-cloud-fonts.html now redirects to): \"All the fonts are included with an Adobe subscription\" / \"Everything is licensed for personal and commercial use\" / \"Fonts are licensed for personal and commercial use; review the full Terms of Use.\" Search-engine snippet of a community.adobe.com thread (NOT vendor terms, NOT stored): Myriad Pro \"has been included with the software for the exclusive use of the software itself\".",
+  "notes": "The two Adobe URLs named in the brief are both redirects today: https://www.adobe.com/products/type/font-licensing.html -> https://www.adobe.com/products/type.html (stored as font-licensing_redirect_target.html; the landing page itself links \"Font Licensing FAQ\" back to the same redirecting URL) and https://www.adobe.com/products/type/creative-cloud-fonts.html -> https://fonts.adobe.com/about (stored as creative-cloud-fonts.html). The live FAQ is https://helpx.adobe.com/fonts/using/font-licensing.html -> https://helpx.adobe.com/fonts/web/font-licensing/font-licensing.html (stored). No stored page names Version 2.007, hence FAMILY-MATCHED. Network notes: adobe.com hosts (www/helpx) are Akamai-fronted; through the environment proxy, curl with a spoofed Chrome User-Agent fails (HTTP/2 'stream 1 was not closed cleanly: INTERNAL_ERROR (err 2)', curl rc=92) and HTTP/1.1 times out with 0 bytes (curl rc=28); curl's default User-Agent succeeds (HTTP 200). Pages were therefore stored with store_ua.py (same store()/meta/index code path, -A removed). Declared licence_url http://www.adobe.com/type/legal.html redirects to the Adobe Type landing page (WebFetch), i.e. the 2004-era legal page is gone."
+ },
+ {
+  "family": "ae_AlMothnna",
+  "upstream": "Arabeyes.org \"Khotot\" fonts project (ae_fonts collection), distributed via SourceForge (project \"arabeyes\", Fonts/ae_fonts). Library file ae_AlMothnna_bold.ttf: \"Version 1; May 22, 2003\", copyright \"Typeface and data © 2003, Arabeyes.org. This font is distributed under[...]\", manufacturer \"Al-Amri\", licence_url http://www.gnu.org/copyleft/gpl.html.",
+  "how_identified": "Name-table copyright naming Arabeyes.org and the GPL URL; Arabeyes wiki project page https://arabeyes.org/Khotot (stored earlier this session) and the SourceForge ae_fonts directory listing (stored: releases ae_fonts1_ttf_1.0 2003-06-13, ae_fonts1_ttf_1.1 2004-07-02, ae_fonts-1.9beta3 2007-08-14, ae_fonts_2.0 2007-08-19, ae_fonts_decorative-2.1 2010-09-07).",
+  "confidence_class": "FAMILY-MATCHED",
+  "licence_status": "OPEN_LICENCE_TEXT_STORED",
+  "stored": [
+   {
+    "path": "/Users/symow/bh29_work/evidence/ae_AlMothnna/Khotot.html",
+    "url": "https://arabeyes.org/Khotot",
+    "sha256": "11d203e77b6b11c99926e1ad0c2e5152cab9f02e53c9df0bed5bad647a2278c1",
+    "kind": "PRODUCT_PAGE",
+    "note": "Arabeyes Khotot fonts project page with licence statement"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/ae_AlMothnna/ae_fonts.html",
+    "url": "https://sourceforge.net/projects/arabeyes/files/Fonts/ae_fonts/",
+    "sha256": "4292b19c872ac8fdb2a7e4c75b8fc7313acc6f7233ab8ebea48562263e728690",
+    "kind": "DOWNLOAD_PAGE"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/ae_AlMothnna/gpl-2.0.txt",
+    "url": "https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt",
+    "sha256": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6",
+    "kind": "LICENCE_TEXT",
+    "note": "GNU GPL version 2 plain text (project page states GPL v2)"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/ae_AlMothnna/gpl.html",
+    "url": "http://www.gnu.org/copyleft/gpl.html",
+    "sha256": "a97e65ee1ce94dac5821a3e46230593b16768a805cbea9d49b21b4240304139b",
+    "kind": "LICENCE_TEXT",
+    "note": "declared licence_url of the font as it resolves today",
+    "final_url": "http://www.gnu.org/licenses/gpl-3.0.html"
+   }
+  ],
+  "bundling_product": "Not a bundled font. Distributed as the ae_fonts tarballs on SourceForge (and repackaged by third parties, e.g. TCPDF's ae_fonts_2.0 directory seen in search results).",
+  "reportage": "REPORTAGE (quoted, not assessed): Khotot project page TODO list: \"New license or dual licensing with GPL and OFL. DONE (GPL with font exception)\"; goals: \"Create and/or salvage free and open TTF Arabic fonts.\" Stored GPL texts: GNU GPL v2 plain text (gnu.org/licenses/old-licenses/gpl-2.0.txt) and the declared licence_url http://www.gnu.org/copyleft/gpl.html, which today resolves to the GPL v3 page (gpl-3.0.html). Search-engine snippets (third-party font mirrors, NOT stored) describe the ae_fonts terms as GPL version 2 with an embedding exception (\"if you create a document which uses this font and embed this font or unaltered portions into the document, this font does not by itself cause the resulting document to be covered by the GNU General Public License\").",
+  "notes": "The library version string (\"Version 1; May 22, 2003\") is consistent with the 2003/2004 ae_fonts1_ttf_1.0/1.1 tarballs but no tarball was downloaded, so no hash match — FAMILY-MATCHED. The GPL version that the 2003 font's own text refers to is not visible in the truncated copyright string; GPL v3 (2007) postdates the font, which is why both the v2 text and the live v3 target of the declared URL are stored. Fetch notes: sourceforge.net returned HTTP 403 to curl with browser User-Agents (Chrome and Firefox) and HTTP 200 to store.py's plain urllib fetch (UA \"bbrose-bh29-evidence-hunt (read-only)\"). The SourceForge listing page shows no licence text itself."
+ },
+ {
+  "family": "Hacen Liner XL",
+  "upstream": "Muhammad Hacen (hacen.net). Library file \"Hacen Liner XL.ttf\": Version 1.00 2006, copyright \"Copyright © 2006 M. Hacen, All Rights Reserved / www.hacen.net\", manufacturer/designer \"Muhammad Hacen\", vendor URL (nameID 11) www.hacen.net/liner, licence URL (nameID 14) www.hacen.net/font_license, licence description (nameID 13) embedded in the font.",
+  "how_identified": "Read the font file itself (read-only, sha256 b307321a… matches families.json) with fontTools to extract the OpenType name table (copyright, designer, vendor URL, licence URL, licence description); the vendor URLs the font names were then probed (see notes). The hacen.net homepage (WebFetch) presents itself as the Arabic-language portfolio/blog of Muhammad Hacen with a footer link \"اتفاقية استخدام الخطوط\" (Font Usage Agreement).",
+  "confidence_class": "NAME+VERSION-MATCHED",
+  "licence_status": "UNRESOLVED",
+  "stored": [
+   {
+    "path": "/Users/symow/bh29_work/evidence/Hacen_Liner_XL/embedded_name_table_license.txt",
+    "url": null,
+    "sha256": "c736dec784120a741abed2df6557181b7b510ad4191e1b71a53a5633295cb83a",
+    "kind": "LICENCE_TEXT",
+    "note": "The font's own published licence statement (name table). Declared licence_url www.hacen.net/font_license -> HTTP 404; live footer link https://hacen.net/license?lang=ar -> HTTP 404.",
+    "source": "EMBEDDED IN FONT FILE (OpenType name table nameIDs 0,5,7-11,13,14), read locally read-only",
+    "source_file": "/Users/symow/Desktop/bbrose-systemOS/materials/Fonts/Hacen Liner XL.ttf",
+    "source_file_sha256": "b307321a9712e30f18b40ae8d1794a014b6cd10ca0b5460daab4b73b312063e3"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Hacen_Liner_XL/license_lang_ar_HTTP404.html",
+    "url": "https://hacen.net/license?lang=ar",
+    "sha256": "2ef25cabda47e6a92fffeb9d68ab40f0d3551333d026ae5170d86e6ae18eb4de",
+    "kind": "DEAD_LINK_404_BODY",
+    "note": "Body of the HTTP 404 response for the 'Font Usage Agreement' link in the hacen.net footer (title 'خطأ 404 - Hacen'); NOT licence text",
+    "http_status": 404
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Hacen_Liner_XL/liner.html",
+    "url": "https://hacen.net/liner",
+    "sha256": "575d2131f9b421fa255f4a7d161db8e5fa2154bb164792aecc397f82d863f473",
+    "kind": "PRODUCT_PAGE",
+    "note": "URL taken from the font's name table (nameID 11 = www.hacen.net/liner). WARNING: the response is NOT a font product page — HTML title 'MANTRA888 Saatnya Coba Permainan Yang Bikin Penasaran' with Indonesian slot-gambling spam text (SITUS SLOT / SLOT GACOR), i.e. hijacked or injected content on the vendor domain. Stored only as evidence of the dead/compromised vendor path; contains no licence wording."
+   }
+  ],
+  "bundling_product": "Not a bundled font (independent Arabic type designer).",
+  "reportage": "REPORTAGE (quoted, not assessed). The font's own embedded licence description (nameID 13): \"The artistic design and the points in each glyph of this font are the property of Hacen, your use of this font is limited to production purposes, you may not edit, modify or rename this font without prior permission. Hacen holds the original shape of each letter of this font, any copying, redrawing, or rendering to match or imitate the shape of the original is a breach of copyright law.\" Search-engine snippet from fontke.com (third-party font-parameter site, NOT stored) labels the font \"Non-Commercial\" and says to contact the copyright party for a commercial licence — that classification is fontke's, not Hacen's. The vendor URL embedded in the font (www.hacen.net/liner) does not serve a font page today: the stored response is titled \"MANTRA888 Saatnya Coba Permainan Yang Bikin Penasaran\" and consists of Indonesian slot-gambling spam (\"SITUS SLOT\", \"SLOT GACOR\"; 291 spam-keyword hits, identical with a browser and with curl's default User-Agent) — hijacked/injected content, no licence wording. The hacen.net homepage itself is clean (title \"Hacen\", 0 spam hits, 37 \"Hacen\" mentions, footer link to https://hacen.net/license?lang=ar which returns 404).",
+  "notes": "Dead links: declared licence_url http://www.hacen.net/font_license -> HTTP 404 (also https://hacen.net/font_license 404); the live site footer links \"اتفاقية استخدام الخطوط\" (Font Usage Agreement) to https://hacen.net/license?lang=ar, which returns HTTP 404 (body titled \"خطأ 404 - Hacen\", filed as license_lang_ar_HTTP404.html); variants /license, /license/, ?lang=en, /ar/license, /en/license, /fonts-license, /terms on hacen.net and www.hacen.net all 404. Wayback Machine: availability API answered HTTP 429 (rate-limited) three times; one direct snapshot request resolved to https://web.archive.org/web/20121215044322/http://www.hacen.net/font_license but returned HTTP 404 (the archived capture itself is a 404). The font's vendor URL https://hacen.net/liner returns HTTP 200 (681,127 bytes) but with hijacked gambling-spam content instead of a font page (stored as liner.html with a warning note; not a product page); the homepage https://hacen.net/ is unaffected (title \"Hacen\"). Because the only licence text is the one embedded in the font (stored verbatim, not a web page) and no live vendor licence page exists, licence_status is UNRESOLVED; NAME+VERSION-MATCHED because the identification rests on the file's own name table and sha256."
+ },
+ {
+  "family": "Dubai",
+  "upstream": "Dubai Font — commissioned by the Dubai Executive Council (\"TEC\", The Executive Council of Dubai) and produced by Monotype; official site dubaifont.com. Library files DUBAI-BOLD.TTF / DUBAI-REGULAR.TTF: Version 1.10, copyright © 2016 Dubai Executive Council, manufacturer Monotype Imaging Inc., licence_url http://www.monotype.com.",
+  "how_identified": "Name-table copyright/manufacturer strings; search results for dubaifont.com (download, privacy, press pages) and a third-party mirror of the \"END USER LICENCE AGREEMENT – DUBAI FONT\" (Font Squirrel) whose text names TEC and info@dubaifont.com. Bundling checked against Microsoft's official Windows 10/11 font lists (Dubai absent from both, including the Arabic Script Supplemental FOD package) and the Microsoft 365 \"Cloud fonts in Office\" list.",
+  "confidence_class": "NAME+VERSION-MATCHED",
+  "licence_status": "UNRESOLVED",
+  "stored": [
+   {
+    "path": "/Users/symow/bh29_work/evidence/Dubai/fontsquirrel_license_dubai.html",
+    "url": "https://www.fontsquirrel.com/license/dubai",
+    "sha256": "c8d9a5ee4c5b0d891d62276479e7f6747cc2a2f386c6d046cd685e0f998a3800",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "note": "THIRD-PARTY MIRROR (Font Squirrel) of the Dubai Font licence text; official dubaifont.com unreachable through the proxy (curl 28 connect timeout on https/http, www and apex)"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Dubai/ms_cloud_fonts_in_office.html",
+    "url": "https://support.microsoft.com/en-us/office/fonts/cloud-fonts-in-office",
+    "sha256": "e73152f646870d36b5e07e5842f6434d75cf7d792ac53b5ea699ce29524916f1",
+    "kind": "PRODUCT_PAGE",
+    "note": "Microsoft Support \"Cloud fonts in Office\": official list of fonts Microsoft supplies to Microsoft 365 subscribers (bundling evidence if Dubai is listed)"
+   }
+  ],
+  "bundling_product": "Microsoft 365 — Office \"cloud fonts\" (Applies To: Excel/Word/Outlook/PowerPoint/Publisher for Microsoft 365, Windows and Mac) per Microsoft Support \"Cloud fonts in Office\" (Last updated: March 12, 2025), which lists \"Dubai Regular / Dubai-Regular.ttf / 1.1\" and \"Dubai Bold / Dubai-Bold.ttf / 1.1\" (plus Light, Medium and the four Italics). Also distributed free of charge from dubaifont.com (per the mirrored EULA, TEC licenses the Font Software \"free of charge on a no-fee basis\"). NOT part of the Windows 10/11 shipped font sets or the Arabic Script Supplemental FOD package (checked on Microsoft's official lists). Which channel the library copies came from is not established (file names DUBAI-BOLD.TTF/DUBAI-REGULAR.TTF are upper-case, unlike Microsoft's Dubai-Bold.ttf).",
+  "reportage": "REPORTAGE (not assessed). Microsoft Support \"Cloud fonts in Office\": \"Cloud fonts are fonts hosted in the cloud by Microsoft 365, and are available in the latest versions of Office applications\"; \"Note Cloud fonts are available to Microsoft 365 subscribers.\"; list rows: \"Dubai Bold Dubai-Bold.ttf 1.1\", \"Dubai Regular Dubai-Regular.ttf 1.1\" (Italics are version 1). Quoted from the Font Squirrel MIRROR of the EULA (not the official page): heading \"END USER LICENCE AGREEMENT – DUBAI FONT\"; \"BY USING, COPYING OR INSTALLING THE FONT SOFTWARE THE LICENSEE ACCEPTS ALL OF THE TERMS AND CONDITIONS CONTAINED HEREIN\"; clause 2.1 \"TEC licenses use of the Font Software to the Licensee on the basis of this Agreement free of charge on a no-fee basis. TEC does not sell the Font Software to the Licensee. TEC remains the owner of the Font Software at all times.\"; \"TEC\" means collectively The Executive Council (an entity in the Emirate of Dubai, United Arab Emirates established pursuant to Law No. (3) of 2003…\". Search-engine snippets of dubaifont.com pages (NOT stored): \"If you download and/or use the Dubai Font from the website, the downloading and/or use is subject to separate licensing terms under an end user licence agreement\"; \"You may use the fonts freely in your own work whether for private or commercial use\"; \"You are not allowed to distribute the fonts\".",
+  "notes": "OFFICIAL EULA NOT STORED: dubaifont.com is unreachable through the environment proxy — curl \"Connection timed out\" (rc=28) on https://dubaifont.com/, https://www.dubaifont.com/, http://www.dubaifont.com/, https://dubaifont.com/privacy and https://www.dubaifont.com/download, with both HTTP/2 and HTTP/1.1; WebFetch also failed (download page: \"Socket is closed\"; homepage: \"Socket is closed\"/60 s timeout). The exact URL of the EULA page on dubaifont.com was not identified (search results index /download, /privacy, /pressCenter only). The mirror is stored as TERMS_PAGE_REPORTAGE and does not cite a source URL (only the contact address info@dubaifont.com appears). NAME+VERSION-MATCHED rests on Microsoft's official cloud-fonts list naming the family and version 1.1 (library: Version 1.10, © 2016 Dubai Executive Council, manufacturer Monotype Imaging Inc.); no binary hash comparison was possible (no font download). learn.microsoft.com/en-us/typography/font-list/dubai -> HTTP 404 (no Microsoft font-list entry). Microsoft Support \"Cloud fonts in Office\" page stored; the word \"Dubai\" occurs 16 time(s) in its text (Dubai IS listed among Microsoft 365 cloud fonts)."
+ },
+ {
+  "family": "Goli",
+  "upstream": "MagicType (Jaikishan Patel), magictype.in; source repository https://github.com/magictype/Goli (default branch main, licence file OFL.txt, GitHub licence badge OFL-1.1). Library files Goli-{Light,Regular,Medium,SemiBold,Bold}-BF6639969….otf: \"Version 1.000;Glyphs 3.2 (3242…\", copyright \"Copyright © 2024 by jaikishan Patel. All rights reserved.\", manufacturer MagicType, licence_url magictype.in.",
+  "how_identified": "Name-table manufacturer/copyright; MagicType product page https://www.magictype.in/portfolio/goli-typeface/ (stored by the main process) links \"Download the latest build at GitHub\" -> github.com/magictype/Goli; the repository's OFL.txt fetched raw from raw.githubusercontent.com and stored.",
+  "confidence_class": "FAMILY-MATCHED",
+  "licence_status": "OPEN_LICENCE_TEXT_STORED",
+  "stored": [
+   {
+    "path": "/Users/symow/bh29_work/evidence/Goli/Goli.html",
+    "url": "https://github.com/magictype/Goli",
+    "sha256": "42edbd862fb7f56cdea93c9fe44bc9da0d14a0315a1509bd2bb9befd0a5b5f78",
+    "kind": "DOWNLOAD_PAGE"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Goli/OFL.txt",
+    "url": "https://raw.githubusercontent.com/magictype/Goli/main/OFL.txt",
+    "sha256": "18bc2a638ef84bcd7200a8f0f97cdf8c99d91c484ea60aa19df1efe72fde6a20",
+    "kind": "LICENCE_TEXT"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Goli/goli-typeface.html",
+    "url": "https://www.magictype.in/portfolio/goli-typeface/",
+    "sha256": "e4c78674e52b4698c47b788173810c3b7fa5a05a84ca531d856b620f27ce173c",
+    "kind": "PRODUCT_PAGE"
+   }
+  ],
+  "bundling_product": "Not bundled; free download from magictype.in / GitHub. The library file names carry a \"BF6639969…\" suffix, the naming pattern of the third-party redistributor befonts.com, so the copies were most likely obtained there rather than from MagicType/GitHub (not verified).",
+  "reportage": "REPORTAGE (quoted, not assessed): product page: \"The font family is available as open source for personal or commercial use. Feel free to use the typeface and share your valuable feedback.\"; OFL.txt (repo): \"Copyright 2024 The Goli Project Authors (https://github.com/magictype/goli) This Font Software is licensed under the SIL Open Font License, Version 1.1.\"; the repo README (per WebFetch) says \"Madhuban is licensed under the SIL Open Font License v1.1. To view the copyright and specific terms and conditions please refer to OFL.txt\" — the README names a different MagicType family (Madhuban), apparently a copy-paste in the README. No price, cart item or purchase requirement appears on the product page for Goli.",
+  "notes": "Purchase NOT required per the vendor page, so not COMMERCIAL. Version 1.000 could not be matched to a GitHub release (repository has no release tags per WebFetch; font binaries not downloaded), hence FAMILY-MATCHED. The font's internal copyright string (\"© 2024 by jaikishan Patel. All rights reserved.\") differs from the OFL.txt copyright line (\"The Goli Project Authors\") — recorded, not interpreted. raw.githubusercontent.com probes: main/OFL.txt 200, master/OFL.txt 200 (branch alias), LICENSE/LICENSE.md/OFL.md 404, main/LICENSE.txt returned 000 (curl error) once."
+ },
+ {
+  "family": "Bebas",
+  "upstream": "Dharma Type (Ryoichi Tsunekawa), dharmatype.com; download/history site bebasfont.com (GitHub Pages, \"Bebas maintained by dharmatype\"). Library file Bebas-Regular.otf: \"Version 1.100;PS 001.100;hotco[nv]\", copyright \"Copyright (c) 2005 by Ryoichi Tsunekawa. All rights reserved.\", manufacturer Dharma Type, licence_url https://dharmatype.com.",
+  "how_identified": "Name-table strings; Dharma Type licence page (stored by main process) and Bebas product page https://dharmatype.com/bebas (stored) which links Download -> http://bebasfont.com (stored); bebasfont.com states the original Bebas development \"was terminated. version1.1(2019)\", matching the library version string 1.100.",
+  "confidence_class": "NAME+VERSION-MATCHED",
+  "licence_status": "UNRESOLVED",
+  "stored": [
+   {
+    "path": "/Users/symow/bh29_work/evidence/Bebas/bebas.html",
+    "url": "https://dharmatype.com/bebas",
+    "sha256": "b3660b32d2f3c750875da5b373ccf7baae465d92dafdca74f12b6421746ffd41",
+    "kind": "PRODUCT_PAGE"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Bebas/bebasfont.com",
+    "url": "http://bebasfont.com/",
+    "sha256": "ce99374cee6690e66fef6bb2bf7e4c3884c15c6e44de0f098fecd4aabd2970d6",
+    "kind": "DOWNLOAD_PAGE"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Bebas/license.html",
+    "url": "https://dharmatype.com/license",
+    "sha256": "8129f57d52c6afab0f0b6c98452a6e365a2d03d94a0b6a4f63adb7940818484f",
+    "kind": "TERMS_PAGE"
+   }
+  ],
+  "bundling_product": "Not bundled; free download (bebasfont.com points to https://www.dafont.com/bebas.font; the original Dharma Type page says development is discontinued).",
+  "reportage": "REPORTAGE (quoted, not assessed). Dharma Type licence page https://dharmatype.com/license (\"THE END USER LICENSE AGREEMENT (EULA) v.2018.11.01.\") does NOT mention Bebas or Bebas Neue by name; its \"License Notice\" says: \"This End User License Agreement (EULA) applies to fonts purchased directly from us after November 2018. If you purchase fonts through third-party shops, their respective licenses will apply. Free fonts are licensed under either our FFEULA or the SIL Open Font License 1.1 (SIL-OFL 1.1). Please refer to each font's page for specific licensing details.\" (the only outbound licence link is https://scripts.sil.org/OFL). Bebas product page: \"Bebas is a free font designed for headlines, captions, and titling. It was originally created in 2005 as a personal type design exercise… The development of the original version has since been discontinued.\" bebasfont.com \"License\" section: \"Bebas (2005) is free font. You can use this font free of charge even for commercial purposes.\" bebasfont.com history on the Neue family: \"Bebas Neue version 1.xxx (2010) — Free font … Licensed under the SIL Open Font License v1.1.\" and \"Bebas Neue version 2.000 (2018) — Free font. From version 2.000, Bebas Neue has become open source font… Licensed under the SIL Open Font License v1.1.\"; also \"Bebas Neue Family (2014) — Free font. Fontfabric designed additional weights and glyphs. They are distributing the font family under the same name of 'Bebas Neue'.\"",
+  "notes": "licence_status left UNRESOLVED deliberately: the vendor's free-font statements for the original Bebas (2005) are stored verbatim, but neither the licence page nor the Bebas page nor bebasfont.com attaches a named licence instrument (FFEULA or SIL OFL) to the ORIGINAL Bebas — the OFL statements on bebasfont.com are made for Bebas Neue 1.x/2.0 and Bebas Kai, not for Bebas (2005). No conclusion drawn. NAME+VERSION-MATCHED rests on the version string 1.100 = \"version1.1(2019)\" named by bebasfont.com; no binary hash comparison (the dafont.com download was not fetched)."
+ },
+ {
+  "family": "Nexa",
+  "upstream": "Fontfabric (Svetoslav Simov), https://www.fontfabric.com/fonts/nexa/ (product page: Release Date October 4, 2012; 36 styles). Library file Nexa-Heavy.ttf: Version 2.001, copyright \"Copyright © 2012 by Fontfabric. All rights reserved.\", manufacturer Fontfabric LLC, licence_url http://www.fontfabric.com.",
+  "how_identified": "Name-table strings; Fontfabric product page (stored by main process) lists \"Nexa Heavy\" inside the paid \"Nexa - 18 font styles\" collection ($175) and the complete family ($249), with desktop licences \"from $29\"; Fontfabric's licensing pages and both published EULA texts were stored earlier this session (main process/other leg) — not re-stored.",
+  "confidence_class": "FAMILY-MATCHED",
+  "licence_status": "COMMERCIAL — EVIDENCE REQUIRES PURCHASE",
+  "stored": [
+   {
+    "path": "/Users/symow/bh29_work/evidence/Nexa/fontfabric-commercial-eula-for-free-fonts.html",
+    "url": "https://www.fontfabric.com/fontfabric-commercial-eula-for-free-fonts/",
+    "sha256": "88aa1eec881a286a6809508d489534f08b38a889b3fd780190c6b2b8d05221d3",
+    "kind": "LICENCE_TEXT",
+    "note": "Fontfabric Commercial EULA for Free Fonts"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Nexa/fontfabric-commercial-eula-for-retail-fonts.html",
+    "url": "https://www.fontfabric.com/fontfabric-commercial-eula-for-retail-fonts/",
+    "sha256": "b3476a78d477b83b98bad07db1a443dfb1c3c90ebcd1a9232a16ee6e22ee4af7",
+    "kind": "LICENCE_TEXT",
+    "note": "Fontfabric Commercial EULA for Retail Fonts"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Nexa/fontfabric-licensing.html",
+    "url": "https://www.fontfabric.com/fontfabric-licensing/",
+    "sha256": "fc4744b719305c5b7d2722dd0d38c4c6e4e3f10ff396e6449170cc61c8e3e8f4",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "note": "Fontfabric Font Licensing overview page"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Nexa/licensing.html",
+    "url": "https://www.fontfabric.com/help/licensing/",
+    "sha256": "1ffae9140427535d5532c730d983abc198c644676726d8322b203d67329c43dc",
+    "kind": "TERMS_PAGE_REPORTAGE"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Nexa/nexa.html",
+    "url": "https://www.fontfabric.com/fonts/nexa/",
+    "sha256": "86ae6833fb7ee6f18906435826853a9e88566bf888976a2626d232081dead561",
+    "kind": "PRODUCT_PAGE"
+   }
+  ],
+  "bundling_product": "Not bundled; retail font sold by Fontfabric (per-style and collection pricing on the product page).",
+  "reportage": "REPORTAGE (quoted, not assessed): product page: \"Nexa Complete Family - 36 font styles … $249\"; \"Nexa - 18 font styles … $175\" (list includes \"Nexa Heavy\", \"Nexa Heavy Italic\"); \"Desktop from $29 — Install the font on your computer to create designs for print or static digital images, such as logos, packaging, and marketing materials. The desktop license is always perpetual.\"; the page also offers \"Enter your email to receive your free font … We'll send you a zipped file with the free font, license agreement, and installation instructions\" (NOT used — no email entered). \"Fontfabric Commercial EULA For Retail Fonts\" (openly published, stored): clause 2.1 \"Customer shall have a non-exclusive, non-assignable, non-transferable (except as expressly permitted) license to install, access and Use the Font Software. Fontfabric reserves all rights not expressly granted…\"; clause 2.3 \"This Agreement shall be effective upon the date that Customer receives Font Software\". \"Fontfabric Commercial EULA For Free Fonts\" (stored): \"All Fontfabric Fonts (Software) available for a free download and commercial use come with a standard Fontfabric Commercial End-User License Agreement For Free Fonts as part of the free download…\".",
+  "notes": "Nexa Heavy is a paid weight; a purchase-specific licence certificate/Order Form would be the evidence of the library owner's own licence and cannot be obtained without purchase (none attempted). The openly published retail EULA text IS stored (LICENCE_TEXT) — it carries no version/date line of its own (page footer \"2026 © Fontfabric llc.\"). Library version 2.001 (2012) vs. the current product build: not shown on the product page, hence FAMILY-MATCHED. Historical note from bebasfont.com (stored under Bebas): Fontfabric also distributed a \"Bebas Neue Family (2014)\" — unrelated to Nexa licensing, recorded for cross-reference only."
+ }
+]

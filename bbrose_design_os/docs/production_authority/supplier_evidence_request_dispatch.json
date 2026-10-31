@@ -1,0 +1,390 @@
+{
+ "record_type": "supplier_evidence_request_dispatch/2.0",
+ "generated_on": "2026-09-11",
+ "superseded_by": "§BH46",
+ "supersession": "§BH46: the system never contacts suppliers. The owners of the companies deal with their suppliers directly and hand the product information to this system, which is the designer and acquires nothing. This record describes a path the system no longer has; it is kept as history, unsent, and nothing here is to be sent.",
+ "derived_from": [
+  "docs/production_authority/production_supplier_request_drafts.json",
+  "docs/production_authority/supplier_dispatch_manifest.json",
+  "django settings (EMAIL_BACKEND, EMAIL_HOST)"
+ ],
+ "derivation": "every field is measured from those inputs on generated_on; nothing here is a record of an earlier run, and nothing here is a send",
+ "authorization": {
+  "granted": true,
+  "granted_by": "PROJECT_OWNER",
+  "granted_at": "2026-07-31",
+  "codes": [
+   "SUPPLIER_EVIDENCE_REQUEST_DISPATCH_OWNER_AUTHORIZED",
+   "PRODUCTION_AUTHORITY_SUPPLIER_OUTREACH_STARTED"
+  ],
+  "scope": "the 5 previously reviewed drafts in production_supplier_request_drafts.json only",
+  "additional_recipients_created": 0,
+  "additional_messages_created": 0,
+  "durable": true,
+  "durable_note": "the authorization stands and does not need to be given again; it is recorded in the drafts record"
+ },
+ "transport": {
+  "email_backend": "django.core.mail.backends.console.EmailBackend",
+  "is_console_backend": true,
+  "delivering_backend": false,
+  "email_host": null,
+  "email_host_user": null,
+  "transport_configured": false,
+  "finding": "EMAIL_BACKEND is django.core.mail.backends.console.EmailBackend and EMAIL_HOST is empty, so this project has no transport that reaches a supplier: a 'send' here would print to a log or a memory buffer and reach no supplier, which must never be recorded as dispatch."
+ },
+ "requests_total": 5,
+ "requests_ready_not_sent": 5,
+ "requests_blocked": 0,
+ "requests_sent": 0,
+ "supplier_requests_sent": 0,
+ "dispatch_complete": false,
+ "full_dispatch_claimed": false,
+ "sent_counts_are_literals": {
+  "rule": "supplier_requests_sent and dispatch_complete are not computed from any state this module can reach. They move only from an owner-typed sent date on the tracking sheet, transcribed by ruling.",
+  "tracking_sheet": "docs/production_authority/dispatch_pack/dispatch_tracking_sheet.md",
+  "this_module_sends": false
+ },
+ "requests": [
+  {
+   "supplier": "Liquid Bottles LLC",
+   "subject": "30 ml cylindrical frosted-glass serum bottle + dropper closure — technical specification and decoration request",
+   "subject_sha256": "b55119288056389c70d30e007806ca2f02cc6b0418c1bea09edb919ae56cfa34",
+   "body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+   "body_length": 2661,
+   "attachments": 0,
+   "recipient": {
+    "company": "Liquid Bottles LLC",
+    "domain": "liquidbottles.com",
+    "channel_field": "public contact form or email — TO BE SENT BY A HUMAN",
+    "recipient_name": null,
+    "email_addresses_in_draft": [
+     "Info@LiquidBottles.com"
+    ],
+    "explicit_address": "Info@LiquidBottles.com",
+    "destination_owner_approved": true,
+    "channel_is_a_placeholder": true,
+    "resolved": true,
+    "code": null
+   },
+   "evidence_categories_covered": {
+    "container": true,
+    "closure": true,
+    "compatibility": true,
+    "material": true,
+    "decoration": true
+   },
+   "checks": {
+    "recipient_company_known": true,
+    "recipient_destination_resolved": true,
+    "recipient_destination_owner_approved": true,
+    "recipient_identity_known": true,
+    "draft_identity_known": true,
+    "subject_present": true,
+    "body_present": true,
+    "language_is_english": true,
+    "product_reference_present": true,
+    "requested_evidence_categories_present": true,
+    "no_internal_audit_content": true,
+    "no_confidential_repository_paths": true,
+    "no_production_authority_claim": true,
+    "no_supplier_approved_geometry_claim": true,
+    "no_unsupported_dimensions": true,
+    "no_colour_system_assignment": true,
+    "no_attachments": true
+   },
+   "content_findings": {},
+   "content_safe_to_send": true,
+   "sendable": true,
+   "blocking_checks": [],
+   "codes": [],
+   "status": "READY_NOT_SENT"
+  },
+  {
+   "supplier": "SKS Bottle & Packaging",
+   "subject": "30 ml cylindrical frosted-glass serum bottle + dropper closure — technical specification and decoration request",
+   "subject_sha256": "b55119288056389c70d30e007806ca2f02cc6b0418c1bea09edb919ae56cfa34",
+   "body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+   "body_length": 2661,
+   "attachments": 0,
+   "recipient": {
+    "company": "SKS Bottle & Packaging",
+    "domain": "sks-bottle.com",
+    "channel_field": "public contact form or email — TO BE SENT BY A HUMAN",
+    "recipient_name": null,
+    "email_addresses_in_draft": [
+     "Customersupport@sks-bottle.com"
+    ],
+    "explicit_address": "Customersupport@sks-bottle.com",
+    "destination_owner_approved": true,
+    "channel_is_a_placeholder": true,
+    "resolved": true,
+    "code": null
+   },
+   "evidence_categories_covered": {
+    "container": true,
+    "closure": true,
+    "compatibility": true,
+    "material": true,
+    "decoration": true
+   },
+   "checks": {
+    "recipient_company_known": true,
+    "recipient_destination_resolved": true,
+    "recipient_destination_owner_approved": true,
+    "recipient_identity_known": true,
+    "draft_identity_known": true,
+    "subject_present": true,
+    "body_present": true,
+    "language_is_english": true,
+    "product_reference_present": true,
+    "requested_evidence_categories_present": true,
+    "no_internal_audit_content": true,
+    "no_confidential_repository_paths": true,
+    "no_production_authority_claim": true,
+    "no_supplier_approved_geometry_claim": true,
+    "no_unsupported_dimensions": true,
+    "no_colour_system_assignment": true,
+    "no_attachments": true
+   },
+   "content_findings": {},
+   "content_safe_to_send": true,
+   "sendable": true,
+   "blocking_checks": [],
+   "codes": [],
+   "status": "READY_NOT_SENT"
+  },
+  {
+   "supplier": "Bottlestore / O.Berk",
+   "subject": "30 ml cylindrical frosted-glass serum bottle + dropper closure — technical specification and decoration request",
+   "subject_sha256": "b55119288056389c70d30e007806ca2f02cc6b0418c1bea09edb919ae56cfa34",
+   "body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+   "body_length": 2661,
+   "attachments": 0,
+   "recipient": {
+    "company": "Bottlestore / O.Berk",
+    "domain": "bottlestore.com",
+    "channel_field": "public contact form or email — TO BE SENT BY A HUMAN",
+    "recipient_name": null,
+    "email_addresses_in_draft": [
+     "customerservice@bottlestore.com"
+    ],
+    "explicit_address": "customerservice@bottlestore.com",
+    "destination_owner_approved": true,
+    "channel_is_a_placeholder": true,
+    "resolved": true,
+    "code": null
+   },
+   "evidence_categories_covered": {
+    "container": true,
+    "closure": true,
+    "compatibility": true,
+    "material": true,
+    "decoration": true
+   },
+   "checks": {
+    "recipient_company_known": true,
+    "recipient_destination_resolved": true,
+    "recipient_destination_owner_approved": true,
+    "recipient_identity_known": true,
+    "draft_identity_known": true,
+    "subject_present": true,
+    "body_present": true,
+    "language_is_english": true,
+    "product_reference_present": true,
+    "requested_evidence_categories_present": true,
+    "no_internal_audit_content": true,
+    "no_confidential_repository_paths": true,
+    "no_production_authority_claim": true,
+    "no_supplier_approved_geometry_claim": true,
+    "no_unsupported_dimensions": true,
+    "no_colour_system_assignment": true,
+    "no_attachments": true
+   },
+   "content_findings": {},
+   "content_safe_to_send": true,
+   "sendable": true,
+   "blocking_checks": [],
+   "codes": [],
+   "status": "READY_NOT_SENT"
+  },
+  {
+   "supplier": "Premium Vials",
+   "subject": "30 ml cylindrical frosted-glass serum bottle + dropper closure — technical specification and decoration request",
+   "subject_sha256": "b55119288056389c70d30e007806ca2f02cc6b0418c1bea09edb919ae56cfa34",
+   "body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+   "body_length": 2661,
+   "attachments": 0,
+   "recipient": {
+    "company": "Premium Vials",
+    "domain": "premiumvials.com",
+    "channel_field": "public contact form or email — TO BE SENT BY A HUMAN",
+    "recipient_name": null,
+    "email_addresses_in_draft": [
+     "support@premiumvials.com"
+    ],
+    "explicit_address": "support@premiumvials.com",
+    "destination_owner_approved": true,
+    "channel_is_a_placeholder": true,
+    "resolved": true,
+    "code": null
+   },
+   "evidence_categories_covered": {
+    "container": true,
+    "closure": true,
+    "compatibility": true,
+    "material": true,
+    "decoration": true
+   },
+   "checks": {
+    "recipient_company_known": true,
+    "recipient_destination_resolved": true,
+    "recipient_destination_owner_approved": true,
+    "recipient_identity_known": true,
+    "draft_identity_known": true,
+    "subject_present": true,
+    "body_present": true,
+    "language_is_english": true,
+    "product_reference_present": true,
+    "requested_evidence_categories_present": true,
+    "no_internal_audit_content": true,
+    "no_confidential_repository_paths": true,
+    "no_production_authority_claim": true,
+    "no_supplier_approved_geometry_claim": true,
+    "no_unsupported_dimensions": true,
+    "no_colour_system_assignment": true,
+    "no_attachments": true
+   },
+   "content_findings": {},
+   "content_safe_to_send": true,
+   "sendable": true,
+   "blocking_checks": [],
+   "codes": [],
+   "status": "READY_NOT_SENT"
+  },
+  {
+   "supplier": "Nicer Packaging",
+   "subject": "30 ml cylindrical frosted-glass serum bottle + dropper closure — technical specification and decoration request",
+   "subject_sha256": "b55119288056389c70d30e007806ca2f02cc6b0418c1bea09edb919ae56cfa34",
+   "body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+   "body_length": 2661,
+   "attachments": 0,
+   "recipient": {
+    "company": "Nicer Packaging",
+    "domain": "nicerpackaging.com",
+    "channel_field": "public contact form or email — TO BE SENT BY A HUMAN",
+    "recipient_name": null,
+    "email_addresses_in_draft": [
+     "sales@nicerpackaging.com"
+    ],
+    "explicit_address": "sales@nicerpackaging.com",
+    "destination_owner_approved": true,
+    "channel_is_a_placeholder": true,
+    "resolved": true,
+    "code": null
+   },
+   "evidence_categories_covered": {
+    "container": true,
+    "closure": true,
+    "compatibility": true,
+    "material": true,
+    "decoration": true
+   },
+   "checks": {
+    "recipient_company_known": true,
+    "recipient_destination_resolved": true,
+    "recipient_destination_owner_approved": true,
+    "recipient_identity_known": true,
+    "draft_identity_known": true,
+    "subject_present": true,
+    "body_present": true,
+    "language_is_english": true,
+    "product_reference_present": true,
+    "requested_evidence_categories_present": true,
+    "no_internal_audit_content": true,
+    "no_confidential_repository_paths": true,
+    "no_production_authority_claim": true,
+    "no_supplier_approved_geometry_claim": true,
+    "no_unsupported_dimensions": true,
+    "no_colour_system_assignment": true,
+    "no_attachments": true
+   },
+   "content_findings": {},
+   "content_safe_to_send": true,
+   "sendable": true,
+   "blocking_checks": [],
+   "codes": [],
+   "status": "READY_NOT_SENT"
+  }
+ ],
+ "ready_requests": [
+  {
+   "supplier": "Liquid Bottles LLC",
+   "destination": "Info@LiquidBottles.com",
+   "destination_owner_approved": true
+  },
+  {
+   "supplier": "SKS Bottle & Packaging",
+   "destination": "Customersupport@sks-bottle.com",
+   "destination_owner_approved": true
+  },
+  {
+   "supplier": "Bottlestore / O.Berk",
+   "destination": "customerservice@bottlestore.com",
+   "destination_owner_approved": true
+  },
+  {
+   "supplier": "Premium Vials",
+   "destination": "support@premiumvials.com",
+   "destination_owner_approved": true
+  },
+  {
+   "supplier": "Nicer Packaging",
+   "destination": "sales@nicerpackaging.com",
+   "destination_owner_approved": true
+  }
+ ],
+ "blocked_requests": [],
+ "blocking_code": null,
+ "blocking_codes": [],
+ "blocking_reason": "none of the 5 is blocked: every request passes the Section 2 content checks and carries an owner-approved destination. None is sent. Sending is the owner's act; this module has no transport and writes no sent count.",
+ "content_validation_passed": true,
+ "attachments_sent": 0,
+ "bodies_modified_after_authorization": true,
+ "body_amendment": {
+  "ruling": "§BH45(a), ruled §BH45(e) OPTION (i) and landed under §BH45(f)(5)",
+  "date": "2026-09-11",
+  "what": "one paragraph added to the single shared body, after the DECORATION paragraph and before the closing lines, asking for the supplier's Pantone, CMYK and spot-colour guidance for the decoration processes it offers — the nineteenth of the nineteen gate requirements, the one the 2026-07-31 body did not ask",
+  "paragraph": "COLOUR — for each decoration process you offer on this item, please state which colour systems you accept artwork in (Pantone, CMYK or spot colours), what you can hold to in each, and any colour tolerance you state.",
+  "prior_body_sha256": "cb5423b8fe27902e7c21fd3a5fd56f3adefeb311d2276cdba4ee9076ff2dd426",
+  "prior_body_length": 2444,
+  "body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+  "body_length": 2661,
+  "reviewed_by": "PROJECT_OWNER — the paragraph previewed in the §BH45 report is the paragraph (§BH45(e)(2)); the letter assigns no colour and the Section 2 colour rule narrowed at ade91aa passes it",
+  "authorization": "the durable authorization of 2026-07-31 covers the amended body by the owner's §BH45(e)(2) and §BH45(f)(5)"
+ },
+ "recipients_resolved": true,
+ "recipients_resolved_at": "2026-07-31",
+ "recipients_resolved_at_source": "supplier_dispatch_manifest.json created_at, where the manifest records recipients_owner_approved",
+ "gates_supported_by_each_request": {
+  "container": [
+   "B_supplier_geometry",
+   "C_flat_artwork"
+  ],
+  "closure": [
+   "B_supplier_geometry"
+  ],
+  "compatibility": [
+   "B_supplier_geometry"
+  ],
+  "material": [
+   "E_material_specification"
+  ],
+  "decoration": [
+   "C_flat_artwork",
+   "D_colour_separation"
+  ]
+ },
+ "what_would_unblock": [],
+ "owner_clarification_required": false,
+ "gate_effect": "NONE - this record moves no gate"
+}

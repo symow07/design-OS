@@ -1,0 +1,299 @@
+{
+  "milestone": "DIP-0C2",
+  "slice_frozen_by": "DIP-0C2a",
+  "frozen": true,
+  "pilot_size": 20,
+  "notes": {
+    "purpose": "One frozen pilot for all of DIP-0C2 (C2a-C2d). C2a exercises segmentation; family/pattern/quality roles are recorded now and consumed in later slices.",
+    "expectations_grounded": "Every expected_segmentation_capability was verified by a real run during the C2a probe.",
+    "eps_boundary": "EPS contributes only header/preview-level facts. The Illustrator TIFF previews here are a 2-samples/px palette subset PIL cannot decode, so EPS-with-preview resolves to UNAVAILABLE, not PREVIEW_DERIVED. The PREVIEW_DERIVED code path is exercised by a synthetic decodable-preview EPS fixture in the tests.",
+    "unsafe_svg": "No unsafe SVG exists in materials/; SVG script/entity/remote rejection during segmentation is covered by a synthetic test fixture, not a pilot file.",
+    "exact_dup_pair_sha256": "6ecf3b0c95a11b4b3505907b2a4068cd4ce88f421ff55f124e34e96634fb40f3",
+    "no_mid_implementation_expansion": "Do not add pilot entries during implementation without recording the reason here.",
+    "expectation_corrections": [
+      "344195-PC2FZA-950.ai: role single_asset_vector_natural -> multi_artboard_vector; expected WHOLE_FILE_SINGLE_ASSET -> VECTOR_GEOMETRY_MULTI. The freeze probe checked page 0 only; the file has 2 artboards -> 2 candidates. No entry added or removed; expectation corrected and grounded on the full multi-page run. The single-asset control is single_asset_vector_fallback (LOGO6.ai -> 1 via whole-file fallback)."
+    ]
+  },
+  "entries": [
+    {
+      "relative_path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/acid-cosmetics-make-up-stickers-collection/9347862.ai",
+      "inventory_category_original": "MOTIF",
+      "c1_participation": {
+        "c1": "collection_sheet/motif_ai"
+      },
+      "c2_test_role": "collection_sheet_vector",
+      "format": ".ai",
+      "difficulty": "hard",
+      "expected_segmentation_capability": "VECTOR_GEOMETRY_MULTI",
+      "expected_family_relationship": "collection_parent",
+      "ownership_licensing_risk": "unverified_owner",
+      "selection_rationale": "probe: segment_page yields 6 candidates — a sticker sheet must split, not become one reusable asset"
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/LOGO6.ai",
+      "inventory_category_original": "LOGO",
+      "c1_participation": {
+        "c1": "brand_logo_ai"
+      },
+      "c2_test_role": "single_asset_vector_fallback",
+      "format": ".ai",
+      "difficulty": "medium",
+      "expected_segmentation_capability": "WHOLE_FILE_SINGLE_ASSET",
+      "expected_family_relationship": "none",
+      "ownership_licensing_risk": "bbrose_brand_candidate",
+      "selection_rationale": "probe: segment_page yields 0 clusters (8 paths below dieline thresholds) — must fall back to ONE whole-file candidate, never zero"
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/abstract-background-with-rounded-shapes/344195-PC2FZA-950.ai",
+      "inventory_category_original": "BACKGROUND",
+      "c1_participation": {
+        "c1": "background_ai"
+      },
+      "c2_test_role": "multi_artboard_vector",
+      "format": ".ai",
+      "difficulty": "medium",
+      "expected_segmentation_capability": "VECTOR_GEOMETRY_MULTI",
+      "expected_family_relationship": "none",
+      "ownership_licensing_risk": "unverified_owner",
+      "selection_rationale": "CORRECTED during C2a implementation (see notes.expectation_corrections): the initial probe checked page 0 only and saw 1 candidate; the file actually has 2 ARTBOARDS, each yielding one asset (2 candidates total). Kept as the page/artboard-provenance fixture. Single-asset control is now single_asset_vector_fallback (LOGO6 -> 1)."
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/9993170.ai",
+      "inventory_category_original": "REUSABLE_VECTOR_ASSET",
+      "c1_participation": {
+        "c1": "clean_vector_medium"
+      },
+      "c2_test_role": "multi_candidate_vector",
+      "format": ".ai",
+      "difficulty": "medium",
+      "expected_segmentation_capability": "VECTOR_GEOMETRY_MULTI",
+      "expected_family_relationship": "none",
+      "ownership_licensing_risk": "unverified_owner",
+      "selection_rationale": "probe: 1426 paths → 4 candidates; a multi-element illustration"
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/5955567.ai",
+      "inventory_category_original": "REUSABLE_VECTOR_ASSET",
+      "c1_participation": {
+        "c1": "jpeg_shell_ai"
+      },
+      "c2_test_role": "jpeg_shell_vector",
+      "format": ".ai",
+      "difficulty": "medium",
+      "expected_segmentation_capability": "WHOLE_FILE_SINGLE_ASSET",
+      "expected_family_relationship": "cross_format_family:595556x",
+      "ownership_licensing_risk": "unverified_owner",
+      "selection_rationale": "C1 JPEG-shell (116% raster, 19 paths); segmentation must not manufacture vector regions from an embedded raster"
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/نماذج عامة من  01الانترنيت/1_5061030170064.svg",
+      "inventory_category_original": "REUSABLE_VECTOR_ASSET",
+      "c1_participation": {
+        "c1": "svg"
+      },
+      "c2_test_role": "safe_svg",
+      "format": ".svg",
+      "difficulty": "easy",
+      "expected_segmentation_capability": "VECTOR_GEOMETRY",
+      "expected_family_relationship": "none",
+      "ownership_licensing_risk": "unverified_owner",
+      "selection_rationale": "probe: 35 rect nodes, safe; segment via native element tree"
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/background-remover(1)/Weixin Image_20250919141742_67_18.png",
+      "inventory_category_original": "BACKGROUND",
+      "c1_participation": {
+        "c1": false
+      },
+      "c2_test_role": "raster_cutout_single",
+      "format": ".png",
+      "difficulty": "medium",
+      "expected_segmentation_capability": "RASTER_REGION_AUTO_CONFIDENT",
+      "expected_family_relationship": "none",
+      "ownership_licensing_risk": "unverified_owner_stock_suspected",
+      "selection_rationale": "probe: background-removed RGBA cutout → 1 connected component (AUTO_CONFIDENT single subject)"
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/background-remover(1)/Weixin Image_20250918113158_44_18.png",
+      "inventory_category_original": "BACKGROUND",
+      "c1_participation": {
+        "c1": false
+      },
+      "c2_test_role": "raster_cutout_lowres",
+      "format": ".png",
+      "difficulty": "medium",
+      "expected_segmentation_capability": "RASTER_REGION_AUTO_CONFIDENT",
+      "expected_family_relationship": "none",
+      "ownership_licensing_risk": "unverified_owner_stock_suspected",
+      "selection_rationale": "probe: 558x546 RGBA cutout, 1 component; low-resolution single subject"
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/flat-black-friday-stickers-collection/5955566.jpg",
+      "inventory_category_original": "MOTIF",
+      "c1_participation": {
+        "c1": false
+      },
+      "c2_test_role": "raster_sticker_sheet",
+      "format": ".jpg",
+      "difficulty": "hard",
+      "expected_segmentation_capability": "RASTER_REGION_MULTI",
+      "expected_family_relationship": "cross_format_family:595556x",
+      "ownership_licensing_risk": "unverified_owner",
+      "selection_rationale": "probe: 2000x2000 rendered sheet → 13 large connected components; a real multi-region raster that must split"
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/24-hours-day-service-availability-fluid-background/SL-041222-49680-07.jpg",
+      "inventory_category_original": "BACKGROUND",
+      "c1_participation": {
+        "c1": "raster_background_jpg"
+      },
+      "c2_test_role": "raster_full_bleed",
+      "format": ".jpg",
+      "difficulty": "hard",
+      "expected_segmentation_capability": "RASTER_REGION_LOW_CONFIDENCE",
+      "expected_family_relationship": "cross_format_pair:SL-041222",
+      "ownership_licensing_risk": "unverified_owner",
+      "selection_rationale": "probe: 4001x4001 fluid abstract background, no clean fg/bg separation → AUTO_LOW_CONFIDENCE / MANUAL_REVIEW_REQUIRED, never a bogus split"
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/247-services-full-time-support-your-business-logo-design-full-vector-illustration-art-work/2e19e85b-ebd3-49fd-a259-bd3cd25bc3dd.eps",
+      "inventory_category_original": "REUSABLE_VECTOR_ASSET",
+      "c1_participation": {
+        "c1": "eps_binary_tiff_preview"
+      },
+      "c2_test_role": "eps_with_preview_undecodable",
+      "format": ".eps",
+      "difficulty": "hard",
+      "expected_segmentation_capability": "UNAVAILABLE_PREVIEW_NOT_DECODABLE",
+      "expected_family_relationship": "cross_format_pair:2e19e85b",
+      "ownership_licensing_risk": "unverified_owner",
+      "selection_rationale": "probe: valid TIFF preview present (1612x1612) BUT a 2-samples/px palette subset PIL cannot decode (SyntaxError: unknown pixel mode) → not a USABLE preview → UNAVAILABLE; a decodable-preview EPS is covered by a synthetic test fixture"
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/24-hours-day-concept-clock-face-with-dial-arrow-around-day-night-interface-icon-use-web-design/icsinto_499.eps",
+      "inventory_category_original": "ICON",
+      "c1_participation": {
+        "c1": "eps_ascii_no_preview/icon_eps"
+      },
+      "c2_test_role": "eps_without_preview",
+      "format": ".eps",
+      "difficulty": "easy",
+      "expected_segmentation_capability": "UNAVAILABLE",
+      "expected_family_relationship": "none",
+      "ownership_licensing_risk": "unverified_owner",
+      "selection_rationale": "probe: ASCII EPS, no bitmap preview → segmentation UNAVAILABLE; no geometry without Ghostscript"
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/24-hours-day-service-availability-fluid-background/SL-041222-49680-07.eps",
+      "inventory_category_original": "BACKGROUND",
+      "c1_participation": {
+        "c1": false
+      },
+      "c2_test_role": "process_cmyk_eps",
+      "format": ".eps",
+      "difficulty": "medium",
+      "expected_segmentation_capability": "UNAVAILABLE",
+      "expected_family_relationship": "cross_format_pair:SL-041222",
+      "ownership_licensing_risk": "unverified_owner",
+      "selection_rationale": "probe: process CMYK, zero named spots — absence of spots is NOT a defect; exercises the process-CMYK-vs-spot colour distinction (readiness in C2b)"
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/baby-pattern-collection-four/260107-P4T7LC-198.ai",
+      "inventory_category_original": "PATTERN",
+      "c1_participation": {
+        "c1": "pattern_ai"
+      },
+      "c2_test_role": "vector_pattern",
+      "format": ".ai",
+      "difficulty": "medium",
+      "expected_segmentation_capability": "VECTOR_GEOMETRY",
+      "expected_family_relationship": "none",
+      "ownership_licensing_risk": "unverified_owner",
+      "selection_rationale": "vector pattern; seamlessness verdict is C2b, segmentation here"
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/abstract-graphical-seamless-pattern-vector-illustration/00b8725f-e97e-4e94-91ac-e0f1f8b82b7c.jpg",
+      "inventory_category_original": "PATTERN",
+      "c1_participation": {
+        "c1": false
+      },
+      "c2_test_role": "raster_pattern_tile",
+      "format": ".jpg",
+      "difficulty": "medium",
+      "expected_segmentation_capability": "RASTER_REGION",
+      "expected_family_relationship": "none",
+      "ownership_licensing_risk": "unverified_owner",
+      "selection_rationale": "raster pattern tile; edge-continuity seamlessness test is C2b"
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/5955564.eps",
+      "inventory_category_original": "REUSABLE_VECTOR_ASSET",
+      "c1_participation": {
+        "c1": false
+      },
+      "c2_test_role": "cross_format_family_eps",
+      "format": ".eps",
+      "difficulty": "medium",
+      "expected_segmentation_capability": "UNAVAILABLE",
+      "expected_family_relationship": "cross_format_family:595556x + exact_dup",
+      "ownership_licensing_risk": "unverified_owner",
+      "selection_rationale": "EPS member of the 595556x numeric family (also byte-identical to a sibling in flat-black-friday — exact-dup fixture)"
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/5955567.ai",
+      "inventory_category_original": "REUSABLE_VECTOR_ASSET",
+      "c1_participation": {
+        "c1": "jpeg_shell_ai"
+      },
+      "c2_test_role": "cross_format_family_ai",
+      "format": ".ai",
+      "difficulty": "medium",
+      "expected_segmentation_capability": "WHOLE_FILE_SINGLE_ASSET",
+      "expected_family_relationship": "cross_format_family:595556x",
+      "ownership_licensing_risk": "unverified_owner",
+      "selection_rationale": "AI member of the 595556x family (same as jpeg_shell_vector; recorded for cross-format family grouping in C2c)"
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/flat-black-friday-stickers-collection/5955564.eps",
+      "inventory_category_original": "MOTIF",
+      "c1_participation": {
+        "c1": false
+      },
+      "c2_test_role": "exact_duplicate_sibling",
+      "format": ".eps",
+      "difficulty": "easy",
+      "expected_segmentation_capability": "UNAVAILABLE",
+      "expected_family_relationship": "exact_dup_of:595556x_eps",
+      "ownership_licensing_risk": "unverified_owner",
+      "selection_rationale": "byte-identical copy of cross_format_family_eps in a different package — exact SHA-256 duplicate fixture"
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/خدمات لوجستيه وشركات شحن/transport-logistic-manager-checking-control-logistic-network-distribution-customer.jpg",
+      "inventory_category_original": "RASTER_DESIGN_ASSET",
+      "c1_participation": {
+        "c1": false
+      },
+      "c2_test_role": "colorway_version_family_a",
+      "format": ".jpg",
+      "difficulty": "medium",
+      "expected_segmentation_capability": "RASTER_REGION",
+      "expected_family_relationship": "colorway_version_family:transport-logistic",
+      "ownership_licensing_risk": "unverified_owner_stock_suspected",
+      "selection_rationale": "base of a filename-normalised version/colorway family"
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/خدمات لوجستيه وشركات شحن/transport-logistic-manager-checking-control-logistic-network-distribution-customer(1).jpg",
+      "inventory_category_original": "RASTER_DESIGN_ASSET",
+      "c1_participation": {
+        "c1": false
+      },
+      "c2_test_role": "colorway_version_family_b",
+      "format": ".jpg",
+      "difficulty": "medium",
+      "expected_segmentation_capability": "RASTER_REGION",
+      "expected_family_relationship": "colorway_version_family:transport-logistic + near_dup",
+      "ownership_licensing_risk": "unverified_owner_stock_suspected",
+      "selection_rationale": "(1) sibling — filename-normalised family member and a likely raster perceptual near-duplicate of the base"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+ "record_type": "vq2_a2_artwork_review/1.0",
+ "created_at": "2026-07-29",
+ "state": "VQ2_HARD_STOP_REVIEW_REQUIRED",
+ "vq2_a2_created": false,
+ "stop_grounds": [
+  "VQ2_APPROVED_LOGO_MANUAL_RECONSTRUCTION_NOT_POSSIBLE",
+  "VQ2_CUSTOM_LETTERING_BELOW_FIDELITY_GATE"
+ ],
+ "owner_ruling": [
+  "VQ2_OWNER_SELECTED_APPROVED_BRAND_MARK",
+  "VQ2_CONCEPT_BRAND_MARK_NONAUTHORITATIVE",
+  "VQ2_INTENTIONAL_BRAND_CORRECTION_AGAINST_CONCEPT"
+ ],
+ "authorities": [
+  "VQ2_REFERENCE_WIDTH_IS_PROJECTED",
+  "VQ2_FRONT_APPEARANCE_WIDTH_AUTHORITY",
+  "VQ2_PRODUCTION_FLAT_WIDTH_BLOCKED"
+ ],
+ "logo_components_meeting_gate": 7,
+ "logo_components_total": 9,
+ "logo_worst_iou": 0.6163,
+ "glyphs_meeting_gate": 0,
+ "glyphs_total": 13,
+ "glyph_worst_iou": 0.6392,
+ "is_manual_redraw": false,
+ "image_trace_used": false,
+ "vq2_a1_preserved": true,
+ "m3_identity": "4ecc8e9df1d1",
+ "m3_modified": false,
+ "inspections_run": 0,
+ "provider_calls": 0,
+ "image_generation_calls": 0,
+ "material_realization_added": false,
+ "vq3_started": false,
+ "packaging_modified": false,
+ "supplier_requests_sent": false,
+ "production_flat_artwork": "BLOCKED_PENDING_WRAP_AND_SUPPLIER_EVIDENCE",
+ "human_accepted": false,
+ "owner_decision_required": "VQ2-A2 was NOT created. Both construction inputs it depends on failed measurement.\n\n1 APPROVED LOGO \u2014 \u00a72 requires a clean MANUAL vector reconstruction. I cannot perform one: that means a human designer redrawing the mark in Illustrator. What I can do is automated contour extraction, and I measured it honestly. Seven of nine components reach >=0.96 IoU, but REGISTERED_RING reaches 0.62 and R_STEM 0.92. The registered symbol is precisely an element \u00a72 requires preserved; shipping it 38% wrong would be an accidental redesign of a registered mark. Options: (A) commission a manual vector redraw, (B) obtain the original vector logo from the brand owner, (C) accept an automated reconstruction with the measured per-component IoU on record.\n\n2 CUSTOM LETTERING \u2014 every one of the 13 glyphs failed the 0.95 threshold (range 0.639-0.920). The cause is source resolution, not method: the product name is only 40-75 px of cap height in the photograph, and a high-contrast Didone's hairlines and serif brackets are 1-2 px there, at or below the render noise floor. One glyph degenerated to 20 contours and 214 nodes, which is noise rather than a letterform. No amount of tolerance tuning recovers detail the source does not contain. Options: (A) supply a higher-resolution render or the original artwork, (B) licence a condensed Didone, (C) commission manual lettering.\n\nDelivered regardless: the owner brand ruling, the two-authority separation (which unblocks concept-front width and confines the flat-width blocker to production artwork), the full per-component and per-glyph feasibility evidence, and the M3 freeze verification.",
+ "pdf": {
+  "path": "docs/visual_quality/vq2/vq2_a2_artwork_review.pdf",
+  "sections": 18,
+  "size_bytes": 7566861
+ },
+ "png": {
+  "path": "docs/visual_quality/vq2/vq2_a2_artwork_review.png",
+  "size": [
+   1500,
+   735
+  ]
+ },
+ "sections": 18
+}

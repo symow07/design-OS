@@ -1,0 +1,20 @@
+§AD0(a) PREDICTION — T38a RUN 3 (relaunch after the run-2 refusal), sealed
+BEFORE the relaunch. Run 1: killed by the session teardown (history; orphan
+ledger line kept). Run 2: REFUSED by the suite gate — PostgreSQL 16 down
+after the machine's reboot (a stale pre-reboot postmaster.pid blocked the
+launch agent; the three WorkflowTraceTests error at setup on connection
+refused); history, §BH24 2/3. Remedy before this run: the stale pid file
+removed, the service respawned by launchd, pg_isready accepting, the suite
+gate's two files run alone to green.
+
+Every leg of pred_t38a (d55930e60ea72688) stands EXCEPT, as pred_t38a_b
+(1437076f27d26b8f) already declared: L5 — 2 files, insertions 135 (133 +
+TWO ledger lines: the run-1 orphan + this run's), deletions 0; L7 — ledger
+472 → 474, HEAD~1 a byte-prefix of HEAD, both new lines verdict OK,
+refusal_count 0. L6: "TIER_2=GREEN collected=8569 failures=0 apps=7757
+dip0c=671 dip0=141". L1: the register only (133/0, prefix
+bf3b57768546d0cb, tail 9e991adad250d1a4, staged since 2026-09-05); the
+quarantine's 16 files (8,136,268,896 B) and the evidence copy still present
+at the landing; nothing deleted. Launched ONCE more, through the inner-root
+launcher, nothing beside it; a third refusal is the hard stop of the arc's
+budget and is reported, not relaunched.

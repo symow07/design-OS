@@ -1,0 +1,14 @@
+{% comment %}A FINISHED DESIGN'S CARD (the Library's page and Finished designs): its own picture — the design, before the concept
+it was made from — a tag saying when it was finished, its name, what it is, its product and whose approval, and its
+files named in words. The picture and the name open its own page.{% endcomment %}
+<article class="card fin">
+  <a class="frame" href="{{ f.url }}">{% if f.picture %}<img src="{{ f.picture }}" alt="{{ f.title }}" loading="lazy"{% if "/dielines/" in f.picture %} class="sheet"{% endif %}>{% else %}<span class="ph-fill still"><svg class="i" aria-hidden="true"><use href="#i-image"/></svg><span>No picture on record</span></span>{% endif %}</a>
+  <div class="fin-t">
+    <span class="tag done"><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg>Finished {{ f.finished|date:"j M Y" }}</span>
+    <a class="nm" href="{{ f.url }}">{{ f.title }}</a>
+    <span class="sub">{{ f.target }}{% if f.product %} · {{ f.product }}{% endif %}{% if f.approver %} · approved by {{ f.approver }}{% endif %}</span>
+    {% if f.picture_is == "concept" %}<span class="sub">Shown by the concept it was made from</span>{% endif %}
+    {% if f.files %}<span class="files"><svg class="i i-sm" aria-hidden="true"><use href="#i-files"/></svg>{% for words, url in f.files %}<a href="{{ url }}" download>{{ words }}</a>{% endfor %}</span>
+    {% else %}<span class="sub">No files on record</span>{% endif %}
+  </div>
+</article>

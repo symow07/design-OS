@@ -1,0 +1,226 @@
+{
+  "input_quality": {
+    "schema_version": "visual_inspector_input_quality/1.0",
+    "evaluated_at": "2026-07-28T07:55:56.471183+00:00",
+    "component_under_review": "FULL_ASSEMBLY",
+    "candidate_path": "docs/visual_quality/vq1_master/vis/m3_full.png",
+    "candidate_sha256": "0260718a921876524ada1ad59ba2583e35556de4b139d1795208ab6fcd17c43c",
+    "measurement": {
+      "component": "FULL_ASSEMBLY",
+      "found": true,
+      "image_size": [
+        495,
+        1100
+      ],
+      "bbox": [
+        81,
+        45,
+        413,
+        1057
+      ],
+      "width_px": 333,
+      "height_px": 1013,
+      "percent_of_image": 61.952,
+      "touches_image_edge": false,
+      "truncated_sides": false,
+      "truncated_top": false,
+      "continues_below_frame": false,
+      "assembly_top_px": 45,
+      "assembly_bottom_px": 1057
+    },
+    "floors_applied": {
+      "min_height_px": 512,
+      "min_width_px": 180
+    },
+    "override_record": null,
+    "checks": {
+      "target_found": true,
+      "meets_min_height": true,
+      "meets_min_width": true,
+      "not_clipped": true,
+      "sharp_enough": true,
+      "contrast_sufficient": true,
+      "aspect_preserved": true,
+      "evidence_full_reference": true,
+      "evidence_reference_component_crop": true,
+      "evidence_full_candidate": true,
+      "evidence_candidate_component_crop": true,
+      "evidence_previous_candidate": true,
+      "evidence_equal_scale_overlay": true,
+      "labels_match_bytes": true,
+      "reference_candidate_scale_compatible": true
+    },
+    "findings": [],
+    "quality_gate": "PASSED",
+    "verdict_if_failed": null,
+    "note": "these are model-input legibility floors, not production dimensions; they carry no geometric authority"
+  },
+  "delivered_sizes": {
+    "ref_full": [
+      399,
+      1100
+    ],
+    "ref_closure": [
+      544,
+      900
+    ],
+    "ref_junction": [
+      402,
+      460
+    ],
+    "m3_full": [
+      495,
+      1100
+    ],
+    "m3_closure": [
+      1241,
+      900
+    ],
+    "m3_junction": [
+      1517,
+      460
+    ],
+    "m3_shoulder": [
+      2763,
+      676
+    ]
+  },
+  "inspections": {
+    "A_REFERENCE_FIDELITY_CRITIC": {
+      "scores": {
+        "rounded_dome": {
+          "score": 7,
+          "finding": "Candidate dome is rounded and arch-shaped, broadly matching the reference silhouette. However the dome radius is tighter/more pointed than the reference's generous hemispherical cap, making it look slightly tombstone-shaped rather than fully domed.",
+          "critical_blocker": false,
+          "confidence": 0.82
+        },
+        "dark_shaft": {
+          "score": 6,
+          "finding": "A dark shaft is present and near-constant in width, consistent with the reference. However the shaft in the candidate appears noticeably wider relative to the dome than in the reference, reducing structural accuracy.",
+          "critical_blocker": false,
+          "confidence": 0.8
+        },
+        "lower_flare": {
+          "score": 5,
+          "finding": "The candidate shows a pronounced outward flare/skirt at the base of the dark component, which is structurally present in the reference. However the flare in the candidate is significantly wider and more exaggerated than the reference's compact skirt, distorting proportions.",
+          "critical_blocker": false,
+          "confidence": 0.85
+        },
+        "flare_symmetry": {
+          "score": 6,
+          "finding": "The flare appears roughly bilaterally symmetric in the candidate, consistent with the reference. The left and right curves of the skirt are reasonably balanced, though the overall exaggerated width diminishes fidelity.",
+          "critical_blocker": false,
+          "confidence": 0.78
+        },
+        "collar_sleeve": {
+          "score": 2,
+          "finding": "Critical structural defect: the reference shows a tall, cylindrical, rose-gold metallic collar band as a distinct component between the dark dropper and the bottle neck. The candidate replaces this with a short, flat, light-beige/cream rounded disc with no cylinder height, losing the defining collar form entirely.",
+          "critical_blocker": true,
+          "confidence": 0.95
+        },
+        "collar_closure_junction": {
+          "score": 2,
+          "finding": "In the reference the dark skirt sits on top of the tall gold collar creating a clear horizontal ledge junction. In the candidate the dark flare merges directly onto the shallow beige disc without a proper stepped junction, making the structural boundary ambiguous.",
+          "critical_blocker": true,
+          "confidence": 0.92
+        },
+        "neck_transition": {
+          "score": 3,
+          "finding": "The reference shows a distinct bottle neck narrowing below the collar. The candidate's neck transition is barely visible; the bottle body widens almost immediately under the shallow disc with no clear neck constriction.",
+          "critical_blocker": false,
+          "confidence": 0.8
+        },
+        "shoulder_transition": {
+          "score": 5,
+          "finding": "The candidate bottle shoulder transitions from the cylindrical body with a rounded curve, which broadly matches the reference bottle silhouette. The curve is slightly too gradual but the structural form is recognisable.",
+          "critical_blocker": false,
+          "confidence": 0.72
+        },
+        "complete_closure_coherence": {
+          "score": 3,
+          "finding": "The overall closure assembly (dome + shaft + flare + collar) reads as a dropper bottle but lacks the tall gold collar band that defines the reference's visual identity. The flat beige disc is a structurally incorrect substitute, and the exaggerated flare further distorts coherence.",
+          "critical_blocker": true,
+          "confidence": 0.9
+        },
+        "overall": {
+          "score": 3,
+          "finding": "The candidate is an improvement over the previous rejected version in that the dome and shaft are larger and more proportionate, and the flare is now visible. However the tall cylindrical rose-gold collar \u2014 the most structurally distinctive element of the reference closure \u2014 is absent and replaced with a flat beige disc. This is a critical structural blocker preventing passage.",
+          "critical_blocker": true,
+          "confidence": 0.92
+        }
+      },
+      "same_visible_component_family": true,
+      "better_than_previous": true,
+      "verdict": "VISUALLY_IMPROVED_BUT_INSUFFICIENT"
+    },
+    "B_ADVERSARIAL_STRUCTURAL_DEFECT_FINDER": {
+      "scores": {
+        "rounded_dome": {
+          "score": 5,
+          "finding": "Dome is present and rounded but rendered as a flat arch (tombstone silhouette) with no three-dimensional curvature or volume. The reference dome is a full hemisphere with clear roundness; the candidate dome is an arc of near-uniform radius grafted onto a rectangular shaft, giving a gravestone shape rather than a bulbous dome. No shading differentiates dome from shaft.",
+          "critical_blocker": false,
+          "confidence": 0.88
+        },
+        "dark_shaft": {
+          "score": 4,
+          "finding": "Shaft exists and is dark-purple but is rendered as a featureless flat rectangle with zero taper and no cylindrical shading. Reference shaft tapers slightly and has modelled curvature. Candidate shaft has hard flat sides with no three-dimensionality; it reads as a 2D vector shape.",
+          "critical_blocker": false,
+          "confidence": 0.9
+        },
+        "lower_flare": {
+          "score": 3,
+          "finding": "The flare/skirt visible in Image 5 and 6 is exaggerated and structurally incorrect. Reference has a modest, controlled flare where the rubber bulb overhangs the collar; candidate shows a wide bell-shaped flare that expands dramatically outward before meeting the collar \u2014 more like a trumpet skirt than a seating flare. This proportionally misrepresents the component family.",
+          "critical_blocker": true,
+          "confidence": 0.92
+        },
+        "flare_symmetry": {
+          "score": 5,
+          "finding": "The flare itself is bilaterally symmetric, so no left-right asymmetry defect is present. However the flare profile curves unevenly \u2014 right side in Image 6 appears to fade/bleed into the background more than the left, suggesting anti-alias or gradient asymmetry.",
+          "critical_blocker": false,
+          "confidence": 0.75
+        },
+        "collar_sleeve": {
+          "score": 2,
+          "finding": "The gold/rose-gold metallic collar of the reference is entirely absent. What appears in its place is a plain matte cream/beige flat cylinder with no metallic ring detail, no top rim step, no bottom rim step, and no reflective surface. This is a critical missing structural element \u2014 the collar is not just a colour issue, it is a distinct geometric component with rim edges.",
+          "critical_blocker": true,
+          "confidence": 0.97
+        },
+        "collar_closure_junction": {
+          "score": 2,
+          "finding": "Because the collar is missing its distinct metallic ring geometry, the junction between the dark rubber bulb and the collar reads as a simple flat tangent contact with no step, no seating ring, and no dimensional separation. Reference shows a clear recessed throat where the rubber skirt seats into the top of the metallic collar.",
+          "critical_blocker": true,
+          "confidence": 0.93
+        },
+        "neck_transition": {
+          "score": 3,
+          "finding": "The neck of the dark bulb component transitions directly into the wide flare with no distinct narrow neck zone visible as a separate geometric stage. Reference shows a clearly pinched narrow cylindrical neck between the body of the bulb and the seating flare. In the candidate the transition is a single continuous taper.",
+          "critical_blocker": false,
+          "confidence": 0.85
+        },
+        "shoulder_transition": {
+          "score": 4,
+          "finding": "The shoulder step between the collar/cap and the bottle body is geometrically present (collar overhangs bottle shoulder) but the collar has no bottom-rim step ring and no chamfer, making the transition look like a simple ledge rather than a machined shoulder. The reference shows a clean, well-defined lower rim on the collar.",
+          "critical_blocker": false,
+          "confidence": 0.8
+        },
+        "complete_closure_coherence": {
+          "score": 2,
+          "finding": "Overall the closure assembly fails coherence: missing metallic collar, oversized bell flare, flat unshaded shaft, and tombstone dome together make the closure read as a single undifferentiated 2D silhouette rather than a three-part assembly (dome bulb + neck + collar). Multiple simultaneous structural defects undermine recognition of the correct component family.",
+          "critical_blocker": true,
+          "confidence": 0.95
+        },
+        "overall": {
+          "score": 2,
+          "finding": "Candidate retains the correct component topology (dark bulb above pale collar above pale bottle) and is marginally improved over the previous candidate in dome size and flare presence, but it introduces a severely exaggerated bell flare and completely omits the rose-gold metallic collar structure. These are critical structural regressions vs. the reference. The piece is not visually representative of the target assembly.",
+          "critical_blocker": true,
+          "confidence": 0.95
+        }
+      },
+      "same_visible_component_family": true,
+      "better_than_previous": true,
+      "verdict": "VISUALLY_IMPROVED_BUT_INSUFFICIENT"
+    }
+  },
+  "calls": 2,
+  "raster_level": "4x (600 dpi verified)"
+}

@@ -1,0 +1,14 @@
+..............................................                           [100%]
+BH41_AMPLIFIER fired=736 K=16
+BH41_DRAIN teardowns=46 median=0.088s p90=0.098s max=1.811s
+
+=============================== warnings summary ===============================
+apps/pipeline/tests/test_browser_review_board_references.py::ReviewBoardReferenceBrowserTests::test_card_metadata_badge_and_actions
+apps/pipeline/tests/test_browser_profile_editor.py::ProfileEditorBrowserTests::test_confirmed_task_shows_confirmed_state_not_the_editor
+apps/pipeline/tests/test_browser_profile_editor.py::ProfileEditorResponsiveA11yTests::test_focus_visible_styling_is_declared
+apps/pipeline/tests/test_browser_profile_editor.py::ConfirmationDialogBrowserTests::test_409_refusal_preserves_editor_and_state
+  /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/django/core/handlers/base.py:61: UserWarning: No directory at: /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/staticfiles/
+    mw_instance = middleware(adapted_handler)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+46 passed, 4 warnings in 51.36s

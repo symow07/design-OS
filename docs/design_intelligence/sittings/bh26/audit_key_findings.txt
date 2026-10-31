@@ -1,0 +1,653 @@
+####################################################################################################
+FINDER gate-clauses
+NOTES(full): SUMMARY OF THE SIMULATION. Current staged tree: stages 1-6 pass (extent 4 clauses, Tier-1 118 passed, record_integrity OK re-measured in-process, reserved_copy OK, brand_strings OK); TIER_2 refuses at the FIRST clause of check_manifest (A327(a) digest pre-check) because ppp:1970 still pins 65aef9fb1a3660cd while the staged manifest hashes fe4199bc421b7454. The digest early-return means A327(a) file-set, (b) tier-1 floors, (c) total floor were never evaluated at attempt 3; DIP0C/DIP0 floors were evaluated at attempt 3 (main L370-386 runs them before the refusal print) and pass (671/671, 135/135). FOURTH FOLD PRICE (not performed): rebinding ppp:1970 -> fe4199bc421b7454 clears the only current refusal (in-memory check_manifest -> [] / 7690); it moves protocol_identity 0e9cd7a2b94ccc82 -> c7924c5a4215f3cf (measured), so tcp:617 must be re-pinned to c7924c5a4215f3cf or Tier-1 fails; no other tracked file pins either identity (git grep). Under the fold every measured clause is NO-fire; the remaining unmeasured risk is the three full-suite legs (12 min; modified Django test files test_container_target.py / test_wif_reconstruct_container.py not run here; the 6 new pure tests pass). Disposition: register has zero consumable AMBER allowance (4 entries at allowed 0, 2 at 1/1 spent), so any leg failure -> REFUSE; a --commit with zero failures consumes nothing. STRUCTURAL OBSERVATIONS: (1) five floors sit at exact equality with the live collection (tier-1 52/52 and 66/66, total 7690/7690, dip0c 671/671, dip0 135/135) — any single test removal anywhere fires; (2) tier2_gate has no module-level _PP (function-local import at L171), so 'tier2_gate._PP' as written in the task would AttributeError — the same module object was reached via sys.modules; (3) guarded_commit.sh L147 cites 'palette_powder_protocol.py:2065' for EXTENT_DIGESTS, stale (dict opens at 1861, key at 1970) — comment only; (4) the fold would also require staging the two .py edits and would append ledger line 436 during its own gate run (APPEND_ONLY-legitimate), which guarded_commit.sh L337-341 stages into the commit; (5) /usr/bin/git is blocked by an unaccepted Xcode license on this machine (exit 69) — the parent's future gate run invokes bare 'git' at guarded_commit.sh L337/L340/L343 and tier2_gate.py L401 and will hit the same shim unless PATH resolves a working git; this is a real environmental hazard for any eventual commit and for tier2's HEAD-stamped capture filename (subprocess 'git rev-parse --short HEAD' would fail, yielding an empty head in the capture name — not a refusal). Log file read in full: /Users/symow/bh26_work/a3_gate.log (4 lines). Files relied on: /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/tools/guarded_commit.sh, tools/tier2_gate.py, tools/extent_gate.py, tools/record_integrity.py, tools/flake_gate.py, apps/pipeline/services/palette_powder_protocol.py, apps/pipeline/tests/test_characterization_protocol.py, docs/roadmap/palt_m6/{suite_file_manifest.json,record_digest_manifest.json,flake_register.json,record_gate_ledger.jsonl,suite_manifest_diffs.json}.
+
+--------------------------------------------------------------------------------
+[CL-TIER1] CLAUSE live=True cur=NO 4th=NO conf=high  tools/guarded_commit.sh:199
+QUOTE: 199: ${=SUITE_CMD} > "${SUITE_OUTPUT}" 2>&1 | 208: GATE=$(sed -n 's/.*"suite_exit": \([0-9][0-9]*\).*/\1/p' "${ARTIFACT}") | 209: if [[ "${GATE}" != "0" ]]; then
+EVIDENCE: Measured at attempt 3 on this exact staged tree: .suite_gate_output '118 passed, 2 subtests passed in 35.89s'; .suite_gate_result suite_exit 0. Under the fold the ONLY live Tier-1 consumer of protocol_identity is tcp:617 (assertEqual(status["protocol_identity"], ...)) — git grep across tracked files for 0e9cd7a2b94ccc82/c7924c5a4215f3cf finds only tcp:617 (plus a comment at tcp:594 and record_digest_manifest.json:10446 for fe4199bc). In-memory fold measured: protocol_status()['protocol_identity'] = c7924c5a4215f3cf, so a tcp:617 re-pin to c7924c5a4215f3cf passes. No Tier-1 test compares EXTENT_DIGESTS['suite_file_manifest'] to the on-disk manifest digest (grep for manifest_digest/check_manifest/collected_counts in apps test files: 0 live hits; the only consumer of EXTENT_DIGESTS['suite_file_manifest'] anywhere is tools/tier2_gate.py:172). test_the_two_copies_of_the_tier1_floors_agree (tcp:1022-1075) reads guarded_commit.sh shell {52,66} >= manifest {52,66}: holds. test_the_manifest_on_disk_carries_no_stale_floor (tcp:1003-1020): 66>=59, 7690>=7353: holds.
+--------------------------------------------------------------------------------
+[CL-A327A-DIGEST] PIN live=True cur=YES 4th=NO conf=high  apps/pipeline/services/palette_powder_protocol.py:1970
+QUOTE: 1970:     "suite_file_manifest": "65aef9fb1a3660cd",
+EVIDENCE: tier2_gate.py:172-177 reads _PP.EXTENT_DIGESTS['suite_file_manifest'] and compares to sha256(manifest bytes)[:16] BEFORE reading the manifest. Measured in-process: collected_counts rc=0 files=372 total=7690; check_manifest(counts) -> (["MANIFEST_DIGEST_MISMATCH: fe4199bc421b7454 != hashed 65aef9fb1a3660cd — the manifest was edited outside the identity chain"], 0) — total returned is 0 because of the early return at L175-177, so clauses (a)(b)(c) are NOT evaluated in the current config. HEAD:./ppp line 1970 is byte-identical ('65aef9fb1a3660cd'); the staged ppp diff is exactly one hunk @@ -2195 +2195 @@ (record_digest_manifest ff18cb2d74866a94 -> cbba67bee1c29105). With EXTENT_DIGESTS['suite_file_manifest'] set in memory to fe4199bc421b7454: check_manifest -> refusals [] total 7690; restored value verified 65aef9fb1a3660cd afterwards. Note: tier2_gate has NO module attribute _PP (hasattr False before and after check_manifest — the import at L171 is function-local); the mutation was done on sys.modules['apps.pipeline.services.palette_powder_protocol'], the same object check_manifest imports.
+--------------------------------------------------------------------------------
+[CL-FULL-SUITE-LEGS] CLAUSE live=True cur=N/A 4th=UNKNOWN conf=medium  tools/tier2_gate.py:394
+QUOTE: 394:     proc = subprocess.run(PYTEST, capture_output=True, text=True, cwd=ROOT) | 408:     dip_failures, dip_rc, dip_out = dip0c_run() | 413:     dip0_failures, dip0_rc, dip0_out = dip0_run()
+EVIDENCE: Never reached in the current config (main returns 1 at L387-393 before L394) and NOT run here (~12 min, writes .tier2_captures, Django/Postgres test DB). Last full run evidence: .tier2_captures/20260902T015228Z_7108fc6*.txt (the gate that produced 8bbe57e): apps 'returncode=0 / 7681 passed, 3 skipped, 606 warnings, 41596 subtests passed in 720.45s', dip0c '671 passed', dip0 '135 passed'; t26g_gate.log L1 'TIER_2=GREEN collected=8490 failures=0 apps=7684 dip0c=671 dip0=135'. The staged tree adds 6 tests (test_container_font_owner_grant.py — run here with -p no:cacheprovider, basetemp outside repo: 6 passed in 0.11s) and modifies test_container_target.py (+12 −8) and test_wif_reconstruct_container.py (+27 −8), which are Django TestCase suites and were NOT run by this audit; pred_a3.txt L6 claims a targeted 124-passed pre-gate run (parent's claim, not measured here). Under the fold, the only suite-wide consumer of the moved identity is tcp:617 (re-pinned); no other test reads EXTENT_DIGESTS['suite_file_manifest'].
+--------------------------------------------------------------------------------
+[CL-DISPOSITION] CLAUSE live=True cur=N/A 4th=NO conf=high  tools/tier2_gate.py:246
+QUOTE: 246: def disposition(failures, register=None, consume=False): | 251:     if not failures: | 252:         return "GREEN", details | 266:         elif entry["invocations_allowed"] == 0: | 269:         elif entry["invocations_used"] >= entry["invocations_allowed"]: | 446:     consume = "--commit" in argv | 449:         json.dump(reg, open(REGISTER, "w"), indent=1, sort_keys=True)
+EVIDENCE: REGISTER = docs/roadmap/palt_m6/flake_register.json (L47), record_type flake_register/1.0, owner_approved false, 6 flakes: 4 at invocations_allowed 0 (REGISTERED_AT_ZERO -> REFUSE), 2 at allowed 1 / used 1 (INVOCATIONS_SPENT -> REFUSE). NO AMBER allowance is pending or consumable anywhere: any failure in any leg -> REFUSE (rc 1, guarded_commit L291-294). A --commit consumes nothing unless a failure id has remaining allowance (L272-276) — none does — so with zero failures the register file is not rewritten (L448-449 guarded by details['consumed']). Under the fold, if the three legs are green: GREEN, register untouched.
+####################################################################################################
+FINDER full-suite
+NOTES(full): RESULT: THE FULL-SUITE MEASUREMENT WAS NOT COMPLETED. The orchestrator's structured-output enforcer forced this return while leg 1 (apps, ~5,600+ tests judging by 72 dots per 1%) was at ~8% and legs 2/3 had not started; the background pytest is terminated on return. What IS established: (1) exact gate legs and roots — apps leg: cwd inner ROOT, relative venv/bin/python, `pytest apps -q -p no:randomly`; dip0c and dip0 legs: cwd OUTER GIT_ROOT (/Users/symow/Desktop/bbrose-systemOS), absolute inner venv interpreter, targets tools/dip0c/tests and tools/dip0/tests, floors 671 and 135 — quoted verbatim with line numbers in the findings; (2) the current refusal is check_manifest's MANIFEST_DIGEST_MISMATCH (tier2_gate.py:172-177) evaluated at main() line 365, BEFORE the suite run at line 394, so the gate has structurally never reached the suite on any attempt — consistent with the task premise; (3) ppp:1970 is identical in worktree and staged blob ('65aef9fb1a3660cd'); the fourth fold would silence that clause and would move test_characterization_protocol.py:617's pin (per the caller's in-memory measurement, not re-measured here). Partial observation only: the first ~600 tests of the apps leg were all passes (no F/E glyph in the -q progress output); this is NOT a leg verdict. Environmental blocker worth recording: /usr/bin/git is an xcrun shim that refuses (exit 69) until the Xcode licence is accepted; the real binary at /Library/Developer/CommandLineTools/usr/bin/git works. tier2_gate.py:401 calls bare `git rev-parse` and would hit the same refusal in this shell environment. To finish the task in a fresh session: run the three commands in the measurements list sequentially (each ~5-12 min) without a return-forcing deadline, then re-capture the zero-write proof.
+
+--------------------------------------------------------------------------------
+[GATE-CONST-PYTEST] CLAUSE live=True cur=UNKNOWN 4th=UNKNOWN conf=low  tools/tier2_gate.py:49
+QUOTE: PYTEST = [os.path.join("venv", "bin", "python"), "-m", "pytest", "apps",
+          "-q", "-p", "no:randomly"]
+EVIDENCE: Leg 1 (apps). Runs with cwd=ROOT (tools/tier2_gate.py:45 `ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))` = /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os, the INNER root); tools/tier2_gate.py:394 `proc = subprocess.run(PYTEST, capture_output=True, text=True, cwd=ROOT)`. Interpreter is RELATIVE venv/bin/python (only valid from the inner root). Verdict NOT OBTAINED: the run was launched exactly as the gate would (plus -p no:cacheprovider -rfE) but the orchestrator forced StructuredOutput while pytest was at ~8% of collection (all dots so far, zero F/E characters observed in the first ~600 tests, no summary line yet). Returncode unknown. No FAILED/ERROR node ids observed at the point of forced return.
+--------------------------------------------------------------------------------
+[GATE-CONST-DIP0C] CLAUSE live=True cur=UNKNOWN 4th=UNKNOWN conf=high  tools/tier2_gate.py:74
+QUOTE: DIP0C_PYTEST = [os.path.join(ROOT, "venv", "bin", "python"), "-m", "pytest",
+                os.path.join("tools", "dip0c", "tests"), "-q",
+                "-p", "no:randomly"]
+EVIDENCE: Leg 2 (dip0c). Runs with cwd=GIT_ROOT (tools/tier2_gate.py:71 `GIT_ROOT = os.path.dirname(ROOT)` = /Users/symow/Desktop/bbrose-systemOS, the OUTER root); tools/tier2_gate.py:138-139 `proc = subprocess.run(DIP0C_PYTEST, capture_output=True, text=True,\n                          cwd=GIT_ROOT)`. Interpreter is ABSOLUTE <inner>/venv/bin/python; target path tools/dip0c/tests resolved relative to the OUTER root (directory verified present: /Users/symow/Desktop/bbrose-systemOS/tools/dip0c/tests). Floor: tools/tier2_gate.py:80 `DIP0C_FLOOR = 671`. NOT RUN: legs must be sequential and leg 1 had not finished when the orchestrator forced return.
+--------------------------------------------------------------------------------
+[GATE-CONST-DIP0] CLAUSE live=True cur=UNKNOWN 4th=UNKNOWN conf=high  tools/tier2_gate.py:101
+QUOTE: DIP0_PYTEST = [os.path.join(ROOT, "venv", "bin", "python"), "-m", "pytest",
+               os.path.join("tools", "dip0", "tests"), "-q",
+               "-p", "no:randomly"]
+EVIDENCE: Leg 3 (dip0). Runs with cwd=GIT_ROOT (OUTER root); tools/tier2_gate.py:155-156 `proc = subprocess.run(DIP0_PYTEST, capture_output=True, text=True,\n                          cwd=GIT_ROOT)`. Directory verified present: /Users/symow/Desktop/bbrose-systemOS/tools/dip0/tests. Floor: tools/tier2_gate.py:111 `DIP0_FLOOR = 135`. NOT RUN (sequential ordering; leg 1 unfinished at forced return).
+####################################################################################################
+FINDER identity-consumers
+NOTES(full): SUMMARY. Exactly TWO live artefacts bind an identity literal to the ppp chain and both are already known: (1) ppp:1970 EXTENT_DIGESTS['suite_file_manifest']='65aef9fb1a3660cd', whose sole live consumer is tools/tier2_gate.py:172-177 (MANIFEST_DIGEST_MISMATCH) — FIRES NOW (on-disk fe4199bc421b7454), SILENT after the fold; (2) tcp:617 pin '0e9cd7a2b94ccc82' in PowderProtocolDeclarationTests::test_the_declaration_is_pinned_and_honest — PASSES NOW (measured 0e9cd7a2b94ccc82), and passes after the fold only because the fold re-pins it to c7924c5a4215f3cf (measured in memory). A third live clause, _assert_record_manifest_synced (ppp:2245-2267, gating every identity call), is satisfied now (cbba67bee1c29105 on disk == ppp:2195) and unaffected by the fold. No other live consumer compares the identity to anything: the eight service call sites (flake_rig:101 [further hashed into law-era/composite identities], m6_exit_gate:73/368 [printed + stored], axis_diagnosis:133, rigs:406/582, texture_axes:903, ppp:2299) STORE the value into records; m5_closeout:638 and tcp:115 use the DIFFERENT palette_characterization_protocol.protocol_identity (pcp:246, measured 6b187e8b87bdb5e9, not bound to ppp — 'is' check False). The 65 docs records embedding protocol_identity (68 hits, 27 distinct values, none of the three audited literals) plus the FROZEN literal 087c7f64317910fb in palette_instrument_repair_protocol.py:55/:321 are historical stamps read back by no code path. TS::SplitIdentityTests are value-independent (mock live-vs-live). c7924c5a4215f3cf exists NOWHERE on disk today (inner root, docs, outer register). So the fourth fold as priced — two one-literal edits — would leave zero live consumers firing; the outer register OWNER_BLOCKER_CLEARANCE.md would then carry only the HEAD-era ead892658e3323a8 (line 17336) and neither the staged nor the folded identity. Design fact worth noting: pytest cannot see the tier2 digest clause (tcp:1027 records this deliberately; tests load tier2_gate but never call check_manifest), which is precisely why a fully green 124-test sweep coexisted with the TIER_2 refusal. Environment caveat: /usr/bin/git is non-functional here (Xcode licence, exit 69); all git reads used /Library/Developer/CommandLineTools/usr/bin/git. Comment-only note: guarded_commit.sh:147 cites 'palette_powder_protocol.py:2065' for the EXTENT_DIGESTS literal; today the literals sit at :1970 and :2195.
+
+--------------------------------------------------------------------------------
+[A5] RECORD live=False cur=N/A 4th=N/A conf=high  docs/roadmap/palt_m6 (65 JSON files; see evidence):0
+QUOTE: (aggregate) "protocol_identity": <value> — 68 hits, 27 distinct hex values + 1 annotated variant; NONE equals ead892658e3323a8, 0e9cd7a2b94ccc82 or c7924c5a4215f3cf
+EVIDENCE: grep -rhoE '"protocol_identity"[[:space:]]*:[[:space:]]*"[^"]*"' docs | sort | uniq -c: a229810ce00ff35c x11, 087c7f64317910fb x6, ef4c4dd7baf072ee x5, 12bdc94cc3419fbb x5, c2d423674ed411e5 x4, 4bee12abd596d496 x4, eb20aad9698e1825 x3, 37b2b7aadcc186e5 x3, f2438bcae8b86533 x2, ca44a5706d270461 x2, c40f855ff386eb41 x2, 57e586fe4c0a829a x2, 44414377f5af69e0 x2, 3eb1a9b0fe36bfe4 x2, 37074516cb840101 x2, 3586022acc972aff x2, eaa03824272b1075, dddbf4eca7d1d28f, 'a229810ce00ff35c (3e not yet hashed at sweep time)', 950499d757b8d368, 92bfaadcbd6691e9, 6b187e8b87bdb5e9, 52bffe4a622e3dc0, 3eea4ac8a8cd7db9, 399522a75cde1878, 270ae2a1e6db6986, 128b32d942988573 (x1 each). Related keys: protocol_identity_unchanged=087c7f64317910fb in 9 instrument_repair*/axis_instrument* records; protocol_identity_untouched=087c7f64317910fb at docs/roadmap/palt_m6/flake_rig/flake_reflection_report.json:74; protocol_identity_at_run = ca4e1dff06909008 (a600_cross_seed_scope.json:4), 9c2df485891b8e27 (a589_two_measurements.json:4), d7718d0a34f8672d (a559_provenance_refusal_demonstration.json:5, a561_granularity_recompute.json:5), 721cde40dc7c394d (a578_published_record_consistency.json:5); protocol_identity_at_measurement=NOT_STATED_IN_RECORD x3 (establishment_table.json:579,606,633). NO code path compares any stored record identity to the live value: the only readers of a record-shaped 'protocol_identity' are B7 (re-emits a literal) and none in tests (git grep protocol_identity over all three test dirs hits only tcp and TS). Historical stamps, not a live index.
+--------------------------------------------------------------------------------
+[B4] CONSUMER live=True cur=NO 4th=NO conf=high  apps/pipeline/services/palette_flake_rig.py:101
+QUOTE:         "protocol_identity_untouched": PP.protocol_identity(),
+EVIDENCE: PP bound at :44 'from apps.pipeline.services import palette_powder_protocol as PP'. Stored into declaration(); then HASHED FURTHER: declaration_law_era_identity() (:131-144) hashes {_LAW_ERA_KEY: declaration()[_LAW_ERA_KEY]} (_LAW_ERA_KEY='protocol_identity_untouched' at :112), declaration_content_identity() (:115-128) EXCLUDES it, declaration_identity() (superseded, :146+) includes it; all three are emitted into reflection records at :317-319. No comparison against a stored value anywhere (stored copy 087c7f64317910fb sits only in docs flake_reflection_report.json:74, never read back). The value moves with the fold; nothing refuses.
+--------------------------------------------------------------------------------
+[B11] PIN live=True cur=NO 4th=NO conf=high  apps/pipeline/services/palette_instrument_repair_protocol.py:55
+QUOTE:     "protocol_identity": "087c7f64317910fb",
+EVIDENCE: FROZEN dict (:48-56); re-emitted at :321 '"protocol_identity_unchanged": FROZEN["protocol_identity"],' into repair_status(). The module never imports palette_powder_protocol (grep: only the docstring at :4 mentions it), so this stale historical literal is never compared to the live identity. test_instrument_repair.py::A3DerivedStatusTests::test_status_derives_realized_from_the_real_record (:154-160) asserts repair_identity == '1e198aed8d86ed9c' only; that file was NOT in the 124-test sweep but has no identity dependence.
+--------------------------------------------------------------------------------
+[C3] TEST live=True cur=NO 4th=NO conf=high  apps/pipeline/tests/test_characterization_protocol.py:858
+QUOTE:             (root / "docs/roadmap/palt_m6/suite_file_manifest.json")
+EVIDENCE: ExtentManifestDeclaresEveryTestFile (:834; reads at :858) and ExtentFloorsAreMonotonic (:930; reads at :1011 and :1065) parse the manifest's files/tier1_floors/total_floor and compare against disk and guarded_commit.sh's EXPECTED_TARGETS; they never hash the file or read EXTENT_DIGESTS (the only EXTENT_DIGESTS mentions in tcp are comments: :237,240,258,278,282,316,386,411,482,581,598,935). tcp:1027 states the design: 'TIER_1 runs before tier2_gate's digest check'. Passed in the sweep; unaffected by either literal edit.
+####################################################################################################
+FINDER manifest-consumers
+NOTES(full): SUMMARY OF LIVE CONSUMERS OF docs/roadmap/palt_m6/suite_file_manifest.json: (1) tools/tier2_gate.py is the ONLY code that reads its bytes (digest :160-161), file list (:182), tier1_floors (:190) and total_floor (:197); the `generated` stamp is written (:350) and read by nothing — it acts only through the bytes digest. (2) The digest is pinned once, LIVE, at ppp:1970 inside EXTENT_DIGESTS, which is (i) compared by tier2_gate.py:172-177 and (ii) hashed into protocol_identity() (ppp:2279), whose value is pinned once, LIVE, at tcp:617. (3) Record layer: record_digest_manifest.json:10443-10448 pins fe4199bc (REVISABLE) and is consumed by record_integrity.check(); it is in sync (ledger line 435 OK). (4) Four SimpleTestCase tests read the REAL manifest (tcp:854-859, :1009-1011, :1064-1066) and the REAL suite_manifest_diffs.json (:910-912); all four pass now and are untouched by the fourth fold; none pins 371/372/7643/7690 or an entry count/last entry. (5) TIER_1 (guarded_commit.sh:149-152 -> extent_gate.py) reads the SHELL copy 52/66, never the manifest; the two copies agree at 52/66 (manifest raised 51->52 by the 2026-09-01 regeneration). tools/sweep_manifest.py and tools/gate_registration.py are NOT consumers of this file.
+
+PRICING THE FOURTH FOLD (ppp:1970 -> fe4199bc421b7454; tcp:617 -> c7924c5a4215f3cf): under the current staged tree exactly ONE clause fires, tier2_gate MANIFEST_DIGEST_MISMATCH (F02), and everything else measured passes (5 tests green, record layer OK, identity 0e9cd7a2b94ccc82 reproduced). After the ppp:1970 edit alone: F02 stops firing (measured []), clauses (a)/(b)/(c) become reachable and pass with ZERO slack (372==372 files, 52==52, 66==66, 7690==7690), and tcp:617 FAILS (identity moves to c7924c5a4215f3cf, measured in-memory). After both edits nothing measured fires. The fourth fold changes no docs/ record, so record_integrity stays OK and the rdm pin at ppp:2195 stays synced. Two caveats worth the owner's attention: (a) the A387 guard (ppp:2245-2268) is asymmetric — it refuses on an unsynced record_digest_manifest but NOT on an unsynced suite_file_manifest, which is exactly why the stale ppp:1970 was pinnable at tcp:617 and only TIER_2 caught it; (b) the generator is non-idempotent (wall-clock `generated`, tier2_gate.py:343/:350, ppp:1905-1917), so any further --regenerate-manifest would re-mint the digest and re-fire F02, i.e. the fourth fold is only stable if the manifest is never regenerated again before commit A lands.
+
+DIVERGENCES FROM THE BRIEF: the "74->75 entries" figure belongs to record_digest_manifest.json's `diffs` array (HEAD 74, staged 75); suite_manifest_diffs.json went 11 -> 12 entries. Ledger line 435 does not contain fe4199bc — it is the record-gate OK line; the TIER_2 refusal string is printed to .tier2_gate_output, not appended to this ledger. guarded_commit.sh comments :146-148 cite tier2_gate.py:267 and palette_powder_protocol.py:2065 — both line references are stale (actual :362 and :1970/:1861); tcp:505's prose "hashed 65aef9fb1a3660cd on disk, equal to the corpus" is now false as a description of the staged tree (comment only, nothing fires).
+
+--------------------------------------------------------------------------------
+[F12] TEST live=True cur=NO 4th=NO conf=high  apps/pipeline/tests/test_characterization_protocol.py:889
+QUOTE:     def test_the_committed_diff_log_shows_what_this_closed(self):
+EVIDENCE: The ONLY test reader of suite_manifest_diffs.json (:910-912, REAL file). Asserts every entry's removed == [] (:913-918), any(len(added) >= 44) (:919-922), and every file ever added is still declared (:923-927). It does NOT assert the entry count or the last entry — the docstring (:906-912) explicitly rejected `diffs[-1]`. Measured: all removed empty True, any added>=44 True, ever_added-declared []; 12 entries in the staged log (HEAD: 11). PASSED.
+--------------------------------------------------------------------------------
+[F20] CONSUMER live=True cur=NO 4th=NO conf=medium  apps/pipeline/services/palette_m6_exit_gate.py:368
+QUOTE:         "protocol_identity": PP.protocol_identity(),
+EVIDENCE: Services that EMBED the live identity into records they write: palette_m6_exit_gate.py:368, palette_powder_rigs.py:406 and :582, palette_powder_texture_axes.py:903, palette_powder_axis_diagnosis.py:133, palette_flake_rig.py:101 (`"protocol_identity_untouched"`). No test compares a committed docs record's protocol_identity to the live value (test_palette_statistics.py:422 mock.patches protocol_identity; tcp:115 only asserts determinism). 65 docs files carry a "protocol_identity" field; none carries 0e9cd7a2b94ccc82 or c7924c5a4215f3cf (git grep: 0e9c… only at tcp:617). Under the fourth fold any NEWLY written record would carry c7924c5a4215f3cf; nothing committed refuses.
+--------------------------------------------------------------------------------
+[F28] RECORD live=True cur=NO 4th=NO conf=high  docs/roadmap/palt_m6/record_digest_manifest.json:1
+QUOTE: {
+ "counts": {
+  "append_only": 6,
+  "revisable": 1732,
+  "total": 1738
+ },
+EVIDENCE: Counts unchanged HEAD -> staged (1738/6/1732): the new .py is NOT_A_RECORD (ppp:2188). rdm `diffs` 74 -> 75; last entry `{"added": 0, "changed": 3, "changed_names": [record_gate_ledger.jsonl, suite_file_manifest.json, suite_manifest_diffs.json], "removed": 0}`. The brief's "suite_manifest_diffs.json (74->75 entries)" is this file's count; suite_manifest_diffs.json itself went 11 -> 12 entries (last: utc 2026-09-01T08:49:51.447023Z, added [apps/pipeline/tests/test_container_font_owner_grant.py], removed [], files_after 372).
+--------------------------------------------------------------------------------
+[F29] TEST live=True cur=NO 4th=NO conf=high  apps/pipeline/tests/test_characterization_protocol.py:1051
+QUOTE:         block = re.search(r"EXPECTED_TARGETS=\((.*?)\)", script, re.S)
+EVIDENCE: Part of F09; the shell-copy parse. git grep -w for 371/372/7643/7690 in apps+tools finds NO live pin of these counts (only unrelated: apps/ire/container_font_authority.py:142/:155 prose '372 case-insensitive occurrences', apps/ire/vq1_corr5.py:51 `"bulb_dome_lower": (372, 47, "closure")` coordinates). 51/52 floor: only guarded_commit.sh:150 (52) and the manifest. Comma forms 7,643 only in comments (ppp:1960, tcp:467); 7,690 nowhere.
+####################################################################################################
+FINDER records-chain
+NOTES(full): RECORDS CHAIN VERDICT AT ATTEMPT 4. (i) record_gate_ledger.jsonl is APPEND_ONLY (record_integrity.py:190 by basename; manifest entry at record_digest_manifest.json:9843-9848 classification APPEND_ONLY), checked by 512-byte prefix stability + non-shrink, never by digest. The stored digest ca3336e219c31319 is exactly the hash of the 434-line prefix (69490 bytes); the 435-line file keeps prefix 72532e5af75bfbe9 and is 69640 >= 69490 bytes, so check() passes now (measured [] in-process) and the attempt-4 run will PASS again: main() surveys and checks (lines 369-370) BEFORE emit_ledger appends (372), so it checks the 435-line file and then writes line 436; the run after that checks 436 lines and passes by the same rule (simulated: []). (ii) The fourth fold moves NO record digest: both edited files are .py = NOT_A_RECORD \"source\" (record_integrity.py:42), live under `apps` = NOT_A_RECORD_ROOT (line 73), and outside RECORD_ROOTS/PATTERNS (docs/roadmap/palt_m6/**/*.json|.jsonl). (iii) record_integrity.py reads nothing about EXTENT_DIGESTS or protocol_identity (grep: docstring line 3 only) — this is why attempt 3 recorded verdict OK at line 435 while TIER_2 refused; it will do so again at attempt 4 under either config. (iv) The attempt-4 append writes only LEDGER (emit_ledger, lines 353-354); it does not touch suite_manifest_diffs.json, suite_file_manifest.json or record_digest_manifest.json (regenerate() runs only on --regenerate, and guarded_commit.sh:227 passes no args; tier2_gate --check --commit regenerates only on --regenerate-manifest, tier2_gate.py:362-364). Consequently ppp:2195 cbba67bee1c29105 stays synced and _assert_record_manifest_synced() passes before and after the fold (measured both ways). The recipe's \"RUN THE RECORDS STEP TWICE\" applies only when the suite manifest is regenerated, which the fold does not do — the fold owes no second records pass. (v) Consistency shown above: hash(434-line prefix) == stored digest; hash(first 512 B) == stored prefix.\n\nATTEMPT-4 PRICING. Current config (tree exactly as staged): guarded_commit.sh records step -> RECORD_INTEGRITY=OK, ledger 436 lines (unstaged, since the `git add` at line 340 is after TIER_2's exit 1); tier2_gate check_manifest (main:366, before pytest) -> MANIFEST_DIGEST_MISMATCH: fe4199bc421b7454 != hashed 65aef9fb1a3660cd -> TIER_2=REFUSE, identical to attempt 3. Every records-chain clause is silent; the single firing clause is tier2_gate.py:172-177 driven by the un-rebound pin ppp:1970. Fourth fold (ppp:1970 -> fe4199bc421b7454, test:617 -> c7924c5a4215f3cf): check_manifest silent; records chain silent; identity measured in-memory c7924c5a4215f3cf equals the re-pinned literal; the 436th ledger line would then be staged by line 340 into commit A alongside line 435. Whether TIER_2 goes GREEN after that depends on extent checks (a)/(b)/(c) and the full pytest run, which are outside this records audit and were not executed. Caveat: if ppp:1970 were rebound without the 617 re-pin, test:617 would FAIL under pytest (0e9cd7a2b94ccc82 != c7924c5a4215f3cf).\n\nDISCREPANCY WITH THE BRIEF: the \"74->75 entries\" belongs to record_digest_manifest.json's `diffs` log (HEAD 74, staged 75); suite_manifest_diffs.json's `diffs` went 11 -> 12 (one 8-line entry added, files_after 372). All other frozen-state figures in the brief were verified exactly (HEAD 8bbe57e, ten staged paths, ledger 435 unstaged, both .py pins at 1970/2195/617, manifest digests fe4199bc421b7454 / 65aef9fb1a3660cd / cbba67bee1c29105, 371 -> 372 files).\n\nENVIRONMENT NOTE for the parent: /usr/bin/git is currently unusable in this sandbox (Xcode licence not accepted, exit 69); any future gate run via guarded_commit.sh will hit that at its own `git` calls (e.g. tier2_gate.py:401 `git rev-parse`, guarded_commit.sh:337/340) unless the licence is accepted or PATH points at /Library/Developer/CommandLineTools/usr/bin — not tested here because that would be a gate run.
+
+--------------------------------------------------------------------------------
+[R1-LEDGER-MANIFEST-ENTRY] RECORD live=True cur=NO 4th=NO conf=high  docs/roadmap/palt_m6/record_digest_manifest.json:9843
+QUOTE:   "docs/roadmap/palt_m6/record_gate_ledger.jsonl": {
+   "bytes": 69490,
+   "classification": "APPEND_ONLY",
+   "digest": "ca3336e219c31319",
+   "prefix": "72532e5af75bfbe9"
+  },
+EVIDENCE: Entry is at lines 9843-9848 (the 44 earlier grep hits at lines 183-606 are `changed_names` lists inside the `diffs` log, not the record). Tier is APPEND_ONLY, so check() (record_integrity.py:231-238) tests prefix + growth, NOT digest. Measured in-process: ledger now 69640 bytes / 435 newline-terminated lines; sha256[:16] of the 434-line prefix (= first 69490 bytes) = ca3336e219c31319 == stored digest (the stored digest is exactly the 434-line file); sha256[:16] of first 512 bytes = 72532e5af75bfbe9 == stored prefix; 69640 >= 69490. RI.check(RI.survey()) returned []. Simulated in-memory 436th OK line (69790 bytes) -> check() still []. Full-file digest now c653e7cb43bb14a7 is irrelevant to the tier rule. The fourth fold touches no file under docs/roadmap.
+--------------------------------------------------------------------------------
+[C1-APPEND-ONLY-CLAUSE] CLAUSE live=True cur=NO 4th=NO conf=high  tools/record_integrity.py:231
+QUOTE:         if rec["classification"] == "APPEND_ONLY":
+            # prefix stability + growth: truncation, reordering and edits
+            # to history all fail; appending passes.
+            if cur["prefix"] != rec["prefix"]:
+                refusals.append(f"HISTORY_EDITED: {rel} first 512 bytes moved")
+            if cur["bytes"] < rec["bytes"]:
+                refusals.append(
+                    f"APPEND_ONLY_SHRANK: {rel} {rec['bytes']} -> {cur['bytes']}")
+EVIDENCE: APPEND_ONLY_NAMES (lines 190-193) = record_gate_ledger.jsonl, flake_register.json, suite_manifest_diffs.json, opt_out_log.json, defect_classes.json, method_evidence_register.json; classify() line 200-202 by basename. Verdict strings emitted by check(): RECORD_MISSING, HISTORY_EDITED, APPEND_ONLY_SHRANK, RECORD_DIGEST_MISMATCH, RECORD_UNDECLARED; by classify_complement(): RECORD_KIND_OUTSIDE_PATTERN or raise UnclassifiedKind; main(): verdict "REFUSED"/"OK", prints RECORD_INTEGRITY_REFUSED (A373/3q) + RECORD_INTEGRITY=REFUSED ... or RECORD_INTEGRITY=OK records=N (append_only=A revisable=R) failing=0. At 435 lines: prefix equal, 69640>=69490 -> PASS. At 436 lines (attempt 4's own append, written AFTER check at main:369-372): still PASS on the next run.
+--------------------------------------------------------------------------------
+[RT1-RECIPE] RULING_TEXT live=True cur=N/A 4th=N/A conf=high  apps/pipeline/services/palette_powder_protocol.py:2196
+QUOTE:     "recipe": ("sha256 of the manifest file's bytes, first 16 hex; "
+               "regenerate the manifest, then update this digest in the "
+               "same amendment, never separately — and run A391's five "
+               "steps IN ORDER: records first, because clearing a record "
+               "refusal moves this very digest and silently invalidates "
+               "any identity pinned before it (§AX). RUN THE RECORDS STEP "
+               "TWICE: regenerating the suite manifest is itself a write "
+               "to three declared records, so step 1's OK does not survive "
+               "step 2 and must be re-earned before the rebind (§AY1). "
+               "REGENERATE THE SUITE MANIFEST ONLY WHEN A TEST FILE WAS "
+               "ACTUALLY ADDED OR REMOVED. It is a WRITE, not a query: it "
+               "stamps `generated` with the wall clock, so a run that "
+               "reports `added (0) / removed (0)` still mints a new digest "
+               "and still costs a rebind, an identity recompute and a "
+               "re-pin. Check `git status` first; if the manifest is clean "
+               "and no test file moved, DO NOT RUN IT (§AY1/§AZ0(l))"),
+}
+EVIDENCE: Lines 2196-2212 (dict closes at 2213). The value is prose but LIVE in the sense that it sits inside EXTENT_DIGESTS and is therefore hashed into protocol_identity() (payload key extent_digests); it is not a check. EXTENT_DIGESTS keys in-process: ['suite_file_manifest', 'record_digest_manifest', 'recipe']. Its own rule ("regenerate the manifest, then update this digest in the same amendment, never separately") is exactly what attempt 3 omitted for the suite manifest: the regen was staged (fe4199bc421b7454) but line 1970 was not rebound.
+--------------------------------------------------------------------------------
+[R4-DIFFS-COUNT-DISCREPANCY] RECORD live=True cur=NO 4th=NO conf=high  docs/roadmap/palt_m6/suite_manifest_diffs.json:448
+QUOTE: +  {
++   "utc": "2026-09-01T08:49:51.447023Z",
++   "added": [
++    "apps/pipeline/tests/test_container_font_owner_grant.py"
++   ],
++   "removed": [],
++   "files_after": 372
+EVIDENCE: The task brief's "suite_manifest_diffs.json (74->75 entries)" is mislabelled: suite_manifest_diffs.json 'diffs' went 11 (HEAD) -> 12 (worktree/index), digest 84257f1da901dd2a -> 065b33fc2a10419f; it is record_digest_manifest.json whose 'diffs' log went 74 (HEAD) -> 75. Both files are APPEND_ONLY/REVISABLE records whose re-surveyed entries match (check() == []). suite_file_manifest.json: 371 files generated 2026-08-27T08:37:40.815465Z at HEAD -> 372 files generated 2026-09-01T08:49:51.447023Z staged.
+####################################################################################################
+FINDER tests-of-the-gate
+NOTES(full): SUMMARY. (1) Exactly two live consumers of EXTENT_DIGESTS: tier2_gate.check_manifest (key suite_file_manifest, compares to sha256[:16] of the real suite_file_manifest.json — FIRES NOW, silent after the fold) and ppp._assert_record_manifest_synced (key record_digest_manifest, compares to sha256[:16] of the real record_digest_manifest.json — silent now and after the fold, since the fold edits two .py files that the record manifest does not track). (2) Category (b) tests that read REAL pins/artifacts all live in test_characterization_protocol.py or test_palette_statistics.py, both measured green on the staged tree, and my predictions agree with that measurement: T1/T2 (protocol_status + identity pin 0e9cd7a2b94ccc82, passes now), T3/T4/T5 (real manifest content/floors/shell copy), T7 (claim_scan over tools/ only), T9 (record_integrity.classify_complement over the real tree), T10-T12 (GuardedCommitTests running the real guarded_commit.sh --dry-run). NONE of them reaches tier2_gate.check_manifest: the only path to it is guarded_commit.sh:284-286, guarded by `if (( ! SUITE_CMD_OVERRIDDEN ))`, and GuardedCommitTests always overrides SUITE_CMD, so TIER2 is reported as NOT_RUN_SUITE_CMD_OVERRIDDEN. That is why the stale ppp:1970 pin coexists with a green 124-test sweep. (3) GuardedCommitTests green-path tests invoke the REAL tools/record_integrity.py against the REAL tree (ROOT from __file__) with the ledger redirected by RECORD_INTEGRITY_LEDGER to a tempdir (tps:575-583, :592; honoured at record_integrity.py:329-331, appended at :353); test_the_real_ledger_and_artifact_are_left_alone asserts real ledger bytes unchanged AND the redirected file's last line has verdict OK. They also invoke opt_out_log.py (dry -> git-ignored .opt_out_harness_log), reserved_copy.py and brand_strings.py (git-ignored stdout captures). No test appends to the real ledger. After the fourth fold all three pass unchanged (record_integrity surveys docs/roadmap/palt_m6/**/*.json|jsonl only). (4) The fourth fold's only firing consequence is T2: rebinding ppp:1970 alone moves protocol_identity to c7924c5a4215f3cf (measured), so tcp:617 must be re-pinned in the same edit; with both edits, every test classified here passes and tier2_gate's digest clause clears. Remaining TIER_2 clauses after that (file-set equality, TIER_1 floors 52/66, total_floor 7690, dip0c/dip0 floors, the three suite legs) are not a function of the pins and were not measured here. Environmental caveat: bare `git` on PATH fails with the Xcode-licence error on this machine, which would ERROR test_two_roots_collision_guard.py and the tier2_gate `git rev-parse` capture step regardless of the fold.
+
+--------------------------------------------------------------------------------
+[C1] CONSUMER live=True cur=YES 4th=NO conf=high  tools/tier2_gate.py:172
+QUOTE:     declared_digest = _PP.EXTENT_DIGESTS["suite_file_manifest"]
+    actual = manifest_digest()
+    if actual != declared_digest:
+        return ([f"MANIFEST_DIGEST_MISMATCH: {actual} != hashed "
+EVIDENCE: tools/tier2_gate.py:160-161 `def manifest_digest(): return hashlib.sha256(open(MANIFEST, "rb").read()).hexdigest()[:16]`; MANIFEST = docs/roadmap/palt_m6/suite_file_manifest.json (tier2_gate.py:47). Measured read-only via importlib: tier2_gate.manifest_digest() = fe4199bc421b7454; ppp EXTENT_DIGESTS["suite_file_manifest"] = 65aef9fb1a3660cd (ppp:1970). Compared with `!=` -> MANIFEST_DIGEST_MISMATCH now (this is exactly the attempt-3 refusal). After rebinding ppp:1970 to fe4199bc421b7454 the two literals are equal and this clause passes; check_manifest then proceeds to clauses (a)/(b)/(c) (file-set equality, TIER_1 floors 52/66, total_floor 7690), which are not affected by the fold. Reached only via tier2_gate.main -> check_manifest (tier2_gate.py:366); NO test calls check_manifest (git grep `check_manifest(` in apps returns only the definition site's callers in tools). check_manifest itself writes nothing (reads only).
+--------------------------------------------------------------------------------
+[C2] CONSUMER live=True cur=NO 4th=NO conf=high  apps/pipeline/services/palette_powder_protocol.py:2263
+QUOTE:     on_disk = hashlib.sha256(open(path, "rb").read()).hexdigest()[:16]
+    stored = EXTENT_DIGESTS["record_digest_manifest"]
+    if on_disk != stored:
+        raise UnsyncedManifest(
+EVIDENCE: _assert_record_manifest_synced() (ppp:2245-2268) hashes the REAL docs/roadmap/palt_m6/record_digest_manifest.json and compares to EXTENT_DIGESTS["record_digest_manifest"]; it is called at the top of protocol_identity() (ppp:2271-2272) and protocol_status() (ppp:2296). Measured: sha256[:16] of the real record_digest_manifest.json = cbba67bee1c29105; ppp:2195 reads `"record_digest_manifest": "cbba67bee1c29105",` -> synced, no raise now. The fourth fold edits only ppp:1970 (a .py, NOT_A_RECORD per record_integrity.py:42) and tcp:617 (.py); record_digest_manifest.json has zero .py keys (measured: `any .py keys []`, 1738 records) so its bytes do not move and this consumer stays silent after the fold.
+--------------------------------------------------------------------------------
+[C3] CONSUMER live=True cur=NO 4th=N/A conf=high  apps/pipeline/services/palette_powder_protocol.py:2279
+QUOTE:         "extent_digests": EXTENT_DIGESTS,
+EVIDENCE: protocol_identity() (ppp:2270-2283) json-dumps the whole EXTENT_DIGESTS dict into the hashed payload; this is why rebinding ppp:1970 moves the identity. Measured read-only via importlib with in-memory mutation only: identity NOW = 0e9cd7a2b94ccc82; with EXTENT_DIGESTS["suite_file_manifest"] set to fe4199bc421b7454 in memory = c7924c5a4215f3cf; restored = 0e9cd7a2b94ccc82. Not a refusal clause itself; its downstream pin is T2.
+--------------------------------------------------------------------------------
+[P1] PIN live=True cur=YES 4th=NO conf=high  apps/pipeline/services/palette_powder_protocol.py:1970
+QUOTE:     "suite_file_manifest": "65aef9fb1a3660cd",
+EVIDENCE: Identical at HEAD (`git show HEAD:./apps/pipeline/services/palette_powder_protocol.py | sed -n 1970p` -> same literal); the staged diff on ppp is ONLY line 2195 (`git diff --cached -U0`: -"record_digest_manifest": "ff18cb2d74866a94" / +"cbba67bee1c29105"). Real manifest hashes fe4199bc421b7454 (measured), so this pin is stale against the staged manifest and is the sole cause of C1 firing. Fold rebinds it to fe4199bc421b7454.
+--------------------------------------------------------------------------------
+[P2] PIN live=True cur=NO 4th=NO conf=high  apps/pipeline/services/palette_powder_protocol.py:2195
+QUOTE:     "record_digest_manifest": "cbba67bee1c29105",
+EVIDENCE: Staged change ff18cb2d74866a94 -> cbba67bee1c29105 matches measured sha256[:16] of the real record_digest_manifest.json (cbba67bee1c29105). Consumed by C2 only. Unchanged by the fold.
+--------------------------------------------------------------------------------
+[T1] TEST live=True cur=NO 4th=NO conf=high  apps/pipeline/tests/test_characterization_protocol.py:191
+QUOTE:         status = PP.protocol_status()
+EVIDENCE: apps/pipeline/tests/test_characterization_protocol.py::PowderProtocolDeclarationTests::test_the_declaration_is_pinned_and_honest — category (b): calls the REAL ppp.protocol_status(), which runs _assert_record_manifest_synced() against the REAL record_digest_manifest.json (C2). Passes now (synced; and it passed in the 124-test sweep, consistent). After the fold the record manifest is untouched, so the sync assertion still passes; the identity assertion inside the same test is T2.
+--------------------------------------------------------------------------------
+[T2] TEST live=True cur=NO 4th=YES conf=high  apps/pipeline/tests/test_characterization_protocol.py:617
+QUOTE:         self.assertEqual(status["protocol_identity"], "0e9cd7a2b94ccc82")
+EVIDENCE: Same node id as T1 (apps/pipeline/tests/test_characterization_protocol.py::PowderProtocolDeclarationTests::test_the_declaration_is_pinned_and_honest). Staged diff: -"ead892658e3323a8" / +"0e9cd7a2b94ccc82" (HEAD line 617 = ead892658e3323a8). Measured identity NOW = 0e9cd7a2b94ccc82 -> passes now (agrees with the sweep). After rebinding ppp:1970 alone the identity is c7924c5a4215f3cf (measured in memory), so this line FAILS unless it is re-pinned to c7924c5a4215f3cf in the same fold — the second of the fold's two one-literal edits. With both edits: passes.
+--------------------------------------------------------------------------------
+[T3] TEST live=True cur=NO 4th=NO conf=high  apps/pipeline/tests/test_characterization_protocol.py:871
+QUOTE:         root, m = self._manifest()
+        undeclared = sorted(self._disk_test_files(root) - set(m["files"]))
+        self.assertEqual(
+            undeclared, [],
+EVIDENCE: apps/pipeline/tests/test_characterization_protocol.py::ExtentManifestDeclaresEveryTestFile::test_every_test_file_on_disk_is_declared — category (b): _manifest() (tcp:855-859) reads the REAL docs/roadmap/palt_m6/suite_file_manifest.json by content (no digest check). Measured: 372 files declared, `apps/pipeline/tests/test_container_font_owner_grant.py` in m['files'] = True. Passed in the sweep. The fold does not touch the manifest or any test_*.py file set -> unchanged. Sibling ::test_the_committed_diff_log_shows_what_this_closed (tcp:889-927) reads the REAL suite_manifest_diffs.json (75 entries, removals all []) — same verdict NO/NO.
+--------------------------------------------------------------------------------
+[T4] TEST live=True cur=NO 4th=NO conf=high  apps/pipeline/tests/test_characterization_protocol.py:1003
+QUOTE:         m = json.loads(
+            (root / "docs/roadmap/palt_m6/suite_file_manifest.json")
+            .read_text())
+        self.assertGreaterEqual(
+            m["tier1_floors"]
+            ["apps/pipeline/tests/test_characterization_protocol.py"], 59,
+EVIDENCE: apps/pipeline/tests/test_characterization_protocol.py::ExtentFloorsAreMonotonic::test_the_manifest_on_disk_carries_no_stale_floor — category (b): reads the REAL manifest. Measured tier1_floors = {tps: 52, tcp: 66}, total_floor 7690 (>= 59 and >= 7353). Passed in sweep; fold does not touch the manifest.
+--------------------------------------------------------------------------------
+[T5] TEST live=True cur=NO 4th=NO conf=high  apps/pipeline/tests/test_characterization_protocol.py:1050
+QUOTE:         script = (root / "tools" / "guarded_commit.sh").read_text()
+        block = re.search(r"EXPECTED_TARGETS=\((.*?)\)", script, re.S)
+EVIDENCE: apps/pipeline/tests/test_characterization_protocol.py::ExtentFloorsAreMonotonic::test_the_two_copies_of_the_tier1_floors_agree — category (b): reads REAL tools/guarded_commit.sh (EXPECTED_TARGETS at guarded_commit.sh:149-152 = tps:52, tcp:66) and the REAL manifest (tcp:1064-1066); asserts shell >= manifest per TIER_1 path. Measured manifest tier1_floors {tps:52, tcp:66} == shell -> passes now and after the fold (neither file moves).
+--------------------------------------------------------------------------------
+[T6] TEST live=True cur=NO 4th=NO conf=high  apps/pipeline/tests/test_characterization_protocol.py:773
+QUOTE:         spec = importlib.util.spec_from_file_location(
+            "t2_control", root / "tools" / "tier2_gate.py")
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+EVIDENCE: AbsentDefectStandingControls (tcp:757-813): ::test_extent_of_comparison_remains_absent, ::test_observation_window_remains_full, ::test_node_id_normalization_refuses_rather_than_falling_through — category (a): import the REAL tools/tier2_gate.py as a module but call only failed_ids()/normalize_node_id() on literal strings; never call check_manifest/manifest_digest; tier2_gate.py:1-113 has no import-time reads of the manifest. Likewise ExtentFloorsAreMonotonic::test_a_stale_floor_is_raised_to_the_measurement / ::test_a_floor_is_never_lowered_by_a_regeneration / ::test_a_tier1_file_that_stopped_collecting_keeps_its_floor (tcp:957-1001) call raised_floors() on literal dicts only. Unaffected by pins.
+--------------------------------------------------------------------------------
+[T7] TEST live=True cur=NO 4th=NO conf=high  apps/pipeline/tests/test_characterization_protocol.py:815
+QUOTE:         spec = importlib.util.spec_from_file_location(
+            "claim_scan", root / "tools" / "claim_scan.py")
+ ...
+            self.assertEqual(mod.scan(), [])
+EVIDENCE: apps/pipeline/tests/test_characterization_protocol.py::AbsentDefectStandingControls::test_instrument_prose_asserts_no_absolutes — category (b)-adjacent: runs REAL tools/claim_scan.py scan() against the REAL tree, but claim_scan.py:24-28 INSTRUMENTS scope is tools/tier2_gate.py, extent_gate.py, guarded_commit.sh, sweep_manifest.py, opt_out_log.py, flake_gate.py, claim_scan.py, fixture_diff.py, reserved_copy.py — none of the fold's files (ppp/tcp). It chdir()s to root and back (os.chdir, no file writes). Passed in sweep; unaffected by the fold.
+--------------------------------------------------------------------------------
+[T8] TEST live=True cur=NO 4th=NO conf=high  apps/pipeline/tests/test_characterization_protocol.py:1339
+QUOTE:             "ri_harvest", root / "tools" / "record_integrity.py")
+ ...
+            mod.LEDGER = f"{td}/ledger.jsonl"
+            line = mod.emit_ledger("OK", [], rows)
+EVIDENCE: A597RecordGateHarvestTests (tcp:1319-1403): ::test_the_ledger_is_declared_APPEND_ONLY, ::test_a_green_run_records_its_extent_not_just_its_verdict, ::test_the_failing_set_is_emitted_ENTIRE_not_counted, ::test_the_ledger_appends_and_never_rewrites, ::test_check_accepts_a_prepared_survey_so_the_harvest_is_free — category (a): import REAL record_integrity.py as a module, redirect mod.LEDGER to a tempfile BEFORE calling emit_ledger (tcp:1360,1376,1386), never call main()/check()/survey(); import has no side effects (LEDGER is computed at record_integrity.py:330-331 from env or ROOT but not opened until emit_ledger:353). Real ledger untouched; unaffected by pins.
+--------------------------------------------------------------------------------
+[T9] TEST live=True cur=NO 4th=NO conf=high  apps/pipeline/tests/test_characterization_protocol.py:1491
+QUOTE:         _kinds, refusals = mod.classify_complement()
+        self.assertEqual(
+            [r for r in refusals if "RECORD_KIND_OUTSIDE_PATTERN" in r], [])
+EVIDENCE: apps/pipeline/tests/test_characterization_protocol.py::AJ3CompressedRecordTests::test_the_real_gz_in_the_committed_tree_classifies_clean — category (b): runs REAL record_integrity.classify_complement() over the REAL tree (root=mod.ROOT) — a kind/extension classification walk, not a digest check; it never reads the suite manifest or EXTENT_DIGESTS and never opens the ledger. The four sibling tests (tcp:1444-1489) build tempdir trees (category a). Passed in sweep; the fold changes only two existing .py files (kind already dispositioned NOT_A_RECORD at record_integrity.py:42) -> unaffected.
+--------------------------------------------------------------------------------
+[T10] TEST live=True cur=NO 4th=NO conf=high  apps/pipeline/tests/test_palette_statistics.py:588
+QUOTE:         env = dict(os.environ, SUITE_CMD=suite_cmd,
+                   SUITE_GATE_ARTIFACT=self.artifact,
+                   RECORD_INTEGRITY_LEDGER=self.ledger,
+                   SUITE_GATE_OUTPUT=self.suite_output,
+                   RECORD_INTEGRITY_OUTPUT=self.integrity_output,
+                   EXTENT_ASSERTION_OPT_OUT="1",
+ ...
+        return subprocess.run(
+            ["zsh", "tools/guarded_commit.sh", "--dry-run", "-m", "x"],
+EVIDENCE: GuardedCommitTests._run (tps:588-606) runs the REAL tools/guarded_commit.sh --dry-run against the REAL tree with SUITE_CMD overridden. What that dry run executes (guarded_commit.sh:171-312): opt_out_log.py (dry=1 -> writes .opt_out_harness_log, git-ignored at .gitignore:18); the fake suite cmd; on green: tools/record_integrity.py (REAL tree, REAL record_digest_manifest.json, ledger REDIRECTED by RECORD_INTEGRITY_LEDGER at record_integrity.py:329-331/353), tools/reserved_copy.py, tools/brand_strings.py (walk apps/, stdout to git-ignored .reserved_copy_output/.brand_strings_output); then `TIER2="NOT_RUN_SUITE_CMD_OVERRIDDEN"` because guarded_commit.sh:283-286 runs tools/tier2_gate.py ONLY `if (( ! SUITE_CMD_OVERRIDDEN ))`; then exits 0 at :310-312 before the ledger `git add` (:332-336). So tier2_gate.check_manifest (C1) is NEVER reached by any GuardedCommitTests test, which is why the class passed in the 124-sweep despite ppp:1970 being stale. Node ids: apps/pipeline/tests/test_palette_statistics.py::GuardedCommitTests::test_red_suite_refuses (SUITE_CMD=false; refuses at :208-221 before record_integrity; flake_gate.py returns 1 at flake_gate.py:49 with no failures parsed -> no REGISTER write), ::test_green_suite_passes_gate (SUITE_CMD=true, asserts rc 0 and GUARDED_COMMIT_DRY_RUN_OK), ::test_artifact_carries_the_true_exit_code (exit 7 script; reads artifact JSON suite_exit==7). All three: pass now (measured in sweep) and pass after the fold — record_integrity.check() (record_integrity.py:221-245) compares the REAL record_digest_manifest.json against a survey of docs/roadmap/palt_m6/**/*.json|jsonl only (PATTERNS :28-29; .py is NOT_A_RECORD :42), and neither ppp nor tcp is under that root or of a record kind. The RECORD_DIGEST_MISMATCH that refused attempt 2 was a stale record_digest_manifest.json vs suite_file_manifest.json (now consistent: rdm records suite_file_manifest.json digest fe4199bc421b7454 == measured).
+--------------------------------------------------------------------------------
+[T11] TEST live=True cur=NO 4th=NO conf=high  apps/pipeline/tests/test_palette_statistics.py:635
+QUOTE:         real = (pathlib.Path(__file__).resolve().parents[3]
+                / "docs/roadmap/palt_m6/record_gate_ledger.jsonl")
+        before = real.read_bytes()
+        r = self._run("true")
+ ...
+        self.assertEqual(
+            real.read_bytes(), before,
+ ...
+        line = json.loads(open(self.ledger).read().splitlines()[-1])
+ ...
+        self.assertEqual(line["verdict"], "OK", line.get("failing_set"))
+EVIDENCE: apps/pipeline/tests/test_palette_statistics.py::GuardedCommitTests::test_the_real_ledger_and_artifact_are_left_alone — the one GuardedCommitTests test that asserts the REAL record_integrity.py verdict (line['verdict']=='OK') against the REAL tree, with the ledger redirected to a tempfile (self.ledger, set in setUp tps:575-583 and passed as RECORD_INTEGRITY_LEDGER at :592) and confirmed read-back from the REDIRECTED file (:668-676). Redirect confirmed in record_integrity.py:329-331 `LEDGER = (os.environ.get(LEDGER_ENV) or os.path.join(ROOT, "docs/roadmap/palt_m6/record_gate_ledger.jsonl"))` and :353 `with open(LEDGER, "a")`. It also asserts the real ledger is byte-identical (:653-657). Passed in the sweep (consistent with real ledger line 435 verdict OK, 1738 records). After the fold: record_integrity survey/check untouched by .py edits -> still OK. NOTE the ledger recorded in record_digest_manifest.json is APPEND_ONLY at 69490 bytes; on disk it is 69640 bytes / 435 lines (the unstaged line 435), which passes the APPEND_ONLY prefix+growth rule (record_integrity.py:231-237).
+--------------------------------------------------------------------------------
+[T12] TEST live=True cur=NO 4th=NO conf=high  apps/pipeline/tests/test_palette_statistics.py:677
+QUOTE:         suite_out = root / ".suite_gate_output"
+        integrity_out = root / ".record_integrity_output"
+ ...
+        r = self._run("true")
+ ...
+        self.assertIn(
+            "RECORD_INTEGRITY", open(self.integrity_output).read(),
+EVIDENCE: apps/pipeline/tests/test_palette_statistics.py::GuardedCommitTests::test_the_real_output_files_are_left_alone — same real-tool run as T11 with outputs redirected (SUITE_GATE_OUTPUT / RECORD_INTEGRITY_OUTPUT, guarded_commit.sh:47); asserts the real git-ignored .suite_gate_output is prefix-preserved and .record_integrity_output byte-equal, and that the redirected integrity output contains RECORD_INTEGRITY. Independent of the suite-manifest pin; passes now and after the fold. Also ::test_source_guard_the_ledger_is_staged_between_dry_run_and_commit (tps:767-839) only reads guarded_commit.sh as text and asserts index ordering of four anchors — NO/NO.
+--------------------------------------------------------------------------------
+[T13] TEST live=True cur=NO 4th=NO conf=high  apps/accounts/test_authz_policy.py:295
+QUOTE:     import tools.tier2_gate  # noqa: F401 — binds `tools` at the PYTEST root
+EVIDENCE: apps/accounts/test_authz_policy.py::test_the_parity_check_survives_tools_being_bound_at_the_pytest_root (and the child-process source at :236) import tools.tier2_gate purely for the namespace-binding side effect; tier2_gate.py:1-113 has no import-time reads (MANIFEST is only a path string). No call to check_manifest. Category (a). Never run against the staged tree, but nothing in it can be moved by the pins.
+--------------------------------------------------------------------------------
+[T14] TEST live=True cur=NO 4th=NO conf=high  apps/ire/tests/test_av2_brand_strings.py:679
+QUOTE:             [_sys.executable, os.path.join("tools", "brand_strings.py"), *args],
+            capture_output=True, text=True, cwd=ROOT)
+EVIDENCE: apps/ire/tests/test_av2_brand_strings.py::TestItCanActuallyBeRunTheWayTheCommitPathRunsIt::test_the_guard_runs_as_a_bare_script_and_not_only_as_an_import and ::test_it_survives_the_git_root_being_first_on_pythonpath run the REAL tools/brand_strings.py as a subprocess over the real apps/ tree (brand_strings.py:469 scan(root=APPS)); ::test_source_guard_the_commit_path_invokes_this_guard_and_refuses_on_it reads REAL tools/guarded_commit.sh as text (:736-754). None reads the manifest or EXTENT_DIGESTS; brand_strings writes only stdout (grep for write-mode open in brand_strings.py/reserved_copy.py/claim_scan.py/extent_gate.py: no hits). Same for apps/ire/tests/test_wi3h_reserved_copy.py::TestTheRealTree::test_the_register_accounts_for_every_reserved_string_in_apps (rc.check() over real apps/, wi3h:56-57) and apps/ire/tests/test_av3_brand_string_runtime.py::TestTheImportFailsClosed (:348-349, imports only). Never run against the staged tree; the fold's two hex-literal edits are not brand/reserved strings.
+--------------------------------------------------------------------------------
+[T15] TEST live=True cur=UNKNOWN 4th=UNKNOWN conf=medium  apps/pipeline/tests/test_two_roots_collision_guard.py:323
+QUOTE:         for name in (".suite_gate_result", ".tier2_gate_output"):
+            self.assertIn(name, inner)
+            self.assertNotIn(name, root)
+EVIDENCE: apps/pipeline/tests/test_two_roots_collision_guard.py::WrongSuccessTests::test_the_inner_gitignore_is_the_one_that_matters_to_the_gate — reads .gitignore blobs via `git show` (only mention of a gate tool is the artifact NAME); the file never reads the manifest, EXTENT_DIGESTS, or runs any gate tool (def index :111-314: all git ls-files/show/status subprocesses). Category (a) with respect to the pins: NOT movable by either fold. UNKNOWN is environmental, not pin-related: every test in this file shells out to bare `git`, and on this machine /usr/bin/git currently exits 69 with the Xcode-licence message (observed on my first command; /Library/Developer/CommandLineTools/usr/bin/git works) — so these tests would ERROR here for reasons unrelated to the fold. Not run.
+--------------------------------------------------------------------------------
+[T16] TEST live=True cur=NO 4th=NO conf=high  apps/pipeline/tests/test_gate_baseline_registration.py:154
+QUOTE:             f"(see tools/gate_registration.py): {undisposed[:5]}")
+EVIDENCE: The grep hit is an assertion-message string only. The file reads REAL docs/roadmap/palt_m6/gate_baseline.json and fallback_class_defects.json (DEFECTS/BASELINE, :27-32,127) — records untouched by the staged attempt and by the fold; it never reads the suite manifest or EXTENT_DIGESTS. Category (b) over different artifacts; not movable by the pins. Never run against the staged tree.
+####################################################################################################
+FINDER ruling-text
+NOTES(full): TASK 4 — answers from the quoted text only, with citations; no reading is chosen.
+
+(i) THE RECIPE SENTENCE. ppp:2196-2197 reads 'sha256 of the manifest file's bytes, first 16 hex; regenerate the manifest, then update this digest in the same amendment, never separately'. Structurally the value sits at key \"recipe\" (:2196), the LAST key of EXTENT_DIGESTS, immediately after \"record_digest_manifest\" (:2195) and 226 lines after \"suite_file_manifest\" (:1970). The sentence names neither key. Its own continuation disambiguates by verb: 'records first, because clearing a record refusal moves this very digest' (:2199-2200) speaks of the record manifest's digest; 'REGENERATE THE SUITE MANIFEST ONLY WHEN A TEST FILE WAS ACTUALLY ADDED OR REMOVED ... still mints a new digest and still costs a rebind, an identity recompute and a re-pin' (:2205-2210) speaks of the suite manifest's digest. The header comment at :1855-1856 says 'the suite manifest stays a large file, but its DIGEST lives here'; the comment at :1971 says 'A375 — the record manifest's own digest'. In tools the word differs: tier2_gate.py:46 MANIFEST = suite_file_manifest.json (hashed by manifest_digest() :160-161 and compared to EXTENT_DIGESTS[\"suite_file_manifest\"] at :172-174); record_integrity.py:22 MANIFEST = record_digest_manifest.json.
+
+(ii) DIGESTS NAMED IN THE A391 FIVE STEPS. The enumeration itself (AR4(4), register 5283: 'records, regenerate, rebind, compute, PIN') names no digest. The restatements do: AX0(p) 6798-6805 names 'regenerate/rebind/compute/pin over `suite_file_manifest`' AND 'record_digest_manifest.json' moved by the records step; AZ0(h) 7484-7491 has step 2 = 'regenerated the suite manifest' and 'the rebind' after it; AR3(c) 5256-5259 'The manifest's digest lives in EXTENT_DIGESTS, so regenerating it moves protocol_identity and drags the full five-step A391 chain'; ppp:2010-2012 comment 'regenerate/rebind/compute/pin over `suite_file_manifest`'; ppp:2264-2268 live message binds the A391 order to the RECORD manifest's on-disk-vs-stored comparison. So across the corpus both digests are named: the records step ↔ record_digest_manifest (:2195), the regenerate/rebind steps ↔ suite_file_manifest (:1970).
+
+(iii) NAMED IN OWNER RULING TEXT? Grep of every blockquote line in 17100-17424: 'palette_powder_protocol.py:1970' ABSENT; key 'suite_file_manifest' ABSENT; 'EXTENT_DIGESTS' ABSENT; 'the manifest digest pin' ABSENT; 'identity chain' ABSENT (the phrase exists only in tools/tier2_gate.py:177). The owner names exactly two source lines, (f)(1) 17271-17272: 'palette_powder_protocol.py:2195 rebind; test_characterization_protocol.py:617 re-pin'. The owner uses the bare word 'digest' in (f)(2) glossed by hex 'ff18cb2d… → 1e52199daa2ea4e8' (the :2195 value) and 'the digest pair' in (g). Executor prose (not owner) names 'suite_file_manifest.json 65aef9fb1a3660cd → fe4199bc421b7454' at 17299 as the RECORD_DIGEST_MISMATCH entry inside record_digest_manifest.json, and 'the A391 recipe at palette_powder_protocol.py:2196–2211' at 17304.
+
+(iv) BOTH READINGS.
+Reading A — (f) 'per the A391 recipe' encompasses rebinding :1970: the owner quotes the recipe's first sentence verbatim ('regenerate the manifest, then update this digest in the same amendment, never separately', 17265-17267) and says 'I follow the recipe' (17267); the recipe's own text ties 'regenerate the suite manifest' to 'a rebind, an identity recompute and a re-pin' (:2205-2210); the (e) tool-run DID regenerate the suite manifest (371→372); AR3(c) 'The manifest's digest lives in EXTENT_DIGESTS ... drags the full five-step A391 chain' (5256-5259) and AX0(p) 'regenerate/rebind/compute/pin over `suite_file_manifest`' (6800) place the :1970 rebind inside A391; (g) 'This method governs any recurrence of the same dynamics without further rulings' (17365-17366) and (f)(3) 'protocol_identity moving is DECLARED: it is maintenance consequence, not authority change' (17279-17280) could be read as pre-pricing a further identity move.
+Reading B — it does not: (f) itself enumerates the write set as 'EIGHT tracked paths ... the prior seven plus record_digest_manifest.json, with the two one-literal maintenance edits (palette_powder_protocol.py:2195 rebind; test_characterization_protocol.py:617 re-pin)' (17269-17272) — :1970 is not among the literals and no ninth path/third literal is ruled; (f)(2) fixes 'all three moving values' as digest/diffs/protocol_identity with the digest glossed 'ff18cb2d…' i.e. the :2195 key (17273-17275); (f)(5) 'If a THIRD distinct downstream pin fires after this fold, stop — do not fold further without my word' (17287-17289); (g) restricts the ratified method to 'the same three-file chain, time-moved inputs only' (17366) and reconfirms 'A NEW downstream pin remains a hard stop per (f)(5)' (17366-17367); the executor's R1/R2/R3 definitions (17326-17337, 17400-17410) never mention :1970; and the test comments at 581-589 treat the suite-manifest rebind as a separately-conditioned act ('NO SUITE-MANIFEST REGENERATION AND NO REBIND ... This commit adds no test file'). Under this reading the :1970 pin is a distinct pin (a different EXTENT_DIGESTS key from :2195), and its firing at attempt 3 is the stop (f)(5)/(g) reserve for the owner.
+
+TASK 5. (f)(5) exact: '> (5) All else stands: single-use (a) authority spent only on LANDING; / >     protected regions byte-identical; ceilings, floors (as ratified in / >     (e)), guards, goal state, hard stops unchanged. If a THIRD / >     distinct downstream pin fires after this fold, stop — do not fold / >     further without my word.' (17285-17289). No prior owner text defines 'distinct downstream pin' — 'downstream pin' first appears at 17288. Adjacent owner vocabulary: (f)(2) 'at its ONE live pin (the grep-verified completeness stands as part of the seal — any second live pin discovered is a hard stop)' (17276-17278) — that clause concerns a second pin OF protocol_identity, which is the :617 pin, distinct from the EXTENT_DIGESTS keys. The counting in (f)(5) ('THIRD') is not glossed by the owner; the executor's summary line 17347 restates it as 'a third distinct downstream pin a hard stop' and (g) restates it as 'A NEW downstream pin'.
+
+CAVEATS. fires_* values on PIN/CLAUSE/TEST rows come from measured sha256s (suite manifest fe4199bc421b7454 vs :1970 65aef9fb1a3660cd; record manifest cbba67bee1c29105 = :2195) plus the task-stated in-memory identities (0e9cd7a2b94ccc82 now, c7924c5a4215f3cf after the fold); I ran no pytest and computed no protocol_identity. Whether a fourth fold's own gate ledger append would re-move record_digest_manifest.json (the (g) time-moved dynamic) is not measured. Bare `git` is broken on this machine by the Xcode license shim (exit 69); /Library/Developer/CommandLineTools/usr/bin/git works and was used for read-only commands only.
+
+--------------------------------------------------------------------------------
+[RT-01-BH26d-owner] RULING_TEXT live=False cur=N/A 4th=N/A conf=high  /Users/symow/Desktop/bbrose-systemOS/OWNER_BLOCKER_CLEARANCE.md:17102
+QUOTE: > OWNER RULING §BH26(d) — typed by me, this session. Transcribe per §BC
+> as a pure append BEFORE acting. If I meant something narrower, my
+> sentence governs.
+
+> Stop 4 ruled: FOLD. The manifest declaration joins commit A's own
+> write set — the new test file entering the suite INCLUDES entering the
+> declared extent; that is one concern, not two. Conditions:
+
+> (1) Read regenerate_manifest() in FULL before running it. Its complete
+>     write set is measured, not assumed — report in the one report what
+>     it wrote beyond the manifest entry, if anything. If it would write
+>     anything other than the 371→372 addition plus its generated
+>     timestamp (floors included), STOP and report before applying.
+
+> (2) §AR4(1) governs: the manifest diff must be purely additive — one
+>     new file entry plus timestamp. Any deletion or mutation of an
+>     existing entry is a hard stop.
+
+> (3) Fresh 8-leg prediction sealed over the full six-path write set
+>     before relaunch. Attempt 1's falsified prediction stands unrevised
+>     as history, already scored.
+
+> (4) The single-use §BH26(a) authority remains live and is spent only
+>     when commit A LANDS. Everything else in §BH26 stands unchanged —
+>     goal state, hard stops, §BH24 budget (still 0/3, this refusal was
+>     a finding, not a flake).
+EVIDENCE: sed -n '17100,17176p' of the register; owner-typed blockquote spans 17102-17127. Names 'the manifest declaration' / 'the manifest diff' (the suite manifest 371→372) only; no digest key, no file:line, no 'EXTENT_DIGESTS', no 'identity chain'.
+--------------------------------------------------------------------------------
+[RT-02-BH26e-owner] RULING_TEXT live=False cur=N/A 4th=N/A conf=high  /Users/symow/Desktop/bbrose-systemOS/OWNER_BLOCKER_CLEARANCE.md:17179
+QUOTE: > OWNER RULING §BH26(e) — typed by me, this session. Transcribe per §BC
+> as a pure append BEFORE acting. If I meant something narrower, my
+> sentence governs.
+
+> Condition-(1) stop ruled: TOOL-RUN. The extent guard names
+> regenerate_manifest() as its remedy; I take the tool's true output
+> shape and amend my own conditions to match, rather than hand-shaping a
+> generated file to fit a sealed number.
+
+> (1) §BH26(d)(2) is SUPERSEDED by this sentence: the manifest diff is
+>     whatever regenerate_manifest(apply_it=True) produces from the
+>     preview already measured — the one purely-additive files entry
+>     (371→372), the generated timestamp, AND the two floor rises
+>     (total_floor 7643→7690, tier1_floors[test_palette_statistics.py]
+>     51→52). I RATIFY the floor rises: they move bars UP to measured
+>     reality; floors only ever rise (retreat stays refused). If the
+>     apply writes ANY value differing from the preview's, that is a
+>     hard stop — preview is the prediction.
+
+> (2) suite_manifest_diffs.json joins commit A's write set — the record
+>     of the extent change is the same concern as the change. The
+>     git-ignored probe overwrite is noise, noted not predicted.
+>     Commit A's ruled write set is now SEVEN tracked paths.
+
+> (3) Fresh 8-leg prediction sealed over the seven paths before
+>     relaunch. Attempt 1's score stands as history. The characterization
+>     floor staying 66→66 is part of the seal.
+
+> (4) All else in §BH26 and §BH26(d) stands: single-use (a) authority
+>     spent only on landing; §BH24 budget untouched; protected regions
+>     byte-identical; goal state and hard stops unchanged.
+EVIDENCE: sed -n '17177,17257p'; owner blockquote spans 17179-17210. Names suite_manifest_diffs.json and regenerate_manifest(); no digest key, no :1970, no 'EXTENT_DIGESTS', no 'identity chain'.
+--------------------------------------------------------------------------------
+[RT-03-BH26f-owner] RULING_TEXT live=False cur=N/A 4th=N/A conf=high  /Users/symow/Desktop/bbrose-systemOS/OWNER_BLOCKER_CLEARANCE.md:17260
+QUOTE: > OWNER RULING §BH26(f) — typed by me, this session. Transcribe per §BC
+> as a pure append BEFORE acting. If I meant something narrower, my
+> sentence governs.
+>
+> Hard stop 4, second occurrence, ruled: FOLD R1–R3 into commit A. The
+> corpus's own A391 recipe governs — "regenerate the manifest, then
+> update this digest in the same amendment, never separately." I follow
+> the recipe.
+>
+> (1) Commit A's ruled write set is now EIGHT tracked paths (apps diff
+>     seven): the prior seven plus record_digest_manifest.json, with the
+>     two one-literal maintenance edits (palette_powder_protocol.py:2195
+>     rebind; test_characterization_protocol.py:617 re-pin).
+> (2) PREVIEW IS THE PREDICTION, all three moving values: digest
+>     ff18cb2d… → 1e52199daa2ea4e8, diffs 74→75,
+>     protocol_identity ead89265… → 11d57441e84b8d73 at its ONE live
+>     pin (the grep-verified completeness stands as part of the seal —
+>     any second live pin discovered is a hard stop). Any written value
+>     differing from the preview is a hard stop.
+> (3) protocol_identity moving is DECLARED: it is maintenance
+>     consequence, not authority change. The L8 identity table updates
+>     to 11d57441e84b8d73 on landing; the old value becomes history.
+> (4) Fresh 8-leg seal over the eight paths before relaunch. Attempts 1
+>     and 2 stand scored, unrevised, as history. §BH24 budget untouched
+>     (0/3 — both refusals were findings, not flakes).
+> (5) All else stands: single-use (a) authority spent only on LANDING;
+>     protected regions byte-identical; ceilings, floors (as ratified in
+>     (e)), guards, goal state, hard stops unchanged. If a THIRD
+>     distinct downstream pin fires after this fold, stop — do not fold
+>     further without my word.
+EVIDENCE: sed -n '17258,17350p'; owner blockquote spans 17260-17289; (f)(5) is 17285-17289. The only file:line the owner names is 'palette_powder_protocol.py:2195 rebind; test_characterization_protocol.py:617 re-pin' (17271-17272). The word 'digest' in (f)(2) is glossed by its hex 'ff18cb2d… → 1e52199daa2ea4e8', i.e. the record_digest_manifest value at :2195 (HEAD :2195 reads ff18cb2d74866a94, verified via git show HEAD:./...).
+--------------------------------------------------------------------------------
+[RT-04-BH26f-executor-prose] COMMENT_ONLY live=False cur=N/A 4th=N/A conf=high  /Users/symow/Desktop/bbrose-systemOS/OWNER_BLOCKER_CLEARANCE.md:17291
+QUOTE: WHAT THIS ANSWERS. The hard-stop-4 SECOND report
+(~/bh26_work/hard_stop_4_second_report.txt): commit A attempt 2
+refused at Tier-1 (exit=1, 3 failed / 115 passed) on the three
+test_palette_statistics.py::GuardedCommitTests green-path tests — none
+a §BH24 id. Mechanism measured end-to-end, reproduced with every write
+redirected: each test runs the real guarded_commit.sh --dry-run, whose
+record-integrity step (A373/3q) always checks the REAL record set and
+refuses on exactly one finding — RECORD_DIGEST_MISMATCH:
+suite_file_manifest.json 65aef9fb1a3660cd → fe4199bc421b7454 — because
+the ruled §BH26(e) tool-run rewrote the suite manifest while
+record_digest_manifest.json, in no ruling, still pinned the old bytes.
+suite_manifest_diffs.json PASSED its APPEND_ONLY check (prefix stable,
+bytes grew): the ruled append held and is no part of the refusal. The
+A391 recipe at palette_powder_protocol.py:2196–2211 already prices the
+remedy — records regenerate, digest rebind in the same amendment,
+identity recompute, re-pin — and the report carried a ZERO-WRITE
+preview of all three moving values plus the grep-verified completeness
+check (exactly two live pins; all other hits historical prose). Ruled:
+lawful exit (i), the FOLD, recipe-conformant.
+EVIDENCE: Executor/transcriber prose (not blockquoted, not owner-typed), lines 17291-17309. This is where 'suite_file_manifest.json 65aef9fb1a3660cd → fe4199bc421b7454' (17299) and 'A391 recipe at palette_powder_protocol.py:2196–2211' (17304) appear — the hex pair 65aef9fb1a3660cd→fe4199bc421b7454 is the SAME pair the TIER_2 refusal of attempt 3 cites, here described as the record-manifest's stale entry for suite_file_manifest.json, not as the :1970 pin.
+--------------------------------------------------------------------------------
+[RT-05-BH26f-executor-order-of-acts] COMMENT_ONLY live=False cur=N/A 4th=N/A conf=high  /Users/symow/Desktop/bbrose-systemOS/OWNER_BLOCKER_CLEARANCE.md:17326
+QUOTE: ORDER OF ACTS under (f): this transcription lands FIRST through the
+guarded gate, predicted 8-leg and scored; then R1 —
+record_integrity.py --regenerate, every written value verified against
+the preview (records diff +0 −0 ~3: the gate ledger's legitimate
+growth plus the two ruled files; diffs entries 74→75; file digest
+1e52199daa2ea4e8; NO ledger line — the --regenerate path never calls
+emit_ledger; the ignored probe overwrite is noise, noted not
+predicted); then R2 — palette_powder_protocol.py:2195, one literal,
+ff18cb2d74866a94 → 1e52199daa2ea4e8; then R3 —
+test_characterization_protocol.py:617, one literal, protocol_identity
+re-pinned ead892658e3323a8 → 11d57441e84b8d73, the recompute verified
+equal to the preview before staging. Targeted evidence THIS TIME
+includes test_palette_statistics.py in full — the refuser joins the
+sweep, per the twice-learned subject-selection lesson. Then the EIGHT
+tracked paths staged, a fresh 8-leg prediction sealed BEFORE git add,
+relaunch, score; only on LANDING is the single-use §BH26(a) authority
+SPENT. Any written value differing from the preview, any second live
+pin, any THIRD distinct downstream pin: hard stop, reported before any
+further fold.
+EVIDENCE: Executor prose 17326-17344 defining R1/R2/R3 concretely: R2 = ':2195, one literal, ff18cb2d74866a94 → 1e52199daa2ea4e8' (the record_digest_manifest key), R3 = ':617'. No R-step touches :1970.
+--------------------------------------------------------------------------------
+[RT-06-BH26g-owner] RULING_TEXT live=False cur=N/A 4th=N/A conf=high  /Users/symow/Desktop/bbrose-systemOS/OWNER_BLOCKER_CLEARANCE.md:17353
+QUOTE: > OWNER RULING §BH26(g) — typed by me, this session. Transcribe per §BC
+> as a pure append BEFORE acting. If I meant something narrower, my
+> sentence governs.
+>
+> The stale-pair stop is ruled: RATIFY THE METHOD, not the hex.
+> §BH26(f)(2)'s two hex values are superseded by this sentence: the
+> digest pair commit A binds is THE PAIR THE ZERO-WRITE PREVIEW MINTS
+> IMMEDIATELY BEFORE R1, recorded verbatim in pred_a3's seal before
+> git add — and any written value differing from that recorded preview
+> is a hard stop. The records diff shape (+0 −0 ~3) and diffs 74→75
+> stand as ruled. Nothing may land between that preview and attempt 3's
+> launch; if anything does, the preview is void and re-mints. This
+> method governs any recurrence of the same dynamics without further
+> rulings — the same three-file chain, time-moved inputs only. A NEW
+> downstream pin remains a hard stop per (f)(5). All else in §BH26 and
+> its amendments stands; this transcription is the last act before the
+> preview.
+EVIDENCE: sed -n '17351,17424p'; owner blockquote spans 17353-17369. Time-moved-dynamics wording: 'This method governs any recurrence of the same dynamics without further rulings — the same three-file chain, time-moved inputs only.' (17365-17367). The NEW-pin sentence: 'A NEW downstream pin remains a hard stop per (f)(5).' (17366-17367). 'the digest pair' is defined as (f)(2)'s two hex values = record_digest_manifest digest + protocol_identity.
+--------------------------------------------------------------------------------
+[RT-07-BH26g-executor-prose] COMMENT_ONLY live=False cur=N/A 4th=N/A conf=high  /Users/symow/Desktop/bbrose-systemOS/OWNER_BLOCKER_CLEARANCE.md:17371
+QUOTE: WHAT THIS ANSWERS. The §BH26(f)(2) stop caught PRE-WRITE after T26f
+landed (7108fc6): the ruled hex pair (1e52199daa2ea4e8 /
+11d57441e84b8d73) was minted at ledger-432, and T26f's own gate — the
+ruled order's first act — appended ledger line 433 into its own
+commit. The ledger's digest is an input to the regenerated
+record_digest_manifest.json blob, so R1 run after T26f would have
+written a DIFFERING pair, measured zero-write as 2c5c61d7c91d29a6 /
+77e243cab9269f43 at ledger-433. Nothing was written; the stop report
+presented (i) ratify the fresh hex, (ii) ratify the method, (iii)
+other. Ruled: (ii). [...] ORDER OF ACTS under (g): [...] then R1
+(record_integrity.py --regenerate, every written value verified
+against that recorded preview — digest, +0 −0 ~3, diffs 74→75, no
+ledger line, the ignored probe noted as noise), R2
+(palette_powder_protocol.py:2195 rebind to the minted digest), R3
+(test_characterization_protocol.py:617 re-pin to the minted identity,
+recompute verified equal before staging); [...] Any written value differing from the recorded preview, any
+second live pin, any NEW downstream pin per (f)(5): hard stop.
+EVIDENCE: Executor prose 17371-17419 (elided with [...] between 17380 and 17400 and 17410-17415). The 'same three-file chain' is spelled out here as R1 record_digest_manifest.json / R2 :2195 / R3 :617. Grep of ALL blockquote lines 17100-17424 for '1970|suite_file_manifest|EXTENT_DIGESTS|manifest digest pin|identity chain' returned no hit (grep rc=1).
+--------------------------------------------------------------------------------
+[RT-08-AR3c-A391-coupling] RULING_TEXT live=False cur=N/A 4th=N/A conf=high  /Users/symow/Desktop/bbrose-systemOS/OWNER_BLOCKER_CLEARANCE.md:5256
+QUOTE: **(c) The cost of declaring a new test file is why this never happened, and the
+cost is not itself wrong.** The manifest's digest lives in `EXTENT_DIGESTS`, so
+regenerating it moves `protocol_identity` and drags the full five-step A391
+chain behind it. That coupling is deliberate and I am not loosening it.
+EVIDENCE: First A391 mention in the register (grep -n A391 → 5258). Under heading '### AR3 — THE RULING' (5242). 'The manifest' here = the suite file manifest (AR context: 318 vs 362 declared test files). No standalone '### A391' definition heading exists anywhere in the register (grep for 'A391 —|**A391|### A391|## A391|A391:' → no hits).
+--------------------------------------------------------------------------------
+[RT-09-AR4-4-five-steps] RULING_TEXT live=False cur=N/A 4th=N/A conf=high  /Users/symow/Desktop/bbrose-systemOS/OWNER_BLOCKER_CLEARANCE.md:5283
+QUOTE: 4. **All five A391 steps run** — records, regenerate, rebind, compute, PIN. §AQ
+   was committed hours ago admitting I stopped that chain at three because step
+   three looked finished. If I stop at three again, in the same session, on the
+   record that made me write it down, the lesson was never learned.
+EVIDENCE: Under '### AR4 — THE CHECK, STATED BEFORE THE CODE SO IT CANNOT BE ADJUSTED AFTER' (5269). This is the five-step enumeration; it names no digest by key or hex.
+--------------------------------------------------------------------------------
+[RT-10-AX0p-A391] RULING_TEXT live=False cur=N/A 4th=N/A conf=high  /Users/symow/Desktop/bbrose-systemOS/OWNER_BLOCKER_CLEARANCE.md:6798
+QUOTE: **AX0(p) — I RAN A391's FIVE STEPS COMPLETE AND MISORDERED, WHICH IS §AV5's
+DEFECT INVERTED.** A391 reads *"records, regenerate, rebind, compute, pin"*.
+This tranche ran regenerate/rebind/compute/pin over `suite_file_manifest`
+first, pinned `protocol_identity` to `a046c26c242831a3` — and only then found
+`record_integrity.py` refusing on a `RECORD_DIGEST_MISMATCH`. The **records**
+step, step one, had not been run. Clearing it moved
+`record_digest_manifest.json` from `b924d02e…` to `a32b4daa…`, invalidating the
+identity pinned minutes earlier and forcing the entire chain a second time.
+EVIDENCE: Register 6798-6805. Names BOTH digests in the A391 chain: 'regenerate/rebind/compute/pin over `suite_file_manifest`' (the :1970 key) and 'record_digest_manifest.json' (the :2195 key, moved by the records step).
+--------------------------------------------------------------------------------
+[RT-11-AZ0h-A391] RULING_TEXT live=False cur=N/A 4th=N/A conf=high  /Users/symow/Desktop/bbrose-systemOS/OWNER_BLOCKER_CLEARANCE.md:7484
+QUOTE: **AZ0(h) — A391's FIVE-STEP CHAIN IS DESCRIBED WRONG, AND FOLLOWING IT
+CORRECTLY STILL REFUSES.** A391 reads "records, regenerate, rebind, compute,
+pin", and §AX's entry on this pin diagnosed its own failure as running the
+steps out of order. This tranche ran them **in** order — step 1 returned
+`RECORD_INTEGRITY=OK records=1734 failing=0` — and step 2 then regenerated the
+suite manifest, **which is itself a write to three declared records**. Step 1's
+OK was invalidated by the very next step of the recipe that ordered it, and
+`record_integrity.py` refused with `RECORD_DIGEST_MISMATCH` before the rebind.
+EVIDENCE: Register 7484-7491. Step 2 = 'regenerated the suite manifest'; step 3 'the rebind' follows it — i.e. in A391 the rebind step is the suite-manifest digest rebind, with the records step moving record_digest_manifest.
+--------------------------------------------------------------------------------
+[RT-12-ppp-EXTENT_DIGESTS-header] RULING_TEXT live=False cur=N/A 4th=N/A conf=high  /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/apps/pipeline/services/palette_powder_protocol.py:1855
+QUOTE: #: A352 repair 3 / 3k — the suite manifest stays a large file, but its
+#: DIGEST lives here, inside the identity. The gate verifies the digest
+#: BEFORE reading the manifest, so the file can no longer be edited
+#: without protocol_identity() moving. The defect this closes is that
+#: the gate's own declared extent was DETERMINED_IN_FACT_NOT_IN_LAW.
+EXTENT_DIGESTS = {
+    #: rebound 2026-08-20 at WI-3J/§AR. The manifest declared 318 files
+    #: against 362 collected and had done since 2026-08-12, so A327(a) —
+    #: the clause that detects a test FILE disappearing — was blind to 44
+    #: files holding 1,310 tests, 17.8% of the suite. Blind in the worst
+    #: direction: deleting an undeclared file took the refusal count from
+EVIDENCE: sed -n '1850,1875p'. Lines 1855-1859 are comment; 1860 opens the live dict. The header's 'the suite manifest ... its DIGEST lives here' is the comment that precedes the first key 'suite_file_manifest' (:1970).
+--------------------------------------------------------------------------------
+[PIN-13-ppp-1970-suite_file_manifest] PIN live=True cur=YES 4th=NO conf=high  /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/apps/pipeline/services/palette_powder_protocol.py:1970
+QUOTE:     "suite_file_manifest": "65aef9fb1a3660cd",
+EVIDENCE: sed -n '1970p' (worktree) and git show HEAD:./apps/pipeline/services/palette_powder_protocol.py | sed -n '1970p' both read 65aef9fb1a3660cd — this line is NOT in the staged diff (git diff --cached -U0 shows only @@ -2195 +2195 @@). Measured shasum -a 256 of the staged docs/roadmap/palt_m6/suite_file_manifest.json = fe4199bc421b7454 ≠ 65aef9fb1a3660cd, so tools/tier2_gate.py:174-177 check_manifest refuses (the attempt-3 TIER_2 refusal text). After the hypothetical rebind to fe4199bc421b7454 the comparison at :174 would be equal (the task's stated fourth-fold premise; not performed).
+--------------------------------------------------------------------------------
+[PIN-14-ppp-2195-record_digest_manifest] PIN live=True cur=NO 4th=NO conf=high  /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/apps/pipeline/services/palette_powder_protocol.py:2195
+QUOTE:     "record_digest_manifest": "cbba67bee1c29105",
+EVIDENCE: Staged diff: '-    "record_digest_manifest": "ff18cb2d74866a94",' / '+    "record_digest_manifest": "cbba67bee1c29105",' (git diff --cached -U0, hunk @@ -2195 +2195 @@). shasum -a 256 of staged record_digest_manifest.json = cbba67bee1c29105, equal to the pin, so the UnsyncedManifest guard at ppp:2264-2268 is satisfied. The fourth fold does not touch this line.
+--------------------------------------------------------------------------------
+[RT-15-ppp-recipe-value] RULING_TEXT live=True cur=N/A 4th=N/A conf=high  /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/apps/pipeline/services/palette_powder_protocol.py:2196
+QUOTE:     "recipe": ("sha256 of the manifest file's bytes, first 16 hex; "
+               "regenerate the manifest, then update this digest in the "
+               "same amendment, never separately — and run A391's five "
+               "steps IN ORDER: records first, because clearing a record "
+               "refusal moves this very digest and silently invalidates "
+               "any identity pinned before it (§AX). RUN THE RECORDS STEP "
+               "TWICE: regenerating the suite manifest is itself a write "
+               "to three declared records, so step 1's OK does not survive "
+               "step 2 and must be re-earned before the rebind (§AY1). "
+               "REGENERATE THE SUITE MANIFEST ONLY WHEN A TEST FILE WAS "
+               "ACTUALLY ADDED OR REMOVED. It is a WRITE, not a query: it "
+               "stamps `generated` with the wall clock, so a run that "
+               "reports `added (0) / removed (0)` still mints a new digest "
+               "and still costs a rebind, an identity recompute and a "
+               "re-pin. Check `git status` first; if the manifest is clean "
+               "and no test file moved, DO NOT RUN IT (§AY1/§AZ0(l))"),
+}
+EVIDENCE: grep -n '"recipe"' → 2196; value spans 2196-2211, closing brace 2212. Dict position: immediately preceded by key 'record_digest_manifest' (:2195); 'suite_file_manifest' is the first key (:1970). The recipe's first sentence says 'the manifest' / 'this digest' without a key name; its later sentences distinguish 'the suite manifest' (regenerate; 'costs a rebind') from 'the records step' ('clearing a record refusal moves this very digest'). It is a string literal inside the executed EXTENT_DIGESTS dict, not an assertion — it refuses nothing by itself.
+--------------------------------------------------------------------------------
+[RT-16-test-comments-570-616] RULING_TEXT live=False cur=N/A 4th=N/A conf=high  /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/apps/pipeline/tests/test_characterization_protocol.py:581
+QUOTE:         # NO SUITE-MANIFEST REGENERATION AND NO REBIND: EXTENT_DIGESTS's own
+        # recipe says regenerate ONLY when a test file was added or removed,
+        # because it is a WRITE that stamps `generated` with the wall clock
+        # and mints a new digest even on added(0)/removed(0). This commit adds
+        # no test file. Measured, not assumed: 0 of the 1735 records in
+        # record_digest_manifest.json is a .py file, so editing the protocol
+        # source moves no record digest, RECORD_INTEGRITY is untouched, and
+        # the "run the records step TWICE" clause does not apply — its cause
+        # is manifest regeneration, which is not performed here.
+        # 63 records EMBED a protocol_identity and none carried the previous
+        # value either; they are historical stamps of the bytes their runs ran
+        # against, not a live index, so a mint does not drag them.
+        # RE-PINNED 2026-08-29 at §BH7, commit U, dfc98caf984055e3 ->
+        # ead892658e3323a8. Mover: NOT the defect-class register this time.
+        # P1's first act (§BH3, ruled to reading A by §BH7(a)) writes three
+        # new bound records under docs/roadmap/palt_m6, so the A391 RECORDS
+        # step was owed and run: `+3 -0 ~1`. That moved
+        # record_digest_manifest.json, which is bound into EXTENT_DIGESTS,
+        # which is bound into this identity — rebound in the SAME amendment
+        # per the recipe, 1e4e82003c328302 -> ff18cb2d74866a94, never
+        # separately.
+        # THE RECORDS STEP RAN ONCE, NOT TWICE, AND THAT IS MEASURED: the
+        # "run it TWICE" clause exists because regenerating the SUITE
+        # manifest is itself a write to three declared records (§AY1). This
+        # commit adds and removes no test file, so the suite manifest is not
+        # regenerated, the clause's cause is absent, and the second pass is
+        # not owed. Independently: record_digest_manifest.json does not track
+        # ITSELF, so regenerating it cannot invalidate itself.
+EVIDENCE: sed -n '570,620p'; the two NO-REBIND narrations sit at 581-589 (commit S, no test file added → no suite-manifest regeneration, no rebind) and 593-608 (commit U: records step ran, record_digest_manifest digest 'rebound in the SAME amendment per the recipe, 1e4e82003c328302 -> ff18cb2d74866a94'). Both comments read the recipe's 'this digest' clause as applying to the record_digest_manifest digest when the records step ran, and to the suite_file_manifest digest only when a test file was added/removed. NOTE: this staged commit DOES add a test file (test_container_font_owner_grant.py, 371→372), so the comment's own 'adds no test file' precondition for NO REBIND is absent here — stated as text, not judged.
+--------------------------------------------------------------------------------
+[TEST-17-test-617-identity-pin] TEST live=True cur=NO 4th=NO conf=medium  /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/apps/pipeline/tests/test_characterization_protocol.py:617
+QUOTE:         self.assertEqual(status["protocol_identity"], "0e9cd7a2b94ccc82")
+EVIDENCE: Staged diff hunk @@ -617 +617 @@: '-        self.assertEqual(status["protocol_identity"], "ead892658e3323a8")' / '+        self.assertEqual(status["protocol_identity"], "0e9cd7a2b94ccc82")'. Per the task's stated in-memory measurement the staged tree's protocol_identity is 0e9cd7a2b94ccc82 (matches, no failure) and the fourth fold moves it to c7924c5a4215f3cf, which the fold re-pins here in the same edit (no failure). Not re-measured by me — no pytest run, no identity computed.
+--------------------------------------------------------------------------------
+[CLAUSE-18-tier2_gate-check_manifest] CLAUSE live=True cur=YES 4th=NO conf=high  /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/tools/tier2_gate.py:164
+QUOTE: def check_manifest(counts):
+    """A327 — (a) file-set equality, (b) TIER_1 floors, (c) total floor."""
+    # A352 repair 3: the manifest stays a file, but its DIGEST lives in
+    # the hashed corpus, so it can no longer be edited without
+    # protocol_identity() moving. Verified BEFORE the file is read.
+    if ROOT not in sys.path:
+        sys.path.insert(0, ROOT)
+    from apps.pipeline.services import palette_powder_protocol as _PP
+    declared_digest = _PP.EXTENT_DIGESTS["suite_file_manifest"]
+    actual = manifest_digest()
+    if actual != declared_digest:
+        return ([f"MANIFEST_DIGEST_MISMATCH: {actual} != hashed "
+                 f"{declared_digest} — the manifest was edited outside "
+                 "the identity chain"], 0)
+EVIDENCE: tools/tier2_gate.py:46 'MANIFEST = os.path.join(ROOT, "docs/roadmap/palt_m6/suite_file_manifest.json")' and :160-161 'def manifest_digest(): return hashlib.sha256(open(MANIFEST, "rb").read()).hexdigest()[:16]'. So in tier2_gate.py 'the manifest' = the SUITE file manifest, and 'the identity chain' phrase exists ONLY here (:177) — it appears in no §BH26 ruling text. Measured actual fe4199bc421b7454 ≠ declared 65aef9fb1a3660cd → fires now; equal after the hypothetical :1970 rebind.
+--------------------------------------------------------------------------------
+[CLAUSE-19-record_integrity-MANIFEST] CLAUSE live=True cur=NO 4th=UNKNOWN conf=medium  /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/tools/record_integrity.py:22
+QUOTE: MANIFEST = os.path.join(ROOT, "docs/roadmap/palt_m6/record_digest_manifest.json")
+EVIDENCE: In record_integrity.py 'the manifest' = the RECORD digest manifest (the two tools' MANIFEST constants differ). Ledger line 435 (the attempt-3 gate's own record-integrity result) reads verdict "OK", refusal_count 0, records_checked 1738 — so the record set is consistent as staged. Fourth fold: rebinding :1970 edits a .py (NOT_A_RECORD per ppp:2189 comment '.py is NOT_A_RECORD ("source")'), but whether the gate's own ledger append then re-moves record_digest_manifest.json is the (g) 'time-moved inputs' dynamic — not measured here (record_integrity.py must not be run as a script).
+--------------------------------------------------------------------------------
+[RT-20-ppp-A391-comment-hits] COMMENT_ONLY live=False cur=N/A 4th=N/A conf=high  /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/apps/pipeline/services/palette_powder_protocol.py:2010
+QUOTE: :2010-2013 '#: THE ORDER IS STEP ONE FOR A REASON AND I STARTED AT STEP TWO. A391 / #: reads "records, regenerate, rebind, compute, pin". This tranche ran / #: regenerate/rebind/compute/pin over `suite_file_manifest` first, pinned / #: protocol_identity to a046c26c242831a3, and only then discovered' | :2031-2033 '#: FROM §AX'S. This tranche ran A391 step 1 exactly as written and read / #: `RECORD_INTEGRITY=OK records=1734 failing=0`. Step 2 then regenerated / #: the suite manifest — and STEP 2 IS ITSELF A RECORD WRITE. It moved' | :2076-2078 '#: A387 earned its keep here rather than merely existing: the three / #: identity tests failed with UnsyncedManifest BEFORE computing anything, / #: naming both digests and the A391 order.'
+EVIDENCE: git grep -n A391 -- apps tools docs (rc=0). All three are #: comments inside EXTENT_DIGESTS; :2010-2012 explicitly names 'regenerate/rebind/compute/pin over `suite_file_manifest`' as A391 steps 2-5.
+--------------------------------------------------------------------------------
+[CLAUSE-21-ppp-2268-UnsyncedManifest] CLAUSE live=True cur=NO 4th=NO conf=high  /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/apps/pipeline/services/palette_powder_protocol.py:2264
+QUOTE:     if on_disk != stored:
+        raise UnsyncedManifest(
+            f"record manifest on disk is {on_disk}, corpus stores "
+            f"{stored} — regenerate and rebind BEFORE computing the "
+            "identity (A391 order: records, regenerate, rebind, compute, pin)")
+EVIDENCE: Live guard naming the A391 order; it compares the RECORD manifest's on-disk digest to the corpus's stored value (:2195). Measured shasum of staged record_digest_manifest.json = cbba67bee1c29105 = :2195, so it does not raise now; the fourth fold does not touch :2195 or the record manifest.
+--------------------------------------------------------------------------------
+[RT-22-test-A391-comment-hits] COMMENT_ONLY live=False cur=N/A 4th=N/A conf=high  /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/apps/pipeline/tests/test_characterization_protocol.py:199
+QUOTE: :199 '# 2026-08-14: identity moved by the A391 manifest rebind for the' | :203 '# products re-run records bound; A391 chain each time).' | :210 '# A375/A391 again: records, regenerate, rebind, compute, PIN. No' | :219 '# fail-closed guard masking a second finding behind it. A375/A391' | :233 '# this test fail in the full suite. The A391 order has five steps' | :376 '# A391 step 1 ran FIRST this time, exactly as the two paragraphs above' | :437 '# naming both digests and the A391 order in the message.' | :596 '# new bound records under docs/roadmap/palt_m6, so the A391 RECORDS' | :935 'in EXTENT_DIGESTS — a full A391 re-pin to change one integer. What'
+EVIDENCE: git grep -n A391 -- apps; every hit in this file is a comment or docstring. :935 (docstring, 932-937) reads 'a floor moved only when someone hand-edited a file whose digest sits in EXTENT_DIGESTS — a full A391 re-pin to change one integer' — the file whose digest sits in EXTENT_DIGESTS and carries floors is the suite manifest.
+--------------------------------------------------------------------------------
+[RT-23-tier2_gate-297-A391] COMMENT_ONLY live=False cur=N/A 4th=N/A conf=high  /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/tools/tier2_gate.py:294
+QUOTE:     RE-MEASURED is the half AR exists because of. Until this change the
+    floors were carried forward verbatim -- `old.get("tier1_floors", {})`
+    -- so a floor moved only when someone hand-edited a file whose digest
+    sits in EXTENT_DIGESTS, at the price of a full A391 re-pin to change
+    one integer.
+EVIDENCE: Docstring of regenerate_manifest (tools/tier2_gate.py:294-298). Same sentence as test :935.
+--------------------------------------------------------------------------------
+[RT-24-docs-A391-hits] COMMENT_ONLY live=False cur=N/A 4th=N/A conf=high  /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/docs/roadmap/palt_m6/spreads_ceiling_breach.json:198
+QUOTE: docs/roadmap/palt_m6/spreads_ceiling_breach.json:198 '... this new record must be too. That is A391, not a scope choice: the manifest is regenerated by tools/record_integrity.py --regenerate, whose survey() auto-discovers the file.' | spreads_ceiling_breach.json:114 'by reading protocol_identity()'s payload while performing A391's compute step' | docs/roadmap/palt_m4c/palette_roadmap_continuation_state.json:286 'A391 chain honoured for the new records: manifest regenerated (...), EXTENT_DIGESTS rebound 7fd1b0a17b262c44 -> 165b383d69074b64, protocol identity moved LAWFULLY ecc46ec0725e5028 -> 87f9c7248ef3e3d3 with the pin updated per the A391 chain.' | :363 'A391 rebound (manifest c275cd37c92e274f, identity 52bffe4a622e3dc0)' | :581 'protocol identity moved lawfully by A391 manifest rebind to 1ccae043c593c4ea' | :664 'lawfully re-pinning the A391-moved identity' | :684 'records + A391 chain only, no instrument code touched' | docs/roadmap/palt_m6/declared_spreads/ensemble_convention_declaration.json:20 'protocol identity moves only by the A391 manifest chain' | docs/roadmap/palt_m6/p1_audit/p1_audit_findings.json:6 '§BH6(b) ruled that a correction \'is its own queued item owing the A391 chain and a fresh ruling; nothing here authorizes it\'' | :69 'A correction is a separate queued item owing the A391 chain and a fresh ruling that does not exist.'
+EVIDENCE: git grep -n A391 -- docs. All are prose fields inside JSON records. In these records 'the manifest' under A391 is used for BOTH the record manifest (spreads_ceiling_breach.json:198: 'regenerated by tools/record_integrity.py --regenerate') and the suite manifest (continuation_state.json:286: 'manifest regenerated ... EXTENT_DIGESTS rebound 7fd1b0a17b262c44 -> 165b383d69074b64').
+--------------------------------------------------------------------------------
+[RT-25-f5-and-second-live-pin-clause] RULING_TEXT live=False cur=N/A 4th=N/A conf=high  /Users/symow/Desktop/bbrose-systemOS/OWNER_BLOCKER_CLEARANCE.md:17285
+QUOTE: > (5) All else stands: single-use (a) authority spent only on LANDING;
+>     protected regions byte-identical; ceilings, floors (as ratified in
+>     (e)), guards, goal state, hard stops unchanged. If a THIRD
+>     distinct downstream pin fires after this fold, stop — do not fold
+>     further without my word.
+EVIDENCE: (f)(5) exact, register 17285-17289. grep -n 'downstream pin' over the whole 17,424-line register returns ONLY 17288 (this sentence), 17343 (executor prose), 17347 (RULED BY summary: 'a third distinct downstream pin a hard stop'), 17367 ((g): 'A NEW downstream pin remains a hard stop per (f)(5)'), 17416 (executor), 17422 (summary). No earlier owner text defines 'distinct downstream pin'. The nearest owner wording is (f)(2) 17274-17278: 'protocol_identity ead89265… → 11d57441e84b8d73 at its ONE live pin (the grep-verified completeness stands as part of the seal — any second live pin discovered is a hard stop)', and executor prose 17307-17308 '(exactly two live pins; all other hits historical prose)'.

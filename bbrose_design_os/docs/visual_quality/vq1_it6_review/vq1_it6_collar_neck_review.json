@@ -1,0 +1,340 @@
+{
+  "schema_version": "vq1_it6_collar_neck_review/1.0",
+  "iteration": "RESET2-IT6",
+  "authorized_change": [
+    "COLLAR_VISIBLE_ENVELOPE",
+    "VISIBLE_NECK_TRANSITION",
+    "DARK_COMPONENT_TO_COLLAR_INTERFACE"
+  ],
+  "scope_report": {
+    "dome_identical": true,
+    "shaft_identical_except_interface": true,
+    "interface_points_added": 1,
+    "body_identical": true,
+    "shoulder_identical": true,
+    "base_identical": true,
+    "neck_band_identical": true,
+    "collar_replaced": true,
+    "aspect_identical": true,
+    "centerline_identical": true
+  },
+  "collar_findings": {
+    "checks": {
+      "visible_contour_steps_zero": true,
+      "walls_near_vertical": true,
+      "single_sleeve": true,
+      "glass_is_one_contour": true,
+      "no_separate_neck_object": true,
+      "internals_hidden": true,
+      "dark_flare_overlaps_collar": true
+    },
+    "findings": [],
+    "visible_steps": 0,
+    "collar_body_ratio": 0.63434,
+    "status": "COLLAR_SINGLE_SLEEVE_VALID"
+  },
+  "metrics": {
+    "measured_on": "ACTUAL_EMITTED_PNG",
+    "row_aligned": true,
+    "averaged_with_body": false,
+    "collar_body_ratio_error": 0.00134,
+    "collar_outer_contour_iou": 0.97179,
+    "mean_collar_contour_distance": 0.00879,
+    "p95_collar_contour_distance": 0.03581,
+    "max_collar_junction_distance": 0.16176,
+    "visible_contour_steps": 0,
+    "unsupported_visible_internal_adapter": false,
+    "dark_flare_collar_overlap_ok": true,
+    "it5_comparison": {
+      "mean": 0.04184,
+      "p95": 0.06191,
+      "max": 0.18312,
+      "iou": 0.8653
+    },
+    "harness_note": "an earlier pass used a 0..1 resampler on a narrow band, which clamped outside the band and reported mean 0.106; row-aligned comparison is the correct measurement and is what is reported here",
+    "gates": {
+      "collar_body_ratio": true,
+      "collar_outer_contour_iou": true,
+      "mean_collar_contour_distance": true,
+      "p95_collar_contour_distance": true,
+      "max_collar_junction_distance": false,
+      "visible_contour_steps_zero": true,
+      "no_unsupported_internal_adapter": true
+    },
+    "gates_pass": false
+  },
+  "reference_pixels": {
+    "authority": "CONCEPT_VISUAL_PIXEL_EVIDENCE",
+    "is_physical_dimension": false,
+    "collar_top_y": 492,
+    "collar_bottom_y": 670,
+    "collar_visible_height_px": 178,
+    "collar_visible_width_px": 217.0,
+    "collar_height_width_ratio": 0.8203,
+    "collar_left_edge_px": 558.0,
+    "collar_right_edge_px": 775.0,
+    "top_edge_curvature_px": -4.0,
+    "bottom_edge_curvature_px": 3.0,
+    "visible_glass_transition_height_px": 20,
+    "collar_shoulder_gap_px": 20,
+    "dark_flare_overlap_px": -36.0,
+    "body_visible_width_px": 343,
+    "dark_shaft_visible_width_px": 109,
+    "lower_dark_flare_width_px": 129,
+    "collar_body_ratio": 0.633
+  },
+  "input_quality": {
+    "schema_version": "visual_inspector_input_quality/1.0",
+    "evaluated_at": "2026-07-28T05:41:38.952747+00:00",
+    "component_under_review": "FULL_ASSEMBLY",
+    "candidate_path": "docs/visual_quality/vq1_it6_gate/iteration_6_closure.png",
+    "candidate_sha256": "13906bace40eb6c7e4369dff1d1fbf34211b08054052d31e6fdcad14cde6fbce",
+    "measurement": {
+      "component": "FULL_ASSEMBLY",
+      "found": true,
+      "image_size": [
+        371,
+        560
+      ],
+      "bbox": [
+        12,
+        45,
+        358,
+        559
+      ],
+      "width_px": 347,
+      "height_px": 515,
+      "percent_of_image": 86.015,
+      "touches_image_edge": false,
+      "truncated_sides": false,
+      "truncated_top": false,
+      "continues_below_frame": true,
+      "assembly_top_px": 45,
+      "assembly_bottom_px": 559
+    },
+    "floors_applied": {
+      "min_height_px": 512,
+      "min_width_px": 180
+    },
+    "override_record": null,
+    "checks": {
+      "target_found": true,
+      "meets_min_height": true,
+      "meets_min_width": true,
+      "not_clipped": true,
+      "sharp_enough": true,
+      "contrast_sufficient": true,
+      "aspect_preserved": true,
+      "evidence_full_reference": true,
+      "evidence_reference_component_crop": true,
+      "evidence_full_candidate": true,
+      "evidence_candidate_component_crop": true,
+      "evidence_previous_candidate": true,
+      "evidence_equal_scale_overlay": true,
+      "labels_match_bytes": true,
+      "reference_candidate_scale_compatible": true
+    },
+    "findings": [],
+    "quality_gate": "PASSED",
+    "verdict_if_failed": null,
+    "note": "these are model-input legibility floors, not production dimensions; they carry no geometric authority"
+  },
+  "visualizer": {
+    "one_clean_cylindrical_metal_sleeve": false,
+    "stepped_ledges_removed": true,
+    "visible_neck_transition_minimal_and_coherent": false,
+    "dark_lower_flare_connects_naturally": false,
+    "same_visible_closure_family": false,
+    "better_than_previous": true,
+    "critical_blockers": [
+      "Metal gold sleeve is absent \u2014 the cylindrical collar is rendered in pale beige/cream instead of rose-gold metallic finish",
+      "Dark rubber bulb flare does not form a clean skirt sitting atop the metal sleeve; it bleeds into the beige collar ambiguously",
+      "Neck transition between dark component and sleeve lacks the crisp defined ring seen in the reference",
+      "Overall closure family reads as a flat matte dropper rather than the reference's polished metal-banded dropper"
+    ],
+    "confidence": 0.62,
+    "calls": 1,
+    "manifest": {
+      "schema_version": "visual_inspector_input_manifest/1.0",
+      "created_at": "2026-07-28T05:41:46.819588+00:00",
+      "inspection_identity": "vq1-it6-collar",
+      "purpose": "collar/neck comparison",
+      "component_under_review": "CLOSURE",
+      "images": [
+        {
+          "label": "reference_component_crop",
+          "path": "docs/visual_quality/vq1_it6_gate/ref97_closure_full_assembly.png",
+          "sha256": "4b0f019e8ef708db87b683b16351498e1a312d361ba1fcd7b4cf23c2093865c0"
+        },
+        {
+          "label": "previous_candidate",
+          "path": "docs/visual_quality/vq1_it6_gate/iteration_5_closure.png",
+          "sha256": "ae2b8ced94f9b3393cc097996232d25975b9c14abab534c46ac79a6c691af7c7"
+        },
+        {
+          "label": "candidate_component_crop",
+          "path": "docs/visual_quality/vq1_it6_gate/iteration_6_closure.png",
+          "sha256": "13906bace40eb6c7e4369dff1d1fbf34211b08054052d31e6fdcad14cde6fbce"
+        }
+      ],
+      "image_order": [
+        "reference_component_crop",
+        "previous_candidate",
+        "candidate_component_crop"
+      ],
+      "semantic_state": "VISIBLE_DARK_CLOSURE_ENVELOPE_WITH_ROUNDED_DOME_AND_FLARED_SKIRT",
+      "human_findings": [],
+      "prompt_version": "it6-collar-qualitative-v1",
+      "model": "claude-sonnet-4-6",
+      "quality_gate": "PASSED",
+      "quality_findings": [],
+      "response_identity": "",
+      "call_permitted": true,
+      "verdict_authority": {
+        "deterministic_output_pixel_analysis_governs": [
+          "apex topology",
+          "contour coordinates",
+          "pixel width",
+          "pixel height",
+          "numeric ratios",
+          "clipping",
+          "symmetry",
+          "component bounds"
+        ],
+        "multimodal_inspection_governs": [
+          "semantic resemblance",
+          "perceived form",
+          "qualitative proportional balance",
+          "generic-versus-reference character",
+          "visual improvement or regression"
+        ],
+        "human_governs": [
+          "final structural acceptance",
+          "semantic approval",
+          "whether another correction is authorized"
+        ],
+        "multimodal_may_override_deterministic_pixel_topology": false
+      },
+      "credentials_persisted": false
+    },
+    "verdict": "VISUALLY_IMPROVED_BUT_INSUFFICIENT"
+  },
+  "nonprinting_technical_internals": [
+    "INTERNAL_NECK_FINISH",
+    "INTERNAL_CLOSURE_OPENING",
+    "INTERNAL_PIPETTE_INTERFACE",
+    "INTERNAL_OVERLAP_REGION"
+  ],
+  "it7_generated": false,
+  "assembly_released": false,
+  "manufacturable_claim": false,
+  "vq1_state": "REVISION_REQUIRED",
+  "production_geometry": "BLOCKED_PENDING_SUPPLIER_RESPONSE",
+  "supplier_requests_sent": false,
+  "image_generation_calls": 0,
+  "status": "AWAITING_HUMAN_STRUCTURAL_REVIEW",
+  "blocker_classification": {
+    "record_type": "vq1_it6_blocker_classification/1.0",
+    "created_at": "2026-07-28",
+    "iteration": "RESET2-IT6",
+    "vq1_state": "REVISION_REQUIRED",
+    "it6_status": "VISUALLY_IMPROVED_BUT_INSUFFICIENT",
+    "active_structural_blockers": [
+      {
+        "code": "VQ_DARK_CLOSURE_LOWER_INTERFACE_FAILED",
+        "canonical": true,
+        "meaning": "The visible dark closure flare does not transition into the collar in a reference-faithful, structurally coherent way.",
+        "source": "stable generator code (apps/ire/vq1_reset2.py)",
+        "supported_by": [
+          "VQ_COLLAR_NECK_JUNCTION_DEVIATION"
+        ],
+        "blocks_vq1_structural_acceptance": true
+      }
+    ],
+    "supporting_deterministic_findings": [
+      {
+        "code": "VQ_COLLAR_NECK_JUNCTION_DEVIATION",
+        "supports": "VQ_DARK_CLOSURE_LOWER_INTERFACE_FAILED",
+        "replaces_canonical_blocker": false,
+        "max_junction_contour_distance": 0.16176,
+        "permitted_maximum": 0.07,
+        "location": "dark-closure flare / collar transition",
+        "measured_on": "ACTUAL_EMITTED_PNG"
+      }
+    ],
+    "relationship": {
+      "blocker": "VQ_DARK_CLOSURE_LOWER_INTERFACE_FAILED",
+      "relation": "supported_by",
+      "finding": "VQ_COLLAR_NECK_JUNCTION_DEVIATION"
+    },
+    "deferred_material_findings": [
+      {
+        "code": "VQ_COLLAR_METALLIC_REALIZATION_DEFERRED_TO_VQ3",
+        "category": "MATERIAL_REALIZATION",
+        "current_workstream_relevance": "NONBLOCKING_FOR_VQ1_STRUCTURE",
+        "blocks_vq1_structural_acceptance": false,
+        "reason": [
+          "VQ-1 evaluates structural form",
+          "polished rose-gold realization belongs to VQ-3",
+          "neutral diagnostic fills are permitted in VQ-1",
+          "material appearance cannot excuse incorrect geometry, but material realism itself is outside this workstream"
+        ],
+        "original_visualizer_wording_preserved_for_audit": [
+          "Metal gold sleeve is absent \u2014 the cylindrical collar is rendered in pale beige/cream instead of rose-gold metallic finish",
+          "Overall closure family reads as a flat matte dropper rather than the reference's polished metal-banded dropper"
+        ],
+        "vq3_may_start_before_vq1_structural_acceptance": false
+      }
+    ],
+    "structural_visualizer_observations_retained": [
+      "Dark rubber bulb flare does not form a clean skirt sitting atop the metal sleeve; it bleeds into the beige collar ambiguously",
+      "Neck transition between dark component and sleeve lacks the crisp defined ring seen in the reference"
+    ],
+    "original_visualizer_critical_blockers_verbatim": [
+      "Metal gold sleeve is absent \u2014 the cylindrical collar is rendered in pale beige/cream instead of rose-gold metallic finish",
+      "Dark rubber bulb flare does not form a clean skirt sitting atop the metal sleeve; it bleeds into the beige collar ambiguously",
+      "Neck transition between dark component and sleeve lacks the crisp defined ring seen in the reference",
+      "Overall closure family reads as a flat matte dropper rather than the reference's polished metal-banded dropper"
+    ],
+    "synonymous_codes_rejected": [
+      "VQ_DARK_FLARE_COLLAR_JUNCTION_FAILED"
+    ],
+    "rejection_reason": "a third synonymous code would fragment the record; the canonical generator code is used instead",
+    "geometry_changed": false,
+    "it7_generated": false,
+    "provider_calls_this_slice": 0,
+    "supplier_requests_sent": false,
+    "visualizer_observation_assignment": [
+      {
+        "observation": "Metal gold sleeve is absent \u2014 the cylindrical collar is rendered in pale beige/cream instead of rose-gold metallic finish",
+        "category": "MATERIAL_REALIZATION",
+        "rationale": "describes finish/appearance, not form",
+        "blocks_vq1_structural_acceptance": false
+      },
+      {
+        "observation": "Dark rubber bulb flare does not form a clean skirt sitting atop the metal sleeve; it bleeds into the beige collar ambiguously",
+        "category": "STRUCTURAL",
+        "rationale": "describes the dark flare's transition into the collar \u2014 this IS the canonical blocker",
+        "blocks_vq1_structural_acceptance": true
+      },
+      {
+        "observation": "Neck transition between dark component and sleeve lacks the crisp defined ring seen in the reference",
+        "category": "STRUCTURAL",
+        "rationale": "describes the visible neck transition geometry",
+        "blocks_vq1_structural_acceptance": true
+      },
+      {
+        "observation": "Overall closure family reads as a flat matte dropper rather than the reference's polished metal-banded dropper",
+        "category": "MATERIAL_REALIZATION",
+        "rationale": "describes finish/appearance, not form",
+        "blocks_vq1_structural_acceptance": false
+      }
+    ],
+    "assignment_method": "EXPLICIT_PER_OBSERVATION",
+    "assignment_note": "an initial keyword pass filed the flare/skirt observation under MATERIAL because it names the metal sleeve; that observation is the canonical structural blocker and was reassigned to STRUCTURAL"
+  },
+  "active_vq1_structural_blocker": "VQ_DARK_CLOSURE_LOWER_INTERFACE_FAILED",
+  "supporting_deterministic_finding": "VQ_COLLAR_NECK_JUNCTION_DEVIATION",
+  "deferred_to_vq3": "VQ_COLLAR_METALLIC_REALIZATION_DEFERRED_TO_VQ3",
+  "vq3_may_start_before_vq1_acceptance": false
+}

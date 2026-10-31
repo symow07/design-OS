@@ -1,0 +1,72 @@
+{
+ "schema_version": "decision_event_key_loss_incident/1.0",
+ "incident_id": "DEKEYLOSS-2026-07-25-001",
+ "discovered_on": "2026-07-25",
+ "declared_on": "2026-07-25",
+ "environment": "LOCAL_DEVELOPMENT — bbrose_design_os development database on the operator's iMac",
+ "classification": [
+  "DECISION_EVENT_ORIGINAL_KEY_MATERIAL_UNRECOVERABLE",
+  "LEGACY_DECISION_SIGNATURE_UNVERIFIABLE",
+  "DECISION_EVENT_KEY_EPOCH_RESET_REQUIRED"
+ ],
+ "cause": "manual rewrite of the runtime .env on 2026-07-25 (adding web-search credentials) dropped DECISION_EVENT_HMAC_KEYS and DECISION_EVENT_ACTIVE_KEY_ID; the original values existed only in that file and in the memory of service processes that were subsequently restarted",
+ "lost_key_identifiers": [
+  "dip1c-dev-key-1"
+ ],
+ "affected_historical_events": {
+  "count": 3,
+  "events": [
+   {
+    "sequence_number": 1,
+    "event_id": "3b00b6105e994367a120822cf02f79ec",
+    "created_at": "2026-07-18T08:08:41Z",
+    "type": "single-operator reviewer-role bootstrap (bootstrap/single_operator_initial_reviewer/1.0)"
+   },
+   {
+    "sequence_number": 2,
+    "event_id": "dc5340e91b0c45a68a40ac97fb059e2f",
+    "created_at": "2026-07-18T09:56:42Z",
+    "type": "human semantic metadata assertion (human_semantic_metadata/1.0)"
+   },
+   {
+    "sequence_number": 3,
+    "event_id": "66c4fb8fce6f4dce8b27426326ca90d3",
+    "created_at": "2026-07-18T10:43:53Z",
+    "type": "human semantic metadata assertion (human_semantic_metadata/1.0)"
+   }
+  ],
+  "chain_head": "also signed under the lost key; re-signs itself under the active epoch at the next append"
+ },
+ "recovery_locations_searched": [
+  "VS Code local history (~/Library/Application Support/Code/User/History) — only the post-rewrite save exists",
+  "project and parent directories for .env backups/editor backups — none",
+  "sibling/archived repository copies — none",
+  "VS Code Backups and workspaceStorage — no hits",
+  "shell history and shell/service configuration (.zsh_history, .zshrc, .zprofile, LaunchAgents, docker-compose) — no hits",
+  "Time Machine / APFS local snapshots — no destination, no snapshots",
+  "project session records — 10 distinct historical key maps recovered (preserved privately outside version control, mode 600); NONE contains the signing key id used by the affected events"
+ ],
+ "recovery_outcome": "DECISION_EVENT_ORIGINAL_KEYS_NOT_RECOVERED",
+ "verification_outcome": "no recovered candidate verifies any of the 3 affected events; every strong recovered candidate was tested read-only against the chain and failed with key-unavailable problems; content-hash and linkage checks pass, so there is no evidence of tampering",
+ "historical_event_integrity_state": "UNVERIFIABLE_DUE_TO_LOST_KEY_MATERIAL",
+ "new_key_epoch": {
+  "key_id": "epoch2-20260725",
+  "generated_on": "2026-07-25",
+  "entropy_bits": 256,
+  "generation": "cryptographically secure OS randomness (secrets.token_hex), no derivation from repository data, timestamps, usernames or product data",
+  "storage": "runtime .env only — never committed, never in the database, never logged",
+  "scope": "signs NEW DecisionEvents only; provides no verification authority over the legacy epoch"
+ },
+ "remediation_state": "KEY_EPOCH_RESET_APPLIED — legacy events preserved immutable and classified; reaffirmation packet issued",
+ "required_human_actions": [
+  "review docs/security/decision_event_reaffirmation_packet.json and decide REAFFIRM / REJECT / SUPERSEDE / NO_LONGER_REQUIRED for each of the 3 legacy decisions",
+  "REVIEWER_ROLE_REAFFIRMATION_REQUIRED — the DESIGN_REVIEWER bootstrap grant (seq 1) must not be trusted from the legacy event alone",
+  "CORPUS_AUTHORIZATION_REAFFIRMATION_REQUIRED — the two semantic-metadata assertions (seq 2, 3) are suspended from any authority until reaffirmed"
+ ],
+ "explicit_non_actions": [
+  "no historical event was deleted, modified or re-signed",
+  "no recovered candidate key was installed",
+  "legacy events are never reported as VALID, VERIFIED or TAMPERED absent tamper evidence",
+  "no candidate key values or new key material are stored in this record"
+ ]
+}

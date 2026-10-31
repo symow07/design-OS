@@ -1,0 +1,30 @@
+§AD0(a) SCORE — T26f (§BH26(f) transcription), commit 7108fc6. Gate
+GREEN, hand-captured exit=0. 8/8 legs HELD.
+
+L1 HELD: register + gate-staged ledger line only; no apps path, no
+   docs/roadmap path beyond the gate's own ledger; seven WIP paths in
+   stash (five apps re-verified vs sha256s.txt before the push; docs
+   pair recorded to sha256s_docs.txt fe4199bc…/065b33fc…; both new
+   files verified absent, five tracked paths verified HEAD-identical).
+L2 HELD: register 93+0; 17,256-line prefix byte-identical (hash
+   fdcd80da… proved at append, worktree==HEAD first); total 17,349.
+L3 HELD: manifest untouched at HEAD; extent guard green against the
+   371-declared disk state; records chain digest-consistent — the
+   three attempt-2 refusers PASSED in this configuration (GREEN line).
+L4 HELD: one staged row 93 0 (measured pre-launch).
+L5 HELD: 2 files, 94 insertions(+), 0 deletions (numstat: 93+0
+   register, 1+0 ledger).
+L6 HELD: suite line EXACT — TIER_2=GREEN collected=8490 failures=0
+   apps=7684 dip0c=671 dip0=135. No refusal; §BH24 0/3.
+L7 HELD: ledger 432 → 433, +1 in this commit.
+L8 HELD: apps diff EMPTY; both protected regions re-verified at
+   scoring (GATE 7fbeb8f1fe10b0fb @ cfa [514:541]; TEST
+   b32030dc827263e4 @ a76242c^ blob [82:98], cwd-correct pathspec,
+   checked exit). protocol_identity untouched this commit
+   (ead892658e3323a8); §BH26(a) authority UNSPENT.
+
+Post-commit: HEAD 7108fc6; porcelain EMPTY; stash restore next,
+byte-verified against BOTH sha256 records, then R1–R3 under
+preview-is-the-prediction (1e52199daa2ea4e8 / 74→75 / +0 −0 ~3 /
+11d57441e84b8d73), targeted sweep including the refuser file, fresh
+8-leg over EIGHT paths, relaunch.

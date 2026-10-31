@@ -1,0 +1,126 @@
+[RECONSTRUCTION NOTE — NOT PART OF THE SEALED TEXT: the original
+/tmp/pred_p1.txt was written and sealed BEFORE pass 1's `git add` and gate,
+and was destroyed minutes AFTER the landing by the environment /tmp sweep
+recorded at §BH21(h). The text below is reproduced verbatim from the
+executor's context. It is scored in the final report exactly as sealed; no
+bar is rescored. The gate-written in-repo artifacts (capture triplet
+20260831T085911Z_b930e85*, ledger line 420, commit fedfab7's diff)
+corroborate every leg independently of this copy.]
+
+§AD0(a) PREDICTION — COMMIT AU — §BH21(b) PASS 1
+=================================================
+Written BEFORE `git add` of the pass-1 paths, BEFORE the gate. Scored in the
+final §BH21 report, against measurement. No bar is lowered after the fact.
+
+HEAD at time of writing: b930e85
+Ruling executed:         §BH21(b) — PASS 1 of the two-pass constant clearance.
+Goal-order position:     FIRST commit of four (pass 1 -> transcription ->
+                         [regen + (c) measurement, no commit] -> pass 2 ->
+                         queue record/final gate).
+
+WHAT CARRIES THE PROOF. §BH21(a) ratifies the two failures as CORRECT
+DETECTIONS and (b) binds every written value to a FRESH measurement taken
+immediately before writing — "No constant is ever written to a value not yet
+measured true." The fresh run (this session, minutes before this file) printed
+FRESH_MEASUREMENT_VERDICT: ALL_HOLD:
+    files 4886 · dedupe.unique 3944 · packages 48        (the three to write)
+    dup_group_count 941 · files_in_dup_grps 1883 ·
+    faces 3966 (stale-true) · groups 2832 (stale-true) ·
+    duplicate_model 941                                   (the held pins)
+plus test_c5's pins (3966/1880/3) green in the 16:32 refused run itself.
+
+THE EIGHT LEGS
+==============
+L1 — WRITE SET
+    Exactly TWO paths of mine, both at the GIT ROOT:
+      M  tools/dip0c/tests/test_c4a.py
+      M  tools/dip0c/tests/test_c4c.py
+    Plus, written BY THE GATE and not by me:
+      M  bbrose_design_os/docs/roadmap/palt_m6/record_gate_ledger.jsonl (+2,
+         see L7 — THE ORPHAN RIDES IN HERE)
+      +  THREE capture files under bbrose_design_os/.tier2_captures
+         ({stamp}_{head}.txt, _dip0c, _dip0), gitignored, unstaged.
+    DELIBERATELY HELD OUT: OWNER_BLOCKER_CLEARANCE.md. It is UNSTAGED before
+    the pass-1 `git add` (index-only `git restore --staged`; worktree copy
+    untouched at +210 -0) and must appear NOWHERE in this commit. §BH21(b):
+    "The staged transcription must NOT ride in."
+    NOTHING ELSE. No queued item is touched: no load_c4a freshness guard, no
+    corpus-pin architecture change, no smalls, no OFL reading.
+
+L2 — DIFF SHAPE
+      tools/dip0c/tests/test_c4a.py     +2  -2   (:311 4883->4886, :313 3941->3944)
+      tools/dip0c/tests/test_c4c.py     +3  -3   (:265 4883->4886, :266 3941->3944,
+                                                  :269 47->48)
+      --------------------------------------------------
+      my subtotal                       +5  -5
+      + record_gate_ledger.jsonl        +2  -0   (gate-written, incl. orphan)
+      --------------------------------------------------
+      commit total                      +7  -5   across 3 files
+    Constants only — no comment is added or removed, the trailing "# C4a"/
+    "# C4b" annotations stay byte-identical.
+
+L3 — MANIFEST / A391
+    suite_file_manifest.json absent; the two test files are not among its 371
+    apps/ paths (census {'apps': 371}). No new file anywhere.
+
+L4 — §BH4(l) STAGED == DECLARED, SCORED ON BOTH HALVES (per §BH21(b))
+    STAGED half: `git diff --cached --numstat` lists exactly the two test
+    files at +2 -2 and +3 -3 — and does NOT list OWNER_BLOCKER_CLEARANCE.md.
+    UNSTAGED half: `git status --porcelain` shows exactly TWO column-2
+    entries — ` M OWNER_BLOCKER_CLEARANCE.md` (+210 -0, the held-out
+    transcription) and ` M .../record_gate_ledger.jsonl` (the orphan; the
+    gate stages the whole file mid-run, folding it). No `??` entries.
+
+L5 — COMMIT CONTENTS
+    ONE commit. CODE-ONLY, CONSTANTS-ONLY — the five swaps above and nothing
+    else. NOT DONE HERE: faces/groups/FONT_FACE stay 3966/2832/3966
+    (stale-true per §BH21(b)); 941/1883/1880 untouched; the transcription, the
+    regen, the (c) measurement, pass 2, the queue record all come later.
+
+L6 — SUITE / COLLECTION
+      TIER_2=GREEN collected=8490 failures=0 apps=7684 dip0c=671 dip0=135
+    The ONLY movement vs the refused AT run is failures 2 -> 0: the two
+    correct detections now assert the new measured truth. Every collection
+    number identical.
+
+L7 — LEDGER (the orphan, handled as §BH21(b) demands it be stated)
+    File sits DIRTY at 419 lines: 418 committed + 1 ORPHAN from the refused
+    AT gate run (record-integrity line, utc 08:20:04Z, verdict OK — a record
+    about record-integrity, not about tier2, verified at refusal time). The
+    ledger is append-only and the line is the gate's own true record of a run
+    that happened; it is NOT deleted and NOT edited. guarded_commit.sh:340
+    stages the WHOLE FILE, so pass 1's fold carries BOTH the orphan and this
+    run's new line: 419 -> 420 on disk, +2 -0 vs HEAD in the commit. After
+    pass 1 the ledger is CLEAN for the first time since the refusal.
+
+L8 — PROTOCOL IDENTITIES
+    Zero apps/ files in the commit; EXTENT_DIGESTS at apps/pipeline/services/
+    palette_powder_protocol.py:1861 untouched, PROVED by an empty
+    `git diff b930e85 <new> -- <that path>` after landing.
+
+NUMBERED CLAIMS
+===============
+C1. EVERY WRITTEN VALUE WAS MEASURED TRUE IMMEDIATELY BEFORE WRITING — 4886,
+    3944, 48 from the ALL_HOLD fresh run, not from the earlier report. No
+    other value is written anywhere.
+C2. PASS 1 LEAVES NOTHING CURRENTLY-FALSE UNFIXED AND NOTHING CURRENTLY-TRUE
+    ALTERED: the same fresh run measured every held pin at its asserted value.
+    After this commit, dip0c has zero corpus pins asserting a value the live
+    corpus contradicts — until the ruled regen moves the stale trio, which is
+    pass 2's job, not this one's.
+C3. THE HELD-OUT TRANSCRIPTION SURVIVES INTACT: after `git restore --staged`,
+    the worktree diff for OWNER_BLOCKER_CLEARANCE.md is still +210 -0 and the
+    16,123-line prefix is still byte-identical to HEAD (the AT C1 check,
+    re-run). Index-only, nothing destroyed.
+C4. THE GATE COMMITS THE INDEX PLUS THE LEDGER, NOTHING MORE — measured by
+    reading guarded_commit.sh, not assumed: :343 is `git commit "$@"` (no -a,
+    no pathspec) and the script's only `git add` is :340 for the ledger. This
+    is WHY the unstaged register cannot ride in.
+C5. THE FIX KEEPS THE GUARD TWO-SIDED: the pins were refusing CORRECTLY
+    (§BH21(a) ratifies the detections) and after the swap they pin the NEW
+    measured truth — a corpus regression to 4883 files would refuse again
+    tomorrow. The refusal is answered, not silenced.
+
+WHAT PASS 1 IS NOT: not the transcription (held out, next commit), not the
+regen, not the join measurement, not pass 2, not the queue record, not any
+queued owner-gated item, and not a touch on any stale-true pin.

@@ -1,0 +1,24 @@
+§AD0(a) SCORE — §BH32(f) usage measured, not assumed, launched against
+pred_usage.txt (sealed 1ea681722698e24f before git add). Gate GREEN,
+GEXIT=0. LANDED 3eacded (2026-09-05T02:16:49Z UTC). 8/8.
+
+L1 HELD: exactly the FIVE declared apps paths + the gate-staged ledger;
+   nothing outside apps/.
+L2 HELD: pdf_ai 169/4; test_pdf_ai_emitter 54/0; container target 12/2;
+   test_container_target 24/0; test_wif_reconstruct_container 4/0.
+L3 HELD: no manifest / records / ledger objection; census-first held —
+   records, identity, corpus constants untouched; WIT denominator 863 with
+   its register keys unmoved.
+L4 HELD: staged == declared, 5 rows, measured before launch.
+L5 HELD: 6 files, 264 insertions, 6 deletions — exact.
+L6 HELD: "TIER_2=GREEN collected=8542 failures=0 apps=7730 dip0c=671
+   dip0=141" — exact (8,538 + the four tests). No refusal; §BH24 0/3.
+L7 HELD: ledger 457 → 458.
+L8 HELD: apps diff = exactly the five paths; GATE 7fbeb8f1fe10b0fb at
+   [514:541], TEST b32030dc827263e4 byte-identical; tree seals unchanged;
+   protocol_identity untouched; the eight M7 artefacts == baseline; on the
+   live container path (task 54, rolled back) the persisted usage record
+   reconciles with agreement True and no usage code in the font readiness;
+   no authority involved.
+Post-landing: porcelain clean. §BH32's build commits complete; the goal
+emission and report follow.

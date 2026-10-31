@@ -1,0 +1,177 @@
+{
+ "record_type": "p1_v4_assumptions_manifest/1.0",
+ "authority_classes": [
+  "OWNER_MEASURED",
+  "OWNER_CONFIRMED",
+  "ONLINE_EXACT_MATCH",
+  "ONLINE_ANALOGOUS_REFERENCE",
+  "CALCULATED_FROM_OWNER_DATA",
+  "VISUAL_ESTIMATE_FROM_PHOTO",
+  "GENERIC_RENDERING_DEFAULT",
+  "VISUALIZATION_ONLY_GEOMETRY",
+  "UNKNOWN"
+ ],
+ "provisional_assumptions": {
+  "A1": "66 mm treated as the straight-wall-end landmark (owner clarification pending)",
+  "A2": "69 mm treated as a point ON the shoulder curve, not a profile control anchor (owner clarification pending)",
+  "A3": "18.11 mm neck height treated as shoulder/neck junction \u2192 glass mouth (owner clarification pending)",
+  "A4": "105 mm dropper height treated as bulb top \u2192 pipette tip (definition pending)"
+ },
+ "modelling_simplifications": {
+  "S1": "GL18-class thread NOT modelled (pitch from DIN 168, turns owner-counted; silhouette shows neck \u00d815.6)",
+  "S2": "collar knurling/ribs NOT modelled",
+  "S3": "base embossing ('50ml', '46', dot ring) NOT modelled",
+  "S4": "label artwork NOT modelled (deferred to artwork phase per owner)",
+  "S5": "pipette EXCLUDED from the rendered assembly (hidden interior component; clearances proven in contract math)",
+  "S6": "hollow glass interior is VISUALIZATION_ONLY_GEOMETRY (material renders only; never measured, never manufacturing authority)",
+  "S7": "serum fill volume is VISUALIZATION_ONLY_GEOMETRY \u2014 the real bottle is filled (IMG_3120); fill line is a VISUAL_ESTIMATE, never a measured capacity"
+ },
+ "shoulder_control_points_v4": [
+  {
+   "z_mm": 66.0,
+   "r_mm": 18.7,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "MEDIUM",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 67.0,
+   "r_mm": 18.42,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 68.0,
+   "r_mm": 17.75,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 69.0,
+   "r_mm": 16.8,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 70.2,
+   "r_mm": 15.1,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 71.4,
+   "r_mm": 12.9,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 72.6,
+   "r_mm": 10.0,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 73.1,
+   "r_mm": 8.65,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 73.49,
+   "r_mm": 7.8,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "MEDIUM",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  }
+ ],
+ "bulb_control_points_v4": [
+  {
+   "z_mm": 0.0,
+   "r_mm": 5.0,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 1.2,
+   "r_mm": 5.2,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 2.6,
+   "r_mm": 5.285,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "MEDIUM",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 13.0,
+   "r_mm": 5.285,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "MEDIUM",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 14.8,
+   "r_mm": 5.1,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 16.4,
+   "r_mm": 4.55,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 17.8,
+   "r_mm": 3.55,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 18.8,
+   "r_mm": 2.05,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  },
+  {
+   "z_mm": 19.2,
+   "r_mm": 0.6,
+   "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+   "confidence": "LOW",
+   "note": "NOT_MANUFACTURING_AUTHORITATIVE"
+  }
+ ],
+ "collar_ribbing_v4": {
+  "representation": "MATERIAL BUMP ONLY (procedural wave normal) \u2014 geometric ribs would alias the 64-sample section; silhouette impact sub-pixel; clay validation unaffected",
+  "rib_count": 60,
+  "depth_mm": 0.12,
+  "authority": "VISUAL_ESTIMATE_FROM_OWNER_PHOTO",
+  "confidence": "LOW"
+ },
+ "accuracy_status": {
+  "P1_GEOMETRY_AUTHORITY": "PROVISIONAL_OWNER_MEASURED_PLUS_INFERRED",
+  "P1_MATERIAL_AUTHORITY": "OWNER_CONFIRMED_EXTERNAL_MATERIALS_PLUS_VISUALIZATION_PARAMETERS",
+  "P1_INTERNAL_GLASS_AUTHORITY": "VISUALIZATION_ONLY_GEOMETRY",
+  "P1_MANUFACTURING_AUTHORITY": "NOT_ESTABLISHED",
+  "P1_VISUAL_COMPARISON_CONFIDENCE": "LIMITED_BY_NON_CALIBRATED_PHOTOGRAPHY",
+  "P1_OWNER_APPROVAL": "PENDING_VISUAL_REVIEW",
+  "GATE_2": "BLOCKED",
+  "PACKAGING_PRODUCTION": "NOT_STARTED"
+ },
+ "calibration_statement": "owner photographs are perspective and uncalibrated \u2014 no calibrated overlay accuracy is claimed anywhere in V4"
+}

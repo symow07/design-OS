@@ -1,0 +1,62 @@
+{
+ "row": 1,
+ "ok": true,
+ "result": {
+  "cartons": {
+   "straight_tuck_end_carton@unpinned": {
+    "flat_mm": [
+     70.0,
+     136.81
+    ],
+    "panels": 5,
+    "folds": 10,
+    "cut_area_mm2": 7797.7,
+    "validate": null
+   },
+   "straight_tuck_end_carton@1.4": {
+    "flat_mm": [
+     71.4,
+     147.75
+    ],
+    "panels": 5,
+    "folds": 12,
+    "cut_area_mm2": 8162.1,
+    "validate": null
+   },
+   "reverse_tuck_end_carton@1.4": {
+    "flat_mm": [
+     71.4,
+     147.75
+    ],
+    "panels": 5,
+    "folds": 12,
+    "cut_area_mm2": 8162.1,
+    "validate": null
+   },
+   "tuck_top_auto_bottom_carton@unpinned": {
+    "flat_mm": [
+     70.0,
+     129.655
+    ],
+    "panels": 5,
+    "folds": 11,
+    "cut_area_mm2": 7788.9,
+    "validate": null
+   }
+  },
+  "tests": {
+   "tests": [
+    "apps/dielines/tests/test_geometry.py",
+    "apps/dielines/tests/test_trade_tuck.py"
+   ],
+   "k": null,
+   "summary": "108 passed, 5 warnings in 0.73s",
+   "failed": [],
+   "seconds": 1.5
+  }
+ },
+ "seconds": 1.6,
+ "files": [
+  "01/round3-bottle-ste-1.4.svg"
+ ]
+}

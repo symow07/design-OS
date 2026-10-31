@@ -1,0 +1,129 @@
+{
+  "refused": [
+    {
+      "attempt": "SYSTEM_ADMIN selects the canonical master",
+      "reason": "role 'SYSTEM_ADMIN' may NOT 'approve_canonical_master'. Permitted roles: ['BRAND_ADMIN']. (Git authorship is provenance, not authorisation.)"
+    },
+    {
+      "attempt": "SYSTEM_ADMIN grants a permission",
+      "reason": "role 'SYSTEM_ADMIN' may NOT 'grant_permission'. Permitted roles: ['LEGAL_REVIEWER', 'BRAND_ADMIN']. (Git authorship is provenance, not authorisation.)"
+    },
+    {
+      "attempt": "BRAND_ADMIN grants redistribution",
+      "reason": "role 'BRAND_ADMIN' may NOT 'grant_legal_permission'. Permitted roles: ['LEGAL_REVIEWER']. (Git authorship is provenance, not authorisation.)"
+    },
+    {
+      "attempt": "LEDGER records a canonical approval attested by ONE person",
+      "reason": "CANONICAL_MASTER_APPROVED is under DUAL CONTROL: its attestations name only {'TEST_ONLY_brand_admin'} — the two attestations must come from two DIFFERENT people. Holding both roles does not make one person two reviewers."
+    },
+    {
+      "attempt": "machine declares CANONICAL_BRAND_MASTER",
+      "reason": "'CANONICAL_BRAND_MASTER' is HUMAN-ONLY: deciding which file is authoritative (or how it relates to the master) is a human judgement. A machine may only say one of ['BRAND_MASTER_CANDIDATE', 'POSSIBLE_VARIANT', 'POSSIBLE_CONFLICT', 'REQUIRES_HUMAN']"
+    },
+    {
+      "attempt": "machine turns a permission false->true",
+      "reason": "machine may NOT turn a permission from false to true — granting is a human decision"
+    }
+  ],
+  "logo_pdf": {
+    "machine_state": "BRAND_MASTER_CANDIDATE",
+    "canonical_approved": false,
+    "note": "machine NOMINATION only. No human approved it, so it is not the canonical master and it has no permissions."
+  },
+  "logo6": {
+    "canonical_approval_allowed": false,
+    "problems": [
+      "a contradiction is present and has NOT been acknowledged"
+    ],
+    "allowed_once_contradiction_acknowledged": true,
+    "note": "still NO real approval is recorded — this only shows the gate opening when a human takes responsibility"
+  },
+  "dual_control": {
+    "one_brand_admin_alone": {
+      "allowed": false,
+      "problems": [
+        "DUAL CONTROL: 'TEST_ONLY_brand_admin' attested BOTH halves. The technical and legal attestations must come from two DIFFERENT people — holding both roles does not make one person two reviewers.",
+        "DUAL CONTROL: the activating actor 'TEST_ONLY_brand_admin' also gave the legal attestation. The legal attestation must come from a different actor than the one activating the master."
+      ]
+    },
+    "technical_only": {
+      "allowed": false,
+      "problems": [
+        "DUAL CONTROL: the RIGHTS_AND_OWNERSHIP attestation is missing. A canonical master requires BOTH a technical/brand attestation and a rights/ownership attestation before it can be activated."
+      ]
+    },
+    "legal_only": {
+      "allowed": false,
+      "problems": [
+        "DUAL CONTROL: the TECHNICAL_AND_BRAND attestation is missing. A canonical master requires BOTH a technical/brand attestation and a rights/ownership attestation before it can be activated."
+      ]
+    },
+    "two_distinct_actors": {
+      "allowed": true,
+      "problems": []
+    },
+    "note": "separation is by ACTOR IDENTITY, not role. One person holding both roles is still one person — and one person is exactly what dual control exists to prevent."
+  },
+  "incomplete_checklist": {
+    "allowed": false,
+    "problems": [
+      "checklist incomplete — an UNANSWERED item is not a pass: ['official_proportions_confirmed']"
+    ]
+  },
+  "canonical_grants_nothing": {
+    "canonical_approved": true,
+    "problems": [],
+    "all_permissions_false": true
+  },
+  "synthetic_master_lifecycle": {
+    "grant_allowed": true,
+    "grant_problems": [],
+    "before_expiry": {
+      "retrieval": true,
+      "status": "GRANTED"
+    },
+    "after_expiry": {
+      "retrieval": false,
+      "status": "RE_REVIEW_REQUIRED"
+    },
+    "out_of_scope_market_US": {
+      "retrieval": false,
+      "status": "DENIED_SCOPE_MISMATCH"
+    },
+    "expired_detected": [
+      {
+        "flag": "retrieval_allowed",
+        "grant_event_id": "evt-971d16f5394d62dda76f",
+        "review_expiry": "2026-10-01T00:00:00+00:00",
+        "effective_value": false,
+        "status": "RE_REVIEW_REQUIRED"
+      }
+    ],
+    "note": "the grant event is UNTOUCHED by expiry. Only the EVALUATION changes, and it fails closed the moment the date passes — it does not wait for an audit event."
+  },
+  "jojia_third_party": {
+    "ownership_state": "THIRD_PARTY_CONFIRMED",
+    "retrieval_admits_third_party": true,
+    "all_permissions_false": true,
+    "canonical_for_bbrose_allowed": false,
+    "problems": [
+      "ownership is 'THIRD_PARTY_CONFIRMED': a canonical master requires CONFIRMED ownership or explicitly permitted use (one of ['BBROSE_OWNED_CONFIRMED', 'LICENSED_FOR_LIMITED_USE', 'JOINT_OR_CONTRACTED_USE'])"
+    ],
+    "note": "confirming WHOSE it is grants NOTHING. Third-party ownership is a settled question, not a permission — and a third party's mark can never be BBROSE's canonical master."
+  },
+  "conflict": {
+    "machine_flag": "POSSIBLE_CONFLICT",
+    "second_canonical_allowed": false,
+    "problems": [
+      "CANONICAL CONFLICT: an active canonical master already covers this scope — ['TEST_ONLY_synthetic_bbrose_master.ai']. The existing master is NOT silently replaced. A human must deprecate it, narrow one scope, reclassify one as a variant, or reject this request."
+    ],
+    "permitted_resolutions": [
+      "deprecate the former master (CANONICAL_MASTER_DEPRECATED)",
+      "narrow one asset's scope (SCOPE_REDUCED)",
+      "reclassify one as a variant (VARIANT_RECLASSIFIED)",
+      "reject the new request (REJECTED_CANDIDATE)"
+    ]
+  },
+  "TEST_ONLY": true,
+  "WARNING": "SYNTHETIC EXAMPLE. This is NOT a real decision and confers NOTHING. It exists to exercise the schema and the validator."
+}

@@ -1,0 +1,344 @@
+{
+ "record_type": "illustrator_execution_verification_checklist/1.0",
+ "created_at": "2026-07-29",
+ "state": "PASSED",
+ "must_be_performed_in": "Adobe Illustrator, by a human",
+ "cannot_be_performed_here": "Illustrator is not installed in this environment and no automated check can substitute for opening the file in Illustrator",
+ "subject_file": "docs/visual_quality/vq2/vq2_a2_r2_final_gate_a_r2.ai",
+ "subject_sha256_16": "6ae00f726ddefda4",
+ "subject_format": "FLAT_EPS_STANDARD_POSTSCRIPT_VECTOR_SOURCE",
+ "expected_layers": [
+  "01_STRUCTURE_BODY",
+  "02_STRUCTURE_COLLAR",
+  "03_STRUCTURE_CLOSURE",
+  "04_APPROVED_BBROSE_LOGO",
+  "05_DIVIDER",
+  "06_ROSE_LETTERING",
+  "07_DAMASCENA_LETTERING",
+  "08_SUPPORTING_COPY"
+ ],
+ "expected_objects": 40,
+ "expected_logo_components": 9,
+ "expected_logo_source_path_items": 314,
+ "expected_rose_glyphs": 4,
+ "expected_damascena_glyphs": 9,
+ "expected_supporting_glyphs": 14,
+ "checks": [
+  {
+   "n": 1,
+   "check": "file opens without repair warnings",
+   "result": "PASS",
+   "notes": null
+  },
+  {
+   "n": 2,
+   "check": "all expected layers/groups appear",
+   "result": "PASS",
+   "notes": null
+  },
+  {
+   "n": 3,
+   "check": "body, collar and closure remain editable",
+   "result": "PASS",
+   "notes": null
+  },
+  {
+   "n": 4,
+   "check": "logo remains 9 components",
+   "result": "PASS",
+   "notes": null
+  },
+  {
+   "n": 5,
+   "check": "medallion remains intact",
+   "result": "PASS",
+   "notes": null
+  },
+  {
+   "n": 6,
+   "check": "registered symbol remains intact",
+   "result": "PASS",
+   "notes": null
+  },
+  {
+   "n": 7,
+   "check": "Rose and Damascena remain separate outlined glyphs",
+   "result": "PASS",
+   "notes": null
+  },
+  {
+   "n": 8,
+   "check": "NIGHT REPAIR OIL remains outlined",
+   "result": "PASS",
+   "notes": null
+  },
+  {
+   "n": 9,
+   "check": "counters and compound paths remain correct",
+   "result": "PASS",
+   "notes": null
+  },
+  {
+   "n": 10,
+   "check": "no clipping-mask corruption",
+   "result": "PASS",
+   "notes": null
+  },
+  {
+   "n": 11,
+   "check": "no fill-rule change",
+   "result": "PASS",
+   "notes": null
+  },
+  {
+   "n": 12,
+   "check": "no mirrored geometry inversion",
+   "result": "PASS",
+   "notes": null
+  },
+  {
+   "n": 13,
+   "check": "no font substitution",
+   "result": "PASS",
+   "notes": null
+  },
+  {
+   "n": 14,
+   "check": "no raster replacement",
+   "result": "PASS",
+   "notes": null
+  },
+  {
+   "n": 15,
+   "check": "no missing artwork",
+   "result": "PASS",
+   "notes": null
+  },
+  {
+   "n": 16,
+   "check": "no object displacement",
+   "result": "PASS",
+   "notes": null
+  },
+  {
+   "n": 17,
+   "check": "no colour change",
+   "result": "PASS",
+   "notes": null
+  },
+  {
+   "n": 18,
+   "check": "no page-size change",
+   "result": "PASS",
+   "notes": null
+  },
+  {
+   "n": 19,
+   "check": "no geometry drift after save",
+   "result": "PASS",
+   "notes": null
+  },
+  {
+   "n": 20,
+   "check": "no unexpected flattening",
+   "result": "PASS",
+   "notes": null
+  },
+  {
+   "n": 21,
+   "check": "no hidden live text",
+   "result": "PASS",
+   "notes": null
+  },
+  {
+   "n": 22,
+   "check": "no linked missing assets",
+   "result": "PASS",
+   "notes": null
+  },
+  {
+   "n": 23,
+   "check": "every object shows its intended colour and none appears black",
+   "result": "PASS",
+   "notes": null
+  },
+  {
+   "n": 24,
+   "check": "the product is not a solid black silhouette",
+   "result": "PASS",
+   "notes": null
+  },
+  {
+   "n": 25,
+   "check": "body #D9BDB5, collar #705242, closure #493034 and artwork #502525 are all present and distinguishable",
+   "result": "PASS",
+   "notes": null
+  },
+  {
+   "n": 26,
+   "check": "counters are OPEN and not filled in - check the H and both R of NIGHT REPAIR OIL, the A of REPAIR, the e of Rose and Damascena, and the P of REPAIR",
+   "result": "PASS",
+   "notes": null
+  },
+  {
+   "n": 27,
+   "check": "ALL of the artwork is present - logo, registered symbol, divider, Rose, Damascena and NIGHT REPAIR OIL are each visible on the bottle",
+   "result": "PASS",
+   "notes": null
+  },
+  {
+   "n": 28,
+   "check": "the count of drawing objects is 40, not 3",
+   "result": "PASS",
+   "notes": null
+  }
+ ],
+ "actions": [
+  {
+   "n": 1,
+   "action": "Run illustrator_gate_a_roundtrip.jsx and select vq2_a2_r2_final_gate_a_r2.ai (NOT the preserved R0 or R1 sources, which both failed)",
+   "done": true
+  },
+  {
+   "n": 2,
+   "action": "Confirm every object shows its intended colour and nothing is black — this is the check the previous attempt failed",
+   "done": true
+  },
+  {
+   "n": 3,
+   "action": "Inspect Layers and Appearance panels",
+   "done": true
+  },
+  {
+   "n": 4,
+   "action": "Select and verify each major object group",
+   "done": true
+  },
+  {
+   "n": 5,
+   "action": "Save a NEW verification copy without overwriting the accepted source",
+   "done": true
+  },
+  {
+   "n": 6,
+   "action": "Reopen the verification copy",
+   "done": true
+  },
+  {
+   "n": 7,
+   "action": "Export a vector PDF and PNG proof",
+   "done": true
+  },
+  {
+   "n": 8,
+   "action": "Compare hashes, dimensions and visible geometry",
+   "done": true
+  },
+  {
+   "n": 9,
+   "action": "Record Illustrator version and operating system",
+   "done": true
+  }
+ ],
+ "do_not_overwrite_accepted_source": true,
+ "passed": true,
+ "passed_by": "PROJECT_OWNER",
+ "passed_at": "2026-07-31",
+ "illustrator_version": "30.0.0",
+ "operating_system": "macOS",
+ "gate": "ILLUSTRATOR_EXECUTION_VERIFICATION",
+ "gate_state": "REQUIRED_BEFORE_PRODUCTION_AUTHORITY",
+ "pdf": {
+  "path": "docs/production_authority/illustrator_execution_verification_checklist.pdf",
+  "sections": 5,
+  "size_bytes": 11568
+ },
+ "verification_copy_received": false,
+ "receipts_record": "docs/production_authority/illustrator_execution_verification_receipts.json",
+ "latest_receipt_codes": [
+  "ILLUSTRATOR_GATE_A_PAGE_SIZE_DRIFT",
+  "ILLUSTRATOR_GATE_A_ARTBOARD_NOT_PRESERVED",
+  "ILLUSTRATOR_ROUNDTRIP_PARTIAL_PASS",
+  "ILLUSTRATOR_EXECUTION_VERIFICATION_INCOMPLETE"
+ ],
+ "awaiting_artifacts": [
+  "vq2_a2_r2_final_illustrator_verified.ai",
+  "vq2_a2_r2_final_illustrator_verified.pdf",
+  "vq2_a2_r2_final_illustrator_verified.png"
+ ],
+ "previous_subject": {
+  "file": "docs/visual_quality/vq2/vq2_a2_r2_final_illustrator_verified_artboard_drift.ai",
+  "sha256_16": "547f55b8f6a71e9b",
+  "result": "ARTWORK_PASSED_ARTBOARD_FAILED",
+  "codes": [
+   "ILLUSTRATOR_GATE_A_PAGE_SIZE_DRIFT",
+   "ILLUSTRATOR_GATE_A_ARTBOARD_NOT_PRESERVED",
+   "ILLUSTRATOR_ROUNDTRIP_PARTIAL_PASS",
+   "ILLUSTRATOR_EXECUTION_VERIFICATION_INCOMPLETE"
+  ],
+  "preserved": true,
+  "overwritten": false
+ },
+ "expected_colors": {
+  "01_STRUCTURE_BODY": "#D9BDB5",
+  "02_STRUCTURE_COLLAR": "#705242",
+  "03_STRUCTURE_CLOSURE": "#493034",
+  "04_APPROVED_BBROSE_LOGO": "#502525",
+  "05_DIVIDER": "#502525",
+  "06_ROSE_LETTERING": "#502525",
+  "07_DAMASCENA_LETTERING": "#502525",
+  "08_SUPPORTING_COPY": "#502525"
+ },
+ "verification_state": "PASSED",
+ "result": "PASSED",
+ "codes": [
+  "ILLUSTRATOR_EXECUTION_VERIFICATION_PASSED",
+  "PRODUCTION_AUTHORITY_GATE_A_PASSED",
+  "ILLUSTRATOR_SAVE_REOPEN_EXPORT_CONFIRMED",
+  "ILLUSTRATOR_ARTBOARD_PRESERVED",
+  "ILLUSTRATOR_VECTOR_EDITABILITY_CONFIRMED"
+ ],
+ "corrected_source": "vq2_a2_r2_final_gate_a_r2.ai",
+ "corrected_source_sha256_16": "6ae00f726ddefda4",
+ "corrected_source_verified": false,
+ "roundtrip_script": "illustrator_gate_a_roundtrip.jsx",
+ "how_to_run": [
+  "open Adobe Illustrator",
+  "File > Scripts > Other Script...",
+  "choose docs/production_authority/illustrator_gate_a_roundtrip.jsx",
+  "select vq2_a2_r2_final_gate_a_r2.ai when prompted",
+  "answer the two confirmation dialogs honestly"
+ ],
+ "human_actions_required": 3,
+ "script_performs": [
+  "Save As",
+  "close",
+  "reopen",
+  "PDF export",
+  "PNG export",
+  "result JSON"
+ ],
+ "named_layers_guaranteed": false,
+ "named_layers_note": "R2 is plain EPS and will most likely import as a single Illustrator layer. The eight group names are carried as comments and object names. Correct stacking and independent editability are what Gate A requires.",
+ "initial_open_passed": true,
+ "initial_open_confirmed_visible": [
+  "body",
+  "collar",
+  "closure",
+  "BBROSE logo",
+  "medallion and registered symbol",
+  "divider",
+  "Rose",
+  "Damascena",
+  "NIGHT REPAIR OIL",
+  "approved colours",
+  "separate Path and Compound Path objects"
+ ],
+ "roundtrip_performed": true,
+ "remaining_actions": [],
+ "roundtrip_passed": true,
+ "expected_page_pt": [
+  207.1627,
+  493.2283
+ ]
+}

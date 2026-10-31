@@ -1,0 +1,19 @@
+## 6. Hard stops (verbatim), with the measurement
+
+- *a proposal reaching any REFERENCE asset for embedding* — never fired: §4 names REFERENCE rows only in the retrieval contract, whose rows carry no bytes and no locator by schema; the placement seam is proposed for PRODUCTION rows only, with the emitter refusing a `materials/` source that lacks a PRODUCTION tier record; a test is proposed that no `Color` or `Image` with `tier == REFERENCE` can reach `pdf_ai`.
+- *a colour or asset outside the governed libraries and existing brand_gov proposed as a default* — never fired: every default in §4a is a brand_gov `ColorSystem` swatch or the design language's existing swatch (the value the engine draws today); the library enters as candidates, never as a default; no new colour is proposed.
+- *any write outside the allowed set* — never fired: the writes are the T38 transcription (ff7b11a), the riding commit ([RIDING_HEAD]: three tracked paths + the untracked tier record), and `~/bh38_work/`; §5 lists the measurement.
+- *the resolution unlocatable by measurement* — never fired: every colour point in §1 is a file:line reached by the static grep and, where it emits, confirmed by the runtime census of §1b; every materials point in §2 is a file:line; where no point exists the report says so exactly (§2, "points that do not exist today").
+
+## 7. Recorded, not resolved (the sentence governs)
+
+1. **The coolvetica EULA pdf.** The riding ruling's count (17) matches the LICENSE_EVIDENCE rows and excludes `Typodermic Desktop EULA 2023.pdf`, the coolvetica pack's own terms text (PRODUCT_REFERENCE by DIP-0A's classifier); the description ("terms and read-me texts of the granted packs") includes it. Applied narrow: the pdf is the one PERMISSIVE PRODUCTION row. One word returns it.
+2. **The riding commit's line shape.** The summary file measured 46 lines where the prediction said 47 (the new `license_evidence_rows_withheld` field arrived as the PRODUCTION/LICENSE_EVIDENCE category line left); the module 286 lines where the prediction said "about 287"; the test file 494 where it said "about 492". Values held exactly; the line counts were stated as measured-at-scoring.
+3. **The generator's first count.** The riding generator's first dry run reported 55 rows withheld — it counted every LICENSE_EVIDENCE row met before the pack ruling filter; moved after the filter it reports the 17. Both dry runs are kept (`riding_dry_run.txt` is the second); the sealed prediction carries 17.
+4. **Two of the 254 "design PDFs" are the owner's number, not a file type.** The 254 = 226 `.ai` (PDF-compatible) + 28 `.pdf`; the 122 `.eps` of the same extraction are PostScript and were not read for colour (a limit, stated in §3d).
+5. **Colour from vectors only.** §3d extracts fills and text by structure; raster content is counted (image area share) and never sampled; files whose page is ≥ 50 % raster are listed as raster-dominated and their "dominant" colour is the vector residue, not the picture.
+6. **CMYK → sRGB is an approximation.** XMP swatch groups and DSC custom colours are CMYK; the hex shown is the naive conversion (no ICC), stated per table; the CMYK values themselves are in `libraries.json`.
+7. **PANTONE names carry no hex.** Separations and spot swatches are listed by name; no value is invented.
+8. **The dip0a tree seal moved with the riding commit** (the summary lives in that tree) — predicted this time.
+9. **T38a's history** (from the previous session, carried): run 1 killed by the session teardown, run 2 refused by the environment (PostgreSQL down after a reboot); §BH24 budget 2/3.
+10. **"Roles from my designs" depends on what the PDFs expose.** Where a design's colour lives in a placed raster (a photographic packshot or a rendered mockup), structure exposes nothing — those files are counted, not read; the proposal's role names come from the files that expose fills.

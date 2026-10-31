@@ -1,0 +1,69 @@
+§BH30 HARD STOP — A CENSUS-UNPREDICTED PIN CLASS FIRED ON THE (d) GATE
+Reported 2026-09-04, repo FROZEN at HEAD 2ac0fd4. Zero writes since the
+refusal; every measurement below was zero-write.
+
+THE RULE, §BH30 HARD STOPS (owner's words): "a census-unpredicted pin
+class". And (e): "A pin class the census does not predict is a hard stop."
+
+WHAT FIRED. The (d) gate (attempt 1, pred_grants.txt c23ff24544774ac1)
+refused at TIER_2 on ONE failure in a file the diff never touched:
+   apps/ire/tests/test_wit_unit_analysis.py::
+     TestTheRegisterIsAMeasurementAndNotAnImpression::
+     test_the_denominator_is_stated_beside_the_numerator
+   assert checks == TREE_CHECKS  →  864 == 863
+   TIER_2=REFUSE collected=8510 failures=1 apps=7698 dip0c=671 dip0=141
+(score_grants_attempt1.txt: L1–L4 held, L6 falsified — a finding, not a
+flake; §BH24 budget 0/3.)
+
+THE PIN. test_wit_unit_analysis.py:1397 `TREE_CHECKS = 863` — the WIT unit
+analyser's census of every .py under apps/: the DENOMINATOR the file pins
+beside its register's numerator (7 findings, unchanged). The file's own
+notes record earlier movements of this number in the commit that moved it
+("**843 -> 844 AT §AV3**, and the sentence naming whose movement it is …
+A denominator that rises while the numerator holds is new code being
+looked at and found clean"). It is a pin class my (d) census did not
+predict — the (d) prediction's L3 declared "records untouched" and named
+no apps-tree census.
+
+THE CAUSE, located to the line (analyser run on the file at HEAD and in
+the worktree; then each candidate line removed in turn):
+   apps/pipeline/tests/test_container_font_owner_grant.py, in the appended
+   test_every_bh30_grant_row_describes_bytes_that_exist_and_hash_as_pinned:
+      assert len(cfg.OWNER_GRANTS_BH30) == len(on_disk)
+   — two count() results compared: the analyser counts it as ONE well-formed
+   check (863 → 864). The grants MODULE adds no check (0 → 0). No finding.
+   The assertion was MINE, added with the one-row-per-face regeneration to
+   state the ruled shape; it is logically REDUNDANT beside the three
+   assertions next to it (exactly one face per row; no sha256 in two rows;
+   the union of faces == the 35 on disk ⇒ rows == faces).
+
+OPTIONS FOR THE OWNER'S WORD (presented, not chosen):
+(1) RE-PIN BY THE FILE'S OWN PRECEDENT: TREE_CHECKS 863 → 864 with the
+    file's customary note naming whose movement it is (one literal + a
+    note in test_wit_unit_analysis.py — a THIRD apps path in the (d)
+    commit); fresh 8-leg seal; attempt 2. The pin moves in the commit that
+    overtakes its premise (§BH13(c)'s shape).
+(2) REMOVE THE REDUNDANT ASSERTION from my appended test (one line; the
+    shape stays proven by the three assertions beside it); the denominator
+    stays 863; the write set stays the TWO declared paths (tests 76/0);
+    fresh 8-leg seal; attempt 2. No pin moves.
+(3) Anything else the owner words.
+My reading, recorded not chosen: (2) moves no pin and keeps §AC's one
+concern; (1) follows the file's precedent for denominators moved by new
+code. Either needs a fresh seal because the sealed L2 (77/0) is falsified.
+
+FROZEN STATE. HEAD 2ac0fd4 (the atomic commit, scored 8/8). Staged:
+exactly the two sealed apps paths (451/10, 77/0). Unstaged: the refusing
+gate's ledger line 448 (carried). Both protected regions byte-identical;
+tree seals unchanged; the Noto pair VERIFIED_FOR_PRODUCTION under Django
+with the tuple in place. §BH30(d) single-use authority UNSPENT. No fold,
+no edit, no unstage, no re-seal, no re-gate until the owner rules.
+
+GOAL MEASUREMENT (goal_measure.py at this HEAD, zero-write; the (d) tuple
+in the worktree, uncommitted): 35/35 activated faces on the confirmed-font
+seam VERIFIED_FOR_PRODUCTION / USER_CONFIRMED / is_fallback False, evidence
+pinned to their licence file path + sha256; 53/53 governed deferred faces
+LICENCE_REVIEW_REQUIRED / UNDECLARED (honest non-granted), 2 not governed
+(BORELA, Blisey — bytes only under the excluded drop); hash-mismatch ⇒
+LICENCE_REVIEW_REQUIRED / not USER_CONFIRMED (GREEN); unknown sha ⇒ record
+untouched (GREEN); Noto pair VERIFIED ×2, all_production_verified True.

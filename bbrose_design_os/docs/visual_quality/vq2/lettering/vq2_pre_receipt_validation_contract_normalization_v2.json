@@ -1,0 +1,47 @@
+{
+ "record_type": "vq2_pre_receipt_validation_contract_normalization/2.0",
+ "created_at": "2026-07-29",
+ "classification": "VQ2_PRE_RECEIPT_VALIDATION_CONTRACT_NORMALIZED",
+ "amendment": "HANDOFF_FORMAT_CORRECTION",
+ "reason": "The emitted handoff .ai is PDF-compatible artwork with no native Illustrator layer structure, so the designer must author a new native document. Receipt checks for asset authority were added BEFORE any asset arrived.",
+ "lettering_asset_available_during_amendment": false,
+ "lettering_asset_processed": false,
+ "criteria_tailored_to_a_submitted_file": false,
+ "prior_contracts": {
+  "validation_spec_v2": {
+   "path": "docs/visual_quality/vq2/lettering/archive/vq2_product_name_lettering_validation_spec_v2.json",
+   "sha256": "606c6158dddf3d8b"
+  },
+  "resume_contract_v2": {
+   "path": "docs/visual_quality/vq2/lettering/archive/vq2_product_name_lettering_resume_contract_v2.json",
+   "sha256": "c669c2cb36a04aa4"
+  }
+ },
+ "updated_contracts": {
+  "validation_spec_v3": {
+   "path": "docs/visual_quality/vq2/lettering/vq2_product_name_lettering_validation_spec.json",
+   "sha256": "097703ba28502bcb"
+  },
+  "resume_contract_v3": {
+   "path": "docs/visual_quality/vq2/lettering/vq2_product_name_lettering_resume_contract.json",
+   "sha256": "86f49d50b7095cb7"
+  }
+ },
+ "changed_requirements": [
+  "added native Illustrator source provenance check (VQ2_NATIVE_ILLUSTRATOR_SOURCE_REQUIRED)",
+  "added native layer inventory and required layer name checks (VQ2_REQUIRED_NATIVE_LAYER_MISSING)",
+  "added Rose/Damascena designated-layer placement check",
+  "added reference-template isolation and imported-reference checks (VQ2_DESIGNER_OUTPUT_FOUND_ONLY_IN_IMPORTED_REFERENCE)",
+  "added PDF-compatible-rename rejection (VQ2_PDF_COMPATIBLE_FILE_NOT_AUTHORITATIVE_AI_SOURCE)",
+  "replaced 09_DESIGNER_OUTPUT with 04_ROSE_LETTERING / 05_DAMASCENA_LETTERING and 09_DESIGNER_NOTES_NONPRINTING",
+  "added a guard so a valid native file is not rejected for differing binary structure"
+ ],
+ "parity": {
+  "source_of_truth": "apps.ire.vq2_lettering_receipt.MANDATORY_CHECKS",
+  "mandatory_check_count": 30,
+  "spec_matches_source": true,
+  "resume_matches_source": true,
+  "files_aligned": true
+ },
+ "state_unchanged": true
+}

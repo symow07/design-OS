@@ -1,0 +1,54 @@
+§AD0(a) PREDICTION — T26i (§BH26(i) transcription, pure append), sealed
+BEFORE git add. Base HEAD 8bbe57e. SEAL v2: v1 (pred_t26i_v1.txt,
+77d1b9345620f701) was sealed against block v1 (104 lines,
+385fc876db998afd) whose transcriber date lines read 2026-09-02; the
+wall clock read 2026-09-03 at sealing, so the unstaged append was
+reverted (register hash-verified back to HEAD bb5f497e…), the block's
+heading/DATE/TRANSCRIBED lines corrected to 2026-09-03 with a DATE
+NOTE added (block v2: 110 lines, 0d9eb019fe754260), and this seal
+replaces v1 BEFORE any git add. Nothing was staged under v1.
+
+L1 WRITE SET: exactly ONE path — OWNER_BLOCKER_CLEARANCE.md (outer
+   root), the §BH26(i) block. Plus the gate-staged ledger: TWO lines,
+   435 carried from attempt 3's refusing gate and 436 this gate's own.
+   NO apps/ path, NO docs/roadmap path beyond the ledger. The TEN
+   commit-A WIP paths sit in stash@{0} (recorded in
+   stash_a4/sha256s_ten.txt: ten sha256 + index blob ids, index ==
+   worktree verified before the push; after the push the two new files
+   verified ABSENT and the eight tracked paths verified HEAD-identical;
+   porcelain = register + ledger only).
+L2 DIFF SHAPE: register +111 −0 (1 seam blank + 110 block lines; the
+   owner blockquote is 33 lines); the 17,424-line prefix byte-identical,
+   proved at append (worktree == HEAD hash bb5f497e… == head -17424
+   post-append); appended tail byte-identical to the block file
+   (0d9eb019fe754260); total 17,535. Ledger +2 −0.
+L3 MANIFEST / A391: manifest untouched at HEAD (65aef9fb… on disk with
+   the WIP stashed) — extent guard passes against the 371-declared disk
+   state; ppp:1970 == HEAD's manifest digest, so A327(a) passes at
+   HEAD; records chain digest-consistent (HEAD rdm ff18cb2d… ↔ HEAD
+   ppp:2195 ↔ identity ead89265…); the ledger at 435 passes the
+   APPEND_ONLY prefix rule exactly as 434 did at T26g. R4/R5 are the
+   NEXT acts, after landing and the byte-verified restore.
+L4 STAGED == DECLARED: exactly one row pre-launch: 111 0
+   OWNER_BLOCKER_CLEARANCE.md (the ledger is staged by the gate itself).
+L5 COMMIT CONTENTS: 2 files (register + ledger), insertions 111+2 =
+   113, deletions 0.
+L6 SUITE LINE + REFUSAL TREE: GREEN — TIER_2=GREEN collected=8490
+   failures=0 apps=7684 dip0c=671 dip0=135, identical to T26d/e/f/g
+   (identical apps/ and docs/ disk state at HEAD). No refusal expected;
+   §BH24 0/3 standing.
+L7 LEDGER FOLD: 434 → 436, +2 in THIS commit: 435 = attempt 3's
+   records-step verdict OK (2026-09-02T02:04:22Z), carried; 436 = this
+   gate's own. The ONE predicted difference from T26g's shape.
+L8 PROTOCOL IDENTITIES / APPS DIFF: apps diff EMPTY; both protected
+   regions byte-identical at scoring (GATE 7fbeb8f1fe10b0fb @ cfa
+   worktree [514:541]; TEST b32030dc827263e4 @ a76242c^ blob [82:98],
+   cwd-correct pathspec, checked exit). protocol_identity UNCHANGED at
+   this commit — ead892658e3323a8 at HEAD; the ruled move to
+   c7924c5a4215f3cf belongs to commit A (attempt 4) after R4/R5. Stash
+   restore after scoring, byte-verified against sha256s_ten.txt (sha256
+   AND index blob ids), BEFORE the pre-fold checks. §BH26(a) authority
+   UNSPENT at this commit.
+
+DIVERGENCE RIDING: the ruling's (1) cites "(h)(4)"; no §BH26(h) exists
+in the register — recorded in the block, not resolved, not invented.

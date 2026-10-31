@@ -1,0 +1,26 @@
+{
+  "schema_version": "ledger/1.0",
+  "event_id": "<generated>",
+  "event_type": "<one of ['ASSERTION_SUBMITTED', 'ASSERTION_WITHDRAWN', 'EVIDENCE_SUBMITTED', 'EVIDENCE_ACCEPTED', 'EVIDENCE_REJECTED', 'OWNERSHIP_CONFIRMED', 'THIRD_PARTY_CONFIRMED', 'LICENSE_APPROVED', 'LIMITED_USE_APPROVED', 'OWNERSHIP_REVOKED', 'LICENSE_REVOKED', 'DECISION_SUPERSEDED', 'RE_REVIEW_REQUIRED', 'CANONICAL_MASTER_APPROVED', 'VARIANT_CLASSIFIED', 'CANONICAL_MASTER_DEPRECATED', 'CANONICAL_MASTER_REPLACED', 'VARIANT_RECLASSIFIED', 'PERMISSION_GRANTED', 'PERMISSION_REVOKED', 'PERMISSION_EXPIRED', 'SCOPE_REDUCED', 'ASSET_QUARANTINED', 'PALETTE_ASSOCIATION_CONFIRMED', 'PALETTE_OWNERSHIP_CONFIRMED', 'PALETTE_LICENSE_CONFIRMED', 'BRAND_PALETTE_APPROVED', 'PALETTE_VARIANT_APPROVED', 'PALETTE_DEPRECATED', 'PALETTE_SUPERSEDED', 'PALETTE_QUARANTINED', 'PALETTE_APPROVAL_REVOKED', 'PALETTE_RE_REVIEW_REQUIRED']>",
+  "asset": "<relative path or asset id>",
+  "actor_id": "<who>",
+  "actor_role": "<one of ['BUSINESS_OWNER', 'BRAND_ADMIN', 'LEGAL_REVIEWER', 'DESIGN_REVIEWER', 'SYSTEM_ADMIN', 'OBSERVER']>",
+  "occurred_at": "<ISO-8601>",
+  "recorded_at": "<generated>",
+  "previous_state": null,
+  "requested_state": null,
+  "decision_reason": "<REQUIRED for a decision>",
+  "evidence_refs": [],
+  "assertion_refs": [],
+  "supersedes_event_id": null,
+  "review_expiry": null,
+  "repository_commit": null,
+  "contradiction": {
+    "contradiction_present": false,
+    "contradiction_refs": [],
+    "contradiction_acknowledged": false,
+    "acknowledgement_reason": null
+  },
+  "notes": "",
+  "content_hash": "<generated>"
+}

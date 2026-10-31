@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% comment %}DESIGNS — every past design and what it made, read-only (§BH52(b) slice 1), in the one shell (the owner's goal of
+2026-09-25: one visual system everywhere). Its own views sit in one row under the top bar.{% endcomment %}
+{% block title %}Designs{% endblock %}
+{% block page_class %}page wide{% endblock %}
+{% block before %}
+<nav class="seg subnav" aria-label="Designs">
+  <a href="{% url 'dashboard:history' %}"{% if section == "tasks" %} aria-current="page"{% endif %}>Every design</a>
+  <a href="{% url 'dashboard:history_concepts' %}"{% if section == "concepts" %} aria-current="page"{% endif %}>Concepts</a>
+  <a href="{% url 'dashboard:history_projects' %}"{% if section == "projects" %} aria-current="page"{% endif %}>Projects</a>
+  <a href="{% url 'dashboard:history_dieline_jobs' %}"{% if section == "jobs" %} aria-current="page"{% endif %}>Carton layouts</a>
+  {% if shell.owner %}<a href="{% url 'dashboard:history_explorations' %}"{% if section == "explorations" %} aria-current="page"{% endif %}>Explorations</a>{% endif %}
+</nav>
+{% endblock %}

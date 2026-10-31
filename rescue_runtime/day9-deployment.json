@@ -1,0 +1,35 @@
+{
+ "day": 9,
+ "commit": "16017bc143649f505d148d4eac2a2e1f6854f20c",
+ "started_at": "2026-10-20T17:57:51Z",
+ "site": {
+  "url": "http://127.0.0.1:8000/healthz",
+  "status": 200,
+  "body": "{\"db\": \"ok\", \"redis\": \"ok\", \"celery\": \"ok\"}",
+  "pid": 59955,
+  "started": "restart_site.sh at 16017bc (the close: the five fixes, the re-derived records, both full runs)"
+ },
+ "worker": {
+  "pid": 59992,
+  "running": true,
+  "revision": "16017bc",
+  "revision_match_at_start": true,
+  "started": "restart_worker.sh at 16017bc (repo == worker revision; complete_product_preflight READY_FOR_LIVE_PILOT)"
+ },
+ "pick_page": {
+  "url": "http://127.0.0.1:8000/dashboard/palette-pick/",
+  "tabs": [
+   "pick",
+   "history",
+   "jury"
+  ],
+  "console_errors": 0,
+  "failed_responses": 0,
+  "broken_images": 0,
+  "capture": "docs/audit/day-9/capture.json"
+ },
+ "earlier": "site and worker were restarted at 0388f70 on 2026-10-20 20:04 Shanghai (the first capture); this startup replaces it",
+ "startup_verified": true,
+ "clean_tree_required_by_restart_scripts": true,
+ "note": "the browser captures were taken on this startup; the closing commit adds the report, the verification record, the captures and the correction batch only; the final restart on the tag is in the git-ignored docs/audit/rescue_runtime/day9-deployment.json"
+}

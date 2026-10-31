@@ -1,0 +1,26 @@
+{
+  "record_type": "vq1_master_cont2_stop/1.0",
+  "created_at": "2026-07-28",
+  "status": "VQ1_MASTER_HARD_STOP_REVIEW_REQUIRED",
+  "reason": "deterministic stage completed successfully; the visual-inspection stage was NOT executed",
+  "m3_deterministic": "PASSED \u2014 junction mean 0.00209, p95 0.01000, max 0.01212 against 0.008/0.025/0.045, plus all five global gates",
+  "what_was_completed": [
+    "\u00a74 anchor alignment contract",
+    "\u00a75 y-alignment correction derived from anchors, not hardcoded",
+    "\u00a76/\u00a77 correspondence contract with local-normal canonical and same-row retained as diagnostic",
+    "\u00a78 metric versioning (v1 immutable, v2 alongside)",
+    "\u00a79 re-run of M3, M4 and RIM1 with zero geometry change",
+    "\u00a710 M3 decision gate"
+  ],
+  "what_was_NOT_completed": [
+    "\u00a72 the forensics PDF/PNG package",
+    "\u00a73 the 1x/2x/4x/8x rasterization sweep",
+    "\u00a717 the two independent visual inspections \u2014 NOT RUN",
+    "\u00a718 the dual scorecards \u2014 NOT PRODUCED",
+    "\u00a719 the 22-section corrected-metric review package"
+  ],
+  "scorecard_reported": "NOT_SCORED",
+  "release_status": "NOT VQ1_MASTER_CANDIDATE_PENDING_HUMAN_REVIEW",
+  "why": "\u00a717 requires two independent inspections after deterministic gates pass. They were not run, so no scorecard exists and release is not available regardless of the deterministic result.",
+  "next_step": "run the dual inspection on M3 unchanged \u2014 no geometry work remains before it"
+}

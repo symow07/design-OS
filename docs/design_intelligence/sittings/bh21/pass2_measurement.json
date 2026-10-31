@@ -1,0 +1,134 @@
+{
+  "schema": "bh21d_pass2_measurement/1.0",
+  "pins": [
+    {
+      "site": "tools/dip0c/tests/test_c4a.py:311",
+      "accessor": "len(run_c4a.load_fonts())",
+      "pinned": 4886,
+      "measured": 4886,
+      "verdict": "HOLDS"
+    },
+    {
+      "site": "tools/dip0c/tests/test_c4a.py:313",
+      "accessor": "FF.dedupe(files)['files_unique']",
+      "pinned": 3944,
+      "measured": 3944,
+      "verdict": "HOLDS"
+    },
+    {
+      "site": "tools/dip0c/tests/test_c4a.py:314",
+      "accessor": "dd['duplicate_group_count']",
+      "pinned": 941,
+      "measured": 941,
+      "verdict": "HOLDS"
+    },
+    {
+      "site": "tools/dip0c/tests/test_c4a.py:315",
+      "accessor": "dd['files_in_duplicate_groups']",
+      "pinned": 1883,
+      "measured": 1883,
+      "verdict": "HOLDS"
+    },
+    {
+      "site": "tools/dip0c/tests/test_c4c.py:265",
+      "accessor": "len(audit()['files'])",
+      "pinned": 4886,
+      "measured": 4886,
+      "verdict": "HOLDS"
+    },
+    {
+      "site": "tools/dip0c/tests/test_c4c.py:266",
+      "accessor": "audit()['dedupe']['files_unique']",
+      "pinned": 3944,
+      "measured": 3944,
+      "verdict": "HOLDS"
+    },
+    {
+      "site": "tools/dip0c/tests/test_c4c.py:267",
+      "accessor": "len(audit()['faces'])",
+      "pinned": 3966,
+      "measured": 3969,
+      "verdict": "MOVED"
+    },
+    {
+      "site": "tools/dip0c/tests/test_c4c.py:268",
+      "accessor": "len(audit()['groups'])",
+      "pinned": 2832,
+      "measured": 2834,
+      "verdict": "MOVED"
+    },
+    {
+      "site": "tools/dip0c/tests/test_c4c.py:269",
+      "accessor": "len(audit()['packages'])",
+      "pinned": 48,
+      "measured": 48,
+      "verdict": "HOLDS"
+    },
+    {
+      "site": "tools/dip0c/tests/test_c4c.py:270",
+      "accessor": "len(audit()['duplicate_model'])",
+      "pinned": 941,
+      "measured": 941,
+      "verdict": "HOLDS"
+    },
+    {
+      "site": "tools/dip0c/tests/test_c5.py:307",
+      "accessor": "index['by_domain']['FONT_FACE']",
+      "pinned": 3966,
+      "measured": 3969,
+      "verdict": "MOVED"
+    },
+    {
+      "site": "tools/dip0c/tests/test_c5.py:308",
+      "accessor": "index['by_domain']['PROVENANCE_RIGHTS_GROUP']",
+      "pinned": 1880,
+      "measured": 1880,
+      "verdict": "HOLDS"
+    },
+    {
+      "site": "tools/dip0c/tests/test_c5.py:309",
+      "accessor": "index['items_requiring_dual_control']",
+      "pinned": 3,
+      "measured": 3,
+      "verdict": "HOLDS"
+    }
+  ],
+  "informational": [
+    {
+      "site": "tools/dip0c/tests/test_c4c.py:271",
+      "what": "rights_batchable count",
+      "expected": 0,
+      "measured": 0,
+      "verdict": "OK"
+    },
+    {
+      "site": "tools/dip0c/tests/test_c5.py:304",
+      "what": "estimated_human_decisions == unique_review_items",
+      "expected": true,
+      "measured": true,
+      "verdict": "OK"
+    }
+  ],
+  "movers": [
+    {
+      "site": "tools/dip0c/tests/test_c4c.py:267",
+      "pinned": 3966,
+      "measured": 3969
+    },
+    {
+      "site": "tools/dip0c/tests/test_c4c.py:268",
+      "pinned": 2832,
+      "measured": 2834
+    },
+    {
+      "site": "tools/dip0c/tests/test_c5.py:307",
+      "pinned": 3966,
+      "measured": 3969
+    }
+  ],
+  "write_control": {
+    "files_snapshotted": 519,
+    "changed": {},
+    "clean": true
+  }
+}

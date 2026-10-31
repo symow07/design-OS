@@ -1,0 +1,38 @@
+{
+ "record_type": "vq2_complete_product_handoff/1.0",
+ "created_at": "2026-07-29",
+ "state": "PREPARED_NOT_STARTED",
+ "complete_product_review_started": false,
+ "starts_only_on": "EXPLICIT_OWNER_APPROVAL",
+ "front_artwork_candidate": "VQ2-A2-R2-FINAL",
+ "artefacts": {
+  "ai": "docs/visual_quality/vq2/vq2_a2_r2_final.ai",
+  "ai_sha256_16": "f3707618edf98c87",
+  "pdf": "docs/visual_quality/vq2/vq2_a2_r2_final.pdf",
+  "pdf_sha256_16": "a95d6d63d0e45871",
+  "clean_png": "docs/visual_quality/vq2/vq2_a2_r2_final_clean.png",
+  "clean_sha256_16": "94ec944326889c20",
+  "guides_png": "docs/visual_quality/vq2/vq2_a2_r2_final_guides.png",
+  "guides_sha256_16": "6186e4e7669758af"
+ },
+ "frozen_inputs": {
+  "m3": "4ecc8e9df1d1",
+  "lf1_r1": "fcd8003994d52028",
+  "font_unit_contour_hash": "5db4403984ba6f75",
+  "approved_logo": "a2b2a82969389ac2"
+ },
+ "carried_blockers": [
+  "PRODUCTION_FLAT_ARTWORK: BLOCKED_PENDING_WRAP_AND_SUPPLIER_EVIDENCE",
+  "PRODUCTION_GEOMETRY: BLOCKED_PENDING_SUPPLIER_EVIDENCE",
+  "PRODUCTION_COLOR_SEPARATION_BLOCKED_PENDING_SUPPLIER_EVIDENCE",
+  "ILLUSTRATOR_EXECUTION_VERIFICATION_REQUIRED",
+  "VQ-3 material realization NOT_STARTED"
+ ],
+ "not_included": [
+  "packaging integration",
+  "supplier requests",
+  "CMYK or spot separations",
+  "material realization"
+ ],
+ "human_accepted": false
+}

@@ -1,0 +1,76 @@
+{
+ "record_type": "vq_fitter_defect_and_remediation/1.0",
+ "created_at": "2026-07-28",
+ "codes": [
+  "VQ_FIT_CUBICS_COARSENING_BYPASSES_TOLERANCE",
+  "VQ_FITTER_SEGMENT_CAP_FAILS_TO_PRESERVE_ERROR_BOUND"
+ ],
+ "defect": {
+  "function": "apps.ire.vq1_master.fit_cubics",
+  "max_seg": 48,
+  "glass_sample_count": 229,
+  "adaptive_segments": 57,
+  "branch_taken": "coarsening (57 > 48): step = 229//48 = 4, giving 57 uniform chunks",
+  "consequence": "the adaptive 0.6 px tolerance was never enforced; the reported residual_max 5.1 px is unbounded rather than tolerance-capped",
+  "is_real_tooling_defect": true
+ },
+ "why_m3_remains_valid": [
+  "M3's emitted fitted curve has now been measured directly",
+  "canonical local-normal neck, shoulder and assembly-wide gates pass",
+  "the 5.1 px same-row result occurs at a contour approximately 74 degrees from vertical, where same-row correspondence is noncanonical",
+  "the corresponding perpendicular deviation is approximately 1.44 px and remains inside the accepted gate"
+ ],
+ "remediation": {
+  "module": "apps.ire.contour_fit.fit_contour",
+  "schema": "vq_contour_fit/2.0",
+  "applies_to": "FUTURE_RECONSTRUCTIONS_ONLY",
+  "legacy_state": "LEGACY_REPRODUCTION_ONLY_DEFECT_DISCLOSED",
+  "legacy_left_byte_stable": true,
+  "stable_failure": "VQ_VECTOR_FIT_TOLERANCE_NOT_ACHIEVED",
+  "behaviours": [
+   "the maximum-segment policy never silently disables the tolerance",
+   "fails closed with a stable diagnostic when tolerance cannot be met",
+   "or raises the limit deterministically while preserving tolerance",
+   "never replaces adaptive segments with unverified uniform chunks",
+   "reports final segment count",
+   "reports maximum fitting residual (parameter-matched AND local-normal)",
+   "reports correspondence method",
+   "reports whether the tolerance was enforced",
+   "persists fitting provenance"
+  ]
+ },
+ "must_not": [
+  "regenerate M3",
+  "change M3 paths",
+  "create an M3 replacement",
+  "reopen the VQ-1 candidate loop",
+  "trigger another inspector cycle",
+  "change historical hashes or metrics"
+ ],
+ "shadow_diagnostic": {
+  "record_type": "vq_contour_fit_shadow_diagnostic/1.0",
+  "authoritative": false,
+  "creates_candidate": false,
+  "changes_candidate_status": false,
+  "on_release_path": false,
+  "legacy": {
+   "schema": "vq_contour_fit/1.0",
+   "segment_count": 57,
+   "reported_residual_max": 5.1,
+   "measured_residual_max_local_normal": 1.5545,
+   "measured_residual_mean_local_normal": 0.0643,
+   "tolerance_enforced": false,
+   "uniform_chunking_used": true
+  },
+  "corrected": {
+   "schema": "vq_contour_fit/2.0",
+   "segment_count": 68,
+   "status": "SEGMENT_CAP_RAISED_TOLERANCE_PRESERVED",
+   "tolerance_enforced": true,
+   "residual_max_parameter_matched": 2.5886,
+   "residual_max_local_normal": 0.5453,
+   "residual_mean_local_normal": 0.0161
+  },
+  "interpretation": "Informational only. It does not license regenerating any frozen candidate and does not reopen VQ-1."
+ }
+}

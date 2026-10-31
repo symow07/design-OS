@@ -1,0 +1,25 @@
+{% extends "dashboard/library/base.html" %}
+{% block title %}Products{% endblock %}
+{% block note %}What designs are made from · a product's size is set here{% endblock %}
+{% block content %}
+<h1>Products{% if brand %} — {{ brand.name }}{% endif %}</h1>
+<p class="lede">Each product a design can be made for, and what a design reads from it. Its size decides how a carton for
+  it is sized: with all three measures on record the size is read from here; with any one missing, it is estimated from
+  the concept — a paid step — and you confirm it.</p>
+{% if saved %}<p class="ok" role="status">Saved — {{ saved }}.</p>{% endif %}
+{% if errors %}<div class="warn" role="alert"><p>Nothing was saved:</p><ul>{% for e in errors %}<li>{{ e }}</li>{% endfor %}</ul></div>{% endif %}
+<div class="products">
+{% for r in products %}
+{% include "dashboard/library/_product.html" %}
+{% empty %}
+  <p class="dim">No product is on record for this brand.</p>
+{% endfor %}
+</div>
+{% if tests %}
+<details class="lib-tests"><summary>{{ tests|length }} test record{{ tests|length|pluralize }} — kept apart from the brand's products</summary>
+  <p class="small">Products made only for the system's own tests: every design of each is one of them.</p>
+  <div class="products">{% for r in tests %}{% include "dashboard/library/_product.html" %}{% endfor %}</div>
+</details>
+{% endif %}
+{% if not can_edit %}<p class="dim">Setting a product's size is for a designer.</p>{% endif %}
+{% endblock %}

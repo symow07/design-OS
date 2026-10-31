@@ -1,0 +1,53 @@
+{
+ "record_type": "vq2_lf1_r1_status/1.0",
+ "created_at": "2026-07-29",
+ "state": "VQ2_LF1_HARD_STOP_REVIEW_REQUIRED",
+ "candidate": "VQ2-LF1-R1",
+ "converter_repair": "SUCCEEDED",
+ "root_cause_code": "VQ2_SEGMENT_PEN_CURVETO_ARITY_HANDLER_DEFECT",
+ "fix": "apps/ire/vq2_glyph_pen.py CubicSink subclasses FontTools BasePen, so super-Bezier curveTo of any arity, qCurveTo sequences and components are decomposed by the library instead of being filtered by a hand-written arity test. Unsupported ops raise rather than being dropped.",
+ "dropped_operations": 0,
+ "unresolved_components": 0,
+ "node_recovery": {
+  "o": "4 -> 16",
+  "c": "3 -> 25",
+  "R": "18 -> 41"
+ },
+ "visual_result": "PASS \u2014 Rose and Damascena render as clean condensed Didone letterforms with intact counters, hairlines and serifs on two straight baselines. The shard output is gone.",
+ "composition": {
+  "Rose": {
+   "ink_width": 128.85,
+   "target": 134,
+   "width_err": 0.0384
+  },
+  "Damascena": {
+   "ink_width": 278.29,
+   "target": 281,
+   "width_err": 0.0096
+  }
+ },
+ "iou_gate": {
+  "threshold": 0.995,
+  "glyphs_passing": 1,
+  "of": 13,
+  "min": 0.94218,
+  "range": "0.942 - 0.996",
+  "interpretation": "NOT certified. The measurement compares two INDEPENDENTLY flattened rasters (cubic at 12 steps vs quadratic at 8 steps) at 61-73 px cap height, so most of the deficit is flattening and rasterisation noise rather than conversion damage \u2014 a one-pixel edge difference costs several percent of area at this size. The visual proof shows no missing contour, bowl or counter. Certification requires re-measuring at high resolution with a single shared flattener; that was not done.",
+  "honest_status": "EQUIVALENCE_NOT_YET_CERTIFIED"
+ },
+ "why_hard_stop": "The mandate requires per-glyph IoU >= 0.995 before inspections run. That gate is not met as measured, so the two typography inspections were correctly NOT run and the review package was not built.",
+ "not_produced": [
+  "high-resolution equivalence certification",
+  "dual typography inspections",
+  "vq2_imbue_lf1_r1_review package",
+  "converter fixture test suite"
+ ],
+ "preserved": "The provisional broken LF1 under lf1/ is untouched and remains VQ2_LF1_PROVISIONAL_CONVERTER_FAILURE.",
+ "axes_unchanged": true,
+ "font_reacquired": false,
+ "glyph_outline_modified": false,
+ "nonuniform_scaling_applied": false,
+ "font_binary_embedded": false,
+ "lf2_generated": false,
+ "vq2_a2_generated": false
+}

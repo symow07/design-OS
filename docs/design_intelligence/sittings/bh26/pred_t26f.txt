@@ -1,0 +1,38 @@
+§AD0(a) PREDICTION — T26f (§BH26(f) transcription, pure append), sealed
+BEFORE git add. Base HEAD d1e5213.
+
+L1 WRITE SET: exactly ONE path — OWNER_BLOCKER_CLEARANCE.md (outer
+   root), the §BH26(f) block. Plus the gate-staged ledger line. NO
+   apps/ path, NO docs/roadmap path. The SEVEN commit-A WIP paths sit
+   in stash@{0} (five apps re-verified OK against
+   stash_a/sha256s.txt immediately before the push; manifest/diff-log
+   worktree sha256s newly recorded to stash_a/sha256s_docs.txt —
+   fe4199bc…, 065b33fc…; after the push both new files verified
+   ABSENT and all five tracked paths verified HEAD-identical;
+   porcelain register-only).
+L2 DIFF SHAPE: register +93 −0 (1 seam blank + 92 block lines);
+   17,256-line prefix byte-identical, proved at append (worktree==HEAD
+   hash fdcd80da… == head -17256 post-append); total 17,349.
+L3 MANIFEST / A391: manifest untouched at HEAD — extent guard passes
+   against the 371-declared disk state with the WIP test file off
+   disk, as at T26d/T26e. The records chain is digest-consistent in
+   this configuration (old manifest ↔ old record_digest pin ↔ old
+   identity), so the three GuardedCommitTests that refused attempt 2
+   PASS here — the same state T26e gated green through. R1–R3 are the
+   NEXT act, after this landing and the byte-verified restore.
+L4 STAGED == DECLARED: exactly one row: 93 0 OWNER_BLOCKER_CLEARANCE.md.
+L5 COMMIT CONTENTS: 2 files (register + ledger), insertions 93+1=94,
+   deletions 0.
+L6 SUITE LINE + REFUSAL TREE: GREEN — TIER_2=GREEN collected=8490
+   failures=0 apps=7684 dip0c=671 dip0=135, identical to T26d/T26e
+   (identical apps/ and docs/ disk state). No refusal expected; §BH24
+   0/3 standing.
+L7 LEDGER FOLD: 432 → 433, the +1 in THIS commit.
+L8 PROTOCOL IDENTITIES / APPS DIFF: apps diff EMPTY; both protected
+   regions byte-identical at scoring (GATE 7fbeb8f1fe10b0fb @ cfa
+   worktree [514:541]; TEST b32030dc827263e4 @ a76242c^ blob [82:98],
+   cwd-correct pathspec, checked exit). protocol_identity UNCHANGED at
+   this commit — ead892658e3323a8; the declared move to
+   11d57441e84b8d73 belongs to commit A per §BH26(f)(3). Stash restore
+   after scoring, byte-verified against BOTH sha256 records, before R1.
+   §BH26(a) authority UNSPENT at this commit.

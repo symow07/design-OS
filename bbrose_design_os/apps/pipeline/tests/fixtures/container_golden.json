@@ -1,0 +1,91 @@
+{
+ "_comment": "Phase 2B-1 golden fixtures. Frozen deterministic outputs of container_contract build_inferred_profile + propose_zones for bottle/jar/tube. A change to any hash means the contract geometry/hashing changed and must be reviewed — never edit these to make a test pass without understanding why the contract drifted. Tube proposals updated 2026-07-24 (2B-3V UI correction §3): optional z_cap CAP_PRINT_ZONE added. Bottle surfaces gained BOTTOM 2026-07-24 (task #51 structural correction: rigid bottles carry a bottom code area). Cap zones gated on bounded cap dims + BOTTOM_INKJET_CODE technique 2026-07-24 (task #51 correction items 1/3/4). [His answer after test day finding 3, 2026-09-30, (4) round: a tube's width is its round diameter, its front and back its flat face, π/2 of it, and it is drawn that wide — the tube's entry recomputed with the tests' own functions (zones, their hashes, the motif's paths, the wrap), every other entry byte-identical.]",
+ "bottle": {
+  "archetype": "bottle",
+  "variant": "cylindrical",
+  "estimates": {
+   "body_width_mm": 40.0,
+   "body_height_mm": 110.0,
+   "neck_ratio": 0.42
+  },
+  "profile_hash": "fba40b120a8d6defaecbcf12dcc1a714",
+  "zone_set_hash": "5eea48f9aaf4ee500113f4d67d32e17d",
+  "combined_hash": "aa6b4b545c15b9cb18a1be6fd569be5c",
+  "surfaces": [
+   "BODY_FRONT",
+   "BODY_BACK",
+   "BODY_LEFT",
+   "BODY_RIGHT",
+   "SHOULDER",
+   "NECK",
+   "CAP_FRONT",
+   "CAP_TOP",
+   "BOTTOM"
+  ],
+  "zone_count": 2,
+  "zone_types": [
+   "FRONT_PRINT_ZONE",
+   "BACK_PRINT_ZONE"
+  ],
+  "zone_surfaces": [
+   "BODY_FRONT",
+   "BODY_BACK"
+  ]
+ },
+ "jar": {
+  "archetype": "jar",
+  "variant": "",
+  "estimates": {
+   "body_width_mm": 70.0,
+   "body_height_mm": 60.0
+  },
+  "profile_hash": "df54002b70d8b93feea216c709fd5045",
+  "zone_set_hash": "0480469da685ed9f5d19007c7b1961cc",
+  "combined_hash": "125c8bc64021ad9c9afb215d879baf0e",
+  "surfaces": [
+   "BODY_FRONT",
+   "BODY_BACK",
+   "BODY_WRAP",
+   "CAP_TOP",
+   "CAP_WRAP",
+   "BOTTOM"
+  ],
+  "zone_count": 1,
+  "zone_types": [
+   "WRAP_LABEL_ZONE"
+  ],
+  "zone_surfaces": [
+   "BODY_WRAP"
+  ]
+ },
+ "tube": {
+  "archetype": "tube",
+  "variant": "",
+  "estimates": {
+   "body_width_mm": 35.0,
+   "body_height_mm": 120.0
+  },
+  "profile_hash": "be8c25d8b3dd401537a535186e3f85f8",
+  "zone_set_hash": "8cf8558ad1efedc21d05390c9fcf3c78",
+  "combined_hash": "1a951f3faa70e7f23f1af8a1e907ff95",
+  "surfaces": [
+   "BODY_FRONT",
+   "BODY_BACK",
+   "BODY_WRAP",
+   "CRIMP_ZONE",
+   "CAP_FRONT",
+   "CAP_TOP"
+  ],
+  "zone_count": 3,
+  "zone_types": [
+   "FRONT_PRINT_ZONE",
+   "BACK_PRINT_ZONE",
+   "BOTTOM_CODE_ZONE"
+  ],
+  "zone_surfaces": [
+   "BODY_FRONT",
+   "BODY_BACK",
+   "CRIMP_ZONE"
+  ]
+ }
+}

@@ -1,0 +1,107 @@
+# CI (Milestone 14.2): ruff lint, full pytest against a Postgres service
+# container, migration drift check, and the production deploy check.
+# Playwright is not in the lock, so the browser tests (test_browser_*.py) skip
+# here.
+name: CI
+
+on:
+  push:
+    branches: [main, "v2-*"]
+  pull_request:
+
+defaults:
+  run:
+    working-directory: bbrose_design_os
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: bbrose
+          POSTGRES_PASSWORD: bbrose
+          POSTGRES_DB: bbrose_ci
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U bbrose"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+
+    env:
+      SECRET_KEY: ci-only-secret-key-not-used-in-production-0123456789abcdef
+      DEBUG: "false"
+      # DIP-1A: decision-event signing is fail-closed — with DEBUG=false and no
+      # key, `manage.py check` errors (accounts.security.E001) and the deploy
+      # check fails. That is the intended behaviour, so CI supplies a CI-ONLY
+      # placeholder. It is a throwaway value, exactly like SECRET_KEY above; a
+      # real signing key is never committed and lives only in the production
+      # secret store.
+      DECISION_EVENT_HMAC_KEYS: '{"ci-key-1":"ci-only-hmac-key-not-used-in-production-0123456789abcdef"}'
+      DECISION_EVENT_ACTIVE_KEY_ID: ci-key-1
+      DATABASE_URL: postgresql://bbrose:bbrose@localhost:5432/bbrose_ci
+      CELERY_EAGER: "true"
+      ALLOWED_HOSTS: localhost,127.0.0.1
+      # Force plain static storage in CI (no collectstatic needed for tests).
+      USE_MANIFEST_STATIC: "false"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: bbrose_design_os/requirements.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
+
+      - name: Ruff lint
+        run: ruff check apps config
+
+      - name: Migration drift check
+        run: python manage.py makemigrations --check --dry-run
+
+      - name: Django deploy check
+        run: python manage.py check --deploy --fail-level ERROR
+
+      - name: Tests
+        # DEBUG=false enables SECURE_SSL_REDIRECT (settings.py), which 301-redirects
+        # every HTTP request the test client makes (it speaks plain HTTP), failing the
+        # suite wholesale. SSL redirect is a production runtime concern, not a test one,
+        # so it is disabled for THIS step only — the deploy check above keeps
+        # SECURE_SSL_REDIRECT on and still validates full production hardening.
+        env:
+          SECURE_SSL_REDIRECT: "false"
+        run: pytest -q apps
+
+      # DIP-1A: the authz policy decoupling made tools/dip0c/authz.py a thin re-export of
+      # the canonical apps/accounts/authz_policy.py. That wrapper is guarded by
+      # test_authz_decoupling.py, which lives OUTSIDE bbrose_design_os and so is not
+      # collected by the Django "Tests" step above. Run it explicitly from the repo root
+      # so a future edit to the canonical __all__ that breaks the re-export fails CI.
+      # It is pure-stdlib (no Django settings, no database).
+      - name: Policy-wrapper parity (audit re-export)
+        working-directory: bbrose_design_os
+        run: python -m pytest -c /dev/null --rootdir . -p no:django --confcutdir tools tools/dip0c/tests/test_authz_decoupling.py -q
+
+      # Frozen-artifact hygiene: the DIP-0C3 milestone records under
+      # docs/design_intelligence/dip0c/ are immutable inputs. Run the C3 suite (which used
+      # to regenerate them) then assert the tracked tree is byte-identical — so
+      # frozen-history churn can never silently enter a commit. Regeneration is opt-in
+      # (DIP0C_ALLOW_MILESTONE_WRITE=1); normal runs write to a temp dir via the conftest.
+      - name: Frozen milestone artifacts unchanged
+        working-directory: bbrose_design_os
+        run: |
+          python -m pytest -c /dev/null --rootdir . -p no:django --confcutdir tools tools/dip0c/tests/test_frozen_artifacts.py \
+            tools/dip0c/tests/test_c3b1.py tools/dip0c/tests/test_c3b2.py \
+            tools/dip0c/tests/test_c3b3.py tools/dip0c/tests/test_c3b4.py \
+            tools/dip0c/tests/test_c3c.py tools/dip0c/tests/test_c3d.py \
+            tools/dip0c/tests/test_c3e.py -q
+          git diff --exit-code -- ../docs/design_intelligence/dip0c/

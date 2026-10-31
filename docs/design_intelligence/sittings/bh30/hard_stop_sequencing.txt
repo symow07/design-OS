@@ -1,0 +1,53 @@
+§BH30(h) HARD STOP — THE RULED ORDER CANNOT GATE GREEN AS SEQUENCED, AND A PIN CLASS
+THE CENSUS DID NOT PREDICT. Reported 2026-09-04 (local), before any further act.
+
+FINDING 1 — five gate tests read the UNTRACKED var/ audit outputs and pin the pre-intake
+numbers. Measured: with var/ swept (16,574 rows) they fail on numbers; with var/ ABSENT
+(after the ruled revert — the 2026-08-31 bytes were overwritten and could not be restored)
+the four dip0c tests FAIL with FileNotFoundError, they do not skip; with var/ regenerated
+under the exclusion (HEAD's corpus + 51/35) they will fail by exactly the intake's delta
+(4,886→4,921 files, 3,969→4,004 faces …) until pass 2 rewrites the constants. Every gate
+in the ruled order — T30h (transcription), (h)(2) the exclusion commit, (3)/(4) the regen
+docs commit — runs these tests. So NO intermediate commit can land green until a
+consistent var/ AND the pass-2 constants exist together, and pass 2 is ruled to come after
+the regen commit. The 2026-08-31 var/ state is not recoverable byte-exact; recreating it
+would need a run excluding brand2026 too, which is not a ruled configuration.
+
+FINDING 2 — a pin class the census did not predict: docs/design_intelligence/dip1/
+dip1b_mvp_manifest_1_0.json (TRACKED, "frozen production manifest") entry 44 pins the
+sha256 of var/design_intelligence/audits/dip0c/c4c/face_manifest.json (UNTRACKED) at
+302679234ae5b9bb935d0394d952fab7f32aee2add5f732ee17dd9bdbc66e35c — the 2026-08-31 bytes.
+ANY regen moves that file's bytes (the ruled re-run adds 35 faces), so the frozen manifest
+must be re-pinned in the same amendment or its test fails whenever var/ is present. Neither
+declaration predicted this pin; §BH30(e): "a pin class the census does not predict is a
+hard stop". Re-pinning a frozen production manifest is a ruling-level act.
+
+STATE, frozen: HEAD 87091c1 (the intake). The §BH30(h) register block is APPENDED and
+STAGED, uncommitted (pred_t30h attempt 1 refused, scored as history). The ledger carries the
+refusing gate's line 446 unstaged (HEAD 445; it rides into the next landing as at T26i).
+The eight dip0a/dip0c records are HEAD-equal (ruled revert (1) executed and verified; tree
+seals 36f08a31ad581c3b / 2e339a7e23a46c00). var/design_intelligence/audits holds only
+dip0b: the swept dip0 + dip0c outputs sit OUTSIDE the repo at ~/bh30_work/var_regen_swept/.
+The exclusion patch (h)(2) is written and rehearsed (six fixture tests green on scratch
+copies), NOT applied. The fresh declaration regen_declaration_2.md is sealed. Nothing else
+moved; the Noto pair VERIFIED_FOR_PRODUCTION under Django.
+
+OPTIONS FOR THE OWNER'S WORD (presented, not chosen):
+ (A) RE-SEQUENCE BY RULING: apply the exclusion config (h)(2) in the worktree, run the ruled
+     re-run so var/ is consistent, then land ONE commit carrying the exclusion code + its
+     tests + the regenerated records + the pass-2 constants + the dip1b entry-44 re-pin
+     (the §BH13(c)/§BH16(a) precedent: pins corrected in the same commit as the change that
+     overtakes their premise), gated green; then the T30h transcription lands after it
+     (its gate green against the consistent state). Cost: §AC's one-concern-per-commit is
+     set aside for that one commit by ruling; the transcription lands out of order.
+ (B) TWO COMMITS WITH A REGISTERED ALLOWANCE: rule a bounded §BH24-style AMBER registration
+     of the five ids for exactly two gate runs (T30h, then the exclusion commit), then the
+     regen+pass-2+re-pin commit clears them. Cost: two landings whose suites carried five
+     known-red tests by allowance.
+ (C) GUARD THE TESTS: rule that the four dip0c real-corpus tests and the dip1b entry SKIP /
+     treat absence as first-class when var/ audit outputs are absent (a code change, its
+     own commit), so T30h and (h)(2) gate green with var/ absent; then the re-run,
+     regen+pass-2+re-pin commit. Cost: a test-design change; masks absence in a clean tree.
+ (D) Anything else the owner words.
+In every option the dip1b entry-44 re-pin needs the owner's word as a frozen-manifest
+change; the re-pin value is minted by the (g) preview immediately before its write.

@@ -1,0 +1,44 @@
+{% extends "base.html" %}{% load static %}
+{% block title %}Serum artwork master{% endblock %}
+{% block page_class %}page wide{% endblock %}
+{% block head %}<link rel="stylesheet" href="{% static 'css/hybrid-master.css' %}">{% endblock %}
+{% block content %}
+<div class="hybrid">
+  <header><span class="over">First product family · Day 2</span><h1>Serum artwork master</h1>
+    <p class="lead">Sun Repair on the S-2422-type bottle. The published Day 2 composition is superseded pending the concept 147 fidelity master.</p>
+    <p class="hybrid-status">Composition superseded · Fidelity master due Day 4 · Stock drawing and print zone unconfirmed</p>
+  </header>
+  <figure class="hybrid-picture"><a href="{{ preview_url }}" target="_blank" rel="noopener"><img src="{{ preview_url }}" alt="Original Sun Repair concept beside the new authored bottle elevation and flat artwork, at equal scale"></a>
+    <figcaption>{% if output %}Revision {{ output.spec_sheet.design_spec.revision }}{% else %}Superseded Day 2 software/proof milestone{% endif %}. Open the picture to zoom. Print the PDF at 100% and check its 50 mm bar.</figcaption>
+  </figure>
+  <nav class="hybrid-downloads" aria-label="Download artwork">
+    {% if output %}
+      <a class="btn" href="{% url 'dashboard:hybrid_file' output.pk 'proof' %}">1:1 comparison PDF</a>
+      <a class="btn" href="{% url 'dashboard:hybrid_file' output.pk 'package' %}">Editable master + fonts</a>
+      <a href="{% url 'dashboard:hybrid_file' output.pk 'pdf' %}">Artwork PDF</a>
+      <a href="{% url 'dashboard:hybrid_file' output.pk 'preflight' %}">File checks</a>
+    {% else %}
+      <a class="btn" href="{% url 'dashboard:hybrid_example' 'proof' %}">1:1 comparison PDF</a>
+      <a class="btn" href="{% url 'dashboard:hybrid_example' 'package' %}">Today's editable master</a>
+    {% endif %}
+  </nav>
+  <p><a href="{% url 'dashboard:assembly_master' %}">Twelve-bottle stepped stand</a> · Geometry-only pin: <code class="hybrid-hash">1b0d5a9c760fa03c2e2662f58f38f3f6b014874a09266533f25cfdefc17f6467</code>. Stand revisions never silently follow a changed bottle.</p>
+  <div class="hybrid-columns">
+    <section><h2>Make a new revision</h2><p>Every saved version stays available. This local proof makes no paid call.</p>
+      {% if can_edit %}<form method="post">{% csrf_token %}{{ form.non_field_errors }}
+        {% for hidden in form.hidden_fields %}{{ hidden }}{% endfor %}
+        {% for field in form.visible_fields %}<div class="hybrid-field"><label for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}{{ field.errors }}</div>{% endfor %}
+        <button class="btn primary" type="submit">{% if task %}Save a new proof{% else %}Create my editable master{% endif %}</button>
+      </form>{% else %}<p>Historical proofs are read-only. A Designer or Admin can edit the <a href="{% if task %}{% url 'dashboard:hybrid_master_task' task.pk %}{% else %}{% url 'dashboard:hybrid_master' %}{% endif %}">current master</a>.</p>{% endif %}
+    </section>
+    <aside><h2>What this proof establishes</h2>
+      <p>The artwork has live English and Arabic type, the approved vector mark, and the original illustration pixels. The bottle view projects that same artwork around a cylinder.</p>
+      <p>Ø29 × 108 mm and 30 ml come from the owner's brief. The 108 mm height datum is unresolved unless entered above. Cap, shoulder and the two 32 × 60 mm decoration areas are proposals. Clear glass and chrome describe materials; they are not print inks.</p>
+      <p>The accepted concept IS the design. The execution must match its composition, colours, full-body swoosh and every line of lettering. Amber is fill through clear glass. Day 4 item 1 is the fidelity master; no artwork is bound to the stand before that correction. The stored Day 2 revision remains unchanged.</p>
+      {% if pending %}<h3>Before production release</h3><ul>{% for item in pending %}<li>{{ item }}</li>{% endfor %}</ul>{% endif %}
+      {% if revisions %}<h3>Saved revisions</h3><ol>{% for revision in revisions %}<li><a href="{% url 'dashboard:hybrid_master_task' task.pk %}?revision={{ revision.pk }}">Revision {{ revision.spec_sheet.design_spec.revision }}</a> · {{ revision.created_at|date:"j M, H:i" }}</li>{% endfor %}</ol>{% endif %}
+      <p class="small">The layered .ai in the package is PDF-compatible. Native Illustrator validation is reported separately. House references arrive by Day 6.</p>
+    </aside>
+  </div>
+</div>
+{% endblock %}

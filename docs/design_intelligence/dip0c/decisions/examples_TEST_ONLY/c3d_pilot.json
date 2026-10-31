@@ -1,0 +1,182 @@
+{
+  "refused": [
+    {
+      "attempt": "SYSTEM_ADMIN approves a brand palette",
+      "reason": "role 'SYSTEM_ADMIN' may NOT 'approve_brand_palette'. Permitted roles: ['BRAND_ADMIN']. (Gi"
+    },
+    {
+      "attempt": "SYSTEM_ADMIN attests palette rights",
+      "reason": "role 'SYSTEM_ADMIN' may NOT 'attest_palette_rights'. Permitted roles: ['LEGAL_REVIEWER']. "
+    },
+    {
+      "attempt": "BRAND_ADMIN attests palette RIGHTS (legal only)",
+      "reason": "role 'BRAND_ADMIN' may NOT 'attest_palette_rights'. Permitted roles: ['LEGAL_REVIEWER']. ("
+    },
+    {
+      "attempt": "machine declares APPROVED_BRAND_PALETTE",
+      "reason": "'APPROVED_BRAND_PALETTE' is a HUMAN decision. Machine code may audit a palette's colours; "
+    },
+    {
+      "attempt": "a palette approval attested by ONE person",
+      "reason": "BRAND_PALETTE_APPROVED is under DUAL CONTROL: its attestations name only {'TEST_ONLY_brand"
+    }
+  ],
+  "real_ase_audit": {
+    "parse_status": "PARTIAL_PARSE",
+    "capability": "REQUIRES_HUMAN",
+    "layout": [
+      "NON_STANDARD_NAME_ENCODING"
+    ],
+    "fallback_used": true,
+    "parser_warnings": [
+      "NAME_LENGTH_FIELD_ABSENT"
+    ],
+    "color_models": [
+      "RGB"
+    ],
+    "color_types": [
+      "GLOBAL"
+    ],
+    "third_party_naming": [
+      "PANTONE"
+    ],
+    "contains_spot_identity": false,
+    "swatch_names": [
+      "Pantone 3519 C"
+    ]
+  },
+  "real_ase_approval": {
+    "allowed": false,
+    "problems": [
+      "ownership is 'OWNERSHIP_UNKNOWN': a brand palette requires confirmed ownership or explicitly permitted use (one of ['BBROSE_OWNED_CONFIRMED', 'LICENSED_FOR_LIMITED_USE', 'JOINT_OR_CONTRACTED_USE'])",
+      "the licence is UNVERIFIED — a brand palette approval must rest on a recorded licence decision",
+      "no REVIEWED_ACCEPTED evidence supports this approval",
+      "this palette is PARTIAL_PARSE (fallback_used=True). A human MAY approve it — but the approval must explicitly acknowledge the parser limitation. Approving a file does not make it well-formed.",
+      "third-party naming detected (['PANTONE']) and NOT acknowledged. A name is not a licence, and approving a palette does not resolve it.",
+      "swatch 'Pantone 3519 C': every approved value must declare its provenance — one of ['RAW_SOURCE', 'DERIVED_PREVIEW', 'MANUALLY_CONFIRMED']. A derived preview does not become source truth by being approved."
+    ],
+    "note": "the REAL file is refused on every axis that matters: ownership unknown, licence unverified, no evidence, PANTONE naming unacknowledged, the parser fallback unacknowledged, and no swatch provenance declared. It stays in a queue. NO approval is recorded."
+  },
+  "approval_grants_nothing": {
+    "approved": true,
+    "problems": [],
+    "all_permissions_false": true,
+    "permission_flags_checked": 9,
+    "note": "APPROVED as the BBROSE brand palette — and every permission is still false. Approving the colours is not permitting their use."
+  },
+  "authority_domains": {
+    "master_plus_palette_same_scope_conflicts": 0,
+    "two_palettes_same_scope_conflicts": 1,
+    "conflict_domain": "BRAND_PALETTE",
+    "master_still_usable": "TEST_ONLY_logo.ai",
+    "palette_blocked": "CANONICAL_CONFLICT",
+    "note": "a logo master and a brand palette answer DIFFERENT questions. They may both be authoritative for one scope without contradicting each other. Two palettes for one scope DO conflict."
+  },
+  "media_scope": {
+    "DIGITAL": true,
+    "SCREEN": true,
+    "PACKAGING_PRINT": false,
+    "PRINT": false,
+    "WEB": false,
+    "note": "approved for DIGITAL. SCREEN is inside DIGITAL, so it is covered. PACKAGING_PRINT is not — PRINT and DIGITAL are declared disjoint and PACKAGING_PRINT inherits that. WEB is UNKNOWN, and unknown FAILS CLOSED."
+  },
+  "expiry": {
+    "before": true,
+    "after": {
+      "value": false,
+      "status": "RE_REVIEW_REQUIRED",
+      "grant_event_id": "evt-a04e15de4b5b8610327f",
+      "review_expiry": "2026-10-01T00:00:00+00:00",
+      "reason": "review expiry 2026-10-01T00:00:00+00:00 has passed; effective use stops immediately and only a new authorized human grant may restore it"
+    }
+  },
+  "parser_limitation_survives": {
+    "parse_status": "PARTIAL_PARSE",
+    "layout": [
+      "NON_STANDARD_NAME_ENCODING"
+    ],
+    "fallback_used": true,
+    "parser_warnings": [
+      "NAME_LENGTH_FIELD_ABSENT"
+    ],
+    "contains_spot_identity": false,
+    "value_provenance": {
+      "Pantone 3519 C": "DERIVED_PREVIEW"
+    },
+    "grants_permissions": false,
+    "note": "even a hypothetical approval cannot rewrite the audit. PARTIAL_PARSE stays PARTIAL_PARSE; a derived preview stays derived."
+  },
+  "color_comparison_gate": {
+    "refusals": [
+      {
+        "attempt": "naive CMYK preview grounds a ΔE",
+        "refused": true,
+        "reason": "a derived preview is not a measurement — it may not ground a ΔE: this sRGB was produced by"
+      },
+      {
+        "attempt": "cross-model RGB vs CMYK",
+        "refused": true,
+        "reason": "cross-model comparison is not meaningful without colour management (RGB vs CMYK)"
+      },
+      {
+        "attempt": "CMYK without an ICC profile",
+        "refused": true,
+        "reason": "CMYK comparison requires an explicitly known ICC profile context"
+      }
+    ],
+    "rgb_to_rgb_allowed": true,
+    "name_is_not_an_id": "COMPARISON_UNAVAILABLE",
+    "historical_link": {
+      "asset": "Pantone_3519C.ase",
+      "linked_to_historical_design_memory": false,
+      "status": "COMPARISON_UNAVAILABLE",
+      "reason": "the file's existence does not establish that BBROSE ever used this colour. A palette sitting in a downloads folder is evidence of a download.",
+      "claims_not_made": [
+        "BBROSE historically used Pantone 3519 C",
+        "the swatch name is an official Pantone match",
+        "this colour appears in historical BBROSE designs"
+      ],
+      "retrievable": false,
+      "automatically_usable": false,
+      "parser": "dip0c.color_compare/0.1.0"
+    }
+  },
+  "dual_control": {
+    "one_person_both_halves_allowed": false,
+    "problems": [
+      "DUAL CONTROL: 'TEST_ONLY_brand_admin' attested BOTH halves. color_reviewer_id != legal_reviewer_id — holding both roles does not make one person two reviewers.",
+      "DUAL CONTROL: the activating actor 'TEST_ONLY_brand_admin' also gave the rights attestation — it must come from a different actor."
+    ]
+  },
+  "queues": {
+    "totals": {
+      "POSSIBLE_BRAND_MASTER": 1,
+      "COMPOSITION_MISLABELLED_AS_MASTER": 0,
+      "OUTLINED_WORDMARK_IDENTIFICATION": 1,
+      "THIRD_PARTY_LOGO_IN_BBROSE_FOLDER": 1,
+      "TECHNICALLY_STRONG_OWNERSHIP_BLOCKED": 0,
+      "MISSING_BRAND_LICENSE_EVIDENCE": 0,
+      "CANONICAL_MASTER_NOMINATION": 1,
+      "CANONICAL_CONFLICT": 1,
+      "PALETTE_ASSOCIATION_REVIEW": 1,
+      "PALETTE_OWNERSHIP_LICENSE_REVIEW": 1,
+      "PALETTE_APPROVAL_DUAL_CONTROL": 1,
+      "EXPIRED_OR_REVOKED_APPROVAL": 0,
+      "ASSERTION_CONTRADICTS_EVIDENCE": 1,
+      "RIGHTS_BLOCKED_PERMISSION": 2
+    },
+    "total_items": 11,
+    "critical": [
+      "CANONICAL_CONFLICT"
+    ],
+    "never_batch_approved": [
+      "CANONICAL_MASTER_NOMINATION",
+      "CANONICAL_CONFLICT",
+      "PALETTE_APPROVAL_DUAL_CONTROL"
+    ],
+    "deterministic": true,
+    "permission_flags_derived": 9
+  },
+  "TEST_ONLY": true,
+  "WARNING": "SYNTHETIC EXAMPLE. This is NOT a real decision and confers NOTHING. It exists to exercise the schema and the validator."
+}

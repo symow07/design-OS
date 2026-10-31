@@ -1,0 +1,31 @@
+{
+  "schema_version": "component_semantic_classification/1.0",
+  "deterministic_classification": "BULB_WITH_INTEGRAL_FLARED_SKIRT",
+  "vision_classification": "EXPOSED_RUBBER_PIPETTE_BULB",
+  "vision_confidence": 0.25,
+  "resolved_classification": "UNCERTAIN",
+  "confidence": 0.25,
+  "agreement": false,
+  "note": "deterministic profile shows a long constant-width run with a lower flare, which contradicts a bare tapering pipette bulb",
+  "evidence": "The intent appears to be a pipette bulb but the rendered shape is a pointed flame-like finial rather than the smooth rounded dome seen in the reference. The shape does not match an exposed rubber bulb morphology.",
+  "profile_findings": {
+    "label": "reference",
+    "peak_at_fraction_from_top": 0.4034,
+    "longest_constant_width_run": 0.5667,
+    "lower_flare": 0.0986,
+    "top_closure_width": 0.0377,
+    "reads_as_cylinder_with_dome": true,
+    "reads_as_teardrop": false
+  },
+  "generation_blocked": true,
+  "blocker": "VQ_COMPONENT_SEMANTICS_HUMAN_CONFIRMATION_REQUIRED",
+  "human_confirmed": false,
+  "allowed_values": [
+    "EXPOSED_RUBBER_PIPETTE_BULB",
+    "BULB_WITH_INTEGRAL_FLARED_SKIRT",
+    "DECORATIVE_OUTER_BULB_COVER",
+    "COMPLETE_CLOSURE_OVERCAP",
+    "OTHER_CLOSURE_FORM",
+    "UNCERTAIN"
+  ]
+}

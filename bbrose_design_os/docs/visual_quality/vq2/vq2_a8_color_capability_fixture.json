@@ -1,0 +1,85 @@
+{
+ "record_type": "ai8_color_capability_fixture/1.0",
+ "purpose": "prove a colour survives emission, execution and raster before trusting the artwork pipeline with it",
+ "swatches": [
+  {
+   "object": "SWATCH_BODY",
+   "role": "BODY",
+   "expected": "#D9BDB5",
+   "emitted_operator": "0.850980 0.741176 0.709804 Xa",
+   "emitted_numeric": [
+    0.85098,
+    0.741176,
+    0.709804
+   ],
+   "scanned_from_bytes": "#D9BDB5",
+   "executed_postscript": "#D9BDB5",
+   "rendered_pixel": "#D8BCB5",
+   "rendered_pixel_count": 51076,
+   "accepted_proof_pixel": "#D8BCB5",
+   "matches_accepted_proof_pixel": true,
+   "tolerance": 1,
+   "pass": true
+  },
+  {
+   "object": "SWATCH_COLLAR",
+   "role": "COLLAR",
+   "expected": "#705242",
+   "emitted_operator": "0.439216 0.321569 0.258824 Xa",
+   "emitted_numeric": [
+    0.439216,
+    0.321569,
+    0.258824
+   ],
+   "scanned_from_bytes": "#705242",
+   "executed_postscript": "#705242",
+   "rendered_pixel": "#705242",
+   "rendered_pixel_count": 51076,
+   "accepted_proof_pixel": "#705242",
+   "matches_accepted_proof_pixel": true,
+   "tolerance": 1,
+   "pass": true
+  },
+  {
+   "object": "SWATCH_CLOSURE",
+   "role": "CLOSURE",
+   "expected": "#493034",
+   "emitted_operator": "0.286275 0.188235 0.203922 Xa",
+   "emitted_numeric": [
+    0.286275,
+    0.188235,
+    0.203922
+   ],
+   "scanned_from_bytes": "#493034",
+   "executed_postscript": "#493034",
+   "rendered_pixel": "#492F34",
+   "rendered_pixel_count": 51076,
+   "accepted_proof_pixel": "#492F34",
+   "matches_accepted_proof_pixel": true,
+   "tolerance": 1,
+   "pass": true
+  },
+  {
+   "object": "SWATCH_ARTWORK",
+   "role": "ARTWORK",
+   "expected": "#502525",
+   "emitted_operator": "0.313725 0.145098 0.145098 Xa",
+   "emitted_numeric": [
+    0.313725,
+    0.145098,
+    0.145098
+   ],
+   "scanned_from_bytes": "#502525",
+   "executed_postscript": "#502525",
+   "rendered_pixel": "#4F2424",
+   "rendered_pixel_count": 51076,
+   "accepted_proof_pixel": "#4F2424",
+   "matches_accepted_proof_pixel": true,
+   "tolerance": 1,
+   "pass": true
+  }
+ ],
+ "tolerance": 1,
+ "passed": true,
+ "failure_codes": []
+}

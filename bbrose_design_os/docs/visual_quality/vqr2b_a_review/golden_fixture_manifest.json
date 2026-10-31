@@ -1,0 +1,423 @@
+{
+ "schema": "golden_visual_fixtures/1.0",
+ "created_at": "2026-08-03",
+ "immutability": "fixtures are immutable after owner acceptance; expectation changes require a new manifest version",
+ "fixtures": [
+  {
+   "fixture_id": "good_transparent_bottle_dropper",
+   "file": "good_transparent_bottle_dropper.png",
+   "role": "GOOD",
+   "scope": "SILHOUETTE",
+   "sha256": "da9bbc96e29e71ad8cd289d8b47552fc1b43bca33827534c413a14aaf8caf9c2",
+   "expected_analyzability": "CONCEPT_ANALYSIS_READY",
+   "expected_mask_method": "ALPHA",
+   "expected_reason_codes": [],
+   "expected_measurements": {
+    "aspect_h_over_w": [
+     3.2,
+     3.6
+    ],
+    "coverage": [
+     0.15,
+     0.35
+    ],
+    "closure_separable": true
+   },
+   "analyzed_by_vqr2b_a": true,
+   "owner_review_status": "PENDING",
+   "immutable": true,
+   "note": ""
+  },
+  {
+   "fixture_id": "good_m3_fixture_silhouette",
+   "file": "good_m3_fixture_silhouette.png",
+   "role": "GOOD",
+   "scope": "SILHOUETTE",
+   "sha256": "4ecc8e9df1d14b7728c7e4c3ebb368379e71a892d404323ccd57bfa6e664df56",
+   "source": "docs/visual_quality/vq1_master/master_it3.png (hash-preserved copy of the IMMUTABLE accepted fixture)",
+   "expected_analyzability": "CONCEPT_ANALYSIS_READY",
+   "expected_mask_method": "BACKGROUND_SEGMENTATION",
+   "expected_reason_codes": [],
+   "expected_measurements": {
+    "aspect_h_over_w": [
+     2.8,
+     3.3
+    ],
+    "closure_separable": true
+   },
+   "analyzed_by_vqr2b_a": true,
+   "owner_review_status": "PENDING",
+   "immutable": true,
+   "note": "identity 4ecc8e9df1d1 \u2014 source never modified"
+  },
+  {
+   "fixture_id": "good_front_facing_jar",
+   "file": "good_front_facing_jar.png",
+   "role": "GOOD",
+   "scope": "SILHOUETTE",
+   "sha256": "bb806e7d43518ad0869d55896468dd498d7d51a5b69c97a7d87e578a7a8320b1",
+   "expected_analyzability": "CONCEPT_ANALYSIS_READY",
+   "expected_mask_method": "BACKGROUND_SEGMENTATION",
+   "expected_reason_codes": [],
+   "expected_measurements": {
+    "aspect_h_over_w": [
+     1.2,
+     1.7
+    ],
+    "closure_separable": false
+   },
+   "analyzed_by_vqr2b_a": true,
+   "owner_review_status": "PENDING",
+   "immutable": true,
+   "note": "squat jar: closure not separable by narrow-band rule \u2014 CONCEPT_CLOSURE_HIDDEN warning expected, not a failure"
+  },
+  {
+   "fixture_id": "good_front_facing_tube",
+   "file": "good_front_facing_tube.png",
+   "role": "GOOD",
+   "scope": "SILHOUETTE",
+   "sha256": "acb1bf02f3183154e907f265a52b3df1671ac27b29e99b542c2d42bf4d34a784",
+   "expected_analyzability": "CONCEPT_ANALYSIS_READY",
+   "expected_mask_method": "BACKGROUND_SEGMENTATION",
+   "expected_reason_codes": [],
+   "expected_measurements": {
+    "aspect_h_over_w": [
+     3.5,
+     4.8
+    ]
+   },
+   "analyzed_by_vqr2b_a": true,
+   "owner_review_status": "PENDING",
+   "immutable": true,
+   "note": ""
+  },
+  {
+   "fixture_id": "good_flat_background_concept",
+   "file": "good_flat_background_concept.png",
+   "role": "GOOD",
+   "scope": "SILHOUETTE",
+   "sha256": "c350ed5d937492d4f189e7841cb1a2a2a39fbcfbcff79b7173561947b0c861fc",
+   "expected_analyzability": "CONCEPT_ANALYSIS_READY",
+   "expected_mask_method": "BACKGROUND_SEGMENTATION",
+   "expected_reason_codes": [],
+   "expected_measurements": {
+    "closure_separable": true
+   },
+   "analyzed_by_vqr2b_a": true,
+   "owner_review_status": "PENDING",
+   "immutable": true,
+   "note": "task-53-like flat dark background"
+  },
+  {
+   "fixture_id": "good_resolved_closure_full_body",
+   "file": "good_resolved_closure_full_body.png",
+   "role": "GOOD",
+   "scope": "SILHOUETTE",
+   "sha256": "2e37229983fc239e28c93b2166824a211f847d076fb09b37dbbd99ccec801af9",
+   "expected_analyzability": "CONCEPT_ANALYSIS_READY",
+   "expected_mask_method": "BACKGROUND_SEGMENTATION",
+   "expected_reason_codes": [],
+   "expected_measurements": {
+    "closure_separable": true
+   },
+   "analyzed_by_vqr2b_a": true,
+   "owner_review_status": "PENDING",
+   "immutable": true,
+   "note": ""
+  },
+  {
+   "fixture_id": "bad_a4_like_empty_canvas",
+   "file": "bad_a4_like_empty_canvas.png",
+   "role": "BAD",
+   "scope": "SILHOUETTE",
+   "sha256": "0a43f608195126bc9161993000e6d62441b5f651b7fa2c3a9ecebc710eac23bb",
+   "expected_analyzability": "CONCEPT_ANALYSIS_READY",
+   "expected_mask_method": "BACKGROUND_SEGMENTATION",
+   "expected_reason_codes": [],
+   "expected_measurements": {
+    "coverage": [
+     0.0,
+     0.035
+    ]
+   },
+   "analyzed_by_vqr2b_a": true,
+   "owner_review_status": "PENDING",
+   "immutable": true,
+   "note": "tiny product lost in empty canvas \u2014 READY but coverage evidence exposes the A4-style waste for later composition axes"
+  },
+  {
+   "fixture_id": "bad_product_cropped_at_base",
+   "file": "bad_product_cropped_at_base.png",
+   "role": "BAD",
+   "scope": "SILHOUETTE",
+   "sha256": "c3f8ee0b40c169cffcd3b29802727c7ba30e87a7641b96ee7e603d68782028b0",
+   "expected_analyzability": "CONCEPT_ANALYSIS_PARTIAL",
+   "expected_mask_method": "BACKGROUND_SEGMENTATION",
+   "expected_reason_codes": [
+    "CONCEPT_FRAME_CONTACT",
+    "CONCEPT_PRODUCT_CROPPED"
+   ],
+   "expected_measurements": {},
+   "analyzed_by_vqr2b_a": true,
+   "owner_review_status": "PENDING",
+   "immutable": true,
+   "note": ""
+  },
+  {
+   "fixture_id": "bad_closure_cropped",
+   "file": "bad_closure_cropped.png",
+   "role": "BAD",
+   "scope": "SILHOUETTE",
+   "sha256": "7ea362eab571e0505b791bfe4dc5f76eee0bb622ee8c764638748587de3e63c4",
+   "expected_analyzability": "CONCEPT_ANALYSIS_PARTIAL",
+   "expected_mask_method": "BACKGROUND_SEGMENTATION",
+   "expected_reason_codes": [
+    "CONCEPT_FRAME_CONTACT",
+    "CONCEPT_PRODUCT_CROPPED"
+   ],
+   "expected_measurements": {},
+   "analyzed_by_vqr2b_a": true,
+   "owner_review_status": "PENDING",
+   "immutable": true,
+   "note": ""
+  },
+  {
+   "fixture_id": "bad_hidden_closure",
+   "file": "bad_hidden_closure.png",
+   "role": "BAD",
+   "scope": "SILHOUETTE",
+   "sha256": "7ebb4f1a118fadea48f7d3fe168de55b3fff290303021092edd435efa8306c81",
+   "expected_analyzability": "CONCEPT_ANALYSIS_READY",
+   "expected_mask_method": "BACKGROUND_SEGMENTATION",
+   "expected_reason_codes": [],
+   "expected_measurements": {
+    "closure_separable": false
+   },
+   "analyzed_by_vqr2b_a": true,
+   "owner_review_status": "PENDING",
+   "immutable": true,
+   "note": "body only \u2014 CONCEPT_CLOSURE_HIDDEN warning expected"
+  },
+  {
+   "fixture_id": "bad_excessive_perspective",
+   "file": "bad_excessive_perspective.png",
+   "role": "BAD",
+   "scope": "SILHOUETTE",
+   "sha256": "cb5382223e0addf18e8fc079ea9ce9f0fb0a1418ff14ddf2a046aa5b7b186d83",
+   "expected_analyzability": "CONCEPT_ANALYSIS_READY",
+   "expected_mask_method": "BACKGROUND_SEGMENTATION",
+   "expected_reason_codes": [],
+   "expected_measurements": {
+    "symmetry_min": 0.06
+   },
+   "analyzed_by_vqr2b_a": true,
+   "owner_review_status": "PENDING",
+   "immutable": true,
+   "note": "sheared silhouette \u2014 CONCEPT_EXCESSIVE_PERSPECTIVE warning via symmetry deviation"
+  },
+  {
+   "fixture_id": "bad_touches_frame",
+   "file": "bad_touches_frame.png",
+   "role": "BAD",
+   "scope": "SILHOUETTE",
+   "sha256": "31047b24d9893bd27da5e6ca9736f6118491705162ea3842b87d099ea8751e63",
+   "expected_analyzability": "CONCEPT_ANALYSIS_PARTIAL",
+   "expected_mask_method": "BACKGROUND_SEGMENTATION",
+   "expected_reason_codes": [
+    "CONCEPT_FRAME_CONTACT"
+   ],
+   "expected_measurements": {},
+   "analyzed_by_vqr2b_a": true,
+   "owner_review_status": "PENDING",
+   "immutable": true,
+   "note": ""
+  },
+  {
+   "fixture_id": "bad_multiple_products",
+   "file": "bad_multiple_products.png",
+   "role": "BAD",
+   "scope": "SILHOUETTE",
+   "sha256": "7c5d2d52b7fc41053fdbb557ed5bc4dc299b428a87a44a9ac04d61b3a7a97fd3",
+   "expected_analyzability": "CONCEPT_ANALYSIS_UNMEASURABLE",
+   "expected_mask_method": "BACKGROUND_SEGMENTATION",
+   "expected_reason_codes": [
+    "CONCEPT_MULTIPLE_PRODUCTS"
+   ],
+   "expected_measurements": {},
+   "analyzed_by_vqr2b_a": true,
+   "owner_review_status": "PENDING",
+   "immutable": true,
+   "note": ""
+  },
+  {
+   "fixture_id": "bad_heavy_shadow_merged",
+   "file": "bad_heavy_shadow_merged.png",
+   "role": "BAD",
+   "scope": "SILHOUETTE",
+   "sha256": "ece8034e4dffc7af0edfee36856808e00470daa899517d5680fb4e6a6dd7ea57",
+   "expected_analyzability": "CONCEPT_ANALYSIS_PARTIAL",
+   "expected_mask_method": "BACKGROUND_SEGMENTATION",
+   "expected_reason_codes": [
+    "CONCEPT_FRAME_CONTACT"
+   ],
+   "expected_measurements": {
+    "aspect_max": 2.0
+   },
+   "analyzed_by_vqr2b_a": true,
+   "owner_review_status": "PENDING",
+   "immutable": true,
+   "note": "shadow merges into the silhouette (aspect corrupted to ~1.81) and reaches the frame \u2014 evidence for shadow-interference detection in VQR-2B-B"
+  },
+  {
+   "fixture_id": "bad_background_unresolved",
+   "file": "bad_background_unresolved.png",
+   "role": "BAD",
+   "scope": "SILHOUETTE",
+   "sha256": "0ae4f41acf82f2e74302f81d8ec2157624d3eaee649f07e6fd3cce4a4c3b5d99",
+   "expected_analyzability": "CONCEPT_ANALYSIS_UNMEASURABLE",
+   "expected_mask_method": "BACKGROUND_SEGMENTATION",
+   "expected_reason_codes": [
+    "CONCEPT_BACKGROUND_UNRESOLVED"
+   ],
+   "expected_measurements": {},
+   "analyzed_by_vqr2b_a": true,
+   "owner_review_status": "PENDING",
+   "immutable": true,
+   "note": ""
+  },
+  {
+   "fixture_id": "bad_tiny_product_coverage",
+   "file": "bad_tiny_product_coverage.png",
+   "role": "BAD",
+   "scope": "SILHOUETTE",
+   "sha256": "507f4121c96c3ed69e0b847b6c9746a5b79e23dc19a0364c4b8a97faa75f3e04",
+   "expected_analyzability": "CONCEPT_ANALYSIS_UNMEASURABLE",
+   "expected_mask_method": "BACKGROUND_SEGMENTATION",
+   "expected_reason_codes": [
+    "CONCEPT_PRODUCT_TOO_SMALL"
+   ],
+   "expected_measurements": {},
+   "analyzed_by_vqr2b_a": true,
+   "owner_review_status": "PENDING",
+   "immutable": true,
+   "note": ""
+  },
+  {
+   "fixture_id": "bad_fragmented_mask",
+   "file": "bad_fragmented_mask.png",
+   "role": "BAD",
+   "scope": "SILHOUETTE",
+   "sha256": "a834230acb9d9ea3882bc4ed5d75bcb0e5c27d2f726948bea0f96d3363642dcb",
+   "expected_analyzability": "CONCEPT_ANALYSIS_UNMEASURABLE",
+   "expected_mask_method": "BACKGROUND_SEGMENTATION",
+   "expected_reason_codes": [
+    "CONCEPT_MASK_FRAGMENTED"
+   ],
+   "expected_measurements": {},
+   "analyzed_by_vqr2b_a": true,
+   "owner_review_status": "PENDING",
+   "immutable": true,
+   "note": ""
+  },
+  {
+   "fixture_id": "bad_wrong_closure_family",
+   "file": "bad_wrong_closure_family.png",
+   "role": "BAD",
+   "scope": "VQR2B_B",
+   "sha256": "34e8153a0a017e7d3c5d2ef5b4d9fba6b147c293819c5ae41f8150d3acf4f479",
+   "expected_analyzability": "CONCEPT_ANALYSIS_READY",
+   "expected_mask_method": "BACKGROUND_SEGMENTATION",
+   "expected_reason_codes": [],
+   "expected_measurements": {},
+   "analyzed_by_vqr2b_a": false,
+   "owner_review_status": "PENDING",
+   "immutable": true,
+   "note": "screw-style block where a dropper is expected \u2014 closure-family judgment belongs to VQR-2B-B comparison, preserved now"
+  },
+  {
+   "fixture_id": "bad_stretched_m3_variants",
+   "file": "../..//vqr2b_a_review/m3_distortion_calibration_contact_sheet.png",
+   "role": "BAD",
+   "scope": "CALIBRATION",
+   "sha256": null,
+   "expected_analyzability": "N/A \u2014 calibration series",
+   "expected_mask_method": "N/A",
+   "expected_reason_codes": [],
+   "expected_measurements": {
+    "ordered_ratios": [
+     1.0,
+     1.025,
+     1.05,
+     1.075,
+     1.1,
+     1.1244,
+     1.15
+    ]
+   },
+   "analyzed_by_vqr2b_a": false,
+   "owner_review_status": "PENDING",
+   "immutable": true,
+   "note": "deliberately width-stretched M3 variants live in the m3_proportion_calibration series (single source)"
+  },
+  {
+   "fixture_id": "bad_placeholder_label",
+   "file": "bad_placeholder_label.png",
+   "role": "BAD",
+   "scope": "VQR3",
+   "sha256": "7bf3be428e4a049e1fad8e4398b7d6a6af4e21fe9dcd84867dad3ec6e924dacd",
+   "expected_analyzability": "RESERVED_FOR_VQR3",
+   "expected_mask_method": "N/A",
+   "expected_reason_codes": [],
+   "expected_measurements": {},
+   "analyzed_by_vqr2b_a": false,
+   "owner_review_status": "PENDING",
+   "immutable": true,
+   "note": "grey placeholder field as final artwork \u2014 artwork axis fixture"
+  },
+  {
+   "fixture_id": "bad_clipped_logo",
+   "file": "bad_clipped_logo.png",
+   "role": "BAD",
+   "scope": "VQR3",
+   "sha256": "0f4eb52403c322217e0ca5d57916ec62f1feeeed54ed09a82280d24011a6973b",
+   "expected_analyzability": "RESERVED_FOR_VQR3",
+   "expected_mask_method": "N/A",
+   "expected_reason_codes": [],
+   "expected_measurements": {},
+   "analyzed_by_vqr2b_a": false,
+   "owner_review_status": "PENDING",
+   "immutable": true,
+   "note": "logo clipped by label edge \u2014 logo axis fixture"
+  },
+  {
+   "fixture_id": "bad_tiny_typography",
+   "file": "bad_tiny_typography.png",
+   "role": "BAD",
+   "scope": "VQR4",
+   "sha256": "99adcb0518f846ec1cf069f5a18ca05b5f871a8aa48b5691fdfce34b85abc165",
+   "expected_analyzability": "RESERVED_FOR_VQR4",
+   "expected_mask_method": "N/A",
+   "expected_reason_codes": [],
+   "expected_measurements": {},
+   "analyzed_by_vqr2b_a": false,
+   "owner_review_status": "PENDING",
+   "immutable": true,
+   "note": ""
+  },
+  {
+   "fixture_id": "bad_unreadable_hierarchy",
+   "file": "bad_unreadable_hierarchy.png",
+   "role": "BAD",
+   "scope": "VQR4",
+   "sha256": "928c5895026be82cd1cccb99d5e9f56252d3fd901fa4c589a11cc47712597dff",
+   "expected_analyzability": "RESERVED_FOR_VQR4",
+   "expected_mask_method": "N/A",
+   "expected_reason_codes": [],
+   "expected_measurements": {},
+   "analyzed_by_vqr2b_a": false,
+   "owner_review_status": "PENDING",
+   "immutable": true,
+   "note": ""
+  }
+ ]
+}

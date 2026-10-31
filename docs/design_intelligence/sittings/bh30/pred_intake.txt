@@ -1,0 +1,55 @@
+§AD0(a) PREDICTION — INTAKE (§BH30(b) acquisition landed + §BH30(c)
+intake), sealed BEFORE git add. Base HEAD fb9b065 (T30). The single-use
+§BH30(b) ACQUISITION authority is SPENT on THIS landing and no other.
+
+PRECONDITIONS, measured before placing (recorded at T30 and re-checked):
+   the §BH18(c) corpus walk reaches static/fonts/brand2026/<family>/;
+   the acquisition re-fetched all 38 recorded files (29 binaries + 9
+   OFL.txt) and every sha256 equalled the §BH29 record
+   (acquisition_record.json, hard_stop null); the six HASH-MATCHED
+   library files were re-hashed against the record before copying; the
+   PROVENANCE.json cross-check: 50 rows, 0 mismatches; the Noto pair
+   VERIFIED_FOR_PRODUCTION under Django at fb9b065.
+
+L1 WRITE SET: exactly 51 NEW tracked paths, all under
+   bbrose_design_os/static/fonts/brand2026/ (14 family folders +
+   PROVENANCE.json): 35 binaries (.ttf) = 29 acquired + 6 library
+   copies under their upstream names (Cairo-Bold.ttf,
+   Montserrat-Regular.ttf, Raleway-Light.ttf, Rubik-Bold.ttf,
+   Lato-Black.ttf, OpenSans-Semibold.ttf); 16 text files = 13 OFL.txt +
+   Montserrat/OFL_at_9548902f.txt + Open_Sans/LICENSE.txt (Apache 2.0)
+   + PROVENANCE.json. Plus the gate-staged ledger line. NO apps/ path,
+   NO docs/roadmap path beyond the ledger, NO change to the four
+   existing static/fonts files, NO write under materials/ (the library
+   originals stay; their mtimes unchanged). sha256 of all 51 recorded
+   in intake_sha256s.txt.
+L2 DIFF SHAPE (measured pre-add with git diff --no-index against
+   /dev/null): text rows — 12 × (93 0) [Amatic_SC, Bebas_Neue, Cairo,
+   Great_Vibes, Lato, Montserrat OFL.txt, Montserrat OFL_at_9548902f,
+   Playfair_Display, Poppins, Quicksand, Rubik, Shadows_Into_Light_Two],
+   Grand_Hotel 94 0, Raleway 95 0, Open_Sans/LICENSE.txt 202 0,
+   PROVENANCE.json 647 0; 35 binary rows shown as "- -". Text
+   insertions total 2,154.
+L3 MANIFEST / A391: manifest untouched (fe4199bc421b7454; fonts are not
+   tests); no record moves (static/ is outside record_integrity's
+   roots); ppp/tcp untouched; identity unchanged c7924c5a4215f3cf; the
+   ledger at 444 passes the APPEND_ONLY prefix rule; DIP-0A stays 7,590
+   at this commit (the regen is the NEXT concern).
+L4 STAGED == DECLARED: git diff --cached --numstat = exactly 51 rows —
+   the 16 text rows of L2 and 35 "- -" rows — and nothing else.
+L5 COMMIT CONTENTS: 52 files (51 + ledger); insertions 2,154 + 1 =
+   2,155 (binaries count no lines); deletions 0.
+L6 SUITE LINE + REFUSAL TREE: GREEN — TIER_2=GREEN collected=8499
+   failures=0 apps=7693 dip0c=671 dip0=135 (no test file added; no
+   test pins static/fonts contents). Pre-gate sweeps on the placed
+   tree: inner 168 passed (font authority, grant, two-roots guard,
+   both Tier-1 files); dip0 135 passed; dip0c rc=0. No refusal
+   expected; §BH24 0/3.
+L7 LEDGER FOLD: 444 → 445, the +1 in THIS commit.
+L8 PROTOCOL IDENTITIES / APPS DIFF: apps diff EMPTY; docs diff = the
+   ledger only; GATE 7fbeb8f1fe10b0fb and TEST b32030dc827263e4
+   byte-identical at scoring; protocol_identity UNCHANGED; the Noto
+   pair VERIFIED_FOR_PRODUCTION / USER_CONFIRMED under Django at
+   scoring; the tree seals dip0c/dip0a unchanged at THIS commit (the
+   regen moves them next). §BH30(b) authority SPENT on this landing;
+   §BH30(d) UNSPENT.

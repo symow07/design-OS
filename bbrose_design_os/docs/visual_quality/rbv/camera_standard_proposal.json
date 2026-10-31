@@ -1,0 +1,72 @@
+{
+ "schema": "real_bottle_camera_standard/1.0",
+ "status": "ACTIVE",
+ "approval_provenance": "APPROVED by the PROJECT_OWNER on 2026-08-17 (OWNER_BLOCKER_CLEARANCE.md §R2, Cowork question session). Approving the STANDARD approves no RENDER: no render, package or node gains visual-quality percentage from this ruling (§R2a), and it does NOT unblock mode B — CLIENT_PRESENTATION packaging stays ABSENT_BLOCKED on rbv2c + the owner geometry gate (§R2b; the §1 two-mode principle is untouched). Amendable later through the clearance sheet; a superseding amendment stays visible on the record (§R2d).",
+ "superseded_status": "PROPOSED_PENDING_OWNER_APPROVAL (in force until 2026-08-17)",
+ "filename_note": "the file keeps its proposal filename because other records reference it by name; it is a STANDARD now, not a proposal",
+ "shared": {
+  "colour_space": "sRGB (IEC 61966-2-1)",
+  "output_resolution_px": [
+   1600,
+   2200
+  ],
+  "product_orientation": "upright, closure at top, front face toward camera (label normal = view axis for FRONT)",
+  "target_point": "assembly bounding-box center",
+  "crop_padding": "6% of assembly height on all sides, fixed scale between compared images",
+  "background": "neutral #F4F4F2, seamless, no gradient in geometry mode",
+  "comparison_rule": "reference and reconstruction MUST use identical camera, scale and crop wherever the reference permits \u2014 never differing zoom levels"
+ },
+ "cameras": {
+  "FRONT_ORTHOGRAPHIC": {
+   "projection": "orthographic",
+   "direction": [
+    0,
+    -1,
+    0
+   ],
+   "camera_height": "assembly center",
+   "ortho_scale": "assembly_height * 1.12"
+  },
+  "SIDE_ORTHOGRAPHIC": {
+   "projection": "orthographic",
+   "direction": [
+    -1,
+    0,
+    0
+   ],
+   "camera_height": "assembly center",
+   "ortho_scale": "assembly_height * 1.12"
+  },
+  "TOP_ORTHOGRAPHIC": {
+   "projection": "orthographic",
+   "direction": [
+    0,
+    0,
+    -1
+   ],
+   "ortho_scale": "assembly_width * 1.25"
+  },
+  "THREE_QUARTER_HERO": {
+   "projection": "perspective",
+   "focal_length_mm_equiv_ff": 85,
+   "azimuth_deg": 30,
+   "elevation_deg": 12,
+   "distance": "3.2 * assembly_height",
+   "note": "presentation only \u2014 never used for geometric comparison"
+  },
+  "CLOSURE_DETAIL": {
+   "projection": "orthographic",
+   "direction": [
+    0,
+    -1,
+    0
+   ],
+   "ortho_scale": "closure_height * 1.6",
+   "camera_height": "closure center"
+  }
+ },
+ "shadow_policy": {
+  "GEOMETRY_VALIDATION": "none (shadow catcher off)",
+  "CLIENT_PRESENTATION": "soft contact shadow, max 18% opacity, never crossing the silhouette edge"
+ }
+}

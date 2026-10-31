@@ -1,0 +1,190 @@
+{
+ "schema": "geometry_validation_render_manifest/1.0",
+ "statement": "GEOMETRY VALIDATION FIXTURE \u2014 NOT A REAL BOTTLE COMPARISON",
+ "fixture_id": "P1_V3",
+ "geometry_schema": "container_geometry/1.0",
+ "geometry_class": "AXISYMMETRIC_REVOLUTION",
+ "authority_class": "PROVISIONAL_OWNER_MEASURED_PLUS_INFERRED",
+ "cross_section_family": "CIRCULAR",
+ "dimensions": {
+  "height_mm": 114.3,
+  "front_width_mm": 37.4,
+  "side_depth_mm": 37.4
+ },
+ "mesh_identities": {
+  "body": "3d81bf24ac44bfea",
+  "collar": "0c0b5a6edcd33875",
+  "bulb": "931cb17e89f86322"
+ },
+ "mesh_statistics": {
+  "body": {
+   "params_version": "mesh_diagnostics_params/1.0",
+   "vertex_count": 6146,
+   "edge_count": 18432,
+   "face_count": 12288,
+   "duplicate_vertices": 0,
+   "zero_area_faces": 0,
+   "non_manifold_edges": 0,
+   "components": 1,
+   "signed_volume_mm3": 81837.252,
+   "codes": []
+  },
+  "collar": {
+   "params_version": "mesh_diagnostics_params/1.0",
+   "vertex_count": 6146,
+   "edge_count": 18432,
+   "face_count": 12288,
+   "duplicate_vertices": 0,
+   "zero_area_faces": 0,
+   "non_manifold_edges": 0,
+   "components": 1,
+   "signed_volume_mm3": 5904.302,
+   "codes": []
+  },
+  "bulb": {
+   "params_version": "mesh_diagnostics_params/1.0",
+   "vertex_count": 6146,
+   "edge_count": 18432,
+   "face_count": 12288,
+   "duplicate_vertices": 0,
+   "zero_area_faces": 0,
+   "non_manifold_edges": 0,
+   "components": 1,
+   "signed_volume_mm3": 1354.54,
+   "codes": []
+  }
+ },
+ "assembly_relations": {
+  "facts": {
+   "body": {
+    "z_min": 0.0,
+    "z_max": 91.6,
+    "cx": 0.0,
+    "cy": 0.0,
+    "width": 37.4
+   },
+   "collar": {
+    "z_min": 78.6,
+    "z_max": 95.1,
+    "cx": 0.0,
+    "cy": 0.0,
+    "width": 21.4
+   },
+   "bulb": {
+    "z_min": 95.1,
+    "z_max": 114.3,
+    "cx": 0.0,
+    "cy": 0.0,
+    "width": 10.57
+   }
+  },
+  "codes": []
+ },
+ "blender_version": "Blender 4.5.12 LTS (pinned)",
+ "render_engine": "CYCLES CPU \u00b7 seed 0 \u00b7 64 samples",
+ "camera_standard": "real_bottle_camera_standard/1.0",
+ "lighting_standard": "real_bottle_lighting_standard/1.0 ",
+ "material_override": {
+  "version": "validation_clay/1.0",
+  "base_colour": [
+   0.69,
+   0.667,
+   0.65,
+   1.0
+  ],
+  "roughness": 0.9,
+  "specular": 0.1,
+  "alpha": 1.0,
+  "normals": "geometry normals unmodified",
+  "colour_management": "Cycles CPU \u00b7 Standard view transform \u00b7 exposure 0 \u00b7 gamma 1 \u00b7 sRGB \u00b7 8-bit PNG"
+ },
+ "render_params": {
+  "version": "geometry_validation_render_params/1.0",
+  "resolution": [
+   1600,
+   2200
+  ],
+  "samples": 12,
+  "ortho_scale_factor": 1.12,
+  "scale_tolerance": 0.03,
+  "center_tolerance": 0.03
+ },
+ "views": {
+  "front": "front.png",
+  "side": "side.png",
+  "top": "top.png",
+  "closure_detail": "closure_detail.png",
+  "three_quarter_diagnostic": "three_quarter_diagnostic.png",
+  "wireframe": "wireframe.png",
+  "normals": "normals.png",
+  "bounds_dimensions": "bounds_dimensions.png"
+ },
+ "pixel_dimensions": [
+  1600,
+  2200
+ ],
+ "physical_scale_mm_per_px": 0.05819,
+ "pixel_hashes": {
+  "front": "f252e402152f950c",
+  "side": "fddd4d2481f5ef52",
+  "top": "690c3b6503f52b40",
+  "closure_detail": "53bed2073f5b5f63",
+  "three_quarter_diagnostic": "6c921d2e87d30a60",
+  "wireframe": "2fdddf851125278f",
+  "normals": "88eb8ddde711ea9d",
+  "bounds_dimensions": "26ee82d4acf0f14e"
+ },
+ "measurements": {
+  "expected_mm_per_px": 0.05819,
+  "front": {
+   "bounds_px": {
+    "x0": 479,
+    "x1": 1120,
+    "y0": 128,
+    "y1": 2081,
+    "touches_frame": false
+   },
+   "rendered_extent_mm": 37.36,
+   "contract_extent_mm": 37.4,
+   "rendered_height_mm": 113.7
+  },
+  "side": {
+   "bounds_px": {
+    "x0": 479,
+    "x1": 1120,
+    "y0": 118,
+    "y1": 2081,
+    "touches_frame": false
+   },
+   "rendered_extent_mm": 37.36,
+   "contract_extent_mm": 37.4,
+   "rendered_height_mm": 114.28
+  },
+  "top": {
+   "bounds_px": {
+    "x0": 479,
+    "x1": 1120,
+    "y0": 779,
+    "y1": 1420,
+    "touches_frame": false
+   }
+  },
+  "closure_detail": {
+   "bounds_px": {
+    "x0": 91,
+    "x1": 1245,
+    "y0": 426,
+    "y1": 2199,
+    "touches_frame": true
+   },
+   "closure_view_coverage": 0.5813
+  }
+ },
+ "warnings": [
+  "RENDER_OFF_CENTER:closure_detail"
+ ],
+ "uncertainty": [
+  "V3 provisional geometry \u2014 owner review pending"
+ ],
+ "reference_availability": "PARTIAL \u2014 owner measurements + uncalibrated photos"
+}

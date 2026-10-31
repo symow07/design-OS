@@ -1,0 +1,101 @@
+{
+ "record_type": "vqr1_owner_review_facts/1.0",
+ "created_at": "2026-08-03",
+ "fixture_task_id": 57,
+ "fixture_classification": "NON_PRODUCTION_DEMONSTRATION (task_text labels it; product VQR1-DEMO)",
+ "profile": {
+  "variant": "cylindrical",
+  "width_mm": 35.0,
+  "archetype": "bottle",
+  "cap_style": "dropper",
+  "height_mm": 95.0,
+  "label_zone": null,
+  "neck_ratio": 0.34,
+  "decoration_zone": null,
+  "closure_geometry": null
+ },
+ "backbone_strategy": "vq1_m3_master_fit",
+ "m3_identity_png_sha256_prefix": "4ecc8e9df1d1",
+ "m3_fit_sha256": "a407ef385d40a462712d5183ec7a4dabf3ea3c9b89719f37f3964ceec1c27f41",
+ "body_bounds_pt": {
+  "width_pt": 99.213,
+  "height_pt": 268.526
+ },
+ "body_bounds_mm": [
+  35.0,
+  94.73
+ ],
+ "artboard_mm": [
+  85.75,
+  153.9
+ ],
+ "artboard_pt": [
+  243.07,
+  436.25
+ ],
+ "margins_mm": {
+  "left": 43.75,
+  "right": 7.0,
+  "top": 11.4,
+  "bottom": 47.5
+ },
+ "body_aspect_ratio_h_over_w": 2.707,
+ "confirmed_aspect": 2.714,
+ "m3_fixture_native_aspect": 3.078,
+ "aspect_note": "production maps the accepted M3 curves anisotropically into the CONFIRMED 35x95 mm box (owner-authoritative dims); the supplement image shows the same pipeline at the fixture's native aspect 30.9x95 for comparison",
+ "closure_family": "dropper",
+ "closure_components": [
+  "collar",
+  "bulb"
+ ],
+ "closure_component_note": "M3 decomposition: GLASS body (one accepted component containing body+shoulder+neck contour), COLLAR band, DARK_CLOSURE bulb. Shoulder/neck are part of the accepted GLASS contour, not separate objects; no internal pipette component exists in the accepted M3 fit (honest absence, VQR-3+ candidate)",
+ "design_graph_structural_objects": {
+  "primitives": {
+   "live_text": 9,
+   "logo_rasters": 1,
+   "vector_paths": 9,
+   "reference_rasters": 1
+  },
+  "backbone_source": "vq1_m3_master_fit",
+  "artboard_policy": "PRODUCT_DERIVED_FROM_CONFIRMED_PROFILE"
+ },
+ "ai_object_inventory_entries": 25,
+ "geometry_flattened": false,
+ "geometry_note": "cubic segments transformed linearly from the frozen fit \u2014 no densification, no outline flattening; live text runs remain text",
+ "raster_objects": {
+  "reference_photo": "demo concept pixel (labelled REFERENCE - not final artwork)",
+  "logo": "controlled raster fallback (pre-existing policy; vector master pending component library)",
+  "decorative_rasters": 0
+ },
+ "body_color_note": "body renders PURE RED because colour sampling \u2014 by design \u2014 sampled the 1x1 red demo concept pixel; a colour fact, not a geometry fact; structure-only renders carry the geometry judgment",
+ "scope_honesty": {
+  "FRONT_ARTWORK": "FAIL_PENDING_VQR_3",
+  "TYPOGRAPHY": "NOT_VALIDATED_PENDING_VQR_4",
+  "MATERIAL_REALIZATION": "NOT_STARTED_PENDING_VQR_5",
+  "LONG_NAME_WRAPPING": "STRUCTURAL_LAYOUT_SAFETY_FIX (not typography-quality completion)"
+ },
+ "archetype_boundary": {
+  "bottle_dropper": "M3_ACCEPTED_BACKBONE",
+  "bottle_non_dropper": "PARAMETRIC (coarse factors; no accepted geometry exists for screw/pump/flip bottle closures \u2014 closure axis stays UNMEASURED)",
+  "jar": "PARAMETRIC_EXISTING_EXPLICIT_STRATEGY",
+  "tube": "PARAMETRIC_EXISTING_EXPLICIT_STRATEGY",
+  "other": "OTHER_CUSTOM_PROFILE_RECONSTRUCTION_PENDING",
+  "silent_conversion_note": "build_backbone's internal unknown-archetype fallback to bottle is dead code behind the confirm gate's archetype validation \u2014 no archetype reaches reconstruction unvalidated"
+ },
+ "quality_gate": {
+  "overall": "FAIL",
+  "status": "BLOCKED_VISUAL_QUALITY",
+  "STRUCTURAL_SILHOUETTE_CONFORMANCE": "PASS",
+  "SELECTED_CONCEPT_SILHOUETTE_FIDELITY": "UNMEASURED",
+  "axes": {
+   "artifact_authority": "PASS",
+   "artboard_fitness": "PASS",
+   "silhouette_fidelity": "UNMEASURED",
+   "closure_fidelity": "PASS",
+   "front_artwork_resolution": "FAIL",
+   "logo_quality": "UNMEASURED",
+   "typography_quality": "UNMEASURED",
+   "composition_quality": "UNMEASURED"
+  }
+ }
+}

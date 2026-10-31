@@ -1,0 +1,34 @@
+{% extends "dashboard/library/base.html" %}
+{% block title %}{{ card.name }} · Materials{% endblock %}
+{% block content %}
+<p class="dim"><a href="{% url 'dashboard:materials_library' %}">← Materials</a></p>
+<h1>{{ card.name }}</h1>
+<p class="lede">{{ card.subject|default:"No description — this file was not captioned." }}</p>
+<div class="material detail">
+  {% if row.preview_file %}<img class="material-picture large" src="{% url 'dashboard:material_preview' row.sha256 %}" alt="{{ card.subject|default:card.name }}">
+  {% else %}<div class="material-nopic">No preview — the preview job could not render this file</div>{% endif %}
+  <div class="material-facts">
+    <h2>Rights</h2>
+    <p class="{% if card.excluded %}warn{% else %}ok{% endif %}">{{ card.tier_words }}</p>
+    <p class="dim">{{ card.basis }}</p>
+    {% if row.evidence_words %}<p class="dim">Evidence ({{ row.evidence_words.type }}): “{{ row.evidence_words.text }}”</p>{% endif %}
+    <p class="dim">{{ row.placement.words }}</p>
+    <h2>What the index says</h2>
+    <p>Kind: {{ card.kind }}{% if row.category_words %} · inventory category {{ row.category_words }}{% endif %}{% if row.file_kind %} · {{ row.file_kind }}{% endif %} · {{ row.extension }}</p>
+    {% if card.tags %}<p>Tags: {{ card.tags|join:" · " }}</p>{% endif %}
+    {% if card.style %}<p>Style: {{ card.style|join:", " }}</p>{% endif %}
+    {% if card.surfaces %}<p>Suits: {{ card.surfaces|join:", " }}{% if row.surfaces_basis %} <span class="dim">({{ row.surfaces_basis }})</span>{% endif %}</p>{% endif %}
+    {% if row.text_seen_words %}<p>Text on it: {{ row.text_seen_words|join:" | " }} · language {{ row.language }}</p>{% elif row.text_present is not None %}<p class="dim">No text seen.</p>{% endif %}
+    {% if row.colours %}<p class="material-palette">{% for c in row.colours %}<span><svg class="dot" viewBox="0 0 14 14" aria-hidden="true"><rect width="14" height="14" fill="{{ c.hex }}"/></svg> {{ c.hex }} · Lab {{ c.lab|join:", " }} · {{ c.share }}</span>{% endfor %}</p>{% endif %}
+    {% if row.kind == "font" %}<p>Family {{ card.family }} · {{ row.faces|length }} face{{ row.faces|length|pluralize }}{% if row.variable %} · variable{% endif %}{% if row.arabic %} · Arabic{% endif %}</p>
+    <ul class="dim">{% for f in row.faces_words %}<li>{{ f.full_name }} · weight {{ f.weight_class }}{% if f.italic %} · italic{% endif %} · {{ f.scripts|join:"/" }}</li>{% endfor %}</ul>{% endif %}
+    <p class="dim">{{ card.described|capfirst }}{% if row.model %} ({{ row.model }}){% endif %}{% if row.confidence %} · confidence {{ row.confidence }}{% endif %}</p>
+    <h2>Files</h2>
+    <ul class="dim">{% for n in row.file_names %}<li>{{ n }}</li>{% endfor %}</ul>
+    <p class="dim">{{ row.paths|length }} path{{ row.paths|length|pluralize }} of the same content in the library{% if card.folder %}, under {{ card.folder }}{% endif %}; the content hash is in the index record.</p>
+    <h2>Used in</h2>
+    {% if used %}<ul>{% for u in used %}<li><a href="{% url 'dashboard:design' u.task_id %}">Design {{ u.task_id }}</a> · {{ u.role }} · {{ u.permission }} · {{ u.created|date:"Y-m-d" }}{% if u.words %} · “{{ u.words }}”{% endif %}</li>{% endfor %}</ul>
+    {% else %}<p class="dim">Not yet offered or pinned to any design.</p>{% endif %}
+  </div>
+</div>
+{% endblock %}

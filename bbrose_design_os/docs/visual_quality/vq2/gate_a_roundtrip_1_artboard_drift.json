@@ -1,0 +1,127 @@
+{
+ "record_type": "illustrator_gate_a_roundtrip_1/1.0",
+ "created_at": "2026-07-31",
+ "environment": {
+  "application": "Adobe Illustrator 30.0 (Macintosh)",
+  "reported_version": "30.0.0",
+  "operating_system": "Macintosh OS 26.5.2/64"
+ },
+ "result": "ARTWORK_PASSED_ARTBOARD_FAILED",
+ "pass_codes": [
+  "ILLUSTRATOR_R2_SAVE_COMPLETED",
+  "ILLUSTRATOR_R2_FULL_ARTWORK_PRESERVED",
+  "ILLUSTRATOR_R2_COLOURS_PRESERVED",
+  "ILLUSTRATOR_R2_VECTOR_OBJECTS_PRESERVED"
+ ],
+ "fail_codes": [
+  "ILLUSTRATOR_GATE_A_PAGE_SIZE_DRIFT",
+  "ILLUSTRATOR_GATE_A_ARTBOARD_NOT_PRESERVED",
+  "ILLUSTRATOR_ROUNDTRIP_PARTIAL_PASS",
+  "ILLUSTRATOR_EXECUTION_VERIFICATION_INCOMPLETE"
+ ],
+ "roundtrip_is_genuine": {
+  "returned_sha256": "547f55b8f6a71e9b85236d185b0fdc977497374ebf96fc50339388c8660967c0",
+  "matches_owner_report": true,
+  "r2_source_sha256": "6ae00f726ddefda4adad93325735c489e3fe987452f9c1a2f603236c73e4c49a",
+  "differs_from_r2_source": true,
+  "is_native_illustrator_document": true,
+  "finding": "this is the first submission that is genuinely a different file from the source, and it is a native Illustrator document rather than our EPS. A save did happen."
+ },
+ "artwork_verified_here": {
+  "measured_from": "the returned .ai itself, not the report",
+  "drawing_objects": 40,
+  "expected_objects": 40,
+  "object_count_preserved": true,
+  "filled_objects": 39,
+  "stroked_objects": 1,
+  "fill_colours": {
+   "#D9BDB5": 1,
+   "#705242": 1,
+   "#493034": 1,
+   "#502525": 36
+  },
+  "stroke_colours": {
+   "#502525": 1
+  },
+  "all_four_approved_colours_present": true,
+  "no_unapproved_colour": true,
+  "raster_images": 0,
+  "live_text_characters": 0,
+  "passed": true
+ },
+ "artboard_failure": {
+  "expected_page_pt": [
+   207.1627,
+   493.2283
+  ],
+  "expected_page_mm": [
+   73.08,
+   174.0
+  ],
+  "actual_page_pt": [
+   763.654,
+   983.225
+  ],
+  "actual_page_mm": [
+   269.4,
+   346.86
+  ],
+  "page_size_drift": true,
+  "ink_bbox_pt": [
+   311.924194,
+   279.224976,
+   450.999176,
+   703.214355
+  ],
+  "ink_size_pt": [
+   139.074982,
+   423.98938
+  ],
+  "artwork_translated": true,
+  "artwork_rescaled": false,
+  "rescale_evidence": "the ink height measures 423.98938 pt against the source's 423.989 pt - the same physical size. The artwork moved; it did not grow.",
+  "measurement_note": "ink width reads about 0.15 pt wider than the source's analytically exact 138.9238 pt because this reader bounds curves by their control points. That is a measurement basis, not a size change."
+ },
+ "root_cause": {
+  "statement": "the generic EPS import preserved the artwork but brought no page with it, and the script saved the default artboard it was handed",
+  "is_an_automation_script_defect": true,
+  "is_an_artwork_defect": false,
+  "fix": "the script now restores the source page around the imported artwork before Save As, and re-checks it after reopen",
+  "artwork_untouched_by_the_fix": true
+ },
+ "second_finding_aborted_run": {
+  "what_happened": "the result JSON on disk was written by a DIFFERENT, aborted run: the file dialog was given illustrator_gate_a_roundtrip.jsx instead of the .ai, Illustrator could not open it, and the script recorded FAIL with save, reopen and both exports false",
+  "recorded_result": "FAIL",
+  "recorded_save_completed": false,
+  "recorded_notes": [
+   "Selected file is named illustrator_gate_a_roundtrip.jsx, expected vq2_a2_r2_final_gate_a_r2.ai. Continuing, but the subject of record is whatever was opened.",
+   "Illustrator could not open the file: Error: the operation was cancelled"
+  ],
+  "consequence": "that FAIL record overwrote the result belonging to the run that actually produced the verification copy, so the returned .ai/.pdf/.png have no script-written provenance to point at",
+  "the_returned_files_are_still_genuine": true,
+  "but_provenance_is_not_established_by_the_json": true,
+  "preserved_as": "docs/production_authority/illustrator_execution_verification_result_aborted_run.json",
+  "script_fixes": [
+   "a selection that is not the expected .ai now STOPS the run instead of continuing into a failed open",
+   "an existing result JSON is copied aside before a new one is written, so a later run can never destroy an earlier record"
+  ]
+ },
+ "preserved_evidence": {
+  "ai": "vq2_a2_r2_final_illustrator_verified_artboard_drift.ai",
+  "pdf": "vq2_a2_r2_final_illustrator_verified_artboard_drift.pdf",
+  "png": "vq2_a2_r2_final_illustrator_verified_artboard_drift.png",
+  "sha256": "547f55b8f6a71e9b85236d185b0fdc977497374ebf96fc50339388c8660967c0",
+  "classification": [
+   "ILLUSTRATOR_ARTWORK_PASSED_ARTBOARD_FAILED",
+   "PRESERVED_FOR_AUDIT",
+   "NOT_PRODUCTION_AUTHORITY"
+  ],
+  "overwritten": false,
+  "renamed_from": "vq2_a2_r2_final_illustrator_verified.ai",
+  "rename_reason": "the canonical verified name is freed for the corrected run; this file keeps the evidence"
+ },
+ "gate_a_effect": "NONE - Gate A remains BLOCKED",
+ "accepted_artwork_modified": false,
+ "r2_source_modified": false,
+ "next_required": "run the corrected illustrator_gate_a_roundtrip.jsx once more on vq2_a2_r2_final_gate_a_r2.ai"
+}

@@ -1,0 +1,234 @@
+{
+  "scope": [
+    "metallic appearance",
+    "rose-gold colour",
+    "gloss",
+    "specular reflection",
+    "polished finish",
+    "texture",
+    "material realism",
+    "lighting quality",
+    "photographic realism"
+  ],
+  "input_quality": {
+    "schema_version": "visual_inspector_input_quality/1.0",
+    "evaluated_at": "2026-07-28T08:10:11.958214+00:00",
+    "component_under_review": "FULL_ASSEMBLY",
+    "candidate_path": "docs/visual_quality/vq1_master/structural/_d_m3sil.png",
+    "candidate_sha256": "c4ff54d5d080c80938229b700c415fd8018b0ab61cb40425bf4bbdf321a21f65",
+    "measurement": {
+      "component": "FULL_ASSEMBLY",
+      "found": true,
+      "image_size": [
+        550,
+        1100
+      ],
+      "bbox": [
+        106,
+        29,
+        443,
+        1070
+      ],
+      "width_px": 338,
+      "height_px": 1042,
+      "percent_of_image": 58.214,
+      "touches_image_edge": false,
+      "truncated_sides": false,
+      "truncated_top": false,
+      "continues_below_frame": false,
+      "assembly_top_px": 29,
+      "assembly_bottom_px": 1070
+    },
+    "floors_applied": {
+      "min_height_px": 512,
+      "min_width_px": 180
+    },
+    "override_record": null,
+    "checks": {
+      "target_found": true,
+      "meets_min_height": true,
+      "meets_min_width": true,
+      "not_clipped": true,
+      "sharp_enough": true,
+      "contrast_sufficient": true,
+      "aspect_preserved": true,
+      "evidence_full_reference": true,
+      "evidence_reference_component_crop": true,
+      "evidence_full_candidate": true,
+      "evidence_candidate_component_crop": true,
+      "evidence_previous_candidate": true,
+      "evidence_equal_scale_overlay": true,
+      "labels_match_bytes": true,
+      "reference_candidate_scale_compatible": true
+    },
+    "findings": [],
+    "quality_gate": "PASSED",
+    "verdict_if_failed": null,
+    "note": "these are model-input legibility floors, not production dimensions; they carry no geometric authority"
+  },
+  "inspections": {
+    "A_STRUCTURAL_REFERENCE_FIDELITY_CRITIC": {
+      "scores": {
+        "rounded_dome": {
+          "score": 9,
+          "finding": "Dome silhouette closely matches reference arch profile. The apex is slightly flatter than the reference's more pronounced curve, and the right shoulder of the dome shows a marginally tighter radius than the left, but deviation is within one pixel at 1200 dpi. No structural blocker.",
+          "critical_structural_blocker": false,
+          "confidence": 0.88,
+          "material_observation_excluded": false
+        },
+        "dark_shaft": {
+          "score": 9,
+          "finding": "Closure shaft width and vertical extent align tightly with reference. Contour overlay (Image 4) shows near-coincident edges on both flanks. Minimal sub-pixel divergence at lower flare entry. IoU 0.980 confirms high fidelity.",
+          "critical_structural_blocker": false,
+          "confidence": 0.91,
+          "material_observation_excluded": false
+        },
+        "lower_flare": {
+          "score": 9,
+          "finding": "The outward flare at the base of the closure/dropper bulb is present and correctly positioned. Flare geometry matches reference arc; contour overlay shows red and black lines nearly coincident throughout the flare zone.",
+          "critical_structural_blocker": false,
+          "confidence": 0.89,
+          "material_observation_excluded": false
+        },
+        "flare_symmetry": {
+          "score": 9,
+          "finding": "Left and right flare arcs appear symmetrical about the centreline. Overlay shows no measurable lateral shift. Micro-asymmetry at flare terminus is sub-pixel and not a structural concern.",
+          "critical_structural_blocker": false,
+          "confidence": 0.87,
+          "material_observation_excluded": false
+        },
+        "collar_sleeve": {
+          "score": 9,
+          "finding": "Collar sleeve rectangle is well-formed; width, height and corner radii closely replicate reference proportions. Collar IoU 0.992 confirms excellent structural match. Top and bottom edges are parallel and horizontal.",
+          "critical_structural_blocker": false,
+          "confidence": 0.93,
+          "material_observation_excluded": false
+        },
+        "collar_closure_junction": {
+          "score": 9,
+          "finding": "Junction between closure/dropper base and collar top is clean and continuous. Mean junction gap 0.00042 at 1200 dpi is negligible. No step discontinuity or misalignment detected.",
+          "critical_structural_blocker": false,
+          "confidence": 0.94,
+          "material_observation_excluded": false
+        },
+        "neck_transition": {
+          "score": 7,
+          "finding": "Reference neck (Image 7) shows a distinct undercut ledge and double-radius transition profile between collar base and bottle shoulder. Candidate neck crop (Image 8) does not reproduce this structural ledge; the transition appears as a smooth convex arc without the concave undercut step. This is a structural form omission \u2014 the stepped neck geometry is missing. Penalised accordingly.",
+          "critical_structural_blocker": false,
+          "confidence": 0.85,
+          "material_observation_excluded": false
+        },
+        "shoulder_transition": {
+          "score": 7,
+          "finding": "Reference shoulder (Image 9) shows a pronounced convex shoulder roll with a visible neck collar ring sitting proud above the body. Candidate shoulder crop (Image 10) shows only a gentle gradual curve without the distinct shoulder roll step or collar ring ledge. Silhouette overlay (Image 4) indicates moderate divergence at the shoulder zone where candidate contour sits slightly wider and the step detail is absent. Body IoU 0.995 and shoulder IoU 0.981 indicate the gross shape is preserved but the fine shoulder roll form is missing.",
+          "critical_structural_blocker": false,
+          "confidence": 0.84,
+          "material_observation_excluded": false
+        },
+        "complete_closure_coherence": {
+          "score": 9,
+          "finding": "All closure sub-components (dome, shaft, flare, collar) read as a coherent single assembly. Component masks (Image 5) show clean segmentation boundaries and correct stacking order. No floating parts, no gaps, no incorrect overlaps.",
+          "critical_structural_blocker": false,
+          "confidence": 0.92,
+          "material_observation_excluded": false
+        },
+        "overall": {
+          "score": 8,
+          "finding": "Candidate silhouette achieves high geometric fidelity to the reference across the closure assembly, collar, body walls and base (whole IoU 0.989). Primary structural shortfall is the omission of the reference's distinct neck undercut ledge and pronounced shoulder roll step, which are present in reference crops but absent in candidate crops. These are real form deviations but not critical blockers. All other measured zones pass at 9/10.",
+          "critical_structural_blocker": false,
+          "confidence": 0.9,
+          "material_observation_excluded": false
+        }
+      },
+      "material_observations_excluded": [
+        "Candidate closure crop (Image 6) uses a flat muted purple-grey fill; reference uses a dark plum with subtle gloss highlight \u2014 colour and surface finish differences are excluded from scoring.",
+        "Candidate neck and shoulder crops (Images 8, 10) use a warm beige gradient; reference uses a frosted cool-grey glass with specular roll highlights \u2014 these are material/finish differences and are excluded from scoring.",
+        "Candidate collar (Image 5) uses a mid-grey diagnostic fill versus reference rose-gold metallic \u2014 material difference, excluded.",
+        "Gradient present in Images 8 and 10 may represent a lighting pass rather than a structural feature; assessed as non-structural fill and excluded."
+      ],
+      "same_visible_structural_family": true,
+      "verdict": "PASSES_STRUCTURAL_INSPECTION_PENDING_HUMAN_REVIEW"
+    },
+    "B_STRUCTURAL_ADVERSARIAL_DEFECT_FINDER": {
+      "scores": {
+        "rounded_dome": {
+          "score": 8,
+          "finding": "Dome is smoothly rounded and centreline-symmetric in the closure crop (Image 6). The arch transitions cleanly into the shaft. Slight flattening relative to the reference's more pronounced hemisphere, but no polygon faceting or hidden step detected.",
+          "critical_structural_blocker": false,
+          "confidence": 0.85,
+          "material_observation_excluded": false
+        },
+        "dark_shaft": {
+          "score": 9,
+          "finding": "Shaft of the bulb is straight-sided and consistent in width from dome base to collar entry. No double contour, pinch, or taper anomaly visible. IoU 0.980 confirms close match.",
+          "critical_structural_blocker": false,
+          "confidence": 0.9,
+          "material_observation_excluded": false
+        },
+        "lower_flare": {
+          "score": 7,
+          "finding": "In Image 6 the bulb base flares outward into a broad skirt before meeting the collar top. This skirt geometry is present in the reference but appears slightly wider and less steeply undercut in the candidate, giving a softer, more platform-like landing rather than the crisp inward tuck of the reference. Not a blocker but a mild shape deviation.",
+          "critical_structural_blocker": false,
+          "confidence": 0.8,
+          "material_observation_excluded": false
+        },
+        "flare_symmetry": {
+          "score": 8,
+          "finding": "Left-right symmetry of the lower flare is good; both sides curve outward at equivalent radii in the silhouette and overlay. No asymmetric droop or offset detected.",
+          "critical_structural_blocker": false,
+          "confidence": 0.87,
+          "material_observation_excluded": false
+        },
+        "collar_sleeve": {
+          "score": 8,
+          "finding": "Collar is rendered as a clean rectangular block with consistent vertical sides. No polygonal segmentation, false rings, or adapter shapes. Collar IoU 0.992 confirms very close match. Slight top-edge radius difference vs. reference is minor.",
+          "critical_structural_blocker": false,
+          "confidence": 0.88,
+          "material_observation_excluded": false
+        },
+        "collar_closure_junction": {
+          "score": 9,
+          "finding": "Junction mean error 0.00042 at 1200 dpi indicates essentially zero geometric gap or step at the collar-to-bulb seam. The flat-fill diagnostic (Image 5) shows the dark bulb mask seats cleanly on the collar mask top with no floating gap or double-line artefact.",
+          "critical_structural_blocker": false,
+          "confidence": 0.92,
+          "material_observation_excluded": false
+        },
+        "neck_transition": {
+          "score": 6,
+          "finding": "Reference neck crop (Image 7) shows a pronounced convex ledge/flare ring where collar base overhangs the bottle neck \u2014 a distinct multi-step moulded profile. Candidate neck crop (Image 8) is a plain, featureless gradient fill with no discernible structural ledge, ring, or concave waist. The moulded neck ring is absent. This is a structural omission relative to the reference family form.",
+          "critical_structural_blocker": false,
+          "confidence": 0.82,
+          "material_observation_excluded": false
+        },
+        "shoulder_transition": {
+          "score": 6,
+          "finding": "Reference shoulder (Image 9) shows a curved, outward-sweeping shoulder that widens from the narrow neck into the body \u2014 a clearly visible concave-to-convex inflection. Candidate shoulder (Image 10) is again a smooth, flat gradient with no identifiable inflection contour. Silhouette (Image 3) does show a shoulder curve present in the outline, so the outer shape is close (shoulder IoU 0.981), but the internal structural articulation of the shoulder ring is not resolved in the crop.",
+          "critical_structural_blocker": false,
+          "confidence": 0.78,
+          "material_observation_excluded": false
+        },
+        "complete_closure_coherence": {
+          "score": 8,
+          "finding": "All three closure components \u2014 dome, shaft, collar \u2014 are geometrically contiguous, centreline-aligned, and free of floating segments or multi-stage adapters. Overall whole-silhouette IoU 0.989 confirms high coherence. Minor skirt-width and missing neck-ring issues noted in individual scores but do not disrupt overall closure integrity.",
+          "critical_structural_blocker": false,
+          "confidence": 0.88,
+          "material_observation_excluded": false
+        },
+        "overall": {
+          "score": 7,
+          "finding": "Candidate silhouette matches the reference family well (whole IoU 0.989) and is free of gross defects such as asymmetry, polygon faceting, floating components or false rings. Primary structural shortfalls are: (1) the moulded convex neck ledge/flare ring present in the reference is not structurally resolved in the candidate, showing as a plain surface; (2) the shoulder inflection detail is similarly absent in the render crops. These are moderate structural omissions relative to the reference product family, not critical blockers.",
+          "critical_structural_blocker": false,
+          "confidence": 0.84,
+          "material_observation_excluded": false
+        }
+      },
+      "material_observations_excluded": [
+        "Candidate uses flat diagnostic grey fills by design; no metallic, rose-gold, gloss or specular properties are present \u2014 this is expected and has not influenced any score.",
+        "Image 8 and Image 10 crop evidence is largely gradient fill with no photographic texture; inability to distinguish structural detail in these crops may partly be a render-fill limitation rather than purely a geometric omission \u2014 noted but scores reflect structural geometry only."
+      ],
+      "same_visible_structural_family": true,
+      "verdict": "STRUCTURALLY_IMPROVED_BUT_INSUFFICIENT"
+    }
+  },
+  "calls": 2
+}

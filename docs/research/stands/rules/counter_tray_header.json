@@ -1,0 +1,133 @@
+{
+ "id": "counter_tray_header",
+ "version": "2.0",
+ "label": "Counter tray with header",
+ "status": "working",
+ "build_order": 1,
+ "one_line": "A shallow tray of rising rows with a slot-in sign above: the counter's everyday unit.",
+ "for": "Most cosmetics at a counter: lip gloss, lipstick, mascara, small bottles.",
+ "suits": {
+  "products": [
+   "bottle",
+   "stick",
+   "small jar"
+  ],
+  "counts": [
+   4,
+   48
+  ],
+  "rows": [
+   1,
+   4
+  ]
+ },
+ "panels": [
+  "floor",
+  "front panel",
+  "front cap",
+  "front inner",
+  "back panel",
+  "back cap",
+  "back inner",
+  "left side",
+  "right side",
+  "front left flap",
+  "front right flap",
+  "back left flap",
+  "back right flap",
+  "header front",
+  "header back",
+  "collar leg",
+  "collar tread 1"
+ ],
+ "folds": [
+  {
+   "fold": "floor / front",
+   "angle": 90,
+   "kind": "crease"
+  },
+  {
+   "fold": "floor / back",
+   "angle": 90,
+   "kind": "crease"
+  },
+  {
+   "fold": "floor / left",
+   "angle": 90,
+   "kind": "crease"
+  },
+  {
+   "fold": "floor / right",
+   "angle": 90,
+   "kind": "crease"
+  },
+  {
+   "fold": "front / cap",
+   "angle": 90,
+   "kind": "crease"
+  },
+  {
+   "fold": "back / cap",
+   "angle": 90,
+   "kind": "crease"
+  },
+  {
+   "fold": "header fold",
+   "angle": 180,
+   "kind": "half-cut"
+  }
+ ],
+ "locks": [
+  {
+   "kind": "barbed",
+   "what": "the header's two leaves, by barbed tongues through the back wall's rim"
+  },
+  {
+   "kind": "flush",
+   "what": "each inner leaf and stair foot through the floor, level with its underside"
+  },
+  {
+   "kind": "through",
+   "what": "each stair's rear tabs through the back wall's inner leaf"
+  }
+ ],
+ "allowances": {
+  "crease_centres": "outside − one caliper (FEFCO Rec. 101, C1)",
+  "panel_ends": "half a caliper + fit gap short of the surface met",
+  "corner_folds": "one caliper + fit gap, so a flap lies on the panel's inner face"
+ },
+ "limits": {
+  "front_lip_mm": 25
+ },
+ "reinforcement": [
+  "front and back walls rolled double",
+  "corner flaps trapped between each wall's leaves",
+  "the stair ties the back wall to the floor"
+ ],
+ "glue": "none",
+ "faces_to_shopper": [
+  "header front",
+  "front panel",
+  "the stair's treads and risers (ground only)"
+ ],
+ "failures": [
+  "header flop",
+  "rear rows hidden",
+  "a floor that sags"
+ ],
+ "codes": "No FEFCO or ECMA code for a tray with a header was found; nearest: FEFCO group 04 (folder trays), 09 (fitments). The double wall follows Packmage E042 and US10159361.",
+ "sources": [
+  "A1",
+  "A3",
+  "A4",
+  "A9",
+  "A16",
+  "A22",
+  "C1",
+  "C6"
+ ],
+ "provisional": [
+  "Fit gap, slot play, barb and rim sizes are our rules: a folded sample decides them.",
+  "Board, ECT and product mass are stated values until the mill's figures come."
+ ]
+}

@@ -1,0 +1,74 @@
+{
+  "schema_version": "container_geometry_authority/1.0",
+  "modes": {
+    "CONCEPT_VISUAL_GEOMETRY": {
+      "authority_sources": [
+        "selected reference pixels",
+        "normalized visible contours",
+        "human semantic decisions",
+        "visualizer findings"
+      ],
+      "permitted_use": [
+        "visual structural reconstruction",
+        "concept preview",
+        "native-vector concept artwork",
+        "visual comparison"
+      ],
+      "prohibited_claims": [
+        "manufacturable",
+        "supplier-confirmed",
+        "production dimension",
+        "tooling dimension",
+        "verified closure construction",
+        "formula compatibility"
+      ],
+      "state": "AUTHORIZED"
+    },
+    "PRODUCTION_GEOMETRY": {
+      "authority_sources": [
+        "manufacturer technical drawing",
+        "supplier specification",
+        "physical sample measurement",
+        "approved CAD",
+        "manufacturer confirmation"
+      ],
+      "state": "NOT_AVAILABLE",
+      "blocked_by": [
+        "VQ_PRODUCTION_GEOMETRY_EVIDENCE_REQUIRED",
+        "MANUFACTURER_DIMENSIONS_REQUIRED",
+        "CLOSURE_CONSTRUCTION_CONFIRMATION_REQUIRED",
+        "BOTTLE_CLOSURE_COMPATIBILITY_REQUIRED",
+        "PHYSICAL_SAMPLE_OR_TECHNICAL_DRAWING_REQUIRED"
+      ]
+    }
+  },
+  "visible_component_semantic": "VISIBLE_DARK_CLOSURE_ENVELOPE_WITH_ROUNDED_DOME_AND_FLARED_SKIRT",
+  "internal_closure_mechanism": "UNRESOLVED / HIDDEN",
+  "forbidden_classifications": [
+    "exposed conventional pipette bulb",
+    "narrow-stem bulb",
+    "outer overcap",
+    "actuator",
+    "complete closure mechanism"
+  ],
+  "bilateral_symmetry": "HUMAN_APPROVED_CONCEPT_ONLY_ASSUMPTION",
+  "symmetry_reason": "the left side of the reference is partially occluded by the carton; the unobscured right contour may be mirrored for concept-visual geometry. This is not evidence of production symmetry or tooling geometry.",
+  "rejected_internal_assumptions": {
+    "state": "REJECTED_INTERNAL_ASSUMPTIONS",
+    "origin": "CORR-5 (vq1_corr5_fixture.json, hash d99c412df4989c18)",
+    "values_mm": {
+      "body_diameter": 31.3,
+      "body_height": 61.0,
+      "collar_diameter": 15.9,
+      "collar_height": 12.1,
+      "bulb_max_width": 8.8,
+      "bulb_stem_width": 3.9,
+      "bulb_body_height": 15.0,
+      "bulb_stem_visible": 3.2,
+      "total_height": 92.9
+    },
+    "may_drive_new_fixture": false,
+    "web_grounded": false,
+    "note": "internal assumptions, never supplier-confirmed; preserved as rejected evidence only"
+  }
+}

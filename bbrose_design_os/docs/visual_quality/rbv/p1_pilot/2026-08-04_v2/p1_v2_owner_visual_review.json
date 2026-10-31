@@ -1,0 +1,23 @@
+{
+ "record_type": "p1_owner_visual_review_decision/1.0",
+ "decided_at": "2026-08-04",
+ "reviews": "P1 V2 evidence package (commit cb4be82) — material preview, silhouette comparison, owner-photo comparison",
+ "decision": {
+  "P1_V2_PIPELINE_VALIDATION": "PASS",
+  "P1_V2_DIMENSIONAL_CONSISTENCY": "PASS_PROVISIONAL",
+  "P1_V2_BULB_GEOMETRY": "PASS_WITH_MINOR_REVISION",
+  "P1_V2_SHOULDER_GEOMETRY": "FAIL",
+  "P1_V2_MATERIAL_REALISM": "FAIL",
+  "P1_V2_OWNER_APPROVAL": "REJECTED_PENDING_V3",
+  "GATE_2": "BLOCKED",
+  "PACKAGING_PRODUCTION": "NOT_STARTED"
+ },
+ "owner_findings": {
+  "shoulder": "too geometric; upper shoulder too flat; outer transition too abrupt; insufficiently convex; resembles moulded plastic more than formed glass; single generic smootherstep formula insufficient regardless of C2 continuity",
+  "material": "bottle still looks opaque — transmission value alone does not create convincing glass; white environment washes out the closure; requires real glass thickness (visualization-only), volume absorption, studio lighting",
+  "bulb": "rounded dome accepted; refine lower bulb connection into the collar (subtle narrowing/fillet); avoid perfect capsule primitive",
+  "silhouettes": "V1/V2 comparison contains noise, highlight holes and lighting-dependent segmentation — silhouettes must come from a deterministic mask pipeline, not thresholded shaded RGB renders"
+ },
+ "versioning": "V1 and V2 preserved completely; the revision lives in docs/visual_quality/rbv/p1_pilot/2026-08-04_v3/",
+ "v2_mesh_identities": {"body": "b301a10969b4e943", "collar": "0c0b5a6edcd33875", "bulb": "edfac8571aea80b8"}
+}

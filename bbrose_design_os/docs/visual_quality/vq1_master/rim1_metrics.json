@@ -1,0 +1,78 @@
+{
+  "iteration": "RIM1",
+  "render": "docs/visual_quality/vq1_master/rim1.png",
+  "regions": {
+    "whole": {
+      "iou": 0.98803,
+      "mean": 0.00477,
+      "p95": 0.00871,
+      "max": 0.37479
+    },
+    "dark_closure": {
+      "iou": 0.97839,
+      "mean": 0.00334,
+      "p95": 0.01243,
+      "max": 0.04411
+    },
+    "collar": {
+      "iou": 0.99163,
+      "mean": 0.00262,
+      "p95": 0.0026,
+      "max": 0.00552
+    },
+    "junction": {
+      "iou": 0.89756,
+      "mean": 0.02922,
+      "p95": 0.12697,
+      "max": 0.12697
+    },
+    "shoulder": {
+      "iou": 0.98121,
+      "mean": 0.00771,
+      "p95": 0.03143,
+      "max": 0.03807
+    },
+    "body": {
+      "iou": 0.99473,
+      "mean": 0.00264,
+      "p95": 0.00292,
+      "max": 0.00517
+    }
+  },
+  "local_gates": {
+    "junction_iou": false,
+    "junction_mean": false,
+    "junction_p95": false,
+    "junction_max": false
+  },
+  "global_gates": {
+    "collar": true,
+    "body": true,
+    "shoulder": true,
+    "dark": true,
+    "whole": true
+  },
+  "all_pass": false,
+  "protected": {
+    "GLASS": {
+      "shared_rows": 229,
+      "values_identical": true
+    },
+    "DARK_above_flare": {
+      "shared_rows": 65,
+      "values_identical": true
+    },
+    "COLLAR_wall_below_rim": {
+      "shared_rows": 0,
+      "values_identical": true
+    }
+  },
+  "m3_junction_max": 0.06539,
+  "improvement_pct": -94.2,
+  "rim_patch": {
+    "sample_count": 14,
+    "segment_count": 5,
+    "residual_mean": 0.2848,
+    "residual_max": 0.55
+  }
+}

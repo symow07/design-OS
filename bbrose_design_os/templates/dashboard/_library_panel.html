@@ -1,0 +1,66 @@
+{% comment %}THE LIBRARY, OPEN WHILE DESIGNING (the owner's goal of 2026-09-25, (d): "The library is usable WHILE designing, not
+a separate trip"; §BH51 (c)3: "the 35 granted faces, the colour roles including Warm Gold, the 4,832 governed materials …
+usable while designing"). What it can do on this design is said on it: a colour or a face is tried on an element only
+where the design loop can draw this design, and only from the brand's own colours and the granted faces.{% endcomment %}
+<aside class="lib" id="library-panel" aria-labelledby="lib-h">
+  <div class="hd">
+    <h2 id="lib-h">Library</h2>
+    <span class="pinned"><svg class="i i-sm" aria-hidden="true"><use href="#i-pin"/></svg>Stays open while you design</span>
+    <button type="button" class="x lib-toggle" aria-controls="library-panel" aria-label="Close the library"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button>
+  </div>
+  <div class="tabs" role="tablist" aria-label="The library">
+    <button type="button" role="tab" id="tab-colours" aria-selected="true" aria-controls="lib-colours">Colours</button>
+    <button type="button" role="tab" id="tab-faces" aria-selected="false" aria-controls="lib-faces">Faces</button>
+    <button type="button" role="tab" id="tab-materials" aria-selected="false" aria-controls="lib-materials">Materials</button>
+    <button type="button" role="tab" id="tab-past" aria-selected="false" aria-controls="lib-past">Past designs</button>
+  </div>
+  <div class="scroll">
+    <section class="grp" id="lib-colours" role="tabpanel" aria-labelledby="tab-colours">
+      {% for sys in lib.colours %}
+      <div class="gh"><b>{{ sys.name }}</b></div>
+      <div class="sws">
+        {% for sw in sys.swatches %}
+        <{% if lib.can_colour and sw.try_hex %}button type="button" data-colour="{{ sw.try_hex }}" data-colour-name="{{ sw.name }}" aria-label="Try {{ sw.name }} on the element picked in Adjust"{% else %}span{% endif %} class="sw" title="{{ sw.name }}{% if sw.hex %} {{ sw.hex }}{% else %} — {{ sw.ink }}{% endif %}{% if sw.usage %} · {{ sw.usage }}{% endif %}">
+          <svg viewBox="0 0 44 44" aria-hidden="true">{% if sw.hex %}<circle cx="22" cy="22" r="21" fill="{{ sw.hex }}"/>{% else %}<circle class="metal" cx="22" cy="22" r="21"/>{% endif %}</svg>
+          {{ sw.name }}
+        </{% if lib.can_colour and sw.try_hex %}button{% else %}span{% endif %}>
+        {% endfor %}
+      </div>
+      {% endfor %}
+      {% if lib.can_colour %}<p class="tip pick"><svg class="i" aria-hidden="true"><use href="#i-sliders"/></svg><span>Pick an element in Adjust, then a colour here — it is tried on <b data-picked>the element you pick</b>.</span></p>{% endif %}
+      <p class="tip"><svg class="i" aria-hidden="true"><use href="#i-info"/></svg>{{ lib.colour_words }}</p>
+    </section>
+    <section class="grp" id="lib-faces" role="tabpanel" aria-labelledby="tab-faces">
+      <div class="gh"><b>Faces</b><span class="for">{{ lib.faces|length }} granted{% if lib.pool_faces %} · <a href="{% url 'dashboard:materials_library' %}?tier=GRANTED">{{ lib.pool_faces }} more in the library</a>{% endif %}</span></div>
+      {% for f in lib.faces %}
+      <div class="face">
+        <img class="spec" src="{% url 'dashboard:face_specimen' f.stem %}?show=name" alt="{{ f.family }}" decoding="async">
+        <span class="nm">{{ f.family }}<span>{{ f.scripts }}{% if f.serves %} · {{ f.serves|first }}{% endif %}</span></span>
+        {% if lib.can_face and f.can_try %}<button type="button" class="use" data-face="{{ f.stem }}" aria-label="Try {{ f.family }} on the name">Try on the name</button>{% endif %}
+      </div>
+      {% endfor %}
+      <p class="tip"><svg class="i" aria-hidden="true"><use href="#i-info"/></svg>{{ lib.face_words }}</p>
+    </section>
+    <section class="grp" id="lib-materials" role="tabpanel" aria-labelledby="tab-materials">
+      <div class="gh"><b>Materials</b><a class="for" href="{% url 'dashboard:materials_library' %}">{{ lib.placeable }} can be placed ›</a></div>
+      <div class="mats">
+        {% for m in lib.materials %}
+        <a class="m" href="{% url 'dashboard:materials_library' %}?q={{ m.name|urlencode }}" title="{{ m.subject|default:m.name }}">
+          <img src="{% url 'dashboard:material_picture' m.n m.sha %}" alt="{{ m.subject|default:m.name }}" loading="lazy">
+          <span class="tag place">Can be placed</span>
+        </a>
+        {% endfor %}
+      </div>
+      <p class="tip"><svg class="i" aria-hidden="true"><use href="#i-info"/></svg>Looking only: placing a material into a design is not built yet.</p>
+    </section>
+    <section class="grp" id="lib-past" role="tabpanel" aria-labelledby="tab-past">
+      <div class="gh"><b>Past designs</b><a class="for" href="{% url 'dashboard:history' %}">every design ›</a></div>
+      <div class="pasts">
+        {% for p in lib.past %}
+        <a href="{{ p.url }}" title="{{ p.title }}">{% if p.picture %}<img src="{{ p.picture }}" alt="{{ p.title }}" loading="lazy">{% else %}<span class="ph-pic"><svg class="i" aria-hidden="true"><use href="#i-image"/></svg></span>{% endif %}<span class="caption">{{ p.title }}</span></a>
+        {% empty %}<p class="small">No other design of this product yet.</p>
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+</aside>

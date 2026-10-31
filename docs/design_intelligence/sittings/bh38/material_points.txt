@@ -1,0 +1,532 @@
+apps/pipeline/direction_signature.py:82:                        "foil first", "texture first", "finish first")),
+apps/pipeline/design_direction_generator.py:85:benefit, sensory texture: hyaluronic acid → water, dew, suspended droplets; vitamin C →
+apps/pipeline/design_direction_generator.py:110:container, a raster texture is required for the design identity, the decoration depends on a
+apps/pipeline/management/commands/correct_dieline_output.py:12:  VECTOR artwork composer (no raster motif), the folded 3D mockup, and the
+apps/pipeline/management/commands/correct_dieline_output.py:148:        mockup_path = None
+apps/pipeline/management/commands/correct_dieline_output.py:150:            from apps.dielines.exporters.mockup_3d import export_folded_mockup
+apps/pipeline/management/commands/correct_dieline_output.py:152:            mockup_out = os.path.join(out_dir, f"{job.id}_mockup_3d.png")
+apps/pipeline/management/commands/correct_dieline_output.py:153:            mockup_path = export_folded_mockup(
+apps/pipeline/management/commands/correct_dieline_output.py:154:                gen["coords"], gen["design_preview_png_path"], mockup_out)
+apps/pipeline/management/commands/correct_dieline_output.py:155:            if mockup_path:
+apps/pipeline/management/commands/correct_dieline_output.py:156:                self.stdout.write(f"  3D mockup: {mockup_path}")
+apps/pipeline/management/commands/rbv4_review.py:189:            with Image.open(path) as img:
+apps/pipeline/agents/image_producer.py:142:            "texture layering and finishing language from them as design "
+apps/pipeline/agents/aria.py:942:        self.log("ARIA: reached Gate 2 — awaiting 3D mockup approval")
+apps/pipeline/agents/aria.py:1574:        """Called when you approve the 3D mockup at Gate 2."""
+apps/pipeline/services/visual_inspector.py:196:        a = np.asarray(Image.open(p).convert("RGB").resize((96, 96)))
+apps/pipeline/agents/prompt_engineer.py:153:                "balance, composition discipline, motif treatment, texture "
+apps/pipeline/services/vqr2b_reconstruction_measurement.py:273:    with Image.open(out) as img:
+apps/pipeline/services/vqr2b_reconstruction_measurement.py:300:    with Image.open(raster["png_path"]) as img:
+apps/pipeline/services/visual_review.py:257:        img = Image.open(path).convert("RGB")
+apps/pipeline/services/visual_review.py:261:        card.paste(img, (ox, oy))
+apps/pipeline/services/visual_review.py:358:        sheet.paste(t, (20 + (i % cols) * (thumb_w + 20),
+apps/pipeline/agents/pacdora_agent.py:205:                    '[class*="preview-container"], .mockup-viewer'
+apps/pipeline/services/production_authority_package.py:348:        thumb = Image.open(src).convert("RGB")
+apps/pipeline/services/production_authority_package.py:350:        im.paste(thumb, (x, THUMB_Y))
+apps/pipeline/services/palt_m4b_a2_evidence.py:72:    hatch = Image.composite(hatch, Image.new("L", img.size, 0), mask)
+apps/pipeline/services/palt_m4b_a2_evidence.py:73:    img.paste(layer, (0, 0), hatch)
+apps/pipeline/services/palt_m4b_a2_evidence.py:117:    img.paste(panel, (int(x0), int(y0)))
+apps/pipeline/services/reference_pack.py:57:        img = Image.open(path)
+apps/pipeline/services/web_research_tavily.py:673:        img = Image.open(BytesIO(body)).convert("L").resize((8, 8))
+apps/pipeline/services/container_material_realization.py:16:* ``NOT_APPLICABLE``  finish/texture (deferred to 2B-3B) and when there are no
+apps/pipeline/services/container_material_realization.py:37:_LOCATOR_MARKERS = ("materials/", "media/", "/users/", ".png", ".jpg",
+apps/pipeline/services/container_material_realization.py:104:        # texture / finishing — separation masks are deferred to 2B-3B
+apps/pipeline/services/container_material_realization.py:105:        influences["texture"] = {"status": NOT_APPLICABLE, "emitted": ""}
+apps/pipeline/services/flat_artwork.py:49:    "botanicals, textures, gradients, ornaments) and distribute them as an "
+apps/pipeline/services/flat_artwork.py:57:    "paper texture in its background color — never letters. "
+apps/pipeline/services/flat_artwork.py:162:        with Image.open(image_path) as im:
+apps/pipeline/services/flat_artwork.py:179:    while preserving the motif's pattern/texture — deterministic, no extra
+apps/pipeline/services/flat_artwork.py:188:        with Image.open(image_path) as im:
+apps/pipeline/services/a3p_evidence_render.py:155:    img = Image.open(path).convert("RGB")
+apps/pipeline/services/a3p_evidence_render.py:159:    out.paste(img, (0, head))
+apps/pipeline/services/a3p_evidence_render.py:666:    a, b = Image.open(left).convert("RGB"), Image.open(right).convert("RGB")
+apps/pipeline/services/a3p_evidence_render.py:671:    out.paste(a, (20, 170))
+apps/pipeline/services/a3p_evidence_render.py:672:    out.paste(b, (a.width + 40, 170))
+apps/pipeline/services/a3p_evidence_render.py:1163:        img = Image.open(path)
+apps/pipeline/services/palette_flake_rig.py:45:from apps.pipeline.services import palette_powder_texture_axes as TX
+apps/pipeline/services/palette_flake_rig.py:63:#: 6-member ensemble, same declared derivation as the texture families
+apps/pipeline/services/concept_visual_graph.py:24:    with Image.open(path) as im:
+apps/pipeline/services/rbv3_review_package.py:238:    with Image.open(view_path) as img:
+apps/pipeline/services/rbv3_review_package.py:362:    board.paste(img, (x, y + 48))
+apps/pipeline/services/rbv3_review_package.py:403:        img = Image.open(views[view])
+apps/pipeline/services/rbv3_review_package.py:472:            pw = _panel(board, draw, Image.open(ref["path"]), x, y,
+apps/pipeline/services/rbv3_review_package.py:566:        with Image.open(bounds_view) as _bv:
+apps/pipeline/services/container_gate1.py:65:named finish masks — NEVER photographic label artwork, raster texture,
+apps/pipeline/services/container_gate1.py:110:photographic printed labels, raster texture, macro photography of the label.
+apps/pipeline/services/palette_axis_eligibility.py:31:from apps.pipeline.services import palette_powder_texture_axes as TX
+apps/pipeline/services/palette_axis_eligibility.py:86:    # texture ensemble at one calibrated energy: calibrate once on the
+apps/pipeline/services/palette_axis_eligibility.py:91:    cal = TX.characterize_texture_pair(
+apps/pipeline/services/palette_axis_eligibility.py:218:        for axis, row in ruling.get("texture_axes", {}).items():
+apps/pipeline/services/palt_p1_m4b_evidence.py:72:    img = Image.open(path).convert("RGB")
+apps/pipeline/services/palette_review_board.py:54:        img = fit(Image.open(path).convert("RGB"), mw, mh)
+apps/pipeline/services/palette_review_board.py:56:        board.paste(img, (x, y + 52))
+apps/pipeline/services/palette_review_board.py:171:    left = Image.open(E("closed_three_quarter.png")).convert("RGB")
+apps/pipeline/services/palette_review_board.py:172:    right = Image.open(E("stress_fixture_three_quarter.png")).convert("RGB")
+apps/pipeline/services/palette_review_board.py:185:    canvas.paste(left, (40, 160))
+apps/pipeline/services/palette_review_board.py:186:    canvas.paste(right, (left.width + 110, 160))
+apps/pipeline/services/gate_a_corr1.py:531:    im = Image.open(path).convert("RGB")
+apps/pipeline/services/gate_a_corr1.py:565:    a = Image.open(ACCEPTED_PNG).convert("RGB")
+apps/pipeline/services/gate_a_corr1.py:566:    b = Image.open(OUT_PNG).convert("RGB")
+apps/pipeline/services/vq1_close1_inspection.py:54:                  "colour", "color", "shading", "shaded", "texture",
+apps/pipeline/services/vq1_close1_inspection.py:82:    "metallic appearance, texture, material realism, lighting or "
+apps/pipeline/services/image_checks.py:102:    with Image.open(path) as im:
+apps/pipeline/services/image_checks.py:171:        with Image.open(path) as img:
+apps/pipeline/services/image_checks.py:204:        with Image.open(path) as img:
+apps/pipeline/services/palette_marbling_rig.py:8:2. the audit discharge — MARBLED is the common microtexture block's
+apps/pipeline/services/palette_marbling_rig.py:58:from apps.pipeline.services import palette_powder_texture_axes as TX
+apps/pipeline/services/palette_marbling_rig.py:282:                  if k.startswith("microtexture")}
+apps/pipeline/services/palette_marbling_rig.py:304:        "microtexture_block_discharge": {
+apps/pipeline/services/geometry_evidence.py:46:    6: {"label": "marketplace, stock, gallery or editorial context",
+apps/pipeline/services/geometry_evidence.py:120:_T5_6 = ("pinterest", "dribbble", "behance", "instagram", "shutterstock",
+apps/pipeline/services/geometry_evidence.py:121:         "istockphoto", "gettyimages", "freepik", "unsplash", "pexels",
+apps/pipeline/services/p1_pilot_evidence.py:46:    img = Image.open(front_png).convert("RGB")
+apps/pipeline/services/p1_pilot_evidence.py:131:    img = Image.open(out_png).convert("RGB")
+apps/pipeline/services/p1_pilot_evidence.py:166:    img = Image.open(out_png).convert("RGB")
+apps/pipeline/services/selected_concept_contract.py:127:    im = Image.open(image_path).convert("RGB")
+apps/pipeline/services/p1_v4_evidence.py:113:        canvas.paste(img, (x, 130))
+apps/pipeline/services/p1_v4_evidence.py:136:            c.paste(img, (xx, 110))
+apps/pipeline/services/p1_v4_evidence.py:161:        panels.append((_fit(Image.open(E(f)).convert("RGB"), 10_000,
+apps/pipeline/services/p1_v4_evidence.py:174:        canvas.paste(im, (x, 150))
+apps/pipeline/services/p1_v4_evidence.py:284:        board.paste(img, (x, y + 56))
+apps/pipeline/services/p1_v4_evidence.py:298:    x += panel(Image.open(E("material_front.png")).convert("RGB"), x, y,
+apps/pipeline/services/p1_v4_evidence.py:302:    x += panel(Image.open(E("material_three_quarter.png")).convert("RGB"),
+apps/pipeline/services/p1_v4_evidence.py:305:    x += panel(Image.open(E("neutral_front.png")).convert("RGB"), x, y,
+apps/pipeline/services/p1_v4_evidence.py:320:        x += panel(Image.open(E(name)).convert("RGB"), x, y2, 780, 1100,
+apps/pipeline/services/p1_v4_evidence.py:328:        x += panel(Image.open(E(name)).convert("RGB"), x, y3, 700, 990,
+apps/pipeline/services/p1_v4_evidence.py:330:    panel(Image.open(E("shoulder_profile_diagnostic.png")).convert("RGB"),
+apps/pipeline/services/p1_v4_evidence.py:335:    panel(Image.open(E("glass_transmission_diagnostic.png")).convert(
+apps/pipeline/services/p1_v4_evidence.py:341:    panel(Image.open(E("v1_v2_v3_v4_silhouette_comparison.png")).convert(
+apps/pipeline/services/p1_v4_evidence.py:379:    panel(Image.open(E("v3_v4_shoulder_comparison.png")).convert("RGB"),
+apps/pipeline/services/p1_v4_evidence.py:382:    panel(Image.open(E("v3_v4_bulb_comparison.png")).convert("RGB"),
+apps/pipeline/services/p1_v4_evidence.py:387:    panel(Image.open(E("owner_photo_vs_v4.png")).convert("RGB"), 60, y7,
+apps/pipeline/services/p1_v4_evidence.py:445:    photo_front = Image.open(os.path.join(photo_dir, "IMG_3120.jpg")) \
+apps/pipeline/services/p1_v4_evidence.py:448:    photo_parts = Image.open(os.path.join(photo_dir, "IMG_3123.jpg")) \
+apps/pipeline/services/palette_variant_visual_proof.py:95:    a, b = Image.open(left).convert("RGB"), Image.open(right).convert("RGB")
+apps/pipeline/services/palette_variant_visual_proof.py:100:    out.paste(a, (20, 200))
+apps/pipeline/services/palette_variant_visual_proof.py:101:    out.paste(b, (a.width + 50, 200))
+apps/pipeline/services/palette_powder_protocol.py:55:        "distinct_from_case_matte": "powder micro-texture scatters with "
+apps/pipeline/services/palette_powder_protocol.py:97:        "structure": "non-powder emulsion: smooth, micro-texture-free, "
+apps/pipeline/services/palette_powder_protocol.py:111:        "physical_question": "how does a surface's micro-texture shape "
+apps/pipeline/services/palette_powder_protocol.py:1335:        "palette_powder_texture_axes.measure_texture_axes seals A558 "
+apps/pipeline/services/palette_powder_protocol.py:1760:            "twelve renders in a texture phase and twenty-two in the "
+apps/pipeline/services/palette_raking_rig.py:12:  >= 0.80 with GRANULARITY is texture-RMS in raking clothes and VOIDS
+apps/pipeline/services/palette_raking_rig.py:17:  grids — no display frame anywhere), so high-frequency texture
+apps/pipeline/services/visual_extract.py:19:    im = Image.open(path).convert("RGB")
+apps/pipeline/services/palt_m4b_a_evidence.py:164:    hatch = Image.composite(hatch, Image.new("L", size, 0), mask)
+apps/pipeline/services/palt_m4b_a_evidence.py:187:            img.paste(layer, (0, 0), hm)
+apps/pipeline/services/palt_m4b_a_evidence.py:222:    canvas.paste(full.crop((0, y1, W, y1 + h_full + 2)), (0, y1))
+apps/pipeline/services/palt_m4b_a_evidence.py:237:    canvas.paste(det.crop((0, y2, W, y2 + h_det + 2)), (0, y2))
+apps/pipeline/services/palt_m4b_a_evidence.py:272:    canvas.paste(panel.crop((0, 0, plot_w, plot_h)), (margin, top))
+apps/pipeline/services/palette_m6_products.py:541:    imgs = [Image.open(p) for p in tiles]
+apps/pipeline/services/palette_m6_products.py:562:        page.paste(t, (x, head))
+apps/pipeline/services/concept_analysis.py:192:    bg.paste(Image.fromarray((mask * 255).astype(np.uint8)), (1, 1))
+apps/pipeline/services/palette_instrument_repair_protocol.py:14:  the instrument: frame provenance, the reader, the three texture
+apps/pipeline/services/palette_instrument_repair_protocol.py:67:        "change": "every texture axis reads the float EXR the renderer "
+apps/pipeline/services/palette_instrument_repair_protocol.py:241:    "texture_axes_validation.json is regenerated; the stale FAIL is "
+apps/pipeline/services/concept_references.py:24:  * `materials/` stays read-only: candidates are read and streamed, never
+apps/pipeline/services/concept_references.py:51:                      "texture", "finishing")
+apps/pipeline/services/concept_references.py:71:    "texture abstract line lines wave marble silk satin powder beauty "
+apps/pipeline/services/concept_references.py:77:_LOCATOR_MARKERS = ("materials/", "media/", "/users/", ".png", ".jpg",
+apps/pipeline/services/concept_references.py:95:    return Path(getattr(settings, "MATERIALS_ROOT",
+apps/pipeline/services/concept_references.py:295:            "texture_influence": _influence_line(
+apps/pipeline/services/concept_references.py:296:                "texture", vocab & {"marble", "silk", "satin", "glitter",
+apps/pipeline/services/concept_references.py:297:                                    "shimmer", "texture", "gradient"},
+apps/pipeline/services/concept_references.py:298:                "note how the reference layers texture without crowding "
+apps/pipeline/services/palette_powder_rigs.py:211:            palette_powder_texture_axes as TX)
+apps/pipeline/services/palette_powder_rigs.py:231:        img = Image.open(annotate_source).convert("RGB")
+apps/pipeline/services/palette_powder_rigs.py:581:        "record_type": "diffuse_microtexture_rig_pairs/1.0",
+apps/pipeline/services/gate1_regeneration.py:40:nearly blank pale backgrounds, photography, raster texture, full-face
+apps/pipeline/services/artwork_segments.py:118:        with Image.open(motif_path) as im:
+apps/pipeline/services/palette_m4b_b_gate.py:35:    arr = np.asarray(Image.open(path).convert("RGB"))
+apps/pipeline/services/p1_v3_evidence.py:118:    return np.asarray(Image.open(path).convert("RGBA"))[:, :, 3] >= 128
+apps/pipeline/services/p1_v3_evidence.py:205:        img = Image.open(out_png).convert("RGB")
+apps/pipeline/services/p1_v3_evidence.py:310:    img = Image.open(E("material_reference_preview.png")).convert("RGB")
+apps/pipeline/services/p1_v3_evidence.py:335:    imgs = [(_fit(Image.open(E(f)).convert("RGB"), 10_000, tile_h)[0], t)
+apps/pipeline/services/p1_v3_evidence.py:350:        canvas.paste(img_p, (x, 150))
+apps/pipeline/services/p1_v3_evidence.py:374:    canvas.paste(photo, (30, 150))
+apps/pipeline/services/p1_v3_evidence.py:466:        canvas.paste(img, (x, 130))
+apps/pipeline/services/p1_v3_evidence.py:491:            c.paste(img, (xx, 110))
+apps/pipeline/services/p1_v3_evidence.py:517:        panels.append((_fit(Image.open(E(f)).convert("RGB"), 10_000,
+apps/pipeline/services/p1_v3_evidence.py:530:        canvas.paste(im, (x, 150))
+apps/pipeline/services/p1_v3_evidence.py:679:        board.paste(img, (x, y + 56))
+apps/pipeline/services/p1_v3_evidence.py:693:    x += panel(Image.open(E("material_front.png")).convert("RGB"), x, y,
+apps/pipeline/services/p1_v3_evidence.py:697:    x += panel(Image.open(E("material_three_quarter.png")).convert("RGB"),
+apps/pipeline/services/p1_v3_evidence.py:700:    x += panel(Image.open(E("neutral_front.png")).convert("RGB"), x, y,
+apps/pipeline/services/p1_v3_evidence.py:715:        x += panel(Image.open(E(name)).convert("RGB"), x, y2, 780, 1100,
+apps/pipeline/services/p1_v3_evidence.py:723:        x += panel(Image.open(E(name)).convert("RGB"), x, y3, 700, 990,
+apps/pipeline/services/p1_v3_evidence.py:725:    panel(Image.open(E("shoulder_profile_diagnostic.png")).convert("RGB"),
+apps/pipeline/services/p1_v3_evidence.py:731:    panel(Image.open(E("glass_transmission_diagnostic.png")).convert(
+apps/pipeline/services/p1_v3_evidence.py:737:    panel(Image.open(E("v1_v2_v3_silhouette_comparison.png")).convert(
+apps/pipeline/services/p1_v3_evidence.py:776:    panel(Image.open(E("v2_v3_shoulder_comparison.png")).convert("RGB"),
+apps/pipeline/services/p1_v3_evidence.py:779:    panel(Image.open(E("v2_v3_bulb_comparison.png")).convert("RGB"),
+apps/pipeline/services/p1_v3_evidence.py:784:    panel(Image.open(E("owner_photo_vs_v3.png")).convert("RGB"), 60, y7,
+apps/pipeline/services/p1_v3_evidence.py:838:    photo_front = Image.open(os.path.join(photo_dir, "IMG_3120.jpg")) \
+apps/pipeline/services/p1_v3_evidence.py:841:    photo_parts = Image.open(os.path.join(photo_dir, "IMG_3123.jpg")) \
+apps/pipeline/services/palette_m5_evidence.py:148:    arr = np.asarray(Image.open(path).convert("RGB")).astype(float)
+apps/pipeline/services/palette_m5_evidence.py:221:    out.paste(img, (0, head))
+apps/pipeline/services/palette_m5_evidence.py:235:        img = Image.open(rec["path"]).convert("RGB").resize((760, 760))
+apps/pipeline/services/palette_m5_evidence.py:255:        board.paste(tile, (30 + (i % cols) * tw, 200 + (i // cols) * th))
+apps/pipeline/services/palette_m5_evidence.py:268:    a = Image.open(path_a).convert("RGB").resize((900, 900))
+apps/pipeline/services/palette_m5_evidence.py:269:    b = Image.open(path_b).convert("RGB").resize((900, 900))
+apps/pipeline/services/palette_m5_evidence.py:271:    out.paste(a, (20, 190))
+apps/pipeline/services/palette_m5_evidence.py:272:    out.paste(b, (a.width + 40, 190))
+apps/pipeline/services/palette_m5_closeout.py:676:    img = Image.open(path).convert("RGB")
+apps/pipeline/services/palette_m5_closeout.py:679:    out.paste(img, ((size - img.width) // 2, 0))
+apps/pipeline/services/palette_m5_closeout.py:697:        board.paste(t, (20 + (i % cols) * tw, 140 + (i // cols) * th))
+apps/pipeline/services/visual_input_quality.py:116:    im = Image.open(path).convert("RGB")
+apps/pipeline/services/visual_input_quality.py:163:    g = np.asarray(Image.open(path).convert("L")).astype(float)
+apps/pipeline/services/visual_input_quality.py:172:    g = np.asarray(Image.open(path).convert("L")).astype(float)
+apps/pipeline/services/visual_input_quality.py:277:    im = Image.open(path).convert("RGB")
+apps/pipeline/services/p1_review_board.py:54:    board.paste(img, (x, y + 64))
+apps/pipeline/services/p1_review_board.py:67:    mask, _, _, _ = ca.extract_mask(Image.open(render_path))
+apps/pipeline/services/p1_review_board.py:77:    s1, _, _, _ = ca.extract_mask(Image.open(os.path.join(v1_dir,
+apps/pipeline/services/p1_review_board.py:79:    s2, _, _, _ = ca.extract_mask(Image.open(os.path.join(v2_dir,
+apps/pipeline/services/p1_review_board.py:94:    canvas.paste(_sil(s1), (0, 150))
+apps/pipeline/services/p1_review_board.py:95:    canvas.paste(_sil(s2), (w + gap, 150))
+apps/pipeline/services/p1_review_board.py:96:    canvas.paste(Image.fromarray(overlay), (2 * (w + gap), 150))
+apps/pipeline/services/p1_review_board.py:111:    front = Image.open(os.path.join(v2_dir, "front.png")).convert("RGB")
+apps/pipeline/services/p1_review_board.py:112:    material = Image.open(os.path.join(
+apps/pipeline/services/p1_review_board.py:126:        canvas.paste(panel, (x, 160))
+apps/pipeline/services/p1_review_board.py:147:    photo_front = Image.open(P("IMG_3120.jpg")).convert("RGB") \
+apps/pipeline/services/p1_review_board.py:150:    photo_parts = Image.open(P("IMG_3123.jpg")).convert("RGB") \
+apps/pipeline/services/p1_review_board.py:153:    front = Image.open(E("front.png")).convert("RGB")
+apps/pipeline/services/p1_review_board.py:154:    side = Image.open(E("side.png")).convert("RGB")
+apps/pipeline/services/p1_review_board.py:155:    top = Image.open(E("top.png")).convert("RGB")
+apps/pipeline/services/p1_review_board.py:156:    tq = Image.open(E("three_quarter_diagnostic.png")).convert("RGB")
+apps/pipeline/services/p1_review_board.py:157:    closure = Image.open(E("closure_detail.png")).convert("RGB")
+apps/pipeline/services/p1_review_board.py:158:    neck = Image.open(E("neck_detail.png")).convert("RGB")
+apps/pipeline/services/p1_review_board.py:159:    material = Image.open(E("material_reference_preview.png")).convert("RGB")
+apps/pipeline/services/p1_review_board.py:292:                           Image.open(comp_a).convert("RGB"), x, y3,
+apps/pipeline/services/p1_review_board.py:297:            _panel(board, draw, Image.open(comp_b).convert("RGB"), x, y3,
+apps/pipeline/services/palette_energy_recovery.py:3:The N=8 texture census calibrated four late-joining families
+apps/pipeline/services/palette_energy_recovery.py:6:docs/roadmap/palt_m6/texture_axes/) but never wrote the solved energy
+apps/pipeline/services/palette_energy_recovery.py:8:(characterize_texture_pair's iterated linear-transport step in
+apps/pipeline/services/palette_energy_recovery.py:9:palette_powder_texture_axes) and both of its inputs are committed
+apps/pipeline/services/palette_energy_recovery.py:24:reads that record. GLITTER raises: it was never in the texture census
+apps/pipeline/services/palette_energy_recovery.py:32:from apps.pipeline.services import palette_powder_texture_axes as TX
+apps/pipeline/services/palette_energy_recovery.py:34:TEXTURE_AXES_DIR = "docs/roadmap/palt_m6/texture_axes"
+apps/pipeline/services/palette_energy_recovery.py:60:    """A114 — the only sanctioned way to cite a texture-axis value
+apps/pipeline/services/palette_energy_recovery.py:121:            f"{family} was never in the texture census — no "
+apps/pipeline/services/palette_energy_recovery.py:148:                "palette_powder_texture_axes.characterize_texture_pair"),
+apps/pipeline/services/palette_m6_spreads_driver.py:26:  sc         — SATIN_VS_CREAM, 6 member-pairs (texture rig)
+apps/pipeline/services/palette_m6_spreads_driver.py:68:def _texture_members(family):
+apps/pipeline/services/palette_m6_spreads_driver.py:69:    from apps.pipeline.services import palette_powder_texture_axes as TA
+apps/pipeline/services/palette_m6_spreads_driver.py:128:def run_texture_pair_phase(phase, fam_a, fam_b) -> dict:
+apps/pipeline/services/palette_m6_spreads_driver.py:131:    from apps.pipeline.services import palette_powder_texture_axes as TA
+apps/pipeline/services/palette_m6_spreads_driver.py:133:    members_a = _texture_members(fam_a)
+apps/pipeline/services/palette_m6_spreads_driver.py:134:    members_b = _texture_members(fam_b)
+apps/pipeline/services/palette_m6_spreads_driver.py:148:        pair = TA.characterize_texture_pair(
+apps/pipeline/services/palette_m6_spreads_driver.py:184:    texture phases' per-pair unit — the ceiling cannot be snuck past).
+apps/pipeline/services/palette_m6_spreads_driver.py:189:    members = {fam: _texture_members(fam) for fam in LOBE_FAMILIES}
+apps/pipeline/services/palette_m6_spreads_driver.py:546:        r = run_texture_pair_phase(phase, a, b)
+apps/pipeline/services/palette_parameter_realization_audit.py:32:from apps.pipeline.services import palette_powder_texture_axes as TX
+apps/pipeline/services/palette_material_engine.py:42:          "transmission": 0.0, "microtexture": "FINE_MOULD_GRAIN"},
+apps/pipeline/services/palette_material_engine.py:44:         "transmission": 0.0, "microtexture": "SOFT_MOULD_GRAIN"},
+apps/pipeline/services/palette_material_engine.py:46:              "transmission": 0.86, "microtexture": "NONE"},
+apps/pipeline/services/palette_material_engine.py:48:            "transmission": 0.0, "microtexture": "BRUSHED_ANISOTROPY"},
+apps/pipeline/services/palette_material_engine.py:51:                           "microtexture": "FIBRE"},
+apps/pipeline/services/palette_material_engine.py:201:            "ior": base["ior"], "microtexture": base["microtexture"],
+apps/pipeline/services/web_geometry_research.py:44:    "pinterest.", "dribbble.", "behance.", "instagram.", "shutterstock.",
+apps/pipeline/services/web_geometry_research.py:45:    "istockphoto.", "gettyimages.", "freepik.", "adobe.com/stock",
+apps/pipeline/services/palette_material_characterization.py:175:    img = Image.open(path)
+apps/core/models.py:68:    surface_zones = models.JSONField()  # {logo_zone, texture_zone, accent_zone}
+apps/pipeline/services/technical_geometry_research.py:153:                      "shutterstock", "istockphoto", "gettyimages",
+apps/pipeline/services/technical_geometry_research.py:181:                "reason": "marketplace / stock / gallery / editorial"}
+apps/pipeline/services/palette_powder_engine.py:155:    "microtexture": {"scale_mm": 0.16, "strength": 0.30},
+apps/pipeline/services/palette_powder_engine.py:156:    "macrotexture": {"scale_mm": 2.4, "strength": 0.06},
+apps/pipeline/services/palette_powder_engine.py:217:        "micro_seed_offset": 2, "microtexture_strength_factor": 0.8,
+apps/pipeline/services/palette_powder_engine.py:233:        "compression_texture": {"scale_mm": 0.6, "strength": 0.12},
+apps/pipeline/services/palette_powder_engine.py:247:        "compression_texture": {"scale_mm": 0.6, "strength": 0.10},
+apps/pipeline/services/palette_powder_engine.py:283:        "crust": {"gloss": 0.30, "baked_microtexture_strength": 0.18},
+apps/pipeline/services/palette_powder_engine.py:300:                       "compression_texture_scale_mm": 0.25,
+apps/pipeline/services/palette_powder_engine.py:301:                       "compression_texture_amplitude": 0.10,
+apps/pipeline/services/palette_powder_engine.py:332:    "BAKED:microtexture.scale_mm":
+apps/pipeline/services/palette_powder_engine.py:334:    "BAKED:microtexture.strength":
+apps/pipeline/services/palette_powder_engine.py:340:    "CREAM:macrotexture.scale_mm":
+apps/pipeline/services/palette_powder_engine.py:342:    "CREAM:macrotexture.strength":
+apps/pipeline/services/palette_powder_engine.py:344:    "CREAM:microtexture.scale_mm":
+apps/pipeline/services/palette_powder_engine.py:346:    "CREAM:microtexture.strength":
+apps/pipeline/services/palette_powder_engine.py:352:    "GLITTER:microtexture.scale_mm":
+apps/pipeline/services/palette_powder_engine.py:354:    "GLITTER:microtexture.strength":
+apps/pipeline/services/palette_powder_engine.py:364:    "MARBLED:macrotexture.scale_mm":
+apps/pipeline/services/palette_powder_engine.py:366:    "MARBLED:macrotexture.strength":
+apps/pipeline/services/palette_powder_engine.py:372:    "POWDER_MATTE:microtexture.scale_mm":
+apps/pipeline/services/palette_powder_engine.py:374:    "POWDER_MATTE:microtexture.strength":
+apps/pipeline/services/palette_powder_engine.py:386:    "POWDER_METALLIC:microtexture.scale_mm":
+apps/pipeline/services/palette_powder_engine.py:388:    "POWDER_METALLIC:microtexture.strength":
+apps/pipeline/services/palette_powder_engine.py:390:    "POWDER_SATIN:compression_texture.scale_mm":
+apps/pipeline/services/palette_powder_engine.py:392:    "POWDER_SATIN:compression_texture.strength":
+apps/pipeline/services/palette_powder_engine.py:396:    "POWDER_SATIN:microtexture.scale_mm":
+apps/pipeline/services/palette_powder_engine.py:398:    "POWDER_SATIN:microtexture.strength":
+apps/pipeline/services/palette_powder_engine.py:410:    "PRESSED_POWDER:microtexture.scale_mm":
+apps/pipeline/services/palette_powder_engine.py:412:    "PRESSED_POWDER:microtexture.strength":
+apps/pipeline/services/palette_powder_engine.py:424:    "SHIMMER:microtexture.scale_mm":
+apps/pipeline/services/palette_powder_engine.py:426:    "SHIMMER:microtexture.strength":
+apps/pipeline/services/palette_powder_engine.py:445:    PP.CREAM: {"microtexture": {"scale_mm": 0.16, "strength": 0.0},
+apps/pipeline/services/palette_powder_engine.py:530:            strength = self.params["microtexture"]["strength"]
+apps/pipeline/services/palette_powder_engine.py:534:                    f"microtexture strength {strength} contradicts the "
+apps/pipeline/services/container_material_influence.py:48:_LOCATOR_MARKERS = ("materials/", "media/", "/users/", ".png", ".jpg", ".jpeg",
+apps/pipeline/services/palette_m6_spreads_adjudication.py:24:  texture rig measures GRANULARITY_INDEX and GRAZING_BAND_CONTRAST;
+apps/pipeline/services/palette_m6_spreads_adjudication.py:26:  characterization rig — a texture-rig raw record cannot adjudicate a
+apps/intelligence/evidence_labels.py:16:repository or `materials/` paths, and the evidence boundary that keeps those out of semantic
+apps/intelligence/evidence_labels.py:93:        # the locator holds a real path (`materials/…`), so it is never rendered; the
+apps/pipeline/services/m3_calibration.py:204:        sheet.paste(im, (x, header))
+apps/pipeline/services/container_visual_graph.py:202:        with Image.open(path) as im:
+apps/pipeline/services/geometry_validation_render.py:85:    arr = np.asarray(Image.open(path).convert("RGB"))
+apps/pipeline/services/geometry_validation_render.py:90:    img = Image.open(path)
+apps/pipeline/services/geometry_validation_render.py:125:                arr = np.asarray(Image.open(path).convert("L"),
+apps/pipeline/services/geometry_validation_render.py:225:    front = Image.open(view_paths["front"]).convert("RGB")
+apps/intelligence/test_semantic_enrichment.py:179:    item = _historical("safe title", family="materials/DOWNLOADE 2026/x.ai")
+apps/intelligence/test_brand_evidence.py:38:    paths = ["materials/a.eps", "materials/b.eps"]
+apps/intelligence/test_brand_evidence.py:70:        relative = f"materials/source-{index}.eps"
+apps/pipeline/services/palette_m7_ai_emitter.py:639:            "file": "materials/Fonts/CrimsonText-Regular.ttf",
+apps/intelligence/test_human_semantic_metadata.py:134:        build_metadata_bundle({"search_synonyms": ["/Users/x/materials/rose.ai"]})
+apps/core/management/commands/seed_bbrose.py:194:                    "texture, rose gold metallic detail, shallow depth of "
+apps/core/management/commands/seed_bbrose.py:201:                    "silk and soft textures, high fashion beauty photography "
+apps/core/management/commands/seed_bbrose.py:262:                    "logo_zone": "upper 30% — clear, no texture",
+apps/core/management/commands/seed_bbrose.py:263:                    "texture_zone": "lower 60% — primary graphic surface",
+apps/intelligence/test_locator_schemas.py:16:    assert normalize_locator("source_file/1.0", {"path": "materials/a.ai"}) == {
+apps/intelligence/test_locator_schemas.py:17:        "path": "materials/a.ai"}
+apps/intelligence/brand_evidence.py:179:    if not relative.startswith("materials/"):
+apps/intelligence/test_artwork_preview.py:53:    `materials/`."""
+apps/intelligence/test_artwork_preview.py:84:        source_location=f"repository:{relative or f'materials/{filename}'}",
+apps/intelligence/test_artwork_preview.py:93:        locator={"path": relative or f"materials/{filename}"},
+apps/intelligence/test_artwork_preview.py:115:        ("repository:materials/../../escape.ai", SOURCE_UNAVAILABLE),
+apps/intelligence/test_artwork_preview.py:116:        ("elsewhere:materials/design.ai", SOURCE_UNAVAILABLE),
+apps/intelligence/test_artwork_preview.py:117:        ("materials/design.ai", SOURCE_UNAVAILABLE),          # no root name at all
+apps/intelligence/test_artwork_preview.py:132:    source.source_location = "repository:materials/link.ai"
+apps/intelligence/test_semantic_benchmark.py:175:    assert "/Users/" not in csv_text and "materials/" not in csv_text
+apps/pipeline/services/palt_p1_evidence.py:82:    img = Image.open(path).convert("RGB")
+apps/pipeline/services/palt_p1_evidence.py:199:    img = Image.open(src).convert("RGB")
+apps/intelligence/test_semantic_v12.py:137:        collection_family_label="materials/DOWNLOADE 2026/9993170.ai")
+apps/intelligence/test_semantic_v12.py:148:        product_family_machine_label="materials/x/y.ai")
+apps/intelligence/artwork_preview.py:19:   no endpoint that returns an `.ai`, `.eps`, `.psd`, font or archive.
+apps/intelligence/artwork_preview.py:291:        with Image.open(io.BytesIO(payload)) as image:
+apps/intelligence/artwork_preview.py:318:        with Image.open(io.BytesIO(payload)) as image:
+apps/intelligence/test_semantic_query.py:101:    {"query_text": "/Users/secret/materials/x.ai"},     # filesystem path
+apps/intelligence/test_semantic_query.py:120:    for forbidden in ("/Users", "materials/", "sk-", "reviewer", "corpus_item_id"):
+apps/intelligence/test_search_service.py:165:        observed_location="/Users/secret/materials/x.ai",
+apps/pipeline/services/palette_powder_texture_axes.py:1:"""M6 §§5-7 — texture axes under the mirror-placed source.
+apps/pipeline/services/palette_powder_texture_axes.py:6:So the new axes measure per-pixel texture statistics exactly there —
+apps/pipeline/services/palette_powder_texture_axes.py:59:SCHEMA = "powder_texture_axes/1.0"
+apps/pipeline/services/palette_powder_texture_axes.py:193:    measure_texture_axes refuses a bare ndarray, and that refusal is
+apps/pipeline/services/palette_powder_texture_axes.py:310:        "schema": "texture_axis_measurement_provenance/1.0",
+apps/pipeline/services/palette_powder_texture_axes.py:315:            "module": "apps/pipeline/services/palette_powder_texture_axes.py",
+apps/pipeline/services/palette_powder_texture_axes.py:316:            "function": "measure_texture_axes"},
+apps/pipeline/services/palette_powder_texture_axes.py:489:def measure_texture_axes(frame, region_idx) -> dict:
+apps/pipeline/services/palette_powder_texture_axes.py:490:    """The two admitted texture axes, from a provenance-asserted
+apps/pipeline/services/palette_powder_texture_axes.py:556:#: ensemble_convention_declaration.json): 6-member texture ensembles for
+apps/pipeline/services/palette_powder_texture_axes.py:575:def characterize_texture_pair(spec_a, spec_b, out_dir, *, label_a,
+apps/pipeline/services/palette_powder_texture_axes.py:591:    # not have to: every texture axis is normalisation-invariant by
+apps/pipeline/services/palette_powder_texture_axes.py:701:        out[label] = measure_texture_axes(frame, idx)
+apps/pipeline/services/palette_powder_texture_axes.py:741:    return measure_texture_axes(frame, region_idx)
+apps/pipeline/services/palette_powder_texture_axes.py:833:        pair = characterize_texture_pair(
+apps/pipeline/services/palette_powder_texture_axes.py:863:    ident = characterize_texture_pair(
+apps/pipeline/services/palette_powder_texture_axes.py:941:    measurements) plus every ADMITTED texture axis (mirror-source rig)
+apps/pipeline/services/palette_powder_texture_axes.py:946:        raise TextureAxisError("no texture axis is admitted — no "
+apps/pipeline/services/palette_powder_texture_axes.py:957:        pair = characterize_texture_pair(
+apps/pipeline/services/palette_powder_texture_axes.py:968:        texture_a = pair[f"{label}_{fam_a}"]
+apps/pipeline/services/palette_powder_texture_axes.py:969:        texture_b = pair[f"{label}_{fam_b}"]
+apps/pipeline/services/palette_powder_texture_axes.py:981:            va = float(texture_a[axis])
+apps/pipeline/services/palette_powder_texture_axes.py:982:            vb = float(texture_b[axis])
+apps/pipeline/services/palette_powder_texture_axes.py:992:            "texture_axes": tex_rows,
+apps/pipeline/services/palette_powder_texture_axes.py:1004:        "admitted_texture_axes": admitted,
+apps/intelligence/test_evidence_integrity.py:103:        source_location=f"repository:materials/{suffix}.ai",
+apps/intelligence/test_evidence_integrity.py:109:        locator={"path": f"materials/{suffix}.ai"},
+apps/intelligence/test_semantic_value_boundary.py:28:REAL_LEAKED_VALUE = "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/9993170.ai"
+apps/intelligence/test_semantic_value_boundary.py:60:        SD._assert_within_boundary(_doc(style_labels=["materials/x/9993170.ai"]))
+apps/intelligence/test_semantic_value_boundary.py:66:    ("/home/someone/x.psd", SD.ABSOLUTE_PATH_VALUE),
+apps/intelligence/test_semantic_value_boundary.py:70:    ("D:/designs/pattern.psd", SD.ABSOLUTE_PATH_VALUE),
+apps/intelligence/test_semantic_value_boundary.py:74:    ("materials/Fonts/3333/consola.ttf", SD.MATERIALS_PATH_VALUE),
+apps/intelligence/test_semantic_value_boundary.py:77:    ("logo.psd", SD.SOURCE_FILENAME_VALUE),
+apps/intelligence/test_semantic_value_boundary.py:144:    assert "materials/" not in blob
+apps/intelligence/test_semantic_value_boundary.py:189:        external_key="asset:materials/DOWNLOADE 2026/9993170.ai")  # required field unsafe
+apps/intelligence/test_semantic_value_boundary.py:193:    assert "asset:materials/DOWNLOADE 2026/9993170.ai" in excluded
+apps/intelligence/test_semantic_value_boundary.py:194:    assert excluded["asset:materials/DOWNLOADE 2026/9993170.ai"] == SD.MATERIALS_PATH_VALUE
+apps/intelligence/test_semantic_value_boundary.py:206:        external_key="asset:materials/x/unsafe.ai")     # excluded at the boundary
+apps/intelligence/test_review_browser.py:182:        observed_location="/Users/secret/materials/private.ai",
+apps/intelligence/test_browser.py:45:        locator={"path": "materials/logical.ai"},
+apps/intelligence/test_browser.py:80:    assert b"materials/logical.ai" in detail.content
+apps/intelligence/test_evidence_labels.py:51:        source_identifier="source-labels", source_location="repository:materials/x.ai",
+apps/intelligence/test_evidence_labels.py:59:        locator={"path": "materials/historical AI production designs/BL-2050 STAND.ai"},
+apps/intelligence/test_evidence_labels.py:117:        ("jsonl_record/1.0", {"path": "materials/index.jsonl", "line": 12}),
+apps/intelligence/test_evidence_labels.py:118:        ("archive_member/1.0", {"archive_path": "materials/pack.zip",
+apps/intelligence/test_evidence_labels.py:120:        ("source_file/1.0", {"path": "materials/secret/place.ai"}),
+apps/intelligence/test_evidence_labels.py:128:        assert "materials/" not in label and "var/" not in label
+apps/intelligence/test_evidence_labels.py:154:        locator={"page": 2, "unit_key": "materials/leaked/path.ai"},
+apps/intelligence/test_evidence_labels.py:219:    # separately renders a root-relative `repository:materials/…` location by design, so
+apps/intelligence/test_evidence_labels.py:222:        assert "materials/" not in label and "/Users/" not in label
+apps/intelligence/semantic_document_v12.py:117:    "BACKGROUND": "background texture or backdrop",
+apps/ire/vq2_artwork.py:94:    return np.asarray(Image.open(path).convert("RGB")).astype(float)
+apps/intelligence/semantic_document.py:299:    `materials/DOWNLOADE 2026/DOWNLOADS 12-2025/9993170.ai`), so it cannot be trusted as
+apps/intelligence/semantic_document.py:396:    ".ai", ".eps", ".pdf", ".psd", ".svg", ".png", ".jpg", ".jpeg", ".tif", ".tiff",
+apps/intelligence/semantic_document.py:405:# the boundary set includes ':' so an embedded key like "asset:materials/x.ai" is
+apps/intelligence/semantic_document.py:409:# a bare filename like "9993170.ai" or "logo.psd": token + source extension, no spaces
+apps/intelligence/semantic_document.py:417:    embeds the real source root is caught even if it is not literally 'materials/'."""
+apps/intelligence/semantic_document.py:421:        for name in ("DIP_SOURCE_ROOT", "SOURCE_ROOT", "MATERIALS_ROOT", "BASE_DIR"):
+apps/ire/compose.py:163:    with PILImage.open(motif_path) as im:
+apps/ire/compose.py:217:    with PILImage.open(motif_path) as im:
+apps/ire/compose.py:248:    with PILImage.open(logo_path) as im:
+apps/ire/container_font_evidence_join.py:17:("yields nothing today": 3,966 rows, all under ``materials/``, NO MATCH) was true
+apps/pipeline/services/blender_scripts/powder_materials.py:30:Every texture is seeded through the 4D W channel from the spec's
+apps/pipeline/services/blender_scripts/powder_materials.py:204:    comp = _noise(nt, vec, scale_mm=p["compression_texture"]["scale_mm"],
+apps/pipeline/services/blender_scripts/powder_materials.py:210:                         p["compression_texture"]["strength"]
+apps/pipeline/services/blender_scripts/powder_materials.py:224:                   scale_mm=p["macrotexture"]["scale_mm"],
+apps/pipeline/services/blender_scripts/powder_materials.py:225:                   strength=p["macrotexture"]["strength"],
+apps/pipeline/services/blender_scripts/powder_materials.py:262:                   scale_mm=p["macrotexture"]["scale_mm"],
+apps/pipeline/services/blender_scripts/powder_materials.py:263:                   strength=p["macrotexture"]["strength"]
+apps/pipeline/services/blender_scripts/powder_materials.py:292:                   scale_mm=spec["params"]["macrotexture"]["scale_mm"],
+apps/pipeline/services/blender_scripts/powder_materials.py:293:                   strength=spec["params"]["macrotexture"]["strength"],
+apps/pipeline/services/blender_scripts/powder_materials.py:324:                   scale_mm=spec["params"]["macrotexture"]["scale_mm"],
+apps/pipeline/services/blender_scripts/powder_materials.py:325:                   strength=spec["params"]["macrotexture"]["strength"],
+apps/pipeline/services/blender_scripts/powder_materials.py:341:                   p["crust"]["baked_microtexture_strength"],
+apps/pipeline/services/blender_scripts/powder_materials.py:349:                   scale_mm=p["macrotexture"]["scale_mm"],
+apps/pipeline/services/blender_scripts/powder_materials.py:350:                   strength=p["macrotexture"]["strength"],
+apps/pipeline/services/blender_scripts/powder_materials.py:415:                   scale_mm=spec["params"]["microtexture"]["scale_mm"],
+apps/pipeline/services/blender_scripts/powder_materials.py:421:              spec["params"]["microtexture"]["strength"]
+apps/pipeline/services/blender_scripts/powder_materials.py:422:              * sh["microtexture_strength_factor"],
+apps/pipeline/services/blender_scripts/powder_materials.py:423:              scale_mm=spec["params"]["microtexture"]["scale_mm"],
+apps/pipeline/services/blender_scripts/powder_materials.py:440:                   scale_mm=cpt["compression_texture_scale_mm"],
+apps/pipeline/services/blender_scripts/powder_materials.py:445:                   cpt["compression_texture_amplitude"],
+apps/pipeline/services/blender_scripts/powder_materials.py:446:                   scale_mm=cpt["compression_texture_scale_mm"],
+apps/pipeline/services/blender_scripts/powder_materials.py:479:                   scale_mm=p["macrotexture"]["scale_mm"],
+apps/pipeline/services/blender_scripts/powder_materials.py:480:                   strength=p["macrotexture"]["strength"]
+apps/intelligence/test_semantic_builders.py:100:    assert "materials/" not in blob and "/Users/" not in blob
+apps/intelligence/test_semantic_builders.py:143:    assert "materials/" not in blob and "/Users/" not in blob
+apps/ire/design_language.py:513:              "engraved", "texture", "gradient"),
+apps/intelligence/test_metadata_conflict_resolution.py:326:    for bad in ({"search_synonyms": ["materials/secret/design.ai"]},
+apps/ire/compose_vector_art.py:431:    with PILImage.open(logo_path) as im:
+apps/core/management/commands/import_design_references.py:120:                with Image.open(out_png) as im:
+apps/ire/container_brand_usage.py:263:        with _PILImage.open(path) as im:
+apps/ire/container_motif.py:66:    ("MICRO_PATTERN", ("micro", "tiny", "fine pattern", "allover", "texture")),
+apps/ire/vq1_close1.py:743:    im = Image.open(src_png)
+apps/ire/container_logo_metrics.py:67:        with _PILImage.open(path) as im:
+apps/ire/vq1_reset2.py:231:        "reference_image": image_id, "crops": list(crops),
+apps/ire/nodes.py:50:        with _PILImage.open(src) as im:
+apps/accounts/authz_policy.py:5:no Django, no database, no filesystem, no `materials/`, no audit tooling. That is a hard
+apps/ire/emitters/pdf_ai.py:540:    c.drawImage(ImageReader(node.src), ctx.X(node.x), ctx.Y(node.y + node.h),
+apps/intelligence/test_semantic_document.py:39:    assert "/Users/" not in blob and "materials/" not in blob
+apps/intelligence/semantic_benchmark.py:141:    _q("Q14", "background texture", ASSET_METADATA,
+apps/dielines/exporters/physical_test_pdf.py:171:         "representative stock", size=7, gap=3.2)
+apps/dielines/exporters/production_pdf.py:307:    motif = ImageReader(motif_path) if motif_path else None
+apps/dielines/exporters/production_pdf.py:308:    art = ImageReader(artwork_path) if artwork_path else None
+apps/dielines/exporters/production_pdf.py:336:        c.drawImage(img, ox, oy, width=dw, height=dh,
+apps/intelligence/curated_expansion.py:45:    ("DOWNLOADS 12-2025/floral-print-seamless-texture/172.eps", "PATTERN"),
+apps/intelligence/curated_expansion.py:47:    ("DOWNLOADS 12-2025/geometric-seamless-texture/td4-s-inv-14.eps", "PATTERN"),
+apps/intelligence/curated_expansion.py:66:    ("DOWNLOADS 12-2025/seamless-decorative-background-decorative-lacy-element-texture-design/pale_geom.eps", "PATTERN"),
+apps/intelligence/curated_expansion.py:111:            f"materials/historical AI production designs/{filename}")
+apps/intelligence/curated_expansion.py:136:        relative = normalize_relative_path(f"materials/DOWNLOADE 2026/{suffix}")
+apps/dielines/exporters/design_preview.py:137:        with Image.open(motif_path) as im:
+apps/dielines/exporters/design_preview.py:319:    img = ImageReader(motif_path)
+apps/dielines/exporters/design_preview.py:325:    seg_readers = ([(ImageReader(s.image), s) for s in segments]
+apps/dielines/exporters/design_preview.py:340:                c.drawImage(reader, sx, sy,
+apps/dielines/exporters/design_preview.py:344:            c.drawImage(img, ox, oy, width=dw, height=dh,
+apps/dielines/exporters/design_preview.py:374:        c.drawImage(img, ox, oy, width=dw, height=dh,
+apps/dielines/exporters/design_preview.py:380:        logo = ImageReader(logo_path)
+apps/dielines/exporters/design_preview.py:387:            c.drawImage(logo, lx, ly, width=span, height=h,
+apps/dielines/exporters/design_preview.py:485:    img = ImageReader(artwork_path)
+apps/dielines/exporters/design_preview.py:495:        motif = ImageReader(motif_path)
+apps/dielines/exporters/design_preview.py:516:            c.drawImage(motif, ox, oy, width=dw, height=dh,
+apps/dielines/exporters/design_preview.py:537:        c.drawImage(img, ox, oy, width=dw, height=dh,
+apps/dielines/management/commands/check_icc_profile.py:12:condition, board stock, coating, press standard and ink limit. Those are
+apps/dielines/management/commands/check_icc_profile.py:72:            "     board stock, coating, press standard and ink limit — this\n"
+apps/intelligence/test_review_packet.py:69:        observed_location="/Users/secret/materials/private.ai",   # absolute — must not leak
+apps/ire/vq1_close1_package.py:38:    with PILImage.open(path) as im:
+apps/ire/vq1_close1_package.py:93:            im = Image.open(p).convert("RGB")
+apps/ire/vq1_close1_package.py:113:        img.paste(t, (cx, cy))
+apps/ire/pdf_raster.py:147:    with Image.open(tmp) as im:
+apps/ire/materials_owner_grant.py:55:        "evidence_path": "materials/17-10-2024/pile-online-shopping-package-mockups/License free.txt",
+apps/ire/materials_owner_grant.py:59:            # materials/17-10-2024/pile-online-shopping-package-mockups/65757.jpg
+apps/ire/materials_owner_grant.py:61:            # materials/17-10-2024/pile-online-shopping-package-mockups/65757.psd
+apps/ire/materials_owner_grant.py:63:            # materials/17-10-2024/pile-online-shopping-package-mockups/License premium.txt
+apps/ire/materials_owner_grant.py:65:            # materials/17-10-2024/pile-online-shopping-package-mockups/License free.txt
+apps/ire/materials_owner_grant.py:70:            "materials/17-10-2024/pile-online-shopping-package-mockups/65757.jpg",
+apps/ire/materials_owner_grant.py:71:            "materials/17-10-2024/pile-online-shopping-package-mockups/65757.psd",
+apps/ire/materials_owner_grant.py:72:            "materials/17-10-2024/pile-online-shopping-package-mockups/License premium.txt",
+apps/ire/materials_owner_grant.py:73:            "materials/17-10-2024/pile-online-shopping-package-mockups/License free.txt",
+apps/ire/materials_owner_grant.py:82:        "evidence_path": "materials/ALL..MOCKUP/27-4-2024/baloo/SIL Open Font License.txt",
+apps/ire/materials_owner_grant.py:86:            # materials/ALL..MOCKUP/27-4-2024/baloo/SIL Open Font License.txt
+apps/ire/materials_owner_grant.py:91:            "materials/ALL..MOCKUP/27-4-2024/baloo/SIL Open Font License.txt",
+apps/ire/materials_owner_grant.py:100:        "evidence_path": "materials/ALL..MOCKUP/27-4-2024/delicious-summer-fruits/License free.txt",
+apps/ire/materials_owner_grant.py:104:            # materials/ALL..MOCKUP/27-4-2024/delicious-summer-fruits/116297-OPHTK5-790.eps
+apps/ire/materials_owner_grant.py:106:            # materials/ALL..MOCKUP/27-4-2024/delicious-summer-fruits/116297-OPHTK7-614.jpg
+apps/ire/materials_owner_grant.py:108:            # materials/ALL..MOCKUP/27-4-2024/delicious-summer-fruits/License premium.txt
+apps/ire/materials_owner_grant.py:110:            # materials/ALL..MOCKUP/27-4-2024/delicious-summer-fruits/License free.txt
+apps/ire/materials_owner_grant.py:112:            # materials/ALL..MOCKUP/27-4-2024/delicious-summer-fruits/116297-OPHTKC-8.ai
+apps/ire/materials_owner_grant.py:117:            "materials/ALL..MOCKUP/27-4-2024/delicious-summer-fruits/116297-OPHTK5-790.eps",
+apps/ire/materials_owner_grant.py:118:            "materials/ALL..MOCKUP/27-4-2024/delicious-summer-fruits/116297-OPHTK7-614.jpg",
+apps/ire/materials_owner_grant.py:119:            "materials/ALL..MOCKUP/27-4-2024/delicious-summer-fruits/License premium.txt",
+apps/ire/materials_owner_grant.py:120:            "materials/ALL..MOCKUP/27-4-2024/delicious-summer-fruits/License free.txt",
+apps/ire/materials_owner_grant.py:121:            "materials/ALL..MOCKUP/27-4-2024/delicious-summer-fruits/116297-OPHTKC-8.ai",
+apps/ire/materials_owner_grant.py:130:        "evidence_path": "materials/ALL..MOCKUP/27-4-2024/fonts bold/codex/codex.txt",
+apps/ire/materials_owner_grant.py:134:            # materials/ALL..MOCKUP/27-4-2024/fonts bold/codex/codex.txt
+apps/ire/materials_owner_grant.py:139:            "materials/ALL..MOCKUP/27-4-2024/fonts bold/codex/codex.txt",
+apps/ire/materials_owner_grant.py:148:        "evidence_path": "materials/ALL..MOCKUP/27-4-2024/fonts bold/coolvetica/Typodermic Desktop EULA 2023.pdf",
+apps/ire/materials_owner_grant.py:152:            # materials/ALL..MOCKUP/27-4-2024/fonts bold/coolvetica/Typodermic Desktop EULA 2023.pdf
+apps/ire/materials_owner_grant.py:154:            # materials/ALL..MOCKUP/27-4-2024/fonts bold/coolvetica/read-this.html
+apps/ire/materials_owner_grant.py:159:            "materials/ALL..MOCKUP/27-4-2024/fonts bold/coolvetica/Typodermic Desktop EULA 2023.pdf",
+apps/ire/materials_owner_grant.py:160:            "materials/ALL..MOCKUP/27-4-2024/fonts bold/coolvetica/read-this.html",
+apps/ire/materials_owner_grant.py:169:        "evidence_path": "materials/ALL..MOCKUP/27-4-2024/green-packaging-cosmetic-products(2)/License free.txt",
+apps/ire/materials_owner_grant.py:173:            # materials/ALL..MOCKUP/27-4-2024/green-packaging-cosmetic-products(2)/License premium.txt
+apps/ire/materials_owner_grant.py:175:            # materials/ALL..MOCKUP/27-4-2024/green-packaging-cosmetic-products(2)/License free.txt
+apps/ire/materials_owner_grant.py:177:            # materials/ALL..MOCKUP/27-4-2024/green-packaging-cosmetic-products(2)/2512866.psd
+apps/ire/materials_owner_grant.py:179:            # materials/ALL..MOCKUP/27-4-2024/green-packaging-cosmetic-products(2)/2512865.jpg
+apps/ire/materials_owner_grant.py:184:            "materials/ALL..MOCKUP/27-4-2024/green-packaging-cosmetic-products(2)/License premium.txt",
+apps/ire/materials_owner_grant.py:185:            "materials/ALL..MOCKUP/27-4-2024/green-packaging-cosmetic-products(2)/License free.txt",
+apps/ire/materials_owner_grant.py:186:            "materials/ALL..MOCKUP/27-4-2024/green-packaging-cosmetic-products(2)/2512866.psd",
+apps/ire/materials_owner_grant.py:187:            "materials/ALL..MOCKUP/27-4-2024/green-packaging-cosmetic-products(2)/2512865.jpg",
+apps/ire/materials_owner_grant.py:196:        "evidence_path": "materials/ALL..MOCKUP/27-4-2024/logo-mockup-luxury-box/License free.txt",
+apps/ire/materials_owner_grant.py:200:            # materials/ALL..MOCKUP/27-4-2024/logo-mockup-luxury-box/License premium.txt
+apps/ire/materials_owner_grant.py:202:            # materials/ALL..MOCKUP/27-4-2024/logo-mockup-luxury-box/License free.txt
+apps/ire/materials_owner_grant.py:204:            # materials/ALL..MOCKUP/27-4-2024/logo-mockup-luxury-box/130.psd
+apps/ire/materials_owner_grant.py:206:            # materials/ALL..MOCKUP/27-4-2024/logo-mockup-luxury-box/130.jpg
+apps/ire/materials_owner_grant.py:211:            "materials/ALL..MOCKUP/27-4-2024/logo-mockup-luxury-box/License premium.txt",
+apps/ire/materials_owner_grant.py:212:            "materials/ALL..MOCKUP/27-4-2024/logo-mockup-luxury-box/License free.txt",
+apps/ire/materials_owner_grant.py:213:            "materials/ALL..MOCKUP/27-4-2024/logo-mockup-luxury-box/130.psd",
+apps/ire/materials_owner_grant.py:214:            "materials/ALL..MOCKUP/27-4-2024/logo-mockup-luxury-box/130.jpg",
+apps/ire/materials_owner_grant.py:223:        "evidence_path": "materials/ALL..MOCKUP/عبوات مواد تجميل/cosmetics-package-realistic-transparent-set/License free.txt",
+apps/ire/materials_owner_grant.py:227:            # materials/ALL..MOCKUP/عبوات مواد تجميل/cosmetics-package-realistic-transparent-set/18207.eps
+apps/ire/materials_owner_grant.py:229:            # materials/ALL..MOCKUP/عبوات مواد تجميل/cosmetics-package-realistic-transparent-set/License premium.txt
+apps/ire/materials_owner_grant.py:231:            # materials/ALL..MOCKUP/عبوات مواد تجميل/cosmetics-package-realistic-transparent-set/License free.txt
+apps/ire/materials_owner_grant.py:233:            # materials/ALL..MOCKUP/عبوات مواد تجميل/cosmetics-package-realistic-transparent-set/18207.jpg
+apps/ire/materials_owner_grant.py:238:            "materials/ALL..MOCKUP/عبوات مواد تجميل/cosmetics-package-realistic-transparent-set/18207.eps",
+apps/ire/materials_owner_grant.py:239:            "materials/ALL..MOCKUP/عبوات مواد تجميل/cosmetics-package-realistic-transparent-set/License premium.txt",
+apps/ire/materials_owner_grant.py:240:            "materials/ALL..MOCKUP/عبوات مواد تجميل/cosmetics-package-realistic-transparent-set/License free.txt",
+apps/ire/materials_owner_grant.py:241:            "materials/ALL..MOCKUP/عبوات مواد تجميل/cosmetics-package-realistic-transparent-set/18207.jpg",
+apps/ire/materials_owner_grant.py:250:        "evidence_path": "materials/ALL..MOCKUP/عبوات مواد تجميل/makeup-realistic-items-super-set-with-mascara-powder-isolated-vector-illustration/License free.txt",
+apps/ire/materials_owner_grant.py:254:            # materials/ALL..MOCKUP/عبوات مواد تجميل/makeup-realistic-items-super-set-with-mascara-powder-isolated-vector-illustration/16260.eps
+apps/ire/materials_owner_grant.py:256:            # materials/ALL..MOCKUP/عبوات مواد تجميل/makeup-realistic-items-super-set-with-mascara-powder-isolated-vector-illustration/License premium.txt
+apps/ire/materials_owner_grant.py:258:            # materials/ALL..MOCKUP/عبوات مواد تجميل/makeup-realistic-items-super-set-with-mascara-powder-isolated-vector-illustration/License free.txt
+apps/ire/materials_owner_grant.py:260:            # materials/ALL..MOCKUP/عبوات مواد تجميل/makeup-realistic-items-super-set-with-mascara-powder-isolated-vector-illustration/16260.jpg
+apps/ire/materials_owner_grant.py:265:            "materials/ALL..MOCKUP/عبوات مواد تجميل/makeup-realistic-items-super-set-with-mascara-powder-isolated-vector-illustration/16260.eps",
+apps/ire/materials_owner_grant.py:266:            "materials/ALL..MOCKUP/عبوات مواد تجميل/makeup-realistic-items-super-set-with-mascara-powder-isolated-vector-illustration/License premium.txt",
+apps/ire/materials_owner_grant.py:267:            "materials/ALL..MOCKUP/عبوات مواد تجميل/makeup-realistic-items-super-set-with-mascara-powder-isolated-vector-illustration/License free.txt",
+apps/ire/materials_owner_grant.py:268:            "materials/ALL..MOCKUP/عبوات مواد تجميل/makeup-realistic-items-super-set-with-mascara-powder-isolated-vector-illustration/16260.jpg",
+apps/ire/materials_owner_grant.py:277:        "evidence_path": "materials/ALL..MOCKUP/عبوات مواد تجميل/nail-polish/License free.txt",
+apps/ire/materials_owner_grant.py:281:            # materials/ALL..MOCKUP/عبوات مواد تجميل/nail-polish/7077.eps
+apps/ire/materials_owner_grant.py:283:            # materials/ALL..MOCKUP/عبوات مواد تجميل/nail-polish/License premium.txt
+apps/ire/materials_owner_grant.py:285:            # materials/ALL..MOCKUP/عبوات مواد تجميل/nail-polish/License free.txt
+apps/ire/materials_owner_grant.py:287:            # materials/ALL..MOCKUP/عبوات مواد تجميل/nail-polish/7077.jpg
+apps/ire/materials_owner_grant.py:292:            "materials/ALL..MOCKUP/عبوات مواد تجميل/nail-polish/7077.eps",
+apps/ire/materials_owner_grant.py:293:            "materials/ALL..MOCKUP/عبوات مواد تجميل/nail-polish/License premium.txt",
+apps/ire/materials_owner_grant.py:294:            "materials/ALL..MOCKUP/عبوات مواد تجميل/nail-polish/License free.txt",
+apps/ire/materials_owner_grant.py:295:            "materials/ALL..MOCKUP/عبوات مواد تجميل/nail-polish/7077.jpg",
+apps/ire/vq2_vectorize.py:41:    im = Image.open(path)
+apps/dielines/exporters/mockup_3d.py:1:"""Preview-grade folded-carton mockup (DIP-2A-5-DIE-5).
+apps/dielines/exporters/mockup_3d.py:26:def export_folded_mockup(
+apps/dielines/exporters/mockup_3d.py:30:    """Write an isometric folded mockup PNG; returns the path or None."""
+apps/dielines/exporters/mockup_3d.py:35:        logger.warning("3D mockup skipped: PIL/numpy unavailable")
+apps/dielines/exporters/mockup_3d.py:41:        flat = Image.open(design_png_path).convert("RGB")
+apps/dielines/exporters/mockup_3d.py:123:        out.paste(warped, (0, 0), mask)
+apps/dielines/exporters/mockup_3d.py:134:    background.paste(out, (0, 0), out)
+apps/dielines/exporters/mockup_3d.py:139:__all__ = ["export_folded_mockup"]
+apps/dielines/services/provisional_preview.py:13:    7. provisional 3D folded mockup (PNG, structural faces)
+apps/dielines/services/provisional_preview.py:214:    # 7. provisional 3D folded mockup ---------------------------------------
+apps/dielines/services/provisional_preview.py:215:    mock_path = os.path.join(out_dir_s, f"{stem}_3d_mockup.png")
+apps/dielines/services/provisional_preview.py:217:        from apps.dielines.exporters.mockup_3d import export_folded_mockup
+apps/dielines/services/provisional_preview.py:219:        result = (export_folded_mockup(coords, source_png, mock_path)
+apps/dielines/services/provisional_preview.py:222:            manifest["artifacts"]["mockup_3d"] = result
+apps/dielines/services/provisional_preview.py:224:            manifest["artifacts"]["mockup_3d_error"] = (
+apps/dielines/services/provisional_preview.py:225:                "mockup renderer returned nothing (diagnostic only)")
+apps/dielines/services/provisional_preview.py:226:    except Exception as exc:  # noqa: BLE001 — mockup is diagnostic
+apps/dielines/services/provisional_preview.py:227:        manifest["artifacts"]["mockup_3d_error"] = str(exc)

@@ -1,0 +1,116 @@
+§BH32(e) HARD STOP — A CENSUS-UNPREDICTED PIN CLASS FIRED ON THE LAYER'S
+BROAD SWEEP (before any seal, add or gate)
+Reported 2026-09-04, repo at HEAD 41604ac ((d)(ii)). The (e) wiring is
+APPLIED in the worktree and UNCOMMITTED; nothing staged; no gate launched
+for (e); the (f) draft ready and unapplied.
+
+THE RULE, §BH32 ORDER (owner's words): "census-first for every pin class
+now known (records, identity, WIT denominator, corpus constants) before
+each apps commit" and HARD STOPS: "a census-unpredicted pin class".
+
+WHAT FIRED. The layer, wired at the eight points exactly as ruled — "The
+theme is the default for every emitter" — was swept over the IRE, dielines
+and pipeline suites before sealing. The census I took (records, identity,
+WIT denominator + its register keys, corpus constants, suite manifest) all
+HELD. What fired is a class none of those names:
+
+  CLASS A — TYPOGRAPHY EVIDENCE PINNED TO THE NOTO PAIR'S METRICS.
+  70 tests in 9 files under apps/ire/tests (the WI series:
+  test_wiu_front_collision, test_wiy_leading_metric_floor,
+  test_wiv_leading_comparison, test_wi2a_split_packer,
+  test_wio_on_pack_copy, test_wik_back_panel_floor, test_wiw_line_ledger,
+  test_container_typography_metrics, test_container_composition_metrics).
+  These files carry OWNER RULINGS as measured numbers — §AB2 "9.0 pt is the
+  correct product-name size … fix the collision by moving the support line,
+  not by shrinking the name" asserted against "numbers read from the
+  pre-WI-U artefact"; §AC1 "the number it must clear is 1.362 em … the
+  setting is 2.0 em" with an ink-clearance control of "0.734953 mm — the
+  face's descender depth"; the WI-W line ledger and the WI-2A split packer
+  ("the sections are no longer the heights this evidence was taken at").
+  Every one was taken with NotoSans-Regular / NotoSans-Bold advancing the
+  text. With the theme's Poppins faces advancing it, line counts, break
+  positions, heights and clearances all move (e.g. 39 split points where the
+  evidence says 36; 28/51/131.0 where the ledger says 26/48/128.46). To
+  re-pin them is to re-measure the owner's typography rulings under
+  different faces — not a rounding, and not mine to do.
+
+  CLASS B — THE 2A-6E CONFIRMED CONCEPT FACE OUTSIDE THE CATALOGUE.
+  3 tests in test_phase2a7_golden_baseline, test_activation_smoke,
+  test_activation_defects, test_selected_concept_fidelity: the Phase 2A-7
+  golden baselines expect the task's confirmed concept face
+  (BarlowCondensed-Bold, a materials/ file outside the 35 + the Noto trio)
+  to reach the emitter as live text. §BH32(e) says the layer may reach
+  "nothing else", so the layer refuses it and the display role resolves to
+  Poppins-Light. The golden baselines pin the old contract.
+
+  CLASS C — WHAT PRODUCTION REPORTS BENEATH A VOID GRANT (§BH26(b) proofs).
+  6 tests in test_wif_reconstruct_container and
+  test_container_font_owner_grant: §BH26's proofs are anchored to the
+  harness document resolving to the Noto pair — "the grant confers on
+  exactly the two named faces", "beneath a void grant the join column is
+  what production reports". Under the layer the harness document resolves
+  to Poppins and a void candidate is SKIPPED for the next verified one
+  (nothing renders that the record does not verify), so the pair is reached
+  only as the last fallback and a void grant no longer shows a
+  LICENCE_REVIEW_REQUIRED face — it shows the next verified face. The
+  channel's fail-closed behaviour is unchanged and its explicit-record
+  tests pass; the PRODUCTION-CALL-SITE proofs pin the pre-layer contract.
+
+  CONSEQUENCE D — THE REGULATORY STICKER'S FIT (1 test, test_compose):
+  with the theme's body face (Poppins-Regular) advancing the sticker copy,
+  the auto-fit reaches its size floor sooner and TRUNCATES by priority —
+  the Spanish warnings line "Solo para uso externo" is dropped at the test
+  panel size. A regulatory line lost to a face change is a finding for the
+  owner, not a test to relax.
+
+DEFECTS OF MINE, FOUND BY THE SAME SWEEP AND REPAIRED BEFORE THIS REPORT:
+  - the layer's lock was not re-entrant (theme resolution held it while the
+    catalogue took it again) — the first two sweeps hung; RLock now;
+  - the emitter's sticker bridge read the legacy `regular`/`bold` keys,
+    absent on a graph without such runs — the theme's legacy keys are now
+    always present and the document's own resolution overrides them;
+  - the preview caption read a local the branch never bound — resolved on
+    the spot now;
+  - my own (d)(ii) tests pinned the pre-layer record shape — updated
+    (an Arabic product name is a display run: arabic-display, Cairo-Bold).
+  Also MEASURED, recorded, not repaired: the EAN-13 widget draws its
+  human-readable digits in built-in Helvetica (reportlab's barcode) — a
+  ninth choice point the §BH31 census did not list — and reportlab
+  declares Times-Roman as the canvas default without drawing a glyph. The
+  (f) draft counts the widget's Helvetica as what it is and flags it
+  `outside_layer` by name so counter and artefact agree.
+
+THE SWEEP AS IT STANDS (final census after the repairs): 80 failed, 6721 passed, 4 skipped, 491 warnings, 41596 subtests passed in 608.43s (0:10:08) — 80 failures: class A 70 (wiu 19, wiy 18, wiv 11, wi2a 9, wio 6, wik 3, wiw 2, typography_metrics 1, composition_metrics 1); class B 3 (phase2a7 golden 2, selected_concept_fidelity 1); class C 6 (owner_grant 4, wif 2); consequence D 1 (test_compose). Log: ~/bh32_work/layer_broad_tests2.log
+
+OPTIONS FOR THE OWNER'S WORD (presented, not chosen):
+(1) RULE THE RE-MEASUREMENT: the WI typography evidence (class A) is
+    re-taken under the theme faces in its own commit(s), each number
+    re-read from the new artefacts with the same discipline the files
+    describe — the §AB2 / §AC1 rulings restated for the theme by the owner
+    where a number is a ruling (9.0 pt; 1.362 em; 2.0 em), measured where
+    it is a measurement. (e) lands after that, green.
+(2) RULE THE SCOPE NARROWER: the theme is the default for the CONTAINER
+    emitter's role runs, but the surfaces those rulings govern (the front
+    product-name block, support lines, the back-panel ledger, the sticker)
+    keep the faces they were measured with until re-ruled — a per-surface
+    exception list, one ruled line per surface. Smaller blast radius; the
+    theme reaches fewer runs.
+(3) RULE CLASSES B AND C: the confirmed-concept-face contract (2A-6E) is
+    superseded by the layer (golden baselines re-pinned to the theme face,
+    or the concept face admitted into the catalogue by its own grant); the
+    §BH26 production-call-site proofs re-anchored to explicit pair records
+    (the channel proofs already pass on explicit records).
+(4) RULE D: the sticker keeps the Noto trio (the proposal's W5 alternative),
+    or a narrower caption face is ruled, or the dropped line is accepted.
+(5) Anything else the owner words.
+
+FROZEN STATE. HEAD 41604ac. Worktree: the (e) wiring at all eight points
+(14 paths: 13 M + font_roles.py A) UNSTAGED and UNCOMMITTED; no gate
+launched for (e); pred_layer.txt drafted, NOT sealed; the (f) draft
+(apply_usage.py, usage_tests.py) ready and unapplied. Protected regions
+byte-identical (GATE 7fbeb8f1fe10b0fb at [514:541], TEST
+b32030dc827263e4); tree seals unchanged; the eight M7 artefacts ==
+baseline; WIT denominator 863 with its register keys unmoved; corpus
+constants, records, identity untouched. (c) SPENT (9243244); (d)(i)
+43d801d and (d)(ii) 41604ac landed 8/8. Nothing further happens in the
+repo until the owner rules.

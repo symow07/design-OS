@@ -1,0 +1,118 @@
+{
+  "_README": "BLANK permission grant. ONE flag per event \u2014 there are no implicit bundles. Canonical status grants nothing; ownership grants nothing. A permission becomes true ONLY here.",
+  "event_type": "PERMISSION_GRANTED",
+  "asset": null,
+  "actor_id": null,
+  "actor_role": "GRANT_PERMISSION roles, or LEGAL_REVIEWER for a legal permission",
+  "occurred_at": "ISO-8601 UTC",
+  "decision_reason": "REQUIRED",
+  "evidence_refs": [
+    "evidence_id of at least one REVIEWED_ACCEPTED record"
+  ],
+  "permission": {
+    "flag": "exactly ONE of: retrieval_allowed, automatic_use_allowed, production_use_allowed, modification_allowed, embedding_allowed, redistribution_allowed, public_export_allowed, approved_for_bbrose, approved_for_other_brands",
+    "previous_value": false,
+    "requested_value": true,
+    "purpose": "REQUIRED for purpose-bound flags",
+    "approved_brands": [],
+    "approved_products": [],
+    "approved_markets": [],
+    "attribution_required": null,
+    "validity_start": null,
+    "review_expiry": "ISO-8601 \u2014 after this instant the permission is DENIED, with or without an audit event having been generated",
+    "ownership_decision_ref": "event_id of the ownership decision relied on",
+    "license_decision_ref": "event_id of the licence decision relied on"
+  },
+  "_prerequisites": {
+    "retrieval_allowed": {
+      "requires_ownership": [
+        "BBROSE_OWNED_CONFIRMED",
+        "LICENSED_FOR_LIMITED_USE",
+        "JOINT_OR_CONTRACTED_USE",
+        "THIRD_PARTY_CONFIRMED"
+      ],
+      "requires_license": "none required",
+      "legal_reviewer_only": false
+    },
+    "automatic_use_allowed": {
+      "requires_ownership": [
+        "BBROSE_OWNED_CONFIRMED",
+        "LICENSED_FOR_LIMITED_USE",
+        "JOINT_OR_CONTRACTED_USE"
+      ],
+      "requires_license": [
+        "LICENSE_APPROVED",
+        "INTERNAL_USE_ONLY"
+      ],
+      "legal_reviewer_only": false
+    },
+    "production_use_allowed": {
+      "requires_ownership": [
+        "BBROSE_OWNED_CONFIRMED",
+        "LICENSED_FOR_LIMITED_USE",
+        "JOINT_OR_CONTRACTED_USE"
+      ],
+      "requires_license": [
+        "LICENSE_APPROVED"
+      ],
+      "legal_reviewer_only": false
+    },
+    "modification_allowed": {
+      "requires_ownership": [
+        "BBROSE_OWNED_CONFIRMED",
+        "LICENSED_FOR_LIMITED_USE"
+      ],
+      "requires_license": [
+        "LICENSE_APPROVED",
+        "INTERNAL_USE_ONLY"
+      ],
+      "legal_reviewer_only": false
+    },
+    "embedding_allowed": {
+      "requires_ownership": [
+        "BBROSE_OWNED_CONFIRMED",
+        "LICENSED_FOR_LIMITED_USE"
+      ],
+      "requires_license": [
+        "LICENSE_APPROVED"
+      ],
+      "legal_reviewer_only": false
+    },
+    "redistribution_allowed": {
+      "requires_ownership": [
+        "BBROSE_OWNED_CONFIRMED"
+      ],
+      "requires_license": [
+        "LICENSE_APPROVED"
+      ],
+      "legal_reviewer_only": true
+    },
+    "public_export_allowed": {
+      "requires_ownership": [
+        "BBROSE_OWNED_CONFIRMED"
+      ],
+      "requires_license": [
+        "LICENSE_APPROVED"
+      ],
+      "legal_reviewer_only": true
+    },
+    "approved_for_bbrose": {
+      "requires_ownership": [
+        "BBROSE_OWNED_CONFIRMED",
+        "LICENSED_FOR_LIMITED_USE",
+        "JOINT_OR_CONTRACTED_USE"
+      ],
+      "requires_license": "none required",
+      "legal_reviewer_only": false
+    },
+    "approved_for_other_brands": {
+      "requires_ownership": [
+        "BBROSE_OWNED_CONFIRMED"
+      ],
+      "requires_license": [
+        "LICENSE_APPROVED"
+      ],
+      "legal_reviewer_only": true
+    }
+  }
+}

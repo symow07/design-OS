@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% comment %}Signing in, in the one shell (the owner's goal of 2026-09-25: one visual system everywhere). The form posts to
+the same door it always did.{% endcomment %}
+{% block title %}Sign in{% endblock %}
+{% block content %}
+<div class="signin">
+  <h1 class="h1">BBROSE Design OS</h1>
+  <p class="lead">Sign in to your design workspace.</p>
+  {% if form.non_field_errors %}
+  <div class="errors">{% for error in form.non_field_errors %}<p>{{ error }}</p>{% endfor %}</div>
+  {% endif %}
+  <form method="post" action="{% url 'accounts:login' %}">
+    {% csrf_token %}
+    <label for="id_username">Username</label>
+    <input type="text" name="username" id="id_username" autofocus autocomplete="username" required>
+    <label for="id_password">Password</label>
+    <input type="password" name="password" id="id_password" autocomplete="current-password" required>
+    <input type="hidden" name="next" value="{{ next }}">
+    <button class="btn primary lg" type="submit">Sign in</button>
+  </form>
+</div>
+{% endblock %}

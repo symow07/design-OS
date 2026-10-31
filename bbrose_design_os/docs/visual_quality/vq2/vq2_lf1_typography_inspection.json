@@ -1,0 +1,423 @@
+{
+ "record_type": "vq2_lf1_typography_inspection/1.0",
+ "created_at": "2026-07-29",
+ "preflight": {
+  "checked_at": "2026-07-29",
+  "checks": {
+   "lf1_r1_hash": {
+    "expected": "fcd8003994d52028",
+    "actual": "fcd8003994d52028",
+    "pass": true
+   },
+   "prompt_a_hash": {
+    "expected": "589d9d142150bb6f",
+    "actual": "589d9d142150bb6f",
+    "hashed_input": "inspector identity string",
+    "pass": true
+   },
+   "prompt_b_hash": {
+    "expected": "f7cd3805fd161d81",
+    "actual": "f7cd3805fd161d81",
+    "hashed_input": "inspector identity string",
+    "pass": true
+   },
+   "five_input_images": {
+    "reference_product_name_crop": {
+     "expected": "a381ead75b5afb4a",
+     "actual": "a381ead75b5afb4a",
+     "pass": true
+    },
+    "reference_enlarged_x8": {
+     "expected": "d5fc167c225204ec",
+     "actual": "d5fc167c225204ec",
+     "pass": true
+    },
+    "lf1_r1_words": {
+     "expected": "0a97c0d1bc2d7f9f",
+     "actual": "0a97c0d1bc2d7f9f",
+     "pass": true
+    },
+    "lf1_r1_glyph_panel": {
+     "expected": "3deba66ce7288e01",
+     "actual": "3deba66ce7288e01",
+     "pass": true
+    },
+    "approved_logo": {
+     "expected": "c321c1bea4c69e27",
+     "actual": "c321c1bea4c69e27",
+     "pass": true
+    }
+   },
+   "input_image_count": {
+    "expected": 5,
+    "actual": 5,
+    "pass": true
+   },
+   "input_quality_manifest": {
+    "all_present": true,
+    "no_clipping": true,
+    "pass": true
+   },
+   "freeze_record_hashes_match_manifest": {
+    "pass": true
+   }
+  },
+  "prompt_body_hashes": {
+   "A": "db6b57e82b96d83d",
+   "B": "030ac6e418a1fc34",
+   "scope": "66f1c5a682012465",
+   "output_contract": "50b89201fa84808c"
+  },
+  "frozen_prompt_hash_defect": "VQ2_FROZEN_PROMPT_HASH_IS_IDENTITY_NOT_BODY \u2014 the frozen values hash the inspector identity strings, so they never constrained the prompt text. Disclosed, not silently corrected: the frozen values are still checked as mandated, and true body hashes are recorded from this run forward. The bodies sent here are byte-identical to the hold-slice runner.",
+  "all_pass": true,
+  "no_crop_rebuilt": true,
+  "no_prompt_rewritten": true,
+  "no_evidence_regenerated": true,
+  "no_geometry_changed": true,
+  "no_axes_or_tracking_changed": true
+ },
+ "input_manifest": {
+  "record_type": "vq2_lf1_inspector_input_manifest/1.0",
+  "images": {
+   "reference_product_name_crop": "docs/visual_quality/vq2/lettering/ref_product_name_block_native.png",
+   "reference_enlarged_x8": "docs/visual_quality/vq2/lettering/ref_product_name_block_enlarged_x8.png",
+   "lf1_r1_words": "docs/visual_quality/vq2/lf1_r1/inspect/lf1_r1_words.png",
+   "lf1_r1_glyph_panel": "docs/visual_quality/vq2/lf1_r1/inspect/lf1_r1_glyph_panel.png",
+   "approved_logo": "docs/visual_quality/vq2/brand/bbrose_logo_approved.png"
+  },
+  "sizes": {
+   "reference_product_name_crop": [
+    305,
+    170
+   ],
+   "reference_enlarged_x8": [
+    2440,
+    1360
+   ],
+   "lf1_r1_words": [
+    1650,
+    1000
+   ],
+   "lf1_r1_glyph_panel": [
+    1500,
+    940
+   ],
+   "approved_logo": [
+    3721,
+    886
+   ]
+  },
+  "sha256": {
+   "reference_product_name_crop": "a381ead75b5afb4a",
+   "reference_enlarged_x8": "d5fc167c225204ec",
+   "lf1_r1_words": "0a97c0d1bc2d7f9f",
+   "lf1_r1_glyph_panel": "3deba66ce7288e01",
+   "approved_logo": "c321c1bea4c69e27"
+  },
+  "all_present": true,
+  "no_clipping": true,
+  "inspectors_isolated": true
+ },
+ "measurements": {
+  "typeface": "Imbue (SIL OFL), natively condensed Didone",
+  "instance": {
+   "opsz": 100,
+   "wght": 400
+  },
+  "deterministic_certification": "PASSED 13/13 vector and 13/13 raster",
+  "symmetric_point_to_segment_max_units": "0.613-0.908 (gate 1.25)",
+  "raster_iou_2048": "0.9958-0.9995 (gate 0.995)",
+  "contours_and_counters": "all preserved, correspondence unambiguous",
+  "composition": {
+   "Rose": {
+    "ink_width": 128.85,
+    "target": 134,
+    "width_err": 0.038,
+    "code": "VQ2_NATIVE_FONT_WIDTH_DIFFERS_FROM_REFERENCE",
+    "distortion_applied": false,
+    "owner_review_item": true
+   },
+   "Damascena": {
+    "ink_width": 278.29,
+    "target": 281,
+    "width_err": 0.0096
+   }
+  },
+  "prohibited_corrections": [
+   "horizontal scaling",
+   "vertical distortion",
+   "non-uniform transform",
+   "glyph modification",
+   "negative colliding tracking"
+  ]
+ },
+ "inspectors_isolated": true,
+ "isolation_evidence": "each inspector received only the five frozen images plus the deterministic measurements; neither prompt nor payload contained the other inspector's findings or verdict",
+ "inspections": {
+  "A": {
+   "identity": "VQ2_IMBUE_LF1_REFERENCE_FIDELITY_CRITIC",
+   "prompt_hash": "589d9d142150bb6f",
+   "status": "COMPLETED",
+   "request_id": "req_011CdW1hCQznBoLM2TpT4VST",
+   "model": "claude-sonnet-4-6",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 6492,
+    "output_tokens": 1732
+   },
+   "model_output_received": true,
+   "raw_output": "```json\n{\n  \"findings\": [\n    {\n      \"area\": \"Overall Didone character\",\n      \"observation\": \"Imbue opsz100 wght400 delivers authentic high-contrast Didone structure across all 13 glyphs. The dramatic thick-to-thin modulation, vertical stress axis, and abrupt stroke transitions are consistent with the Didone classification. The candidate matches the reference concept's typographic register convincingly.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Native condensed construction\",\n      \"observation\": \"Imbue is a natively condensed design; no distortion was applied. The condensed proportions are intrinsic to the font's design and align well with the reference, which also uses a condensed Didone. The candidate's condensed character is authentic and structurally sound.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Stroke contrast\",\n      \"observation\": \"Hairlines are extremely fine and thicks are very broad, producing the extreme contrast ratio characteristic of Bodoni-class Didones. The contrast level in the candidate is visually consistent with \u2014 and possibly marginally higher than \u2014 the reference, which is within acceptable range for opsz100.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Hairline delicacy\",\n      \"observation\": \"Hairline strokes on R, o, s, e, D, a, m, c, n are all present and rendered correctly per the vector certification (raster IoU 0.9958\u20130.9995). No hairline dropout or inflation detected. Hairline weight is appropriate to the optical size.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Serif language\",\n      \"observation\": \"Serifs are flat, unbracketed, and horizontally consistent \u2014 characteristic of the Didone idiom. The uppercase R and D show proper bilateral flat serifs. Lowercase serifs on a, m, n, c, e are correctly formed. Serif language is coherent and matches the reference category.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Counter shapes\",\n      \"observation\": \"All counters are structurally intact per contour-count and IoU certification. The O counter is tall and narrow, consistent with condensed Didone proportion. The a counters (double-storey in DAMASCENA_a) are open and correctly shaped. No counter distortion or collapse observed.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Terminals\",\n      \"observation\": \"The lowercase s and c terminals are ball-free with sheared or abrupt endings consistent with Didone convention. The reference also shows abrupt terminals. No decorative balls that would indicate a mismatch with the Didone classification are present. Terminal treatment is faithful.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Uppercase / lowercase relationship\",\n      \"observation\": \"Rose: cap-height R is substantially taller than the x-height of o, s, e \u2014 the correct hierarchical relationship for a Didone at this weight. Damascena: the D cap is appropriately larger than the lowercase cluster. The size relationship between 'Rose' (larger) and 'Damascena' (smaller body relative to its line) mirrors the reference composition. Relationship is sound.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Rose rhythm and spacing\",\n      \"observation\": \"The four-glyph sequence R-o-s-e reads evenly. The R leg and tail, the o oval, the s spine, and the e counter all contribute consistent color. No obvious loose or tight pair detected. Rhythm is acceptable relative to the reference.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Damascena rhythm and spacing\",\n      \"observation\": \"The nine-glyph sequence D-a-m-a-s-c-e-n-a reads with consistent typographic color. The repeated 'a' glyphs are correctly rendered (contours verified). The m provides a stable anchor. No runaway gaps or collisions visible. Rhythm is acceptable.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Rose word width (3.8% narrower than 134 px target)\",\n      \"observation\": \"Measured at 128.85 px vs 134 px target \u2014 a 5.15 px / 3.8% shortfall. This arises from the native glyph advance widths of Imbue at this instance and cannot be corrected without prohibited distortion. At display sizes the difference is visually perceptible as slightly tighter fit, but the word does not appear condensed beyond the font's own design intent. Flagged as owner-review item per deterministic certification; no actionable typographic correction exists.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Damascena word width (1.0% narrower than 281 px target)\",\n      \"observation\": \"Measured at 278.29 px vs 281 px target \u2014 a 2.71 px / 1.0% shortfall. This is within typical rounding and optical tolerance for native font rendering at this size. Not a visible defect.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Hierarchy between Rose and Damascena\",\n      \"observation\": \"Rose is set at a visually larger size than Damascena, matching the reference composition's two-level hierarchy. The size differential reads clearly and reinforces the botanical subtitle relationship. Hierarchy is correct.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Compatibility with reference concept #97\",\n      \"observation\": \"The candidate reproduces the typographic character of the reference faithfully: same Didone classification, same condensed genre, comparable contrast ratio, matching two-line layout with size hierarchy. No category-level departure detected.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Compatibility with approved BBROSE logo\",\n      \"observation\": \"The BBROSE logo uses a broad, low-contrast rounded sans with decorative swash elements \u2014 a markedly different typographic register. The Didone candidate serves as a product-name complement rather than a typographic echo of the logo, which is a standard luxury-brand practice (expressive logo + refined Didone body name). No incompatibility defect; the contrast is intentional and appropriate.\",\n      \"actionable\": false\n    }\n  ],\n  \"rose_width_classification\": \"NONACTIONABLE\",\n  \"rose_width_reasoning\": \"The 3.8% width shortfall (128.85 px vs 134 px) is a direct consequence of Imbue's native glyph advance widths at opsz100 wght400. Correcting it would require horizontal scaling or non-uniform transform, both of which are explicitly prohibited. At the intended display scale the difference does not produce a visible condensation artifact beyond the font's own design; the word reads as correctly proportioned condensed Didone. The deterministic certification confirms no distortion was applied. This is an owner-review item noting a metric divergence from the AI-generated reference, not a typographic defect requiring or permitting a corrective action.\",\n  \"actionable_defect_count\": 0,\n  \"verdict\": \"PASSES_TYPOGRAPHY_INSPECTION_PENDING_OWNER_REVIEW\"\n}\n```",
+   "raw_output_sha256_16": "722e076a455fb8c6",
+   "input_manifest_identity": {
+    "record_type": "vq2_lf1_inspector_input_manifest/1.0",
+    "sha256": {
+     "reference_product_name_crop": "a381ead75b5afb4a",
+     "reference_enlarged_x8": "d5fc167c225204ec",
+     "lf1_r1_words": "0a97c0d1bc2d7f9f",
+     "lf1_r1_glyph_panel": "3deba66ce7288e01",
+     "approved_logo": "c321c1bea4c69e27"
+    },
+    "sizes": {
+     "reference_product_name_crop": [
+      305,
+      170
+     ],
+     "reference_enlarged_x8": [
+      2440,
+      1360
+     ],
+     "lf1_r1_words": [
+      1650,
+      1000
+     ],
+     "lf1_r1_glyph_panel": [
+      1500,
+      940
+     ],
+     "approved_logo": [
+      3721,
+      886
+     ]
+    }
+   },
+   "result": {
+    "findings": [
+     {
+      "area": "Overall Didone character",
+      "observation": "Imbue opsz100 wght400 delivers authentic high-contrast Didone structure across all 13 glyphs. The dramatic thick-to-thin modulation, vertical stress axis, and abrupt stroke transitions are consistent with the Didone classification. The candidate matches the reference concept's typographic register convincingly.",
+      "actionable": false
+     },
+     {
+      "area": "Native condensed construction",
+      "observation": "Imbue is a natively condensed design; no distortion was applied. The condensed proportions are intrinsic to the font's design and align well with the reference, which also uses a condensed Didone. The candidate's condensed character is authentic and structurally sound.",
+      "actionable": false
+     },
+     {
+      "area": "Stroke contrast",
+      "observation": "Hairlines are extremely fine and thicks are very broad, producing the extreme contrast ratio characteristic of Bodoni-class Didones. The contrast level in the candidate is visually consistent with \u2014 and possibly marginally higher than \u2014 the reference, which is within acceptable range for opsz100.",
+      "actionable": false
+     },
+     {
+      "area": "Hairline delicacy",
+      "observation": "Hairline strokes on R, o, s, e, D, a, m, c, n are all present and rendered correctly per the vector certification (raster IoU 0.9958\u20130.9995). No hairline dropout or inflation detected. Hairline weight is appropriate to the optical size.",
+      "actionable": false
+     },
+     {
+      "area": "Serif language",
+      "observation": "Serifs are flat, unbracketed, and horizontally consistent \u2014 characteristic of the Didone idiom. The uppercase R and D show proper bilateral flat serifs. Lowercase serifs on a, m, n, c, e are correctly formed. Serif language is coherent and matches the reference category.",
+      "actionable": false
+     },
+     {
+      "area": "Counter shapes",
+      "observation": "All counters are structurally intact per contour-count and IoU certification. The O counter is tall and narrow, consistent with condensed Didone proportion. The a counters (double-storey in DAMASCENA_a) are open and correctly shaped. No counter distortion or collapse observed.",
+      "actionable": false
+     },
+     {
+      "area": "Terminals",
+      "observation": "The lowercase s and c terminals are ball-free with sheared or abrupt endings consistent with Didone convention. The reference also shows abrupt terminals. No decorative balls that would indicate a mismatch with the Didone classification are present. Terminal treatment is faithful.",
+      "actionable": false
+     },
+     {
+      "area": "Uppercase / lowercase relationship",
+      "observation": "Rose: cap-height R is substantially taller than the x-height of o, s, e \u2014 the correct hierarchical relationship for a Didone at this weight. Damascena: the D cap is appropriately larger than the lowercase cluster. The size relationship between 'Rose' (larger) and 'Damascena' (smaller body relative to its line) mirrors the reference composition. Relationship is sound.",
+      "actionable": false
+     },
+     {
+      "area": "Rose rhythm and spacing",
+      "observation": "The four-glyph sequence R-o-s-e reads evenly. The R leg and tail, the o oval, the s spine, and the e counter all contribute consistent color. No obvious loose or tight pair detected. Rhythm is acceptable relative to the reference.",
+      "actionable": false
+     },
+     {
+      "area": "Damascena rhythm and spacing",
+      "observation": "The nine-glyph sequence D-a-m-a-s-c-e-n-a reads with consistent typographic color. The repeated 'a' glyphs are correctly rendered (contours verified). The m provides a stable anchor. No runaway gaps or collisions visible. Rhythm is acceptable.",
+      "actionable": false
+     },
+     {
+      "area": "Rose word width (3.8% narrower than 134 px target)",
+      "observation": "Measured at 128.85 px vs 134 px target \u2014 a 5.15 px / 3.8% shortfall. This arises from the native glyph advance widths of Imbue at this instance and cannot be corrected without prohibited distortion. At display sizes the difference is visually perceptible as slightly tighter fit, but the word does not appear condensed beyond the font's own design intent. Flagged as owner-review item per deterministic certification; no actionable typographic correction exists.",
+      "actionable": false
+     },
+     {
+      "area": "Damascena word width (1.0% narrower than 281 px target)",
+      "observation": "Measured at 278.29 px vs 281 px target \u2014 a 2.71 px / 1.0% shortfall. This is within typical rounding and optical tolerance for native font rendering at this size. Not a visible defect.",
+      "actionable": false
+     },
+     {
+      "area": "Hierarchy between Rose and Damascena",
+      "observation": "Rose is set at a visually larger size than Damascena, matching the reference composition's two-level hierarchy. The size differential reads clearly and reinforces the botanical subtitle relationship. Hierarchy is correct.",
+      "actionable": false
+     },
+     {
+      "area": "Compatibility with reference concept #97",
+      "observation": "The candidate reproduces the typographic character of the reference faithfully: same Didone classification, same condensed genre, comparable contrast ratio, matching two-line layout with size hierarchy. No category-level departure detected.",
+      "actionable": false
+     },
+     {
+      "area": "Compatibility with approved BBROSE logo",
+      "observation": "The BBROSE logo uses a broad, low-contrast rounded sans with decorative swash elements \u2014 a markedly different typographic register. The Didone candidate serves as a product-name complement rather than a typographic echo of the logo, which is a standard luxury-brand practice (expressive logo + refined Didone body name). No incompatibility defect; the contrast is intentional and appropriate.",
+      "actionable": false
+     }
+    ],
+    "rose_width_classification": "NONACTIONABLE",
+    "rose_width_reasoning": "The 3.8% width shortfall (128.85 px vs 134 px) is a direct consequence of Imbue's native glyph advance widths at opsz100 wght400. Correcting it would require horizontal scaling or non-uniform transform, both of which are explicitly prohibited. At the intended display scale the difference does not produce a visible condensation artifact beyond the font's own design; the word reads as correctly proportioned condensed Didone. The deterministic certification confirms no distortion was applied. This is an owner-review item noting a metric divergence from the AI-generated reference, not a typographic defect requiring or permitting a corrective action.",
+    "actionable_defect_count": 0,
+    "verdict": "PASSES_TYPOGRAPHY_INSPECTION_PENDING_OWNER_REVIEW"
+   }
+  },
+  "B": {
+   "identity": "VQ2_IMBUE_LF1_ADVERSARIAL_DEFECT_FINDER",
+   "prompt_hash": "f7cd3805fd161d81",
+   "status": "COMPLETED",
+   "request_id": "req_011CdW1kNamXSPhnxt7QAM6a",
+   "model": "claude-sonnet-4-6",
+   "stop_reason": "end_turn",
+   "usage": {
+    "input_tokens": 6540,
+    "output_tokens": 1922
+   },
+   "model_output_received": true,
+   "raw_output": "```json\n{\n  \"findings\": [\n    {\n      \"area\": \"Rose \u2014 R serif and leg terminal\",\n      \"observation\": \"In the candidate (Image 3/4), the R's leg terminates in a modest ball-like spur. Compared to the reference (Image 2), the leg terminal reads slightly more abrupt and less refined at this optical size, but this is within the normal rendering variation of the Imbue R glyph at opsz100 and does not constitute a damaged or missing element. Contour count 2 is correct (outer + counter of bowl). No actionable defect.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Rose \u2014 o counter\",\n      \"observation\": \"The o in 'Rose' (Image 4, ROSE_o contours 2) shows a correctly preserved inner counter. The counter shape is an upright oval consistent with Imbue's Didone axis. No collapse or malformation detected. Contour count 2 confirmed correct.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Rose \u2014 s spine and terminals\",\n      \"observation\": \"ROSE_s carries contour 1 (no counter, correct for s). The spine stress and hairline-to-stem transition appear clean. The top and bottom terminals are slightly asymmetric in curvature direction as is normal for a Didone s. No missing segment or converter artifact visible.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Rose \u2014 e aperture and counter\",\n      \"observation\": \"ROSE_e contours 1 is correct. The counter opening at the upper right and the horizontal crossbar hairline appear intact. No collapsed counter or fragmented hairline.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Damascena \u2014 D bowl and counter\",\n      \"observation\": \"DAMASCENA_D contours 2 is correct (outer + inner counter). The bowl's outer curve and the flat vertical stem transition look clean. Counter is open and well-formed.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Damascena \u2014 a (all three instances) counter integrity\",\n      \"observation\": \"DAMASCENA_a_1, DAMASCENA_a_2, DAMASCENA_a_3 all carry contours 2 (bowl counter + outer). Examining Image 4, all three a glyphs show the characteristic Didone single-storey a with a teardrop counter. Counters are intact and comparable across the three instances, confirming no inadvertent substitution or counter collapse across repeated glyphs.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Damascena \u2014 m arch hairlines\",\n      \"observation\": \"DAMASCENA_m contours 1 is correct (no counter). The two arches show the characteristic thin hairline joins at the shoulders. At this optical size the hairlines appear adequately weighted and no breakage is visible in Image 4.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Damascena \u2014 s and c apertures\",\n      \"observation\": \"DAMASCENA_s (contours 1) and DAMASCENA_c (contours 1) are both correct. The s spine reads consistently with ROSE_s in the same composition, confirming uniform weight application. The c terminal opening is clean.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Damascena \u2014 n arch\",\n      \"observation\": \"DAMASCENA_n contours 1 is correct. The single arch hairline at the shoulder appears intact. No segment missing.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Optical size / weight consistency between lines\",\n      \"observation\": \"'Rose' and 'Damascena' are both declared at opsz100 wght400. Visually in Image 3, 'Rose' appears significantly larger (it occupies the top line at a much larger point size) than 'Damascena'. This is a deliberate hierarchical sizing decision by the compositor, not a font inconsistency. However, the contrast in apparent size means the Didone stroke contrast on 'Rose' looks more extreme relative to 'Damascena'. This is an inherent optical consequence of different point sizes, not a defect in the glyph outlines themselves.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Line 1 ('Rose') \u2014 left alignment vs. line 2 ('Damascena')\",\n      \"observation\": \"In Image 3, 'Rose' is positioned with its R beginning at the far left, while 'Damascena' also begins at the far left. The reference (Image 2) shows the same left-aligned stacking. No misalignment defect.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Tracking / inter-glyph spacing within 'Rose'\",\n      \"observation\": \"Spacing between R-o, o-s, s-e in the candidate appears visually consistent with the reference. No excessive positive tracking or collapsed pair is detectable. The rendering matches the font's default spacing.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Tracking / inter-glyph spacing within 'Damascena'\",\n      \"observation\": \"The nine glyphs of 'Damascena' show even, slightly open spacing consistent with Imbue's default sidebearings at this optical size. No runaway positive tracking or collision is visible.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Rose width vs. reference target (3.8% narrower)\",\n      \"observation\": \"Measured ink width 128.85 px vs. 134 px reference \u2014 5.15 px / 3.8% deficit. This arises from the font's own native advance widths and cannot be corrected without prohibited horizontal scaling. See rose_width_classification for formal classification.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"BBROSE logo compatibility\",\n      \"observation\": \"The BBROSE logo (Image 5) uses a wide, upright serif face with relatively low stroke contrast and large, open counters \u2014 stylistically distinct from Imbue's high-contrast Didone. The product-name lettering in Imbue is contextually subordinate branding copy, not a logo-matching element, and the reference concept #97 already uses Imbue in this role. No typographic incompatibility that would constitute a defect in the candidate; the relationship is consistent with the established reference.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Editability / path integrity\",\n      \"observation\": \"Deterministic certification reports PASSED 13/13 vector and 13/13 raster, max point-to-segment deviation 0.908 units (gate 1.25), IoU 0.9958\u20130.9995 (gate 0.995). All contour counts match expected values. No editability problem, broken node, or converter artifact is flagged by measurement or visible in Image 4.\",\n      \"actionable\": false\n    }\n  ],\n  \"rose_width_classification\": \"NONACTIONABLE\",\n  \"rose_width_reasoning\": \"The 3.8% width shortfall (128.85 px vs. 134 px) is produced entirely by the native advance widths of Imbue at opsz100 wght400 with no distortion applied. The only remedies would be prohibited horizontal scaling or glyph modification. Visually, at the size 'Rose' occupies on the label, a sub-4% width difference is imperceptible to a consumer and does not produce a visual imbalance relative to 'Damascena' (which itself falls 1% short of its target). Because the discrepancy is measurement-level, non-distorted, and non-correctable by permitted means, it is NONACTIONABLE as a typography defect, though it remains an owner-review item on record.\",\n  \"actionable_defect_count\": 0,\n  \"verdict\": \"PASSES_TYPOGRAPHY_INSPECTION_PENDING_OWNER_REVIEW\"\n}\n```",
+   "raw_output_sha256_16": "e415226dcab96ce0",
+   "input_manifest_identity": {
+    "record_type": "vq2_lf1_inspector_input_manifest/1.0",
+    "sha256": {
+     "reference_product_name_crop": "a381ead75b5afb4a",
+     "reference_enlarged_x8": "d5fc167c225204ec",
+     "lf1_r1_words": "0a97c0d1bc2d7f9f",
+     "lf1_r1_glyph_panel": "3deba66ce7288e01",
+     "approved_logo": "c321c1bea4c69e27"
+    },
+    "sizes": {
+     "reference_product_name_crop": [
+      305,
+      170
+     ],
+     "reference_enlarged_x8": [
+      2440,
+      1360
+     ],
+     "lf1_r1_words": [
+      1650,
+      1000
+     ],
+     "lf1_r1_glyph_panel": [
+      1500,
+      940
+     ],
+     "approved_logo": [
+      3721,
+      886
+     ]
+    }
+   },
+   "result": {
+    "findings": [
+     {
+      "area": "Rose \u2014 R serif and leg terminal",
+      "observation": "In the candidate (Image 3/4), the R's leg terminates in a modest ball-like spur. Compared to the reference (Image 2), the leg terminal reads slightly more abrupt and less refined at this optical size, but this is within the normal rendering variation of the Imbue R glyph at opsz100 and does not constitute a damaged or missing element. Contour count 2 is correct (outer + counter of bowl). No actionable defect.",
+      "actionable": false
+     },
+     {
+      "area": "Rose \u2014 o counter",
+      "observation": "The o in 'Rose' (Image 4, ROSE_o contours 2) shows a correctly preserved inner counter. The counter shape is an upright oval consistent with Imbue's Didone axis. No collapse or malformation detected. Contour count 2 confirmed correct.",
+      "actionable": false
+     },
+     {
+      "area": "Rose \u2014 s spine and terminals",
+      "observation": "ROSE_s carries contour 1 (no counter, correct for s). The spine stress and hairline-to-stem transition appear clean. The top and bottom terminals are slightly asymmetric in curvature direction as is normal for a Didone s. No missing segment or converter artifact visible.",
+      "actionable": false
+     },
+     {
+      "area": "Rose \u2014 e aperture and counter",
+      "observation": "ROSE_e contours 1 is correct. The counter opening at the upper right and the horizontal crossbar hairline appear intact. No collapsed counter or fragmented hairline.",
+      "actionable": false
+     },
+     {
+      "area": "Damascena \u2014 D bowl and counter",
+      "observation": "DAMASCENA_D contours 2 is correct (outer + inner counter). The bowl's outer curve and the flat vertical stem transition look clean. Counter is open and well-formed.",
+      "actionable": false
+     },
+     {
+      "area": "Damascena \u2014 a (all three instances) counter integrity",
+      "observation": "DAMASCENA_a_1, DAMASCENA_a_2, DAMASCENA_a_3 all carry contours 2 (bowl counter + outer). Examining Image 4, all three a glyphs show the characteristic Didone single-storey a with a teardrop counter. Counters are intact and comparable across the three instances, confirming no inadvertent substitution or counter collapse across repeated glyphs.",
+      "actionable": false
+     },
+     {
+      "area": "Damascena \u2014 m arch hairlines",
+      "observation": "DAMASCENA_m contours 1 is correct (no counter). The two arches show the characteristic thin hairline joins at the shoulders. At this optical size the hairlines appear adequately weighted and no breakage is visible in Image 4.",
+      "actionable": false
+     },
+     {
+      "area": "Damascena \u2014 s and c apertures",
+      "observation": "DAMASCENA_s (contours 1) and DAMASCENA_c (contours 1) are both correct. The s spine reads consistently with ROSE_s in the same composition, confirming uniform weight application. The c terminal opening is clean.",
+      "actionable": false
+     },
+     {
+      "area": "Damascena \u2014 n arch",
+      "observation": "DAMASCENA_n contours 1 is correct. The single arch hairline at the shoulder appears intact. No segment missing.",
+      "actionable": false
+     },
+     {
+      "area": "Optical size / weight consistency between lines",
+      "observation": "'Rose' and 'Damascena' are both declared at opsz100 wght400. Visually in Image 3, 'Rose' appears significantly larger (it occupies the top line at a much larger point size) than 'Damascena'. This is a deliberate hierarchical sizing decision by the compositor, not a font inconsistency. However, the contrast in apparent size means the Didone stroke contrast on 'Rose' looks more extreme relative to 'Damascena'. This is an inherent optical consequence of different point sizes, not a defect in the glyph outlines themselves.",
+      "actionable": false
+     },
+     {
+      "area": "Line 1 ('Rose') \u2014 left alignment vs. line 2 ('Damascena')",
+      "observation": "In Image 3, 'Rose' is positioned with its R beginning at the far left, while 'Damascena' also begins at the far left. The reference (Image 2) shows the same left-aligned stacking. No misalignment defect.",
+      "actionable": false
+     },
+     {
+      "area": "Tracking / inter-glyph spacing within 'Rose'",
+      "observation": "Spacing between R-o, o-s, s-e in the candidate appears visually consistent with the reference. No excessive positive tracking or collapsed pair is detectable. The rendering matches the font's default spacing.",
+      "actionable": false
+     },
+     {
+      "area": "Tracking / inter-glyph spacing within 'Damascena'",
+      "observation": "The nine glyphs of 'Damascena' show even, slightly open spacing consistent with Imbue's default sidebearings at this optical size. No runaway positive tracking or collision is visible.",
+      "actionable": false
+     },
+     {
+      "area": "Rose width vs. reference target (3.8% narrower)",
+      "observation": "Measured ink width 128.85 px vs. 134 px reference \u2014 5.15 px / 3.8% deficit. This arises from the font's own native advance widths and cannot be corrected without prohibited horizontal scaling. See rose_width_classification for formal classification.",
+      "actionable": false
+     },
+     {
+      "area": "BBROSE logo compatibility",
+      "observation": "The BBROSE logo (Image 5) uses a wide, upright serif face with relatively low stroke contrast and large, open counters \u2014 stylistically distinct from Imbue's high-contrast Didone. The product-name lettering in Imbue is contextually subordinate branding copy, not a logo-matching element, and the reference concept #97 already uses Imbue in this role. No typographic incompatibility that would constitute a defect in the candidate; the relationship is consistent with the established reference.",
+      "actionable": false
+     },
+     {
+      "area": "Editability / path integrity",
+      "observation": "Deterministic certification reports PASSED 13/13 vector and 13/13 raster, max point-to-segment deviation 0.908 units (gate 1.25), IoU 0.9958\u20130.9995 (gate 0.995). All contour counts match expected values. No editability problem, broken node, or converter artifact is flagged by measurement or visible in Image 4.",
+      "actionable": false
+     }
+    ],
+    "rose_width_classification": "NONACTIONABLE",
+    "rose_width_reasoning": "The 3.8% width shortfall (128.85 px vs. 134 px) is produced entirely by the native advance widths of Imbue at opsz100 wght400 with no distortion applied. The only remedies would be prohibited horizontal scaling or glyph modification. Visually, at the size 'Rose' occupies on the label, a sub-4% width difference is imperceptible to a consumer and does not produce a visual imbalance relative to 'Damascena' (which itself falls 1% short of its target). Because the discrepancy is measurement-level, non-distorted, and non-correctable by permitted means, it is NONACTIONABLE as a typography defect, though it remains an owner-review item on record.",
+    "actionable_defect_count": 0,
+    "verdict": "PASSES_TYPOGRAPHY_INSPECTION_PENDING_OWNER_REVIEW"
+   }
+  }
+ }
+}

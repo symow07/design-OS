@@ -1,0 +1,35 @@
+§AD0(a) SCORE — §BH33(1) ARABIC RE-RANK, launched against pred_rerank.txt
+(sealed a70dd40f803875ec before git add). Gate GREEN, GEXIT=0. LANDED 04faa08 (2026-09-05T03:36:28Z UTC). 8/8.
+
+LAUNCH HISTORY (recorded, not a gate refusal): the first launch was issued
+from the OUTER root, where tools/guarded_commit.sh does not exist — the
+launcher exited 127 before the gate ran (rerank_gate_launch1_failed.log:
+"zsh: can't open input file"), nothing was committed, no ledger line was
+appended (460 before and after); relaunched from the inner root with the
+proven idiom. The prediction was unchanged between the two launches.
+§BH24 budget 0/3 — the gate itself never refused.
+
+L1 HELD: exactly the THREE declared apps paths + the gate-staged ledger.
+L2 HELD: font_roles 12/8; test_pdf_ai_emitter 10/9;
+   test_container_font_authority 4/5 — exact; no test added or removed.
+L3 HELD: no manifest / records / identity in the commit; ledger 460 → 461
+   with HEAD~1 a byte-prefix of HEAD; census-first held (records none,
+   identity none, WIT 863 with its keys — the analyser's test green in the
+   targeted set and in the gate; corpus constants none).
+L4 HELD: staged == declared, 3 rows, measured before launch.
+L5 HELD: 4 files, 27 insertions, 22 deletions — exact.
+L6 HELD: "TIER_2=GREEN collected=8542 failures=0 apps=7730 dip0c=671
+   dip0=141" — exact. No refusal.
+L7 HELD: ledger 460 → 461; the new line verdict OK, refusal_count 0.
+L8 HELD: apps diff = exactly the three paths; GATE 7fbeb8f1fe10b0fb at
+   [514:541] (573 lines), TEST b32030dc827263e4; tree seals unchanged;
+   protocol_identity untouched; the eight M7 artefacts == baseline; under
+   Django at scoring: catalogue 38, the three Arabic chains
+   (NotoNaskhArabic-Regular,), Naskh first try for all three roles
+   VERIFIED_FOR_PRODUCTION / USER_CONFIRMED with nothing tried before it,
+   Cairo-Bold in the catalogue (latin True, arabic False, letters True, 36
+   forms missing), the exempt legacy resolution unchanged (NotoSans /
+   NotoSans-Bold / NotoNaskhArabic), the Noto trio VERIFIED_FOR_PRODUCTION,
+   the 35 at their PROVENANCE hashes; no authority involved.
+Post-landing: porcelain clean. Next, in the ruled order: (2) the
+variable-instance pin.

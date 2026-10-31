@@ -1,0 +1,41 @@
+§AD0(a) SCORE — (e) CONSULTED BY RULE (§BH40(e)), against pred_e.txt (sealed
+87f52014e681a1ae before the copy and before git add). Gate GREEN, GEXIT=0.
+LANDED 0d210d5 (launched 2026-09-08T09:51:34Z, finished 10:05:49Z). 8/8.
+Launched once; services checked up; nothing beside it.
+
+L1 HELD: exactly ONE new path — CLAUDE.md at the OUTER root (7 lines, 662
+   bytes, sha256[:16] dc12f5dc6154ce6b at HEAD == the draft byte for byte) —
+   + the gate-staged ledger; no inner CLAUDE.md and none at ~/.claude (the
+   chain's guards held before the copy).
+L2 HELD: 1 added +7, 0 modified, 0 deleted.
+L3 HELD: manifest/records/identity in commit NONE; the ledger APPEND_ONLY;
+   WIT 864; corpus constants, dip1b, the exclusion list, the materials record
+   untouched; the two-roots guard's three names unchanged (CLAUDE.md at the
+   outer root only).
+L4 HELD: 1 row "A" (proved before launch).
+L5 HELD: 2 files, 8 insertions, 0 deletions.
+L6 HELD: "TIER_2=GREEN collected=8598 failures=0 apps=7786 dip0c=671
+   dip0=141" — exact; the rebuild step enumerated 415 sources, CLAUDE.md the
+   new one ("BRAIN_REBUILD_OK seconds=2.70 sources=415 docs=43758
+   sections=834+556 materials=12473" on log line 2, before the suite line),
+   and the freshness test passed against the record that step wrote; the
+   ledger line (utc 09:52:12Z) was again appended after the rebuild without
+   staling the record.
+L7 HELD: ledger 491 → 492 (utc 2026-09-08T09:52:12Z, verdict OK,
+   refusal_count 0).
+L8 HELD: apps diff EMPTY; GATE 7fbeb8f1fe10b0fb [514:541] / TEST
+   b32030dc827263e4; tree seals dip0c c22592930c75001c / dip0a
+   d72072760ab20a6a unchanged; M7 artefacts == baseline (8 rows, sha256 +
+   size); the register 20,213 lines db241ccf0b258e35; the DIP-0A inventory
+   3b3cfdc2bf4fc6c0; under Django at 0d210d5 the Noto trio
+   VERIFIED_FOR_PRODUCTION (3) and Warm Gold #CBA87D in both seeded systems
+   (2); no register hash in any tracked file (git grep at HEAD: 0 files);
+   CLAUDE.md carries none of the seven phrases and no hash; the freshness
+   record on disk (brain_freshness/1.0) names 415 sources, CLAUDE.md among
+   them, rebuild_seconds 2.7.
+THE CHAIN IS COMPLETE: T40 d058685, (a) da56c06, (b) bcb7eca, (c) c00f2b3,
+(d) 9f75253, (e) 0d210d5 — six commits, six predictions sealed before git
+add, six scores of 8/8 on the landed commits (history: (a) attempt 1 6/8
+unlaunched, attempt 2 refused by the flush deadlock → §BH41, attempt 3
+landed after the cause was removed).
+Next: the goal report and the owner's word; v2 is the next goal, not this one.

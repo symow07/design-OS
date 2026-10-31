@@ -1,0 +1,53 @@
+{
+ "record_type": "gate_a_corr2_automated_gates/1.0",
+ "created_at": "2026-07-31",
+ "checks": {
+  "forty_visible_objects_present": true,
+  "eight_required_groups_present": true,
+  "all_artwork_objects_explicitly_painted": true,
+  "no_hidden_artwork_group": true,
+  "no_layer_blocks_emitted": true,
+  "no_clipping_state_after_each_object": true,
+  "no_unmatched_graphics_state_operation": true,
+  "every_object_sets_own_colour": true,
+  "no_object_relies_on_inherited_paint_state": true,
+  "all_four_approved_colors_present": true,
+  "body_color_is_D9BDB5": true,
+  "collar_color_is_705242": true,
+  "closure_color_is_493034": true,
+  "all_artwork_color_is_502525": true,
+  "black_default_visible_objects_is_zero": true,
+  "source_proof_geometry_identical": true,
+  "source_proof_color_identical": true,
+  "object_ordering_identical": true,
+  "page_dimensions_identical": true,
+  "logo_counters_present": true,
+  "product_name_counters_present": true,
+  "raster_objects_zero": true,
+  "live_text_zero": true,
+  "geometry_drift_zero": true,
+  "artwork_drift_zero": true,
+  "freeze_is_not_a_self_comparison": true,
+  "no_state_affecting_operators": true
+ },
+ "all_passed": true,
+ "failed": [],
+ "gate_a_state": "BLOCKED",
+ "gate_a_passed": null,
+ "these_checks_cannot_pass_gate_a": true,
+ "gate_a_requires": "a human running illustrator_gate_a_roundtrip.jsx in Adobe Illustrator and confirming both dialogs",
+ "r1_taught_us": "R1 passed every automated gate of its own slice and still lost 37 objects in Illustrator. Automated checks constrain the bytes; they do not establish what Illustrator does with them.",
+ "r2_source": {
+  "file": "vq2_a2_r2_final_gate_a_r2.ai",
+  "sha256": "6ae00f726ddefda4adad93325735c489e3fe987452f9c1a2f603236c73e4c49a",
+  "classification": [
+   "ILLUSTRATOR_COMPATIBLE_AI8_EPS_VECTOR_SOURCE",
+   "PENDING_HUMAN_ILLUSTRATOR_EXECUTION",
+   "SRGB_CONCEPT_ARTWORK"
+  ],
+  "illustrator_verified": false,
+  "production_authority": false,
+  "named_layers_guaranteed": false,
+  "named_layers_note": "R2 is plain EPS, so Illustrator will most likely import it as a single layer. Group and object names are carried as DSC comments and the eight group names are preserved, but Illustrator-native named LAYERS are not guaranteed. Correct stacking and independent editability are what Gate A requires; named layers are a convenience, and trading them for artwork that actually renders is the owner's call to see rather than mine to hide."
+ }
+}

@@ -1,0 +1,43 @@
+{% extends "dashboard/library/base.html" %}
+{% comment %}ONE FINISHED DESIGN, at its own address (C's Library; it was a dialog drawn by a script): its picture, what it is, its
+product and brand, the size it was made at, the direction chosen and what it spent; its files named in words; the way
+back to the design itself; a new design started from it — Start a design filled in, the cost under its button, never a
+click that spends; what was asked, and each approval in words.{% endcomment %}
+{% block title %}{{ f.title }}{% endblock %}
+{% block content %}
+<div class="fin-one">
+  <div class="frame">{% if f.picture %}<img src="{{ f.picture }}" alt="{{ f.title }}"{% if "/dielines/" in f.picture %} class="sheet"{% endif %}>{% else %}<span class="ph-fill still"><svg class="i" aria-hidden="true"><use href="#i-image"/></svg><span>No picture on record</span></span>{% endif %}
+    {% if f.picture_is == "concept" %}<p class="small">The concept it was made from — its own picture is not on record.</p>{% endif %}</div>
+  <div class="fin-facts">
+    <span class="tag done"><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg>Finished {{ f.finished|date:"j F Y" }}</span>
+    <p class="over">{{ f.target }}</p>
+    <h1 class="h2 fin-title">{{ f.title }}</h1>
+    <dl class="fin-dl">
+      <dt>Product</dt><dd>{{ f.product|default:"None on record" }}</dd>
+      <dt>Brand</dt><dd>{{ f.brand|default:"—" }}</dd>
+      {% if size %}<dt>Size</dt><dd>{{ size }}</dd>{% endif %}
+      {% if direction %}<dt>Direction</dt><dd>{{ direction }}</dd>{% endif %}
+      <dt>Spent</dt><dd>${{ spent|floatformat:2 }}</dd>
+    </dl>
+    <h2 class="over">Files</h2>
+    {% if f.files %}<ul class="fin-files">{% for words, url in f.files %}<li><a href="{{ url }}" download><svg class="i i-sm" aria-hidden="true"><use href="#i-files"/></svg>{{ words }}</a></li>{% endfor %}</ul>
+    {% else %}<p class="small">No files on record.</p>{% endif %}
+    <div class="fin-acts">
+      <a class="btn primary" href="{{ f.design_url }}">Open the design</a>
+      {# the designer flow of 2026-10-27: "Start a new design from this one" led into the classic paths; unlinked, kept in the code (f.start_url) #}
+    </div>
+  </div>
+</div>
+<section class="section" aria-labelledby="h-asked">
+  <h2 id="h-asked" class="h2">What was asked</h2>
+  <div class="brief">{{ asked }}</div>
+</section>
+{% if approvals %}
+<section class="section" aria-labelledby="h-approvals">
+  <h2 id="h-approvals" class="h2">Approvals</h2>
+  <ul class="fin-approvals">
+    {% for a in approvals %}<li><b>{{ a.words }}</b>{% if a.by %} — {{ a.by }}{% endif %}{% if a.at %}, {{ a.at|date:"j F Y" }}{% endif %}{% if a.notes %}<span class="small">“{{ a.notes }}”</span>{% endif %}</li>{% endfor %}
+  </ul>
+</section>
+{% endif %}
+{% endblock %}

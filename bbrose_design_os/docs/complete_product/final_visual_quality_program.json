@@ -1,0 +1,582 @@
+{
+  "schema_version": "final_visual_quality_program/1.0",
+  "status": "BASELINE_AND_ARCHITECTURE",
+  "human_review_state": "PENDING_PROGRAM_ARCHITECTURE_REVIEW",
+  "fixtures": [
+    {
+      "task_id": 51,
+      "selected_image_id": 95,
+      "selected_variation": "C_DEWDROP_CONSTELLATION",
+      "state": "HUMAN_REJECTED / NEVER_ACCEPTED_FIXTURE",
+      "lessons": [
+        "photographic condensation misclassified as printed artwork",
+        "generic label fallback appeared",
+        "transparent wall and product fill visually collapsed",
+        "selected container geometry not preserved",
+        "technical validators passed visually unrelated output"
+      ]
+    },
+    {
+      "task_id": 52,
+      "selected_image_id": 97,
+      "selected_variation": "B_ROSE_SMOKE",
+      "state": "HUMAN_REJECTED / NEVER_ACCEPTED_FIXTURE",
+      "rejection_outputs": [
+        "qJ5Rt23",
+        "3raQ6aB",
+        "oeWjCvc",
+        "SmTqI0A"
+      ],
+      "lessons": [
+        "cylindrical bottle became a rectangular schematic",
+        "collar/neck/bulb failed perceived closure fidelity",
+        "frosted glass became vector bands and flat fills",
+        "rose-gold roles did not create metallic appearance",
+        "product-name grouping and hierarchy not preserved",
+        "repeated dimension tuning did not solve the visual problem",
+        "automated geometry passes inconsistent with human judgment"
+      ]
+    }
+  ],
+  "engine_components": [
+    "targets/container/silhouettes.py",
+    "ire/compose_dropper.py",
+    "ire/compose_container.py",
+    "ire/container_concept_fidelity.py",
+    "ire/container_motif_fidelity.py",
+    "services/container_visual_graph.py",
+    "services/selected_concept_contract.py"
+  ],
+  "failure_taxonomy": {
+    "REFERENCE_INTERPRETATION": [
+      "VQ_PHOTOGRAPHIC_STYLING_AS_PRINT",
+      "VQ_PHYSICAL_OBJECT_AS_ARTWORK",
+      "VQ_LABEL_VS_DIRECT_PRINT_CONFUSION",
+      "VQ_FILL_VS_WALL_CONFUSION",
+      "VQ_BACKGROUND_AS_DESIGN_CONTENT"
+    ],
+    "STRUCTURAL_FORM": [
+      "VQ_ARCHETYPE_MISMATCH",
+      "VQ_CYLINDER_AS_ROUNDED_RECTANGLE",
+      "VQ_CLOSURE_DISCONTINUITY",
+      "VQ_GENERIC_SILHOUETTE_FALLBACK",
+      "VQ_ASPECT_PERCEPTUAL_MISMATCH",
+      "VQ_CAP_BODY_RELATIONSHIP_FAILED"
+    ],
+    "MATERIAL_REALIZATION": [
+      "VQ_TRANSPARENT_RENDERED_OPAQUE",
+      "VQ_FROST_AS_STRIPES",
+      "VQ_METAL_AS_FLAT_COLOR",
+      "VQ_FILL_COLLAPSED_INTO_WALL",
+      "VQ_REFRACTION_AS_GRAPHIC_BARS",
+      "VQ_VIZ_MIXED_INTO_SEPARATIONS"
+    ],
+    "TYPOGRAPHY": [
+      "VQ_NAME_GROUPING_FAILED",
+      "VQ_LOGO_SCALE_FAILED",
+      "VQ_HIERARCHY_INVERSION",
+      "VQ_LEADING_FAILED",
+      "VQ_FONT_CHARACTER_MISMATCH",
+      "VQ_LIVE_TEXT_VISUALLY_WRONG"
+    ],
+    "COMPOSITION": [
+      "VQ_LABEL_CARD_FALLBACK",
+      "VQ_ARTWORK_DETACHED_FROM_MATERIAL",
+      "VQ_EXCESSIVE_EMPTY_ZONES",
+      "VQ_FOCAL_POINT_MISMATCH",
+      "VQ_NEGATIVE_SPACE_LOST"
+    ],
+    "VALIDATION": [
+      "VQ_LABEL_SELF_CERTIFICATION",
+      "VQ_NOMINAL_PASSES_GENERIC_GEOMETRY",
+      "VQ_METADATA_WITHOUT_VISUAL_AGREEMENT",
+      "VQ_REJECTION_NOT_IN_REGRESSIONS",
+      "VQ_PREVIEW_GRAPH_DIVERGENCE"
+    ]
+  },
+  "decomposition_schema": "selected_concept_visual_decomposition/1.0",
+  "decomposition_components": [
+    "physical_silhouette_mask",
+    "body_mask",
+    "shoulder_mask",
+    "neck_mask",
+    "collar_cap_mask",
+    "bulb_closure_mask",
+    "transparent_wall_region",
+    "product_fill_region",
+    "printed_artwork_region",
+    "attached_label_region",
+    "typography_regions",
+    "logo_region",
+    "product_name_region",
+    "supporting_copy_region",
+    "material_highlight_regions",
+    "photographic_styling_regions",
+    "background_prop_regions",
+    "uncertainty_regions"
+  ],
+  "perceived_geometry_contract": {
+    "schema": "container_perceived_geometry_contract/1.0",
+    "distinguishes": [
+      "nominal_technical",
+      "emitted_vector",
+      "perceived_visual"
+    ],
+    "checks": [
+      "cylindrical_readability",
+      "shoulder_continuity",
+      "neck_visibility",
+      "closure_coherence",
+      "body_slenderness",
+      "top_heaviness",
+      "visual_center_of_mass",
+      "edge_curvature_continuity",
+      "material_dependent_silhouette_perception"
+    ]
+  },
+  "material_contracts": {
+    "FROSTED_GLASS": {
+      "forbidden_fallbacks": [
+        "single_opaque_fill",
+        "broad_white_bars",
+        "flat_rect_gradients",
+        "footer_base_band"
+      ],
+      "fields": [
+        "editable_object_structure",
+        "highlight_behavior",
+        "shadow_behavior",
+        "edge_behavior",
+        "transparency",
+        "refraction",
+        "curvature_dependency",
+        "production_vs_visualization_layers",
+        "unacceptable_fallback_forms",
+        "actual_preview_validation"
+      ]
+    },
+    "POLISHED_ROSE_GOLD": {
+      "forbidden_fallbacks": [
+        "flat_pink_fill",
+        "rect_tonal_panels",
+        "yellow_gold_substitution"
+      ],
+      "fields": [
+        "editable_object_structure",
+        "highlight_behavior",
+        "shadow_behavior",
+        "edge_behavior",
+        "transparency",
+        "refraction",
+        "curvature_dependency",
+        "production_vs_visualization_layers",
+        "unacceptable_fallback_forms",
+        "actual_preview_validation"
+      ]
+    },
+    "TRANSPARENT_GLASS": {
+      "forbidden_fallbacks": [
+        "single_opaque_fill"
+      ],
+      "fields": [
+        "editable_object_structure",
+        "highlight_behavior",
+        "shadow_behavior",
+        "edge_behavior",
+        "transparency",
+        "refraction",
+        "curvature_dependency",
+        "production_vs_visualization_layers",
+        "unacceptable_fallback_forms",
+        "actual_preview_validation"
+      ]
+    },
+    "TINTED_GLASS": {
+      "forbidden_fallbacks": [
+        "single_opaque_fill"
+      ],
+      "fields": [
+        "editable_object_structure",
+        "highlight_behavior",
+        "shadow_behavior",
+        "edge_behavior",
+        "transparency",
+        "refraction",
+        "curvature_dependency",
+        "production_vs_visualization_layers",
+        "unacceptable_fallback_forms",
+        "actual_preview_validation"
+      ]
+    },
+    "TRANSLUCENT_PLASTIC": {
+      "forbidden_fallbacks": [
+        "single_opaque_fill"
+      ],
+      "fields": [
+        "editable_object_structure",
+        "highlight_behavior",
+        "shadow_behavior",
+        "edge_behavior",
+        "transparency",
+        "refraction",
+        "curvature_dependency",
+        "production_vs_visualization_layers",
+        "unacceptable_fallback_forms",
+        "actual_preview_validation"
+      ]
+    },
+    "OPAQUE_PLASTIC": {
+      "forbidden_fallbacks": [],
+      "fields": [
+        "editable_object_structure",
+        "highlight_behavior",
+        "shadow_behavior",
+        "edge_behavior",
+        "transparency",
+        "refraction",
+        "curvature_dependency",
+        "production_vs_visualization_layers",
+        "unacceptable_fallback_forms",
+        "actual_preview_validation"
+      ]
+    },
+    "POLISHED_GOLD": {
+      "forbidden_fallbacks": [
+        "flat_yellow_fill"
+      ],
+      "fields": [
+        "editable_object_structure",
+        "highlight_behavior",
+        "shadow_behavior",
+        "edge_behavior",
+        "transparency",
+        "refraction",
+        "curvature_dependency",
+        "production_vs_visualization_layers",
+        "unacceptable_fallback_forms",
+        "actual_preview_validation"
+      ]
+    },
+    "BRUSHED_METAL": {
+      "forbidden_fallbacks": [
+        "flat_grey_fill"
+      ],
+      "fields": [
+        "editable_object_structure",
+        "highlight_behavior",
+        "shadow_behavior",
+        "edge_behavior",
+        "transparency",
+        "refraction",
+        "curvature_dependency",
+        "production_vs_visualization_layers",
+        "unacceptable_fallback_forms",
+        "actual_preview_validation"
+      ]
+    },
+    "SOFT_TOUCH_CARTON": {
+      "forbidden_fallbacks": [],
+      "fields": [
+        "editable_object_structure",
+        "highlight_behavior",
+        "shadow_behavior",
+        "edge_behavior",
+        "transparency",
+        "refraction",
+        "curvature_dependency",
+        "production_vs_visualization_layers",
+        "unacceptable_fallback_forms",
+        "actual_preview_validation"
+      ]
+    },
+    "MATTE_CARTON": {
+      "forbidden_fallbacks": [],
+      "fields": [
+        "editable_object_structure",
+        "highlight_behavior",
+        "shadow_behavior",
+        "edge_behavior",
+        "transparency",
+        "refraction",
+        "curvature_dependency",
+        "production_vs_visualization_layers",
+        "unacceptable_fallback_forms",
+        "actual_preview_validation"
+      ]
+    },
+    "FOIL": {
+      "forbidden_fallbacks": [
+        "flat_fill_no_specular"
+      ],
+      "fields": [
+        "editable_object_structure",
+        "highlight_behavior",
+        "shadow_behavior",
+        "edge_behavior",
+        "transparency",
+        "refraction",
+        "curvature_dependency",
+        "production_vs_visualization_layers",
+        "unacceptable_fallback_forms",
+        "actual_preview_validation"
+      ]
+    },
+    "SPOT_UV": {
+      "forbidden_fallbacks": [
+        "visible_opaque_overlay"
+      ],
+      "fields": [
+        "editable_object_structure",
+        "highlight_behavior",
+        "shadow_behavior",
+        "edge_behavior",
+        "transparency",
+        "refraction",
+        "curvature_dependency",
+        "production_vs_visualization_layers",
+        "unacceptable_fallback_forms",
+        "actual_preview_validation"
+      ]
+    }
+  },
+  "missing_bottle_backbones": [
+    "cylindrical_dropper_bottle",
+    "cylindrical_pump_bottle",
+    "rectangular_rigid_bottle",
+    "oval_bottle",
+    "airless_bottle",
+    "serum_bottle_flat_shoulder",
+    "serum_bottle_rounded_shoulder"
+  ],
+  "typography_contract": "container_typography_visual_contract/1.0",
+  "preview_comparison": {
+    "metrics": [
+      "silhouette_overlap",
+      "component_centroid_difference",
+      "normalized_component_ratios",
+      "material_area_distribution",
+      "palette_distance_bands",
+      "typography_region_alignment",
+      "negative_space_distribution",
+      "closure_body_visual_relationship",
+      "direct_print_vs_label_relationship"
+    ],
+    "authority": "evidence for human review \u2014 never a replacement"
+  },
+  "regression_fixture_schema": "human_visual_regression_fixture/1.0",
+  "scorecard": {
+    "structural_form": {
+      "max": 20,
+      "critical_min": 14
+    },
+    "closure_cap_fidelity": {
+      "max": 15,
+      "critical_min": null
+    },
+    "material_realization": {
+      "max": 20,
+      "critical_min": 14
+    },
+    "typography": {
+      "max": 15,
+      "critical_min": null
+    },
+    "composition": {
+      "max": 10,
+      "critical_min": null
+    },
+    "palette": {
+      "max": 10,
+      "critical_min": null
+    },
+    "selected_concept_preservation": {
+      "max": 10,
+      "critical_min": 7
+    }
+  },
+  "workstreams": {
+    "VQ-1": {
+      "title": "Cylindrical Bottle Backbone and Closure Assembly",
+      "depends_on": [],
+      "targets": [
+        "apps/pipeline/targets/container/silhouettes.py",
+        "apps/ire/compose_dropper.py"
+      ],
+      "schema_impact": "none",
+      "migration": "none",
+      "fixtures": [
+        52
+      ],
+      "stop": "human visual review",
+      "providers": "none",
+      "effort": "L"
+    },
+    "VQ-2": {
+      "title": "Glass, Frosted Glass and Product-Fill Rendering",
+      "depends_on": [
+        "VQ-1"
+      ],
+      "targets": [
+        "apps/ire/compose_dropper.py",
+        "apps/ire/design_language.py"
+      ],
+      "schema_impact": "material contracts",
+      "migration": "none",
+      "fixtures": [
+        51,
+        52
+      ],
+      "stop": "human visual review",
+      "providers": "none",
+      "effort": "L"
+    },
+    "VQ-3": {
+      "title": "Metallic Collar and Cap Material Realization",
+      "depends_on": [
+        "VQ-1"
+      ],
+      "targets": [
+        "apps/ire/compose_dropper.py"
+      ],
+      "schema_impact": "material contracts",
+      "migration": "none",
+      "fixtures": [
+        52
+      ],
+      "stop": "human visual review",
+      "providers": "none",
+      "effort": "M"
+    },
+    "VQ-4": {
+      "title": "Selected-Concept Typography Extraction and Grouping",
+      "depends_on": [],
+      "targets": [
+        "apps/pipeline/services/selected_concept_contract.py",
+        "apps/ire/container_motif_fidelity.py"
+      ],
+      "schema_impact": "container_typography_visual_contract/1.0",
+      "migration": "none",
+      "fixtures": [
+        51,
+        52
+      ],
+      "stop": "human visual review",
+      "providers": "none",
+      "effort": "M"
+    },
+    "VQ-5": {
+      "title": "Direct Print, Label and Photographic-Styling Classification",
+      "depends_on": [],
+      "targets": [
+        "apps/pipeline/services/container_visual_graph.py"
+      ],
+      "schema_impact": "selected_concept_visual_decomposition/1.0",
+      "migration": "none",
+      "fixtures": [
+        51
+      ],
+      "stop": "human visual review",
+      "providers": "none",
+      "effort": "M"
+    },
+    "VQ-6": {
+      "title": "Actual Preview Comparison and Perceived Geometry Validation",
+      "depends_on": [
+        "VQ-1",
+        "VQ-2"
+      ],
+      "targets": [
+        "apps/ire/container_concept_fidelity.py"
+      ],
+      "schema_impact": "container_perceived_geometry_contract/1.0",
+      "migration": "none",
+      "fixtures": [
+        51,
+        52
+      ],
+      "stop": "human visual review",
+      "providers": "none",
+      "effort": "L"
+    },
+    "VQ-7": {
+      "title": "Designer-Grade Concept Sheet and Review Board",
+      "depends_on": [
+        "VQ-1",
+        "VQ-2",
+        "VQ-3"
+      ],
+      "targets": [
+        "apps/ire/compose_dropper.py",
+        "apps/pipeline/review_board.py"
+      ],
+      "schema_impact": "none",
+      "migration": "none",
+      "fixtures": [
+        52
+      ],
+      "stop": "human visual review",
+      "providers": "none",
+      "effort": "M"
+    },
+    "VQ-8": {
+      "title": "Real Regression Rebuild of task #52",
+      "depends_on": [
+        "VQ-1",
+        "VQ-2",
+        "VQ-3",
+        "VQ-4",
+        "VQ-6",
+        "VQ-7"
+      ],
+      "targets": [
+        "live re-render, human Gate-2 review"
+      ],
+      "schema_impact": "none",
+      "migration": "none",
+      "fixtures": [
+        52
+      ],
+      "stop": "human acceptance decision",
+      "providers": "none",
+      "effort": "M"
+    },
+    "VQ-9": {
+      "title": "Real Regression Rebuild of task #51",
+      "depends_on": [
+        "VQ-2",
+        "VQ-5",
+        "VQ-6"
+      ],
+      "targets": [
+        "live re-render, human review"
+      ],
+      "schema_impact": "none",
+      "migration": "none",
+      "fixtures": [
+        51
+      ],
+      "stop": "human acceptance decision",
+      "providers": "none",
+      "effort": "M"
+    }
+  },
+  "success_criteria": [
+    "task #52 reconstructs as a visibly cylindrical premium serum bottle",
+    "closure reads as a physically coherent neck/collar/bulb assembly",
+    "frosted glass reads as material, not vector bands",
+    "rose gold reads as metal, not pink plastic",
+    "Rose/Damascena remains one coherent typographic block",
+    "task #51 no longer turns photographic condensation into printed artwork",
+    "generic label and silhouette fallbacks fail closed",
+    "actual-preview comparison supports the human visual verdict",
+    "native editability remains intact",
+    "decorative raster count stays zero (controlled fallbacks only)",
+    "human review approves the replacement output"
+  ],
+  "stop_conditions": [
+    "human rejection is always authoritative",
+    "no automated Gate-2 approval",
+    "each workstream stops for human visual review"
+  ],
+  "program_hash": "8dc56a46e265ee8e439fb12e4d4e48807e17235242dee7ca8a52247f629a3303"
+}

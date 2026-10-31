@@ -1,0 +1,64 @@
+{
+ "record_type": "real_bottle_reference_inventory/1.0",
+ "created_at": "2026-08-04",
+ "sources_audited": [
+  "materials/ (28GB read-only) via the DIP-0 inventory (var/design_intelligence/audits/dip0/inventory/inventory.jsonl, 7,586 records \u2014 no filesystem rescan; governance-recorded ownership/licence classes used verbatim)",
+  "TaskReference uploads (dev DB)",
+  "supplier qualification records (docs/qualification, docs/production_authority)"
+ ],
+ "candidates": [
+  {
+   "group": "keyword-matched imagery (bottle/dropper/serum/vial/packshot)",
+   "count": 8,
+   "examples": [
+    "collection-water-bottles-glass-silhouette-vector",
+    "cute-kawaii-nail-polish-bottle-coloring-page",
+    "set-bottle-plastic-mineral-water-tumbler",
+    "pink-bottle-with-heart"
+   ],
+   "views": "single decorative view each",
+   "dimensions_available": false,
+   "technical_drawing_available": false,
+   "ownership_status": "UNKNOWN",
+   "license_status": "UNVERIFIED",
+   "authority_class": "NONE \u2014 decorative stock, not cosmetic product reference",
+   "usable": false,
+   "reason": "wrong subject matter AND governance-unusable (ownership UNKNOWN, licence UNVERIFIED)"
+  },
+  {
+   "group": "materials/historical AI production designs",
+   "count": 91,
+   "examples": [
+    "BL-2050 STAND.ai",
+    "ES3083 blister display dieline (Chinese-labelled)",
+    "EP2508-E.ai"
+   ],
+   "views": "production artwork/dielines, not orthographic product views",
+   "dimensions_available": "embedded in dielines where present \u2014 unverified",
+   "technical_drawing_available": "dieline-class only (packaging/display), no bottle CAD found",
+   "ownership_status": "UNKNOWN (category HISTORICAL_DESIGN)",
+   "license_status": "UNVERIFIED",
+   "authority_class": "POTENTIAL owner-confirmable historical evidence \u2014 NOT promotable on filename/folder alone",
+   "usable": false,
+   "reason": "ownership requires explicit owner confirmation per the binding DIP rules; content class is packaging/display dielines, not Bottle+Dropper reference"
+  },
+  {
+   "group": "TaskReference uploads",
+   "count": 0,
+   "usable": false,
+   "reason": "no reference uploads exist in the dev DB"
+  },
+  {
+   "group": "supplier technical drawings",
+   "count": 0,
+   "usable": false,
+   "reason": "supplier outreach was composed but never sent (0 of 5); no supplier geometry was ever received"
+  }
+ ],
+ "conclusion": "NO_USABLE_REAL_BOTTLE_REFERENCE_IN_REPOSITORY",
+ "rules_applied": [
+  "no promotion by filename/folder",
+  "no restricted or ownership-uncertain material without owner approval",
+  "no internet images"
+ ]
+}

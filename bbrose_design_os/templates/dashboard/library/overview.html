@@ -1,0 +1,116 @@
+{% extends "dashboard/library/base.html" %}
+{% comment %}THE LIBRARY — C's (the owner's answer to the UI directions of 2026-09-25): everything a design is made from, on
+one page — the brand's colours, the faces its type is set in, its mark, the materials that can be placed (each artwork
+once), the granted faces, the products and their sizes, the finished designs — each section a click from its whole page.
+Read-only. A colour is an SVG shape with a fill, never a style attribute.{% endcomment %}
+{% block title %}Library{% endblock %}
+{% block head_words %}<h1 class="h1">Library</h1>
+<p class="lead">Everything a design is made from, in one place — and open beside every design while you work on it.</p>
+{% include "dashboard/_brand_switch.html" %}{% endblock %}
+{% block content %}
+<div class="lib-top">
+  <section class="card pad lib-colours" id="colours" aria-labelledby="h-colours">
+    <div class="lib-hd"><h2 id="h-colours" class="h3">Colours</h2><a class="more" href="{% url 'dashboard:brand_library' %}#colours">The part each plays ›</a></div>
+    {% for cs in colour_systems %}
+    <h3 class="over">{{ cs.name }}</h3>
+    <ul class="lib-sws">
+      {% for sw in cs.swatches %}
+      <li><svg viewBox="0 0 64 40" aria-hidden="true">{% if sw.hex %}<rect width="64" height="40" rx="8" fill="{{ sw.hex }}"/>{% else %}<rect class="metal" width="64" height="40" rx="8"/>{% endif %}</svg>
+        <b>{{ sw.name }}</b><span>{% if sw.hex %}{{ sw.hex }}{% else %}{{ sw.ink }}{% endif %}</span>{% if sw.role %}<span>{{ sw.role|lower }}</span>{% endif %}</li>
+      {% endfor %}
+    </ul>
+    {% empty %}<p class="small">No colour system is on record for this brand.</p>{% endfor %}
+  </section>
+  <section class="card pad lib-roles" id="faces" aria-labelledby="h-faces">
+    <div class="lib-hd"><h2 id="h-faces" class="h3">Faces</h2><a class="more" href="#all-faces">Every face ›</a></div>
+    {% for r in roles %}
+    <div class="lib-role"><img class="spec" src="{% url 'dashboard:face_specimen' r.face %}?show=glyph" alt="{{ r.family }}" decoding="async">
+      <span><b>{{ r.family }}</b><span>{{ r.words }}</span></span></div>
+    {% endfor %}
+    <p class="small">What each kind of text is set in. <a href="{% url 'dashboard:brand_library' %}#type">Every kind ›</a></p>
+  </section>
+  <section class="card pad lib-mark" id="mark" aria-labelledby="h-mark">
+    <div class="lib-hd"><h2 id="h-mark" class="h3">The mark</h2></div>
+    {% if mark_approved %}
+    <span class="lib-mk"><span class="mark" aria-hidden="true"></span></span>
+    <p class="small">The approved vector{% if mark_date %}, on file since {{ mark_date|date:"j F Y" }}{% endif %} — the top bar draws it too.</p>
+    {% else %}
+    <p class="small">No approved mark is on file, so none is shown.</p>
+    {% endif %}
+    <a class="more" href="{% url 'dashboard:brand_library' %}#mark">Its parts, its ink and its rules ›</a>
+  </section>
+</div>
+
+<section class="section" id="materials" aria-labelledby="h-materials">
+  <div class="sec-hd"><h2 id="h-materials" class="h2">Materials</h2>
+    {% if record %}<span class="note">{{ counts_words.all }} files of the brand's own work and references</span>
+    <a class="more" href="{% url 'dashboard:materials_library' %}">Search them by words or colour ›</a>{% endif %}</div>
+  {% if not record %}
+  <p class="warn">The materials record is not on this machine, so no material can be shown or placed here.</p>
+  {% else %}
+  <div class="lib-mats">
+    {% for m in artworks %}
+    <a class="lib-mat" href="{% url 'dashboard:materials_library' %}?q={{ m.name|urlencode }}">
+      <span class="frame"><img src="{% url 'dashboard:material_picture' m.n m.sha %}" alt="{{ m.subject|default:m.name }}" loading="lazy"></span>
+      <span class="cap"><b>{{ m.subject|default:m.name }}</b><span><span class="tag done">Can be placed</span>{% if m.kinds %}<span class="kinds">{{ m.kinds|join:" + " }}</span>{% endif %}</span></span>
+    </a>
+    {% empty %}<p class="small">No material that can be placed is drawn here.</p>
+    {% endfor %}
+  </div>
+  <p class="small lib-note"><svg class="i i-sm" aria-hidden="true"><use href="#i-info"/></svg>{{ counts_words.placeable }} file{{ counts.placeable|pluralize }} can be placed in a design — {{ artwork_count }} artwork{{ artwork_count|pluralize }}, each shown once however many files it is on (an .ai and its .jpg are one). Placing one into a design is not built yet.</p>
+  <div class="lib-refs">
+    <b class="n">{{ counts_words.reference }}</b>
+    <p><b>reference{{ counts.reference|pluralize }}, for inspiration only.</b> They can inspire a design but are never placed in one, and their pictures are not shown.</p>
+    <a class="btn sm" href="{% url 'dashboard:materials_library' %}?tier=reference">Show them</a>
+  </div>
+  {% endif %}
+</section>
+
+<section class="section" id="all-faces" aria-labelledby="h-all-faces">
+  <div class="sec-hd"><h2 id="h-all-faces" class="h2">Faces <span class="count-n">{{ families|length }}</span></h2>
+    <span class="note">every face a design may use — {{ face_count }} granted style{{ face_count|pluralize }}</span>
+    <a class="more" href="{% url 'dashboard:brand_library' %}#faces">Their grants and licences ›</a></div>
+  <div class="lib-faces">
+    {% for f in families %}
+    <div class="lib-face"><img class="spec" src="{% url 'dashboard:face_specimen' f.stem %}?show=name" alt="{{ f.family }}, a specimen" decoding="async">
+      <b>{{ f.family }}</b><span title="{{ f.styles|join:', ' }}">{% if f.styles|length > 1 %}{{ f.styles|length }} styles{% else %}{{ f.styles|first }}{% endif %} · {{ f.scripts }}</span>
+      {% if f.serves %}<span class="for">First for: {{ f.serves|join:"; "|lower }}</span>{% endif %}</div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section" id="products" aria-labelledby="h-products">
+  <div class="sec-hd"><h2 id="h-products" class="h2">Products <span class="count-n">{{ product_count }}</span></h2>
+    <span class="note">a design reads its size from here</span>
+    <a class="more" href="{% url 'dashboard:products_library' %}">Set a size ›</a></div>
+  <div class="lib-prods">
+    {% for r in products %}
+    <a class="lib-prod" href="{% url 'dashboard:products_library' %}#product-{{ r.p.pk }}">
+      <b>{{ r.p.name }}</b>{% if r.p.name_ar %}<span class="ar" lang="ar" dir="rtl">{{ r.p.name_ar }}</span>{% endif %}
+      <span>{% if r.size %}{{ r.size }}{% else %}<span class="tag wait">No size on record</span>{% endif %}</span>
+    </a>
+    {% empty %}<p class="small">No product is on record for this brand.</p>
+    {% endfor %}
+  </div>
+  {% if product_count > products|length %}<p class="small"><a href="{% url 'dashboard:products_library' %}">All {{ product_count }} products ›</a></p>{% endif %}
+  {% if tests %}
+  <details class="lib-tests"><summary><svg class="i i-sm" aria-hidden="true"><use href="#i-fold"/></svg>{{ tests|length }} test record{{ tests|length|pluralize }} — kept apart from the brand's products</summary>
+    <p class="small">Products made only for the system's own tests: every design of each is one of them.</p>
+    <div class="lib-prods">
+      {% for r in tests %}<a class="lib-prod" href="{% url 'dashboard:products_library' %}#product-{{ r.p.pk }}"><b>{{ r.p.name }}</b><span>{{ r.p.product_id }}</span></a>{% endfor %}
+    </div>
+  </details>
+  {% endif %}
+</section>
+
+<section class="section" id="finished" aria-labelledby="h-finished">
+  <div class="sec-hd"><h2 id="h-finished" class="h2">Finished designs <span class="count-n">{{ finished_count }}</span></h2>
+    <span class="note">made, with their files</span>
+    {% if can_see_finished %}<a class="more" href="{% url 'dashboard:finished_designs' %}">All of them ›</a>{% endif %}</div>
+  {% if can_see_finished %}
+  <div class="lib-fins">{% for f in finished %}{% include "dashboard/library/_finished_card.html" %}{% empty %}<p class="small">No design is finished yet — a design appears here once its files are made.</p>{% endfor %}</div>
+  {% else %}
+  <p class="small">Your account has no role — ask an admin to add you to a team role.</p>
+  {% endif %}
+</section>
+{% endblock %}

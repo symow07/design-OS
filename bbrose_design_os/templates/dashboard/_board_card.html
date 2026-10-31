@@ -1,0 +1,16 @@
+{% comment %}One design on the board: its picture, its name and what is designed, its number, what happens next, and the one
+thing to do — each card opens the design's own page. Its state is its form: working shimmers, waiting carries a gold
+edge, can't-move is quiet, finished takes a tick.{% endcomment %}
+<article class="bcard {{ c.state }}">
+  {% if c.picture %}<img class="thumb" src="{{ c.picture }}" alt="" loading="lazy">{% else %}<span class="thumb ph-pic {{ c.state }}"><svg class="i" aria-hidden="true"><use href="#{{ c.icon }}"/></svg></span>{% endif %}
+  <div class="body">
+    <a class="nm" href="{{ c.url }}">{{ c.product_or_brief }}</a>
+    <span class="wh">{{ c.what }} · #{{ c.task_id }}</span>
+    {% if c.state == "working" %}<span class="working-tag"><span class="ring" aria-hidden="true"></span>{{ c.next_words }}</span>
+    {% elif c.state == "stuck" %}<span class="note">{{ c.next_words }}</span>
+    {% elif c.brief_note %}<span class="note">{{ c.brief_note }}</span>{% endif %}
+    {% if c.earlier_stops %}<span class="note">{{ c.earlier_stops|length }} earlier tr{{ c.earlier_stops|length|pluralize:"y,ies" }} stopped — listed on Status</span>{% endif %}
+    <span class="act"><a class="go" href="{{ c.url }}">{{ c.action }} <svg class="i i-sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>{% if c.cost %}<span class="cost">{{ c.cost }}</span>{% endif %}</span>
+  </div>
+  {% if c.state == "finished" %}<svg class="i i-sm state" aria-label="Finished"><use href="#i-check"/></svg>{% endif %}
+</article>

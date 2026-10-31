@@ -1,0 +1,131 @@
+{
+  "slice": "DIP-0C3b1",
+  "c3a_commit": "2c00dda6e0595f85d78c189941cb5682bd0b9f57",
+  "model_version": "rights/1.0",
+  "ownership_states": {
+    "machine_permitted": [
+      "OWNERSHIP_UNKNOWN",
+      "BBROSE_OWNED_UNCONFIRMED",
+      "THIRD_PARTY_UNCONFIRMED",
+      "OWNERSHIP_DISPUTED",
+      "QUARANTINED_PENDING_REVIEW"
+    ],
+    "human_only": [
+      "BBROSE_OWNED_CONFIRMED",
+      "THIRD_PARTY_CONFIRMED",
+      "LICENSED_FOR_LIMITED_USE",
+      "JOINT_OR_CONTRACTED_USE"
+    ],
+    "business_assertion": "BUSINESS_ASSERTED_BBROSE",
+    "total": 10
+  },
+  "license_states": {
+    "machine_permitted": [
+      "LICENSE_UNVERIFIED",
+      "NO_LICENSE_EVIDENCE",
+      "COMMERCIAL_USE_UNKNOWN",
+      "QUARANTINED",
+      "EXPIRED_OR_REVIEW_REQUIRED"
+    ],
+    "human_only": [
+      "LICENSE_APPROVED",
+      "INTERNAL_USE_ONLY",
+      "ATTRIBUTION_REQUIRED",
+      "MODIFICATION_RESTRICTED",
+      "EMBEDDING_RESTRICTED",
+      "REDISTRIBUTION_RESTRICTED"
+    ],
+    "total": 11
+  },
+  "transition_counts": {
+    "ownership": {
+      "machine": {
+        "legal": 18,
+        "refused": 72
+      },
+      "human": {
+        "legal": 81,
+        "refused": 9
+      }
+    },
+    "license": {
+      "machine": {
+        "legal": 21,
+        "refused": 89
+      },
+      "human": {
+        "legal": 110,
+        "refused": 0
+      }
+    }
+  },
+  "machine_refusal_reasons": {
+    "IllegalTransition": 56,
+    "HumanOnlyStateViolation": 105
+  },
+  "permission_flags": [
+    "retrieval_allowed",
+    "automatic_use_allowed",
+    "production_use_allowed",
+    "modification_allowed",
+    "embedding_allowed",
+    "redistribution_allowed",
+    "public_export_allowed",
+    "approved_for_bbrose",
+    "approved_for_other_brands"
+  ],
+  "machine_guards": {
+    "machine_cannot_emit_human_only_ownership": true,
+    "machine_cannot_emit_human_only_license": true,
+    "machine_cannot_invent_a_business_assertion": true,
+    "machine_cannot_select_canonical_master": true,
+    "machine_never_increases_certainty": true,
+    "certainty_increases_found": [],
+    "machine_cannot_grant_any_permission": true,
+    "permission_flags_checked": 9,
+    "machine_may_revoke": true
+  },
+  "four_layers": {
+    "layer_key_counts": {
+      "business_assertion": 10,
+      "machine_inference": 7,
+      "human_confirmation": 5,
+      "permissions": 13
+    },
+    "layers_are_disjoint": true,
+    "overlapping_keys": {},
+    "defaults": {
+      "ownership": "OWNERSHIP_UNKNOWN",
+      "license": "LICENSE_UNVERIFIED",
+      "confirmed_ownership": null,
+      "all_permissions_denied": true,
+      "approved_products": [],
+      "approved_markets": [],
+      "canonical_brand_master": null
+    }
+  },
+  "business_assertion_behaviour": {
+    "assertion_changed_nothing_else": true,
+    "assertion_is_not_a_confirmation": true,
+    "assertion_grants_no_permission": true,
+    "effective_ownership_is_still_unknown": true,
+    "assertion_alone_cannot_confirm": true,
+    "why_not": "confirmation requires at least one REVIEWED evidence item; the business assertion is a BELIEF, not evidence"
+  },
+  "integrity": {
+    "materials": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "modified": [],
+      "file_count_before": 7695,
+      "file_count_after": 7695
+    },
+    "no_output_under_source": {
+      "output_root": "/Users/symow/Desktop/bbrose-systemOS/var/design_intelligence/audits/dip0c",
+      "source_root": "/Users/symow/Desktop/bbrose-systemOS/materials",
+      "ok": true
+    }
+  },
+  "runtime_seconds": 0.11
+}

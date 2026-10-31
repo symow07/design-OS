@@ -1,0 +1,174 @@
+{
+  "schema_version": "ledger/1.0",
+  "event_id": "evt-9e2b9c4d06717fd1e35a",
+  "event_type": "CANONICAL_MASTER_APPROVED",
+  "asset": "TEST_ONLY_synthetic_bbrose_master.ai",
+  "actor_id": "TEST_ONLY_brand_admin",
+  "actor_role": "BRAND_ADMIN",
+  "occurred_at": "2026-07-11T09:00:00+00:00",
+  "previous_state": null,
+  "requested_state": null,
+  "decision_reason": "passes the full checklist",
+  "evidence_refs": [
+    "evd-142f31fedd592d56008a"
+  ],
+  "assertion_refs": [],
+  "supersedes_event_id": null,
+  "review_expiry": null,
+  "contradiction": {
+    "contradiction_present": false,
+    "contradiction_refs": [],
+    "contradiction_acknowledged": false,
+    "acknowledgement_reason": null
+  },
+  "permission": null,
+  "canonical": {
+    "canonical_state": "CANONICAL_BRAND_MASTER",
+    "scope": {
+      "brand": "BBROSE",
+      "lockup": "PRIMARY",
+      "products": [],
+      "markets": [
+        "EU"
+      ],
+      "effective_from": null,
+      "effective_to": null
+    },
+    "checklist": {
+      "brand_identity_confirmed": {
+        "result": true,
+        "confirmed_by": "TEST_ONLY_brand_admin",
+        "confirmed_at": "2026-07-11T09:00:00+00:00",
+        "notes": "TEST_ONLY"
+      },
+      "technical_readiness_appropriate": {
+        "result": true,
+        "confirmed_by": "TEST_ONLY_brand_admin",
+        "confirmed_at": "2026-07-11T09:00:00+00:00",
+        "notes": "TEST_ONLY"
+      },
+      "editable_vector_confirmed": {
+        "result": true,
+        "confirmed_by": "TEST_ONLY_brand_admin",
+        "confirmed_at": "2026-07-11T09:00:00+00:00",
+        "notes": "TEST_ONLY"
+      },
+      "official_proportions_confirmed": {
+        "result": true,
+        "confirmed_by": "TEST_ONLY_brand_admin",
+        "confirmed_at": "2026-07-11T09:00:00+00:00",
+        "notes": "TEST_ONLY"
+      },
+      "symbol_wordmark_relationship_confirmed": {
+        "result": true,
+        "confirmed_by": "TEST_ONLY_brand_admin",
+        "confirmed_at": "2026-07-11T09:00:00+00:00",
+        "notes": "TEST_ONLY"
+      },
+      "approved_lockup_type": {
+        "result": true,
+        "confirmed_by": "TEST_ONLY_brand_admin",
+        "confirmed_at": "2026-07-11T09:00:00+00:00",
+        "notes": "TEST_ONLY"
+      },
+      "approved_color_variants": {
+        "result": true,
+        "confirmed_by": "TEST_ONLY_brand_admin",
+        "confirmed_at": "2026-07-11T09:00:00+00:00",
+        "notes": "TEST_ONLY"
+      },
+      "version_or_date_recorded": {
+        "result": true,
+        "confirmed_by": "TEST_ONLY_brand_admin",
+        "confirmed_at": "2026-07-11T09:00:00+00:00",
+        "notes": "TEST_ONLY"
+      },
+      "ownership_or_permitted_use_confirmed": {
+        "result": true,
+        "confirmed_by": "TEST_ONLY_legal",
+        "confirmed_at": "2026-07-11T09:00:00+00:00",
+        "notes": "TEST_ONLY"
+      },
+      "reviewed_accepted_evidence_present": {
+        "result": true,
+        "confirmed_by": "TEST_ONLY_legal",
+        "confirmed_at": "2026-07-11T09:00:00+00:00",
+        "notes": "TEST_ONLY"
+      },
+      "license_status_confirmed": {
+        "result": true,
+        "confirmed_by": "TEST_ONLY_legal",
+        "confirmed_at": "2026-07-11T09:00:00+00:00",
+        "notes": "TEST_ONLY"
+      },
+      "restrictions_and_attribution_recorded": {
+        "result": true,
+        "confirmed_by": "TEST_ONLY_legal",
+        "confirmed_at": "2026-07-11T09:00:00+00:00",
+        "notes": "TEST_ONLY"
+      },
+      "approved_product_scope": {
+        "result": true,
+        "confirmed_by": "TEST_ONLY_legal",
+        "confirmed_at": "2026-07-11T09:00:00+00:00",
+        "notes": "TEST_ONLY"
+      },
+      "approved_market_scope": {
+        "result": true,
+        "confirmed_by": "TEST_ONLY_legal",
+        "confirmed_at": "2026-07-11T09:00:00+00:00",
+        "notes": "TEST_ONLY"
+      },
+      "review_expiry_or_no_expiry_reason": {
+        "result": true,
+        "confirmed_by": "TEST_ONLY_legal",
+        "confirmed_at": "2026-07-11T09:00:00+00:00",
+        "notes": "TEST_ONLY"
+      }
+    },
+    "attestations": [
+      {
+        "category": "TECHNICAL_AND_BRAND",
+        "actor_id": "TEST_ONLY_brand_admin",
+        "actor_role": "BRAND_ADMIN",
+        "attested_at": "2026-07-11T09:00:00+00:00",
+        "notes": "TEST_ONLY",
+        "covers_items": [
+          "brand_identity_confirmed",
+          "technical_readiness_appropriate",
+          "editable_vector_confirmed",
+          "official_proportions_confirmed",
+          "symbol_wordmark_relationship_confirmed",
+          "approved_lockup_type",
+          "approved_color_variants",
+          "version_or_date_recorded"
+        ]
+      },
+      {
+        "category": "RIGHTS_AND_OWNERSHIP",
+        "actor_id": "TEST_ONLY_legal",
+        "actor_role": "LEGAL_REVIEWER",
+        "attested_at": "2026-07-11T09:00:00+00:00",
+        "notes": "TEST_ONLY",
+        "covers_items": [
+          "ownership_or_permitted_use_confirmed",
+          "reviewed_accepted_evidence_present",
+          "license_status_confirmed",
+          "restrictions_and_attribution_recorded",
+          "approved_product_scope",
+          "approved_market_scope",
+          "review_expiry_or_no_expiry_reason"
+        ]
+      }
+    ],
+    "version_or_date": "v1 / 2026-07-11",
+    "grants_permissions": false,
+    "note": "canonical status says WHICH FILE IS AUTHORITATIVE. It says nothing about what the system may DO with it — every permission remains false until separately granted."
+  },
+  "notes": "",
+  "recorded_at": "2026-07-14T02:06:43+00:00",
+  "repository_commit": null,
+  "content_hash": "8c3a81b60754d3d3428a9e9d63d06da0d1abcdc8cbe08a5445bbf9afe9fc947f",
+  "TEST_ONLY": true,
+  "WARNING": "SYNTHETIC EXAMPLE. This is NOT a real decision and confers NOTHING. It exists to exercise the schema and the validator."
+}

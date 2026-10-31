@@ -1,0 +1,37 @@
+§AD0(a) SCORE — §BH37(2)+(3) ONE ATOMIC COMMIT, launched against
+pred_atomic.txt (sealed 8b3043ab6b5c66ae before git add). Gate GREEN,
+GEXIT=0. LANDED 86f8ccd (2026-09-05T08:37:26Z UTC). 8/8. Launched once,
+through the inner-root launcher, nothing running beside it.
+
+L1 HELD: exactly the FOURTEEN declared paths + the gate-staged ledger; no
+   apps/ path, no register block, no new file, no suite-manifest change.
+L2 HELD: every numstat row as declared (config 8/9; test_corpus_roots
+   13/14; pilot_manifest 80/80; summary 72/59; c4a_family_summary 649/530;
+   c4a_reconciliation 52/51; c4c_reconciliation 39/39;
+   font_batch_review_manifest 3230/7; font_review_queue_summary 26/26;
+   test_c4a 4/4; test_c4c 6/6; test_c5 2/2; manifest 34/34; registry 1/1);
+   the twelve literals as written; the 34 entries pin 9697b040eae2622b… ==
+   the on-disk face_manifest; the registry pin 7d31d29ff4e50093… == the
+   manifest's bytes at HEAD.
+L3 HELD: suite manifest untouched; records chain consistent (nothing under
+   docs/roadmap but the ledger); ledger 470 → 471 with HEAD~1 a
+   byte-prefix of HEAD; census-first held — the seven regenerated records,
+   the twelve literals, the 34 entries and the registry pin were the only
+   pin classes that moved, each by preview; WIT 863 untouched (no apps
+   change); identity none.
+L4 HELD: staged == declared, 14 rows, measured before launch.
+L5 HELD: 15 files, 4,217 insertions, 862 deletions — exact.
+L6 HELD: "TIER_2=GREEN collected=8564 failures=0 apps=7752 dip0c=671
+   dip0=141" — exact. No refusal; §BH24 1/3 carried.
+L7 HELD: ledger 470 → 471; the new line verdict OK, refusal_count 0.
+L8 HELD: apps diff EMPTY; GATE 7fbeb8f1fe10b0fb at [514:541] (593 lines),
+   TEST b32030dc827263e4; tree seals moved to dip0c c22592930c75001c /
+   dip0a cac81c9c1ba5fade exactly as declared; protocol_identity untouched;
+   the eight M7 artefacts == baseline; under Django at scoring the Noto trio
+   VERIFIED_FOR_PRODUCTION, the 35 at their PROVENANCE hashes, exactly 38
+   faces carry a granted sha256 and none is a drop font; the re-pin
+   authority SPENT on this landing; (4)'s authority UNSPENT. The declared
+   divergences stand recorded: the walk sees the census minus 16, not 13;
+   seven records moved, not eight (the curated starter set unchanged).
+Post-landing: porcelain clean. Next, in the ruled order: (4) the tiers
+assigned and the grants through the channel.

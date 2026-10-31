@@ -1,0 +1,312 @@
+{
+  "schema_version": "ledger/1.0",
+  "event_types": [
+    "ASSERTION_SUBMITTED",
+    "ASSERTION_WITHDRAWN",
+    "EVIDENCE_SUBMITTED",
+    "EVIDENCE_ACCEPTED",
+    "EVIDENCE_REJECTED",
+    "OWNERSHIP_CONFIRMED",
+    "THIRD_PARTY_CONFIRMED",
+    "LICENSE_APPROVED",
+    "LIMITED_USE_APPROVED",
+    "OWNERSHIP_REVOKED",
+    "LICENSE_REVOKED",
+    "DECISION_SUPERSEDED",
+    "RE_REVIEW_REQUIRED",
+    "CANONICAL_MASTER_APPROVED",
+    "VARIANT_CLASSIFIED",
+    "CANONICAL_MASTER_DEPRECATED",
+    "CANONICAL_MASTER_REPLACED",
+    "VARIANT_RECLASSIFIED",
+    "PERMISSION_GRANTED",
+    "PERMISSION_REVOKED",
+    "PERMISSION_EXPIRED",
+    "SCOPE_REDUCED",
+    "ASSET_QUARANTINED",
+    "PALETTE_ASSOCIATION_CONFIRMED",
+    "PALETTE_OWNERSHIP_CONFIRMED",
+    "PALETTE_LICENSE_CONFIRMED",
+    "BRAND_PALETTE_APPROVED",
+    "PALETTE_VARIANT_APPROVED",
+    "PALETTE_DEPRECATED",
+    "PALETTE_SUPERSEDED",
+    "PALETTE_QUARANTINED",
+    "PALETTE_APPROVAL_REVOKED",
+    "PALETTE_RE_REVIEW_REQUIRED"
+  ],
+  "decision_events": [
+    "OWNERSHIP_CONFIRMED",
+    "THIRD_PARTY_CONFIRMED",
+    "LICENSE_APPROVED",
+    "LIMITED_USE_APPROVED"
+  ],
+  "corrective_events": [
+    "OWNERSHIP_REVOKED",
+    "LICENSE_REVOKED",
+    "DECISION_SUPERSEDED",
+    "RE_REVIEW_REQUIRED",
+    "EVIDENCE_REJECTED",
+    "ASSERTION_WITHDRAWN",
+    "CANONICAL_MASTER_DEPRECATED",
+    "CANONICAL_MASTER_REPLACED",
+    "VARIANT_RECLASSIFIED",
+    "PERMISSION_REVOKED",
+    "PERMISSION_EXPIRED",
+    "SCOPE_REDUCED",
+    "PALETTE_DEPRECATED",
+    "PALETTE_SUPERSEDED",
+    "PALETTE_APPROVAL_REVOKED",
+    "PALETTE_RE_REVIEW_REQUIRED"
+  ],
+  "event_requires_action": {
+    "ASSERTION_SUBMITTED": "submit_assertion",
+    "ASSERTION_WITHDRAWN": "withdraw_assertion",
+    "EVIDENCE_SUBMITTED": "submit_evidence",
+    "EVIDENCE_ACCEPTED": "review_evidence",
+    "EVIDENCE_REJECTED": "review_evidence",
+    "OWNERSHIP_CONFIRMED": "confirm_ownership",
+    "THIRD_PARTY_CONFIRMED": "confirm_third_party",
+    "LICENSE_APPROVED": "approve_license",
+    "LIMITED_USE_APPROVED": "approve_limited_use",
+    "OWNERSHIP_REVOKED": "revoke_decision",
+    "LICENSE_REVOKED": "revoke_decision",
+    "DECISION_SUPERSEDED": "revoke_decision",
+    "RE_REVIEW_REQUIRED": "require_re_review",
+    "CANONICAL_MASTER_APPROVED": "approve_canonical_master",
+    "VARIANT_CLASSIFIED": "classify_variant",
+    "CANONICAL_MASTER_DEPRECATED": "deprecate_canonical",
+    "CANONICAL_MASTER_REPLACED": "approve_canonical_master",
+    "VARIANT_RECLASSIFIED": "classify_variant",
+    "PERMISSION_GRANTED": "grant_permission",
+    "PERMISSION_REVOKED": "revoke_permission",
+    "PERMISSION_EXPIRED": "execute_expiry",
+    "SCOPE_REDUCED": "revoke_permission",
+    "ASSET_QUARANTINED": "quarantine_asset",
+    "PALETTE_ASSOCIATION_CONFIRMED": "confirm_palette_association",
+    "PALETTE_OWNERSHIP_CONFIRMED": "confirm_ownership",
+    "PALETTE_LICENSE_CONFIRMED": "approve_license",
+    "BRAND_PALETTE_APPROVED": "approve_brand_palette",
+    "PALETTE_VARIANT_APPROVED": "classify_variant",
+    "PALETTE_DEPRECATED": "deprecate_palette",
+    "PALETTE_SUPERSEDED": "approve_brand_palette",
+    "PALETTE_QUARANTINED": "quarantine_asset",
+    "PALETTE_APPROVAL_REVOKED": "revoke_decision",
+    "PALETTE_RE_REVIEW_REQUIRED": "require_re_review"
+  },
+  "evidence_types": [
+    "SOURCE_FILE",
+    "DESIGNER_DELIVERY",
+    "CONTRACT",
+    "INVOICE",
+    "PURCHASE_RECORD",
+    "TRADEMARK_REGISTRATION",
+    "INTERNAL_CREATION_RECORD",
+    "EMAIL_OR_APPROVAL",
+    "VENDOR_OR_SOURCE_INFORMATION",
+    "LICENSE_DOCUMENT",
+    "USAGE_HISTORY",
+    "OFFICIAL_WEBSITE_OR_PACKAGING_USAGE",
+    "BUSINESS_OWNER_DECLARATION",
+    "LEGAL_REVIEW",
+    "OTHER"
+  ],
+  "evidence_statuses": [
+    "SUBMITTED",
+    "REVIEWED_ACCEPTED",
+    "REVIEWED_REJECTED",
+    "EXPIRED",
+    "SUPERSEDED",
+    "QUARANTINED"
+  ],
+  "hash_excluded_fields": [
+    "content_hash",
+    "recorded_at",
+    "repository_commit"
+  ],
+  "authorization_policy": {
+    "policy_version": "authz/1.0",
+    "roles": [
+      "BUSINESS_OWNER",
+      "BRAND_ADMIN",
+      "LEGAL_REVIEWER",
+      "DESIGN_REVIEWER",
+      "SYSTEM_ADMIN",
+      "OBSERVER"
+    ],
+    "actions": [
+      "submit_assertion",
+      "withdraw_assertion",
+      "submit_evidence",
+      "review_evidence",
+      "confirm_ownership",
+      "confirm_third_party",
+      "approve_license",
+      "approve_limited_use",
+      "revoke_decision",
+      "require_re_review",
+      "approve_canonical_master",
+      "attest_canonical_technical",
+      "attest_canonical_legal",
+      "classify_variant",
+      "deprecate_canonical",
+      "confirm_brand_identity",
+      "confirm_design_quality",
+      "approve_business_scope",
+      "grant_permission",
+      "grant_legal_permission",
+      "revoke_permission",
+      "execute_expiry",
+      "quarantine_asset",
+      "attest_palette_color",
+      "attest_palette_rights",
+      "approve_brand_palette",
+      "confirm_palette_association",
+      "deprecate_palette"
+    ],
+    "policy": {
+      "submit_assertion": [
+        "BUSINESS_OWNER",
+        "BRAND_ADMIN"
+      ],
+      "withdraw_assertion": [
+        "BUSINESS_OWNER",
+        "BRAND_ADMIN"
+      ],
+      "submit_evidence": [
+        "BUSINESS_OWNER",
+        "BRAND_ADMIN",
+        "LEGAL_REVIEWER",
+        "DESIGN_REVIEWER"
+      ],
+      "review_evidence": [
+        "LEGAL_REVIEWER",
+        "BRAND_ADMIN",
+        "DESIGN_REVIEWER"
+      ],
+      "confirm_ownership": [
+        "LEGAL_REVIEWER",
+        "BRAND_ADMIN"
+      ],
+      "confirm_third_party": [
+        "LEGAL_REVIEWER",
+        "BRAND_ADMIN"
+      ],
+      "approve_license": [
+        "LEGAL_REVIEWER"
+      ],
+      "approve_limited_use": [
+        "LEGAL_REVIEWER"
+      ],
+      "revoke_decision": [
+        "LEGAL_REVIEWER",
+        "BRAND_ADMIN",
+        "SYSTEM_ADMIN"
+      ],
+      "require_re_review": [
+        "LEGAL_REVIEWER",
+        "BRAND_ADMIN",
+        "SYSTEM_ADMIN",
+        "DESIGN_REVIEWER"
+      ],
+      "approve_canonical_master": [
+        "BRAND_ADMIN"
+      ],
+      "attest_canonical_technical": [
+        "DESIGN_REVIEWER",
+        "BRAND_ADMIN"
+      ],
+      "attest_canonical_legal": [
+        "LEGAL_REVIEWER"
+      ],
+      "classify_variant": [
+        "BRAND_ADMIN",
+        "DESIGN_REVIEWER"
+      ],
+      "deprecate_canonical": [
+        "BRAND_ADMIN",
+        "BUSINESS_OWNER"
+      ],
+      "confirm_brand_identity": [
+        "BRAND_ADMIN",
+        "BUSINESS_OWNER"
+      ],
+      "confirm_design_quality": [
+        "DESIGN_REVIEWER",
+        "BRAND_ADMIN"
+      ],
+      "approve_business_scope": [
+        "BUSINESS_OWNER",
+        "BRAND_ADMIN"
+      ],
+      "grant_permission": [
+        "LEGAL_REVIEWER",
+        "BRAND_ADMIN"
+      ],
+      "grant_legal_permission": [
+        "LEGAL_REVIEWER"
+      ],
+      "revoke_permission": [
+        "LEGAL_REVIEWER",
+        "BRAND_ADMIN",
+        "SYSTEM_ADMIN"
+      ],
+      "execute_expiry": [
+        "SYSTEM_ADMIN",
+        "LEGAL_REVIEWER",
+        "BRAND_ADMIN"
+      ],
+      "quarantine_asset": [
+        "SYSTEM_ADMIN",
+        "LEGAL_REVIEWER",
+        "BRAND_ADMIN"
+      ],
+      "attest_palette_color": [
+        "BRAND_ADMIN",
+        "DESIGN_REVIEWER"
+      ],
+      "attest_palette_rights": [
+        "LEGAL_REVIEWER"
+      ],
+      "approve_brand_palette": [
+        "BRAND_ADMIN"
+      ],
+      "confirm_palette_association": [
+        "BRAND_ADMIN",
+        "BUSINESS_OWNER"
+      ],
+      "deprecate_palette": [
+        "BRAND_ADMIN",
+        "BUSINESS_OWNER"
+      ]
+    },
+    "state_requires_action": {
+      "BBROSE_OWNED_CONFIRMED": "confirm_ownership",
+      "THIRD_PARTY_CONFIRMED": "confirm_third_party",
+      "LICENSED_FOR_LIMITED_USE": "approve_limited_use",
+      "JOINT_OR_CONTRACTED_USE": "approve_limited_use",
+      "LICENSE_APPROVED": "approve_license",
+      "INTERNAL_USE_ONLY": "approve_license",
+      "ATTRIBUTION_REQUIRED": "approve_license",
+      "MODIFICATION_RESTRICTED": "approve_license",
+      "EMBEDDING_RESTRICTED": "approve_license",
+      "REDISTRIBUTION_RESTRICTED": "approve_license"
+    },
+    "notes": [
+      "no role may do everything",
+      "SYSTEM_ADMIN may revoke and quarantine but may NOT confirm ownership or approve a licence — administrative power is not legal authority",
+      "DESIGN_REVIEWER may review evidence but may not decide ownership",
+      "APPROVE_LICENSE is LEGAL_REVIEWER only",
+      "OBSERVER is read-only and appears in no policy entry",
+      "git authorship is PROVENANCE, not AUTHORISATION"
+    ]
+  },
+  "rules": [
+    "the immutable record FILES are the source of truth; index.json is generated and is a deletion tripwire, never authoritative",
+    "a record is never edited or deleted; a correction is a NEW superseding event",
+    "evidence status NEVER automatically changes ownership or licence",
+    "a business assertion is a BELIEF: it confirms nothing and grants nothing",
+    "git authorship is provenance, not authorisation",
+    "sensitive evidence is referenced by path/hash, never committed"
+  ]
+}

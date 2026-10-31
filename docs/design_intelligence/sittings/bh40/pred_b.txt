@@ -1,0 +1,43 @@
+§AD0(a) PREDICTION — (b) THE INDEX AND THE REBUILD (§BH40(b)), its own commit,
+sealed BEFORE git add. Base HEAD da56c06 ((a), 8/8). The rebuild has run on
+this content: BRAIN_REBUILD_OK in 2.56–2.80 s (bound 120 s), 414 sources,
+43,757 docs, 834 register + 556 queue sections, 12,473 materials rows.
+
+L1 WRITE SET: exactly THREE new paths at the OUTER root — tools/brain/
+   sources.py (117 lines), tools/brain/chunker.py (215), tools/brain/
+   rebuild.py (189). No other path: no apps/, docs/, register, queue,
+   CLAUDE.md, .mcp.json, server.py, README, .gitignore, gate script; var/
+   brain/ (brain.sqlite 76.9 MB, freshness.json) is git-ignored (.gitignore:66
+   `var/`) and stays untracked; nothing under materials/ or ~/ written by the
+   commit. Plus the gate-staged ledger line.
+L2 DIFF SHAPE: 3 added at +521 (117 + 215 + 189), 0 modified, 0 deleted.
+L3 MANIFEST / A391: suite manifest untouched (no test file; the outer tools/
+   brain is collected by no leg — the dip0 and dip0c legs target their own
+   tests dirs, the apps leg runs `pytest apps`); records consistent
+   (record_integrity walks the INNER root); ledger at 488 passes APPEND_ONLY.
+   Census-first: records none; identity none; WIT 864 untouched (tools/brain
+   is outside apps/); corpus constants, dip1b, the exclusion list, the
+   materials record untouched; the two-roots guard's three names unchanged
+   (tools already collides; no new top-level name); no test enumerates the
+   outer tools/ tree (measured: the dip0 tests enumerate dip0a only).
+L4 STAGED == DECLARED: 3 rows, every one "A", every path tools/brain/.
+L5 COMMIT CONTENTS: 4 files (3 + the ledger), insertions 522, deletions 0.
+L6 SUITE LINE + REFUSAL TREE: GREEN — TIER_2=GREEN collected=8594
+   failures=0 apps=7782 dip0c=671 dip0=141 (the tree at da56c06; no test
+   change); PostgreSQL 16 and Redis up; nothing beside the gate. §BH24
+   retired: a flush deadlock would be a defect to reproduce, never a re-run.
+L7 LEDGER FOLD: 488 → 489, the +1 in THIS commit; HEAD~1 a byte-prefix of
+   HEAD; verdict OK, refusal_count 0.
+L8 PROTOCOL IDENTITIES / HARD-STOP PROOFS: apps diff EMPTY; GATE
+   7fbeb8f1fe10b0fb at [514:541] (593 lines) and TEST b32030dc827263e4
+   byte-identical; tree seals dip0c c22592930c75001c / dip0a
+   d72072760ab20a6a UNCHANGED; protocol_identity UNCHANGED; the eight M7
+   artefacts == baseline; the register untouched (20,213 lines,
+   db241ccf0b258e35); the DIP-0A inventory 3b3cfdc2bf4fc6c0; font and colour
+   themes unchanged. NO TRACKED FILE CARRIES A REGISTER HASH: the three files
+   grep 0 for the register's sha at HEAD, HEAD~1 and HEAD~2 (db241ccf0b258e35,
+   a26433bcb4a8c545, 12aa45e1307de417); the only register hash lives in the
+   untracked var/brain/freshness.json. THE BRAIN WRITES NOTHING BUT var/brain/:
+   the rebuild's write set measured = brain.sqlite (via a tmp file moved into
+   place) + freshness.json; every source's mtime and sha256 unchanged across
+   the rebuild (porcelain clean after it). No claim-scan phrase in the files.

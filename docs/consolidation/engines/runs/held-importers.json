@@ -1,0 +1,443 @@
+{
+ "schema": "held_importers/1",
+ "engines": {
+  "3 carton choosers": {
+   "modules": 3,
+   "chain": [
+    "apps.dielines.geometry.engine",
+    "apps.dielines.qualification.dtuck_qual",
+    "apps.dielines.qualification.legacy_tuck",
+    "apps.dielines.qualification.reverse_tuck_qual",
+    "apps.dielines.qualification.runner",
+    "apps.dielines.qualification.side_seam_qual"
+   ]
+  },
+  "9 carton exporters": {
+   "modules": 3,
+   "other": [
+    "apps.dielines.api.views",
+    "apps.dielines.exporters.info_panel",
+    "apps.dielines.validators.production",
+    "apps.dielines.validators.production_readiness",
+    "apps.pipeline.agents.dieline_agent",
+    "apps.pipeline.targets.container"
+   ],
+   "held": [
+    "apps.ire.compose",
+    "apps.ire.compose_vector_art",
+    "apps.ire.emitters.native_ai",
+    "apps.pipeline.services.native_handoff"
+   ]
+  },
+  "20 designers eye": {
+   "modules": 1,
+   "other": [
+    "apps.pipeline.agents.aria",
+    "apps.pipeline.targets.container",
+    "apps.pipeline.views"
+   ]
+  },
+  "21 tavily": {
+   "modules": 1,
+   "held": [
+    "apps.pipeline.services.trend_board"
+   ],
+   "other": [
+    "apps.pipeline.services.comparison_anchors"
+   ]
+  },
+  "22 web research": {
+   "modules": 1,
+   "other": [
+    "apps.pipeline.services.comparison_anchors",
+    "apps.pipeline.services.technical_geometry_research",
+    "apps.pipeline.services.visual_review",
+    "apps.pipeline.services.web_geometry_research",
+    "apps.pipeline.views"
+   ],
+   "held": [
+    "apps.pipeline.services.trend_board",
+    "apps.pipeline.services.web_research_tavily"
+   ],
+   "chain": [
+    "apps.pipeline.services.round_designer"
+   ]
+  },
+  "23 trend board": {
+   "modules": 1,
+   "other": [
+    "apps.pipeline.agents.aria",
+    "apps.pipeline.agents.image_producer",
+    "apps.pipeline.agents.qa_reviewer",
+    "apps.pipeline.autopilot",
+    "apps.pipeline.services.comparison_anchors",
+    "apps.pipeline.targets.container",
+    "apps.pipeline.targets.container.readable",
+    "apps.pipeline.tasks",
+    "apps.pipeline.views"
+   ]
+  },
+  "24 library retrieval": {
+   "modules": 2,
+   "chain": [
+    "apps.pipeline.services.round_designer"
+   ],
+   "held": [
+    "apps.pipeline.services.trend_board"
+   ],
+   "other": [
+    "apps.dashboard.materials_library",
+    "apps.pipeline.services.concept_references",
+    "apps.pipeline.services.materials_house_designs"
+   ]
+  },
+  "49 font_pool": {
+   "modules": 1,
+   "chain": [
+    "apps.pipeline.services.round_files_export"
+   ],
+   "other": [
+    "apps.dashboard.brand_library",
+    "apps.ire.concept_typeface",
+    "apps.ire.container_font_owner_grant",
+    "apps.ire.font_instances",
+    "apps.ire.font_roles",
+    "apps.ire.lettering_faces",
+    "apps.ire.type_book",
+    "apps.pipeline.services.concept_design_map"
+   ]
+  },
+  "51 tracers": {
+   "modules": 2,
+   "other": [
+    "apps.pipeline.services.concept_design_map",
+    "apps.pipeline.targets.carton_layout",
+    "apps.pipeline.targets.composite",
+    "apps.pipeline.targets.container",
+    "apps.pipeline.targets.container.tray_picture",
+    "apps.pipeline.targets.packaging"
+   ],
+   "held": [
+    "apps.pipeline.services.designers_eye"
+   ]
+  },
+  "53 IRE composer": {
+   "modules": 10,
+   "other": [
+    "apps.dashboard.exploration_render",
+    "apps.ire.back_panel",
+    "apps.ire.concept_face",
+    "apps.ire.concept_front",
+    "apps.ire.container_composition_metrics",
+    "apps.ire.container_concept_fidelity",
+    "apps.ire.container_fidelity",
+    "apps.ire.container_finishes",
+    "apps.ire.container_motif",
+    "apps.ire.container_production_method",
+    "apps.ire.container_text_floor",
+    "apps.ire.front_faces",
+    "apps.ire.handoff.container_adapter",
+    "apps.ire.inside_print",
+    "apps.ire.legibility",
+    "apps.ire.lettering_faces",
+    "apps.ire.palette_tray",
+    "apps.ire.self_check",
+    "apps.ire.vq1_render",
+    "apps.pipeline.agents.aria",
+    "apps.pipeline.gate2_problems",
+    "apps.pipeline.services.concept_design_map",
+    "apps.pipeline.services.hybrid_bottle_output",
+    "apps.pipeline.services.tube_proof",
+    "apps.pipeline.targets.artwork",
+    "apps.pipeline.targets.container",
+    "apps.pipeline.targets.packaging",
+    "apps.pipeline.views",
+    "tools.brand_mark_place",
+    "tools.build_rescue_serum",
+    "tools.wim_front_render",
+    "tools.wiu_front_collision",
+    "tools.wiv_leading_comparison",
+    "tools.wiy_leading_floor"
+   ],
+   "held": [
+    "apps.dielines.services.export_service",
+    "apps.pipeline.services.native_handoff"
+   ]
+  },
+  "54 native_handoff": {
+   "modules": 1,
+   "other": [
+    "apps.pipeline.targets.packaging",
+    "apps.pipeline.views"
+   ]
+  },
+  "57 palette M-series": {
+   "modules": 80,
+   "other": [
+    "apps.core.tests",
+    "apps.dashboard.views",
+    "apps.pipeline.services.a3p_evidence_render",
+    "apps.pipeline.services.concept_analysis",
+    "apps.pipeline.services.palt_m4b_a",
+    "apps.pipeline.services.palt_m4b_a2",
+    "apps.pipeline.services.palt_m4b_a2_evidence",
+    "apps.pipeline.services.palt_m4b_a3",
+    "apps.pipeline.services.palt_m4b_a3_evidence",
+    "apps.pipeline.services.palt_m4b_a_evidence",
+    "apps.pipeline.services.palt_p1",
+    "apps.pipeline.services.palt_p1_evidence",
+    "apps.pipeline.services.palt_p1_m4b_evidence",
+    "apps.pipeline.targets.container.silhouettes",
+    "apps.pipeline.targets.palette",
+    "tools.tier2_gate"
+   ]
+  }
+ },
+ "other_holders": {
+  "apps.core.tests": [
+   "57"
+  ],
+  "apps.dashboard.brand_library": [
+   "49"
+  ],
+  "apps.dashboard.exploration_render": [
+   "53"
+  ],
+  "apps.dashboard.materials_library": [
+   "24"
+  ],
+  "apps.dashboard.views": [
+   "57"
+  ],
+  "apps.dielines.api.views": [
+   "9"
+  ],
+  "apps.dielines.exporters.info_panel": [
+   "9"
+  ],
+  "apps.dielines.validators.production": [
+   "9"
+  ],
+  "apps.dielines.validators.production_readiness": [
+   "9"
+  ],
+  "apps.ire.back_panel": [
+   "53"
+  ],
+  "apps.ire.concept_face": [
+   "53"
+  ],
+  "apps.ire.concept_front": [
+   "53"
+  ],
+  "apps.ire.concept_typeface": [
+   "49"
+  ],
+  "apps.ire.container_composition_metrics": [
+   "53"
+  ],
+  "apps.ire.container_concept_fidelity": [
+   "53"
+  ],
+  "apps.ire.container_fidelity": [
+   "53"
+  ],
+  "apps.ire.container_finishes": [
+   "53"
+  ],
+  "apps.ire.container_font_owner_grant": [
+   "49"
+  ],
+  "apps.ire.container_motif": [
+   "53"
+  ],
+  "apps.ire.container_production_method": [
+   "53"
+  ],
+  "apps.ire.container_text_floor": [
+   "53"
+  ],
+  "apps.ire.font_instances": [
+   "49"
+  ],
+  "apps.ire.font_roles": [
+   "49"
+  ],
+  "apps.ire.front_faces": [
+   "53"
+  ],
+  "apps.ire.handoff.container_adapter": [
+   "53"
+  ],
+  "apps.ire.inside_print": [
+   "53"
+  ],
+  "apps.ire.legibility": [
+   "53"
+  ],
+  "apps.ire.lettering_faces": [
+   "49",
+   "53"
+  ],
+  "apps.ire.palette_tray": [
+   "53"
+  ],
+  "apps.ire.self_check": [
+   "53"
+  ],
+  "apps.ire.type_book": [
+   "49"
+  ],
+  "apps.ire.vq1_render": [
+   "53"
+  ],
+  "apps.pipeline.agents.aria": [
+   "20",
+   "23",
+   "53"
+  ],
+  "apps.pipeline.agents.dieline_agent": [
+   "9"
+  ],
+  "apps.pipeline.agents.image_producer": [
+   "23"
+  ],
+  "apps.pipeline.agents.qa_reviewer": [
+   "23"
+  ],
+  "apps.pipeline.autopilot": [
+   "23"
+  ],
+  "apps.pipeline.gate2_problems": [
+   "53"
+  ],
+  "apps.pipeline.services.a3p_evidence_render": [
+   "57"
+  ],
+  "apps.pipeline.services.comparison_anchors": [
+   "21",
+   "22",
+   "23"
+  ],
+  "apps.pipeline.services.concept_analysis": [
+   "57"
+  ],
+  "apps.pipeline.services.concept_design_map": [
+   "49",
+   "51",
+   "53"
+  ],
+  "apps.pipeline.services.concept_references": [
+   "24"
+  ],
+  "apps.pipeline.services.hybrid_bottle_output": [
+   "53"
+  ],
+  "apps.pipeline.services.materials_house_designs": [
+   "24"
+  ],
+  "apps.pipeline.services.palt_m4b_a": [
+   "57"
+  ],
+  "apps.pipeline.services.palt_m4b_a2": [
+   "57"
+  ],
+  "apps.pipeline.services.palt_m4b_a2_evidence": [
+   "57"
+  ],
+  "apps.pipeline.services.palt_m4b_a3": [
+   "57"
+  ],
+  "apps.pipeline.services.palt_m4b_a3_evidence": [
+   "57"
+  ],
+  "apps.pipeline.services.palt_m4b_a_evidence": [
+   "57"
+  ],
+  "apps.pipeline.services.palt_p1": [
+   "57"
+  ],
+  "apps.pipeline.services.palt_p1_evidence": [
+   "57"
+  ],
+  "apps.pipeline.services.palt_p1_m4b_evidence": [
+   "57"
+  ],
+  "apps.pipeline.services.technical_geometry_research": [
+   "22"
+  ],
+  "apps.pipeline.services.tube_proof": [
+   "53"
+  ],
+  "apps.pipeline.services.visual_review": [
+   "22"
+  ],
+  "apps.pipeline.services.web_geometry_research": [
+   "22"
+  ],
+  "apps.pipeline.targets.artwork": [
+   "53"
+  ],
+  "apps.pipeline.targets.carton_layout": [
+   "51"
+  ],
+  "apps.pipeline.targets.composite": [
+   "51"
+  ],
+  "apps.pipeline.targets.container": [
+   "9",
+   "20",
+   "23",
+   "51",
+   "53"
+  ],
+  "apps.pipeline.targets.container.readable": [
+   "23"
+  ],
+  "apps.pipeline.targets.container.silhouettes": [
+   "57"
+  ],
+  "apps.pipeline.targets.container.tray_picture": [
+   "51"
+  ],
+  "apps.pipeline.targets.packaging": [
+   "51",
+   "53",
+   "54"
+  ],
+  "apps.pipeline.targets.palette": [
+   "57"
+  ],
+  "apps.pipeline.tasks": [
+   "23"
+  ],
+  "apps.pipeline.views": [
+   "20",
+   "22",
+   "23",
+   "53",
+   "54"
+  ],
+  "tools.brand_mark_place": [
+   "53"
+  ],
+  "tools.build_rescue_serum": [
+   "53"
+  ],
+  "tools.tier2_gate": [
+   "57"
+  ],
+  "tools.wim_front_render": [
+   "53"
+  ],
+  "tools.wiu_front_collision": [
+   "53"
+  ],
+  "tools.wiv_leading_comparison": [
+   "53"
+  ],
+  "tools.wiy_leading_floor": [
+   "53"
+  ]
+ }
+}

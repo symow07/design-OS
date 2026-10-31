@@ -1,0 +1,25 @@
+§AD0(a) SCORE — the §BH30(d) GRANTS commit, ATTEMPT 2 (per §BH30(k)(2)),
+launched against pred_grants2.txt (sealed 42b447e41aee7c62 before git add).
+Gate GREEN, GEXIT=0. LANDED ba67d5a (2026-09-04T04:19:22Z UTC). 8/8.
+Attempt 1 (c23ff24544774ac1) stands scored as history.
+
+L1 HELD: exactly the TWO declared apps paths + the gate-staged ledger;
+   nothing outside apps/ but the ledger.
+L2 HELD: module 451/10; tests 76/0 (the one assertion removed per (k)(2));
+   35 rows one face each; OWNER_GRANTS 36 with OWNER_GRANT_BH26 first.
+L3 HELD: no manifest / records / ledger objection; TREE_CHECKS 863 held
+   (the WIT register class green in the gate's own run).
+L4 HELD: staged == declared, 2 rows, measured before launch.
+L5 HELD: 3 files, 528 insertions, 10 deletions — exact.
+L6 HELD: "TIER_2=GREEN collected=8510 failures=0 apps=7698 dip0c=671
+   dip0=141" — exact. No refusal; §BH24 budget 0/3.
+L7 HELD: ledger 449 → 450.
+L8 HELD: apps diff = exactly the two paths; GATE 7fbeb8f1fe10b0fb, TEST
+   b32030dc827263e4 byte-identical; tree seals unchanged (dip0c
+   5ae44035bd03bae1, dip0a 4fe747b806ed71bd); protocol_identity untouched;
+   the Noto pair VERIFIED_FOR_PRODUCTION / USER_CONFIRMED ×2, is_fallback
+   False, all_production_verified True under Django at scoring
+   (goal_measure at ba67d5a); the §BH30(d) single-use authority SPENT on
+   this landing; no other authority. No new divergence.
+Post-landing: porcelain clean; stash empty. §BH30's three single-use
+authorities all spent: (b) 87091c1, (i)(2) 2ac0fd4, (d) ba67d5a.

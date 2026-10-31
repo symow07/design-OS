@@ -1,0 +1,112 @@
+{
+  "record_type": "vq1_master_model2_hard_stop/1.0",
+  "created_at": "2026-07-28",
+  "status": "VQ1_MASTER_HARD_STOP_REVIEW_REQUIRED",
+  "vq1_state": "REVISION_REQUIRED",
+  "final_status_never": "HUMAN_ACCEPTED",
+  "stopped_at_iteration": "RIM1",
+  "hard_stop_condition": "RIM1 is worse than M3 (\u00a716)",
+  "best_candidate_remains": "M3",
+  "rim2_rim3_authorized": false,
+  "reason_no_rim2": "\u00a79 permits RIM2 only after RIM1 improves the local junction maximum by >=5%. RIM1 regressed by 94%.",
+  "metric_progression_junction_max": {
+    "IT6": 0.16176,
+    "M1": 0.13598,
+    "M2": 0.06765,
+    "M3": 0.06539,
+    "M4": 0.12697,
+    "RIM1": 0.12697,
+    "gate": 0.045
+  },
+  "key_observation": "RIM1 and M4 produce the IDENTICAL junction maximum, 0.12697, to five decimals \u2014 from two completely different partition models (M4: one exact contact row with the collar owning the ramp; RIM1: a dedicated rim patch owned by neither). An identical residual across different models is strong evidence the remaining error is NOT the junction partition. Both models share one thing M3 does not: the dark closure band ends at row 495 instead of extending to 498-502. The dominant error is most likely a single row at the flare terminal, not the ramp.",
+  "what_this_means": "a third partition model would probably reproduce 0.127 again. The next investigation should be diagnostic \u2014 identify the exact residual row and its source \u2014 not another contact model.",
+  "protected_geometry_verified": {
+    "GLASS": {
+      "shared_rows": 229,
+      "values_identical": true
+    },
+    "DARK_above_flare": {
+      "shared_rows": 65,
+      "values_identical": true
+    },
+    "COLLAR_wall_below_rim": {
+      "shared_rows": 0,
+      "values_identical": true
+    }
+  },
+  "protected_check_correction": "the first protected check compared sample LISTS and fired on a sampling-phase shift when the collar band start moved. It was corrected to compare half-width VALUES at shared rows; all three protected regions are identical by value.",
+  "global_non_regression": {
+    "collar": true,
+    "body": true,
+    "shoulder": true,
+    "dark": true,
+    "whole": true
+  },
+  "local_gates": {
+    "junction_iou": false,
+    "junction_mean": false,
+    "junction_p95": false,
+    "junction_max": false
+  },
+  "rim1_regions": {
+    "whole": {
+      "iou": 0.98803,
+      "mean": 0.00477,
+      "p95": 0.00871,
+      "max": 0.37479
+    },
+    "dark_closure": {
+      "iou": 0.97839,
+      "mean": 0.00334,
+      "p95": 0.01243,
+      "max": 0.04411
+    },
+    "collar": {
+      "iou": 0.99163,
+      "mean": 0.00262,
+      "p95": 0.0026,
+      "max": 0.00552
+    },
+    "junction": {
+      "iou": 0.89756,
+      "mean": 0.02922,
+      "p95": 0.12697,
+      "max": 0.12697
+    },
+    "shoulder": {
+      "iou": 0.98121,
+      "mean": 0.00771,
+      "p95": 0.03143,
+      "max": 0.03807
+    },
+    "body": {
+      "iou": 0.99473,
+      "mean": 0.00264,
+      "p95": 0.00292,
+      "max": 0.00517
+    }
+  },
+  "rim_patch_fit": {
+    "sample_count": 14,
+    "segment_count": 5,
+    "residual_mean": 0.2848,
+    "residual_max": 0.55
+  },
+  "rim_was_not_a_fifth_object": true,
+  "what_was_NOT_done": [
+    "\u00a712 pre-render contour inspection \u2014 NOT RUN (RIM1 regressed before it)",
+    "\u00a713 two independent post-render inspections \u2014 NOT RUN (\u00a713 requires all deterministic gates to pass first)",
+    "\u00a714 dual 10/10 scorecards \u2014 NOT PRODUCED",
+    "\u00a717 the 22-section review package \u2014 NOT PRODUCED",
+    "RIM2 and RIM3 \u2014 not authorized after a worse-than-M3 result"
+  ],
+  "scorecard_reported": "NOT_SCORED",
+  "release_status": "NOT VQ1_MASTER_CANDIDATE_PENDING_HUMAN_REVIEW",
+  "production_geometry": "BLOCKED_PENDING_SUPPLIER_EVIDENCE",
+  "concept_visual_geometry_only": true,
+  "manufacturable": false,
+  "supplier_requests_sent": false,
+  "image_generation_calls": 0,
+  "multimodal_calls_this_slice": 0,
+  "rim4_generated": false
+}

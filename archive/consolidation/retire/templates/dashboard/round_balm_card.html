@@ -1,0 +1,10 @@
+<article class="round-card" id="{{ location }}-candidate-{{ card.id }}">
+<h2>{{ card.id }}{% if card.selected %} <small class="round-muted">Selected</small>{% endif %}</h2><p class="round-reading">{{ card.reading.idea_in_ten_words }}</p>
+{% if card.reading.proof %}<p>{{ card.reading.proof_panel }} — {{ card.reading.proof }}</p>{% endif %}
+{% if card.intent %}<p><strong>Fork intent:</strong> {{ card.intent }}</p>{% endif %}
+{% if card.family %}<p>Parent and forks: {% for id in card.family %}<a href="#history-candidate-{{ id }}" data-round-jump="{{ id }}">{{ id }}</a>{% if not forloop.last %} · {% endif %}{% endfor %}</p>{% endif %}
+{% if not card.inspection.eligible %}<p><strong>Disqualified</strong></p><ul>{% for reason in card.inspection.reasons %}<li>{{ reason }}</li>{% endfor %}</ul>{% endif %}
+<div class="round-pictures"><a href="{% url 'dashboard:round_balm_file' card.sheet %}" target="_blank"><img src="{% url 'dashboard:round_balm_file' card.sheet %}" alt="{{ card.id }} — complete nine-panel sheet" loading="lazy"></a><a class="round-drawing" href="{% url 'dashboard:round_balm_file' card.drawing %}" target="_blank"><img src="{% url 'dashboard:round_balm_file' card.drawing %}" alt="{{ card.id }} — closed front and three-quarter drawing" loading="lazy"></a></div>
+<details><summary>Nine panels · nominal physical size, 1:1</summary><div class="round-panels">{% for panel in card.panels %}<figure><a href="{% url 'dashboard:round_balm_file' panel.role %}" target="_blank"><img src="{% url 'dashboard:round_balm_file' panel.role %}" alt="{{ card.id }} {{ panel.name }}" data-panel-width="{{ panel.mm.0 }}" data-panel-height="{{ panel.mm.1 }}" loading="lazy"></a><figcaption>{{ panel.name }} · {{ panel.mm.0|floatformat:2 }} × {{ panel.mm.1|floatformat:2 }} mm</figcaption></figure>{% endfor %}</div><p class="round-muted">Shown at nominal physical dimensions; monitor scaling may vary. Open any panel for its original pixels.</p></details>
+{% if card.inspection.copy_gaps %}<details><summary>Provisional copy observations</summary><ul>{% for gap in card.inspection.copy_gaps %}<li>{{ gap }}</li>{% endfor %}</ul></details>{% endif %}
+</article>

@@ -1,0 +1,33 @@
+{% extends "dashboard/gate1_regeneration_base.html" %}
+{% block title %}Drawing the concepts again — {{ job_words }}{% endblock %}
+{% block regen %}
+<span class="tag {% if job.status == 'failed' %}attn{% elif job.status == 'completed' %}done{% else %}run{% endif %}">{{ job_words }}</span>
+<h1 class="h1">Drawing the concepts again</h1>
+<div class="card pad regen-card{% if job.status == 'failed' %} attn{% endif %}">
+  {% if job.status == 'completed' %}
+    <p><b>The new concepts are ready</b> — choose one on the design's page.</p>
+  {% elif job.status == 'failed' %}
+    <p><b>Nothing was drawn.</b> Nothing is paid for when a check fails before drawing; what went wrong is below.</p>
+  {% else %}
+    <p>The concepts are being drawn. Refresh to see how it goes — nothing needs this page open.</p>
+  {% endif %}
+  <dl class="regen-dl">
+    <dt>Started</dt><dd>{{ job.created_at|date:"j F Y, H:i" }}</dd>
+    {% if job.finished_at %}<dt>Finished</dt><dd>{{ job.finished_at|date:"j F Y, H:i" }}</dd>{% endif %}
+    <dt>Looked at</dt><dd>{{ now|date:"j F Y, H:i:s" }}</dd>
+  </dl>
+  <details class="tech"{% if job.status == 'failed' %} open{% endif %}><summary>What the record says</summary>
+    <table><tr><th>Job</th><td>#{{ job.pk }} — {{ job.status|upper }}</td></tr>
+      <tr><th>Task</th><td>#{{ task.pk }}</td></tr>
+      <tr><th>Direction</th><td>{{ job.direction_id }}</td></tr>
+      <tr><th>Reference IDs</th><td>{{ job.approved_reference_ids|join:", " }}</td></tr>
+      <tr><th>Influence plan</th><td><code>{{ job.influence_plan_hash|slice:":16" }}…</code></td></tr>
+      <tr><th>Variations</th><td>{{ job.variation_identities|join:" · " }}</td></tr>
+      {% if job.error %}<tr><th>Error</th><td>{{ job.error }}</td></tr>{% endif %}</table>
+  </details>
+</div>
+<p class="regen-acts">
+  <a class="btn primary" href="">Refresh status</a>
+  <a class="btn" href="{% url 'dashboard:design' task.pk %}">Back to the design</a>
+</p>
+{% endblock %}

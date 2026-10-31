@@ -1,0 +1,79 @@
+{
+ "record_type": "vq2_lf1_inspection_input_freeze/1.0",
+ "created_at": "2026-07-29",
+ "images": {
+  "reference_product_name_crop": {
+   "path": "docs/visual_quality/vq2/lettering/ref_product_name_block_native.png",
+   "size": [
+    305,
+    170
+   ],
+   "sha256": "a381ead75b5afb4a",
+   "native_or_enlarged": "NATIVE",
+   "clipping": false
+  },
+  "reference_enlarged_x8": {
+   "path": "docs/visual_quality/vq2/lettering/ref_product_name_block_enlarged_x8.png",
+   "size": [
+    2440,
+    1360
+   ],
+   "sha256": "d5fc167c225204ec",
+   "native_or_enlarged": "ENLARGED_X8_NEAREST_NOT_NATIVE",
+   "clipping": false
+  },
+  "lf1_r1_words": {
+   "path": "docs/visual_quality/vq2/lf1_r1/inspect/lf1_r1_words.png",
+   "size": [
+    1650,
+    1000
+   ],
+   "sha256": "0a97c0d1bc2d7f9f",
+   "native_or_enlarged": "NATIVE",
+   "clipping": false
+  },
+  "lf1_r1_glyph_panel": {
+   "path": "docs/visual_quality/vq2/lf1_r1/inspect/lf1_r1_glyph_panel.png",
+   "size": [
+    1500,
+    940
+   ],
+   "sha256": "3deba66ce7288e01",
+   "native_or_enlarged": "NATIVE",
+   "clipping": false
+  },
+  "approved_logo": {
+   "path": "docs/visual_quality/vq2/brand/bbrose_logo_approved.png",
+   "size": [
+    3721,
+    886
+   ],
+   "sha256": "c321c1bea4c69e27",
+   "native_or_enlarged": "NATIVE",
+   "clipping": false
+  }
+ },
+ "clipping_verification": {
+  "lf1_r1_ink_y": "40-759 of 1000",
+  "lf1_r1_ink_x": "70-1461 of 1650",
+  "clipped": false,
+  "rejected_earlier_render": "a first render at scale 6 on a 1900x700 canvas cropped Damascena; caught by the ink-bbox check and replaced. Retained as a rejected input-quality fixture."
+ },
+ "prompts_frozen": true,
+ "prompt_hashes": {
+  "A": "589d9d142150bb6f",
+  "B": "f7cd3805fd161d81"
+ },
+ "prompt_requirements_preserved": [
+  "typography-only scope",
+  "no material judgment",
+  "no recommendation to scale or distort",
+  "explicit Rose-width ACTIONABLE/NONACTIONABLE/UNCERTAIN classification",
+  "no access to the other inspector output",
+  "enlarged glyph evidence",
+  "approved-logo context",
+  "deterministic certification evidence"
+ ],
+ "inspectors_isolated_by_construction": true,
+ "do_not_rewrite_after_credit_restoration": true
+}

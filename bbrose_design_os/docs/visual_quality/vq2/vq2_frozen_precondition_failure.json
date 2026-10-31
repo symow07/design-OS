@@ -1,0 +1,78 @@
+{
+ "record_type": "vq2_withdrawn_finding/1.0",
+ "code": "VQ2_FROZEN_INSPECTION_PRECONDITION_FAILED",
+ "status": "WITHDRAWN_INVALID_MEASUREMENT",
+ "withdrawn_because": "This failure was produced by MY OWN wrong hashing method, not by any change to the frozen evidence. I recomputed the prompt hashes as sha256 of the prompt BODY and got a mismatch. The frozen values are sha256 of the inspector IDENTITY strings \u2014 reproduced exactly once identified. No frozen input changed: LF1-R1 and all five images matched on the very same run.",
+ "real_defect_found": "VQ2_FROZEN_PROMPT_HASH_IS_IDENTITY_NOT_BODY \u2014 the frozen \"prompt hashes\" never constrained the prompt text. Disclosed in the preflight record; true body hashes now recorded going forward.",
+ "evidence_integrity": "INTACT \u2014 nothing was rebuilt, rewritten or regenerated",
+ "superseded_by": "docs/visual_quality/vq2/vq2_lf1_inspection_preflight.json",
+ "original_finding_preserved": {
+  "code": "VQ2_FROZEN_INSPECTION_PRECONDITION_FAILED",
+  "preflight": {
+   "checked_at": "2026-07-29",
+   "checks": {
+    "lf1_r1_hash": {
+     "expected": "fcd8003994d52028",
+     "actual": "fcd8003994d52028",
+     "pass": true
+    },
+    "prompt_a_hash": {
+     "expected": "589d9d142150bb6f",
+     "actual": "db6b57e82b96d83d",
+     "pass": false
+    },
+    "prompt_b_hash": {
+     "expected": "f7cd3805fd161d81",
+     "actual": "030ac6e418a1fc34",
+     "pass": false
+    },
+    "five_input_images": {
+     "reference_product_name_crop": {
+      "expected": "a381ead75b5afb4a",
+      "actual": "a381ead75b5afb4a",
+      "pass": true
+     },
+     "reference_enlarged_x8": {
+      "expected": "d5fc167c225204ec",
+      "actual": "d5fc167c225204ec",
+      "pass": true
+     },
+     "lf1_r1_words": {
+      "expected": "0a97c0d1bc2d7f9f",
+      "actual": "0a97c0d1bc2d7f9f",
+      "pass": true
+     },
+     "lf1_r1_glyph_panel": {
+      "expected": "3deba66ce7288e01",
+      "actual": "3deba66ce7288e01",
+      "pass": true
+     },
+     "approved_logo": {
+      "expected": "c321c1bea4c69e27",
+      "actual": "c321c1bea4c69e27",
+      "pass": true
+     }
+    },
+    "input_image_count": {
+     "expected": 5,
+     "actual": 5,
+     "pass": true
+    },
+    "input_quality_manifest": {
+     "all_present": true,
+     "no_clipping": true,
+     "pass": true
+    },
+    "freeze_record_hashes_match_manifest": {
+     "pass": true
+    }
+   },
+   "all_pass": false,
+   "no_crop_rebuilt": true,
+   "no_prompt_rewritten": true,
+   "no_evidence_regenerated": true,
+   "no_geometry_changed": true,
+   "no_axes_or_tracking_changed": true
+  }
+ }
+}

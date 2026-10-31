@@ -1,0 +1,74 @@
+§AD0(a) SCORE — commit A (§BH26(a)), GATE ATTEMPT 1: REFUSED. Scored as
+history against pred_a.txt (sealed before git add, base HEAD 49813ec).
+The prediction is NOT revised; this file records its falsification.
+
+GATE EXIT: hand-captured exit=1 (~/bh26_work/a_exit.txt). The background
+task notification reported wrapper exit 0 — the launcher's echo succeeded;
+the hand-captured gate exit is the truth. Hand-capture discipline held.
+
+REFUSING ID: apps/pipeline/tests/test_characterization_protocol.py::
+ExtentManifestDeclaresEveryTestFile::test_every_test_file_on_disk_is_declared
+Refused at TIER-1 (1 failed, 117 passed = the two tier1_floor files, 32.78s);
+the full suite never ran. Gate printed: "SUITE FAILURE IS NOT A REGISTERED
+FLAKE — it is a finding, not a retry." NOT one of §BH24's two named ids ⇒
+§BH26 HARD STOP 4 ("Gate refusal not covered by §BH24 standing") ⇒ REPORT
+IMMEDIATELY, no further action. §BH24 budget untouched (0/3 — not a
+re-run-eligible id; no re-run attempted).
+
+LEG SCORES:
+L1 WRITE SET: staging measured exactly the five declared paths — but the
+   leg's claim "container_font_authority.py NOT in the write set" was the
+   only exclusion I proved. FALSIFIED BY OMISSION: the write set was
+   INCOMPLETE. A new test file must enter the declared extent
+   (docs/roadmap/palt_m6/suite_file_manifest.json, §AR/WI-3J standing
+   guard); the manifest was a required sixth path and was absent.
+L2 DIFF SHAPE: staged numstat measured 141+0 / 17−7 / 120+0 / 12−8 / 27−8
+   — matches the declaration row for row. HELD (for the five staged paths).
+L3 MANIFEST / A391: predicted "none touched". FALSIFIED — the extent
+   manifest is exactly the artifact this commit was required to touch.
+   This is the refusal's entire cause and it was knowable at sealing time:
+   the guard's docstring says a new undeclared test file makes A327(a)
+   complain LESS when coverage vanishes. My sweep of possibly-affected
+   files (19 files, 392 passed) ran test files but never ran the
+   characterization protocol file against the DISK state with the new file
+   present — wait, it would have caught it if included. Measured fact:
+   test_characterization_protocol.py was NOT among my 19 possibly-affected
+   files. The targeted sweep's selection predicate (files whose CONTENT the
+   diff touches) cannot see guards whose SUBJECT is the filesystem itself.
+L4 STAGED == DECLARED: HELD (five rows exact, measured post-refusal;
+   staging intact).
+L5 COMMIT CONTENTS: UNMEASURABLE — no commit landed. HEAD remains 49813ec.
+L6 SUITE LINE + REFUSAL TREE: FALSIFIED — predicted GREEN/no refusal;
+   measured a Tier-1 refusal on an id outside §BH24. The predicted
+   collected=8496 line never printed (Tier-2 never ran).
+L7 LEDGER FOLD: predicted 430→431 in this commit. NOT FOLDED — ledger
+   measured 430 post-refusal; the refusal path appends nothing. The
+   prediction's fold remains contingent on a landing that did not occur.
+L8 PROTOCOL IDENTITIES / APPS DIFF: apps diff = exactly the five paths
+   (measured); container_font_authority.py not in the diff; neither
+   protected region touched (manifest is not a protected region). The
+   sub-claim "§BH26(a) authority SPENT on this landing" DID NOT OCCUR —
+   no landing, authority UNSPENT.
+
+HARD-STOP CENSUS AT REFUSAL:
+  1 guard/ceiling change required: NO (channel landed staged without any).
+  2 protected region change required: NO (cfa not even in the diff; TEST
+    region is a historical blob).
+  3 licence hash ≠ f2095b08 at build: NO (targeted run's live-path test
+    asserted the applied grant, which re-hashes OFL.txt — it passed).
+  4 gate refusal outside §BH24: YES — THIS STOP. Reported.
+
+POST-REFUSAL STATE (all measured): HEAD 49813ec; five files staged
+byte-exactly as declared; porcelain shows nothing else; ledger 430, clean;
+work dir ~/bh26_work/ carries pred_a.txt, a_msg.txt, a_gate.log, a_exit.txt.
+
+DIVERGENCE PREVIOUSLY RECORDED (R2 two-vs-three redden points) stands
+unedited in the register block; unaffected by this refusal.
+
+REMEDY NAMED BY THE GUARD ITSELF (not acted on — awaiting ruling):
+"Regenerate via tools/tier2_gate.py --regenerate-manifest, and read
+§AR4(1) first: the diff must be purely additive." Manifest is 371 files,
+set-as-declaration, no count pin; the addition would be files 371→372
+(+ its "generated" timestamp field). total_floor=7643 vs predicted
+apps=7690: regeneration semantics for floors NOT yet read — to be read
+before any regeneration if ruled.

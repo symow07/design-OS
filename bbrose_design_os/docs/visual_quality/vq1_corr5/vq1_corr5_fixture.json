@@ -1,0 +1,618 @@
+{
+  "record_type": "vq1_corr5_structural_fixture/1.0",
+  "contour": "vq1_human_calibrated_reference_contour/1.1",
+  "dims_mm": {
+    "body_diameter": 31.3,
+    "body_height": 61.0,
+    "shoulder_rise": 4.6,
+    "base_curve_depth": 3.5,
+    "neck_diameter": 9.0,
+    "visible_neck": 1.6,
+    "collar_diameter": 15.9,
+    "collar_height": 12.1,
+    "collar_rim": 0.55,
+    "collar_bow": 0.22,
+    "bulb_max_width": 8.8,
+    "bulb_stem_width": 3.9,
+    "bulb_body_height": 15.0,
+    "bulb_stem_visible": 3.2,
+    "bulb_insertion": 2.6,
+    "bulb_max_at": 0.44,
+    "bulb_dome_start": 0.76,
+    "bulb_dome_width": 0.47,
+    "bulb_narrowing_exp": 1.5,
+    "bulb_dome_n": 2.0
+  },
+  "projection": {
+    "mode": "weak_perspective_front",
+    "ellipse_depth_ratio": 0.06,
+    "centerline": "shared",
+    "scale": "shared",
+    "vertical_axis": "shared"
+  },
+  "layout_mm": {
+    "y_bulb_apex": 0.0,
+    "y_collar_top": 18.2,
+    "y_collar_bot": 30.299999999999997,
+    "y_body_top": 31.9,
+    "y_wall_top": 36.5,
+    "y_base_start": 89.4,
+    "y_bottom": 92.9,
+    "total_height": 92.9
+  },
+  "assembly_gate": {
+    "record_type": "vq1_corr5_assembly_gate/1.0",
+    "subfixtures": {
+      "A_bulb": "PASSES_STRUCTURAL_FORM_PENDING_HUMAN_REVIEW",
+      "B_collar_neck": "PASSES_STRUCTURAL_FORM_PENDING_HUMAN_REVIEW",
+      "C_shoulder_body": "PASSES_STRUCTURAL_FORM_PENDING_HUMAN_REVIEW"
+    },
+    "subfixture_records": {
+      "A_bulb": {
+        "record_type": "vq1_corr5_bulb_subfixture/1.0",
+        "component": "BULB",
+        "checks": {
+          "max_width_25_32pc_of_body": true,
+          "stem_width_10_15pc_of_body": true,
+          "stem_substantially_narrower": true,
+          "insertion_stem_exists": true,
+          "no_flat_base_segment": true,
+          "maximum_in_lower_middle": true,
+          "upper_middle_clearly_slimmer": true,
+          "continuous_narrowing_above_max": true,
+          "dome_closes_to_zero": true,
+          "dome_narrow_not_tombstone": true,
+          "crown_continuously_curved": true,
+          "at_least_31_samples": true
+        },
+        "findings": [],
+        "samples_31": [
+          {
+            "t": 0.0,
+            "half_width_mm": 0.0,
+            "width_frac": 0.0,
+            "width_frac_of_body": 0.0,
+            "y_mm_from_stem_base": 0.0
+          },
+          {
+            "t": 0.0333,
+            "half_width_mm": 1.6841,
+            "width_frac": 0.3828,
+            "width_frac_of_body": 0.1076,
+            "y_mm_from_stem_base": 0.6933
+          },
+          {
+            "t": 0.0667,
+            "half_width_mm": 1.95,
+            "width_frac": 0.4432,
+            "width_frac_of_body": 0.1246,
+            "y_mm_from_stem_base": 1.3867
+          },
+          {
+            "t": 0.1,
+            "half_width_mm": 1.95,
+            "width_frac": 0.4432,
+            "width_frac_of_body": 0.1246,
+            "y_mm_from_stem_base": 2.08
+          },
+          {
+            "t": 0.1333,
+            "half_width_mm": 1.95,
+            "width_frac": 0.4432,
+            "width_frac_of_body": 0.1246,
+            "y_mm_from_stem_base": 2.7733
+          },
+          {
+            "t": 0.1667,
+            "half_width_mm": 1.95,
+            "width_frac": 0.4432,
+            "width_frac_of_body": 0.1246,
+            "y_mm_from_stem_base": 3.4667
+          },
+          {
+            "t": 0.2,
+            "half_width_mm": 1.95,
+            "width_frac": 0.4432,
+            "width_frac_of_body": 0.1246,
+            "y_mm_from_stem_base": 4.16
+          },
+          {
+            "t": 0.2333,
+            "half_width_mm": 1.95,
+            "width_frac": 0.4432,
+            "width_frac_of_body": 0.1246,
+            "y_mm_from_stem_base": 4.8533
+          },
+          {
+            "t": 0.2667,
+            "half_width_mm": 1.95,
+            "width_frac": 0.4432,
+            "width_frac_of_body": 0.1246,
+            "y_mm_from_stem_base": 5.5467
+          },
+          {
+            "t": 0.3,
+            "half_width_mm": 2.0656,
+            "width_frac": 0.4694,
+            "width_frac_of_body": 0.132,
+            "y_mm_from_stem_base": 6.24
+          },
+          {
+            "t": 0.3333,
+            "half_width_mm": 2.6008,
+            "width_frac": 0.5911,
+            "width_frac_of_body": 0.1662,
+            "y_mm_from_stem_base": 6.9333
+          },
+          {
+            "t": 0.3667,
+            "half_width_mm": 3.3397,
+            "width_frac": 0.759,
+            "width_frac_of_body": 0.2134,
+            "y_mm_from_stem_base": 7.6267
+          },
+          {
+            "t": 0.4,
+            "half_width_mm": 4.0221,
+            "width_frac": 0.9141,
+            "width_frac_of_body": 0.257,
+            "y_mm_from_stem_base": 8.32
+          },
+          {
+            "t": 0.4333,
+            "half_width_mm": 4.3878,
+            "width_frac": 0.9972,
+            "width_frac_of_body": 0.2804,
+            "y_mm_from_stem_base": 9.0133
+          },
+          {
+            "t": 0.4667,
+            "half_width_mm": 4.3439,
+            "width_frac": 0.9873,
+            "width_frac_of_body": 0.2776,
+            "y_mm_from_stem_base": 9.7067
+          },
+          {
+            "t": 0.5,
+            "half_width_mm": 4.2107,
+            "width_frac": 0.957,
+            "width_frac_of_body": 0.2691,
+            "y_mm_from_stem_base": 10.4
+          },
+          {
+            "t": 0.5333,
+            "half_width_mm": 4.0327,
+            "width_frac": 0.9165,
+            "width_frac_of_body": 0.2577,
+            "y_mm_from_stem_base": 11.0933
+          },
+          {
+            "t": 0.5667,
+            "half_width_mm": 3.8192,
+            "width_frac": 0.868,
+            "width_frac_of_body": 0.244,
+            "y_mm_from_stem_base": 11.7867
+          },
+          {
+            "t": 0.6,
+            "half_width_mm": 3.5755,
+            "width_frac": 0.8126,
+            "width_frac_of_body": 0.2285,
+            "y_mm_from_stem_base": 12.48
+          },
+          {
+            "t": 0.6333,
+            "half_width_mm": 3.3049,
+            "width_frac": 0.7511,
+            "width_frac_of_body": 0.2112,
+            "y_mm_from_stem_base": 13.1733
+          },
+          {
+            "t": 0.6667,
+            "half_width_mm": 3.0098,
+            "width_frac": 0.684,
+            "width_frac_of_body": 0.1923,
+            "y_mm_from_stem_base": 13.8667
+          },
+          {
+            "t": 0.7,
+            "half_width_mm": 2.6921,
+            "width_frac": 0.6118,
+            "width_frac_of_body": 0.172,
+            "y_mm_from_stem_base": 14.56
+          },
+          {
+            "t": 0.7333,
+            "half_width_mm": 2.3533,
+            "width_frac": 0.5348,
+            "width_frac_of_body": 0.1504,
+            "y_mm_from_stem_base": 15.2533
+          },
+          {
+            "t": 0.7667,
+            "half_width_mm": 2.0672,
+            "width_frac": 0.4698,
+            "width_frac_of_body": 0.1321,
+            "y_mm_from_stem_base": 15.9467
+          },
+          {
+            "t": 0.8,
+            "half_width_mm": 2.0391,
+            "width_frac": 0.4634,
+            "width_frac_of_body": 0.1303,
+            "y_mm_from_stem_base": 16.64
+          },
+          {
+            "t": 0.8333,
+            "half_width_mm": 1.9691,
+            "width_frac": 0.4475,
+            "width_frac_of_body": 0.1258,
+            "y_mm_from_stem_base": 17.3333
+          },
+          {
+            "t": 0.8667,
+            "half_width_mm": 1.8525,
+            "width_frac": 0.421,
+            "width_frac_of_body": 0.1184,
+            "y_mm_from_stem_base": 18.0267
+          },
+          {
+            "t": 0.9,
+            "half_width_mm": 1.6797,
+            "width_frac": 0.3817,
+            "width_frac_of_body": 0.1073,
+            "y_mm_from_stem_base": 18.72
+          },
+          {
+            "t": 0.9333,
+            "half_width_mm": 1.4304,
+            "width_frac": 0.3251,
+            "width_frac_of_body": 0.0914,
+            "y_mm_from_stem_base": 19.4133
+          },
+          {
+            "t": 0.9667,
+            "half_width_mm": 1.0514,
+            "width_frac": 0.239,
+            "width_frac_of_body": 0.0672,
+            "y_mm_from_stem_base": 20.1067
+          },
+          {
+            "t": 1.0,
+            "half_width_mm": 0.0,
+            "width_frac": 0.0,
+            "width_frac_of_body": 0.0,
+            "y_mm_from_stem_base": 20.8
+          }
+        ],
+        "max_width_mm": 8.8,
+        "max_width_frac_of_body": 0.2812,
+        "stem_width_mm": 3.9,
+        "stem_width_frac_of_body": 0.1246,
+        "stem_visible_mm": 3.2,
+        "insertion_mm": 2.6,
+        "status": "PASSES_STRUCTURAL_FORM_PENDING_HUMAN_REVIEW",
+        "human_review": "PENDING"
+      },
+      "B_collar_neck": {
+        "record_type": "vq1_corr5_collar_neck_subfixture/1.0",
+        "component": "COLLAR+NECK",
+        "checks": {
+          "collar_45_55pc_of_body": true,
+          "sleeve_height_65_85pc_of_width": true,
+          "no_straight_sleeve_sidewall": true,
+          "sidewall_is_bowed": true,
+          "minimal_top_face": true,
+          "not_jar_lid": true,
+          "top_opening_concealed_by_stem": true,
+          "neck_substantially_narrower_than_collar": true,
+          "neck_mostly_hidden_in_collar": true,
+          "small_visible_glass_transition": true,
+          "collar_physically_overlaps_neck": true,
+          "neck_is_cylindrical": true,
+          "closure_mass_subordinate": true
+        },
+        "findings": [],
+        "collar_body_ratio": 0.508,
+        "sleeve_height_width_ratio": 0.761,
+        "neck_collar_ratio": 0.566,
+        "neck_overlap_mm": 6.655,
+        "neck_hidden_fraction": 0.7825,
+        "visible_neck_mm": 1.6,
+        "status": "PASSES_STRUCTURAL_FORM_PENDING_HUMAN_REVIEW",
+        "human_review": "PENDING"
+      },
+      "C_shoulder_body": {
+        "record_type": "vq1_corr5_shoulder_body_subfixture/1.0",
+        "component": "SHOULDER+BODY",
+        "checks": {
+          "shoulder_rise_matches_reference": true,
+          "shoulder_rise_shallow": true,
+          "not_a_dome": true,
+          "shoulder_is_uppermost_portion_only": true,
+          "shoulder_is_one_cubic": true,
+          "horizontal_tangent_at_neck": true,
+          "vertical_tangent_at_wall": true,
+          "no_straight_facet": true,
+          "walls_parallel": true,
+          "no_taper": true,
+          "base_integrated_no_pedestal": true,
+          "base_curve_shallow": true,
+          "body_proportion_matches_reference": true
+        },
+        "findings": [],
+        "shoulder_rise_mm": 4.6,
+        "reference_shoulder_rise_mm": 4.563,
+        "shoulder_rise_frac_of_body_width": 0.147,
+        "body_height_width_ratio": 1.9489,
+        "reference_body_height_width_ratio": 1.9475,
+        "shoulder_curvature_samples": [
+          {
+            "t": 0.02,
+            "x": 10.738,
+            "y": 31.903,
+            "curvature": 0.040543
+          },
+          {
+            "t": 0.068,
+            "x": 9.777,
+            "y": 31.938,
+            "curvature": 0.042482
+          },
+          {
+            "t": 0.116,
+            "x": 8.855,
+            "y": 32.009,
+            "curvature": 0.044634
+          },
+          {
+            "t": 0.164,
+            "x": 7.972,
+            "y": 32.113,
+            "curvature": 0.047062
+          },
+          {
+            "t": 0.212,
+            "x": 7.129,
+            "y": 32.247,
+            "curvature": 0.049848
+          },
+          {
+            "t": 0.26,
+            "x": 6.328,
+            "y": 32.409,
+            "curvature": 0.053101
+          },
+          {
+            "t": 0.308,
+            "x": 5.57,
+            "y": 32.596,
+            "curvature": 0.056965
+          },
+          {
+            "t": 0.356,
+            "x": 4.855,
+            "y": 32.806,
+            "curvature": 0.061633
+          },
+          {
+            "t": 0.404,
+            "x": 4.185,
+            "y": 33.036,
+            "curvature": 0.067371
+          },
+          {
+            "t": 0.452,
+            "x": 3.56,
+            "y": 33.283,
+            "curvature": 0.074547
+          },
+          {
+            "t": 0.5,
+            "x": 2.983,
+            "y": 33.544,
+            "curvature": 0.083687
+          },
+          {
+            "t": 0.548,
+            "x": 2.453,
+            "y": 33.818,
+            "curvature": 0.095548
+          },
+          {
+            "t": 0.596,
+            "x": 1.972,
+            "y": 34.102,
+            "curvature": 0.111249
+          },
+          {
+            "t": 0.644,
+            "x": 1.541,
+            "y": 34.392,
+            "curvature": 0.132471
+          },
+          {
+            "t": 0.692,
+            "x": 1.16,
+            "y": 34.686,
+            "curvature": 0.161779
+          },
+          {
+            "t": 0.74,
+            "x": 0.832,
+            "y": 34.982,
+            "curvature": 0.203115
+          },
+          {
+            "t": 0.788,
+            "x": 0.556,
+            "y": 35.277,
+            "curvature": 0.262485
+          },
+          {
+            "t": 0.836,
+            "x": 0.335,
+            "y": 35.568,
+            "curvature": 0.348603
+          },
+          {
+            "t": 0.884,
+            "x": 0.169,
+            "y": 35.853,
+            "curvature": 0.472365
+          },
+          {
+            "t": 0.932,
+            "x": 0.058,
+            "y": 36.129,
+            "curvature": 0.641465
+          },
+          {
+            "t": 0.98,
+            "x": 0.005,
+            "y": 36.394,
+            "curvature": 0.84315
+          }
+        ],
+        "status": "PASSES_STRUCTURAL_FORM_PENDING_HUMAN_REVIEW",
+        "human_review": "PENDING"
+      }
+    },
+    "canonical_render_identity": "EQUAL",
+    "complete_assembly_released": true,
+    "findings": [],
+    "status": "PASSES_STRUCTURAL_FORM_PENDING_HUMAN_REVIEW",
+    "human_note": "automated path equality never overrides a human visual rejection; this never auto-accepts"
+  },
+  "canonical_path_hashes": {
+    "BODY": "ec913774a0348b87",
+    "COLLAR": "15ff757db880b40a",
+    "NECK": "fb4791c5c314fa20",
+    "BULB": "b9558fe0714d219c"
+  },
+  "contour_deviation": {
+    "max_abs": 0.1619,
+    "rows": [
+      [
+        "bulb_top",
+        0.0,
+        0.0,
+        0.0136,
+        0.0136
+      ],
+      [
+        "bulb_dome_upper",
+        0.036,
+        0.0341,
+        0.0222,
+        -0.0119
+      ],
+      [
+        "bulb_dome_lower",
+        0.0758,
+        0.0445,
+        0.0371,
+        -0.0074
+      ],
+      [
+        "bulb_maximum_width",
+        0.1165,
+        0.0455,
+        0.0472,
+        0.0018
+      ],
+      [
+        "bulb_upper_taper",
+        0.1515,
+        0.0426,
+        0.0359,
+        -0.0067
+      ],
+      [
+        "bulb_lower_width",
+        0.1686,
+        0.0379,
+        0.0222,
+        -0.0156
+      ],
+      [
+        "bulb_insertion_stem",
+        0.1856,
+        0.0208,
+        0.021,
+        0.0002
+      ],
+      [
+        "collar_top",
+        0.1894,
+        0.0843,
+        0.0856,
+        0.0013
+      ],
+      [
+        "collar_bottom",
+        0.3438,
+        0.0843,
+        0.0484,
+        -0.0358
+      ],
+      [
+        "neck_visible",
+        0.3504,
+        0.0492,
+        0.0484,
+        -0.0008
+      ],
+      [
+        "shoulder_start",
+        0.3674,
+        0.1013,
+        0.0,
+        -0.1013
+      ],
+      [
+        "shoulder_apex",
+        0.3911,
+        0.1402,
+        0.1685,
+        0.0283
+      ],
+      [
+        "body_wall_top",
+        0.4148,
+        0.1619,
+        0.0,
+        -0.1619
+      ],
+      [
+        "body_wall_bottom",
+        0.964,
+        0.1619,
+        0.1685,
+        0.0065
+      ],
+      [
+        "base_curve",
+        0.9905,
+        0.142,
+        0.0,
+        -0.142
+      ],
+      [
+        "base_bottom",
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  "preserved_prior_fixtures": [
+    "vq1 19f9b98d0bc46a0d",
+    "corr2",
+    "corr3",
+    "corr4 b67352ca10e8b623"
+  ],
+  "human_review": "PENDING",
+  "fixture_hash": "d99c412df4989c18e3510ccfef0a1d24d3353427dbc11e254f5cc5b7960e2989"
+}

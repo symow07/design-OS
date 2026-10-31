@@ -1,0 +1,262 @@
+{
+ "schema": "round3_attempt3_measured/1",
+ "measured_on": "a copy of docs/rounds/lip-gloss-product-and-counter-stand-9634b86f91 (/bin/zsh)",
+ "painting": {
+  "n": 3,
+  "registration_iou": 0.5339,
+  "coverage": {
+   "front panel": 1.0,
+   "left side": 0.2614,
+   "right side": 0.3141,
+   "back panel": 1.0,
+   "header back": 1.0,
+   "header front": 0.9993
+  }
+ },
+ "plain_faces_assumed": [
+  "side",
+  "left",
+  "back",
+  "header_back"
+ ],
+ "thresholds": {
+  "reliable_crop": {
+   "coverage": 0.9,
+   "unpainted_share": 0.5
+  },
+  "plain": {
+   "delta_e": 15.0,
+   "share": 0.02
+  },
+  "against_bar": {
+   "median": 10.0,
+   "p90": 20.0
+  }
+ },
+ "faces": {
+  "cap": {
+   "state": "drawn",
+   "drawing": 2,
+   "source": "net",
+   "native_ppi": 486.1
+  },
+  "back": {
+   "state": "drawn",
+   "drawing": 2,
+   "source": "panel",
+   "native_ppi": 300.0,
+   "crop": {
+    "coverage": 1.0,
+    "unpainted_share": 0.0,
+    "reliable": true
+   },
+   "against": [
+    2.4,
+    7.21
+   ],
+   "plain_share": 0.0471,
+   "flags": [
+    "not plain: 4.7% of it more than ΔE00 15 from its own colour (at most 2%)"
+   ],
+   "system_redraw": true,
+   "redraw_reference": "painting",
+   "hold_usd": 0.5765
+  },
+  "left": {
+   "state": "drawn",
+   "drawing": 1,
+   "source": "panel",
+   "native_ppi": 300.0,
+   "crop": {
+    "coverage": 0.2614,
+    "unpainted_share": 0.8575,
+    "reliable": false
+   },
+   "against": [
+    5.46,
+    76.27
+   ],
+   "plain_share": 0.148,
+   "flags": [
+    "against its reference ΔE00 median 5.5, p90 76.3 (bar 10, 20)",
+    "drawn from a crop the painting did not keep (coverage 0.26, 86% left unpainted)",
+    "not plain: 14.8% of it more than ΔE00 15 from its own colour (at most 2%)"
+   ],
+   "system_redraw": true,
+   "redraw_reference": "board swatch",
+   "hold_usd": 0.452
+  },
+  "side": {
+   "state": "drawn",
+   "drawing": 2,
+   "source": "panel",
+   "native_ppi": 300.0,
+   "crop": {
+    "coverage": 0.3141,
+    "unpainted_share": 0.8186,
+    "reliable": false
+   },
+   "against": [
+    28.74,
+    76.82
+   ],
+   "plain_share": 0.1192,
+   "flags": [
+    "against its reference ΔE00 median 28.7, p90 76.8 (bar 10, 20)",
+    "drawn from a crop the painting did not keep (coverage 0.31, 82% left unpainted)",
+    "not plain: 11.9% of it more than ΔE00 15 from its own colour (at most 2%)"
+   ],
+   "system_redraw": true,
+   "redraw_reference": "board swatch",
+   "hold_usd": 0.452
+  },
+  "front": {
+   "state": "drawn",
+   "drawing": 2,
+   "source": "panel",
+   "native_ppi": 300.0,
+   "crop": {
+    "coverage": 1.0,
+    "unpainted_share": 1.0,
+    "reliable": false
+   },
+   "against": [
+    0.82,
+    55.59
+   ],
+   "plain_share": null,
+   "flags": [
+    "against its reference ΔE00 median 0.8, p90 55.6 (bar 10, 20)",
+    "drawn from a crop the painting did not keep (coverage 1.00, 100% left unpainted)"
+   ],
+   "system_redraw": true,
+   "redraw_reference": "picked picture (stand_base)",
+   "hold_usd": 0.35
+  },
+  "bottle": {
+   "state": "drawn",
+   "drawing": 2,
+   "source": "net",
+   "native_ppi": 375.6
+  },
+  "header": {
+   "state": "drawn",
+   "drawing": 2,
+   "source": "panel",
+   "native_ppi": 300.0,
+   "crop": {
+    "coverage": 0.9993,
+    "unpainted_share": 0.0,
+    "reliable": true
+   },
+   "against": [
+    4.26,
+    8.36
+   ],
+   "plain_share": null,
+   "flags": [],
+   "system_redraw": false,
+   "redraw_reference": null,
+   "hold_usd": null
+  },
+  "header_back": {
+   "state": "drawn",
+   "drawing": 1,
+   "source": "panel",
+   "native_ppi": 300.0,
+   "crop": {
+    "coverage": 1.0,
+    "unpainted_share": 0.0,
+    "reliable": true
+   },
+   "against": [
+    1.57,
+    2.22
+   ],
+   "plain_share": 0.0257,
+   "flags": [
+    "not plain: 2.6% of it more than ΔE00 15 from its own colour (at most 2%)"
+   ],
+   "system_redraw": true,
+   "redraw_reference": "painting",
+   "hold_usd": 0.35
+  }
+ },
+ "swatch": "flat/swatch/header_back-1.png",
+ "system_redraws": [
+  "back",
+  "left",
+  "side",
+  "front",
+  "header_back"
+ ],
+ "holds_usd": 2.1805,
+ "panel_views": {
+  "signature": "81f9ee2f5b136bea",
+  "folded": "flat/panels/81f9ee2f5b136bea/drawing/stand-folded.png",
+  "folded_sha256": "0acdcc282b1658d35892c974c0b40f5f36f05517a1cf1fbcc2987b69e2569d41",
+  "loaded": "flat/panels/81f9ee2f5b136bea/product-drawing.png",
+  "rule": "drawn from the current panel drawings, accepted or not: what will print",
+  "loaded_sha256": "67084e3d31b5271fd8919e5da5ba355dc89897c4d642fb11d838a7e7f526438d"
+ },
+ "proof_sheet": {
+  "schema": "owner_proof_sheet/1",
+  "signature": "81f9ee2f5b136bea",
+  "pdf": "proof/81f9ee2f5b136bea/proof-sheet.pdf",
+  "png": "proof/81f9ee2f5b136bea/proof-sheet.png",
+  "pdf_sha256": "a7dde712425591797325caf40a8111022800d4240b9e2a6d818089880117d19d",
+  "png_sha256": "a5d5a62e4dda4db5554ed8818ddc45b04dd1e0df4c997e772fdab8e02a341ddd",
+  "page_mm": [
+   546.0,
+   948.0
+  ],
+  "stand_mm": [
+   445,
+   908
+  ],
+  "nets": [
+   {
+    "key": "bottle",
+    "frame_mm": [
+     -3.0,
+     -3.0,
+     63.0,
+     73.0
+    ],
+    "dpi_at_1to1": 375.6
+   },
+   {
+    "key": "cap",
+    "frame_mm": [
+     -3.0,
+     -3.0,
+     63.0,
+     48.0
+    ],
+    "dpi_at_1to1": 486.1
+   }
+  ],
+  "faces": {
+   "cap": "dfeb116179320a3a39cd80b0b786473c54d029b48e193e5beef7168f916ea8e8",
+   "back": "ab39ce7a7ee51467779608830f8495436d61a5331dcf714a1cef31e149c508a7",
+   "left": "b345fabf34de921713fdeae686ddb27efd968447e10f3d3d7d93ee48df40fc67",
+   "side": "0968e83b54c2b2b2b2d7d572cd7db402ba10120983c4bfa449f5a106fcda1b69",
+   "front": "7e2ec9db5577d2a155e53af70c24e876dbb1a1756f6da98db7926c88fbb4bef4",
+   "bottle": "f81e8863e2da9327f233b04d056976f4725a7758bf9620534fa7ee5226092cd4",
+   "header": "83d7671ea9a50ce93177a00c144455d651b02ab4998afcde5de00b3cd8660237",
+   "header_back": "595a9d3a1f6140c6cea1d3823136a4401eec13319d4314c38f4d46c88873f30b"
+  },
+  "accepted": {
+   "cap": false,
+   "back": false,
+   "left": false,
+   "side": false,
+   "front": false,
+   "bottle": false,
+   "header": false,
+   "header_back": false
+  },
+  "rule": "real size: print at 100%; the stand art at 300 PPI; not yet accepted"
+ },
+ "proof_png": "docs/consolidation/quality/runs/round3-attempt3-proof.png"
+}

@@ -1,0 +1,74 @@
+{
+ "schema_version": "dropper_closure_assembly/1.0",
+ "centerline_shared": true,
+ "components": {
+  "NECK": {
+   "outer_diameter": 9.0,
+   "visible_height": 2.5,
+   "collar_overlap": 1.0,
+   "cylindrical": true,
+   "rect_spacer": false
+  },
+  "COLLAR": {
+   "outer_diameter": 21.5,
+   "visible_height": 9.5,
+   "rim_ry": 0.85,
+   "top_rim": true,
+   "bottom_rim": true,
+   "neck_insertion_depth": 1.0
+  },
+  "BULB": {
+   "max_width": 11.0,
+   "visible_height": 21.5,
+   "base_width": 6.82,
+   "collar_insertion_depth": 1.4,
+   "width_samples": [
+    {
+     "height_frac": 0.0,
+     "width_frac": 0.62
+    },
+    {
+     "height_frac": 0.125,
+     "width_frac": 0.728
+    },
+    {
+     "height_frac": 0.25,
+     "width_frac": 0.809
+    },
+    {
+     "height_frac": 0.375,
+     "width_frac": 0.881
+    },
+    {
+     "height_frac": 0.5,
+     "width_frac": 0.948
+    },
+    {
+     "height_frac": 0.625,
+     "width_frac": 0.978
+    },
+    {
+     "height_frac": 0.75,
+     "width_frac": 0.772
+    },
+    {
+     "height_frac": 0.875,
+     "width_frac": 0.912
+    },
+    {
+     "height_frac": 1.0,
+     "width_frac": 0.0
+    }
+   ]
+  }
+ },
+ "continuity": {
+  "shoulder_to_neck": true,
+  "neck_to_collar": true,
+  "bulb_into_collar": true,
+  "floating_gaps": 0,
+  "total_height_composition": 104.0,
+  "components_sum": 104.0,
+  "symmetry_ok": true
+ }
+}

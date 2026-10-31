@@ -1,0 +1,27 @@
+§AD0(a) PREDICTION — T26e (§BH26(e) transcription, pure append), sealed
+BEFORE git add. Base HEAD 8aab053.
+
+L1 WRITE SET: exactly ONE path — OWNER_BLOCKER_CLEARANCE.md (outer
+   root), the §BH26(e) block. Plus the gate-staged ledger line. NO
+   apps/ path. The five commit-A WIP paths sit in stash@{0} (sha256s
+   re-verified OK against stash_a/sha256s.txt immediately before the
+   push; disk verified: both new files absent, porcelain register-only).
+L2 DIFF SHAPE: register +81 −0 (1 seam blank + 80 block lines);
+   17,175-line prefix byte-identical, proved at append (worktree==HEAD
+   hash 05f43a3… == head -17175 post-append); total 17,256.
+L3 MANIFEST / A391: none touched — extent guard passes against the
+   371-declared disk state with the WIP test file off disk, as at T26d.
+   The manifest regeneration is the NEXT act, after this landing.
+L4 STAGED == DECLARED: exactly one row: 81 0 OWNER_BLOCKER_CLEARANCE.md.
+L5 COMMIT CONTENTS: 2 files (register + ledger), insertions 81+1=82,
+   deletions 0.
+L6 SUITE LINE + REFUSAL TREE: GREEN — TIER_2=GREEN collected=8490
+   failures=0 apps=7684 dip0c=671 dip0=135, as at T26d (identical apps/
+   disk state). No refusal expected; §BH24 0/3 standing.
+L7 LEDGER FOLD: 431 → 432, the +1 in THIS commit.
+L8 PROTOCOL IDENTITIES / APPS DIFF: apps diff EMPTY; both protected
+   regions byte-identical at scoring (GATE 7fbeb8f1fe10b0fb @ cfa
+   [514:541]; TEST b32030dc827263e4 @ a76242c^ blob [82:98], measured
+   with the cwd-correct pathspec and checked exit). Stash restore after
+   scoring, byte-verified, before the tool-run. §BH26(a) authority
+   UNSPENT at this commit.

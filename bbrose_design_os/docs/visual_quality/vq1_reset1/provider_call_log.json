@@ -1,0 +1,21 @@
+{
+  "record_type": "vq1_reset1_provider_call_log/1.0",
+  "created_at": "2026-07-28",
+  "note": "program-level log. ApiCallRecord binds to a DesignTask; VQ-1 is program-level and binding it to task 51/52 is forbidden, so inspector/search calls are logged HERE and the task-bound ledger stays at 226.",
+  "calls_by_type": {
+    "visual_inspection_multimodal": 1,
+    "web_geometry_search": 8,
+    "governed_page_fetch": 5,
+    "image_generation": 0,
+    "design_concept_generation": 0,
+    "prompt_engineer": 0
+  },
+  "authorized_by_mandate": [
+    "bounded Tavily web-search calls",
+    "governed public-page fetches",
+    "bounded multimodal visual-inspector calls"
+  ],
+  "image_generation_calls": 0,
+  "confirmation": "NO image-generation call occurred; no reconstruction of task 51 or 52; no Packaging created",
+  "credentials_never_logged": true
+}

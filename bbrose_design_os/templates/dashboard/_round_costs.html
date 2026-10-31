@@ -1,0 +1,5 @@
+{% if costs %}<section class="master-panel round-costs" aria-labelledby="round-costs-title"><h2 id="round-costs-title">What this round has cost</h2>
+<p><strong>${{ costs.total_usd|floatformat:4 }} of its ${{ costs.cap_usd|floatformat:2 }} cap, all in</strong> — from the brief to Make my files, every paid call as the ledger settled it. The round stops before any call that would pass the cap.</p>
+{% if costs.steps %}<table class="round-table"><thead><tr><th scope="col">Step</th><th scope="col">Cost</th><th scope="col">Calls</th><th scope="col">Notes</th></tr></thead><tbody>
+{% for step in costs.steps %}<tr><th scope="row">{{ step.step }}</th><td>${{ step.usd|floatformat:4 }}</td><td>{{ step.calls }}</td><td>{% if step.held_usd %}${{ step.held_usd|floatformat:4 }} still held for a call not yet back. {% endif %}{% if step.lost %}{{ step.lost }} lost call{{ step.lost|pluralize }} (nothing came back), counted at {{ step.lost|pluralize:"its,their" }} hold. {% endif %}{% if step.refused %}{{ step.refused }} refused by the provider, not billed.{% endif %}</td></tr>{% endfor %}
+</tbody></table>{% else %}<p>Nothing paid yet.</p>{% endif %}</section>{% endif %}

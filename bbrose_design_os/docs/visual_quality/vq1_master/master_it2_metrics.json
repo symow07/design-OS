@@ -1,0 +1,52 @@
+{
+  "iteration": "MASTER-M2",
+  "render": "docs/visual_quality/vq1_master/master_it2.png",
+  "regions": {
+    "whole": {
+      "iou": 0.9888,
+      "mean": 0.00446,
+      "p95": 0.00805,
+      "max": 0.37479
+    },
+    "dark_closure": {
+      "iou": 0.97952,
+      "mean": 0.00317,
+      "p95": 0.0115,
+      "max": 0.04411
+    },
+    "collar": {
+      "iou": 0.99192,
+      "mean": 0.00253,
+      "p95": 0.0026,
+      "max": 0.00485
+    },
+    "junction": {
+      "iou": 0.94155,
+      "mean": 0.01526,
+      "p95": 0.06765,
+      "max": 0.06765
+    },
+    "shoulder": {
+      "iou": 0.98121,
+      "mean": 0.00771,
+      "p95": 0.03143,
+      "max": 0.03807
+    },
+    "body": {
+      "iou": 0.99473,
+      "mean": 0.00264,
+      "p95": 0.00292,
+      "max": 0.00517
+    }
+  },
+  "gates": {
+    "collar_iou": true,
+    "collar_mean": true,
+    "collar_p95": true,
+    "collar_max": true,
+    "junction_max": false,
+    "shoulder_iou": true,
+    "visible_object_count": true
+  },
+  "gates_pass": false
+}

@@ -1,0 +1,193 @@
+{
+ "record_type": "illustrator_compatibility_fixtures/1.0",
+ "created_at": "2026-07-31",
+ "purpose": "prove the R2 serializer independently of the artwork, and let Illustrator separate H1 from H2",
+ "emitted_by": "the same serializer that writes the R2 source",
+ "fixtures": [
+  {
+   "fixture": "A_layer_sequence",
+   "objects_expected": 8,
+   "objects_in_emitted_bytes": 8,
+   "object_names": [
+    "SWATCH_01_STRUCTURE_BODY",
+    "SWATCH_02_STRUCTURE_COLLAR",
+    "SWATCH_03_STRUCTURE_CLOSURE",
+    "SWATCH_04_APPROVED_BBROSE_LOGO",
+    "SWATCH_05_DIVIDER",
+    "SWATCH_06_ROSE_LETTERING",
+    "SWATCH_07_DAMASCENA_LETTERING",
+    "SWATCH_08_SUPPORTING_COPY"
+   ],
+   "groups": [
+    "01_STRUCTURE_BODY",
+    "02_STRUCTURE_COLLAR",
+    "03_STRUCTURE_CLOSURE",
+    "04_APPROVED_BBROSE_LOGO",
+    "05_DIVIDER",
+    "06_ROSE_LETTERING",
+    "07_DAMASCENA_LETTERING",
+    "08_SUPPORTING_COPY"
+   ],
+   "graphics_state": {
+    "objects": 8,
+    "colour_set_count": 8,
+    "paint_count": 8,
+    "gsave_grestore_balanced": true,
+    "max_nesting_depth": 1,
+    "every_object_sets_own_colour": true,
+    "every_object_painted": true,
+    "forbidden_operators_present": [],
+    "errors": [],
+    "passed": true
+   },
+   "geometry_round_trips": true,
+   "colors_round_trip": true,
+   "executed_paints": 8,
+   "executed_colors_correct": true,
+   "uses_ai_operator_vocabulary": false,
+   "pending_human_illustrator_confirmation": true,
+   "discriminates_stacking_direction": true,
+   "paint_order_first_to_last": [
+    "SWATCH_01_STRUCTURE_BODY",
+    "SWATCH_02_STRUCTURE_COLLAR",
+    "SWATCH_03_STRUCTURE_CLOSURE",
+    "SWATCH_04_APPROVED_BBROSE_LOGO",
+    "SWATCH_05_DIVIDER",
+    "SWATCH_06_ROSE_LETTERING",
+    "SWATCH_07_DAMASCENA_LETTERING",
+    "SWATCH_08_SUPPORTING_COPY"
+   ],
+   "expected_topmost": "SWATCH_08_SUPPORTING_COPY",
+   "expected_bottommost": "SWATCH_01_STRUCTURE_BODY",
+   "reads_as": {
+    "all eight visible, black on top": "stacking correct - neither H1 nor H2",
+    "all eight visible, red on top": "stacking inverted - H1",
+    "fewer than eight visible": "later content dropped - H2"
+   },
+   "passed": true,
+   "files": {
+    "ai": "docs/visual_quality/vq2/illustrator_fixtures/fixture_a_layer_sequence.ai",
+    "pdf": "docs/visual_quality/vq2/illustrator_fixtures/fixture_a_layer_sequence.pdf",
+    "png": "docs/visual_quality/vq2/illustrator_fixtures/fixture_a_layer_sequence.png"
+   },
+   "sha256": "0c72a70da117a8856f51508869a143f63c0eb97a86a1d91d86edb8dc0f0ba70b"
+  },
+  {
+   "fixture": "B_compound_path",
+   "objects_expected": 2,
+   "objects_in_emitted_bytes": 2,
+   "object_names": [
+    "OUTER_WITH_TWO_COUNTERS",
+    "REGISTERED_SYMBOL_SIZED"
+   ],
+   "groups": [
+    "B_COMPOUND"
+   ],
+   "graphics_state": {
+    "objects": 2,
+    "colour_set_count": 2,
+    "paint_count": 2,
+    "gsave_grestore_balanced": true,
+    "max_nesting_depth": 1,
+    "every_object_sets_own_colour": true,
+    "every_object_painted": true,
+    "forbidden_operators_present": [],
+    "errors": [],
+    "passed": true
+   },
+   "geometry_round_trips": true,
+   "colors_round_trip": true,
+   "executed_paints": 2,
+   "executed_colors_correct": true,
+   "uses_ai_operator_vocabulary": false,
+   "pending_human_illustrator_confirmation": true,
+   "passed": true,
+   "files": {
+    "ai": "docs/visual_quality/vq2/illustrator_fixtures/fixture_b_compound_path.ai",
+    "pdf": "docs/visual_quality/vq2/illustrator_fixtures/fixture_b_compound_path.pdf",
+    "png": "docs/visual_quality/vq2/illustrator_fixtures/fixture_b_compound_path.png"
+   },
+   "sha256": "412ed911e805d2c3f039e8f2899a5eec7855a6547e1c25d5e6f5650fe8bd8b9d"
+  },
+  {
+   "fixture": "C_artwork_paint",
+   "objects_expected": 4,
+   "objects_in_emitted_bytes": 4,
+   "object_names": [
+    "04_APPROVED_BBROSE_LOGO__APPROVED_BBROSE_006",
+    "05_DIVIDER__DIVIDER_RULE",
+    "06_ROSE_LETTERING__ROSE_00_R",
+    "08_SUPPORTING_COPY__SUPPORTING_06_R"
+   ],
+   "groups": [
+    "C_ARTWORK"
+   ],
+   "graphics_state": {
+    "objects": 4,
+    "colour_set_count": 4,
+    "paint_count": 4,
+    "gsave_grestore_balanced": true,
+    "max_nesting_depth": 1,
+    "every_object_sets_own_colour": true,
+    "every_object_painted": true,
+    "forbidden_operators_present": [],
+    "errors": [],
+    "passed": true
+   },
+   "geometry_round_trips": true,
+   "colors_round_trip": true,
+   "executed_paints": 4,
+   "executed_colors_correct": true,
+   "uses_ai_operator_vocabulary": false,
+   "pending_human_illustrator_confirmation": true,
+   "passed": true,
+   "files": {
+    "ai": "docs/visual_quality/vq2/illustrator_fixtures/fixture_c_artwork_paint.ai",
+    "pdf": "docs/visual_quality/vq2/illustrator_fixtures/fixture_c_artwork_paint.pdf",
+    "png": "docs/visual_quality/vq2/illustrator_fixtures/fixture_c_artwork_paint.png"
+   },
+   "sha256": "6abb2c8653df383272a9e8f65138e62bad5979e6b806c58686ea1238c8359b66"
+  },
+  {
+   "fixture": "D_graphics_state",
+   "objects_expected": 3,
+   "objects_in_emitted_bytes": 3,
+   "object_names": [
+    "WIDE_STROKE",
+    "PLAIN_FILL",
+    "THIN_STROKE"
+   ],
+   "groups": [
+    "D_STATE"
+   ],
+   "graphics_state": {
+    "objects": 3,
+    "colour_set_count": 3,
+    "paint_count": 3,
+    "gsave_grestore_balanced": true,
+    "max_nesting_depth": 1,
+    "every_object_sets_own_colour": true,
+    "every_object_painted": true,
+    "forbidden_operators_present": [],
+    "errors": [],
+    "passed": true
+   },
+   "geometry_round_trips": true,
+   "colors_round_trip": true,
+   "executed_paints": 3,
+   "executed_colors_correct": true,
+   "uses_ai_operator_vocabulary": false,
+   "pending_human_illustrator_confirmation": true,
+   "passed": true,
+   "files": {
+    "ai": "docs/visual_quality/vq2/illustrator_fixtures/fixture_d_graphics_state.ai",
+    "pdf": "docs/visual_quality/vq2/illustrator_fixtures/fixture_d_graphics_state.pdf",
+    "png": "docs/visual_quality/vq2/illustrator_fixtures/fixture_d_graphics_state.png"
+   },
+   "sha256": "c61832fc04f38c29880ea2e2c636bda6dd705f453641628824418448cb2c61d4"
+  }
+ ],
+ "all_structural_checks_passed": true,
+ "illustrator_confirmed": false,
+ "illustrator_confirmation_note": "structural checks are about the bytes. Whether Illustrator paints them is what the owner's run establishes."
+}

@@ -1,0 +1,23 @@
+{
+ "record_type": "p1_owner_visual_review_decision/1.0",
+ "decided_at": "2026-08-05",
+ "reviews": "P1 V3 evidence package (commit fa9251b)",
+ "decision": {
+  "P1_V3_TECHNICAL_PIPELINE": "PASS",
+  "P1_V3_VISUAL_QUALITY": "UNACCEPTABLE",
+  "P1_V3_PRODUCT_REALISM": "UNACCEPTABLE",
+  "P1_V3_MATCH_TO_REAL_BOTTLE": "POOR",
+  "P1_V3_OWNER_APPROVAL": "REJECTED",
+  "GATE_2": "BLOCKED",
+  "PACKAGING_PRODUCTION": "NOT_STARTED"
+ },
+ "owner_findings": {
+  "glass": "reads as dark brown opaque smoked glass or matte plastic; must be transparent orange-tinted with background visibly transmitted through the CENTRE; muddy brown banned; artificial dark-red base band banned",
+  "shoulder": "too inflated across the outer shoulder and pinches too sharply near the neck; stays wide too long then contracts too rapidly; narrowing must begin earlier with progressive curvature",
+  "bulb": "too narrow and egg-shaped; must have nearly vertical sides through most of its height with only slight narrowing at the collar",
+  "collar": "too generic; needs saturated burnt orange + moulded character; fine vertical ribbing only as photo-supported",
+  "standard": "STRICT: V4 is judged against the real owner photographs, not against V3; improvement over V3 is not enough; technical correctness does not compensate for weak visual fidelity; any blocking defect = REJECTED; Claude must not self-approve"
+ },
+ "versioning": "V1-V3 preserved completely; the revision lives in docs/visual_quality/rbv/p1_pilot/2026-08-04_v4/",
+ "v3_mesh_identities": {"body": "3d81bf24ac44bfea", "collar": "0c0b5a6edcd33875", "bulb": "931cb17e89f86322"}
+}

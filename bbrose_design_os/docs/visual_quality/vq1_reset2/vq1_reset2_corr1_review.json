@@ -1,0 +1,970 @@
+{
+  "schema_version": "vq1_reset2_corr1_review/1.0",
+  "iteration": "RESET2-IT5",
+  "authorized_change": "closure dome termination only",
+  "iteration_5": {
+    "iteration": "RESET2-IT5",
+    "render": "docs/visual_quality/vq1_reset2/iteration_5.png",
+    "comparison": {
+      "metrics": {
+        "silhouette_iou_non_occluded": 0.98461,
+        "mean_normalized_contour_distance": 0.00605,
+        "p95_contour_distance": 0.03537,
+        "max_contour_distance": 0.18223,
+        "component_centroid_displacement": 0.00028,
+        "collar_body_ratio_error": 0.00618,
+        "dark_body_ratio_error": 0.00022,
+        "constant_width_region_difference": 0.00182,
+        "flare_width_difference": 0.01176,
+        "shoulder_rise_difference": 0.0,
+        "occluded_side_excluded_from_scoring": "LEFT",
+        "reference_aspect_w_over_h": 0.32481,
+        "candidate_aspect_w_over_h": 0.32321,
+        "aspect_error": 0.0016,
+        "dome_only_contour_distance": 0.00481,
+        "dome_only_max": 0.03278
+      },
+      "gates": {
+        "silhouette_iou": true,
+        "mean_contour_distance": true,
+        "p95_contour_distance": true,
+        "max_contour_distance": false,
+        "collar_body_ratio": true,
+        "dark_body_ratio": true,
+        "assembly_aspect": true,
+        "dome_only": true
+      },
+      "gates_pass": false,
+      "thresholds": {
+        "silhouette_iou_min": 0.9,
+        "mean_contour_max": 0.02,
+        "p95_contour_max": 0.045,
+        "max_contour_max": 0.07,
+        "collar_ratio_error_max": 0.025,
+        "dark_ratio_error_max": 0.025,
+        "aspect_error_max": 0.02
+      },
+      "note": "a failing component is never excluded to improve the overall score"
+    },
+    "dome": {
+      "checks": {
+        "apex_half_width_zero": true,
+        "no_horizontal_closing_segment": true,
+        "dome_widens_monotonically_from_apex": true,
+        "at_least_21_dome_samples": true,
+        "dome_curvature_continuous": true,
+        "no_upper_plateau": true,
+        "apex_centered": true
+      },
+      "findings": [],
+      "apex_half_width": 0.0,
+      "dome_samples": 25,
+      "status": "DOME_TERMINATION_VALID"
+    },
+    "unchanged_outside_dome": {
+      "per_component": {
+        "DARK_CLOSURE": "SHAFT_AND_FLARE_IDENTICAL",
+        "COLLAR": "IDENTICAL",
+        "NECK_VISIBLE": "IDENTICAL",
+        "SHOULDER": "IDENTICAL",
+        "BODY": "IDENTICAL",
+        "BASE": "IDENTICAL"
+      },
+      "only_dome_changed": true
+    },
+    "envelope_findings": {
+      "checks": {
+        "constant_width_region_present": true,
+        "lower_flare_present": true,
+        "rounded_dome_not_spear": true,
+        "no_mid_maximum": true,
+        "no_external_stem": true
+      },
+      "findings": [],
+      "constant_width_spread": 0.0,
+      "peak_at_fraction": 1.0,
+      "top_width_fraction_of_max": 0.0,
+      "status": "ENVELOPE_MATCHES_APPROVED_VISIBLE_SEMANTIC"
+    }
+  },
+  "envelope_it5": {
+    "schema_version": "concept_visual_envelope/1.0",
+    "reference_image": "GeneratedImage#97 task_52_var_2_reALblg.png",
+    "crops": [
+      "ref97_closure.png",
+      "ref97_shoulder_neck.png",
+      "ref97_body_base.png"
+    ],
+    "coordinate_system": {
+      "assembly_height": 1.0,
+      "body_visible_width": 1.0,
+      "shared_centerline": 0.0,
+      "units": "NORMALIZED_NONE",
+      "millimetres_used": false
+    },
+    "centerline_px": 666.5,
+    "assembly_span_px": [
+      292,
+      1348
+    ],
+    "body_width_px": 343.0,
+    "components": {
+      "DARK_CLOSURE": {
+        "normalized_points": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.010392,
+            0.000114
+          ],
+          [
+            0.020739,
+            0.000454
+          ],
+          [
+            0.030998,
+            0.001019
+          ],
+          [
+            0.041124,
+            0.001807
+          ],
+          [
+            0.051074,
+            0.002814
+          ],
+          [
+            0.060805,
+            0.004037
+          ],
+          [
+            0.070275,
+            0.005469
+          ],
+          [
+            0.079445,
+            0.007105
+          ],
+          [
+            0.088275,
+            0.008937
+          ],
+          [
+            0.096726,
+            0.010959
+          ],
+          [
+            0.104763,
+            0.01316
+          ],
+          [
+            0.112352,
+            0.015532
+          ],
+          [
+            0.11946,
+            0.018065
+          ],
+          [
+            0.126056,
+            0.020747
+          ],
+          [
+            0.132112,
+            0.023568
+          ],
+          [
+            0.137603,
+            0.026515
+          ],
+          [
+            0.142504,
+            0.029576
+          ],
+          [
+            0.146795,
+            0.032736
+          ],
+          [
+            0.150458,
+            0.035984
+          ],
+          [
+            0.153476,
+            0.039305
+          ],
+          [
+            0.155837,
+            0.042685
+          ],
+          [
+            0.157531,
+            0.046108
+          ],
+          [
+            0.15855,
+            0.049562
+          ],
+          [
+            0.15889,
+            0.05303
+          ],
+          [
+            0.15889,
+            0.06629
+          ],
+          [
+            0.15889,
+            0.07955
+          ],
+          [
+            0.15889,
+            0.0928
+          ],
+          [
+            0.15889,
+            0.10606
+          ],
+          [
+            0.15889,
+            0.11932
+          ],
+          [
+            0.15889,
+            0.13258
+          ],
+          [
+            0.15889,
+            0.14583
+          ],
+          [
+            0.16287,
+            0.15909
+          ],
+          [
+            0.17532,
+            0.17235
+          ],
+          [
+            0.19388,
+            0.18561
+          ]
+        ],
+        "y_norm_range": [
+          0.0,
+          0.18561
+        ],
+        "max_half_width_norm": 0.19388,
+        "min_half_width_norm": 0.0
+      },
+      "COLLAR": {
+        "normalized_points": [
+          [
+            0.25139,
+            0.19697
+          ],
+          [
+            0.25139,
+            0.20833
+          ],
+          [
+            0.25139,
+            0.2197
+          ],
+          [
+            0.25139,
+            0.23106
+          ],
+          [
+            0.25139,
+            0.24242
+          ],
+          [
+            0.26199,
+            0.25379
+          ],
+          [
+            0.26199,
+            0.26515
+          ],
+          [
+            0.26199,
+            0.27652
+          ],
+          [
+            0.26199,
+            0.28788
+          ],
+          [
+            0.26199,
+            0.29924
+          ],
+          [
+            0.31341,
+            0.31061
+          ],
+          [
+            0.31341,
+            0.32197
+          ],
+          [
+            0.31341,
+            0.33333
+          ],
+          [
+            0.31341,
+            0.3447
+          ],
+          [
+            0.30891,
+            0.35606
+          ]
+        ],
+        "y_norm_range": [
+          0.19697,
+          0.35606
+        ],
+        "max_half_width_norm": 0.31341,
+        "min_half_width_norm": 0.25139
+      },
+      "NECK_VISIBLE": {
+        "normalized_points": [
+          [
+            0.30758,
+            0.35795
+          ],
+          [
+            0.30652,
+            0.35931
+          ],
+          [
+            0.30413,
+            0.36066
+          ],
+          [
+            0.30307,
+            0.36201
+          ],
+          [
+            0.30042,
+            0.36337
+          ],
+          [
+            0.2991,
+            0.36472
+          ],
+          [
+            0.29645,
+            0.36607
+          ],
+          [
+            0.29539,
+            0.36742
+          ],
+          [
+            0.29459,
+            0.36878
+          ],
+          [
+            0.29459,
+            0.37013
+          ],
+          [
+            0.29539,
+            0.37148
+          ],
+          [
+            0.29724,
+            0.37284
+          ],
+          [
+            0.29857,
+            0.37419
+          ],
+          [
+            0.30228,
+            0.37554
+          ],
+          [
+            0.30493,
+            0.37689
+          ]
+        ],
+        "y_norm_range": [
+          0.35795,
+          0.37689
+        ],
+        "max_half_width_norm": 0.30758,
+        "min_half_width_norm": 0.29459
+      },
+      "SHOULDER": {
+        "normalized_points": [
+          [
+            0.30493,
+            0.37689
+          ],
+          [
+            0.31527,
+            0.3796
+          ],
+          [
+            0.33435,
+            0.38231
+          ],
+          [
+            0.36403,
+            0.38501
+          ],
+          [
+            0.38895,
+            0.38772
+          ],
+          [
+            0.42764,
+            0.39042
+          ],
+          [
+            0.45971,
+            0.39313
+          ],
+          [
+            0.48145,
+            0.39583
+          ],
+          [
+            0.49205,
+            0.39854
+          ],
+          [
+            0.49788,
+            0.40124
+          ],
+          [
+            0.50106,
+            0.40395
+          ],
+          [
+            0.50212,
+            0.40666
+          ],
+          [
+            0.50292,
+            0.40936
+          ],
+          [
+            0.50292,
+            0.41207
+          ],
+          [
+            0.50292,
+            0.41477
+          ]
+        ],
+        "y_norm_range": [
+          0.37689,
+          0.41477
+        ],
+        "max_half_width_norm": 0.50292,
+        "min_half_width_norm": 0.30493
+      },
+      "BODY": {
+        "normalized_points": [
+          [
+            0.50292,
+            0.41477
+          ],
+          [
+            0.50292,
+            0.454
+          ],
+          [
+            0.50292,
+            0.49324
+          ],
+          [
+            0.50292,
+            0.53247
+          ],
+          [
+            0.50292,
+            0.5717
+          ],
+          [
+            0.50292,
+            0.61093
+          ],
+          [
+            0.50292,
+            0.65016
+          ],
+          [
+            0.50292,
+            0.68939
+          ],
+          [
+            0.5008,
+            0.72863
+          ],
+          [
+            0.5,
+            0.76786
+          ],
+          [
+            0.5,
+            0.80709
+          ],
+          [
+            0.5,
+            0.84632
+          ],
+          [
+            0.5,
+            0.88555
+          ],
+          [
+            0.5,
+            0.92478
+          ],
+          [
+            0.5,
+            0.96402
+          ]
+        ],
+        "y_norm_range": [
+          0.41477,
+          0.96402
+        ],
+        "max_half_width_norm": 0.50292,
+        "min_half_width_norm": 0.5
+      },
+      "BASE": {
+        "normalized_points": [
+          [
+            0.5,
+            0.96402
+          ],
+          [
+            0.5,
+            0.96659
+          ],
+          [
+            0.49973,
+            0.96916
+          ],
+          [
+            0.49894,
+            0.97173
+          ],
+          [
+            0.49708,
+            0.9743
+          ],
+          [
+            0.49417,
+            0.97687
+          ],
+          [
+            0.49178,
+            0.97944
+          ],
+          [
+            0.48728,
+            0.98201
+          ],
+          [
+            0.48436,
+            0.98458
+          ],
+          [
+            0.48251,
+            0.98715
+          ],
+          [
+            0.47933,
+            0.98972
+          ],
+          [
+            0.47509,
+            0.99229
+          ],
+          [
+            0.46851,
+            0.99486
+          ],
+          [
+            0.46574,
+            0.99743
+          ],
+          [
+            0.4621,
+            1.0
+          ]
+        ],
+        "y_norm_range": [
+          0.96402,
+          1.0
+        ],
+        "max_half_width_norm": 0.5,
+        "min_half_width_norm": 0.4621
+      }
+    },
+    "occluded_regions": [
+      {
+        "side": "LEFT",
+        "cause": "adjacent carton",
+        "y_norm_range": [
+          0.0,
+          1.0
+        ],
+        "measurable": false
+      }
+    ],
+    "mirrored_regions": [
+      {
+        "side": "LEFT",
+        "derived_from": "measured RIGHT edge",
+        "authority": "HUMAN_APPROVED_CONCEPT_ONLY_ASSUMPTION"
+      }
+    ],
+    "confidence": 0.72,
+    "human_authority": "CONCEPT_VISUAL_GEOMETRY_AUTHORIZED",
+    "production_authority_prohibition": "this envelope may NOT be described as manufacturable, supplier-confirmed, a production dimension, a tooling dimension or a verified closure construction",
+    "reference_pixel_relationships": {
+      "authority": "REFERENCE_PIXEL_RELATIONSHIPS",
+      "is_physical_dimension": false,
+      "source_image": "GeneratedImage#97 task_52_var_2_reALblg.png",
+      "visible_body_width_px": 343,
+      "visible_collar_width_px": 217,
+      "collar_body_ratio": 0.633,
+      "dark_constant_width_px": 109,
+      "dark_body_ratio": 0.318,
+      "lower_flare_width_px": 129,
+      "flare_body_ratio": 0.376,
+      "constant_width_run_px": 96,
+      "left_body_edge": "PARTIALLY_OCCLUDED_BY_CARTON",
+      "bilateral_symmetry": "NOT_DIRECTLY_MEASURABLE"
+    },
+    "dome_cap": {
+      "construction": "QUARTER_ELLIPSE_CAP",
+      "samples": 25,
+      "dome_height_norm": 0.05303,
+      "shaft_half_width_norm": 0.15889,
+      "apex_half_width": 0.0,
+      "apex_on_centerline": true,
+      "c1_join_to_shaft": true,
+      "replaced_region_only": "DARK_CLOSURE upper dome",
+      "samples_in_upper_quarter": 25,
+      "control_points": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.010392,
+          0.000114
+        ],
+        [
+          0.020739,
+          0.000454
+        ],
+        [
+          0.030998,
+          0.001019
+        ],
+        [
+          0.041124,
+          0.001807
+        ],
+        [
+          0.051074,
+          0.002814
+        ],
+        [
+          0.060805,
+          0.004037
+        ],
+        [
+          0.070275,
+          0.005469
+        ],
+        [
+          0.079445,
+          0.007105
+        ],
+        [
+          0.088275,
+          0.008937
+        ],
+        [
+          0.096726,
+          0.010959
+        ],
+        [
+          0.104763,
+          0.01316
+        ],
+        [
+          0.112352,
+          0.015532
+        ],
+        [
+          0.11946,
+          0.018065
+        ],
+        [
+          0.126056,
+          0.020747
+        ],
+        [
+          0.132112,
+          0.023568
+        ],
+        [
+          0.137603,
+          0.026515
+        ],
+        [
+          0.142504,
+          0.029576
+        ],
+        [
+          0.146795,
+          0.032736
+        ],
+        [
+          0.150458,
+          0.035984
+        ],
+        [
+          0.153476,
+          0.039305
+        ],
+        [
+          0.155837,
+          0.042685
+        ],
+        [
+          0.157531,
+          0.046108
+        ],
+        [
+          0.15855,
+          0.049562
+        ],
+        [
+          0.15889,
+          0.05303
+        ]
+      ]
+    }
+  },
+  "visualizer": {
+    "calls": 1,
+    "iteration_5": {
+      "reference_description": "Close-up of a dropper bottle closure showing a large, soft dark-plum/mauve rubber pipette bulb with a rounded dome top and a wide skirt that flares over a tall, highly polished rose-gold metallic collar/cap. The bulb is prominent, occupying roughly half the visible height. The collar is cylindrical, wide, and reflective with a warm gold tone. No bottle body is visible.",
+      "output_description": "Full-bottle synthetic render showing a rectangular flat-sided bottle body in off-white/cream. The closure consists of a small beige/tan stepped collar (two-tier cylindrical cap) surmounted by a small dark-plum flat-topped cylindrical rubber bulb. The bulb is disproportionately small, flat-topped rather than dome-shaped, and the collar is beige/tan with no metallic finish whatsoever.",
+      "top_component_observed_shape": "Small flat-topped cylinder (dark plum) sitting on a two-step beige cylindrical collar",
+      "component_semantics": {
+        "classification": "EXPOSED_RUBBER_PIPETTE_BULB",
+        "confidence": 0.45,
+        "evidence": "A dark plum element is present at the top suggesting a rubber bulb, but its shape is flat-cylindrical rather than the large rounded dome seen in the reference; it lacks the characteristic rounded top and wide flared skirt of the reference bulb"
+      },
+      "same_component_type": false,
+      "same_structural_family": false,
+      "closure_proportions_physically_coherent": false,
+      "output_appears_generic": true,
+      "failing_component": "BULB",
+      "per_component_score": {
+        "closure": 2,
+        "shoulder": 3,
+        "body": 4,
+        "silhouette": 3
+      },
+      "reference_preservation_score": 2,
+      "visual_findings": [
+        "Reference bulb is large, dome-topped, dark plum with wide flared skirt; generated bulb is small, flat-topped, and cylindrical with no flare",
+        "Reference collar is tall, wide, highly polished rose-gold metallic; generated collar is beige/tan matte with stepped profile \u2014 no metallic finish",
+        "Generated bulb height is approximately 20% of closure height vs ~55% in reference",
+        "Generated Image 2 is nearly identical to rejected Image 3; minimal or no improvement between iterations",
+        "Bottle body in generated render is rectangular/flat-sided; reference shows no body but implies a cylindrical or round-shouldered bottle",
+        "Color palette of collar is completely wrong (beige vs rose-gold)"
+      ],
+      "critical_blockers": [
+        "Bulb shape wrong: flat cylinder instead of large rounded dome",
+        "Collar color/material wrong: beige matte instead of rose-gold polished metal",
+        "Bulb-to-collar proportion wrong: bulb is far too small relative to collar",
+        "No improvement from previously rejected iteration \u2014 essentially same render",
+        "Flared skirt on bulb absent entirely"
+      ],
+      "confidence": 0.92
+    },
+    "verdict": "VISUALLY_REJECTED",
+    "conflict": "VQ_MULTIMODAL_NUMERIC_CLAIM_CONFLICT \u2014 model claims a flat top; apex half-width is exactly 0 and dome-only max distance is 0.033. Deterministic measurement governs."
+  },
+  "it6_generated": false,
+  "assembly_released": false,
+  "manufacturable_claim": false,
+  "image_generation_calls": 0,
+  "supplier_outreach": {
+    "record_type": "vq1_supplier_specification_outreach/1.0",
+    "created_at": "2026-07-28",
+    "outbound_email_available": false,
+    "capability_note": "EMAIL_BACKEND is the console backend with no EMAIL_HOST, so no external delivery is possible. Nothing is marked SENT.",
+    "requested_documents": [
+      "exact 30 ml cylindrical frosted-glass serum bottle SKU",
+      "product-variant page or catalogue reference",
+      "bottle dimensional drawing",
+      "bottle outside diameter",
+      "bottle height without closure",
+      "neck finish",
+      "neck outside diameter",
+      "brimful/overflow capacity",
+      "glass weight",
+      "compatible dropper closure SKU",
+      "closure technical drawing",
+      "collar outside diameter",
+      "collar visible height",
+      "dark outer component construction (bare rubber bulb / integral bulb-and-skirt / decorative outer cover / complete overcap / other)",
+      "pipette length",
+      "total assembled height",
+      "bottle material",
+      "closure materials",
+      "compatible decoration methods",
+      "CAD/PDF files",
+      "MOQ",
+      "sample availability",
+      "sample cost",
+      "lead time",
+      "country of manufacture"
+    ],
+    "authorization_excludes": [
+      "placing an order",
+      "accepting a quotation",
+      "agreeing to MOQ",
+      "payment",
+      "sharing proprietary designs",
+      "sharing selected concept #97",
+      "sharing task #51 or #52",
+      "sharing rejected VQ fixtures",
+      "granting supplier production authority"
+    ],
+    "information_boundary": {
+      "attachments": [],
+      "permitted_identification": [
+        "BBROSE",
+        "general requirement for a premium 30 ml serum package",
+        "frosted cylindrical glass bottle",
+        "preferred rose-gold collar appearance",
+        "need for compatible dropper closure and specifications"
+      ],
+      "prohibited_attachments_present": false
+    },
+    "suppliers": [
+      {
+        "supplier": "Liquid Bottles LLC",
+        "domain": "liquidbottles.com",
+        "contact_endpoint": "https://www.liquidbottles.com/contact-us",
+        "endpoint_verification": {
+          "status": "VERIFIED_REACHABLE",
+          "http": null,
+          "bytes": 20240
+        },
+        "request_identity": "REQ-LIQUIDBOTTLES",
+        "subject": "30 ml cylindrical serum bottle + dropper closure \u2014 technical specification request",
+        "body": "Hello,\n\nBBROSE is specifying packaging for a premium 30 ml serum: a frosted cylindrical glass bottle with a rose-gold-appearance metallic dropper closure. We need manufacturer specification data.\n\nCould you provide, for one exact product variant:\n\n  - exact 30 ml cylindrical frosted-glass serum bottle SKU\n  - product-variant page or catalogue reference\n  - bottle dimensional drawing\n  - bottle outside diameter\n  - bottle height without closure\n  - neck finish\n  - neck outside diameter\n  - brimful/overflow capacity\n  - glass weight\n  - compatible dropper closure SKU\n  - closure technical drawing\n  - collar outside diameter\n  - collar visible height\n  - dark outer component construction (bare rubber bulb / integral bulb-and-skirt / decorative outer cover / complete overcap / other)\n  - pipette length\n  - total assembled height\n  - bottle material\n  - closure materials\n  - compatible decoration methods\n  - CAD/PDF files\n  - MOQ\n  - sample availability\n  - sample cost\n  - lead time\n  - country of manufacture\n\nPlease state clearly whether any total-height figure INCLUDES the closure.\n\nA dimensional drawing or CAD file is the most useful single item. We are at the specification stage and are not placing an order or requesting a quotation at this time.\n\nThank you.",
+        "body_sha256_16": "23ff7ce7b6a65e6f",
+        "status": "DRAFTED_READY_FOR_HUMAN_SEND",
+        "sent": false,
+        "delivery_verified": false,
+        "response_status": "NONE",
+        "follow_up_date": "2026-08-11",
+        "rights_note": "public contact endpoint only; no scraped private addresses; no credentials stored"
+      },
+      {
+        "supplier": "SKS Bottle & Packaging",
+        "domain": "sks-bottle.com",
+        "contact_endpoint": "https://www.sks-bottle.com/contact.html",
+        "endpoint_verification": {
+          "status": "UNVERIFIED",
+          "code": "HTTP 404"
+        },
+        "request_identity": "REQ-SKS-BOTTLE",
+        "subject": "30 ml cylindrical serum bottle + dropper closure \u2014 technical specification request",
+        "body": "Hello,\n\nBBROSE is specifying packaging for a premium 30 ml serum: a frosted cylindrical glass bottle with a rose-gold-appearance metallic dropper closure. We need manufacturer specification data.\n\nCould you provide, for one exact product variant:\n\n  - exact 30 ml cylindrical frosted-glass serum bottle SKU\n  - product-variant page or catalogue reference\n  - bottle dimensional drawing\n  - bottle outside diameter\n  - bottle height without closure\n  - neck finish\n  - neck outside diameter\n  - brimful/overflow capacity\n  - glass weight\n  - compatible dropper closure SKU\n  - closure technical drawing\n  - collar outside diameter\n  - collar visible height\n  - dark outer component construction (bare rubber bulb / integral bulb-and-skirt / decorative outer cover / complete overcap / other)\n  - pipette length\n  - total assembled height\n  - bottle material\n  - closure materials\n  - compatible decoration methods\n  - CAD/PDF files\n  - MOQ\n  - sample availability\n  - sample cost\n  - lead time\n  - country of manufacture\n\nPlease state clearly whether any total-height figure INCLUDES the closure.\n\nA dimensional drawing or CAD file is the most useful single item. We are at the specification stage and are not placing an order or requesting a quotation at this time.\n\nThank you.",
+        "body_sha256_16": "23ff7ce7b6a65e6f",
+        "status": "DRAFTED_READY_FOR_HUMAN_SEND",
+        "sent": false,
+        "delivery_verified": false,
+        "response_status": "NONE",
+        "follow_up_date": "2026-08-11",
+        "rights_note": "public contact endpoint only; no scraped private addresses; no credentials stored"
+      },
+      {
+        "supplier": "BottleStore / O.Berk",
+        "domain": "bottlestore.com",
+        "contact_endpoint": "https://www.bottlestore.com/contact-us",
+        "endpoint_verification": {
+          "status": "VERIFIED_REACHABLE",
+          "http": null,
+          "bytes": 331156
+        },
+        "request_identity": "REQ-BOTTLESTORE",
+        "subject": "30 ml cylindrical serum bottle + dropper closure \u2014 technical specification request",
+        "body": "Hello,\n\nBBROSE is specifying packaging for a premium 30 ml serum: a frosted cylindrical glass bottle with a rose-gold-appearance metallic dropper closure. We need manufacturer specification data.\n\nCould you provide, for one exact product variant:\n\n  - exact 30 ml cylindrical frosted-glass serum bottle SKU\n  - product-variant page or catalogue reference\n  - bottle dimensional drawing\n  - bottle outside diameter\n  - bottle height without closure\n  - neck finish\n  - neck outside diameter\n  - brimful/overflow capacity\n  - glass weight\n  - compatible dropper closure SKU\n  - closure technical drawing\n  - collar outside diameter\n  - collar visible height\n  - dark outer component construction (bare rubber bulb / integral bulb-and-skirt / decorative outer cover / complete overcap / other)\n  - pipette length\n  - total assembled height\n  - bottle material\n  - closure materials\n  - compatible decoration methods\n  - CAD/PDF files\n  - MOQ\n  - sample availability\n  - sample cost\n  - lead time\n  - country of manufacture\n\nPlease state clearly whether any total-height figure INCLUDES the closure.\n\nA dimensional drawing or CAD file is the most useful single item. We are at the specification stage and are not placing an order or requesting a quotation at this time.\n\nThank you.",
+        "body_sha256_16": "23ff7ce7b6a65e6f",
+        "status": "DRAFTED_READY_FOR_HUMAN_SEND",
+        "sent": false,
+        "delivery_verified": false,
+        "response_status": "NONE",
+        "follow_up_date": "2026-08-11",
+        "rights_note": "public contact endpoint only; no scraped private addresses; no credentials stored"
+      },
+      {
+        "supplier": "Premium Vials",
+        "domain": "premiumvials.com",
+        "contact_endpoint": "https://www.premiumvials.com/pages/contact-us",
+        "endpoint_verification": {
+          "status": "UNVERIFIED",
+          "code": "HTTP 404"
+        },
+        "request_identity": "REQ-PREMIUMVIALS",
+        "subject": "30 ml cylindrical serum bottle + dropper closure \u2014 technical specification request",
+        "body": "Hello,\n\nBBROSE is specifying packaging for a premium 30 ml serum: a frosted cylindrical glass bottle with a rose-gold-appearance metallic dropper closure. We need manufacturer specification data.\n\nCould you provide, for one exact product variant:\n\n  - exact 30 ml cylindrical frosted-glass serum bottle SKU\n  - product-variant page or catalogue reference\n  - bottle dimensional drawing\n  - bottle outside diameter\n  - bottle height without closure\n  - neck finish\n  - neck outside diameter\n  - brimful/overflow capacity\n  - glass weight\n  - compatible dropper closure SKU\n  - closure technical drawing\n  - collar outside diameter\n  - collar visible height\n  - dark outer component construction (bare rubber bulb / integral bulb-and-skirt / decorative outer cover / complete overcap / other)\n  - pipette length\n  - total assembled height\n  - bottle material\n  - closure materials\n  - compatible decoration methods\n  - CAD/PDF files\n  - MOQ\n  - sample availability\n  - sample cost\n  - lead time\n  - country of manufacture\n\nPlease state clearly whether any total-height figure INCLUDES the closure.\n\nA dimensional drawing or CAD file is the most useful single item. We are at the specification stage and are not placing an order or requesting a quotation at this time.\n\nThank you.",
+        "body_sha256_16": "23ff7ce7b6a65e6f",
+        "status": "DRAFTED_READY_FOR_HUMAN_SEND",
+        "sent": false,
+        "delivery_verified": false,
+        "response_status": "NONE",
+        "follow_up_date": "2026-08-11",
+        "rights_note": "public contact endpoint only; no scraped private addresses; no credentials stored"
+      },
+      {
+        "supplier": "Nicer Packaging",
+        "domain": "nicerpackaging.com",
+        "contact_endpoint": "https://www.nicerpackaging.com/contact-us/",
+        "endpoint_verification": {
+          "status": "VERIFIED_REACHABLE",
+          "http": null,
+          "bytes": 203418
+        },
+        "request_identity": "REQ-NICERPACKAGING",
+        "subject": "30 ml cylindrical serum bottle + dropper closure \u2014 technical specification request",
+        "body": "Hello,\n\nBBROSE is specifying packaging for a premium 30 ml serum: a frosted cylindrical glass bottle with a rose-gold-appearance metallic dropper closure. We need manufacturer specification data.\n\nCould you provide, for one exact product variant:\n\n  - exact 30 ml cylindrical frosted-glass serum bottle SKU\n  - product-variant page or catalogue reference\n  - bottle dimensional drawing\n  - bottle outside diameter\n  - bottle height without closure\n  - neck finish\n  - neck outside diameter\n  - brimful/overflow capacity\n  - glass weight\n  - compatible dropper closure SKU\n  - closure technical drawing\n  - collar outside diameter\n  - collar visible height\n  - dark outer component construction (bare rubber bulb / integral bulb-and-skirt / decorative outer cover / complete overcap / other)\n  - pipette length\n  - total assembled height\n  - bottle material\n  - closure materials\n  - compatible decoration methods\n  - CAD/PDF files\n  - MOQ\n  - sample availability\n  - sample cost\n  - lead time\n  - country of manufacture\n\nPlease state clearly whether any total-height figure INCLUDES the closure.\n\nA dimensional drawing or CAD file is the most useful single item. We are at the specification stage and are not placing an order or requesting a quotation at this time.\n\nThank you.",
+        "body_sha256_16": "23ff7ce7b6a65e6f",
+        "status": "DRAFTED_READY_FOR_HUMAN_SEND",
+        "sent": false,
+        "delivery_verified": false,
+        "response_status": "NONE",
+        "follow_up_date": "2026-08-11",
+        "rights_note": "public contact endpoint only; no scraped private addresses; no credentials stored"
+      }
+    ],
+    "production_geometry": "BLOCKED_PENDING_SUPPLIER_RESPONSE",
+    "no_response_is_automatically_authoritative": true
+  },
+  "production_geometry": "BLOCKED_PENDING_SUPPLIER_RESPONSE",
+  "vq1_state": "REVISION_REQUIRED",
+  "status": "AWAITING_HUMAN_REVIEW"
+}

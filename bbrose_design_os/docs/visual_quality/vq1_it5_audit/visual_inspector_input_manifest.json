@@ -1,0 +1,61 @@
+{
+  "record_type": "visual_inspector_input_manifest/1.0",
+  "created_at": "2026-07-28",
+  "inspection_id": "vq1-reset2-it5-inspection",
+  "model": "QA_VISION_MODEL or CLAUDE_MODEL_FAST",
+  "prompt_version": "VISION_SYSTEM (visual_inspector.py, blind describe-then-judge)",
+  "image_ordering": [
+    "IMAGE 1 = REFERENCE (closure crop)",
+    "IMAGE 2 = GENERATED (IT5, full assembly)",
+    "IMAGE 3 = PREVIOUS (IT4, full assembly)"
+  ],
+  "images": [
+    {
+      "role": "reference",
+      "path": "docs/visual_quality/vq1_corr5/ref97_closure.png",
+      "sha256": "69f0d12296ccb5625b4aca2c84c3efea8b1105499f55cc4e32a3eb45ae01189e",
+      "size": [
+        260,
+        430
+      ],
+      "mime": "image/png",
+      "crop_bounds": [
+        540,
+        270,
+        800,
+        700
+      ]
+    },
+    {
+      "role": "output_it5",
+      "path": "docs/visual_quality/vq1_reset2/iteration_5.png",
+      "sha256": "cef8e1ab2618a97859c693e8a91ed0378f31baae482caef991e87e136b3973b9",
+      "size": [
+        307,
+        709
+      ],
+      "mime": "image/png",
+      "crop_bounds": null
+    },
+    {
+      "role": "previous_it4",
+      "path": "docs/visual_quality/vq1_reset2/iteration_4.png",
+      "sha256": "7f6a9ef2634a9bcd8f830e2fe4e2c57dc38e11f5cf7cb02762bd074b8e39900b",
+      "size": [
+        307,
+        709
+      ],
+      "mime": "image/png",
+      "crop_bounds": null
+    }
+  ],
+  "images_required_but_not_supplied": [
+    "visualizer_input_it4_it5_comparison.png",
+    "visualizer_input_reference_it5_overlay.png",
+    "visualizer_input_montage.png"
+  ],
+  "scaling_applied": "NONE",
+  "compression_applied": "NONE (PNG bytes as written)",
+  "credentials_persisted": false,
+  "hidden_reasoning_persisted": false
+}

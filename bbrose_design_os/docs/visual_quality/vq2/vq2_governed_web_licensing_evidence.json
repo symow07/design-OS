@@ -1,0 +1,92 @@
+{
+ "record_type": "vq2_governed_web_licensing_evidence/1.0",
+ "created_at": "2026-07-29",
+ "performed": true,
+ "scope": "official sources only",
+ "source_count": 4,
+ "sources": [
+  {
+   "url": "https://openfontlicense.org/documents/OFL.txt",
+   "title": "SIL Open Font License Version 1.1",
+   "publisher": "SIL International / Open Font License",
+   "access_date": "2026-07-29",
+   "category": "OFFICIAL_LICENCE_TEXT",
+   "rights_statement": "OFL 1.1, 26 February 2007",
+   "font_binaries_offered": false,
+   "use": "open-source",
+   "excerpt": "\"The requirement for fonts to remain under this license does not apply to any document created using the Font Software.\" Reserved Font Name condition applies to Modified Versions of the Font Software.",
+   "confidence": 0.97,
+   "content_hash": "5c9d71244fc8c7d9"
+  },
+  {
+   "url": "https://openfontlicense.org/ofl-faq/",
+   "title": "OFL FAQ",
+   "publisher": "SIL International",
+   "access_date": "2026-07-29",
+   "category": "OFFICIAL_LICENCE_FAQ",
+   "rights_statement": "OFL 1.1 FAQ",
+   "font_binaries_offered": false,
+   "use": "open-source",
+   "excerpt": "Q1.1 permits using OFL fonts for any design work including logos and graphics based on their outlines. Q1.1.1: \"You remain the author and copyright holder of that newly derived graphic... It is only when you redistribute, bundle or modify the font itself that other conditions of the license have to be respected.\" Outlined artwork is a DOCUMENT, not a Modified Version, so the Reserved Font Name does not attach to it.",
+   "confidence": 0.96,
+   "content_hash": "51a40fcdf74e8d4d"
+  },
+  {
+   "url": "https://fonts.google.com/specimen/GFS+Didot",
+   "title": "GFS Didot specimen",
+   "publisher": "Google Fonts",
+   "access_date": "2026-07-29",
+   "category": "OFFICIAL_FONT_PLATFORM",
+   "rights_statement": "SIL Open Font License 1.1; \"GFS Didot\" is a Reserved Font Name",
+   "font_binaries_offered": true,
+   "binaries_downloaded": false,
+   "use": "open-source",
+   "excerpt": "GFS Didot by the Greek Font Society is published under OFL 1.1 with GFS Didot as a Reserved Font Name.",
+   "confidence": 0.9,
+   "content_hash": "b833ec977edbfc13"
+  },
+  {
+   "url": "https://github.com/google/fonts/blob/main/ofl/gfsdidot/DESCRIPTION.en_us.html",
+   "title": "google/fonts ofl/gfsdidot",
+   "publisher": "Google Fonts repository (GitHub)",
+   "access_date": "2026-07-29",
+   "category": "OFFICIAL_REPOSITORY",
+   "rights_statement": "listed under ofl/ directory",
+   "font_binaries_offered": true,
+   "binaries_downloaded": false,
+   "use": "open-source",
+   "excerpt": "GFS Didot is distributed in the OFL directory of the official Google Fonts repository.",
+   "confidence": 0.85,
+   "content_hash": "ae803ced3544294e"
+  }
+ ],
+ "excluded_source_types": [
+  "free-font redistribution websites",
+  "unofficial download mirrors",
+  "marketplace summaries",
+  "AI-generated licensing articles"
+ ],
+ "font_binaries_downloaded": false,
+ "font_binaries_redistributed": false,
+ "embedded_subsets_extracted": false,
+ "logins_or_captcha_bypassed": false,
+ "forms_submitted": false,
+ "determination": {
+  "ofl_permits_outline_derived_commercial_artwork": true,
+  "outlined_artwork_is_a_document_not_a_modified_version": true,
+  "reserved_font_name_applies_to_artwork": false,
+  "reserved_font_name_applies_to": "a derived FONT redistributed under the RFN",
+  "conclusion": "On the licensing axis the GFS Didot scaffold appears permissible for commercial vector artwork under OFL 1.1.",
+  "confidence": 0.93,
+  "independently_verified_against_gfs_primary_site": false,
+  "residual_code": "VQ2_WEB_FONT_RIGHTS_UNRESOLVED (downgraded: OFL terms confirmed from official SIL sources; GFS primary-site confirmation not obtained)"
+ },
+ "critical_separation": "Rights compliance and visual-construction compliance are SEPARATE gates. The OFL result does NOT cure the frozen VQ-2 construction-method failure.",
+ "web_evidence_is_secondary": true,
+ "did_not_override": [
+  "the owner-submitted lettering",
+  "the approved BBROSE logo",
+  "the measured concept composition",
+  "explicit owner decisions"
+ ]
+}

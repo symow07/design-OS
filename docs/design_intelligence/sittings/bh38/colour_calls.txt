@@ -1,0 +1,207 @@
+apps/pipeline/targets/container/__init__.py:771:            if colors.get(key):
+apps/pipeline/targets/container/__init__.py:1050:                        "product_color": colors.get("product", "#F2C4CE")}
+apps/pipeline/services/palette_flake_rig.py:168:    return PE.PowderShade("prov_flake_neutral", (0.62, 0.55, 0.48),
+apps/pipeline/services/palt_m4b_a.py:242:    for fil in (0.0001, 0.6, 0.8):
+apps/pipeline/services/palette_characterization_rig.py:223:                 samples=None, rgb=(0.62, 0.62, 0.63)) -> dict:
+apps/pipeline/services/native_handoff.py:248:                        "product_color": colors.get("product", "#F2C4CE")}
+apps/pipeline/services/a3p_evidence_render.py:305:    for t in (0.2, 0.5, 0.8):
+apps/pipeline/services/palette_raking_rig.py:214:    shade = PE.PowderShade("prov_rake", (0.62, 0.55, 0.48),
+apps/pipeline/services/palette_axis_eligibility.py:75:    shade = PE.PowderShade("prov_char_neutral", (0.62, 0.55, 0.48),
+apps/pipeline/services/palette_characterization_protocol.py:585:def _spec(material, finish, rgb=(0.62, 0.62, 0.63)):
+apps/pipeline/services/palette_marbling_rig.py:214:    warm = PE.PowderShade("prov_dark_warm_sienna", (0.38, 0.22, 0.14),
+apps/pipeline/services/palette_marbling_rig.py:216:    cool = PE.PowderShade("prov_dark_cool_plum", (0.30, 0.18, 0.26),
+apps/pipeline/services/spec_sheet.py:22:BBROSE_BLUSH = colors.HexColor('#F2C4CE')
+apps/pipeline/services/spec_sheet.py:23:BBROSE_ROSE_GOLD = colors.HexColor('#B5895A')
+apps/pipeline/services/spec_sheet.py:24:BBROSE_DARK = colors.HexColor('#1A1A1A')
+apps/pipeline/services/spec_sheet.py:25:BBROSE_CREAM = colors.HexColor('#F5EDD6')
+apps/pipeline/services/spec_sheet.py:120:                ('GRID', (0, 0), (-1, -1), 0.5, colors.HexColor('#D0D0D0')),
+apps/pipeline/services/spec_sheet.py:158:            ('GRID', (0, 0), (-1, -1), 0.5, colors.HexColor('#D0D0D0')),
+apps/pipeline/services/spec_sheet.py:159:            ('ROWBACKGROUNDS', (0, 1), (-1, -1), [BBROSE_CREAM, colors.white]),
+apps/pipeline/services/spec_sheet.py:181:        ParagraphStyle('Timestamp', fontSize=8, textColor=colors.HexColor('#999999')),
+apps/pipeline/services/palette_powder_rigs.py:262:    shade = PE.PowderShade("prov_census_neutral", (0.62, 0.55, 0.48),
+apps/pipeline/services/palette_powder_rigs.py:558:    shade = PE.PowderShade("prov_char_neutral", (0.62, 0.55, 0.48),
+apps/pipeline/services/palette_m5_evidence.py:197:    grey = ME.Colour(rgb=(0.62, 0.62, 0.63))
+apps/pipeline/services/palette_m5_evidence.py:199:                                ME.Colour(rgb=(0.72, 0.73, 0.75)))
+apps/pipeline/services/palette_m5_evidence.py:201:                                   ME.Colour(rgb=(0.36, 0.30, 0.28)))
+apps/pipeline/services/palette_m6_spreads_driver.py:142:    shade = PE.PowderShade("prov_char_neutral", (0.62, 0.55, 0.48),
+apps/pipeline/services/palette_m6_spreads_driver.py:198:    shade = PE.PowderShade("prov_char_neutral", (0.62, 0.55, 0.48),
+apps/pipeline/services/palette_m6_spreads_driver.py:282:    shade = PE.PowderShade("prov_census_neutral", (0.62, 0.55, 0.48),
+apps/pipeline/services/palette_material_engine.py:90:    PANTONE_621C: (0.72, 0.80, 0.74),
+apps/pipeline/services/palette_material_engine.py:91:    PANTONE_627C: (0.16, 0.30, 0.24),
+apps/pipeline/services/palette_material_engine.py:153:    rgb = DISPLAY_PROXY.get(colour.name, (0.55, 0.55, 0.57))
+apps/pipeline/services/palette_material_engine.py:288:                                _neutral((0.72, 0.73, 0.75))),
+apps/pipeline/services/palette_material_engine.py:290:                                _neutral((0.36, 0.30, 0.28)))],
+apps/pipeline/services/palette_material_engine.py:298:                                _neutral((0.72, 0.73, 0.75))),
+apps/pipeline/services/palette_material_engine.py:300:                                _neutral((0.36, 0.30, 0.28)))],
+apps/pipeline/services/palette_material_engine.py:308:                                _neutral((0.72, 0.73, 0.75))),
+apps/pipeline/services/palette_material_engine.py:310:                                _neutral((0.36, 0.30, 0.28)))],
+apps/pipeline/services/palette_material_engine.py:318:                                _neutral((0.78, 0.72, 0.52)),
+apps/pipeline/services/palette_material_engine.py:321:                                _neutral((0.78, 0.72, 0.52))),
+apps/pipeline/services/palette_material_engine.py:323:                                _neutral((0.78, 0.72, 0.52))),
+apps/pipeline/services/palette_material_engine.py:325:                                _neutral((0.72, 0.73, 0.75))),
+apps/pipeline/services/palette_material_engine.py:327:                                _neutral((0.36, 0.30, 0.28)))],
+apps/pipeline/services/palette_material_engine.py:337:                                _neutral((0.72, 0.73, 0.75))),
+apps/pipeline/services/palette_material_engine.py:339:                                _neutral((0.36, 0.30, 0.28)))],
+apps/pipeline/services/palette_material_engine.py:347:                                       rgb=(0.31, 0.57, 0.49))),
+apps/pipeline/services/palette_material_engine.py:349:                                _neutral((0.72, 0.73, 0.75))),
+apps/pipeline/services/palette_material_engine.py:351:                                _neutral((0.36, 0.30, 0.28)))],
+apps/pipeline/services/palette_m7_ai_emitter.py:101:    if v.startswith("rgb(") and v.endswith(")"):
+apps/pipeline/services/palette_geometry.py:227:def transform(component, *, translate=(0.0, 0.0, 0.0), rotate_x_about=None,
+apps/pipeline/services/palette_powder_engine.py:666:        (1, s("prov_light_warm_ivory", (0.88, 0.80, 0.68)),
+apps/pipeline/services/palette_powder_engine.py:668:        (2, s("prov_light_cool_rose", (0.85, 0.72, 0.74)),
+apps/pipeline/services/palette_powder_engine.py:670:        (3, s("prov_light_champagne", (0.87, 0.78, 0.62)), PP.SHIMMER),
+apps/pipeline/services/palette_powder_engine.py:671:        (4, s("prov_medium_warm_copper", (0.62, 0.38, 0.24)),
+apps/pipeline/services/palette_powder_engine.py:673:        (5, s("prov_medium_terracotta", (0.60, 0.36, 0.28)),
+apps/pipeline/services/palette_powder_engine.py:675:        (6, s("prov_medium_cool_mauve", (0.52, 0.40, 0.48)),
+apps/pipeline/services/palette_powder_engine.py:677:        (7, s("prov_medium_bronze", (0.48, 0.34, 0.20)), PP.BAKED),
+apps/pipeline/services/palette_powder_engine.py:678:        (8, s("prov_medium_gold_glitter", (0.68, 0.52, 0.24)),
+apps/pipeline/services/palette_powder_engine.py:680:        (9, s("prov_dark_warm_sienna", (0.38, 0.22, 0.14)),
+apps/pipeline/services/palette_powder_engine.py:682:        (10, s("prov_dark_cool_plum", (0.30, 0.18, 0.26)), PP.MARBLED),
+apps/pipeline/services/palette_powder_engine.py:683:        (11, s("prov_dark_espresso", (0.24, 0.16, 0.12)),
+apps/pipeline/services/palette_powder_engine.py:685:        (12, s("prov_dark_graphite_shimmer", (0.22, 0.22, 0.25)),
+apps/pipeline/services/palette_powder_engine.py:828:        PowderShade("prov_pressed_natural_beige", (0.80, 0.68, 0.56),
+apps/pipeline/services/palette_powder_axis_diagnosis.py:37:_SHADE = ("prov_diag_neutral", (0.62, 0.55, 0.48))
+apps/pipeline/services/palette_design_graph.py:39:UNRESOLVED_SPOT_PLACEHOLDER = Color(r=0.5, g=0.5, b=0.5)
+apps/pipeline/services/palette_parameter_realization_audit.py:71:    shade = PE.PowderShade("prov_realize_audit", (0.62, 0.55, 0.48),
+apps/pipeline/services/palette_material_characterization.py:288:def spec_for(material, finish, rgb=(0.62, 0.62, 0.63)) -> dict:
+apps/pipeline/services/blender_scripts/palette_csg_views.py:122:NEUTRAL = clay("NEUTRAL_MEDIUM_GREY_CLAY", (0.42, 0.42, 0.425))
+apps/pipeline/services/blender_scripts/palette_csg_views.py:124:    "pan": clay("TECH_PAN", (0.55, 0.56, 0.58), 0.35),
+apps/pipeline/services/blender_scripts/palette_csg_views.py:125:    "powder": clay("TECH_POWDER", (0.30, 0.30, 0.31), 0.95),
+apps/pipeline/services/blender_scripts/palette_csg_views.py:126:    "mirror": clay("TECH_MIRROR", (0.62, 0.63, 0.66), 0.12),
+apps/pipeline/services/blender_scripts/palette_csg_views.py:127:    "adhesive": clay("TECH_ADHESIVE", (0.34, 0.32, 0.30), 0.85),
+apps/pipeline/services/blender_scripts/palette_csg_views.py:128:    "hinge": clay("TECH_HINGE", (0.50, 0.50, 0.52), 0.30),
+apps/pipeline/services/blender_scripts/palette_csg_views.py:129:    "clasp": clay("TECH_CLASP", (0.50, 0.50, 0.52), 0.30),
+apps/pipeline/services/blender_scripts/palette_csg_views.py:130:    "rib": clay("TECH_RIB", (0.38, 0.38, 0.39), 0.70),
+apps/pipeline/services/blender_scripts/palette_views.py:65:sun.rotation_euler = (0.72, 0.16, 0.42)
+apps/pipeline/services/palette_baked_clearance.py:60:    shade = PE.PowderShade("prov_clearance", (0.5, 0.4, 0.3),
+apps/pipeline/services/palette_powder_texture_axes.py:821:    shade = PE.PowderShade("prov_diag_neutral", (0.62, 0.55, 0.48),
+apps/pipeline/services/palette_powder_texture_axes.py:950:    shade = PE.PowderShade("prov_char_neutral", (0.62, 0.55, 0.48),
+apps/pipeline/services/palette_pan_profile.py:52:TESTED_BASE_RADII_MM = (0.30, 0.40, 0.50)
+apps/pipeline/services/blender_scripts/p1_material_studio.py:186:                                                (0.60, 0.60, 0.60)))
+apps/pipeline/services/blender_scripts/p1_material_studio.py:189:                                                (0.88, 0.88, 0.88)))
+apps/pipeline/services/palette_m5_closeout.py:353:                                  ME.Colour(rgb=(0.62, 0.62, 0.63))),
+apps/pipeline/services/palette_m5_closeout.py:355:                                  ME.Colour(rgb=(0.72, 0.73, 0.75))),
+apps/pipeline/services/palette_m5_closeout.py:357:                                  ME.Colour(rgb=(0.36, 0.30, 0.28)))])
+apps/pipeline/services/blender_scripts/validation_views.py:73:sun.rotation_euler = (0.7, 0.15, 0.4)
+apps/pipeline/services/blender_scripts/validation_views.py:170:    vmath.inputs[1].default_value = (0.5, 0.5, 0.5)
+apps/pipeline/services/blender_scripts/validation_views.py:171:    vmath.inputs[2].default_value = (0.5, 0.5, 0.5)
+apps/pipeline/services/blender_scripts/p1_material_preview.py:92:sun.rotation_euler = (0.7, 0.15, 0.4)
+apps/pipeline/services/blender_scripts/m4b_a_tray_views.py:103:    madd.inputs[1].default_value = (0.5, 0.5, 0.5)
+apps/pipeline/services/blender_scripts/m4b_a_tray_views.py:104:    madd.inputs[2].default_value = (0.5, 0.5, 0.5)
+apps/pipeline/services/blender_scripts/m4b_a_tray_views.py:111:NEUTRAL = clay("NEUTRAL_MEDIUM_GREY_CLAY", (0.42, 0.42, 0.425))
+apps/pipeline/services/blender_scripts/m4b_a_tray_views.py:114:MARKER = clay("TECH_MARKER_RED", (0.78, 0.11, 0.09), 0.28)
+apps/pipeline/services/blender_scripts/m4b_a_tray_views.py:115:PAN_MAT = clay("TECH_PAN", (0.58, 0.59, 0.61), 0.34)
+apps/pipeline/services/blender_scripts/m4b_a_tray_views.py:116:POWDER = clay("TECH_POWDER", (0.28, 0.28, 0.29), 0.96)
+apps/pipeline/services/blender_scripts/powder_materials.py:134:    half.inputs[1].default_value = (0.5, 0.5, 0.5)
+apps/pipeline/services/blender_scripts/powder_materials.py:181:    mixed = _mix_rgb(nt, fac, (0.0, 0.0, 0.0), rgb)
+apps/pipeline/services/blender_scripts/powder_materials.py:455:    cen.inputs[1].default_value = (0.5, 0.5, 0.5)
+apps/ire/compose.py:52:_CUT = Color.from_hex("#0000FF", cmyk=(1.0, 1.0, 0.0, 0.0))
+apps/ire/compose.py:53:_FOLD = Color.from_hex("#FF0000", cmyk=(0.0, 1.0, 1.0, 0.0))
+apps/ire/compose.py:54:_WHITE = Color.from_hex("#FFFFFF", cmyk=(0.0, 0.0, 0.0, 0.0))
+apps/ire/compose.py:55:_INK_LIGHT = Color.from_hex("#FCF8F5", cmyk=(0.0, 0.02, 0.03, 0.01))
+apps/ire/graph.py:33:class Color(BaseModel):
+apps/ire/graph.py:43:    cmyk: Optional[tuple[float, float, float, float]] = None
+apps/ire/graph.py:46:    def from_hex(cls, value: str, cmyk: tuple[float, float, float, float] | None = None) -> "Color":
+apps/ire/graph.py:52:                   b=int(h[4:6], 16) / 255.0, cmyk=cmyk)
+apps/ire/vq1_close1_package.py:21:                             spaceAfter=10, textColor=colors.HexColor("#1d1b1e")),
+apps/ire/vq1_close1_package.py:24:                             textColor=colors.HexColor("#2A2426")),
+apps/ire/vq1_close1_package.py:31:                               textColor=colors.HexColor("#9c1f1f")),
+apps/ire/container_production_method.py:466:                    colors.add(stroke.color.to_hex())
+apps/ire/container_production_method.py:470:                colors.add(col.to_hex())
+apps/ire/handoff/container_adapter.py:300:                "cmyk": entry.get("cmyk") or [0, 0, 0, 0.5],
+apps/ire/design_language.py:68:    cmyk: tuple[float, float, float, float]
+apps/ire/design_language.py:71:        return Color.from_hex(self.hex, cmyk=self.cmyk)
+apps/ire/design_language.py:88:        return {s.name: {"hex": s.hex, "cmyk": list(s.cmyk)} for s in self.all()}
+apps/ire/compose_container.py:177:    return Color(r=mix(color.r), g=mix(color.g), b=mix(color.b))
+apps/ire/compose_container.py:817:    body_c = Color.from_hex(colors.get("body", _DEFAULT_BODY))
+apps/ire/compose_container.py:818:    cap_c = Color.from_hex(colors.get("cap", _DEFAULT_CAP))
+apps/ire/vq1_corr4.py:278:                 component=None, stroke_color=None, width_mm=0.35):
+apps/ire/vq1_corr4.py:282:    col = stroke_color or INK
+apps/ire/handoff/graph_schema.py:116:                                "cmyk": [_r(c) for c in entry.get("cmyk", [])],
+apps/ire/handoff/graph_schema.py:129:            cmyk = list(color.cmyk) if color.cmyk else [0.0, 0.0, 0.0, 0.0]
+apps/ire/handoff/graph_schema.py:131:                                "cmyk": [_r(c) for c in cmyk],
+apps/ire/handoff/graph_schema.py:177:            extra.name, {"hex": extra.hex, "cmyk": list(extra.cmyk)})
+apps/ire/handoff/graph_schema.py:361:        "spot_swatches": [{"name": n, "hex": h, "cmyk": list(c),
+apps/ire/vq1_corr5.py:319:         stroke_color=None, width_mm=0.4, neutral=False):
+apps/ire/vq1_corr5.py:328:                             stroke=Stroke(color=stroke_color or INK,
+apps/ire/emitters/pdf_ai.py:337:    c.setFillColor(_rl_color(node.color))
+apps/ire/emitters/pdf_ai.py:412:    c.setFillColor(_rl_color(node.color))
+apps/ire/emitters/pdf_ai.py:441:        black_c = CMYKColor(0, 0, 0, 1)     # CMYK ink — no RGB operators
+apps/ire/emitters/pdf_ai.py:554:    if color.cmyk is not None:
+apps/ire/emitters/pdf_ai.py:556:        return CMYKColor(*color.cmyk)
+apps/ire/emitters/pdf_ai.py:611:    if all(s.color.cmyk is not None for s in fill.stops):
+apps/ire/emitters/pdf_ai.py:629:    c.setFillColor(_rl_color(fill.color))
+apps/ire/emitters/pdf_ai.py:638:    c.setStrokeColor(_rl_color(stroke.color))
+apps/dielines/analysis/measure.py:122:        "colors": dict(colors.most_common(8)),
+apps/ire/handoff/jsx_emitter.py:30:function cmyk(values) {
+apps/ire/handoff/jsx_emitter.py:31:    var c = new CMYKColor();
+apps/ire/handoff/jsx_emitter.py:94:        sw.color = cmyk(s.cmyk);
+apps/ire/handoff/jsx_emitter.py:96:    processColors[s.name] = cmyk(s.cmyk);
+apps/ire/handoff/jsx_emitter.py:108:        spot.color = cmyk(s.cmyk);
+apps/ire/handoff/jsx_emitter.py:118:    return cmyk([0, 0, 0, 1]);
+apps/ire/handoff/jsx_emitter.py:238:            it.fillColor = colorFor(obj.fill.swatch);
+apps/ire/handoff/jsx_emitter.py:255:                        || cmyk([0, 0, 0, 0]);
+apps/ire/handoff/jsx_emitter.py:261:            it.fillColor = gc;
+apps/ire/handoff/jsx_emitter.py:279:            it.strokeColor = colorFor(obj.stroke.swatch);
+apps/ire/handoff/jsx_emitter.py:319:            _step = "fillColor";
+apps/ire/handoff/jsx_emitter.py:320:            attrs.fillColor = colorFor(obj.swatch);
+apps/dielines/exporters/physical_test_pdf.py:27:_BLEED = (0.0, 0.65, 0.2)   # green
+apps/dielines/exporters/physical_test_pdf.py:28:_GLUE_FILL = (0.88, 0.88, 0.88)
+apps/dielines/exporters/physical_test_pdf.py:70:    c.setFillColorRGB(0.75, 0.0, 0.0)
+apps/dielines/exporters/physical_test_pdf.py:78:        c.setStrokeColorRGB(*color)
+apps/dielines/exporters/physical_test_pdf.py:90:    c.setFillColorRGB(*_GLUE_FILL)
+apps/dielines/exporters/physical_test_pdf.py:102:    c.setStrokeColorRGB(*_CUT)
+apps/dielines/exporters/physical_test_pdf.py:107:    c.setStrokeColorRGB(*_CREASE)
+apps/dielines/exporters/physical_test_pdf.py:115:    c.setFillColorRGB(0.45, 0.45, 0.45)
+apps/dielines/exporters/physical_test_pdf.py:130:        c.setFillColorRGB(*color)
+apps/dielines/exporters/physical_test_pdf.py:143:    c.setStrokeColorRGB(*_CUT)
+apps/dielines/exporters/physical_test_pdf.py:147:    c.setStrokeColorRGB(*_CREASE)
+apps/dielines/exporters/physical_test_pdf.py:152:    c.setStrokeColorRGB(*_BLEED)
+apps/dielines/exporters/physical_test_pdf.py:180:    c.setStrokeColorRGB(0, 0, 0)
+apps/dielines/exporters/physical_test_pdf.py:184:    c.setFillColorRGB(0, 0, 0)
+apps/dielines/exporters/production_pdf.py:67:BLEED = CMYKColor(0, 0, 0, 0.45)
+apps/dielines/exporters/production_pdf.py:68:SAFE = CMYKColor(0, 0, 0, 0.28)
+apps/dielines/exporters/production_pdf.py:69:INK = CMYKColor(0, 0, 0, 1)        # body text / dimension lines
+apps/dielines/exporters/production_pdf.py:344:        c.setFillColorRGB(0.985, 0.973, 0.960)
+apps/dielines/exporters/production_pdf.py:395:    c.setStrokeColor(BLEED)
+apps/dielines/exporters/production_pdf.py:401:    c.setStrokeColor(SAFE)
+apps/dielines/exporters/production_pdf.py:407:    c.setStrokeColor(CREASE)
+apps/dielines/exporters/production_pdf.py:414:    c.setStrokeColor(CUT)
+apps/dielines/exporters/production_pdf.py:434:    c.setStrokeColor(REG)
+apps/dielines/exporters/production_pdf.py:465:    c.setFillColor(color)
+apps/dielines/exporters/production_pdf.py:477:    c.setStrokeColor(INK)
+apps/dielines/exporters/production_pdf.py:485:    c.setFillColor(INK)
+apps/dielines/exporters/production_pdf.py:517:    c.setStrokeColor(INK)
+apps/dielines/exporters/production_pdf.py:530:    c.setFillColor(INK)
+apps/dielines/exporters/production_pdf.py:550:        c.setFillColorRGB(0.75, 0.0, 0.0)
+apps/dielines/exporters/production_pdf.py:556:        c.setFillColor(INK)
+apps/dielines/exporters/production_pdf.py:600:        c.setStrokeColor(color)
+apps/dielines/exporters/production_pdf.py:604:        c.setFillColor(INK)
+apps/dielines/exporters/folded_diagnostic.py:109:    pos, heading = (0.0, 0.0, 0.0), (1.0, 0.0)
+apps/dielines/exporters/structural_comparison.py:39:_CUT = CMYKColor(1, 1, 0, 0)      # informational preview, process ink
+apps/dielines/exporters/structural_comparison.py:40:_CREASE = CMYKColor(0, 1, 1, 0)
+apps/dielines/exporters/structural_comparison.py:41:_GRAY = CMYKColor(0, 0, 0, 0.5)
+apps/dielines/exporters/structural_comparison.py:328:    c.setFillColor(INK)
+apps/dielines/exporters/structural_comparison.py:354:    c.setStrokeColor(_CREASE)
+apps/dielines/exporters/structural_comparison.py:360:    c.setStrokeColor(_CUT)
+apps/dielines/exporters/structural_comparison.py:375:    c.setFillColor(_GRAY)
+apps/dielines/exporters/structural_comparison.py:409:    c.setFillColor(INK)
+apps/dielines/exporters/structural_comparison.py:419:    c.setFillColor(INK)
+apps/dielines/exporters/structural_comparison.py:486:    c.setFillColor(INK)
+apps/dielines/exporters/design_preview.py:65:    c.setStrokeColorRGB(1, 1, 1)
+apps/dielines/exporters/design_preview.py:71:    c.setStrokeColorRGB(0, 0, 1)
+apps/dielines/exporters/design_preview.py:75:    c.setStrokeColorRGB(1, 0, 0)
+apps/dielines/exporters/design_preview.py:290:    c.setFillColorRGB(tr, tg, tb)
+apps/dielines/exporters/design_preview.py:311:        c.setFillColorRGB(0.985, 0.973, 0.960)
+apps/dielines/exporters/design_preview.py:394:        c.setFillColorRGB(0.97, 0.94, 0.90)          # warm white on dark
+apps/dielines/exporters/design_preview.py:396:        c.setFillColorRGB(0.35, 0.16, 0.22)          # deep rose ink on light
+apps/dielines/exporters/design_preview.py:415:    c.setFillColorRGB(0.545, 0.227, 0.322)
+apps/dielines/exporters/design_preview.py:470:    c.setFillColorRGB(tr, tg, tb)
+apps/dielines/exporters/design_preview.py:543:        c.setFillColorRGB(0.985, 0.973, 0.960)
+apps/dielines/exporters/design_preview.py:551:    c.setFillColorRGB(0.545, 0.227, 0.322)
+apps/dielines/exporters/info_panel.py:38:_INK = (0.25, 0.15, 0.12)
+apps/dielines/exporters/info_panel.py:158:    c.setFillColor(_PAPER_C)
+apps/dielines/exporters/info_panel.py:159:    c.setStrokeColor(_INK_C)
+apps/dielines/exporters/info_panel.py:169:    c.setFillColor(_INK_C)
+apps/dielines/exporters/info_panel.py:255:        c.setStrokeColor(_INK_C)
+apps/dielines/services/customer_dieline.py:48:    ("bleed", (0.0, 0.7, 0.2), 0.35),

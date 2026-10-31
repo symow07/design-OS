@@ -1,0 +1,57 @@
+§AD0(a) SCORE — T26i (§BH26(i) transcription), commit 2ddc742. Gate
+GREEN, hand-captured exit=0 (GEXIT=0). 8/8 legs HELD against seal v2
+(pred_t26i.txt 0639e4ab3c89f7f3; v1 77d1b9345620f701 superseded
+BEFORE any git add — see the SEAL v2 note in the prediction).
+
+L1 HELD: register + gate-staged ledger only; no apps path, no
+   docs/roadmap path beyond the ledger; the TEN WIP paths sat in
+   stash@{0} (all ten recorded by sha256 + index blob id before the
+   push; after the push both new files ABSENT, eight tracked paths
+   HEAD-identical, porcelain register + ledger only). Restored after
+   scoring with `git stash pop --index`: all ten OK on sha256 AND
+   index blob, porcelain exactly the ten staged rows, cached-diff sha
+   53feeeb4eaffb58c == the pre-T26i baseline, zero unstaged, zero
+   stashes left.
+L2 HELD: register +111 −0; 17,424-line prefix byte-identical (hash
+   bb5f497e… proved at append AND at HEAD post-commit); seam blank at
+   17,425; appended tail byte-identical to block v2 (0d9eb019fe754260);
+   total 17,535; worktree == HEAD.
+L3 HELD: manifest untouched at HEAD (no manifest row in the commit);
+   extent guard green against the 371-declared disk state; A327(a)
+   satisfied at HEAD (ppp:1970 == HEAD's manifest digest); records
+   chain consistent; the ledger at 435 passed the APPEND_ONLY prefix
+   rule as predicted.
+L4 HELD: one staged row 111 0 OWNER_BLOCKER_CLEARANCE.md (measured
+   pre-launch).
+L5 HELD: 2 files, 113 insertions (111 register + 2 ledger), 0
+   deletions.
+L6 HELD: suite line EXACT — TIER_2=GREEN collected=8490 failures=0
+   apps=7684 dip0c=671 dip0=135. No refusal; §BH24 0/3.
+L7 HELD: ledger 434 → 436, +2 in this commit (HEAD~1=434, HEAD=436,
+   worktree=436): line 435 = attempt 3's carried records-step verdict,
+   436 = this gate's own; GUARDED_COMMIT_LEDGER_STAGED logged.
+L8 HELD: apps diff HEAD~1..HEAD EMPTY (checked); both protected
+   regions re-verified with the exact recipe (sha256 of the joined
+   slice, rstrip newline): GATE 7fbeb8f1fe10b0fb @ cfa worktree
+   [514:541]; TEST b32030dc827263e4 @ a76242c^ blob [82:98],
+   cwd-correct pathspec, checked exit. protocol_identity untouched
+   this commit (ead892658e3323a8 at HEAD's apps; 0e9cd7a2b94ccc82 on
+   disk once the WIP is restored). §BH26(a) authority UNSPENT.
+
+Scoring note: a first L8 recomputation used a guessed recipe
+(str-joined lines 514..541 without rstrip) and printed different
+hashes; discarded once the transcript's recipe was recovered. The
+files were byte-identical throughout (apps diff empty).
+
+Divergences recorded at this commit, not resolved: the ruling's (1)
+cites "(h)(4)" — no §BH26(h) exists in the register; the transcriber's
+date lines carry 2026-09-03 (wall clock) while the session's date
+notice read 2026-09-02 (DATE NOTE in the block).
+
+Post-commit: HEAD 2ddc742; stash restored byte-verified; pre-fold
+checks ALL_OK (22/22 against the census's measured expectations:
+rdm cbba67bee1c29105 unchanged, manifest fe4199bc421b7454, on-disk
+identity 0e9cd7a2b94ccc82, patched identity c7924c5a4215f3cf,
+check_manifest [] / 7690 under the patch, 372 files, floors 52/66/
+7690, dip0c 671, dip0 135). Next: R4/R5, grep completeness, targeted
+sweep, stage, seal pred_a4, launch attempt 4.

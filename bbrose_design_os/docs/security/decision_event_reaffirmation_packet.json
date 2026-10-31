@@ -1,0 +1,110 @@
+{
+ "schema_version": "decision_event_reaffirmation_packet/1.0",
+ "status": "COMPLETE",
+ "incident_id": "DEKEYLOSS-2026-07-25-001",
+ "issued_on": "2026-07-25",
+ "principle": "the three decisions below were signed under key material that is confirmed unrecoverable; their signatures can no longer be verified (UNVERIFIABLE_DUE_TO_LOST_KEY_MATERIAL). They remain preserved and auditable but cannot independently authorize new actions. Equivalent authority requires a NEW signed decision under the active key epoch. Nothing here is recreated automatically.",
+ "decisions": [
+  {
+   "sequence_number": 1,
+   "event_id": "3b00b6105e994367a120822cf02f79ec",
+   "decision_type": "single-operator reviewer-role bootstrap grant (bootstrap/single_operator_initial_reviewer/1.0)",
+   "subject": "DESIGN_REVIEWER role for user id 1 (admin)",
+   "actor": "user id 1 (admin), basis SUPERUSER_LOCAL_BOOTSTRAP_NOT_ROLE_POLICY, single-operator, dual_control=false",
+   "original_timestamp": "2026-07-18T08:08:41Z",
+   "original_requested_authority": "DESIGN_REVIEWER grant for the DIP-1C-5C bounded human semantic-metadata pilot; granted 2026-07-18, expires 2026-08-01",
+   "current_operational_dependency": {
+    "role_in_current_account_state": "yes — ReviewerRoleAssignment #1 (DESIGN_REVIEWER, user 1, expires 2026-08-01, not revoked) and ReviewerProfile #1 (enabled) exist as live unsigned rows",
+    "access_depends_solely_on_this_event": "no — user 1 is a superuser; permission checks pass on the superuser basis independently of this grant, and the unsigned assignment/profile rows also exist",
+    "lockout_risk_if_reliance_removed": "none — administrative access rests on the superuser account, which this event did not create",
+    "independent_bootstrap_mechanism": "yes — the bootstrap_single_operator_reviewer ceremony exists (bootstrap state currently closed) and can re-grant under the new epoch",
+    "note": "administrative access is preserved for recovery purposes only; that preservation does NOT reaffirm this grant"
+   },
+   "blocker": "REVIEWER_ROLE_REAFFIRMATION_REQUIRED",
+   "recommended_action": "REAFFIRM (re-grant under the active epoch via the bootstrap/grant ceremony) or NO_LONGER_REQUIRED (the grant self-expires 2026-08-01; choose this if the DIP-1C-5C pilot is finished)",
+   "human_decision": "NO_LONGER_REQUIRED",
+   "lineage": {
+    "legacy_event_id": "3b00b6105e994367a120822cf02f79ec",
+    "legacy_sequence_number": 1,
+    "human_decision": "NO_LONGER_REQUIRED",
+    "relationship": "CLOSED_BY",
+    "closure_event_id": "84377f45f93e4c789a62ae9a5039895b",
+    "actor_user_id": 1,
+    "timestamp": "2026-07-25T03:31:44.423571+00:00",
+    "key_epoch": "epoch2-20260725",
+    "legacy_integrity_state": "UNVERIFIABLE_DUE_TO_LOST_KEY_MATERIAL",
+    "new_event_integrity_state": "VERIFIED"
+   }
+  },
+  {
+   "sequence_number": 2,
+   "event_id": "dc5340e91b0c45a68a40ac97fb059e2f",
+   "decision_type": "human semantic-metadata assertion (human_semantic_metadata/1.0)",
+   "subject": "corpus item 8656cdaa-fe9a-453a-9761-1f5b13ad58f9 — semantic metadata bundle (visual moods FEMININE/SOFT, no dominant motif)",
+   "actor": "user id 1 (admin) under policy bbrose.reviewer.authz authz/1.3, review scope dip1c_semantic_metadata_review_scope/1.0",
+   "original_timestamp": "2026-07-18T09:56:42Z",
+   "original_requested_authority": "record reviewed semantic metadata for the corpus item (DIP-1C-5C pilot)",
+   "current_operational_dependency": "semantic-metadata reads for this corpus item now resolve REVIEW_REQUIRED / CORPUS_AUTHORIZATION_REAFFIRMATION_REQUIRED; the assertion carries no authority; no provider-input, artwork-reuse, production or Design-Memory permission ever derived from it; corpus assets and audit history preserved",
+   "blocker": "CORPUS_AUTHORIZATION_REAFFIRMATION_REQUIRED",
+   "recommended_action": "SUPERSEDE — re-record the metadata assertion under the active epoch if the pilot's metadata is still wanted (note event 3 appears to be a later assertion for the same item; review both together)",
+   "human_decision": "SUPERSEDED",
+   "lineage": {
+    "legacy_event_id": "dc5340e91b0c45a68a40ac97fb059e2f",
+    "legacy_sequence_number": 2,
+    "human_decision": "SUPERSEDE",
+    "relationship": "SUPERSEDED_BY",
+    "replacement_event_id": "afe08094b2464a69af0684f2525342df",
+    "actor_user_id": 1,
+    "timestamp": "2026-07-25T03:31:44.398810+00:00",
+    "key_epoch": "epoch2-20260725",
+    "legacy_integrity_state": "UNVERIFIABLE_DUE_TO_LOST_KEY_MATERIAL",
+    "new_event_integrity_state": "VERIFIED"
+   }
+  },
+  {
+   "sequence_number": 3,
+   "event_id": "66c4fb8fce6f4dce8b27426326ca90d3",
+   "decision_type": "human semantic-metadata assertion (human_semantic_metadata/1.0)",
+   "subject": "corpus item 8656cdaa-fe9a-453a-9761-1f5b13ad58f9 — semantic metadata bundle (same item as seq 2)",
+   "actor": "user id 1 (admin) under policy bbrose.reviewer.authz authz/1.3, review scope dip1c_semantic_metadata_review_scope/1.0",
+   "original_timestamp": "2026-07-18T10:43:53Z",
+   "original_requested_authority": "record reviewed semantic metadata for the corpus item (DIP-1C-5C pilot)",
+   "current_operational_dependency": "same as sequence 2 — suspended pending reaffirmation; retrieval records and audit history preserved; no corpus asset deleted",
+   "blocker": "CORPUS_AUTHORIZATION_REAFFIRMATION_REQUIRED",
+   "recommended_action": "SUPERSEDE — if this was the operative assertion for the item, re-record it under the active epoch; otherwise NO_LONGER_REQUIRED",
+   "human_decision": "SUPERSEDED",
+   "lineage": {
+    "legacy_event_id": "66c4fb8fce6f4dce8b27426326ca90d3",
+    "legacy_sequence_number": 3,
+    "human_decision": "SUPERSEDE",
+    "relationship": "SUPERSEDED_BY",
+    "replacement_event_id": "35660c28711c41739d63530b8490d985",
+    "actor_user_id": 1,
+    "timestamp": "2026-07-25T03:31:44.416516+00:00",
+    "key_epoch": "epoch2-20260725",
+    "legacy_integrity_state": "UNVERIFIABLE_DUE_TO_LOST_KEY_MATERIAL",
+    "new_event_integrity_state": "VERIFIED"
+   }
+  }
+ ],
+ "decision_vocabulary": [
+  "REAFFIRM",
+  "REJECT",
+  "SUPERSEDE",
+  "NO_LONGER_REQUIRED"
+ ],
+ "excluded_from_this_packet": [
+  "signing keys and candidate key maps",
+  "secret environment values",
+  "any automatic recreation of the decisions above"
+ ],
+ "completed_on": "2026-07-25T03:31:44.441369+00:00",
+ "closure_event_id": "84377f45f93e4c789a62ae9a5039895b",
+ "replacement_event_ids": [
+  "afe08094b2464a69af0684f2525342df",
+  "35660c28711c41739d63530b8490d985"
+ ],
+ "remaining_blockers": [
+  "MULTIPLE_ACTIVE_METADATA_EVENTS — the corpus item returns to its pre-incident posture (two active assertions); resolving that fork is the ordinary conflict-resolution workflow, not this ceremony"
+ ]
+}

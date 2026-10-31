@@ -1,0 +1,320 @@
+{
+ "record_type": "vq2_state/3.0",
+ "created_at": "2026-07-29",
+ "VQ_2": "VQ2_FINAL_FRONT_ARTWORK_OWNER_APPROVED",
+ "vq2_a2": "PRESERVED_SUPERSEDED_BY_A2_R1",
+ "vq2_a3": "NOT_GENERATED",
+ "vq2_a1": "PRESERVED_DIAGNOSTIC_CANDIDATE",
+ "active_blockers": [
+  {
+   "code": "VQ2_DUAL_TYPOGRAPHY_INSPECTION_PENDING",
+   "state": "ACTIVE"
+  },
+  {
+   "code": "VQ2_TYPOGRAPHY_INSPECTION_BLOCKED_PROVIDER_CREDIT",
+   "state": "ACTIVE",
+   "external": true
+  },
+  {
+   "code": "VQ2_NATIVE_FONT_WIDTH_DIFFERS_FROM_REFERENCE",
+   "state": "UNADJUDICATED"
+  },
+  {
+   "code": "VQ2_OWNER_APPROVAL_MISSING",
+   "state": "ACTIVE"
+  }
+ ],
+ "production_only_blockers": [
+  "VQ2_FLAT_WIDTH_UNRESOLVED_PENDING_WRAP_MODEL"
+ ],
+ "CONCEPT_FRONT_APPEARANCE_ARTWORK": "ACTIVE",
+ "PRODUCTION_FLAT_ARTWORK": "BLOCKED_PENDING_WRAP_AND_SUPPLIER_EVIDENCE",
+ "PRODUCTION_FLAT_ARTWORK_cause": "wrap model unresolved, and spec pack not yet handed over (§BH46) — the code is kept as history",
+ "automated_reconstruction_status": {
+  "logo": [
+   "DIAGNOSTIC_ONLY",
+   "NOT_APPROVED_FOR_FINAL_ARTWORK",
+   "NOT_APPROVED_FOR_PRINT",
+   "NOT_APPROVED_AS_BRAND_AUTHORITY"
+  ],
+  "lettering": [
+   "DIAGNOSTIC_ONLY",
+   "NOT_APPROVED_FOR_FINAL_ARTWORK",
+   "NOT_APPROVED_FOR_PRINT",
+   "NOT_APPROVED_AS_REFERENCE_FAITHFUL_LETTERING"
+  ],
+  "emitted_into_any_candidate": false
+ },
+ "tracer_status": "DIAGNOSTIC_VECTOR_FEASIBILITY_TOOL",
+ "tracer_approved_for_brand_assets": false,
+ "raster_logo_state": "REFERENCE_ONLY_NONPRINTING",
+ "concept_logo_state": "REFERENCE_CONFLICT_NONPRINTING",
+ "preserved_a1_elements": [
+  "visible-copy inventory",
+  "divider rule",
+  "NIGHT REPAIR OIL",
+  "vertical placement",
+  "baseline treatment",
+  "spacing evidence",
+  "flat colour records",
+  "conceptual print zone",
+  "front-appearance authority",
+  "production-wrap blocker",
+  "M3 freeze manifests"
+ ],
+ "VQ_1": "OWNER_ACCEPTED_AND_CLOSED",
+ "VQ_3": "OWNER_APPROVED_AND_CLOSED",
+ "PRODUCTION_GEOMETRY": "BLOCKED_PENDING_SUPPLIER_EVIDENCE",
+ "PRODUCTION_GEOMETRY_cause": "spec pack not yet handed over (§BH46) — the code is kept as history",
+ "m3_identity": "4ecc8e9df1d1",
+ "m3_frozen": true,
+ "updated_at": "2026-08-01",
+ "resolved_blockers": [
+  {
+   "code": "VQ2_APPROVED_VECTOR_LOGO_REQUIRED",
+   "state": "RESOLVED_OWNER_CONFIRMED",
+   "asset": "AUTHORITATIVE_VECTOR_LOGO / OWNER_CONFIRMED / AUTHORIZED_FOR_VQ2_USE",
+   "canonical_ai": "docs/visual_quality/vq2/brand/bbrose_logo_approved.ai",
+   "canonical_ai_sha256": "a2b2a82969389ac2",
+   "components": 9,
+   "render_iou_vs_source": 0.9707
+  }
+ ],
+ "vq2_a2_condition_a_logo": "PASS",
+ "vq2_a2_condition_b_lettering": "FAIL",
+ "brand_colour_evidence": {
+  "pantone": [
+   "0821 C",
+   "0521 C"
+  ],
+  "status": "APPROVED_BRAND_GUIDELINE_COLOUR_EVIDENCE",
+  "both_must_appear_on_this_product": "NOT_ASSUMED",
+  "vq2_use_determined_by": [
+   "approved guideline",
+   "concept #97",
+   "explicit owner direction"
+  ]
+ },
+ "brand_typography_evidence": {
+  "faces": [
+   "MOXA Bestine",
+   "MAREGY Regular"
+  ],
+  "classification": "APPROVED_BRAND_TYPOGRAPHY_EVIDENCE",
+  "confirmed_product_name_typeface": false,
+  "reason": "guideline membership does not prove concept #97 used the face for the product name"
+ },
+ "owner_decision_codes": [
+  "VQ2_OWNER_SELECTED_HUMAN_CUSTOM_VECTOR_LETTERING",
+  "VQ2_PRODUCT_NAME_LETTERING_COMMISSION_REQUIRED",
+  "VQ2_A2_BLOCKED_PENDING_APPROVED_CUSTOM_LETTERING"
+ ],
+ "further_asset_search_permitted": false,
+ "automatic_tracing_permitted": false,
+ "automatic_font_purchase_permitted": false,
+ "moxa_bestine_confirmed_product_face": false,
+ "validation_contract_version": "3.1",
+ "validation_contract_normalized": "VQ2_PRE_RECEIPT_VALIDATION_CONTRACT_NORMALIZED",
+ "lettering_asset_received": false,
+ "lettering_receipt_attempts": [
+  {
+   "date": "2026-07-29",
+   "outcome": "REJECTED_AT_ASSET_AUTHORITY_GATE",
+   "codes": [
+    "VQ2_SUBMISSION_CONTAINS_PRESERVED_DIAGNOSTIC_A1",
+    "VQ2_SUBMISSION_CONTAINS_BLANK_HANDOFF_TEMPLATE",
+    "VQ2_AUTHORITATIVE_HUMAN_LETTERING_NOT_DELIVERED",
+    "VQ2_RECEIPT_VALIDATION_STOPPED_AT_ASSET_AUTHORITY"
+   ],
+   "record": "docs/visual_quality/vq2/lettering/vq2_lettering_receipt_rejection.json",
+   "downstream_glyph_validation_executed": false
+  },
+  {
+   "date": "2026-07-29",
+   "outcome": "FAILED",
+   "codes": [
+    "VQ2_NONUNIFORM_GLYPH_SCALING_DETECTED",
+    "VQ2_HORIZONTAL_GLYPH_SCALING_DETECTED",
+    "VQ2_GEOMETRY_EXPANDED_AFTER_DISTORTION"
+   ],
+   "record": "docs/visual_quality/vq2/vq2_owner_ruling_baked_compression.json"
+  }
+ ],
+ "handoff_template_classification": [
+  "DESIGNER_REFERENCE_TEMPLATE",
+  "PDF_COMPATIBLE",
+  "NOT_AUTHORITATIVE_NATIVE_AI_SOURCE"
+ ],
+ "designer_authors_new_native_document": true,
+ "submitted_asset_classification": [
+  "PROGRAMMATIC_CONDENSED_DIDONE_SCAFFOLD",
+  "DIAGNOSTIC_ONLY",
+  "VISUALLY_USEFUL_REFERENCE",
+  "NOT_APPROVED_FOR_FINAL_VQ2_ARTWORK",
+  "NOT_APPROVED_FOR_PRINT",
+  "NOT_APPROVED_FOR_VQ2_A2"
+ ],
+ "lp1": "HARD_STOP_REVIEW_REQUIRED / NOT_OFFERED_AS_CANDIDATE",
+ "lp2": "NOT_AUTHORIZED",
+ "lf1": "PROVISIONAL_CONVERTER_FAILURE_PRESERVED",
+ "typeface_selection": "OWNER_SELECTION_REQUIRED",
+ "owner_holds_font_licence": "OFL_OPEN_LICENSE",
+ "typeface_selected": "Imbue (OFL) opsz100 wght400",
+ "lf1_r1": "DETERMINISTICALLY_CERTIFIED_INSPECTION_BLOCKED",
+ "VQ2_PRODUCT_NAME_LETTERING": "DETERMINISTICALLY_CERTIFIED / VISUAL_INSPECTION_PENDING",
+ "rose_width_classification": "UNADJUDICATED_PENDING_DUAL_TYPOGRAPHY_INSPECTION",
+ "converter_fixture_suite": "COMPLETE_24_FIXTURES_PASSING",
+ "provider_calls_during_hold": 0,
+ "provider_substituted": false,
+ "resume_attempts": [
+  {
+   "attempt": 1,
+   "outcome": "BLOCKED_SAME_BILLING_ERROR",
+   "request_id": "req_011CdVwoXHG75nMC5iqDDVDT",
+   "record": "docs/visual_quality/vq2/vq2_lf1_resume_attempt_1.json"
+  }
+ ],
+ "provider_retries_used": 1,
+ "probe_attempts": [
+  {
+   "attempt": 1,
+   "outcome": "PROBE_FAILED_BILLING",
+   "request_id": "req_011CdVyjuaL48Mppm1xUT5aK",
+   "code": "VQ2_ANTHROPIC_FUNDED_KEY_OR_BALANCE_NOT_CONFIRMED"
+  }
+ ],
+ "rose_width": "VQ2_ROSE_NATIVE_WIDTH_DIFFERENCE_OWNER_ACCEPTED",
+ "inspections_performed": 2,
+ "human_visual_approval": "PENDING",
+ "lettering": "VQ2_PRODUCT_NAME_LETTERING_RESOLVED",
+ "vq2_a2_r1": "PRESERVED_SUPERSEDED_BY_A2_R2",
+ "vq2_a2_r2": "PRESERVED_SUPERSEDED_BY_A2_R2_FINAL",
+ "vq2_a2_r2_final": "OWNER_APPROVED_AND_FROZEN",
+ "COMPLETE_PRODUCT_REVIEW": "OWNER_ACCEPTED_AND_CLOSED",
+ "VQ_2_WORKSTREAM": "VQ2_WORKSTREAM_CLOSED",
+ "VQ2_FINAL_PREFLIGHT": "VQ2_FINAL_PREFLIGHT_TECHNICALLY_PASSED",
+ "PACKAGING": "NOT_STARTED",
+ "PRODUCTION_COLOR_SEPARATION": "BLOCKED_PENDING_SUPPLIER_EVIDENCE",
+ "PRODUCTION_COLOR_SEPARATION_cause": "spec pack not yet handed over (§BH46) — the code is kept as history",
+ "ILLUSTRATOR_EXECUTION_VERIFICATION": "PASSED",
+ "COMPLETE_PRODUCT_RESULT": "COMPLETE_PRODUCT_OWNER_APPROVED",
+ "PACKAGING_READINESS": "BLOCKED_PENDING_WRAP_AND_SUPPLIER_EVIDENCE",
+ "PACKAGING_READINESS_cause": "wrap model unresolved, and spec pack not yet handed over (§BH46) — the code is kept as history",
+ "VQ3_READINESS": "READY_PENDING_EXPLICIT_START",
+ "VQ_1_CLOSED": true,
+ "VQ_2_CLOSED": true,
+ "VQ3_STATE": "VQ3_WORKSTREAM_CLOSED",
+ "VQ3_RESULT": "VQ3_OWNER_SELECTED_M3",
+ "PRODUCTION_MATERIAL_SPECIFICATION": "BLOCKED_PENDING_SUPPLIER_EVIDENCE",
+ "PRODUCTION_MATERIAL_SPECIFICATION_cause": "spec pack not yet handed over (§BH46) — the code is kept as history",
+ "VQ3_SELECTED_CANDIDATE": "M3",
+ "VQ3_CLOSED": true,
+ "PRODUCTION_AUTHORITY_PREFLIGHT": "STARTED",
+ "GATE_A_CORRECTION": "IN_PROGRESS",
+ "vq2_a2_r2_final_source_file": "ILLUSTRATOR_EXECUTION_FAILED_SOURCE / BLACK_ONLY_AI8_EMISSION / NOT_PRODUCTION_AUTHORITY / PRESERVED_FOR_AUDIT",
+ "vq2_a2_r2_final_gate_a_r1": "ILLUSTRATOR_EXECUTION_FAILED_SOURCE / GATE_A_R1_ARTWORK_NOT_RENDERED / NOT_PRODUCTION_AUTHORITY / PRESERVED_FOR_AUDIT",
+ "gate_a_corr1_failure_codes": [
+  "ILLUSTRATOR_EXECUTION_VERIFICATION_FAILED",
+  "ILLUSTRATOR_AI8_ALL_OBJECTS_EMITTED_BLACK",
+  "ILLUSTRATOR_DOCUMENT_PROCESS_COLORS_BLACK_ONLY",
+  "ILLUSTRATOR_SOURCE_PROOF_COLOR_DIVERGENCE",
+  "ILLUSTRATOR_PRODUCTION_SOURCE_REGENERATION_REQUIRED"
+ ],
+ "GATE_A_R1": "FAILED_ARTWORK_NOT_RENDERED_RESOLVED_IN_R2",
+ "GATE_A_R2_CORRECTION": "INITIAL_OPEN_PASSED_ROUNDTRIP_PENDING",
+ "vq2_a2_r2_final_gate_a_r2": "ILLUSTRATOR_COMPATIBLE_AI8_EPS_VECTOR_SOURCE / PENDING_HUMAN_ILLUSTRATOR_EXECUTION / SRGB_CONCEPT_ARTWORK",
+ "gate_a_r1_failure_codes": [
+  "ILLUSTRATOR_EXECUTION_VERIFICATION_FAILED",
+  "ILLUSTRATOR_GATE_A_R1_ARTWORK_NOT_RENDERED",
+  "ILLUSTRATOR_LOGO_NOT_RENDERED",
+  "ILLUSTRATOR_DIVIDER_NOT_RENDERED",
+  "ILLUSTRATOR_PRODUCT_NAME_NOT_RENDERED",
+  "ILLUSTRATOR_SUPPORTING_COPY_NOT_RENDERED",
+  "ILLUSTRATOR_SOURCE_PROOF_DIVERGENCE_PERSISTS",
+  "GATE_A_R2_SOURCE_REQUIRED"
+ ],
+ "PRODUCTION_AUTHORITY_GATE_A": "PASSED",
+ "GATE_A_R2_INITIAL_OPEN": "PASSED",
+ "gate_a_r2_initial_open_codes": [
+  "ILLUSTRATOR_GATE_A_R2_INITIAL_OPEN_PASSED",
+  "ILLUSTRATOR_GATE_A_R1_ARTWORK_LOSS_RESOLVED",
+  "ILLUSTRATOR_R2_FULL_VISIBLE_ARTWORK_PRESENT",
+  "ILLUSTRATOR_R2_VECTOR_PATHS_PRESENT"
+ ],
+ "gate_a_known_defects_closed": [
+  "ILLUSTRATOR_AI8_ALL_OBJECTS_EMITTED_BLACK",
+  "ILLUSTRATOR_GATE_A_R1_ARTWORK_NOT_RENDERED"
+ ],
+ "gate_a_remaining_blocker": "ARTBOARD_NOT_PRESERVED_BY_ROUNDTRIP_SCRIPT",
+ "GATE_A_ROUNDTRIP_1": "ARTWORK_PASSED_ARTBOARD_FAILED",
+ "gate_a_roundtrip_1_codes": [
+  "ILLUSTRATOR_GATE_A_PAGE_SIZE_DRIFT",
+  "ILLUSTRATOR_GATE_A_ARTBOARD_NOT_PRESERVED",
+  "ILLUSTRATOR_ROUNDTRIP_PARTIAL_PASS",
+  "ILLUSTRATOR_EXECUTION_VERIFICATION_INCOMPLETE"
+ ],
+ "GATE_A_ROUNDTRIP_2": "PASSED",
+ "gate_a_pass_codes": [
+  "ILLUSTRATOR_EXECUTION_VERIFICATION_PASSED",
+  "PRODUCTION_AUTHORITY_GATE_A_PASSED",
+  "ILLUSTRATOR_SAVE_REOPEN_EXPORT_CONFIRMED",
+  "ILLUSTRATOR_ARTBOARD_PRESERVED",
+  "ILLUSTRATOR_VECTOR_EDITABILITY_CONFIRMED"
+ ],
+ "gate_a_verified_ai_sha256": "ae287712de97798e9fa91efbb4fe3bb093f5950b8f55931441af71d7b00c13c0",
+ "gate_a_does_not_grant": [
+  "production geometry authority",
+  "supplier compatibility",
+  "print-wrap authority",
+  "colour-separation authority",
+  "material specification",
+  "manufacturability",
+  "packaging authorization"
+ ],
+ "NEXT_REQUIRED_OWNER_ACTION": "REVIEW the root-cause report and recovery roadmap; authorize (or amend) PRODUCT_CONTAINER_VISUAL_RECONSTRUCTION_QUALITY_RECOVERY",
+ "SUPPLIER_EVIDENCE_REQUEST_DISPATCH": "OWNER_AUTHORIZED",
+ "SUPPLIER_EVIDENCE_REQUESTS": "READY_FOR_OWNER_MANUAL_SEND",
+ "supplier_evidence_request_codes": [
+  "SUPPLIER_EVIDENCE_REQUEST_DISPATCH_OWNER_AUTHORIZED",
+  "PRODUCTION_AUTHORITY_SUPPLIER_OUTREACH_STARTED"
+ ],
+ "supplier_requests_sent": 0,
+ "supplier_requests_blocked": 5,
+ "supplier_dispatch_blocking_code": null,
+ "SUPPLIER_REQUEST_RECIPIENTS": "OWNER_APPROVED",
+ "supplier_recipient_codes": [
+  "SUPPLIER_REQUEST_RECIPIENTS_OWNER_APPROVED",
+  "SUPPLIER_REQUEST_RECIPIENT_UNRESOLVED:RESOLVED"
+ ],
+ "supplier_requests_ready_to_send": 5,
+ "SUPPLIER_SENT_EVIDENCE": "NOT_RECEIVED",
+ "supplier_requests_verified_sent": 0,
+ "SUPPLIER_OUTREACH": "DEFERRED_UNTIL_REAL_SUPPLIER_ENGAGEMENT",
+ "PRODUCTION_AUTHORITY_GATES_B_TO_E": "DEFERRED_NON_BLOCKING_FOR_PLATFORM_DEVELOPMENT",
+ "SUPPLIER_WORKFLOW_CLASSIFICATION": "OPTIONAL_FUTURE_MANUFACTURING_WORKFLOW",
+ "SUPPLIER_OUTREACH_superseded_by": "§BH46 — the system never contacts suppliers; supplier_requests_ready_to_send, SUPPLIER_SENT_EVIDENCE, supplier_requests_verified_sent, SUPPLIER_OUTREACH and SUPPLIER_WORKFLOW_CLASSIFICATION describe a path the system no longer has and are kept as history",
+ "ACTIVE_MILESTONE": "PRODUCT_CONTAINER_B4_UX",
+ "ACTIVE_SLICE": "NONE_AWAITING_OWNER_REVIEW_OF_ROOT_CAUSE_REPORT",
+ "B4B_STATUS": "ACCEPTANCE_REJECTED_QUALITY_RECOVERY_REQUIRED",
+ "B4B_MIGRATION_REQUIRED": true,
+ "COMPLETE_PRODUCT_PIPELINE": "PRESERVED",
+ "COMPLETE_PRODUCT_CREATION_ENTRY": "DEFERRED_UNTIL_DEDICATED_UX",
+ "B4B_1_SECURE_REFERENCE_CORE": "IMPLEMENTED",
+ "REFERENCE_MAX_UPLOAD_MB": 20.0,
+ "B4B_2_REFERENCE_CREATION_UI": "IMPLEMENTED",
+ "B4B_2B_REFERENCE_VALIDATION_AND_ERROR_PRESENTATION": "IMPLEMENTED",
+ "B4B_2C_TARGET_SWITCHING_PACKAGING_CONFIRMATION_AND_VISUAL_VALIDATION": "IMPLEMENTED",
+ "B4B_3A_REVIEW_BOARD_REFERENCE_PRESENTATION": "IMPLEMENTED",
+ "B4B_3_REVIEW_BOARD_AND_PIPELINE_REFERENCE_MANIFEST": "IMPLEMENTED",
+ "B4B_3B_PIPELINE_REFERENCE_MANIFEST": "IMPLEMENTED",
+ "PRODUCT_CONTAINER_CONFIRM_PROFILE_UI_1_EDITOR_AND_PREVIEW": "IMPLEMENTED",
+ "PRODUCT_CONTAINER_CONFIRM_PROFILE_UI": "IMPLEMENTED",
+ "PRODUCT_CONTAINER_CONFIRM_PROFILE_UI_2A_CONFIRMATION_AND_DISPATCH": "IMPLEMENTED",
+ "PRODUCT_CONTAINER_CONFIRM_PROFILE_UI_2B_1_STATUS_AND_POLLING": "IMPLEMENTED",
+ "PRODUCT_CONTAINER_CONFIRM_PROFILE_UI_2B_2A_RESULT_PRESENTATION_AND_ACCESS": "IMPLEMENTED",
+ "PRODUCT_CONTAINER_CONFIRM_PROFILE_UI_2B_2B_RECOVERY_RETRY_AND_FINAL_VALIDATION": "IMPLEMENTED",
+ "PRODUCT_CONTAINER_WORKFLOW": "IMPLEMENTED_BUT_NOT_OWNER_ACCEPTED",
+ "PRODUCT_CONTAINER_END_TO_END_ACCEPTANCE": "REJECTED",
+ "OWNER_ACCEPTANCE_DEFECT": "BLOCKING_RECONSTRUCTION_VISUAL_QUALITY_FAILURE",
+ "GATE_2": "NOT_READY_FOR_OWNER_APPROVAL"
+}

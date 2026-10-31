@@ -1,0 +1,1526 @@
+{
+  "schema": "dieline_qualification_matrix/1.0",
+  "template_key": "reference_opposed_tuck_carton/0.1",
+  "rows": [
+    {
+      "case": "small_shallow",
+      "input": {
+        "width_mm": 34.0,
+        "depth_mm": 12.0,
+        "height_mm": 61.0,
+        "board_thickness_mm": 0.5,
+        "glue_tab_mm": 8.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "SUPPORTED",
+      "violations": [],
+      "invariant_failures": [],
+      "geometry_hash": "7c2612a4c1c6c1aaaca3a50fac1ae393",
+      "content_hashes": {
+        "cut_path_hash": "eec69a5912c748560f3feb6160de16ecec46b6224dd47053e8e01b5abf9cfc8f",
+        "crease_path_hash": "7188bc8801025fd1030d1f6c3f1b7f2445d34ba1016b745098aee5b041b6af65",
+        "bleed_path_hash": "f4c5b5e021fd40f44a5e15090079909fa6dac0b6baba0af1a220cd0ecb4623c0"
+      },
+      "dimensions": {
+        "inner_mm": [
+          34.0,
+          12.0,
+          61.0
+        ],
+        "manufacture_mm": [
+          35.0,
+          13.0,
+          62.0
+        ],
+        "outer_mm": [
+          36.0,
+          14.0,
+          63.0
+        ],
+        "board_compensation": [
+          "external = inner + 2t: L=35, P=13, A=62 (t=0.5)",
+          "panels: glue 8 | main_a 34.5 | side_a 13 | main_b 35 | side_b 12.5",
+          "asymmetric closure compensation: main_a top crease +0.5 mm, main_b bottom crease -0.5 mm (opposing tucks)",
+          "glue crease shortened 0.5 mm at the top only (bottom of main_a is a cut edge \u2014 the bottom closure lives on main_b)",
+          "closure face depth P - 2t = 12 mm at BOTH ends (= inner depth)",
+          "lock ears 2t = 1 mm; entry slits 7 x 2.5 mm at all four fold ends; folds shortened accordingly",
+          "dust flap depth (P + hook - t)/2 = 15.25 mm (cap L/2); plain chamfer on tuck-adjacent edges, taper on free edges"
+        ],
+        "closure_stack_allowance_mm": 1.0,
+        "score_compression_mm": "not modelled in 0.1 \u2014 physical-sample assumption",
+        "headspace_mm": 0.0
+      },
+      "derived": {
+        "closure_face_mm": 12.0,
+        "major_tuck_reach_mm": 30.0,
+        "dust_flap_depth_mm": 15.25,
+        "locking_ear_mm": 1.0,
+        "flat_mm": [
+          103.0,
+          122.0
+        ]
+      },
+      "folded_all_ok": true,
+      "folded_checks": [
+        {
+          "name": "opposing_attachment_preserved",
+          "ok": true,
+          "detail": "top tuck on main_a, bottom tuck on main_b"
+        },
+        {
+          "name": "folded_dust_flap_pair_clearance",
+          "ok": true,
+          "detail": "actual dust outlines reach 15.25 mm each across the 34 mm inner width -> 3.50 mm gap"
+        },
+        {
+          "name": "closure_face_spans_opening",
+          "ok": true,
+          "detail": "closure face 12 mm == inner depth 12 mm (both tucks)"
+        },
+        {
+          "name": "hook_clears_inside_face",
+          "ok": true,
+          "detail": "hook 18 mm + ear 1 mm folds inside the 61 mm inner height"
+        },
+        {
+          "name": "lock_ear_engages_slit",
+          "ok": true,
+          "detail": "ear projects 1 mm and the slit admits 7 mm of edge \u2014 engagement length 6 mm per corner"
+        },
+        {
+          "name": "dust_below_tuck_zone",
+          "ok": true,
+          "detail": "tuck zone 30 mm vs dust 15.25 mm"
+        },
+        {
+          "name": "glue_flap_vs_side_panel",
+          "ok": true,
+          "detail": "side span 13 mm clears the glue flap"
+        },
+        {
+          "name": "component_area_overlap",
+          "ok": true,
+          "detail": "largest pairwise flat overlap 0.00000000 mm^2"
+        },
+        {
+          "name": "cut_contour_closed_valid",
+          "ok": true,
+          "detail": "cut contour is one valid closed region"
+        },
+        {
+          "name": "bleed_contour_complete",
+          "ok": true,
+          "detail": "bleed offset outward on every side (min growth 3.000 mm)"
+        }
+      ],
+      "renders": {
+        "preview_svg": "docs/qualification/reference_opposed_tuck_carton_0_1/renders/small_shallow.svg",
+        "folded_diagnostic": "docs/qualification/reference_opposed_tuck_carton_0_1/renders/small_shallow_folded.png"
+      }
+    },
+    {
+      "case": "small_deep",
+      "input": {
+        "width_mm": 40.0,
+        "depth_mm": 19.0,
+        "height_mm": 65.0,
+        "board_thickness_mm": 0.5,
+        "glue_tab_mm": 12.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "SUPPORTED",
+      "violations": [],
+      "invariant_failures": [],
+      "geometry_hash": "b2d45f8a4bf78e6fb3447ccb898336c6",
+      "content_hashes": {
+        "cut_path_hash": "e84efddec8c2772c720b52072265dca2d3b247db50d1cdfb10dfb036c8bfe04a",
+        "crease_path_hash": "e66f3beb9a0b4849bf29673bd19c2a48ba1e6e335703a3f567956ebdcd9cdf94",
+        "bleed_path_hash": "64b2745824f294d87040236a71291e80b5b6e74d3ffe013a70bf3b2b9bf67abd"
+      },
+      "dimensions": {
+        "inner_mm": [
+          40.0,
+          19.0,
+          65.0
+        ],
+        "manufacture_mm": [
+          41.0,
+          20.0,
+          66.0
+        ],
+        "outer_mm": [
+          42.0,
+          21.0,
+          67.0
+        ],
+        "board_compensation": [
+          "external = inner + 2t: L=41, P=20, A=66 (t=0.5)",
+          "panels: glue 12 | main_a 40.5 | side_a 20 | main_b 41 | side_b 19.5",
+          "asymmetric closure compensation: main_a top crease +0.5 mm, main_b bottom crease -0.5 mm (opposing tucks)",
+          "glue crease shortened 0.5 mm at the top only (bottom of main_a is a cut edge \u2014 the bottom closure lives on main_b)",
+          "closure face depth P - 2t = 19 mm at BOTH ends (= inner depth)",
+          "lock ears 2t = 1 mm; entry slits 7 x 2.5 mm at all four fold ends; folds shortened accordingly",
+          "dust flap depth (P + hook - t)/2 = 18.75 mm (cap L/2); plain chamfer on tuck-adjacent edges, taper on free edges"
+        ],
+        "closure_stack_allowance_mm": 1.0,
+        "score_compression_mm": "not modelled in 0.1 \u2014 physical-sample assumption",
+        "headspace_mm": 0.0
+      },
+      "derived": {
+        "closure_face_mm": 19.0,
+        "major_tuck_reach_mm": 37.0,
+        "dust_flap_depth_mm": 18.75,
+        "locking_ear_mm": 1.0,
+        "flat_mm": [
+          133.0,
+          140.0
+        ]
+      },
+      "folded_all_ok": true,
+      "folded_checks": [
+        {
+          "name": "opposing_attachment_preserved",
+          "ok": true,
+          "detail": "top tuck on main_a, bottom tuck on main_b"
+        },
+        {
+          "name": "folded_dust_flap_pair_clearance",
+          "ok": true,
+          "detail": "actual dust outlines reach 18.75 mm each across the 40 mm inner width -> 2.50 mm gap"
+        },
+        {
+          "name": "closure_face_spans_opening",
+          "ok": true,
+          "detail": "closure face 19 mm == inner depth 19 mm (both tucks)"
+        },
+        {
+          "name": "hook_clears_inside_face",
+          "ok": true,
+          "detail": "hook 18 mm + ear 1 mm folds inside the 65 mm inner height"
+        },
+        {
+          "name": "lock_ear_engages_slit",
+          "ok": true,
+          "detail": "ear projects 1 mm and the slit admits 7 mm of edge \u2014 engagement length 6 mm per corner"
+        },
+        {
+          "name": "dust_below_tuck_zone",
+          "ok": true,
+          "detail": "tuck zone 37 mm vs dust 18.75 mm"
+        },
+        {
+          "name": "glue_flap_vs_side_panel",
+          "ok": true,
+          "detail": "side span 20 mm clears the glue flap"
+        },
+        {
+          "name": "component_area_overlap",
+          "ok": true,
+          "detail": "largest pairwise flat overlap 0.00000000 mm^2"
+        },
+        {
+          "name": "cut_contour_closed_valid",
+          "ok": true,
+          "detail": "cut contour is one valid closed region"
+        },
+        {
+          "name": "bleed_contour_complete",
+          "ok": true,
+          "detail": "bleed offset outward on every side (min growth 3.000 mm)"
+        }
+      ],
+      "renders": {
+        "preview_svg": "docs/qualification/reference_opposed_tuck_carton_0_1/renders/small_deep.svg",
+        "folded_diagnostic": "docs/qualification/reference_opposed_tuck_carton_0_1/renders/small_deep_folded.png"
+      }
+    },
+    {
+      "case": "medium_shallow",
+      "input": {
+        "width_mm": 70.0,
+        "depth_mm": 15.0,
+        "height_mm": 100.0,
+        "board_thickness_mm": 0.5,
+        "glue_tab_mm": 12.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "SUPPORTED",
+      "violations": [],
+      "invariant_failures": [],
+      "geometry_hash": "23efd35f4eded6178fdf2234dfb8bc56",
+      "content_hashes": {
+        "cut_path_hash": "caa17762a7baed9ffdaa9818e96fa5a18c3d05c8fa1e0a68849e2a4e35b1a6bc",
+        "crease_path_hash": "1bfac6b06680d8774eb1215e3bf8957cddaa5decfe5f38382b9c950d692cd16a",
+        "bleed_path_hash": "b377ae900a5590a5c86041f017fdaf98fba2225ac3a5abc8520f217bf415fba7"
+      },
+      "dimensions": {
+        "inner_mm": [
+          70.0,
+          15.0,
+          100.0
+        ],
+        "manufacture_mm": [
+          71.0,
+          16.0,
+          101.0
+        ],
+        "outer_mm": [
+          72.0,
+          17.0,
+          102.0
+        ],
+        "board_compensation": [
+          "external = inner + 2t: L=71, P=16, A=101 (t=0.5)",
+          "panels: glue 12 | main_a 70.5 | side_a 16 | main_b 71 | side_b 15.5",
+          "asymmetric closure compensation: main_a top crease +0.5 mm, main_b bottom crease -0.5 mm (opposing tucks)",
+          "glue crease shortened 0.5 mm at the top only (bottom of main_a is a cut edge \u2014 the bottom closure lives on main_b)",
+          "closure face depth P - 2t = 15 mm at BOTH ends (= inner depth)",
+          "lock ears 2t = 1 mm; entry slits 7 x 2.5 mm at all four fold ends; folds shortened accordingly",
+          "dust flap depth (P + hook - t)/2 = 16.75 mm (cap L/2); plain chamfer on tuck-adjacent edges, taper on free edges"
+        ],
+        "closure_stack_allowance_mm": 1.0,
+        "score_compression_mm": "not modelled in 0.1 \u2014 physical-sample assumption",
+        "headspace_mm": 0.0
+      },
+      "derived": {
+        "closure_face_mm": 15.0,
+        "major_tuck_reach_mm": 33.0,
+        "dust_flap_depth_mm": 16.75,
+        "locking_ear_mm": 1.0,
+        "flat_mm": [
+          185.0,
+          167.0
+        ]
+      },
+      "folded_all_ok": true,
+      "folded_checks": [
+        {
+          "name": "opposing_attachment_preserved",
+          "ok": true,
+          "detail": "top tuck on main_a, bottom tuck on main_b"
+        },
+        {
+          "name": "folded_dust_flap_pair_clearance",
+          "ok": true,
+          "detail": "actual dust outlines reach 16.75 mm each across the 70 mm inner width -> 36.50 mm gap"
+        },
+        {
+          "name": "closure_face_spans_opening",
+          "ok": true,
+          "detail": "closure face 15 mm == inner depth 15 mm (both tucks)"
+        },
+        {
+          "name": "hook_clears_inside_face",
+          "ok": true,
+          "detail": "hook 18 mm + ear 1 mm folds inside the 100 mm inner height"
+        },
+        {
+          "name": "lock_ear_engages_slit",
+          "ok": true,
+          "detail": "ear projects 1 mm and the slit admits 7 mm of edge \u2014 engagement length 6 mm per corner"
+        },
+        {
+          "name": "dust_below_tuck_zone",
+          "ok": true,
+          "detail": "tuck zone 33 mm vs dust 16.75 mm"
+        },
+        {
+          "name": "glue_flap_vs_side_panel",
+          "ok": true,
+          "detail": "side span 16 mm clears the glue flap"
+        },
+        {
+          "name": "component_area_overlap",
+          "ok": true,
+          "detail": "largest pairwise flat overlap 0.00000000 mm^2"
+        },
+        {
+          "name": "cut_contour_closed_valid",
+          "ok": true,
+          "detail": "cut contour is one valid closed region"
+        },
+        {
+          "name": "bleed_contour_complete",
+          "ok": true,
+          "detail": "bleed offset outward on every side (min growth 3.000 mm)"
+        }
+      ],
+      "renders": {
+        "preview_svg": "docs/qualification/reference_opposed_tuck_carton_0_1/renders/medium_shallow.svg",
+        "folded_diagnostic": "docs/qualification/reference_opposed_tuck_carton_0_1/renders/medium_shallow_folded.png"
+      }
+    },
+    {
+      "case": "medium_deep",
+      "input": {
+        "width_mm": 70.0,
+        "depth_mm": 49.0,
+        "height_mm": 110.0,
+        "board_thickness_mm": 0.5,
+        "glue_tab_mm": 12.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "SUPPORTED",
+      "violations": [],
+      "invariant_failures": [],
+      "geometry_hash": "2fc5c597ba46cc60bd35d39a0ba92acb",
+      "content_hashes": {
+        "cut_path_hash": "048366385c5f990975d78e21f4005db61057c8fe68de00a4e5f4be873015dad9",
+        "crease_path_hash": "37eb675e5667ad573d780bd65fb5718a44958ea272f87fbe4daa1b002e75d5b6",
+        "bleed_path_hash": "9538b87a170e693dbadb9354d75e7c6fb0655611abf5ae71a2376d3c097c315a"
+      },
+      "dimensions": {
+        "inner_mm": [
+          70.0,
+          49.0,
+          110.0
+        ],
+        "manufacture_mm": [
+          71.0,
+          50.0,
+          111.0
+        ],
+        "outer_mm": [
+          72.0,
+          51.0,
+          112.0
+        ],
+        "board_compensation": [
+          "external = inner + 2t: L=71, P=50, A=111 (t=0.5)",
+          "panels: glue 12 | main_a 70.5 | side_a 50 | main_b 71 | side_b 49.5",
+          "asymmetric closure compensation: main_a top crease +0.5 mm, main_b bottom crease -0.5 mm (opposing tucks)",
+          "glue crease shortened 0.5 mm at the top only (bottom of main_a is a cut edge \u2014 the bottom closure lives on main_b)",
+          "closure face depth P - 2t = 49 mm at BOTH ends (= inner depth)",
+          "lock ears 2t = 1 mm; entry slits 7 x 2.5 mm at all four fold ends; folds shortened accordingly",
+          "dust flap depth (P + hook - t)/2 = 33.75 mm (cap L/2); plain chamfer on tuck-adjacent edges, taper on free edges"
+        ],
+        "closure_stack_allowance_mm": 1.0,
+        "score_compression_mm": "not modelled in 0.1 \u2014 physical-sample assumption",
+        "headspace_mm": 0.0
+      },
+      "derived": {
+        "closure_face_mm": 49.0,
+        "major_tuck_reach_mm": 67.0,
+        "dust_flap_depth_mm": 33.75,
+        "locking_ear_mm": 1.0,
+        "flat_mm": [
+          253.0,
+          245.0
+        ]
+      },
+      "folded_all_ok": true,
+      "folded_checks": [
+        {
+          "name": "opposing_attachment_preserved",
+          "ok": true,
+          "detail": "top tuck on main_a, bottom tuck on main_b"
+        },
+        {
+          "name": "folded_dust_flap_pair_clearance",
+          "ok": true,
+          "detail": "actual dust outlines reach 33.75 mm each across the 70 mm inner width -> 2.50 mm gap"
+        },
+        {
+          "name": "closure_face_spans_opening",
+          "ok": true,
+          "detail": "closure face 49 mm == inner depth 49 mm (both tucks)"
+        },
+        {
+          "name": "hook_clears_inside_face",
+          "ok": true,
+          "detail": "hook 18 mm + ear 1 mm folds inside the 110 mm inner height"
+        },
+        {
+          "name": "lock_ear_engages_slit",
+          "ok": true,
+          "detail": "ear projects 1 mm and the slit admits 7 mm of edge \u2014 engagement length 6 mm per corner"
+        },
+        {
+          "name": "dust_below_tuck_zone",
+          "ok": true,
+          "detail": "tuck zone 67 mm vs dust 33.75 mm"
+        },
+        {
+          "name": "glue_flap_vs_side_panel",
+          "ok": true,
+          "detail": "side span 50 mm clears the glue flap"
+        },
+        {
+          "name": "component_area_overlap",
+          "ok": true,
+          "detail": "largest pairwise flat overlap 0.00000000 mm^2"
+        },
+        {
+          "name": "cut_contour_closed_valid",
+          "ok": true,
+          "detail": "cut contour is one valid closed region"
+        },
+        {
+          "name": "bleed_contour_complete",
+          "ok": true,
+          "detail": "bleed offset outward on every side (min growth 3.000 mm)"
+        }
+      ],
+      "renders": {
+        "preview_svg": "docs/qualification/reference_opposed_tuck_carton_0_1/renders/medium_deep.svg",
+        "folded_diagnostic": "docs/qualification/reference_opposed_tuck_carton_0_1/renders/medium_deep_folded.png"
+      }
+    },
+    {
+      "case": "large_shallow",
+      "input": {
+        "width_mm": 250.0,
+        "depth_mm": 40.0,
+        "height_mm": 300.0,
+        "board_thickness_mm": 0.8,
+        "glue_tab_mm": 12.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "SUPPORTED",
+      "violations": [],
+      "invariant_failures": [],
+      "geometry_hash": "8a1cf6b5abe5c79e88b32409ffbe100b",
+      "content_hashes": {
+        "cut_path_hash": "eda328dbff85f286c2ba0b5cd945e9cbb60365e4d5e1aeff306e06c550d696ac",
+        "crease_path_hash": "e48f65ec757de5a0dde7709d96bdc4dd0404d49ed1d00de3c19a1e1853bb7fa6",
+        "bleed_path_hash": "e5d4bc0f9af8f994e5d389be7411ed8dff3cbaadc823edf376ceee2e3c5a480b"
+      },
+      "dimensions": {
+        "inner_mm": [
+          250.0,
+          40.0,
+          300.0
+        ],
+        "manufacture_mm": [
+          251.6,
+          41.6,
+          301.6
+        ],
+        "outer_mm": [
+          253.2,
+          43.2,
+          303.2
+        ],
+        "board_compensation": [
+          "external = inner + 2t: L=251.6, P=41.6, A=301.6 (t=0.8)",
+          "panels: glue 12 | main_a 250.8 | side_a 41.6 | main_b 251.6 | side_b 40.8",
+          "asymmetric closure compensation: main_a top crease +0.8 mm, main_b bottom crease -0.8 mm (opposing tucks)",
+          "glue crease shortened 0.8 mm at the top only (bottom of main_a is a cut edge \u2014 the bottom closure lives on main_b)",
+          "closure face depth P - 2t = 40 mm at BOTH ends (= inner depth)",
+          "lock ears 2t = 1.6 mm; entry slits 7 x 2.5 mm at all four fold ends; folds shortened accordingly",
+          "dust flap depth (P + hook - t)/2 = 29.4 mm (cap L/2); plain chamfer on tuck-adjacent edges, taper on free edges"
+        ],
+        "closure_stack_allowance_mm": 1.6,
+        "score_compression_mm": "not modelled in 0.1 \u2014 physical-sample assumption",
+        "headspace_mm": 0.0
+      },
+      "derived": {
+        "closure_face_mm": 40.0,
+        "major_tuck_reach_mm": 58.0,
+        "dust_flap_depth_mm": 29.4,
+        "locking_ear_mm": 1.6,
+        "flat_mm": [
+          596.8,
+          417.6
+        ]
+      },
+      "folded_all_ok": true,
+      "folded_checks": [
+        {
+          "name": "opposing_attachment_preserved",
+          "ok": true,
+          "detail": "top tuck on main_a, bottom tuck on main_b"
+        },
+        {
+          "name": "folded_dust_flap_pair_clearance",
+          "ok": true,
+          "detail": "actual dust outlines reach 29.4 mm each across the 250 mm inner width -> 191.20 mm gap"
+        },
+        {
+          "name": "closure_face_spans_opening",
+          "ok": true,
+          "detail": "closure face 40 mm == inner depth 40 mm (both tucks)"
+        },
+        {
+          "name": "hook_clears_inside_face",
+          "ok": true,
+          "detail": "hook 18 mm + ear 1.6 mm folds inside the 300 mm inner height"
+        },
+        {
+          "name": "lock_ear_engages_slit",
+          "ok": true,
+          "detail": "ear projects 1.6 mm and the slit admits 7 mm of edge \u2014 engagement length 5.4 mm per corner"
+        },
+        {
+          "name": "dust_below_tuck_zone",
+          "ok": true,
+          "detail": "tuck zone 58 mm vs dust 29.4 mm"
+        },
+        {
+          "name": "glue_flap_vs_side_panel",
+          "ok": true,
+          "detail": "side span 41.6 mm clears the glue flap"
+        },
+        {
+          "name": "component_area_overlap",
+          "ok": true,
+          "detail": "largest pairwise flat overlap 0.00000000 mm^2"
+        },
+        {
+          "name": "cut_contour_closed_valid",
+          "ok": true,
+          "detail": "cut contour is one valid closed region"
+        },
+        {
+          "name": "bleed_contour_complete",
+          "ok": true,
+          "detail": "bleed offset outward on every side (min growth 3.000 mm)"
+        }
+      ],
+      "renders": {
+        "preview_svg": "docs/qualification/reference_opposed_tuck_carton_0_1/renders/large_shallow.svg",
+        "folded_diagnostic": "docs/qualification/reference_opposed_tuck_carton_0_1/renders/large_shallow_folded.png"
+      }
+    },
+    {
+      "case": "large_deep",
+      "input": {
+        "width_mm": 279.0,
+        "depth_mm": 258.0,
+        "height_mm": 320.0,
+        "board_thickness_mm": 0.8,
+        "glue_tab_mm": 12.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "SUPPORTED",
+      "violations": [],
+      "invariant_failures": [],
+      "geometry_hash": "c157c49cd6c9247c9f5253cdd84fead2",
+      "content_hashes": {
+        "cut_path_hash": "65f6e6cdc058f74a82e2cb6d7caf4914df1f08543831062c8144650b6c89bdee",
+        "crease_path_hash": "89d0ce1c691d0251966bebefc28c014d52d0d65768e7818010ef7eea36437dbb",
+        "bleed_path_hash": "0253dc981ef23270e8864fd85f776775a365c88f150e2a9beee8b9a8ac86a9e3"
+      },
+      "dimensions": {
+        "inner_mm": [
+          279.0,
+          258.0,
+          320.0
+        ],
+        "manufacture_mm": [
+          280.6,
+          259.6,
+          321.6
+        ],
+        "outer_mm": [
+          282.2,
+          261.2,
+          323.2
+        ],
+        "board_compensation": [
+          "external = inner + 2t: L=280.6, P=259.6, A=321.6 (t=0.8)",
+          "panels: glue 12 | main_a 279.8 | side_a 259.6 | main_b 280.6 | side_b 258.8",
+          "asymmetric closure compensation: main_a top crease +0.8 mm, main_b bottom crease -0.8 mm (opposing tucks)",
+          "glue crease shortened 0.8 mm at the top only (bottom of main_a is a cut edge \u2014 the bottom closure lives on main_b)",
+          "closure face depth P - 2t = 258 mm at BOTH ends (= inner depth)",
+          "lock ears 2t = 1.6 mm; entry slits 7 x 2.5 mm at all four fold ends; folds shortened accordingly",
+          "dust flap depth (P + hook - t)/2 = 138.4 mm (cap L/2); plain chamfer on tuck-adjacent edges, taper on free edges"
+        ],
+        "closure_stack_allowance_mm": 1.6,
+        "score_compression_mm": "not modelled in 0.1 \u2014 physical-sample assumption",
+        "headspace_mm": 0.0
+      },
+      "derived": {
+        "closure_face_mm": 258.0,
+        "major_tuck_reach_mm": 276.0,
+        "dust_flap_depth_mm": 138.4,
+        "locking_ear_mm": 1.6,
+        "flat_mm": [
+          1090.8,
+          873.6
+        ]
+      },
+      "folded_all_ok": true,
+      "folded_checks": [
+        {
+          "name": "opposing_attachment_preserved",
+          "ok": true,
+          "detail": "top tuck on main_a, bottom tuck on main_b"
+        },
+        {
+          "name": "folded_dust_flap_pair_clearance",
+          "ok": true,
+          "detail": "actual dust outlines reach 138.4 mm each across the 279 mm inner width -> 2.20 mm gap"
+        },
+        {
+          "name": "closure_face_spans_opening",
+          "ok": true,
+          "detail": "closure face 258 mm == inner depth 258 mm (both tucks)"
+        },
+        {
+          "name": "hook_clears_inside_face",
+          "ok": true,
+          "detail": "hook 18 mm + ear 1.6 mm folds inside the 320 mm inner height"
+        },
+        {
+          "name": "lock_ear_engages_slit",
+          "ok": true,
+          "detail": "ear projects 1.6 mm and the slit admits 7 mm of edge \u2014 engagement length 5.4 mm per corner"
+        },
+        {
+          "name": "dust_below_tuck_zone",
+          "ok": true,
+          "detail": "tuck zone 276 mm vs dust 138.4 mm"
+        },
+        {
+          "name": "glue_flap_vs_side_panel",
+          "ok": true,
+          "detail": "side span 259.6 mm clears the glue flap"
+        },
+        {
+          "name": "component_area_overlap",
+          "ok": true,
+          "detail": "largest pairwise flat overlap 0.00000000 mm^2"
+        },
+        {
+          "name": "cut_contour_closed_valid",
+          "ok": true,
+          "detail": "cut contour is one valid closed region"
+        },
+        {
+          "name": "bleed_contour_complete",
+          "ok": true,
+          "detail": "bleed offset outward on every side (min growth 3.000 mm)"
+        }
+      ],
+      "renders": {
+        "preview_svg": "docs/qualification/reference_opposed_tuck_carton_0_1/renders/large_deep.svg",
+        "folded_diagnostic": "docs/qualification/reference_opposed_tuck_carton_0_1/renders/large_deep_folded.png"
+      }
+    },
+    {
+      "case": "tall_narrow",
+      "input": {
+        "width_mm": 33.0,
+        "depth_mm": 12.0,
+        "height_mm": 590.0,
+        "board_thickness_mm": 0.3,
+        "glue_tab_mm": 8.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "SUPPORTED",
+      "violations": [],
+      "invariant_failures": [],
+      "geometry_hash": "dc54e1018a13a76979fef0f2dd97ba39",
+      "content_hashes": {
+        "cut_path_hash": "f4aa32b4f965eaed159e73d6636be3aa82b1242639f9ea43863dbef43634c428",
+        "crease_path_hash": "b2180042f2ea9ca09d47886c91fd8ea41049d69446bd5e5e776f9fbfdce9c1a5",
+        "bleed_path_hash": "317ef5bcd06f484097503ec2753a57b0205405a1a00697fdfbd38f5b110629ce"
+      },
+      "dimensions": {
+        "inner_mm": [
+          33.0,
+          12.0,
+          590.0
+        ],
+        "manufacture_mm": [
+          33.6,
+          12.6,
+          590.6
+        ],
+        "outer_mm": [
+          34.2,
+          13.2,
+          591.2
+        ],
+        "board_compensation": [
+          "external = inner + 2t: L=33.6, P=12.6, A=590.6 (t=0.3)",
+          "panels: glue 8 | main_a 33.3 | side_a 12.6 | main_b 33.6 | side_b 12.3",
+          "asymmetric closure compensation: main_a top crease +0.3 mm, main_b bottom crease -0.3 mm (opposing tucks)",
+          "glue crease shortened 0.3 mm at the top only (bottom of main_a is a cut edge \u2014 the bottom closure lives on main_b)",
+          "closure face depth P - 2t = 12 mm at BOTH ends (= inner depth)",
+          "lock ears 2t = 0.6 mm; entry slits 7 x 2.5 mm at all four fold ends; folds shortened accordingly",
+          "dust flap depth (P + hook - t)/2 = 15.15 mm (cap L/2); plain chamfer on tuck-adjacent edges, taper on free edges"
+        ],
+        "closure_stack_allowance_mm": 0.6,
+        "score_compression_mm": "not modelled in 0.1 \u2014 physical-sample assumption",
+        "headspace_mm": 0.0
+      },
+      "derived": {
+        "closure_face_mm": 12.0,
+        "major_tuck_reach_mm": 30.0,
+        "dust_flap_depth_mm": 15.15,
+        "locking_ear_mm": 0.6,
+        "flat_mm": [
+          99.8,
+          650.6
+        ]
+      },
+      "folded_all_ok": true,
+      "folded_checks": [
+        {
+          "name": "opposing_attachment_preserved",
+          "ok": true,
+          "detail": "top tuck on main_a, bottom tuck on main_b"
+        },
+        {
+          "name": "folded_dust_flap_pair_clearance",
+          "ok": true,
+          "detail": "actual dust outlines reach 15.15 mm each across the 33 mm inner width -> 2.70 mm gap"
+        },
+        {
+          "name": "closure_face_spans_opening",
+          "ok": true,
+          "detail": "closure face 12 mm == inner depth 12 mm (both tucks)"
+        },
+        {
+          "name": "hook_clears_inside_face",
+          "ok": true,
+          "detail": "hook 18 mm + ear 0.6 mm folds inside the 590 mm inner height"
+        },
+        {
+          "name": "lock_ear_engages_slit",
+          "ok": true,
+          "detail": "ear projects 0.6 mm and the slit admits 7 mm of edge \u2014 engagement length 6.4 mm per corner"
+        },
+        {
+          "name": "dust_below_tuck_zone",
+          "ok": true,
+          "detail": "tuck zone 30 mm vs dust 15.15 mm"
+        },
+        {
+          "name": "glue_flap_vs_side_panel",
+          "ok": true,
+          "detail": "side span 12.6 mm clears the glue flap"
+        },
+        {
+          "name": "component_area_overlap",
+          "ok": true,
+          "detail": "largest pairwise flat overlap 0.00000000 mm^2"
+        },
+        {
+          "name": "cut_contour_closed_valid",
+          "ok": true,
+          "detail": "cut contour is one valid closed region"
+        },
+        {
+          "name": "bleed_contour_complete",
+          "ok": true,
+          "detail": "bleed offset outward on every side (min growth 3.000 mm)"
+        }
+      ],
+      "renders": {
+        "preview_svg": "docs/qualification/reference_opposed_tuck_carton_0_1/renders/tall_narrow.svg",
+        "folded_diagnostic": "docs/qualification/reference_opposed_tuck_carton_0_1/renders/tall_narrow_folded.png"
+      }
+    },
+    {
+      "case": "nearly_square",
+      "input": {
+        "width_mm": 95.0,
+        "depth_mm": 74.0,
+        "height_mm": 96.0,
+        "board_thickness_mm": 0.5,
+        "glue_tab_mm": 12.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "SUPPORTED",
+      "violations": [],
+      "invariant_failures": [],
+      "geometry_hash": "ef15c2832127e6d4cc462a473d8770f9",
+      "content_hashes": {
+        "cut_path_hash": "442c8ce9f845078bf18a9aa543e4d00c4d2b203623d5d8e5c818d74a4d0a5f1d",
+        "crease_path_hash": "2bf3be8793debbe374f502c650cd4f1a8d312ae79823384004c1ec364a80e439",
+        "bleed_path_hash": "fb980d80cfe3e5758ac0a056fa84270090b9cbc6bd4d0695a2d4919db6d2cff2"
+      },
+      "dimensions": {
+        "inner_mm": [
+          95.0,
+          74.0,
+          96.0
+        ],
+        "manufacture_mm": [
+          96.0,
+          75.0,
+          97.0
+        ],
+        "outer_mm": [
+          97.0,
+          76.0,
+          98.0
+        ],
+        "board_compensation": [
+          "external = inner + 2t: L=96, P=75, A=97 (t=0.5)",
+          "panels: glue 12 | main_a 95.5 | side_a 75 | main_b 96 | side_b 74.5",
+          "asymmetric closure compensation: main_a top crease +0.5 mm, main_b bottom crease -0.5 mm (opposing tucks)",
+          "glue crease shortened 0.5 mm at the top only (bottom of main_a is a cut edge \u2014 the bottom closure lives on main_b)",
+          "closure face depth P - 2t = 74 mm at BOTH ends (= inner depth)",
+          "lock ears 2t = 1 mm; entry slits 7 x 2.5 mm at all four fold ends; folds shortened accordingly",
+          "dust flap depth (P + hook - t)/2 = 46.25 mm (cap L/2); plain chamfer on tuck-adjacent edges, taper on free edges"
+        ],
+        "closure_stack_allowance_mm": 1.0,
+        "score_compression_mm": "not modelled in 0.1 \u2014 physical-sample assumption",
+        "headspace_mm": 0.0
+      },
+      "derived": {
+        "closure_face_mm": 74.0,
+        "major_tuck_reach_mm": 92.0,
+        "dust_flap_depth_mm": 46.25,
+        "locking_ear_mm": 1.0,
+        "flat_mm": [
+          353.0,
+          281.0
+        ]
+      },
+      "folded_all_ok": true,
+      "folded_checks": [
+        {
+          "name": "opposing_attachment_preserved",
+          "ok": true,
+          "detail": "top tuck on main_a, bottom tuck on main_b"
+        },
+        {
+          "name": "folded_dust_flap_pair_clearance",
+          "ok": true,
+          "detail": "actual dust outlines reach 46.25 mm each across the 95 mm inner width -> 2.50 mm gap"
+        },
+        {
+          "name": "closure_face_spans_opening",
+          "ok": true,
+          "detail": "closure face 74 mm == inner depth 74 mm (both tucks)"
+        },
+        {
+          "name": "hook_clears_inside_face",
+          "ok": true,
+          "detail": "hook 18 mm + ear 1 mm folds inside the 96 mm inner height"
+        },
+        {
+          "name": "lock_ear_engages_slit",
+          "ok": true,
+          "detail": "ear projects 1 mm and the slit admits 7 mm of edge \u2014 engagement length 6 mm per corner"
+        },
+        {
+          "name": "dust_below_tuck_zone",
+          "ok": true,
+          "detail": "tuck zone 92 mm vs dust 46.25 mm"
+        },
+        {
+          "name": "glue_flap_vs_side_panel",
+          "ok": true,
+          "detail": "side span 75 mm clears the glue flap"
+        },
+        {
+          "name": "component_area_overlap",
+          "ok": true,
+          "detail": "largest pairwise flat overlap 0.00000000 mm^2"
+        },
+        {
+          "name": "cut_contour_closed_valid",
+          "ok": true,
+          "detail": "cut contour is one valid closed region"
+        },
+        {
+          "name": "bleed_contour_complete",
+          "ok": true,
+          "detail": "bleed offset outward on every side (min growth 3.000 mm)"
+        }
+      ],
+      "renders": {
+        "preview_svg": "docs/qualification/reference_opposed_tuck_carton_0_1/renders/nearly_square.svg",
+        "folded_diagnostic": "docs/qualification/reference_opposed_tuck_carton_0_1/renders/nearly_square_folded.png"
+      }
+    },
+    {
+      "case": "task_50_exact",
+      "input": {
+        "width_mm": 90.0,
+        "depth_mm": 32.0,
+        "height_mm": 92.0,
+        "board_thickness_mm": 0.5,
+        "glue_tab_mm": 12.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "SUPPORTED",
+      "violations": [],
+      "invariant_failures": [],
+      "geometry_hash": "0f5b8bf6bc2aa8ce0678fad3099da2d3",
+      "content_hashes": {
+        "cut_path_hash": "fe5adb1f53dc3823c63df2121c67ba0b3241ac413e1b156b10f871f468de1dbc",
+        "crease_path_hash": "108fbcb8d8b9e84fbddeec695e3d0ece99081148b169371aacd29e4e37945dc6",
+        "bleed_path_hash": "e973b39f91c2a905b7deeeb5e2e1bfaf62d3b13752b6bd005382e27b13e801ea"
+      },
+      "dimensions": {
+        "inner_mm": [
+          90.0,
+          32.0,
+          92.0
+        ],
+        "manufacture_mm": [
+          91.0,
+          33.0,
+          93.0
+        ],
+        "outer_mm": [
+          92.0,
+          34.0,
+          94.0
+        ],
+        "board_compensation": [
+          "external = inner + 2t: L=91, P=33, A=93 (t=0.5)",
+          "panels: glue 12 | main_a 90.5 | side_a 33 | main_b 91 | side_b 32.5",
+          "asymmetric closure compensation: main_a top crease +0.5 mm, main_b bottom crease -0.5 mm (opposing tucks)",
+          "glue crease shortened 0.5 mm at the top only (bottom of main_a is a cut edge \u2014 the bottom closure lives on main_b)",
+          "closure face depth P - 2t = 32 mm at BOTH ends (= inner depth)",
+          "lock ears 2t = 1 mm; entry slits 7 x 2.5 mm at all four fold ends; folds shortened accordingly",
+          "dust flap depth (P + hook - t)/2 = 25.25 mm (cap L/2); plain chamfer on tuck-adjacent edges, taper on free edges"
+        ],
+        "closure_stack_allowance_mm": 1.0,
+        "score_compression_mm": "not modelled in 0.1 \u2014 physical-sample assumption",
+        "headspace_mm": 0.0
+      },
+      "derived": {
+        "closure_face_mm": 32.0,
+        "major_tuck_reach_mm": 50.0,
+        "dust_flap_depth_mm": 25.25,
+        "locking_ear_mm": 1.0,
+        "flat_mm": [
+          259.0,
+          193.0
+        ]
+      },
+      "folded_all_ok": true,
+      "folded_checks": [
+        {
+          "name": "opposing_attachment_preserved",
+          "ok": true,
+          "detail": "top tuck on main_a, bottom tuck on main_b"
+        },
+        {
+          "name": "folded_dust_flap_pair_clearance",
+          "ok": true,
+          "detail": "actual dust outlines reach 25.25 mm each across the 90 mm inner width -> 39.50 mm gap"
+        },
+        {
+          "name": "closure_face_spans_opening",
+          "ok": true,
+          "detail": "closure face 32 mm == inner depth 32 mm (both tucks)"
+        },
+        {
+          "name": "hook_clears_inside_face",
+          "ok": true,
+          "detail": "hook 18 mm + ear 1 mm folds inside the 92 mm inner height"
+        },
+        {
+          "name": "lock_ear_engages_slit",
+          "ok": true,
+          "detail": "ear projects 1 mm and the slit admits 7 mm of edge \u2014 engagement length 6 mm per corner"
+        },
+        {
+          "name": "dust_below_tuck_zone",
+          "ok": true,
+          "detail": "tuck zone 50 mm vs dust 25.25 mm"
+        },
+        {
+          "name": "glue_flap_vs_side_panel",
+          "ok": true,
+          "detail": "side span 33 mm clears the glue flap"
+        },
+        {
+          "name": "component_area_overlap",
+          "ok": true,
+          "detail": "largest pairwise flat overlap 0.00000000 mm^2"
+        },
+        {
+          "name": "cut_contour_closed_valid",
+          "ok": true,
+          "detail": "cut contour is one valid closed region"
+        },
+        {
+          "name": "bleed_contour_complete",
+          "ok": true,
+          "detail": "bleed offset outward on every side (min growth 3.000 mm)"
+        }
+      ],
+      "renders": {
+        "preview_svg": "docs/qualification/reference_opposed_tuck_carton_0_1/renders/task_50_exact.svg",
+        "folded_diagnostic": "docs/qualification/reference_opposed_tuck_carton_0_1/renders/task_50_exact_folded.png"
+      }
+    },
+    {
+      "case": "inside_dust_pair_boundary",
+      "input": {
+        "width_mm": 52.5,
+        "depth_mm": 32.0,
+        "height_mm": 92.0,
+        "board_thickness_mm": 0.5,
+        "glue_tab_mm": 12.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "SUPPORTED",
+      "violations": [],
+      "invariant_failures": [],
+      "geometry_hash": "05819cdbbc5d33faf20840e9d37b97a7",
+      "content_hashes": {
+        "cut_path_hash": "09d2c4830d042ee269461ad54b8cf14d218534d97f186f4ab36969459d21607d",
+        "crease_path_hash": "7354b671be01f3ab394628c3570c13de26c3faa7c4d900b4f52354b2f907f98c",
+        "bleed_path_hash": "eb5b673543ae8c97bdf505d8d7616c8ea5bae8375f378ed5b831c700b172414a"
+      },
+      "dimensions": {
+        "inner_mm": [
+          52.5,
+          32.0,
+          92.0
+        ],
+        "manufacture_mm": [
+          53.5,
+          33.0,
+          93.0
+        ],
+        "outer_mm": [
+          54.5,
+          34.0,
+          94.0
+        ],
+        "board_compensation": [
+          "external = inner + 2t: L=53.5, P=33, A=93 (t=0.5)",
+          "panels: glue 12 | main_a 53 | side_a 33 | main_b 53.5 | side_b 32.5",
+          "asymmetric closure compensation: main_a top crease +0.5 mm, main_b bottom crease -0.5 mm (opposing tucks)",
+          "glue crease shortened 0.5 mm at the top only (bottom of main_a is a cut edge \u2014 the bottom closure lives on main_b)",
+          "closure face depth P - 2t = 32 mm at BOTH ends (= inner depth)",
+          "lock ears 2t = 1 mm; entry slits 7 x 2.5 mm at all four fold ends; folds shortened accordingly",
+          "dust flap depth (P + hook - t)/2 = 25.25 mm (cap L/2); plain chamfer on tuck-adjacent edges, taper on free edges"
+        ],
+        "closure_stack_allowance_mm": 1.0,
+        "score_compression_mm": "not modelled in 0.1 \u2014 physical-sample assumption",
+        "headspace_mm": 0.0
+      },
+      "derived": {
+        "closure_face_mm": 32.0,
+        "major_tuck_reach_mm": 50.0,
+        "dust_flap_depth_mm": 25.25,
+        "locking_ear_mm": 1.0,
+        "flat_mm": [
+          184.0,
+          193.0
+        ]
+      },
+      "folded_all_ok": true,
+      "folded_checks": [
+        {
+          "name": "opposing_attachment_preserved",
+          "ok": true,
+          "detail": "top tuck on main_a, bottom tuck on main_b"
+        },
+        {
+          "name": "folded_dust_flap_pair_clearance",
+          "ok": true,
+          "detail": "actual dust outlines reach 25.25 mm each across the 52.5 mm inner width -> 2.00 mm gap"
+        },
+        {
+          "name": "closure_face_spans_opening",
+          "ok": true,
+          "detail": "closure face 32 mm == inner depth 32 mm (both tucks)"
+        },
+        {
+          "name": "hook_clears_inside_face",
+          "ok": true,
+          "detail": "hook 18 mm + ear 1 mm folds inside the 92 mm inner height"
+        },
+        {
+          "name": "lock_ear_engages_slit",
+          "ok": true,
+          "detail": "ear projects 1 mm and the slit admits 7 mm of edge \u2014 engagement length 6 mm per corner"
+        },
+        {
+          "name": "dust_below_tuck_zone",
+          "ok": true,
+          "detail": "tuck zone 50 mm vs dust 25.25 mm"
+        },
+        {
+          "name": "glue_flap_vs_side_panel",
+          "ok": true,
+          "detail": "side span 33 mm clears the glue flap"
+        },
+        {
+          "name": "component_area_overlap",
+          "ok": true,
+          "detail": "largest pairwise flat overlap 0.00000000 mm^2"
+        },
+        {
+          "name": "cut_contour_closed_valid",
+          "ok": true,
+          "detail": "cut contour is one valid closed region"
+        },
+        {
+          "name": "bleed_contour_complete",
+          "ok": true,
+          "detail": "bleed offset outward on every side (min growth 3.000 mm)"
+        }
+      ],
+      "renders": {
+        "preview_svg": "docs/qualification/reference_opposed_tuck_carton_0_1/renders/inside_dust_pair_boundary.svg",
+        "folded_diagnostic": "docs/qualification/reference_opposed_tuck_carton_0_1/renders/inside_dust_pair_boundary_folded.png"
+      }
+    },
+    {
+      "case": "outside_dust_pair_boundary",
+      "input": {
+        "width_mm": 52.0,
+        "depth_mm": 32.0,
+        "height_mm": 92.0,
+        "board_thickness_mm": 0.5,
+        "glue_tab_mm": 12.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "REJECTED_BY_DOMAIN",
+      "violations": [
+        "DUST_PAIR_CLEARANCE: folded dust clearance = 1.5 mm is below 2 mm (needs W >= D + t + 20)"
+      ],
+      "invariant_failures": [],
+      "geometry_hash": "",
+      "content_hashes": {},
+      "dimensions": {},
+      "derived": {},
+      "folded_all_ok": null,
+      "folded_checks": []
+    },
+    {
+      "case": "outside_height_rule",
+      "input": {
+        "width_mm": 92.0,
+        "depth_mm": 32.0,
+        "height_mm": 92.0,
+        "board_thickness_mm": 0.5,
+        "glue_tab_mm": 12.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "REJECTED_BY_DOMAIN",
+      "violations": [
+        "HEIGHT_GT_WIDTH: H = 92 must exceed W = 92"
+      ],
+      "invariant_failures": [],
+      "geometry_hash": "",
+      "content_hashes": {},
+      "dimensions": {},
+      "derived": {},
+      "folded_all_ok": null,
+      "folded_checks": []
+    },
+    {
+      "case": "inside_board_max",
+      "input": {
+        "width_mm": 90.0,
+        "depth_mm": 32.0,
+        "height_mm": 92.0,
+        "board_thickness_mm": 1.0,
+        "glue_tab_mm": 12.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "SUPPORTED",
+      "violations": [],
+      "invariant_failures": [],
+      "geometry_hash": "324f84a74a85dbc510fcd9f01881b860",
+      "content_hashes": {
+        "cut_path_hash": "cddc26818cd6f71991abf3aca472deecc359fcbf64089b6400e195336967b2e6",
+        "crease_path_hash": "b76ba54388f9d5085ebe46761a776edba79a4403bdccd48f4b8cee7d5ce0d633",
+        "bleed_path_hash": "0515bbe6f4ae4191f08cf71a15d079cb163f94d0fdd2a155eb5bd3239c9beb01"
+      },
+      "dimensions": {
+        "inner_mm": [
+          90.0,
+          32.0,
+          92.0
+        ],
+        "manufacture_mm": [
+          92.0,
+          34.0,
+          94.0
+        ],
+        "outer_mm": [
+          94.0,
+          36.0,
+          96.0
+        ],
+        "board_compensation": [
+          "external = inner + 2t: L=92, P=34, A=94 (t=1)",
+          "panels: glue 12 | main_a 91 | side_a 34 | main_b 92 | side_b 33",
+          "asymmetric closure compensation: main_a top crease +1 mm, main_b bottom crease -1 mm (opposing tucks)",
+          "glue crease shortened 1 mm at the top only (bottom of main_a is a cut edge \u2014 the bottom closure lives on main_b)",
+          "closure face depth P - 2t = 32 mm at BOTH ends (= inner depth)",
+          "lock ears 2t = 2 mm; entry slits 7 x 2.5 mm at all four fold ends; folds shortened accordingly",
+          "dust flap depth (P + hook - t)/2 = 25.5 mm (cap L/2); plain chamfer on tuck-adjacent edges, taper on free edges"
+        ],
+        "closure_stack_allowance_mm": 2.0,
+        "score_compression_mm": "not modelled in 0.1 \u2014 physical-sample assumption",
+        "headspace_mm": 0.0
+      },
+      "derived": {
+        "closure_face_mm": 32.0,
+        "major_tuck_reach_mm": 50.0,
+        "dust_flap_depth_mm": 25.5,
+        "locking_ear_mm": 2.0,
+        "flat_mm": [
+          262.0,
+          194.0
+        ]
+      },
+      "folded_all_ok": true,
+      "folded_checks": [
+        {
+          "name": "opposing_attachment_preserved",
+          "ok": true,
+          "detail": "top tuck on main_a, bottom tuck on main_b"
+        },
+        {
+          "name": "folded_dust_flap_pair_clearance",
+          "ok": true,
+          "detail": "actual dust outlines reach 25.5 mm each across the 90 mm inner width -> 39.00 mm gap"
+        },
+        {
+          "name": "closure_face_spans_opening",
+          "ok": true,
+          "detail": "closure face 32 mm == inner depth 32 mm (both tucks)"
+        },
+        {
+          "name": "hook_clears_inside_face",
+          "ok": true,
+          "detail": "hook 18 mm + ear 2 mm folds inside the 92 mm inner height"
+        },
+        {
+          "name": "lock_ear_engages_slit",
+          "ok": true,
+          "detail": "ear projects 2 mm and the slit admits 7 mm of edge \u2014 engagement length 5 mm per corner"
+        },
+        {
+          "name": "dust_below_tuck_zone",
+          "ok": true,
+          "detail": "tuck zone 50 mm vs dust 25.5 mm"
+        },
+        {
+          "name": "glue_flap_vs_side_panel",
+          "ok": true,
+          "detail": "side span 34 mm clears the glue flap"
+        },
+        {
+          "name": "component_area_overlap",
+          "ok": true,
+          "detail": "largest pairwise flat overlap 0.00000000 mm^2"
+        },
+        {
+          "name": "cut_contour_closed_valid",
+          "ok": true,
+          "detail": "cut contour is one valid closed region"
+        },
+        {
+          "name": "bleed_contour_complete",
+          "ok": true,
+          "detail": "bleed offset outward on every side (min growth 3.000 mm)"
+        }
+      ],
+      "renders": {
+        "preview_svg": "docs/qualification/reference_opposed_tuck_carton_0_1/renders/inside_board_max.svg",
+        "folded_diagnostic": "docs/qualification/reference_opposed_tuck_carton_0_1/renders/inside_board_max_folded.png"
+      }
+    },
+    {
+      "case": "outside_board_max",
+      "input": {
+        "width_mm": 90.0,
+        "depth_mm": 32.0,
+        "height_mm": 92.0,
+        "board_thickness_mm": 1.01,
+        "glue_tab_mm": 12.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "REJECTED_BY_DOMAIN",
+      "violations": [
+        "BOARD_RANGE: board_thickness_mm = 1.01 mm is outside [0.3, 1] mm",
+        "EAR_ENGAGEMENT: slit crossing = 0.48 mm is below 0.5 mm (t must be <= 1)"
+      ],
+      "invariant_failures": [],
+      "geometry_hash": "",
+      "content_hashes": {},
+      "dimensions": {},
+      "derived": {},
+      "folded_all_ok": null,
+      "folded_checks": []
+    },
+    {
+      "case": "outside_glue_clearance",
+      "input": {
+        "width_mm": 34.0,
+        "depth_mm": 12.0,
+        "height_mm": 61.0,
+        "board_thickness_mm": 0.5,
+        "glue_tab_mm": 14.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "REJECTED_BY_DOMAIN",
+      "violations": [
+        "GLUE_CLEARANCE: side span D + 2t = 13 mm must be >= G + 3 = 17 mm"
+      ],
+      "invariant_failures": [],
+      "geometry_hash": "",
+      "content_hashes": {},
+      "dimensions": {},
+      "derived": {},
+      "folded_all_ok": null,
+      "folded_checks": []
+    },
+    {
+      "case": "inside_depth_floor",
+      "input": {
+        "width_mm": 90.0,
+        "depth_mm": 12.0,
+        "height_mm": 92.0,
+        "board_thickness_mm": 0.5,
+        "glue_tab_mm": 6.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "SUPPORTED",
+      "violations": [],
+      "invariant_failures": [],
+      "geometry_hash": "a18de635d3beedab8fdcaf1f08e3571a",
+      "content_hashes": {
+        "cut_path_hash": "5fd90fabf1b6b9fe4e76c29f0edf5153100f12e282da87a9953b671e3820cdd8",
+        "crease_path_hash": "f5efa874b2c72dad0ab695c4d55b56ed0d4127f98aacc82662579d8ca0cadf8c",
+        "bleed_path_hash": "a2941833117f1276fd98f408d41224622aabe9ffde8f2f879557b760cf73d54c"
+      },
+      "dimensions": {
+        "inner_mm": [
+          90.0,
+          12.0,
+          92.0
+        ],
+        "manufacture_mm": [
+          91.0,
+          13.0,
+          93.0
+        ],
+        "outer_mm": [
+          92.0,
+          14.0,
+          94.0
+        ],
+        "board_compensation": [
+          "external = inner + 2t: L=91, P=13, A=93 (t=0.5)",
+          "panels: glue 6 | main_a 90.5 | side_a 13 | main_b 91 | side_b 12.5",
+          "asymmetric closure compensation: main_a top crease +0.5 mm, main_b bottom crease -0.5 mm (opposing tucks)",
+          "glue crease shortened 0.5 mm at the top only (bottom of main_a is a cut edge \u2014 the bottom closure lives on main_b)",
+          "closure face depth P - 2t = 12 mm at BOTH ends (= inner depth)",
+          "lock ears 2t = 1 mm; entry slits 7 x 2.5 mm at all four fold ends; folds shortened accordingly",
+          "dust flap depth (P + hook - t)/2 = 15.25 mm (cap L/2); plain chamfer on tuck-adjacent edges, taper on free edges"
+        ],
+        "closure_stack_allowance_mm": 1.0,
+        "score_compression_mm": "not modelled in 0.1 \u2014 physical-sample assumption",
+        "headspace_mm": 0.0
+      },
+      "derived": {
+        "closure_face_mm": 12.0,
+        "major_tuck_reach_mm": 30.0,
+        "dust_flap_depth_mm": 15.25,
+        "locking_ear_mm": 1.0,
+        "flat_mm": [
+          213.0,
+          153.0
+        ]
+      },
+      "folded_all_ok": true,
+      "folded_checks": [
+        {
+          "name": "opposing_attachment_preserved",
+          "ok": true,
+          "detail": "top tuck on main_a, bottom tuck on main_b"
+        },
+        {
+          "name": "folded_dust_flap_pair_clearance",
+          "ok": true,
+          "detail": "actual dust outlines reach 15.25 mm each across the 90 mm inner width -> 59.50 mm gap"
+        },
+        {
+          "name": "closure_face_spans_opening",
+          "ok": true,
+          "detail": "closure face 12 mm == inner depth 12 mm (both tucks)"
+        },
+        {
+          "name": "hook_clears_inside_face",
+          "ok": true,
+          "detail": "hook 18 mm + ear 1 mm folds inside the 92 mm inner height"
+        },
+        {
+          "name": "lock_ear_engages_slit",
+          "ok": true,
+          "detail": "ear projects 1 mm and the slit admits 7 mm of edge \u2014 engagement length 6 mm per corner"
+        },
+        {
+          "name": "dust_below_tuck_zone",
+          "ok": true,
+          "detail": "tuck zone 30 mm vs dust 15.25 mm"
+        },
+        {
+          "name": "glue_flap_vs_side_panel",
+          "ok": true,
+          "detail": "side span 13 mm clears the glue flap"
+        },
+        {
+          "name": "component_area_overlap",
+          "ok": true,
+          "detail": "largest pairwise flat overlap 0.00000000 mm^2"
+        },
+        {
+          "name": "cut_contour_closed_valid",
+          "ok": true,
+          "detail": "cut contour is one valid closed region"
+        },
+        {
+          "name": "bleed_contour_complete",
+          "ok": true,
+          "detail": "bleed offset outward on every side (min growth 3.000 mm)"
+        }
+      ],
+      "renders": {
+        "preview_svg": "docs/qualification/reference_opposed_tuck_carton_0_1/renders/inside_depth_floor.svg",
+        "folded_diagnostic": "docs/qualification/reference_opposed_tuck_carton_0_1/renders/inside_depth_floor_folded.png"
+      }
+    },
+    {
+      "case": "outside_depth_floor",
+      "input": {
+        "width_mm": 90.0,
+        "depth_mm": 11.9,
+        "height_mm": 92.0,
+        "board_thickness_mm": 0.5,
+        "glue_tab_mm": 6.0,
+        "bleed_mm": 3.0,
+        "safe_margin_mm": 4.0
+      },
+      "outcome": "REJECTED_BY_DOMAIN",
+      "violations": [
+        "DEPTH_RANGE: depth_mm = 11.9 mm is outside [12, 300] mm"
+      ],
+      "invariant_failures": [],
+      "geometry_hash": "",
+      "content_hashes": {},
+      "dimensions": {},
+      "derived": {},
+      "folded_all_ok": null,
+      "folded_checks": []
+    }
+  ]
+}

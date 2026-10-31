@@ -1,0 +1,31 @@
+§AD0(a) SCORE — (3) THE DRAINED LIVE SERVER, ATTEMPT 2, scored as HISTORY
+against pred_fix2.txt (sealed c8a13ae9509fdf6e before git add). NOT
+launched: the negative control found a third defect in the fix; the content
+changes again and pred_fix3.txt is sealed on it.
+
+MISS (L8, the control's claim "0 LiveServerNotDrained, 10 of 10 green"):
+   E2_after_fix runs 2 and 3 (single session, verified by process start
+   times; run 1 excluded as contaminated by a survivor of the killed E job,
+   incident_sampler_session.md): deadlock_lines 0, flush_errors 0,
+   unique_violations 0 — the flush is now unconditional and the cascade is
+   gone — but "2 failed, 44 passed" each: LiveServerNotDrained ×2 per run
+   at the 25.0 s bound, on ConfirmationDialogBrowserTests (the tests that
+   confirm a task into a working status, whose page then opens the
+   server-sent-events stream). The drain statistics: median 0.086–0.089 s,
+   p90 0.098–0.099 s, max 25.0 s over 46 teardowns.
+   Defect 3 — an abandoned stream outlives every bound: closing the browser
+   context does not end the server thread of an open stream; the thread
+   learns its client has gone only when a WRITE fails, the stream writes
+   only every fifteen iterations, and on this host the first write after
+   the peer's close still succeeds (the RST arrives after it) — so the
+   abandoned request lives ≥ 30 s, longer than the 25 s bound and longer
+   than any bound worth waiting for. A bound alone is the wrong shape.
+   Correction: the server keeps every in-flight request's socket; the drain,
+   while requests remain, peeks each socket without consuming — a readable
+   socket that yields EOF is a client that has gone — and shuts that socket
+   down, so the handler's next write fails at once and the request ends
+   (its connection closed in close_request, its locks released); a request
+   whose client is alive is never touched. The bound stays as the fast,
+   named failure for a request that neither ends nor loses its client.
+HELD: WIT 864; the collected FILE set; apps collected; the swaps; the stash.
+Score: 7/8 (L8's control sub-claim missed; L1–L7 not exercised — no gate).

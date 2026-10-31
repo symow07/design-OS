@@ -1,0 +1,116 @@
+{
+  "reference_anchors": {
+    "apex": 295,
+    "shoulder_datum": 501,
+    "body_wall": 716,
+    "base": 1348
+  },
+  "alignment": {
+    "M3": {
+      "candidate_anchors": {
+        "apex": 30,
+        "shoulder_datum": 163,
+        "body_wall": 301,
+        "base": 708
+      },
+      "scale": 0.643875,
+      "y_translation": -159.943,
+      "anchor_residual_px": {
+        "apex": 0.0,
+        "shoulder_datum": -0.362,
+        "body_wall": 0.071,
+        "base": 0.0
+      },
+      "derived_from": [
+        "apex",
+        "base"
+      ],
+      "validation_anchor": "body_wall",
+      "optimized_on_failing_row": false
+    },
+    "M4": {
+      "candidate_anchors": {
+        "apex": 30,
+        "shoulder_datum": 163,
+        "body_wall": 301,
+        "base": 708
+      },
+      "scale": 0.643875,
+      "y_translation": -159.943,
+      "anchor_residual_px": {
+        "apex": 0.0,
+        "shoulder_datum": -0.362,
+        "body_wall": 0.071,
+        "base": 0.0
+      },
+      "derived_from": [
+        "apex",
+        "base"
+      ],
+      "validation_anchor": "body_wall",
+      "optimized_on_failing_row": false
+    },
+    "RIM1": {
+      "candidate_anchors": {
+        "apex": 30,
+        "shoulder_datum": 163,
+        "body_wall": 301,
+        "base": 708
+      },
+      "scale": 0.643875,
+      "y_translation": -159.943,
+      "anchor_residual_px": {
+        "apex": 0.0,
+        "shoulder_datum": -0.362,
+        "body_wall": 0.071,
+        "base": 0.0
+      },
+      "derived_from": [
+        "apex",
+        "base"
+      ],
+      "validation_anchor": "body_wall",
+      "optimized_on_failing_row": false
+    }
+  },
+  "results": {
+    "M3": {
+      "local_normal": {
+        "mean": 0.00209,
+        "p95": 0.01,
+        "max": 0.01212
+      },
+      "same_row_diagnostic": {
+        "mean": 0.00392,
+        "max": 0.03161
+      }
+    },
+    "M4": {
+      "local_normal": {
+        "mean": 0.00435,
+        "p95": 0.02711,
+        "max": 0.02711
+      },
+      "same_row_diagnostic": {
+        "mean": 0.01549,
+        "max": 0.12989
+      }
+    },
+    "RIM1": {
+      "local_normal": {
+        "mean": 0.00513,
+        "p95": 0.04271,
+        "max": 0.04271
+      },
+      "same_row_diagnostic": {
+        "mean": 0.01575,
+        "max": 0.12989
+      }
+    }
+  },
+  "gates": {
+    "mean": 0.008,
+    "p95": 0.025,
+    "max": 0.045
+  }
+}

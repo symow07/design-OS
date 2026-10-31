@@ -1,0 +1,11 @@
+{% extends 'base.html' %}{% load static %}
+{% block title %}{{ round.product_brief.name }} · Retired round{% endblock %}
+{% block head %}<link rel="stylesheet" href="{% static 'css/product-round.css' %}">{% endblock %}
+{% block page_class %}page wide round-page{% endblock %}
+{% block content %}
+<header class="page-hd"><div><p class="over">BBROSE · Retired round</p><h1 class="h1">{{ round.product_brief.name }}</h1><p><a href="{% url 'dashboard:round_list' %}">Your rounds</a></p>
+<p class="lead">{{ retired }}</p>
+<div class="round-state"><strong>{{ round.display_state }}</strong><span>Spent ${{ summary.spend.actual_usd|floatformat:2 }}</span></div>
+</div></header>
+{% if error %}<div class="round-error" role="alert">{{ error }}</div>{% endif %}
+{% endblock %}

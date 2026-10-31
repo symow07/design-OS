@@ -1,0 +1,20 @@
+{
+ "record_type": "colour_material_calibration/1.0",
+ "status": "PROPOSED \u2014 defined for future presentation renders; PBR materials NOT built in this slice per owner instruction",
+ "colour_management": {
+  "working_space": "linear Rec.709/sRGB primaries (Blender scene linear)",
+  "output_colour_space": "sRGB (IEC 61966-2-1)",
+  "view_transform": "Standard (pinned; Filmic/AgX explicitly NOT used without owner approval \u2014 tone mapping changes perceived colour)",
+  "exposure": "fixed 0.0 EV, controlled per-scene, never auto",
+  "white_balance": "grey-card capture in the reference pack; renders use D65 whites"
+ },
+ "material_parameter_provenance": {
+  "rule": "every material parameter cites its source: measured (from reference pack), owner-declared, or DEFAULT_UNVERIFIED",
+  "glass_transmission": "from material_reference; default UNVERIFIED IOR 1.5, transmission 0.95",
+  "frosting_roughness": "from finish_reference; default UNVERIFIED 0.35 band",
+  "metallic_values": "metal collar metallic 1.0, roughness from finish reference",
+  "rose_gold_colour_source": "MUST come from a calibrated colour reference or approved brand swatch \u2014 never sampled from an uncalibrated photo",
+  "rubber_response": "bulb: diffuse 0.9 roughness band, UNVERIFIED until reference"
+ },
+ "hard_rule": "no exact-colour claim from an uncalibrated phone photograph"
+}

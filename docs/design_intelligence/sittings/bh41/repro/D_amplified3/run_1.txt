@@ -1,0 +1,3542 @@
+..........FFFF..FF..FF.......FFFF.FF..FFFFFFFF                           [100%]
+BH41_AMPLIFIER fired=560 K=16
+
+=================================== FAILURES ===================================
+_ ReviewBoardReferenceBrowserTests.test_raster_previews_load_through_the_authorized_endpoint _
+
+self = <django.db.backends.utils.CursorWrapper object at 0x1141dc490>
+sql = 'TRUNCATE "core_brand", "auth_user_user_permissions", "dielines_dielinejob", "pipeline_palettematerialartifact", "inte...on", "auth_user_groups", "auth_group_permissions", "intelligence_semanticdocumentembedding", "pipeline_taskreference";'
+params = None
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x1141dc490>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+>               return self.cursor.execute(sql)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+E               psycopg2.errors.DeadlockDetected: deadlock detected
+E               DETAIL:  Process 13024 waits for AccessExclusiveLock on relation 55385451 of database 55384414; blocked by process 13040.
+E               Process 13040 waits for AccessShareLock on relation 55384744 of database 55384414; blocked by process 13024.
+E               HINT:  See server log for query details.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:87: DeadlockDetected
+
+The above exception was the direct cause of the following exception:
+
+self = <django.core.management.commands.flush.Command object at 0x114060a90>
+options = {'allow_cascade': False, 'database': 'default', 'force_color': False, 'inhibit_post_migrate': False, ...}
+database = 'default'
+connection = <DatabaseWrapper vendor='postgresql' alias='default'>
+verbosity = 0, interactive = False, reset_sequences = False
+allow_cascade = False, inhibit_post_migrate = False
+
+        def handle(self, **options):
+            database = options["database"]
+            connection = connections[database]
+            verbosity = options["verbosity"]
+            interactive = options["interactive"]
+            # The following are stealth options used by Django's internals.
+            reset_sequences = options.get("reset_sequences", True)
+            allow_cascade = options.get("allow_cascade", False)
+            inhibit_post_migrate = options.get("inhibit_post_migrate", False)
+    
+            self.style = no_style()
+    
+            # Import the 'management' module within each installed app, to register
+            # dispatcher events.
+            for app_config in apps.get_app_configs():
+                try:
+                    import_module(".management", app_config.name)
+                except ImportError:
+                    pass
+    
+            sql_list = sql_flush(
+                self.style,
+                connection,
+                reset_sequences=reset_sequences,
+                allow_cascade=allow_cascade,
+            )
+    
+            if interactive:
+                confirm = input(
+                    """You have requested a flush of the database.
+    This will IRREVERSIBLY DESTROY all data currently in the "%s" database,
+    and return each table to an empty state.
+    Are you sure you want to do this?
+    
+        Type 'yes' to continue, or 'no' to cancel: """
+                    % connection.settings_dict["NAME"]
+                )
+            else:
+                confirm = "yes"
+    
+            if confirm == "yes":
+                try:
+>                   connection.ops.execute_sql_flush(sql_list)
+
+venv/lib/python3.11/site-packages/django/core/management/commands/flush.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/db/backends/base/operations.py:451: in execute_sql_flush
+    cursor.execute(sql)
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:67: in execute
+    return self._execute_with_wrappers(
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:80: in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:84: in _execute
+    with self.db.wrap_database_errors:
+venv/lib/python3.11/site-packages/django/db/utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.db.backends.utils.CursorWrapper object at 0x1141dc490>
+sql = 'TRUNCATE "core_brand", "auth_user_user_permissions", "dielines_dielinejob", "pipeline_palettematerialartifact", "inte...on", "auth_user_groups", "auth_group_permissions", "intelligence_semanticdocumentembedding", "pipeline_taskreference";'
+params = None
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x1141dc490>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+>               return self.cursor.execute(sql)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+E               django.db.utils.OperationalError: deadlock detected
+E               DETAIL:  Process 13024 waits for AccessExclusiveLock on relation 55385451 of database 55384414; blocked by process 13040.
+E               Process 13040 waits for AccessShareLock on relation 55384744 of database 55384414; blocked by process 13024.
+E               HINT:  See server log for query details.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:87: OperationalError
+
+The above exception was the direct cause of the following exception:
+
+self = <apps.pipeline.tests.test_browser_review_board_references.ReviewBoardReferenceBrowserTests testMethod=test_raster_previews_load_through_the_authorized_endpoint>
+result = <TestCaseFunction test_raster_previews_load_through_the_authorized_endpoint>
+debug = False
+
+    def _setup_and_call(self, result, debug=False):
+        """
+        Perform the following in order: pre-setup, run test, post-teardown,
+        skipping pre/post hooks if test is set to be skipped.
+    
+        If debug=True, reraise any errors in setup and use super().debug()
+        instead of __call__() to run the test.
+        """
+        testMethod = getattr(self, self._testMethodName)
+        skipped = getattr(self.__class__, "__unittest_skip__", False) or getattr(
+            testMethod, "__unittest_skip__", False
+        )
+    
+        # Convert async test methods.
+        if iscoroutinefunction(testMethod):
+            setattr(self, self._testMethodName, async_to_sync(testMethod))
+    
+        if not skipped:
+            try:
+                self._pre_setup()
+            except Exception:
+                if debug:
+                    raise
+                result.addError(self, sys.exc_info())
+                return
+        if debug:
+            super().debug()
+        else:
+            super().__call__(result)
+        if not skipped:
+            try:
+>               self._post_teardown()
+
+venv/lib/python3.11/site-packages/django/test/testcases.py:419: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/test/testcases.py:1279: in _post_teardown
+    self._fixture_teardown()
+venv/lib/python3.11/site-packages/django/test/testcases.py:1313: in _fixture_teardown
+    call_command(
+venv/lib/python3.11/site-packages/django/core/management/__init__.py:194: in call_command
+    return command.execute(*args, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/core/management/base.py:458: in execute
+    output = self.handle(*args, **options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.core.management.commands.flush.Command object at 0x114060a90>
+options = {'allow_cascade': False, 'database': 'default', 'force_color': False, 'inhibit_post_migrate': False, ...}
+database = 'default'
+connection = <DatabaseWrapper vendor='postgresql' alias='default'>
+verbosity = 0, interactive = False, reset_sequences = False
+allow_cascade = False, inhibit_post_migrate = False
+
+        def handle(self, **options):
+            database = options["database"]
+            connection = connections[database]
+            verbosity = options["verbosity"]
+            interactive = options["interactive"]
+            # The following are stealth options used by Django's internals.
+            reset_sequences = options.get("reset_sequences", True)
+            allow_cascade = options.get("allow_cascade", False)
+            inhibit_post_migrate = options.get("inhibit_post_migrate", False)
+    
+            self.style = no_style()
+    
+            # Import the 'management' module within each installed app, to register
+            # dispatcher events.
+            for app_config in apps.get_app_configs():
+                try:
+                    import_module(".management", app_config.name)
+                except ImportError:
+                    pass
+    
+            sql_list = sql_flush(
+                self.style,
+                connection,
+                reset_sequences=reset_sequences,
+                allow_cascade=allow_cascade,
+            )
+    
+            if interactive:
+                confirm = input(
+                    """You have requested a flush of the database.
+    This will IRREVERSIBLY DESTROY all data currently in the "%s" database,
+    and return each table to an empty state.
+    Are you sure you want to do this?
+    
+        Type 'yes' to continue, or 'no' to cancel: """
+                    % connection.settings_dict["NAME"]
+                )
+            else:
+                confirm = "yes"
+    
+            if confirm == "yes":
+                try:
+                    connection.ops.execute_sql_flush(sql_list)
+                except Exception as exc:
+>                   raise CommandError(
+                        "Database %s couldn't be flushed. Possible reasons:\n"
+                        "  * The database isn't running or isn't configured correctly.\n"
+                        "  * At least one of the expected database tables doesn't exist.\n"
+                        "  * The SQL was invalid.\n"
+                        "Hint: Look at the output of 'django-admin sqlflush'. "
+                        "That's the SQL this command wasn't able to run."
+                        % (connection.settings_dict["NAME"],)
+                    ) from exc
+E                   django.core.management.base.CommandError: Database test_bbrose_db couldn't be flushed. Possible reasons:
+E                     * The database isn't running or isn't configured correctly.
+E                     * At least one of the expected database tables doesn't exist.
+E                     * The SQL was invalid.
+E                   Hint: Look at the output of 'django-admin sqlflush'. That's the SQL this command wasn't able to run.
+
+venv/lib/python3.11/site-packages/django/core/management/commands/flush.py:75: CommandError
+_ ReviewBoardReferenceBrowserTests.test_references_stay_separate_from_concepts _
+
+self = <django.db.backends.utils.CursorWrapper object at 0x11461da10>
+sql = 'INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING "auth_user"."id"'
+params = ('pbkdf2_sha256$600000$V9d7kZ1OxHUKqfdRVouvJO$sWyyd0bhO7PDK7sjp/Khcv8C4khAAqOdrpsBi8nqivM=', None, False, 'uib4b', '', '', ...)
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x11461da10>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+                return self.cursor.execute(sql)
+            else:
+>               return self.cursor.execute(sql, params)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "auth_user_username_key"
+E               DETAIL:  Key (username)=(uib4b) already exists.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:89: UniqueViolation
+
+The above exception was the direct cause of the following exception:
+apps/pipeline/tests/test_browser_staged_reference_ui.py:68: in setUp
+    self.user = User.objects.create_user("uib4b", "u@t.com", "pw",
+venv/lib/python3.11/site-packages/django/contrib/auth/models.py:161: in create_user
+    return self._create_user(username, email, password, **extra_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/contrib/auth/models.py:155: in _create_user
+    user.save(using=self._db)
+venv/lib/python3.11/site-packages/django/contrib/auth/base_user.py:76: in save
+    super().save(*args, **kwargs)
+venv/lib/python3.11/site-packages/django/db/models/base.py:814: in save
+    self.save_base(
+venv/lib/python3.11/site-packages/django/db/models/base.py:877: in save_base
+    updated = self._save_table(
+venv/lib/python3.11/site-packages/django/db/models/base.py:1020: in _save_table
+    results = self._do_insert(
+venv/lib/python3.11/site-packages/django/db/models/base.py:1061: in _do_insert
+    return manager._insert(
+venv/lib/python3.11/site-packages/django/db/models/manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/models/query.py:1805: in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py:1820: in execute_sql
+    cursor.execute(sql, params)
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:67: in execute
+    return self._execute_with_wrappers(
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:80: in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:84: in _execute
+    with self.db.wrap_database_errors:
+venv/lib/python3.11/site-packages/django/db/utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.db.backends.utils.CursorWrapper object at 0x11461da10>
+sql = 'INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING "auth_user"."id"'
+params = ('pbkdf2_sha256$600000$V9d7kZ1OxHUKqfdRVouvJO$sWyyd0bhO7PDK7sjp/Khcv8C4khAAqOdrpsBi8nqivM=', None, False, 'uib4b', '', '', ...)
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x11461da10>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+                return self.cursor.execute(sql)
+            else:
+>               return self.cursor.execute(sql, params)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               django.db.utils.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+E               DETAIL:  Key (username)=(uib4b) already exists.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:89: IntegrityError
+_ ProfileEditorBrowserTests.test_confirmed_task_shows_confirmed_state_not_the_editor _
+
+self = <django.db.backends.utils.CursorWrapper object at 0x113f01a10>
+sql = 'TRUNCATE "core_brand", "auth_user_user_permissions", "dielines_dielinejob", "pipeline_palettematerialartifact", "inte...on", "auth_user_groups", "auth_group_permissions", "intelligence_semanticdocumentembedding", "pipeline_taskreference";'
+params = None
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x113f01a10>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+>               return self.cursor.execute(sql)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+E               psycopg2.errors.DeadlockDetected: deadlock detected
+E               DETAIL:  Process 13067 waits for AccessExclusiveLock on relation 55385451 of database 55384414; blocked by process 13086.
+E               Process 13086 waits for AccessShareLock on relation 55384744 of database 55384414; blocked by process 13067.
+E               HINT:  See server log for query details.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:87: DeadlockDetected
+
+The above exception was the direct cause of the following exception:
+
+self = <django.core.management.commands.flush.Command object at 0x11401d590>
+options = {'allow_cascade': False, 'database': 'default', 'force_color': False, 'inhibit_post_migrate': False, ...}
+database = 'default'
+connection = <DatabaseWrapper vendor='postgresql' alias='default'>
+verbosity = 0, interactive = False, reset_sequences = False
+allow_cascade = False, inhibit_post_migrate = False
+
+        def handle(self, **options):
+            database = options["database"]
+            connection = connections[database]
+            verbosity = options["verbosity"]
+            interactive = options["interactive"]
+            # The following are stealth options used by Django's internals.
+            reset_sequences = options.get("reset_sequences", True)
+            allow_cascade = options.get("allow_cascade", False)
+            inhibit_post_migrate = options.get("inhibit_post_migrate", False)
+    
+            self.style = no_style()
+    
+            # Import the 'management' module within each installed app, to register
+            # dispatcher events.
+            for app_config in apps.get_app_configs():
+                try:
+                    import_module(".management", app_config.name)
+                except ImportError:
+                    pass
+    
+            sql_list = sql_flush(
+                self.style,
+                connection,
+                reset_sequences=reset_sequences,
+                allow_cascade=allow_cascade,
+            )
+    
+            if interactive:
+                confirm = input(
+                    """You have requested a flush of the database.
+    This will IRREVERSIBLY DESTROY all data currently in the "%s" database,
+    and return each table to an empty state.
+    Are you sure you want to do this?
+    
+        Type 'yes' to continue, or 'no' to cancel: """
+                    % connection.settings_dict["NAME"]
+                )
+            else:
+                confirm = "yes"
+    
+            if confirm == "yes":
+                try:
+>                   connection.ops.execute_sql_flush(sql_list)
+
+venv/lib/python3.11/site-packages/django/core/management/commands/flush.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/db/backends/base/operations.py:451: in execute_sql_flush
+    cursor.execute(sql)
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:67: in execute
+    return self._execute_with_wrappers(
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:80: in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:84: in _execute
+    with self.db.wrap_database_errors:
+venv/lib/python3.11/site-packages/django/db/utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.db.backends.utils.CursorWrapper object at 0x113f01a10>
+sql = 'TRUNCATE "core_brand", "auth_user_user_permissions", "dielines_dielinejob", "pipeline_palettematerialartifact", "inte...on", "auth_user_groups", "auth_group_permissions", "intelligence_semanticdocumentembedding", "pipeline_taskreference";'
+params = None
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x113f01a10>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+>               return self.cursor.execute(sql)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+E               django.db.utils.OperationalError: deadlock detected
+E               DETAIL:  Process 13067 waits for AccessExclusiveLock on relation 55385451 of database 55384414; blocked by process 13086.
+E               Process 13086 waits for AccessShareLock on relation 55384744 of database 55384414; blocked by process 13067.
+E               HINT:  See server log for query details.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:87: OperationalError
+
+The above exception was the direct cause of the following exception:
+
+self = <apps.pipeline.tests.test_browser_profile_editor.ProfileEditorBrowserTests testMethod=test_confirmed_task_shows_confirmed_state_not_the_editor>
+result = <TestCaseFunction test_confirmed_task_shows_confirmed_state_not_the_editor>
+debug = False
+
+    def _setup_and_call(self, result, debug=False):
+        """
+        Perform the following in order: pre-setup, run test, post-teardown,
+        skipping pre/post hooks if test is set to be skipped.
+    
+        If debug=True, reraise any errors in setup and use super().debug()
+        instead of __call__() to run the test.
+        """
+        testMethod = getattr(self, self._testMethodName)
+        skipped = getattr(self.__class__, "__unittest_skip__", False) or getattr(
+            testMethod, "__unittest_skip__", False
+        )
+    
+        # Convert async test methods.
+        if iscoroutinefunction(testMethod):
+            setattr(self, self._testMethodName, async_to_sync(testMethod))
+    
+        if not skipped:
+            try:
+                self._pre_setup()
+            except Exception:
+                if debug:
+                    raise
+                result.addError(self, sys.exc_info())
+                return
+        if debug:
+            super().debug()
+        else:
+            super().__call__(result)
+        if not skipped:
+            try:
+>               self._post_teardown()
+
+venv/lib/python3.11/site-packages/django/test/testcases.py:419: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/test/testcases.py:1279: in _post_teardown
+    self._fixture_teardown()
+venv/lib/python3.11/site-packages/django/test/testcases.py:1313: in _fixture_teardown
+    call_command(
+venv/lib/python3.11/site-packages/django/core/management/__init__.py:194: in call_command
+    return command.execute(*args, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/core/management/base.py:458: in execute
+    output = self.handle(*args, **options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.core.management.commands.flush.Command object at 0x11401d590>
+options = {'allow_cascade': False, 'database': 'default', 'force_color': False, 'inhibit_post_migrate': False, ...}
+database = 'default'
+connection = <DatabaseWrapper vendor='postgresql' alias='default'>
+verbosity = 0, interactive = False, reset_sequences = False
+allow_cascade = False, inhibit_post_migrate = False
+
+        def handle(self, **options):
+            database = options["database"]
+            connection = connections[database]
+            verbosity = options["verbosity"]
+            interactive = options["interactive"]
+            # The following are stealth options used by Django's internals.
+            reset_sequences = options.get("reset_sequences", True)
+            allow_cascade = options.get("allow_cascade", False)
+            inhibit_post_migrate = options.get("inhibit_post_migrate", False)
+    
+            self.style = no_style()
+    
+            # Import the 'management' module within each installed app, to register
+            # dispatcher events.
+            for app_config in apps.get_app_configs():
+                try:
+                    import_module(".management", app_config.name)
+                except ImportError:
+                    pass
+    
+            sql_list = sql_flush(
+                self.style,
+                connection,
+                reset_sequences=reset_sequences,
+                allow_cascade=allow_cascade,
+            )
+    
+            if interactive:
+                confirm = input(
+                    """You have requested a flush of the database.
+    This will IRREVERSIBLY DESTROY all data currently in the "%s" database,
+    and return each table to an empty state.
+    Are you sure you want to do this?
+    
+        Type 'yes' to continue, or 'no' to cancel: """
+                    % connection.settings_dict["NAME"]
+                )
+            else:
+                confirm = "yes"
+    
+            if confirm == "yes":
+                try:
+                    connection.ops.execute_sql_flush(sql_list)
+                except Exception as exc:
+>                   raise CommandError(
+                        "Database %s couldn't be flushed. Possible reasons:\n"
+                        "  * The database isn't running or isn't configured correctly.\n"
+                        "  * At least one of the expected database tables doesn't exist.\n"
+                        "  * The SQL was invalid.\n"
+                        "Hint: Look at the output of 'django-admin sqlflush'. "
+                        "That's the SQL this command wasn't able to run."
+                        % (connection.settings_dict["NAME"],)
+                    ) from exc
+E                   django.core.management.base.CommandError: Database test_bbrose_db couldn't be flushed. Possible reasons:
+E                     * The database isn't running or isn't configured correctly.
+E                     * At least one of the expected database tables doesn't exist.
+E                     * The SQL was invalid.
+E                   Hint: Look at the output of 'django-admin sqlflush'. That's the SQL this command wasn't able to run.
+
+venv/lib/python3.11/site-packages/django/core/management/commands/flush.py:75: CommandError
+--------------------------- Captured stderr teardown ---------------------------
+[2026-09-08 06:49:36,130] ERROR django.request rid=dc493eb47d35 Internal Server Error: /api/tasks/
+Traceback (most recent call last):
+  File "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.DeadlockDetected: deadlock detected
+LINE 1: ...oined" FROM "pipeline_designtask" LEFT OUTER JOIN "core_prod...
+                                                             ^
+DETAIL:  Process 13084 waits for AccessShareLock on relation 55384744 of database 55384414; blocked by process 13067.
+Process 13067 waits for AccessExclusiveLock on relation 55385451 of database 55384414; blocked by process 13084.
+HINT:  See server log for query details.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/rest_framework/generics.py", line 203, in get
+    return self.list(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/rest_framework/mixins.py", line 40, in list
+    page = self.paginate_queryset(queryset)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/rest_framework/generics.py", line 175, in paginate_queryset
+    return self.paginator.paginate_queryset(queryset, self.request, view=self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/rest_framework/pagination.py", line 213, in paginate_queryset
+    return list(self.page)
+           ^^^^^^^^^^^^^^^
+  File "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/django/core/paginator.py", line 174, in __len__
+    return len(self.object_list)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: deadlock detected
+LINE 1: ...oined" FROM "pipeline_designtask" LEFT OUTER JOIN "core_prod...
+                                                             ^
+DETAIL:  Process 13084 waits for AccessShareLock on relation 55384744 of database 55384414; blocked by process 13067.
+Process 13067 waits for AccessExclusiveLock on relation 55385451 of database 55384414; blocked by process 13084.
+HINT:  See server log for query details.
+
+________ ProfileEditorBrowserTests.test_dirty_region_is_a_status_region ________
+
+self = <django.db.backends.utils.CursorWrapper object at 0x114c06090>
+sql = 'INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING "auth_user"."id"'
+params = ('pbkdf2_sha256$600000$zWGs7LL0RDVigHAlOr32ML$CZPjMrmFwYegHr3h2kqWCbUVAHWzTZW3JaAfpKY+l3s=', None, False, 'uib4b', '', '', ...)
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x114c06090>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+                return self.cursor.execute(sql)
+            else:
+>               return self.cursor.execute(sql, params)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "auth_user_username_key"
+E               DETAIL:  Key (username)=(uib4b) already exists.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:89: UniqueViolation
+
+The above exception was the direct cause of the following exception:
+
+self = <apps.pipeline.tests.test_browser_profile_editor.ProfileEditorBrowserTests testMethod=test_dirty_region_is_a_status_region>
+
+    def setUp(self):
+>       super().setUp()
+
+apps/pipeline/tests/test_browser_profile_editor.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+apps/pipeline/tests/test_browser_staged_reference_ui.py:68: in setUp
+    self.user = User.objects.create_user("uib4b", "u@t.com", "pw",
+venv/lib/python3.11/site-packages/django/contrib/auth/models.py:161: in create_user
+    return self._create_user(username, email, password, **extra_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/contrib/auth/models.py:155: in _create_user
+    user.save(using=self._db)
+venv/lib/python3.11/site-packages/django/contrib/auth/base_user.py:76: in save
+    super().save(*args, **kwargs)
+venv/lib/python3.11/site-packages/django/db/models/base.py:814: in save
+    self.save_base(
+venv/lib/python3.11/site-packages/django/db/models/base.py:877: in save_base
+    updated = self._save_table(
+venv/lib/python3.11/site-packages/django/db/models/base.py:1020: in _save_table
+    results = self._do_insert(
+venv/lib/python3.11/site-packages/django/db/models/base.py:1061: in _do_insert
+    return manager._insert(
+venv/lib/python3.11/site-packages/django/db/models/manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/models/query.py:1805: in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py:1820: in execute_sql
+    cursor.execute(sql, params)
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:67: in execute
+    return self._execute_with_wrappers(
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:80: in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:84: in _execute
+    with self.db.wrap_database_errors:
+venv/lib/python3.11/site-packages/django/db/utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.db.backends.utils.CursorWrapper object at 0x114c06090>
+sql = 'INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING "auth_user"."id"'
+params = ('pbkdf2_sha256$600000$zWGs7LL0RDVigHAlOr32ML$CZPjMrmFwYegHr3h2kqWCbUVAHWzTZW3JaAfpKY+l3s=', None, False, 'uib4b', '', '', ...)
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x114c06090>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+                return self.cursor.execute(sql)
+            else:
+>               return self.cursor.execute(sql, params)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               django.db.utils.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+E               DETAIL:  Key (username)=(uib4b) already exists.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:89: IntegrityError
+________ ProfileEditorBrowserTests.test_four_config_driven_radio_cards _________
+
+self = <django.db.backends.utils.CursorWrapper object at 0x1144f8590>
+sql = 'TRUNCATE "core_brand", "auth_user_user_permissions", "dielines_dielinejob", "pipeline_palettematerialartifact", "inte...on", "auth_user_groups", "auth_group_permissions", "intelligence_semanticdocumentembedding", "pipeline_taskreference";'
+params = None
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x1144f8590>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+>               return self.cursor.execute(sql)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+E               psycopg2.errors.DeadlockDetected: deadlock detected
+E               DETAIL:  Process 13165 waits for AccessExclusiveLock on relation 55385451 of database 55384414; blocked by process 13179.
+E               Process 13179 waits for AccessShareLock on relation 55384744 of database 55384414; blocked by process 13165.
+E               HINT:  See server log for query details.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:87: DeadlockDetected
+
+The above exception was the direct cause of the following exception:
+
+self = <django.core.management.commands.flush.Command object at 0x11411d590>
+options = {'allow_cascade': False, 'database': 'default', 'force_color': False, 'inhibit_post_migrate': False, ...}
+database = 'default'
+connection = <DatabaseWrapper vendor='postgresql' alias='default'>
+verbosity = 0, interactive = False, reset_sequences = False
+allow_cascade = False, inhibit_post_migrate = False
+
+        def handle(self, **options):
+            database = options["database"]
+            connection = connections[database]
+            verbosity = options["verbosity"]
+            interactive = options["interactive"]
+            # The following are stealth options used by Django's internals.
+            reset_sequences = options.get("reset_sequences", True)
+            allow_cascade = options.get("allow_cascade", False)
+            inhibit_post_migrate = options.get("inhibit_post_migrate", False)
+    
+            self.style = no_style()
+    
+            # Import the 'management' module within each installed app, to register
+            # dispatcher events.
+            for app_config in apps.get_app_configs():
+                try:
+                    import_module(".management", app_config.name)
+                except ImportError:
+                    pass
+    
+            sql_list = sql_flush(
+                self.style,
+                connection,
+                reset_sequences=reset_sequences,
+                allow_cascade=allow_cascade,
+            )
+    
+            if interactive:
+                confirm = input(
+                    """You have requested a flush of the database.
+    This will IRREVERSIBLY DESTROY all data currently in the "%s" database,
+    and return each table to an empty state.
+    Are you sure you want to do this?
+    
+        Type 'yes' to continue, or 'no' to cancel: """
+                    % connection.settings_dict["NAME"]
+                )
+            else:
+                confirm = "yes"
+    
+            if confirm == "yes":
+                try:
+>                   connection.ops.execute_sql_flush(sql_list)
+
+venv/lib/python3.11/site-packages/django/core/management/commands/flush.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/db/backends/base/operations.py:451: in execute_sql_flush
+    cursor.execute(sql)
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:67: in execute
+    return self._execute_with_wrappers(
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:80: in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:84: in _execute
+    with self.db.wrap_database_errors:
+venv/lib/python3.11/site-packages/django/db/utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.db.backends.utils.CursorWrapper object at 0x1144f8590>
+sql = 'TRUNCATE "core_brand", "auth_user_user_permissions", "dielines_dielinejob", "pipeline_palettematerialartifact", "inte...on", "auth_user_groups", "auth_group_permissions", "intelligence_semanticdocumentembedding", "pipeline_taskreference";'
+params = None
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x1144f8590>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+>               return self.cursor.execute(sql)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+E               django.db.utils.OperationalError: deadlock detected
+E               DETAIL:  Process 13165 waits for AccessExclusiveLock on relation 55385451 of database 55384414; blocked by process 13179.
+E               Process 13179 waits for AccessShareLock on relation 55384744 of database 55384414; blocked by process 13165.
+E               HINT:  See server log for query details.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:87: OperationalError
+
+The above exception was the direct cause of the following exception:
+
+self = <apps.pipeline.tests.test_browser_profile_editor.ProfileEditorBrowserTests testMethod=test_four_config_driven_radio_cards>
+result = <TestCaseFunction test_four_config_driven_radio_cards>, debug = False
+
+    def _setup_and_call(self, result, debug=False):
+        """
+        Perform the following in order: pre-setup, run test, post-teardown,
+        skipping pre/post hooks if test is set to be skipped.
+    
+        If debug=True, reraise any errors in setup and use super().debug()
+        instead of __call__() to run the test.
+        """
+        testMethod = getattr(self, self._testMethodName)
+        skipped = getattr(self.__class__, "__unittest_skip__", False) or getattr(
+            testMethod, "__unittest_skip__", False
+        )
+    
+        # Convert async test methods.
+        if iscoroutinefunction(testMethod):
+            setattr(self, self._testMethodName, async_to_sync(testMethod))
+    
+        if not skipped:
+            try:
+                self._pre_setup()
+            except Exception:
+                if debug:
+                    raise
+                result.addError(self, sys.exc_info())
+                return
+        if debug:
+            super().debug()
+        else:
+            super().__call__(result)
+        if not skipped:
+            try:
+>               self._post_teardown()
+
+venv/lib/python3.11/site-packages/django/test/testcases.py:419: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/test/testcases.py:1279: in _post_teardown
+    self._fixture_teardown()
+venv/lib/python3.11/site-packages/django/test/testcases.py:1313: in _fixture_teardown
+    call_command(
+venv/lib/python3.11/site-packages/django/core/management/__init__.py:194: in call_command
+    return command.execute(*args, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/core/management/base.py:458: in execute
+    output = self.handle(*args, **options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.core.management.commands.flush.Command object at 0x11411d590>
+options = {'allow_cascade': False, 'database': 'default', 'force_color': False, 'inhibit_post_migrate': False, ...}
+database = 'default'
+connection = <DatabaseWrapper vendor='postgresql' alias='default'>
+verbosity = 0, interactive = False, reset_sequences = False
+allow_cascade = False, inhibit_post_migrate = False
+
+        def handle(self, **options):
+            database = options["database"]
+            connection = connections[database]
+            verbosity = options["verbosity"]
+            interactive = options["interactive"]
+            # The following are stealth options used by Django's internals.
+            reset_sequences = options.get("reset_sequences", True)
+            allow_cascade = options.get("allow_cascade", False)
+            inhibit_post_migrate = options.get("inhibit_post_migrate", False)
+    
+            self.style = no_style()
+    
+            # Import the 'management' module within each installed app, to register
+            # dispatcher events.
+            for app_config in apps.get_app_configs():
+                try:
+                    import_module(".management", app_config.name)
+                except ImportError:
+                    pass
+    
+            sql_list = sql_flush(
+                self.style,
+                connection,
+                reset_sequences=reset_sequences,
+                allow_cascade=allow_cascade,
+            )
+    
+            if interactive:
+                confirm = input(
+                    """You have requested a flush of the database.
+    This will IRREVERSIBLY DESTROY all data currently in the "%s" database,
+    and return each table to an empty state.
+    Are you sure you want to do this?
+    
+        Type 'yes' to continue, or 'no' to cancel: """
+                    % connection.settings_dict["NAME"]
+                )
+            else:
+                confirm = "yes"
+    
+            if confirm == "yes":
+                try:
+                    connection.ops.execute_sql_flush(sql_list)
+                except Exception as exc:
+>                   raise CommandError(
+                        "Database %s couldn't be flushed. Possible reasons:\n"
+                        "  * The database isn't running or isn't configured correctly.\n"
+                        "  * At least one of the expected database tables doesn't exist.\n"
+                        "  * The SQL was invalid.\n"
+                        "Hint: Look at the output of 'django-admin sqlflush'. "
+                        "That's the SQL this command wasn't able to run."
+                        % (connection.settings_dict["NAME"],)
+                    ) from exc
+E                   django.core.management.base.CommandError: Database test_bbrose_db couldn't be flushed. Possible reasons:
+E                     * The database isn't running or isn't configured correctly.
+E                     * At least one of the expected database tables doesn't exist.
+E                     * The SQL was invalid.
+E                   Hint: Look at the output of 'django-admin sqlflush'. That's the SQL this command wasn't able to run.
+
+venv/lib/python3.11/site-packages/django/core/management/commands/flush.py:75: CommandError
+___________ ProfileEditorBrowserTests.test_group_labels_are_semantic ___________
+
+self = <django.db.backends.utils.CursorWrapper object at 0x113e63310>
+sql = 'INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING "auth_user"."id"'
+params = ('pbkdf2_sha256$600000$6KtLvxHE5UCM6nPzoxBfhG$O+yJq82xpS1qMb4JQFWl5LqivYgngLvM6BBPk9QM8zc=', None, False, 'uib4b', '', '', ...)
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x113e63310>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+                return self.cursor.execute(sql)
+            else:
+>               return self.cursor.execute(sql, params)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "auth_user_username_key"
+E               DETAIL:  Key (username)=(uib4b) already exists.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:89: UniqueViolation
+
+The above exception was the direct cause of the following exception:
+
+self = <apps.pipeline.tests.test_browser_profile_editor.ProfileEditorBrowserTests testMethod=test_group_labels_are_semantic>
+
+    def setUp(self):
+>       super().setUp()
+
+apps/pipeline/tests/test_browser_profile_editor.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+apps/pipeline/tests/test_browser_staged_reference_ui.py:68: in setUp
+    self.user = User.objects.create_user("uib4b", "u@t.com", "pw",
+venv/lib/python3.11/site-packages/django/contrib/auth/models.py:161: in create_user
+    return self._create_user(username, email, password, **extra_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/contrib/auth/models.py:155: in _create_user
+    user.save(using=self._db)
+venv/lib/python3.11/site-packages/django/contrib/auth/base_user.py:76: in save
+    super().save(*args, **kwargs)
+venv/lib/python3.11/site-packages/django/db/models/base.py:814: in save
+    self.save_base(
+venv/lib/python3.11/site-packages/django/db/models/base.py:877: in save_base
+    updated = self._save_table(
+venv/lib/python3.11/site-packages/django/db/models/base.py:1020: in _save_table
+    results = self._do_insert(
+venv/lib/python3.11/site-packages/django/db/models/base.py:1061: in _do_insert
+    return manager._insert(
+venv/lib/python3.11/site-packages/django/db/models/manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/models/query.py:1805: in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py:1820: in execute_sql
+    cursor.execute(sql, params)
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:67: in execute
+    return self._execute_with_wrappers(
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:80: in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:84: in _execute
+    with self.db.wrap_database_errors:
+venv/lib/python3.11/site-packages/django/db/utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.db.backends.utils.CursorWrapper object at 0x113e63310>
+sql = 'INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING "auth_user"."id"'
+params = ('pbkdf2_sha256$600000$6KtLvxHE5UCM6nPzoxBfhG$O+yJq82xpS1qMb4JQFWl5LqivYgngLvM6BBPk9QM8zc=', None, False, 'uib4b', '', '', ...)
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x113e63310>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+                return self.cursor.execute(sql)
+            else:
+>               return self.cursor.execute(sql, params)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               django.db.utils.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+E               DETAIL:  Key (username)=(uib4b) already exists.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:89: IntegrityError
+______ ProfileEditorBrowserTests.test_number_input_clamps_to_config_range ______
+
+self = <django.db.backends.utils.CursorWrapper object at 0x1140208d0>
+sql = 'TRUNCATE "core_brand", "auth_user_user_permissions", "dielines_dielinejob", "pipeline_palettematerialartifact", "inte...on", "auth_user_groups", "auth_group_permissions", "intelligence_semanticdocumentembedding", "pipeline_taskreference";'
+params = None
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x1140208d0>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+>               return self.cursor.execute(sql)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+E               psycopg2.errors.DeadlockDetected: deadlock detected
+E               DETAIL:  Process 13290 waits for AccessExclusiveLock on relation 55385451 of database 55384414; blocked by process 13304.
+E               Process 13304 waits for AccessShareLock on relation 55384744 of database 55384414; blocked by process 13290.
+E               HINT:  See server log for query details.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:87: DeadlockDetected
+
+The above exception was the direct cause of the following exception:
+
+self = <django.core.management.commands.flush.Command object at 0x11464cd10>
+options = {'allow_cascade': False, 'database': 'default', 'force_color': False, 'inhibit_post_migrate': False, ...}
+database = 'default'
+connection = <DatabaseWrapper vendor='postgresql' alias='default'>
+verbosity = 0, interactive = False, reset_sequences = False
+allow_cascade = False, inhibit_post_migrate = False
+
+        def handle(self, **options):
+            database = options["database"]
+            connection = connections[database]
+            verbosity = options["verbosity"]
+            interactive = options["interactive"]
+            # The following are stealth options used by Django's internals.
+            reset_sequences = options.get("reset_sequences", True)
+            allow_cascade = options.get("allow_cascade", False)
+            inhibit_post_migrate = options.get("inhibit_post_migrate", False)
+    
+            self.style = no_style()
+    
+            # Import the 'management' module within each installed app, to register
+            # dispatcher events.
+            for app_config in apps.get_app_configs():
+                try:
+                    import_module(".management", app_config.name)
+                except ImportError:
+                    pass
+    
+            sql_list = sql_flush(
+                self.style,
+                connection,
+                reset_sequences=reset_sequences,
+                allow_cascade=allow_cascade,
+            )
+    
+            if interactive:
+                confirm = input(
+                    """You have requested a flush of the database.
+    This will IRREVERSIBLY DESTROY all data currently in the "%s" database,
+    and return each table to an empty state.
+    Are you sure you want to do this?
+    
+        Type 'yes' to continue, or 'no' to cancel: """
+                    % connection.settings_dict["NAME"]
+                )
+            else:
+                confirm = "yes"
+    
+            if confirm == "yes":
+                try:
+>                   connection.ops.execute_sql_flush(sql_list)
+
+venv/lib/python3.11/site-packages/django/core/management/commands/flush.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/db/backends/base/operations.py:451: in execute_sql_flush
+    cursor.execute(sql)
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:67: in execute
+    return self._execute_with_wrappers(
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:80: in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:84: in _execute
+    with self.db.wrap_database_errors:
+venv/lib/python3.11/site-packages/django/db/utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.db.backends.utils.CursorWrapper object at 0x1140208d0>
+sql = 'TRUNCATE "core_brand", "auth_user_user_permissions", "dielines_dielinejob", "pipeline_palettematerialartifact", "inte...on", "auth_user_groups", "auth_group_permissions", "intelligence_semanticdocumentembedding", "pipeline_taskreference";'
+params = None
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x1140208d0>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+>               return self.cursor.execute(sql)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+E               django.db.utils.OperationalError: deadlock detected
+E               DETAIL:  Process 13290 waits for AccessExclusiveLock on relation 55385451 of database 55384414; blocked by process 13304.
+E               Process 13304 waits for AccessShareLock on relation 55384744 of database 55384414; blocked by process 13290.
+E               HINT:  See server log for query details.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:87: OperationalError
+
+The above exception was the direct cause of the following exception:
+
+self = <apps.pipeline.tests.test_browser_profile_editor.ProfileEditorBrowserTests testMethod=test_number_input_clamps_to_config_range>
+result = <TestCaseFunction test_number_input_clamps_to_config_range>
+debug = False
+
+    def _setup_and_call(self, result, debug=False):
+        """
+        Perform the following in order: pre-setup, run test, post-teardown,
+        skipping pre/post hooks if test is set to be skipped.
+    
+        If debug=True, reraise any errors in setup and use super().debug()
+        instead of __call__() to run the test.
+        """
+        testMethod = getattr(self, self._testMethodName)
+        skipped = getattr(self.__class__, "__unittest_skip__", False) or getattr(
+            testMethod, "__unittest_skip__", False
+        )
+    
+        # Convert async test methods.
+        if iscoroutinefunction(testMethod):
+            setattr(self, self._testMethodName, async_to_sync(testMethod))
+    
+        if not skipped:
+            try:
+                self._pre_setup()
+            except Exception:
+                if debug:
+                    raise
+                result.addError(self, sys.exc_info())
+                return
+        if debug:
+            super().debug()
+        else:
+            super().__call__(result)
+        if not skipped:
+            try:
+>               self._post_teardown()
+
+venv/lib/python3.11/site-packages/django/test/testcases.py:419: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/test/testcases.py:1279: in _post_teardown
+    self._fixture_teardown()
+venv/lib/python3.11/site-packages/django/test/testcases.py:1313: in _fixture_teardown
+    call_command(
+venv/lib/python3.11/site-packages/django/core/management/__init__.py:194: in call_command
+    return command.execute(*args, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/core/management/base.py:458: in execute
+    output = self.handle(*args, **options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.core.management.commands.flush.Command object at 0x11464cd10>
+options = {'allow_cascade': False, 'database': 'default', 'force_color': False, 'inhibit_post_migrate': False, ...}
+database = 'default'
+connection = <DatabaseWrapper vendor='postgresql' alias='default'>
+verbosity = 0, interactive = False, reset_sequences = False
+allow_cascade = False, inhibit_post_migrate = False
+
+        def handle(self, **options):
+            database = options["database"]
+            connection = connections[database]
+            verbosity = options["verbosity"]
+            interactive = options["interactive"]
+            # The following are stealth options used by Django's internals.
+            reset_sequences = options.get("reset_sequences", True)
+            allow_cascade = options.get("allow_cascade", False)
+            inhibit_post_migrate = options.get("inhibit_post_migrate", False)
+    
+            self.style = no_style()
+    
+            # Import the 'management' module within each installed app, to register
+            # dispatcher events.
+            for app_config in apps.get_app_configs():
+                try:
+                    import_module(".management", app_config.name)
+                except ImportError:
+                    pass
+    
+            sql_list = sql_flush(
+                self.style,
+                connection,
+                reset_sequences=reset_sequences,
+                allow_cascade=allow_cascade,
+            )
+    
+            if interactive:
+                confirm = input(
+                    """You have requested a flush of the database.
+    This will IRREVERSIBLY DESTROY all data currently in the "%s" database,
+    and return each table to an empty state.
+    Are you sure you want to do this?
+    
+        Type 'yes' to continue, or 'no' to cancel: """
+                    % connection.settings_dict["NAME"]
+                )
+            else:
+                confirm = "yes"
+    
+            if confirm == "yes":
+                try:
+                    connection.ops.execute_sql_flush(sql_list)
+                except Exception as exc:
+>                   raise CommandError(
+                        "Database %s couldn't be flushed. Possible reasons:\n"
+                        "  * The database isn't running or isn't configured correctly.\n"
+                        "  * At least one of the expected database tables doesn't exist.\n"
+                        "  * The SQL was invalid.\n"
+                        "Hint: Look at the output of 'django-admin sqlflush'. "
+                        "That's the SQL this command wasn't able to run."
+                        % (connection.settings_dict["NAME"],)
+                    ) from exc
+E                   django.core.management.base.CommandError: Database test_bbrose_db couldn't be flushed. Possible reasons:
+E                     * The database isn't running or isn't configured correctly.
+E                     * At least one of the expected database tables doesn't exist.
+E                     * The SQL was invalid.
+E                   Hint: Look at the output of 'django-admin sqlflush'. That's the SQL this command wasn't able to run.
+
+venv/lib/python3.11/site-packages/django/core/management/commands/flush.py:75: CommandError
+________ ProfileEditorBrowserTests.test_other_is_honest_never_a_bottle _________
+
+self = <django.db.backends.utils.CursorWrapper object at 0x114376f90>
+sql = 'INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING "auth_user"."id"'
+params = ('pbkdf2_sha256$600000$NiQTSBePa9eVaEzPA4GzHb$tKbWd45RBb40ggdx55mClGCcpLHF+am8sRoorei/Rug=', None, False, 'uib4b', '', '', ...)
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x114376f90>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+                return self.cursor.execute(sql)
+            else:
+>               return self.cursor.execute(sql, params)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "auth_user_username_key"
+E               DETAIL:  Key (username)=(uib4b) already exists.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:89: UniqueViolation
+
+The above exception was the direct cause of the following exception:
+
+self = <apps.pipeline.tests.test_browser_profile_editor.ProfileEditorBrowserTests testMethod=test_other_is_honest_never_a_bottle>
+
+    def setUp(self):
+>       super().setUp()
+
+apps/pipeline/tests/test_browser_profile_editor.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+apps/pipeline/tests/test_browser_staged_reference_ui.py:68: in setUp
+    self.user = User.objects.create_user("uib4b", "u@t.com", "pw",
+venv/lib/python3.11/site-packages/django/contrib/auth/models.py:161: in create_user
+    return self._create_user(username, email, password, **extra_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/contrib/auth/models.py:155: in _create_user
+    user.save(using=self._db)
+venv/lib/python3.11/site-packages/django/contrib/auth/base_user.py:76: in save
+    super().save(*args, **kwargs)
+venv/lib/python3.11/site-packages/django/db/models/base.py:814: in save
+    self.save_base(
+venv/lib/python3.11/site-packages/django/db/models/base.py:877: in save_base
+    updated = self._save_table(
+venv/lib/python3.11/site-packages/django/db/models/base.py:1020: in _save_table
+    results = self._do_insert(
+venv/lib/python3.11/site-packages/django/db/models/base.py:1061: in _do_insert
+    return manager._insert(
+venv/lib/python3.11/site-packages/django/db/models/manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/models/query.py:1805: in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py:1820: in execute_sql
+    cursor.execute(sql, params)
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:67: in execute
+    return self._execute_with_wrappers(
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:80: in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:84: in _execute
+    with self.db.wrap_database_errors:
+venv/lib/python3.11/site-packages/django/db/utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.db.backends.utils.CursorWrapper object at 0x114376f90>
+sql = 'INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING "auth_user"."id"'
+params = ('pbkdf2_sha256$600000$NiQTSBePa9eVaEzPA4GzHb$tKbWd45RBb40ggdx55mClGCcpLHF+am8sRoorei/Rug=', None, False, 'uib4b', '', '', ...)
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x114376f90>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+                return self.cursor.execute(sql)
+            else:
+>               return self.cursor.execute(sql, params)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               django.db.utils.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+E               DETAIL:  Key (username)=(uib4b) already exists.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:89: IntegrityError
+___ ProfileEditorResponsiveA11yTests.test_focus_visible_styling_is_declared ____
+
+self = <django.db.backends.utils.CursorWrapper object at 0x1144c7a90>
+sql = 'TRUNCATE "core_brand", "auth_user_user_permissions", "dielines_dielinejob", "pipeline_palettematerialartifact", "inte...on", "auth_user_groups", "auth_group_permissions", "intelligence_semanticdocumentembedding", "pipeline_taskreference";'
+params = None
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x1144c7a90>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+>               return self.cursor.execute(sql)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+E               psycopg2.errors.DeadlockDetected: deadlock detected
+E               DETAIL:  Process 13553 waits for AccessExclusiveLock on relation 55385451 of database 55384414; blocked by process 13565.
+E               Process 13565 waits for AccessShareLock on relation 55384744 of database 55384414; blocked by process 13553.
+E               HINT:  See server log for query details.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:87: DeadlockDetected
+
+The above exception was the direct cause of the following exception:
+
+self = <django.core.management.commands.flush.Command object at 0x110d4a410>
+options = {'allow_cascade': False, 'database': 'default', 'force_color': False, 'inhibit_post_migrate': False, ...}
+database = 'default'
+connection = <DatabaseWrapper vendor='postgresql' alias='default'>
+verbosity = 0, interactive = False, reset_sequences = False
+allow_cascade = False, inhibit_post_migrate = False
+
+        def handle(self, **options):
+            database = options["database"]
+            connection = connections[database]
+            verbosity = options["verbosity"]
+            interactive = options["interactive"]
+            # The following are stealth options used by Django's internals.
+            reset_sequences = options.get("reset_sequences", True)
+            allow_cascade = options.get("allow_cascade", False)
+            inhibit_post_migrate = options.get("inhibit_post_migrate", False)
+    
+            self.style = no_style()
+    
+            # Import the 'management' module within each installed app, to register
+            # dispatcher events.
+            for app_config in apps.get_app_configs():
+                try:
+                    import_module(".management", app_config.name)
+                except ImportError:
+                    pass
+    
+            sql_list = sql_flush(
+                self.style,
+                connection,
+                reset_sequences=reset_sequences,
+                allow_cascade=allow_cascade,
+            )
+    
+            if interactive:
+                confirm = input(
+                    """You have requested a flush of the database.
+    This will IRREVERSIBLY DESTROY all data currently in the "%s" database,
+    and return each table to an empty state.
+    Are you sure you want to do this?
+    
+        Type 'yes' to continue, or 'no' to cancel: """
+                    % connection.settings_dict["NAME"]
+                )
+            else:
+                confirm = "yes"
+    
+            if confirm == "yes":
+                try:
+>                   connection.ops.execute_sql_flush(sql_list)
+
+venv/lib/python3.11/site-packages/django/core/management/commands/flush.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/db/backends/base/operations.py:451: in execute_sql_flush
+    cursor.execute(sql)
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:67: in execute
+    return self._execute_with_wrappers(
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:80: in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:84: in _execute
+    with self.db.wrap_database_errors:
+venv/lib/python3.11/site-packages/django/db/utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.db.backends.utils.CursorWrapper object at 0x1144c7a90>
+sql = 'TRUNCATE "core_brand", "auth_user_user_permissions", "dielines_dielinejob", "pipeline_palettematerialartifact", "inte...on", "auth_user_groups", "auth_group_permissions", "intelligence_semanticdocumentembedding", "pipeline_taskreference";'
+params = None
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x1144c7a90>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+>               return self.cursor.execute(sql)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+E               django.db.utils.OperationalError: deadlock detected
+E               DETAIL:  Process 13553 waits for AccessExclusiveLock on relation 55385451 of database 55384414; blocked by process 13565.
+E               Process 13565 waits for AccessShareLock on relation 55384744 of database 55384414; blocked by process 13553.
+E               HINT:  See server log for query details.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:87: OperationalError
+
+The above exception was the direct cause of the following exception:
+
+self = <apps.pipeline.tests.test_browser_profile_editor.ProfileEditorResponsiveA11yTests testMethod=test_focus_visible_styling_is_declared>
+result = <TestCaseFunction test_focus_visible_styling_is_declared>
+debug = False
+
+    def _setup_and_call(self, result, debug=False):
+        """
+        Perform the following in order: pre-setup, run test, post-teardown,
+        skipping pre/post hooks if test is set to be skipped.
+    
+        If debug=True, reraise any errors in setup and use super().debug()
+        instead of __call__() to run the test.
+        """
+        testMethod = getattr(self, self._testMethodName)
+        skipped = getattr(self.__class__, "__unittest_skip__", False) or getattr(
+            testMethod, "__unittest_skip__", False
+        )
+    
+        # Convert async test methods.
+        if iscoroutinefunction(testMethod):
+            setattr(self, self._testMethodName, async_to_sync(testMethod))
+    
+        if not skipped:
+            try:
+                self._pre_setup()
+            except Exception:
+                if debug:
+                    raise
+                result.addError(self, sys.exc_info())
+                return
+        if debug:
+            super().debug()
+        else:
+            super().__call__(result)
+        if not skipped:
+            try:
+>               self._post_teardown()
+
+venv/lib/python3.11/site-packages/django/test/testcases.py:419: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/test/testcases.py:1279: in _post_teardown
+    self._fixture_teardown()
+venv/lib/python3.11/site-packages/django/test/testcases.py:1313: in _fixture_teardown
+    call_command(
+venv/lib/python3.11/site-packages/django/core/management/__init__.py:194: in call_command
+    return command.execute(*args, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/core/management/base.py:458: in execute
+    output = self.handle(*args, **options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.core.management.commands.flush.Command object at 0x110d4a410>
+options = {'allow_cascade': False, 'database': 'default', 'force_color': False, 'inhibit_post_migrate': False, ...}
+database = 'default'
+connection = <DatabaseWrapper vendor='postgresql' alias='default'>
+verbosity = 0, interactive = False, reset_sequences = False
+allow_cascade = False, inhibit_post_migrate = False
+
+        def handle(self, **options):
+            database = options["database"]
+            connection = connections[database]
+            verbosity = options["verbosity"]
+            interactive = options["interactive"]
+            # The following are stealth options used by Django's internals.
+            reset_sequences = options.get("reset_sequences", True)
+            allow_cascade = options.get("allow_cascade", False)
+            inhibit_post_migrate = options.get("inhibit_post_migrate", False)
+    
+            self.style = no_style()
+    
+            # Import the 'management' module within each installed app, to register
+            # dispatcher events.
+            for app_config in apps.get_app_configs():
+                try:
+                    import_module(".management", app_config.name)
+                except ImportError:
+                    pass
+    
+            sql_list = sql_flush(
+                self.style,
+                connection,
+                reset_sequences=reset_sequences,
+                allow_cascade=allow_cascade,
+            )
+    
+            if interactive:
+                confirm = input(
+                    """You have requested a flush of the database.
+    This will IRREVERSIBLY DESTROY all data currently in the "%s" database,
+    and return each table to an empty state.
+    Are you sure you want to do this?
+    
+        Type 'yes' to continue, or 'no' to cancel: """
+                    % connection.settings_dict["NAME"]
+                )
+            else:
+                confirm = "yes"
+    
+            if confirm == "yes":
+                try:
+                    connection.ops.execute_sql_flush(sql_list)
+                except Exception as exc:
+>                   raise CommandError(
+                        "Database %s couldn't be flushed. Possible reasons:\n"
+                        "  * The database isn't running or isn't configured correctly.\n"
+                        "  * At least one of the expected database tables doesn't exist.\n"
+                        "  * The SQL was invalid.\n"
+                        "Hint: Look at the output of 'django-admin sqlflush'. "
+                        "That's the SQL this command wasn't able to run."
+                        % (connection.settings_dict["NAME"],)
+                    ) from exc
+E                   django.core.management.base.CommandError: Database test_bbrose_db couldn't be flushed. Possible reasons:
+E                     * The database isn't running or isn't configured correctly.
+E                     * At least one of the expected database tables doesn't exist.
+E                     * The SQL was invalid.
+E                   Hint: Look at the output of 'django-admin sqlflush'. That's the SQL this command wasn't able to run.
+
+venv/lib/python3.11/site-packages/django/core/management/commands/flush.py:75: CommandError
+___ ProfileEditorResponsiveA11yTests.test_mobile_390_stacks_without_overflow ___
+
+self = <django.db.backends.utils.CursorWrapper object at 0x1143e2a90>
+sql = 'INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING "auth_user"."id"'
+params = ('pbkdf2_sha256$600000$QJBVhN6g3suQpgZ1P4iPm0$Jmj3VemS0Fa3s9vxIKWOkIJQewjf9O72RJ0nTnsIPzE=', None, False, 'uib4b', '', '', ...)
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x1143e2a90>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+                return self.cursor.execute(sql)
+            else:
+>               return self.cursor.execute(sql, params)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "auth_user_username_key"
+E               DETAIL:  Key (username)=(uib4b) already exists.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:89: UniqueViolation
+
+The above exception was the direct cause of the following exception:
+
+self = <apps.pipeline.tests.test_browser_profile_editor.ProfileEditorResponsiveA11yTests testMethod=test_mobile_390_stacks_without_overflow>
+
+    def setUp(self):
+>       super().setUp()
+
+apps/pipeline/tests/test_browser_profile_editor.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+apps/pipeline/tests/test_browser_staged_reference_ui.py:68: in setUp
+    self.user = User.objects.create_user("uib4b", "u@t.com", "pw",
+venv/lib/python3.11/site-packages/django/contrib/auth/models.py:161: in create_user
+    return self._create_user(username, email, password, **extra_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/contrib/auth/models.py:155: in _create_user
+    user.save(using=self._db)
+venv/lib/python3.11/site-packages/django/contrib/auth/base_user.py:76: in save
+    super().save(*args, **kwargs)
+venv/lib/python3.11/site-packages/django/db/models/base.py:814: in save
+    self.save_base(
+venv/lib/python3.11/site-packages/django/db/models/base.py:877: in save_base
+    updated = self._save_table(
+venv/lib/python3.11/site-packages/django/db/models/base.py:1020: in _save_table
+    results = self._do_insert(
+venv/lib/python3.11/site-packages/django/db/models/base.py:1061: in _do_insert
+    return manager._insert(
+venv/lib/python3.11/site-packages/django/db/models/manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/models/query.py:1805: in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py:1820: in execute_sql
+    cursor.execute(sql, params)
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:67: in execute
+    return self._execute_with_wrappers(
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:80: in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:84: in _execute
+    with self.db.wrap_database_errors:
+venv/lib/python3.11/site-packages/django/db/utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.db.backends.utils.CursorWrapper object at 0x1143e2a90>
+sql = 'INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING "auth_user"."id"'
+params = ('pbkdf2_sha256$600000$QJBVhN6g3suQpgZ1P4iPm0$Jmj3VemS0Fa3s9vxIKWOkIJQewjf9O72RJ0nTnsIPzE=', None, False, 'uib4b', '', '', ...)
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x1143e2a90>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+                return self.cursor.execute(sql)
+            else:
+>               return self.cursor.execute(sql, params)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               django.db.utils.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+E               DETAIL:  Key (username)=(uib4b) already exists.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:89: IntegrityError
+_ ProfileEditorResponsiveA11yTests.test_mobile_cards_operable_and_reset_reachable _
+
+self = <django.db.backends.utils.CursorWrapper object at 0x114d16ad0>
+sql = 'TRUNCATE "core_brand", "auth_user_user_permissions", "dielines_dielinejob", "pipeline_palettematerialartifact", "inte...on", "auth_user_groups", "auth_group_permissions", "intelligence_semanticdocumentembedding", "pipeline_taskreference";'
+params = None
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x114d16ad0>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+>               return self.cursor.execute(sql)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+E               psycopg2.errors.DeadlockDetected: deadlock detected
+E               DETAIL:  Process 13593 waits for AccessExclusiveLock on relation 55385451 of database 55384414; blocked by process 13602.
+E               Process 13602 waits for AccessShareLock on relation 55384744 of database 55384414; blocked by process 13593.
+E               HINT:  See server log for query details.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:87: DeadlockDetected
+
+The above exception was the direct cause of the following exception:
+
+self = <django.core.management.commands.flush.Command object at 0x114dea950>
+options = {'allow_cascade': False, 'database': 'default', 'force_color': False, 'inhibit_post_migrate': False, ...}
+database = 'default'
+connection = <DatabaseWrapper vendor='postgresql' alias='default'>
+verbosity = 0, interactive = False, reset_sequences = False
+allow_cascade = False, inhibit_post_migrate = False
+
+        def handle(self, **options):
+            database = options["database"]
+            connection = connections[database]
+            verbosity = options["verbosity"]
+            interactive = options["interactive"]
+            # The following are stealth options used by Django's internals.
+            reset_sequences = options.get("reset_sequences", True)
+            allow_cascade = options.get("allow_cascade", False)
+            inhibit_post_migrate = options.get("inhibit_post_migrate", False)
+    
+            self.style = no_style()
+    
+            # Import the 'management' module within each installed app, to register
+            # dispatcher events.
+            for app_config in apps.get_app_configs():
+                try:
+                    import_module(".management", app_config.name)
+                except ImportError:
+                    pass
+    
+            sql_list = sql_flush(
+                self.style,
+                connection,
+                reset_sequences=reset_sequences,
+                allow_cascade=allow_cascade,
+            )
+    
+            if interactive:
+                confirm = input(
+                    """You have requested a flush of the database.
+    This will IRREVERSIBLY DESTROY all data currently in the "%s" database,
+    and return each table to an empty state.
+    Are you sure you want to do this?
+    
+        Type 'yes' to continue, or 'no' to cancel: """
+                    % connection.settings_dict["NAME"]
+                )
+            else:
+                confirm = "yes"
+    
+            if confirm == "yes":
+                try:
+>                   connection.ops.execute_sql_flush(sql_list)
+
+venv/lib/python3.11/site-packages/django/core/management/commands/flush.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/db/backends/base/operations.py:451: in execute_sql_flush
+    cursor.execute(sql)
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:67: in execute
+    return self._execute_with_wrappers(
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:80: in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:84: in _execute
+    with self.db.wrap_database_errors:
+venv/lib/python3.11/site-packages/django/db/utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.db.backends.utils.CursorWrapper object at 0x114d16ad0>
+sql = 'TRUNCATE "core_brand", "auth_user_user_permissions", "dielines_dielinejob", "pipeline_palettematerialartifact", "inte...on", "auth_user_groups", "auth_group_permissions", "intelligence_semanticdocumentembedding", "pipeline_taskreference";'
+params = None
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x114d16ad0>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+>               return self.cursor.execute(sql)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+E               django.db.utils.OperationalError: deadlock detected
+E               DETAIL:  Process 13593 waits for AccessExclusiveLock on relation 55385451 of database 55384414; blocked by process 13602.
+E               Process 13602 waits for AccessShareLock on relation 55384744 of database 55384414; blocked by process 13593.
+E               HINT:  See server log for query details.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:87: OperationalError
+
+The above exception was the direct cause of the following exception:
+
+self = <apps.pipeline.tests.test_browser_profile_editor.ProfileEditorResponsiveA11yTests testMethod=test_mobile_cards_operable_and_reset_reachable>
+result = <TestCaseFunction test_mobile_cards_operable_and_reset_reachable>
+debug = False
+
+    def _setup_and_call(self, result, debug=False):
+        """
+        Perform the following in order: pre-setup, run test, post-teardown,
+        skipping pre/post hooks if test is set to be skipped.
+    
+        If debug=True, reraise any errors in setup and use super().debug()
+        instead of __call__() to run the test.
+        """
+        testMethod = getattr(self, self._testMethodName)
+        skipped = getattr(self.__class__, "__unittest_skip__", False) or getattr(
+            testMethod, "__unittest_skip__", False
+        )
+    
+        # Convert async test methods.
+        if iscoroutinefunction(testMethod):
+            setattr(self, self._testMethodName, async_to_sync(testMethod))
+    
+        if not skipped:
+            try:
+                self._pre_setup()
+            except Exception:
+                if debug:
+                    raise
+                result.addError(self, sys.exc_info())
+                return
+        if debug:
+            super().debug()
+        else:
+            super().__call__(result)
+        if not skipped:
+            try:
+>               self._post_teardown()
+
+venv/lib/python3.11/site-packages/django/test/testcases.py:419: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/test/testcases.py:1279: in _post_teardown
+    self._fixture_teardown()
+venv/lib/python3.11/site-packages/django/test/testcases.py:1313: in _fixture_teardown
+    call_command(
+venv/lib/python3.11/site-packages/django/core/management/__init__.py:194: in call_command
+    return command.execute(*args, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/core/management/base.py:458: in execute
+    output = self.handle(*args, **options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.core.management.commands.flush.Command object at 0x114dea950>
+options = {'allow_cascade': False, 'database': 'default', 'force_color': False, 'inhibit_post_migrate': False, ...}
+database = 'default'
+connection = <DatabaseWrapper vendor='postgresql' alias='default'>
+verbosity = 0, interactive = False, reset_sequences = False
+allow_cascade = False, inhibit_post_migrate = False
+
+        def handle(self, **options):
+            database = options["database"]
+            connection = connections[database]
+            verbosity = options["verbosity"]
+            interactive = options["interactive"]
+            # The following are stealth options used by Django's internals.
+            reset_sequences = options.get("reset_sequences", True)
+            allow_cascade = options.get("allow_cascade", False)
+            inhibit_post_migrate = options.get("inhibit_post_migrate", False)
+    
+            self.style = no_style()
+    
+            # Import the 'management' module within each installed app, to register
+            # dispatcher events.
+            for app_config in apps.get_app_configs():
+                try:
+                    import_module(".management", app_config.name)
+                except ImportError:
+                    pass
+    
+            sql_list = sql_flush(
+                self.style,
+                connection,
+                reset_sequences=reset_sequences,
+                allow_cascade=allow_cascade,
+            )
+    
+            if interactive:
+                confirm = input(
+                    """You have requested a flush of the database.
+    This will IRREVERSIBLY DESTROY all data currently in the "%s" database,
+    and return each table to an empty state.
+    Are you sure you want to do this?
+    
+        Type 'yes' to continue, or 'no' to cancel: """
+                    % connection.settings_dict["NAME"]
+                )
+            else:
+                confirm = "yes"
+    
+            if confirm == "yes":
+                try:
+                    connection.ops.execute_sql_flush(sql_list)
+                except Exception as exc:
+>                   raise CommandError(
+                        "Database %s couldn't be flushed. Possible reasons:\n"
+                        "  * The database isn't running or isn't configured correctly.\n"
+                        "  * At least one of the expected database tables doesn't exist.\n"
+                        "  * The SQL was invalid.\n"
+                        "Hint: Look at the output of 'django-admin sqlflush'. "
+                        "That's the SQL this command wasn't able to run."
+                        % (connection.settings_dict["NAME"],)
+                    ) from exc
+E                   django.core.management.base.CommandError: Database test_bbrose_db couldn't be flushed. Possible reasons:
+E                     * The database isn't running or isn't configured correctly.
+E                     * At least one of the expected database tables doesn't exist.
+E                     * The SQL was invalid.
+E                   Hint: Look at the output of 'django-admin sqlflush'. That's the SQL this command wasn't able to run.
+
+venv/lib/python3.11/site-packages/django/core/management/commands/flush.py:75: CommandError
+____ ProfileEditorResponsiveA11yTests.test_mobile_sliders_fit_the_viewport _____
+
+self = <django.db.backends.utils.CursorWrapper object at 0x11452e990>
+sql = 'INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING "auth_user"."id"'
+params = ('pbkdf2_sha256$600000$6DCTvnXhW5q6RVRKrVfZIJ$GEgPIGWcfGvS6pVIqZEwKJ4zvZM5fhPfhsZxxs+6LLM=', None, False, 'uib4b', '', '', ...)
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x11452e990>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+                return self.cursor.execute(sql)
+            else:
+>               return self.cursor.execute(sql, params)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "auth_user_username_key"
+E               DETAIL:  Key (username)=(uib4b) already exists.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:89: UniqueViolation
+
+The above exception was the direct cause of the following exception:
+
+self = <apps.pipeline.tests.test_browser_profile_editor.ProfileEditorResponsiveA11yTests testMethod=test_mobile_sliders_fit_the_viewport>
+
+    def setUp(self):
+>       super().setUp()
+
+apps/pipeline/tests/test_browser_profile_editor.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+apps/pipeline/tests/test_browser_staged_reference_ui.py:68: in setUp
+    self.user = User.objects.create_user("uib4b", "u@t.com", "pw",
+venv/lib/python3.11/site-packages/django/contrib/auth/models.py:161: in create_user
+    return self._create_user(username, email, password, **extra_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/contrib/auth/models.py:155: in _create_user
+    user.save(using=self._db)
+venv/lib/python3.11/site-packages/django/contrib/auth/base_user.py:76: in save
+    super().save(*args, **kwargs)
+venv/lib/python3.11/site-packages/django/db/models/base.py:814: in save
+    self.save_base(
+venv/lib/python3.11/site-packages/django/db/models/base.py:877: in save_base
+    updated = self._save_table(
+venv/lib/python3.11/site-packages/django/db/models/base.py:1020: in _save_table
+    results = self._do_insert(
+venv/lib/python3.11/site-packages/django/db/models/base.py:1061: in _do_insert
+    return manager._insert(
+venv/lib/python3.11/site-packages/django/db/models/manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/models/query.py:1805: in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py:1820: in execute_sql
+    cursor.execute(sql, params)
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:67: in execute
+    return self._execute_with_wrappers(
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:80: in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:84: in _execute
+    with self.db.wrap_database_errors:
+venv/lib/python3.11/site-packages/django/db/utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.db.backends.utils.CursorWrapper object at 0x11452e990>
+sql = 'INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING "auth_user"."id"'
+params = ('pbkdf2_sha256$600000$6DCTvnXhW5q6RVRKrVfZIJ$GEgPIGWcfGvS6pVIqZEwKJ4zvZM5fhPfhsZxxs+6LLM=', None, False, 'uib4b', '', '', ...)
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x11452e990>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+                return self.cursor.execute(sql)
+            else:
+>               return self.cursor.execute(sql, params)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               django.db.utils.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+E               DETAIL:  Key (username)=(uib4b) already exists.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:89: IntegrityError
+__ ProfileEditorResponsiveA11yTests.test_selected_states_are_not_colour_only ___
+
+self = <django.db.backends.utils.CursorWrapper object at 0x114460190>
+sql = 'TRUNCATE "core_brand", "auth_user_user_permissions", "dielines_dielinejob", "pipeline_palettematerialartifact", "inte...on", "auth_user_groups", "auth_group_permissions", "intelligence_semanticdocumentembedding", "pipeline_taskreference";'
+params = None
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x114460190>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+>               return self.cursor.execute(sql)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+E               psycopg2.errors.DeadlockDetected: deadlock detected
+E               DETAIL:  Process 13662 waits for AccessExclusiveLock on relation 55385451 of database 55384414; blocked by process 13678.
+E               Process 13678 waits for AccessShareLock on relation 55384744 of database 55384414; blocked by process 13662.
+E               HINT:  See server log for query details.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:87: DeadlockDetected
+
+The above exception was the direct cause of the following exception:
+
+self = <django.core.management.commands.flush.Command object at 0x114d17390>
+options = {'allow_cascade': False, 'database': 'default', 'force_color': False, 'inhibit_post_migrate': False, ...}
+database = 'default'
+connection = <DatabaseWrapper vendor='postgresql' alias='default'>
+verbosity = 0, interactive = False, reset_sequences = False
+allow_cascade = False, inhibit_post_migrate = False
+
+        def handle(self, **options):
+            database = options["database"]
+            connection = connections[database]
+            verbosity = options["verbosity"]
+            interactive = options["interactive"]
+            # The following are stealth options used by Django's internals.
+            reset_sequences = options.get("reset_sequences", True)
+            allow_cascade = options.get("allow_cascade", False)
+            inhibit_post_migrate = options.get("inhibit_post_migrate", False)
+    
+            self.style = no_style()
+    
+            # Import the 'management' module within each installed app, to register
+            # dispatcher events.
+            for app_config in apps.get_app_configs():
+                try:
+                    import_module(".management", app_config.name)
+                except ImportError:
+                    pass
+    
+            sql_list = sql_flush(
+                self.style,
+                connection,
+                reset_sequences=reset_sequences,
+                allow_cascade=allow_cascade,
+            )
+    
+            if interactive:
+                confirm = input(
+                    """You have requested a flush of the database.
+    This will IRREVERSIBLY DESTROY all data currently in the "%s" database,
+    and return each table to an empty state.
+    Are you sure you want to do this?
+    
+        Type 'yes' to continue, or 'no' to cancel: """
+                    % connection.settings_dict["NAME"]
+                )
+            else:
+                confirm = "yes"
+    
+            if confirm == "yes":
+                try:
+>                   connection.ops.execute_sql_flush(sql_list)
+
+venv/lib/python3.11/site-packages/django/core/management/commands/flush.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/db/backends/base/operations.py:451: in execute_sql_flush
+    cursor.execute(sql)
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:67: in execute
+    return self._execute_with_wrappers(
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:80: in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:84: in _execute
+    with self.db.wrap_database_errors:
+venv/lib/python3.11/site-packages/django/db/utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.db.backends.utils.CursorWrapper object at 0x114460190>
+sql = 'TRUNCATE "core_brand", "auth_user_user_permissions", "dielines_dielinejob", "pipeline_palettematerialartifact", "inte...on", "auth_user_groups", "auth_group_permissions", "intelligence_semanticdocumentembedding", "pipeline_taskreference";'
+params = None
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x114460190>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+>               return self.cursor.execute(sql)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+E               django.db.utils.OperationalError: deadlock detected
+E               DETAIL:  Process 13662 waits for AccessExclusiveLock on relation 55385451 of database 55384414; blocked by process 13678.
+E               Process 13678 waits for AccessShareLock on relation 55384744 of database 55384414; blocked by process 13662.
+E               HINT:  See server log for query details.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:87: OperationalError
+
+The above exception was the direct cause of the following exception:
+
+self = <apps.pipeline.tests.test_browser_profile_editor.ProfileEditorResponsiveA11yTests testMethod=test_selected_states_are_not_colour_only>
+result = <TestCaseFunction test_selected_states_are_not_colour_only>
+debug = False
+
+    def _setup_and_call(self, result, debug=False):
+        """
+        Perform the following in order: pre-setup, run test, post-teardown,
+        skipping pre/post hooks if test is set to be skipped.
+    
+        If debug=True, reraise any errors in setup and use super().debug()
+        instead of __call__() to run the test.
+        """
+        testMethod = getattr(self, self._testMethodName)
+        skipped = getattr(self.__class__, "__unittest_skip__", False) or getattr(
+            testMethod, "__unittest_skip__", False
+        )
+    
+        # Convert async test methods.
+        if iscoroutinefunction(testMethod):
+            setattr(self, self._testMethodName, async_to_sync(testMethod))
+    
+        if not skipped:
+            try:
+                self._pre_setup()
+            except Exception:
+                if debug:
+                    raise
+                result.addError(self, sys.exc_info())
+                return
+        if debug:
+            super().debug()
+        else:
+            super().__call__(result)
+        if not skipped:
+            try:
+>               self._post_teardown()
+
+venv/lib/python3.11/site-packages/django/test/testcases.py:419: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/test/testcases.py:1279: in _post_teardown
+    self._fixture_teardown()
+venv/lib/python3.11/site-packages/django/test/testcases.py:1313: in _fixture_teardown
+    call_command(
+venv/lib/python3.11/site-packages/django/core/management/__init__.py:194: in call_command
+    return command.execute(*args, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/core/management/base.py:458: in execute
+    output = self.handle(*args, **options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.core.management.commands.flush.Command object at 0x114d17390>
+options = {'allow_cascade': False, 'database': 'default', 'force_color': False, 'inhibit_post_migrate': False, ...}
+database = 'default'
+connection = <DatabaseWrapper vendor='postgresql' alias='default'>
+verbosity = 0, interactive = False, reset_sequences = False
+allow_cascade = False, inhibit_post_migrate = False
+
+        def handle(self, **options):
+            database = options["database"]
+            connection = connections[database]
+            verbosity = options["verbosity"]
+            interactive = options["interactive"]
+            # The following are stealth options used by Django's internals.
+            reset_sequences = options.get("reset_sequences", True)
+            allow_cascade = options.get("allow_cascade", False)
+            inhibit_post_migrate = options.get("inhibit_post_migrate", False)
+    
+            self.style = no_style()
+    
+            # Import the 'management' module within each installed app, to register
+            # dispatcher events.
+            for app_config in apps.get_app_configs():
+                try:
+                    import_module(".management", app_config.name)
+                except ImportError:
+                    pass
+    
+            sql_list = sql_flush(
+                self.style,
+                connection,
+                reset_sequences=reset_sequences,
+                allow_cascade=allow_cascade,
+            )
+    
+            if interactive:
+                confirm = input(
+                    """You have requested a flush of the database.
+    This will IRREVERSIBLY DESTROY all data currently in the "%s" database,
+    and return each table to an empty state.
+    Are you sure you want to do this?
+    
+        Type 'yes' to continue, or 'no' to cancel: """
+                    % connection.settings_dict["NAME"]
+                )
+            else:
+                confirm = "yes"
+    
+            if confirm == "yes":
+                try:
+                    connection.ops.execute_sql_flush(sql_list)
+                except Exception as exc:
+>                   raise CommandError(
+                        "Database %s couldn't be flushed. Possible reasons:\n"
+                        "  * The database isn't running or isn't configured correctly.\n"
+                        "  * At least one of the expected database tables doesn't exist.\n"
+                        "  * The SQL was invalid.\n"
+                        "Hint: Look at the output of 'django-admin sqlflush'. "
+                        "That's the SQL this command wasn't able to run."
+                        % (connection.settings_dict["NAME"],)
+                    ) from exc
+E                   django.core.management.base.CommandError: Database test_bbrose_db couldn't be flushed. Possible reasons:
+E                     * The database isn't running or isn't configured correctly.
+E                     * At least one of the expected database tables doesn't exist.
+E                     * The SQL was invalid.
+E                   Hint: Look at the output of 'django-admin sqlflush'. That's the SQL this command wasn't able to run.
+
+venv/lib/python3.11/site-packages/django/core/management/commands/flush.py:75: CommandError
+_ ProfileEditorResponsiveA11yTests.test_sliders_have_accessible_names_and_values _
+
+self = <django.db.backends.utils.CursorWrapper object at 0x11452dd90>
+sql = 'INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING "auth_user"."id"'
+params = ('pbkdf2_sha256$600000$Dy66L9KeydJgPQCdLaCGYn$W+HK2d1xqVqzUMHudxOvscbJ0Hi+3qVcgOTZnPRaHCw=', None, False, 'uib4b', '', '', ...)
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x11452dd90>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+                return self.cursor.execute(sql)
+            else:
+>               return self.cursor.execute(sql, params)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "auth_user_username_key"
+E               DETAIL:  Key (username)=(uib4b) already exists.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:89: UniqueViolation
+
+The above exception was the direct cause of the following exception:
+
+self = <apps.pipeline.tests.test_browser_profile_editor.ProfileEditorResponsiveA11yTests testMethod=test_sliders_have_accessible_names_and_values>
+
+    def setUp(self):
+>       super().setUp()
+
+apps/pipeline/tests/test_browser_profile_editor.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+apps/pipeline/tests/test_browser_staged_reference_ui.py:68: in setUp
+    self.user = User.objects.create_user("uib4b", "u@t.com", "pw",
+venv/lib/python3.11/site-packages/django/contrib/auth/models.py:161: in create_user
+    return self._create_user(username, email, password, **extra_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/contrib/auth/models.py:155: in _create_user
+    user.save(using=self._db)
+venv/lib/python3.11/site-packages/django/contrib/auth/base_user.py:76: in save
+    super().save(*args, **kwargs)
+venv/lib/python3.11/site-packages/django/db/models/base.py:814: in save
+    self.save_base(
+venv/lib/python3.11/site-packages/django/db/models/base.py:877: in save_base
+    updated = self._save_table(
+venv/lib/python3.11/site-packages/django/db/models/base.py:1020: in _save_table
+    results = self._do_insert(
+venv/lib/python3.11/site-packages/django/db/models/base.py:1061: in _do_insert
+    return manager._insert(
+venv/lib/python3.11/site-packages/django/db/models/manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/models/query.py:1805: in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py:1820: in execute_sql
+    cursor.execute(sql, params)
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:67: in execute
+    return self._execute_with_wrappers(
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:80: in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:84: in _execute
+    with self.db.wrap_database_errors:
+venv/lib/python3.11/site-packages/django/db/utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.db.backends.utils.CursorWrapper object at 0x11452dd90>
+sql = 'INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING "auth_user"."id"'
+params = ('pbkdf2_sha256$600000$Dy66L9KeydJgPQCdLaCGYn$W+HK2d1xqVqzUMHudxOvscbJ0Hi+3qVcgOTZnPRaHCw=', None, False, 'uib4b', '', '', ...)
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x11452dd90>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+                return self.cursor.execute(sql)
+            else:
+>               return self.cursor.execute(sql, params)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               django.db.utils.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+E               DETAIL:  Key (username)=(uib4b) already exists.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:89: IntegrityError
+_ ConfirmationDialogBrowserTests.test_complete_profile_opens_dialog_with_exact_values _
+
+self = <django.db.backends.utils.CursorWrapper object at 0x110ee83d0>
+sql = 'TRUNCATE "core_brand", "auth_user_user_permissions", "dielines_dielinejob", "pipeline_palettematerialartifact", "inte...on", "auth_user_groups", "auth_group_permissions", "intelligence_semanticdocumentembedding", "pipeline_taskreference";'
+params = None
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x110ee83d0>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+>               return self.cursor.execute(sql)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+E               psycopg2.errors.DeadlockDetected: deadlock detected
+E               DETAIL:  Process 13768 waits for AccessExclusiveLock on relation 55385451 of database 55384414; blocked by process 13787.
+E               Process 13787 waits for AccessShareLock on relation 55384744 of database 55384414; blocked by process 13768.
+E               HINT:  See server log for query details.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:87: DeadlockDetected
+
+The above exception was the direct cause of the following exception:
+
+self = <django.core.management.commands.flush.Command object at 0x11412d810>
+options = {'allow_cascade': False, 'database': 'default', 'force_color': False, 'inhibit_post_migrate': False, ...}
+database = 'default'
+connection = <DatabaseWrapper vendor='postgresql' alias='default'>
+verbosity = 0, interactive = False, reset_sequences = False
+allow_cascade = False, inhibit_post_migrate = False
+
+        def handle(self, **options):
+            database = options["database"]
+            connection = connections[database]
+            verbosity = options["verbosity"]
+            interactive = options["interactive"]
+            # The following are stealth options used by Django's internals.
+            reset_sequences = options.get("reset_sequences", True)
+            allow_cascade = options.get("allow_cascade", False)
+            inhibit_post_migrate = options.get("inhibit_post_migrate", False)
+    
+            self.style = no_style()
+    
+            # Import the 'management' module within each installed app, to register
+            # dispatcher events.
+            for app_config in apps.get_app_configs():
+                try:
+                    import_module(".management", app_config.name)
+                except ImportError:
+                    pass
+    
+            sql_list = sql_flush(
+                self.style,
+                connection,
+                reset_sequences=reset_sequences,
+                allow_cascade=allow_cascade,
+            )
+    
+            if interactive:
+                confirm = input(
+                    """You have requested a flush of the database.
+    This will IRREVERSIBLY DESTROY all data currently in the "%s" database,
+    and return each table to an empty state.
+    Are you sure you want to do this?
+    
+        Type 'yes' to continue, or 'no' to cancel: """
+                    % connection.settings_dict["NAME"]
+                )
+            else:
+                confirm = "yes"
+    
+            if confirm == "yes":
+                try:
+>                   connection.ops.execute_sql_flush(sql_list)
+
+venv/lib/python3.11/site-packages/django/core/management/commands/flush.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/db/backends/base/operations.py:451: in execute_sql_flush
+    cursor.execute(sql)
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:67: in execute
+    return self._execute_with_wrappers(
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:80: in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:84: in _execute
+    with self.db.wrap_database_errors:
+venv/lib/python3.11/site-packages/django/db/utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.db.backends.utils.CursorWrapper object at 0x110ee83d0>
+sql = 'TRUNCATE "core_brand", "auth_user_user_permissions", "dielines_dielinejob", "pipeline_palettematerialartifact", "inte...on", "auth_user_groups", "auth_group_permissions", "intelligence_semanticdocumentembedding", "pipeline_taskreference";'
+params = None
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x110ee83d0>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+>               return self.cursor.execute(sql)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+E               django.db.utils.OperationalError: deadlock detected
+E               DETAIL:  Process 13768 waits for AccessExclusiveLock on relation 55385451 of database 55384414; blocked by process 13787.
+E               Process 13787 waits for AccessShareLock on relation 55384744 of database 55384414; blocked by process 13768.
+E               HINT:  See server log for query details.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:87: OperationalError
+
+The above exception was the direct cause of the following exception:
+
+self = <apps.pipeline.tests.test_browser_profile_editor.ConfirmationDialogBrowserTests testMethod=test_complete_profile_opens_dialog_with_exact_values>
+result = <TestCaseFunction test_complete_profile_opens_dialog_with_exact_values>
+debug = False
+
+    def _setup_and_call(self, result, debug=False):
+        """
+        Perform the following in order: pre-setup, run test, post-teardown,
+        skipping pre/post hooks if test is set to be skipped.
+    
+        If debug=True, reraise any errors in setup and use super().debug()
+        instead of __call__() to run the test.
+        """
+        testMethod = getattr(self, self._testMethodName)
+        skipped = getattr(self.__class__, "__unittest_skip__", False) or getattr(
+            testMethod, "__unittest_skip__", False
+        )
+    
+        # Convert async test methods.
+        if iscoroutinefunction(testMethod):
+            setattr(self, self._testMethodName, async_to_sync(testMethod))
+    
+        if not skipped:
+            try:
+                self._pre_setup()
+            except Exception:
+                if debug:
+                    raise
+                result.addError(self, sys.exc_info())
+                return
+        if debug:
+            super().debug()
+        else:
+            super().__call__(result)
+        if not skipped:
+            try:
+>               self._post_teardown()
+
+venv/lib/python3.11/site-packages/django/test/testcases.py:419: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/test/testcases.py:1279: in _post_teardown
+    self._fixture_teardown()
+venv/lib/python3.11/site-packages/django/test/testcases.py:1313: in _fixture_teardown
+    call_command(
+venv/lib/python3.11/site-packages/django/core/management/__init__.py:194: in call_command
+    return command.execute(*args, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/core/management/base.py:458: in execute
+    output = self.handle(*args, **options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.core.management.commands.flush.Command object at 0x11412d810>
+options = {'allow_cascade': False, 'database': 'default', 'force_color': False, 'inhibit_post_migrate': False, ...}
+database = 'default'
+connection = <DatabaseWrapper vendor='postgresql' alias='default'>
+verbosity = 0, interactive = False, reset_sequences = False
+allow_cascade = False, inhibit_post_migrate = False
+
+        def handle(self, **options):
+            database = options["database"]
+            connection = connections[database]
+            verbosity = options["verbosity"]
+            interactive = options["interactive"]
+            # The following are stealth options used by Django's internals.
+            reset_sequences = options.get("reset_sequences", True)
+            allow_cascade = options.get("allow_cascade", False)
+            inhibit_post_migrate = options.get("inhibit_post_migrate", False)
+    
+            self.style = no_style()
+    
+            # Import the 'management' module within each installed app, to register
+            # dispatcher events.
+            for app_config in apps.get_app_configs():
+                try:
+                    import_module(".management", app_config.name)
+                except ImportError:
+                    pass
+    
+            sql_list = sql_flush(
+                self.style,
+                connection,
+                reset_sequences=reset_sequences,
+                allow_cascade=allow_cascade,
+            )
+    
+            if interactive:
+                confirm = input(
+                    """You have requested a flush of the database.
+    This will IRREVERSIBLY DESTROY all data currently in the "%s" database,
+    and return each table to an empty state.
+    Are you sure you want to do this?
+    
+        Type 'yes' to continue, or 'no' to cancel: """
+                    % connection.settings_dict["NAME"]
+                )
+            else:
+                confirm = "yes"
+    
+            if confirm == "yes":
+                try:
+                    connection.ops.execute_sql_flush(sql_list)
+                except Exception as exc:
+>                   raise CommandError(
+                        "Database %s couldn't be flushed. Possible reasons:\n"
+                        "  * The database isn't running or isn't configured correctly.\n"
+                        "  * At least one of the expected database tables doesn't exist.\n"
+                        "  * The SQL was invalid.\n"
+                        "Hint: Look at the output of 'django-admin sqlflush'. "
+                        "That's the SQL this command wasn't able to run."
+                        % (connection.settings_dict["NAME"],)
+                    ) from exc
+E                   django.core.management.base.CommandError: Database test_bbrose_db couldn't be flushed. Possible reasons:
+E                     * The database isn't running or isn't configured correctly.
+E                     * At least one of the expected database tables doesn't exist.
+E                     * The SQL was invalid.
+E                   Hint: Look at the output of 'django-admin sqlflush'. That's the SQL this command wasn't able to run.
+
+venv/lib/python3.11/site-packages/django/core/management/commands/flush.py:75: CommandError
+_ ConfirmationDialogBrowserTests.test_confirm_sends_one_request_and_freezes_into_confirmed_state _
+
+self = <django.db.backends.utils.CursorWrapper object at 0x1142f9850>
+sql = 'INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING "auth_user"."id"'
+params = ('pbkdf2_sha256$600000$teVDDluJRZ5hf0tT4DkXux$XBAMV7JKgmHtnu1ZG0T9Kbb77y6ASMulQc/a/1dyu2k=', None, False, 'uib4b', '', '', ...)
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x1142f9850>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+                return self.cursor.execute(sql)
+            else:
+>               return self.cursor.execute(sql, params)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "auth_user_username_key"
+E               DETAIL:  Key (username)=(uib4b) already exists.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:89: UniqueViolation
+
+The above exception was the direct cause of the following exception:
+
+self = <apps.pipeline.tests.test_browser_profile_editor.ConfirmationDialogBrowserTests testMethod=test_confirm_sends_one_request_and_freezes_into_confirmed_state>
+
+    def setUp(self):
+>       super().setUp()
+
+apps/pipeline/tests/test_browser_profile_editor.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+apps/pipeline/tests/test_browser_staged_reference_ui.py:68: in setUp
+    self.user = User.objects.create_user("uib4b", "u@t.com", "pw",
+venv/lib/python3.11/site-packages/django/contrib/auth/models.py:161: in create_user
+    return self._create_user(username, email, password, **extra_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/contrib/auth/models.py:155: in _create_user
+    user.save(using=self._db)
+venv/lib/python3.11/site-packages/django/contrib/auth/base_user.py:76: in save
+    super().save(*args, **kwargs)
+venv/lib/python3.11/site-packages/django/db/models/base.py:814: in save
+    self.save_base(
+venv/lib/python3.11/site-packages/django/db/models/base.py:877: in save_base
+    updated = self._save_table(
+venv/lib/python3.11/site-packages/django/db/models/base.py:1020: in _save_table
+    results = self._do_insert(
+venv/lib/python3.11/site-packages/django/db/models/base.py:1061: in _do_insert
+    return manager._insert(
+venv/lib/python3.11/site-packages/django/db/models/manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/models/query.py:1805: in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py:1820: in execute_sql
+    cursor.execute(sql, params)
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:67: in execute
+    return self._execute_with_wrappers(
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:80: in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:84: in _execute
+    with self.db.wrap_database_errors:
+venv/lib/python3.11/site-packages/django/db/utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.db.backends.utils.CursorWrapper object at 0x1142f9850>
+sql = 'INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING "auth_user"."id"'
+params = ('pbkdf2_sha256$600000$teVDDluJRZ5hf0tT4DkXux$XBAMV7JKgmHtnu1ZG0T9Kbb77y6ASMulQc/a/1dyu2k=', None, False, 'uib4b', '', '', ...)
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x1142f9850>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+                return self.cursor.execute(sql)
+            else:
+>               return self.cursor.execute(sql, params)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               django.db.utils.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+E               DETAIL:  Key (username)=(uib4b) already exists.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:89: IntegrityError
+____________ ConfirmationDialogBrowserTests.test_dialog_traps_focus ____________
+
+self = <django.db.backends.utils.CursorWrapper object at 0x11460c0d0>
+sql = 'TRUNCATE "core_brand", "auth_user_user_permissions", "dielines_dielinejob", "pipeline_palettematerialartifact", "inte...on", "auth_user_groups", "auth_group_permissions", "intelligence_semanticdocumentembedding", "pipeline_taskreference";'
+params = None
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x11460c0d0>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+>               return self.cursor.execute(sql)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+E               psycopg2.errors.DeadlockDetected: deadlock detected
+E               DETAIL:  Process 13807 waits for AccessExclusiveLock on relation 55385451 of database 55384414; blocked by process 13815.
+E               Process 13815 waits for AccessShareLock on relation 55384744 of database 55384414; blocked by process 13807.
+E               HINT:  See server log for query details.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:87: DeadlockDetected
+
+The above exception was the direct cause of the following exception:
+
+self = <django.core.management.commands.flush.Command object at 0x1148d2d10>
+options = {'allow_cascade': False, 'database': 'default', 'force_color': False, 'inhibit_post_migrate': False, ...}
+database = 'default'
+connection = <DatabaseWrapper vendor='postgresql' alias='default'>
+verbosity = 0, interactive = False, reset_sequences = False
+allow_cascade = False, inhibit_post_migrate = False
+
+        def handle(self, **options):
+            database = options["database"]
+            connection = connections[database]
+            verbosity = options["verbosity"]
+            interactive = options["interactive"]
+            # The following are stealth options used by Django's internals.
+            reset_sequences = options.get("reset_sequences", True)
+            allow_cascade = options.get("allow_cascade", False)
+            inhibit_post_migrate = options.get("inhibit_post_migrate", False)
+    
+            self.style = no_style()
+    
+            # Import the 'management' module within each installed app, to register
+            # dispatcher events.
+            for app_config in apps.get_app_configs():
+                try:
+                    import_module(".management", app_config.name)
+                except ImportError:
+                    pass
+    
+            sql_list = sql_flush(
+                self.style,
+                connection,
+                reset_sequences=reset_sequences,
+                allow_cascade=allow_cascade,
+            )
+    
+            if interactive:
+                confirm = input(
+                    """You have requested a flush of the database.
+    This will IRREVERSIBLY DESTROY all data currently in the "%s" database,
+    and return each table to an empty state.
+    Are you sure you want to do this?
+    
+        Type 'yes' to continue, or 'no' to cancel: """
+                    % connection.settings_dict["NAME"]
+                )
+            else:
+                confirm = "yes"
+    
+            if confirm == "yes":
+                try:
+>                   connection.ops.execute_sql_flush(sql_list)
+
+venv/lib/python3.11/site-packages/django/core/management/commands/flush.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/db/backends/base/operations.py:451: in execute_sql_flush
+    cursor.execute(sql)
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:67: in execute
+    return self._execute_with_wrappers(
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:80: in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:84: in _execute
+    with self.db.wrap_database_errors:
+venv/lib/python3.11/site-packages/django/db/utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.db.backends.utils.CursorWrapper object at 0x11460c0d0>
+sql = 'TRUNCATE "core_brand", "auth_user_user_permissions", "dielines_dielinejob", "pipeline_palettematerialartifact", "inte...on", "auth_user_groups", "auth_group_permissions", "intelligence_semanticdocumentembedding", "pipeline_taskreference";'
+params = None
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x11460c0d0>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+>               return self.cursor.execute(sql)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+E               django.db.utils.OperationalError: deadlock detected
+E               DETAIL:  Process 13807 waits for AccessExclusiveLock on relation 55385451 of database 55384414; blocked by process 13815.
+E               Process 13815 waits for AccessShareLock on relation 55384744 of database 55384414; blocked by process 13807.
+E               HINT:  See server log for query details.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:87: OperationalError
+
+The above exception was the direct cause of the following exception:
+
+self = <apps.pipeline.tests.test_browser_profile_editor.ConfirmationDialogBrowserTests testMethod=test_dialog_traps_focus>
+result = <TestCaseFunction test_dialog_traps_focus>, debug = False
+
+    def _setup_and_call(self, result, debug=False):
+        """
+        Perform the following in order: pre-setup, run test, post-teardown,
+        skipping pre/post hooks if test is set to be skipped.
+    
+        If debug=True, reraise any errors in setup and use super().debug()
+        instead of __call__() to run the test.
+        """
+        testMethod = getattr(self, self._testMethodName)
+        skipped = getattr(self.__class__, "__unittest_skip__", False) or getattr(
+            testMethod, "__unittest_skip__", False
+        )
+    
+        # Convert async test methods.
+        if iscoroutinefunction(testMethod):
+            setattr(self, self._testMethodName, async_to_sync(testMethod))
+    
+        if not skipped:
+            try:
+                self._pre_setup()
+            except Exception:
+                if debug:
+                    raise
+                result.addError(self, sys.exc_info())
+                return
+        if debug:
+            super().debug()
+        else:
+            super().__call__(result)
+        if not skipped:
+            try:
+>               self._post_teardown()
+
+venv/lib/python3.11/site-packages/django/test/testcases.py:419: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/test/testcases.py:1279: in _post_teardown
+    self._fixture_teardown()
+venv/lib/python3.11/site-packages/django/test/testcases.py:1313: in _fixture_teardown
+    call_command(
+venv/lib/python3.11/site-packages/django/core/management/__init__.py:194: in call_command
+    return command.execute(*args, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/core/management/base.py:458: in execute
+    output = self.handle(*args, **options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.core.management.commands.flush.Command object at 0x1148d2d10>
+options = {'allow_cascade': False, 'database': 'default', 'force_color': False, 'inhibit_post_migrate': False, ...}
+database = 'default'
+connection = <DatabaseWrapper vendor='postgresql' alias='default'>
+verbosity = 0, interactive = False, reset_sequences = False
+allow_cascade = False, inhibit_post_migrate = False
+
+        def handle(self, **options):
+            database = options["database"]
+            connection = connections[database]
+            verbosity = options["verbosity"]
+            interactive = options["interactive"]
+            # The following are stealth options used by Django's internals.
+            reset_sequences = options.get("reset_sequences", True)
+            allow_cascade = options.get("allow_cascade", False)
+            inhibit_post_migrate = options.get("inhibit_post_migrate", False)
+    
+            self.style = no_style()
+    
+            # Import the 'management' module within each installed app, to register
+            # dispatcher events.
+            for app_config in apps.get_app_configs():
+                try:
+                    import_module(".management", app_config.name)
+                except ImportError:
+                    pass
+    
+            sql_list = sql_flush(
+                self.style,
+                connection,
+                reset_sequences=reset_sequences,
+                allow_cascade=allow_cascade,
+            )
+    
+            if interactive:
+                confirm = input(
+                    """You have requested a flush of the database.
+    This will IRREVERSIBLY DESTROY all data currently in the "%s" database,
+    and return each table to an empty state.
+    Are you sure you want to do this?
+    
+        Type 'yes' to continue, or 'no' to cancel: """
+                    % connection.settings_dict["NAME"]
+                )
+            else:
+                confirm = "yes"
+    
+            if confirm == "yes":
+                try:
+                    connection.ops.execute_sql_flush(sql_list)
+                except Exception as exc:
+>                   raise CommandError(
+                        "Database %s couldn't be flushed. Possible reasons:\n"
+                        "  * The database isn't running or isn't configured correctly.\n"
+                        "  * At least one of the expected database tables doesn't exist.\n"
+                        "  * The SQL was invalid.\n"
+                        "Hint: Look at the output of 'django-admin sqlflush'. "
+                        "That's the SQL this command wasn't able to run."
+                        % (connection.settings_dict["NAME"],)
+                    ) from exc
+E                   django.core.management.base.CommandError: Database test_bbrose_db couldn't be flushed. Possible reasons:
+E                     * The database isn't running or isn't configured correctly.
+E                     * At least one of the expected database tables doesn't exist.
+E                     * The SQL was invalid.
+E                   Hint: Look at the output of 'django-admin sqlflush'. That's the SQL this command wasn't able to run.
+
+venv/lib/python3.11/site-packages/django/core/management/commands/flush.py:75: CommandError
+______ ConfirmationDialogBrowserTests.test_double_click_sends_one_request ______
+
+self = <django.db.backends.utils.CursorWrapper object at 0x114030cd0>
+sql = 'INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING "auth_user"."id"'
+params = ('pbkdf2_sha256$600000$oQXdkRkZs4XCt2CNJGLiZx$5bz9FOdQOgkmNvtTVyu+h3+g0zcLJ5iglLidYxtwByY=', None, False, 'uib4b', '', '', ...)
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x114030cd0>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+                return self.cursor.execute(sql)
+            else:
+>               return self.cursor.execute(sql, params)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "auth_user_username_key"
+E               DETAIL:  Key (username)=(uib4b) already exists.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:89: UniqueViolation
+
+The above exception was the direct cause of the following exception:
+
+self = <apps.pipeline.tests.test_browser_profile_editor.ConfirmationDialogBrowserTests testMethod=test_double_click_sends_one_request>
+
+    def setUp(self):
+>       super().setUp()
+
+apps/pipeline/tests/test_browser_profile_editor.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+apps/pipeline/tests/test_browser_staged_reference_ui.py:68: in setUp
+    self.user = User.objects.create_user("uib4b", "u@t.com", "pw",
+venv/lib/python3.11/site-packages/django/contrib/auth/models.py:161: in create_user
+    return self._create_user(username, email, password, **extra_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/contrib/auth/models.py:155: in _create_user
+    user.save(using=self._db)
+venv/lib/python3.11/site-packages/django/contrib/auth/base_user.py:76: in save
+    super().save(*args, **kwargs)
+venv/lib/python3.11/site-packages/django/db/models/base.py:814: in save
+    self.save_base(
+venv/lib/python3.11/site-packages/django/db/models/base.py:877: in save_base
+    updated = self._save_table(
+venv/lib/python3.11/site-packages/django/db/models/base.py:1020: in _save_table
+    results = self._do_insert(
+venv/lib/python3.11/site-packages/django/db/models/base.py:1061: in _do_insert
+    return manager._insert(
+venv/lib/python3.11/site-packages/django/db/models/manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/models/query.py:1805: in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py:1820: in execute_sql
+    cursor.execute(sql, params)
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:67: in execute
+    return self._execute_with_wrappers(
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:80: in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:84: in _execute
+    with self.db.wrap_database_errors:
+venv/lib/python3.11/site-packages/django/db/utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.db.backends.utils.CursorWrapper object at 0x114030cd0>
+sql = 'INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING "auth_user"."id"'
+params = ('pbkdf2_sha256$600000$oQXdkRkZs4XCt2CNJGLiZx$5bz9FOdQOgkmNvtTVyu+h3+g0zcLJ5iglLidYxtwByY=', None, False, 'uib4b', '', '', ...)
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x114030cd0>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+                return self.cursor.execute(sql)
+            else:
+>               return self.cursor.execute(sql, params)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               django.db.utils.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+E               DETAIL:  Key (username)=(uib4b) already exists.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:89: IntegrityError
+_ ConfirmationDialogBrowserTests.test_incomplete_profile_cannot_open_the_dialog _
+
+self = <django.db.backends.utils.CursorWrapper object at 0x1143e19d0>
+sql = 'TRUNCATE "core_brand", "auth_user_user_permissions", "dielines_dielinejob", "pipeline_palettematerialartifact", "inte...on", "auth_user_groups", "auth_group_permissions", "intelligence_semanticdocumentembedding", "pipeline_taskreference";'
+params = None
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x1143e19d0>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+>               return self.cursor.execute(sql)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+E               psycopg2.errors.DeadlockDetected: deadlock detected
+E               DETAIL:  Process 13839 waits for AccessExclusiveLock on relation 55385451 of database 55384414; blocked by process 13857.
+E               Process 13857 waits for AccessShareLock on relation 55384744 of database 55384414; blocked by process 13839.
+E               HINT:  See server log for query details.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:87: DeadlockDetected
+
+The above exception was the direct cause of the following exception:
+
+self = <django.core.management.commands.flush.Command object at 0x113fc9a10>
+options = {'allow_cascade': False, 'database': 'default', 'force_color': False, 'inhibit_post_migrate': False, ...}
+database = 'default'
+connection = <DatabaseWrapper vendor='postgresql' alias='default'>
+verbosity = 0, interactive = False, reset_sequences = False
+allow_cascade = False, inhibit_post_migrate = False
+
+        def handle(self, **options):
+            database = options["database"]
+            connection = connections[database]
+            verbosity = options["verbosity"]
+            interactive = options["interactive"]
+            # The following are stealth options used by Django's internals.
+            reset_sequences = options.get("reset_sequences", True)
+            allow_cascade = options.get("allow_cascade", False)
+            inhibit_post_migrate = options.get("inhibit_post_migrate", False)
+    
+            self.style = no_style()
+    
+            # Import the 'management' module within each installed app, to register
+            # dispatcher events.
+            for app_config in apps.get_app_configs():
+                try:
+                    import_module(".management", app_config.name)
+                except ImportError:
+                    pass
+    
+            sql_list = sql_flush(
+                self.style,
+                connection,
+                reset_sequences=reset_sequences,
+                allow_cascade=allow_cascade,
+            )
+    
+            if interactive:
+                confirm = input(
+                    """You have requested a flush of the database.
+    This will IRREVERSIBLY DESTROY all data currently in the "%s" database,
+    and return each table to an empty state.
+    Are you sure you want to do this?
+    
+        Type 'yes' to continue, or 'no' to cancel: """
+                    % connection.settings_dict["NAME"]
+                )
+            else:
+                confirm = "yes"
+    
+            if confirm == "yes":
+                try:
+>                   connection.ops.execute_sql_flush(sql_list)
+
+venv/lib/python3.11/site-packages/django/core/management/commands/flush.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/db/backends/base/operations.py:451: in execute_sql_flush
+    cursor.execute(sql)
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:67: in execute
+    return self._execute_with_wrappers(
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:80: in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:84: in _execute
+    with self.db.wrap_database_errors:
+venv/lib/python3.11/site-packages/django/db/utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.db.backends.utils.CursorWrapper object at 0x1143e19d0>
+sql = 'TRUNCATE "core_brand", "auth_user_user_permissions", "dielines_dielinejob", "pipeline_palettematerialartifact", "inte...on", "auth_user_groups", "auth_group_permissions", "intelligence_semanticdocumentembedding", "pipeline_taskreference";'
+params = None
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x1143e19d0>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+>               return self.cursor.execute(sql)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+E               django.db.utils.OperationalError: deadlock detected
+E               DETAIL:  Process 13839 waits for AccessExclusiveLock on relation 55385451 of database 55384414; blocked by process 13857.
+E               Process 13857 waits for AccessShareLock on relation 55384744 of database 55384414; blocked by process 13839.
+E               HINT:  See server log for query details.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:87: OperationalError
+
+The above exception was the direct cause of the following exception:
+
+self = <apps.pipeline.tests.test_browser_profile_editor.ConfirmationDialogBrowserTests testMethod=test_incomplete_profile_cannot_open_the_dialog>
+result = <TestCaseFunction test_incomplete_profile_cannot_open_the_dialog>
+debug = False
+
+    def _setup_and_call(self, result, debug=False):
+        """
+        Perform the following in order: pre-setup, run test, post-teardown,
+        skipping pre/post hooks if test is set to be skipped.
+    
+        If debug=True, reraise any errors in setup and use super().debug()
+        instead of __call__() to run the test.
+        """
+        testMethod = getattr(self, self._testMethodName)
+        skipped = getattr(self.__class__, "__unittest_skip__", False) or getattr(
+            testMethod, "__unittest_skip__", False
+        )
+    
+        # Convert async test methods.
+        if iscoroutinefunction(testMethod):
+            setattr(self, self._testMethodName, async_to_sync(testMethod))
+    
+        if not skipped:
+            try:
+                self._pre_setup()
+            except Exception:
+                if debug:
+                    raise
+                result.addError(self, sys.exc_info())
+                return
+        if debug:
+            super().debug()
+        else:
+            super().__call__(result)
+        if not skipped:
+            try:
+>               self._post_teardown()
+
+venv/lib/python3.11/site-packages/django/test/testcases.py:419: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/test/testcases.py:1279: in _post_teardown
+    self._fixture_teardown()
+venv/lib/python3.11/site-packages/django/test/testcases.py:1313: in _fixture_teardown
+    call_command(
+venv/lib/python3.11/site-packages/django/core/management/__init__.py:194: in call_command
+    return command.execute(*args, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/core/management/base.py:458: in execute
+    output = self.handle(*args, **options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.core.management.commands.flush.Command object at 0x113fc9a10>
+options = {'allow_cascade': False, 'database': 'default', 'force_color': False, 'inhibit_post_migrate': False, ...}
+database = 'default'
+connection = <DatabaseWrapper vendor='postgresql' alias='default'>
+verbosity = 0, interactive = False, reset_sequences = False
+allow_cascade = False, inhibit_post_migrate = False
+
+        def handle(self, **options):
+            database = options["database"]
+            connection = connections[database]
+            verbosity = options["verbosity"]
+            interactive = options["interactive"]
+            # The following are stealth options used by Django's internals.
+            reset_sequences = options.get("reset_sequences", True)
+            allow_cascade = options.get("allow_cascade", False)
+            inhibit_post_migrate = options.get("inhibit_post_migrate", False)
+    
+            self.style = no_style()
+    
+            # Import the 'management' module within each installed app, to register
+            # dispatcher events.
+            for app_config in apps.get_app_configs():
+                try:
+                    import_module(".management", app_config.name)
+                except ImportError:
+                    pass
+    
+            sql_list = sql_flush(
+                self.style,
+                connection,
+                reset_sequences=reset_sequences,
+                allow_cascade=allow_cascade,
+            )
+    
+            if interactive:
+                confirm = input(
+                    """You have requested a flush of the database.
+    This will IRREVERSIBLY DESTROY all data currently in the "%s" database,
+    and return each table to an empty state.
+    Are you sure you want to do this?
+    
+        Type 'yes' to continue, or 'no' to cancel: """
+                    % connection.settings_dict["NAME"]
+                )
+            else:
+                confirm = "yes"
+    
+            if confirm == "yes":
+                try:
+                    connection.ops.execute_sql_flush(sql_list)
+                except Exception as exc:
+>                   raise CommandError(
+                        "Database %s couldn't be flushed. Possible reasons:\n"
+                        "  * The database isn't running or isn't configured correctly.\n"
+                        "  * At least one of the expected database tables doesn't exist.\n"
+                        "  * The SQL was invalid.\n"
+                        "Hint: Look at the output of 'django-admin sqlflush'. "
+                        "That's the SQL this command wasn't able to run."
+                        % (connection.settings_dict["NAME"],)
+                    ) from exc
+E                   django.core.management.base.CommandError: Database test_bbrose_db couldn't be flushed. Possible reasons:
+E                     * The database isn't running or isn't configured correctly.
+E                     * At least one of the expected database tables doesn't exist.
+E                     * The SQL was invalid.
+E                   Hint: Look at the output of 'django-admin sqlflush'. That's the SQL this command wasn't able to run.
+
+venv/lib/python3.11/site-packages/django/core/management/commands/flush.py:75: CommandError
+_ ConfirmationDialogBrowserTests.test_network_failure_recovers_through_state_inspection _
+
+self = <django.db.backends.utils.CursorWrapper object at 0x114022dd0>
+sql = 'INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING "auth_user"."id"'
+params = ('pbkdf2_sha256$600000$VLKNlLV1hX07NoRc11v2mf$dm7Ycwoye8mpQkgTwYq3H34pXLGZ3ZmOvP5eBUICIHU=', None, False, 'uib4b', '', '', ...)
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x114022dd0>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+                return self.cursor.execute(sql)
+            else:
+>               return self.cursor.execute(sql, params)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "auth_user_username_key"
+E               DETAIL:  Key (username)=(uib4b) already exists.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:89: UniqueViolation
+
+The above exception was the direct cause of the following exception:
+
+self = <apps.pipeline.tests.test_browser_profile_editor.ConfirmationDialogBrowserTests testMethod=test_network_failure_recovers_through_state_inspection>
+
+    def setUp(self):
+>       super().setUp()
+
+apps/pipeline/tests/test_browser_profile_editor.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+apps/pipeline/tests/test_browser_staged_reference_ui.py:68: in setUp
+    self.user = User.objects.create_user("uib4b", "u@t.com", "pw",
+venv/lib/python3.11/site-packages/django/contrib/auth/models.py:161: in create_user
+    return self._create_user(username, email, password, **extra_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/contrib/auth/models.py:155: in _create_user
+    user.save(using=self._db)
+venv/lib/python3.11/site-packages/django/contrib/auth/base_user.py:76: in save
+    super().save(*args, **kwargs)
+venv/lib/python3.11/site-packages/django/db/models/base.py:814: in save
+    self.save_base(
+venv/lib/python3.11/site-packages/django/db/models/base.py:877: in save_base
+    updated = self._save_table(
+venv/lib/python3.11/site-packages/django/db/models/base.py:1020: in _save_table
+    results = self._do_insert(
+venv/lib/python3.11/site-packages/django/db/models/base.py:1061: in _do_insert
+    return manager._insert(
+venv/lib/python3.11/site-packages/django/db/models/manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/models/query.py:1805: in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py:1820: in execute_sql
+    cursor.execute(sql, params)
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:67: in execute
+    return self._execute_with_wrappers(
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:80: in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:84: in _execute
+    with self.db.wrap_database_errors:
+venv/lib/python3.11/site-packages/django/db/utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.db.backends.utils.CursorWrapper object at 0x114022dd0>
+sql = 'INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING "auth_user"."id"'
+params = ('pbkdf2_sha256$600000$VLKNlLV1hX07NoRc11v2mf$dm7Ycwoye8mpQkgTwYq3H34pXLGZ3ZmOvP5eBUICIHU=', None, False, 'uib4b', '', '', ...)
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x114022dd0>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+                return self.cursor.execute(sql)
+            else:
+>               return self.cursor.execute(sql, params)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               django.db.utils.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+E               DETAIL:  Key (username)=(uib4b) already exists.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:89: IntegrityError
+________ ConfirmationDialogBrowserTests.test_other_cannot_open_or_post _________
+
+self = <django.db.backends.utils.CursorWrapper object at 0x114126e50>
+sql = 'TRUNCATE "core_brand", "auth_user_user_permissions", "dielines_dielinejob", "pipeline_palettematerialartifact", "inte...on", "auth_user_groups", "auth_group_permissions", "intelligence_semanticdocumentembedding", "pipeline_taskreference";'
+params = None
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x114126e50>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+>               return self.cursor.execute(sql)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+E               psycopg2.errors.DeadlockDetected: deadlock detected
+E               DETAIL:  Process 13877 waits for AccessExclusiveLock on relation 55385451 of database 55384414; blocked by process 13891.
+E               Process 13891 waits for AccessShareLock on relation 55384744 of database 55384414; blocked by process 13877.
+E               HINT:  See server log for query details.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:87: DeadlockDetected
+
+The above exception was the direct cause of the following exception:
+
+self = <django.core.management.commands.flush.Command object at 0x113fadd50>
+options = {'allow_cascade': False, 'database': 'default', 'force_color': False, 'inhibit_post_migrate': False, ...}
+database = 'default'
+connection = <DatabaseWrapper vendor='postgresql' alias='default'>
+verbosity = 0, interactive = False, reset_sequences = False
+allow_cascade = False, inhibit_post_migrate = False
+
+        def handle(self, **options):
+            database = options["database"]
+            connection = connections[database]
+            verbosity = options["verbosity"]
+            interactive = options["interactive"]
+            # The following are stealth options used by Django's internals.
+            reset_sequences = options.get("reset_sequences", True)
+            allow_cascade = options.get("allow_cascade", False)
+            inhibit_post_migrate = options.get("inhibit_post_migrate", False)
+    
+            self.style = no_style()
+    
+            # Import the 'management' module within each installed app, to register
+            # dispatcher events.
+            for app_config in apps.get_app_configs():
+                try:
+                    import_module(".management", app_config.name)
+                except ImportError:
+                    pass
+    
+            sql_list = sql_flush(
+                self.style,
+                connection,
+                reset_sequences=reset_sequences,
+                allow_cascade=allow_cascade,
+            )
+    
+            if interactive:
+                confirm = input(
+                    """You have requested a flush of the database.
+    This will IRREVERSIBLY DESTROY all data currently in the "%s" database,
+    and return each table to an empty state.
+    Are you sure you want to do this?
+    
+        Type 'yes' to continue, or 'no' to cancel: """
+                    % connection.settings_dict["NAME"]
+                )
+            else:
+                confirm = "yes"
+    
+            if confirm == "yes":
+                try:
+>                   connection.ops.execute_sql_flush(sql_list)
+
+venv/lib/python3.11/site-packages/django/core/management/commands/flush.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/db/backends/base/operations.py:451: in execute_sql_flush
+    cursor.execute(sql)
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:67: in execute
+    return self._execute_with_wrappers(
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:80: in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:84: in _execute
+    with self.db.wrap_database_errors:
+venv/lib/python3.11/site-packages/django/db/utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.db.backends.utils.CursorWrapper object at 0x114126e50>
+sql = 'TRUNCATE "core_brand", "auth_user_user_permissions", "dielines_dielinejob", "pipeline_palettematerialartifact", "inte...on", "auth_user_groups", "auth_group_permissions", "intelligence_semanticdocumentembedding", "pipeline_taskreference";'
+params = None
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x114126e50>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+>               return self.cursor.execute(sql)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+E               django.db.utils.OperationalError: deadlock detected
+E               DETAIL:  Process 13877 waits for AccessExclusiveLock on relation 55385451 of database 55384414; blocked by process 13891.
+E               Process 13891 waits for AccessShareLock on relation 55384744 of database 55384414; blocked by process 13877.
+E               HINT:  See server log for query details.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:87: OperationalError
+
+The above exception was the direct cause of the following exception:
+
+self = <apps.pipeline.tests.test_browser_profile_editor.ConfirmationDialogBrowserTests testMethod=test_other_cannot_open_or_post>
+result = <TestCaseFunction test_other_cannot_open_or_post>, debug = False
+
+    def _setup_and_call(self, result, debug=False):
+        """
+        Perform the following in order: pre-setup, run test, post-teardown,
+        skipping pre/post hooks if test is set to be skipped.
+    
+        If debug=True, reraise any errors in setup and use super().debug()
+        instead of __call__() to run the test.
+        """
+        testMethod = getattr(self, self._testMethodName)
+        skipped = getattr(self.__class__, "__unittest_skip__", False) or getattr(
+            testMethod, "__unittest_skip__", False
+        )
+    
+        # Convert async test methods.
+        if iscoroutinefunction(testMethod):
+            setattr(self, self._testMethodName, async_to_sync(testMethod))
+    
+        if not skipped:
+            try:
+                self._pre_setup()
+            except Exception:
+                if debug:
+                    raise
+                result.addError(self, sys.exc_info())
+                return
+        if debug:
+            super().debug()
+        else:
+            super().__call__(result)
+        if not skipped:
+            try:
+>               self._post_teardown()
+
+venv/lib/python3.11/site-packages/django/test/testcases.py:419: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/test/testcases.py:1279: in _post_teardown
+    self._fixture_teardown()
+venv/lib/python3.11/site-packages/django/test/testcases.py:1313: in _fixture_teardown
+    call_command(
+venv/lib/python3.11/site-packages/django/core/management/__init__.py:194: in call_command
+    return command.execute(*args, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/core/management/base.py:458: in execute
+    output = self.handle(*args, **options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.core.management.commands.flush.Command object at 0x113fadd50>
+options = {'allow_cascade': False, 'database': 'default', 'force_color': False, 'inhibit_post_migrate': False, ...}
+database = 'default'
+connection = <DatabaseWrapper vendor='postgresql' alias='default'>
+verbosity = 0, interactive = False, reset_sequences = False
+allow_cascade = False, inhibit_post_migrate = False
+
+        def handle(self, **options):
+            database = options["database"]
+            connection = connections[database]
+            verbosity = options["verbosity"]
+            interactive = options["interactive"]
+            # The following are stealth options used by Django's internals.
+            reset_sequences = options.get("reset_sequences", True)
+            allow_cascade = options.get("allow_cascade", False)
+            inhibit_post_migrate = options.get("inhibit_post_migrate", False)
+    
+            self.style = no_style()
+    
+            # Import the 'management' module within each installed app, to register
+            # dispatcher events.
+            for app_config in apps.get_app_configs():
+                try:
+                    import_module(".management", app_config.name)
+                except ImportError:
+                    pass
+    
+            sql_list = sql_flush(
+                self.style,
+                connection,
+                reset_sequences=reset_sequences,
+                allow_cascade=allow_cascade,
+            )
+    
+            if interactive:
+                confirm = input(
+                    """You have requested a flush of the database.
+    This will IRREVERSIBLY DESTROY all data currently in the "%s" database,
+    and return each table to an empty state.
+    Are you sure you want to do this?
+    
+        Type 'yes' to continue, or 'no' to cancel: """
+                    % connection.settings_dict["NAME"]
+                )
+            else:
+                confirm = "yes"
+    
+            if confirm == "yes":
+                try:
+                    connection.ops.execute_sql_flush(sql_list)
+                except Exception as exc:
+>                   raise CommandError(
+                        "Database %s couldn't be flushed. Possible reasons:\n"
+                        "  * The database isn't running or isn't configured correctly.\n"
+                        "  * At least one of the expected database tables doesn't exist.\n"
+                        "  * The SQL was invalid.\n"
+                        "Hint: Look at the output of 'django-admin sqlflush'. "
+                        "That's the SQL this command wasn't able to run."
+                        % (connection.settings_dict["NAME"],)
+                    ) from exc
+E                   django.core.management.base.CommandError: Database test_bbrose_db couldn't be flushed. Possible reasons:
+E                     * The database isn't running or isn't configured correctly.
+E                     * At least one of the expected database tables doesn't exist.
+E                     * The SQL was invalid.
+E                   Hint: Look at the output of 'django-admin sqlflush'. That's the SQL this command wasn't able to run.
+
+venv/lib/python3.11/site-packages/django/core/management/commands/flush.py:75: CommandError
+__ ConfirmationDialogBrowserTests.test_review_cancel_and_escape_send_nothing ___
+
+self = <django.db.backends.utils.CursorWrapper object at 0x10b6f6b50>
+sql = 'INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING "auth_user"."id"'
+params = ('pbkdf2_sha256$600000$Ep0IVRvw75T4Qme9bqOYHO$55/g+krlScdNoBotKJpBhKcGk1vq91xAY98xPQUVVKg=', None, False, 'uib4b', '', '', ...)
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x10b6f6b50>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+                return self.cursor.execute(sql)
+            else:
+>               return self.cursor.execute(sql, params)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "auth_user_username_key"
+E               DETAIL:  Key (username)=(uib4b) already exists.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:89: UniqueViolation
+
+The above exception was the direct cause of the following exception:
+
+self = <apps.pipeline.tests.test_browser_profile_editor.ConfirmationDialogBrowserTests testMethod=test_review_cancel_and_escape_send_nothing>
+
+    def setUp(self):
+>       super().setUp()
+
+apps/pipeline/tests/test_browser_profile_editor.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+apps/pipeline/tests/test_browser_staged_reference_ui.py:68: in setUp
+    self.user = User.objects.create_user("uib4b", "u@t.com", "pw",
+venv/lib/python3.11/site-packages/django/contrib/auth/models.py:161: in create_user
+    return self._create_user(username, email, password, **extra_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/contrib/auth/models.py:155: in _create_user
+    user.save(using=self._db)
+venv/lib/python3.11/site-packages/django/contrib/auth/base_user.py:76: in save
+    super().save(*args, **kwargs)
+venv/lib/python3.11/site-packages/django/db/models/base.py:814: in save
+    self.save_base(
+venv/lib/python3.11/site-packages/django/db/models/base.py:877: in save_base
+    updated = self._save_table(
+venv/lib/python3.11/site-packages/django/db/models/base.py:1020: in _save_table
+    results = self._do_insert(
+venv/lib/python3.11/site-packages/django/db/models/base.py:1061: in _do_insert
+    return manager._insert(
+venv/lib/python3.11/site-packages/django/db/models/manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/models/query.py:1805: in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py:1820: in execute_sql
+    cursor.execute(sql, params)
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:67: in execute
+    return self._execute_with_wrappers(
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:80: in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:84: in _execute
+    with self.db.wrap_database_errors:
+venv/lib/python3.11/site-packages/django/db/utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <django.db.backends.utils.CursorWrapper object at 0x10b6f6b50>
+sql = 'INSERT INTO "auth_user" ("password", "last_login", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined") VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING "auth_user"."id"'
+params = ('pbkdf2_sha256$600000$Ep0IVRvw75T4Qme9bqOYHO$55/g+krlScdNoBotKJpBhKcGk1vq91xAY98xPQUVVKg=', None, False, 'uib4b', '', '', ...)
+ignored_wrapper_args = (False, {'connection': <DatabaseWrapper vendor='postgresql' alias='default'>, 'cursor': <django.db.backends.utils.CursorWrapper object at 0x10b6f6b50>})
+
+    def _execute(self, sql, params, *ignored_wrapper_args):
+        self.db.validate_no_broken_transaction()
+        with self.db.wrap_database_errors:
+            if params is None:
+                # params default might be backend specific.
+                return self.cursor.execute(sql)
+            else:
+>               return self.cursor.execute(sql, params)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               django.db.utils.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+E               DETAIL:  Key (username)=(uib4b) already exists.
+
+venv/lib/python3.11/site-packages/django/db/backends/utils.py:89: IntegrityError
+=============================== warnings summary ===============================
+apps/pipeline/tests/test_browser_review_board_references.py::ReviewBoardReferenceBrowserTests::test_card_metadata_badge_and_actions
+apps/pipeline/tests/test_browser_profile_editor.py::ProfileEditorBrowserTests::test_confirmed_task_shows_confirmed_state_not_the_editor
+apps/pipeline/tests/test_browser_profile_editor.py::ProfileEditorResponsiveA11yTests::test_focus_visible_styling_is_declared
+apps/pipeline/tests/test_browser_profile_editor.py::ConfirmationDialogBrowserTests::test_409_refusal_preserves_editor_and_state
+  /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/django/core/handlers/base.py:61: UserWarning: No directory at: /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/staticfiles/
+    mw_instance = middleware(adapted_handler)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED apps/pipeline/tests/test_browser_review_board_references.py::ReviewBoardReferenceBrowserTests::test_raster_previews_load_through_the_authorized_endpoint
+FAILED apps/pipeline/tests/test_browser_review_board_references.py::ReviewBoardReferenceBrowserTests::test_references_stay_separate_from_concepts
+FAILED apps/pipeline/tests/test_browser_profile_editor.py::ProfileEditorBrowserTests::test_confirmed_task_shows_confirmed_state_not_the_editor
+FAILED apps/pipeline/tests/test_browser_profile_editor.py::ProfileEditorBrowserTests::test_dirty_region_is_a_status_region
+FAILED apps/pipeline/tests/test_browser_profile_editor.py::ProfileEditorBrowserTests::test_four_config_driven_radio_cards
+FAILED apps/pipeline/tests/test_browser_profile_editor.py::ProfileEditorBrowserTests::test_group_labels_are_semantic
+FAILED apps/pipeline/tests/test_browser_profile_editor.py::ProfileEditorBrowserTests::test_number_input_clamps_to_config_range
+FAILED apps/pipeline/tests/test_browser_profile_editor.py::ProfileEditorBrowserTests::test_other_is_honest_never_a_bottle
+FAILED apps/pipeline/tests/test_browser_profile_editor.py::ProfileEditorResponsiveA11yTests::test_focus_visible_styling_is_declared
+FAILED apps/pipeline/tests/test_browser_profile_editor.py::ProfileEditorResponsiveA11yTests::test_mobile_390_stacks_without_overflow
+FAILED apps/pipeline/tests/test_browser_profile_editor.py::ProfileEditorResponsiveA11yTests::test_mobile_cards_operable_and_reset_reachable
+FAILED apps/pipeline/tests/test_browser_profile_editor.py::ProfileEditorResponsiveA11yTests::test_mobile_sliders_fit_the_viewport
+FAILED apps/pipeline/tests/test_browser_profile_editor.py::ProfileEditorResponsiveA11yTests::test_selected_states_are_not_colour_only
+FAILED apps/pipeline/tests/test_browser_profile_editor.py::ProfileEditorResponsiveA11yTests::test_sliders_have_accessible_names_and_values
+FAILED apps/pipeline/tests/test_browser_profile_editor.py::ConfirmationDialogBrowserTests::test_complete_profile_opens_dialog_with_exact_values
+FAILED apps/pipeline/tests/test_browser_profile_editor.py::ConfirmationDialogBrowserTests::test_confirm_sends_one_request_and_freezes_into_confirmed_state
+FAILED apps/pipeline/tests/test_browser_profile_editor.py::ConfirmationDialogBrowserTests::test_dialog_traps_focus
+FAILED apps/pipeline/tests/test_browser_profile_editor.py::ConfirmationDialogBrowserTests::test_double_click_sends_one_request
+FAILED apps/pipeline/tests/test_browser_profile_editor.py::ConfirmationDialogBrowserTests::test_incomplete_profile_cannot_open_the_dialog
+FAILED apps/pipeline/tests/test_browser_profile_editor.py::ConfirmationDialogBrowserTests::test_network_failure_recovers_through_state_inspection
+FAILED apps/pipeline/tests/test_browser_profile_editor.py::ConfirmationDialogBrowserTests::test_other_cannot_open_or_post
+FAILED apps/pipeline/tests/test_browser_profile_editor.py::ConfirmationDialogBrowserTests::test_review_cancel_and_escape_send_nothing
+22 failed, 24 passed, 4 warnings in 38.75s

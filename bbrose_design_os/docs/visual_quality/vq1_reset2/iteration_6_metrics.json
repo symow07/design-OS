@@ -1,0 +1,404 @@
+{
+  "metrics": {
+    "measured_on": "ACTUAL_EMITTED_PNG",
+    "row_aligned": true,
+    "averaged_with_body": false,
+    "collar_body_ratio_error": 0.00134,
+    "collar_outer_contour_iou": 0.97179,
+    "mean_collar_contour_distance": 0.00879,
+    "p95_collar_contour_distance": 0.03581,
+    "max_collar_junction_distance": 0.16176,
+    "visible_contour_steps": 0,
+    "unsupported_visible_internal_adapter": false,
+    "dark_flare_collar_overlap_ok": true,
+    "it5_comparison": {
+      "mean": 0.04184,
+      "p95": 0.06191,
+      "max": 0.18312,
+      "iou": 0.8653
+    },
+    "harness_note": "an earlier pass used a 0..1 resampler on a narrow band, which clamped outside the band and reported mean 0.106; row-aligned comparison is the correct measurement and is what is reported here",
+    "gates": {
+      "collar_body_ratio": true,
+      "collar_outer_contour_iou": true,
+      "mean_collar_contour_distance": true,
+      "p95_collar_contour_distance": true,
+      "max_collar_junction_distance": false,
+      "visible_contour_steps_zero": true,
+      "no_unsupported_internal_adapter": true
+    },
+    "gates_pass": false
+  },
+  "crops": {
+    "it5_CLOSURE": {
+      "component": "CLOSURE",
+      "created": true,
+      "path": "docs/visual_quality/vq1_it6_gate/iteration_5_closure.png",
+      "source_path": "docs/visual_quality/vq1_reset2/iteration_5.png",
+      "source_sha256": "cef8e1ab2618a97859c693e8a91ed0378f31baae482caef991e87e136b3973b9",
+      "crop_sha256": "f4dae362ceadafa081d14d436a779f31db2e9477cbc16da45831d0d0000f503a",
+      "original_dimensions": [
+        307,
+        709
+      ],
+      "component_bbox": [
+        86,
+        28,
+        220,
+        262
+      ],
+      "crop_bounds": [
+        66,
+        0,
+        241,
+        298
+      ],
+      "crop_dimensions_before_scaling": [
+        175,
+        298
+      ],
+      "scale_factor": 1.4094,
+      "scaling_algorithm": "LANCZOS",
+      "output_dimensions": [
+        246,
+        420
+      ],
+      "aspect_preserved": true,
+      "generative_upscaling": false,
+      "clipped": false,
+      "evidence_status": "LEGIBILITY_ONLY_NOT_NEW_GEOMETRIC_EVIDENCE",
+      "topology_authority": "the ORIGINAL image governs topology, coordinates, ratios and symmetry"
+    },
+    "it5_COLLAR": {
+      "component": "COLLAR",
+      "created": true,
+      "path": "docs/visual_quality/vq1_it6_gate/iteration_5_collar.png",
+      "source_path": "docs/visual_quality/vq1_reset2/iteration_5.png",
+      "source_sha256": "cef8e1ab2618a97859c693e8a91ed0378f31baae482caef991e87e136b3973b9",
+      "crop_sha256": "c2e8049856acbab5bf5eeee3577a1bc3002b0e369acc811cda6cb06895aa9649",
+      "original_dimensions": [
+        307,
+        709
+      ],
+      "component_bbox": [
+        86,
+        150,
+        220,
+        260
+      ],
+      "crop_bounds": [
+        66,
+        134,
+        241,
+        277
+      ],
+      "crop_dimensions_before_scaling": [
+        175,
+        143
+      ],
+      "scale_factor": 1.1189,
+      "scaling_algorithm": "LANCZOS",
+      "output_dimensions": [
+        195,
+        160
+      ],
+      "aspect_preserved": true,
+      "generative_upscaling": false,
+      "clipped": false,
+      "evidence_status": "LEGIBILITY_ONLY_NOT_NEW_GEOMETRIC_EVIDENCE",
+      "topology_authority": "the ORIGINAL image governs topology, coordinates, ratios and symmetry"
+    },
+    "it6_CLOSURE": {
+      "component": "CLOSURE",
+      "created": true,
+      "path": "docs/visual_quality/vq1_it6_gate/iteration_6_closure.png",
+      "source_path": "docs/visual_quality/vq1_reset2/iteration_6.png",
+      "source_sha256": "be5d479aad8f0fd340603694c7e12ed829d89507d3379f9d9397fe097482767a",
+      "crop_sha256": "a1da8d11a205c442e246ac6b5dc3630bdfc33856dce214b194e088c962a14e90",
+      "original_dimensions": [
+        307,
+        709
+      ],
+      "component_bbox": [
+        86,
+        28,
+        220,
+        262
+      ],
+      "crop_bounds": [
+        66,
+        0,
+        241,
+        298
+      ],
+      "crop_dimensions_before_scaling": [
+        175,
+        298
+      ],
+      "scale_factor": 1.4094,
+      "scaling_algorithm": "LANCZOS",
+      "output_dimensions": [
+        246,
+        420
+      ],
+      "aspect_preserved": true,
+      "generative_upscaling": false,
+      "clipped": false,
+      "evidence_status": "LEGIBILITY_ONLY_NOT_NEW_GEOMETRIC_EVIDENCE",
+      "topology_authority": "the ORIGINAL image governs topology, coordinates, ratios and symmetry"
+    },
+    "it6_COLLAR": {
+      "component": "COLLAR",
+      "created": true,
+      "path": "docs/visual_quality/vq1_it6_gate/iteration_6_collar.png",
+      "source_path": "docs/visual_quality/vq1_reset2/iteration_6.png",
+      "source_sha256": "be5d479aad8f0fd340603694c7e12ed829d89507d3379f9d9397fe097482767a",
+      "crop_sha256": "7f491b6ca4a843363b855a3f16fe3074d0c542c9b9ac5664ffd80cbdb78d35bd",
+      "original_dimensions": [
+        307,
+        709
+      ],
+      "component_bbox": [
+        86,
+        150,
+        220,
+        260
+      ],
+      "crop_bounds": [
+        66,
+        134,
+        241,
+        277
+      ],
+      "crop_dimensions_before_scaling": [
+        175,
+        143
+      ],
+      "scale_factor": 1.1189,
+      "scaling_algorithm": "LANCZOS",
+      "output_dimensions": [
+        195,
+        160
+      ],
+      "aspect_preserved": true,
+      "generative_upscaling": false,
+      "clipped": false,
+      "evidence_status": "LEGIBILITY_ONLY_NOT_NEW_GEOMETRIC_EVIDENCE",
+      "topology_authority": "the ORIGINAL image governs topology, coordinates, ratios and symmetry"
+    }
+  },
+  "reference_crop": {
+    "component": "FULL_ASSEMBLY",
+    "created": true,
+    "path": "docs/visual_quality/vq1_it6_gate/ref97_closure_full_assembly.png",
+    "source_path": "docs/visual_quality/vq1_corr5/ref97_closure.png",
+    "source_sha256": "69f0d12296ccb5625b4aca2c84c3efea8b1105499f55cc4e32a3eb45ae01189e",
+    "crop_sha256": "69a860bd9163fe8bbd77ea93e92c9b90109504acee9e8d4623d06fa4898a1d9a",
+    "original_dimensions": [
+      260,
+      430
+    ],
+    "component_bbox": [
+      0,
+      0,
+      259,
+      429
+    ],
+    "crop_bounds": [
+      0,
+      0,
+      260,
+      430
+    ],
+    "crop_dimensions_before_scaling": [
+      260,
+      430
+    ],
+    "scale_factor": 1.2093,
+    "scaling_algorithm": "LANCZOS",
+    "output_dimensions": [
+      314,
+      520
+    ],
+    "aspect_preserved": true,
+    "generative_upscaling": false,
+    "clipped": true,
+    "evidence_status": "LEGIBILITY_ONLY_NOT_NEW_GEOMETRIC_EVIDENCE",
+    "topology_authority": "the ORIGINAL image governs topology, coordinates, ratios and symmetry"
+  },
+  "input_quality": {
+    "schema_version": "visual_inspector_input_quality/1.0",
+    "evaluated_at": "2026-07-28T05:41:38.952747+00:00",
+    "component_under_review": "FULL_ASSEMBLY",
+    "candidate_path": "docs/visual_quality/vq1_it6_gate/iteration_6_closure.png",
+    "candidate_sha256": "13906bace40eb6c7e4369dff1d1fbf34211b08054052d31e6fdcad14cde6fbce",
+    "measurement": {
+      "component": "FULL_ASSEMBLY",
+      "found": true,
+      "image_size": [
+        371,
+        560
+      ],
+      "bbox": [
+        12,
+        45,
+        358,
+        559
+      ],
+      "width_px": 347,
+      "height_px": 515,
+      "percent_of_image": 86.015,
+      "touches_image_edge": false,
+      "truncated_sides": false,
+      "truncated_top": false,
+      "continues_below_frame": true,
+      "assembly_top_px": 45,
+      "assembly_bottom_px": 559
+    },
+    "floors_applied": {
+      "min_height_px": 512,
+      "min_width_px": 180
+    },
+    "override_record": null,
+    "checks": {
+      "target_found": true,
+      "meets_min_height": true,
+      "meets_min_width": true,
+      "not_clipped": true,
+      "sharp_enough": true,
+      "contrast_sufficient": true,
+      "aspect_preserved": true,
+      "evidence_full_reference": true,
+      "evidence_reference_component_crop": true,
+      "evidence_full_candidate": true,
+      "evidence_candidate_component_crop": true,
+      "evidence_previous_candidate": true,
+      "evidence_equal_scale_overlay": true,
+      "labels_match_bytes": true,
+      "reference_candidate_scale_compatible": true
+    },
+    "findings": [],
+    "quality_gate": "PASSED",
+    "verdict_if_failed": null,
+    "note": "these are model-input legibility floors, not production dimensions; they carry no geometric authority"
+  },
+  "crops_for_inspection": {
+    "it5": {
+      "component": "CLOSURE",
+      "created": true,
+      "path": "docs/visual_quality/vq1_it6_gate/iteration_5_closure.png",
+      "source_path": "docs/visual_quality/vq1_reset2/iteration_5.png",
+      "source_sha256": "cef8e1ab2618a97859c693e8a91ed0378f31baae482caef991e87e136b3973b9",
+      "crop_sha256": "ae2b8ced94f9b3393cc097996232d25975b9c14abab534c46ac79a6c691af7c7",
+      "original_dimensions": [
+        307,
+        709
+      ],
+      "component_bbox": [
+        86,
+        28,
+        220,
+        262
+      ],
+      "crop_bounds": [
+        39,
+        0,
+        268,
+        345
+      ],
+      "crop_dimensions_before_scaling": [
+        229,
+        345
+      ],
+      "scale_factor": 1.6232,
+      "scaling_algorithm": "LANCZOS",
+      "output_dimensions": [
+        371,
+        560
+      ],
+      "aspect_preserved": true,
+      "generative_upscaling": false,
+      "clipped": false,
+      "evidence_status": "LEGIBILITY_ONLY_NOT_NEW_GEOMETRIC_EVIDENCE",
+      "topology_authority": "the ORIGINAL image governs topology, coordinates, ratios and symmetry"
+    },
+    "it6": {
+      "component": "CLOSURE",
+      "created": true,
+      "path": "docs/visual_quality/vq1_it6_gate/iteration_6_closure.png",
+      "source_path": "docs/visual_quality/vq1_reset2/iteration_6.png",
+      "source_sha256": "be5d479aad8f0fd340603694c7e12ed829d89507d3379f9d9397fe097482767a",
+      "crop_sha256": "13906bace40eb6c7e4369dff1d1fbf34211b08054052d31e6fdcad14cde6fbce",
+      "original_dimensions": [
+        307,
+        709
+      ],
+      "component_bbox": [
+        86,
+        28,
+        220,
+        262
+      ],
+      "crop_bounds": [
+        39,
+        0,
+        268,
+        345
+      ],
+      "crop_dimensions_before_scaling": [
+        229,
+        345
+      ],
+      "scale_factor": 1.6232,
+      "scaling_algorithm": "LANCZOS",
+      "output_dimensions": [
+        371,
+        560
+      ],
+      "aspect_preserved": true,
+      "generative_upscaling": false,
+      "clipped": false,
+      "evidence_status": "LEGIBILITY_ONLY_NOT_NEW_GEOMETRIC_EVIDENCE",
+      "topology_authority": "the ORIGINAL image governs topology, coordinates, ratios and symmetry"
+    },
+    "reference": {
+      "component": "FULL_ASSEMBLY",
+      "created": true,
+      "path": "docs/visual_quality/vq1_it6_gate/ref97_closure_full_assembly.png",
+      "source_path": "docs/visual_quality/vq1_corr5/ref97_closure.png",
+      "source_sha256": "69f0d12296ccb5625b4aca2c84c3efea8b1105499f55cc4e32a3eb45ae01189e",
+      "crop_sha256": "4b0f019e8ef708db87b683b16351498e1a312d361ba1fcd7b4cf23c2093865c0",
+      "original_dimensions": [
+        260,
+        430
+      ],
+      "component_bbox": [
+        0,
+        0,
+        259,
+        429
+      ],
+      "crop_bounds": [
+        0,
+        0,
+        260,
+        430
+      ],
+      "crop_dimensions_before_scaling": [
+        260,
+        430
+      ],
+      "scale_factor": 1.3023,
+      "scaling_algorithm": "LANCZOS",
+      "output_dimensions": [
+        338,
+        560
+      ],
+      "aspect_preserved": true,
+      "generative_upscaling": false,
+      "clipped": true,
+      "evidence_status": "LEGIBILITY_ONLY_NOT_NEW_GEOMETRIC_EVIDENCE",
+      "topology_authority": "the ORIGINAL image governs topology, coordinates, ratios and symmetry"
+    }
+  }
+}

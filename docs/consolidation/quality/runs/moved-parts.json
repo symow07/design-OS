@@ -1,0 +1,477 @@
+{
+ "schema": "consolidation_moved_parts/1",
+ "summary": {
+  "round_designer": {
+   "identical": 7
+  },
+  "round_flow": {
+   "identical": 1
+  },
+  "round_calls": {
+   "changed": 1,
+   "identical": 5
+  },
+  "round_files_gate": {
+   "changed": 2,
+   "identical": 1
+  },
+  "round_files_faces": {
+   "changed": 4,
+   "identical": 2
+  },
+  "round_files_export": {
+   "identical": 6
+  },
+  "counter_display": {
+   "changed": 1,
+   "identical": 2
+  },
+  "counter_display_files": {
+   "identical": 7
+  }
+ },
+ "parts": [
+  {
+   "engine": "round_designer",
+   "name": "TavilySearchConnector",
+   "donor": "git:26db887:bbrose_design_os/apps/pipeline/services/web_research_tavily.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_designer.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "round_designer",
+   "name": "CONTRACT",
+   "donor": "archive/consolidation/boards/merged/round_ideas_brief.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_designer.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "round_designer",
+   "name": "COPY_START",
+   "donor": "git:26db887:bbrose_design_os/apps/pipeline/services/round_ideas.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_designer.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "round_designer",
+   "name": "COPY_END",
+   "donor": "git:26db887:bbrose_design_os/apps/pipeline/services/round_ideas.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_designer.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "round_designer",
+   "name": "_line",
+   "donor": "git:26db887:bbrose_design_os/apps/pipeline/services/round_ideas.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_designer.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "round_designer",
+   "name": "_validation",
+   "donor": "git:26db887:bbrose_design_os/apps/pipeline/services/round_ideas.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_designer.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "round_designer",
+   "name": "read",
+   "donor": "git:26db887:bbrose_design_os/apps/pipeline/services/round_ideas.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_designer.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "round_flow",
+   "name": "record_break",
+   "donor": "git:26db887:bbrose_design_os/apps/pipeline/services/round_ideas.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_flow.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "round_calls",
+   "name": "IdeasContext",
+   "donor": "archive/consolidation/paid-calls/merged/round_ideas_calls.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_calls.py",
+   "state": "changed",
+   "changed": {
+    "donor_lines": 144,
+    "target_lines": 141,
+    "removed": [
+     "from . import image_guard",
+     "if image_guard._under(path, image_guard.WEB_ROOTS) or not path.is_file() or sha(path) != item['sha256']:",
+     "from . import image_guard",
+     "if settings.IMAGE_MODEL != IMAGE_MODEL or image_guard.competitor_in(prompt):",
+     "from apps.pipeline.agents.image_producer import download_image_bytes"
+    ],
+    "added": [
+     "if _under(path, WEB_ROOTS) or not path.is_file() or sha(path) != item['sha256']:",
+     "if settings.IMAGE_MODEL != IMAGE_MODEL or competitor_in(prompt):"
+    ]
+   }
+  },
+  {
+   "engine": "round_calls",
+   "name": "check",
+   "donor": "archive/consolidation/paid-calls/merged/image_guard.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_calls.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "round_calls",
+   "name": "denylist",
+   "donor": "archive/consolidation/paid-calls/merged/image_guard.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_calls.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "round_calls",
+   "name": "competitor_in",
+   "donor": "archive/consolidation/paid-calls/merged/image_guard.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_calls.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "round_calls",
+   "name": "parse_response_text",
+   "donor": "git:26db887:bbrose_design_os/apps/pipeline/services/round_balm_calls.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_calls.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "round_calls",
+   "name": "download_image_bytes",
+   "donor": "git:26db887:bbrose_design_os/apps/pipeline/agents/image_producer.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_calls.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "round_files_gate",
+   "name": "retain_failure",
+   "donor": "archive/consolidation/face-gate/merged/round_files_flow.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_files_gate.py",
+   "state": "changed",
+   "changed": {
+    "donor_lines": 7,
+    "target_lines": 6,
+    "removed": [
+     "from .round_ideas import record_break",
+     "record_break(build.round, job, event['error'])"
+    ],
+    "added": [
+     "flow.record_break(build.round, job, event['error'])"
+    ]
+   }
+  },
+  {
+   "engine": "round_files_gate",
+   "name": "digest",
+   "donor": "archive/consolidation/face-gate/merged/round_files_job.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_files_gate.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "round_files_gate",
+   "name": "build_stand",
+   "donor": "archive/consolidation/die-solving/merged/round_files_stand.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_files_gate.py",
+   "state": "changed",
+   "changed": {
+    "donor_lines": 10,
+    "target_lines": 12,
+    "removed": [
+     "def build_stand(brief, inspection, outdir, *, include_enclosure=False, rear_visibility=False):",
+     "\"\"\"Write the engine record and its independent fold and sightline reports.\"\"\"",
+     "write_json(root / 'stand-geometry.json', result)",
+     "write_json(root / 'stand-die.json', result['record'])",
+     "write_json(root / 'stand-fold-check.json', result['fold_check'])",
+     "write_json(root / 'stand-sightlines.json', result['sightlines'])"
+    ],
+    "added": [
+     "def build_stand(brief, inspection, outdir, *, include_enclosure=False, rear_visibility='inside'):",
+     "\"\"\"The stand solved from the brief (and the picture's reading, if any) by the die solver",
+     "(counter_display.solve_stand), its record and its fold and sightline reports written into outdir.\"\"\"",
+     "from apps.dielines.geometry.counter_display import solve_stand",
+     "flow.write_json(root / 'stand-geometry.json', result)",
+     "flow.write_json(root / 'stand-die.json', result['record'])",
+     "flow.write_json(root / 'stand-fold-check.json', result['fold_check'])",
+     "flow.write_json(root / 'stand-sightlines.json', result['sightlines'])"
+    ]
+   }
+  },
+  {
+   "engine": "round_files_faces",
+   "name": "turn",
+   "donor": "git:26db887:bbrose_design_os/apps/pipeline/services/zilal_tray.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_files_faces.py",
+   "state": "changed",
+   "changed": {
+    "donor_lines": 2,
+    "target_lines": 3,
+    "removed": [],
+    "added": [
+     "\"\"\"A picture turned ``quarters`` clockwise: a face as it folds onto the sheet (the reverse turn: upright).\"\"\""
+    ]
+   }
+  },
+  {
+   "engine": "round_files_faces",
+   "name": "face_mm_size",
+   "donor": "git:26db887:bbrose_design_os/apps/pipeline/services/zilal_tray.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_files_faces.py",
+   "state": "changed",
+   "changed": {
+    "donor_lines": 4,
+    "target_lines": 5,
+    "removed": [],
+    "added": [
+     "\"\"\"A face's upright size (w \u00d7 h mm) from its polygon on the sheet, where it lies turned ``quarters``.\"\"\""
+    ]
+   }
+  },
+  {
+   "engine": "round_files_faces",
+   "name": "upright_polygon",
+   "donor": "git:26db887:bbrose_design_os/apps/pipeline/services/zilal_tray.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_files_faces.py",
+   "state": "changed",
+   "changed": {
+    "donor_lines": 13,
+    "target_lines": 13,
+    "removed": [
+     "W, H = w + 2 * BLEED_MM, h + 2 * BLEED_MM",
+     "x, y = X - (x0 - BLEED_MM), Y - (y0 - BLEED_MM)",
+     "# the inverse of to_sheet's step: a clockwise turn of a frame (fw \u00d7 fh) maps (x, y) \u2192 (fh \u2212 y, x)"
+    ],
+    "added": [
+     "W, H = w + 2 * STAND_BLEED_MM, h + 2 * STAND_BLEED_MM",
+     "x, y = X - (x0 - STAND_BLEED_MM), Y - (y0 - STAND_BLEED_MM)",
+     "# the inverse of the sheet's turn: a clockwise turn of a frame (fw \u00d7 fh) maps (x, y) \u2192 (fh \u2212 y, x)"
+    ]
+   }
+  },
+  {
+   "engine": "round_files_faces",
+   "name": "K",
+   "donor": "git:26db887:bbrose_design_os/apps/pipeline/services/zilal_tray.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_files_faces.py",
+   "state": "changed",
+   "changed": {
+    "donor_lines": 1,
+    "target_lines": 1,
+    "removed": [
+     "K = 300.0 / lm.MM_PER_INCH"
+    ],
+    "added": [
+     "K = 300 / 25.4"
+    ]
+   }
+  },
+  {
+   "engine": "round_files_faces",
+   "name": "srgb_to_lab",
+   "donor": "git:26db887:bbrose_design_os/apps/pipeline/services/lid_master.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_files_faces.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "round_files_faces",
+   "name": "delta_e00",
+   "donor": "git:26db887:bbrose_design_os/apps/pipeline/services/lid_master.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_files_faces.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "round_files_export",
+   "name": "glyph_metrics",
+   "donor": "git:26db887:bbrose_design_os/apps/pipeline/services/round_balm_master.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_files_export.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "round_files_export",
+   "name": "shaped",
+   "donor": "git:26db887:bbrose_design_os/apps/pipeline/services/round_balm_master.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_files_export.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "round_files_export",
+   "name": "FONT_PATHS",
+   "donor": "git:26db887:bbrose_design_os/apps/pipeline/services/round_balm_master.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_files_export.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "round_files_export",
+   "name": "rgb",
+   "donor": "git:26db887:bbrose_design_os/apps/pipeline/services/round_balm_master.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_files_export.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "round_files_export",
+   "name": "set_layers",
+   "donor": "git:26db887:bbrose_design_os/apps/pipeline/services/round_balm_master.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_files_export.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "round_files_export",
+   "name": "raster",
+   "donor": "git:26db887:bbrose_design_os/apps/pipeline/services/round_balm_master.py",
+   "target": "bbrose_design_os/apps/pipeline/services/round_files_export.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "counter_display",
+   "name": "solve_stand",
+   "donor": "archive/consolidation/die-solving/merged/round_files_stand.py",
+   "target": "bbrose_design_os/apps/dielines/geometry/counter_display.py",
+   "state": "changed",
+   "changed": {
+    "donor_lines": 133,
+    "target_lines": 147,
+    "removed": [
+     "def solve_stand(brief, inspection, *, include_enclosure=False, rear_visibility=False):",
+     "placement['height_matches_observation'] = abs(height - placement['measured_height_mm']) <= engine.TOL_MM",
+     "record = production.solve(product='bottle', board='e_flute' if abs(board - 1.5) < 1e-6 else 'white_card_0_5'",
+     "if rear_visibility:",
+     "visibility_adjustment = engine.product_tray_raise_rear(record)",
+     "record = production.resolve_raised(record, raised)",
+     "placement['height_matches_observation'] = abs(height - placement['measured_height_mm']) <= engine.TOL_MM",
+     "die = engine.build_die(record)",
+     "fold = engine.fold_check(record, die)",
+     "sight = engine.sightlines(record)",
+     "geometry = production.layer_geometry(die)",
+     "'platform_fronts': engine.product_tray_platform_fronts(record),",
+     "result = {'schema': 'round_files_stand/1', 'record': record, 'count': count, 'rows': rows, 'columns': columns,",
+     "enclosure = engine.product_tray_enclosure_elevations(record)"
+    ],
+    "added": [
+     "def solve_stand(brief, inspection, *, include_enclosure=False, rear_visibility='inside'):",
+     "placement['height_matches_observation'] = abs(height - placement['measured_height_mm']) <= TOL_MM",
+     "record = solve(product='bottle', board='e_flute' if abs(board - 1.5) < 1e-6 else 'white_card_0_5'",
+     "if rear_visibility == 'inside':",
+     "# the default (the owner's goal of 2026-10-29: fix the stand's sightline failure; his ruling: keep its size):",
+     "# rows whose seats were measured from the picture move inside the stand's own size until the eye sees every",
+     "# product's top band and the header's safe area. Rows on the floor for want of evidence are not given rises",
+     "# nobody measured: their report stays the designer's to read.",
+     "first = product_tray_sightlines(record)",
+     "if placement['applied'] and not (first['passed'] and first['header_clear']):",
+     "try:",
+     "visibility_adjustment = product_tray_raise_rear(record, keep_size=True)",
+     "except ValueError as exc:",
+     "visibility_adjustment = {'keep_size': True, 'failed': str(exc), 'initial_sightlines': first}",
+     "elif rear_visibility:",
+     "visibility_adjustment = product_tray_raise_rear(record)",
+     "if visibility_adjustment is not None and 'record' in visibility_adjustment:",
+     "record = resolve_raised(record, raised)",
+     "record.setdefault('authority', {})['rear_visibility'] = raised['authority']['rear_visibility']",
+     "placement['height_matches_observation'] = abs(height - placement['measured_height_mm']) <= TOL_MM",
+     "die = build_die(record)",
+     "fold = fold_check(record, die)",
+     "sight = sightlines(record)",
+     "geometry = layer_geometry(die)",
+     "'platform_fronts': product_tray_platform_fronts(record),",
+     "result = {'schema': 'round_files_stand/1', 'sightline_revision': SIGHTLINE_REVISION, 'record': record,",
+     "'count': count, 'rows': rows, 'columns': columns,",
+     "enclosure = product_tray_enclosure_elevations(record)"
+    ]
+   }
+  },
+  {
+   "engine": "counter_display",
+   "name": "stand_layout",
+   "donor": "archive/consolidation/die-solving/merged/round_files_stand.py",
+   "target": "bbrose_design_os/apps/dielines/geometry/counter_display.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "counter_display",
+   "name": "observed_row_placement",
+   "donor": "archive/consolidation/die-solving/merged/round_files_stand.py",
+   "target": "bbrose_design_os/apps/dielines/geometry/counter_display.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "counter_display_files",
+   "name": "begin",
+   "donor": "archive/consolidation/die-writing/merged/pdf_layers.py",
+   "target": "bbrose_design_os/apps/dielines/exporters/counter_display_files.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "counter_display_files",
+   "name": "end",
+   "donor": "archive/consolidation/die-writing/merged/pdf_layers.py",
+   "target": "bbrose_design_os/apps/dielines/exporters/counter_display_files.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "counter_display_files",
+   "name": "layers_of",
+   "donor": "archive/consolidation/die-writing/merged/pdf_layers.py",
+   "target": "bbrose_design_os/apps/dielines/exporters/counter_display_files.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "counter_display_files",
+   "name": "_resolve_fonts",
+   "donor": "archive/consolidation/cartons/merged/production_pdf.py",
+   "target": "bbrose_design_os/apps/dielines/exporters/counter_display_files.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "counter_display_files",
+   "name": "_resolve_arabic_font",
+   "donor": "archive/consolidation/cartons/merged/production_pdf.py",
+   "target": "bbrose_design_os/apps/dielines/exporters/counter_display_files.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "counter_display_files",
+   "name": "_resolve_arabic_bold_font",
+   "donor": "archive/consolidation/cartons/merged/production_pdf.py",
+   "target": "bbrose_design_os/apps/dielines/exporters/counter_display_files.py",
+   "state": "identical",
+   "changed": null
+  },
+  {
+   "engine": "counter_display_files",
+   "name": "write_svg",
+   "donor": "archive/consolidation/cartons/merged/svg_exporter.py",
+   "target": "bbrose_design_os/apps/dielines/exporters/counter_display_files.py",
+   "state": "identical",
+   "changed": null
+  }
+ ]
+}

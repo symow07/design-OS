@@ -1,0 +1,163 @@
+{
+ "record_type": "vq2_product_name_lettering_resume_contract/2.0",
+ "created_at": "2026-07-29",
+ "vq2_a2_may_resume_when": "the owner supplies an APPROVED human custom lettering asset",
+ "accepted_input_formats": [
+  ".ai",
+  "vector .pdf",
+  ".eps"
+ ],
+ "validation_on_receipt": [
+  "exact_wording",
+  "exact_capitalization",
+  "correct_line_order",
+  "vector_only_construction",
+  "one_independently_editable_object_per_glyph",
+  "no_raster_content",
+  "no_unresolved_live_fonts",
+  "no_horizontal_scaling",
+  "no_vertical_scaling",
+  "no_nonuniform_scaling",
+  "no_scaled_word_groups",
+  "no_colliding_glyphs",
+  "no_self_intersections",
+  "no_unintended_open_paths",
+  "valid_counters_and_fill_rules",
+  "clean_cubic_bezier_construction",
+  "clean_layer_structure",
+  "straight_canonical_baselines",
+  "apparent_front_width_compliance",
+  "centerline_compliance",
+  "cap_height_compliance",
+  "line_spacing_compliance",
+  "owner_approval"
+ ],
+ "on_pass_classify": "VQ2_PRODUCT_NAME_LETTERING: RESOLVED_OWNER_APPROVED",
+ "then_construct": "exactly one VQ2-A2",
+ "vq2_a3_automatic": false,
+ "vq2_a2_inputs": [
+  "frozen M3 4ecc8e9df1d1",
+  "authoritative approved BBROSE vector logo",
+  "owner-approved custom Rose and Damascena lettering",
+  "accepted divider rule",
+  "accepted NIGHT REPAIR OIL",
+  "accepted vertical placement",
+  "flat artwork colours",
+  "concept-front appearance authority"
+ ],
+ "designer_delivery_layers": [
+  "01_ROSE_GLYPHS",
+  "02_DAMASCENA_GLYPHS",
+  "03_WORD_GROUPS",
+  "04_CONSTRUCTION_GUIDES_NONPRINTING",
+  "05_DESIGNER_NOTES_NONPRINTING"
+ ],
+ "designer_must_flag_interpretation": true,
+ "may_resume_from_automated_tracing": false,
+ "contract_version": "2.0",
+ "updated_at": "2026-07-29",
+ "supersedes": "vq2_product_name_lettering_resume_contract/1.0",
+ "finding_for_check": {
+  "exact_wording": "VQ2_PRODUCT_NAME_WORDING_MISMATCH",
+  "exact_capitalization": "VQ2_PRODUCT_NAME_CAPITALIZATION_MISMATCH",
+  "correct_line_order": "VQ2_PRODUCT_NAME_LINE_ORDER_MISMATCH",
+  "vector_only_construction": "VQ2_RASTER_CONTENT_DETECTED",
+  "one_independently_editable_object_per_glyph": "VQ2_GLYPH_NOT_INDEPENDENTLY_EDITABLE",
+  "no_raster_content": "VQ2_RASTER_CONTENT_DETECTED",
+  "no_unresolved_live_fonts": "VQ2_UNRESOLVED_LIVE_FONT_DETECTED",
+  "no_horizontal_scaling": "VQ2_HORIZONTAL_GLYPH_SCALING_DETECTED",
+  "no_vertical_scaling": "VQ2_VERTICAL_GLYPH_SCALING_DETECTED",
+  "no_nonuniform_scaling": "VQ2_NONUNIFORM_GLYPH_SCALING_DETECTED",
+  "no_scaled_word_groups": "VQ2_WORD_GROUP_SCALING_DETECTED",
+  "no_colliding_glyphs": "VQ2_GLYPH_COLLISION_DETECTED",
+  "no_self_intersections": "VQ2_SELF_INTERSECTION_DETECTED",
+  "no_unintended_open_paths": "VQ2_UNINTENDED_OPEN_PATH_DETECTED",
+  "valid_counters_and_fill_rules": "VQ2_GLYPH_COUNTER_COLLAPSED",
+  "clean_cubic_bezier_construction": "VQ2_BEZIER_CONSTRUCTION_INVALID",
+  "clean_layer_structure": "VQ2_LAYER_STRUCTURE_INVALID",
+  "straight_canonical_baselines": "VQ2_CANONICAL_BASELINE_NOT_STRAIGHT",
+  "apparent_front_width_compliance": "VQ2_APPARENT_WIDTH_OUT_OF_TOLERANCE",
+  "centerline_compliance": "VQ2_CENTERLINE_OUT_OF_TOLERANCE",
+  "cap_height_compliance": "VQ2_CAP_HEIGHT_OUT_OF_TOLERANCE",
+  "line_spacing_compliance": "VQ2_LINE_SPACING_OUT_OF_TOLERANCE",
+  "owner_approval": "VQ2_OWNER_APPROVAL_MISSING"
+ },
+ "tolerances": {
+  "apparent_width_err_max": 0.025,
+  "centerline_err_max_of_body_width": 0.01,
+  "cap_height_err_max": 0.02,
+  "line_spacing_err_max": 0.02,
+  "baseline_angle_err_max_deg": 0.5,
+  "scale_unity_tolerance": 0.005
+ },
+ "required_words": [
+  "Rose",
+  "Damascena"
+ ],
+ "required_line_order": [
+  "Rose",
+  "Damascena"
+ ],
+ "capitalization_requirements": {
+  "required_strings": [
+   "Rose",
+   "Damascena"
+  ],
+  "uppercase_R_in_Rose": true,
+  "lowercase_ose": true,
+  "uppercase_D_in_Damascena": true,
+  "lowercase_amascena": true,
+  "all_caps_conversion": false,
+  "lowercase_initial": false,
+  "alternate_spelling": false,
+  "added_punctuation": false,
+  "omitted_character": false,
+  "finding": "VQ2_PRODUCT_NAME_CAPITALIZATION_MISMATCH"
+ },
+ "counter_integrity_requirements": {
+  "counters_open_and_coherent": true,
+  "counter_collapse": false,
+  "accidental_filled_hole": false,
+  "duplicated_inner_contour": false,
+  "reversed_fill_rule": false,
+  "self_intersecting_counter": false,
+  "clipping_mask_simulating_counter": false,
+  "compound_path_winding_valid": true,
+  "authority_for_which_letters": "the actual delivered glyph construction",
+  "findings": [
+   "VQ2_GLYPH_COUNTER_COLLAPSED",
+   "VQ2_GLYPH_COUNTER_MISSING",
+   "VQ2_GLYPH_COUNTER_DUPLICATED",
+   "VQ2_GLYPH_FILL_RULE_INVALID"
+  ]
+ },
+ "scaling_requirements": {
+  "horizontal_glyph_scale": "100%",
+  "vertical_glyph_scale": "100%",
+  "nonuniform_scaling": false,
+  "word_group_scaling_to_force_metrics": false,
+  "residual_transform_scale_other_than_canonical_placement": false,
+  "expanded_appearance_from_distorted_source": false,
+  "unity_tolerance": 0.005,
+  "findings": [
+   "VQ2_HORIZONTAL_GLYPH_SCALING_DETECTED",
+   "VQ2_VERTICAL_GLYPH_SCALING_DETECTED",
+   "VQ2_NONUNIFORM_GLYPH_SCALING_DETECTED",
+   "VQ2_WORD_GROUP_SCALING_DETECTED"
+  ]
+ },
+ "proportion_rule": {
+  "A_NATIVE_DRAWN_GEOMETRY": {
+   "permitted": true,
+   "description": "Bezier outlines authored directly at their intended proportions, object transform normalized, no post-construction horizontal or vertical compression.",
+   "narrow_proportions_alone_are_a_defect": false
+  },
+  "B_TRANSFORMED_OR_DISTORTED_GEOMETRY": {
+   "permitted": false,
+   "description": "A font or outline scaled horizontally or vertically, a non-uniform transform applied to a glyph, word or group, or geometry expanded only after distortion to conceal the transform."
+  },
+  "rule": "A correctly drawn condensed letterform must NOT be rejected merely because its visual proportions are narrow. What is prohibited is a TRANSFORM, not a proportion."
+ },
+ "on_fail_classify": "VQ2_LETTERING_RECEIPT_REJECTED",
+ "validator_module": "apps.ire.vq2_lettering_receipt"
+}

@@ -1,0 +1,18 @@
+§AD0(a) PREDICTION — T38a RUN 2 (relaunch), sealed BEFORE the relaunch.
+Run 1 (pred_t38a d55930e60ea72688, launched 2026-09-05T11:27:56Z) was
+KILLED by the session teardown ~45 s in: the gate had written its ledger
+line (utc 2026-09-05T11:28:32Z, verdict OK, refusal_count 0) and truncated
+.tier2_gate_output, the suite never completed, no commit; the log holds
+only the "launched" line. Recorded as history — the orphan ledger line is
+append-only and STAYS (the dry+real precedent: two lines land). The
+register stays staged exactly as proved on 2026-09-05 (133/0, prefix
+bf3b57768546d0cb, tail 9e991adad250d1a4); the block's TRANSCRIBED date
+2026-09-05 is the transcription's date, the landing is 2026-09-07.
+
+Every leg of pred_t38a stands EXCEPT: L5 — 2 files, insertions 135 (133 +
+TWO ledger lines), deletions 0; L7 — ledger 472 → 474, HEAD~1 a byte-prefix
+of HEAD, both new lines verdict OK, refusal_count 0. L6 unchanged:
+"TIER_2=GREEN collected=8569 failures=0 apps=7757 dip0c=671 dip0=141".
+L1 unchanged: the quarantine's 16 files (8,136,268,896 B) still present at
+the landing; the evidence copy still present; nothing deleted. Launched
+ONCE more, through the inner-root launcher, nothing beside it.

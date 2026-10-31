@@ -1,0 +1,29 @@
+§AD0(a) SCORE — (3) THE DRAINED LIVE SERVER, ATTEMPT 1, scored as HISTORY
+against pred_fix.txt (sealed e49f2dd889f8e6e1 before git add). NOT launched:
+the negative control the prediction itself required found two defects in the
+fix before any gate spend; the content changes and a corrected prediction is
+sealed as pred_fix2.txt.
+
+MISS (L8, the negative control's own claim "AFTER the fix … 0 events, 10 of
+   10 green"): E_after_fix/run_1 — deadlock_lines=0, flush_errors=0 (the
+   deadlock IS gone) but 3 failed + 1 error: LiveServerNotDrained "2
+   request(s) still mid-handling after 15.0s" in ConfirmationDialogBrowser
+   Tests::test_confirm_sends_one_request_and_freezes_into_confirmed_state
+   and ::test_dialog_traps_focus, then UniqueViolation in the setUp of the
+   two tests that followed.
+   Defect 1 — the bound: a task page in a working status opens the
+   server-sent-events stream (live_views.py:55–83), which sleeps a second
+   between polls and writes only every fifteen iterations; a server thread
+   learns its client is gone only when a write fails, so the stream stays
+   mid-handling for up to ~16 s after the context closes — longer than the
+   15 s bound. Correction: the bound is 25 s, the reason on the attribute.
+   Defect 2 — the cascade of my own: _post_teardown raised the named error
+   BEFORE super()._post_teardown(), so the flush was SKIPPED and the next
+   test's setUp met the rows — the very shape the class removes. Correction:
+   the flush always runs; the named error is raised after it (try/finally).
+   The three browser-free tests still pass (3/3, four runs).
+HELD (measured before the seal and unchanged): WIT 864 (52 passed after the
+   edits; the module carries 0 checks before and after the correction); the
+   collected FILE set unchanged; apps collected 7781; the swaps import + base
+   only; the stash intact.
+Score: 7/8 (L8's control sub-claim missed; L1–L7 not exercised — no gate).

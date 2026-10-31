@@ -1,0 +1,119 @@
+{
+  "slice": "DIP-0C2c",
+  "sources": 19,
+  "candidates": 48,
+  "source_exact_duplicate_edges": 1,
+  "source_relationship_totals": {
+    "EXACT_FILE_DUPLICATE": 1,
+    "FILENAME_FAMILY": 24,
+    "VERSION_SOURCE": 22,
+    "ALTERNATE_FORMAT_SOURCE": 18,
+    "SAME_DOWNLOAD_PACKAGE": 7
+  },
+  "candidate_relationship_totals": {
+    "COLLECTION_MEMBER": 115,
+    "UNKNOWN_RELATIONSHIP": 49
+  },
+  "near_duplicate_totals": {
+    "exact_visual": 0,
+    "likely_near_duplicate": 0
+  },
+  "hypothesis_totals": {
+    "colorway": 0,
+    "crop_variant": 0,
+    "format_variant": 0,
+    "scale_variant": 0
+  },
+  "transform_matches": {
+    "total": 0,
+    "by_transform": {}
+  },
+  "family_components": 6,
+  "component_sizes": [
+    13,
+    6,
+    5,
+    4,
+    3,
+    3
+  ],
+  "weak_bridges_detected_and_split": 0,
+  "canonical_nominations": 6,
+  "cross_format_5955564_66_67": {
+    "members": {
+      "5955567.ai": {
+        "candidates": 1,
+        "readiness": [
+          "NEEDS_VECTOR_RECONSTRUCTION"
+        ],
+        "perceptually_hashable": true
+      },
+      "5955566.jpg": {
+        "candidates": 13,
+        "readiness": [
+          "NEEDS_CLEANUP",
+          "REFERENCE_ONLY"
+        ],
+        "perceptually_hashable": true
+      },
+      "5955564.eps": {
+        "candidates": 2,
+        "readiness": [
+          "HEADER_ONLY_PARTIAL"
+        ],
+        "perceptually_hashable": false
+      }
+    },
+    "source_relationships": [
+      "ALTERNATE_FORMAT_SOURCE",
+      "EXACT_FILE_DUPLICATE",
+      "FILENAME_FAMILY",
+      "SAME_DOWNLOAD_PACKAGE",
+      "VERSION_SOURCE"
+    ],
+    "source_visual_corroboration": [
+      {
+        "a": "5955567.ai",
+        "b": "5955566.jpg",
+        "dhash": 1,
+        "phash": 2,
+        "visually_near_identical": true
+      }
+    ],
+    "candidate_relationships": [
+      "COLLECTION_MEMBER",
+      "UNKNOWN_RELATIONSHIP"
+    ],
+    "readiness_per_member": {
+      "5955567.ai": [
+        "NEEDS_VECTOR_RECONSTRUCTION"
+      ],
+      "5955566.jpg": [
+        "NEEDS_CLEANUP",
+        "REFERENCE_ONLY"
+      ],
+      "5955564.eps": [
+        "HEADER_ONLY_PARTIAL"
+      ]
+    },
+    "readiness_did_not_propagate": true,
+    "candidate_equivalence_not_asserted": "the .jpg is segmented into stickers while the .ai is a single whole-page embedded-raster candidate, so no candidate pair is a comparable unit. The visual family link is real of the FILES and is recorded as SOURCE evidence; it is deliberately NOT promoted to candidate equivalence.",
+    "note": "members share a family but keep DIFFERENT technical readiness and different capabilities; EPS has no perceptual hash"
+  },
+  "unhashable_candidates": 6,
+  "blocking": {
+    "candidates": 48,
+    "naive_pairs": 1128,
+    "blocked_pairs": 448,
+    "reduction": 0.6028,
+    "perceptual_comparisons_performed": 332,
+    "strategy": [
+      "exact-SHA groups",
+      "pHash 4x16-bit bands",
+      "filename-normalized stems",
+      "folder/package groups",
+      "aspect-ratio + format buckets"
+    ]
+  },
+  "note": "relationships are evidence, never verdicts; nothing is activated"
+}

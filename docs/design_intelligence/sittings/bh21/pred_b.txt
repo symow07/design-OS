@@ -1,0 +1,86 @@
+§AD0(a) PREDICTION — COMMIT B — CORRECTED PASS 2, THE FOUR RULED CONSTANTS
+==========================================================================
+Drafted during the A′ gate window with the diff measured live
+(`git diff --numstat -- tools/dip0c/tests/` = 1-1 / 2-2 / 1-1, all four
+changed lines read byte-exact); SEALED after commit C lands (the line below
+updated), BEFORE `git add` of the tests, BEFORE gate B. Durable in
+~/bh21_work/.
+
+C hash at seal time: 2bc229b (parent of B == C; landed at attempt 2 under
+§BH24, exit 0 hand-captured + new HEAD, pred_c2 zero-miss).
+Ruling executed: §BH21(c) pass 2, resumed by §BH22(c) and §BH23(b) —
+"pass 2 B (four constants, measured true)".
+
+THE EIGHT LEGS
+==============
+L1 — WRITE SET
+    Staged, exactly THREE paths of mine (GIT-ROOT tools/, not apps/):
+      M  tools/dip0c/tests/test_c4b.py
+      M  tools/dip0c/tests/test_c4c.py
+      M  tools/dip0c/tests/test_c5.py
+    Plus, written BY THE GATE and not by me:
+      M  bbrose_design_os/docs/roadmap/palt_m6/record_gate_ledger.jsonl (+1 -0)
+      +  capture file under .tier2_captures (gitignored, unstaged).
+    UNSTAGED after staging: NOTHING of mine — the worktree's last remaining
+    edits are exactly this set. No `??` entries.
+
+L2 — DIFF SHAPE
+      test_c4b.py                        +1 -1   (:482  127→130)
+      test_c4c.py                        +2 -2   (:267 3966→3969, :268 2832→2834)
+      test_c5.py                         +1 -1   (:307 3966→3969)
+      record_gate_ledger.jsonl           +1 -0   (gate)
+      ---------------------------------------------------------
+      commit total                       +5 -4, 4 files
+    Every changed line of mine is a bare integer constant in an assert; no
+    key, no structure, no new test.
+
+L3 — MANIFEST / A391
+    suite_file_manifest.json absent; no new tracked file; tools/dip0c tests
+    are collected by the gate's separate dip0c run, not the apps manifest.
+
+L4 — §BH4(l) STAGED == DECLARED, BOTH HALVES
+    STAGED: exactly the three test rows at 1-1/2-2/1-1. UNSTAGED: empty
+    (then the ledger row once the gate runs).
+
+L5 — COMMIT CONTENTS
+    ONE commit, test-constants ONLY (message b_msg.txt): the four
+    enumerated mover sites re-pinned to measured post-regen values; the 10
+    held pins untouched (§BH21(d)); no contract, no app code, no queue
+    file. NOT DONE HERE: the queue record (D).
+
+L6 — SUITE / COLLECTION
+      TIER_2=GREEN collected=8490 failures=0 apps=7684 dip0c=671 dip0=135
+    Identical counts — constants only, no new tests. These edits sat
+    unstaged through THREE full suite runs (A′ GREEN; C attempt 1 REFUSED
+    on the two registered flakes, dip0c leg fully green; C attempt 2
+    GREEN): measured true three times before this gate. ON A REFUSAL,
+    §BH24(a) governs (standing, per commit): ONLY the two named ids in the
+    deadlock/dirty-DB shape → re-run UNCHANGED without asking, max three
+    attempts for THIS commit, orphan folds counted; any content failure,
+    other id, different shape, or third refusal = hard stop + report.
+
+L7 — LEDGER
+    MEASURED at seal (post-C): starts CLEAN at 426 == 426. This run
+    appends its own line: 427 on disk; gate folds it: committed 427,
+    +1 -0, CLEAN after. (Draft's 425 base was superseded by C's ruled
+    +2 orphan fold — re-measured, not assumed.)
+
+L8 — PROTOCOL IDENTITIES
+    Zero apps/ files in the commit; EXTENT_DIGESTS untouched, PROVED by an
+    empty `git diff <C> <new> -- bbrose_design_os/apps/`.
+
+NUMBERED CLAIMS
+===============
+C1. The four written values were measured true fresh (pass2_measure.py and
+    bh22_measurement.json sweeps, write-control clean) and have been
+    measured true by THREE full-suite runs while unstaged (A′ GREEN, C
+    attempt 1's dip0c leg, C attempt 2 GREEN) — this commit adds no new
+    measurement, it stages a proven set.
+C2. WORKTREE CLEAN AFTER LANDING: `git status --porcelain` over tracked
+    paths is EMPTY post-commit — first time since the §BH20(b) regen.
+C3. EXIT EVIDENCE: gate log ~/bh21_work/b_gate.log, exit hand-captured to
+    ~/bh21_work/b_exit.txt. TWO confirmations: exit 0 AND new HEAD.
+
+WHAT COMMIT B IS NOT: not the queue record (D), not a touch on any
+contract, the 21, or the held pins — and its green gate is not yet the
+goal-state gate (that is D's, per §BH23(b)).

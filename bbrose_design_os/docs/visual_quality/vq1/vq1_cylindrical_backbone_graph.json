@@ -1,0 +1,170 @@
+{
+ "schema_version": "container_form_backbone/1.0",
+ "implementation": "cylindrical_serum_dropper_backbone/1.0",
+ "archetype": "CYLINDRICAL_SERUM_DROPPER_BOTTLE",
+ "variant": "FLAT_RESTRAINED",
+ "coordinate_system": "centerline x=0 \u00b7 base y=0 \u00b7 bulb top y=total \u00b7 mm internal \u00b7 preview scaling at render only",
+ "nominal_dimensions_mm": {
+  "body_diameter": 31.5,
+  "body_height": 70.5,
+  "visible_neck": 2.5,
+  "neck_diameter": 9.0,
+  "collar_diameter": 21.5,
+  "collar_height": 9.5,
+  "bulb_width": 11.0,
+  "bulb_height": 21.5,
+  "base_thickness": 3.5,
+  "shoulder_radius": 3.0
+ },
+ "profile": {
+  "closed_symmetric_path": true,
+  "curve_segments": 5,
+  "self_intersections": 0,
+  "zero_length_segments": 0,
+  "top_width_ratio": 0.286,
+  "sidewall_shoulder_tangent_continuous": true,
+  "shoulder_style": "FLAT_RESTRAINED",
+  "rounded_rectangle_primitive": false
+ },
+ "profile_anchors": {
+  "CENTERLINE": 0.0,
+  "BASE_LEFT": [
+   -15.75,
+   0.0
+  ],
+  "BASE_RIGHT": [
+   15.75,
+   0.0
+  ],
+  "WALL_LEFT": [
+   -15.75,
+   35.25
+  ],
+  "WALL_RIGHT": [
+   15.75,
+   35.25
+  ],
+  "SHOULDER_LEFT_START": [
+   -15.75,
+   65.9
+  ],
+  "SHOULDER_LEFT_END": [
+   -4.5,
+   70.5
+  ],
+  "SHOULDER_RIGHT_START": [
+   15.75,
+   65.9
+  ],
+  "SHOULDER_RIGHT_END": [
+   4.5,
+   70.5
+  ],
+  "NECK_LEFT": [
+   -4.5,
+   73.0
+  ],
+  "NECK_RIGHT": [
+   4.5,
+   73.0
+  ]
+ },
+ "emitted_paths": [
+  "GLASS_OUTER_WALL",
+  "NECK_GLASS",
+  "COLLAR_ROSE_GOLD_BASE",
+  "COLLAR_TOP_RIM",
+  "COLLAR_BOTTOM_RIM",
+  "BULB_DARK_PLUM",
+  "GLASS_BASE_THICKNESS"
+ ],
+ "surfaces": [
+  "BODY_FRONT",
+  "BODY_BACK",
+  "BODY_LEFT_CURVATURE",
+  "BODY_RIGHT_CURVATURE",
+  "SHOULDER",
+  "NECK",
+  "COLLAR",
+  "BULB",
+  "BOTTOM"
+ ],
+ "closure_assembly": {
+  "schema_version": "dropper_closure_assembly/1.0",
+  "centerline_shared": true,
+  "components": {
+   "NECK": {
+    "outer_diameter": 9.0,
+    "visible_height": 2.5,
+    "collar_overlap": 1.0,
+    "cylindrical": true,
+    "rect_spacer": false
+   },
+   "COLLAR": {
+    "outer_diameter": 21.5,
+    "visible_height": 9.5,
+    "rim_ry": 0.85,
+    "top_rim": true,
+    "bottom_rim": true,
+    "neck_insertion_depth": 1.0
+   },
+   "BULB": {
+    "max_width": 11.0,
+    "visible_height": 21.5,
+    "base_width": 6.82,
+    "collar_insertion_depth": 1.4,
+    "width_samples": [
+     {
+      "height_frac": 0.0,
+      "width_frac": 0.62
+     },
+     {
+      "height_frac": 0.125,
+      "width_frac": 0.728
+     },
+     {
+      "height_frac": 0.25,
+      "width_frac": 0.809
+     },
+     {
+      "height_frac": 0.375,
+      "width_frac": 0.881
+     },
+     {
+      "height_frac": 0.5,
+      "width_frac": 0.948
+     },
+     {
+      "height_frac": 0.625,
+      "width_frac": 0.978
+     },
+     {
+      "height_frac": 0.75,
+      "width_frac": 0.772
+     },
+     {
+      "height_frac": 0.875,
+      "width_frac": 0.912
+     },
+     {
+      "height_frac": 1.0,
+      "width_frac": 0.0
+     }
+    ]
+   }
+  },
+  "continuity": {
+   "shoulder_to_neck": true,
+   "neck_to_collar": true,
+   "bulb_into_collar": true,
+   "floating_gaps": 0,
+   "total_height_composition": 104.0,
+   "components_sum": 104.0,
+   "symmetry_ok": true
+  }
+ },
+ "perceived_findings": [],
+ "verdict": "PASSES_STRUCTURAL_FORM_PENDING_HUMAN_REVIEW",
+ "authority": "structural form only \u2014 never material/typography/Gate-2 approval; human review decides",
+ "backbone_hash": "19f9b98d0bc46a0d3ff5f1e3e7b56dda990bbd9c4112c9ad92dabbe535863234"
+}

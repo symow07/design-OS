@@ -1,0 +1,56 @@
+{
+ "record_type": "vq3_closeout/1.0",
+ "created_at": "2026-07-29",
+ "state": "VQ3_OWNER_APPROVED_PENDING_CLOSEOUT",
+ "selected": "M3",
+ "selection_record": "docs/visual_quality/vq3/vq3_owner_selection.json",
+ "remaining_technical_steps": [
+  {
+   "item": "per-candidate component-mask SHEET",
+   "present": false,
+   "have": "8 shared per-component mask PNGs in vq3/masks/ (masks are identical across candidates by construction, so they were produced once)",
+   "missing": "a composed sheet per candidate",
+   "is_regeneration": false
+  },
+  {
+   "item": "per-candidate geometry overlay",
+   "present": false,
+   "have": "numeric geometry gates recorded per candidate (IoU 1.000000, 0 px drift)",
+   "missing": "a rendered overlay image showing the frozen outline on each candidate",
+   "is_regeneration": false
+  },
+  {
+   "item": "per-candidate material close-ups",
+   "present": false,
+   "have": "artwork-legibility crops per candidate; a collar comparison strip was made during review but not committed as a deliverable",
+   "missing": "committed body / collar / closure close-up sheets",
+   "is_regeneration": false
+  }
+ ],
+ "nothing_regenerated": true,
+ "m4_created": false,
+ "accepted_render_frozen": {
+  "path": "docs/visual_quality/vq3/vq3_m3_warm_rose_gold.png",
+  "sha256_16": "fbdedc5b23e31745",
+  "params": {
+   "name": "WARMER_ROSE_GOLD_METAL",
+   "body_gloss": 0.1,
+   "body_sigma": 0.26,
+   "body_edge": 0.2,
+   "body_grain": 0.02,
+   "collar_warm": 0.13,
+   "collar_contrast": 1.1,
+   "closure_gloss": 0.075
+  }
+ },
+ "alternates_preserved": [
+  "M1",
+  "M2"
+ ],
+ "next_action": "produce the three outstanding per-candidate evidence deliverables, then VQ-3 may close. No re-render is needed and the selected candidate will not change.",
+ "blocked_from": [
+  "packaging",
+  "supplier requests",
+  "production authority"
+ ]
+}

@@ -1,0 +1,46 @@
+§AD0(a) SCORE — T30h ATTEMPT 1 (§BH30(h) transcription), REFUSED. Gate
+exit=1 (GEXIT=1): TIER_2=REFUSE collected=8499 failures=5 apps=7693
+dip0c=671 dip0=135. NOTHING LANDED. HEAD stays 87091c1. Scored against
+pred_t30h.txt (6553a32310b9a483); attempt 1 stands, unrevised.
+
+L1 HELD (pre-launch): register staged alone; the eight swept records
+   set aside; porcelain register-only.
+L2 HELD: register +93 −0; 18,269-line prefix byte-identical
+   (042a44bc1ed5cdb6); tail == block (0bfa496f275fffda); 18,362 lines.
+L3 HELD as written for the manifest/records; the ledger at 445 passed
+   the records step (line 446 appended, unstaged).
+L4 HELD: one staged row 93 0.
+L5 NOT REALIZED: no commit.
+L6 FALSIFIED — a FINDING, not a flake (no §BH24 id; budget 0/3):
+   five failures, all reading the UNTRACKED var/ audit outputs, which
+   the §BH30(e) regen had overwritten with the swept state:
+     tools/dip0c/tests/test_c4a.py::test_the_real_corpus_audits_and_the_numbers_hold
+     tools/dip0c/tests/test_c4b.py::test_the_real_corpus_suspicion_totals_hold
+     tools/dip0c/tests/test_c4c.py::test_totals_reconcile_with_c4a_and_c4b
+     tools/dip0c/tests/test_c5.py::test_the_review_index_counts_decisions_once
+       — each loads var/…/dip0/inventory/inventory.jsonl (and the C4a/C4b/
+       C4c/C5 outputs) and asserts the PRE-INTAKE numbers (4886/3944/941/
+       1883; 706/130; 3969/2834/48; 3969/1880/3); the swept var/ measured
+       other numbers.
+     apps/intelligence/test_manifest_import.py::test_frozen_production_manifest_persists_exact_bounded_corpus_or_fails_closed
+       — docs/design_intelligence/dip1/dip1b_mvp_manifest_1_0.json entry 44
+       pins var/design_intelligence/audits/dip0c/c4c/face_manifest.json at
+       sha256 302679234ae5b9bb… (the 2026-08-31 bytes); the swept file
+       hashed d9fc99…; the test's fail-closed branch expected the
+       "unavailable" path, not a mismatch.
+   The prediction assumed no test read the swept var/; wrong.
+L7 NOT REALIZED: no landing; the refusing gate's line 446 sits
+   unstaged (HEAD 445).
+L8 HELD where measurable: apps diff empty (nothing staged there);
+   regions 7fbeb8f1fe10b0fb / b32030dc827263e4; identity unchanged;
+   the Noto pair VERIFIED_FOR_PRODUCTION under Django.
+
+After the refusal the ruled revert (h)(1) was executed: the stash of
+swept records dropped, the eight files verified sha256-EQUAL to HEAD
+87091c1 (tree seals back at 36f08a31ad581c3b / 2e339a7e23a46c00); the
+swept var/ dip0 + dip0c outputs moved OUT of the repo to
+~/bh30_work/var_regen_swept/ (104 files, 147 MB; var/ now holds only
+dip0b). MEASURED with var/ absent: the four dip0c tests FAIL
+(FileNotFoundError on the inventory — they do not skip); the apps
+manifest test PASSES (its "unavailable" branch). See
+hard_stop_sequencing.txt.

@@ -1,0 +1,154 @@
+{
+  "slice": "DIP-0C3c",
+  "source": {
+    "path": "materials/DOWNLOADE 2026/نماذج عامة من  01الانترنيت/Pantone_3519C.ase",
+    "sha256": "82f415be8b47d92f700d50cfefffeee9cf82a0ff5a2bf641158fb2d972521c4f",
+    "bytes": 66
+  },
+  "palette": {
+    "format": "ASE",
+    "signature": "ASEF",
+    "version": [
+      1,
+      0
+    ],
+    "declared_block_count": 1,
+    "parsed_block_count": 1,
+    "group_count": 0,
+    "swatch_count": 1,
+    "color_models": [
+      "RGB"
+    ],
+    "color_types": [
+      "GLOBAL"
+    ],
+    "parse_status": "PARTIAL_PARSE",
+    "capability": "REQUIRES_HUMAN",
+    "layouts_seen": [
+      "NON_STANDARD_NAME_ENCODING"
+    ],
+    "fallback_used": true,
+    "trailing_bytes": 0,
+    "parser_warnings": [
+      "NAME_LENGTH_FIELD_ABSENT"
+    ]
+  },
+  "groups": [],
+  "swatches": [
+    {
+      "raw": {
+        "name": "Pantone 3519 C",
+        "model": "RGB",
+        "channels": [
+          0.47843137383461,
+          0.18039216101169586,
+          0.3803921639919281
+        ],
+        "color_type": "GLOBAL",
+        "color_type_raw": 0,
+        "source_block_index": 0,
+        "source_offset": 18,
+        "source_end": 66,
+        "declared_block_length": 48,
+        "body_sha256": "0c856a98c20bbf5930ac0a3741340ad0e46c29346fe126830b244bf34e7e2fbd",
+        "bytes_consumed": 48,
+        "unexplained_bytes": 0,
+        "layout": "NON_STANDARD_NAME_ENCODING",
+        "fallback_used": true,
+        "standard_failure_reason": "declared name length 80 UTF-16 units = 160 bytes, but the block body is only 48 bytes — the name cannot fit, so the documented layout is PROVABLY impossible here",
+        "group": null,
+        "authoritative": true
+      },
+      "normalized": {
+        "srgb_preview": [
+          0.478431,
+          0.180392,
+          0.380392
+        ],
+        "srgb_8bit_preview": [
+          122,
+          46,
+          97
+        ],
+        "lab": [
+          31.706,
+          39.217,
+          -13.802
+        ],
+        "channel_range": "0.0..1.0",
+        "conversion_method": "sRGB_to_LAB_D65",
+        "conversion_library": "tools.dip0b.color/0.1.0",
+        "gamut_warning": false,
+        "clipping_warning": false,
+        "warnings": [],
+        "confidence": 1.0,
+        "note": "DERIVATIVE. The raw source values are authoritative; these are analytical previews and never replace the source representation."
+      }
+    }
+  ],
+  "naming": {
+    "source_filename": "Pantone_3519C.ase",
+    "source_folder": "materials/DOWNLOADE 2026/نماذج عامة من  01الانترنيت",
+    "swatch_names": [
+      "Pantone 3519 C"
+    ],
+    "naming_from_filename": [],
+    "naming_from_swatch_names": [
+      {
+        "swatch": "Pantone 3519 C",
+        "system": "PANTONE",
+        "matched": "Pantone",
+        "trademarked_third_party": true,
+        "note": "PANTONE is a THIRD-PARTY naming system. A name is evidence about naming — not a colour definition, not ownership, and not permission to redistribute."
+      }
+    ],
+    "detected_naming_systems": [
+      "PANTONE"
+    ],
+    "third_party_naming_present": true,
+    "contains_spot_identity": false,
+    "color_models_present": [
+      "RGB"
+    ],
+    "authoritative_definition_present": false,
+    "findings": [
+      "PANTONE naming detected — third-party, trademarked",
+      "the file declares NO spot colour: every swatch is GLOBAL or NORMAL. It therefore contains no authoritative spot definition, whatever its name says.",
+      "the file carries RGB only — no CMYK, no LAB, no ICC profile. There is nothing here from which a print-accurate or licensed conversion could be derived, and none may be fabricated from a generic formula.",
+      "CONCLUSION: PANTONE exists only in a NAME STRING. This is third-party naming evidence, not a colour definition and not a licence."
+    ],
+    "filename_proves_nothing": "The filename and folder are NOT evidence of ownership, of brand association, or of permission. They never have been.",
+    "parser": "dip0c.palette_rights/0.1.0"
+  },
+  "rights": {
+    "ownership_status": "OWNERSHIP_UNCONFIRMED",
+    "license_status": "LICENSE_UNVERIFIED",
+    "brand_association": "REQUIRES_HUMAN",
+    "reuse_posture": "REFERENCE_ONLY",
+    "third_party_naming_present": true,
+    "detected_naming_systems": [
+      "PANTONE"
+    ],
+    "permissions": {
+      "retrieval_allowed": false,
+      "automatic_use_allowed": false,
+      "production_use_allowed": false,
+      "modification_allowed": false,
+      "embedding_allowed": false,
+      "redistribution_allowed": false,
+      "public_export_allowed": false,
+      "approved_for_bbrose": false,
+      "approved_for_other_brands": false
+    },
+    "restrictions": [
+      "no proprietary colour library may be bundled or redistributed",
+      "only the single source file supplied in materials/ has been audited",
+      "third-party naming does not grant any right to expose or export third-party reference data",
+      "no commercial approval is implied by the presence of this file"
+    ],
+    "human_review_required": true,
+    "why_unusable": "The palette may be technically readable and still be unusable. Parsing a colour is a TECHNICAL fact; owning it, licensing it, and calling it the brand's are LEGAL and BRAND facts. None of the latter has been established, so every permission stays false.",
+    "parser": "dip0c.palette_rights/0.1.0"
+  },
+  "conversion_warnings": []
+}

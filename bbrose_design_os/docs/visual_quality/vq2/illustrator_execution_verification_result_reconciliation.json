@@ -1,0 +1,126 @@
+{
+ "record_type": "illustrator_logical_object_reconciliation/1.0",
+ "created_at": "2026-07-31",
+ "codes": [
+  "ILLUSTRATOR_ALL_PATHS_ARRIVED_FALSE_COUNTING_MISMATCH",
+  "ILLUSTRATOR_LOGICAL_OBJECTS_AND_PATH_ITEMS_RECONCILED"
+ ],
+ "submitted_result_file": "docs/visual_quality/vq2/illustrator_execution_verification_result.json",
+ "submitted_result_sha256": "110d205d04712d44af79f86838a04de9bd3a4165d465e5ca6d4cc7e18c350cb3",
+ "submitted_result_preserved_unchanged": true,
+ "submitted_result_rewritten": false,
+ "this_record_sits_beside_it_not_over_it": true,
+ "submitted_flag": {
+  "field": "all_paths_arrived",
+  "value": false,
+  "compared": "Illustrator path items against LOGICAL drawing objects — two different inventories"
+ },
+ "whose_defect": "mine. The script compared path_items_total with EXPECTED_OBJECTS (40). A compound path is one drawing and several path items, so the two can never be equal for this artwork and the flag could only ever read false.",
+ "logical_drawing_objects": 40,
+ "path_items_expected": 67,
+ "path_items_reported_by_illustrator": 67,
+ "reconciles_exactly": true,
+ "compound_objects": 18,
+ "extra_subpaths_beyond_one_each": 27,
+ "arithmetic": "40 logical drawings + 27 extra subpaths from 18 compound objects = 67 path items",
+ "compound_breakdown": [
+  {
+   "group": "04_APPROVED_BBROSE_LOGO",
+   "object": "APPROVED_BBROSE_000",
+   "subpaths": 3
+  },
+  {
+   "group": "04_APPROVED_BBROSE_LOGO",
+   "object": "APPROVED_BBROSE_001",
+   "subpaths": 3
+  },
+  {
+   "group": "04_APPROVED_BBROSE_LOGO",
+   "object": "APPROVED_BBROSE_006",
+   "subpaths": 4
+  },
+  {
+   "group": "04_APPROVED_BBROSE_LOGO",
+   "object": "APPROVED_BBROSE_007",
+   "subpaths": 2
+  },
+  {
+   "group": "04_APPROVED_BBROSE_LOGO",
+   "object": "APPROVED_BBROSE_008",
+   "subpaths": 2
+  },
+  {
+   "group": "06_ROSE_LETTERING",
+   "object": "ROSE_00_R",
+   "subpaths": 2
+  },
+  {
+   "group": "06_ROSE_LETTERING",
+   "object": "ROSE_01_o",
+   "subpaths": 2
+  },
+  {
+   "group": "07_DAMASCENA_LETTERING",
+   "object": "DAMASCENA_00_D",
+   "subpaths": 2
+  },
+  {
+   "group": "07_DAMASCENA_LETTERING",
+   "object": "DAMASCENA_01_a",
+   "subpaths": 2
+  },
+  {
+   "group": "07_DAMASCENA_LETTERING",
+   "object": "DAMASCENA_03_a",
+   "subpaths": 2
+  },
+  {
+   "group": "07_DAMASCENA_LETTERING",
+   "object": "DAMASCENA_08_a",
+   "subpaths": 2
+  },
+  {
+   "group": "08_SUPPORTING_COPY",
+   "object": "SUPPORTING_03_H",
+   "subpaths": 3
+  },
+  {
+   "group": "08_SUPPORTING_COPY",
+   "object": "SUPPORTING_06_R",
+   "subpaths": 3
+  },
+  {
+   "group": "08_SUPPORTING_COPY",
+   "object": "SUPPORTING_07_E",
+   "subpaths": 4
+  },
+  {
+   "group": "08_SUPPORTING_COPY",
+   "object": "SUPPORTING_08_P",
+   "subpaths": 2
+  },
+  {
+   "group": "08_SUPPORTING_COPY",
+   "object": "SUPPORTING_09_A",
+   "subpaths": 2
+  },
+  {
+   "group": "08_SUPPORTING_COPY",
+   "object": "SUPPORTING_11_R",
+   "subpaths": 3
+  },
+  {
+   "group": "08_SUPPORTING_COPY",
+   "object": "SUPPORTING_13_O",
+   "subpaths": 2
+  }
+ ],
+ "corrected_semantic_result": {
+  "all_logical_objects_arrived": true,
+  "all_path_items_arrived": true,
+  "no_missing_logo_glyph_divider_or_supporting_copy": true,
+  "no_raster_substitution": true,
+  "no_live_text": true
+ },
+ "script_fixed_for_future_runs": true
+}

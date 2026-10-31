@@ -1,0 +1,27 @@
+§AD0(a) SCORE — T28 (§BH28 goal transcription), commit f005c67. Gate
+GREEN, hand-captured exit=0 (GEXIT=0). 8/8 legs HELD against
+pred_t28.txt (119d8ab527f93c2b, sealed before git add).
+
+L1 HELD: register + gate-staged ledger line only; no apps path, no
+   docs/roadmap path beyond the ledger; tree clean at 93d569c;
+   extraction NOT begun at commit time (begun after scoring).
+L2 HELD: register +102 −0 (1 seam blank + 101 block lines); 17,860-line
+   prefix byte-identical (41e28c596b5b8760 at append AND at HEAD);
+   seam blank at 17,861; tail byte-identical to the block
+   (490f9771dae4e9fa); total 17,962; worktree == HEAD.
+L3 HELD: manifest untouched; records consistent; ppp/tcp untouched;
+   ledger at 441 passed the APPEND_ONLY prefix rule; DIP-0A 7,590.
+L4 HELD: one staged row 102 0, re-verified by the launch command
+   (INDEX_VERIFIED) before the gate ran.
+L5 HELD: 2 files, 103 insertions, 0 deletions.
+L6 HELD: suite line EXACT — TIER_2=GREEN collected=8499 failures=0
+   apps=7693 dip0c=671 dip0=135. No refusal; §BH24 0/3.
+L7 HELD: ledger 441 → 442 (HEAD~1=441, HEAD=442, worktree=442).
+L8 HELD: apps diff EMPTY; GATE 7fbeb8f1fe10b0fb and TEST
+   b32030dc827263e4 re-verified (exact recipe); tree seals measured at
+   receipt inside the block-writing command (dip0c 36f08a31ad581c3b,
+   dip0a 2e339a7e23a46c00); protocol_identity UNCHANGED
+   c7924c5a4215f3cf. No authority involved.
+
+Post-commit: HEAD f005c67; porcelain EMPTY. The extraction follows,
+read-only, under ~/bh28_work/ only.

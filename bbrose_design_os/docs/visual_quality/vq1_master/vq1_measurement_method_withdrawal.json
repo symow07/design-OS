@@ -1,0 +1,60 @@
+{
+ "record_type": "vq1_measurement_method_withdrawal/1.0",
+ "created_at": "2026-07-28",
+ "codes": [
+  "VQ1_SAMPLE_IDENTITY_COMPARISON_VACUOUS",
+  "VQ1_GLASS_FIT_COARSENED_TOLERANCE_NOT_ENFORCED"
+ ],
+ "withdrawn_claim": "M3's fitted glass samples are byte-identical to the reference half-widths across all 26 sampled rows from 664 to 739.",
+ "why_the_claim_was_vacuous": "The comparison read master_fit_m3.json[\"fits\"][\"GLASS\"][\"samples_px\"], which ARE the reference half-widths that were extracted to drive the fit. Comparing them to their own source can only ever return identity. It tested nothing about the fitted curve, which is what is actually rendered.",
+ "superseded_numbers": {
+  "neck": {
+   "mean": 0.00078,
+   "max": 0.00385
+  },
+  "shoulder": {
+   "mean": 0.00121,
+   "max": 0.00292
+  },
+  "status": "WITHDRAWN_DO_NOT_CITE"
+ },
+ "corrected_numbers_local_normal_canonical": {
+  "neck": {
+   "count": 30,
+   "mean": 0.001996,
+   "p95": 0.00337,
+   "max": 0.004073
+  },
+  "shoulder": {
+   "count": 36,
+   "mean": 0.001011,
+   "p95": 0.003673,
+   "max": 0.004197
+  },
+  "method": "fitted Bezier chain evaluated against EVERY reference row (step 1), true point-to-curve distance"
+ },
+ "corrected_numbers_same_row_diagnostic": {
+  "neck": {
+   "count": 30,
+   "mean": 0.002909,
+   "p95": 0.007381,
+   "max": 0.0074
+  },
+  "shoulder": {
+   "count": 36,
+   "mean": 0.00255,
+   "p95": 0.013544,
+   "max": 0.014869
+  },
+  "caveat": "invalid where the contour is steep; diagnostic only"
+ },
+ "second_defect_found_while_correcting": {
+  "code": "VQ1_GLASS_FIT_COARSENED_TOLERANCE_NOT_ENFORCED",
+  "detail": "fit_cubics carries max_seg=48. The GLASS chain has 229 samples and produced 57 segments, so the coarsening branch fired: step = 229//48 = 4, giving 57 uniform chunks. That branch discards the adaptive tolerance guarantee, so tol=0.6 px was never enforced on GLASS. Its worst segment residual, 5.1 px, is unbounded rather than tolerance-capped, and it lands on the shoulder transition.",
+  "why_not_fixed_here": "Re-fitting would change M3 geometry, which this mandate prohibits. Disclosed for human decision instead."
+ },
+ "conclusion_that_survives": "The corrected dense measurement still clears every deterministic neck and shoulder gate, so the finding that no reference-driven geometry correction is justified is unchanged. Only the evidence for it changed.",
+ "prior_records_not_rewritten": true,
+ "supersedes": "vq1_m3s1_justification_review.json",
+ "supersedes_disposition": "PRESERVED_UNCHANGED_AS_AUDIT_FIXTURE (\u00a73)"
+}

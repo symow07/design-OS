@@ -1,0 +1,1977 @@
+{
+  "ownership": {
+    "machine": {
+      "legal_count": 18,
+      "refused_count": 72,
+      "legal": [
+        {
+          "from": "OWNERSHIP_UNKNOWN",
+          "to": "OWNERSHIP_DISPUTED"
+        },
+        {
+          "from": "OWNERSHIP_UNKNOWN",
+          "to": "QUARANTINED_PENDING_REVIEW"
+        },
+        {
+          "from": "BBROSE_OWNED_UNCONFIRMED",
+          "to": "OWNERSHIP_UNKNOWN"
+        },
+        {
+          "from": "BBROSE_OWNED_UNCONFIRMED",
+          "to": "THIRD_PARTY_UNCONFIRMED"
+        },
+        {
+          "from": "BBROSE_OWNED_UNCONFIRMED",
+          "to": "OWNERSHIP_DISPUTED"
+        },
+        {
+          "from": "BBROSE_OWNED_UNCONFIRMED",
+          "to": "QUARANTINED_PENDING_REVIEW"
+        },
+        {
+          "from": "THIRD_PARTY_UNCONFIRMED",
+          "to": "OWNERSHIP_UNKNOWN"
+        },
+        {
+          "from": "THIRD_PARTY_UNCONFIRMED",
+          "to": "BBROSE_OWNED_UNCONFIRMED"
+        },
+        {
+          "from": "THIRD_PARTY_UNCONFIRMED",
+          "to": "OWNERSHIP_DISPUTED"
+        },
+        {
+          "from": "THIRD_PARTY_UNCONFIRMED",
+          "to": "QUARANTINED_PENDING_REVIEW"
+        },
+        {
+          "from": "OWNERSHIP_DISPUTED",
+          "to": "QUARANTINED_PENDING_REVIEW"
+        },
+        {
+          "from": "QUARANTINED_PENDING_REVIEW",
+          "to": "OWNERSHIP_DISPUTED"
+        },
+        {
+          "from": "BBROSE_OWNED_CONFIRMED",
+          "to": "OWNERSHIP_DISPUTED"
+        },
+        {
+          "from": "BBROSE_OWNED_CONFIRMED",
+          "to": "QUARANTINED_PENDING_REVIEW"
+        },
+        {
+          "from": "THIRD_PARTY_CONFIRMED",
+          "to": "OWNERSHIP_DISPUTED"
+        },
+        {
+          "from": "THIRD_PARTY_CONFIRMED",
+          "to": "QUARANTINED_PENDING_REVIEW"
+        },
+        {
+          "from": "LICENSED_FOR_LIMITED_USE",
+          "to": "QUARANTINED_PENDING_REVIEW"
+        },
+        {
+          "from": "JOINT_OR_CONTRACTED_USE",
+          "to": "QUARANTINED_PENDING_REVIEW"
+        }
+      ],
+      "refused": [
+        {
+          "from": "OWNERSHIP_UNKNOWN",
+          "to": "BBROSE_OWNED_UNCONFIRMED",
+          "refused_because": "IllegalTransition",
+          "reason": "'OWNERSHIP_UNKNOWN' -> 'BBROSE_OWNED_UNCONFIRMED' is NOT in the explicit machine transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "OWNERSHIP_UNKNOWN",
+          "to": "THIRD_PARTY_UNCONFIRMED",
+          "refused_because": "IllegalTransition",
+          "reason": "'OWNERSHIP_UNKNOWN' -> 'THIRD_PARTY_UNCONFIRMED' is NOT in the explicit machine transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "OWNERSHIP_UNKNOWN",
+          "to": "BBROSE_OWNED_CONFIRMED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'BBROSE_OWNED_CONFIRMED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "OWNERSHIP_UNKNOWN",
+          "to": "THIRD_PARTY_CONFIRMED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'THIRD_PARTY_CONFIRMED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "OWNERSHIP_UNKNOWN",
+          "to": "LICENSED_FOR_LIMITED_USE",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'LICENSED_FOR_LIMITED_USE' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "OWNERSHIP_UNKNOWN",
+          "to": "JOINT_OR_CONTRACTED_USE",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'JOINT_OR_CONTRACTED_USE' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "OWNERSHIP_UNKNOWN",
+          "to": "BUSINESS_ASSERTED_BBROSE",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "a machine cannot invent a business assertion"
+        },
+        {
+          "from": "BBROSE_OWNED_UNCONFIRMED",
+          "to": "BBROSE_OWNED_CONFIRMED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'BBROSE_OWNED_CONFIRMED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "BBROSE_OWNED_UNCONFIRMED",
+          "to": "THIRD_PARTY_CONFIRMED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'THIRD_PARTY_CONFIRMED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "BBROSE_OWNED_UNCONFIRMED",
+          "to": "LICENSED_FOR_LIMITED_USE",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'LICENSED_FOR_LIMITED_USE' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "BBROSE_OWNED_UNCONFIRMED",
+          "to": "JOINT_OR_CONTRACTED_USE",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'JOINT_OR_CONTRACTED_USE' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "BBROSE_OWNED_UNCONFIRMED",
+          "to": "BUSINESS_ASSERTED_BBROSE",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "a machine cannot invent a business assertion"
+        },
+        {
+          "from": "THIRD_PARTY_UNCONFIRMED",
+          "to": "BBROSE_OWNED_CONFIRMED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'BBROSE_OWNED_CONFIRMED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "THIRD_PARTY_UNCONFIRMED",
+          "to": "THIRD_PARTY_CONFIRMED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'THIRD_PARTY_CONFIRMED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "THIRD_PARTY_UNCONFIRMED",
+          "to": "LICENSED_FOR_LIMITED_USE",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'LICENSED_FOR_LIMITED_USE' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "THIRD_PARTY_UNCONFIRMED",
+          "to": "JOINT_OR_CONTRACTED_USE",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'JOINT_OR_CONTRACTED_USE' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "THIRD_PARTY_UNCONFIRMED",
+          "to": "BUSINESS_ASSERTED_BBROSE",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "a machine cannot invent a business assertion"
+        },
+        {
+          "from": "OWNERSHIP_DISPUTED",
+          "to": "OWNERSHIP_UNKNOWN",
+          "refused_because": "IllegalTransition",
+          "reason": "'OWNERSHIP_DISPUTED' -> 'OWNERSHIP_UNKNOWN' is NOT in the explicit machine transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "OWNERSHIP_DISPUTED",
+          "to": "BBROSE_OWNED_UNCONFIRMED",
+          "refused_because": "IllegalTransition",
+          "reason": "'OWNERSHIP_DISPUTED' -> 'BBROSE_OWNED_UNCONFIRMED' is NOT in the explicit machine transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "OWNERSHIP_DISPUTED",
+          "to": "THIRD_PARTY_UNCONFIRMED",
+          "refused_because": "IllegalTransition",
+          "reason": "'OWNERSHIP_DISPUTED' -> 'THIRD_PARTY_UNCONFIRMED' is NOT in the explicit machine transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "OWNERSHIP_DISPUTED",
+          "to": "BBROSE_OWNED_CONFIRMED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'BBROSE_OWNED_CONFIRMED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "OWNERSHIP_DISPUTED",
+          "to": "THIRD_PARTY_CONFIRMED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'THIRD_PARTY_CONFIRMED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "OWNERSHIP_DISPUTED",
+          "to": "LICENSED_FOR_LIMITED_USE",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'LICENSED_FOR_LIMITED_USE' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "OWNERSHIP_DISPUTED",
+          "to": "JOINT_OR_CONTRACTED_USE",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'JOINT_OR_CONTRACTED_USE' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "OWNERSHIP_DISPUTED",
+          "to": "BUSINESS_ASSERTED_BBROSE",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "a machine cannot invent a business assertion"
+        },
+        {
+          "from": "QUARANTINED_PENDING_REVIEW",
+          "to": "OWNERSHIP_UNKNOWN",
+          "refused_because": "IllegalTransition",
+          "reason": "'QUARANTINED_PENDING_REVIEW' -> 'OWNERSHIP_UNKNOWN' is NOT in the explicit machine transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "QUARANTINED_PENDING_REVIEW",
+          "to": "BBROSE_OWNED_UNCONFIRMED",
+          "refused_because": "IllegalTransition",
+          "reason": "'QUARANTINED_PENDING_REVIEW' -> 'BBROSE_OWNED_UNCONFIRMED' is NOT in the explicit machine transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "QUARANTINED_PENDING_REVIEW",
+          "to": "THIRD_PARTY_UNCONFIRMED",
+          "refused_because": "IllegalTransition",
+          "reason": "'QUARANTINED_PENDING_REVIEW' -> 'THIRD_PARTY_UNCONFIRMED' is NOT in the explicit machine transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "QUARANTINED_PENDING_REVIEW",
+          "to": "BBROSE_OWNED_CONFIRMED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'BBROSE_OWNED_CONFIRMED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "QUARANTINED_PENDING_REVIEW",
+          "to": "THIRD_PARTY_CONFIRMED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'THIRD_PARTY_CONFIRMED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "QUARANTINED_PENDING_REVIEW",
+          "to": "LICENSED_FOR_LIMITED_USE",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'LICENSED_FOR_LIMITED_USE' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "QUARANTINED_PENDING_REVIEW",
+          "to": "JOINT_OR_CONTRACTED_USE",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'JOINT_OR_CONTRACTED_USE' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "QUARANTINED_PENDING_REVIEW",
+          "to": "BUSINESS_ASSERTED_BBROSE",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "a machine cannot invent a business assertion"
+        },
+        {
+          "from": "BBROSE_OWNED_CONFIRMED",
+          "to": "OWNERSHIP_UNKNOWN",
+          "refused_because": "IllegalTransition",
+          "reason": "'BBROSE_OWNED_CONFIRMED' -> 'OWNERSHIP_UNKNOWN' is NOT in the explicit machine transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "BBROSE_OWNED_CONFIRMED",
+          "to": "BBROSE_OWNED_UNCONFIRMED",
+          "refused_because": "IllegalTransition",
+          "reason": "'BBROSE_OWNED_CONFIRMED' -> 'BBROSE_OWNED_UNCONFIRMED' is NOT in the explicit machine transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "BBROSE_OWNED_CONFIRMED",
+          "to": "THIRD_PARTY_UNCONFIRMED",
+          "refused_because": "IllegalTransition",
+          "reason": "'BBROSE_OWNED_CONFIRMED' -> 'THIRD_PARTY_UNCONFIRMED' is NOT in the explicit machine transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "BBROSE_OWNED_CONFIRMED",
+          "to": "THIRD_PARTY_CONFIRMED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'THIRD_PARTY_CONFIRMED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "BBROSE_OWNED_CONFIRMED",
+          "to": "LICENSED_FOR_LIMITED_USE",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'LICENSED_FOR_LIMITED_USE' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "BBROSE_OWNED_CONFIRMED",
+          "to": "JOINT_OR_CONTRACTED_USE",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'JOINT_OR_CONTRACTED_USE' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "BBROSE_OWNED_CONFIRMED",
+          "to": "BUSINESS_ASSERTED_BBROSE",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "a machine cannot invent a business assertion"
+        },
+        {
+          "from": "THIRD_PARTY_CONFIRMED",
+          "to": "OWNERSHIP_UNKNOWN",
+          "refused_because": "IllegalTransition",
+          "reason": "'THIRD_PARTY_CONFIRMED' -> 'OWNERSHIP_UNKNOWN' is NOT in the explicit machine transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "THIRD_PARTY_CONFIRMED",
+          "to": "BBROSE_OWNED_UNCONFIRMED",
+          "refused_because": "IllegalTransition",
+          "reason": "'THIRD_PARTY_CONFIRMED' -> 'BBROSE_OWNED_UNCONFIRMED' is NOT in the explicit machine transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "THIRD_PARTY_CONFIRMED",
+          "to": "THIRD_PARTY_UNCONFIRMED",
+          "refused_because": "IllegalTransition",
+          "reason": "'THIRD_PARTY_CONFIRMED' -> 'THIRD_PARTY_UNCONFIRMED' is NOT in the explicit machine transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "THIRD_PARTY_CONFIRMED",
+          "to": "BBROSE_OWNED_CONFIRMED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'BBROSE_OWNED_CONFIRMED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "THIRD_PARTY_CONFIRMED",
+          "to": "LICENSED_FOR_LIMITED_USE",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'LICENSED_FOR_LIMITED_USE' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "THIRD_PARTY_CONFIRMED",
+          "to": "JOINT_OR_CONTRACTED_USE",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'JOINT_OR_CONTRACTED_USE' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "THIRD_PARTY_CONFIRMED",
+          "to": "BUSINESS_ASSERTED_BBROSE",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "a machine cannot invent a business assertion"
+        },
+        {
+          "from": "LICENSED_FOR_LIMITED_USE",
+          "to": "OWNERSHIP_UNKNOWN",
+          "refused_because": "IllegalTransition",
+          "reason": "'LICENSED_FOR_LIMITED_USE' -> 'OWNERSHIP_UNKNOWN' is NOT in the explicit machine transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "LICENSED_FOR_LIMITED_USE",
+          "to": "BBROSE_OWNED_UNCONFIRMED",
+          "refused_because": "IllegalTransition",
+          "reason": "'LICENSED_FOR_LIMITED_USE' -> 'BBROSE_OWNED_UNCONFIRMED' is NOT in the explicit machine transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "LICENSED_FOR_LIMITED_USE",
+          "to": "THIRD_PARTY_UNCONFIRMED",
+          "refused_because": "IllegalTransition",
+          "reason": "'LICENSED_FOR_LIMITED_USE' -> 'THIRD_PARTY_UNCONFIRMED' is NOT in the explicit machine transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "LICENSED_FOR_LIMITED_USE",
+          "to": "OWNERSHIP_DISPUTED",
+          "refused_because": "IllegalTransition",
+          "reason": "'LICENSED_FOR_LIMITED_USE' -> 'OWNERSHIP_DISPUTED' is NOT in the explicit machine transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "LICENSED_FOR_LIMITED_USE",
+          "to": "BBROSE_OWNED_CONFIRMED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'BBROSE_OWNED_CONFIRMED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "LICENSED_FOR_LIMITED_USE",
+          "to": "THIRD_PARTY_CONFIRMED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'THIRD_PARTY_CONFIRMED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "LICENSED_FOR_LIMITED_USE",
+          "to": "JOINT_OR_CONTRACTED_USE",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'JOINT_OR_CONTRACTED_USE' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "LICENSED_FOR_LIMITED_USE",
+          "to": "BUSINESS_ASSERTED_BBROSE",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "a machine cannot invent a business assertion"
+        },
+        {
+          "from": "JOINT_OR_CONTRACTED_USE",
+          "to": "OWNERSHIP_UNKNOWN",
+          "refused_because": "IllegalTransition",
+          "reason": "'JOINT_OR_CONTRACTED_USE' -> 'OWNERSHIP_UNKNOWN' is NOT in the explicit machine transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "JOINT_OR_CONTRACTED_USE",
+          "to": "BBROSE_OWNED_UNCONFIRMED",
+          "refused_because": "IllegalTransition",
+          "reason": "'JOINT_OR_CONTRACTED_USE' -> 'BBROSE_OWNED_UNCONFIRMED' is NOT in the explicit machine transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "JOINT_OR_CONTRACTED_USE",
+          "to": "THIRD_PARTY_UNCONFIRMED",
+          "refused_because": "IllegalTransition",
+          "reason": "'JOINT_OR_CONTRACTED_USE' -> 'THIRD_PARTY_UNCONFIRMED' is NOT in the explicit machine transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "JOINT_OR_CONTRACTED_USE",
+          "to": "OWNERSHIP_DISPUTED",
+          "refused_because": "IllegalTransition",
+          "reason": "'JOINT_OR_CONTRACTED_USE' -> 'OWNERSHIP_DISPUTED' is NOT in the explicit machine transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "JOINT_OR_CONTRACTED_USE",
+          "to": "BBROSE_OWNED_CONFIRMED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'BBROSE_OWNED_CONFIRMED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "JOINT_OR_CONTRACTED_USE",
+          "to": "THIRD_PARTY_CONFIRMED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'THIRD_PARTY_CONFIRMED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "JOINT_OR_CONTRACTED_USE",
+          "to": "LICENSED_FOR_LIMITED_USE",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'LICENSED_FOR_LIMITED_USE' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "JOINT_OR_CONTRACTED_USE",
+          "to": "BUSINESS_ASSERTED_BBROSE",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "a machine cannot invent a business assertion"
+        },
+        {
+          "from": "BUSINESS_ASSERTED_BBROSE",
+          "to": "OWNERSHIP_UNKNOWN",
+          "refused_because": "IllegalTransition",
+          "reason": "'BUSINESS_ASSERTED_BBROSE' -> 'OWNERSHIP_UNKNOWN' is NOT in the explicit machine transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "BUSINESS_ASSERTED_BBROSE",
+          "to": "BBROSE_OWNED_UNCONFIRMED",
+          "refused_because": "IllegalTransition",
+          "reason": "'BUSINESS_ASSERTED_BBROSE' -> 'BBROSE_OWNED_UNCONFIRMED' is NOT in the explicit machine transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "BUSINESS_ASSERTED_BBROSE",
+          "to": "THIRD_PARTY_UNCONFIRMED",
+          "refused_because": "IllegalTransition",
+          "reason": "'BUSINESS_ASSERTED_BBROSE' -> 'THIRD_PARTY_UNCONFIRMED' is NOT in the explicit machine transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "BUSINESS_ASSERTED_BBROSE",
+          "to": "OWNERSHIP_DISPUTED",
+          "refused_because": "IllegalTransition",
+          "reason": "'BUSINESS_ASSERTED_BBROSE' -> 'OWNERSHIP_DISPUTED' is NOT in the explicit machine transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "BUSINESS_ASSERTED_BBROSE",
+          "to": "QUARANTINED_PENDING_REVIEW",
+          "refused_because": "IllegalTransition",
+          "reason": "'BUSINESS_ASSERTED_BBROSE' -> 'QUARANTINED_PENDING_REVIEW' is NOT in the explicit machine transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "BUSINESS_ASSERTED_BBROSE",
+          "to": "BBROSE_OWNED_CONFIRMED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'BBROSE_OWNED_CONFIRMED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "BUSINESS_ASSERTED_BBROSE",
+          "to": "THIRD_PARTY_CONFIRMED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'THIRD_PARTY_CONFIRMED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "BUSINESS_ASSERTED_BBROSE",
+          "to": "LICENSED_FOR_LIMITED_USE",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'LICENSED_FOR_LIMITED_USE' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "BUSINESS_ASSERTED_BBROSE",
+          "to": "JOINT_OR_CONTRACTED_USE",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'JOINT_OR_CONTRACTED_USE' is HUMAN-ONLY; machine code may never confirm or approve"
+        }
+      ]
+    },
+    "human": {
+      "legal_count": 81,
+      "refused_count": 9,
+      "legal": [
+        {
+          "from": "OWNERSHIP_UNKNOWN",
+          "to": "BBROSE_OWNED_UNCONFIRMED"
+        },
+        {
+          "from": "OWNERSHIP_UNKNOWN",
+          "to": "THIRD_PARTY_UNCONFIRMED"
+        },
+        {
+          "from": "OWNERSHIP_UNKNOWN",
+          "to": "OWNERSHIP_DISPUTED"
+        },
+        {
+          "from": "OWNERSHIP_UNKNOWN",
+          "to": "QUARANTINED_PENDING_REVIEW"
+        },
+        {
+          "from": "OWNERSHIP_UNKNOWN",
+          "to": "BBROSE_OWNED_CONFIRMED"
+        },
+        {
+          "from": "OWNERSHIP_UNKNOWN",
+          "to": "THIRD_PARTY_CONFIRMED"
+        },
+        {
+          "from": "OWNERSHIP_UNKNOWN",
+          "to": "LICENSED_FOR_LIMITED_USE"
+        },
+        {
+          "from": "OWNERSHIP_UNKNOWN",
+          "to": "JOINT_OR_CONTRACTED_USE"
+        },
+        {
+          "from": "BBROSE_OWNED_UNCONFIRMED",
+          "to": "OWNERSHIP_UNKNOWN"
+        },
+        {
+          "from": "BBROSE_OWNED_UNCONFIRMED",
+          "to": "THIRD_PARTY_UNCONFIRMED"
+        },
+        {
+          "from": "BBROSE_OWNED_UNCONFIRMED",
+          "to": "OWNERSHIP_DISPUTED"
+        },
+        {
+          "from": "BBROSE_OWNED_UNCONFIRMED",
+          "to": "QUARANTINED_PENDING_REVIEW"
+        },
+        {
+          "from": "BBROSE_OWNED_UNCONFIRMED",
+          "to": "BBROSE_OWNED_CONFIRMED"
+        },
+        {
+          "from": "BBROSE_OWNED_UNCONFIRMED",
+          "to": "THIRD_PARTY_CONFIRMED"
+        },
+        {
+          "from": "BBROSE_OWNED_UNCONFIRMED",
+          "to": "LICENSED_FOR_LIMITED_USE"
+        },
+        {
+          "from": "BBROSE_OWNED_UNCONFIRMED",
+          "to": "JOINT_OR_CONTRACTED_USE"
+        },
+        {
+          "from": "THIRD_PARTY_UNCONFIRMED",
+          "to": "OWNERSHIP_UNKNOWN"
+        },
+        {
+          "from": "THIRD_PARTY_UNCONFIRMED",
+          "to": "BBROSE_OWNED_UNCONFIRMED"
+        },
+        {
+          "from": "THIRD_PARTY_UNCONFIRMED",
+          "to": "OWNERSHIP_DISPUTED"
+        },
+        {
+          "from": "THIRD_PARTY_UNCONFIRMED",
+          "to": "QUARANTINED_PENDING_REVIEW"
+        },
+        {
+          "from": "THIRD_PARTY_UNCONFIRMED",
+          "to": "BBROSE_OWNED_CONFIRMED"
+        },
+        {
+          "from": "THIRD_PARTY_UNCONFIRMED",
+          "to": "THIRD_PARTY_CONFIRMED"
+        },
+        {
+          "from": "THIRD_PARTY_UNCONFIRMED",
+          "to": "LICENSED_FOR_LIMITED_USE"
+        },
+        {
+          "from": "THIRD_PARTY_UNCONFIRMED",
+          "to": "JOINT_OR_CONTRACTED_USE"
+        },
+        {
+          "from": "OWNERSHIP_DISPUTED",
+          "to": "OWNERSHIP_UNKNOWN"
+        },
+        {
+          "from": "OWNERSHIP_DISPUTED",
+          "to": "BBROSE_OWNED_UNCONFIRMED"
+        },
+        {
+          "from": "OWNERSHIP_DISPUTED",
+          "to": "THIRD_PARTY_UNCONFIRMED"
+        },
+        {
+          "from": "OWNERSHIP_DISPUTED",
+          "to": "QUARANTINED_PENDING_REVIEW"
+        },
+        {
+          "from": "OWNERSHIP_DISPUTED",
+          "to": "BBROSE_OWNED_CONFIRMED"
+        },
+        {
+          "from": "OWNERSHIP_DISPUTED",
+          "to": "THIRD_PARTY_CONFIRMED"
+        },
+        {
+          "from": "OWNERSHIP_DISPUTED",
+          "to": "LICENSED_FOR_LIMITED_USE"
+        },
+        {
+          "from": "OWNERSHIP_DISPUTED",
+          "to": "JOINT_OR_CONTRACTED_USE"
+        },
+        {
+          "from": "QUARANTINED_PENDING_REVIEW",
+          "to": "OWNERSHIP_UNKNOWN"
+        },
+        {
+          "from": "QUARANTINED_PENDING_REVIEW",
+          "to": "BBROSE_OWNED_UNCONFIRMED"
+        },
+        {
+          "from": "QUARANTINED_PENDING_REVIEW",
+          "to": "THIRD_PARTY_UNCONFIRMED"
+        },
+        {
+          "from": "QUARANTINED_PENDING_REVIEW",
+          "to": "OWNERSHIP_DISPUTED"
+        },
+        {
+          "from": "QUARANTINED_PENDING_REVIEW",
+          "to": "BBROSE_OWNED_CONFIRMED"
+        },
+        {
+          "from": "QUARANTINED_PENDING_REVIEW",
+          "to": "THIRD_PARTY_CONFIRMED"
+        },
+        {
+          "from": "QUARANTINED_PENDING_REVIEW",
+          "to": "LICENSED_FOR_LIMITED_USE"
+        },
+        {
+          "from": "QUARANTINED_PENDING_REVIEW",
+          "to": "JOINT_OR_CONTRACTED_USE"
+        },
+        {
+          "from": "BBROSE_OWNED_CONFIRMED",
+          "to": "OWNERSHIP_UNKNOWN"
+        },
+        {
+          "from": "BBROSE_OWNED_CONFIRMED",
+          "to": "BBROSE_OWNED_UNCONFIRMED"
+        },
+        {
+          "from": "BBROSE_OWNED_CONFIRMED",
+          "to": "THIRD_PARTY_UNCONFIRMED"
+        },
+        {
+          "from": "BBROSE_OWNED_CONFIRMED",
+          "to": "OWNERSHIP_DISPUTED"
+        },
+        {
+          "from": "BBROSE_OWNED_CONFIRMED",
+          "to": "QUARANTINED_PENDING_REVIEW"
+        },
+        {
+          "from": "BBROSE_OWNED_CONFIRMED",
+          "to": "THIRD_PARTY_CONFIRMED"
+        },
+        {
+          "from": "BBROSE_OWNED_CONFIRMED",
+          "to": "LICENSED_FOR_LIMITED_USE"
+        },
+        {
+          "from": "BBROSE_OWNED_CONFIRMED",
+          "to": "JOINT_OR_CONTRACTED_USE"
+        },
+        {
+          "from": "THIRD_PARTY_CONFIRMED",
+          "to": "OWNERSHIP_UNKNOWN"
+        },
+        {
+          "from": "THIRD_PARTY_CONFIRMED",
+          "to": "BBROSE_OWNED_UNCONFIRMED"
+        },
+        {
+          "from": "THIRD_PARTY_CONFIRMED",
+          "to": "THIRD_PARTY_UNCONFIRMED"
+        },
+        {
+          "from": "THIRD_PARTY_CONFIRMED",
+          "to": "OWNERSHIP_DISPUTED"
+        },
+        {
+          "from": "THIRD_PARTY_CONFIRMED",
+          "to": "QUARANTINED_PENDING_REVIEW"
+        },
+        {
+          "from": "THIRD_PARTY_CONFIRMED",
+          "to": "BBROSE_OWNED_CONFIRMED"
+        },
+        {
+          "from": "THIRD_PARTY_CONFIRMED",
+          "to": "LICENSED_FOR_LIMITED_USE"
+        },
+        {
+          "from": "THIRD_PARTY_CONFIRMED",
+          "to": "JOINT_OR_CONTRACTED_USE"
+        },
+        {
+          "from": "LICENSED_FOR_LIMITED_USE",
+          "to": "OWNERSHIP_UNKNOWN"
+        },
+        {
+          "from": "LICENSED_FOR_LIMITED_USE",
+          "to": "BBROSE_OWNED_UNCONFIRMED"
+        },
+        {
+          "from": "LICENSED_FOR_LIMITED_USE",
+          "to": "THIRD_PARTY_UNCONFIRMED"
+        },
+        {
+          "from": "LICENSED_FOR_LIMITED_USE",
+          "to": "OWNERSHIP_DISPUTED"
+        },
+        {
+          "from": "LICENSED_FOR_LIMITED_USE",
+          "to": "QUARANTINED_PENDING_REVIEW"
+        },
+        {
+          "from": "LICENSED_FOR_LIMITED_USE",
+          "to": "BBROSE_OWNED_CONFIRMED"
+        },
+        {
+          "from": "LICENSED_FOR_LIMITED_USE",
+          "to": "THIRD_PARTY_CONFIRMED"
+        },
+        {
+          "from": "LICENSED_FOR_LIMITED_USE",
+          "to": "JOINT_OR_CONTRACTED_USE"
+        },
+        {
+          "from": "JOINT_OR_CONTRACTED_USE",
+          "to": "OWNERSHIP_UNKNOWN"
+        },
+        {
+          "from": "JOINT_OR_CONTRACTED_USE",
+          "to": "BBROSE_OWNED_UNCONFIRMED"
+        },
+        {
+          "from": "JOINT_OR_CONTRACTED_USE",
+          "to": "THIRD_PARTY_UNCONFIRMED"
+        },
+        {
+          "from": "JOINT_OR_CONTRACTED_USE",
+          "to": "OWNERSHIP_DISPUTED"
+        },
+        {
+          "from": "JOINT_OR_CONTRACTED_USE",
+          "to": "QUARANTINED_PENDING_REVIEW"
+        },
+        {
+          "from": "JOINT_OR_CONTRACTED_USE",
+          "to": "BBROSE_OWNED_CONFIRMED"
+        },
+        {
+          "from": "JOINT_OR_CONTRACTED_USE",
+          "to": "THIRD_PARTY_CONFIRMED"
+        },
+        {
+          "from": "JOINT_OR_CONTRACTED_USE",
+          "to": "LICENSED_FOR_LIMITED_USE"
+        },
+        {
+          "from": "BUSINESS_ASSERTED_BBROSE",
+          "to": "OWNERSHIP_UNKNOWN"
+        },
+        {
+          "from": "BUSINESS_ASSERTED_BBROSE",
+          "to": "BBROSE_OWNED_UNCONFIRMED"
+        },
+        {
+          "from": "BUSINESS_ASSERTED_BBROSE",
+          "to": "THIRD_PARTY_UNCONFIRMED"
+        },
+        {
+          "from": "BUSINESS_ASSERTED_BBROSE",
+          "to": "OWNERSHIP_DISPUTED"
+        },
+        {
+          "from": "BUSINESS_ASSERTED_BBROSE",
+          "to": "QUARANTINED_PENDING_REVIEW"
+        },
+        {
+          "from": "BUSINESS_ASSERTED_BBROSE",
+          "to": "BBROSE_OWNED_CONFIRMED"
+        },
+        {
+          "from": "BUSINESS_ASSERTED_BBROSE",
+          "to": "THIRD_PARTY_CONFIRMED"
+        },
+        {
+          "from": "BUSINESS_ASSERTED_BBROSE",
+          "to": "LICENSED_FOR_LIMITED_USE"
+        },
+        {
+          "from": "BUSINESS_ASSERTED_BBROSE",
+          "to": "JOINT_OR_CONTRACTED_USE"
+        }
+      ],
+      "refused": [
+        {
+          "from": "OWNERSHIP_UNKNOWN",
+          "to": "BUSINESS_ASSERTED_BBROSE",
+          "refused_because": "IllegalTransition",
+          "reason": "'OWNERSHIP_UNKNOWN' -> 'BUSINESS_ASSERTED_BBROSE' is NOT in the explicit human transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "BBROSE_OWNED_UNCONFIRMED",
+          "to": "BUSINESS_ASSERTED_BBROSE",
+          "refused_because": "IllegalTransition",
+          "reason": "'BBROSE_OWNED_UNCONFIRMED' -> 'BUSINESS_ASSERTED_BBROSE' is NOT in the explicit human transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "THIRD_PARTY_UNCONFIRMED",
+          "to": "BUSINESS_ASSERTED_BBROSE",
+          "refused_because": "IllegalTransition",
+          "reason": "'THIRD_PARTY_UNCONFIRMED' -> 'BUSINESS_ASSERTED_BBROSE' is NOT in the explicit human transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "OWNERSHIP_DISPUTED",
+          "to": "BUSINESS_ASSERTED_BBROSE",
+          "refused_because": "IllegalTransition",
+          "reason": "'OWNERSHIP_DISPUTED' -> 'BUSINESS_ASSERTED_BBROSE' is NOT in the explicit human transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "QUARANTINED_PENDING_REVIEW",
+          "to": "BUSINESS_ASSERTED_BBROSE",
+          "refused_because": "IllegalTransition",
+          "reason": "'QUARANTINED_PENDING_REVIEW' -> 'BUSINESS_ASSERTED_BBROSE' is NOT in the explicit human transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "BBROSE_OWNED_CONFIRMED",
+          "to": "BUSINESS_ASSERTED_BBROSE",
+          "refused_because": "IllegalTransition",
+          "reason": "'BBROSE_OWNED_CONFIRMED' -> 'BUSINESS_ASSERTED_BBROSE' is NOT in the explicit human transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "THIRD_PARTY_CONFIRMED",
+          "to": "BUSINESS_ASSERTED_BBROSE",
+          "refused_because": "IllegalTransition",
+          "reason": "'THIRD_PARTY_CONFIRMED' -> 'BUSINESS_ASSERTED_BBROSE' is NOT in the explicit human transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "LICENSED_FOR_LIMITED_USE",
+          "to": "BUSINESS_ASSERTED_BBROSE",
+          "refused_because": "IllegalTransition",
+          "reason": "'LICENSED_FOR_LIMITED_USE' -> 'BUSINESS_ASSERTED_BBROSE' is NOT in the explicit human transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "JOINT_OR_CONTRACTED_USE",
+          "to": "BUSINESS_ASSERTED_BBROSE",
+          "refused_because": "IllegalTransition",
+          "reason": "'JOINT_OR_CONTRACTED_USE' -> 'BUSINESS_ASSERTED_BBROSE' is NOT in the explicit human transition matrix for ownership. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        }
+      ]
+    }
+  },
+  "license": {
+    "machine": {
+      "legal_count": 21,
+      "refused_count": 89,
+      "legal": [
+        {
+          "from": "LICENSE_UNVERIFIED",
+          "to": "NO_LICENSE_EVIDENCE"
+        },
+        {
+          "from": "LICENSE_UNVERIFIED",
+          "to": "COMMERCIAL_USE_UNKNOWN"
+        },
+        {
+          "from": "LICENSE_UNVERIFIED",
+          "to": "QUARANTINED"
+        },
+        {
+          "from": "LICENSE_UNVERIFIED",
+          "to": "EXPIRED_OR_REVIEW_REQUIRED"
+        },
+        {
+          "from": "NO_LICENSE_EVIDENCE",
+          "to": "LICENSE_UNVERIFIED"
+        },
+        {
+          "from": "NO_LICENSE_EVIDENCE",
+          "to": "COMMERCIAL_USE_UNKNOWN"
+        },
+        {
+          "from": "NO_LICENSE_EVIDENCE",
+          "to": "QUARANTINED"
+        },
+        {
+          "from": "NO_LICENSE_EVIDENCE",
+          "to": "EXPIRED_OR_REVIEW_REQUIRED"
+        },
+        {
+          "from": "COMMERCIAL_USE_UNKNOWN",
+          "to": "LICENSE_UNVERIFIED"
+        },
+        {
+          "from": "COMMERCIAL_USE_UNKNOWN",
+          "to": "NO_LICENSE_EVIDENCE"
+        },
+        {
+          "from": "COMMERCIAL_USE_UNKNOWN",
+          "to": "QUARANTINED"
+        },
+        {
+          "from": "COMMERCIAL_USE_UNKNOWN",
+          "to": "EXPIRED_OR_REVIEW_REQUIRED"
+        },
+        {
+          "from": "QUARANTINED",
+          "to": "EXPIRED_OR_REVIEW_REQUIRED"
+        },
+        {
+          "from": "EXPIRED_OR_REVIEW_REQUIRED",
+          "to": "QUARANTINED"
+        },
+        {
+          "from": "LICENSE_APPROVED",
+          "to": "QUARANTINED"
+        },
+        {
+          "from": "LICENSE_APPROVED",
+          "to": "EXPIRED_OR_REVIEW_REQUIRED"
+        },
+        {
+          "from": "INTERNAL_USE_ONLY",
+          "to": "EXPIRED_OR_REVIEW_REQUIRED"
+        },
+        {
+          "from": "ATTRIBUTION_REQUIRED",
+          "to": "EXPIRED_OR_REVIEW_REQUIRED"
+        },
+        {
+          "from": "MODIFICATION_RESTRICTED",
+          "to": "EXPIRED_OR_REVIEW_REQUIRED"
+        },
+        {
+          "from": "EMBEDDING_RESTRICTED",
+          "to": "EXPIRED_OR_REVIEW_REQUIRED"
+        },
+        {
+          "from": "REDISTRIBUTION_RESTRICTED",
+          "to": "EXPIRED_OR_REVIEW_REQUIRED"
+        }
+      ],
+      "refused": [
+        {
+          "from": "LICENSE_UNVERIFIED",
+          "to": "LICENSE_APPROVED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'LICENSE_APPROVED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "LICENSE_UNVERIFIED",
+          "to": "INTERNAL_USE_ONLY",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'INTERNAL_USE_ONLY' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "LICENSE_UNVERIFIED",
+          "to": "ATTRIBUTION_REQUIRED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'ATTRIBUTION_REQUIRED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "LICENSE_UNVERIFIED",
+          "to": "MODIFICATION_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'MODIFICATION_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "LICENSE_UNVERIFIED",
+          "to": "EMBEDDING_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'EMBEDDING_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "LICENSE_UNVERIFIED",
+          "to": "REDISTRIBUTION_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'REDISTRIBUTION_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "NO_LICENSE_EVIDENCE",
+          "to": "LICENSE_APPROVED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'LICENSE_APPROVED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "NO_LICENSE_EVIDENCE",
+          "to": "INTERNAL_USE_ONLY",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'INTERNAL_USE_ONLY' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "NO_LICENSE_EVIDENCE",
+          "to": "ATTRIBUTION_REQUIRED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'ATTRIBUTION_REQUIRED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "NO_LICENSE_EVIDENCE",
+          "to": "MODIFICATION_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'MODIFICATION_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "NO_LICENSE_EVIDENCE",
+          "to": "EMBEDDING_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'EMBEDDING_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "NO_LICENSE_EVIDENCE",
+          "to": "REDISTRIBUTION_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'REDISTRIBUTION_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "COMMERCIAL_USE_UNKNOWN",
+          "to": "LICENSE_APPROVED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'LICENSE_APPROVED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "COMMERCIAL_USE_UNKNOWN",
+          "to": "INTERNAL_USE_ONLY",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'INTERNAL_USE_ONLY' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "COMMERCIAL_USE_UNKNOWN",
+          "to": "ATTRIBUTION_REQUIRED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'ATTRIBUTION_REQUIRED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "COMMERCIAL_USE_UNKNOWN",
+          "to": "MODIFICATION_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'MODIFICATION_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "COMMERCIAL_USE_UNKNOWN",
+          "to": "EMBEDDING_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'EMBEDDING_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "COMMERCIAL_USE_UNKNOWN",
+          "to": "REDISTRIBUTION_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'REDISTRIBUTION_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "QUARANTINED",
+          "to": "LICENSE_UNVERIFIED",
+          "refused_because": "IllegalTransition",
+          "reason": "'QUARANTINED' -> 'LICENSE_UNVERIFIED' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "QUARANTINED",
+          "to": "NO_LICENSE_EVIDENCE",
+          "refused_because": "IllegalTransition",
+          "reason": "'QUARANTINED' -> 'NO_LICENSE_EVIDENCE' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "QUARANTINED",
+          "to": "COMMERCIAL_USE_UNKNOWN",
+          "refused_because": "IllegalTransition",
+          "reason": "'QUARANTINED' -> 'COMMERCIAL_USE_UNKNOWN' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "QUARANTINED",
+          "to": "LICENSE_APPROVED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'LICENSE_APPROVED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "QUARANTINED",
+          "to": "INTERNAL_USE_ONLY",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'INTERNAL_USE_ONLY' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "QUARANTINED",
+          "to": "ATTRIBUTION_REQUIRED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'ATTRIBUTION_REQUIRED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "QUARANTINED",
+          "to": "MODIFICATION_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'MODIFICATION_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "QUARANTINED",
+          "to": "EMBEDDING_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'EMBEDDING_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "QUARANTINED",
+          "to": "REDISTRIBUTION_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'REDISTRIBUTION_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "EXPIRED_OR_REVIEW_REQUIRED",
+          "to": "LICENSE_UNVERIFIED",
+          "refused_because": "IllegalTransition",
+          "reason": "'EXPIRED_OR_REVIEW_REQUIRED' -> 'LICENSE_UNVERIFIED' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "EXPIRED_OR_REVIEW_REQUIRED",
+          "to": "NO_LICENSE_EVIDENCE",
+          "refused_because": "IllegalTransition",
+          "reason": "'EXPIRED_OR_REVIEW_REQUIRED' -> 'NO_LICENSE_EVIDENCE' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "EXPIRED_OR_REVIEW_REQUIRED",
+          "to": "COMMERCIAL_USE_UNKNOWN",
+          "refused_because": "IllegalTransition",
+          "reason": "'EXPIRED_OR_REVIEW_REQUIRED' -> 'COMMERCIAL_USE_UNKNOWN' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "EXPIRED_OR_REVIEW_REQUIRED",
+          "to": "LICENSE_APPROVED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'LICENSE_APPROVED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "EXPIRED_OR_REVIEW_REQUIRED",
+          "to": "INTERNAL_USE_ONLY",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'INTERNAL_USE_ONLY' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "EXPIRED_OR_REVIEW_REQUIRED",
+          "to": "ATTRIBUTION_REQUIRED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'ATTRIBUTION_REQUIRED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "EXPIRED_OR_REVIEW_REQUIRED",
+          "to": "MODIFICATION_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'MODIFICATION_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "EXPIRED_OR_REVIEW_REQUIRED",
+          "to": "EMBEDDING_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'EMBEDDING_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "EXPIRED_OR_REVIEW_REQUIRED",
+          "to": "REDISTRIBUTION_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'REDISTRIBUTION_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "LICENSE_APPROVED",
+          "to": "LICENSE_UNVERIFIED",
+          "refused_because": "IllegalTransition",
+          "reason": "'LICENSE_APPROVED' -> 'LICENSE_UNVERIFIED' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "LICENSE_APPROVED",
+          "to": "NO_LICENSE_EVIDENCE",
+          "refused_because": "IllegalTransition",
+          "reason": "'LICENSE_APPROVED' -> 'NO_LICENSE_EVIDENCE' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "LICENSE_APPROVED",
+          "to": "COMMERCIAL_USE_UNKNOWN",
+          "refused_because": "IllegalTransition",
+          "reason": "'LICENSE_APPROVED' -> 'COMMERCIAL_USE_UNKNOWN' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "LICENSE_APPROVED",
+          "to": "INTERNAL_USE_ONLY",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'INTERNAL_USE_ONLY' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "LICENSE_APPROVED",
+          "to": "ATTRIBUTION_REQUIRED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'ATTRIBUTION_REQUIRED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "LICENSE_APPROVED",
+          "to": "MODIFICATION_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'MODIFICATION_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "LICENSE_APPROVED",
+          "to": "EMBEDDING_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'EMBEDDING_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "LICENSE_APPROVED",
+          "to": "REDISTRIBUTION_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'REDISTRIBUTION_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "INTERNAL_USE_ONLY",
+          "to": "LICENSE_UNVERIFIED",
+          "refused_because": "IllegalTransition",
+          "reason": "'INTERNAL_USE_ONLY' -> 'LICENSE_UNVERIFIED' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "INTERNAL_USE_ONLY",
+          "to": "NO_LICENSE_EVIDENCE",
+          "refused_because": "IllegalTransition",
+          "reason": "'INTERNAL_USE_ONLY' -> 'NO_LICENSE_EVIDENCE' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "INTERNAL_USE_ONLY",
+          "to": "COMMERCIAL_USE_UNKNOWN",
+          "refused_because": "IllegalTransition",
+          "reason": "'INTERNAL_USE_ONLY' -> 'COMMERCIAL_USE_UNKNOWN' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "INTERNAL_USE_ONLY",
+          "to": "QUARANTINED",
+          "refused_because": "IllegalTransition",
+          "reason": "'INTERNAL_USE_ONLY' -> 'QUARANTINED' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "INTERNAL_USE_ONLY",
+          "to": "LICENSE_APPROVED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'LICENSE_APPROVED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "INTERNAL_USE_ONLY",
+          "to": "ATTRIBUTION_REQUIRED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'ATTRIBUTION_REQUIRED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "INTERNAL_USE_ONLY",
+          "to": "MODIFICATION_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'MODIFICATION_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "INTERNAL_USE_ONLY",
+          "to": "EMBEDDING_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'EMBEDDING_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "INTERNAL_USE_ONLY",
+          "to": "REDISTRIBUTION_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'REDISTRIBUTION_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "ATTRIBUTION_REQUIRED",
+          "to": "LICENSE_UNVERIFIED",
+          "refused_because": "IllegalTransition",
+          "reason": "'ATTRIBUTION_REQUIRED' -> 'LICENSE_UNVERIFIED' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "ATTRIBUTION_REQUIRED",
+          "to": "NO_LICENSE_EVIDENCE",
+          "refused_because": "IllegalTransition",
+          "reason": "'ATTRIBUTION_REQUIRED' -> 'NO_LICENSE_EVIDENCE' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "ATTRIBUTION_REQUIRED",
+          "to": "COMMERCIAL_USE_UNKNOWN",
+          "refused_because": "IllegalTransition",
+          "reason": "'ATTRIBUTION_REQUIRED' -> 'COMMERCIAL_USE_UNKNOWN' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "ATTRIBUTION_REQUIRED",
+          "to": "QUARANTINED",
+          "refused_because": "IllegalTransition",
+          "reason": "'ATTRIBUTION_REQUIRED' -> 'QUARANTINED' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "ATTRIBUTION_REQUIRED",
+          "to": "LICENSE_APPROVED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'LICENSE_APPROVED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "ATTRIBUTION_REQUIRED",
+          "to": "INTERNAL_USE_ONLY",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'INTERNAL_USE_ONLY' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "ATTRIBUTION_REQUIRED",
+          "to": "MODIFICATION_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'MODIFICATION_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "ATTRIBUTION_REQUIRED",
+          "to": "EMBEDDING_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'EMBEDDING_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "ATTRIBUTION_REQUIRED",
+          "to": "REDISTRIBUTION_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'REDISTRIBUTION_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "MODIFICATION_RESTRICTED",
+          "to": "LICENSE_UNVERIFIED",
+          "refused_because": "IllegalTransition",
+          "reason": "'MODIFICATION_RESTRICTED' -> 'LICENSE_UNVERIFIED' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "MODIFICATION_RESTRICTED",
+          "to": "NO_LICENSE_EVIDENCE",
+          "refused_because": "IllegalTransition",
+          "reason": "'MODIFICATION_RESTRICTED' -> 'NO_LICENSE_EVIDENCE' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "MODIFICATION_RESTRICTED",
+          "to": "COMMERCIAL_USE_UNKNOWN",
+          "refused_because": "IllegalTransition",
+          "reason": "'MODIFICATION_RESTRICTED' -> 'COMMERCIAL_USE_UNKNOWN' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "MODIFICATION_RESTRICTED",
+          "to": "QUARANTINED",
+          "refused_because": "IllegalTransition",
+          "reason": "'MODIFICATION_RESTRICTED' -> 'QUARANTINED' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "MODIFICATION_RESTRICTED",
+          "to": "LICENSE_APPROVED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'LICENSE_APPROVED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "MODIFICATION_RESTRICTED",
+          "to": "INTERNAL_USE_ONLY",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'INTERNAL_USE_ONLY' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "MODIFICATION_RESTRICTED",
+          "to": "ATTRIBUTION_REQUIRED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'ATTRIBUTION_REQUIRED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "MODIFICATION_RESTRICTED",
+          "to": "EMBEDDING_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'EMBEDDING_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "MODIFICATION_RESTRICTED",
+          "to": "REDISTRIBUTION_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'REDISTRIBUTION_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "EMBEDDING_RESTRICTED",
+          "to": "LICENSE_UNVERIFIED",
+          "refused_because": "IllegalTransition",
+          "reason": "'EMBEDDING_RESTRICTED' -> 'LICENSE_UNVERIFIED' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "EMBEDDING_RESTRICTED",
+          "to": "NO_LICENSE_EVIDENCE",
+          "refused_because": "IllegalTransition",
+          "reason": "'EMBEDDING_RESTRICTED' -> 'NO_LICENSE_EVIDENCE' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "EMBEDDING_RESTRICTED",
+          "to": "COMMERCIAL_USE_UNKNOWN",
+          "refused_because": "IllegalTransition",
+          "reason": "'EMBEDDING_RESTRICTED' -> 'COMMERCIAL_USE_UNKNOWN' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "EMBEDDING_RESTRICTED",
+          "to": "QUARANTINED",
+          "refused_because": "IllegalTransition",
+          "reason": "'EMBEDDING_RESTRICTED' -> 'QUARANTINED' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "EMBEDDING_RESTRICTED",
+          "to": "LICENSE_APPROVED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'LICENSE_APPROVED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "EMBEDDING_RESTRICTED",
+          "to": "INTERNAL_USE_ONLY",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'INTERNAL_USE_ONLY' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "EMBEDDING_RESTRICTED",
+          "to": "ATTRIBUTION_REQUIRED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'ATTRIBUTION_REQUIRED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "EMBEDDING_RESTRICTED",
+          "to": "MODIFICATION_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'MODIFICATION_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "EMBEDDING_RESTRICTED",
+          "to": "REDISTRIBUTION_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'REDISTRIBUTION_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "REDISTRIBUTION_RESTRICTED",
+          "to": "LICENSE_UNVERIFIED",
+          "refused_because": "IllegalTransition",
+          "reason": "'REDISTRIBUTION_RESTRICTED' -> 'LICENSE_UNVERIFIED' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "REDISTRIBUTION_RESTRICTED",
+          "to": "NO_LICENSE_EVIDENCE",
+          "refused_because": "IllegalTransition",
+          "reason": "'REDISTRIBUTION_RESTRICTED' -> 'NO_LICENSE_EVIDENCE' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "REDISTRIBUTION_RESTRICTED",
+          "to": "COMMERCIAL_USE_UNKNOWN",
+          "refused_because": "IllegalTransition",
+          "reason": "'REDISTRIBUTION_RESTRICTED' -> 'COMMERCIAL_USE_UNKNOWN' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "REDISTRIBUTION_RESTRICTED",
+          "to": "QUARANTINED",
+          "refused_because": "IllegalTransition",
+          "reason": "'REDISTRIBUTION_RESTRICTED' -> 'QUARANTINED' is NOT in the explicit machine transition matrix for license. The matrix is the authoritative policy; a transition is never legal merely because its certainty rank is equal or lower."
+        },
+        {
+          "from": "REDISTRIBUTION_RESTRICTED",
+          "to": "LICENSE_APPROVED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'LICENSE_APPROVED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "REDISTRIBUTION_RESTRICTED",
+          "to": "INTERNAL_USE_ONLY",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'INTERNAL_USE_ONLY' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "REDISTRIBUTION_RESTRICTED",
+          "to": "ATTRIBUTION_REQUIRED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'ATTRIBUTION_REQUIRED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "REDISTRIBUTION_RESTRICTED",
+          "to": "MODIFICATION_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'MODIFICATION_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        },
+        {
+          "from": "REDISTRIBUTION_RESTRICTED",
+          "to": "EMBEDDING_RESTRICTED",
+          "refused_because": "HumanOnlyStateViolation",
+          "reason": "'EMBEDDING_RESTRICTED' is HUMAN-ONLY; machine code may never confirm or approve"
+        }
+      ]
+    },
+    "human": {
+      "legal_count": 110,
+      "refused_count": 0,
+      "legal": [
+        {
+          "from": "LICENSE_UNVERIFIED",
+          "to": "NO_LICENSE_EVIDENCE"
+        },
+        {
+          "from": "LICENSE_UNVERIFIED",
+          "to": "COMMERCIAL_USE_UNKNOWN"
+        },
+        {
+          "from": "LICENSE_UNVERIFIED",
+          "to": "QUARANTINED"
+        },
+        {
+          "from": "LICENSE_UNVERIFIED",
+          "to": "EXPIRED_OR_REVIEW_REQUIRED"
+        },
+        {
+          "from": "LICENSE_UNVERIFIED",
+          "to": "LICENSE_APPROVED"
+        },
+        {
+          "from": "LICENSE_UNVERIFIED",
+          "to": "INTERNAL_USE_ONLY"
+        },
+        {
+          "from": "LICENSE_UNVERIFIED",
+          "to": "ATTRIBUTION_REQUIRED"
+        },
+        {
+          "from": "LICENSE_UNVERIFIED",
+          "to": "MODIFICATION_RESTRICTED"
+        },
+        {
+          "from": "LICENSE_UNVERIFIED",
+          "to": "EMBEDDING_RESTRICTED"
+        },
+        {
+          "from": "LICENSE_UNVERIFIED",
+          "to": "REDISTRIBUTION_RESTRICTED"
+        },
+        {
+          "from": "NO_LICENSE_EVIDENCE",
+          "to": "LICENSE_UNVERIFIED"
+        },
+        {
+          "from": "NO_LICENSE_EVIDENCE",
+          "to": "COMMERCIAL_USE_UNKNOWN"
+        },
+        {
+          "from": "NO_LICENSE_EVIDENCE",
+          "to": "QUARANTINED"
+        },
+        {
+          "from": "NO_LICENSE_EVIDENCE",
+          "to": "EXPIRED_OR_REVIEW_REQUIRED"
+        },
+        {
+          "from": "NO_LICENSE_EVIDENCE",
+          "to": "LICENSE_APPROVED"
+        },
+        {
+          "from": "NO_LICENSE_EVIDENCE",
+          "to": "INTERNAL_USE_ONLY"
+        },
+        {
+          "from": "NO_LICENSE_EVIDENCE",
+          "to": "ATTRIBUTION_REQUIRED"
+        },
+        {
+          "from": "NO_LICENSE_EVIDENCE",
+          "to": "MODIFICATION_RESTRICTED"
+        },
+        {
+          "from": "NO_LICENSE_EVIDENCE",
+          "to": "EMBEDDING_RESTRICTED"
+        },
+        {
+          "from": "NO_LICENSE_EVIDENCE",
+          "to": "REDISTRIBUTION_RESTRICTED"
+        },
+        {
+          "from": "COMMERCIAL_USE_UNKNOWN",
+          "to": "LICENSE_UNVERIFIED"
+        },
+        {
+          "from": "COMMERCIAL_USE_UNKNOWN",
+          "to": "NO_LICENSE_EVIDENCE"
+        },
+        {
+          "from": "COMMERCIAL_USE_UNKNOWN",
+          "to": "QUARANTINED"
+        },
+        {
+          "from": "COMMERCIAL_USE_UNKNOWN",
+          "to": "EXPIRED_OR_REVIEW_REQUIRED"
+        },
+        {
+          "from": "COMMERCIAL_USE_UNKNOWN",
+          "to": "LICENSE_APPROVED"
+        },
+        {
+          "from": "COMMERCIAL_USE_UNKNOWN",
+          "to": "INTERNAL_USE_ONLY"
+        },
+        {
+          "from": "COMMERCIAL_USE_UNKNOWN",
+          "to": "ATTRIBUTION_REQUIRED"
+        },
+        {
+          "from": "COMMERCIAL_USE_UNKNOWN",
+          "to": "MODIFICATION_RESTRICTED"
+        },
+        {
+          "from": "COMMERCIAL_USE_UNKNOWN",
+          "to": "EMBEDDING_RESTRICTED"
+        },
+        {
+          "from": "COMMERCIAL_USE_UNKNOWN",
+          "to": "REDISTRIBUTION_RESTRICTED"
+        },
+        {
+          "from": "QUARANTINED",
+          "to": "LICENSE_UNVERIFIED"
+        },
+        {
+          "from": "QUARANTINED",
+          "to": "NO_LICENSE_EVIDENCE"
+        },
+        {
+          "from": "QUARANTINED",
+          "to": "COMMERCIAL_USE_UNKNOWN"
+        },
+        {
+          "from": "QUARANTINED",
+          "to": "EXPIRED_OR_REVIEW_REQUIRED"
+        },
+        {
+          "from": "QUARANTINED",
+          "to": "LICENSE_APPROVED"
+        },
+        {
+          "from": "QUARANTINED",
+          "to": "INTERNAL_USE_ONLY"
+        },
+        {
+          "from": "QUARANTINED",
+          "to": "ATTRIBUTION_REQUIRED"
+        },
+        {
+          "from": "QUARANTINED",
+          "to": "MODIFICATION_RESTRICTED"
+        },
+        {
+          "from": "QUARANTINED",
+          "to": "EMBEDDING_RESTRICTED"
+        },
+        {
+          "from": "QUARANTINED",
+          "to": "REDISTRIBUTION_RESTRICTED"
+        },
+        {
+          "from": "EXPIRED_OR_REVIEW_REQUIRED",
+          "to": "LICENSE_UNVERIFIED"
+        },
+        {
+          "from": "EXPIRED_OR_REVIEW_REQUIRED",
+          "to": "NO_LICENSE_EVIDENCE"
+        },
+        {
+          "from": "EXPIRED_OR_REVIEW_REQUIRED",
+          "to": "COMMERCIAL_USE_UNKNOWN"
+        },
+        {
+          "from": "EXPIRED_OR_REVIEW_REQUIRED",
+          "to": "QUARANTINED"
+        },
+        {
+          "from": "EXPIRED_OR_REVIEW_REQUIRED",
+          "to": "LICENSE_APPROVED"
+        },
+        {
+          "from": "EXPIRED_OR_REVIEW_REQUIRED",
+          "to": "INTERNAL_USE_ONLY"
+        },
+        {
+          "from": "EXPIRED_OR_REVIEW_REQUIRED",
+          "to": "ATTRIBUTION_REQUIRED"
+        },
+        {
+          "from": "EXPIRED_OR_REVIEW_REQUIRED",
+          "to": "MODIFICATION_RESTRICTED"
+        },
+        {
+          "from": "EXPIRED_OR_REVIEW_REQUIRED",
+          "to": "EMBEDDING_RESTRICTED"
+        },
+        {
+          "from": "EXPIRED_OR_REVIEW_REQUIRED",
+          "to": "REDISTRIBUTION_RESTRICTED"
+        },
+        {
+          "from": "LICENSE_APPROVED",
+          "to": "LICENSE_UNVERIFIED"
+        },
+        {
+          "from": "LICENSE_APPROVED",
+          "to": "NO_LICENSE_EVIDENCE"
+        },
+        {
+          "from": "LICENSE_APPROVED",
+          "to": "COMMERCIAL_USE_UNKNOWN"
+        },
+        {
+          "from": "LICENSE_APPROVED",
+          "to": "QUARANTINED"
+        },
+        {
+          "from": "LICENSE_APPROVED",
+          "to": "EXPIRED_OR_REVIEW_REQUIRED"
+        },
+        {
+          "from": "LICENSE_APPROVED",
+          "to": "INTERNAL_USE_ONLY"
+        },
+        {
+          "from": "LICENSE_APPROVED",
+          "to": "ATTRIBUTION_REQUIRED"
+        },
+        {
+          "from": "LICENSE_APPROVED",
+          "to": "MODIFICATION_RESTRICTED"
+        },
+        {
+          "from": "LICENSE_APPROVED",
+          "to": "EMBEDDING_RESTRICTED"
+        },
+        {
+          "from": "LICENSE_APPROVED",
+          "to": "REDISTRIBUTION_RESTRICTED"
+        },
+        {
+          "from": "INTERNAL_USE_ONLY",
+          "to": "LICENSE_UNVERIFIED"
+        },
+        {
+          "from": "INTERNAL_USE_ONLY",
+          "to": "NO_LICENSE_EVIDENCE"
+        },
+        {
+          "from": "INTERNAL_USE_ONLY",
+          "to": "COMMERCIAL_USE_UNKNOWN"
+        },
+        {
+          "from": "INTERNAL_USE_ONLY",
+          "to": "QUARANTINED"
+        },
+        {
+          "from": "INTERNAL_USE_ONLY",
+          "to": "EXPIRED_OR_REVIEW_REQUIRED"
+        },
+        {
+          "from": "INTERNAL_USE_ONLY",
+          "to": "LICENSE_APPROVED"
+        },
+        {
+          "from": "INTERNAL_USE_ONLY",
+          "to": "ATTRIBUTION_REQUIRED"
+        },
+        {
+          "from": "INTERNAL_USE_ONLY",
+          "to": "MODIFICATION_RESTRICTED"
+        },
+        {
+          "from": "INTERNAL_USE_ONLY",
+          "to": "EMBEDDING_RESTRICTED"
+        },
+        {
+          "from": "INTERNAL_USE_ONLY",
+          "to": "REDISTRIBUTION_RESTRICTED"
+        },
+        {
+          "from": "ATTRIBUTION_REQUIRED",
+          "to": "LICENSE_UNVERIFIED"
+        },
+        {
+          "from": "ATTRIBUTION_REQUIRED",
+          "to": "NO_LICENSE_EVIDENCE"
+        },
+        {
+          "from": "ATTRIBUTION_REQUIRED",
+          "to": "COMMERCIAL_USE_UNKNOWN"
+        },
+        {
+          "from": "ATTRIBUTION_REQUIRED",
+          "to": "QUARANTINED"
+        },
+        {
+          "from": "ATTRIBUTION_REQUIRED",
+          "to": "EXPIRED_OR_REVIEW_REQUIRED"
+        },
+        {
+          "from": "ATTRIBUTION_REQUIRED",
+          "to": "LICENSE_APPROVED"
+        },
+        {
+          "from": "ATTRIBUTION_REQUIRED",
+          "to": "INTERNAL_USE_ONLY"
+        },
+        {
+          "from": "ATTRIBUTION_REQUIRED",
+          "to": "MODIFICATION_RESTRICTED"
+        },
+        {
+          "from": "ATTRIBUTION_REQUIRED",
+          "to": "EMBEDDING_RESTRICTED"
+        },
+        {
+          "from": "ATTRIBUTION_REQUIRED",
+          "to": "REDISTRIBUTION_RESTRICTED"
+        },
+        {
+          "from": "MODIFICATION_RESTRICTED",
+          "to": "LICENSE_UNVERIFIED"
+        },
+        {
+          "from": "MODIFICATION_RESTRICTED",
+          "to": "NO_LICENSE_EVIDENCE"
+        },
+        {
+          "from": "MODIFICATION_RESTRICTED",
+          "to": "COMMERCIAL_USE_UNKNOWN"
+        },
+        {
+          "from": "MODIFICATION_RESTRICTED",
+          "to": "QUARANTINED"
+        },
+        {
+          "from": "MODIFICATION_RESTRICTED",
+          "to": "EXPIRED_OR_REVIEW_REQUIRED"
+        },
+        {
+          "from": "MODIFICATION_RESTRICTED",
+          "to": "LICENSE_APPROVED"
+        },
+        {
+          "from": "MODIFICATION_RESTRICTED",
+          "to": "INTERNAL_USE_ONLY"
+        },
+        {
+          "from": "MODIFICATION_RESTRICTED",
+          "to": "ATTRIBUTION_REQUIRED"
+        },
+        {
+          "from": "MODIFICATION_RESTRICTED",
+          "to": "EMBEDDING_RESTRICTED"
+        },
+        {
+          "from": "MODIFICATION_RESTRICTED",
+          "to": "REDISTRIBUTION_RESTRICTED"
+        },
+        {
+          "from": "EMBEDDING_RESTRICTED",
+          "to": "LICENSE_UNVERIFIED"
+        },
+        {
+          "from": "EMBEDDING_RESTRICTED",
+          "to": "NO_LICENSE_EVIDENCE"
+        },
+        {
+          "from": "EMBEDDING_RESTRICTED",
+          "to": "COMMERCIAL_USE_UNKNOWN"
+        },
+        {
+          "from": "EMBEDDING_RESTRICTED",
+          "to": "QUARANTINED"
+        },
+        {
+          "from": "EMBEDDING_RESTRICTED",
+          "to": "EXPIRED_OR_REVIEW_REQUIRED"
+        },
+        {
+          "from": "EMBEDDING_RESTRICTED",
+          "to": "LICENSE_APPROVED"
+        },
+        {
+          "from": "EMBEDDING_RESTRICTED",
+          "to": "INTERNAL_USE_ONLY"
+        },
+        {
+          "from": "EMBEDDING_RESTRICTED",
+          "to": "ATTRIBUTION_REQUIRED"
+        },
+        {
+          "from": "EMBEDDING_RESTRICTED",
+          "to": "MODIFICATION_RESTRICTED"
+        },
+        {
+          "from": "EMBEDDING_RESTRICTED",
+          "to": "REDISTRIBUTION_RESTRICTED"
+        },
+        {
+          "from": "REDISTRIBUTION_RESTRICTED",
+          "to": "LICENSE_UNVERIFIED"
+        },
+        {
+          "from": "REDISTRIBUTION_RESTRICTED",
+          "to": "NO_LICENSE_EVIDENCE"
+        },
+        {
+          "from": "REDISTRIBUTION_RESTRICTED",
+          "to": "COMMERCIAL_USE_UNKNOWN"
+        },
+        {
+          "from": "REDISTRIBUTION_RESTRICTED",
+          "to": "QUARANTINED"
+        },
+        {
+          "from": "REDISTRIBUTION_RESTRICTED",
+          "to": "EXPIRED_OR_REVIEW_REQUIRED"
+        },
+        {
+          "from": "REDISTRIBUTION_RESTRICTED",
+          "to": "LICENSE_APPROVED"
+        },
+        {
+          "from": "REDISTRIBUTION_RESTRICTED",
+          "to": "INTERNAL_USE_ONLY"
+        },
+        {
+          "from": "REDISTRIBUTION_RESTRICTED",
+          "to": "ATTRIBUTION_REQUIRED"
+        },
+        {
+          "from": "REDISTRIBUTION_RESTRICTED",
+          "to": "MODIFICATION_RESTRICTED"
+        },
+        {
+          "from": "REDISTRIBUTION_RESTRICTED",
+          "to": "EMBEDDING_RESTRICTED"
+        }
+      ],
+      "refused": []
+    }
+  }
+}

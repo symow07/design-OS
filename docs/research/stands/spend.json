@@ -1,0 +1,39 @@
+{
+ "schema": "stand_research_spend/1",
+ "goal": "part 2, 2026-10-31",
+ "reserved_before_any_call": {
+  "web_searches": 110,
+  "page_fetches": 130,
+  "note": "A ceiling on calls, set before the first one. Text only: no picture is downloaded, and none reaches any image model."
+ },
+ "image_calls": 0,
+ "settled": {
+  "web_searches": 91,
+  "page_fetches": 127,
+  "by_file": {
+   "types-counter": [
+    21,
+    31
+   ],
+   "types-other": [
+    21,
+    27
+   ],
+   "professional-rules": [
+    29,
+    34
+   ],
+   "best-in-class": [
+    20,
+    27
+   ],
+   "spot-checks of the agents' sources": [
+    0,
+    8
+   ]
+  },
+  "money": "Web searches and fetches ran on the session's own tools, as the box research did: no API key of the project, no round's cap touched, no provider bill to read. So: $0.00 against any round; the tokens they used are part of this session's own usage, not measured here.",
+  "image_calls": 0,
+  "pictures_downloaded": 0
+ }
+}

@@ -1,0 +1,57 @@
+{
+ "row": 9,
+ "ok": true,
+ "result": {
+  "svg": 11921,
+  "production_pdf": {
+   "path": "carton_production.pdf",
+   "pages": 1,
+   "ocgs": [
+    "BLEED",
+    "CREASE",
+    "CUT",
+    "DIMENSIONS",
+    "GLUE",
+    "SAFE"
+   ],
+   "bytes": 37301
+  },
+  "ai_from_pdf": "carton.ai",
+  "pdf_layers_of": {
+   "CUT": {
+    "prints": true
+   },
+   "CREASE": {
+    "prints": true
+   },
+   "GLUE": {
+    "prints": false
+   },
+   "BLEED": {
+    "prints": false
+   },
+   "SAFE": {
+    "prints": false
+   },
+   "DIMENSIONS": {
+    "prints": false
+   }
+  },
+  "tests": {
+   "tests": [
+    "apps/dielines/tests/test_svg.py",
+    "apps/dielines/tests/test_production_pdf.py"
+   ],
+   "k": null,
+   "summary": "68 passed, 5 warnings in 0.35s",
+   "failed": [],
+   "seconds": 1.2
+  }
+ },
+ "seconds": 1.2,
+ "files": [
+  "09/carton.ai",
+  "09/carton.svg",
+  "09/carton_production.pdf"
+ ]
+}

@@ -1,0 +1,80 @@
+{
+  "record_type": "visual_scorecard_consistency/1.0",
+  "created_at": "2026-07-28",
+  "inspectors": {
+    "A_REFERENCE_FIDELITY_CRITIC": {
+      "verdict": "VISUALLY_IMPROVED_BUT_INSUFFICIENT",
+      "all_ten": false,
+      "categories_below_ten": [
+        "rounded_dome",
+        "dark_shaft",
+        "lower_flare",
+        "flare_symmetry",
+        "collar_sleeve",
+        "collar_closure_junction",
+        "neck_transition",
+        "shoulder_transition",
+        "complete_closure_coherence",
+        "overall"
+      ],
+      "ten_with_criticism": [],
+      "internally_consistent": true,
+      "scores": {
+        "rounded_dome": 7,
+        "dark_shaft": 6,
+        "lower_flare": 5,
+        "flare_symmetry": 6,
+        "collar_sleeve": 2,
+        "collar_closure_junction": 2,
+        "neck_transition": 3,
+        "shoulder_transition": 5,
+        "complete_closure_coherence": 3,
+        "overall": 3
+      }
+    },
+    "B_ADVERSARIAL_STRUCTURAL_DEFECT_FINDER": {
+      "verdict": "VISUALLY_IMPROVED_BUT_INSUFFICIENT",
+      "all_ten": false,
+      "categories_below_ten": [
+        "rounded_dome",
+        "dark_shaft",
+        "lower_flare",
+        "flare_symmetry",
+        "collar_sleeve",
+        "collar_closure_junction",
+        "neck_transition",
+        "shoulder_transition",
+        "complete_closure_coherence",
+        "overall"
+      ],
+      "ten_with_criticism": [],
+      "internally_consistent": true,
+      "scores": {
+        "rounded_dome": 5,
+        "dark_shaft": 4,
+        "lower_flare": 3,
+        "flare_symmetry": 5,
+        "collar_sleeve": 2,
+        "collar_closure_junction": 2,
+        "neck_transition": 3,
+        "shoulder_transition": 4,
+        "complete_closure_coherence": 2,
+        "overall": 2
+      }
+    }
+  },
+  "inspectors_agree": true,
+  "both_pass_required": "PASSES_VISUAL_INSPECTION_PENDING_HUMAN_REVIEW",
+  "both_returned": [
+    "VISUALLY_IMPROVED_BUT_INSUFFICIENT",
+    "VISUALLY_IMPROVED_BUT_INSUFFICIENT"
+  ],
+  "release_blocked_because": "no category reached 10/10 in either scorecard",
+  "dominant_finding": "both inspectors scored collar_sleeve and collar_closure_junction 2/10, citing the ABSENT rose-gold metallic finish. Deterministic collar contour IoU is 0.992 against the reference edge, so the collar GEOMETRY matches closely; the inspectors are penalising material realization despite being instructed that finish and colour are out of scope. Per the accepted VQ-3 deferral this is NOT a VQ-1 structural blocker, but it dominated both scorecards and must be resolved before a 10/10 is achievable \u2014 either by rendering neutral-but-metallic-reading fills or by constraining the inspectors more tightly to silhouette-only evidence.",
+  "genuine_structural_findings": [
+    "neck transition scored 3/10 by A and B \u2014 the reference shows a distinct narrowing below the collar that the candidate under-expresses",
+    "shoulder transition 4-5/10",
+    "dome read as a flat arch by B"
+  ],
+  "no_geometry_correction_implemented": true
+}

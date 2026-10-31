@@ -1,0 +1,19 @@
+# Tooling config (Milestone 14.2). Ruff is the CI linter.
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+# Migrations are Django-generated (unused imports by design) and vendored dirs
+# are not ours to lint.
+extend-exclude = ["**/migrations/**", "venv", "venv_*", "static", "staticfiles"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = [
+    "E501",  # line length — left to reviewers, not a build blocker
+    "I001",  # import sorting — not enforced on this legacy codebase yet
+]
+
+[tool.ruff.lint.per-file-ignores]
+# Test files use fixtures/imports that read as "unused" to static analysis.
+"**/tests/*" = ["F401", "F811"]
+"**/tests.py" = ["F401"]

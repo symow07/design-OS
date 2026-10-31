@@ -1,0 +1,166 @@
+{
+ "record_type": "human_structural_adjudication/1.0",
+ "created_at": "2026-07-28",
+ "adjudicator": "PROJECT_OWNER",
+ "candidate": "M3",
+ "candidate_sha256_png": "4ecc8e9df1d1",
+ "codes": [
+  "VQ1_WITHIN_TOLERANCE_CONTOUR_RESIDUAL",
+  "VQ1_NONBLOCKING_SUBPIXEL_STRUCTURAL_DEVIATION",
+  "VQ1_INSPECTOR_DISAGREEMENT_RESOLVED_BY_HUMAN_TOLERANCE_RULING"
+ ],
+ "ruling": "The reported sub-2-pixel deviations are NOT actionable VQ-1 structural defects.",
+ "disputed_deviations": [
+  {
+   "deviation": "neck inset shallower than the quantized reference",
+   "measured_px": 0.7,
+   "measure": "inset depth difference per side",
+   "reference_value_px": 8.0,
+   "m3_value_px": 7.3,
+   "applicable_gate": "neck local-normal max 0.035 normalized",
+   "measured_against_gate": 0.004073,
+   "inside_gate": true,
+   "reference_uncertainty_px": 0.5,
+   "inspector_a_classification": "LOW_SALIENCE_UNDER_NEUTRAL_PRESENTATION",
+   "inspector_b_classification": "TRUE_STRUCTURAL_DEFECT"
+  },
+  {
+   "deviation": "shoulder transition local-normal deviation",
+   "measured_px": 1.44,
+   "measure": "peak local-normal at row 706",
+   "applicable_gate": "shoulder local-normal max 0.035 normalized",
+   "measured_against_gate": 0.004197,
+   "inside_gate": true,
+   "reference_uncertainty_px": 0.5,
+   "note": "the same point measured SAME_ROW reads 5.1 px, but the reference tangent there is 74 degrees from vertical, where SAME_ROW correspondence is noncanonical",
+   "inspector_a_classification": "LOW_SALIENCE_UNDER_NEUTRAL_PRESENTATION",
+   "inspector_b_classification": "TRUE_STRUCTURAL_DEFECT"
+  },
+  {
+   "deviation": "flare/collar seam local-normal deviation",
+   "measured_px": 1.84,
+   "measure": "peak local-normal at row 495",
+   "applicable_gate": "assembly-wide local-normal max 0.035 normalized",
+   "measured_against_gate": 0.007594,
+   "inside_gate": true,
+   "reference_uncertainty_px": 0.5,
+   "inspector_a_classification": "NOT_RAISED",
+   "inspector_b_classification": "TRUE_STRUCTURAL_DEFECT"
+  }
+ ],
+ "deterministic_measurements": {
+  "neck_local_normal": {
+   "count": 30,
+   "mean": 0.001996,
+   "p95": 0.00337,
+   "max": 0.004073
+  },
+  "shoulder_local_normal": {
+   "count": 36,
+   "mean": 0.001011,
+   "p95": 0.003673,
+   "max": 0.004197
+  },
+  "assembly_wide_largest_px": 2.6048,
+  "assembly_wide_largest_norm": 0.007594,
+  "assembly_wide_at_row": 667
+ },
+ "applicable_gates": {
+  "mean": 0.006,
+  "p95": 0.018,
+  "max": 0.035
+ },
+ "reference_uncertainty": {
+  "source": "raster photograph",
+  "edge_quantization_px": 0.5,
+  "photographic_uncertainty": "present and unquantified",
+  "far_flank": "DERIVED_BY_MIRROR_NOT_INDEPENDENTLY_MEASURED"
+ },
+ "absence_of_topological_or_semantic_failure": {
+  "incorrect_component": false,
+  "topology_change": false,
+  "gap": false,
+  "step": false,
+  "discontinuity": false,
+  "asymmetry": false,
+  "visible_fallback": false,
+  "unsupported_visible_object": false,
+  "one_row_spike": false,
+  "neck_inset_present": true,
+  "shoulder_convex_outward": true
+ },
+ "reasons": [
+  "every deviation is inside its declared deterministic gate",
+  "the source reference is a raster photograph with edge quantization and photographic uncertainty",
+  "no residual introduces an incorrect component, topology change, gap, step, discontinuity, asymmetry or visible fallback",
+  "inspectors disagreed about whether these deviations were defects",
+  "deterministic evidence does not support changing the geometry",
+  "modifying M3 to remove them would optimize against inspector sensitivity rather than the validated reference"
+ ],
+ "determination": "NON_BLOCKING",
+ "decision_not_to_modify_m3": true,
+ "inspector_responses_rewritten": false,
+ "inspector_scores_changed": false,
+ "inspector_observations_removed": false,
+ "inspector_observations_status": "PRESERVED_AS_ADVISORY_AUDIT_EVIDENCE",
+ "acceptance_layer": "HUMAN_ADJUDICATION_NOT_RETROACTIVE_MODEL_AGREEMENT",
+ "may_not_be_classified_as": "TRUE_STRUCTURAL_DEFECT",
+ "preserved_inspector_records": {
+  "A": {
+   "identity": "STRUCTURAL_REFERENCE_FIDELITY_CRITIC",
+   "verdict": "PASSES_STRUCTURAL_INSPECTION_PENDING_HUMAN_REVIEW",
+   "scores": {
+    "rounded_dome": 9,
+    "dark_shaft": 10,
+    "lower_flare": 9,
+    "flare_symmetry": 9,
+    "collar_sleeve": 10,
+    "collar_closure_junction": 9,
+    "neck_transition": 9,
+    "shoulder_transition": 9,
+    "complete_closure_coherence": 9,
+    "overall": 9
+   },
+   "consistency_codes": [
+    "VQ1_LOW_SALIENCE_ALONE_REDUCED_STRUCTURAL_SCORE",
+    "VQ1_PASS_VERDICT_CONTAINS_SCORE_BELOW_10"
+   ]
+  },
+  "B": {
+   "identity": "STRUCTURAL_ADVERSARIAL_EVIDENCE_AUDITOR",
+   "verdict": "PASSES_STRUCTURAL_INSPECTION_PENDING_HUMAN_REVIEW",
+   "scores": {
+    "rounded_dome": 9,
+    "dark_shaft": 10,
+    "lower_flare": 8,
+    "flare_symmetry": 8,
+    "collar_sleeve": 9,
+    "collar_closure_junction": 9,
+    "neck_transition": 8,
+    "shoulder_transition": 8,
+    "complete_closure_coherence": 9,
+    "overall": 8
+   },
+   "consistency_codes": [
+    "VQ1_PASS_VERDICT_CONTAINS_SCORE_BELOW_10",
+    "VQ1_SCORE_10_CONTAINS_GENUINE_CONTOUR_CRITICISM"
+   ]
+  },
+  "both_pass_verdicts_remain_invalid_under_automatic_rule": true,
+  "disagreement": {
+   "inspector_a_true_defects": 0,
+   "inspector_b_true_defects": 3,
+   "a_true_defect_observations": [],
+   "b_true_defect_observations": [
+    "Neck inset depth under-expressed by 0.7 px per side (M3 inset 7.3 px vs reference 8.0 px, ratio 0.9125). The neck undercut exists but is marginally shallower than the reference.",
+    "Shoulder transition peak local-normal deviation of 1.44 px at row 706, where M3 contour crosses from inside to outside the reference curve at the point of maximum curvature.",
+    "Lower flare corner (rows 493\u2013497) shows red contour displaced approximately 1\u20132 px outward from black reference at the transition from curved corner to straight sidewall."
+   ],
+   "categories_diverging_by_2_or_more": {},
+   "disagree_on_geometry_correctness": true
+  }
+ },
+ "human_accepted": false,
+ "manufacturable": false,
+ "production_ready": false
+}

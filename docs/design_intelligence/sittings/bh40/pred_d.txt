@@ -1,0 +1,60 @@
+§AD0(a) PREDICTION — (d) THE FRESHNESS GATE (§BH40(d)), its own commit, sealed
+BEFORE git add. Base HEAD c00f2b3 ((c), 8/8). The rebuild time stated BEFORE the
+wiring, as ruled: 2.56–2.80 s per rebuild on this content (bound 120 s).
+
+L1 WRITE SET: exactly THREE modified paths — bbrose_design_os/tools/
+   guarded_commit.sh (+27: the rebuild step before the tier-1 suite run, in
+   the ledger-append idiom, run only when SUITE_CMD is not overridden),
+   bbrose_design_os/.gitignore (+1: .brain_rebuild_output beside the gate's
+   other artifacts), bbrose_design_os/apps/pipeline/tests/
+   test_two_roots_collision_guard.py (+98: BrainFreshnessGateTests, four
+   tests, loading tools/brain/sources.py by file path from the git root). No
+   other path; the freshness record stays untracked. Plus the gate-staged
+   ledger line.
+L2 DIFF SHAPE: 3 modified at +126 −0.
+L3 MANIFEST / A391: suite manifest untouched (the four tests join an existing
+   collected file; no new test FILE); records consistent; ledger APPEND_ONLY.
+   Census-first: records none; identity none; WIT 864 (measured: the test
+   section carries 0 dimensioned checks); corpus constants, dip1b, the
+   exclusion list, the materials record untouched; the two-roots guard's
+   three names unchanged (its own file gains a class, its pins untouched);
+   claim_scan (guarded_commit.sh is an INSTRUMENT): the step's prose carries
+   none of the seven phrases (measured); GuardedCommitTests: the nested
+   --dry-run runs override SUITE_CMD, so the step is skipped and writes no
+   artifact under a running gate (their output-file assertions hold).
+L4 STAGED == DECLARED: 3 rows "M".
+L5 COMMIT CONTENTS: 4 files (3 + the ledger), insertions 127, deletions 0.
+L6 SUITE LINE + REFUSAL TREE: GREEN — TIER_2=GREEN collected=8598
+   failures=0 apps=7786 dip0c=671 dip0=141 (8594 + the four freshness tests);
+   THIS gate is the first to run the rebuild step: .brain_rebuild_output
+   carries BRAIN_REBUILD_OK and the gate log echoes it before the suite line;
+   the freshness test then passes against the record the step just wrote.
+L7 LEDGER FOLD: 490 → 491, the +1 in THIS commit; HEAD~1 a
+   byte-prefix of HEAD; verdict OK, refusal_count 0.
+L8 PROTOCOL IDENTITIES / NEGATIVE CONTROL: apps diff = the test file only;
+   GATE 7fbeb8f1fe10b0fb / TEST b32030dc827263e4 byte-identical; tree seals
+   dip0c c22592930c75001c / dip0a d72072760ab20a6a UNCHANGED;
+   protocol_identity UNCHANGED; the eight M7 artefacts == baseline; the
+   register untouched (20,213 lines, db241ccf0b258e35); font and colour
+   themes unchanged. THE NEGATIVE CONTROL, measured before the seal: with
+   BRAIN_DIR pointing at a directory holding a STALE record (one source's
+   hash altered; a record naming no source; no record at all) the freshness
+   test FAILS by name (BRAIN_STALE / NO_FRESHNESS_RECORD); against the real
+   var/brain after a rebuild it PASSES; the stale-record run of the gate's
+   own dry-run form is not made (the step rebuilds first, by design — the
+   test is the gate's refusing element, the step is what makes it pass).
+   Measured at rehearsal (2026-09-08T09:22Z, sources.py at HEAD): 414 sources
+   enumerated and hashed in 0.06 s; the REAL record was already STALE —
+   SOURCE_CHANGED on the executor's memory file project_bbrose_bh32_font_
+   wiring_build.md, edited after the last rebuild — the designed behaviour
+   outside a gate (run the rebuild); the (d) gate's own step rebuilds first,
+   so its freshness test passes against a record that includes that change.
+   MEASURED AFTER THE EDITS, BEFORE THIS SEAL: the live negative control —
+   the test against the real record FAILED by name (BRAIN_STALE:
+   SOURCE_CHANGED on the memory file and on bbrose_design_os/tools/
+   guarded_commit.sh itself, the launcher just edited being a source); after
+   one rebuild (2.62 s) the four tests passed twice; the whole guard file 14
+   passed (10 + 4); GuardedCommitTests 6 passed with the step in place (their
+   nested dry-runs override SUITE_CMD and skip it); claim_scan clean on the
+   modified instrument; WIT 52 passed (864); the guard file collects 14 and
+   the apps leg 7,786.

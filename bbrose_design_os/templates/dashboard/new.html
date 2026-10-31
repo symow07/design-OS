@@ -1,0 +1,252 @@
+{% extends "base.html" %}
+{% load static %}
+{% comment %}START A NEW DESIGN — C's start (the owner's answer to the UI directions of 2026-09-25, his pick of the executor's options, a691f56: "starting a design, the library and history are C's"). Four questions down one column, the rail on the left keeping what is answered, and what
+the start costs said before the button that spends it. Every control is the start form's own — its ids, its checks, its
+references and its omission dialog — so what it sends is exactly what it always sent; nothing is spent until Start.{% endcomment %}
+{% block title %}Start a new design{% endblock %}
+{% block page_class %}page wide start-page{% endblock %}
+{% block content %}
+<div class="start">
+  <aside class="rail" aria-label="Where you are in starting a design">
+    <span class="over">A new design</span>
+    <ol class="rsteps">
+      <li class="rstep" id="rail-what"><span class="d">1</span><b>What</b><span data-rail="what">{{ default_target_name|default:"—" }}</span></li>
+      <li class="rstep" id="rail-product"><span class="d">2</span><b>Which product</b><span data-rail="product">{% if start_from %}{{ start_from.product_name|default:"—" }}{% else %}—{% endif %}</span></li>
+      <li class="rstep" id="rail-describe"><span class="d">3</span><b>Describe it</b><span data-rail="describe">In your own words</span></li>
+      <li class="rstep later" id="rail-start"><span class="d">4</span><b>Start</b><span>What it costs is shown before anything is spent</span></li>
+    </ol>
+  </aside>
+
+  <div class="start-main composer start-design" id="start-design">
+    <h1 class="h1 start-title">Start a new design</h1>
+    <p class="note-box"><a class="btn primary" href="{% url 'dashboard:new' %}">New design</a> — research, three mood boards, three designs, then your pick. <a href="{% url 'dashboard:round_list' %}">Your rounds</a></p>
+    <p class="lead">Four short questions. Nothing is spent until you press Start at the end.</p>
+    {% include "dashboard/_brand_switch.html" %}
+    {% if start_from %}<p class="note-box start-from" id="start-from">Filled in from a finished design, “{{ start_from.title }}” —
+      change anything before you start.</p>{% endif %}
+
+    <section class="q" aria-labelledby="start-what">
+      <div class="qh"><span class="qn">1</span><h2 class="h2 start-step" id="start-what">What are you designing?</h2></div>
+      <div id="target-selector" class="kgrid" role="radiogroup" aria-labelledby="start-what">
+        {% for c in target_cards %}
+        <button type="button"
+                class="target-chip kcard{% if c.value == default_target %} active{% endif %}{% if not c.active %} soon{% if c.needs %} needs{% endif %}{% endif %}"
+                role="radio"
+                aria-checked="{% if c.value == default_target %}true{% else %}false{% endif %}"
+                data-target="{{ c.value }}"
+                data-icon="{{ c.icon }}"
+                data-status="{{ c.status }}"
+                {% if not c.active %}disabled aria-disabled="true"{% endif %}
+                title="{{ c.description }} ({{ c.status }})">
+          <span class="ic" aria-hidden="true"><svg class="i"><use href="#{{ c.svg }}"/></svg></span>
+          <span class="chip-name">{{ c.name }}</span>
+          <span class="chip-desc">{{ c.description }}</span>{# [Step 1 (5): "card descriptions in one plain line each"] how it is finished is said in its title, never a second line #}
+          <span class="tick" aria-hidden="true"><svg class="i"><use href="#i-check"/></svg></span>
+        </button>
+        {% endfor %}
+      </div>
+      <p id="target-explanation" class="small">{{ selector_explanation }}</p>
+      <!-- Composite hint (C3): names the linked stages a composite target runs. -->
+      <div id="composite-hint" hidden></div>
+    </section>
+
+    <section class="q" aria-labelledby="start-product">
+      <div class="qh"><span class="qn">2</span><h2 class="h2" id="start-product">Which product?</h2></div>
+      <label class="start-step lbl" for="product-select">For which product?</label>
+      <select id="product-select" name="product_id" class="field">
+        <option value="">None on record — the description says it all</option>
+        {% for product in products %}
+          <option value="{{ product.id }}"{% if start_from and product.id == start_from.product_id %} selected{% endif %}>{{ product.product_id }} — {{ product.name }} · {{ product.size_words|default:"no size on record" }}</option>
+        {% endfor %}
+      </select>
+      <p class="small">Use confirmed measurements. Missing measurements remain unresolved. <a href="{% url 'dashboard:products_library' %}">Products</a> — set a size there.</p>
+      {# [his answers after 122 was redrawn, 2026-10-08, (1): "Add an optional SKU field on New design and at Gate 2"] #}
+      <label class="start-step lbl" for="sku-input">SKU <span>optional</span></label>
+      <input id="sku-input" name="sku" class="field" maxlength="64" autocomplete="off"
+             placeholder="None yet? Leave it empty — you can add it when you review the design">
+      <p class="small">A product chosen above brings its own SKU.</p>
+    </section>
+
+    <section class="q" aria-labelledby="physical-details">
+      <h2 class="h2" id="physical-details">Measurements and required content</h2>
+      <p class="small">Enter confirmed details in your own words. Blank fields stay unresolved.</p>
+      <label class="lbl" for="intake-dimensions">Product and display dimensions (mm)</label>
+      <input class="field" id="intake-dimensions" placeholder="Bottle Ø29 × 108; display W × D × H">
+      <label class="lbl" for="intake-count">Count and arrangement</label>
+      <input class="field" id="intake-count" placeholder="12 bottles; 3 stepped rows of 4">
+      <label class="lbl" for="intake-material">Materials and closure</label>
+      <input class="field" id="intake-material" placeholder="Clear glass; chrome spray cap">
+      <label class="lbl" for="intake-method">Decoration method</label>
+      <input class="field" id="intake-method" placeholder="Screen print, label, foil — or unresolved">
+      <label class="lbl" for="intake-languages">Languages</label>
+      <input class="field" id="intake-languages" placeholder="English, Arabic">
+      <label class="lbl" for="intake-copy">Exact required copy, one line per item</label>
+      <textarea class="field" id="intake-copy" rows="4"></textarea>
+    </section>
+
+    <section class="q" aria-labelledby="start-describe">
+      <div class="qh"><span class="qn">3</span><h2 class="h2" id="start-describe">Describe it</h2></div>
+      <label class="start-step lbl" for="task-input">Describe it <span>required</span></label>
+      <textarea id="task-input" class="field describe-box" rows="5" placeholder="What should it look and feel like? Name the mood, the colours, the finish, anything it must say…">{% if start_from %}{{ start_from.task_text }}{% else %}{{ brief }}{% endif %}</textarea>
+      {# §BH69(2): inspiration pictures, for every kind of design — each read into words before the design starts #}
+      <fieldset class="inspire" id="inspiration-box" data-max="{{ inspiration.max }}" data-kind="{{ inspiration.kind }}">
+        <legend>Inspiration pictures <span>optional</span></legend>
+        <p class="small">A screenshot or photograph you admire — from Instagram, Pinterest, Dribbble or anywhere. Each
+          one is read into words after Start: its layout, colours, mood, finish and type style. The design
+          takes those qualities, never the picture itself — it is never drawn from, and another brand's logo, name or
+          words are never copied. Reading is reserved within the rescue budget after Start; up to {{ inspiration.max }}.</p>
+        <label class="ref-zone inspire-zone" for="inspiration-input">
+          <span class="ref-zone-title">Add inspiration pictures</span>
+          <span class="ref-zone-drop">Drop pictures here or browse — PNG, JPEG or WEBP</span>
+        </label>
+        <input id="inspiration-input" class="ref-input" type="file" multiple accept=".png,.jpg,.jpeg,.webp">
+        <ul class="inspire-list" id="inspiration-list" aria-live="polite"></ul>
+      </fieldset>
+      {# [his final goal, 2026-10-05, B1] the inside reference, beside the inspiration box — read for its pattern and style #}
+      <fieldset class="inspire" id="inside-box" data-max="{{ inside.max }}" data-kind="{{ inside.kind }}">
+        <legend>Inside reference <span>optional — cartons</span></legend>
+        <p class="small">A picture of the print you want inside the carton. Each one is read for its pattern and style,
+          and the inside is drawn anew in vector in the design's own colours — never pasted, never copied. You can also
+          describe it in the brief: <i>Inside: …</i>. With neither, the inside repeats the concept's own motif. Reading a
+          picture costs {{ inside.cost_words }}; up to {{ inside.max }}.</p>
+        <label class="ref-zone inspire-zone" for="inside-input">
+          <span class="ref-zone-title">Add inside pictures</span>
+          <span class="ref-zone-drop">Drop pictures here or browse — PNG, JPEG or WEBP</span>
+        </label>
+        <input id="inside-input" class="ref-input" type="file" multiple accept=".png,.jpg,.jpeg,.webp">
+        <ul class="inspire-list" id="inside-list" aria-live="polite"></ul>
+      </fieldset>
+      {# [his final goal, 2026-10-05, B3] the custom sticker's picture — read for its shape, fill and border #}
+      <fieldset class="inspire" id="sticker-box" data-max="{{ sticker.max }}" data-kind="{{ sticker.kind }}">
+        <legend>Sticker reference <span>optional — cartons</span></legend>
+        <p class="small">A picture of the sticker you want for the back's information. It is read for its shape, fill
+          and border, and drawn anew in the design's own colours when you choose a custom sticker at the size step —
+          never pasted, never copied. You can also describe it in the brief: <i>Sticker: …</i>. Reading a picture costs
+          {{ sticker.cost_words }}; up to {{ sticker.max }}.</p>
+        <label class="ref-zone inspire-zone" for="sticker-input">
+          <span class="ref-zone-title">Add sticker pictures</span>
+          <span class="ref-zone-drop">Drop pictures here or browse — PNG, JPEG or WEBP</span>
+        </label>
+        <input id="sticker-input" class="ref-input" type="file" multiple accept=".png,.jpg,.jpeg,.webp">
+        <ul class="inspire-list" id="sticker-list" aria-live="polite"></ul>
+      </fieldset>
+      <!-- §BH70(1), item 15: the product hints, in their own block, for every design that starts from the product's
+           own shape — a Product Container and a Complete Product, whose first stage is one; blank = auto-infer. -->
+      <div id="product-hints" data-targets="{{ hint_targets|join:' ' }}" hidden>
+        <div class="hints-row">
+        {% for f in container_hint_fields %}
+        <label class="composer-hint lbl" for="{{ f.id }}">{{ f.label }} <span>{{ f.hint }}</span>
+        {% if f.options %}
+        <select id="{{ f.id }}" class="field">
+          {% for value, label in f.options %}<option value="{{ value }}">{{ label }}</option>{% endfor %}
+        </select>
+        {% else %}
+        <input id="{{ f.id }}" class="field" type="text" placeholder="{{ f.hint }}">
+        {% endif %}
+        </label>
+        {% endfor %}
+        </div>
+        <p id="profile-gate-note" class="small">{{ profile_gate_note }}</p>
+      </div>
+      <!-- Product Container progressive disclosure (B4a): its references. -->
+      <div id="container-inputs" hidden>
+        <div id="reference-config"
+             data-max-bytes="{{ reference_config.max_file_bytes }}"
+             data-max-mb="{{ reference_config.max_file_mb }}"
+             data-allowed="{{ reference_config.allowed_extensions|join:"," }}"
+             data-previewable="{{ reference_config.previewable_extensions|join:"," }}"
+             hidden></div>
+        {{ reference_categories|json_script:"reference-categories" }}
+        <fieldset id="reference-section">
+          <legend>References <span class="composer-hint">optional — reference only, never final artwork</span></legend>
+          <p id="reference-only-notice" class="small">{{ reference_only_notice }}</p>
+          <p class="small ref-guidance">Supported:
+            {{ reference_config.allowed_extensions|join:" " }} · up to
+            {{ reference_config.max_file_mb }} MB per file · final validation
+            happens at submission</p>
+          <div id="ref-errors" class="ref-errors"></div>
+          <div id="reference-categories-grid" class="ref-grid">
+            {% for c in reference_categories %}
+            <div class="ref-category" data-kind="{{ c.key }}">
+              <label class="ref-zone" for="ref-input-{{ c.key }}" data-kind="{{ c.key }}">
+                <span class="ref-zone-title">{{ c.label }}</span>
+                <span class="ref-zone-desc">{{ c.description }}</span>
+                <span class="ref-zone-drop" data-idle="Drop files here or browse">Drop files here or browse</span>
+              </label>
+              <input id="ref-input-{{ c.key }}" class="ref-input" type="file" multiple
+                     accept="{{ reference_config.allowed_extensions|join:"," }}"
+                     data-kind="{{ c.key }}">
+              <div class="ref-cards" data-kind="{{ c.key }}"></div>
+            </div>
+            {% endfor %}
+          </div>
+          <p id="ref-live" class="sr" aria-live="polite"></p>
+        </fieldset>
+      </div>
+      <div id="ref-held-notice" class="ref-held-notice" role="status" hidden></div>
+      <label class="start-step start-optional lbl" for="project-name">Name this project <span>optional</span></label>
+      <input id="project-name" class="field" type="text" placeholder="Name this project…">
+    </section>
+
+    <section class="q" aria-labelledby="start-go">
+      <div class="qh"><span class="qn">4</span><h2 class="h2" id="start-go">Start</h2></div>
+      <div class="go-card">
+        <p class="go-lead">When you start, the design opens on its own page and waits there for you at every choice
+          it needs.</p>
+        <div class="go-row">
+          <button id="btn-submit" class="btn primary lg" type="button">Start the design</button>
+          {# [His goal after the pitch page, 2026-10-15, B (9)] the pitch run: one tick beside Start #}
+          <label class="choice-row small" for="autopilot-toggle"><input type="checkbox" id="autopilot-toggle">
+            Let the system take every step by itself (pitch run — it picks the trend-led concept and stops when the
+            drawing is ready for your approval)</label>
+          <p id="spend-before-click" class="spend-note small">This button spends on the AI providers.
+            {% if spend_costs.start_design %}Measured on this system's ledger:{% for s in spend_costs.start_design %}
+            <span class="spend-row">{{ s.target_words }} ${{ s.min_usd|floatformat:2 }}–${{ s.max_usd|floatformat:2 }} a task
+              (median ${{ s.median_usd|floatformat:2 }}, {{ s.tasks }} task{{ s.tasks|pluralize }})</span>{% endfor %}
+            {% else %}No task has spent yet, so no cost is measured.{% endif %}
+            A measurement, never a quote. Trying a design on its own page spends nothing.</p>
+        </div>
+      </div>
+    </section>
+
+    {% comment %}[the owner's answer of 2026-09-27: a brief that says "gloss" without saying which asks him — wand vial
+       or squeeze tube — before anything is started; the words and the choices are the server's. His goal of 2026-10-06,
+       item 1: the same dialog asks when his brief names two forms, or another form than his Container type. Item 14:
+       this note was a {# … #} over two lines — Django reads that tag on one line only, and the page printed it.]
+    {% endcomment %}
+    <dialog id="gloss-dialog" class="omission-dialog" aria-modal="true" aria-labelledby="gloss-title"
+            aria-describedby="gloss-desc">
+      <h3 id="gloss-title"></h3>
+      <p id="gloss-desc"></p>
+      <div id="gloss-choices" class="omission-actions"></div>
+    </dialog>
+
+    <dialog id="omission-dialog" class="omission-dialog" aria-modal="true"
+            aria-labelledby="omission-title" aria-describedby="omission-desc">
+      <h3 id="omission-title">Submit Packaging without references?</h3>
+      <p id="omission-desc"></p>
+      <p id="omission-correction" class="small" hidden>Some held files were rejected by validation and still need
+        correction — they stay held either way.</p>
+      <p class="small">Packaging submits as JSON. No reference records will be created for this Packaging task.</p>
+      <div class="omission-actions">
+        <button type="button" id="omission-cancel" class="btn" autofocus>Cancel</button>
+        <button type="button" id="omission-return" class="btn">Return to Product Container</button>
+        <button type="button" id="omission-submit" class="btn primary">Submit Packaging Without References</button>
+      </div>
+    </dialog>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}
+{{ status_words|json_script:"status-words" }}
+{{ page|json_script:"design-page" }}
+<script src="{% static 'js/design_page.js' %}?v={{ FRONTEND_BUILD }}"></script>
+<script src="{% static 'js/api.js' %}?v={{ FRONTEND_BUILD }}"></script>
+<script src="{% static 'js/staged_references.js' %}?v={{ FRONTEND_BUILD }}"></script>
+<script src="{% static 'js/staged_reference_ui.js' %}?v={{ FRONTEND_BUILD }}"></script>
+<script src="{% static 'js/omission_dialog.js' %}?v={{ FRONTEND_BUILD }}"></script>
+<script src="{% static 'js/project.js' %}?v={{ FRONTEND_BUILD }}"></script>
+<script src="{% static 'js/inspiration.js' %}?v={{ FRONTEND_BUILD }}"></script>
+<script src="{% static 'js/poll.js' %}?v={{ FRONTEND_BUILD }}"></script>
+<script src="{% static 'js/start_page.js' %}?v={{ FRONTEND_BUILD }}"></script>
+{% endblock %}

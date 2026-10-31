@@ -1,0 +1,44 @@
+§AD0(a) PREDICTION — §BH33(4) ARABIC ROLE ROWS SPLIT, sealed BEFORE git add.
+Base HEAD 660f6ca ((3), scored 8/8).
+
+L1 WRITE SET: exactly FOUR tracked paths, all under apps/ —
+   apps/ire/font_roles.py, apps/ire/container_font_authority.py,
+   apps/pipeline/tests/test_container_font_authority.py,
+   apps/pipeline/tests/test_wif_reconstruct_container.py. Plus the
+   gate-staged ledger line. NO other path; the exemption list, the legacy
+   branch and the chains untouched.
+L2 DIFF SHAPE (insertions/deletions):
+   apps/ire/font_roles.py 6/9 — `record_role_map` declares each Arabic
+   layer role as its own record row (no `arabic` collapse); the record
+   order lists the three; docstring.
+   apps/ire/container_font_authority.py 2/2 — the seam's docstring,
+   LINE-NEUTRAL (file stays 592 lines; the grouping at [514:541]).
+   apps/pipeline/tests/test_container_font_authority.py 42/0 — ONE test
+   added (`_themed_trilingual_doc` helper + the three-rows test with the
+   refusal of arabic-heading alone).
+   apps/pipeline/tests/test_wif_reconstruct_container.py 56/0 — ONE class,
+   TWO tests added (the reconstruct contract on the real path with the
+   composer's document re-tagged non-exempt and an Arabic product name;
+   the live exempt composition still persisting the 41604ac shape).
+L3 MANIFEST / A391: suite manifest untouched (no new test FILE); records
+   untouched; ledger at 463 passes the APPEND_ONLY prefix rule.
+   Census-first: records none; identity none; WIT denominator 863 and its
+   REGISTER keys hold (the analyser's test green on the patched tree);
+   corpus constants none.
+L4 STAGED == DECLARED: exactly the FOUR numstat rows of L2.
+L5 COMMIT CONTENTS: 5 files (4 + ledger), insertions 107, deletions 11.
+L6 SUITE LINE + REFUSAL TREE: GREEN — TIER_2=GREEN collected=8555
+   failures=0 apps=7743 dip0c=671 dip0=141 (8552 + the three tests).
+   No refusal expected; §BH24 0/3.
+L7 LEDGER FOLD: 463 → 464, the +1 in THIS commit.
+L8 PROTOCOL IDENTITIES / APPS DIFF / AUTHORITY: apps diff = exactly the
+   four paths; GATE 7fbeb8f1fe10b0fb at [514:541] (measured on the
+   patched tree, file 592 lines) and TEST b32030dc827263e4 byte-identical;
+   tree seals unchanged; protocol_identity unchanged; neither ceiling nor
+   guard moved; the eight M7 artefacts == baseline; under Django at
+   scoring: a themed trilingual document's record carries arabic-display,
+   arabic-heading, arabic-body as distinct rows, each Naskh
+   VERIFIED_FOR_PRODUCTION / USER_CONFIRMED, and no `arabic` row; an exempt
+   Arabic document records bold / regular / arabic as at 41604ac; the Noto
+   trio VERIFIED_FOR_PRODUCTION; the 35 at their PROVENANCE hashes; no
+   authority involved.

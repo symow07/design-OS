@@ -1,0 +1,16 @@
+{
+  "record_type": "vq1_raster_stability_report/1.0",
+  "candidate": "M3",
+  "vector_source": "docs/visual_quality/vq1_master/master_it3.ai",
+  "geometry_changed": false,
+  "first_attempt_invalid": true,
+  "first_attempt_defect": "pdf_to_png tries `sips` before `pdftoppm` and sips ignores the dpi argument, so the 1x/2x/4x/8x sweep produced FOUR BYTE-IDENTICAL copies of the same 150 dpi render (all sha 4ecc8e9df1d1). Its 'PASS' was meaningless and is withdrawn.",
+  "finding": "VQ_RASTER_SWEEP_RESOLUTION_NOT_APPLIED",
+  "rasterizer_honouring_dpi_available": false,
+  "true_sweep": {},
+  "distinct_resolutions_rendered": false,
+  "gates_pass": false,
+  "status": "RASTER_STABILITY_NOT_CERTIFIABLE",
+  "reason": "no available rasterizer honours the dpi argument, so resolution independence cannot be demonstrated on this host",
+  "consequence": "\u00a75 forbids running the visual inspections after an unsatisfied raster-stability gate"
+}

@@ -1,0 +1,51 @@
+{
+ "record_type": "rbv_future_requirements/1.0",
+ "status": "OWNER-MANDATED, scheduled AFTER the renderer is operational \u2014 recorded now so no later slice can claim ignorance",
+ "automatic_visualization_per_result": {
+  "when": "after RBV render modes are operational",
+  "package": [
+   "front ortho validation",
+   "side ortho validation",
+   "top ortho validation",
+   "closure detail",
+   "structure-only",
+   "three-quarter hero",
+   "artwork-only",
+   "material preview",
+   "reference-vs-reconstruction side-by-side",
+   "aligned overlay",
+   "deviation view",
+   "result manifest"
+  ],
+  "gate_rule": "a result without the required package can never become OWNER_REVIEW_READY or GATE_2_READY; unavailable reference views are marked unavailable honestly"
+ },
+ "automated_comparison": {
+  "metrics": [
+   "front silhouette overlap",
+   "side silhouette overlap",
+   "body aspect",
+   "body depth",
+   "shoulder height",
+   "neck width",
+   "collar width",
+   "closure width+height",
+   "width-at-height profile",
+   "keypoint displacement",
+   "aligned contour distance",
+   "symmetry",
+   "product-frame coverage"
+  ],
+  "rules": [
+   "no side-view accuracy without an authoritative side reference",
+   "geometry never merged with artwork/typography/materials into one score"
+  ]
+ },
+ "claude_review_per_result": {
+  "contract": "claude_visual_review/1.0 on every complete package",
+  "rules": [
+   "findings BLOCKING/MAJOR/MINOR/VISUAL_POLISH",
+   "Claude cannot approve a gate",
+   "owner final authority"
+  ]
+ }
+}

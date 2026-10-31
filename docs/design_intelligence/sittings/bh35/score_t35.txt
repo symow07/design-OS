@@ -1,0 +1,32 @@
+§AD0(a) SCORE — T35 run 2 (§BH35 goal transcription, pure append, its own
+commit BEFORE any act), launched against pred_t35b.txt (sealed
+db54b15125f31757 before the relaunch; run 1 against pred_t35.txt REFUSED and
+scored as history in score_t35_run1.txt — §BH24 1/3). Gate GREEN, GEXIT=0.
+LANDED b7ed6cc (2026-09-05T06:43:32Z UTC). 8/8.
+
+L1 HELD: exactly OWNER_BLOCKER_CLEARANCE.md + the ledger (two lines: the
+   refused run's own record-integrity line and this landing's); no apps/,
+   docs/design_intelligence, tools/ or static/ path; nothing under
+   materials/ touched.
+L2 HELD: register +135 −0; the 19,103-line 5898035 prefix byte-identical
+   (5dc8b04482cb08c3); seam + tail == t35_block.md (7ef34d5fea0dc8e9);
+   total 19,238; the owner's 67 lines round-trip byte-identical
+   (aaffa4320d6f3269); worktree == HEAD.
+L3 HELD: no manifest / records / identity in the commit; ledger 465 → 467
+   with HEAD~1 a byte-prefix of HEAD; census-first held (records none,
+   identity none, WIT 863 untouched — no apps change, corpus constants
+   none, the exclusion list untouched).
+L4 HELD: staged == declared, one row 135 0 (the ledger the gate's own).
+L5 HELD: 2 files, 137 insertions, 0 deletions — exact.
+L6 HELD: "TIER_2=GREEN collected=8555 failures=0 apps=7743 dip0c=671
+   dip0=141" — exact, nothing running beside the gate. The two Playwright
+   tests that refused run 1 passed in this run.
+L7 HELD: ledger 465 → 467 (+2 exactly as predicted for the relaunch).
+L8 HELD: apps diff EMPTY; GATE 7fbeb8f1fe10b0fb at [514:541] (593 lines),
+   TEST b32030dc827263e4; tree seals unchanged; protocol_identity
+   untouched; the eight M7 artefacts == baseline; under Django at scoring
+   the Noto trio VERIFIED_FOR_PRODUCTION / USER_CONFIRMED, the 35 at their
+   PROVENANCE hashes, catalogue 38; no authority involved; nothing
+   censused before this landing.
+Post-landing: porcelain clean. The census begins now, writing only under
+~/bh35_work/.

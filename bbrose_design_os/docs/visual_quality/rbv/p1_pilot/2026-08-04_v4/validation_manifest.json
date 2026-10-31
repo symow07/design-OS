@@ -1,0 +1,62 @@
+{
+ "record_type": "p1_v4_validation_manifest/1.0",
+ "revision": "V4",
+ "mask_authority": "unlit emission alpha pass (blender_scripts/silhouette_mask.py) \u2014 the mask scene contains NO lights, so masks are lighting-independent by construction",
+ "front": {
+  "bounds_px": {
+   "x0": 239,
+   "x1": 560,
+   "y0": 59,
+   "y1": 1040
+  },
+  "width_mm": 37.47,
+  "height_mm": 114.28,
+  "cx_offset_fraction": 0.0006,
+  "internal_hole_pixels": 0,
+  "hash": "39114d97009b5e94"
+ },
+ "side": {
+  "bounds_px": {
+   "x0": 239,
+   "x1": 560,
+   "y0": 59,
+   "y1": 1040
+  },
+  "width_mm": 37.47,
+  "height_mm": 114.28,
+  "cx_offset_fraction": 0.0006,
+  "internal_hole_pixels": 0,
+  "hash": "39114d97009b5e94"
+ },
+ "closure_detail": {
+  "bounds_px": {
+   "x0": 57,
+   "x1": 742,
+   "y0": 206,
+   "y1": 1099
+  },
+  "width_mm": 35.62,
+  "height_mm": 46.42,
+  "cx_offset_fraction": 0.0006,
+  "internal_hole_pixels": 0,
+  "hash": "f6a72ef64d7fb62f"
+ },
+ "deterministic": true,
+ "expected": {
+  "width_mm": 37.4,
+  "height_mm": 114.3
+ },
+ "checks": {
+  "front_width": true,
+  "front_height": true,
+  "front_centred": true,
+  "closure_centred": true,
+  "no_internal_holes": true
+ },
+ "mask_hashes": {
+  "V1_front": "f795f0bf49c9aa44",
+  "V2_front": "6d2a962554c15654",
+  "V3_front": "37a08386881557f1",
+  "V4_front": "39114d97009b5e94"
+ }
+}

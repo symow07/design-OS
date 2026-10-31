@@ -1,0 +1,55 @@
+{
+ "Grand Hotel": {
+  "upstream": "google/fonts repository ofl/grandhotel (Astigmatic, OFL)",
+  "how": "name match; the family is hosted on Google Fonts",
+  "download_url": [
+   "https://raw.githubusercontent.com/google/fonts/main/ofl/grandhotel/GrandHotel-Regular.ttf"
+  ],
+  "upstream_sha256": {
+   "GrandHotel-Regular.ttf": "ec7ae65d49c936cb5ed32534ab74dbd40c56733de5145ac3aae9da362e02b50f"
+  },
+  "licence_stored": [
+   "https://raw.githubusercontent.com/google/fonts/main/ofl/grandhotel/OFL.txt"
+  ],
+  "status": "OPEN_LICENCE_TEXT_STORED (OFL.txt)",
+  "acquired": false
+ },
+ "GoodDog": {
+  "upstream": "Fonthead Design (fonthead.com) \u2014 HOST DEAD: the domain now serves a certificate for ll924.com (recorded probe); GoodDog New is carried by Adobe Fonts (bundling vendor, Creative Cloud subscription) \u2014 page stored",
+  "how": "search + Adobe Fonts page; Font Squirrel's licence page answers HTTP 200 text/html with an EMPTY body to non-browser clients (headers recorded 2026-09-03), Fontspring answers 403 \u2014 neither text could be stored byte-verbatim",
+  "download_url": [],
+  "upstream_sha256": {},
+  "licence_stored": [
+   "https://fonts.adobe.com/fonts/gooddog-new (PRODUCT_PAGE, reportage: \"The full Adobe Fonts library is cleared for both personal and commercial use.\")"
+  ],
+  "status": "UNRESOLVED as evidence \u2014 the free GoodDog (Plain/Cool) licence text is only republished by redistributors (Font Squirrel/Fontspring) that refuse non-browser clients (empty body / 403, headers recorded); BUNDLED reportage via Adobe Fonts",
+  "acquired": false
+ },
+ "Aquire": {
+  "upstream": "designer Gregory \"Sesohq\" Ortiz \u2014 own store https://sesohq.sellfy.store/p/ff7uie/ (free for personal use at $0+, paid Desktop/Web/Logo tiers)",
+  "how": "search + fontspace page (aggregator) naming the designer and store",
+  "download_url": [
+   "https://sesohq.sellfy.store/p/ff7uie/ (checkout flow, not entered)"
+  ],
+  "upstream_sha256": {},
+  "licence_stored": [
+   "https://www.fontspace.com/aquire-font-f43735 (aggregator PRODUCT_PAGE: \"Freeware, Non-Commercial\"; \"Contact the designer to purchase a commercial license\")"
+  ],
+  "status": "FREE_FOR_PERSONAL_USE \u2014 COMMERCIAL \u2014 EVIDENCE REQUIRES PURCHASE; the authoritative download sits behind a store checkout (email required) \u2014 NOT ENTERED per the hard stop; no upstream sha256 recorded",
+  "acquired": false
+ },
+ "Angora": {
+  "upstream": "Omotu Studio (omotustudio.com) \u2014 licence page stored; demo on dafont \"PERSONAL USE ONLY\"; commercial tiers sold (Creative Fabrica / Fontspring / MyFonts / omotustudio.com)",
+  "how": "search; dafont page names Omotu Studio; ambiguity: \"VTC Angora Chik\" is a different free font \u2014 the designs reference \"AngoraRegular\", consistent with Omotu's Angora Regular naming but NOT verified against a file; Omotu Studio's own shop search page (stored, evidence/Angora/index.html) carries the product 'Angora' with its product images (Angora-1.jpg), confirming Angora is an Omotu Studio product",
+  "download_url": [
+   "https://www.dafont.com/angora.font (demo, personal use only \u2014 aggregator)"
+  ],
+  "upstream_sha256": {},
+  "licence_stored": [
+   "https://omotustudio.com/license/ (TERMS_PAGE_REPORTAGE)",
+   "https://www.dafont.com/angora.font (PRODUCT_PAGE)"
+  ],
+  "status": "COMMERCIAL \u2014 EVIDENCE REQUIRES PURCHASE (demo free for personal use only); same-name ambiguity flagged",
+  "acquired": false
+ }
+}

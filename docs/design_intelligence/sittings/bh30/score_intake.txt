@@ -1,0 +1,32 @@
+§AD0(a) SCORE — INTAKE (§BH30(b)(c)), commit 87091c1. Gate GREEN,
+hand-captured exit=0 (GEXIT=0). 8/8 legs HELD against pred_intake.txt
+(795326063ff4fbc1, sealed before git add). The single-use §BH30(b)
+ACQUISITION authority is SPENT on this landing.
+
+L1 HELD: exactly the 51 new paths under
+   bbrose_design_os/static/fonts/brand2026/ + the gate-staged ledger
+   line (52 files in the commit); no apps/ path; docs diff = the ledger
+   only; the four pre-existing static/fonts files untouched; the
+   library originals under materials/ untouched (FONTS 2026 mtime
+   2026-09-01 15:02:40); every committed byte sha256-identical to the
+   pre-add manifest (intake_sha256s.txt, 51/51).
+L2 HELD: 35 binary rows ("- -") + the 16 text rows exactly as measured
+   pre-add (12 × 93, 94, 95, 202, 647); text insertions 2,154.
+L3 HELD: manifest untouched (no test file); no record moved; ppp/tcp
+   untouched; identity unchanged; the ledger at 444 passed the
+   APPEND_ONLY prefix rule; DIP-0A still 7,590 at this commit.
+L4 HELD: staged == declared, 51 rows, nothing else in porcelain
+   (measured pre-launch).
+L5 HELD: 52 files changed, 2,155 insertions, 0 deletions.
+L6 HELD: suite line EXACT — TIER_2=GREEN collected=8499 failures=0
+   apps=7693 dip0c=671 dip0=135. No refusal; §BH24 0/3.
+L7 HELD: ledger 444 → 445 (HEAD~1=444, HEAD=445, worktree=445).
+L8 HELD: apps diff EMPTY; GATE 7fbeb8f1fe10b0fb and TEST
+   b32030dc827263e4 re-verified; protocol_identity UNCHANGED
+   c7924c5a4215f3cf; the Noto pair VERIFIED_FOR_PRODUCTION /
+   USER_CONFIRMED / is_fallback False under Django (all_production_
+   verified True). §BH30(b) SPENT; §BH30(d) UNSPENT.
+
+Post-commit: HEAD 87091c1; porcelain EMPTY. Next: the regen (e) under
+the sealed declaration (regen_declaration.md 5e42379dfb800966 + its
+addendum), then its docs commit, then pass 2, then the grants (d).

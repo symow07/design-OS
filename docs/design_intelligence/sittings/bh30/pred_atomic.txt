@@ -1,0 +1,60 @@
+§AD0(a) PREDICTION — the §BH30(i) ONE ATOMIC COMMIT (§BH30(h)+(i)+(j)),
+sealed BEFORE git add. Base HEAD 87091c1. Attempt 1 of T30h stands scored
+as history; this is the first gate launched for the atomic commit.
+
+L1 WRITE SET: exactly EIGHTEEN tracked paths, all under the OUTER root —
+   OWNER_BLOCKER_CLEARANCE.md ((h)+(i)+(j) blocks);
+   tools/dip0/config.py, tools/dip0/walk.py, tools/dip0/run.py,
+   tools/dip0/tests/test_corpus_roots.py (the exclusion + 6 fixture tests);
+   docs/design_intelligence/dip0a/summary.md, dip0a/pilot_manifest.json,
+   dip0c/c4a_family_summary.json, dip0c/c4a_reconciliation.json,
+   dip0c/c4c_curated_starter_candidates.json, dip0c/c4c_reconciliation.json,
+   dip0c/font_batch_review_manifest.json, dip0c/font_review_queue_summary.json
+   (the eight re-run records);
+   tools/dip0c/tests/test_c4a.py, test_c4c.py, test_c5.py (twelve literals);
+   docs/design_intelligence/dip1/dip1b_mvp_manifest_1_0.json (34 entries),
+   dip1/dip1b_evidence_integrity_registry_1_0.json (one pin).
+   Plus the gate-staged ledger line. NO apps/ path, NO ppp/tcp, NO record
+   under docs/roadmap but the ledger, NO suite-manifest regeneration.
+L2 DIFF SHAPE (insertions/deletions vs HEAD): register 234/0 — 18,269-line
+   HEAD prefix byte-identical (042a44bc1ed5cdb6), (h) block 18,271–18,362
+   (0bfa496f275fffda), (i) 18,364–18,444 (19ecd4f0dad267a0), (j)
+   18,446–18,503 (58 lines), total 18,503; config 58/0; run 10/0; walk
+   10/0; test_corpus_roots 74/0; pilot_manifest 27/44; summary 24/19;
+   c4a_family_summary 741/283; c4a_reconciliation 54/50;
+   c4c_curated_starter_candidates 1/120; c4c_reconciliation 38/36;
+   font_batch_review_manifest 635/36; font_review_queue_summary 28/28;
+   test_c4a 4/4; test_c4c 6/6; test_c5 2/2; manifest 34/34; registry 1/1.
+   The twelve literals: c4a 4921/3973/942/1890; c4c 4921/3973/3998/2837/
+   62/942; c5 3998/1887. The 34 entries: 302679234ae5b9bb… →
+   28f0cf310361a680…, byte_size 11,719,703; the registry pin 88630af7… →
+   7759ee0150b87665…; registry bytes bffdc976ff0b769f….
+L3 MANIFEST / A391: suite_file_manifest untouched (file set of 372 apps
+   files unchanged; Tier-1 floors 52/66 met — 118 collected); records
+   chain consistent (record_integrity roots = docs/roadmap only; nothing
+   there moves but the ledger); ledger at 446 passes the APPEND_ONLY
+   prefix rule; the frozen manifest and registry consistent with the
+   on-disk face_manifest (manifest-import 7 passed); DIP-0A milestone at
+   this worktree's var/ (deterministic re-run under the exclusion).
+L4 STAGED == DECLARED: exactly the EIGHTEEN numstat rows of L2, nothing
+   else staged; the ledger left to the gate.
+L5 COMMIT CONTENTS: 19 files (18 + ledger), insertions 1,983, deletions
+   663.
+L6 SUITE LINE + REFUSAL TREE: GREEN — TIER_2=GREEN collected=8505
+   failures=0 apps=7693 dip0c=671 dip0=141 (8499 + the six fixture tests).
+   No refusal expected; §BH24 budget 0/3. Targeted before the gate: dip0c
+   671, dip0 141, manifest-import 7, container font authority 34, Tier-1
+   118 (+2 subtests), owner-grant + wif 37, all passed; the Noto pair
+   VERIFIED_FOR_PRODUCTION / USER_CONFIRMED ×2 under Django.
+L7 LEDGER FOLD: 445 → 447 — +2 in THIS commit: the T30h refusing gate's
+   carried line 446 and this landing's 447.
+L8 PROTOCOL IDENTITIES / APPS DIFF / AUTHORITY: apps diff EMPTY; GATE
+   7fbeb8f1fe10b0fb and TEST b32030dc827263e4 byte-identical; tree seals
+   MOVE to dip0c 5ae44035bd03bae1, dip0a 4fe747b806ed71bd (records, not
+   protected); protocol_identity UNCHANGED (no ppp/tcp); the Noto pair
+   VERIFIED_FOR_PRODUCTION under Django at scoring; the (i)(2) entry-44
+   authority SPENT on this landing; (d) UNSPENT until its own commit.
+   DIVERGENCE RIDING, recorded not resolved: (j) names "the eleven
+   constants"; twelve literals move (test_c4c.py:269 48→62, absent from
+   the printed table because the test halts at its first failing line;
+   remedy if eleven was meant: one-literal revert + re-gate).

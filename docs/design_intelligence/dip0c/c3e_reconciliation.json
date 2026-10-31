@@ -1,0 +1,102 @@
+{
+  "slice": "DIP-0C3e",
+  "c3d_commit": "1960128",
+  "authority_domains": [
+    "BRAND_MASTER",
+    "BRAND_PALETTE"
+  ],
+  "resolution_actions": [
+    "DEPRECATE_INCUMBENT",
+    "SUPERSEDE_INCUMBENT",
+    "NARROW_INCUMBENT_SCOPE",
+    "NARROW_NEW_SCOPE",
+    "RECLASSIFY_AS_VARIANT",
+    "REJECT_NEW_CANDIDATE",
+    "QUARANTINE_BOTH_PENDING_REVIEW"
+  ],
+  "domain_event_mapping": {
+    "BRAND_MASTER": {
+      "deprecate_event": "CANONICAL_MASTER_DEPRECATED",
+      "replace_event": "CANONICAL_MASTER_REPLACED",
+      "scope_event": "SCOPE_REDUCED",
+      "variant_event": "VARIANT_RECLASSIFIED",
+      "reject_event": "CANONICAL_MASTER_DEPRECATED",
+      "quarantine_event": "ASSET_QUARANTINED"
+    },
+    "BRAND_PALETTE": {
+      "deprecate_event": "PALETTE_DEPRECATED",
+      "replace_event": "PALETTE_SUPERSEDED",
+      "scope_event": "SCOPE_REDUCED",
+      "variant_event": "PALETTE_VARIANT_APPROVED",
+      "reject_event": "PALETTE_APPROVAL_REVOKED",
+      "quarantine_event": "PALETTE_QUARANTINED"
+    }
+  },
+  "pilot": {
+    "two_palettes_fail_closed": true,
+    "conflict_domain_is_palette": true,
+    "neither_palette_available": true,
+    "master_unaffected_by_palette_conflict": true,
+    "deprecate_resolves": true,
+    "supersede_resolves": true,
+    "no_master_events_from_palette_resolution": true,
+    "parser_limitation_survives": true,
+    "third_party_ack_survives": true,
+    "resolution_grants_no_permission": true,
+    "narrowing_reduces_only": true,
+    "nothing_written_on_failure": true
+  },
+  "refused_attempts": [
+    {
+      "attempt": "supersede with no legal attestation",
+      "reason": "PALETTE_SUPERSEDED is under DUAL CONTROL and must carry BOTH a technical/brand attestation and a rig"
+    },
+    {
+      "attempt": "one actor attests both halves",
+      "reason": "PALETTE_SUPERSEDED is under DUAL CONTROL: its attestations name only {'TEST_ONLY_brand_admin'} — the"
+    },
+    {
+      "attempt": "a replacement with no technical audit",
+      "reason": "a palette replacement must carry its technical audit — parse status, warnings and all. A replacement"
+    },
+    {
+      "attempt": "a replacement with undeclared value provenance",
+      "reason": "every approved value must declare its provenance (['Plum']). A derived preview does not become sourc"
+    },
+    {
+      "attempt": "SYSTEM_ADMIN resolves a palette conflict",
+      "reason": "- unauthorized: role 'SYSTEM_ADMIN' may NOT 'approve_brand_palette'. Permitted roles: ['BRAND_ADMIN'"
+    },
+    {
+      "attempt": "a resolution that would leave an overlap",
+      "reason": "- post-state would hold two active canonical masters for an overlapping scope: ['TEST_ONLY_palette_b"
+    },
+    {
+      "attempt": "palette widening disguised as narrowing",
+      "reason": "- this WIDENS the scope on ['markets', 'media'] — widening is a NEW canonical approval and must pass"
+    },
+    {
+      "attempt": "a machine resolves a palette conflict",
+      "reason": "a canonical conflict is resolved by a human. Machine code may raise POSSIBLE_CONFLICT and enumerate "
+    }
+  ],
+  "real_ledger": {
+    "events": 0,
+    "compound_events": 0,
+    "note": "EMPTY. No real conflict was resolved."
+  },
+  "ledger_valid": true,
+  "compound_valid": true,
+  "integrity": {
+    "materials": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "modified": [],
+      "file_count_before": 7695,
+      "file_count_after": 7695
+    }
+  },
+  "runtime_seconds": 0.12,
+  "output_bytes": 2854
+}

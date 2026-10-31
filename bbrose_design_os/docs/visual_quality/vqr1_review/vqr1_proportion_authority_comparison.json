@@ -1,0 +1,40 @@
+{
+ "record_type": "vqr1_m3_proportion_authority_comparison/1.0",
+ "created_at": "2026-08-03",
+ "status": "PROPOSED_PENDING_OWNER_DECISION",
+ "production_behavior_changed": false,
+ "native_m3_aspect_h_over_w": 3.0787,
+ "confirmed_profile_aspect_h_over_w": 2.7143,
+ "production_aspect_h_over_w": 2.7066,
+ "width_scaling_factor_mm_per_px": 0.101156,
+ "height_scaling_factor_mm_per_px": 0.089962,
+ "anisotropic_distortion_ratio": 1.1244,
+ "distortion_reading": "the emitted form is stretched ~12.4% widthwise relative to the accepted fixture proportions \u2014 NOT visually equivalent, merely curve-preserving",
+ "visible_effects": {
+  "shoulder": "vertical compression flattens the shoulder curve; the soft M3 transition reads slightly sharper and wider",
+  "neck": "the neck flare under the collar widens proportionally; the collar-seat junction reads more pronounced than the fixture",
+  "body": "overall silhouette reads squatter/wider; the fixture's slender serum character is diluted at 35x95"
+ },
+ "policy_proposal": {
+  "schema": "m3_proportion_policy/1.0",
+  "state": "PROPOSED \u2014 production remains PROFILE_AUTHORITATIVE until the owner selects a mode",
+  "modes": {
+   "PROFILE_AUTHORITATIVE": {
+    "behavior": "confirmed width/height exact; M3 curves deform anisotropically (CURRENT production behavior)",
+    "risk": "M3 character drifts whenever confirmed aspect diverges from 3.079; no guardrail"
+   },
+   "M3_CHARACTER_AUTHORITATIVE": {
+    "behavior": "uniform scale preserving aspect 3.079; confirmed height honored, width DERIVED (30.9 mm at H=95)",
+    "risk": "violates the confirmed width \u2014 requires an owner dimension amendment before use"
+   },
+   "BOUNDED_M3_ADAPTATION": {
+    "behavior": "anisotropic mapping permitted while the distortion ratio stays within tolerance; beyond it the reconstruction REFUSES with M3_PROPORTION_OUT_OF_BOUNDS and asks the owner to either amend dimensions or explicitly select PROFILE_AUTHORITATIVE",
+    "proposed_max_distortion_ratio": 1.05,
+    "tolerance_basis": "5% anisotropy \u2014 the threshold below which curve character is generally imperceptible; anchored to the VQ-1 acceptance discipline (sub-1% residuals) with a 5x allowance, NOT chosen to pass current output",
+    "honesty_note": "the CURRENT production output (ratio 1.1245) would FAIL this tolerance; under this mode the 35x95 profile requires either width <= 32.4 mm (ratio 1.05) or an explicit PROFILE_AUTHORITATIVE selection"
+   }
+  },
+  "recommended_default": "BOUNDED_M3_ADAPTATION",
+  "recommendation_reason": "keeps confirmed dims authoritative inside a perceptual guardrail and turns large divergence into an explicit owner decision instead of a silent squash"
+ }
+}

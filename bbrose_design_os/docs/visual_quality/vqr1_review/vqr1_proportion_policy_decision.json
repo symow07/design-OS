@@ -1,0 +1,27 @@
+{
+ "record_type": "vqr1_proportion_policy_decision/1.0",
+ "decided_at": "2026-08-03",
+ "decided_by": "OWNER",
+ "M3_PROPORTION_POLICY": "BOUNDED_M3_ADAPTATION",
+ "max_distortion_ratio": "1.05_PROVISIONAL_PENDING_VQR_2B_CALIBRATION",
+ "threshold_basis_correction": "5% is NOT described as a universally established perceptual threshold. It is an initial conservative design-policy guardrail that must be calibrated against golden visual fixtures, VQR-2B measurements and owner visual review. This supersedes the 'generally imperceptible' phrasing in the earlier proposal record.",
+ "required_behavior": {
+  "within_threshold": "allow bounded anisotropic adaptation",
+  "beyond_threshold": "REFUSE silent reconstruction with M3_PROPORTION_OUT_OF_BOUNDS",
+  "owner_options_on_refusal": [
+   "preserve M3 character and amend width",
+   "explicitly choose PROFILE_AUTHORITATIVE",
+   "return to the profile editor"
+  ],
+  "implementation_state": "NOT implemented in this decision-record slice (owner instruction: no production behavior change); scheduled for the next implementation slice with VQR-2B calibration"
+ },
+ "current_profile_classification": {
+  "profile": "bottle 35 x 95 mm (fixture task 57)",
+  "anisotropic_distortion_ratio": 1.1244,
+  "PROPORTION_POLICY_RESULT": "FAIL_REQUIRES_OWNER_DECISION",
+  "native_m3_character_width_mm_at_h95": 30.9,
+  "provisional_1_05_bounded_max_width_mm_at_h95": 32.4
+ },
+ "task_57_modified": false,
+ "production_behavior_changed": false
+}

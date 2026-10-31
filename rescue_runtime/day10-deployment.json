@@ -1,0 +1,32 @@
+{
+ "day": 10,
+ "commit": "b48e699",
+ "code_commit": "9d5f44e",
+ "started_at": "2026-10-23T07:36:03Z",
+ "site": {
+  "url": "http://127.0.0.1:8000/healthz",
+  "status": 200,
+  "body": "{\"db\": \"ok\", \"redis\": \"ok\", \"celery\": \"ok\"}",
+  "pid": 50167,
+  "started": "restart_site.sh at b48e699 (the code at 9d5f44e: the review fixes and the page fix; b48e699 adds the first full run's record only)"
+ },
+ "worker": {
+  "pid": 50200,
+  "running": true,
+  "revision": "b48e699",
+  "revision_match_at_start": true,
+  "started": "restart_worker.sh at b48e699 (repo == worker revision; complete_product_preflight READY_FOR_LIVE_PILOT)"
+ },
+ "pick_page": {
+  "url": "http://127.0.0.1:8000/dashboard/palette-pick/",
+  "console_errors": 0,
+  "failed_responses": 0,
+  "broken_images": 0,
+  "day10_downloads": 7,
+  "pinned_files_served": "25 of 25, each 200 with its published sha256",
+  "capture": "docs/audit/day-10/capture.json"
+ },
+ "startup_verified": true,
+ "clean_tree_required_by_restart_scripts": true,
+ "note": "restarted before the second full run (the scripts refuse beside a running pytest); the closing commits add the run's record, the report, the verification record and the capture only"
+}

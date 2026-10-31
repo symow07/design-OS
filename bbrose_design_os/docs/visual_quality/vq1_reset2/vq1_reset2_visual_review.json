@@ -1,0 +1,1156 @@
+{
+  "schema_version": "vq1_reset2_visual_review/1.0",
+  "authority": {
+    "schema_version": "container_geometry_authority/1.0",
+    "modes": {
+      "CONCEPT_VISUAL_GEOMETRY": {
+        "authority_sources": [
+          "selected reference pixels",
+          "normalized visible contours",
+          "human semantic decisions",
+          "visualizer findings"
+        ],
+        "permitted_use": [
+          "visual structural reconstruction",
+          "concept preview",
+          "native-vector concept artwork",
+          "visual comparison"
+        ],
+        "prohibited_claims": [
+          "manufacturable",
+          "supplier-confirmed",
+          "production dimension",
+          "tooling dimension",
+          "verified closure construction",
+          "formula compatibility"
+        ],
+        "state": "AUTHORIZED"
+      },
+      "PRODUCTION_GEOMETRY": {
+        "authority_sources": [
+          "manufacturer technical drawing",
+          "supplier specification",
+          "physical sample measurement",
+          "approved CAD",
+          "manufacturer confirmation"
+        ],
+        "state": "NOT_AVAILABLE",
+        "blocked_by": [
+          "VQ_PRODUCTION_GEOMETRY_EVIDENCE_REQUIRED",
+          "MANUFACTURER_DIMENSIONS_REQUIRED",
+          "CLOSURE_CONSTRUCTION_CONFIRMATION_REQUIRED",
+          "BOTTLE_CLOSURE_COMPATIBILITY_REQUIRED",
+          "PHYSICAL_SAMPLE_OR_TECHNICAL_DRAWING_REQUIRED"
+        ]
+      }
+    },
+    "visible_component_semantic": "VISIBLE_DARK_CLOSURE_ENVELOPE_WITH_ROUNDED_DOME_AND_FLARED_SKIRT",
+    "internal_closure_mechanism": "UNRESOLVED / HIDDEN",
+    "forbidden_classifications": [
+      "exposed conventional pipette bulb",
+      "narrow-stem bulb",
+      "outer overcap",
+      "actuator",
+      "complete closure mechanism"
+    ],
+    "bilateral_symmetry": "HUMAN_APPROVED_CONCEPT_ONLY_ASSUMPTION",
+    "symmetry_reason": "the left side of the reference is partially occluded by the carton; the unobscured right contour may be mirrored for concept-visual geometry. This is not evidence of production symmetry or tooling geometry.",
+    "rejected_internal_assumptions": {
+      "state": "REJECTED_INTERNAL_ASSUMPTIONS",
+      "origin": "CORR-5 (vq1_corr5_fixture.json, hash d99c412df4989c18)",
+      "values_mm": {
+        "body_diameter": 31.3,
+        "body_height": 61.0,
+        "collar_diameter": 15.9,
+        "collar_height": 12.1,
+        "bulb_max_width": 8.8,
+        "bulb_stem_width": 3.9,
+        "bulb_body_height": 15.0,
+        "bulb_stem_visible": 3.2,
+        "total_height": 92.9
+      },
+      "may_drive_new_fixture": false,
+      "web_grounded": false,
+      "note": "internal assumptions, never supplier-confirmed; preserved as rejected evidence only"
+    }
+  },
+  "envelope": {
+    "schema_version": "concept_visual_envelope/1.0",
+    "reference_image": "GeneratedImage#97 task_52_var_2_reALblg.png",
+    "crops": [
+      "ref97_closure.png",
+      "ref97_shoulder_neck.png",
+      "ref97_body_base.png"
+    ],
+    "coordinate_system": {
+      "assembly_height": 1.0,
+      "body_visible_width": 1.0,
+      "shared_centerline": 0.0,
+      "units": "NORMALIZED_NONE",
+      "millimetres_used": false
+    },
+    "centerline_px": 666.5,
+    "assembly_span_px": [
+      292,
+      1348
+    ],
+    "body_width_px": 343.0,
+    "components": {
+      "DARK_CLOSURE": {
+        "normalized_points": [
+          [
+            0.05102,
+            0.0
+          ],
+          [
+            0.09846,
+            0.01326
+          ],
+          [
+            0.13477,
+            0.02652
+          ],
+          [
+            0.152,
+            0.03977
+          ],
+          [
+            0.15863,
+            0.05303
+          ],
+          [
+            0.15889,
+            0.06629
+          ],
+          [
+            0.15889,
+            0.07955
+          ],
+          [
+            0.15889,
+            0.0928
+          ],
+          [
+            0.15889,
+            0.10606
+          ],
+          [
+            0.15889,
+            0.11932
+          ],
+          [
+            0.15889,
+            0.13258
+          ],
+          [
+            0.15889,
+            0.14583
+          ],
+          [
+            0.16287,
+            0.15909
+          ],
+          [
+            0.17532,
+            0.17235
+          ],
+          [
+            0.19388,
+            0.18561
+          ]
+        ],
+        "y_norm_range": [
+          0.0,
+          0.18561
+        ],
+        "max_half_width_norm": 0.19388,
+        "min_half_width_norm": 0.05102
+      },
+      "COLLAR": {
+        "normalized_points": [
+          [
+            0.25139,
+            0.19697
+          ],
+          [
+            0.25139,
+            0.20833
+          ],
+          [
+            0.25139,
+            0.2197
+          ],
+          [
+            0.25139,
+            0.23106
+          ],
+          [
+            0.25139,
+            0.24242
+          ],
+          [
+            0.26199,
+            0.25379
+          ],
+          [
+            0.26199,
+            0.26515
+          ],
+          [
+            0.26199,
+            0.27652
+          ],
+          [
+            0.26199,
+            0.28788
+          ],
+          [
+            0.26199,
+            0.29924
+          ],
+          [
+            0.31341,
+            0.31061
+          ],
+          [
+            0.31341,
+            0.32197
+          ],
+          [
+            0.31341,
+            0.33333
+          ],
+          [
+            0.31341,
+            0.3447
+          ],
+          [
+            0.30891,
+            0.35606
+          ]
+        ],
+        "y_norm_range": [
+          0.19697,
+          0.35606
+        ],
+        "max_half_width_norm": 0.31341,
+        "min_half_width_norm": 0.25139
+      },
+      "NECK_VISIBLE": {
+        "normalized_points": [
+          [
+            0.30758,
+            0.35795
+          ],
+          [
+            0.30652,
+            0.35931
+          ],
+          [
+            0.30413,
+            0.36066
+          ],
+          [
+            0.30307,
+            0.36201
+          ],
+          [
+            0.30042,
+            0.36337
+          ],
+          [
+            0.2991,
+            0.36472
+          ],
+          [
+            0.29645,
+            0.36607
+          ],
+          [
+            0.29539,
+            0.36742
+          ],
+          [
+            0.29459,
+            0.36878
+          ],
+          [
+            0.29459,
+            0.37013
+          ],
+          [
+            0.29539,
+            0.37148
+          ],
+          [
+            0.29724,
+            0.37284
+          ],
+          [
+            0.29857,
+            0.37419
+          ],
+          [
+            0.30228,
+            0.37554
+          ],
+          [
+            0.30493,
+            0.37689
+          ]
+        ],
+        "y_norm_range": [
+          0.35795,
+          0.37689
+        ],
+        "max_half_width_norm": 0.30758,
+        "min_half_width_norm": 0.29459
+      },
+      "SHOULDER": {
+        "normalized_points": [
+          [
+            0.30493,
+            0.37689
+          ],
+          [
+            0.31527,
+            0.3796
+          ],
+          [
+            0.33435,
+            0.38231
+          ],
+          [
+            0.36403,
+            0.38501
+          ],
+          [
+            0.38895,
+            0.38772
+          ],
+          [
+            0.42764,
+            0.39042
+          ],
+          [
+            0.45971,
+            0.39313
+          ],
+          [
+            0.48145,
+            0.39583
+          ],
+          [
+            0.49205,
+            0.39854
+          ],
+          [
+            0.49788,
+            0.40124
+          ],
+          [
+            0.50106,
+            0.40395
+          ],
+          [
+            0.50212,
+            0.40666
+          ],
+          [
+            0.50292,
+            0.40936
+          ],
+          [
+            0.50292,
+            0.41207
+          ],
+          [
+            0.50292,
+            0.41477
+          ]
+        ],
+        "y_norm_range": [
+          0.37689,
+          0.41477
+        ],
+        "max_half_width_norm": 0.50292,
+        "min_half_width_norm": 0.30493
+      },
+      "BODY": {
+        "normalized_points": [
+          [
+            0.50292,
+            0.41477
+          ],
+          [
+            0.50292,
+            0.454
+          ],
+          [
+            0.50292,
+            0.49324
+          ],
+          [
+            0.50292,
+            0.53247
+          ],
+          [
+            0.50292,
+            0.5717
+          ],
+          [
+            0.50292,
+            0.61093
+          ],
+          [
+            0.50292,
+            0.65016
+          ],
+          [
+            0.50292,
+            0.68939
+          ],
+          [
+            0.5008,
+            0.72863
+          ],
+          [
+            0.5,
+            0.76786
+          ],
+          [
+            0.5,
+            0.80709
+          ],
+          [
+            0.5,
+            0.84632
+          ],
+          [
+            0.5,
+            0.88555
+          ],
+          [
+            0.5,
+            0.92478
+          ],
+          [
+            0.5,
+            0.96402
+          ]
+        ],
+        "y_norm_range": [
+          0.41477,
+          0.96402
+        ],
+        "max_half_width_norm": 0.50292,
+        "min_half_width_norm": 0.5
+      },
+      "BASE": {
+        "normalized_points": [
+          [
+            0.5,
+            0.96402
+          ],
+          [
+            0.5,
+            0.96659
+          ],
+          [
+            0.49973,
+            0.96916
+          ],
+          [
+            0.49894,
+            0.97173
+          ],
+          [
+            0.49708,
+            0.9743
+          ],
+          [
+            0.49417,
+            0.97687
+          ],
+          [
+            0.49178,
+            0.97944
+          ],
+          [
+            0.48728,
+            0.98201
+          ],
+          [
+            0.48436,
+            0.98458
+          ],
+          [
+            0.48251,
+            0.98715
+          ],
+          [
+            0.47933,
+            0.98972
+          ],
+          [
+            0.47509,
+            0.99229
+          ],
+          [
+            0.46851,
+            0.99486
+          ],
+          [
+            0.46574,
+            0.99743
+          ],
+          [
+            0.4621,
+            1.0
+          ]
+        ],
+        "y_norm_range": [
+          0.96402,
+          1.0
+        ],
+        "max_half_width_norm": 0.5,
+        "min_half_width_norm": 0.4621
+      }
+    },
+    "occluded_regions": [
+      {
+        "side": "LEFT",
+        "cause": "adjacent carton",
+        "y_norm_range": [
+          0.0,
+          1.0
+        ],
+        "measurable": false
+      }
+    ],
+    "mirrored_regions": [
+      {
+        "side": "LEFT",
+        "derived_from": "measured RIGHT edge",
+        "authority": "HUMAN_APPROVED_CONCEPT_ONLY_ASSUMPTION"
+      }
+    ],
+    "confidence": 0.72,
+    "human_authority": "CONCEPT_VISUAL_GEOMETRY_AUTHORIZED",
+    "production_authority_prohibition": "this envelope may NOT be described as manufacturable, supplier-confirmed, a production dimension, a tooling dimension or a verified closure construction",
+    "reference_pixel_relationships": {
+      "authority": "REFERENCE_PIXEL_RELATIONSHIPS",
+      "is_physical_dimension": false,
+      "source_image": "GeneratedImage#97 task_52_var_2_reALblg.png",
+      "visible_body_width_px": 343,
+      "visible_collar_width_px": 217,
+      "collar_body_ratio": 0.633,
+      "dark_constant_width_px": 109,
+      "dark_body_ratio": 0.318,
+      "lower_flare_width_px": 129,
+      "flare_body_ratio": 0.376,
+      "constant_width_run_px": 96,
+      "left_body_edge": "PARTIALLY_OCCLUDED_BY_CARTON",
+      "bilateral_symmetry": "NOT_DIRECTLY_MEASURABLE"
+    }
+  },
+  "iterations": [
+    {
+      "iteration": "RESET2-IT1",
+      "render": "docs/visual_quality/vq1_reset2/iteration_1.png",
+      "comparison": {
+        "metrics": {
+          "silhouette_iou_non_occluded": 0.92058,
+          "mean_normalized_contour_distance": 0.03366,
+          "p95_contour_distance": 0.11842,
+          "max_contour_distance": 0.15395,
+          "component_centroid_displacement": 0.02691,
+          "collar_body_ratio_error": 0.00618,
+          "dark_body_ratio_error": 0.00022,
+          "constant_width_region_difference": 0.00091,
+          "flare_width_difference": 0.01706,
+          "shoulder_rise_difference": 0.0,
+          "occluded_side_excluded_from_scoring": "LEFT"
+        },
+        "gates": {
+          "silhouette_iou": true,
+          "mean_contour_distance": false,
+          "p95_contour_distance": false,
+          "max_contour_distance": false,
+          "collar_body_ratio": true,
+          "dark_body_ratio": true
+        },
+        "gates_pass": false,
+        "thresholds": {
+          "silhouette_iou_min": 0.9,
+          "mean_contour_max": 0.02,
+          "p95_contour_max": 0.045,
+          "max_contour_max": 0.07,
+          "collar_ratio_error_max": 0.025,
+          "dark_ratio_error_max": 0.025
+        },
+        "note": "a failing component is never excluded to improve the overall score"
+      },
+      "envelope_findings": {
+        "checks": {
+          "constant_width_region_present": true,
+          "lower_flare_present": true,
+          "rounded_dome_not_spear": true,
+          "no_mid_maximum": true,
+          "no_external_stem": true
+        },
+        "findings": [],
+        "constant_width_spread": 0.0,
+        "peak_at_fraction": 1.0,
+        "top_width_fraction_of_max": 0.2596,
+        "status": "ENVELOPE_MATCHES_APPROVED_VISIBLE_SEMANTIC"
+      }
+    },
+    {
+      "iteration": "RESET2-IT2",
+      "render": "docs/visual_quality/vq1_reset2/iteration_2.png",
+      "comparison": {
+        "metrics": {
+          "silhouette_iou_non_occluded": 0.9887,
+          "mean_normalized_contour_distance": 0.00443,
+          "p95_contour_distance": 0.03248,
+          "max_contour_distance": 0.16156,
+          "component_centroid_displacement": 0.00025,
+          "collar_body_ratio_error": 0.00618,
+          "dark_body_ratio_error": 0.00022,
+          "constant_width_region_difference": 0.00091,
+          "flare_width_difference": 0.01706,
+          "shoulder_rise_difference": 0.0,
+          "occluded_side_excluded_from_scoring": "LEFT"
+        },
+        "gates": {
+          "silhouette_iou": true,
+          "mean_contour_distance": true,
+          "p95_contour_distance": true,
+          "max_contour_distance": false,
+          "collar_body_ratio": true,
+          "dark_body_ratio": true
+        },
+        "gates_pass": false,
+        "thresholds": {
+          "silhouette_iou_min": 0.9,
+          "mean_contour_max": 0.02,
+          "p95_contour_max": 0.045,
+          "max_contour_max": 0.07,
+          "collar_ratio_error_max": 0.025,
+          "dark_ratio_error_max": 0.025
+        },
+        "note": "a failing component is never excluded to improve the overall score"
+      }
+    },
+    {
+      "iteration": "RESET2-IT3",
+      "render": "docs/visual_quality/vq1_reset2/iteration_3.png",
+      "comparison": {
+        "metrics": {
+          "silhouette_iou_non_occluded": 0.98806,
+          "mean_normalized_contour_distance": 0.00469,
+          "p95_contour_distance": 0.03502,
+          "max_contour_distance": 0.10455,
+          "component_centroid_displacement": 0.0004,
+          "collar_body_ratio_error": 0.00618,
+          "dark_body_ratio_error": 0.00029,
+          "constant_width_region_difference": 0.00182,
+          "flare_width_difference": 0.01176,
+          "shoulder_rise_difference": 0.0,
+          "occluded_side_excluded_from_scoring": "LEFT"
+        },
+        "gates": {
+          "silhouette_iou": true,
+          "mean_contour_distance": true,
+          "p95_contour_distance": true,
+          "max_contour_distance": false,
+          "collar_body_ratio": true,
+          "dark_body_ratio": true
+        },
+        "gates_pass": false,
+        "thresholds": {
+          "silhouette_iou_min": 0.9,
+          "mean_contour_max": 0.02,
+          "p95_contour_max": 0.045,
+          "max_contour_max": 0.07,
+          "collar_ratio_error_max": 0.025,
+          "dark_ratio_error_max": 0.025
+        },
+        "note": "a failing component is never excluded to improve the overall score"
+      },
+      "envelope_findings": {
+        "checks": {
+          "constant_width_region_present": true,
+          "lower_flare_present": true,
+          "rounded_dome_not_spear": true,
+          "no_mid_maximum": true,
+          "no_external_stem": true
+        },
+        "findings": [],
+        "constant_width_spread": 0.0016,
+        "peak_at_fraction": 1.0,
+        "top_width_fraction_of_max": 0.2632,
+        "status": "ENVELOPE_MATCHES_APPROVED_VISIBLE_SEMANTIC"
+      }
+    },
+    {
+      "iteration": "RESET2-IT4",
+      "render": "docs/visual_quality/vq1_reset2/iteration_4.png",
+      "comparison": {
+        "metrics": {
+          "silhouette_iou_non_occluded": 0.98462,
+          "mean_normalized_contour_distance": 0.00605,
+          "p95_contour_distance": 0.03673,
+          "max_contour_distance": 0.18223,
+          "component_centroid_displacement": 0.00019,
+          "collar_body_ratio_error": 0.00618,
+          "dark_body_ratio_error": 0.00029,
+          "constant_width_region_difference": 0.00182,
+          "flare_width_difference": 0.01176,
+          "shoulder_rise_difference": 0.0,
+          "occluded_side_excluded_from_scoring": "LEFT",
+          "reference_aspect_w_over_h": 0.32481,
+          "candidate_aspect_w_over_h": 0.32321,
+          "aspect_error": 0.0016
+        },
+        "gates": {
+          "silhouette_iou": true,
+          "mean_contour_distance": true,
+          "p95_contour_distance": true,
+          "max_contour_distance": false,
+          "collar_body_ratio": true,
+          "dark_body_ratio": true,
+          "assembly_aspect": true
+        },
+        "gates_pass": false,
+        "thresholds": {
+          "silhouette_iou_min": 0.9,
+          "mean_contour_max": 0.02,
+          "p95_contour_max": 0.045,
+          "max_contour_max": 0.07,
+          "collar_ratio_error_max": 0.025,
+          "dark_ratio_error_max": 0.025,
+          "aspect_error_max": 0.02
+        },
+        "note": "a failing component is never excluded to improve the overall score"
+      },
+      "envelope_findings": {
+        "checks": {
+          "constant_width_region_present": true,
+          "lower_flare_present": true,
+          "rounded_dome_not_spear": true,
+          "no_mid_maximum": true,
+          "no_external_stem": true
+        },
+        "findings": [],
+        "constant_width_spread": 0.0016,
+        "peak_at_fraction": 1.0,
+        "top_width_fraction_of_max": 0.2632,
+        "status": "ENVELOPE_MATCHES_APPROVED_VISIBLE_SEMANTIC"
+      }
+    }
+  ],
+  "correction_plans": [
+    {
+      "schema_version": "visual_correction_plan/1.0",
+      "iteration_identity": "RESET2-IT1",
+      "failed_component": "WHOLE_ASSEMBLY",
+      "root_cause": "the candidate was emitted as one undifferentiated silhouette on a page narrower than the body, so it rendered cropped with no distinguishable closure or collar",
+      "problem_class": "RENDERING",
+      "required_change": "draw separate visible component contours and size the page from the body width",
+      "model_replacement_required": false,
+      "human_review_state": "NOT_REVIEWED"
+    },
+    {
+      "schema_version": "visual_correction_plan/1.0",
+      "iteration_identity": "RESET2-IT2",
+      "failed_component": "CLOSURE_COLLAR_JUNCTION",
+      "root_cause": "band boundaries sat on transition rows, blending two widths and leaving a notch between closure and collar",
+      "problem_class": "CONTOUR",
+      "required_change": "move band boundaries inside each component and extend the sleeve to meet the flare",
+      "model_replacement_required": false,
+      "human_review_state": "NOT_REVIEWED"
+    },
+    {
+      "schema_version": "visual_correction_plan/1.0",
+      "iteration_identity": "RESET2-IT3",
+      "failed_component": "WHOLE_ASSEMBLY",
+      "root_cause": "width and height were normalized independently to 1.0 and x was scaled by height, making the render 1:1 instead of 3.08:1. The profile comparison divides by body width and was structurally blind to it; the visual inspector caught it",
+      "problem_class": "COORDINATE_SYSTEM",
+      "required_change": "scale x by ASPECT_W_OVER_H and add an assembly-aspect gate",
+      "model_replacement_required": false,
+      "human_review_state": "NOT_REVIEWED"
+    },
+    {
+      "schema_version": "visual_correction_plan/1.0",
+      "iteration_identity": "RESET2-IT4",
+      "failed_component": "DARK_CLOSURE",
+      "root_cause": "the closure contour terminates at its band top with a finite half-width, so the mirror closes it with a straight line and the dome reads as a flat trapezoid",
+      "problem_class": "CONTOUR",
+      "required_change": "carry the closure contour to zero half-width at the apex so the dome closes as a curve",
+      "model_replacement_required": false,
+      "human_review_state": "NOT_REVIEWED",
+      "applied": false,
+      "note": "identified but NOT applied \u2014 all three inspector calls are consumed and \u00a711 stops the loop"
+    }
+  ],
+  "loop": {
+    "schema_version": "visual_correction_loop/1.0",
+    "iterations": [
+      "RESET2-IT1",
+      "RESET2-IT2",
+      "RESET2-IT3",
+      "RESET2-IT4"
+    ],
+    "inspector_calls_used": 3,
+    "inspector_calls_max": 3,
+    "image_generation_calls": 0,
+    "stop": true,
+    "reason": "ALL_INSPECTOR_CALLS_CONSUMED",
+    "additional_stop_conditions_met": [
+      "deterministic metrics did not improve 5% on iteration 4 (mean 0.00469 -> 0.00605, max 0.105 -> 0.182) even though it corrected a structural aspect error",
+      "visualizer and deterministic metrics materially conflicted on iteration 3: IoU 0.988 while the inspector reported a squat jar-like form \u2014 the conflict was real and the inspector was right"
+    ],
+    "best_candidate": "RESET2-IT4",
+    "assembly_released": false,
+    "release_rule": "\u00a712 requires deterministic gates to pass AND a PASSES_VISUAL_INSPECTION_PENDING_HUMAN_REVIEW verdict; neither holds",
+    "outstanding_blockers": [
+      "max_contour_distance 0.182 > 0.070",
+      "dark closure dome renders flat-topped",
+      "visual inspector verdict VISUALLY_REJECTED"
+    ],
+    "never_auto_accepted": true
+  },
+  "multimodal": {
+    "calls": 3,
+    "iteration_1": {
+      "reference_description": "A dropper bottle for 'BBROSE Rose Damascena Night Repair Oil'. The bottle body is frosted/matte glass with a soft blush-pink tint, cylindrical with gently rounded shoulders. The closure assembly consists of: a wide rose-gold/champagne metallic collar that screws onto the bottle neck, topped by a dark plum/aubergine rubber pipette bulb that is rounded-dome shaped at the top. The bulb is large, smooth, and sits prominently above the metallic collar. The label text is printed directly on the frosted glass in dark rose/burgundy tones.",
+      "output_description": "A flat, nearly textureless off-white/cream silhouette of a bottle upper section only. The shape shows a wide cylindrical body tapering inward in stepped/tiered increments toward a narrow neck at the top. There are three visible horizontal ledge-steps on the shoulder/neck transition area. No dropper bulb is present, no collar is visible, no color differentiation, no label, no closure details. The image is cropped and shows only roughly the top half of a bottle form.",
+      "top_component_observed_shape": "Absent \u2014 no closure component visible; only a flat stepped/tiered neck silhouette is present",
+      "component_semantics": {
+        "classification": "UNCERTAIN",
+        "confidence": 0.05,
+        "evidence": "No bulb, no collar, no dropper assembly of any kind is rendered. The top of the render terminates in a flat stepped neck with no closure element attached."
+      },
+      "same_component_type": false,
+      "same_structural_family": false,
+      "closure_proportions_physically_coherent": false,
+      "output_appears_generic": true,
+      "failing_component": "BULB",
+      "per_component_score": {
+        "closure": 0,
+        "shoulder": 2,
+        "body": 2,
+        "silhouette": 1
+      },
+      "reference_preservation_score": 1,
+      "visual_findings": [
+        "No dropper bulb present in generated render \u2014 critical missing element",
+        "No metallic gold/rose-gold collar rendered",
+        "Shoulder geometry shows unnatural stepped/tiered ledges not present in reference smooth rounded shoulder",
+        "No color \u2014 reference has distinctive blush-pink frosted glass, render is flat off-white",
+        "No label or text elements",
+        "Image appears cropped, showing only upper portion with no base",
+        "Bottle proportions are much wider relative to height compared to reference tall cylindrical form",
+        "Previous iteration (Image 3) at least had a bulb and collar present, though incorrectly shaped; current render regresses further"
+      ],
+      "critical_blockers": [
+        "Dropper bulb completely absent",
+        "Metallic collar completely absent",
+        "Stepped shoulder geometry is structurally incorrect \u2014 reference has smooth rounded transition",
+        "No frosted blush-pink glass appearance",
+        "Bottle appears to be different form factor entirely (wider, squatter proportions)",
+        "Render is incomplete/cropped with no base visible"
+      ],
+      "confidence": 0.97
+    },
+    "iteration_3": {
+      "reference_description": "A frosted glass dropper bottle with a soft pinkish-mauve tone. The bottle is cylindrical with gently rounded shoulders, a short neck, and a wide body that tapers slightly at the base. The closure system consists of a rose-gold/champagne metallic collar (wide, prominent, approximately 1/4 the bottle height) that threads onto the neck, topped by a large smooth rounded rubber pipette bulb in deep plum/aubergine color. The bulb is hemispherical-to-ovoid, clearly exposed above the collar. Label reads 'BBROSE Rose Damascena Night Repair Oil'. Overall silhouette is tall and elegant, with the bulb and collar together forming roughly 30% of total height.",
+      "output_description": "A synthetic render showing a squat, wide cylindrical bottle body in off-white/cream color with very little neck definition. The top closure area consists of a flat, stepped beige/cream disk-like collar that is disproportionately wide and flat compared to reference. Above the collar sits a very small, flat-topped trapezoidal dark plum shape \u2014 not a rounded bulb, but more like a truncated pyramid or flat pad. The body is extremely wide and short relative to the reference, giving a jar-like appearance rather than a dropper bottle. No gold/metallic collar visible; no bottle neck visible; bottle proportions are completely wrong.",
+      "top_component_observed_shape": "Flat-topped truncated trapezoid (small dark plum pad sitting on a wide stepped cream disk)",
+      "component_semantics": {
+        "classification": "UNCERTAIN",
+        "confidence": 0.2,
+        "evidence": "The dark shape at the top is not a rounded rubber bulb \u2014 it is a flat, angular truncated trapezoid with no curvature. It does not match the exposed rubber pipette bulb of the reference. The collar is beige/cream flat disk instead of a tall rose-gold metallic band."
+      },
+      "same_component_type": false,
+      "same_structural_family": false,
+      "closure_proportions_physically_coherent": false,
+      "output_appears_generic": true,
+      "failing_component": "BULB",
+      "per_component_score": {
+        "closure": 1,
+        "shoulder": 2,
+        "body": 2,
+        "silhouette": 1
+      },
+      "reference_preservation_score": 1,
+      "visual_findings": [
+        "Bulb is flat trapezoidal shape, not a smooth rounded hemisphere as in reference",
+        "Collar is a flat beige disk with no metallic rose-gold finish \u2014 reference has a tall prominent gold metallic collar",
+        "Bottle body is extremely squat and wide (jar-like), reference is tall and slender cylindrical",
+        "No neck visible in render; reference has a distinct short neck between collar and shoulder",
+        "Body proportions: reference height-to-width ratio approximately 2.5:1; render appears close to 1:1",
+        "No label or surface decoration present in render",
+        "Color palette is off \u2014 cream/off-white vs reference frosted pinkish-mauve",
+        "Previous iteration (Image 3) had wrong bulb shape (flame/teardrop) and wrong proportions; current iteration has regressed further with truncated-top bulb and jar body"
+      ],
+      "critical_blockers": [
+        "Bulb shape is completely wrong \u2014 flat trapezoid instead of rounded rubber hemisphere",
+        "Bottle silhouette is jar-like, not tall dropper bottle \u2014 fundamental proportion failure",
+        "Gold metallic collar absent \u2014 replaced by flat cream disk",
+        "Overall structure does not represent a dropper bottle; unrecognizable as the reference product"
+      ],
+      "confidence": 0.95
+    },
+    "iteration_4": {
+      "reference_description": "A dropper bottle with a frosted blush-pink cylindrical glass body that has a gently rounded shoulder transitioning to a short neck. The closure assembly consists of a tall rose-gold/champagne metallic collar screwed onto the neck, topped by a dark plum/mauve rubber pipette bulb that is rounded-dome shaped at the top. The bottle carries 'BBROSE Rose Damascena Night Repair Oil' branding. The overall silhouette is a wide, squat cylinder with elegant proportions.",
+      "output_description": "A flat/cartoon-style synthetic render showing a dropper bottle with a nearly rectangular body (very little shoulder curvature, nearly straight sides going almost to the top edge), a small stepped beige/cream collar segment, and a dark purple-grey truncated-rectangular/trapezoidal bulb shape at the top. The bulb reads as a flat pentagon or trapezoid rather than a rounded dome. The body is white-cream with no frosted translucency or branding. Proportions are taller and narrower than the reference, and the overall rendering style is 2D flat with no materials depth.",
+      "top_component_observed_shape": "Flat trapezoidal/pentagonal dark shape \u2014 not a rounded dome bulb",
+      "component_semantics": {
+        "classification": "EXPOSED_RUBBER_PIPETTE_BULB",
+        "confidence": 0.45,
+        "evidence": "The dark element at the top is positioned where a pipette bulb would be, but its shape is a flat trapezoid/pentagon rather than the expected rounded hemisphere of the reference's plum dome bulb."
+      },
+      "same_component_type": false,
+      "same_structural_family": true,
+      "closure_proportions_physically_coherent": false,
+      "output_appears_generic": true,
+      "failing_component": "BULB",
+      "per_component_score": {
+        "closure": 2,
+        "shoulder": 1,
+        "body": 3,
+        "silhouette": 2
+      },
+      "reference_preservation_score": 2,
+      "visual_findings": [
+        "Bulb shape is a flat pentagon/trapezoid, not the rounded dome seen in the reference.",
+        "Collar is a plain beige stepped block with no metallic rose-gold finish.",
+        "Body is rectangular with near-straight sides and minimal shoulder curvature; reference has a clearly rounded cylindrical shoulder.",
+        "No frosted blush-pink translucency; render is flat opaque white-cream.",
+        "Render is 2D flat-art style with no material depth, reflections, or surface finish.",
+        "No branding or label present on the body.",
+        "Overall proportions are taller and narrower than the squat cylindrical reference.",
+        "Previous iteration (Image 3) had a similar structural problem with bulb shape (flame/spike form); current iteration changes it to a flat trapezoid but still does not achieve the rounded dome."
+      ],
+      "critical_blockers": [
+        "Bulb geometry is wrong \u2014 flat trapezoidal shape instead of rounded dome",
+        "Collar has no metallic rose-gold finish \u2014 critical brand identity element missing",
+        "Body silhouette is rectangular, not cylindrical with rounded shoulder",
+        "Frosted blush-pink glass material not represented",
+        "Flat 2D rendering lacks structural fidelity required for packaging structural render"
+      ],
+      "confidence": 0.88
+    }
+  },
+  "same_domain_discovery": {
+    "record_type": "same_domain_public_spec_discovery/1.0",
+    "created_at": "2026-07-28",
+    "limits": {
+      "max_domains": 5,
+      "max_pages": 20,
+      "max_pdfs": 10,
+      "max_link_depth": 3,
+      "same_domain_only": true
+    },
+    "policy": [
+      "robots respected",
+      "no login",
+      "no quote-form submission",
+      "no portal bypass",
+      "no CAPTCHA defeat",
+      "rate limited"
+    ],
+    "domains": [
+      "www.liquidbottles.com",
+      "www.sks-bottle.com",
+      "www.bottlestore.com",
+      "www.premiumvials.com",
+      "www.nicerpackaging.com"
+    ],
+    "attempts": [
+      {
+        "url": "https://www.liquidbottles.com/technical-drawings",
+        "status": "BLOCKED",
+        "code": "HTTP 404"
+      },
+      {
+        "url": "https://www.liquidbottles.com/downloads",
+        "status": "BLOCKED",
+        "code": "HTTP 404"
+      },
+      {
+        "url": "https://www.liquidbottles.com/spec-sheets",
+        "status": "BLOCKED",
+        "code": "HTTP 404"
+      },
+      {
+        "url": "https://www.liquidbottles.com/resources",
+        "status": "BLOCKED",
+        "code": "HTTP 404"
+      },
+      {
+        "url": "https://www.liquidbottles.com/pages/technical-drawings",
+        "status": "BLOCKED",
+        "code": "HTTP 404"
+      },
+      {
+        "url": "https://www.liquidbottles.com/technical",
+        "status": "BLOCKED",
+        "code": "HTTP 404"
+      },
+      {
+        "url": "https://www.liquidbottles.com/catalog.pdf",
+        "status": "BLOCKED",
+        "code": "HTTP 404"
+      },
+      {
+        "url": "https://www.sks-bottle.com/technical-drawings",
+        "status": "BLOCKED",
+        "code": "HTTP 404"
+      },
+      {
+        "url": "https://www.sks-bottle.com/downloads",
+        "status": "BLOCKED",
+        "code": "HTTP 404"
+      },
+      {
+        "url": "https://www.sks-bottle.com/spec-sheets",
+        "status": "BLOCKED",
+        "code": "HTTP 404"
+      },
+      {
+        "url": "https://www.sks-bottle.com/resources",
+        "status": "BLOCKED",
+        "code": "HTTP 404"
+      },
+      {
+        "url": "https://www.sks-bottle.com/pages/technical-drawings",
+        "status": "BLOCKED",
+        "code": "HTTP 404"
+      },
+      {
+        "url": "https://www.sks-bottle.com/technical",
+        "status": "BLOCKED",
+        "code": "HTTP 404"
+      },
+      {
+        "url": "https://www.sks-bottle.com/catalog.pdf",
+        "status": "BLOCKED",
+        "code": "HTTP 404"
+      },
+      {
+        "url": "https://www.bottlestore.com/technical-drawings",
+        "status": "BLOCKED",
+        "code": "HTTP 404"
+      },
+      {
+        "url": "https://www.bottlestore.com/downloads",
+        "status": "BLOCKED",
+        "code": "HTTP 404"
+      },
+      {
+        "url": "https://www.bottlestore.com/spec-sheets",
+        "status": "BLOCKED",
+        "code": "HTTP 404"
+      },
+      {
+        "url": "https://www.bottlestore.com/resources",
+        "status": "BLOCKED",
+        "code": "HTTP 404"
+      },
+      {
+        "url": "https://www.bottlestore.com/pages/technical-drawings",
+        "status": "BLOCKED",
+        "code": "HTTP 404"
+      },
+      {
+        "url": "https://www.bottlestore.com/technical",
+        "status": "BLOCKED",
+        "code": "HTTP 404"
+      }
+    ],
+    "public_specs_found": 0,
+    "pages_attempted": 20,
+    "result": "NO_PUBLIC_SPECIFICATION_AVAILABLE"
+  },
+  "supplier_requests": {
+    "record_type": "vq1_supplier_specification_request/1.0",
+    "created_at": "2026-07-28",
+    "state": "DRAFTED_NOT_SENT",
+    "sent": false,
+    "requires_human_approval_before_sending": true,
+    "reason": "the bounded same-domain discovery found no public specification (20 probes, all blocked); \u00a714 directs a supplier request packet",
+    "requested_items": [
+      "exact 30 ml bottle SKU",
+      "dimensional drawing",
+      "bottle diameter",
+      "bottle height without closure",
+      "neck finish",
+      "neck diameter",
+      "overflow capacity",
+      "glass weight",
+      "compatible dropper SKU",
+      "closure drawing",
+      "collar diameter",
+      "collar height",
+      "bulb/outer-cover construction",
+      "pipette length",
+      "total assembled height",
+      "materials",
+      "decoration methods",
+      "CAD/PDF files",
+      "MOQ and sample availability"
+    ],
+    "requests": [
+      {
+        "supplier": "Liquid Bottles LLC",
+        "domain": "liquidbottles.com",
+        "channel": "public contact form or email \u2014 to be sent BY A HUMAN",
+        "subject": "30 ml cylindrical serum bottle + dropper closure \u2014 technical specification request",
+        "body": "Hello,\n\nWe are specifying packaging for a 30 ml cylindrical frosted-glass cosmetic serum bottle with a metallic dropper closure, and we need manufacturer specification data rather than marketing copy.\n\nCould you send, for one exact product variant:\n\n  - exact 30 ml bottle SKU\n  - dimensional drawing\n  - bottle diameter\n  - bottle height without closure\n  - neck finish\n  - neck diameter\n  - overflow capacity\n  - glass weight\n  - compatible dropper SKU\n  - closure drawing\n  - collar diameter\n  - collar height\n  - bulb/outer-cover construction\n  - pipette length\n  - total assembled height\n  - materials\n  - decoration methods\n  - CAD/PDF files\n  - MOQ and sample availability\n\nA dimensional drawing or CAD file is the single most useful item. Please also confirm whether the visible dark component on your dropper closures is an exposed elastomer bulb, a bulb with an integral flared skirt, or a separate decorative outer cover, since that affects our design.\n\nThank you.",
+        "status": "DRAFTED_NOT_SENT"
+      },
+      {
+        "supplier": "SKS Bottle & Packaging",
+        "domain": "sks-bottle.com",
+        "channel": "public contact form or email \u2014 to be sent BY A HUMAN",
+        "subject": "30 ml cylindrical serum bottle + dropper closure \u2014 technical specification request",
+        "body": "Hello,\n\nWe are specifying packaging for a 30 ml cylindrical frosted-glass cosmetic serum bottle with a metallic dropper closure, and we need manufacturer specification data rather than marketing copy.\n\nCould you send, for one exact product variant:\n\n  - exact 30 ml bottle SKU\n  - dimensional drawing\n  - bottle diameter\n  - bottle height without closure\n  - neck finish\n  - neck diameter\n  - overflow capacity\n  - glass weight\n  - compatible dropper SKU\n  - closure drawing\n  - collar diameter\n  - collar height\n  - bulb/outer-cover construction\n  - pipette length\n  - total assembled height\n  - materials\n  - decoration methods\n  - CAD/PDF files\n  - MOQ and sample availability\n\nA dimensional drawing or CAD file is the single most useful item. Please also confirm whether the visible dark component on your dropper closures is an exposed elastomer bulb, a bulb with an integral flared skirt, or a separate decorative outer cover, since that affects our design.\n\nThank you.",
+        "status": "DRAFTED_NOT_SENT"
+      },
+      {
+        "supplier": "Bottlestore / O.Berk",
+        "domain": "bottlestore.com",
+        "channel": "public contact form or email \u2014 to be sent BY A HUMAN",
+        "subject": "30 ml cylindrical serum bottle + dropper closure \u2014 technical specification request",
+        "body": "Hello,\n\nWe are specifying packaging for a 30 ml cylindrical frosted-glass cosmetic serum bottle with a metallic dropper closure, and we need manufacturer specification data rather than marketing copy.\n\nCould you send, for one exact product variant:\n\n  - exact 30 ml bottle SKU\n  - dimensional drawing\n  - bottle diameter\n  - bottle height without closure\n  - neck finish\n  - neck diameter\n  - overflow capacity\n  - glass weight\n  - compatible dropper SKU\n  - closure drawing\n  - collar diameter\n  - collar height\n  - bulb/outer-cover construction\n  - pipette length\n  - total assembled height\n  - materials\n  - decoration methods\n  - CAD/PDF files\n  - MOQ and sample availability\n\nA dimensional drawing or CAD file is the single most useful item. Please also confirm whether the visible dark component on your dropper closures is an exposed elastomer bulb, a bulb with an integral flared skirt, or a separate decorative outer cover, since that affects our design.\n\nThank you.",
+        "status": "DRAFTED_NOT_SENT"
+      },
+      {
+        "supplier": "Premium Vials",
+        "domain": "premiumvials.com",
+        "channel": "public contact form or email \u2014 to be sent BY A HUMAN",
+        "subject": "30 ml cylindrical serum bottle + dropper closure \u2014 technical specification request",
+        "body": "Hello,\n\nWe are specifying packaging for a 30 ml cylindrical frosted-glass cosmetic serum bottle with a metallic dropper closure, and we need manufacturer specification data rather than marketing copy.\n\nCould you send, for one exact product variant:\n\n  - exact 30 ml bottle SKU\n  - dimensional drawing\n  - bottle diameter\n  - bottle height without closure\n  - neck finish\n  - neck diameter\n  - overflow capacity\n  - glass weight\n  - compatible dropper SKU\n  - closure drawing\n  - collar diameter\n  - collar height\n  - bulb/outer-cover construction\n  - pipette length\n  - total assembled height\n  - materials\n  - decoration methods\n  - CAD/PDF files\n  - MOQ and sample availability\n\nA dimensional drawing or CAD file is the single most useful item. Please also confirm whether the visible dark component on your dropper closures is an exposed elastomer bulb, a bulb with an integral flared skirt, or a separate decorative outer cover, since that affects our design.\n\nThank you.",
+        "status": "DRAFTED_NOT_SENT"
+      },
+      {
+        "supplier": "Nicer Packaging",
+        "domain": "nicerpackaging.com",
+        "channel": "public contact form or email \u2014 to be sent BY A HUMAN",
+        "subject": "30 ml cylindrical serum bottle + dropper closure \u2014 technical specification request",
+        "body": "Hello,\n\nWe are specifying packaging for a 30 ml cylindrical frosted-glass cosmetic serum bottle with a metallic dropper closure, and we need manufacturer specification data rather than marketing copy.\n\nCould you send, for one exact product variant:\n\n  - exact 30 ml bottle SKU\n  - dimensional drawing\n  - bottle diameter\n  - bottle height without closure\n  - neck finish\n  - neck diameter\n  - overflow capacity\n  - glass weight\n  - compatible dropper SKU\n  - closure drawing\n  - collar diameter\n  - collar height\n  - bulb/outer-cover construction\n  - pipette length\n  - total assembled height\n  - materials\n  - decoration methods\n  - CAD/PDF files\n  - MOQ and sample availability\n\nA dimensional drawing or CAD file is the single most useful item. Please also confirm whether the visible dark component on your dropper closures is an exposed elastomer bulb, a bulb with an integral flared skirt, or a separate decorative outer cover, since that affects our design.\n\nThank you.",
+        "status": "DRAFTED_NOT_SENT"
+      }
+    ]
+  },
+  "production_geometry": "BLOCKED",
+  "approved_physical_dimensions": "NONE",
+  "assembly_released": false,
+  "manufacturable_claim": false,
+  "image_generation_calls": 0,
+  "status": "AWAITING_HUMAN_VISUAL_REVIEW"
+}

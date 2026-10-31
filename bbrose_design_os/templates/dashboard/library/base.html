@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% comment %}THE LIBRARY — what designs are made from, read-only (§BH55 Phase 3), in the one shell (the owner's goal of
+2026-09-25); C's (his answer to the UI directions of 2026-09-25): one library, its page first, with finished designs part
+of it. Colours are drawn as SVG shapes with a fill, never a style attribute.{% endcomment %}
+{% block title %}Library{% endblock %}
+{% block before %}{% block head_words %}{% endblock %}
+<nav class="seg subnav" aria-label="Library">
+  <a href="{% url 'dashboard:library' %}"{% if section == "all" %} aria-current="page"{% endif %}>All</a>
+  <a href="{% url 'dashboard:brand_library' %}"{% if section == "brand" %} aria-current="page"{% endif %}>Colours, faces and the mark</a>
+  <a href="{% url 'dashboard:materials_library' %}"{% if section == "materials" %} aria-current="page"{% endif %}>Materials</a>
+  <a href="{% url 'dashboard:products_library' %}"{% if section == "products" %} aria-current="page"{% endif %}>Products</a>
+  <a href="{% url 'dashboard:finished_designs' %}"{% if section == "finished" %} aria-current="page"{% endif %}>Finished designs</a>
+  <a href="{% url 'dashboard:house_references' %}"{% if section == "references" %} aria-current="page"{% endif %}>House references</a>
+</nav>
+{% endblock %}

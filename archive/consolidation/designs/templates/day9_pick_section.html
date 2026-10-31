@@ -1,0 +1,64 @@
+{% comment %}Day 9 §6 — palette round 2 on the pick page, above Day 8's section (included by day8_pick.html). Its whole context is
+the one key `day9` (apps/dashboard/day8_views.py::_day9), read from docs/audit/day-9/pick/publication.json with every file
+re-hashed (apps/pipeline/services/day9_pick.py). No inline style: the 1 : 1 crops carry width and height attributes in
+CSS px, which CSS fixes at 96 to the inch.{% endcomment %}
+<section class="d9" id="day9" aria-labelledby="d9-title">
+<header><p class="eyebrow">ENCHANTED ROSE · EYESHADOW PALETTE 124 · DAY 9 · PALETTE ROUND 2</p><h1 id="d9-title">The palette pick · Day 9</h1>
+{% if day9.state == 'being built' %}<p class="d9-state">Day 9's round is being built. Day 8's pick is below, as it was.</p>
+{% elif day9.state == 'changed' %}<p class="d9-state">Day 9's publication no longer matches its files: {{ day9.why }}. Nothing of Day 9 is shown until it is published again. Day 8's pick is below, as it was.</p>
+{% elif day9.state == 'unreadable' %}<p class="d9-state">Day 9's publication could not be read ({{ day9.why }}). Nothing of Day 9 is shown until it is published again. Day 8's pick is below, as it was.</p>
+{% else %}{% with p=day9.proof %}{% if p %}<p class="d9-proof"><strong>The finish proof moved Day 8's {{ p.build }} from {{ p.before_stricter_mean|floatformat:2 }} to {{ p.after_stricter_mean|floatformat:2 }}</strong> on the stricter juror's mean ({% if p.delta > 0 %}+{% endif %}{{ p.delta|floatformat:2 }}, rubric {{ p.rubric }}). {{ p.jury_spread_note }} <a href="{{ day9.proof_url }}">The measurement</a>.</p>{% else %}<p class="d9-proof">The finish proof's measured effect on Day 8's build is not in this publication yet.</p>{% endif %}{% endwith %}
+<p>Each lid below is the truthful build beside its finish proof: the flat lid as it prints, and the same lid front-on with its finishes rendered as materials from the finish plates (foil as polished metal, emboss and deboss as relief, metallic ink as a soft sheen) — computed, not a mockup. Gate: {{ day9.record.gate }}.</p>
+{% if not day9.shown %}<p class="below"><strong>No Day 9 build has a complete verdict yet.</strong> Every build is in the history below.</p>
+{% elif day9.none_pass %}<p class="below"><strong>Below the bar.</strong> No Day 9 build passed the jury, so this is the below-the-bar sheet, with the jury's findings — {{ day9.record.below_the_bar_rule }}. If nothing passes today, you pick from this sheet and Day 10 builds the master of the pick (D-D9-8).</p>{% endif %}
+{% endif %}</header>
+{% if day9.state == 'published' %}{% for b in day9.shown %}
+<article class="d9-build" id="d9-{{ b.id }}">
+<h2>{{ b.id }} · {{ b.idea_name }} <span class="pick-small">(idea {{ b.idea }} · direction {{ b.direction }}{% if b.repair_of %} · a repair of {{ b.repair_of }}{% endif %}){% if b.passes %} · passes the jury{% else %} · below the bar{% endif %}</span></h2>
+<p><strong>{{ b.idea_line }}</strong></p>
+<div class="d9-pair">
+<figure><a href="{{ b.urls.truthful }}" target="_blank" rel="noopener"><img src="{{ b.urls.truthful }}" width="{{ b.pictures.truthful.size_px.0 }}" height="{{ b.pictures.truthful.size_px.1 }}" alt="{{ b.id }}: the flat lid, 190 by 120 millimetres"></a><figcaption class="pick-small">The flat build — what prints · {{ b.pictures.truthful.size_px.0 }} × {{ b.pictures.truthful.size_px.1 }} px, {{ b.pictures.truthful.off_lid_proportion_pct }} % from 190 : 120</figcaption></figure>
+<figure><a href="{{ b.urls.proof }}" target="_blank" rel="noopener"><img src="{{ b.urls.proof }}" width="{{ b.pictures.proof.size_px.0 }}" height="{{ b.pictures.proof.size_px.1 }}" alt="{{ b.id }}: the finish proof, the same lid front-on with its finishes rendered"></a><figcaption class="pick-small">The finish proof — the same lid, its finishes seen · {{ b.pictures.proof.size_px.0 }} × {{ b.pictures.proof.size_px.1 }} px, {{ b.pictures.proof.off_lid_proportion_pct }} % from 190 : 120</figcaption></figure>
+</div>
+<div class="d9-grid"><div>
+<h3>The jury · both jurors per dimension</h3>
+{% if b.judged %}<p>Raw means J1 {{ b.raw_means.J1 }} · J2 {{ b.raw_means.J2 }} · stricter {{ b.stricter_mean }} · both {{ b.both_mean }} · after the caps {{ b.capped_mean }} · {{ b.status_said }} · rubric {{ b.rubric }}</p>
+<table class="pick-scores"><thead><tr><th>Dimension</th><th>J1</th><th>J2</th><th>Stands</th></tr></thead><tbody>{% for n, s in b.score_rows %}<tr><td>{{ n }}</td><td>{{ s.J1 }}</td><td>{{ s.J2 }}</td><td>{{ s.stands }}</td></tr>{% endfor %}</tbody></table>
+{% if b.caps %}<p class="pick-small">Caps: {{ b.caps|join:"; " }}</p>{% endif %}{% if b.hard_failures %}<p class="pick-small">Hard failures: {{ b.hard_failures|join:"; " }}</p>{% endif %}
+<h3>J1's desirability answer</h3>
+<p class="d9-desire">Would she buy it partly for the lid? <strong>{{ b.desirability.would_buy_partly_for_the_lid|yesno:"yes,no,not answered" }}</strong> · Would she photograph it? <strong>{{ b.desirability.would_photograph_it|yesno:"yes,no,not answered" }}</strong> — {{ b.desirability.why }}</p>
+<h3>Top findings</h3>
+<h4>J1 · the creative director</h4><ol>{% for i in b.juror_issues.J1 %}<li>{{ i.observation }} <span class="pick-small">({{ i.location }})</span> — {{ i.repair }}</li>{% endfor %}</ol>
+<h4>J2 · the packaging and production lead</h4><ol>{% for i in b.juror_issues.J2 %}<li>{{ i.observation }} <span class="pick-small">({{ i.location }})</span> — {{ i.repair }}</li>{% endfor %}</ol>
+{% if b.rule_issues %}<h4>Set by the verdict's rules (a "no" from J1 is a top issue, D-D9-7)</h4><ol>{% for i in b.rule_issues %}<li>{{ i.observation }} <span class="pick-small">({{ i.location }})</span> — {{ i.repair }}</li>{% endfor %}</ol>{% endif %}
+{% else %}<p>Review pending — no score stands: {{ b.pending_why|join:"; " }}</p>{% endif %}
+</div><div>
+<h3>Finish numbers</h3>
+<ul class="pick-small">
+<li>Foil or metallic ink: {% if b.finish.foil_metallic_pct is None %}not measured{% else %}{{ b.finish.foil_metallic_pct }} % of the lid{% endif %} · relief: {% if b.finish.relief_pct is None %}not measured{% else %}{{ b.finish.relief_pct }} %{% endif %} — the area floor (foil or metallic ink ≥ {{ day9.record.floors.foil_metallic_pct|floatformat }} %, or relief ≥ {{ day9.record.floors.relief_pct|floatformat }} %): {% if b.finish.area_floor_holds is None %}not measured{% elif b.finish.area_floor_holds %}holds{% else %}<strong>not met</strong>{% endif %}</li>
+<li>The ornament at its densest: {% if b.finish.lines_per_cm_densest is None %}not measured{% else %}{{ b.finish.lines_per_cm_densest }} lines per cm{% endif %} — the floor (≥ {{ day9.record.floors.lines_per_cm|floatformat }}): {% if b.finish.lines_floor_holds is None %}not measured{% elif b.finish.lines_floor_holds %}holds{% else %}<strong>not met</strong>{% endif %}</li>
+<li>Foil lines ≥ 0.1 mm and gaps ≥ 0.2 mm (no metallic ink: PANTONE 9244 C is a pastel in the house files): {% if b.finish.foil_limits_hold is None %}not measured{% elif b.finish.foil_limits_hold %}hold{% else %}<strong>not met</strong>{% endif %}</li>
+</ul>
+<h3>The sketch it came from</h3>{% if b.sketch_row %}<img class="d9-sketch" src="{{ b.sketch_row.url }}" alt="sketch {{ b.sketch }}"><p class="pick-small">Sketch {{ b.sketch }}{% if b.sketch_row.ranked %} · direction {{ b.sketch_row.direction }} · J1 rank {{ b.sketch_row.rank }} · {{ b.sketch_row.score }} — {{ b.sketch_row.why }}{% else %} · not ranked{% endif %}</p>{% else %}<p class="pick-small">Sketch {{ b.sketch }}: its picture is not in this publication.</p>{% endif %}
+<h3>The lettering and the Arabic</h3>
+<ul class="pick-small"><li>The name: a logotype from {{ b.lettering.face }} ({{ b.lettering.stem }}) — {{ b.lettering.licence }}; {{ b.ops_said }}; capitals {{ b.lettering.cap_mm }} mm</li>
+<li>The Arabic: {{ b.arabic.face }} ({{ b.arabic.stem }}) — {{ b.arabic.licence }}</li></ul>
+<p class="pick-small">{% if b.checks_hold %}Every measured check holds{% else %}<strong>Not every measured check holds:</strong> {{ b.issues_said }}{% endif %}{% if b.cannot_meet %} · cannot meet: {{ b.cannot_meet_said }}{% endif %} · plate path {{ b.plate_path }}</p>
+</div></div>
+<h3>The name and the Arabic at 1 : 1</h3>
+<div class="d9-true">
+<img src="{{ b.urls.name }}" width="{{ b.name_css.width_px }}" height="{{ b.name_css.height_px }}" alt="{{ b.id }}: the name at actual size"><p class="pick-small">The name, {{ b.name_crop.width_mm }} × {{ b.name_crop.height_mm }} mm at 1 : 1</p>
+<img src="{{ b.urls.arabic }}" width="{{ b.arabic_css.width_px }}" height="{{ b.arabic_css.height_px }}" alt="{{ b.id }}: the Arabic line at actual size"><p class="pick-small">The Arabic line, {{ b.arabic_crop.width_mm }} × {{ b.arabic_crop.height_mm }} mm at 1 : 1</p>
+</div>
+<p class="pick-small">Files: <a href="{{ b.urls.ai }}">layered .ai</a> · <a href="{{ b.urls.pdf }}">PDF</a> · <a href="{{ b.urls.svg }}">SVG</a> · <a href="{{ b.urls.finishes }}">finish sheet</a> · <a href="{{ b.urls.media }}">media map</a> · <a href="{{ b.urls.checks }}">checks</a> · <a href="{{ b.urls.eye }}">designer's eye</a> · <a href="{{ b.urls.build }}">build record</a> · <a href="{{ b.urls.verdict }}">verdict</a></p>
+</article>{% endfor %}
+<details class="d9-history"><summary>Day 9's history — every sketch and every build</summary>
+<h2>Every sketch · J1's ranking (green: went on to a build)</h2>
+{% for d in day9.unranked_directions %}<p class="pick-small">Direction {{ d }}: not ranked yet.</p>{% endfor %}
+{% for d, why, link, unranked in day9.ranking_notes %}<p class="pick-small">Direction {{ d }}: {{ why }}{% if unranked %} — its sketches are shown unranked{% endif %} (<a href="{{ link }}">the record</a>).</p>{% endfor %}
+<div class="d9-sketches">{% for s in day9.sketches %}<figure><img class="{% if s.went_on %}went-on{% endif %}" src="{{ s.url }}" loading="lazy" alt="sketch {{ s.id }}"><figcaption class="pick-small">{{ s.id }}{% if s.ranked %} · direction {{ s.direction }} · rank {{ s.rank }} · {{ s.score }} · {{ s.why }}{% for k, v in s.desirability_said %} · {{ k }}: {{ v }}{% endfor %}{% for k, v in s.buildability_said %} · {{ k }}: {{ v }}{% endfor %}{% if s.ranked_bytes_hold is False %} · <strong>these bytes are not the ones J1 ranked</strong>{% endif %}{% else %} · not ranked{% endif %}{% if s.built_as %} · built as {{ s.built_as|join:", " }}{% endif %}</figcaption></figure>{% endfor %}</div>
+<h2>Every build · its verdict</h2>
+<div class="d9-scroll"><table class="pick-scores"><thead><tr><th>Build</th><th>Idea</th><th>Sketch</th><th>Repair of</th><th>Raw J1</th><th>Raw J2</th><th>Stricter</th><th>Both</th><th>Capped</th><th>Status</th><th>Foil or metallic %</th><th>Relief %</th><th>Lines per cm</th></tr></thead><tbody>{% for b in day9.builds %}<tr><td><a href="{{ b.urls.truthful }}">{{ b.id }}</a></td><td>{{ b.idea }} · {{ b.idea_name }}</td><td>{{ b.sketch }}</td><td>{{ b.repair_of|default_if_none:"—" }}</td>{% if b.judged %}<td>{{ b.raw_means.J1 }}</td><td>{{ b.raw_means.J2 }}</td>{% else %}<td>—</td><td>—</td>{% endif %}<td>{{ b.stricter_mean|default_if_none:"—" }}</td><td>{{ b.both_mean|default_if_none:"—" }}</td><td>{{ b.capped_mean|default_if_none:"—" }}</td><td>{{ b.status_said }}{% if b.passes %} · passes{% endif %}</td><td>{{ b.finish.foil_metallic_pct|default_if_none:"—" }}</td><td>{{ b.finish.relief_pct|default_if_none:"—" }}</td><td>{{ b.finish.lines_per_cm_densest|default_if_none:"—" }}</td></tr>{% endfor %}</tbody></table></div>
+{% if day9.record.left_out %}<h3>Not on the page — a file missing from the build's folder</h3><ul class="pick-small">{% for x in day9.record.left_out %}<li>{{ x.id }}: {{ x.missing|join:", " }}</li>{% endfor %}</ul>{% endif %}
+</details>{% endif %}
+</section>

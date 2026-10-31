@@ -1,0 +1,132 @@
+{
+ "id": "tester_unit",
+ "version": "1.0",
+ "label": "Tester unit",
+ "status": "working",
+ "build_order": 5,
+ "one_line": "An open deck for testers, each with room to go back, and a row for their caps.",
+ "for": "One tester per shade on the counter, taken out and put back all day.",
+ "suits": {
+  "products": [
+   "bottle",
+   "stick",
+   "tube"
+  ],
+  "counts": [
+   1,
+   12
+  ],
+  "rows": [
+   1,
+   1
+  ]
+ },
+ "testers": true,
+ "panels": [
+  "floor",
+  "front panel",
+  "front cap",
+  "front inner",
+  "back panel",
+  "back cap",
+  "back inner",
+  "left side",
+  "right side",
+  "front left flap",
+  "front right flap",
+  "back left flap",
+  "back right flap",
+  "header front",
+  "header back",
+  "collar leg",
+  "collar tread 1",
+  "seat leg",
+  "seat tread 1"
+ ],
+ "folds": [
+  {
+   "fold": "floor / front",
+   "angle": 90,
+   "kind": "crease"
+  },
+  {
+   "fold": "floor / back",
+   "angle": 90,
+   "kind": "crease"
+  },
+  {
+   "fold": "floor / left",
+   "angle": 90,
+   "kind": "crease"
+  },
+  {
+   "fold": "floor / right",
+   "angle": 90,
+   "kind": "crease"
+  },
+  {
+   "fold": "front / cap",
+   "angle": 90,
+   "kind": "crease"
+  },
+  {
+   "fold": "back / cap",
+   "angle": 90,
+   "kind": "crease"
+  },
+  {
+   "fold": "header fold",
+   "angle": 180,
+   "kind": "half-cut"
+  }
+ ],
+ "locks": [
+  {
+   "kind": "barbed",
+   "what": "the header's two leaves, by barbed tongues through the back wall's rim"
+  },
+  {
+   "kind": "flush",
+   "what": "each inner leaf and stair foot through the floor, level with its underside"
+  },
+  {
+   "kind": "through",
+   "what": "each stair's rear tabs through the back wall's inner leaf"
+  }
+ ],
+ "allowances": {
+  "crease_centres": "outside − one caliper (FEFCO Rec. 101, C1)",
+  "panel_ends": "half a caliper + fit gap short of the surface met",
+  "corner_folds": "one caliper + fit gap, so a flap lies on the panel's inner face"
+ },
+ "limits": {
+  "angle_deg": 8,
+  "front_lip_mm": 25,
+  "clearance_total_mm": 2.0,
+  "max_lean_deg": 5.0
+ },
+ "reinforcement": [
+  "as the tray"
+ ],
+ "glue": "none",
+ "faces_to_shopper": [
+  "header front",
+  "front panel",
+  "the deck (ground only)"
+ ],
+ "failures": [
+  "worn opening edges",
+  "caps with nowhere to go"
+ ],
+ "codes": "The tester fixtures found are moulded plastic (US9060625, US10470593); cap-and-tube openings from US4610348. A board tester deck: no source.",
+ "sources": [
+  "A12",
+  "A13",
+  "A14"
+ ],
+ "provisional": [
+  "Clearance 2 mm, our rule.",
+  "Tilt 5–10° from a plastic fixture patent; a board deck wears: a sample decides its coating.",
+  "A tester may lean 5° in its opening (2026-10-31): at a sealed product's 3° its deck stood so high that under half its colour window showed."
+ ]
+}

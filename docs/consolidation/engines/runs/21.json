@@ -1,0 +1,74 @@
+{
+ "row": 21,
+ "ok": true,
+ "result": {
+  "saved_searches": 6,
+  "per_search": [
+   {
+    "file": "1.json",
+    "results": 5,
+    "query": "lip gloss packaging and counter display design"
+   },
+   {
+    "file": "2.json",
+    "results": 5,
+    "query": "new lip gloss launches 2026"
+   },
+   {
+    "file": "3.json",
+    "results": 5,
+    "query": "lip gloss packaging materials"
+   },
+   {
+    "file": "4.json",
+    "results": 5,
+    "query": "lip gloss packaging finishes"
+   },
+   {
+    "file": "5.json",
+    "results": 5,
+    "query": "lip gloss packaging colour trends 2026"
+   },
+   {
+    "file": "6.json",
+    "results": 5,
+    "query": "lip gloss packaging typography trends"
+   }
+  ],
+  "research_sources_kept": 19,
+  "normalize": {
+   "connector": "tavily_connector/1.0",
+   "query": "lip gloss",
+   "results": [
+    {
+     "query": "lip gloss",
+     "rank": 1,
+     "title": "T",
+     "url": "https://a.example/x",
+     "domain": "a.example",
+     "snippet": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+     "relevance_score": 0.5,
+     "published_date": "",
+     "images": []
+    }
+   ],
+   "images": [],
+   "provider_request_id": "",
+   "provider_response_id": "",
+   "latency_ms": 0,
+   "usage": {},
+   "answer_discarded": true
+  },
+  "tests": {
+   "tests": [
+    "apps/pipeline/tests/test_2c2a_tavily.py"
+   ],
+   "k": null,
+   "summary": "50 passed, 8 warnings in 11.33s",
+   "failed": [],
+   "seconds": 12.4
+  }
+ },
+ "seconds": 12.4,
+ "files": []
+}

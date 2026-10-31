@@ -1,0 +1,74 @@
+{
+ "record_type": "vq2_product_name_lettering_validation_spec/1.0",
+ "created_at": "2026-07-29",
+ "classification": "CUSTOM_REFERENCE_DERIVED_WORD_LETTERING",
+ "is_not": [
+  "a complete font",
+  "the original commercial typeface",
+  "a reusable alphabet",
+  "a supplier-confirmed production wordmark"
+ ],
+ "required_words": [
+  "Rose",
+  "Damascena"
+ ],
+ "required_line_order": [
+  "Rose",
+  "Damascena"
+ ],
+ "A_deterministic_composition_gates": {
+  "exact_text": "PASS_REQUIRED",
+  "capitalization": "PASS_REQUIRED",
+  "line_count": 2,
+  "rose_apparent_width_err_max": 0.025,
+  "damascena_apparent_width_err_max": 0.025,
+  "word_centerline_err_max_of_body_width": 0.01,
+  "cap_height_err_max": 0.02,
+  "baseline_angle_err_max_deg": 0.5,
+  "line_spacing_err_max": 0.02,
+  "glyph_collisions_max": 0,
+  "self_intersections_max": 0,
+  "open_unintended_paths_max": 0,
+  "raster_objects_max": 0,
+  "live_font_objects_max": 0,
+  "horizontally_scaled_font_outlines_max": 0,
+  "unresolved_visible_glyphs_max": 0
+ },
+ "B_human_form_review": {
+  "reviewer": "OWNER",
+  "criteria": [
+   "overall Didone character",
+   "serif construction",
+   "stroke contrast",
+   "counter forms",
+   "terminals",
+   "optical spacing",
+   "word rhythm",
+   "fidelity to the visible reference",
+   "compatibility with the approved BBROSE logo"
+  ],
+  "automated_gate": false
+ },
+ "hairline_pixels_used_as_hard_gates": false,
+ "pixel_perfect_identity_required": false,
+ "measurement_space": "APPARENT_PROJECTED_REFERENCE_PIXELS",
+ "targets": {
+  "Rose": {
+   "word": "Rose",
+   "reference_left_px": 527,
+   "apparent_width_px": 134,
+   "baseline_px": 1021.0,
+   "cap_height_px": 73.0
+  },
+  "Damascena": {
+   "word": "Damascena",
+   "reference_left_px": 527,
+   "apparent_width_px": 281,
+   "baseline_px": 1091.0,
+   "cap_height_px": 61.0
+  }
+ },
+ "canonical_baseline": "STRAIGHT",
+ "projection_baked_into_source_paths": false,
+ "is_production_flat_specification": false
+}

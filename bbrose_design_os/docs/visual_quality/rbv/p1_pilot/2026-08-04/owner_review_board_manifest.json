@@ -1,0 +1,70 @@
+{
+ "record_type": "p1_owner_review_board_manifest/1.0",
+ "created_at": "2026-08-04",
+ "board": {
+  "png": "owner_review_board.png",
+  "pdf": "owner_review_board.pdf",
+  "pixel_dimensions": [
+   4400,
+   5110
+  ]
+ },
+ "evidence_classes": [
+  "OWNER PHOTOGRAPH",
+  "NEUTRAL GEOMETRY VALIDATION",
+  "MATERIAL PREVIEW",
+  "COMPARISON",
+  "INFERRED GEOMETRY (legend)",
+  "OMITTED DETAILS (legend)"
+ ],
+ "photo_treatment": "whole-region crops + uniform LANCZOS scaling; IMG_3120 crop rotated 90 degrees clockwise (lossless) for upright display - never stretched, never distorted; originals untouched",
+ "calibration_statement": "photographs are perspective and uncalibrated - the board claims NO calibrated overlay accuracy",
+ "materials": {
+  "bottle": {
+   "material": "GLASS",
+   "finish": "MATTE",
+   "colour": "TRANSLUCENT_ORANGE"
+  },
+  "collar": {
+   "material": "PLASTIC",
+   "finish": "GLOSSY",
+   "colour": "ORANGE"
+  },
+  "bulb": {
+   "material": "PLASTIC",
+   "finish": "GLOSSY",
+   "colour": "ORANGE",
+   "transparency": "OPAQUE"
+  },
+  "pipette": {
+   "material": "CLEAR_GLASS",
+   "finish": null,
+   "colour": null
+  },
+  "authority": "OWNER_CONFIRMED_MATERIAL_EVIDENCE",
+  "correction_2026_08_04": "bulb corrected CLEAR/TRANSPARENT -> GLOSSY/ORANGE/OPAQUE by owner review of the photographs (deviation D1 resolved)"
+ },
+ "accuracy_status": {
+  "P1_GEOMETRY_AUTHORITY": "PROVISIONAL_OWNER_MEASURED_PLUS_INFERRED",
+  "P1_MANUFACTURING_AUTHORITY": "NOT_ESTABLISHED",
+  "P1_VISUAL_COMPARISON_CONFIDENCE": "LIMITED_BY_NON_CALIBRATED_PHOTOGRAPHY",
+  "P1_OWNER_APPROVAL": "PENDING_VISUAL_REVIEW",
+  "GATE_2": "BLOCKED",
+  "PACKAGING_PRODUCTION": "NOT_STARTED"
+ },
+ "sources": {
+  "owner_photographs": [
+   "IMG_3120.jpg (crop 450,950-2400,3024)",
+   "IMG_3123.jpg (crop 500,1000-3950,2200)"
+  ],
+  "renders": [
+   "front.png",
+   "side.png",
+   "top.png",
+   "three_quarter_diagnostic.png",
+   "closure_detail.png",
+   "neck_detail.png",
+   "material_reference_preview.png"
+  ]
+ }
+}

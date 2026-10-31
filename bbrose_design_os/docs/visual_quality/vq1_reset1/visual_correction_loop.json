@@ -1,0 +1,17 @@
+{
+  "schema_version": "visual_correction_loop/1.0",
+  "calibration_inspections": [
+    "vq1-reset1-corr-2",
+    "vq1-reset1-corr-3",
+    "vq1-reset1-corr-4",
+    "vq1-reset1-corr-5"
+  ],
+  "calibration_note": "retrospective inspections of the already-rejected fixtures \u2014 the inspector's acceptance test against recorded human ground truth, NOT correction passes",
+  "correction_passes_run": 0,
+  "max_correction_passes": 3,
+  "stop": true,
+  "reason": "RESULT_BECAME_WORSE",
+  "passes_used": 1,
+  "synthetic_iterations_produced": 0,
+  "reason_no_iteration_produced": "\u00a77 forbids generating a backbone from an uncertain component model and \u00a715 forbids generating the new fixture before the web packet is human-reviewed. Component semantics resolved UNCERTAIN (confidence 0.25); every packet approval is PENDING."
+}

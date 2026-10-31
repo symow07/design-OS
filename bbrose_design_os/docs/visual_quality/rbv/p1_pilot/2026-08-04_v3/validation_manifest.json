@@ -1,0 +1,66 @@
+{
+ "record_type": "p1_v3_validation_manifest/1.0",
+ "mask_authority": "unlit emission alpha pass (blender_scripts/silhouette_mask.py) \u2014 lighting-independent by construction (the mask scene contains NO lights)",
+ "front": {
+  "bounds_px": {
+   "x0": 239,
+   "x1": 560,
+   "y0": 59,
+   "y1": 1040
+  },
+  "width_mm": 37.47,
+  "height_mm": 114.28,
+  "cx_offset_fraction": 0.0006,
+  "internal_hole_pixels": 0,
+  "hash": "37a08386881557f1"
+ },
+ "side": {
+  "bounds_px": {
+   "x0": 239,
+   "x1": 560,
+   "y0": 59,
+   "y1": 1040
+  },
+  "width_mm": 37.47,
+  "height_mm": 114.28,
+  "cx_offset_fraction": 0.0006,
+  "internal_hole_pixels": 0,
+  "hash": "37a08386881557f1"
+ },
+ "closure_detail": {
+  "bounds_px": {
+   "x0": 46,
+   "x1": 753,
+   "y0": 206,
+   "y1": 1099
+  },
+  "width_mm": 36.76,
+  "height_mm": 46.42,
+  "cx_offset_fraction": 0.0006,
+  "internal_hole_pixels": 0,
+  "hash": "04c056ceb2b1d6b8"
+ },
+ "deterministic": true,
+ "expected": {
+  "width_mm": 37.4,
+  "height_mm": 114.3
+ },
+ "checks": {
+  "front_width": true,
+  "front_height": true,
+  "front_centred": true,
+  "closure_centred": true,
+  "no_internal_holes": true
+ },
+ "v2_warning_resolution": {
+  "warning": "RENDER_OFF_CENTER:closure_detail (V2 manifest)",
+  "mask_authority_cx_offset_fraction": 0.0006,
+  "classification": "RGB_SEGMENTATION_ARTIFACT",
+  "evidence": "the unlit alpha mask of the same closure-detail camera is centred within tolerance while the V2 shaded-RGB segmentation drifted (smooth-shading highlight blended into the background) \u2014 the warning was a segmentation artifact, not a camera/geometry offset"
+ },
+ "mask_hashes": {
+  "V1_front": "f795f0bf49c9aa44",
+  "V2_front": "6d2a962554c15654",
+  "V3_front": "37a08386881557f1"
+ }
+}

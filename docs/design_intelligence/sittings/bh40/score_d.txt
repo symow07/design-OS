@@ -1,0 +1,38 @@
+§AD0(a) SCORE — (d) THE FRESHNESS GATE (§BH40(d)), against pred_d.txt (sealed
+6caa9e063305879f before git add). Gate GREEN, GEXIT=0. LANDED 9f75253
+(launched 2026-09-08T09:33:51Z, finished 09:48:13Z). 8/8. Launched once;
+services checked up; nothing beside it. THIS gate was the first to run the
+rebuild step: "BRAIN_REBUILD_OK seconds=2.64 sources=414 docs=43757
+sections=834+556 materials=12473 index_bytes=76935168" is line 2 of the gate
+log, before the suite line, and .brain_rebuild_output carries the same line.
+
+L1 HELD: exactly 3 modified paths — bbrose_design_os/tools/guarded_commit.sh
+   (+27), bbrose_design_os/.gitignore (+1), bbrose_design_os/apps/pipeline/
+   tests/test_two_roots_collision_guard.py (+98) — + the gate-staged ledger;
+   the freshness record untracked (porcelain clean after the landing).
+L2 HELD: 3 modified at +126 −0.
+L3 HELD: manifest/records/identity in commit NONE; the ledger APPEND_ONLY;
+   WIT 864; corpus constants, dip1b, the exclusion list, the materials record
+   untouched; the two-roots guard's three names unchanged (the file's diff is
+   pure addition, +98 −0); claim_scan exit 0 on the modified instrument;
+   GuardedCommitTests inside the green apps leg.
+L4 HELD: 3 rows "M" (proved before launch).
+L5 HELD: 4 files, 127 insertions, 0 deletions.
+L6 HELD: "TIER_2=GREEN collected=8598 failures=0 apps=7786 dip0c=671
+   dip0=141" — exact; the rebuild step ran first and the freshness test
+   passed against the record it wrote.
+L7 HELD: ledger 490 → 491 (utc 2026-09-08T09:34:29Z, verdict OK,
+   refusal_count 0).
+L8 HELD: apps diff = the test file only (+98); GATE 7fbeb8f1fe10b0fb [514:541]
+   / TEST b32030dc827263e4; tree seals dip0c c22592930c75001c / dip0a
+   d72072760ab20a6a unchanged; M7 artefacts == baseline (8 rows, sha256 +
+   size); the register 20,213 lines db241ccf0b258e35; the DIP-0A inventory
+   3b3cfdc2bf4fc6c0; under Django at 9f75253 the Noto trio
+   VERIFIED_FOR_PRODUCTION (3), the 35 at their PROVENANCE hashes, Warm Gold
+   #CBA87D in both seeded systems (2: seed_bbrose.py:124, :187); no register
+   hash in any tracked file (git grep at HEAD: 0). THE NEGATIVE CONTROL as
+   sealed: measured before the seal (a stale record refused by name,
+   BRAIN_STALE with the changed sources listed; a fresh record passes), and
+   this gate is the positive control — its own step rebuilt first and the
+   test passed against that record.
+Next, in the ruled order: (e) CLAUDE.md.

@@ -1,0 +1,30 @@
+{
+ "record_type": "blender_runtime/1.0",
+ "installed_at": "2026-08-04",
+ "version": "Blender 4.5.12 LTS",
+ "installer": "blender-4.5.12-macos-arm64.dmg (download.blender.org official release)",
+ "installer_sha256": "f4afdca92c56a9e231e45226445e6750879a70a0d2322cee80d82ce021a99fb0",
+ "checksum_verification": "matched the official combined manifest blender-4.5.12.sha256",
+ "executable_path": "~/Applications/Blender-4.5.12-LTS.app/Contents/MacOS/Blender",
+ "license": "GPL-2.0-or-later (Blender Foundation)",
+ "installation_method": "pinned dmg copy to a version-named app bundle \u2014 NO auto-upgrade path; brew cask deliberately not used (it tracks latest stable 5.2.0 and auto-bumps)",
+ "headless_invocation": "Blender -b --factory-startup -noaudio -P <script> -- <args> (scene built 100% from code; user preferences never read)",
+ "python_api": "BPY 4.5.12 LTS PY 3.11.11",
+ "render_engines": [
+  "CYCLES (CPU verified)",
+  "BLENDER_EEVEE_NEXT (GPU-dependent, unverified headless)",
+  "BLENDER_WORKBENCH"
+ ],
+ "deterministic_configuration": {
+  "engine": "CYCLES",
+  "device": "CPU",
+  "samples": "fixed (16 in smoke)",
+  "seed": 0,
+  "denoising": false,
+  "verified": "two runs pixel-identical (max channel delta 0 over 140,800 px); file hashes differ from PNG metadata only",
+  "determinism_policy": "compare decoded pixel arrays (or pixel-bytes hash), never raw file bytes"
+ },
+ "worker_runtime_access": "subprocess invocation from web/worker; no Python-package coupling (no bpy in venv)",
+ "ci_limitations": "render smoke excluded from the shared-DB pytest suite by default (subprocess + ~seconds cost); invoked explicitly like the screenshot harnesses",
+ "smoke_render_evidence": "docs/visual_quality/rbv/blender_smoke_render.png"
+}

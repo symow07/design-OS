@@ -1,0 +1,454 @@
+{
+  "schema_version": "brand_colour_roles/1.0",
+  "ruling": "§BH39(a)(b) — the roles derived from the owner's 254 design PDFs are the brand's colour roles; brand_gov FIRST",
+  "measured_at": "2026-09-07",
+  "measured_by": "~/bh38_work/design_pdf_colours38.py + design_roles38.py (PyMuPDF get_drawings, page 0, artboard backdrops excluded, clusters at ΔE76 ≤ 8)",
+  "ruled_at": "2026-09-08",
+  "register": "OWNER_BLOCKER_CLEARANCE.md — the §BH39 block (T39)",
+  "authority": "brand_gov FIRST: a role with a brand colour resolves to it and takes no library candidate; a role without one may take a PRODUCTION-palette candidate; REFERENCE palettes are inspiration only, never written into an output",
+  "roles": [
+    {
+      "role": "ground_cream",
+      "brand_swatch": {
+        "system_id": "CS-001",
+        "name": "Warm Cream",
+        "hex": "#FAF3EC"
+      },
+      "measured_hex": "#F2E8E2",
+      "files": 61,
+      "delta_e": 3.8,
+      "kind": "ground"
+    },
+    {
+      "role": "ground_gold",
+      "brand_swatch": {
+        "system_id": "CS-001",
+        "name": "Warm Gold",
+        "hex": "#CBA87D"
+      },
+      "measured_hex": "#CBA87D",
+      "files": 24,
+      "delta_e": 0.0,
+      "kind": "ground",
+      "named_by": "§BH39(a)"
+    },
+    {
+      "role": "ground_blush",
+      "brand_swatch": {
+        "system_id": "CS-001",
+        "name": "Blush",
+        "hex": "#F2C4CE"
+      },
+      "measured_hex": "#EEC7CE",
+      "files": 12,
+      "delta_e": 3.1,
+      "kind": "ground"
+    },
+    {
+      "role": "accent_light",
+      "brand_swatch": {
+        "system_id": "CS-001",
+        "name": "Warm Cream",
+        "hex": "#FAF3EC"
+      },
+      "measured_hex": "#FFFFFF",
+      "files": 105,
+      "delta_e": 5.8,
+      "kind": "accent",
+      "note": "white / cream accents; white itself is process white"
+    },
+    {
+      "role": "accent_blush",
+      "brand_swatch": {
+        "system_id": "CS-001",
+        "name": "Pale Petal",
+        "hex": "#F7DDE3"
+      },
+      "measured_hex": "#F7DBE0",
+      "files": 11,
+      "delta_e": 1.1,
+      "kind": "accent",
+      "also": {
+        "measured_hex": "#FAC9D1",
+        "brand_swatch": "Blush #F2C4CE",
+        "delta_e": 2.5,
+        "files": 12
+      }
+    },
+    {
+      "role": "accent_nude",
+      "brand_swatch": {
+        "system_id": "CS-002",
+        "name": "Warm Nude",
+        "hex": "#E8C9B3"
+      },
+      "measured_hex": "#DDC8B7",
+      "files": 13,
+      "delta_e": 5.0,
+      "kind": "accent",
+      "also": {
+        "measured_hex": "#F9EBD5",
+        "brand_swatch": "Soft Sand #F0DECB",
+        "delta_e": 4.7,
+        "files": 9
+      }
+    },
+    {
+      "role": "accent_dark",
+      "brand_swatch": null,
+      "measured_hex": "#231916",
+      "files": 53,
+      "delta_e": null,
+      "kind": "accent",
+      "note": "no brand colour (nearest Cocoa Rose at ΔE 32.2); by §BH39(b) the one role that may take a PRODUCTION-palette candidate; not named by the ruling"
+    },
+    {
+      "role": "ink",
+      "brand_swatch": null,
+      "measured_hex": "#000000",
+      "files": 12,
+      "delta_e": null,
+      "kind": "ink",
+      "note": "black ink; the warm greys #676767 / #9A8E83 sit near WARM_GREY_SUPPORTING_TEXT (design language), no brand swatch — process black is the ink"
+    }
+  ],
+  "no_role": [
+    {
+      "system_id": "CS-001",
+      "name": "Deep Rose",
+      "hex": "#8B3A52"
+    },
+    {
+      "system_id": "CS-002",
+      "name": "Cocoa Rose",
+      "hex": "#7A4A42"
+    }
+  ],
+  "warm_gold": {
+    "name": "Warm Gold",
+    "hex": "#CBA87D",
+    "provenance": "§BH39(a) · measured 2026-09-07 by structure from the 24 historical design files below (~/bh38_work/design_roles.json)",
+    "files": [
+      "materials/historical AI production designs/FL-3098 - STAND.ai",
+      "materials/historical AI production designs/FL5518.ai",
+      "materials/historical AI production designs/HL5503高光液.ai",
+      "materials/historical AI production designs/LG-2008.ai",
+      "materials/historical AI production designs/LG5505唇彩.ai",
+      "materials/historical AI production designs/LG5511唇彩.ai",
+      "materials/historical AI production designs/LH5529唇蜜.ai",
+      "materials/historical AI production designs/LP-2007.ai",
+      "materials/historical AI production designs/LP-2018.ai",
+      "materials/historical AI production designs/LP-2019.ai",
+      "materials/historical AI production designs/LP5526-E.ai",
+      "materials/historical AI production designs/PM5520妆前乳.ai",
+      "materials/historical AI production designs/YB-1025(LP5870)...ai",
+      "materials/historical AI production designs/YB-1028(LP5871)..ai",
+      "materials/historical AI production designs/YB-1030(LG5862)..ai",
+      "materials/historical AI production designs/YB-1031(LG5861)..ai",
+      "materials/historical AI production designs/YB-1032(LG5859)..ai",
+      "materials/historical AI production designs/YB-1033(LG5863)..ai",
+      "materials/historical AI production designs/YB-1034(LG5860)..ai",
+      "materials/historical AI production designs/YB-1059(ES6009).END.ai",
+      "materials/historical AI production designs/ZYG2043.ai",
+      "materials/historical AI production designs/ZYG5506.ai",
+      "materials/historical AI production designs/ZYG5507遮瑕.ai",
+      "materials/historical AI production designs/ZYG5508.ai"
+    ]
+  },
+  "measured_clusters": {
+    "dominant": [
+      [
+        "#F2E8E2",
+        61,
+        [
+          "CS-001 Blush Core / Ground Warm Cream",
+          3.8
+        ],
+        [
+          "DEFAULT/LINE_LIGHT",
+          3.4
+        ]
+      ],
+      [
+        "#CBA87D",
+        24,
+        [
+          "CS-002 Nude Warm / Primary Warm Nude",
+          17.0
+        ],
+        [
+          "DEFAULT/LINE_DEEP",
+          10.4
+        ]
+      ],
+      [
+        "#FFFFFF",
+        22,
+        [
+          "CS-001 Blush Core / Ground Warm Cream",
+          5.8
+        ],
+        [
+          "WHITE_TYPE_HIGHLIGHT",
+          2.5
+        ]
+      ],
+      [
+        "#000000",
+        17,
+        [
+          "CS-002 Nude Warm / Accent Cocoa Rose",
+          43.7
+        ],
+        [
+          "DEFAULT/INK",
+          34.2
+        ]
+      ],
+      [
+        "#EEC7CE",
+        12,
+        [
+          "CS-001 Blush Core / Primary Blush",
+          3.1
+        ],
+        [
+          "POWDER/BLUSH_PINK",
+          3.1
+        ]
+      ],
+      [
+        "#1D1D1B",
+        11,
+        [
+          "CS-002 Nude Warm / Accent Cocoa Rose",
+          35.0
+        ],
+        [
+          "DEFAULT/INK",
+          28.4
+        ]
+      ],
+      [
+        "#DDC8B7",
+        6,
+        [
+          "CS-002 Nude Warm / Primary Warm Nude",
+          5.0
+        ],
+        [
+          "DEFAULT/GROUND_TOP",
+          5.0
+        ]
+      ],
+      [
+        "#0A1640",
+        5,
+        [
+          "CS-001 Blush Core / Accent Deep Rose",
+          47.9
+        ],
+        [
+          "DEFAULT/INK",
+          33.3
+        ]
+      ]
+    ],
+    "accent": [
+      [
+        "#FFFFFF",
+        105,
+        [
+          "CS-001 Blush Core / Ground Warm Cream",
+          5.8
+        ],
+        [
+          "WHITE_TYPE_HIGHLIGHT",
+          2.5
+        ]
+      ],
+      [
+        "#F2E8E2",
+        70,
+        [
+          "CS-001 Blush Core / Ground Warm Cream",
+          3.8
+        ],
+        [
+          "DEFAULT/LINE_LIGHT",
+          3.4
+        ]
+      ],
+      [
+        "#231916",
+        53,
+        [
+          "CS-002 Nude Warm / Accent Cocoa Rose",
+          32.2
+        ],
+        [
+          "DEFAULT/INK",
+          25.0
+        ]
+      ],
+      [
+        "#BCB3AB",
+        13,
+        [
+          "CS-002 Nude Warm / Primary Warm Nude",
+          14.9
+        ],
+        [
+          "DEFAULT/GROUND_TOP",
+          14.9
+        ]
+      ],
+      [
+        "#DDC8B7",
+        13,
+        [
+          "CS-002 Nude Warm / Primary Warm Nude",
+          5.0
+        ],
+        [
+          "DEFAULT/GROUND_TOP",
+          5.0
+        ]
+      ],
+      [
+        "#FAC9D1",
+        12,
+        [
+          "CS-001 Blush Core / Primary Blush",
+          2.5
+        ],
+        [
+          "POWDER/BLUSH_PINK",
+          2.5
+        ]
+      ],
+      [
+        "#A49483",
+        11,
+        [
+          "CS-002 Nude Warm / Primary Warm Nude",
+          21.6
+        ],
+        [
+          "POWDER/WARM_GREY_SUPPORTING_TEXT",
+          10.2
+        ]
+      ],
+      [
+        "#F7AFB8",
+        11,
+        [
+          "CS-001 Blush Core / Primary Blush",
+          11.8
+        ],
+        [
+          "POWDER/BLUSH_PINK",
+          11.8
+        ]
+      ]
+    ],
+    "ink": [
+      [
+        "#000000",
+        12,
+        [
+          "CS-002 Nude Warm / Accent Cocoa Rose",
+          43.7
+        ],
+        [
+          "DEFAULT/INK",
+          34.2
+        ]
+      ],
+      [
+        "#FFFFFF",
+        10,
+        [
+          "CS-001 Blush Core / Ground Warm Cream",
+          5.8
+        ],
+        [
+          "WHITE_TYPE_HIGHLIGHT",
+          2.5
+        ]
+      ],
+      [
+        "#676767",
+        7,
+        [
+          "CS-002 Nude Warm / Accent Cocoa Rose",
+          24.6
+        ],
+        [
+          "POWDER/WARM_GREY_SUPPORTING_TEXT",
+          12.0
+        ]
+      ],
+      [
+        "#231F20",
+        5,
+        [
+          "CS-002 Nude Warm / Accent Cocoa Rose",
+          32.9
+        ],
+        [
+          "DEFAULT/INK",
+          25.3
+        ]
+      ],
+      [
+        "#9A8E83",
+        5,
+        [
+          "CS-002 Nude Warm / Primary Warm Nude",
+          25.0
+        ],
+        [
+          "POWDER/WARM_GREY_SUPPORTING_TEXT",
+          6.2
+        ]
+      ],
+      [
+        "#28275A",
+        3,
+        [
+          "CS-001 Blush Core / Accent Deep Rose",
+          43.0
+        ],
+        [
+          "DEFAULT/INK",
+          31.3
+        ]
+      ],
+      [
+        "#9B999F",
+        2,
+        [
+          "CS-001 Blush Core / Primary Blush",
+          25.8
+        ],
+        [
+          "POWDER/WARM_GREY_SUPPORTING_TEXT",
+          12.7
+        ]
+      ],
+      [
+        "#303C44",
+        2,
+        [
+          "CS-002 Nude Warm / Accent Cocoa Rose",
+          32.2
+        ],
+        [
+          "DEFAULT/INK",
+          28.1
+        ]
+      ]
+    ]
+  }
+}

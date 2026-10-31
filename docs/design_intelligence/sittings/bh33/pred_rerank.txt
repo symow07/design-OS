@@ -1,0 +1,39 @@
+§AD0(a) PREDICTION — §BH33(1) ARABIC RE-RANK, sealed BEFORE git add. Base
+HEAD b12bdcd (T33, scored 8/8).
+
+L1 WRITE SET: exactly THREE tracked paths, all under apps/ —
+   apps/ire/font_roles.py, apps/ire/tests/test_pdf_ai_emitter.py,
+   apps/pipeline/tests/test_container_font_authority.py. Plus the
+   gate-staged ledger line. NO other path; the exemption list, the legacy
+   branch, the Latin chains untouched.
+L2 DIFF SHAPE (insertions/deletions):
+   apps/ire/font_roles.py 12/8 — CHAINS arabic-display / arabic-heading /
+   arabic-body = ("NotoNaskhArabic-Regular",); the module docstring and the
+   CHAINS comment state §BH33(1) (Cairo-Bold out of every Arabic chain,
+   its Latin display role kept).
+   apps/ire/tests/test_pdf_ai_emitter.py 10/9 — every ruled default first
+   try with nothing tried before it; the three Arabic chains == (Naskh,);
+   Cairo-Bold in no chain; its Latin capability True; one comment.
+   apps/pipeline/tests/test_container_font_authority.py 4/5 — the themed
+   Arabic record's skipped list == [] (the (h)(3) contract stays proved on
+   the void-grant test, untouched).
+   No test added or removed.
+L3 MANIFEST / A391: suite manifest untouched; records untouched; ledger at
+   460 passes the APPEND_ONLY prefix rule. Census-first: records none;
+   identity none; WIT denominator 863 and its REGISTER keys hold (the
+   analyser's own test green on the patched tree: 201 passed in the
+   targeted set); corpus constants none.
+L4 STAGED == DECLARED: exactly the THREE numstat rows of L2.
+L5 COMMIT CONTENTS: 4 files (3 + ledger), insertions 27, deletions 22.
+L6 SUITE LINE + REFUSAL TREE: GREEN — TIER_2=GREEN collected=8542
+   failures=0 apps=7730 dip0c=671 dip0=141. No refusal expected; §BH24 0/3.
+L7 LEDGER FOLD: 460 → 461, the +1 in THIS commit.
+L8 PROTOCOL IDENTITIES / APPS DIFF / AUTHORITY: apps diff = exactly the
+   three paths; GATE 7fbeb8f1fe10b0fb at [514:541] and TEST
+   b32030dc827263e4 byte-identical (cfa untouched); tree seals unchanged;
+   protocol_identity unchanged; neither ceiling nor guard moved; the eight
+   M7 artefacts == baseline; the catalogue 38 with Cairo-Bold still in it
+   (Latin True, arabic False); under Django at scoring the three Arabic
+   chains read (NotoNaskhArabic-Regular,) and Naskh resolves first try for
+   all three roles VERIFIED_FOR_PRODUCTION / USER_CONFIRMED; exempt
+   surfaces resolve as at 41604ac; no authority involved.

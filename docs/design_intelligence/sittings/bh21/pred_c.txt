@@ -1,0 +1,88 @@
+§AD0(a) PREDICTION — COMMIT C — §BC TRANSCRIPTION OF §BH22 + §BH23
+===================================================================
+Drafted during gate A′'s run with every figure measured from the prepared
+block (~/bh21_work/bh22_block.md, 230 lines, leading blank line); SEALED
+(the line below updated with A′'s hash) after A′ scored zero-miss and the
+placeholder resolved, BEFORE `git add` of the register, BEFORE gate C. Durable in
+~/bh21_work/. NOTE: pred_tr.txt is the §BH21-era transcription prediction
+(landed a06ccf6, scored history) — this file is its §BH23 successor, named
+pred_c to avoid touching that evidence.
+
+A′ hash at seal time: 00ab549 (5 occurrences in the block + 2 in
+c_msg.txt resolve to it; §BH22(c)'s blockquoted __P2HASH__ is OWNER TEXT —
+the owner's own token, typed in the ruling — and stays literal).
+
+Ordering authority: §BH23 header — "Transcribe per §BC as the next landing
+after A′ goes green — same header logic as §BH21/§BH22." §BH22's own header
+ordered transcription as FIRST landing once the gate can pass it; both
+rulings land together as one pure append, §BH22 then §BH23.
+
+THE EIGHT LEGS
+==============
+L1 — WRITE SET
+    Staged, exactly ONE path of mine, at the GIT ROOT:
+      M  OWNER_BLOCKER_CLEARANCE.md
+    Plus, written BY THE GATE and not by me:
+      M  bbrose_design_os/docs/roadmap/palt_m6/record_gate_ledger.jsonl (+1 -0)
+      +  capture file under .tier2_captures (gitignored, unstaged).
+    UNSTAGED throughout: exactly THREE ` M` rows — test_c4b.py, test_c4c.py,
+    test_c5.py (commit B's declared set). No `??` entries.
+
+L2 — DIFF SHAPE
+      OWNER_BLOCKER_CLEARANCE.md         +230 -0   (pure append)
+      record_gate_ledger.jsonl           +1   -0   (gate)
+      ---------------------------------------------------------
+      commit total                       +231 -0, 2 files
+    Zero deletions anywhere — §BC pure-append proved by the numstat's -0.
+
+L3 — MANIFEST / A391
+    suite_file_manifest.json absent from the commit; no new tracked file.
+
+L4 — §BH4(l) STAGED == DECLARED, BOTH HALVES
+    STAGED: register +230 -0, nothing else. UNSTAGED: exactly three test
+    rows (+ the ledger once the gate runs). Two-roots idiom first:
+    `git ls-files --error-unmatch -- OWNER_BLOCKER_CLEARANCE.md` from the
+    git root before any status read.
+
+L5 — COMMIT CONTENTS
+    ONE commit, transcription ONLY (message c_msg.txt): both rulings' owner
+    sentences blockquoted verbatim; executor sections marked as the
+    executor's; §BH22(d) records the TRUE sequence (amendment → own gate
+    REFUSED failures=4 on the registry root-of-trust pin, first firing
+    since the 2026-07-16 seal → hard stop, report → §BH23 → A′ under two
+    authorities). NOT DONE HERE: pass 2 (B), queue record (D), any code,
+    test, or contract edit.
+
+L6 — SUITE / COLLECTION
+      TIER_2=GREEN collected=8490 failures=0 apps=7684 dip0c=671 dip0=135
+    The commit touches only a git-root markdown the suite never imports;
+    the gate-time worktree is A′'s green worktree plus that one file. A
+    refusal on ANYTHING = hard stop, stop and report (§BH23).
+
+L7 — LEDGER
+    Starts CLEAN at 424 on disk == 424 committed (A′ folded both orphans +
+    its own line). This run appends its own: 425 on disk; gate folds it:
+    committed 425, +1 -0, CLEAN after. No orphan.
+
+L8 — PROTOCOL IDENTITIES
+    Zero apps/ files in the commit; EXTENT_DIGESTS untouched, PROVED by an
+    empty `git diff <A′> <new> -- bbrose_design_os/apps/`.
+
+NUMBERED CLAIMS
+===============
+C1. PURE APPEND: register numstat -0; HEAD prefix byte-identical, proved
+    pre-staging by rc=0 on `diff <(git show HEAD:./OWNER_BLOCKER_CLEARANCE.md) <(head -n <head_lines> …)`
+    from the git root.
+C2. VERBATIM: every blockquoted owner line matches the transcript source;
+    §BH22(c)'s __P2HASH__ survives literally — owner's token, count exactly 1.
+C3. PLACEHOLDERS: the AXHASH placeholder token count in the appended block
+    = 0 after resolution (was 5, each now reading 00ab549 = A′'s short
+    hash); block line count unchanged at 230 by the substitution.
+C4. ORDER: first landing after A′ — parent of C == A′.
+C5. EXIT EVIDENCE: gate log ~/bh21_work/c_gate.log, exit hand-captured to
+    ~/bh21_work/c_exit.txt. TWO confirmations before "landed": captured
+    exit 0 AND a new HEAD hash.
+
+WHAT COMMIT C IS NOT: not pass 2 (B), not the queue record (D), not a touch
+on any code, test, contract, or the 21 — and not a precedent: it records
+two single-use authorizations as SPENT.

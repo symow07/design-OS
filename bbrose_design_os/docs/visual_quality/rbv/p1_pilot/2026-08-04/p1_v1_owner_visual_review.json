@@ -1,0 +1,35 @@
+{
+ "record_type": "p1_owner_visual_review_decision/1.0",
+ "decided_at": "2026-08-04",
+ "reviews": "P1 V1 evidence package (commits 5c5bc5e + 988f968) — board + material preview",
+ "decision": {
+  "P1_PIPELINE_VALIDATION": "PASS",
+  "P1_DIMENSIONAL_CONSISTENCY": "PASS_PROVISIONAL",
+  "P1_VISUAL_FIDELITY": "FAIL",
+  "P1_MATERIAL_REALISM": "FAIL",
+  "P1_OWNER_APPROVAL": "REJECTED_PENDING_VISUAL_REVISION",
+  "GATE_2": "BLOCKED",
+  "PACKAGING_PRODUCTION": "NOT_STARTED"
+ },
+ "versioning": "this directory is preserved as P1 V1; the revision lives in docs/visual_quality/rbv/p1_pilot/2026-08-04_v2/ — nothing here is overwritten",
+ "accepted_owner_dimensions_unchangeable": {
+  "total_assembled_height_mm": 114.3,
+  "bottle_height_mm": 91.6,
+  "body_diameter_mm": 37.4,
+  "base_diameter_mm": 37.35,
+  "collar_outside_diameter_mm": 21.4,
+  "collar_height_mm": 16.5,
+  "bulb_max_diameter_mm": 10.57,
+  "bulb_visible_height_mm": 19.2,
+  "neck_outside_diameter_mm": 15.6
+ },
+ "required_revisions": {
+  "1_bulb": "rounded capsule: straight/gently curved lower sides, full rounded dome, no conical roof, no pointed nipple, smooth transition into the collar; measured max diameter + visible height preserved",
+  "2_shoulder": "fuller smoother profile: continuous smooth curvature, no ridge at body junction, no sharp neck transition, slightly fuller outer shoulder; bottle height/diameter preserved; landmarks stay provisional; verify normals",
+  "3_collar": "subtle upper/lower edge bevels or rounding, small physically plausible radius; diameter/height unchanged",
+  "4_base": "softer external bottom radius + subtle weighted-glass base profile; no internal manufacturing geometry",
+  "5_materials": "bottle: frosted translucent darker amber-orange with visible light transmission (not opaque plastic, not pastel peach); collar: glossy saturated orange plastic; bulb: glossy saturated orange OPAQUE plastic; pipette: clear glass; NEVER the same orange shader for bottle/collar/bulb",
+  "6_render_quality": "increase samples / improve denoising — body must not be visibly grainy"
+ },
+ "v1_mesh_identities": {"body": "e7b0236deb66715e", "collar": "7175cb33d5cd7375", "bulb": "491a134981dd9506"}
+}

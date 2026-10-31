@@ -1,0 +1,242 @@
+{
+ "schema": "consolidation_chain_run/1",
+ "native": true,
+ "paid_steps_not_run": [
+  "none: the drawings are round 3's own, made by its paid run"
+ ],
+ "die": {
+  "height_mm": 225.02474195235837,
+  "header_mm": [
+   107.0,
+   78.2491
+  ],
+  "sightline_revision": "inside-size/2026-10-29",
+  "sightlines_passed": true,
+  "header_clear": true,
+  "record_sha256": "f72c29485bf1627b95281d296c74b0c1cee8e7f3f9b223f9aa29fccb8539b69f"
+ },
+ "template": {
+  "frame": "1024x1536",
+  "dpi_at_1to1": 59.8,
+  "template_sha256": "1bd873aa8fcbdd692d8f634746a8377f5b265903116a14dc8110026150d32838",
+  "sheet_sha256": "16b8edb96309c8189d70c7599989d8363b4e2c8363762bfcc148cf140a6e814d",
+  "same_as_round3": true
+ },
+ "live": true,
+ "faces_state": {
+  "cap": {
+   "state": "drawn",
+   "drawing": 2,
+   "source": "net"
+  },
+  "back": {
+   "state": "drawn",
+   "drawing": 4,
+   "source": "board"
+  },
+  "left": {
+   "state": "drawn",
+   "drawing": 2,
+   "source": "panel"
+  },
+  "side": {
+   "state": "drawn",
+   "drawing": 3,
+   "source": "panel"
+  },
+  "front": {
+   "state": "drawn",
+   "drawing": 3,
+   "source": "panel"
+  },
+  "bottle": {
+   "state": "drawn",
+   "drawing": 2,
+   "source": "net"
+  },
+  "header": {
+   "state": "drawn",
+   "drawing": 2,
+   "source": "panel"
+  },
+  "header_back": {
+   "state": "drawn",
+   "drawing": 1,
+   "source": "panel"
+  }
+ },
+ "faces": {
+  "cap": {
+   "sha256": "dfeb116179320a3a",
+   "size_px": [
+    287,
+    575
+   ],
+   "native_ppi": 486.1
+  },
+  "back": {
+   "sha256": "32b4a557efeb16b0",
+   "size_px": [
+    1335,
+    1770
+   ],
+   "native_ppi": 300.0
+  },
+  "left": {
+   "sha256": "f4b5357514629993",
+   "size_px": [
+    1040,
+    1770
+   ],
+   "native_ppi": 300.0
+  },
+  "side": {
+   "sha256": "2f1ccfbd1e29bfad",
+   "size_px": [
+    1040,
+    1770
+   ],
+   "native_ppi": 300.0
+  },
+  "front": {
+   "sha256": "f7d336b695256bdd",
+   "size_px": [
+    1335,
+    286
+   ],
+   "native_ppi": 300.0
+  },
+  "bottle": {
+   "sha256": "f81e8863e2da9327",
+   "size_px": [
+    222,
+    1036
+   ],
+   "native_ppi": 375.6
+  },
+  "header": {
+   "sha256": "83d7671ea9a50ce9",
+   "size_px": [
+    1335,
+    996
+   ],
+   "native_ppi": 300.0
+  },
+  "header_back": {
+   "sha256": "595a9d3a1f6140c6",
+   "size_px": [
+    1335,
+    1013
+   ],
+   "native_ppi": 300.0
+  }
+ },
+ "objects": {
+  "bottle-front": {
+   "ai": "bottle-front.ai",
+   "ai_sha256": "c4827cc2a7ecf689",
+   "ai_content_sha256": "d8136fe9270a5188",
+   "png_sha256": "9ea1ac0608b10f30",
+   "checks": 15,
+   "checks_failed": [],
+   "native": {
+    "saved": true,
+    "reopened": true,
+    "save_checks_failed": [],
+    "reopen_checks_failed": [],
+    "checks": [
+     14,
+     13
+    ]
+   }
+  },
+  "cap": {
+   "ai": "cap.ai",
+   "ai_sha256": "57d98c86ace71f53",
+   "ai_content_sha256": "c96c976b38e47b63",
+   "png_sha256": "59a5483411f1a6fd",
+   "checks": 15,
+   "checks_failed": [],
+   "native": {
+    "saved": true,
+    "reopened": true,
+    "save_checks_failed": [],
+    "reopen_checks_failed": [],
+    "checks": [
+     14,
+     13
+    ]
+   }
+  },
+  "stand": {
+   "ai": "stand.ai",
+   "ai_sha256": "dc4793f536d36228",
+   "ai_content_sha256": "36426ebcf3149257",
+   "png_sha256": "6155d3ac885f4c5e",
+   "checks": 15,
+   "checks_failed": [],
+   "native": {
+    "saved": true,
+    "reopened": true,
+    "save_checks_failed": [],
+    "reopen_checks_failed": [],
+    "checks": [
+     14,
+     13
+    ]
+   }
+  }
+ },
+ "die_files": {
+  "files": [
+   "die.pdf",
+   "die.dxf",
+   "die.cf2",
+   "assembly.pdf"
+  ],
+  "readback_mm": {
+   "CUT": 0.0003,
+   "CREASE": 0.0003,
+   "ARTWORK": 0.0003
+  },
+  "nest_best": {
+   "sheet_mm": [
+    1400,
+    1000
+   ],
+   "sets": 2,
+   "parts_placed": 14,
+   "yield": 0.1563,
+   "turned": false,
+   "method": "shelf packing of the parts' bleed rectangles; whole sets only"
+  }
+ },
+ "zip": {
+  "members": [
+   "assembly.pdf",
+   "bottle-front.ai",
+   "bottle-front.png",
+   "cap.ai",
+   "cap.png",
+   "die.cf2",
+   "die.dxf",
+   "die.pdf",
+   "product-drawing.png",
+   "stand.ai",
+   "stand.png"
+  ],
+  "count": 11
+ },
+ "views": [
+  "back",
+  "bottle",
+  "cap",
+  "front",
+  "header",
+  "header_back",
+  "left",
+  "side"
+ ],
+ "drawing": "revisions/1/product-drawing.png",
+ "seconds": 44.2
+}

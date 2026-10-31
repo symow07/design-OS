@@ -1,0 +1,65 @@
+{
+  "record_type": "vq1_m3s1_justification_review/1.0",
+  "created_at": "2026-07-28",
+  "status": "VQ1_MASTER_HARD_STOP_REVIEW_REQUIRED",
+  "m3s1_created": false,
+  "finding": "M3S1_NOT_JUSTIFIED_BY_MEASUREMENT",
+  "evidence": {
+    "neck_shoulder_samples_identical_to_reference": true,
+    "rows_compared": 26,
+    "row_range": [
+      664,
+      739
+    ],
+    "m3_neck_error": {
+      "mean": 0.00078,
+      "max": 0.00385
+    },
+    "m3_neck_gates": {
+      "mean_limit": 0.006,
+      "max_limit": 0.035,
+      "passes": true
+    },
+    "m3_shoulder_error": {
+      "mean": 0.00121,
+      "max": 0.00292
+    },
+    "m3_shoulder_gates": {
+      "mean_limit": 0.006,
+      "max_limit": 0.035,
+      "passes": true
+    },
+    "reference_inset_px_per_side": 8.0,
+    "inset_as_fraction_of_body_width": 0.02332
+  },
+  "why_no_candidate_was_built": "M3 already reproduces the reference neck and shoulder contour exactly \u2014 its fitted GLASS samples are byte-identical to the reference half-widths across all 26 sampled rows from 664 to 739, and the measured neck error is 0.00078 mean / 0.00385 max against gates of 0.006 / 0.035. Building M3S1 to make the undercut MORE pronounced would move the contour AWAY from the reference and fail the very gates it is meant to satisfy. \u00a710 requires the undercut to come from narrowing the glass below the collar; it is already narrowed by exactly the reference amount.",
+  "reinterpretation_of_inspector_findings": "The reference undercut is 8 px per side on a 343 px body \u2014 2.3% of body width. In the photograph it reads clearly because shading and a specular edge define it. In a flat neutral silhouette with no shading, an 8 px inset is close to invisible at inspection scale. Both inspectors were therefore describing a real perceptual difference with a NON-geometric cause: legibility of a correct contour under neutral fills, not contour error.",
+  "code": "VQ1_NECK_UNDERCUT_LEGIBILITY_NOT_GEOMETRY",
+  "proposed_unimplemented_options": [
+    {
+      "option": "A",
+      "action": "accept the neck/shoulder as geometrically correct and treat the perceptual gap as a VQ-3 shading concern",
+      "geometry_change": false
+    },
+    {
+      "option": "B",
+      "action": "add a NON-metallic neutral edge-darkening cue at the collar/glass boundary purely so the correct contour reads in structural review",
+      "geometry_change": false,
+      "note": "a rendering-legibility aid, not material simulation; still needs authorization because it changes how structural evidence is presented"
+    },
+    {
+      "option": "C",
+      "action": "deliberately exaggerate the inset beyond the reference",
+      "geometry_change": true,
+      "recommendation": "REJECT \u2014 this optimizes for the inspector instead of the reference, the exact failure this workstream has spent many slices removing"
+    }
+  ],
+  "recommended": "A or B; C is not recommended",
+  "protected_geometry_untouched": true,
+  "metallic_material_added": false,
+  "image_generation_calls": 0,
+  "multimodal_calls": 0,
+  "supplier_requests_sent": false,
+  "inspector_a_pass_verdict": "VQ1_INSPECTOR_A_PASS_VERDICT_INVALIDATED (recorded)",
+  "inspector_a_findings_preserved": true
+}

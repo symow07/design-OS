@@ -1,0 +1,21 @@
+§AD0(a) SCORE — T31 (§BH31 transcription), launched against pred_t31.txt
+(sealed 72422188d28f6bf1 before git add). Gate GREEN, GEXIT=0. LANDED
+21601ea (2026-09-04T06:15:51Z UTC). 8/8.
+
+L1 HELD: exactly ONE tracked path (the register) + the gate-staged ledger;
+   nothing else in the commit.
+L2 HELD: register 108/0 — 18,558-line HEAD prefix dfaa3aec4a0ae82f
+   byte-identical; seam blank; tail == the block (ad5dbaad49b14b7b);
+   total 18,666.
+L3 HELD: no manifest / records / ledger objection.
+L4 HELD: staged == declared, one row, measured before launch.
+L5 HELD: 2 files, 109 insertions, 0 deletions — exact.
+L6 HELD: "TIER_2=GREEN collected=8510 failures=0 apps=7698 dip0c=671
+   dip0=141" — exact. No refusal; §BH24 budget 0/3.
+L7 HELD: ledger 450 → 451.
+L8 HELD: apps diff EMPTY; GATE 7fbeb8f1fe10b0fb, TEST b32030dc827263e4
+   byte-identical; tree seals unchanged (dip0c 5ae44035bd03bae1, dip0a
+   4fe747b806ed71bd); protocol_identity untouched; the Noto pair
+   VERIFIED_FOR_PRODUCTION / USER_CONFIRMED ×2 under Django at scoring;
+   no authority involved.
+Post-landing: porcelain clean. §BH31's goal work begins after this landing.

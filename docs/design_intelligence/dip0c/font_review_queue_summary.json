@@ -1,0 +1,317 @@
+{
+  "schema_version": "review_queue/1.1",
+  "permission_flags": [
+    "approved_for_bbrose",
+    "approved_for_other_brands",
+    "automatic_use_allowed",
+    "embedding_allowed",
+    "modification_allowed",
+    "production_use_allowed",
+    "public_export_allowed",
+    "redistribution_allowed",
+    "retrieval_allowed"
+  ],
+  "all_permissions_false": true,
+  "proposed_human_decisions": 7261,
+  "queues": [
+    {
+      "schema_version": "review_queue/1.1",
+      "queue_id": "FONT_FAMILY_RELATIONSHIP_REVIEW",
+      "display_label": "A",
+      "title": "Family relationship conflicts",
+      "item_count": 199,
+      "file_count": 692,
+      "face_count": 714,
+      "family_count": 156,
+      "package_count": 25,
+      "priority": "MEDIUM",
+      "shared_reason": "the family name matched but the corroborating evidence did not",
+      "evidence": "vendor, PostScript prefix, version, glyph coverage, package",
+      "exceptions": "a family name is a hypothesis, never identity proof",
+      "required_reviewer_roles": [
+        "DESIGN_REVIEWER",
+        "BRAND_ADMIN"
+      ],
+      "recommended_human_action": "confirm or split the family",
+      "batch_review_allowed": true,
+      "applies_decision_automatically": false
+    },
+    {
+      "schema_version": "review_queue/1.1",
+      "queue_id": "FONT_PROVENANCE_MISSING",
+      "display_label": "B",
+      "title": "No known provenance",
+      "item_count": 3667,
+      "file_count": 3667,
+      "face_count": 3692,
+      "family_count": 0,
+      "package_count": 2,
+      "priority": "HIGH",
+      "shared_reason": "no known acquisition source and no evidence of any kind. PROVENANCE IS MISSING — and rights attach to provenance.",
+      "evidence": "absence, recorded as absence",
+      "exceptions": "the paperwork may exist outside materials/ entirely",
+      "required_reviewer_roles": [
+        "LEGAL_REVIEWER"
+      ],
+      "recommended_human_action": "establish provenance, or leave disabled",
+      "batch_review_allowed": true,
+      "applies_decision_automatically": false
+    },
+    {
+      "schema_version": "review_queue/1.1",
+      "queue_id": "FONT_LICENSE_EVIDENCE_PRESENT",
+      "display_label": "C",
+      "title": "Font-relevant licence evidence, unreviewed",
+      "item_count": 119,
+      "file_count": 119,
+      "face_count": 119,
+      "family_count": 0,
+      "package_count": 47,
+      "priority": "MEDIUM",
+      "shared_reason": "licence evidence that actually discusses fonts — and is UNREVIEWED",
+      "evidence": "OFL / Apache / EULA text, read and classified",
+      "exceptions": "evidence is not approval; an OFL grants nothing until a human reads it",
+      "required_reviewer_roles": [
+        "LEGAL_REVIEWER"
+      ],
+      "recommended_human_action": "review the licence and record a decision",
+      "batch_review_allowed": true,
+      "applies_decision_automatically": false
+    },
+    {
+      "schema_version": "review_queue/1.1",
+      "queue_id": "FONT_LICENSE_EVIDENCE_IRRELEVANT",
+      "display_label": "D",
+      "title": "Nearby evidence that does not discuss fonts",
+      "item_count": 193,
+      "file_count": 193,
+      "face_count": 193,
+      "family_count": 0,
+      "package_count": 20,
+      "priority": "HIGH",
+      "shared_reason": "a licence document sits beside the font but never mentions fonts — it may govern something else entirely (a stock vector, for instance)",
+      "evidence": "the document text, re-read",
+      "exceptions": "a font licence that avoids the word 'font' would be misfiled here",
+      "required_reviewer_roles": [
+        "LEGAL_REVIEWER"
+      ],
+      "recommended_human_action": "confirm the document does not cover this font; find one that does",
+      "batch_review_allowed": true,
+      "applies_decision_automatically": false
+    },
+    {
+      "schema_version": "review_queue/1.1",
+      "queue_id": "FONT_SUSPECTED_SYSTEM_COPY",
+      "display_label": "E",
+      "title": "Suspected system-font copies",
+      "item_count": 706,
+      "file_count": 706,
+      "face_count": 706,
+      "family_count": 324,
+      "package_count": 2,
+      "priority": "HIGH",
+      "shared_reason": "the NAME TABLE names an OS or major foundry — a suspicion, never a finding of wrongdoing",
+      "evidence": "OS/2.achVendID, name.copyright, name.trademark",
+      "exceptions": "a licensed Microsoft font is perfectly legal; an internal system dependency may be legitimate",
+      "required_reviewer_roles": [
+        "LEGAL_REVIEWER"
+      ],
+      "recommended_human_action": "confirm licensed / internal dependency / restricted / quarantine",
+      "batch_review_allowed": true,
+      "applies_decision_automatically": false
+    },
+    {
+      "schema_version": "review_queue/1.1",
+      "queue_id": "FONT_SYSTEM_STATUS_UNCERTAIN",
+      "display_label": "F",
+      "title": "System-font status uncertain",
+      "item_count": 130,
+      "file_count": 130,
+      "face_count": 130,
+      "family_count": 87,
+      "package_count": 4,
+      "priority": "MEDIUM",
+      "shared_reason": "partial foundry evidence, below the suspicion threshold",
+      "evidence": "vendor ID without a corroborating copyright string",
+      "exceptions": "weak evidence is not evidence of innocence either",
+      "required_reviewer_roles": [
+        "LEGAL_REVIEWER"
+      ],
+      "recommended_human_action": "confirm or dismiss the origin",
+      "batch_review_allowed": true,
+      "applies_decision_automatically": false
+    },
+    {
+      "schema_version": "review_queue/1.1",
+      "queue_id": "FONT_DUPLICATE_TECHNICAL_GROUP",
+      "display_label": "G",
+      "title": "Exact duplicates — TECHNICAL identity only",
+      "item_count": 1047,
+      "file_count": 2102,
+      "face_count": 1053,
+      "family_count": 0,
+      "package_count": 92,
+      "priority": "LOW",
+      "shared_reason": "byte-identical files. ONE technical decision genuinely covers them — and it covers NOTHING about rights.",
+      "evidence": "SHA-256",
+      "exceptions": "EXACT BYTES DO NOT PROVE IDENTICAL RIGHTS. See queue H.",
+      "required_reviewer_roles": [
+        "DESIGN_REVIEWER"
+      ],
+      "recommended_human_action": "record the technical audit once per hash",
+      "batch_review_allowed": true,
+      "applies_decision_automatically": false
+    },
+    {
+      "schema_version": "review_queue/1.1",
+      "queue_id": "FONT_CROSS_PACKAGE_DUPLICATE_RIGHTS_REVIEW",
+      "display_label": "H",
+      "title": "Cross-package duplicates — separate RIGHTS review",
+      "item_count": 1047,
+      "file_count": 2102,
+      "face_count": 0,
+      "family_count": 0,
+      "package_count": 92,
+      "priority": "HIGH",
+      "shared_reason": "identical bytes arriving from different or unverified sources. Rights attach to PROVENANCE, not content — one package's licence never clears an identical file from somewhere else.",
+      "evidence": "source package + licence-evidence association per copy",
+      "exceptions": "NONE. This queue exists precisely because the batch is unsafe.",
+      "required_reviewer_roles": [
+        "LEGAL_REVIEWER"
+      ],
+      "recommended_human_action": "review each provenance subgroup separately",
+      "batch_review_allowed": false,
+      "applies_decision_automatically": false
+    },
+    {
+      "schema_version": "review_queue/1.1",
+      "queue_id": "FONT_SOURCE_PACKAGE_REVIEW",
+      "display_label": "I",
+      "title": "Source-package rights review",
+      "item_count": 46,
+      "file_count": 168,
+      "face_count": 165,
+      "family_count": 0,
+      "package_count": 46,
+      "priority": "MEDIUM",
+      "shared_reason": "a credible package boundary — the natural unit of a rights decision",
+      "evidence": "package root, members, licence documents",
+      "exceptions": "one package's licence NEVER clears another",
+      "required_reviewer_roles": [
+        "LEGAL_REVIEWER",
+        "BRAND_ADMIN"
+      ],
+      "recommended_human_action": "review the package as one rights unit",
+      "batch_review_allowed": true,
+      "applies_decision_automatically": false
+    },
+    {
+      "schema_version": "review_queue/1.1",
+      "queue_id": "FONT_FAMILY_SOURCE_CONFLICT",
+      "display_label": "J",
+      "title": "Same family, conflicting vendor or evidence",
+      "item_count": 42,
+      "file_count": 0,
+      "face_count": 0,
+      "family_count": 42,
+      "package_count": 24,
+      "priority": "HIGH",
+      "shared_reason": "the same family arrives from several packages with different evidence",
+      "evidence": "family key × source package",
+      "exceptions": "the families may be unrelated despite the shared name",
+      "required_reviewer_roles": [
+        "LEGAL_REVIEWER",
+        "BRAND_ADMIN"
+      ],
+      "recommended_human_action": "review each family × package pair separately",
+      "batch_review_allowed": true,
+      "applies_decision_automatically": false
+    },
+    {
+      "schema_version": "review_queue/1.1",
+      "queue_id": "FONT_UNSUPPORTED_FORMAT",
+      "display_label": "K",
+      "title": "Unsupported format (.fon)",
+      "item_count": 32,
+      "file_count": 32,
+      "face_count": 0,
+      "family_count": 0,
+      "package_count": 2,
+      "priority": "LOW",
+      "shared_reason": "legacy Windows .fon bitmap fonts — there is no sfnt to parse",
+      "evidence": "fontTools cannot read the format at all",
+      "exceptions": "unreadable is not absent: they are still in materials/",
+      "required_reviewer_roles": [
+        "DESIGN_REVIEWER"
+      ],
+      "recommended_human_action": "confirm they are system fonts, or find a tool that reads them",
+      "batch_review_allowed": true,
+      "applies_decision_automatically": false
+    },
+    {
+      "schema_version": "review_queue/1.1",
+      "queue_id": "FONT_PARSE_FAILURE",
+      "display_label": "L",
+      "title": "Parse failures",
+      "item_count": 0,
+      "file_count": 0,
+      "face_count": 0,
+      "family_count": 0,
+      "package_count": 0,
+      "priority": "LOW",
+      "shared_reason": "the font claims a format it does not honour",
+      "evidence": "the parser error, recorded verbatim",
+      "exceptions": "a corrupt file may still be a licensed one",
+      "required_reviewer_roles": [
+        "DESIGN_REVIEWER"
+      ],
+      "recommended_human_action": "repair, replace, or leave disabled",
+      "batch_review_allowed": true,
+      "applies_decision_automatically": false
+    },
+    {
+      "schema_version": "review_queue/1.1",
+      "queue_id": "FONT_QUARANTINE_CANDIDATE",
+      "display_label": "M",
+      "title": "Quarantine candidates",
+      "item_count": 1,
+      "file_count": 4715,
+      "face_count": 3807,
+      "family_count": 0,
+      "package_count": 2,
+      "priority": "HIGH",
+      "shared_reason": "quarantine is PROPOSED pending human review. Nothing is deleted, moved or permanently rejected.",
+      "evidence": "system-font suspicion + absent provenance",
+      "exceptions": "the batch is defined by FOLDER while suspicion is defined by NAME TABLE — accepting it quarantines fonts never individually implicated",
+      "required_reviewer_roles": [
+        "LEGAL_REVIEWER"
+      ],
+      "recommended_human_action": "accept, refuse, or narrow the proposal",
+      "batch_review_allowed": true,
+      "applies_decision_automatically": false
+    },
+    {
+      "schema_version": "review_queue/1.1",
+      "queue_id": "FONT_CURATED_STARTER_CANDIDATE",
+      "display_label": "N",
+      "title": "Curated starter-library candidates",
+      "item_count": 32,
+      "file_count": 0,
+      "face_count": 58,
+      "family_count": 32,
+      "package_count": 19,
+      "priority": "HIGH",
+      "shared_reason": "a shortlist for review: known package, font-relevant evidence, healthy, unconflicted. NOT approved, NOT active, NOT retrievable.",
+      "evidence": "provenance + licence evidence + technical health",
+      "exceptions": "the licence evidence is UNREVIEWED — a candidate may still be rejected outright",
+      "required_reviewer_roles": [
+        "LEGAL_REVIEWER",
+        "BRAND_ADMIN",
+        "DESIGN_REVIEWER"
+      ],
+      "recommended_human_action": "review the licence, then decide whether it joins the library",
+      "batch_review_allowed": false,
+      "applies_decision_automatically": false
+    }
+  ]
+}

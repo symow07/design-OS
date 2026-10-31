@@ -1,0 +1,16 @@
+{
+ "record_type": "vqr2b_a_owner_visual_decision/1.0",
+ "decided_at": "2026-08-03",
+ "decided_by": "OWNER",
+ "VQR_2B_A_IMPLEMENTATION": "IMPLEMENTED",
+ "VQR_2B_A_AUTOMATED_VALIDATION": "VALIDATED",
+ "VQR_2B_A_OWNER_VISUAL_REVIEW": "REJECTED_AS_NON_REALISTIC_VISUAL_EVIDENCE",
+ "reason": "ABSTRACT_FIXTURES_DO_NOT_REPRESENT_REAL_COSMETIC_BOTTLE_QUALITY",
+ "VQR_2B_B": "BLOCKED_PENDING_REAL_BOTTLE_REFERENCE_AND_VISUALIZATION_STANDARD",
+ "scope_reading": "the measurement ENGINE and its automated validation stand (implementation/validation kept); the VISUAL EVIDENCE is rejected \u2014 synthetic PIL-drawn primitives cannot calibrate real cosmetic-bottle quality judgments",
+ "engineering_preserved": "concept_analysis.py, m3_calibration.py, the canonical bounds and the 29 tests remain validated; the golden fixture LIBRARY's realism is what failed owner review",
+ "unblock_requirements": [
+  "a REAL cosmetic bottle reference (owner-supplied or governance-cleared licensed imagery \u2014 materials/ items require the DIP ownership/licence rules)",
+  "a defined VISUALIZATION STANDARD for evidence realism"
+ ]
+}

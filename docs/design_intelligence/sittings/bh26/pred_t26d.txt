@@ -1,0 +1,34 @@
+§AD0(a) PREDICTION — T26d (§BH26(d) transcription, pure append), sealed
+BEFORE git add. Base HEAD 49813ec.
+
+L1 WRITE SET: exactly ONE path — OWNER_BLOCKER_CLEARANCE.md (outer
+   root), the §BH26(d) block. Plus the gate-staged ledger line. NO apps/
+   path in the write set. The five commit-A WIP paths sit in stash@{0}
+   for the duration (backed up ~/bh26_work/stash_a/ + sha256s.txt;
+   disk verified pre-launch: 2 new files absent, 3 modified files
+   byte-identical to HEAD).
+L2 DIFF SHAPE: register +77 −0 (1 seam blank + 76 block lines);
+   17,098-line prefix byte-identical, proved by hash 01e1bccc… (pre-
+   append worktree==HEAD) == head -17098 post-append; total 17,175.
+L3 MANIFEST / A391: none touched — and the extent guard passes by
+   MEASURED disk state this time: the undeclared WIP test file is off
+   disk (verified absent), so the filesystem walk finds 371 declared
+   files exactly as at T26.
+L4 STAGED == DECLARED: git diff --cached --numstat = exactly one row:
+   77 0 OWNER_BLOCKER_CLEARANCE.md.
+L5 COMMIT CONTENTS: 2 files (register + ledger), insertions 77+1=78,
+   deletions 0.
+L6 SUITE LINE + REFUSAL TREE: GREEN — TIER_2=GREEN collected=8490
+   failures=0 apps=7684 dip0c=671 dip0=135, identical to T26 (apps/
+   disk state == HEAD == T26's state; a docs append adds no tests).
+   No refusal expected; §BH24 standing 0/3, covers only its two named
+   ids, max 3.
+L7 LEDGER FOLD: 430 → 431, the +1 in THIS commit (attempt-1 refusal
+   appended nothing, measured).
+L8 PROTOCOL IDENTITIES / APPS DIFF: apps diff EMPTY — no apps path in
+   the commit; both protected regions byte-identical at scoring
+   (GATE 7fbeb8f1fe10b0fb @ cfa :515-541; TEST b32030dc827263e4 @
+   a76242c^ blob) — trivially, nothing under apps/ is touched. The
+   stash restore happens AFTER scoring, verified against
+   stash_a/sha256s.txt; it is not part of this commit's write set.
+   The §BH26(a) authority remains UNSPENT at this commit.

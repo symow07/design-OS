@@ -1,0 +1,216 @@
+{
+  "slice": "DIP-0C3a",
+  "relationship_edges": 83,
+  "relationship_hypotheses": {
+    "SAME_BRAND_VARIANT": 7,
+    "UNKNOWN_BRAND_RELATIONSHIP": 55,
+    "POSSIBLE_LOCKUP_VARIANT": 6,
+    "POSSIBLE_PRODUCT_VARIANT": 15
+  },
+  "rules": [
+    "a shared folder NEVER proves a brand relationship",
+    "POSSIBLE_THIRD_PARTY_ASSET is a property of a FILE, not of a pair",
+    "brand relationships are proposed only between BRAND assets, never between a rights-blocked pattern and a logo",
+    "every hypothesis carries positive AND contradictory evidence; human_confirmed is blank"
+  ],
+  "sample_edges": [
+    {
+      "a": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/BBROSE.pdf",
+      "b": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/BBROSE-1.pdf",
+      "hypotheses": [
+        {
+          "relationship": "SAME_BRAND_VARIANT",
+          "positive_evidence": [
+            "both wordmarks read DIRECTLY from live text as 'BBROSE'"
+          ],
+          "contradictory_evidence": [],
+          "confidence": 0.75,
+          "capability_tier": "DIRECT",
+          "human_confirmed": null
+        }
+      ],
+      "primary": "SAME_BRAND_VARIANT",
+      "confidence": 0.75,
+      "shared_folder": true,
+      "shared_folder_is_decisive": false,
+      "human_confirmed_relationship": null,
+      "parser": "dip0c.brand_rel/0.1.0",
+      "config_fingerprint": "5f31dc7c2e5b"
+    },
+    {
+      "a": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/logo.pdf",
+      "b": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/JOJIA LOGO.ai",
+      "hypotheses": [
+        {
+          "relationship": "POSSIBLE_LOCKUP_VARIANT",
+          "positive_evidence": [
+            "two isolated marks whose geometry differs sharply (22 vs 149 paths) — consistent with a symbol vs a full lockup"
+          ],
+          "contradictory_evidence": [
+            "path count alone does not establish a lockup; the marks were NOT visually matched, and they may simply be different logos"
+          ],
+          "confidence": 0.3,
+          "capability_tier": "HEURISTIC",
+          "human_confirmed": null
+        }
+      ],
+      "primary": "POSSIBLE_LOCKUP_VARIANT",
+      "confidence": 0.3,
+      "shared_folder": true,
+      "shared_folder_is_decisive": false,
+      "human_confirmed_relationship": null,
+      "parser": "dip0c.brand_rel/0.1.0",
+      "config_fingerprint": "5f31dc7c2e5b"
+    },
+    {
+      "a": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/logo.pdf",
+      "b": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/LOGO ATC.ai",
+      "hypotheses": [
+        {
+          "relationship": "POSSIBLE_LOCKUP_VARIANT",
+          "positive_evidence": [
+            "two isolated marks whose geometry differs sharply (22 vs 7 paths) — consistent with a symbol vs a full lockup"
+          ],
+          "contradictory_evidence": [
+            "path count alone does not establish a lockup; the marks were NOT visually matched, and they may simply be different logos"
+          ],
+          "confidence": 0.3,
+          "capability_tier": "HEURISTIC",
+          "human_confirmed": null
+        }
+      ],
+      "primary": "POSSIBLE_LOCKUP_VARIANT",
+      "confidence": 0.3,
+      "shared_folder": true,
+      "shared_folder_is_decisive": false,
+      "human_confirmed_relationship": null,
+      "parser": "dip0c.brand_rel/0.1.0",
+      "config_fingerprint": "5f31dc7c2e5b"
+    },
+    {
+      "a": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/logo.pdf",
+      "b": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/Color Obsession_ BBROSE® Flair.png",
+      "hypotheses": [
+        {
+          "relationship": "POSSIBLE_PRODUCT_VARIANT",
+          "positive_evidence": [
+            "one side is a BBROSE-named raster render and the other is an isolated vector mark — the render may DEPICT the mark"
+          ],
+          "contradictory_evidence": [
+            "no visual match was performed; a render is PRODUCT_REFERENCE and can NEVER be a canonical master"
+          ],
+          "confidence": 0.25,
+          "capability_tier": "HEURISTIC",
+          "human_confirmed": null
+        }
+      ],
+      "primary": "POSSIBLE_PRODUCT_VARIANT",
+      "confidence": 0.25,
+      "shared_folder": true,
+      "shared_folder_is_decisive": false,
+      "human_confirmed_relationship": null,
+      "parser": "dip0c.brand_rel/0.1.0",
+      "config_fingerprint": "5f31dc7c2e5b"
+    },
+    {
+      "a": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/logo.pdf",
+      "b": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/Peach Perfection_ BBROSE Nail Polish.png",
+      "hypotheses": [
+        {
+          "relationship": "POSSIBLE_PRODUCT_VARIANT",
+          "positive_evidence": [
+            "one side is a BBROSE-named raster render and the other is an isolated vector mark — the render may DEPICT the mark"
+          ],
+          "contradictory_evidence": [
+            "no visual match was performed; a render is PRODUCT_REFERENCE and can NEVER be a canonical master"
+          ],
+          "confidence": 0.25,
+          "capability_tier": "HEURISTIC",
+          "human_confirmed": null
+        }
+      ],
+      "primary": "POSSIBLE_PRODUCT_VARIANT",
+      "confidence": 0.25,
+      "shared_folder": true,
+      "shared_folder_is_decisive": false,
+      "human_confirmed_relationship": null,
+      "parser": "dip0c.brand_rel/0.1.0",
+      "config_fingerprint": "5f31dc7c2e5b"
+    },
+    {
+      "a": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/logo.pdf",
+      "b": "materials/DOWNLOADE 2026/نماذج عامة من  01الانترنيت/BBROSE_palette.png",
+      "hypotheses": [
+        {
+          "relationship": "POSSIBLE_PRODUCT_VARIANT",
+          "positive_evidence": [
+            "one side is a BBROSE-named raster render and the other is an isolated vector mark — the render may DEPICT the mark"
+          ],
+          "contradictory_evidence": [
+            "no visual match was performed; a render is PRODUCT_REFERENCE and can NEVER be a canonical master"
+          ],
+          "confidence": 0.25,
+          "capability_tier": "HEURISTIC",
+          "human_confirmed": null
+        }
+      ],
+      "primary": "POSSIBLE_PRODUCT_VARIANT",
+      "confidence": 0.25,
+      "shared_folder": false,
+      "shared_folder_is_decisive": false,
+      "human_confirmed_relationship": null,
+      "parser": "dip0c.brand_rel/0.1.0",
+      "config_fingerprint": "5f31dc7c2e5b"
+    },
+    {
+      "a": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/LOGO6.ai",
+      "b": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/ATC LOGO.ai",
+      "hypotheses": [
+        {
+          "relationship": "POSSIBLE_LOCKUP_VARIANT",
+          "positive_evidence": [
+            "two isolated marks whose geometry differs sharply (8 vs 54 paths) — consistent with a symbol vs a full lockup"
+          ],
+          "contradictory_evidence": [
+            "path count alone does not establish a lockup; the marks were NOT visually matched, and they may simply be different logos"
+          ],
+          "confidence": 0.3,
+          "capability_tier": "HEURISTIC",
+          "human_confirmed": null
+        }
+      ],
+      "primary": "POSSIBLE_LOCKUP_VARIANT",
+      "confidence": 0.3,
+      "shared_folder": true,
+      "shared_folder_is_decisive": false,
+      "human_confirmed_relationship": null,
+      "parser": "dip0c.brand_rel/0.1.0",
+      "config_fingerprint": "5f31dc7c2e5b"
+    },
+    {
+      "a": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/LOGO6.ai",
+      "b": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/JOJIA LOGO.ai",
+      "hypotheses": [
+        {
+          "relationship": "POSSIBLE_LOCKUP_VARIANT",
+          "positive_evidence": [
+            "two isolated marks whose geometry differs sharply (8 vs 149 paths) — consistent with a symbol vs a full lockup"
+          ],
+          "contradictory_evidence": [
+            "path count alone does not establish a lockup; the marks were NOT visually matched, and they may simply be different logos"
+          ],
+          "confidence": 0.3,
+          "capability_tier": "HEURISTIC",
+          "human_confirmed": null
+        }
+      ],
+      "primary": "POSSIBLE_LOCKUP_VARIANT",
+      "confidence": 0.3,
+      "shared_folder": true,
+      "shared_folder_is_decisive": false,
+      "human_confirmed_relationship": null,
+      "parser": "dip0c.brand_rel/0.1.0",
+      "config_fingerprint": "5f31dc7c2e5b"
+    }
+  ]
+}

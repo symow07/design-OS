@@ -1,0 +1,147 @@
+{
+ "record_type": "vq1_master_structural_review/1.0",
+ "created_at": "2026-07-28",
+ "candidate": "M3",
+ "candidate_png_sha256": "4ecc8e9df1d14b77",
+ "geometry_modified": false,
+ "edge_darkening_applied": false,
+ "metallic_material_added": false,
+ "material_simulated": false,
+ "image_generation_calls": 0,
+ "new_geometry_candidates": 0,
+ "prohibited_candidates_absent": true,
+ "required_sections": 31,
+ "sections_present": 44,
+ "closeout_sections": [
+  "CLOSEOUT \u2014 withdrawal of the vacuous sample-identity comparison",
+  "CLOSEOUT \u2014 corrected fitted-curve evaluation (AUTHORITATIVE)",
+  "CLOSEOUT \u2014 dense assembly-wide confirmation",
+  "CLOSEOUT \u2014 sub-2-pixel residual table",
+  "CLOSEOUT \u2014 deterministic gates",
+  "CLOSEOUT \u2014 inspector disagreement (preserved, not rewritten)",
+  "CLOSEOUT \u2014 HUMAN TOLERANCE RULING",
+  "CLOSEOUT \u2014 amended definition of 10/10",
+  "CLOSEOUT \u2014 final M3 geometry freeze",
+  "CLOSEOUT \u2014 fit_cubics tooling defect",
+  "CLOSEOUT \u2014 future-only fitter remediation",
+  "CLOSEOUT \u2014 production-geometry blocker and required owner acceptance"
+ ],
+ "extra_section": "MEASUREMENT METHOD WITHDRAWAL (added for honesty)",
+ "human_adjudication": [
+  "VQ1_WITHIN_TOLERANCE_CONTOUR_RESIDUAL",
+  "VQ1_NONBLOCKING_SUBPIXEL_STRUCTURAL_DEVIATION",
+  "VQ1_INSPECTOR_DISAGREEMENT_RESOLVED_BY_HUMAN_TOLERANCE_RULING"
+ ],
+ "final_classification": [
+  "VQ1_FINAL_STRUCTURAL_CANDIDATE",
+  "VQ1_GEOMETRY_COMPLETE_PENDING_OWNER_ACCEPTANCE"
+ ],
+ "fitter_defect_codes": [
+  "VQ_FIT_CUBICS_COARSENING_BYPASSES_TOLERANCE",
+  "VQ_FITTER_SEGMENT_CAP_FAILS_TO_PRESERVE_ERROR_BOUND"
+ ],
+ "fitter_remediation": "apps.ire.contour_fit.fit_contour",
+ "m3_regenerated": false,
+ "inspector_scores_rewritten": false,
+ "section_titles": [
+  "CLOSEOUT \u2014 withdrawal of the vacuous sample-identity comparison",
+  "CLOSEOUT \u2014 corrected fitted-curve evaluation (AUTHORITATIVE)",
+  "CLOSEOUT \u2014 dense assembly-wide confirmation",
+  "CLOSEOUT \u2014 sub-2-pixel residual table",
+  "CLOSEOUT \u2014 deterministic gates",
+  "CLOSEOUT \u2014 inspector disagreement (preserved, not rewritten)",
+  "CLOSEOUT \u2014 HUMAN TOLERANCE RULING",
+  "CLOSEOUT \u2014 amended definition of 10/10",
+  "CLOSEOUT \u2014 final M3 geometry freeze",
+  "CLOSEOUT \u2014 fit_cubics tooling defect",
+  "CLOSEOUT \u2014 future-only fitter remediation",
+  "CLOSEOUT \u2014 production-geometry blocker and required owner acceptance",
+  "MEASUREMENT METHOD WITHDRAWAL \u2014 read first",
+  "Selected concept #97",
+  "M3 \u2014 the authoritative candidate",
+  "Normalized full silhouettes",
+  "Contour overlay",
+  "Component masks",
+  "Dome evidence",
+  "Shaft evidence",
+  "Lower-flare evidence",
+  "Flare-symmetry evidence",
+  "Collar-sleeve evidence",
+  "Collar / junction evidence",
+  "Neck reference extraction",
+  "Enlarged neck contour",
+  "Neck width progression",
+  "8-pixel inset evidence",
+  "Shoulder reference extraction",
+  "Enlarged shoulder contour",
+  "Shoulder curvature progression",
+  "Dense row confirmation",
+  "Deterministic gate summary",
+  "Certified raster sweep",
+  "Inspector A input manifest",
+  "Inspector A scorecard",
+  "Inspector B input manifest",
+  "Inspector B scorecard",
+  "Scorecard-consistency result",
+  "Low-salience presentation findings",
+  "Deferred VQ-3 observations",
+  "Production-geometry blockers",
+  "Supplier-draft state",
+  "FINAL REQUIRED HUMAN DECISION"
+ ],
+ "pdf": {
+  "path": "docs/visual_quality/vq1_master/vq1_master_structural_review.pdf",
+  "sections": 44,
+  "size_bytes": 1441211
+ },
+ "png": {
+  "path": "docs/visual_quality/vq1_master/vq1_master_structural_review.png",
+  "size": [
+   1500,
+   1265
+  ]
+ },
+ "state": "VQ1_OWNER_ACCEPTED",
+ "blocking_reasons": [
+  "INSPECTORS_DISAGREE_ON_GEOMETRY_CORRECTNESS",
+  "INSPECTOR_A_CATEGORY_BELOW_10",
+  "INSPECTOR_A_SCORECARD_INCONSISTENT",
+  "INSPECTOR_B_CATEGORY_BELOW_10",
+  "INSPECTOR_B_SCORECARD_INCONSISTENT"
+ ],
+ "human_accepted": false,
+ "manufacturable": false,
+ "production_ready": false,
+ "final_required_human_decision": "Two questions require a human ruling. They are independent.\n\nQ1 \u2014 Are the three deviations Inspector B classified as TRUE_STRUCTURAL_DEFECT actually defects, or correct geometry at the resolution limit? All three are real and measured: neck inset 7.3 px vs 8.0 px reference (0.7 px shallow), shoulder peak 1.44 px at row 706, flare/collar seam 1.84 px at row 495. All three sit far inside every deterministic gate (largest is 0.0076 normalized against a 0.035 limit), and the reference itself is quantized to +/-0.5 px. Inspector A saw the same evidence and classified all of them as presentation artifacts. The automated layer cannot break this tie: it is a judgment about what 'faithful' means at sub-2-pixel scale.\n\nQ2 \u2014 Should the GLASS contour be re-fitted? Its adaptive 0.6 px tolerance was never enforced because the chain exceeded the fitter's segment budget and fell into uniform chunking. Re-fitting would change M3 geometry, which this mandate prohibits, so it was disclosed rather than done. A re-fit would likely reduce the shoulder and seam deviations. It would also mean a new candidate and a new inspection cycle.\n\nNo further geometry candidate may be generated until you rule. M3S1 and M3S2 remain prohibited.",
+ "owner_acceptance": {
+  "codes": [
+   "VQ1_OWNER_ACCEPTED",
+   "VQ1_STRUCTURAL_GEOMETRY_ACCEPTED",
+   "VQ1_WORKSTREAM_CLOSED"
+  ],
+  "final_classification": "VQ1_FINAL_STRUCTURAL_CANDIDATE",
+  "decided_by": "PROJECT_OWNER",
+  "created_at": "2026-07-28",
+  "accepted_commit": "6fb8262",
+  "identity_sha256_png": "4ecc8e9df1d1",
+  "scope": "CONCEPT_VISUAL_STRUCTURAL_GEOMETRY",
+  "is_production_authority": false
+ },
+ "workstream_state": {
+  "VQ_1": "OWNER_ACCEPTED_CLOSED",
+  "VQ_2": "UNBLOCKED_PENDING_EXPLICIT_START",
+  "VQ_3": "UNBLOCKED_PENDING_EXPLICIT_START",
+  "PRODUCTION_GEOMETRY": "BLOCKED_PENDING_SUPPLIER_EVIDENCE"
+ },
+ "rendered_assets_regenerated": false,
+ "rendered_asset_note": "The PDF and PNG were deliberately NOT re-rendered in the acceptance transition. They carry the pre-acceptance state; this JSON carries the acceptance. M3 artwork was not touched.",
+ "automatic_release_state_at_close1": "VQ1_MASTER_HARD_STOP_REVIEW_REQUIRED",
+ "automatic_release_note": "The automatic release layer hard-stopped at CLOSE-1 and never passed on its own. VQ-1 is accepted by explicit owner ruling, recorded separately; this key preserves what the automated layer concluded.",
+ "blocking_reasons_at_close1": [
+  "INSPECTORS_DISAGREE_ON_GEOMETRY_CORRECTNESS",
+  "INSPECTOR_A_CATEGORY_BELOW_10",
+  "INSPECTOR_A_SCORECARD_INCONSISTENT",
+  "INSPECTOR_B_CATEGORY_BELOW_10",
+  "INSPECTOR_B_SCORECARD_INCONSISTENT"
+ ]
+}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load plain_words %}
+{% comment %}RBV-3 — THE RENDER REVIEW PACKAGES, read-only, in the one shell (the owner's goal of 2026-09-25: "One clean visual
+system", "Plain words everywhere"). Each package gathers a bottle's renders from hash-verified render evidence; the
+owner's reviews are batched in the review queue and decided only through the register — this page has no decision
+control, by rule (CORR-1). Each standard's schema and each code is folded under "What the record says".{% endcomment %}
+{% block title %}The render review packages{% endblock %}
+{% block content %}
+<h1 class="h1">The render review packages</h1>
+<p class="lead">Each package gathers one bottle's renders, drawn under a fixed camera and light, for you to look at. This
+  page only shows them: your reviews are gathered in the review queue and decided in the register, never here.</p>
+<details class="tech"><summary>What the record says</summary><p>Read-only review surface. Packages are assembled from hash-verified RBV-2B render evidence. Owner reviews are batched via OWNER_REVIEW_QUEUE.md and decided ONLY through OWNER_BLOCKER_CLEARANCE.md — this page has no decision controls, by rule (CORR-1: committed files are not a review boundary; a parallel decision channel would be worse).</p></details>
+{% for p in packages %}
+<section class="card pad prog-panel" aria-label="{{ p.package_id }}">
+  <div class="prog-hd"><h2 class="h3">{{ p.manifest.subject_id|plain }}</h2><span class="tag wait">your review: {{ p.manifest.owner_review.status|plain }}</span></div>
+  <p class="warn">{{ p.manifest.statement }}</p>
+  <p class="small">Made {{ p.manifest.created_at|when }}</p>
+  <dl class="prog-dl">
+    <dt>The camera</dt><dd>{{ p.manifest.camera_standard.status|plain }}</dd>
+    <dt>The light</dt><dd>{{ p.manifest.lighting_standard.status|plain }}</dd>
+    <dt>For showing a client</dt><dd class="warn">{{ p.manifest.modes.CLIENT_PRESENTATION.status|plain }}{% if p.manifest.modes.CLIENT_PRESENTATION.reasons %} — {{ p.manifest.modes.CLIENT_PRESENTATION.reasons|join:", "|plain }}{% endif %}</dd>
+    <dt>Warnings</dt><dd>{{ p.manifest.modes.GEOMETRY_VALIDATION.warnings|join:", "|default:"none"|plain }}</dd>
+    <dt>References</dt><dd>{{ p.manifest.modes.GEOMETRY_VALIDATION.reference_availability|plain }}</dd>
+  </dl>
+  {% if p.manifest.note %}<p class="small">{{ p.manifest.note|plain }}</p>{% endif %}
+  <h3 class="over">The contact sheet</h3>
+  <img class="prog-img" src="/api/visual-quality/rbv3/{{ p.package_id }}/contact-sheet/" alt="The contact sheet of {{ p.manifest.subject_id|plain }}" loading="lazy">
+  <h3 class="over">Each view</h3>
+  <p>{% for view, entry in p.manifest.modes.GEOMETRY_VALIDATION.views.items %}<a href="/api/visual-quality/rbv3/{{ p.package_id }}/view-{{ view }}/">{{ view|plain }}</a>{% if not forloop.last %} · {% endif %}{% endfor %}</p>
+  <details class="tech"><summary>What the record says</summary>
+    <p>{{ p.package_id }} · {{ p.manifest.subject_id }} · created {{ p.manifest.created_at }} · review {{ p.manifest.owner_review.status }}</p>
+    <p>camera {{ p.manifest.camera_standard.schema }} [{{ p.manifest.camera_standard.status }}] · light {{ p.manifest.lighting_standard.schema }} [{{ p.manifest.lighting_standard.status }}]</p>
+    <p>client presentation {{ p.manifest.modes.CLIENT_PRESENTATION.status }} — {{ p.manifest.modes.CLIENT_PRESENTATION.reasons|join:", " }} · §11 warnings {{ p.manifest.modes.GEOMETRY_VALIDATION.warnings|join:", "|default:"none" }}</p>
+  </details>
+</section>
+{% empty %}
+<p class="small">No review package has been committed yet.</p>
+{% endfor %}
+{% endblock %}

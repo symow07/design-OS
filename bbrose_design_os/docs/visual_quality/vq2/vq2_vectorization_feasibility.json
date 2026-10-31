@@ -1,0 +1,383 @@
+{
+ "record_type": "vq2_vectorization_feasibility/1.0",
+ "created_at": "2026-07-29",
+ "method": "DETERMINISTIC_CONTOUR_EXTRACTION_AND_BEZIER_FIT",
+ "honest_label": "AUTOMATED_VECTORIZATION_NOT_A_MANUAL_REDRAW",
+ "is_manual_redraw": false,
+ "is_adobe_image_trace": false,
+ "how_it_differs_from_image_trace": "per-component decomposition, corner-preserving fit and a reported node budget \u2014 all three are measured, not claimed",
+ "important": "This is AUTOMATED vectorization. \u00a72 asks for a clean MANUAL vector reconstruction of the approved mark. No manual redraw was performed and none is claimed: producing one requires a human designer redrawing the mark in Illustrator.",
+ "approved_logo": {
+  "source": "media/brand/logo.png",
+  "source_sha256": "72f0fc7ad97b90e0",
+  "components_found": 9,
+  "components_meeting_0_95": 7,
+  "total_nodes": 1562,
+  "worst": 0.6163,
+  "per_component": [
+   {
+    "component": "B_1",
+    "bbox_px": [
+     1,
+     34,
+     210,
+     290
+    ],
+    "source_px": 21771,
+    "upsample": 2,
+    "rdp_eps": 1.2,
+    "contours": 3,
+    "nodes": 126,
+    "iou_vs_source": 0.9696,
+    "meets_0_95": true
+   },
+   {
+    "component": "B_2",
+    "bbox_px": [
+     216,
+     34,
+     426,
+     290
+    ],
+    "source_px": 21632,
+    "upsample": 2,
+    "rdp_eps": 1.2,
+    "contours": 3,
+    "nodes": 122,
+    "iou_vs_source": 0.9634,
+    "meets_0_95": true
+   },
+   {
+    "component": "R_STEM",
+    "bbox_px": [
+     430,
+     34,
+     506,
+     290
+    ],
+    "source_px": 7543,
+    "upsample": 2,
+    "rdp_eps": 1.073,
+    "contours": 2,
+    "nodes": 52,
+    "iou_vs_source": 0.9241,
+    "meets_0_95": false
+   },
+   {
+    "component": "R_BOWL",
+    "bbox_px": [
+     504,
+     34,
+     697,
+     290
+    ],
+    "source_px": 14269,
+    "upsample": 2,
+    "rdp_eps": 1.2,
+    "contours": 4,
+    "nodes": 183,
+    "iou_vs_source": 0.9683,
+    "meets_0_95": true
+   },
+   {
+    "component": "ROSE_MEDALLION",
+    "bbox_px": [
+     695,
+     24,
+     973,
+     292
+    ],
+    "source_px": 39055,
+    "upsample": 2,
+    "rdp_eps": 1.2,
+    "contours": 5,
+    "nodes": 485,
+    "iou_vs_source": 0.9665,
+    "meets_0_95": true
+   },
+   {
+    "component": "S",
+    "bbox_px": [
+     990,
+     28,
+     1147,
+     299
+    ],
+    "source_px": 14149,
+    "upsample": 2,
+    "rdp_eps": 1.2,
+    "contours": 1,
+    "nodes": 214,
+    "iou_vs_source": 0.9746,
+    "meets_0_95": true
+   },
+   {
+    "component": "E",
+    "bbox_px": [
+     1154,
+     34,
+     1361,
+     292
+    ],
+    "source_px": 16499,
+    "upsample": 2,
+    "rdp_eps": 1.2,
+    "contours": 1,
+    "nodes": 106,
+    "iou_vs_source": 0.9947,
+    "meets_0_95": true
+   },
+   {
+    "component": "REGISTERED_RING",
+    "bbox_px": [
+     1362,
+     0,
+     1437,
+     73
+    ],
+    "source_px": 1660,
+    "upsample": 4,
+    "rdp_eps": 0.849,
+    "contours": 4,
+    "nodes": 207,
+    "iou_vs_source": 0.6163,
+    "meets_0_95": false
+   },
+   {
+    "component": "REGISTERED_INNER",
+    "bbox_px": [
+     1383,
+     17,
+     1419,
+     55
+    ],
+    "source_px": 943,
+    "upsample": 4,
+    "rdp_eps": 0.45,
+    "contours": 2,
+    "nodes": 67,
+    "iou_vs_source": 0.987,
+    "meets_0_95": true
+   }
+  ]
+ },
+ "custom_lettering": {
+  "glyphs": 13,
+  "glyphs_meeting_0_95": 0,
+  "total_nodes": 638,
+  "worst": 0.6392,
+  "best": 0.9204,
+  "per_glyph": [
+   {
+    "index": 0,
+    "char": "R",
+    "word": "Rose",
+    "source_crop_px": [
+     527,
+     947,
+     562,
+     1022
+    ],
+    "cap_or_x_height_px": 75,
+    "contours": 2,
+    "nodes": 26,
+    "iou_vs_reference": 0.8486,
+    "meets_0_95": false
+   },
+   {
+    "index": 1,
+    "char": "o",
+    "word": "Rose",
+    "source_crop_px": [
+     563,
+     975,
+     597,
+     1022
+    ],
+    "cap_or_x_height_px": 47,
+    "contours": 3,
+    "nodes": 30,
+    "iou_vs_reference": 0.8711,
+    "meets_0_95": false
+   },
+   {
+    "index": 2,
+    "char": "s",
+    "word": "Rose",
+    "source_crop_px": [
+     603,
+     976,
+     626,
+     1023
+    ],
+    "cap_or_x_height_px": 47,
+    "contours": 1,
+    "nodes": 34,
+    "iou_vs_reference": 0.903,
+    "meets_0_95": false
+   },
+   {
+    "index": 3,
+    "char": "e",
+    "word": "Rose",
+    "source_crop_px": [
+     631,
+     976,
+     660,
+     1023
+    ],
+    "cap_or_x_height_px": 47,
+    "contours": 2,
+    "nodes": 27,
+    "iou_vs_reference": 0.8876,
+    "meets_0_95": false
+   },
+   {
+    "index": 4,
+    "char": "D",
+    "word": "Damascena",
+    "source_crop_px": [
+     527,
+     1029,
+     562,
+     1090
+    ],
+    "cap_or_x_height_px": 61,
+    "contours": 2,
+    "nodes": 24,
+    "iou_vs_reference": 0.8223,
+    "meets_0_95": false
+   },
+   {
+    "index": 5,
+    "char": "a",
+    "word": "Damascena",
+    "source_crop_px": [
+     566,
+     1052,
+     600,
+     1094
+    ],
+    "cap_or_x_height_px": 42,
+    "contours": 3,
+    "nodes": 38,
+    "iou_vs_reference": 0.6392,
+    "meets_0_95": false
+   },
+   {
+    "index": 6,
+    "char": "m",
+    "word": "Damascena",
+    "source_crop_px": [
+     604,
+     1053,
+     643,
+     1094
+    ],
+    "cap_or_x_height_px": 41,
+    "contours": 1,
+    "nodes": 36,
+    "iou_vs_reference": 0.8404,
+    "meets_0_95": false
+   },
+   {
+    "index": 7,
+    "char": "a",
+    "word": "Damascena",
+    "source_crop_px": [
+     648,
+     1054,
+     672,
+     1094
+    ],
+    "cap_or_x_height_px": 40,
+    "contours": 2,
+    "nodes": 39,
+    "iou_vs_reference": 0.9067,
+    "meets_0_95": false
+   },
+   {
+    "index": 8,
+    "char": "s",
+    "word": "Damascena",
+    "source_crop_px": [
+     676,
+     1053,
+     699,
+     1094
+    ],
+    "cap_or_x_height_px": 41,
+    "contours": 2,
+    "nodes": 44,
+    "iou_vs_reference": 0.8999,
+    "meets_0_95": false
+   },
+   {
+    "index": 9,
+    "char": "c",
+    "word": "Damascena",
+    "source_crop_px": [
+     704,
+     1053,
+     728,
+     1093
+    ],
+    "cap_or_x_height_px": 40,
+    "contours": 1,
+    "nodes": 32,
+    "iou_vs_reference": 0.9164,
+    "meets_0_95": false
+   },
+   {
+    "index": 10,
+    "char": "e",
+    "word": "Damascena",
+    "source_crop_px": [
+     732,
+     1052,
+     760,
+     1092
+    ],
+    "cap_or_x_height_px": 40,
+    "contours": 3,
+    "nodes": 44,
+    "iou_vs_reference": 0.8043,
+    "meets_0_95": false
+   },
+   {
+    "index": 11,
+    "char": "n",
+    "word": "Damascena",
+    "source_crop_px": [
+     764,
+     1050,
+     785,
+     1090
+    ],
+    "cap_or_x_height_px": 40,
+    "contours": 5,
+    "nodes": 50,
+    "iou_vs_reference": 0.9204,
+    "meets_0_95": false
+   },
+   {
+    "index": 12,
+    "char": "a",
+    "word": "Damascena",
+    "source_crop_px": [
+     786,
+     1047,
+     807,
+     1089
+    ],
+    "cap_or_x_height_px": 42,
+    "contours": 20,
+    "nodes": 214,
+    "iou_vs_reference": 0.7203,
+    "meets_0_95": false
+   }
+  ]
+ },
+ "root_cause_lettering": "The product name occupies only 40-75 px of cap height in the source photograph. A high-contrast Didone has hairlines and serif brackets 1-2 px wide at that scale, at or below the render noise floor, so per-glyph serif geometry cannot be recovered reliably. One glyph degenerated to 20 contours / 214 nodes \u2014 noise, not letterform.",
+ "root_cause_logo": "Seven of nine components reach >=0.96, but the REGISTERED_RING reaches only 0.62 and R_STEM 0.92. The registered symbol is precisely an element \u00a72 requires preserved, and an auto-traced registered mark that is 38% wrong is a redesign by accident."
+}

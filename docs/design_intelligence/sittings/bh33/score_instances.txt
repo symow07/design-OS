@@ -1,0 +1,41 @@
+§AD0(a) SCORE — §BH33(2) VARIABLE INSTANCE PIN, launched against
+pred_instances.txt (sealed a82e69d9438703cc before git add). Gate GREEN,
+GEXIT=0. LANDED 5a3627b (2026-09-05T03:52:54Z UTC). 8/8.
+
+LAUNCH HISTORY (recorded, not a gate refusal): the first launch again ran
+from the OUTER root (the combined seal/stage/launch command had cd'd there
+for git add) — exit 127 at the launcher, nothing ran, no ledger line
+(instances_gate_launch1_failed.log); relaunched through
+~/bh33_work/launch_gate.sh, which pins the inner root itself. The
+prediction was unchanged between the launches. §BH24 0/3.
+
+L1 HELD: exactly the FIVE declared apps paths + the gate-staged ledger;
+   nothing under static/.
+L2 HELD: font_roles 159/27; pdf_ai 16/7; container_font_authority 22/2;
+   test_pdf_ai_emitter 93/0; test_container_font_authority 32/0 — exact;
+   five + one tests added.
+L3 HELD: no manifest / records / identity in the commit; ledger 461 → 462
+   with HEAD~1 a byte-prefix of HEAD; census-first held (records none,
+   identity none, WIT 863 with its keys — the analyser's test green in the
+   targeted set and the gate; corpus constants none).
+L4 HELD: staged == declared, 5 rows, measured before launch.
+L5 HELD: 6 files, 323 insertions, 36 deletions — exact.
+L6 HELD: "TIER_2=GREEN collected=8548 failures=0 apps=7736 dip0c=671
+   dip0=141" — exact (8542 + the six tests). No refusal.
+L7 HELD: ledger 461 → 462; the new line verdict OK, refusal_count 0.
+L8 HELD: apps diff = exactly the five paths; GATE 7fbeb8f1fe10b0fb at
+   [514:541] (file 593 lines, `_with_instance` below the grouping), TEST
+   b32030dc827263e4; tree seals unchanged; protocol_identity untouched;
+   the eight M7 artefacts == baseline; under Django at scoring: catalogue
+   38, five variable faces (Montserrat[wght], Montserrat-Italic[wght],
+   Quicksand[wght], PlayfairDisplay[wght], PlayfairDisplay-Italic[wght]);
+   heading → Montserrat[wght] at wght 700 = Montserrat-Bold (derived sha
+   90cd4f1a7d9b707f…, the granted file 0f7b311b2f3279e4… verifying
+   VERIFIED_FOR_PRODUCTION / USER_CONFIRMED); body pin → Montserrat-Regular;
+   display unpinned → None; the Noto trio VERIFIED_FOR_PRODUCTION; the 35
+   at their PROVENANCE hashes; no authority involved.
+Post-landing: porcelain clean. The regulatory sticker's content streams at
+this HEAD hash to 35060d5da26f8506a8175752369ec8bef08c1831f4f9fde61542018277073c41
+(31,274 inflated bytes; stable across two runs; equal to the value at
+4c6be16) — the pin the (3) test carries. Next, in the ruled order: (3)
+harakat kept.

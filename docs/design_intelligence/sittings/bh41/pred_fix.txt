@@ -1,0 +1,52 @@
+§AD0(a) PREDICTION — (3) THE DRAINED LIVE SERVER (§BH41(3)), the fix as its
+own commit, sealed BEFORE git add. Base HEAD 08a7c45 (T41, 8/8). The stash
+(§BH40(a) import, 298 entries) untouched by this commit.
+
+L1 WRITE SET: exactly 21 paths under bbrose_design_os/apps/pipeline/tests/ —
+   ONE new module browser_live_server.py (119 lines) and TWENTY modified
+   files: the 15 test_browser_*.py files and the 5 *_screenshot_capture.py
+   harnesses (each: the import of StaticLiveServerTestCase becomes the import
+   of DrainedStaticLiveServerTestCase, every base swapped; nothing else),
+   test_browser_staged_reference_ui.py also gaining the three
+   DrainedLiveServerTests. Plus the gate-staged ledger line. NO other path:
+   no tools/, docs/, register, settings, gate script, .gitignore, CLAUDE.md,
+   .mcp.json; nothing under materials/, var/ or ~/ written by the commit.
+L2 DIFF SHAPE: 20 modified at +130 −42 (18 files 2+/2−, test_browser_
+   profile_editor.py 4+/4−, test_browser_staged_reference_ui.py 90+/2−) and
+   1 added at +119; every swapped file's diff is import + base lines only.
+L3 MANIFEST / A391: the suite manifest UNTOUCHED — browser_live_server.py is
+   not a test file (pytest collects test_*.py and tests.py; measured: the
+   collected FILE set unchanged); the three new tests join an existing file;
+   records consistent; the ledger passes APPEND_ONLY (486 at HEAD, this run
+   +1). Census-first: records none; identity none; WIT 864 UNCHANGED
+   (measured after the edits: test_wit_unit_analysis.py 52 passed; the
+   module and the tests carry 0 dimensioned checks, the swaps change no
+   comparison); corpus constants, dip1b, the exclusion list, the materials
+   record and summary untouched; no new test FILE; no new colliding
+   top-level name (the two-roots guard's three names unchanged).
+L4 STAGED == DECLARED: 21 rows — 20 M + 1 A — all under
+   bbrose_design_os/apps/pipeline/tests/.
+L5 COMMIT CONTENTS: 22 files (21 + the ledger), insertions 250 (130 + 119 +
+   1), deletions 42.
+L6 SUITE LINE + REFUSAL TREE: GREEN — TIER_2=GREEN collected=8593
+   failures=0 apps=7781 dip0c=671 dip0=141 (8590 + the three drain tests;
+   measured by --collect-only: apps 7781); PostgreSQL 16 and Redis checked
+   up; nothing runs beside the gate. If the flush deadlock fires on this
+   gate: the fix did not remove the cause — NO re-run, a stop and a report.
+L7 LEDGER FOLD: 486 → 487, the +1 in THIS commit; HEAD~1 a byte-prefix of
+   HEAD; verdict OK, refusal_count 0.
+L8 PROTOCOL IDENTITIES / INVARIANTS: apps diff = the 21 paths above only;
+   GATE 7fbeb8f1fe10b0fb at [514:541] (593 lines) and TEST b32030dc827263e4
+   byte-identical; tree seals dip0c c22592930c75001c / dip0a
+   d72072760ab20a6a UNCHANGED; protocol_identity UNCHANGED; the eight M7
+   artefacts == baseline; the register untouched (20,213 lines,
+   db241ccf0b258e35); the Noto trio and Warm Gold under Django at scoring
+   (font and colour themes unchanged); the DIP-0A inventory 3b3cfdc2bf4fc6c0
+   unchanged; the stash's 298 entries identical after the landing.
+   THE NEGATIVE CONTROL (measured before this seal on the same content —
+   the ten amplified runs BEFORE the fix: 75 events in 460 tests, 8 of 10
+   runs refusing; AFTER the fix, the same runner on the same two files, ten
+   runs: predicted 0 events, 10 of 10 green, the drain waiting under 1 s per
+   teardown) is reported in the commit message and the goal report; if the
+   AFTER runs show any deadlock, this prediction is scored as history and
+   the commit does not launch.

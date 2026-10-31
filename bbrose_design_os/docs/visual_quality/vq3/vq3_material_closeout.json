@@ -1,0 +1,424 @@
+{
+ "record_type": "vq3_material_closeout/1.0",
+ "created_at": "2026-07-29",
+ "state": "OWNER_APPROVED_AND_CLOSED",
+ "vq3_state": "VQ3_WORKSTREAM_CLOSED",
+ "codes": [
+  "VQ3_OWNER_SELECTED_M3",
+  "VQ3_MATERIAL_CANDIDATE_M3_ACCEPTED",
+  "VQ3_MATERIAL_SELECTION_RESOLVED_BY_OWNER",
+  "VQ3_COLLAR_BODY_MATERIAL_INTEGRATION_RESOLVED",
+  "VQ3_CLOSEOUT_EVIDENCE_COMPLETE",
+  "VQ3_WORKSTREAM_CLOSED"
+ ],
+ "selected": "M3",
+ "selected_sha256_16": "fbdedc5b23e31745",
+ "alternates": {
+  "M1": "REJECTED_AS_ALTERNATE / PRESERVED_FOR_AUDIT",
+  "M2": "REJECTED_AS_ALTERNATE / PRESERVED_FOR_AUDIT"
+ },
+ "evidence_artifacts": {
+  "component_mask_sheet": {
+   "record_type": "vq3_m3_component_mask_sheet/1.0",
+   "sheet": "docs/visual_quality/vq3/vq3_m3_component_mask_sheet.png",
+   "sheet_sha256_16": "b515a61e1a175246",
+   "panels": [
+    "BODY",
+    "COLLAR",
+    "DARK_CLOSURE",
+    "LOGO",
+    "DIVIDER",
+    "ROSE",
+    "DAMASCENA",
+    "SUPPORTING_COPY",
+    "BACKGROUND"
+   ],
+   "source": "the eight frozen vector-derived mask PNGs, re-read from disk",
+   "regenerated_from_colour_threshold": false,
+   "hand_drawn": false,
+   "inferred_from_render": false,
+   "mask_hashes_match_frozen_records": true,
+   "mask_dimensions_match_m3": true,
+   "mask_pixel_counts": {
+    "BODY": 822378,
+    "COLLAR": 138793,
+    "DARK_CLOSURE": 77454,
+    "LOGO": 3131,
+    "DIVIDER": 510,
+    "ROSE": 10909,
+    "DAMASCENA": 18785,
+    "SUPPORTING_COPY": 1726
+   },
+   "pairwise_overlap_px": {
+    "BODY|COLLAR": 0,
+    "BODY|DARK_CLOSURE": 0,
+    "BODY|LOGO": 3131,
+    "BODY|DIVIDER": 510,
+    "BODY|ROSE": 10909,
+    "BODY|DAMASCENA": 18785,
+    "BODY|SUPPORTING_COPY": 1726,
+    "COLLAR|DARK_CLOSURE": 0,
+    "COLLAR|LOGO": 0,
+    "COLLAR|DIVIDER": 0,
+    "COLLAR|ROSE": 0,
+    "COLLAR|DAMASCENA": 0,
+    "COLLAR|SUPPORTING_COPY": 0,
+    "DARK_CLOSURE|LOGO": 0,
+    "DARK_CLOSURE|DIVIDER": 0,
+    "DARK_CLOSURE|ROSE": 0,
+    "DARK_CLOSURE|DAMASCENA": 0,
+    "DARK_CLOSURE|SUPPORTING_COPY": 0,
+    "LOGO|DIVIDER": 0,
+    "LOGO|ROSE": 0,
+    "LOGO|DAMASCENA": 0,
+    "LOGO|SUPPORTING_COPY": 0,
+    "DIVIDER|ROSE": 0,
+    "DIVIDER|DAMASCENA": 0,
+    "DIVIDER|SUPPORTING_COPY": 0,
+    "ROSE|DAMASCENA": 0,
+    "ROSE|SUPPORTING_COPY": 0,
+    "DAMASCENA|SUPPORTING_COPY": 0
+   },
+   "artwork_spill_outside_product": 0,
+   "structure_gap_px": 0,
+   "artwork_masks_pixel_identical_to_accepted_geometry": true
+  },
+  "geometry_overlay": {
+   "record_type": "vq3_m3_geometry_overlay/1.0",
+   "overlay": "docs/visual_quality/vq3/vq3_m3_geometry_overlay.png",
+   "overlay_sha256_16": "b79ec76c16c121a6",
+   "underlying_render": "docs/visual_quality/vq3/vq3_m3_warm_rose_gold.png",
+   "underlying_render_sha256_16": "fbdedc5b23e31745",
+   "underlying_render_modified": false,
+   "derived_from": "frozen vector-derived masks; no geometry inferred from pixels",
+   "shows": [
+    "bottle outer silhouette",
+    "closure silhouette",
+    "collar silhouette",
+    "centerline",
+    "artwork anchors",
+    "logo bounds",
+    "Rose bounds",
+    "Damascena bounds",
+    "supporting-copy bounds",
+    "component boundaries"
+   ],
+   "artwork_bounds_px": {
+    "LOGO": [
+     226,
+     1189,
+     424,
+     1230
+    ],
+    "ROSE": [
+     228,
+     1408,
+     473,
+     1548
+    ],
+    "DAMASCENA": [
+     227,
+     1564,
+     756,
+     1681
+    ],
+    "SUPPORTING_COPY": [
+     335,
+     1781,
+     673,
+     1805
+    ],
+    "DIVIDER": [
+     224,
+     1360,
+     478,
+     1361
+    ]
+   },
+   "centerline_x_px": 488,
+   "gates": {
+    "silhouette_iou": 1.0,
+    "centerline_drift_px": 0.0,
+    "body_width_drift_px": 0,
+    "collar_width_drift_px": 0,
+    "closure_width_drift_px": 0,
+    "artwork_anchor_drift_px": 0,
+    "logo_drift": 0,
+    "glyph_drift": 0,
+    "clipping": 0,
+    "unsupported_objects": 0,
+    "mask_spill": 0
+   },
+   "is_not_a_replacement_clean_preview": true
+  },
+  "material_closeups": {
+   "record_type": "vq3_m3_material_closeups/1.0",
+   "sheet": "docs/visual_quality/vq3/vq3_m3_material_closeups.png",
+   "sheet_sha256_16": "287de4b3078ebf15",
+   "source": "crops of the frozen selected M3 render",
+   "source_sha256_16": "fbdedc5b23e31745",
+   "repainted": false,
+   "enhanced": false,
+   "sharpened": false,
+   "recoloured": false,
+   "regenerated": false,
+   "resample": "NEAREST \u2014 no interpolation invents detail",
+   "panels": {
+    "A_BODY": {
+     "mean": [
+      207.7,
+      181.3,
+      174.3
+     ],
+     "variation": 32.57,
+     "max": 239
+    },
+    "B_COLLAR": {
+     "mean": [
+      141.3,
+      101.8,
+      85.8
+     ],
+     "variation": 38.88,
+     "max": 242
+    },
+    "C_DARK_CLOSURE": {
+     "mean": [
+      81.6,
+      57.5,
+      61.3
+     ],
+     "variation": 5.12,
+     "max": 90
+    },
+    "D_ARTWORK": {
+     "mean": [
+      80.0,
+      37.0,
+      37.0
+     ],
+     "variation": 0.0,
+     "max": 80
+    }
+   },
+   "body_frosted_not_plastic": true,
+   "collar_blown_highlight_px": 0,
+   "collar_warmer_than_body": true,
+   "collar_more_reflective_than_body": true,
+   "closure_not_metallic": true
+  }
+ },
+ "verification": {
+  "record_type": "vq3_closeout_verification/1.0",
+  "created_at": "2026-07-29",
+  "frozen_inputs": {
+   "m3_selected_render": {
+    "live": "fbdedc5b23e31745",
+    "expected": "fbdedc5b23e31745",
+    "match": true
+   },
+   "m3_structural": {
+    "live": "4ecc8e9df1d1",
+    "expected": "4ecc8e9df1d1",
+    "match": true
+   },
+   "lf1_r1": {
+    "live": "fcd8003994d52028",
+    "expected": "fcd8003994d52028",
+    "match": true
+   },
+   "font_unit": {
+    "live": "5db4403984ba6f75",
+    "expected": "5db4403984ba6f75",
+    "match": true
+   },
+   "approved_logo": {
+    "live": "a2b2a82969389ac2",
+    "expected": "a2b2a82969389ac2",
+    "match": true
+   },
+   "vq2_clean_preview": {
+    "live": "94ec944326889c20",
+    "expected": "94ec944326889c20",
+    "match": true
+   },
+   "m1_render": {
+    "live": "cfba6016eb4ac40f",
+    "expected": "cfba6016eb4ac40f",
+    "match": true
+   },
+   "m2_render": {
+    "live": "26ed49546edbea48",
+    "expected": "26ed49546edbea48",
+    "match": true
+   },
+   "BODY": {
+    "live": "1ce3057cf3bc2f80",
+    "expected": "1ce3057cf3bc2f80",
+    "match": true
+   },
+   "COLLAR": {
+    "live": "4e666b3cf6841ef9",
+    "expected": "4e666b3cf6841ef9",
+    "match": true
+   },
+   "DARK_CLOSURE": {
+    "live": "a05982ac563865a4",
+    "expected": "a05982ac563865a4",
+    "match": true
+   },
+   "LOGO": {
+    "live": "cb4b4c5ad2f24904",
+    "expected": "cb4b4c5ad2f24904",
+    "match": true
+   },
+   "DIVIDER": {
+    "live": "152bc61d7fbf3fdb",
+    "expected": "152bc61d7fbf3fdb",
+    "match": true
+   },
+   "ROSE": {
+    "live": "54cd2ead9beb64a2",
+    "expected": "54cd2ead9beb64a2",
+    "match": true
+   },
+   "DAMASCENA": {
+    "live": "5cc66f125ec63e0a",
+    "expected": "5cc66f125ec63e0a",
+    "match": true
+   },
+   "SUPPORTING_COPY": {
+    "live": "95b20e7ce6463080",
+    "expected": "95b20e7ce6463080",
+    "match": true
+   }
+  },
+  "frozen_input_drift": [],
+  "frozen_inputs_checked": 16,
+  "selected_render_hash_unchanged": true,
+  "all_eight_mask_hashes_unchanged": true,
+  "geometry_overlay_derived_from_frozen_vectors": true,
+  "closeups_derived_from_frozen_m3_pixels": true,
+  "render_regenerated": false,
+  "material_modified": false,
+  "typography_modified": false,
+  "logo_modified": false,
+  "new_provider_calls": 0,
+  "new_image_generation_calls": 0,
+  "m4_created": false,
+  "packaging_started": false,
+  "supplier_requests_sent": 0,
+  "ranking_preserved": [
+   "M3",
+   "M1",
+   "M2"
+  ],
+  "actionable_counts_true": {
+   "M1": 4,
+   "M2": 7,
+   "M3": 0
+  },
+  "actionable_count_correction": {
+   "code": "VQ3_ACTIONABLE_COUNT_MISREPORTED_IN_PRIOR_SUMMARY",
+   "previously_reported": {
+    "M1": 2,
+    "M2": 5,
+    "M3": 0
+   },
+   "correct": {
+    "M1": 4,
+    "M2": 7,
+    "M3": 0
+   },
+   "cause": "my earlier prose quoted Inspector A's per-candidate counts as if they were the two-inspector totals",
+   "records_were_always_correct": true,
+   "evidence": {
+    "M1": {
+     "A": 2,
+     "B": 2
+    },
+    "M2": {
+     "A": 5,
+     "B": 2
+    },
+    "M3": {
+     "A": 0,
+     "B": 0
+    }
+   },
+   "affects_selection": false,
+   "why_not": "M3 had zero actionable findings from both inspectors under either reading, and the owner selected M3"
+  },
+  "collar_body_integration": {
+   "code": "VQ3_COLLAR_BODY_MATERIAL_INTEGRATION_RESOLVED",
+   "supported_by": [
+    "owner selection of M3",
+    "both M3 material inspections returned collar_body_integration PASS",
+    "material close-up evidence sheet",
+    "collar warmer than body: True",
+    "collar more reflective than body: True",
+    "shared studio lighting environment across all components",
+    "no chromatic isolation",
+    "no pasted-on appearance"
+   ],
+   "still_supported": true
+  }
+ },
+ "evidence_complete": true,
+ "production_boundaries": {
+  "PRODUCTION_GEOMETRY": "BLOCKED_PENDING_SUPPLIER_EVIDENCE",
+  "PRODUCTION_FLAT_ARTWORK": "BLOCKED_PENDING_WRAP_AND_SUPPLIER_EVIDENCE",
+  "PRODUCTION_COLOR_SEPARATION": "BLOCKED_PENDING_SUPPLIER_EVIDENCE",
+  "PRODUCTION_MATERIAL_SPECIFICATION": "BLOCKED_PENDING_SUPPLIER_EVIDENCE",
+  "ILLUSTRATOR_EXECUTION_VERIFICATION": "REQUIRED_BEFORE_PRODUCTION_AUTHORITY"
+ },
+ "closure_does_not_imply": [
+  "manufacturability",
+  "supplier compatibility",
+  "material formulation",
+  "anodized-colour specification",
+  "Pantone or CMYK authority",
+  "production readiness"
+ ],
+ "upstream": {
+  "VQ_1": "CLOSED",
+  "VQ_2": "CLOSED",
+  "COMPLETE_PRODUCT_REVIEW": "CLOSED"
+ },
+ "packaging_started": false,
+ "supplier_requests_sent": 0,
+ "provider_calls": 0,
+ "image_generation_calls": 0,
+ "m4_created": false,
+ "section_titles": [
+  "What this is",
+  "1. VQ-3 start authority",
+  "2. Frozen upstream identities",
+  "3. M1 alternate",
+  "4. M2 alternate",
+  "5. Selected M3",
+  "6. Owner-selection record",
+  "7. Inspector ranking and findings",
+  "8. Component-mask sheet",
+  "9. Geometry overlay",
+  "10-13. Material close-ups (body, collar, closure, artwork)",
+  "14. Collar/body integration evidence",
+  "15. Deterministic geometry gates",
+  "16. Provider-call history",
+  "17. Production boundaries",
+  "18. Final workstream state"
+ ],
+ "sections": 16,
+ "pdf": {
+  "path": "docs/visual_quality/vq3/vq3_material_closeout.pdf",
+  "sections": 16,
+  "size_bytes": 2085704
+ },
+ "png": {
+  "path": "docs/visual_quality/vq3/vq3_material_closeout.png",
+  "size": [
+   1500,
+   773
+  ]
+ }
+}

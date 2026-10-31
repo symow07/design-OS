@@ -1,0 +1,340 @@
+{
+  "schema_version": "scope_taxonomy/1.0",
+  "taxonomy_version": "1.1.0",
+  "reviewed_at": "2026-07-14T00:00:00+00:00",
+  "reviewer_notes": [
+    "HUMAN-MAINTAINED. This file is the ONLY place the meaning of a scope token is declared. Nothing infers a relationship from spelling, naming similarity, or folder location.",
+    "A token that is not registered here is UNKNOWN, and an UNKNOWN token fails closed: any scope comparison touching it returns SCOPE_UNKNOWN_OVERLAP and goes to human review. That is deliberate. The cost of a review item is small; the cost of silently deciding two masters do not collide is a wrong logo shipping to a market.",
+    "DISJOINT is never inferred from the mere absence of an edge. Two registered tokens are disjoint ONLY where this file says so — via mutually_exclusive_children, mutually_exclusive_roots on a closed_world axis, or an explicit disjoint_peers entry.",
+    "Adding a token, an alias, or an edge CHANGES how existing approvals would be read. That is why every decision pins taxonomy_version. Bump the version on any semantic change and expect TAXONOMY_REVIEW_REQUIRED on affected decisions.",
+    "The token sets below are seeded from what DIP-0A/0C actually observed plus the examples the business gave. They are deliberately small: a short honest registry beats a long speculative one, because every unregistered token fails safely.",
+    "v1.1.0 (DIP-0C3d) adds the MEDIA axis. Media answers 'where may this be used' and is INDEPENDENT of products, which answers 'what is being designed'. A palette approved for DIGITAL is not approved for the press, and encoding that inside the product tree would collapse two questions into one. SCREEN is deliberately NOT declared a parent of WEB or SOCIAL_MEDIA: the business has not said it is, so those comparisons return SCOPE_UNKNOWN_OVERLAP and go to review rather than being guessed from naming similarity."
+  ],
+  "axes": {
+    "markets": {
+      "closed_world": true,
+      "mutually_exclusive_roots": true,
+      "omission_means": "ALL",
+      "notes": "Closed-world: BBROSE sells into a known set of markets. Distinct roots (EU / US / CN / GLOBAL_OTHER) are mutually exclusive by declaration, so EU vs US is DISJOINT. EU is a PARENT of its member states, so EU vs FR OVERLAPS.",
+      "tokens": {
+        "EU": {
+          "type": "PARENT",
+          "children": [
+            "FR",
+            "DE",
+            "IT",
+            "ES",
+            "NL"
+          ],
+          "mutually_exclusive_children": true,
+          "aliases": [
+            "EUROPE",
+            "EUROPEAN_UNION"
+          ]
+        },
+        "FR": {
+          "type": "LEAF",
+          "aliases": [
+            "FRANCE"
+          ]
+        },
+        "DE": {
+          "type": "LEAF",
+          "aliases": [
+            "GERMANY"
+          ]
+        },
+        "IT": {
+          "type": "LEAF",
+          "aliases": [
+            "ITALY"
+          ]
+        },
+        "ES": {
+          "type": "LEAF",
+          "aliases": [
+            "SPAIN"
+          ]
+        },
+        "NL": {
+          "type": "LEAF",
+          "aliases": [
+            "NETHERLANDS"
+          ]
+        },
+        "US": {
+          "type": "LEAF",
+          "aliases": [
+            "USA",
+            "UNITED_STATES"
+          ]
+        },
+        "CN": {
+          "type": "LEAF",
+          "aliases": [
+            "CHINA"
+          ]
+        },
+        "UK": {
+          "type": "LEAF",
+          "aliases": [
+            "GB",
+            "UNITED_KINGDOM"
+          ],
+          "notes": "Deliberately NOT a child of EU."
+        }
+      },
+      "explicit_overlaps": [],
+      "disjoint_peers": [],
+      "deprecated_tokens": {
+        "EEC": {
+          "replaced_by": "EU",
+          "deprecated_at": "2026-07-14"
+        }
+      }
+    },
+    "products": {
+      "closed_world": true,
+      "mutually_exclusive_roots": true,
+      "omission_means": "ALL",
+      "notes": "A hierarchy: COSMETICS > MAKEUP > {LIP_GLOSS, MASCARA, ...}. An ancestor OVERLAPS its descendants. Siblings under a parent declared mutually_exclusive_children are DISJOINT.",
+      "tokens": {
+        "COSMETICS": {
+          "type": "PARENT",
+          "children": [
+            "MAKEUP",
+            "SKINCARE",
+            "FRAGRANCE"
+          ],
+          "mutually_exclusive_children": true,
+          "aliases": [
+            "BEAUTY"
+          ]
+        },
+        "MAKEUP": {
+          "type": "PARENT",
+          "children": [
+            "LIP_GLOSS",
+            "LIPSTICK",
+            "MASCARA",
+            "EYESHADOW",
+            "FOUNDATION"
+          ],
+          "mutually_exclusive_children": true,
+          "aliases": [
+            "COLOR_COSMETICS"
+          ]
+        },
+        "LIP_GLOSS": {
+          "type": "LEAF",
+          "aliases": [
+            "LIPGLOSS"
+          ]
+        },
+        "LIPSTICK": {
+          "type": "LEAF",
+          "aliases": []
+        },
+        "MASCARA": {
+          "type": "LEAF",
+          "aliases": []
+        },
+        "EYESHADOW": {
+          "type": "LEAF",
+          "aliases": []
+        },
+        "FOUNDATION": {
+          "type": "LEAF",
+          "aliases": []
+        },
+        "SKINCARE": {
+          "type": "PARENT",
+          "children": [
+            "SERUM",
+            "CREAM"
+          ],
+          "mutually_exclusive_children": true,
+          "aliases": []
+        },
+        "SERUM": {
+          "type": "LEAF",
+          "aliases": []
+        },
+        "CREAM": {
+          "type": "LEAF",
+          "aliases": []
+        },
+        "FRAGRANCE": {
+          "type": "LEAF",
+          "aliases": [
+            "PERFUME"
+          ]
+        },
+        "PACKAGING": {
+          "type": "GENERAL",
+          "aliases": [],
+          "notes": "A GENERAL token: it cuts across the product tree rather than sitting inside it. It is never disjoint from anything by structure alone — comparisons against it are UNKNOWN unless an explicit edge says otherwise."
+        }
+      },
+      "explicit_overlaps": [],
+      "disjoint_peers": [],
+      "deprecated_tokens": {}
+    },
+    "lockups": {
+      "closed_world": true,
+      "mutually_exclusive_roots": false,
+      "omission_means": "ALL",
+      "notes": "PRIMARY is a GENERAL/parent scope: it OVERLAPS PRIMARY_HORIZONTAL and PRIMARY_VERTICAL. The two orientations are disjoint ONLY because mutually_exclusive_children says so explicitly — orientation is not self-evidently a partition of brand usage. mutually_exclusive_roots is FALSE here: PRIMARY vs STACKED is NOT assumed disjoint, because a stacked lockup may well be a primary one. Those comparisons return UNKNOWN and go to review, which is the honest answer.",
+      "tokens": {
+        "PRIMARY": {
+          "type": "PARENT",
+          "children": [
+            "PRIMARY_HORIZONTAL",
+            "PRIMARY_VERTICAL"
+          ],
+          "mutually_exclusive_children": true,
+          "aliases": [
+            "PRIMARY_LOCKUP"
+          ]
+        },
+        "PRIMARY_HORIZONTAL": {
+          "type": "LEAF",
+          "aliases": [
+            "HORIZONTAL"
+          ]
+        },
+        "PRIMARY_VERTICAL": {
+          "type": "LEAF",
+          "aliases": [
+            "VERTICAL"
+          ]
+        },
+        "STACKED": {
+          "type": "LEAF",
+          "aliases": []
+        },
+        "SYMBOL_ONLY": {
+          "type": "LEAF",
+          "aliases": [
+            "MARK_ONLY",
+            "ICON_ONLY"
+          ]
+        },
+        "WORDMARK_ONLY": {
+          "type": "LEAF",
+          "aliases": [
+            "LOGOTYPE_ONLY"
+          ]
+        }
+      },
+      "explicit_overlaps": [],
+      "disjoint_peers": [
+        [
+          "SYMBOL_ONLY",
+          "WORDMARK_ONLY"
+        ]
+      ],
+      "deprecated_tokens": {}
+    },
+    "variant_roles": {
+      "closed_world": true,
+      "mutually_exclusive_roots": true,
+      "omission_means": "ALL",
+      "notes": "The role a file plays relative to the canonical master. MASTER is the canonical role; the others are subordinate and can never become the master by reclassification alone.",
+      "tokens": {
+        "MASTER": {
+          "type": "LEAF",
+          "aliases": [
+            "CANONICAL"
+          ]
+        },
+        "MONOCHROME": {
+          "type": "LEAF",
+          "aliases": [
+            "MONO",
+            "BLACK_AND_WHITE"
+          ]
+        },
+        "COLOR": {
+          "type": "LEAF",
+          "aliases": [
+            "COLOUR"
+          ]
+        },
+        "PRODUCT_SPECIFIC": {
+          "type": "LEAF",
+          "aliases": []
+        },
+        "ALTERNATE_LOCKUP": {
+          "type": "LEAF",
+          "aliases": []
+        }
+      },
+      "explicit_overlaps": [],
+      "disjoint_peers": [],
+      "deprecated_tokens": {}
+    },
+    "media": {
+      "closed_world": true,
+      "mutually_exclusive_roots": false,
+      "omission_means": "ALL",
+      "notes": "Where or how an asset may be used. mutually_exclusive_roots is FALSE: media tokens are NOT assumed to partition the world, so two registered tokens with no declared relationship return SCOPE_UNKNOWN_OVERLAP and go to review. SCREEN vs WEB is UNKNOWN — a web page is shown on a screen, and until the business SAYS whether WEB sits under SCREEN, guessing either way would be exactly the inference this taxonomy forbids. PRINT and DIGITAL are disjoint only because disjoint_peers declares it, and PACKAGING_PRINT inherits that disjointness from its parent PRINT.",
+      "tokens": {
+        "ALL": {
+          "type": "SPECIAL",
+          "aliases": [
+            "ANY",
+            "ALL_MEDIA"
+          ],
+          "notes": "contains every media token"
+        },
+        "PRINT": {
+          "type": "PARENT",
+          "children": [
+            "PACKAGING_PRINT"
+          ],
+          "mutually_exclusive_children": false,
+          "aliases": []
+        },
+        "PACKAGING_PRINT": {
+          "type": "LEAF",
+          "aliases": [
+            "PACKAGING"
+          ]
+        },
+        "DIGITAL": {
+          "type": "PARENT",
+          "children": [
+            "SCREEN"
+          ],
+          "mutually_exclusive_children": false,
+          "aliases": []
+        },
+        "SCREEN": {
+          "type": "LEAF",
+          "aliases": []
+        },
+        "WEB": {
+          "type": "LEAF",
+          "aliases": [
+            "WEBSITE"
+          ]
+        },
+        "SOCIAL_MEDIA": {
+          "type": "LEAF",
+          "aliases": [
+            "SOCIAL"
+          ]
+        }
+      },
+      "explicit_overlaps": [],
+      "disjoint_peers": [
+        [
+          "PRINT",
+          "DIGITAL"
+        ]
+      ],
+      "deprecated_tokens": {}
+    }
+  }
+}

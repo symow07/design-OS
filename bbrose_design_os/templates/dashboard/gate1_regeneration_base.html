@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% comment %}DRAWING A DESIGN'S CONCEPTS AGAIN WITH THE REFERENCES APPROVED FOR IT (2A-6E-CORR-4, c607bcf) — in the one shell
+(the owner's goal of 2026-09-25: "One clean visual system: type, colour, spacing, used the same way everywhere"). Every
+step still works with JavaScript off, as CORR-4 made it: each step is a page and a plain form; the shell's script only
+opens the top bar's lists. What each step says is in words; its codes are folded under "What the record says".{% endcomment %}
+{% block content %}
+{% if task %}<a class="regen-back" href="{% url 'dashboard:design' task.pk %}"><svg class="i i-sm" aria-hidden="true"><use href="#i-back"/></svg>Back to the design</a>{% endif %}
+{% block regen %}{% endblock %}
+{% endblock %}

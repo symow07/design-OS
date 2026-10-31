@@ -1,0 +1,50 @@
+{
+ "schema": "real_bottle_visual_comparison/1.0",
+ "status": "PROPOSED_PENDING_OWNER_APPROVAL",
+ "no_single_score_rule": "domains are never collapsed into one score; a blocking failure in any required domain remains blocking (fail-closed, VQR-2A semantics)",
+ "canonical_geometry_basis": "m3_canonical_proportion_bounds/1.0 for M3 subjects; reference-pack dimensions for real bottles",
+ "domains": {
+  "GEOMETRY": [
+   "silhouette_overlap_iou",
+   "contour_distance_normalized",
+   "width_at_height_profile (64 samples, shared with product_container_concept_analysis/1.0)",
+   "shoulder_height_norm",
+   "neck_width_norm",
+   "collar_width_norm",
+   "closure_width_height_norm",
+   "body_aspect_h_over_w",
+   "centroid_offset_norm",
+   "vertical_symmetry_deviation",
+   "keypoint_displacement"
+  ],
+  "ARTWORK": [
+   "logo_bounds_norm",
+   "label_bounds_norm",
+   "product_name_placement",
+   "divider_motif_placement",
+   "hierarchy_order",
+   "crop_and_clipping_flags"
+  ],
+  "TYPOGRAPHY": [
+   "font_authority_state",
+   "rendered_scale_pt",
+   "tracking",
+   "line_spacing",
+   "contrast_ratio",
+   "legibility_floor_check"
+  ],
+  "MATERIAL": [
+   "glass_transparency_class",
+   "frosting_presence",
+   "metallic_appearance_class",
+   "colour_relationship_deltaE",
+   "gloss_matte_balance"
+  ]
+ },
+ "verdict_model": "per-domain PASS/FAIL/UNMEASURED (VQR-2A vocabulary); UNMEASURED on a required domain is blocking",
+ "consumers": [
+  "RBV-5 comparison gate",
+  "VQR-2B-B silhouette fidelity axis",
+  "claude_visual_review/1.0"
+ ]
+}

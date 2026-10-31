@@ -1,0 +1,19 @@
+{
+  "schema_version": "visual_correction_plan/1.0",
+  "iteration_identity": "vq1-reset1-iteration-0",
+  "inspection_id": "vq1-reset1-corr-5",
+  "failed_component": "BULB",
+  "root_cause": "the component model itself is wrong: the visible component was classified from an assumption rather than from the reference",
+  "problem_class": "SEMANTIC",
+  "target": "component model (replace, do not tune)",
+  "required_change": "replace the component model after human semantic confirmation; parameter tuning is prohibited",
+  "prohibited_changes": [
+    "tuning the frozen LEGACY_REJECTED_STRUCTURAL_GENERATOR formulas",
+    "reusing the CORR-5 bulb model by default",
+    "treating a semantic-model failure as a parameter tweak"
+  ],
+  "expected_visual_improvement": "the visible component matches the reference component type",
+  "model_replacement_required": true,
+  "confidence": 0.92,
+  "human_review_state": "NOT_REVIEWED"
+}

@@ -1,0 +1,59 @@
+{
+ "record_type": "complete_product_inspection_consistency/1.0",
+ "created_at": "2026-07-29",
+ "both_inspectors_returned_output": true,
+ "independence": {
+  "separate_requests": [
+   "req_011CdXe3RRqm2P9W8VYButK4",
+   "req_011CdXe5hYWfPJJrutDkJySm"
+  ],
+  "distinct_prompt_bodies": {
+   "A": "e547fa940481fd74",
+   "B": "d6a0af6f9be45caa"
+  },
+  "distinct_outputs": true,
+  "b_saw_a_output": false
+ },
+ "verdicts": {
+  "A": "COMPLETE_PRODUCT_COHERENT_PENDING_OWNER_APPROVAL",
+  "B": "COMPLETE_PRODUCT_REVIEW_REQUIRED"
+ },
+ "actionable": {
+  "A": 0,
+  "B": 4
+ },
+ "agree_on": [
+  "structural coherence PASS",
+  "artwork coherence PASS",
+  "reads as luxury cosmetics = true",
+  "reads as technical diagram = false",
+  "neither blocks packaging or VQ-3",
+  "the collar reads as a different colour family from the body"
+ ],
+ "disagree_on": [
+  {
+   "field": "verdict",
+   "A": "COMPLETE_PRODUCT_COHERENT_PENDING_OWNER_APPROVAL",
+   "B": "COMPLETE_PRODUCT_REVIEW_REQUIRED"
+  },
+  {
+   "field": "colour_coherence",
+   "A": "PASS",
+   "B": "CONCERN"
+  },
+  {
+   "field": "product_character",
+   "A": "PASS",
+   "B": "CONCERN"
+  },
+  {
+   "field": "is the collar colour actionable",
+   "A": "NO \u2014 observed and marked non-actionable",
+   "B": "YES \u2014 argues chromatic isolation is a system defect"
+  }
+ ],
+ "notable": "Both inspectors independently observed the SAME collar-colour fact and split on whether it is actionable. That split is the substance of this review, and it is recorded rather than resolved.",
+ "defects_contesting_accepted_decisions": 4,
+ "defects_total": 4,
+ "no_inspector_reopened_accepted_geometry_unilaterally": true
+}

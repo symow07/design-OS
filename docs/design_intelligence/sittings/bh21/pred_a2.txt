@@ -1,0 +1,118 @@
+§AD0(a) PREDICTION — COMMIT A′ — §BH22(a)+§BH23(a) RE-PIN + REGISTRY FIELD
+==========================================================================
+Written AFTER the ruled edits and their verification, BEFORE `git add` of the
+registry, BEFORE the gate. Scored in the final §BH23 report against
+measurement. No bar lowered after the fact. Durable in ~/bh21_work/.
+
+HEAD at time of writing: a06ccf6 (unmoved through the refused gate A)
+Rulings executed:        §BH22(a) — the 34 face_manifest re-pins (single-use)
+                         §BH23(a) — registry:18 current_frozen_manifest_sha256,
+                         ONE field, SAME commit (single-use). "Atomicity is
+                         forced by the gate itself."
+Predecessor scored:      pred_a — its gate REFUSED (TIER_2=REFUSE failures=4,
+                         exit 1 hand-captured, a_exit.txt); hard stop fired,
+                         report delivered (bh22_report.md); §BH23 ruled the
+                         extension. pred_a stays as scored history.
+
+WHAT CARRIES THE PROOF
+  - The 34: bh22_measurement.json (2026-09-01T01:31:26Z, exit 0,
+    write-control CLEAN over 519 files; count gate PASS — exactly 34 + the
+    21 §BH22(b) brand queues, no 35th). Value 302679…e35c fresh-measured.
+  - The registry field: write-time match loop, this session-minute — fresh
+    re-hash of the amended manifest == the written field, both
+    88630af784b72f3093b34d63be037195c7d0b7b3be463afb92249eefc5d2159a.
+    Old value 7dbb2281…86186aa → 0 occurrences in the registry. Manifest is
+    size-neutral vs HEAD (148,693 == 148,693), so no byte_size field
+    anywhere measures as needing edit.
+  - Count gate §BH23: registry numstat exactly +1 −1; registry enumerated in
+    full (56 lines) — :19/:25/:15/observations pin OTHER, untouched files.
+  - Mechanism pre-verified: standalone
+    `pytest apps/intelligence/test_evidence_integrity.py` = 19 passed,
+    RC=0 hand-captured (a2_targeted.log), no other test in the file moved.
+
+THE EIGHT LEGS
+==============
+L1 — WRITE SET
+    Staged, exactly TWO paths of mine:
+      M  docs/design_intelligence/dip1/dip1b_mvp_manifest_1_0.json
+      M  docs/design_intelligence/dip1/dip1b_evidence_integrity_registry_1_0.json
+    Plus, written BY THE GATE and not by me:
+      M  bbrose_design_os/docs/roadmap/palt_m6/record_gate_ledger.jsonl
+         (folded whole: two refused runs' orphans + this run's line = +3)
+      +  capture files under .tier2_captures (gitignored, unstaged).
+    UNSTAGED and NOT in this commit (commit B's declared set): test_c4b.py
+    (+1 -1), test_c4c.py (+2 -2), test_c5.py (+1 -1). NOTHING ELSE — the 21
+    byte-untouched (§BH22(b)); the five 7dbb2281 history sites and
+    brand_evidence.py:35 untouched (§BH23(a): "read as history and are NOT
+    touched"); register and queue untouched (commits C and D).
+
+L2 — DIFF SHAPE
+      dip1b_mvp_manifest_1_0.json                        +34 -34
+      dip1b_evidence_integrity_registry_1_0.json         +1  -1
+      record_gate_ledger.jsonl                           +3  -0   (gate)
+      ---------------------------------------------------------------
+      commit total                                       +38 -35, 3 files
+    35 identical single-token sha swaps, 64 hex chars both ways — every
+    changed line of mine is a "sha256"-bearing line; no key, no ordering,
+    no count changes.
+
+L3 — MANIFEST / A391
+    suite_file_manifest.json absent from the commit; no new tracked file.
+
+L4 — §BH4(l) STAGED == DECLARED, BOTH HALVES
+    STAGED: `git diff --cached --numstat` = manifest +34-34, registry +1-1,
+    nothing else. UNSTAGED: exactly FOUR ` M` rows — three test files + the
+    ledger. No `??` entries.
+
+L5 — COMMIT CONTENTS
+    ONE commit, evidence-contract amendment ONLY, under the TWO quoted
+    single-use authorities; message records the mover of the 34 (§BH20(b)
+    ruled regen, proven by fedfab7 + a06ccf6 hashing pre-regen bytes to the
+    old pin) and the pin-chain fact (registry pins manifest bytes; chain
+    terminates; first firing since the 2026-07-16 seal). NOT DONE HERE: the
+    four constants (B), the transcription (C), the queue record (D),
+    anything on the 21 or the history sites.
+
+L6 — SUITE / COLLECTION
+      TIER_2=GREEN collected=8490 failures=0 apps=7684 dip0c=671 dip0=135
+    The worktree answers EVERY enumerated mover: dip1b fail-closed
+    (brand-first, pre-refusal shape) · test_c4b 130 · the four
+    evidence_integrity tests (19/19 standalone, exit 0 hand-captured).
+    A refusal on ANYTHING = hard stop, stop and report (§BH23: "a refusal
+    on anything beyond the movers these rulings exist to clear" — and every
+    known mover is answered here, so any refusal stops).
+
+L7 — LEDGER
+    Starts DIRTY at 423 on disk / 421 committed — TWO orphans (the §BH21
+    refused pass-2 run's + the refused gate A run's), measured and declared.
+    This run appends its own line: 424 on disk; the gate folds the whole
+    file: committed 424, +3 -0 in this commit, CLEAN after. No third orphan.
+
+L8 — PROTOCOL IDENTITIES
+    Zero apps/ files in the commit; EXTENT_DIGESTS untouched, PROVED by an
+    empty `git diff a06ccf6 <new> -- bbrose_design_os/apps/`.
+
+NUMBERED CLAIMS
+===============
+C1. BOTH written values measured fresh at write time: the 34 from
+    bh22_measurement.json (minutes before their edit), the registry field
+    matched against a same-minute re-hash of the amended manifest — neither
+    taken from any report.
+C2. BOTH count gates measured: exactly 34 amended entries, no 35th
+    (hard_stop_count_gate PASS); exactly ONE registry field in ONE file
+    (numstat +1 -1; 19/19 standalone proves no second edit needed).
+C3. THE 21 BYTE-UNTOUCHED: no dfccbad2… line in any diff; selector :15
+    untouched; post-edit audit still measures them MISMATCH at entries 78-98.
+C4. SINGLE-USE ×2: the message carries both owner sentences verbatim; this
+    commit establishes NO standing machine authority over evidence contracts.
+C5. TWO-SIDED GUARD PRESERVED, now THREE-sided: a corpus regression re-fires
+    the dip1b fail-closed branch and the four constants; a future manifest
+    edit re-fires the registry root-of-trust check — the check is not
+    weakened, its pin now names the currently-sealed bytes.
+C6. EXIT EVIDENCE: gate log ~/bh21_work/a2_gate.log, exit hand-captured to
+    ~/bh21_work/a2_exit.txt. TWO confirmations before "landed": captured
+    exit 0 AND a new HEAD hash.
+
+WHAT COMMIT A′ IS NOT: not pass 2 (B), not the transcription (C), not the
+queue record (D), not a touch on the 21, the history sites, or
+brand_evidence.py:35 — and not a precedent: single-use ×2, spent together.

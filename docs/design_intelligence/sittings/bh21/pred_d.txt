@@ -1,0 +1,93 @@
+§AD0(a) PREDICTION — COMMIT D — QUEUE RECORD, THE FINAL LANDING
+================================================================
+Drafted during the A′ gate window with the block measured
+(~/bh21_work/bh22_queue_append.md, 221 lines after the §BH24
+third-interruption sentence, leading blank line, placeholders __AXHASH__ ×3
++ __P2HASH__ ×2 + __CATT__ ×1, the C attempt count; resolved pre-seal by
+one sed pass over the PAYLOAD only, verified 0 tokens left / 221 lines
+unchanged / all six sites read); SEALED after commit B lands (hashes
+below filled), BEFORE `git add` of the queue file, BEFORE gate D.
+Durable in ~/bh21_work/.
+
+A′ hash: 00ab549 · B hash: 574324d (both from git log, both landed
+with hand-captured exit 0 + new HEAD before use; parent of D == B).
+Ruling executed: §BH23(b) final clause — "queue record D with placeholders
+resolved, whose gate proves the goal state."
+
+THE EIGHT LEGS
+==============
+L1 — WRITE SET
+    Staged, exactly ONE path of mine, at the GIT ROOT:
+      M  OWNER_REVIEW_QUEUE.md
+    Plus, written BY THE GATE and not by me:
+      M  bbrose_design_os/docs/roadmap/palt_m6/record_gate_ledger.jsonl (+1 -0)
+      +  capture file under .tier2_captures (gitignored, unstaged).
+    UNSTAGED: NOTHING of mine anywhere. No `??` entries.
+
+L2 — DIFF SHAPE
+      OWNER_REVIEW_QUEUE.md              +221 -0   (pure append, two blocks)
+      record_gate_ledger.jsonl           +1   -0   (gate)
+      ---------------------------------------------------------
+      commit total                       +222 -0, 2 files
+    Zero deletions — append-only queue discipline proved by the -0.
+
+L3 — MANIFEST / A391
+    suite_file_manifest.json absent; no new tracked file.
+
+L4 — §BH4(l) STAGED == DECLARED, BOTH HALVES
+    STAGED: queue file +221 -0, nothing else. UNSTAGED: empty (then the
+    ledger row once the gate runs). Two-roots idiom first:
+    `git ls-files --error-unmatch -- OWNER_REVIEW_QUEUE.md` from the git
+    root.
+
+L5 — COMMIT CONTENTS
+    ONE commit, queue record ONLY (message d_msg.txt): block 1 = the
+    §BH20(b)/(c) record landed under §BH23(b), resumed unchanged by
+    §BH24(c) — its intro records the three ruled interruptions (regen
+    table, join/Q4 table,
+    pins section enumerating 4 constants + 34 entries + 1 registry field,
+    three gate-out-enumerates-the-sweep instances); block 2 = the §BH22(b)
+    owner-gated item (the 21 + masking coincidence + governance facts,
+    already-measured only). Placeholder counts after resolution: 0.
+
+L6 — SUITE / COLLECTION
+      TIER_2=GREEN collected=8490 failures=0 apps=7684 dip0c=671 dip0=135
+    Git-root markdown only; the gate-time worktree is B's green worktree
+    plus this one file. ON A REFUSAL, §BH24(a) governs (standing, per
+    commit): ONLY the two named ids in the deadlock/dirty-DB shape →
+    re-run UNCHANGED without asking, max three attempts for THIS commit,
+    orphan folds counted; any content failure, other id, different shape,
+    or third refusal = hard stop + report, capture preserved.
+
+L7 — LEDGER
+    MEASURED at seal (post-B): starts CLEAN at 427 == 427. This run
+    appends its own line: 428 on disk; gate folds it: committed 428,
+    +1 -0, CLEAN after. (Draft's 426 base was superseded by C's ruled
+    +2 orphan fold — re-measured, not assumed.)
+
+L8 — PROTOCOL IDENTITIES
+    Zero apps/ files; EXTENT_DIGESTS untouched, PROVED by an empty
+    `git diff <B> <new> -- bbrose_design_os/apps/`.
+
+NUMBERED CLAIMS — THE GOAL STATE, MEASURED AT THIS GATE
+=======================================================
+C1. gate GREEN at final HEAD — the L6 line, exit 0 hand-captured
+    (~/bh21_work/d_gate.log, d_exit.txt; TWO confirmations).
+C2. worktree clean — `git status --porcelain` EMPTY post-landing (tracked
+    and untracked both; first fully-clean tree since the §BH20(b) regen).
+C3. every commit predicted-then-scored — pred_a (scored, its gate refused,
+    kept as history) · pred_a2/A′ · pred_c (scored, attempt 1 refused,
+    kept as history) · pred_c2/C under §BH24 · pred_b/B · pred_d/D, each
+    sealed before its gate, each scored in the §BH23 one-report.
+C4. §BH20(c)'s join measurement landed in the queue — block 1's join/Q4
+    section IS that landing.
+C5. PURE APPEND ×2 registers: clearance +295 -0 (C — three rulings,
+    §BH22+§BH23+§BH24, EXTEND per §BH24's header), queue +221 -0 (D);
+    both HEAD prefixes byte-identical, proved pre-staging.
+C6. The queue stands at FOUR owner-gated items; both single-use
+    authorities SPENT; no standing machine authority over evidence
+    contracts exists after this sequence.
+
+WHAT COMMIT D IS NOT: not a code, test, or contract change; not an
+investigation of the 21; not a fifth queue item; not a precedent — and
+after it, NOTHING in §BH23 remains unexecuted except the one report.

@@ -1,0 +1,123 @@
+{
+ "record_type": "vq2_imbue_lf1_r1_review_pending/1.0",
+ "created_at": "2026-07-29",
+ "banner": "PENDING \u2014 TYPOGRAPHY INSPECTIONS NOT PERFORMED. BLOCKED BY ANTHROPIC PROVIDER CREDIT.",
+ "is_final_review": false,
+ "inspections_performed": 0,
+ "inspector_a_status": "NOT_PERFORMED_PROVIDER_CREDIT",
+ "inspector_b_status": "NOT_PERFORMED_PROVIDER_CREDIT",
+ "fabricated_inspector_findings": false,
+ "inspector_scorecards_present": false,
+ "owner_decision_available": false,
+ "section_titles": [
+  "STATUS \u2014 PENDING \u2014 TYPOGRAPHY INSPECTIONS NOT PERFORMED. BLOCKED BY ANTHROPIC PROVIDER CREDIT.",
+  "Official Imbue source and OFL provenance",
+  "Selected instance",
+  "Original converter failure",
+  "Repaired BasePen implementation",
+  "Completed converter fixture suite",
+  "Legacy-handler regression evidence",
+  "Shared-flattener certification",
+  "Old mixed-flattener false negative",
+  "Point-to-vertex metric defect",
+  "Point-to-segment metric repair",
+  "Analytical distance fixtures",
+  "All thirteen glyphs",
+  "Source versus converted \u2014 full words",
+  "Symmetric vector metrics",
+  "High-resolution raster metrics",
+  "Topology and counter certification",
+  "Rose composition",
+  "Damascena composition",
+  "Rose native-width finding",
+  "Approved BBROSE logo context",
+  "Reference product-name crop (native)",
+  "Reference enlarged x8 (not native detail)",
+  "Frozen Inspector A input manifest",
+  "Frozen Inspector A prompt identity",
+  "Inspector A status",
+  "Frozen Inspector B input manifest",
+  "Frozen Inspector B prompt identity",
+  "Inspector B status",
+  "Provider-credit blocker",
+  "Failed request identity",
+  "Rose-width state",
+  "Exact resume contract",
+  "OWNER DECISION UNAVAILABLE"
+ ],
+ "sections": 34,
+ "provider_blocker": {
+  "codes": [
+   "VQ2_TYPOGRAPHY_INSPECTION_BLOCKED_PROVIDER_CREDIT",
+   "VQ2_INSPECTION_NOT_PERFORMED_PROVIDER_UNAVAILABLE",
+   "VQ2_ROSE_WIDTH_REMAINS_UNADJUDICATED"
+  ],
+  "request_id": "req_011CdVuiNaWaRAponJhPTXpk",
+  "http_status": 400,
+  "model_output_received": false,
+  "billable_result": false,
+  "retry_count": 0,
+  "snapshot_note": "POINT_IN_TIME_SNAPSHOT taken at the hold slice (one attempt, retry_count 0). SUPERSEDED_BY vq2_typography_provider_blocker.json, which is the live blocker. This copy is history and must not be updated.",
+  "superseded_by": "docs/visual_quality/vq2/vq2_typography_provider_blocker.json"
+ },
+ "frozen_input_hashes": {
+  "reference_product_name_crop": "a381ead75b5afb4a",
+  "reference_enlarged_x8": "d5fc167c225204ec",
+  "lf1_r1_words": "0a97c0d1bc2d7f9f",
+  "lf1_r1_glyph_panel": "3deba66ce7288e01",
+  "approved_logo": "c321c1bea4c69e27"
+ },
+ "frozen_prompt_hashes": {
+  "A": "589d9d142150bb6f",
+  "B": "f7cd3805fd161d81"
+ },
+ "converter_fixtures": {
+  "suite": "apps/pipeline/tests/test_vq2_converter_fixtures.py",
+  "total_fixtures": 24,
+  "result": "ALL PASSING",
+  "coverage": [
+   "ordinary three-point curveTo",
+   "arbitrary-arity super-Bezier decomposition",
+   "connected cubic segments",
+   "qCurveTo sequences",
+   "implied on-curve quadratic points (trailing None)",
+   "closed bowl",
+   "nested counters",
+   "disconnected ink contours",
+   "closePath",
+   "endPath",
+   "unsupported operation raises",
+   "point-to-segment distance fixtures",
+   "contour correspondence by geometry"
+  ],
+  "repaired_handler": "PASS",
+  "legacy_handler_regression": "LegacySink emits ZERO cubics for a super-Bezier and ZERO for a qCurveTo \u2014 the original defect reproduces on demand",
+  "dropped_operations": 0,
+  "unresolved_components": 0,
+  "real_glyph_guards": "every Imbue glyph asserted to drop nothing, resolve all components, keep counters and exceed three nodes (guard against shard output returning)"
+ },
+ "deterministic_certification": {
+  "state": "VQ2_LF1_R1_DETERMINISTICALLY_CERTIFIED",
+  "vector_passing": 13,
+  "raster_passing": 13
+ },
+ "rose_width_state": "UNADJUDICATED_PENDING_DUAL_TYPOGRAPHY_INSPECTION",
+ "resume_contract": "vq2_lf1_r1_inspection_resume_contract/1.0",
+ "built_from_existing_records_only": true,
+ "recomputed_anything": false,
+ "provider_calls": 0,
+ "image_generation_calls": 0,
+ "lf1_r1_geometry_changed": false,
+ "pdf": {
+  "path": "docs/visual_quality/vq2/typeface/vq2_imbue_lf1_r1_review_pending.pdf",
+  "sections": 34,
+  "size_bytes": 671756
+ },
+ "png": {
+  "path": "docs/visual_quality/vq2/typeface/vq2_imbue_lf1_r1_review_pending.png",
+  "size": [
+   1500,
+   680
+  ]
+ }
+}

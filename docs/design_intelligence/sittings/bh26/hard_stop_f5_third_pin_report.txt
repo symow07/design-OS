@@ -1,0 +1,113 @@
+§BH26(f)(5) HARD STOP — THIRD DISTINCT DOWNSTREAM PIN
+Reported 2026-09-02, repo FROZEN at HEAD 8bbe57e. Zero writes since
+the refusal; every measurement below was zero-write.
+
+THE RULE, owner's words at §BH26(f)(5): "If a THIRD distinct
+downstream pin fires after this fold, stop — do not fold further
+without my word." Reconfirmed at (g): "A NEW downstream pin remains a
+hard stop per (f)(5)."
+
+WHAT FIRED. Attempt 3's gate (launched against pred_a3.txt, the
+(g)-method seal) refused at TIER_2, verbatim:
+
+   TIER_2_REFUSED: declared extent not met (A327/3m)
+     MANIFEST_DIGEST_MISMATCH: fe4199bc421b7454 != hashed
+     65aef9fb1a3660cd — the manifest was edited outside the identity
+     chain
+   TIER_2=REFUSE
+   GUARDED_COMMIT_REFUSED: TIER_2=REFUSE (A326/3m)
+
+THE REFUSER. tools/tier2_gate.py check_manifest (A352 repair 3 /
+A327), which hashes the manifest file and compares it to ppp's pin
+BEFORE reading the file:
+
+   declared_digest = _PP.EXTENT_DIGESTS["suite_file_manifest"]
+   actual = manifest_digest()          # sha256(file bytes)[:16]
+   if actual != declared_digest:
+       return ([f"MANIFEST_DIGEST_MISMATCH: {actual} != hashed
+       {declared_digest} — the manifest was edited outside the
+       identity chain"], 0)
+
+The pin lives at palette_powder_protocol.py:1970 —
+   "suite_file_manifest": "65aef9fb1a3660cd",
+with its own history at :1938: "rebound 2026-08-27 at §BC(h)/C10,
+307ce4c380fa0f02 -> 65aef9fb1a3660cd". It pins the manifest's
+PRE-regeneration bytes. The (e)-ruled tool-run rewrote the manifest
+(371→372 files, fe4199bc421b7454); no ruling named :1970.
+
+WHY THIS IS THE THIRD PIN, AND NEW. Pin one: record_digest_manifest's
+survey row for the manifest — ruled at (f), R1 rewrote it. Pin two:
+protocol_identity, which digests EXTENT_DIGESTS — ruled at (f)(3)
+"declared maintenance consequence", R3 re-pinned it, (g) minted its
+value. Pin three: ppp:1970 itself, the DIRECT byte-pin of the manifest
+inside EXTENT_DIGESTS — named in NO ruling. Attempts 1 and 2 never
+reached it: attempt 1 refused at the §AR/WI-3J extent guard, attempt 2
+at Tier-1's record-digest check. Attempt 3 cleared both for the first
+time (extent declared; records chain consistent — the gate's own
+records step logged verdict OK, refusal_count 0, ledger line 435), so
+the pipeline advanced to A327's clause for the first time in the arc.
+
+MEASUREMENTS (all zero-write, taken frozen).
+EXTENT_DIGESTS, every key, pin vs disk:
+   suite_file_manifest    pin 65aef9fb1a3660cd  disk fe4199bc421b7454  MISMATCH
+   record_digest_manifest pin cbba67bee1c29105  disk cbba67bee1c29105  MATCH
+   recipe                 (prose, not a disk-hashed record)
+On-disk protocol_identity(): 0e9cd7a2b94ccc82 — equals the mint;
+internally consistent with the staged tree, because the minted
+identity was computed over EXTENT_DIGESTS as they stand, INCLUDING the
+stale :1970 pin. The gate's objection is not that the identity is
+wrong for its inputs — it is that one of those inputs still pins the
+manifest's old bytes.
+
+THE WOULD-BE FOLD, PRICED, NOT ACTED (in-memory recompute via ppp's
+own protocol_identity(), restored and re-checked after):
+   IF :1970 rebound 65aef9fb1a3660cd -> fe4199bc421b7454 (one literal)
+   THEN protocol_identity moves 0e9cd7a2b94ccc82 -> c7924c5a4215f3cf
+        — a THIRD identity move (ead89265… -> 0e9cd7a2… -> c7924c5a…),
+   THEN tcp:617's fresh re-pin is falsified and needs re-pinning (one
+        literal),
+   THEN the (g)-minted pair's identity half is superseded AGAIN — the
+        preview would have to re-mint, a fresh seal, attempt 4.
+   record_digest_manifest does NOT move (ppp is .py, NOT_A_RECORD, not
+   surveyed): cbba67bee1c29105 stays. Sweep cost: the same targeted
+   124 + grant tests, then the ~12-min gate.
+This is precisely the unbounded pin-cascade (f)(5) exists to stop,
+so I stopped instead of folding.
+
+FROZEN STATE. HEAD 8bbe57e (T26g, scored 8/8). The TEN sealed paths
+still staged exactly as pred_a3 L1/L4 declared (re-verified
+post-refusal: 10 numstat rows, shapes intact). One unstaged row: ` M
+docs/roadmap/palt_m6/record_gate_ledger.jsonl` — worktree 435, the
+refusing gate's own append (verdict OK, 2026-09-02T02:04:22Z), the
+known refusing-gate behaviour. Both protected regions byte-identical
+(GATE 7fbeb8f1fe10b0fb; TEST b32030dc827263e4). §BH26(a) single-use
+authority UNSPENT. §BH24 budget 0/3 — this refusal is a FINDING.
+Attempt 3 stands scored (score_a_attempt3.txt): L1–L4 held, L5/L7 not
+realized, L6 falsified by this refusal, L8 held where measurable.
+
+OPTIONS FOR THE OWNER'S WORD (presented, not chosen):
+(1) RULE A FOURTH FOLD, (f)-style: :1970 rebinds to fe4199bc421b7454
+    in the same amendment (the A391 sentence's own logic, extended to
+    the second manifest pin); identity moves to the priced
+    c7924c5a4215f3cf; tcp:617 re-pins; the (g) preview re-mints over
+    the unchanged tree; fresh 8-leg seal; attempt 4. Two one-literal
+    edits beyond the sealed set; no other path changes.
+(2) RULE THE (g) METHOD COVERS IT: same edits, but ruled as the
+    existing (g) authority's "time-moved dynamics" rather than a new
+    fold — my reading is AGAINST this ((g) priced the gate-ledger
+    append, not a new pin; (g) itself reconfirmed the (f)(5) stop),
+    recorded here so the narrower reading is available to overrule.
+(3) UNWIND: drop the manifest regeneration so :1970's pin holds —
+    contradicts the standing (d)/(e) ruling that put the regenerated
+    manifest in this commit; recorded for completeness, not
+    recommended.
+(4) Anything else the owner words.
+
+DIVERGENCES RIDING, unchanged: transcribed R2's "exactly TWO" redden
+points measured THREE; the (g) block's TRANSCRIBED line carries
+2026-09-02 vs the ruling's DATE 2026-09-01 (interruption recorded).
+No new divergence: this stop is not a divergence, it is the (f)(5)
+rule doing what it says.
+
+NOTHING further happens in the repo until the owner rules. No fold,
+no edit, no unstage, no re-preview, no gate.

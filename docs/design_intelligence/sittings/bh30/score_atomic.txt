@@ -1,0 +1,29 @@
+§AD0(a) SCORE — the §BH30(i) ONE ATOMIC COMMIT (§BH30(h)+(i)+(j)),
+launched against pred_atomic.txt (sealed 4f9787fa9eed3c29 before git add).
+Gate GREEN, GEXIT=0. LANDED 2ac0fd4 on v2-features-phase12-14
+(2026-09-04T03:24:00Z UTC). 8/8.
+
+L1 HELD: exactly the EIGHTEEN declared tracked paths + the gate-staged
+   ledger; apps/ paths in the commit: NONE; docs/roadmap: the ledger only.
+L2 HELD: every diff shape exact — register 234/0 (18,269-line HEAD prefix
+   042a44bc1ed5cdb6 byte-identical; total 18,503); config 58/0; run 10/0;
+   walk 10/0; test_corpus_roots 74/0; pilot_manifest 27/44; summary 24/19;
+   c4a_family_summary 741/283; c4a_reconciliation 54/50;
+   c4c_curated_starter_candidates 1/120; c4c_reconciliation 38/36;
+   font_batch_review_manifest 635/36; font_review_queue_summary 28/28;
+   test_c4a 4/4; test_c4c 6/6; test_c5 2/2; manifest 34/34; registry 1/1.
+L3 HELD: the gate's manifest/records/ledger checks passed (no
+   MANIFEST_DIGEST_MISMATCH, no A391 objection); ledger append-only held.
+L4 HELD: staged == declared, 18 rows, measured before launch.
+L5 HELD: 19 files, 1,983 insertions, 663 deletions — exact.
+L6 HELD: "TIER_2=GREEN collected=8505 failures=0 apps=7693 dip0c=671
+   dip0=141" — exact. No refusal; §BH24 budget 0/3.
+L7 HELD: ledger 445 → 447 (the carried T30h refusal line + this landing).
+L8 HELD: apps diff EMPTY; GATE 7fbeb8f1fe10b0fb, TEST b32030dc827263e4
+   byte-identical; tree seals dip0c 5ae44035bd03bae1, dip0a
+   4fe747b806ed71bd as predicted; protocol_identity untouched; the Noto
+   pair VERIFIED_FOR_PRODUCTION / USER_CONFIRMED ×2 under Django at
+   scoring; the (i)(2) entry-44 authority SPENT on this landing; (d)
+   UNSPENT. DIVERGENCE RIDING (recorded, not resolved): twelve literals
+   moved where (j) says eleven — test_c4c.py:269 48→62.
+Post-landing: porcelain clean.

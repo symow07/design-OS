@@ -1,0 +1,34 @@
+§AD0(a) PREDICTION — §BH32(d)(i) RTL detected by script at composition,
+sealed BEFORE git add. Base HEAD 9243244 ((c), scored 8/8).
+
+L1 WRITE SET: exactly THREE tracked paths, all under apps/ire —
+   apps/ire/graph.py (M), apps/ire/tests/test_graph.py (M),
+   apps/ire/text_script.py (A, new module — NOT a test file, so the suite
+   manifest's file set is untouched). Plus the gate-staged ledger line. NO
+   container_font_authority.py, NO static/, docs/, tools/, register.
+L2 DIFF SHAPE: graph.py 14/1 — the import line, `rtl: Optional[bool] = None`
+   with its comment replacing `rtl: bool = False`, and the after-validator
+   `_detect_rtl`; test_graph.py 58/0 — seven tests appended, no count
+   comparison; text_script.py 101/0 — is_rtl / first_strong_script /
+   scripts_in / split_script_runs over Unicode ranges, no unit-bearing
+   arithmetic.
+L3 MANIFEST / A391: suite_file_manifest untouched (existing test file; file
+   set of 372 unchanged; total floor 7,690 ≤ apps 7,708); records untouched;
+   ledger at 453 passes the APPEND_ONLY prefix rule. Census-first: records
+   none; identity none; WIT denominator 863 holds (register class 6 passed on
+   the patched tree); corpus constants none.
+L4 STAGED == DECLARED: exactly THREE numstat rows — 14 1 graph.py, 58 0
+   test_graph.py, 101 0 text_script.py.
+L5 COMMIT CONTENTS: 4 files (3 + ledger), insertions 174, deletions 1.
+L6 SUITE LINE + REFUSAL TREE: GREEN — TIER_2=GREEN collected=8520
+   failures=0 apps=7708 dip0c=671 dip0=141 (8513 + the seven tests). No
+   refusal expected; §BH24 0/3. Targeted before the gate: 1,140 passed
+   (apps/ire/tests, container font authority, wif reconstruct, composite
+   golden fixtures, info panel, owner-grant).
+L7 LEDGER FOLD: 453 → 454, the +1 in THIS commit.
+L8 PROTOCOL IDENTITIES / APPS DIFF / AUTHORITY: apps diff = exactly the
+   three paths; GATE 7fbeb8f1fe10b0fb and TEST b32030dc827263e4
+   byte-identical; tree seals unchanged; protocol_identity unchanged;
+   neither ceiling nor guard moved; the eight M7 artefacts == baseline; the
+   Noto pair and Naskh VERIFIED_FOR_PRODUCTION under Django at scoring; no
+   authority involved.

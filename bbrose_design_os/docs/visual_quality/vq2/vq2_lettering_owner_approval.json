@@ -1,0 +1,82 @@
+{
+ "record_type": "vq2_product_name_lettering_owner_approval/1.0",
+ "created_at": "2026-07-29",
+ "decided_by": "PROJECT_OWNER",
+ "accepted_review_commit": "5b153b6",
+ "codes": [
+  "VQ2_PRODUCT_NAME_LETTERING_OWNER_APPROVED",
+  "VQ2_IMBUE_LF1_R1_OWNER_ACCEPTED",
+  "VQ2_PRODUCT_NAME_LETTERING_RESOLVED"
+ ],
+ "authoritative_lettering": "VQ2-LF1-R1",
+ "identity_sha256_16": "fcd8003994d52028",
+ "typeface": "Imbue",
+ "axes": {
+  "opsz": 100,
+  "wght": 400
+ },
+ "approved_words": [
+  "Rose",
+  "Damascena"
+ ],
+ "accepted_findings": [
+  "authentic condensed Didone character",
+  "coherent thick/thin contrast",
+  "intact counters",
+  "consistent serif language",
+  "appropriate uppercase/lowercase relationship",
+  "suitable luxury-cosmetics character",
+  "visually compatible with the approved BBROSE identity",
+  "no actionable converter or outline defect"
+ ],
+ "basis": "direct owner visual review of the final review package, plus two independent machine inspections with zero actionable defects",
+ "machine_pass_did_not_confer_approval": true,
+ "scope": "VQ-2 concept-front artwork only \u2014 not Gate-2, not manufacturability, not production authority",
+ "rose_width_ruling": {
+  "code": "VQ2_ROSE_NATIVE_WIDTH_DIFFERENCE_OWNER_ACCEPTED",
+  "classification": "NONACTIONABLE",
+  "state": "OWNER_ACCEPTED",
+  "rose": {
+   "candidate_px": 128.85,
+   "reference_px": 134,
+   "difference": 0.038
+  },
+  "damascena": {
+   "candidate_px": 278.29,
+   "reference_px": 281,
+   "difference": 0.01
+  },
+  "prohibited": [
+   "horizontal scaling of Rose",
+   "outline modification",
+   "tracking altered to force the reference width",
+   "typeface change",
+   "opsz change",
+   "wght change"
+  ]
+ },
+ "inspector_logo_discrepancy": {
+  "code": "VQ2_INSPECTOR_A_LOGO_DESCRIPTION_INACCURATE_NONBLOCKING",
+  "inspector_a_said": "rounded sans with decorative swashes",
+  "inspector_b_said": "upright serif face",
+  "owner_finding": "the approved logo is visibly serif-based; Inspector A's description is inaccurate",
+  "nonblocking_because": [
+   "neither inspector classified the logo observation as actionable",
+   "both reached the same compatibility conclusion",
+   "owner approval rests on direct visual review and the authoritative logo evidence"
+  ],
+  "raw_inspector_output_rewritten": false
+ },
+ "lf1_r1_freeze": {
+  "state": "FROZEN_BYTE_IDENTICAL",
+  "regenerated": false,
+  "glyph_paths_modified": false,
+  "counters_modified": false,
+  "tracking_modified": false,
+  "axes_modified": false,
+  "lf2_created": false,
+  "typeface_substituted": false,
+  "font_binary_internal_only": true,
+  "font_binary_in_user_facing_deliverables": false
+ }
+}

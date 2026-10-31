@@ -1,0 +1,499 @@
+{
+ "record_type": "complete_product_review/1.0",
+ "created_at": "2026-07-29",
+ "stage": "COMPLETE-PRODUCT-REVIEW-1",
+ "state": "STARTED",
+ "result_classification": "COMPLETE_PRODUCT_REVIEW_REQUIRED",
+ "is_review_not_redesign": true,
+ "corrections_implemented": 0,
+ "accepted_inputs": {
+  "vq1": [
+   "VQ1_OWNER_ACCEPTED",
+   "VQ1_STRUCTURAL_GEOMETRY_ACCEPTED",
+   "VQ1_WORKSTREAM_CLOSED"
+  ],
+  "vq2": [
+   "VQ2_FINAL_FRONT_ARTWORK_OWNER_APPROVED",
+   "VQ2_FINAL_FRONT_ARTWORK_ACCEPTED",
+   "VQ2_WORKSTREAM_CLOSED_IF_NO_FURTHER_VQ2_TASKS_REMAIN"
+  ],
+  "vq1_reopened": false,
+  "vq2_reopened": false
+ },
+ "freeze_contract": {
+  "m3": {
+   "live": "4ecc8e9df1d1",
+   "expected": "4ecc8e9df1d1",
+   "match": true
+  },
+  "lf1_r1": {
+   "live": "fcd8003994d52028",
+   "expected": "fcd8003994d52028",
+   "match": true
+  },
+  "font_unit": {
+   "live": "5db4403984ba6f75",
+   "expected": "5db4403984ba6f75",
+   "match": true
+  },
+  "logo_canonical": {
+   "live": "a2b2a82969389ac2",
+   "expected": "a2b2a82969389ac2",
+   "match": true
+  },
+  "clean_preview": {
+   "live": "94ec944326889c20",
+   "expected": "94ec944326889c20",
+   "match": true
+  }
+ },
+ "frozen_output_drift": [],
+ "deterministic_checks": {
+  "structural_hash_drift": 0,
+  "product_name_hash_drift": 0,
+  "logo_geometry_drift": 0,
+  "artwork_placement_drift": 0,
+  "symmetry_mismatch_mm": 0.0,
+  "visible_object_count": 40,
+  "clean_preview_guide_count": 0,
+  "raster_object_count": 0,
+  "live_text_count": 0,
+  "material_effect_count": 0,
+  "production_authority_claim_count": 0
+ },
+ "deterministic_all_pass": true,
+ "metrics": {
+  "geometry_derived": {
+   "measurement_space": "accepted M3 band model in apparent reference px \u2014 NOT re-segmented from the photograph, whose soft background makes a colour mask over-inclusive and the resulting ratios unreliable",
+   "assembly_span_px": [
+    292,
+    1348
+   ],
+   "total_height_px": 1056,
+   "bands": {
+    "DARK_CLOSURE": [
+     292,
+     495
+    ],
+    "COLLAR": [
+     495,
+     676
+    ],
+    "GLASS": [
+     664,
+     1348
+    ]
+   },
+   "closure_height_px": 203,
+   "collar_height_px": 181,
+   "body_height_px": 684,
+   "closure_plus_collar_to_total": 0.3636,
+   "body_to_total": 0.6364,
+   "max_half_widths_px": {
+    "GLASS": 172.5,
+    "COLLAR": 108.5,
+    "DARK_CLOSURE": 84.5
+   },
+   "body_width_px": 345.0,
+   "aspect_w_over_h": 0.3267,
+   "closure_width_to_body_width": 0.4899,
+   "collar_width_to_body_width": 0.629
+  },
+  "artwork_geometry": {
+   "logo": {
+    "left_px": 528,
+    "width_px": 104.8,
+    "to_rose_ratio": 0.8133
+   },
+   "divider": {
+    "left_px": 527,
+    "width_px": 134
+   },
+   "rose": {
+    "left_px": 527,
+    "width_px": 128.85,
+    "cap_px": 73.0
+   },
+   "damascena": {
+    "left_px": 527,
+    "width_px": 278.29,
+    "cap_px": 61.0
+   },
+   "supporting": {
+    "left_px": 572,
+    "width_px": 201.9,
+    "cap_px": 15.0
+   },
+   "hierarchy_cap_ratios": {
+    "rose_to_damascena": 1.1967,
+    "damascena_to_supporting": 4.0667,
+    "logo_to_rose_width": 0.8133,
+    "supporting_to_damascena_width": 0.7255
+   },
+   "left_datum_shared_by": [
+    "divider",
+    "rose",
+    "damascena"
+   ],
+   "artwork_block_width_px": 278.29,
+   "artwork_block_to_body_width": 0.8066
+  },
+  "balance": {
+   "artwork_block_bbox": [
+    48,
+    596,
+    449,
+    1084
+   ],
+   "artwork_ink_pixels": 16679,
+   "artwork_block_area": 195688,
+   "artwork_ink_density": 0.08523,
+   "negative_space_ratio": 0.91477,
+   "product_ink_pixels": 475532,
+   "artwork_centre_of_mass_x": 193.11,
+   "product_geometric_centre_x": 244.5,
+   "centre_offset_px": -51.39,
+   "centre_offset_pct_of_width": -10.51,
+   "alignment": "LEFT_ALIGNED_ARTWORK_BLOCK \u2014 the offset is intentional per concept #97, which sets the artwork on a left datum rather than centring it"
+  },
+  "superseded_photo_segmentation": {
+   "note": "earlier reference aspect/closure ratios in this file were computed by colour-segmenting the concept photograph and are NOT authoritative; the geometry-derived block above supersedes them",
+   "withdrawn_values": {
+    "reference_aspect": 0.63392,
+    "reference_closure_ratio": 0.8071
+   }
+  }
+ },
+ "evidence_images": {
+  "cp_3_side_by_side.png": "a73d6ebe44d1da28",
+  "cp_2_integrated.png": "686a6981b098bb55",
+  "cp_4_silhouette.png": "600354f1f38dcb63",
+  "cp_6_hierarchy.png": "54be9ba6a6f4475e",
+  "cp_7_colour.png": "959846bd6bb0b7d9"
+ },
+ "inspector_a": {
+  "identity": "COMPLETE_PRODUCT_REFERENCE_FIDELITY_CRITIC",
+  "request_id": "req_011CdXe3RRqm2P9W8VYButK4",
+  "model": "claude-sonnet-4-6",
+  "usage": {
+   "input_tokens": 6748,
+   "output_tokens": 1247
+  },
+  "raw_output": "```json\n{\n  \"findings\": [\n    {\n      \"area\": \"Silhouette fidelity \u2014 dropper bottle form\",\n      \"observation\": \"Silhouette comparison (Image 3) confirms the integrated product's closure, collar, and body proportions register cleanly against the reference. The closure-plus-collar-to-total ratio of 0.364 and body-to-total of 0.636 are consistent with concept #97's tall-body, discrete-collar dropper typology. No structural drift detected.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Collar colour vs. reference\",\n      \"observation\": \"The integrated collar renders as a flat warm brown (#705242) which reads as a noticeably different value from the rose-gold metallic collar in the reference photograph. This difference is expected: the reference uses a rendered metallic finish that VQ-3 owns; the flat concept artwork correctly substitutes a non-metallic proxy tone. The accepted note that collar/body contrast is strong but acceptable covers this. Not a new defect.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Artwork hierarchy \u2014 logo, divider, product name, descriptor\",\n      \"observation\": \"The four-level hierarchy (BBROSE logo \u2192 thin rule divider \u2192 Rose Damascena display serif \u2192 NIGHT REPAIR OIL spaced caps) is coherent, legible, and matches the reference ladder. Rose-to-Damascena ratio of 1.197 preserves visual unity on the two-line name. The descriptor sits at correct subordinate scale. No hierarchy defect.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Left-datum alignment of artwork block\",\n      \"observation\": \"Divider, 'Rose', and 'Damascena' share a confirmed common left datum matching concept #97's intentional left-set layout. Artwork block occupies 80.7% of body width, leaving deliberate right-side negative space consistent with the reference's editorial whitespace intent. Alignment is correct and non-centred placement is concept-faithful.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"BBROSE logo integration\",\n      \"observation\": \"Logo is correctly positioned upper-left with rose-icon substituting the 'O', registered trademark symbol present, logo-to-Rose-width ratio of 0.813 gives appropriate scale subordination to the display name. Logo reads clearly at concept scale. No defect.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Flat colour system coherence\",\n      \"observation\": \"Four tones \u2014 body #D9BDB5, collar #705242, closure #493034, artwork ink #502525 \u2014 form a single cohesive warm rose-to-deep-burgundy family. Artwork ink (#502525) is sufficiently darker than the body (#D9BDB5) to ensure legibility without introducing an out-of-family hue. Closure (#493034) and ink (#502525) are close in value but are applied to physically distinct zones (top hardware vs. printed text) so no confusion arises. Colour system PASSES.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Negative space ratio within artwork block\",\n      \"observation\": \"Negative-space ratio of 0.915 within the artwork block is high but consistent with the concept's restrained luxury register. The reference equally carries large expanses of unmarked body. This is a deliberate brand choice, not an error.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Supporting copy typographic style\",\n      \"observation\": \"NIGHT REPAIR OIL in widely-tracked caps is acknowledged as the weakest typographic line stylistically (accepted non-blocking note). It remains the weakest line in the integrated view but causes no hierarchy failure and does not materially damage the overall product at this stage. Repeating this does not constitute a new actionable defect.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Product-family and category legibility\",\n      \"observation\": \"The complete integrated product \u2014 dropper closure form, rose-blush body, deep ink typography, restrained editorial layout \u2014 unambiguously reads as a luxury facial oil within the prestige cosmetics segment. It is consistent with the BBROSE brand family and concept #97 intent. No category confusion.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Material realism absence\",\n      \"observation\": \"No glass refraction, metallic sheen, lighting or shadow effects are present. This is correct for a flat VQ-2 concept artwork. VQ-3 owns material realisation. Absence is not a defect and is not reported as one.\",\n      \"actionable\": false\n    }\n  ],\n  \"structural_coherence\": \"PASS\",\n  \"artwork_coherence\": \"PASS\",\n  \"colour_coherence\": \"PASS\",\n  \"product_character\": \"PASS\",\n  \"reads_as_luxury_cosmetics\": true,\n  \"reads_as_technical_diagram\": false,\n  \"actionable_defect_count\": 0,\n  \"blocks_packaging_or_vq3\": false,\n  \"verdict\": \"COMPLETE_PRODUCT_COHERENT_PENDING_OWNER_APPROVAL\"\n}\n```",
+  "raw_output_sha256_16": "e14b7a14b04a4304",
+  "status": "COMPLETED"
+ },
+ "inspector_b": {
+  "identity": "COMPLETE_PRODUCT_ADVERSARIAL_DEFECT_FINDER",
+  "request_id": "req_011CdXe5hYWfPJJrutDkJySm",
+  "model": "claude-sonnet-4-6",
+  "usage": {
+   "input_tokens": 6800,
+   "output_tokens": 1270
+  },
+  "raw_output": "```json\n{\n  \"findings\": [\n    {\n      \"area\": \"Collar colour vs reference concept\",\n      \"observation\": \"The integrated product collar is rendered in flat mid-brown #705242, which is a warm earth tone with no chromatic relationship to the rose-pink body (#D9BDB5) or the artwork ink (#502525). In the reference concept the collar is a rose-gold metallic band that acts as a chromatic bridge between the pink body and the dark closure. Without that bridging tone the integrated flat version presents a three-colour stack (pink / brown / near-black) where the collar reads as an unrelated intrusion rather than a luxury connector. This is a new integrated-system observation: it only manifests when the flat colour system is read as a complete product stack rather than as isolated accepted swatches.\",\n      \"actionable\": true\n    },\n    {\n      \"area\": \"Artwork block left-alignment vs bottle centroid \u2014 negative-space imbalance on right\",\n      \"observation\": \"The artwork block occupies 80.7% of body width but is left-anchored, leaving approximately 19% of the body width as unoccupied right-side space below the label zone. The divider rule, logo, and both name lines all share the same left datum, producing a deliberate asymmetry that is concept-consistent. However, in the integrated flat view \u2014 with no tonal gradient or glass edge to carry the eye \u2014 the raw right-side void is visually heavier than in the reference, where frosted-glass curvature and subtle shadow fill the same zone perceptually. The void is not resolved by any graphic device in the flat concept, making it read as incomplete rather than intentional when the product is viewed in isolation (Image 2). This is an integration-level finding: the right-side negative space is acceptable in the reference context but unresolved in the flat integrated product.\",\n      \"actionable\": true\n    },\n    {\n      \"area\": \"Logo scale relative to hero type block\",\n      \"observation\": \"The logo-to-'Rose'-width ratio is 0.813, meaning the BBROSE logo is only marginally smaller than the width of the 'Rose' line. In the reference concept the logo is visually subordinate because the frosted body and surrounding white space give it breathing room. In the flat integrated product the logo sits in very close proximity above a large negative-space gap before the divider, then an even larger hero type block. The logo therefore reads as weakly anchored \u2014 too small to command the upper zone, too large to be a discreet brand mark. The gap between the logo baseline and the divider rule is perceptually disproportionate to the gap between the divider and the 'Rose' headline.\",\n      \"actionable\": true\n    },\n    {\n      \"area\": \"Colour coherence \u2014 four-tone system chromatic isolation\",\n      \"observation\": \"Viewed as a complete colour system, the four tones split into two unconnected pairs: {#D9BDB5 pink body} and {#705242 brown collar / #493034 dark closure / #502525 artwork ink}. The pink body has no warm-brown undertone relative to the collar, so the body-to-collar junction reads as a colour discontinuity rather than a tone family. In the reference concept rose-gold metallic unifies the warm register across all zones. In the flat system there is no hue shared between the pink body and the brown/dark group, which weakens product-family coherence at the integrated stage.\",\n      \"actionable\": true\n    },\n    {\n      \"area\": \"Closure-to-collar width step\",\n      \"observation\": \"The closure width is 49% of body width and the collar width is 62.9% of body width. The step-down from collar to closure is therefore roughly 14 percentage points of body width, creating a visible notch at the collar-to-closure shoulder. In the reference this step is softened by the rounded glass neck and metallic gradation. In the flat integrated product the notch reads as a hard geometric discontinuity \u2014 a square collar block with a narrower rounded cap sitting on top \u2014 which gives the dropper assembly a stacked-block appearance rather than a unified applicator form. This reads slightly as a technical diagram at the top of the bottle.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Product character \u2014 luxury cosmetics legibility\",\n      \"observation\": \"Typography hierarchy, colour palette, and bottle silhouette are all individually consistent with premium skincare. The integrated flat product reads as luxury cosmetics at a concept stage. No generic or commodity cues are introduced by integration.\",\n      \"actionable\": false\n    },\n    {\n      \"area\": \"Structural / artwork mismatch \u2014 none detected\",\n      \"observation\": \"All deterministic checks pass. Logo geometry, product name, divider placement, and structural proportions are faithful to the accepted concept. No text regression, no glyph substitution, no artwork drift detected.\",\n      \"actionable\": false\n    }\n  ],\n  \"structural_coherence\": \"PASS\",\n  \"artwork_coherence\": \"PASS\",\n  \"colour_coherence\": \"CONCERN\",\n  \"product_character\": \"CONCERN\",\n  \"reads_as_luxury_cosmetics\": true,\n  \"reads_as_technical_diagram\": false,\n  \"actionable_defect_count\": 4,\n  \"blocks_packaging_or_vq3\": false,\n  \"verdict\": \"COMPLETE_PRODUCT_REVIEW_REQUIRED\"\n}\n```",
+  "raw_output_sha256_16": "b90999bb18a7b174",
+  "status": "COMPLETED"
+ },
+ "inspector_a_result": {
+  "findings": [
+   {
+    "area": "Silhouette fidelity \u2014 dropper bottle form",
+    "observation": "Silhouette comparison (Image 3) confirms the integrated product's closure, collar, and body proportions register cleanly against the reference. The closure-plus-collar-to-total ratio of 0.364 and body-to-total of 0.636 are consistent with concept #97's tall-body, discrete-collar dropper typology. No structural drift detected.",
+    "actionable": false
+   },
+   {
+    "area": "Collar colour vs. reference",
+    "observation": "The integrated collar renders as a flat warm brown (#705242) which reads as a noticeably different value from the rose-gold metallic collar in the reference photograph. This difference is expected: the reference uses a rendered metallic finish that VQ-3 owns; the flat concept artwork correctly substitutes a non-metallic proxy tone. The accepted note that collar/body contrast is strong but acceptable covers this. Not a new defect.",
+    "actionable": false
+   },
+   {
+    "area": "Artwork hierarchy \u2014 logo, divider, product name, descriptor",
+    "observation": "The four-level hierarchy (BBROSE logo \u2192 thin rule divider \u2192 Rose Damascena display serif \u2192 NIGHT REPAIR OIL spaced caps) is coherent, legible, and matches the reference ladder. Rose-to-Damascena ratio of 1.197 preserves visual unity on the two-line name. The descriptor sits at correct subordinate scale. No hierarchy defect.",
+    "actionable": false
+   },
+   {
+    "area": "Left-datum alignment of artwork block",
+    "observation": "Divider, 'Rose', and 'Damascena' share a confirmed common left datum matching concept #97's intentional left-set layout. Artwork block occupies 80.7% of body width, leaving deliberate right-side negative space consistent with the reference's editorial whitespace intent. Alignment is correct and non-centred placement is concept-faithful.",
+    "actionable": false
+   },
+   {
+    "area": "BBROSE logo integration",
+    "observation": "Logo is correctly positioned upper-left with rose-icon substituting the 'O', registered trademark symbol present, logo-to-Rose-width ratio of 0.813 gives appropriate scale subordination to the display name. Logo reads clearly at concept scale. No defect.",
+    "actionable": false
+   },
+   {
+    "area": "Flat colour system coherence",
+    "observation": "Four tones \u2014 body #D9BDB5, collar #705242, closure #493034, artwork ink #502525 \u2014 form a single cohesive warm rose-to-deep-burgundy family. Artwork ink (#502525) is sufficiently darker than the body (#D9BDB5) to ensure legibility without introducing an out-of-family hue. Closure (#493034) and ink (#502525) are close in value but are applied to physically distinct zones (top hardware vs. printed text) so no confusion arises. Colour system PASSES.",
+    "actionable": false
+   },
+   {
+    "area": "Negative space ratio within artwork block",
+    "observation": "Negative-space ratio of 0.915 within the artwork block is high but consistent with the concept's restrained luxury register. The reference equally carries large expanses of unmarked body. This is a deliberate brand choice, not an error.",
+    "actionable": false
+   },
+   {
+    "area": "Supporting copy typographic style",
+    "observation": "NIGHT REPAIR OIL in widely-tracked caps is acknowledged as the weakest typographic line stylistically (accepted non-blocking note). It remains the weakest line in the integrated view but causes no hierarchy failure and does not materially damage the overall product at this stage. Repeating this does not constitute a new actionable defect.",
+    "actionable": false
+   },
+   {
+    "area": "Product-family and category legibility",
+    "observation": "The complete integrated product \u2014 dropper closure form, rose-blush body, deep ink typography, restrained editorial layout \u2014 unambiguously reads as a luxury facial oil within the prestige cosmetics segment. It is consistent with the BBROSE brand family and concept #97 intent. No category confusion.",
+    "actionable": false
+   },
+   {
+    "area": "Material realism absence",
+    "observation": "No glass refraction, metallic sheen, lighting or shadow effects are present. This is correct for a flat VQ-2 concept artwork. VQ-3 owns material realisation. Absence is not a defect and is not reported as one.",
+    "actionable": false
+   }
+  ],
+  "structural_coherence": "PASS",
+  "artwork_coherence": "PASS",
+  "colour_coherence": "PASS",
+  "product_character": "PASS",
+  "reads_as_luxury_cosmetics": true,
+  "reads_as_technical_diagram": false,
+  "actionable_defect_count": 0,
+  "blocks_packaging_or_vq3": false,
+  "verdict": "COMPLETE_PRODUCT_COHERENT_PENDING_OWNER_APPROVAL"
+ },
+ "inspector_b_result": {
+  "findings": [
+   {
+    "area": "Collar colour vs reference concept",
+    "observation": "The integrated product collar is rendered in flat mid-brown #705242, which is a warm earth tone with no chromatic relationship to the rose-pink body (#D9BDB5) or the artwork ink (#502525). In the reference concept the collar is a rose-gold metallic band that acts as a chromatic bridge between the pink body and the dark closure. Without that bridging tone the integrated flat version presents a three-colour stack (pink / brown / near-black) where the collar reads as an unrelated intrusion rather than a luxury connector. This is a new integrated-system observation: it only manifests when the flat colour system is read as a complete product stack rather than as isolated accepted swatches.",
+    "actionable": true
+   },
+   {
+    "area": "Artwork block left-alignment vs bottle centroid \u2014 negative-space imbalance on right",
+    "observation": "The artwork block occupies 80.7% of body width but is left-anchored, leaving approximately 19% of the body width as unoccupied right-side space below the label zone. The divider rule, logo, and both name lines all share the same left datum, producing a deliberate asymmetry that is concept-consistent. However, in the integrated flat view \u2014 with no tonal gradient or glass edge to carry the eye \u2014 the raw right-side void is visually heavier than in the reference, where frosted-glass curvature and subtle shadow fill the same zone perceptually. The void is not resolved by any graphic device in the flat concept, making it read as incomplete rather than intentional when the product is viewed in isolation (Image 2). This is an integration-level finding: the right-side negative space is acceptable in the reference context but unresolved in the flat integrated product.",
+    "actionable": true
+   },
+   {
+    "area": "Logo scale relative to hero type block",
+    "observation": "The logo-to-'Rose'-width ratio is 0.813, meaning the BBROSE logo is only marginally smaller than the width of the 'Rose' line. In the reference concept the logo is visually subordinate because the frosted body and surrounding white space give it breathing room. In the flat integrated product the logo sits in very close proximity above a large negative-space gap before the divider, then an even larger hero type block. The logo therefore reads as weakly anchored \u2014 too small to command the upper zone, too large to be a discreet brand mark. The gap between the logo baseline and the divider rule is perceptually disproportionate to the gap between the divider and the 'Rose' headline.",
+    "actionable": true
+   },
+   {
+    "area": "Colour coherence \u2014 four-tone system chromatic isolation",
+    "observation": "Viewed as a complete colour system, the four tones split into two unconnected pairs: {#D9BDB5 pink body} and {#705242 brown collar / #493034 dark closure / #502525 artwork ink}. The pink body has no warm-brown undertone relative to the collar, so the body-to-collar junction reads as a colour discontinuity rather than a tone family. In the reference concept rose-gold metallic unifies the warm register across all zones. In the flat system there is no hue shared between the pink body and the brown/dark group, which weakens product-family coherence at the integrated stage.",
+    "actionable": true
+   },
+   {
+    "area": "Closure-to-collar width step",
+    "observation": "The closure width is 49% of body width and the collar width is 62.9% of body width. The step-down from collar to closure is therefore roughly 14 percentage points of body width, creating a visible notch at the collar-to-closure shoulder. In the reference this step is softened by the rounded glass neck and metallic gradation. In the flat integrated product the notch reads as a hard geometric discontinuity \u2014 a square collar block with a narrower rounded cap sitting on top \u2014 which gives the dropper assembly a stacked-block appearance rather than a unified applicator form. This reads slightly as a technical diagram at the top of the bottle.",
+    "actionable": false
+   },
+   {
+    "area": "Product character \u2014 luxury cosmetics legibility",
+    "observation": "Typography hierarchy, colour palette, and bottle silhouette are all individually consistent with premium skincare. The integrated flat product reads as luxury cosmetics at a concept stage. No generic or commodity cues are introduced by integration.",
+    "actionable": false
+   },
+   {
+    "area": "Structural / artwork mismatch \u2014 none detected",
+    "observation": "All deterministic checks pass. Logo geometry, product name, divider placement, and structural proportions are faithful to the accepted concept. No text regression, no glyph substitution, no artwork drift detected.",
+    "actionable": false
+   }
+  ],
+  "structural_coherence": "PASS",
+  "artwork_coherence": "PASS",
+  "colour_coherence": "CONCERN",
+  "product_character": "CONCERN",
+  "reads_as_luxury_cosmetics": true,
+  "reads_as_technical_diagram": false,
+  "actionable_defect_count": 4,
+  "blocks_packaging_or_vq3": false,
+  "verdict": "COMPLETE_PRODUCT_REVIEW_REQUIRED"
+ },
+ "consistency": {
+  "record_type": "complete_product_inspection_consistency/1.0",
+  "created_at": "2026-07-29",
+  "both_inspectors_returned_output": true,
+  "independence": {
+   "separate_requests": [
+    "req_011CdXe3RRqm2P9W8VYButK4",
+    "req_011CdXe5hYWfPJJrutDkJySm"
+   ],
+   "distinct_prompt_bodies": {
+    "A": "e547fa940481fd74",
+    "B": "d6a0af6f9be45caa"
+   },
+   "distinct_outputs": true,
+   "b_saw_a_output": false
+  },
+  "verdicts": {
+   "A": "COMPLETE_PRODUCT_COHERENT_PENDING_OWNER_APPROVAL",
+   "B": "COMPLETE_PRODUCT_REVIEW_REQUIRED"
+  },
+  "actionable": {
+   "A": 0,
+   "B": 4
+  },
+  "agree_on": [
+   "structural coherence PASS",
+   "artwork coherence PASS",
+   "reads as luxury cosmetics = true",
+   "reads as technical diagram = false",
+   "neither blocks packaging or VQ-3",
+   "the collar reads as a different colour family from the body"
+  ],
+  "disagree_on": [
+   {
+    "field": "verdict",
+    "A": "COMPLETE_PRODUCT_COHERENT_PENDING_OWNER_APPROVAL",
+    "B": "COMPLETE_PRODUCT_REVIEW_REQUIRED"
+   },
+   {
+    "field": "colour_coherence",
+    "A": "PASS",
+    "B": "CONCERN"
+   },
+   {
+    "field": "product_character",
+    "A": "PASS",
+    "B": "CONCERN"
+   },
+   {
+    "field": "is the collar colour actionable",
+    "A": "NO \u2014 observed and marked non-actionable",
+    "B": "YES \u2014 argues chromatic isolation is a system defect"
+   }
+  ],
+  "notable": "Both inspectors independently observed the SAME collar-colour fact and split on whether it is actionable. That split is the substance of this review, and it is recorded rather than resolved.",
+  "defects_contesting_accepted_decisions": 4,
+  "defects_total": 4,
+  "no_inspector_reopened_accepted_geometry_unilaterally": true
+ },
+ "open_defects": [
+  {
+   "raised_by": "COMPLETE_PRODUCT_ADVERSARIAL_DEFECT_FINDER",
+   "area": "Collar colour vs reference concept",
+   "observation": "The integrated product collar is rendered in flat mid-brown #705242, which is a warm earth tone with no chromatic relationship to the rose-pink body (#D9BDB5) or the artwork ink (#502525). In the reference concept the collar is a rose-gold metallic band that acts as a chromatic bridge between the pink body and the dark closure. Without that bridging tone the integrated flat version presents a three-colour stack (pink / brown / near-black) where the collar reads as an unrelated intrusion rather than a luxury connector. This is a new integrated-system observation: it only manifests when the flat colour system is read as a complete product stack rather than as isolated accepted swatches.",
+   "contests_an_accepted_owner_decision": true,
+   "which": "VQ-2 advisory note 2 \u2014 \"collar/body contrast is visually strong but acceptable\" \u2014 accepted NON-BLOCKING by the owner on 049e025",
+   "inspector_claim": "the four tones split into two chromatically unconnected pairs, which it argues is a system-level defect rather than a contrast preference",
+   "proposed_next_action": "OWNER RULING \u2014 either reaffirm the note as non-blocking, or authorise a bounded collar/closure hue revision. I did not change any colour."
+  },
+  {
+   "raised_by": "COMPLETE_PRODUCT_ADVERSARIAL_DEFECT_FINDER",
+   "area": "Artwork block left-alignment vs bottle centroid \u2014 negative-space imbalance on right",
+   "observation": "The artwork block occupies 80.7% of body width but is left-anchored, leaving approximately 19% of the body width as unoccupied right-side space below the label zone. The divider rule, logo, and both name lines all share the same left datum, producing a deliberate asymmetry that is concept-consistent. However, in the integrated flat view \u2014 with no tonal gradient or glass edge to carry the eye \u2014 the raw right-side void is visually heavier than in the reference, where frosted-glass curvature and subtle shadow fill the same zone perceptually. The void is not resolved by any graphic device in the flat concept, making it read as incomplete rather than intentional when the product is viewed in isolation (Image 2). This is an integration-level finding: the right-side negative space is acceptable in the reference context but unresolved in the flat integrated product.",
+   "contests_an_accepted_owner_decision": true,
+   "which": "the left datum comes from concept #97 and the composed front artwork was owner approved on 049e025",
+   "inspector_claim": "the left-anchored block leaves the right side of the body visually unoccupied",
+   "proposed_next_action": "OWNER RULING \u2014 reaffirm the left datum or authorise a bounded re-balance."
+  },
+  {
+   "raised_by": "COMPLETE_PRODUCT_ADVERSARIAL_DEFECT_FINDER",
+   "area": "Logo scale relative to hero type block",
+   "observation": "The logo-to-'Rose'-width ratio is 0.813, meaning the BBROSE logo is only marginally smaller than the width of the 'Rose' line. In the reference concept the logo is visually subordinate because the frosted body and surrounding white space give it breathing room. In the flat integrated product the logo sits in very close proximity above a large negative-space gap before the divider, then an even larger hero type block. The logo therefore reads as weakly anchored \u2014 too small to command the upper zone, too large to be a discreet brand mark. The gap between the logo baseline and the divider rule is perceptually disproportionate to the gap between the divider and the 'Rose' headline.",
+   "contests_an_accepted_owner_decision": true,
+   "which": "the logo/Rose ratio of 0.8134 was MANDATED by the owner's own final audit, which required increasing the logo from 0.6035 toward the measured reference",
+   "inspector_claim": "at 0.813 the logo now reads too large relative to the hero type block",
+   "proposed_next_action": "OWNER RULING \u2014 the inspector and the audit target disagree. I applied the audit target and changed nothing here."
+  },
+  {
+   "raised_by": "COMPLETE_PRODUCT_ADVERSARIAL_DEFECT_FINDER",
+   "area": "Colour coherence \u2014 four-tone system chromatic isolation",
+   "observation": "Viewed as a complete colour system, the four tones split into two unconnected pairs: {#D9BDB5 pink body} and {#705242 brown collar / #493034 dark closure / #502525 artwork ink}. The pink body has no warm-brown undertone relative to the collar, so the body-to-collar junction reads as a colour discontinuity rather than a tone family. In the reference concept rose-gold metallic unifies the warm register across all zones. In the flat system there is no hue shared between the pink body and the brown/dark group, which weakens product-family coherence at the integrated stage.",
+   "contests_an_accepted_owner_decision": true,
+   "which": "VQ-2 advisory note 2 \u2014 \"collar/body contrast is visually strong but acceptable\" \u2014 accepted NON-BLOCKING by the owner on 049e025",
+   "inspector_claim": "the four tones split into two chromatically unconnected pairs, which it argues is a system-level defect rather than a contrast preference",
+   "proposed_next_action": "OWNER RULING \u2014 either reaffirm the note as non-blocking, or authorise a bounded collar/closure hue revision. I did not change any colour."
+  }
+ ],
+ "advisory_notes_carried": [
+  {
+   "n": 1,
+   "note": "the bottle silhouette still reads slightly schematic at the shoulder/body transition and the lower body corners",
+   "blocking": false,
+   "artwork_changed_in_response": false
+  },
+  {
+   "n": 2,
+   "note": "collar/body contrast is visually strong but acceptable",
+   "blocking": false,
+   "artwork_changed_in_response": false
+  },
+  {
+   "n": 3,
+   "note": "supporting copy is acceptable and approved, though still the weakest typographic line stylistically",
+   "blocking": false,
+   "artwork_changed_in_response": false
+  }
+ ],
+ "downstream_readiness": {
+  "PACKAGING_READINESS": "BLOCKED_PENDING_WRAP_AND_SUPPLIER_EVIDENCE",
+  "packaging_reason": "independent of this review: production flat artwork needs a wrap model and supplier evidence. The complete-product defects are colour/composition judgements, not packaging blockers \u2014 both inspectors reported blocks_packaging_or_vq3 = false.",
+  "VQ3_READINESS": "BLOCKED_PENDING_OWNER_APPROVAL",
+  "vq3_reason": "the complete product is not yet owner approved; four actionable findings are open for owner ruling. No finding is itself a VQ-3 blocker.",
+  "neither_started": true
+ },
+ "production_authority": {
+  "PRODUCTION_GEOMETRY": "BLOCKED_PENDING_SUPPLIER_EVIDENCE",
+  "PRODUCTION_FLAT_ARTWORK": "BLOCKED_PENDING_WRAP_AND_SUPPLIER_EVIDENCE",
+  "PRODUCTION_COLOR_SEPARATION": "BLOCKED_PENDING_SUPPLIER_EVIDENCE",
+  "ILLUSTRATOR_EXECUTION_VERIFICATION": "REQUIRED_BEFORE_PRODUCTION_AUTHORITY"
+ },
+ "may_not_certify": [
+  "manufacturability",
+  "physical dimensions",
+  "supplier compatibility",
+  "closure mechanics",
+  "glass-wall construction",
+  "print wrap",
+  "CMYK or Pantone separation",
+  "foil or screen-print feasibility",
+  "material realism",
+  "lighting",
+  "reflections",
+  "glass refraction",
+  "metallic rendering"
+ ],
+ "accepted_assets_modified": false,
+ "packaging_started": false,
+ "vq3_started": false,
+ "supplier_requests_sent": 0,
+ "image_generation_calls": 0,
+ "provider_calls": 2,
+ "human_accepted": false,
+ "owner_decision_required": true,
+ "pdf": {
+  "path": "docs/visual_quality/complete_product/complete_product_review.pdf",
+  "sections": 22,
+  "size_bytes": 5896268
+ },
+ "png": {
+  "path": "docs/visual_quality/complete_product/complete_product_review.png",
+  "size": [
+   1500,
+   792
+  ]
+ },
+ "section_titles": [
+  "What this is",
+  "1. VQ-1 acceptance",
+  "2. VQ-2 acceptance",
+  "3. Frozen identities",
+  "4. Selected concept #97",
+  "5. Integrated complete product",
+  "5b. Reference beside integrated product",
+  "6. Structural coherence",
+  "7. Artwork coherence",
+  "8. Colour coherence",
+  "9. Hierarchy",
+  "10. Brand fit",
+  "11. Negative space and balance",
+  "12. Advisory notes carried from VQ-2",
+  "13. Deterministic checks",
+  "14. Inspector A findings",
+  "15. Inspector B findings",
+  "15b. Open defects and proposed next actions",
+  "16. OWNER DECISION REQUIRED",
+  "17. Packaging readiness",
+  "18. VQ-3 readiness",
+  "19. Production blockers"
+ ],
+ "sections": 22
+}

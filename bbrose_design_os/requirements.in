@@ -1,0 +1,54 @@
+# Direct dependencies (Milestone 14.2). This is the human-edited source;
+# requirements.txt is the fully-pinned lock (regenerate with
+# `pip-compile requirements.in` or `pip freeze`). Keep this list minimal —
+# transitive deps belong only in the lock.
+
+# --- Web / API ---
+Django==4.2
+djangorestframework
+django-environ
+whitenoise
+gunicorn                     # prod WSGI server (Milestone 14.3)
+
+# --- Database ---
+psycopg2-binary              # Postgres driver (psycopg3 migration is a future option)
+
+# --- Async / queue ---
+celery
+redis
+
+# --- AI providers ---
+anthropic
+openai
+
+# --- Dieline geometry & export ---
+pydantic>=2.0
+svgwrite>=1.4
+shapely>=2.0.0
+reportlab
+svglib>=1.5                  # SVG->.ai fallback (pure-Python)
+
+# --- Media storage (S3 backend, lazily imported) ---
+django-storages
+boto3
+
+# --- Utilities ---
+requests
+pillow
+python-dotenv
+
+# --- Multilingual label rendering (2026-07-07) ---
+# reportlab does no complex-script shaping; these two pure-Python libs turn
+# logical Arabic into presentation-form glyphs in visual order for the
+# trilingual back-panel sticker. Fonts live in static/fonts/ (OFL).
+arabic-reshaper
+python-bidi
+
+# --- Ops / monitoring ---
+sentry-sdk                   # only initialised when SENTRY_DSN is set (Milestone 14.1)
+
+# --- Not installed by default: the browser tests (test_browser_*.py) ---
+# They skip without it. To run them:
+#   pip install playwright && playwright install chromium
+# playwright
+ezdxf>=1.4

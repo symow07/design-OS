@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% comment %}A PALETTE'S DESIGN INTENT — WHAT WAS UNDERSTOOD FROM ITS PICTURE, CONFIRMED BY ITS OWNER (PALT-M4C-4 §2), in the one
+shell (the owner's answer to the UI directions of 2026-09-25: "One clean visual system", "Plain words everywhere"). The
+reading is said in words; every value the form posts is the record's own, as it was — each field's action, its value, the
+baseline, the notes, the reopening. It still works with JavaScript off: a page and plain forms.{% endcomment %}
+{% block title %}The palette's reading{% if task %} — {{ task.task_text|truncatechars:40 }}{% endif %}{% endblock %}
+{% block content %}
+{% if task %}<a class="regen-back" href="{% url 'dashboard:design' task.pk %}"><svg class="i i-sm" aria-hidden="true"><use href="#i-back"/></svg>Back to the design</a>{% endif %}
+<h1 class="h1">What was understood from the palette's picture</h1>
+<p class="lead">What was read off the picture, field by field. A value shown as approximate stays approximate until you
+  confirm it or correct it.</p>
+<p class="small">Read from: {{ source_words }}</p>
+{% if flow %}
+<p class="intent-state">{% if flow.current_version %}<span class="tag done"><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg>Confirmed — version {{ flow.current_version }}</span>
+  {% else %}<span class="tag wait">Not confirmed yet</span>{% endif %} <span class="small">{{ status_words }}</span></p>
+{% else %}
+<p class="small"><b>Looking only.</b> A confirmation is recorded against a design, so none can be made here.</p>
+{% endif %}
+<details class="tech"><summary>What the record says</summary>
+  <p class="small">{{ panel.warning }}</p>
+  <p class="small">{{ panel.concept_reference }}</p>
+  <p class="small">{{ panel.title }}{% if task %} · task {{ task.id }} · status {{ flow.task_status }}{% endif %}{% if flow.current_version %} ·
+    confirmed version {{ flow.current_version }} ({{ flow.confirmed_intent_identity }}), scope {{ flow.scope }}, gate decision
+    #{{ flow.gate_decision_id }} on {{ flow.gate }}{% endif %}</p>
+</details>
+
+<section class="section" aria-labelledby="h-drawn">
+  <h2 id="h-drawn" class="h2">The reading, drawn</h2>
+  <img class="intent-overlay" src="{{ overlay_url }}" alt="A schematic of what was understood from the palette's picture">
+  <p class="small">This schematic is <b>not registered onto the source image</b>: {{ annotations.why_not_registered }}. No Image Trace was used.</p>
+</section>
+
+<section class="section" aria-labelledby="h-fields">
+  <h2 id="h-fields" class="h2">The reading, field by field</h2>
+  <form method="post" class="intent-form">
+  {% csrf_token %}
+  <div class="table-wrap"><table class="intent">
+    <thead><tr><th scope="col">What</th><th scope="col">What was understood</th><th scope="col">How sure</th>
+      <th scope="col">How binding</th><th scope="col">Where it stands</th><th scope="col">Where it was read</th>
+      <th scope="col">Your change</th></tr></thead>
+    <tbody>
+    {% for row in rows %}
+      <tr>
+        <td>{{ row.field_words }}</td>
+        <td>{{ row.understood_words|default:"—" }}{% if row.why %}<div class="small">{{ row.why }}</div>{% endif %}{% if row.note %}<div class="small">{{ row.note }}</div>{% endif %}</td>
+        <td>{% if row.sure %}<span class="tag {% if row.confidence >= 0.8 %}done{% else %}wait{% endif %}">{{ row.sure }}</span>{% else %}—{% endif %}</td>
+        <td>{% if row.level %}<span class="tag {% if 'HARD' in row.level %}attn{% elif 'SOFT' in row.level %}wait{% else %}line{% endif %}">{{ row.level_words }}</span>{% else %}—{% endif %}</td>
+        <td>{{ row.state_words }}</td>
+        <td class="small">{{ row.source_region|default:"—" }}{% if row.method_words %}<br>{{ row.method_words }}{% endif %}</td>
+        <td>{% if row.actionable %}
+          <label class="sr" for="action-{{ row.field }}">Your change to {{ row.field_words|lower }}</label>
+          <select class="field" id="action-{{ row.field }}" name="action_{{ row.field }}">
+            <option value="">— no change —</option>
+            {% for value, words in actions %}<option value="{{ value }}">{{ words }}</option>{% endfor %}
+          </select>
+          <input class="field" type="text" name="value_{{ row.field }}" placeholder="the new value, or the level" size="16" aria-label="The new value for {{ row.field_words|lower }}">
+        {% else %}—{% endif %}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table></div>
+  <details class="tech"><summary>The reading as the record writes it</summary>
+    <ul class="small">{% for row in rows %}<li>{{ row.field }}: {{ row.understood|default:"—" }} · {{ row.level|default:"—" }} · {{ row.state }} · {{ row.extraction_method|default:"—" }}{% if row.confidence is not None %} · {{ row.confidence }}{% endif %}</li>{% endfor %}</ul>
+  </details>
+  <details class="tech"><summary>Changing how binding a field is — what to type</summary>
+    <p class="small">{% for value, words in levels %}{{ words }}: {{ value }}{% if not forloop.last %} · {% endif %}{% endfor %}</p>
+  </details>
+  {% if can_confirm %}
+    <p class="small"><label><input type="checkbox" name="apply_es3083_baseline" value="1">
+      also apply the recorded ES3083 owner confirmation (rectangular pans, 12 in a 4 x 3 grid, named Pantone tokens)</label></p>
+    <label class="lbl" for="fnotes">Notes — recorded with your confirmation
+      <textarea class="field" id="fnotes" name="notes" rows="3"></textarea></label>
+    <p class="intent-acts"><button class="btn primary" type="submit">Save these corrections and confirm this reading</button></p>
+  {% endif %}
+  </form>
+</section>
+
+<section class="section" aria-labelledby="h-not">
+  <h2 id="h-not" class="h2">What this confirmation is not</h2>
+  <p>It confirms the palette's visible composition only. Confirming it does not settle:</p>
+  <ul class="intent-list">{% for item in owner_scope.explicitly_not_authorized %}<li>{{ item }}</li>{% endfor %}</ul>
+  <p class="small">Pantone tokens stay named: {{ owner_scope.pantone_policy.why }}</p>
+  <details class="tech"><summary>What the record says</summary><p class="small">Scope: {{ owner_scope.scope }}</p></details>
+</section>
+
+<section class="section" aria-labelledby="h-unresolved">
+  <h2 id="h-unresolved" class="h2">Unresolved</h2>
+  <ul class="intent-list">{% for item in panel.unresolved %}<li>{{ item }}</li>{% empty %}<li>Nothing.</li>{% endfor %}</ul>
+</section>
+
+<div class="card pad intent-box">
+  {% if can_confirm %}
+    <p class="small">Use the table above to confirm, correct, remove, add, change how binding, mark unresolved or note any
+      field, then save. Saving makes a new version; nothing is overwritten.</p>
+  {% elif task and flow.current_version %}
+    <p class="small">A confirmation is recorded at version {{ flow.current_version }}. Revising it makes a new version;
+      nothing is overwritten.</p>
+    {% if can_revise %}
+      <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="reopen" value="1">
+        <button class="btn" type="submit">Revise this confirmation</button>
+      </form>
+    {% endif %}
+  {% elif task %}
+    <p class="small">This design is not waiting for its reading to be confirmed, or confirming it is not yours to do.</p>
+  {% else %}
+    <p class="small">Looking only — open it from a palette design to confirm its reading.</p>
+  {% endif %}
+</div>
+
+{% if history %}
+<section class="section" aria-labelledby="h-history">
+  <h2 id="h-history" class="h2">Revision history</h2>
+  <div class="table-wrap"><table class="intent pic-hist">
+    <thead><tr><th scope="col">Version</th><th scope="col">Confirmed by</th><th scope="col">When</th><th scope="col">Now</th></tr></thead>
+    <tbody>
+    {% for r in history %}
+      <tr><td>{{ r.version }}</td><td>{{ r.confirmed_by|default:"—" }}</td><td>{{ r.created_at|date:"j F Y, H:i" }}</td>
+        <td>{% if r.is_current %}current{% else %}superseded{% endif %}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table></div>
+  <details class="tech"><summary>What the record says</summary>
+    <ul class="small">{% for r in history %}<li>version {{ r.version }}: draft {{ r.draft_identity }} · confirmed {{ r.confirmed_intent_identity }}</li>{% endfor %}</ul>
+  </details>
+</section>
+{% endif %}
+
+<details class="tech"><summary>Where this palette stands for production</summary>
+  <p class="small">Its final dimensions are not approved, its manufacturing is not established, the owner has not approved
+    it for production, and its design review is blocked.</p>
+  <p class="small">PALT_P1_FINAL_DIMENSIONS: NOT_APPROVED · PALT_P1_MANUFACTURING_AUTHORITY: NOT_ESTABLISHED ·
+    PALT_P1_OWNER_APPROVAL: NOT_GRANTED · GATE_2: BLOCKED</p>
+</details>
+{% endblock %}

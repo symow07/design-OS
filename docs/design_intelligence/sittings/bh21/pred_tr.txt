@@ -1,0 +1,106 @@
+§AD0(a) PREDICTION — COMMIT AV — §BH21(c) TRANSCRIPTION (§BH20 + §BH21 TOGETHER)
+==================================================================================
+Written and finalized BEFORE `git add` of the register, BEFORE the gate.
+Scored in the final §BH21 report. No bar is lowered after the fact.
+Kept in ~/bh21_work/ because an environment sweep destroyed every /tmp
+artifact minutes after pass 1 landed (custody note recorded at §BH21(h)).
+
+HEAD at time of writing: fedfab7 (pass 1, landed and fully scored; predecessor b930e85)
+Ruling executed:         §BH21(c) first clause — "Then the transcription commit
+                         (§BH20 + this §BH21 together, pure append)".
+Goal-order position:     SECOND commit of four. The supersession §BH21's header
+                         grants reaches exactly this far: the register follows
+                         pass 1 because the AT attempt proved (hand-captured
+                         exit 1, HEAD unmoved) that it cannot land through a
+                         refusing gate. Everything else unchanged.
+
+THE EIGHT LEGS
+==============
+L1 — WRITE SET
+    Exactly ONE path of mine, at the GIT ROOT:
+      M  OWNER_BLOCKER_CLEARANCE.md   (+371 -0: the §BH20 block, 210 lines,
+         in the worktree since the AT attempt, prefix re-proved after pass 1;
+         plus the §BH21 block, 161 lines, appended now with both former
+         __P1HASH__ sites filled with fedfab7 and a custody note at (h)
+         recording the /tmp sweep)
+    Plus, written BY THE GATE and not by me:
+      M  bbrose_design_os/docs/roadmap/palt_m6/record_gate_ledger.jsonl
+         (+1: this run's own line; the orphan was folded by pass 1 and the
+         ledger starts this run CLEAN at 420 for the first time since the
+         refusal)
+      3  capture files under bbrose_design_os/.tier2_captures (gitignored).
+    NOTHING ELSE. No code path, no var/ path, no queue file.
+
+L2 — DIFF SHAPE
+      OWNER_BLOCKER_CLEARANCE.md               +371  -0
+      + record_gate_ledger.jsonl (gate-written)  +1  -0
+      ------------------------------------------------
+      commit total                             +372  -0  across 2 files
+    ZERO deletions anywhere — "pure append" is provable by the deletion
+    count, the §BH18(b) idiom.
+
+L3 — MANIFEST / A391
+    No new tracked file; suite_file_manifest.json untouched; the register is
+    not an apps/ path.
+
+L4 — §BH4(l) STAGED == DECLARED, BOTH HALVES
+    STAGED half: `git diff --cached --numstat` lists EXACTLY
+    OWNER_BLOCKER_CLEARANCE.md at +371 -0 and nothing else.
+    UNSTAGED half: after staging, `git status --porcelain` shows the single
+    staged register row and — once the gate is running/done — exactly ONE
+    column-2 entry, ` M .../record_gate_ledger.jsonl` (this run's line,
+    folded whole by the gate at guarded_commit.sh:340). No `??` entries.
+
+L5 — COMMIT CONTENTS
+    ONE commit, DOCS-ONLY, one concern (§AC): the transcription of two
+    rulings the owner's own §BH21(c) orders landed together. Register
+    16,333 -> 16,494 lines, three provable segments: lines 1-16,123
+    byte-identical to HEAD's register (diff rc=0, measured pre-staging);
+    16,124-16,333 the §BH20 block, whose byte-identity to its draft was
+    proven at the AT attempt BEFORE the sweep destroyed the draft (the
+    register is now its sole copy — recorded, not re-provable);
+    16,334-16,494 byte-identical to ~/bh21_work/bh21_block.md (diff rc=0,
+    measured pre-staging). NOT here: no regen, no measurement, no pass-2
+    constant, no queue record.
+
+L6 — SUITE / COLLECTION
+      TIER_2=GREEN collected=8490 failures=0 apps=7684 dip0c=671 dip0=135
+    Identical to pass 1's line — a docs-only commit moves no test.
+
+L7 — LEDGER
+    Starts CLEAN at 420 committed lines (pass 1 folded the orphan; verified
+    post-landing). This run appends its own line: 421 on disk, +1 -0 vs HEAD
+    in the commit, CLEAN after. No second orphan exists.
+
+L8 — PROTOCOL IDENTITIES
+    Zero apps/ files; EXTENT_DIGESTS at apps/pipeline/services/
+    palette_powder_protocol.py:1861 untouched, proved by empty
+    `git diff fedfab7 <new> -- bbrose_design_os/apps/pipeline/services/palette_powder_protocol.py`.
+
+NUMBERED CLAIMS
+===============
+C1. ZERO PLACEHOLDERS REMAIN: `grep -c P1HASH` on the register returns 0
+    (measured pre-staging: 0) and returns 0 again on the landed blob.
+C2. PURE APPEND BY COUNT: -0 total. The 16,123-line HEAD prefix is
+    byte-identical (diff of `git show HEAD:./OWNER_BLOCKER_CLEARANCE.md`
+    against head -16123 of the worktree file, rc=0 — measured pre-staging,
+    re-provable on the landed blob).
+C3. EVERY OWNER SENTENCE IS BLOCKQUOTED VERBATIM in both blocks: §BH20's
+    four letters + caveat; §BH21's header, GOAL STATE, five letters, HARD
+    STOPS, queue line, caveat. Executor text is confined to lettered
+    sections marked as executor readings and the footers.
+C4. ALL FOUR §BH21(g) FACTUAL ASSERTIONS HOLD as verified pre-draft (the
+    three constants' fresh measurement ALL_HOLD; the §BH18(c)->§BH19(b)
+    timeline measured; the AT exit-1 hand-capture, made before the sweep
+    destroyed its file; test_c5.py:307's exact citation). §BH20's six held
+    at the AT attempt and were not re-litigated.
+C5. THE GATE COMMITS THE INDEX PLUS THE LEDGER, NOTHING MORE
+    (guarded_commit.sh:340,:343 — measured at pass 1, unchanged).
+C6. EXIT EVIDENCE IS KEPT OUT OF /tmp THIS TIME: hand-captured exit to
+    ~/bh21_work/tr_exit.txt, log to ~/bh21_work/tr_gate.log. Two
+    confirmations required as always: captured exit 0 AND a new HEAD hash.
+
+WHAT THIS COMMIT IS NOT: not the regen (declaration ~/bh21_work/
+regen_decl.md is DRAFTED but executes only after this lands, sealed first),
+not the join measurement, not pass 2, not the queue record, and not a touch
+on any queued owner-gated item.

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% comment %}Design intelligence — the reviewer's pages, in the one shell (the owner's goal of 2026-09-25: one visual system everywhere); their notices keep their words.{% endcomment %}
+{% block title %}Human review queue{% endblock %}
+{% block page_class %}page wide intel{% endblock %}
+{% block before %}
+<nav class="seg subnav" aria-label="Design intelligence">
+  <a href="{% url 'intelligence:review-queue' %}">Review queue</a>
+  <a href="{% url 'intelligence:corpus-list' %}">Candidate corpus</a>
+  <a href="{% url 'intelligence:search' %}">Candidate search</a>
+</nav>
+{% endblock %}
+{% block content %}
+  <section class="notice"><strong>HUMAN INTELLIGENCE ASSERTIONS DO NOT AUTHORIZE OPERATIONAL USE.</strong></section>
+  <section class="notice"><strong>REVIEW READINESS IS NOT APPROVAL OR OPERATIONAL PERMISSION.</strong><p>Readiness is coordination metadata: it says what a reviewer can usefully pick up next and what blocks them. It is not approval, ownership, licence validity, canonical status, or permission to use anything.</p></section>
+  {% if campaign_scope_error %}<section class="notice"><strong>CAMPAIGN SCOPE UNAVAILABLE — MEMBERSHIP NOT SHOWN.</strong><p>{{ campaign_scope_error }}</p><p>Wave membership is withheld rather than guessed; review tasks below remain reviewable through the normal workflow.</p></section>{% endif %}
+  <form method="get" class="filters" aria-label="Review queue filters">
+    <label>Assignment<select name="assignment"><option value="">All</option><option value="mine"{% if filters.assignment == 'mine' %} selected{% endif %}>Assigned to me</option><option value="unassigned"{% if filters.assignment == 'unassigned' %} selected{% endif %}>Unassigned</option></select></label>
+    <label>Status<select name="status"><option value="">All</option>{% for value, label in statuses %}<option value="{{ value }}"{% if filters.status == value %} selected{% endif %}>{{ label }}</option>{% endfor %}</select></label>
+    <label>Review type<select name="review_type"><option value="">All</option>{% for value, label in review_types %}<option value="{{ value }}"{% if filters.review_type == value %} selected{% endif %}>{{ label }}</option>{% endfor %}</select></label>
+    <label>Campaign wave<select name="wave"><option value="">All</option>{% for value in waves %}<option value="{{ value }}"{% if filters.wave == value %} selected{% endif %}>{{ value }}</option>{% endfor %}</select></label>
+    <label>Review readiness<select name="readiness"><option value="">All</option>{% for value in readiness_states %}<option value="{{ value }}"{% if filters.readiness == value %} selected{% endif %}>{{ value }}</option>{% endfor %}</select></label>
+    <label>Blocker<select name="blocker"><option value="">All</option>{% for value in readiness_blockers %}<option value="{{ value }}"{% if filters.blocker == value %} selected{% endif %}>{{ value }}</option>{% endfor %}</select></label>
+    <label>Machine candidate kind<select name="candidate_kind"><option value="">All</option>{% for value in machine_candidate_kinds %}<option value="{{ value }}"{% if filters.candidate_kind == value %} selected{% endif %}>{{ value }}</option>{% endfor %}</select></label>
+    <label>Assigned reviewer<input name="reviewer" maxlength="150" value="{{ filters.reviewer|default:'' }}"></label>
+    <button type="submit">Filter reviews</button>
+  </form>
+  <p class="count">Machine candidate kind is a machine label used for display filtering only. It does not determine wave, lineage, identity, or governance subject.</p>
+  <h2>CAMPAIGN PROGRESS · all review tasks · unaffected by filters</h2>
+  <section class="status-grid" aria-label="Review progress">
+    <div><span>REVIEW TASKS COMPLETED</span><strong>{{ review_tasks_completed }}</strong><small>of {{ review_tasks_total }}</small></div>
+    <div><span>REVIEW TASKS REMAINING</span><strong>{{ review_tasks_remaining }}</strong><small>Workflow coordination only</small></div>
+    {% for state, count in readiness_counts.items %}<div><span>READINESS · {{ state }}</span><strong>{{ count }}</strong><small>Not approval</small></div>{% endfor %}
+  </section>
+  <p class="count">Progress counts review tasks, not approvals. No count here means anything is approved, owned, licensed, or permitted. These totals describe the whole queue and do not change when you filter.</p>
+  {% if unreadable_candidates %}<p class="count">{{ unreadable_candidates }} review task{{ unreadable_candidates|pluralize }} could not be placed in the campaign and are withheld from readiness counts rather than guessed.</p>{% endif %}
+  {% if next_candidate %}<section><h2>NEXT RECOMMENDED CANDIDATE</h2><article class="evidence"><strong><a href="{% url 'intelligence:review-detail' next_candidate.pk %}">{{ next_candidate.review_display }}</a></strong><span>{{ next_candidate.readiness.overall }}</span><small>A suggestion of what to pick up next. It claims nothing and assigns nothing — you must still claim the review.</small></article></section>{% endif %}
+  <div class="count">{{ page.paginator.count }} review task{{ page.paginator.count|pluralize }}</div>
+  <div class="cards">{% for candidate in page.object_list %}<article class="card"><div class="eyebrow">{{ candidate.review_type }} · PRIORITY {{ candidate.priority }}{% if candidate.campaign_entry %} · {{ candidate.campaign_entry.wave }}{% endif %}</div>{% if candidate.integrity_warning %}<div class="notice"><strong>{{ candidate.integrity_warning.status }} · REVIEW REQUIRED · {{ candidate.integrity_warning.classification }}</strong><br>{{ candidate.integrity_warning.warning_message }}</div>{% endif %}<h2><a href="{% url 'intelligence:review-detail' candidate.pk %}">{{ candidate.review_display }}</a></h2><dl><div><dt>Workflow</dt><dd>{{ candidate.workflow_status }}</dd></div><div><dt>Review readiness</dt><dd>{{ candidate.readiness.overall }} <small>(not approval)</small></dd></div><div><dt>Blockers</dt><dd>{{ candidate.readiness.blocker_codes|join:', '|default:'None' }}</dd></div><div><dt>Evidence integrity</dt><dd>{{ candidate.readiness.integrity }}</dd></div><div><dt>Machine candidate kind</dt><dd>{{ candidate.machine_candidate_kind|default:'NONE' }} <small>(machine label; not lineage)</small></dd></div><div><dt>Assigned</dt><dd>{{ candidate.assigned_to.username|default:'UNASSIGNED' }}</dd></div><div><dt>Corpus identity</dt><dd>{{ candidate.corpus_item_id }}</dd></div><div><dt>Manifest</dt><dd>{{ candidate.review_manifest_id }}</dd></div></dl></article>{% empty %}<p class="empty">No review tasks match these filters.</p>{% endfor %}</div>
+{% endblock %}

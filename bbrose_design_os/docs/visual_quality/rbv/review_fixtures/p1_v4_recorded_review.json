@@ -1,0 +1,102 @@
+{
+ "schema": "claude_visual_review_fixture/1.0",
+ "subject_id": "P1_V4",
+ "recorded_at": "2026-08-17",
+ "recorded_by": "executing session (Claude Opus 5), RBV-4 build node",
+ "origin": "DIRECT_INSPECTION_OF_THE_COMMITTED_CONTACT_SHEET_AND_MANIFEST — the reviewer opened docs/visual_quality/rbv/review_packages/p1_v4/review_contact_sheet.png and read review_package_manifest.json. NO PROVIDER API CALL WAS MADE and none was billed; no owner call budget was spent. These dispositions are REPLAYED by the harness, never presented as provider evidence.",
+ "scope_note": "mode A GEOMETRY VALIDATION only. The package carries references: [] and reference_availability PARTIAL, so every category that is defined as a DIFFERENCE FROM A REAL BOTTLE is undischargeable here and is recorded as uncertainty, never resolved by assumption (contract authority_rules).",
+ "dispositions": [
+  {
+   "category": "silhouette differences",
+   "disposition": "UNCERTAIN_MISSING_EVIDENCE",
+   "source": "RECORDED_FIXTURE",
+   "observation": "The rendered silhouette is internally consistent: front and side occupy the identical horizontal band (bounds_px x0=479, x1=1120 in both) for a rendered_extent_mm of 37.36 against a contract_extent_mm of 37.4, which is what a body of circular cross-section should produce under the orthographic camera. That is a self-consistency check, NOT a silhouette difference: no authoritative real-bottle silhouette exists in this package to differ from.",
+   "missing_evidence": "no authoritative real-bottle reference is packaged (manifest references: []); RBV-1 is IN_PROGRESS with the P1 reference pack INCOMPLETE — 4 landmark clarifications and 5 calibrated photographs outstanding"
+  },
+  {
+   "category": "shoulder differences",
+   "disposition": "UNCERTAIN_MISSING_EVIDENCE",
+   "source": "RECORDED_FIXTURE",
+   "observation": "A soft rounded shoulder transition is legible in front, side and three_quarter_diagnostic, and the normals view shows a continuous gradient across it with no faceting or crease. Whether that shoulder MATCHES the real bottle cannot be stated.",
+   "missing_evidence": "no calibrated real-bottle photograph and no owner-confirmed shoulder landmark; the shoulder is one of the 4 landmark clarifications RBV-1 still owes"
+  },
+  {
+   "category": "neck differences",
+   "disposition": "UNCERTAIN_MISSING_EVIDENCE",
+   "source": "RECORDED_FIXTURE",
+   "observation": "The neck reads as a short cylindrical section fully concealed by the closure collar in front and side; it is not independently measurable from any packaged view because no view exposes it.",
+   "missing_evidence": "no real-bottle neck dimension in the reference pack, and no packaged view exposes the neck below the collar"
+  },
+  {
+   "category": "closure differences",
+   "disposition": "UNCERTAIN_MISSING_EVIDENCE",
+   "source": "RECORDED_FIXTURE",
+   "observation": "The closure reads as a straight-walled collar with a domed bulb above it. The one view dedicated to it (closure_detail) is clipped — see the perspective-mismatch finding — so even the rendered closure is only partially evidenced, and no real-bottle closure is packaged to compare against.",
+   "missing_evidence": "no real-bottle closure reference; additionally the packaged closure_detail view is itself incomplete (closure_view_coverage 0.5532, silhouette touches the frame)"
+  },
+  {
+   "category": "aspect and proportion differences",
+   "disposition": "FINDING",
+   "classification": "MINOR",
+   "source": "RECORDED_FIXTURE",
+   "observation": "Two orthographic views of the same object report different heights: front rendered_height_mm 113.64 (bounds y0=129, y1=2081 = 1952 px) versus side rendered_height_mm 114.23 (bounds y0=119, y1=2081 = 1962 px). That is a 10 px / 0.59 mm discrepancy at the manifest's own expected_mm_per_px of 0.05819, on an object whose widths are pixel-identical across the same two views. For a body of revolution under an identical orthographic camera the two heights should agree. The cause is NOT determined here — asymmetry in the bulb or collar, and a mask-extraction edge difference, are both consistent with the evidence, and separating them is outside a review's authority. Widths themselves are within tolerance: 37.36 rendered against 37.4 contract is 0.04 mm, below one pixel."
+  },
+  {
+   "category": "perspective mismatch",
+   "disposition": "FINDING",
+   "classification": "MAJOR",
+   "source": "RECORDED_FIXTURE",
+   "observation": "closure_detail is framed off-centre and its subject is CLIPPED: bounds_px x0=115, x1=1217, y0=432, y1=2199 with touches_frame TRUE and closure_view_coverage 0.5532. The render manifest already warns RENDER_OFF_CENTER:closure_detail and the contact sheet prints that warning in red, so the package is honest about it — but the consequence for review is not cosmetic. The camera standard's comparison rule is 'identical camera, never differing zoom'; a view whose subject runs out of frame cannot be placed under that rule against any future reference photograph, so this view is not yet usable as comparison evidence. Recorded as perspective mismatch because it is a camera-framing defect and that is the closest category the contract defines; it is a framing fault, not a projection fault — every packaged view is orthographic as the standard requires."
+  },
+  {
+   "category": "artwork placement",
+   "disposition": "NOT_OBSERVED",
+   "source": "RECORDED_FIXTURE",
+   "observation": "No artwork is present to place. Mode A renders neutral clay BY DESIGN; the absence is the design of the mode, not a defect and not missing evidence. Artwork placement belongs to mode B and to VQR-3, neither of which this package claims."
+  },
+  {
+   "category": "logo placement",
+   "disposition": "NOT_OBSERVED",
+   "source": "RECORDED_FIXTURE",
+   "observation": "No logo is present on any packaged view, for the same reason as artwork placement: mode A is neutral clay by design."
+  },
+  {
+   "category": "typography quality",
+   "disposition": "NOT_OBSERVED",
+   "source": "RECORDED_FIXTURE",
+   "observation": "The SUBJECT carries no typography in any packaged view. The type visible on the contact sheet is the package's own labelling (Helvetica, recorded in the manifest with its sha256), which is the review instrument, not the reviewed object; judging the subject's typography from it would be a category error."
+  },
+  {
+   "category": "material realism",
+   "disposition": "NOT_OBSERVED",
+   "source": "RECORDED_FIXTURE",
+   "observation": "Out of scope for mode A by the §1 two-mode principle. The neutral clay shader is a geometry-reading aid — it deliberately makes form legible and makes material claims impossible. Scoring material realism from it would be exactly the re-badging of a validation render as a presentation render that §1 forbids, and the package states mode B ABSENT_BLOCKED on two reasons (RBV2C_PRESENTATION_RENDERER_NOT_BUILT, OWNER_GATE_PILOT_GEOMETRY_INSPECTION_PENDING)."
+  },
+  {
+   "category": "lighting issues",
+   "disposition": "FINDING",
+   "classification": "MINOR",
+   "source": "RECORDED_FIXTURE",
+   "observation": "The clay body sits at a value close to the panel background across front, side, top and three_quarter_diagnostic, so the silhouette edge is low-contrast on the contact sheet. It was sufficient for the automated mask — bounds were extracted on every view and touches_frame is correctly False on front/side/top — but it makes human edge judgement harder at contact-sheet scale, which is the sheet's whole purpose. The wireframe and normals views do not share the problem and read clearly. This is a lighting/background separation issue in the neutral setup, not a geometry fault."
+  },
+  {
+   "category": "colour differences",
+   "disposition": "NOT_OBSERVED",
+   "source": "RECORDED_FIXTURE",
+   "observation": "Mode A makes no colour claim — the render is deliberately neutral. Colour comparison requires mode B plus the colour/material calibration proposal, and both are absent/PROPOSED, so there is no colour to differ."
+  },
+  {
+   "category": "client-presentability",
+   "disposition": "NOT_OBSERVED",
+   "source": "RECORDED_FIXTURE",
+   "observation": "NOT ASSESSABLE, and deliberately so. The package states CLIENT PRESENTATION — ABSENT (BLOCKED) on the contact sheet itself with both blocking reasons named. Issuing any presentability judgement from mode A would re-badge a geometry-validation render as presentation, which §1 forbids and which this package was built to make visible rather than possible."
+  },
+  {
+   "category": "uncertainty caused by missing reference evidence",
+   "disposition": "FINDING",
+   "classification": "MAJOR",
+   "source": "RECORDED_FIXTURE",
+   "observation": "This is the dominant limitation of the review, and it is structural rather than incidental: 4 of the contract's 14 required categories (silhouette, shoulder, neck and closure differences) are undischargeable because the package contains no authoritative real-bottle reference — manifest references: [] and reference_availability 'PARTIAL — owner measurements + uncalibrated photos'. Every one of those four is defined as a DIFFERENCE from the real bottle, so no amount of inspection of this package can close them; only RBV-1 completing the P1 pack can. Recorded as MAJOR, not BLOCKING: the package is honest about its own reference availability and correctly presents itself as a geometry-validation fixture, so nothing here is misrepresented — the evidence simply does not exist yet. The subject is additionally the FROZEN P1 V4 regression fixture with P1_OWNER_VISUAL_APPROVAL NOT_GRANTED, so no geometry acceptance could follow from this review even if the references were present."
+  }
+ ]
+}

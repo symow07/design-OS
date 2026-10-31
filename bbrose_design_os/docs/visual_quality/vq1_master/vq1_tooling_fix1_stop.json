@@ -1,0 +1,33 @@
+{
+  "record_type": "vq1_tooling_fix1_stop/1.0",
+  "created_at": "2026-07-28",
+  "status": "VQ1_MASTER_HARD_STOP_REVIEW_REQUIRED",
+  "tooling_fix": "COMPLETED \u2014 pdf_raster.py, PyMuPDF certified DPI_CAPABLE",
+  "raster_gate": "PASSED \u2014 4 distinct resolutions, verified effective DPI",
+  "dual_inspection": "COMPLETED \u2014 2 calls, both under a PASSED input-quality gate",
+  "scorecards": "BOTH BELOW 10/10 IN EVERY CATEGORY",
+  "inspectors_agree": true,
+  "release_status": "NOT VQ1_MASTER_CANDIDATE_PENDING_HUMAN_REVIEW",
+  "m3_geometry_changed": false,
+  "new_candidate_generated": false,
+  "proposed_unimplemented_plan": {
+    "component": "inspection scope + collar material read",
+    "defect": "both scorecards dominated by absent metallic finish, which the accepted VQ-3 deferral places outside VQ-1",
+    "deterministic_evidence": "collar contour IoU 0.992; junction mean 0.00042 at 8x",
+    "visual_evidence": "collar_sleeve 2/10 from both inspectors citing colour/finish",
+    "protected_geometry": "M3 untouched",
+    "proposed_next_action": "decide whether VQ-1 scorecards should be taken on silhouette-only renders, or whether a neutral metallic read is authorized for inspection purposes. Not implemented."
+  },
+  "genuine_structural_gaps": [
+    "neck transition scored 3/10 by A and B \u2014 the reference shows a distinct narrowing below the collar that the candidate under-expresses",
+    "shoulder transition 4-5/10",
+    "dome read as a flat arch by B"
+  ],
+  "what_was_NOT_completed": [
+    "\u00a719 forensic package",
+    "\u00a720 final review package"
+  ],
+  "image_generation_calls": 0,
+  "multimodal_calls": 2,
+  "supplier_requests_sent": false
+}

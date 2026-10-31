@@ -1,0 +1,206 @@
+{
+ "record_type": "vq1_junction_forensics/1.0",
+ "created_at": "2026-07-28",
+ "candidate": "M3",
+ "candidate_sha256_png": "4ecc8e9df1d14b77",
+ "historic_junction_failures": {
+  "IT6": 0.162,
+  "M1": 0.136,
+  "M2": 0.068,
+  "M3": 0.065,
+  "M4": 0.127,
+  "RIM1": 0.127,
+  "gate": 0.045,
+  "note": "M4 and RIM1 produced an identical 0.12697 from different partition models, proving the partition was never the cause."
+ },
+ "metric_correspondence_correction": {
+  "canonical": "LOCAL_NORMAL_DIRECTION",
+  "diagnostic_retained": "SAME_ROW",
+  "effect_on_m3": "M3 passes all junction gates under the corrected contract (mean 0.00209, p95 0.01000, max 0.01212) while M4 and RIM1 still fail \u2014 the correction discriminates rather than whitewashing."
+ },
+ "rasterizer_defect_and_fix": {
+  "defect": "VQ_RASTER_SWEEP_RESOLUTION_NOT_APPLIED \u2014 a 1x/2x/4x/8x sweep returned PASS with four byte-identical files (4ecc8e9df1d1) because sips ignores the dpi argument.",
+  "fix": "apps/ire/pdf_raster.py \u2014 PyMuPDF certified DPI_CAPABLE only after a capability test, every render verified against dimensions predicted from the page box.",
+  "invalid_record_preserved": "vq1_raster_stability_report_invalid.json"
+ },
+ "valid_raster_sweep": true,
+ "contaminated_inspections_preserved": "vq1_dual_inspection.json",
+ "structural_only_inspections_preserved": "vq1_structural_rescore.json",
+ "inspector_a_pass_verdict_invalidated": "vq1_inspector_a_verdict_invalidation.json",
+ "neck_shoulder_perceptual_diagnosis": {
+  "code": "VQ1_NECK_UNDERCUT_LEGIBILITY_NOT_GEOMETRY",
+  "reference_inset_px_per_side": 8.0,
+  "as_fraction_of_body_width": 0.02332,
+  "dense_finding": "the reference neck is a smooth monotonic waist with a 7-row plateau at 100.5 px, NOT the stepped ledge an earlier inspector described"
+ },
+ "measurement_method_withdrawal": [
+  "VQ1_SAMPLE_IDENTITY_COMPARISON_VACUOUS",
+  "VQ1_GLASS_FIT_COARSENED_TOLERANCE_NOT_ENFORCED"
+ ],
+ "dense_geometry_confirmation": {
+  "bounded_region": {
+   "neck": {
+    "count": 30,
+    "mean": 0.001996,
+    "p95": 0.00337,
+    "max": 0.004073
+   },
+   "shoulder": {
+    "count": 36,
+    "mean": 0.001011,
+    "p95": 0.003673,
+    "max": 0.004197
+   },
+   "all_gates_pass": true
+  },
+  "assembly_wide": {
+   "DARK_CLOSURE": {
+    "rows": 201,
+    "mean": 0.000378,
+    "p95": 0.001698,
+    "max": 0.005369
+   },
+   "COLLAR": {
+    "rows": 181,
+    "mean": 0.00022,
+    "p95": 0.001574,
+    "max": 0.007594
+   },
+   "GLASS": {
+    "rows": 685,
+    "mean": 0.000212,
+    "p95": 0.00204,
+    "max": 0.004531
+   }
+  }
+ },
+ "final_inspection_evidence": {
+  "inspector_a": {
+   "identity": "STRUCTURAL_REFERENCE_FIDELITY_CRITIC",
+   "verdict": "PASSES_STRUCTURAL_INSPECTION_PENDING_HUMAN_REVIEW",
+   "scores": {
+    "rounded_dome": 9,
+    "dark_shaft": 10,
+    "lower_flare": 9,
+    "flare_symmetry": 9,
+    "collar_sleeve": 10,
+    "collar_closure_junction": 9,
+    "neck_transition": 9,
+    "shoulder_transition": 9,
+    "complete_closure_coherence": 9,
+    "overall": 9
+   },
+   "consistency_codes": [
+    "VQ1_LOW_SALIENCE_ALONE_REDUCED_STRUCTURAL_SCORE",
+    "VQ1_PASS_VERDICT_CONTAINS_SCORE_BELOW_10"
+   ]
+  },
+  "inspector_b": {
+   "identity": "STRUCTURAL_ADVERSARIAL_EVIDENCE_AUDITOR",
+   "verdict": "PASSES_STRUCTURAL_INSPECTION_PENDING_HUMAN_REVIEW",
+   "scores": {
+    "rounded_dome": 9,
+    "dark_shaft": 10,
+    "lower_flare": 8,
+    "flare_symmetry": 8,
+    "collar_sleeve": 9,
+    "collar_closure_junction": 9,
+    "neck_transition": 8,
+    "shoulder_transition": 8,
+    "complete_closure_coherence": 9,
+    "overall": 8
+   },
+   "consistency_codes": [
+    "VQ1_PASS_VERDICT_CONTAINS_SCORE_BELOW_10",
+    "VQ1_SCORE_10_CONTAINS_GENUINE_CONTOUR_CRITICISM"
+   ]
+  },
+  "substantive_disagreement": {
+   "inspector_a_true_defects": 0,
+   "inspector_b_true_defects": 3,
+   "a_true_defect_observations": [],
+   "b_true_defect_observations": [
+    "Neck inset depth under-expressed by 0.7 px per side (M3 inset 7.3 px vs reference 8.0 px, ratio 0.9125). The neck undercut exists but is marginally shallower than the reference.",
+    "Shoulder transition peak local-normal deviation of 1.44 px at row 706, where M3 contour crosses from inside to outside the reference curve at the point of maximum curvature.",
+    "Lower flare corner (rows 493\u2013497) shows red contour displaced approximately 1\u20132 px outward from black reference at the transition from curved corner to straight sidewall."
+   ],
+   "categories_diverging_by_2_or_more": {},
+   "disagree_on_geometry_correctness": true
+  }
+ },
+ "result": {
+  "state": "VQ1_GEOMETRY_COMPLETE_PENDING_OWNER_ACCEPTANCE",
+  "automatic_release_state_at_close1": "VQ1_MASTER_HARD_STOP_REVIEW_REQUIRED",
+  "resolved_by": "HUMAN_TOLERANCE_RULING",
+  "human_accepted": false,
+  "manufacturable": false,
+  "production_ready": false
+ },
+ "human_structural_adjudication": [
+  "VQ1_WITHIN_TOLERANCE_CONTOUR_RESIDUAL",
+  "VQ1_NONBLOCKING_SUBPIXEL_STRUCTURAL_DEVIATION",
+  "VQ1_INSPECTOR_DISAGREEMENT_RESOLVED_BY_HUMAN_TOLERANCE_RULING"
+ ],
+ "human_ruling": "The reported sub-2-pixel deviations are NOT actionable VQ-1 structural defects.",
+ "scoring_contract": "MEETS_REFERENCE_WITHIN_DECLARED_STRUCTURAL_TOLERANCE",
+ "final_classification": [
+  "VQ1_FINAL_STRUCTURAL_CANDIDATE",
+  "VQ1_GEOMETRY_COMPLETE_PENDING_OWNER_ACCEPTANCE"
+ ],
+ "fitter_defect": [
+  "VQ_FIT_CUBICS_COARSENING_BYPASSES_TOLERANCE",
+  "VQ_FITTER_SEGMENT_CAP_FAILS_TO_PRESERVE_ERROR_BOUND"
+ ],
+ "fitter_remediation": "apps.ire.contour_fit.fit_contour",
+ "fitter_shadow_diagnostic": {
+  "record_type": "vq_contour_fit_shadow_diagnostic/1.0",
+  "authoritative": false,
+  "creates_candidate": false,
+  "changes_candidate_status": false,
+  "on_release_path": false,
+  "legacy": {
+   "schema": "vq_contour_fit/1.0",
+   "segment_count": 57,
+   "reported_residual_max": 5.1,
+   "measured_residual_max_local_normal": 1.5545,
+   "measured_residual_mean_local_normal": 0.0643,
+   "tolerance_enforced": false,
+   "uniform_chunking_used": true
+  },
+  "corrected": {
+   "schema": "vq_contour_fit/2.0",
+   "segment_count": 68,
+   "status": "SEGMENT_CAP_RAISED_TOLERANCE_PRESERVED",
+   "tolerance_enforced": true,
+   "residual_max_parameter_matched": 2.5886,
+   "residual_max_local_normal": 0.5453,
+   "residual_mean_local_normal": 0.0161
+  },
+  "interpretation": "Informational only. It does not license regenerating any frozen candidate and does not reopen VQ-1."
+ },
+ "m3_regenerated": false,
+ "inspector_scores_rewritten": false,
+ "workstream_state": {
+  "VQ_1": "OWNER_ACCEPTED_CLOSED",
+  "VQ_2": "UNBLOCKED_PENDING_EXPLICIT_START",
+  "VQ_3": "UNBLOCKED_PENDING_EXPLICIT_START",
+  "PRODUCTION_GEOMETRY": "BLOCKED_PENDING_SUPPLIER_EVIDENCE"
+ },
+ "owner_acceptance": {
+  "codes": [
+   "VQ1_OWNER_ACCEPTED",
+   "VQ1_STRUCTURAL_GEOMETRY_ACCEPTED",
+   "VQ1_WORKSTREAM_CLOSED"
+  ],
+  "final_classification": "VQ1_FINAL_STRUCTURAL_CANDIDATE",
+  "decided_by": "PROJECT_OWNER",
+  "created_at": "2026-07-28",
+  "accepted_commit": "6fb8262",
+  "identity_sha256_png": "4ecc8e9df1d1",
+  "scope": "CONCEPT_VISUAL_STRUCTURAL_GEOMETRY",
+  "is_production_authority": false
+ },
+ "state": "VQ1_OWNER_ACCEPTED",
+ "rendered_assets_regenerated": false,
+ "rendered_asset_note": "The PDF and PNG were deliberately NOT re-rendered in the acceptance transition. They carry the pre-acceptance state; this JSON carries the acceptance. M3 artwork was not touched."
+}

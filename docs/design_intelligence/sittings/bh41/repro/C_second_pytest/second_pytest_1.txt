@@ -1,0 +1,572 @@
+.....EEEF..........................                                      [100%]
+==================================== ERRORS ====================================
+_________ ERROR at setup of HealthzTests.test_eager_mode_reports_eager _________
+
+self = <DatabaseWrapper vendor='postgresql' alias='default'>
+
+    @async_unsafe
+    def ensure_connection(self):
+        """Guarantee that a connection to the database is established."""
+        if self.connection is None:
+            with self.wrap_database_errors:
+>               self.connect()
+
+venv/lib/python3.11/site-packages/django/db/backends/base/base.py:289: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/utils/asyncio.py:26: in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/base/base.py:270: in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/utils/asyncio.py:26: in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/postgresql/base.py:269: in get_new_connection
+    connection = self.Database.connect(**conn_params)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+dsn = 'dbname=test_bbrose_db gssencmode=disable user=user password=password host=localhost port=5432'
+connection_factory = None, cursor_factory = None
+kwargs = {'dbname': 'test_bbrose_db', 'gssencmode': 'disable', 'host': 'localhost', 'password': 'password', ...}
+kwasync = {}
+
+    def connect(dsn=None, connection_factory=None, cursor_factory=None, **kwargs):
+        """
+        Create a new database connection.
+    
+        The connection parameters can be specified as a string:
+    
+            conn = psycopg2.connect("dbname=test user=postgres password=secret")
+    
+        or using a set of keyword arguments:
+    
+            conn = psycopg2.connect(database="test", user="postgres", password="secret")
+    
+        Or as a mix of both. The basic connection parameters are:
+    
+        - *dbname*: the database name
+        - *database*: the database name (only as keyword argument)
+        - *user*: user name used to authenticate
+        - *password*: password used to authenticate
+        - *host*: database host address (defaults to UNIX socket if not provided)
+        - *port*: connection port number (defaults to 5432 if not provided)
+    
+        Using the *connection_factory* parameter a different class or connections
+        factory can be specified. It should be a callable object taking a dsn
+        argument.
+    
+        Using the *cursor_factory* parameter, a new default cursor factory will be
+        used by cursor().
+    
+        Using *async*=True an asynchronous connection will be created. *async_* is
+        a valid alias (for Python versions where ``async`` is a keyword).
+    
+        Any other keyword parameter will be passed to the underlying client
+        library: the list of supported parameters depends on the library version.
+    
+        """
+        kwasync = {}
+        if 'async' in kwargs:
+            kwasync['async'] = kwargs.pop('async')
+        if 'async_' in kwargs:
+            kwasync['async_'] = kwargs.pop('async_')
+    
+        dsn = _ext.make_dsn(dsn, **kwargs)
+>       conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "test_bbrose_db" does not exist
+E       DETAIL:  It seems to have just been dropped or renamed.
+
+venv/lib/python3.11/site-packages/psycopg2/__init__.py:122: OperationalError
+
+The above exception was the direct cause of the following exception:
+
+cls = <class 'apps.core.tests.HealthzTests'>
+
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        if not cls._databases_support_transactions():
+            return
+>       cls.cls_atomics = cls._enter_atomics()
+                          ^^^^^^^^^^^^^^^^^^^^
+
+venv/lib/python3.11/site-packages/django/test/testcases.py:1451: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/test/testcases.py:1431: in _enter_atomics
+    atomic.__enter__()
+venv/lib/python3.11/site-packages/django/db/transaction.py:198: in __enter__
+    if not connection.get_autocommit():
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/base/base.py:464: in get_autocommit
+    self.ensure_connection()
+venv/lib/python3.11/site-packages/django/utils/asyncio.py:26: in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/base/base.py:288: in ensure_connection
+    with self.wrap_database_errors:
+venv/lib/python3.11/site-packages/django/db/utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+venv/lib/python3.11/site-packages/django/db/backends/base/base.py:289: in ensure_connection
+    self.connect()
+venv/lib/python3.11/site-packages/django/utils/asyncio.py:26: in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/base/base.py:270: in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/utils/asyncio.py:26: in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/postgresql/base.py:269: in get_new_connection
+    connection = self.Database.connect(**conn_params)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+dsn = 'dbname=test_bbrose_db gssencmode=disable user=user password=password host=localhost port=5432'
+connection_factory = None, cursor_factory = None
+kwargs = {'dbname': 'test_bbrose_db', 'gssencmode': 'disable', 'host': 'localhost', 'password': 'password', ...}
+kwasync = {}
+
+    def connect(dsn=None, connection_factory=None, cursor_factory=None, **kwargs):
+        """
+        Create a new database connection.
+    
+        The connection parameters can be specified as a string:
+    
+            conn = psycopg2.connect("dbname=test user=postgres password=secret")
+    
+        or using a set of keyword arguments:
+    
+            conn = psycopg2.connect(database="test", user="postgres", password="secret")
+    
+        Or as a mix of both. The basic connection parameters are:
+    
+        - *dbname*: the database name
+        - *database*: the database name (only as keyword argument)
+        - *user*: user name used to authenticate
+        - *password*: password used to authenticate
+        - *host*: database host address (defaults to UNIX socket if not provided)
+        - *port*: connection port number (defaults to 5432 if not provided)
+    
+        Using the *connection_factory* parameter a different class or connections
+        factory can be specified. It should be a callable object taking a dsn
+        argument.
+    
+        Using the *cursor_factory* parameter, a new default cursor factory will be
+        used by cursor().
+    
+        Using *async*=True an asynchronous connection will be created. *async_* is
+        a valid alias (for Python versions where ``async`` is a keyword).
+    
+        Any other keyword parameter will be passed to the underlying client
+        library: the list of supported parameters depends on the library version.
+    
+        """
+        kwasync = {}
+        if 'async' in kwargs:
+            kwasync['async'] = kwargs.pop('async')
+        if 'async_' in kwargs:
+            kwasync['async_'] = kwargs.pop('async_')
+    
+        dsn = _ext.make_dsn(dsn, **kwargs)
+>       conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       django.db.utils.OperationalError: connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "test_bbrose_db" does not exist
+E       DETAIL:  It seems to have just been dropped or renamed.
+
+venv/lib/python3.11/site-packages/psycopg2/__init__.py:122: OperationalError
+_________ ERROR at setup of HealthzTests.test_live_worker_returns_200 __________
+
+self = <DatabaseWrapper vendor='postgresql' alias='default'>
+
+    @async_unsafe
+    def ensure_connection(self):
+        """Guarantee that a connection to the database is established."""
+        if self.connection is None:
+            with self.wrap_database_errors:
+>               self.connect()
+
+venv/lib/python3.11/site-packages/django/db/backends/base/base.py:289: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/utils/asyncio.py:26: in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/base/base.py:270: in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/utils/asyncio.py:26: in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/postgresql/base.py:269: in get_new_connection
+    connection = self.Database.connect(**conn_params)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+dsn = 'dbname=test_bbrose_db gssencmode=disable user=user password=password host=localhost port=5432'
+connection_factory = None, cursor_factory = None
+kwargs = {'dbname': 'test_bbrose_db', 'gssencmode': 'disable', 'host': 'localhost', 'password': 'password', ...}
+kwasync = {}
+
+    def connect(dsn=None, connection_factory=None, cursor_factory=None, **kwargs):
+        """
+        Create a new database connection.
+    
+        The connection parameters can be specified as a string:
+    
+            conn = psycopg2.connect("dbname=test user=postgres password=secret")
+    
+        or using a set of keyword arguments:
+    
+            conn = psycopg2.connect(database="test", user="postgres", password="secret")
+    
+        Or as a mix of both. The basic connection parameters are:
+    
+        - *dbname*: the database name
+        - *database*: the database name (only as keyword argument)
+        - *user*: user name used to authenticate
+        - *password*: password used to authenticate
+        - *host*: database host address (defaults to UNIX socket if not provided)
+        - *port*: connection port number (defaults to 5432 if not provided)
+    
+        Using the *connection_factory* parameter a different class or connections
+        factory can be specified. It should be a callable object taking a dsn
+        argument.
+    
+        Using the *cursor_factory* parameter, a new default cursor factory will be
+        used by cursor().
+    
+        Using *async*=True an asynchronous connection will be created. *async_* is
+        a valid alias (for Python versions where ``async`` is a keyword).
+    
+        Any other keyword parameter will be passed to the underlying client
+        library: the list of supported parameters depends on the library version.
+    
+        """
+        kwasync = {}
+        if 'async' in kwargs:
+            kwasync['async'] = kwargs.pop('async')
+        if 'async_' in kwargs:
+            kwasync['async_'] = kwargs.pop('async_')
+    
+        dsn = _ext.make_dsn(dsn, **kwargs)
+>       conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "test_bbrose_db" does not exist
+E       DETAIL:  It seems to have just been dropped or renamed.
+
+venv/lib/python3.11/site-packages/psycopg2/__init__.py:122: OperationalError
+
+The above exception was the direct cause of the following exception:
+
+cls = <class 'apps.core.tests.HealthzTests'>
+
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        if not cls._databases_support_transactions():
+            return
+>       cls.cls_atomics = cls._enter_atomics()
+                          ^^^^^^^^^^^^^^^^^^^^
+
+venv/lib/python3.11/site-packages/django/test/testcases.py:1451: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/test/testcases.py:1431: in _enter_atomics
+    atomic.__enter__()
+venv/lib/python3.11/site-packages/django/db/transaction.py:198: in __enter__
+    if not connection.get_autocommit():
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/base/base.py:464: in get_autocommit
+    self.ensure_connection()
+venv/lib/python3.11/site-packages/django/utils/asyncio.py:26: in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/base/base.py:288: in ensure_connection
+    with self.wrap_database_errors:
+venv/lib/python3.11/site-packages/django/db/utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+venv/lib/python3.11/site-packages/django/db/backends/base/base.py:289: in ensure_connection
+    self.connect()
+venv/lib/python3.11/site-packages/django/utils/asyncio.py:26: in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/base/base.py:270: in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/utils/asyncio.py:26: in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/postgresql/base.py:269: in get_new_connection
+    connection = self.Database.connect(**conn_params)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+dsn = 'dbname=test_bbrose_db gssencmode=disable user=user password=password host=localhost port=5432'
+connection_factory = None, cursor_factory = None
+kwargs = {'dbname': 'test_bbrose_db', 'gssencmode': 'disable', 'host': 'localhost', 'password': 'password', ...}
+kwasync = {}
+
+    def connect(dsn=None, connection_factory=None, cursor_factory=None, **kwargs):
+        """
+        Create a new database connection.
+    
+        The connection parameters can be specified as a string:
+    
+            conn = psycopg2.connect("dbname=test user=postgres password=secret")
+    
+        or using a set of keyword arguments:
+    
+            conn = psycopg2.connect(database="test", user="postgres", password="secret")
+    
+        Or as a mix of both. The basic connection parameters are:
+    
+        - *dbname*: the database name
+        - *database*: the database name (only as keyword argument)
+        - *user*: user name used to authenticate
+        - *password*: password used to authenticate
+        - *host*: database host address (defaults to UNIX socket if not provided)
+        - *port*: connection port number (defaults to 5432 if not provided)
+    
+        Using the *connection_factory* parameter a different class or connections
+        factory can be specified. It should be a callable object taking a dsn
+        argument.
+    
+        Using the *cursor_factory* parameter, a new default cursor factory will be
+        used by cursor().
+    
+        Using *async*=True an asynchronous connection will be created. *async_* is
+        a valid alias (for Python versions where ``async`` is a keyword).
+    
+        Any other keyword parameter will be passed to the underlying client
+        library: the list of supported parameters depends on the library version.
+    
+        """
+        kwasync = {}
+        if 'async' in kwargs:
+            kwasync['async'] = kwargs.pop('async')
+        if 'async_' in kwargs:
+            kwasync['async_'] = kwargs.pop('async_')
+    
+        dsn = _ext.make_dsn(dsn, **kwargs)
+>       conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       django.db.utils.OperationalError: connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "test_bbrose_db" does not exist
+E       DETAIL:  It seems to have just been dropped or renamed.
+
+venv/lib/python3.11/site-packages/psycopg2/__init__.py:122: OperationalError
+__________ ERROR at setup of HealthzTests.test_no_worker_returns_503 ___________
+
+self = <DatabaseWrapper vendor='postgresql' alias='default'>
+
+    @async_unsafe
+    def ensure_connection(self):
+        """Guarantee that a connection to the database is established."""
+        if self.connection is None:
+            with self.wrap_database_errors:
+>               self.connect()
+
+venv/lib/python3.11/site-packages/django/db/backends/base/base.py:289: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/utils/asyncio.py:26: in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/base/base.py:270: in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/utils/asyncio.py:26: in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/postgresql/base.py:269: in get_new_connection
+    connection = self.Database.connect(**conn_params)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+dsn = 'dbname=test_bbrose_db gssencmode=disable user=user password=password host=localhost port=5432'
+connection_factory = None, cursor_factory = None
+kwargs = {'dbname': 'test_bbrose_db', 'gssencmode': 'disable', 'host': 'localhost', 'password': 'password', ...}
+kwasync = {}
+
+    def connect(dsn=None, connection_factory=None, cursor_factory=None, **kwargs):
+        """
+        Create a new database connection.
+    
+        The connection parameters can be specified as a string:
+    
+            conn = psycopg2.connect("dbname=test user=postgres password=secret")
+    
+        or using a set of keyword arguments:
+    
+            conn = psycopg2.connect(database="test", user="postgres", password="secret")
+    
+        Or as a mix of both. The basic connection parameters are:
+    
+        - *dbname*: the database name
+        - *database*: the database name (only as keyword argument)
+        - *user*: user name used to authenticate
+        - *password*: password used to authenticate
+        - *host*: database host address (defaults to UNIX socket if not provided)
+        - *port*: connection port number (defaults to 5432 if not provided)
+    
+        Using the *connection_factory* parameter a different class or connections
+        factory can be specified. It should be a callable object taking a dsn
+        argument.
+    
+        Using the *cursor_factory* parameter, a new default cursor factory will be
+        used by cursor().
+    
+        Using *async*=True an asynchronous connection will be created. *async_* is
+        a valid alias (for Python versions where ``async`` is a keyword).
+    
+        Any other keyword parameter will be passed to the underlying client
+        library: the list of supported parameters depends on the library version.
+    
+        """
+        kwasync = {}
+        if 'async' in kwargs:
+            kwasync['async'] = kwargs.pop('async')
+        if 'async_' in kwargs:
+            kwasync['async_'] = kwargs.pop('async_')
+    
+        dsn = _ext.make_dsn(dsn, **kwargs)
+>       conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "test_bbrose_db" does not exist
+E       DETAIL:  It seems to have just been dropped or renamed.
+
+venv/lib/python3.11/site-packages/psycopg2/__init__.py:122: OperationalError
+
+The above exception was the direct cause of the following exception:
+
+cls = <class 'apps.core.tests.HealthzTests'>
+
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        if not cls._databases_support_transactions():
+            return
+>       cls.cls_atomics = cls._enter_atomics()
+                          ^^^^^^^^^^^^^^^^^^^^
+
+venv/lib/python3.11/site-packages/django/test/testcases.py:1451: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv/lib/python3.11/site-packages/django/test/testcases.py:1431: in _enter_atomics
+    atomic.__enter__()
+venv/lib/python3.11/site-packages/django/db/transaction.py:198: in __enter__
+    if not connection.get_autocommit():
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/base/base.py:464: in get_autocommit
+    self.ensure_connection()
+venv/lib/python3.11/site-packages/django/utils/asyncio.py:26: in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/base/base.py:288: in ensure_connection
+    with self.wrap_database_errors:
+venv/lib/python3.11/site-packages/django/db/utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+venv/lib/python3.11/site-packages/django/db/backends/base/base.py:289: in ensure_connection
+    self.connect()
+venv/lib/python3.11/site-packages/django/utils/asyncio.py:26: in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/base/base.py:270: in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/utils/asyncio.py:26: in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+venv/lib/python3.11/site-packages/django/db/backends/postgresql/base.py:269: in get_new_connection
+    connection = self.Database.connect(**conn_params)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+dsn = 'dbname=test_bbrose_db gssencmode=disable user=user password=password host=localhost port=5432'
+connection_factory = None, cursor_factory = None
+kwargs = {'dbname': 'test_bbrose_db', 'gssencmode': 'disable', 'host': 'localhost', 'password': 'password', ...}
+kwasync = {}
+
+    def connect(dsn=None, connection_factory=None, cursor_factory=None, **kwargs):
+        """
+        Create a new database connection.
+    
+        The connection parameters can be specified as a string:
+    
+            conn = psycopg2.connect("dbname=test user=postgres password=secret")
+    
+        or using a set of keyword arguments:
+    
+            conn = psycopg2.connect(database="test", user="postgres", password="secret")
+    
+        Or as a mix of both. The basic connection parameters are:
+    
+        - *dbname*: the database name
+        - *database*: the database name (only as keyword argument)
+        - *user*: user name used to authenticate
+        - *password*: password used to authenticate
+        - *host*: database host address (defaults to UNIX socket if not provided)
+        - *port*: connection port number (defaults to 5432 if not provided)
+    
+        Using the *connection_factory* parameter a different class or connections
+        factory can be specified. It should be a callable object taking a dsn
+        argument.
+    
+        Using the *cursor_factory* parameter, a new default cursor factory will be
+        used by cursor().
+    
+        Using *async*=True an asynchronous connection will be created. *async_* is
+        a valid alias (for Python versions where ``async`` is a keyword).
+    
+        Any other keyword parameter will be passed to the underlying client
+        library: the list of supported parameters depends on the library version.
+    
+        """
+        kwasync = {}
+        if 'async' in kwargs:
+            kwasync['async'] = kwargs.pop('async')
+        if 'async_' in kwargs:
+            kwasync['async_'] = kwargs.pop('async_')
+    
+        dsn = _ext.make_dsn(dsn, **kwargs)
+>       conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       django.db.utils.OperationalError: connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "test_bbrose_db" does not exist
+E       DETAIL:  It seems to have just been dropped or renamed.
+
+venv/lib/python3.11/site-packages/psycopg2/__init__.py:122: OperationalError
+=================================== FAILURES ===================================
+_____________ MigrationStateTests.test_a_clean_database_reports_ok _____________
+
+self = <apps.core.tests.MigrationStateTests testMethod=test_a_clean_database_reports_ok>
+
+    def test_a_clean_database_reports_ok(self):
+        from apps.core.health import migration_state
+        # The test database is migrated by the runner, so this is the real
+        # measurement rather than a mocked one.
+>       self.assertEqual(migration_state(), "ok")
+E       AssertionError: 'unapplied: 56 (auth.0010_alter_group_name[138 chars], …)' != 'ok'
+E       - unapplied: 56 (auth.0010_alter_group_name_max_length, auth.0011_update_proxy_permissions, auth.0012_alter_user_first_name_max_length, core.0001_initial, core.0002_product_campaign, …)
+E       + ok
+
+apps/core/tests.py:106: AssertionError
+=============================== warnings summary ===============================
+apps/core/tests.py::ServeMediaTests::test_authenticated_request_streams_file
+apps/core/tests.py::ServeMediaTests::test_missing_file_returns_404
+apps/core/tests.py::ServeMediaTests::test_path_traversal_returns_404
+apps/core/tests.py::ServeMediaTests::test_unauthenticated_request_is_rejected
+apps/core/tests.py::MigrationStateTests::test_migration_state_is_not_wired_into_healthz
+apps/core/tests.py::ContentSecurityPolicyTests::test_healthz_json_is_not_tagged_through_the_real_stack
+apps/core/tests.py::ContentSecurityPolicyTests::test_the_middleware_is_actually_installed
+  /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/django/core/handlers/base.py:61: UserWarning: No directory at: /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/staticfiles/
+    mw_instance = middleware(adapted_handler)
+
+apps/core/tests.py::test_the_colour_roles_record_carries_the_eight_measured_roles_and_warm_gold_with_its_provenance
+  /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os:0: PytestWarning: Error when trying to teardown test databases: OperationalError('database "test_bbrose_db" is being accessed by other users\nDETAIL:  There is 1 other session using the database.\n')
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED apps/core/tests.py::MigrationStateTests::test_a_clean_database_reports_ok
+ERROR apps/core/tests.py::HealthzTests::test_eager_mode_reports_eager - djang...
+ERROR apps/core/tests.py::HealthzTests::test_live_worker_returns_200 - django...
+ERROR apps/core/tests.py::HealthzTests::test_no_worker_returns_503 - django.d...
+1 failed, 31 passed, 8 warnings, 3 errors in 11.46s

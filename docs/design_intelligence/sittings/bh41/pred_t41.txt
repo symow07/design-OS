@@ -1,0 +1,50 @@
+§AD0(a) PREDICTION — T41 (§BH41 transcription, pure append, its own commit
+BEFORE any act; the §BH40(a) import stashed for its gate, byte-verified),
+sealed BEFORE the stash, BEFORE the append and BEFORE git add. Base HEAD
+d058685 (T40, 8/8); the refused (a) attempt's orphan ledger line on disk.
+
+L1 WRITE SET: exactly ONE path — OWNER_BLOCKER_CLEARANCE.md (outer root),
+   the §BH41 block. Plus the gate-staged ledger (carrying the orphan + this
+   run's line). NO apps/, docs/, tools/, CLAUDE.md, .mcp.json or var/ path;
+   nothing under materials/ or ~/ touched by the commit; the stash holds the
+   298 import paths and is not read by the commit.
+L2 DIFF SHAPE: register +94 −0 (1 seam blank + 93 block lines); the
+   20,119-line HEAD prefix byte-identical (a26433bcb4a8c545); the appended
+   tail byte-identical to ~/bh41_work/t41_block.md (ed0497c2acb36d63); the
+   owner's 58 typed lines round-trip byte-identical through the blockquote
+   (72e64d1d6cd53b00); total 20,213 lines.
+L3 MANIFEST / A391: suite manifest untouched; records consistent; the
+   ledger passes APPEND_ONLY (485 on disk = HEAD's 484 + the orphan, a pure
+   growth). Census-first: records none; identity none; WIT 864 untouched
+   (no apps change); corpus constants, dip1b, the exclusion list, the
+   materials record and summary untouched; no new test file.
+L4 STAGED == DECLARED: exactly one row staged by the executor: 94 0
+   OWNER_BLOCKER_CLEARANCE.md; the gate stages the ledger (2 0).
+L5 COMMIT CONTENTS: 2 files (register + ledger), insertions 96 (94 + 2),
+   deletions 0.
+L6 SUITE LINE + REFUSAL TREE: GREEN — TIER_2=GREEN collected=8590
+   failures=0 apps=7778 dip0c=671 dip0=141 (the tree at d058685 plus the
+   register; the stash is not on disk); PostgreSQL 16 and Redis checked up
+   before launch; nothing runs beside the gate. If the flush deadlock fires
+   on THIS run: NO re-run (§BH41: "No re-runs until it does"; §BH24 spent at
+   3/3) — the refusal is captured, scored as history and reported; the
+   transcription stays staged.
+L7 LEDGER FOLD: 484 → 486 — the orphan of the refused (a) attempt (utc
+   2026-09-08T05:12:36Z, verdict OK) and this run's line, both in THIS
+   commit; HEAD~1 a byte-prefix of HEAD; verdict OK, refusal_count 0.
+L8 PROTOCOL IDENTITIES / STASH PROOFS: apps diff EMPTY; GATE
+   7fbeb8f1fe10b0fb at [514:541] (593 lines) and TEST b32030dc827263e4
+   byte-identical; tree seals dip0c c22592930c75001c / dip0a
+   d72072760ab20a6a UNCHANGED; protocol_identity UNCHANGED; the eight M7
+   artefacts == baseline; the Noto trio VERIFIED_FOR_PRODUCTION and Warm
+   Gold in CS-001/CS-002 under Django at scoring; the DIP-0A inventory sha
+   3b3cfdc2bf4fc6c0 unchanged. THE STASH: stash@{0} created by `git stash
+   push --staged` holds exactly the 298 recorded index entries
+   (~/bh41_work/import_index_entries.txt, sha256[:16] ada59c8fe5c5b34f;
+   index tree f856d4d426b14959 before the stash): `git ls-tree -r
+   stash@{0}^2 -- docs/design_intelligence/sittings` == the recorded (mode,
+   blob, path) list, 298 entries; after the stash the working tree carries
+   no docs/design_intelligence/sittings/ path and porcelain shows only the
+   ledger M until the register is staged; the stash is not popped, read
+   or written by anything in this commit. No authority spent; nothing
+   built.

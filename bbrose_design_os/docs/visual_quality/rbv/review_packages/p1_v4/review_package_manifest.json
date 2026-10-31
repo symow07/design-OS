@@ -1,0 +1,226 @@
+{
+ "schema": "rbv3_review_package/1.0",
+ "subject_id": "P1_V4",
+ "created_at": "2026-08-17",
+ "statement": "GEOMETRY VALIDATION FIXTURE \u2014 NOT A REAL BOTTLE COMPARISON",
+ "note": "first standard package (RBV-3); subject is the FROZEN P1 V4 engine-validation geometry (p1_engine_validation_freeze.json: P1_OWNER_VISUAL_APPROVAL NOT_GRANTED, regression fixture, not the active design priority); the P1-specific owner board 2026-08-04_v4/owner_review_board.png remains on file",
+ "decision_channel": "owner reviews are QUEUED in OWNER_REVIEW_QUEUE.md and decided ONLY through OWNER_BLOCKER_CLEARANCE.md \u2014 no decision endpoint exists in this package by rule",
+ "owner_review": {
+  "status": "QUEUED_PENDING_OWNER_REVIEW",
+  "granted": false
+ },
+ "camera_standard": {
+  "schema": "real_bottle_camera_standard/1.0",
+  "status": "ACTIVE",
+  "source": "docs/visual_quality/rbv/camera_standard_proposal.json"
+ },
+ "lighting_standard": {
+  "schema": "real_bottle_lighting_standard/1.0",
+  "status": "ACTIVE",
+  "source": "docs/visual_quality/rbv/lighting_standard_proposal.json"
+ },
+ "modes": {
+  "GEOMETRY_VALIDATION": {
+   "source_render_manifest": {
+    "schema": "geometry_validation_render_manifest/1.0",
+    "sha256": "b41bf98ea6d78eb0709ca11ef9896894ce20336af5a18449af8bfbc182637d3b",
+    "fixture_id": "P1_V4",
+    "authority_class": "PROVISIONAL_OWNER_MEASURED_PLUS_INFERRED"
+   },
+   "views": {
+    "front": {
+     "source_file": "neutral_front.png",
+     "pixel_hash": "c97b59c3c090083a"
+    },
+    "side": {
+     "source_file": "neutral_side.png",
+     "pixel_hash": "55bcf238cec41a83"
+    },
+    "top": {
+     "source_file": "neutral_top.png",
+     "pixel_hash": "7da3633c74802162"
+    },
+    "closure_detail": {
+     "source_file": "closure_detail.png",
+     "pixel_hash": "e2e378c2470fac68"
+    },
+    "three_quarter_diagnostic": {
+     "source_file": "neutral_three_quarter.png",
+     "pixel_hash": "6498e2fd2b94b847"
+    },
+    "wireframe": {
+     "source_file": "wireframe.png",
+     "pixel_hash": "723262b6786875b7"
+    },
+    "normals": {
+     "source_file": "normals.png",
+     "pixel_hash": "8a859f6be9334fab"
+    },
+    "bounds_dimensions": {
+     "source_file": "bounds_dimensions.png",
+     "pixel_hash": "91a8d69a83f650cc"
+    }
+   },
+   "view_source_dir": "docs/visual_quality/rbv/p1_pilot/2026-08-04_v4",
+   "view_storage_policy": "views are REFERENCED from the committed render evidence (source_dir + source_file + recorded decoded-pixel hash), never copied; the contact sheet is the package's own artifact",
+   "view_rebinding": {
+    "front": "neutral_front.png",
+    "side": "neutral_side.png",
+    "top": "neutral_top.png",
+    "three_quarter_diagnostic": "neutral_three_quarter.png"
+   },
+   "measurements": {
+    "expected_mm_per_px": 0.05819,
+    "front": {
+     "bounds_px": {
+      "x0": 479,
+      "x1": 1120,
+      "y0": 129,
+      "y1": 2081,
+      "touches_frame": false
+     },
+     "rendered_extent_mm": 37.36,
+     "contract_extent_mm": 37.4,
+     "rendered_height_mm": 113.64
+    },
+    "side": {
+     "bounds_px": {
+      "x0": 479,
+      "x1": 1120,
+      "y0": 119,
+      "y1": 2081,
+      "touches_frame": false
+     },
+     "rendered_extent_mm": 37.36,
+     "contract_extent_mm": 37.4,
+     "rendered_height_mm": 114.23
+    },
+    "top": {
+     "bounds_px": {
+      "x0": 479,
+      "x1": 1120,
+      "y0": 779,
+      "y1": 1415,
+      "touches_frame": false
+     }
+    },
+    "closure_detail": {
+     "bounds_px": {
+      "x0": 115,
+      "x1": 1217,
+      "y0": 432,
+      "y1": 2199,
+      "touches_frame": true
+     },
+     "closure_view_coverage": 0.5532
+    }
+   },
+   "warnings": [
+    "RENDER_OFF_CENTER:closure_detail"
+   ],
+   "uncertainty": [
+    "V3 provisional geometry \u2014 owner review pending"
+   ],
+   "reference_availability": "PARTIAL \u2014 owner measurements + uncalibrated photos"
+  },
+  "CLIENT_PRESENTATION": {
+   "status": "ABSENT_BLOCKED",
+   "reasons": [
+    "RBV2C_PRESENTATION_RENDERER_NOT_BUILT",
+    "OWNER_GATE_PILOT_GEOMETRY_INSPECTION_PENDING"
+   ],
+   "rule": "validation renders are never re-badged as presentation (\u00a71 two-mode principle); geometry verdicts come only from mode A"
+  }
+ },
+ "references": [],
+ "legibility": {
+  "provider_long_edge_limit": 2576,
+  "sheet_long_edge": 3840,
+  "provider_downscale": 0.6708,
+  "floor_effective_px": 12.0,
+  "texts": [
+   {
+    "role": "title",
+    "font_size": 60,
+    "glyph_px": 52,
+    "effective_px": 34.88
+   },
+   {
+    "role": "banner",
+    "font_size": 28,
+    "glyph_px": 21,
+    "effective_px": 14.09
+   },
+   {
+    "role": "panel_title",
+    "font_size": 30,
+    "glyph_px": 26,
+    "effective_px": 17.44
+   },
+   {
+    "role": "mode_b_heading",
+    "font_size": 40,
+    "glyph_px": 38,
+    "effective_px": 25.49
+   },
+   {
+    "role": "mode_b_reason",
+    "font_size": 30,
+    "glyph_px": 26,
+    "effective_px": 17.44
+   },
+   {
+    "role": "mode_b_rule",
+    "font_size": 26,
+    "glyph_px": 24,
+    "effective_px": 16.1
+   },
+   {
+    "role": "measurements_heading",
+    "font_size": 36,
+    "glyph_px": 34,
+    "effective_px": 22.81
+   },
+   {
+    "role": "contract_dimensions",
+    "font_size": 30,
+    "glyph_px": 28,
+    "effective_px": 18.78
+   },
+   {
+    "role": "measurement_line",
+    "font_size": 26,
+    "glyph_px": 24,
+    "effective_px": 16.1
+   },
+   {
+    "role": "source_line",
+    "font_size": 26,
+    "glyph_px": 20,
+    "effective_px": 13.42
+   }
+  ],
+  "worst_effective_px": 13.42,
+  "below_floor": [],
+  "renderer_baked_annotations": {
+   "view_pixel_size": [
+    1600,
+    2200
+   ],
+   "renderer_font": "PIL default bitmap face (no truetype face given)",
+   "baked_glyph_px": 8,
+   "panel_scale": 0.5,
+   "provider_downscale": 0.6708,
+   "effective_px": 2.68,
+   "superseded_by": "the composer draws the same contract dimensions from the render manifest at a measured, above-floor size; the baked annotations are left in the frozen render evidence untouched"
+  }
+ },
+ "contact_sheet": {
+  "file": "review_contact_sheet.png",
+  "pixel_hash": "c8af548d789b12ff",
+  "font": {
+   "path": "/System/Library/Fonts/Helvetica.ttc",
+   "sha256": "25eceb458d4baf62"
+  }
+ }
+}

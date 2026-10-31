@@ -1,0 +1,35 @@
+{
+ "record_type": "vq2_lf1_r1_inspection_resume_contract/1.0",
+ "created_at": "2026-07-29",
+ "preconditions": [
+  "LF1-R1 .ai hash unchanged: fcd8003994d52028",
+  "all five input image hashes unchanged",
+  "both prompt hashes unchanged",
+  "input-quality manifest still passes"
+ ],
+ "steps": [
+  "run Inspector A exactly once",
+  "run Inspector B exactly once and independently",
+  "persist both raw outputs",
+  "validate inspection consistency",
+  "classify Rose width independently per inspector",
+  "generate the final non-pending review package",
+  "stop for owner visual approval"
+ ],
+ "do_not_rebuild": [
+  "lettering",
+  "glyph crops",
+  "deterministic metrics",
+  "converter evidence",
+  "web research",
+  "font acquisition",
+  "license evidence"
+ ],
+ "retry_rule": {
+  "retries_permitted_after_credit_restored": 1,
+  "on_same_billing_error": "preserve the new request id, keep the blocker active, do not retry again, stop",
+  "on_different_provider_error": "classify separately, never convert into a typography finding"
+ },
+ "provider_substitution": "PROHIBITED_WITHOUT_SEPARATE_OWNER_RULING",
+ "why_no_substitution": "it would change inspection authority, prompt behaviour, the visual judgment baseline and historical comparability"
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": "pdf_rasterizer_capability/1.0",
+  "backend": "pymupdf",
+  "page_geometry": {
+    "page_width_pt": 283.4646,
+    "page_height_pt": 170.0787,
+    "rotation": 0,
+    "page_count": 1
+  },
+  "renders": [
+    {
+      "dpi": 72,
+      "width": 284,
+      "height": 171,
+      "expected": [
+        283,
+        170
+      ],
+      "effective_dpi_x": 72.14,
+      "dimensions_match": true,
+      "sha256_16": "21673a673fd01f7e"
+    },
+    {
+      "dpi": 144,
+      "width": 567,
+      "height": 341,
+      "expected": [
+        567,
+        340
+      ],
+      "effective_dpi_x": 144.02,
+      "dimensions_match": true,
+      "sha256_16": "6da923663032ad78"
+    },
+    {
+      "dpi": 288,
+      "width": 1134,
+      "height": 681,
+      "expected": [
+        1134,
+        680
+      ],
+      "effective_dpi_x": 288.04,
+      "dimensions_match": true,
+      "sha256_16": "c89886d5796209a3"
+    },
+    {
+      "dpi": 576,
+      "width": 2268,
+      "height": 1361,
+      "expected": [
+        2268,
+        1361
+      ],
+      "effective_dpi_x": 576.07,
+      "dimensions_match": true,
+      "sha256_16": "da9a650e3b2df1ae"
+    }
+  ],
+  "distinct_dimensions_per_dpi": true,
+  "all_dimensions_match_prediction": true,
+  "dpi_capable": true,
+  "note": "identical hashes alone can never certify stability; pixel dimensions and effective DPI are the evidence",
+  "certified_at": "2026-07-28T07:53:25.511817+00:00"
+}

@@ -1,0 +1,167 @@
+{
+  "slice": "DIP-0C3a",
+  "pilot_files": 21,
+  "pilot_by_role": {
+    "brand_master_mislabelled": 2,
+    "logo_candidate_outlined": 1,
+    "logo_candidate_live_text": 1,
+    "third_party_logo": 1,
+    "third_party_logo_live_text": 1,
+    "third_party_logo_misshelved": 1,
+    "third_party_deck": 4,
+    "bbrose_product_render": 2,
+    "bbrose_palette_raster": 1,
+    "color_palette_ase": 1,
+    "queue_i_rights_blocked": 6
+  },
+  "pilot_by_format": {
+    ".pdf": 7,
+    ".ai": 8,
+    ".png": 4,
+    ".ase": 1,
+    ".svg": 1
+  },
+  "queue_i_files": 7,
+  "classification_overrides": [
+    {
+      "file": "BBROSE.pdf",
+      "original": "BRAND_MASTER",
+      "override": "DESIGN_COMPOSITION",
+      "reuse_posture": "REFERENCE_ONLY",
+      "confidence": 0.85,
+      "cannot_be_canonical_master": true,
+      "evidence": [
+        "~80% raster coverage",
+        "18 embedded images",
+        "44 live-text spans across 7 fonts",
+        "large composition-style file",
+        "NOT isolated logo geometry"
+      ]
+    },
+    {
+      "file": "BBROSE-1.pdf",
+      "original": "BRAND_MASTER",
+      "override": "DESIGN_COMPOSITION",
+      "reuse_posture": "REFERENCE_ONLY",
+      "confidence": 0.85,
+      "cannot_be_canonical_master": true,
+      "evidence": [
+        "~81% raster coverage",
+        "29 embedded images",
+        "56 live-text spans across 6 fonts",
+        "large composition-style file",
+        "NOT isolated logo geometry"
+      ]
+    }
+  ],
+  "brand_names_from_live_text": [
+    {
+      "file": "BBROSE.pdf",
+      "brand_name": "BBROSE",
+      "tier": "DIRECT"
+    },
+    {
+      "file": "BBROSE-1.pdf",
+      "brand_name": "BBROSE",
+      "tier": "DIRECT"
+    },
+    {
+      "file": "JOJIA LOGO.ai",
+      "brand_name": "JOJIA",
+      "tier": "DIRECT"
+    },
+    {
+      "file": "ATC PRESENTATION.pdf",
+      "brand_name": "ATC",
+      "tier": "DIRECT"
+    },
+    {
+      "file": "ATC PRESENTATION-1.pdf",
+      "brand_name": "ATC",
+      "tier": "DIRECT"
+    },
+    {
+      "file": "ATC PRESENTATION-2.pdf",
+      "brand_name": "ATC",
+      "tier": "DIRECT"
+    },
+    {
+      "file": "ATC PRESENTATION-3.pdf",
+      "brand_name": "ATC",
+      "tier": "DIRECT"
+    }
+  ],
+  "outlined_wordmarks_requiring_human": [
+    "logo.pdf",
+    "ATC LOGO.ai",
+    "LOGO ATC.ai",
+    "9993170.ai",
+    "9347862.ai"
+  ],
+  "isolated_logo_candidates": [
+    "logo.pdf",
+    "LOGO6.ai",
+    "ATC LOGO.ai",
+    "JOJIA LOGO.ai",
+    "LOGO ATC.ai",
+    "344195-PC2FZA-950.ai",
+    "9347862.ai"
+  ],
+  "raster_heavy_design_compositions": [
+    "BBROSE.pdf",
+    "BBROSE-1.pdf",
+    "ATC PRESENTATION.pdf",
+    "ATC PRESENTATION-1.pdf",
+    "ATC PRESENTATION-2.pdf",
+    "ATC PRESENTATION-3.pdf"
+  ],
+  "third_party_candidates": [
+    {
+      "file": "ATC LOGO.ai",
+      "brand": "ATC",
+      "tier": "HEURISTIC",
+      "in_bbrose_office_folder": true
+    },
+    {
+      "file": "JOJIA LOGO.ai",
+      "brand": "JOJIA",
+      "tier": "DIRECT",
+      "in_bbrose_office_folder": true
+    },
+    {
+      "file": "LOGO ATC.ai",
+      "brand": "ATC",
+      "tier": "HEURISTIC",
+      "in_bbrose_office_folder": true
+    },
+    {
+      "file": "ATC PRESENTATION.pdf",
+      "brand": "ATC",
+      "tier": "DIRECT",
+      "in_bbrose_office_folder": true
+    },
+    {
+      "file": "ATC PRESENTATION-1.pdf",
+      "brand": "ATC",
+      "tier": "DIRECT",
+      "in_bbrose_office_folder": true
+    },
+    {
+      "file": "ATC PRESENTATION-2.pdf",
+      "brand": "ATC",
+      "tier": "DIRECT",
+      "in_bbrose_office_folder": true
+    },
+    {
+      "file": "ATC PRESENTATION-3.pdf",
+      "brand": "ATC",
+      "tier": "DIRECT",
+      "in_bbrose_office_folder": true
+    }
+  ],
+  "brand_master_candidate_nominations": [
+    "logo.pdf",
+    "LOGO6.ai"
+  ],
+  "note": "C3a audits TECHNIQUE and RELATIONSHIPS only. No ownership, licence, canonical status or permission is inferred; every permission is false."
+}

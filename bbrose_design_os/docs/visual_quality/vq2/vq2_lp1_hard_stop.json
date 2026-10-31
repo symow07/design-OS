@@ -1,0 +1,48 @@
+{
+ "record_type": "vq2_lp1_hard_stop/1.0",
+ "created_at": "2026-07-29",
+ "state": "VQ2_PROCEDURAL_LETTERING_HARD_STOP_REVIEW_REQUIRED",
+ "candidate": "VQ2-LP1",
+ "candidate_accepted": false,
+ "authoring": "PROCEDURALLY_AUTHORED_CONDENSED_LETTERING",
+ "not_manual": "NOT_MANUALLY_REDRAWN_NOT_HUMAN_COMMISSIONED",
+ "what_was_built": "apps/ire/vq2_didone.py \u2014 a direct Didone construction system (cap/x-height/stem/hairline/serif/overshoot parameters, ellipse-ring bowls, hairline slab serifs, ball terminals, arches) plus 13 glyph builders that author outlines in final document coordinates.",
+ "contract_compliance_that_holds": {
+  "external_outline_imported": false,
+  "nonuniform_scaling_applied": false,
+  "expanded_after_distortion": false,
+  "final_transform": "identity",
+  "glyph_objects": 13,
+  "rose_objects": 4,
+  "damascena_objects": 9,
+  "repeated_a_separate_objects": 3,
+  "image_trace_used": false,
+  "width_solved_by": "designed advance widths + optical gaps only"
+ },
+ "why_it_fails": [
+  "Letterform quality is not acceptable. The rendered glyphs are mechanical blobs rather than coherent Didone letterforms.",
+  "Counters are not reliably punched: glyphs whose ink is several separate subpaths (R = stem + bowl + leg, m = three stems + two arches) lose parts to the fill heuristic, so bowls and counters are malformed.",
+  "Placement is wrong: the baseline mapping drove the artwork to the bottom canvas edge and clipped it, so composition targets were never actually met.",
+  "Serif and terminal language is not visually consistent across the set."
+ ],
+ "stop_conditions_met": [
+  "glyphs appear mechanically distorted",
+  "a counter is malformed",
+  "serifs are inconsistent",
+  "direct construction did not meet the target composition"
+ ],
+ "honest_assessment": "The construction SYSTEM is sound in principle and satisfies every derivation rule the contract cares about. What it does not yet produce is letterforms of acceptable visual quality. Authoring a credible condensed Didone across 13 glyphs is real type-design work and my first pass did not reach it. Presenting this as a candidate would repeat exactly the failure this workstream has been removing.",
+ "lp2_generated": false,
+ "vq2_a2_generated": false,
+ "deliverables_not_produced": [
+  "dual typography inspections (gated behind deterministic pass, which was not reached)",
+  "vq2_lp1_lettering_review.pdf/png/json",
+  "contract /4.0 emission",
+  "composition metrics against the gates"
+ ],
+ "next_options": [
+  "iterate the construction system on glyph quality and the fill/placement defects before any inspection",
+  "or commission a human designer using the existing package",
+  "or licence a natively condensed Didone (Path B)"
+ ]
+}

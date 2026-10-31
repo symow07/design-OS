@@ -1,0 +1,107 @@
+{
+ "id": "lid_header_tray",
+ "version": "1.0",
+ "label": "Lid-converts-to-header tray",
+ "status": "working",
+ "build_order": 3,
+ "one_line": "Ships closed and filled; tear the walls, swing the lid up, and the lid is the sign.",
+ "for": "Stock that ships pre-filled and sets up in a minute.",
+ "suits": {
+  "products": [
+   "bottle",
+   "stick"
+  ],
+  "counts": [
+   4,
+   36
+  ],
+  "rows": [
+   1,
+   3
+  ]
+ },
+ "ships_filled": true,
+ "panels": [
+  "floor",
+  "front panel",
+  "front tear",
+  "back panel",
+  "left side",
+  "right side",
+  "left tear",
+  "right tear",
+  "header back",
+  "header front",
+  "header lock tab"
+ ],
+ "folds": [
+  {
+   "fold": "floor / front",
+   "angle": 90,
+   "kind": "crease"
+  },
+  {
+   "fold": "floor / back",
+   "angle": 90,
+   "kind": "crease"
+  },
+  {
+   "fold": "back / lid",
+   "angle": 0,
+   "kind": "crease"
+  },
+  {
+   "fold": "header fold",
+   "angle": 180,
+   "kind": "half-cut"
+  },
+  {
+   "fold": "front tear line",
+   "angle": 0,
+   "kind": "perforation"
+  }
+ ],
+ "locks": [
+  {
+   "kind": "flush",
+   "what": "the liner's tab through the lid; each stair foot through the floor"
+  },
+  {
+   "kind": "through",
+   "what": "the back-brace, into the lid and the back wall"
+  }
+ ],
+ "allowances": {
+  "crease_centres": "outside − one caliper (FEFCO Rec. 101, C1)",
+  "panel_ends": "half a caliper + fit gap short of the surface met",
+  "corner_folds": "one caliper + fit gap, so a flap lies on the panel's inner face"
+ },
+ "limits": {
+  "front_lip_mm": 25
+ },
+ "reinforcement": [
+  "a doubled lid",
+  "a brace closing the triangle behind it"
+ ],
+ "glue": "small zones on the four corner flaps, marked",
+ "faces_to_shopper": [
+  "header front (the lid's liner)",
+  "front panel"
+ ],
+ "failures": [
+  "ragged tears",
+  "a hinge with no lock flops"
+ ],
+ "codes": "No opened source shows a lid that itself becomes the header: this is our own construction from US6942102 (tear only on the lid), US6109514 (lid over the header), US8328079 (tear-out header).",
+ "sources": [
+  "A2",
+  "A3",
+  "A6",
+  "A7",
+  "A8"
+ ],
+ "provisional": [
+  "Tear pattern: our own numbers; corrugated tear patterns were not found.",
+  "The brace is what holds the lid up: a sample proves the hinge."
+ ]
+}

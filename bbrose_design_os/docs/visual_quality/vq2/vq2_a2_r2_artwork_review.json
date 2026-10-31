@@ -1,0 +1,391 @@
+{
+ "record_type": "vq2_a2_r2_artwork_review/1.0",
+ "created_at": "2026-07-29",
+ "banner": "VQ2-A2-R2 BUILT \u2014 FLAT ARTWORK PRESENTATION. AWAITING OWNER REVIEW. NOT ACCEPTANCE, NOT PRODUCTION ARTWORK.",
+ "state": "VQ2_A2_R2_BUILT_PENDING_OWNER_REVIEW",
+ "supersedes": "vq2_a2_r1/1.0",
+ "r2": {
+  "record_type": "vq2_a2_r2/1.0",
+  "created_at": "2026-07-29",
+  "candidate": "VQ2-A2-R2",
+  "revision_of": "VQ2-A2-R1",
+  "state": "VQ2_A2_R2_BUILT_PENDING_OWNER_REVIEW",
+  "exactly_one_r2": true,
+  "vq2_a3_created": false,
+  "lf2_created": false,
+  "ai_path": "docs/visual_quality/vq2/vq2_a2_r2.ai",
+  "ai_sha256_16": "0513183b2e2c3f25",
+  "clean_png": "docs/visual_quality/vq2/vq2_a2_r2_clean.png",
+  "clean_sha256_16": "de11ee5795d22a7e",
+  "clean_png_role": "OWNER_REVIEW_CANDIDATE",
+  "guides_png": "docs/visual_quality/vq2/vq2_a2_r2_guides.png",
+  "guides_sha256_16": "b27297633d3bc349",
+  "guides_png_role": "DIAGNOSTIC_ONLY",
+  "symmetry": {
+   "record_type": "vq2_a2_r2_symmetry_proof/1.0",
+   "created_at": "2026-07-29",
+   "architecture": "MASTER_LEFT_PROFILE -> MIRROR_ACROSS_CENTERLINE",
+   "canonical_centerline_mm": 36.541193,
+   "independently_authored_sides": false,
+   "post_mirror_adjustment": false,
+   "separate_shoulder_construction": false,
+   "separate_base_construction": false,
+   "tolerance_mm": 0.01,
+   "components": {
+    "GLASS": {
+     "worst_lr_mm": 0.0,
+     "bbox_mid_deviation_mm": 0.0,
+     "profile_points": 2737,
+     "pass": true
+    },
+    "COLLAR": {
+     "worst_lr_mm": 0.0,
+     "bbox_mid_deviation_mm": 0.0,
+     "profile_points": 865,
+     "pass": true
+    },
+    "DARK_CLOSURE": {
+     "worst_lr_mm": 0.0,
+     "bbox_mid_deviation_mm": 0.0,
+     "profile_points": 865,
+     "pass": true
+    }
+   },
+   "all_pass": true,
+   "before_r2": {
+    "code": "VQ_CONTAINER_BILATERAL_SYMMETRY_FAILED",
+    "confirmed": true,
+    "scope": "DARK_CLOSURE only",
+    "method": "per-component Bezier geometry measured against the CANONICAL centerline OX=36.541193mm, not a self-derived bbox midpoint (a self-derived centre cannot detect centreline deviation and would have reported a false pass)",
+    "GLASS": {
+     "worst_lr_mm": 0.0,
+     "bbox_mid_deviation_mm": 0.0,
+     "verdict": "PASS"
+    },
+    "COLLAR": {
+     "worst_lr_mm": 0.0,
+     "bbox_mid_deviation_mm": 0.0,
+     "verdict": "PASS"
+    },
+    "DARK_CLOSURE": {
+     "worst_lr_mm": 8.531533,
+     "bbox_mid_deviation_mm": 1.198714,
+     "verdict": "FAIL",
+     "tolerance_mm": 0.01
+    },
+    "owner_was_right": true,
+    "note": "A composite silhouette check on the PNG reported 145/148 rows within 1px and would have wrongly cleared this. The raster is ~0.09mm per pixel against a 0.01mm tolerance, and merging the three components hides an off-centre closure inside the outer silhouette."
+   },
+   "method_note": "measured against the CANONICAL centerline. A self-derived bbox midpoint reported 145/148 rows clean and would have wrongly passed the off-centre closure."
+  },
+  "logo_validation": {
+   "record_type": "vq2_a2_r2_logo_validation/1.0",
+   "created_at": "2026-07-29",
+   "source": "BBROSE.pdf page 1 vector extraction (canonical brand/bbrose_logo_approved.pdf)",
+   "canonical_ai_sha256_16": "a2b2a82969389ac2",
+   "source_path_items": 314,
+   "emitted_line_and_curve_items": 314,
+   "path_items_match": true,
+   "components_expected": 9,
+   "components_emitted": 9,
+   "component_count_match": true,
+   "subpaths_emitted": 18,
+   "subpaths_per_component": [
+    3,
+    3,
+    1,
+    1,
+    1,
+    1,
+    4,
+    2,
+    2
+   ],
+   "closepaths": 18,
+   "total_segments": 350,
+   "canonical_emitted_segments_figure": 341,
+   "segment_count_reconciliation": "The canonical record reports 341 emitted segments; R2 emits 350. The difference is bookkeeping, not content. Both carry the SAME 314 source path items. The canonical figure counts one MoveTo per component (9) + 314 items + 18 ClosePath = 341. R2 counts one MoveTo per SUBPATH (18) + 314 items + 18 ClosePath = 350. R2 has nine more MoveTos precisely BECAUSE the R1 defect is fixed \u2014 every subpath now starts its own contour instead of continuing from the previous one. A count of 341 here would mean the defect was still present.",
+   "counters_preserved": {
+    "B_1": true,
+    "B_2": true,
+    "R": true,
+    "medallion_O": true,
+    "S": true,
+    "E": true,
+    "registered": true
+   },
+   "medallion_subpaths": 4,
+   "traced": false,
+   "reconstructed": false,
+   "approximated": false,
+   "redrawn": false,
+   "image_trace_used": false,
+   "uniform_scale": 0.72,
+   "nonuniform_scaling": false
+  },
+  "flat_artwork": {
+   "body_fill": "#D9BDB5",
+   "collar_fill": "#705242",
+   "closure_fill": "#493034",
+   "edges": {
+    "GLASS": "#C2A49C",
+    "COLLAR": "#5A4136",
+    "DARK_CLOSURE": "#3A262A"
+   },
+   "derivation": "one median colour sampled per component from concept #97 \u2014 a single flat tone each, so no gradient exists",
+   "gradients": 0,
+   "reflections": 0,
+   "shadows": 0,
+   "gloss": 0,
+   "lighting": 0,
+   "texture": 0,
+   "glass_realism": 0,
+   "material_realization_added": false
+  },
+  "lettering": {
+   "source": "VQ2-LF1-R1",
+   "owner_approved": true,
+   "ai_sha256_16": "fcd8003994d52028",
+   "typeface": "Imbue",
+   "axes": {
+    "opsz": 100,
+    "wght": 400
+   },
+   "axes_changed": false,
+   "tracking_changed": false,
+   "rose_scaled": false,
+   "outlines_modified": false,
+   "glyph_count": 13,
+   "font_unit_contour_hash": "5db4403984ba6f75",
+   "font_binary_embedded": false,
+   "derivation": "convert_glyph on the same instance with the same max_err_units \u2014 the emitted outlines are LF1-R1s own geometry, uniformly scaled to working size only"
+  },
+  "lf1_r1_ai_sha256_16": "fcd8003994d52028",
+  "typography_frozen": true,
+  "typography_freeze_method": "the R1 point-set comparison is NOT reusable \u2014 R2 emits the structure as dense polylines whose points fall inside the product-name band and swamp it. The guarantee is the font-unit contour hash plus the LF1-R1 file hash, both unchanged.",
+  "product_ink": "#502525",
+  "supporting_copy": {
+   "text": "NIGHT REPAIR OIL",
+   "face": "Noto Sans Regular",
+   "authority": "PASS",
+   "licence": "SIL Open Font License 1.1",
+   "is_ideal_stylistic_match": false,
+   "collisions": 0,
+   "left_px": 572,
+   "right_px": 776,
+   "target_width_px": 180,
+   "cap_height_px": 12.5,
+   "baseline_px": 1157.0,
+   "tracking_px_apparent": 2.022,
+   "tracking_sign": "POSITIVE"
+  },
+  "clean_preview_nonprinting_objects": 0,
+  "clean_preview_guide_pixels": 0,
+  "clean_preview_red_guide_pixels": 0,
+  "guides_overlay_guide_pixels": 763,
+  "guides_overlay_nonprinting_objects": 8,
+  "artwork_objects": 43,
+  "m3_file_identity": "4ecc8e9df1d1",
+  "m3_file_modified": false,
+  "m3_rendered_closure_differs": true,
+  "m3_divergence_note": "M3's own DARK_CLOSURE data is what was asymmetric (8.531533 mm out, 1.198714 mm off centre). R2 renders a symmetrised closure derived from M3's canonical left half. The M3 record on disk is untouched; this is a derived correction, not an edit to M3, and it is the correction the owner asked for.",
+  "hierarchy_order_top_to_bottom": [
+   "APPROVED_BBROSE_LOGO",
+   "DIVIDER_RULE",
+   "ROSE",
+   "DAMASCENA",
+   "NIGHT_REPAIR_OIL"
+  ],
+  "production_flat_artwork": "BLOCKED_PENDING_WRAP_AND_SUPPLIER_EVIDENCE",
+  "production_geometry": "BLOCKED_PENDING_SUPPLIER_EVIDENCE",
+  "vq3_started": false,
+  "packaging_modified": false,
+  "supplier_requests_sent": 0,
+  "image_generation_calls": 0,
+  "provider_calls": 0,
+  "human_accepted": false,
+  "owner_decision_required": true
+ },
+ "symmetry_proof": {
+  "record_type": "vq2_a2_r2_symmetry_proof/1.0",
+  "created_at": "2026-07-29",
+  "architecture": "MASTER_LEFT_PROFILE -> MIRROR_ACROSS_CENTERLINE",
+  "canonical_centerline_mm": 36.541193,
+  "independently_authored_sides": false,
+  "post_mirror_adjustment": false,
+  "separate_shoulder_construction": false,
+  "separate_base_construction": false,
+  "tolerance_mm": 0.01,
+  "components": {
+   "GLASS": {
+    "worst_lr_mm": 0.0,
+    "bbox_mid_deviation_mm": 0.0,
+    "profile_points": 2737,
+    "pass": true
+   },
+   "COLLAR": {
+    "worst_lr_mm": 0.0,
+    "bbox_mid_deviation_mm": 0.0,
+    "profile_points": 865,
+    "pass": true
+   },
+   "DARK_CLOSURE": {
+    "worst_lr_mm": 0.0,
+    "bbox_mid_deviation_mm": 0.0,
+    "profile_points": 865,
+    "pass": true
+   }
+  },
+  "all_pass": true,
+  "before_r2": {
+   "code": "VQ_CONTAINER_BILATERAL_SYMMETRY_FAILED",
+   "confirmed": true,
+   "scope": "DARK_CLOSURE only",
+   "method": "per-component Bezier geometry measured against the CANONICAL centerline OX=36.541193mm, not a self-derived bbox midpoint (a self-derived centre cannot detect centreline deviation and would have reported a false pass)",
+   "GLASS": {
+    "worst_lr_mm": 0.0,
+    "bbox_mid_deviation_mm": 0.0,
+    "verdict": "PASS"
+   },
+   "COLLAR": {
+    "worst_lr_mm": 0.0,
+    "bbox_mid_deviation_mm": 0.0,
+    "verdict": "PASS"
+   },
+   "DARK_CLOSURE": {
+    "worst_lr_mm": 8.531533,
+    "bbox_mid_deviation_mm": 1.198714,
+    "verdict": "FAIL",
+    "tolerance_mm": 0.01
+   },
+   "owner_was_right": true,
+   "note": "A composite silhouette check on the PNG reported 145/148 rows within 1px and would have wrongly cleared this. The raster is ~0.09mm per pixel against a 0.01mm tolerance, and merging the three components hides an off-centre closure inside the outer silhouette."
+  },
+  "method_note": "measured against the CANONICAL centerline. A self-derived bbox midpoint reported 145/148 rows clean and would have wrongly passed the off-centre closure."
+ },
+ "logo_validation": {
+  "record_type": "vq2_a2_r2_logo_validation/1.0",
+  "created_at": "2026-07-29",
+  "source": "BBROSE.pdf page 1 vector extraction (canonical brand/bbrose_logo_approved.pdf)",
+  "canonical_ai_sha256_16": "a2b2a82969389ac2",
+  "source_path_items": 314,
+  "emitted_line_and_curve_items": 314,
+  "path_items_match": true,
+  "components_expected": 9,
+  "components_emitted": 9,
+  "component_count_match": true,
+  "subpaths_emitted": 18,
+  "subpaths_per_component": [
+   3,
+   3,
+   1,
+   1,
+   1,
+   1,
+   4,
+   2,
+   2
+  ],
+  "closepaths": 18,
+  "total_segments": 350,
+  "canonical_emitted_segments_figure": 341,
+  "segment_count_reconciliation": "The canonical record reports 341 emitted segments; R2 emits 350. The difference is bookkeeping, not content. Both carry the SAME 314 source path items. The canonical figure counts one MoveTo per component (9) + 314 items + 18 ClosePath = 341. R2 counts one MoveTo per SUBPATH (18) + 314 items + 18 ClosePath = 350. R2 has nine more MoveTos precisely BECAUSE the R1 defect is fixed \u2014 every subpath now starts its own contour instead of continuing from the previous one. A count of 341 here would mean the defect was still present.",
+  "counters_preserved": {
+   "B_1": true,
+   "B_2": true,
+   "R": true,
+   "medallion_O": true,
+   "S": true,
+   "E": true,
+   "registered": true
+  },
+  "medallion_subpaths": 4,
+  "traced": false,
+  "reconstructed": false,
+  "approximated": false,
+  "redrawn": false,
+  "image_trace_used": false,
+  "uniform_scale": 0.72,
+  "nonuniform_scaling": false
+ },
+ "r1_defects": {
+  "record_type": "vq2_a2_r1_defect_diagnosis/1.0",
+  "created_at": "2026-07-29",
+  "owner_rejection": "bottle symmetry + logo asset fidelity",
+  "both_confirmed": true,
+  "defect_1_structural_symmetry": {
+   "code": "VQ_CONTAINER_BILATERAL_SYMMETRY_FAILED",
+   "confirmed": true,
+   "scope": "DARK_CLOSURE only",
+   "method": "per-component Bezier geometry measured against the CANONICAL centerline OX=36.541193mm, not a self-derived bbox midpoint (a self-derived centre cannot detect centreline deviation and would have reported a false pass)",
+   "GLASS": {
+    "worst_lr_mm": 0.0,
+    "bbox_mid_deviation_mm": 0.0,
+    "verdict": "PASS"
+   },
+   "COLLAR": {
+    "worst_lr_mm": 0.0,
+    "bbox_mid_deviation_mm": 0.0,
+    "verdict": "PASS"
+   },
+   "DARK_CLOSURE": {
+    "worst_lr_mm": 8.531533,
+    "bbox_mid_deviation_mm": 1.198714,
+    "verdict": "FAIL",
+    "tolerance_mm": 0.01
+   },
+   "owner_was_right": true,
+   "note": "A composite silhouette check on the PNG reported 145/148 rows within 1px and would have wrongly cleared this. The raster is ~0.09mm per pixel against a 0.01mm tolerance, and merging the three components hides an off-centre closure inside the outer silhouette."
+  },
+  "defect_2_logo_fidelity": {
+   "code": "VQ2_APPROVED_LOGO_SUBPATH_FILL_DEFECT",
+   "confirmed": true,
+   "symptom": "counters of B, B, R, O, S, E are filled solid; the medallion rose silhouette is destroyed; the registered symbol is a blob",
+   "segments_emitted": 323,
+   "segments_expected": 341,
+   "missing": 18,
+   "root_cause": "the extraction loop inserted a MoveTo only for the FIRST item of each drawing, so every subsequent subpath continued from the previous point instead of starting its own contour, and all subpaths were merged into a single filled Path with no fill rule. Counters could not knock out.",
+   "same_class_as": "the Qu2CuPen defect \u2014 a converter silently dropping what its handler does not cover",
+   "owner_was_right": true
+  },
+  "r2_not_yet_built": true,
+  "m3_file_modified": false,
+  "lf1_r1_modified": false
+ },
+ "section_titles": [
+  "What this is",
+  "1. R1 defects (both owner rejections were correct)",
+  "2. R2 corrections",
+  "3. Symmetry proof",
+  "4. Logo extraction proof",
+  "5. Typography freeze proof",
+  "6. Clean preview \u2014 THE OWNER-REVIEW CANDIDATE",
+  "7. Guide overlay \u2014 diagnostic only",
+  "8. VQ2-A2-R1 (superseded)",
+  "9. Reference concept #97",
+  "10. Flat artwork colours",
+  "11. Clean-preview verification",
+  "12. M3 freeze and the closure divergence",
+  "13. Remaining VQ-3 blockers",
+  "14. OWNER DECISION REQUIRED"
+ ],
+ "sections": 15,
+ "human_accepted": false,
+ "owner_decision_required": true,
+ "provider_calls": 0,
+ "image_generation_calls": 0,
+ "vq3_started": false,
+ "packaging_modified": false,
+ "pdf": {
+  "path": "docs/visual_quality/vq2/vq2_a2_r2_artwork_review.pdf",
+  "sections": 15,
+  "size_bytes": 277118
+ },
+ "png": {
+  "path": "docs/visual_quality/vq2/vq2_a2_r2_artwork_review.png",
+  "size": [
+   1500,
+   773
+  ]
+ }
+}

@@ -1,0 +1,115 @@
+{
+  "schema": "dieline_supported_domain/1.0",
+  "template_key": "reverse_tuck_end_carton/1.2",
+  "closure": {
+    "orientation": "REVERSE_TUCK",
+    "major_tuck_count": 2,
+    "top_tuck_panel": "front",
+    "bottom_tuck_panel": "back",
+    "dust_panels": [
+      "side_left",
+      "side_right",
+      "side_left",
+      "side_right"
+    ],
+    "locking_mechanism": "FRICTION_SLIT_LOCK_NOTCHES",
+    "slit_type": "STADIUM_FRICTION_SLIT",
+    "notch_types": [
+      "SHOULDER_LOCK_NOTCH_2T",
+      "DUST_BASE_NOTCH"
+    ],
+    "fold_sequence": [
+      "dust_flap",
+      "dust_flap",
+      "major_tuck"
+    ],
+    "board_compensation_model": "external_equals_inner_plus_2t",
+    "collision_model": "ratio_tuck_folded",
+    "physical_validation_requirement": "PHYSICAL_SAMPLE_VALIDATION_REQUIRED",
+    "expected_slit_line_count": 0,
+    "expected_stadium_count": 2
+  },
+  "constraints": [
+    {
+      "name": "BOARD_RANGE",
+      "formula": "0.3 <= board_thickness_mm <= 1",
+      "derivation": "manufacturing caliper range"
+    },
+    {
+      "name": "WIDTH_RANGE",
+      "formula": "12 <= width_mm <= 300",
+      "derivation": "print-shop budget"
+    },
+    {
+      "name": "DEPTH_RANGE",
+      "formula": "12 <= depth_mm <= 300",
+      "derivation": "print-shop budget"
+    },
+    {
+      "name": "HEIGHT_RANGE",
+      "formula": "60 <= height_mm <= 600",
+      "derivation": "print-shop budget"
+    },
+    {
+      "name": "GLUE_RANGE",
+      "formula": "6 <= glue_tab_mm <= 15",
+      "derivation": "adhesive practice"
+    },
+    {
+      "name": "BLEED_RANGE",
+      "formula": "2 <= bleed_mm <= 5",
+      "derivation": "prepress practice"
+    },
+    {
+      "name": "SAFE_RANGE",
+      "formula": "3 <= safe_margin_mm <= 8",
+      "derivation": "prepress practice"
+    },
+    {
+      "name": "HEIGHT_GT_WIDTH",
+      "formula": "H > W",
+      "derivation": "schema tuck-carton proportion rule"
+    },
+    {
+      "name": "HEIGHT_GT_DEPTH",
+      "formula": "H > D",
+      "derivation": "schema tuck-carton proportion rule"
+    },
+    {
+      "name": "DEPTH_VS_WIDTH_RATIO",
+      "formula": "D <= 2.5 W",
+      "derivation": "schema Milestone 9.1 rule"
+    },
+    {
+      "name": "GLUE_VS_SIDE",
+      "formula": "D + t >= G + 3",
+      "derivation": "the glue flap laps inside the side span"
+    },
+    {
+      "name": "DUST_PAIR_CLEARANCE",
+      "formula": "W - 2 x 0.631 D >= 0",
+      "derivation": "FOLDED: D-derived dust flaps collide across the W opening when W < 1.262 D. UNCHANGED from 1.1 \u2014 1.2 widens only in the wide-short (lip) direction, not here."
+    },
+    {
+      "name": "SLIT_WEB_UNREDUCED",
+      "formula": "web >= 2 mm at the nominal slit width (1.2 shoulder)",
+      "derivation": "friction slit must fit without the web-guard reduction (computed with the lip-derived shoulder span)"
+    }
+  ],
+  "envelope_at_t05_glue12": {
+    "board_thickness_mm": [
+      0.3,
+      1.0
+    ],
+    "width_mm_min_at_depth_floor": 32.5,
+    "width_mm_max": 300.0,
+    "depth_mm_min": 14.0,
+    "depth_mm_max_given_W": "W - t - 20",
+    "height_mm": [
+      60.0,
+      600.0
+    ],
+    "height_rule": "H > W and H > D",
+    "width_depth_rule": "W >= D + t + 20 (folded dust clearance)"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": "ledger/1.0",
+  "event_id": "evt-971d16f5394d62dda76f",
+  "event_type": "PERMISSION_GRANTED",
+  "asset": "TEST_ONLY_synthetic_bbrose_master.ai",
+  "actor_id": "TEST_ONLY_legal",
+  "actor_role": "LEGAL_REVIEWER",
+  "occurred_at": "2026-07-12T09:00:00+00:00",
+  "previous_state": null,
+  "requested_state": null,
+  "decision_reason": "internal retrieval for design work",
+  "evidence_refs": [
+    "evd-142f31fedd592d56008a"
+  ],
+  "assertion_refs": [],
+  "supersedes_event_id": null,
+  "review_expiry": "2026-10-01T00:00:00+00:00",
+  "contradiction": {
+    "contradiction_present": false,
+    "contradiction_refs": [],
+    "contradiction_acknowledged": false,
+    "acknowledgement_reason": null
+  },
+  "permission": {
+    "flag": "retrieval_allowed",
+    "previous_value": false,
+    "requested_value": true,
+    "purpose": "internal_design",
+    "approved_brands": [
+      "BBROSE"
+    ],
+    "approved_products": [],
+    "approved_markets": [
+      "EU"
+    ],
+    "attribution_required": null,
+    "validity_start": "2026-07-12T09:00:00+00:00",
+    "review_expiry": "2026-10-01T00:00:00+00:00",
+    "restrictions": [],
+    "ownership_decision_ref": "evt-TEST_ONLY-ownership",
+    "license_decision_ref": "evt-TEST_ONLY-license"
+  },
+  "canonical": null,
+  "notes": "",
+  "recorded_at": "2026-07-14T02:06:43+00:00",
+  "repository_commit": null,
+  "content_hash": "3eda4896789442198dc725c57feca09ccbaf2c48eec7e91169109b7bd4369ab8",
+  "TEST_ONLY": true,
+  "WARNING": "SYNTHETIC EXAMPLE. This is NOT a real decision and confers NOTHING. It exists to exercise the schema and the validator."
+}

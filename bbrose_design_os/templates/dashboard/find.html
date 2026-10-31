@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% comment %}FIND — what the one search box in the top bar finds (C's, 2026-09-25): designs by anything on their record, products,
+the brand's colours, the granted faces and materials that can be placed — and a new design started with these words.
+Read-only; nothing here decides, approves or spends.{% endcomment %}
+{% block title %}Find{% if q %}: {{ q }}{% endif %}{% endblock %}
+{% block page_class %}page wide{% endblock %}
+{% block content %}
+<h1 class="h1">Find</h1>
+{% if not q %}
+<p class="lead">Type in the search box above — a product, a colour, a face, a material, or anything a design's record says.</p>
+{% else %}
+<p class="lead">What “{{ q }}” finds — {{ counts.designs }} design{{ counts.designs|pluralize }}, {{ counts.products }} product{{ counts.products|pluralize }}, {{ counts.colours }} colour{{ counts.colours|pluralize }}, {{ counts.faces }} face{{ counts.faces|pluralize }} and {{ counts.materials }} material{{ counts.materials|pluralize }}.</p>
+<a class="find-start" href="{% url 'dashboard:new' %}?brief={{ q|urlencode }}"><svg class="i" aria-hidden="true"><use href="#i-spark"/></svg>
+  <span><b>Start a new design: “{{ q }}”</b><span>Opens New design with your words as its creative ambition</span></span></a>
+
+<section class="find-sec" aria-labelledby="f-designs">
+  <div class="fh"><h2 id="f-designs" class="over">Designs · {{ counts.designs }}</h2>{% if counts.designs > designs|length %}<a href="{% url 'dashboard:history' %}?q={{ q|urlencode }}">See all {{ counts.designs }} ›</a>{% endif %}</div>
+  {% for c in designs %}
+  <a class="frow" href="{{ c.url }}">
+    {% if c.picture %}<img class="pic" src="{{ c.picture }}" alt="" loading="lazy">{% else %}<span class="pic ph-pic {{ c.state }}"><svg class="i" aria-hidden="true"><use href="#{{ c.icon }}"/></svg></span>{% endif %}
+    <span class="t"><b>{{ c.title }}</b><span>#{{ c.task_id }} · {{ c.what }}</span></span>
+    <span class="tag {{ c.tag_class }}"><svg class="i i-sm" aria-hidden="true"><use href="#{{ c.icon }}"/></svg>{{ c.action }}</span>
+  </a>
+  {% empty %}<p class="small">No design's record says it.</p>{% endfor %}
+</section>
+
+<div class="find-cols">
+  <section class="find-sec" aria-labelledby="f-products">
+    <div class="fh"><h2 id="f-products" class="over">Products · {{ counts.products }}</h2><a href="{% url 'dashboard:products_library' %}">Products ›</a></div>
+    {% for p in products %}<div class="frow plain"><span class="pic ph-pic"><svg class="i" aria-hidden="true"><use href="#i-box"/></svg></span><span class="t"><b>{{ p.name }}</b><span>{{ p.product_id }} · {{ p.size_words|default:"no size on record" }}</span></span></div>
+    {% empty %}<p class="small">No product is called that.</p>{% endfor %}
+  </section>
+  <section class="find-sec" aria-labelledby="f-colours">
+    <div class="fh"><h2 id="f-colours" class="over">Colours · {{ counts.colours }}</h2><a href="{% url 'dashboard:brand_library' %}">The brand ›</a></div>
+    {% for sw in colours %}<div class="frow plain"><svg class="dot" viewBox="0 0 44 44" aria-hidden="true">{% if sw.hex %}<circle cx="22" cy="22" r="21" fill="{{ sw.hex }}"/>{% else %}<circle class="metal" cx="22" cy="22" r="21"/>{% endif %}</svg>
+      <span class="t"><b>{{ sw.name }}</b><span>{% if sw.hex %}{{ sw.hex }}{% else %}{{ sw.ink }}{% endif %} · {{ sw.system }}{% if sw.role %} · {{ sw.role }}{% endif %}</span></span></div>
+    {% empty %}<p class="small">No colour of the brand is called that.</p>{% endfor %}
+  </section>
+  <section class="find-sec" aria-labelledby="f-faces">
+    <div class="fh"><h2 id="f-faces" class="over">Faces · {{ counts.faces }}</h2><a href="{% url 'dashboard:brand_library' %}#faces">Faces ›</a></div>
+    {% for f in faces %}<div class="frow plain"><img class="spec" src="{% url 'dashboard:face_specimen' f.stem %}?show=glyph" alt="{{ f.family }}" decoding="async">
+      <span class="t"><b>{{ f.family }}</b><span>{{ f.scripts }}</span></span></div>
+    {% empty %}<p class="small">No granted face is called that.</p>{% endfor %}
+  </section>
+  <section class="find-sec" aria-labelledby="f-materials">
+    <div class="fh"><h2 id="f-materials" class="over">Materials · {{ counts.materials }}</h2><a href="{% url 'dashboard:materials_library' %}?q={{ q|urlencode }}">Materials ›</a></div>
+    <div class="fmats">{% for m in materials %}<a href="{% url 'dashboard:materials_library' %}?q={{ m.name|urlencode }}" title="{{ m.subject|default:m.name }}"><img src="{% url 'dashboard:material_picture' m.n m.sha %}" alt="{{ m.subject|default:m.name }}" loading="lazy"></a>
+    {% empty %}<p class="small">No material that can be placed shows that.</p>{% endfor %}</div>
+  </section>
+</div>
+{% endif %}
+{% endblock %}

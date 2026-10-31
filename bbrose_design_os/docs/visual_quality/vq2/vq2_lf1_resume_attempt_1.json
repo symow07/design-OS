@@ -1,0 +1,46 @@
+{
+ "record_type": "vq2_lf1_resume_attempt/1.0",
+ "created_at": "2026-07-29",
+ "attempt": "RESUME_1",
+ "outcome": "BLOCKED_SAME_BILLING_ERROR",
+ "preconditions": {
+  "lf1_r1_hash": "fcd8003994d52028",
+  "matched": true,
+  "five_input_hashes_matched": true,
+  "prompt_a": "589d9d142150bb6f",
+  "prompt_b": "f7cd3805fd161d81",
+  "prompts_matched": true,
+  "input_quality_manifest": "PASS",
+  "all_preconditions": "PASS"
+ },
+ "inspector_a": {
+  "called": true,
+  "result": "HTTP 400 credit balance too low",
+  "request_id": "req_011CdVwoXHG75nMC5iqDDVDT",
+  "model_output_received": false
+ },
+ "inspector_b": {
+  "called": false,
+  "reason": "A failed before B was reached"
+ },
+ "raw_outputs_persisted": 0,
+ "consistency_validation_run": false,
+ "rose_width_classification": "UNADJUDICATED_PENDING_DUAL_TYPOGRAPHY_INSPECTION",
+ "final_package_generated": false,
+ "evidence_rebuilt": false,
+ "lettering_geometry_changed": false,
+ "axes_or_tracking_changed": false,
+ "lf2_created": false,
+ "vq2_a2_created": false,
+ "contract_compliance": {
+  "one_retry_per_inspector": true,
+  "retry_used_by_A": 1,
+  "retry_used_by_B": 0,
+  "further_retry": "STOPPED_PER_CONTRACT",
+  "provider_substitution": "NOT_PERFORMED \u2014 prohibited without owner ruling",
+  "retry_budget_scope": "GLOBAL_NOT_PER_INSPECTOR",
+  "retry_budget_evidence": "retry_rule holds a single scalar retries_permitted_after_credit_restored=1 with no per-inspector map, and on_same_billing_error says \"do not retry again, stop\". The budget is therefore global: it was spent by A, and B is correctly not attempted rather than owed a call."
+ },
+ "owner_action_required": "Fund the Anthropic account, confirm credit is live, then re-issue the resume instruction. Preconditions will be re-verified and the same two calls attempted; nothing else needs rebuilding.",
+ "retries_remaining_scope": "retries_remaining governs AUTOMATIC retries within this slice only. A new explicit owner instruction re-authorizes attempts; it is not blocked by this counter."
+}

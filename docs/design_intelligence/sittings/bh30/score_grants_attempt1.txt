@@ -1,0 +1,39 @@
+§AD0(a) SCORE — the §BH30(d) GRANTS commit, ATTEMPT 1, launched against
+pred_grants.txt (sealed c23ff24544774ac1). Gate REFUSED, GEXIT=1. NOTHING
+LANDED. HEAD remains 2ac0fd4. This score stands unrevised as history.
+
+THE REFUSAL, verbatim (grants_gate.log):
+   UNREGISTERED: apps/ire/tests/test_wit_unit_analysis.py::
+     TestTheRegisterIsAMeasurementAndNotAnImpression::
+     test_the_denominator_is_stated_beside_the_numerator
+   TIER_2=REFUSE collected=8510 failures=1 apps=7698 dip0c=671 dip0=141
+   GUARDED_COMMIT_REFUSED: TIER_2=REFUSE (A326/3m)
+   The assertion: `assert checks == TREE_CHECKS` → 864 == 863.
+
+L1 HELD (pre-launch): exactly the TWO declared apps paths staged; no
+   other path; ledger left to the gate. Re-verified post-refusal.
+L2 HELD as written: module 451/10, tests 77/0, the shapes as declared.
+L3 HELD where measured: no manifest / records objection reached; the
+   refusal came from a test, not from A327/A391.
+L4 HELD: staged == declared, 2 rows.
+L5 NOT REALIZED: no commit.
+L6 FALSIFIED: "GREEN … no refusal expected" — one failure, a FINDING, not a
+   flake: the WIT unit analyser's census of `apps/` counts one more
+   well-formed check (863 → 864) in the five appended tests, and the
+   denominator pinned beside the register's numerator (TREE_CHECKS, a pin
+   class my (d) census did not predict) no longer matches. The register's
+   numerator did not move (7 findings). Collected 8510 = 8505 + 5 exactly
+   as predicted; apps 7698; dip0c 671; dip0 141. §BH24 budget 0/3 (finding).
+L7 NOT REALIZED: ledger at HEAD still 447; the refusing gate appended its
+   own unstaged line 448 (carried, the known refusing-gate behaviour).
+L8 HELD where measurable: apps diff = exactly the two paths; GATE
+   7fbeb8f1fe10b0fb and TEST b32030dc827263e4 byte-identical; tree seals
+   unchanged (dip0c 5ae44035bd03bae1, dip0a 4fe747b806ed71bd); the Noto
+   pair VERIFIED_FOR_PRODUCTION under Django with the tuple in place
+   (measured at goal_measure); the §BH30(d) single-use authority UNSPENT.
+
+HARD STOP TRIGGERED: §BH30 HARD STOPS — "a census-unpredicted pin class".
+TREE_CHECKS (test_wit_unit_analysis.py:1397) is a pin class no census
+predicted for this commit. STOPPED: no re-pin, no edit, no unstage, no
+re-seal, no re-gate. Post-refusal state, frozen: HEAD 2ac0fd4; the two
+paths staged as sealed; ledger 448 unstaged; awaiting the owner's word.

@@ -1,0 +1,82 @@
+{
+ "row": 2,
+ "ok": true,
+ "result": {
+  "templates": 7,
+  "rows": [
+   {
+    "id": "counter_tray_header",
+    "version": "0.1",
+    "production_ready": false
+   },
+   {
+    "id": "ecma_a20_20_01_01_ste_carton",
+    "version": "0.1",
+    "production_ready": false
+   },
+   {
+    "id": "reference_opposed_tuck_carton",
+    "version": "0.1",
+    "production_ready": false
+   },
+   {
+    "id": "reverse_tuck_end_carton",
+    "version": "1.1",
+    "production_ready": true
+   },
+   {
+    "id": "skynte_foundation_tuck_carton",
+    "version": "1.0",
+    "production_ready": true
+   },
+   {
+    "id": "straight_tuck_end_carton",
+    "version": "1.1",
+    "production_ready": true
+   },
+   {
+    "id": "tuck_top_auto_bottom_carton",
+    "version": "1.1",
+    "production_ready": false
+   }
+  ],
+  "unpinned_gets": {
+   "counter_tray_header": "0.1",
+   "ecma_a20_20_01_01_ste_carton": "0.1",
+   "reference_opposed_tuck_carton": "0.1",
+   "reverse_tuck_end_carton": "1.1",
+   "skynte_foundation_tuck_carton": "1.0",
+   "straight_tuck_end_carton": "1.1",
+   "tuck_top_auto_bottom_carton": "1.1"
+  },
+  "production": [
+   [
+    "reverse_tuck_end_carton",
+    "1.1"
+   ],
+   [
+    "skynte_foundation_tuck_carton",
+    "1.0"
+   ],
+   [
+    "straight_tuck_end_carton",
+    "1.1"
+   ]
+  ],
+  "counter_tray_header_1_0": {
+   "production_ready": true
+  },
+  "tests": {
+   "tests": [
+    "apps/dielines/tests/test_registry.py",
+    "apps/dielines/tests/test_template_registry_agreement.py"
+   ],
+   "k": null,
+   "summary": "25 passed in 0.29s",
+   "failed": [],
+   "seconds": 1.0
+  }
+ },
+ "seconds": 1.0,
+ "files": []
+}

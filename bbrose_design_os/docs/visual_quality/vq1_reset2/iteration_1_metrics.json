@@ -1,0 +1,51 @@
+{
+  "iteration": "RESET2-IT1",
+  "render": "docs/visual_quality/vq1_reset2/iteration_1.png",
+  "comparison": {
+    "metrics": {
+      "silhouette_iou_non_occluded": 0.92058,
+      "mean_normalized_contour_distance": 0.03366,
+      "p95_contour_distance": 0.11842,
+      "max_contour_distance": 0.15395,
+      "component_centroid_displacement": 0.02691,
+      "collar_body_ratio_error": 0.00618,
+      "dark_body_ratio_error": 0.00022,
+      "constant_width_region_difference": 0.00091,
+      "flare_width_difference": 0.01706,
+      "shoulder_rise_difference": 0.0,
+      "occluded_side_excluded_from_scoring": "LEFT"
+    },
+    "gates": {
+      "silhouette_iou": true,
+      "mean_contour_distance": false,
+      "p95_contour_distance": false,
+      "max_contour_distance": false,
+      "collar_body_ratio": true,
+      "dark_body_ratio": true
+    },
+    "gates_pass": false,
+    "thresholds": {
+      "silhouette_iou_min": 0.9,
+      "mean_contour_max": 0.02,
+      "p95_contour_max": 0.045,
+      "max_contour_max": 0.07,
+      "collar_ratio_error_max": 0.025,
+      "dark_ratio_error_max": 0.025
+    },
+    "note": "a failing component is never excluded to improve the overall score"
+  },
+  "envelope_findings": {
+    "checks": {
+      "constant_width_region_present": true,
+      "lower_flare_present": true,
+      "rounded_dome_not_spear": true,
+      "no_mid_maximum": true,
+      "no_external_stem": true
+    },
+    "findings": [],
+    "constant_width_spread": 0.0,
+    "peak_at_fraction": 1.0,
+    "top_width_fraction_of_max": 0.2596,
+    "status": "ENVELOPE_MATCHES_APPROVED_VISIBLE_SEMANTIC"
+  }
+}

@@ -1,0 +1,244 @@
+apps/pipeline/targets/container/__init__.py:29:_DEFAULT_CAP_HEX = "#C9A24B"
+apps/pipeline/targets/container/__init__.py:30:_DEFAULT_BODY_HEX = "#EAD7D2"
+apps/pipeline/targets/container/__init__.py:1005:    # (e.g. the blush cap "#F2C4CE") beats the generic gold default and the
+apps/pipeline/targets/container/__init__.py:1019:    colors["product"] = body_hex or cap_hex or "#F2C4CE"
+apps/pipeline/targets/container/__init__.py:1050:                        "product_color": colors.get("product", "#F2C4CE")}
+apps/pipeline/targets/container/__init__.py:1082:        colors = {"body": "#D8BEB8", "cap": "#B76E79", "product": "#C9A6A0"}
+apps/pipeline/direction_content.py:404:    failed the retry because ivory #FAF3EC — which the brief REQUIRES in all
+apps/pipeline/services/spec_sheet.py:22:BBROSE_BLUSH = colors.HexColor('#F2C4CE')
+apps/pipeline/services/spec_sheet.py:23:BBROSE_ROSE_GOLD = colors.HexColor('#B5895A')
+apps/pipeline/services/spec_sheet.py:24:BBROSE_DARK = colors.HexColor('#1A1A1A')
+apps/pipeline/services/spec_sheet.py:25:BBROSE_CREAM = colors.HexColor('#F5EDD6')
+apps/pipeline/services/spec_sheet.py:120:                ('GRID', (0, 0), (-1, -1), 0.5, colors.HexColor('#D0D0D0')),
+apps/pipeline/services/spec_sheet.py:158:            ('GRID', (0, 0), (-1, -1), 0.5, colors.HexColor('#D0D0D0')),
+apps/pipeline/services/spec_sheet.py:181:        ParagraphStyle('Timestamp', fontSize=8, textColor=colors.HexColor('#999999')),
+apps/pipeline/services/flat_artwork.py:156:def dominant_color_hex(image_path: str, default: str = "#EFE9E4") -> str:
+apps/pipeline/services/native_handoff.py:248:                        "product_color": colors.get("product", "#F2C4CE")}
+apps/pipeline/services/gate_a_corr1.py:400:            sum(1 for r in rows if r["parsed_resulting_color"] == "#000000"),
+apps/pipeline/services/gate_a_corr1.py:783:        "body_color_is_D9BDB5": by_role.get("BODY") == {"#D9BDB5"},
+apps/pipeline/services/gate_a_corr1.py:784:        "collar_color_is_705242": by_role.get("COLLAR") == {"#705242"},
+apps/pipeline/services/gate_a_corr1.py:785:        "closure_color_is_493034": by_role.get("CLOSURE") == {"#493034"},
+apps/pipeline/services/gate_a_corr1.py:786:        "all_artwork_color_is_502525": by_role.get("ARTWORK") == {"#502525"},
+apps/pipeline/services/image_checks.py:55:    """'#E8B4B8' / 'e8b4b8' / '#eab' -> (232, 180, 184), or None if malformed."""
+apps/pipeline/services/brand_context.py:46:    """Return the canonical brand hex colours (e.g. ['#E8B4B8', ...]).
+apps/pipeline/services/artwork_segments.py:37:    h = (color_hex or "#EFE9E4").lstrip("#")
+apps/pipeline/services/palette_powder_engine.py:738:     "hex": "#F2E3D8", "family": PP.POWDER_MATTE,
+apps/pipeline/services/palette_powder_engine.py:741:     "hex": "#E9CBAE", "family": PP.POWDER_SATIN,
+apps/pipeline/services/palette_powder_engine.py:744:     "hex": "#E4D8D4", "family": PP.SHIMMER,
+apps/pipeline/services/palette_powder_engine.py:747:     "hex": "#D9A2A6", "family": PP.POWDER_MATTE,
+apps/pipeline/services/palette_powder_engine.py:750:     "hex": "#C57E82", "family": PP.POWDER_SATIN,
+apps/pipeline/services/palette_powder_engine.py:753:     "hex": "#C9916B", "family": PP.BAKED,
+apps/pipeline/services/palette_powder_engine.py:756:     "hex": "#A85B33", "family": PP.POWDER_METALLIC,
+apps/pipeline/services/palette_powder_engine.py:759:     "hex": "#7F846E", "family": PP.POWDER_MATTE,
+apps/pipeline/services/palette_powder_engine.py:762:     "hex": "#8D5459", "family": PP.PRESSED_POWDER,
+apps/pipeline/services/palette_powder_engine.py:765:     "hex": "#5D3A42", "family": PP.POWDER_MATTE,
+apps/pipeline/services/palette_powder_engine.py:768:     "hex": "#48583F", "family": PP.MARBLED,
+apps/pipeline/services/palette_powder_engine.py:776:     "hex": "#4A2E3B", "family": PP.POWDER_METALLIC,
+apps/pipeline/services/palette_powder_engine.py:780:         "#4A2E3B is dark enough that a soft pearl load disappears into "
+apps/pipeline/services/brand_component_library.py:269:                # is "#66433A" and is SUPERSEDED: A2 used four
+apps/pipeline/services/ai8_color.py:26:  cannot pass. That is the specific mistake that turns #D9BDB5 into #B5BDD9.
+apps/pipeline/services/ai8_color.py:91:    """Round, never truncate. The proof PNG shipped #D8BCB5 for #D9BDB5 once."""
+apps/pipeline/services/ai8_color.py:1010:# — #D8BCB5, #705242, #492F34, #4F2424 — so those pixels are the approved
+apps/pipeline/services/gate_a_roundtrip1.py:57:APPROVED = {"#D9BDB5", "#705242", "#493034", "#502525"}
+apps/core/management/commands/seed_bbrose.py:86:                        "hex": "#F2C4CE",
+apps/core/management/commands/seed_bbrose.py:93:                        "hex": "#F7DDE3",
+apps/core/management/commands/seed_bbrose.py:100:                        "hex": "#8B3A52",
+apps/core/management/commands/seed_bbrose.py:113:                        "hex": "#FAF3EC",
+apps/core/management/commands/seed_bbrose.py:121:                    "#F2C4CE primary"
+apps/core/management/commands/seed_bbrose.py:137:                        "hex": "#E8C9B3",
+apps/core/management/commands/seed_bbrose.py:144:                        "hex": "#F0DECB",
+apps/core/management/commands/seed_bbrose.py:151:                        "hex": "#7A4A42",
+apps/core/management/commands/seed_bbrose.py:164:                        "hex": "#FAF3EC",
+apps/core/management/commands/seed_bbrose.py:172:                    "light, #E8C9B3 primary"
+apps/pipeline/services/gate_a_final.py:59:APPROVED = {"#D9BDB5", "#705242", "#493034", "#502525"}
+apps/pipeline/services/gate_a_corr2.py:383:            sum(1 for r in rows if r["parsed_resulting_color"] == "#000000"),
+apps/pipeline/services/gate_a_corr2.py:552:        "body_color_is_D9BDB5": by_role.get("BODY") == {"#D9BDB5"},
+apps/pipeline/services/gate_a_corr2.py:553:        "collar_color_is_705242": by_role.get("COLLAR") == {"#705242"},
+apps/pipeline/services/gate_a_corr2.py:554:        "closure_color_is_493034": by_role.get("CLOSURE") == {"#493034"},
+apps/pipeline/services/gate_a_corr2.py:555:        "all_artwork_color_is_502525": by_role.get("ARTWORK") == {"#502525"},
+apps/ire/back_panel.py:359:    ink = ink if ink is not None else Color.from_hex("#2A2426")
+apps/ire/vq2_artwork.py:389:    black = Color.from_hex("#000000")
+apps/ire/vq2_artwork.py:419:    black = Color.from_hex("#000000")
+apps/ire/compose_dropper.py:50:_INK = Color.from_hex("#2A2426")
+apps/ire/compose_dropper.py:56:    "BODY_BASE": ("#D8BEB8", "frosted dusty-rose glass — PROCESS, "
+apps/ire/compose_dropper.py:58:    "PRODUCT_FILL": ("#C9A6A0", "internal product tint — PROCESS, "
+apps/ire/compose_dropper.py:60:    "GLASS_BASE": ("#EFE8E3", "clear glass base — PROCESS, "
+apps/ire/compose_dropper.py:62:    "ROSE_GOLD_BASE": ("#BC7480", "blush-copper base — METALLIC SPOT, "
+apps/ire/compose_dropper.py:64:    "ROSE_GOLD_LIGHT": ("#EBD0BC", "warm champagne highlight — "
+apps/ire/compose_dropper.py:66:    "ROSE_GOLD_SPECULAR": ("#FDEFE4", "narrow specular — NONPRINTING viz"),
+apps/ire/compose_dropper.py:67:    "ROSE_GOLD_SHADOW": ("#6E3A46", "deep warm-metal shadow — "
+apps/ire/compose_dropper.py:69:    "BULB_DARK_PLUM": ("#3F2A33", "smooth dark plum — PROCESS, "
+apps/ire/compose_dropper.py:71:    "TYPE_WINE": ("#5A2C3A", "typography — PROCESS, authority UNVERIFIED"),
+apps/ire/compose_dropper.py:207:                    y_base - 0.8, Color.from_hex("#B79B95"), 0.26),
+apps/ire/compose_dropper.py:209:                    y_base - 0.8, Color.from_hex("#A98D88"), 0.34),
+apps/ire/compose_dropper.py:213:                    Color.from_hex("#FFFFFF"), 0.06),
+apps/ire/compose_dropper.py:215:             fill=SolidFill(color=Color.from_hex("#FFFFFF"),
+apps/ire/compose_dropper.py:220:                    Color.from_hex("#FFFFFF"), 0.26),
+apps/ire/compose_dropper.py:227:            stroke=Stroke(color=Color.from_hex("#FFFFFF"), width_mm=0.32,
+apps/ire/compose_dropper.py:230:                0.9, fill=Color.from_hex("#F4E9E4"), op=0.28),
+apps/ire/compose_dropper.py:232:                fill=Color.from_hex("#F4E9E4"), op=0.32),
+apps/ire/compose_dropper.py:246:                fill=Color.from_hex("#FFFFFF"), op=0.22),
+apps/ire/compose_dropper.py:332:                    Color.from_hex("#FFFFFF"), 0.14),
+apps/ire/compose_dropper.py:772:                 fill=SolidFill(color=Color.from_hex("#F7F1EC")),
+apps/ire/compose_dropper.py:945:                      _PAGE_W / 2, 17.5, 5.5, Color.from_hex("#8E4F5C")),
+apps/ire/vq1_render.py:24:INK = Color.from_hex("#2A2426")
+apps/ire/vq1_render.py:119:                 fill=SolidFill(color=Color.from_hex("#E9E2DE"))),
+apps/ire/vq1_render.py:128:                fill=SolidFill(color=Color.from_hex("#B9AEA9"),
+apps/ire/vq1_render.py:137:                fill=SolidFill(color=Color.from_hex("#A79B96"),
+apps/ire/vq1_render.py:144:                         fill=SolidFill(color=Color.from_hex("#DDD3CE"))))
+apps/ire/vq1_render.py:161:                fill=SolidFill(color=Color.from_hex("#C8B8B2"))),
+apps/ire/vq1_render.py:164:                Color.from_hex("#B5A29B"), 0.9),
+apps/ire/vq1_render.py:171:                fill=SolidFill(color=Color.from_hex("#9B8880"),
+apps/ire/vq1_render.py:194:                         fill=SolidFill(color=Color.from_hex("#6B5A57"))))
+apps/ire/vq1_close1_package.py:21:                             spaceAfter=10, textColor=colors.HexColor("#1d1b1e")),
+apps/ire/vq1_close1_package.py:24:                             textColor=colors.HexColor("#2A2426")),
+apps/ire/vq1_close1_package.py:31:                               textColor=colors.HexColor("#9c1f1f")),
+apps/ire/vq1_reset2.py:31:INK = Color.from_hex("#2A2426")
+apps/ire/vq1_reset2.py:285:_FILL = ("#F2ECE8", "#E6DCD6", "#B3A49C")
+apps/ire/vq1_reset2.py:292:    "DARK_CLOSURE": ("#7A6570", "#4A3A44", "#291F26"),
+apps/ire/vq1_reset2.py:293:    "COLLAR": ("#F0E0CE", "#CDB9A6", "#8A7460"),
+apps/ire/vq1_reset2.py:294:    "NECK_VISIBLE": ("#EFE7E1", "#DCD1CA", "#A99C95"),
+apps/ire/vq1_reset2.py:295:    "BODY_ASSEMBLY": ("#F4EEEA", "#E7DCD6", "#B3A49C"),
+apps/ire/vq1_reset2.py:725:_IT6_FILL = {"GLASS_ASSEMBLY": ("#F4EEEA", "#E7DCD6", "#B3A49C"),
+apps/ire/vq1_reset2.py:726:             "COLLAR_SLEEVE": ("#F0E0CE", "#CDB9A6", "#8A7460"),
+apps/ire/vq1_reset2.py:727:             "DARK_CLOSURE": ("#7A6570", "#4A3A44", "#291F26")}
+apps/ire/nodes.py:62:    return Color.from_hex("#F7F0E6") if lum < 0.5 else Color.from_hex("#59283A")
+apps/ire/vq1_master.py:23:INK = Color.from_hex("#2A2426")
+apps/ire/vq1_master.py:296:_FILL = {"GLASS": ("#F4EEEA", "#E7DCD6", "#B3A49C"),
+apps/ire/vq1_master.py:297:         "COLLAR": ("#F0E0CE", "#CDB9A6", "#8A7460"),
+apps/ire/vq1_master.py:298:         "DARK_CLOSURE": ("#7A6570", "#4A3A44", "#291F26")}
+apps/ire/vq1_corr5.py:36:INK = Color.from_hex("#2A2426")
+apps/ire/vq1_corr5.py:297:_CYL = {"BODY": ("#F4EFEC", "#E3DAD5", "#B5A79F"),
+apps/ire/vq1_corr5.py:298:        "COLLAR": ("#F2E5D4", "#D2C0B0", "#8E7A6B"),
+apps/ire/vq1_corr5.py:299:        "NECK": ("#F2ECE7", "#DCD2CC", "#A79B96"),
+apps/ire/vq1_corr5.py:300:        "BULB": ("#8B7078", "#5A484F", "#31262B")}
+apps/ire/vq1_corr5.py:331:    flat = {"BODY": "#E7E0DB", "NECK": "#D6CCC6", "COLLAR": "#C4B4A6",
+apps/ire/vq1_corr5.py:332:            "BULB": "#5A484F"}
+apps/ire/vq1_corr5.py:349:                           color_hex="#B0453A", width_mm=0.5,
+apps/ire/vq1_corr4.py:31:INK = Color.from_hex("#2A2426")
+apps/ire/vq1_corr4.py:301:_CYL = {"BODY": ("#F4EFEC", "#E4DBD6", "#B7A9A3"),
+apps/ire/vq1_corr4.py:302:        "COLLAR": ("#F0E2D2", "#CDBBAE", "#8C7A6E"),
+apps/ire/vq1_corr4.py:303:        "NECK": ("#F2ECE7", "#DDD3CE", "#A79B96"),
+apps/ire/vq1_corr4.py:304:        "BULB": ("#8E7680", "#5C4A50", "#33272C")}
+apps/ire/vq1_corr4.py:326:                           color_hex="#9C8F89", width_mm=0.4):
+apps/ire/compose.py:42:_TINT = "#EFE9E4"
+apps/ire/compose.py:52:_CUT = Color.from_hex("#0000FF", cmyk=(1.0, 1.0, 0.0, 0.0))
+apps/ire/compose.py:53:_FOLD = Color.from_hex("#FF0000", cmyk=(0.0, 1.0, 1.0, 0.0))
+apps/ire/compose.py:54:_WHITE = Color.from_hex("#FFFFFF", cmyk=(0.0, 0.0, 0.0, 0.0))
+apps/ire/compose.py:55:_INK_LIGHT = Color.from_hex("#FCF8F5", cmyk=(0.0, 0.02, 0.03, 0.01))
+apps/ire/compose.py:265:    ink = (Color.from_hex("#F7F0E6") if lum < 0.5 else Color.from_hex("#59283A"))
+apps/ire/handoff/container_adapter.py:193:                      color=Color.from_hex("#555555"), font="regular",
+apps/ire/handoff/container_adapter.py:299:                "hex": entry.get("hex") or "#888888",
+apps/ire/design_language.py:92:    ground_top=Swatch("GROUND_TOP", "#E8C9B3", (0.06, 0.22, 0.30, 0.02)),
+apps/ire/design_language.py:93:    ground_bottom=Swatch("GROUND_BOTTOM", "#F0DECB", (0.04, 0.12, 0.20, 0.00)),
+apps/ire/design_language.py:94:    line_light=Swatch("LINE_LIGHT", "#F7EFE4", (0.02, 0.05, 0.10, 0.00)),
+apps/ire/design_language.py:95:    line_deep=Swatch("LINE_DEEP", "#D9B49A", (0.10, 0.32, 0.42, 0.05)),
+apps/ire/design_language.py:96:    accent=Swatch("ACCENT_FOIL", "#B76E79", (0.12, 0.62, 0.42, 0.12)),
+apps/ire/design_language.py:97:    ink=Swatch("INK", "#59283A", (0.35, 0.85, 0.45, 0.45)),
+apps/ire/design_language.py:103:    ground_top=Swatch("WARM_IVORY_BASE", "#FAF3EC",
+apps/ire/design_language.py:105:    ground_bottom=Swatch("BLUSH_PINK", "#F2C4CE", (0.02, 0.30, 0.10, 0.00)),
+apps/ire/design_language.py:106:    line_light=Swatch("SOFT_PEACH_PARTICLES", "#F0C9A8",
+apps/ire/design_language.py:108:    line_deep=Swatch("DUSTY_PINK_TYPE", "#C98B96",
+apps/ire/design_language.py:110:    accent=Swatch("ROSE_GOLD_PLACEHOLDER", "#B76E79",
+apps/ire/design_language.py:112:    ink=Swatch("WARM_GREY_SUPPORTING_TEXT", "#8A7F78",
+apps/ire/design_language.py:115:WHITE_TYPE_HIGHLIGHT = Swatch("WHITE_TYPE_HIGHLIGHT", "#FDFBF7",
+apps/ire/design_language.py:117:SOFT_MINT_WASH = Swatch("SOFT_MINT_WASH", "#E8F5F0", (0.09, 0.00, 0.06, 0.00))
+apps/ire/design_language.py:684:    ground_top=Swatch("CONTAINER_TRANSPARENT_BODY", "#FDF7F2",
+apps/ire/design_language.py:686:    ground_bottom=Swatch("PRODUCT_PEACH_ROSE_FILL", "#F2C4CE",
+apps/ire/design_language.py:688:    line_light=Swatch("DEWDROP_CLEAR", "#FFFFFF", (0.0, 0.0, 0.0, 0.0)),
+apps/ire/design_language.py:689:    line_deep=Swatch("DEWDROP_PEACH", "#F7DDE3", (0.02, 0.16, 0.06, 0.00)),
+apps/ire/design_language.py:690:    accent=Swatch("DEWDROP_HIGHLIGHT", "#FFFFFF", (0.0, 0.0, 0.0, 0.0)),
+apps/ire/design_language.py:691:    ink=Swatch("PRODUCT_NAME_PRINT", "#8B3A52", (0.20, 0.80, 0.40, 0.15)),
+apps/ire/container_brand_usage.py:88:    "#F6EDEB": "brand_light_ground",   # _tint(body, 0.55) — decoration-field
+apps/ire/container_brand_usage.py:89:    "#EAD7D2": "brand_light_ground",   # _DEFAULT_BODY — the container body
+apps/ire/container_brand_usage.py:593:    0.312 mm ``Stroke`` at opacity 0.9 in #F7EFE4, **the same ink as the three
+apps/ire/container_brand_usage.py:860:    # document whose ground measures #F6EDEB and whose whole subject is the
+apps/ire/compose_container.py:135:_INK = Color.from_hex("#3F2620")
+apps/ire/compose_container.py:137:_DEFAULT_BODY = "#EAD7D2"
+apps/ire/compose_container.py:138:_DEFAULT_CAP = "#C9A24B"
+apps/ire/compose_container.py:336:        ink = Color.from_hex("#5A2C3A")          # deep wine-plum print ink
+apps/ire/compose_container.py:873:        body_hex = material_stack.get("body_color", "#D8BEB8")
+apps/ire/compose_container.py:874:        fill_hex = material_stack.get("product_color", "#C9A6A0")
+apps/ire/compose_container.py:876:                                                     "#B76E79"))
+apps/ire/compose_container.py:877:        bulb_c = Color.from_hex(material_stack.get("bulb_color", "#3A2A2C"))
+apps/ire/compose_container.py:888:                 fill=SolidFill(color=Color.from_hex("#FFFFFF"),
+apps/ire/compose_container.py:906:                 fill=SolidFill(color=Color.from_hex("#FFFFFF"),
+apps/ire/compose_container.py:922:            (transparency.get("product_color") or "#F2C4CE"))
+apps/ire/compose_container.py:930:                 fill=SolidFill(color=Color.from_hex("#FDF7F2"),
+apps/ire/compose_container.py:939:                 fill=SolidFill(color=Color.from_hex("#FFFFFF"),
+apps/ire/compose_container.py:960:            fill=SolidFill(color=Color.from_hex("#3A2A2C"))))
+apps/ire/compose_container.py:1040:            (transparency.get("product_color") or "#F2C4CE"))
+apps/ire/compose_container.py:1042:            ("CONTAINER_TRANSPARENT_BODY", Color.from_hex("#FDF7F2")),
+apps/ire/compose_container.py:1045:            ("LOGO_PRINT", Color.from_hex("#B76E79")),
+apps/ire/compose_container.py:1046:            ("PRODUCT_NAME_PRINT", Color.from_hex("#8B3A52")),
+apps/ire/compose_container.py:1047:            ("DEWDROP_CLEAR", Color.from_hex("#FFFFFF")),
+apps/ire/compose_container.py:1048:            ("DEWDROP_PEACH", Color.from_hex("#F7DDE3")),
+apps/ire/compose_container.py:1049:            ("DEWDROP_HIGHLIGHT", Color.from_hex("#FFFFFF")),
+apps/ire/compose_container.py:1050:            ("SPOT_UV_DEWDROPS", Color.from_hex("#E8E8E8")),
+apps/dielines/exporters/folded_diagnostic.py:166:        fills = {main_a.name: "#F2E8DC", side_a.name: "#E4D5C3",
+apps/dielines/exporters/folded_diagnostic.py:167:                 main_b.name: "#EADFCE", side_b.name: "#DCCBB5"}
+apps/dielines/exporters/folded_diagnostic.py:173:            poly3d(ring, "#555555", fill=fills[name])
+apps/dielines/exporters/folded_diagnostic.py:185:               "#B03030", width=4)
+apps/dielines/exporters/folded_diagnostic.py:186:        label3d(fr_a.body_point(0, H * 0.15), "GLUE SEAM", "#B03030")
+apps/dielines/exporters/folded_diagnostic.py:196:            poly3d(pts, "#3060C0", width=2)
+apps/dielines/exporters/folded_diagnostic.py:199:                "DUST (1st/2nd)", "#3060C0")
+apps/dielines/exporters/folded_diagnostic.py:212:            poly3d(pts, "#207040", width=3)
+apps/dielines/exporters/folded_diagnostic.py:216:                    label + " (3rd)", "#207040")
+apps/dielines/exporters/folded_diagnostic.py:228:                             outline="#C08000", width=2)
+apps/dielines/exporters/folded_diagnostic.py:231:                "slit/ear" if slit_l > 0 else "friction lock", "#C08000")
+apps/dielines/exporters/folded_diagnostic.py:256:                  fill="#207040" if not failed else "#B03030")
+apps/dielines/exporters/folded_diagnostic.py:259:              "APPROVED FOR MASS PRODUCTION", fill="#B03030")
+apps/ire/handoff/graph_schema.py:68:    ("CUT", "#FF0000", (0.0, 1.0, 1.0, 0.0)),
+apps/ire/handoff/graph_schema.py:69:    ("CREASE", "#0000FF", (1.0, 1.0, 0.0, 0.0)),
+apps/ire/handoff/graph_schema.py:70:    ("SPOT_UV", "#00A0A0", (0.8, 0.0, 0.3, 0.0)),
+apps/ire/handoff/graph_schema.py:71:    ("EMBOSS", "#808000", (0.2, 0.2, 1.0, 0.1)),
+apps/ire/handoff/graph_schema.py:72:    ("DEBOSS", "#606060", (0.0, 0.0, 0.0, 0.7)),
+apps/ire/handoff/graph_schema.py:73:    ("ROSE_GOLD_FOIL", "#B76E79", (0.12, 0.62, 0.42, 0.12)),
+apps/dielines/exporters/svg_exporter.py:4:  - g#bleed        green dashed, offset outline           (#00FF00)
+apps/dielines/exporters/svg_exporter.py:5:  - g#cut-lines    blue solid, full cut outline           (#0000FF)
+apps/dielines/exporters/svg_exporter.py:6:  - g#fold-lines   red dashed, 6 crease lines             (#FF0000)
+apps/dielines/exporters/svg_exporter.py:7:  - g#safe-area    green short-dashed, inward inset       (#00FF00)
+apps/dielines/exporters/svg_exporter.py:129:                    stroke="#00FF00", stroke_width=_STROKE["bleed"],
+apps/dielines/exporters/svg_exporter.py:138:                  stroke="#0000FF", stroke_width=_STROKE["cut"])
+apps/dielines/exporters/svg_exporter.py:166:                   stroke="#FF0000", stroke_width=_STROKE["fold"],
+apps/dielines/exporters/svg_exporter.py:176:                   stroke="#00FF00", stroke_width=_STROKE["safe"],
+apps/dielines/exporters/info_panel.py:324:        f'height="{p.height:.2f}" fill="#FBF8F5"/>',
+apps/dielines/exporters/info_panel.py:326:        f'rx="{min(3.0, fw * 0.05):.2f}" fill="#FCF9F6" stroke="#3F2620" '
+apps/dielines/exporters/info_panel.py:339:                f'fill="#3F2620">{escape(title[:40])}</text>'
+apps/dielines/exporters/info_panel.py:345:                f'fill="#3F2620">{escape(title_ar[:40])}</text>'
+apps/dielines/exporters/info_panel.py:351:                f'font-weight="bold" fill="#3F2620">{escape(title[:44])}</text>'
+apps/dielines/exporters/info_panel.py:383:                    f'font-size="{size:.2f}" fill="#3F2620"{weight}>'
+apps/dielines/exporters/info_panel.py:390:                    f'fill="#3F2620"{weight}>{escape(ln)}</text>'
+apps/dielines/exporters/info_panel.py:400:            f'height="8" fill="none" stroke="#3F2620" stroke-width="0.2"/>'
+apps/dielines/exporters/info_panel.py:402:            f'font-size="{size:.2f}" fill="#3F2620">EAN {escape(ean)}</text>'
+apps/dielines/exporters/info_panel.py:408:            f'stroke="#3F2620" stroke-width="0.2"/>'
+apps/dielines/exporters/info_panel.py:411:            f'fill="#3F2620">QR</text>'
+apps/dielines/exporters/info_panel.py:421:            f'fill="#3F2620">{escape(meta[:70])}</text>'
+apps/dielines/exporters/attachment_overlay.py:19:_TUCK_BAD = "#D04040"
+apps/dielines/exporters/attachment_overlay.py:20:_TUCK_GOOD = "#207040"
+apps/dielines/exporters/attachment_overlay.py:21:_DUST = "#3060C0"
+apps/dielines/exporters/attachment_overlay.py:22:_GLUE = "#BBBBBB"
+apps/dielines/exporters/attachment_overlay.py:23:_SLIT = "#C08000"
+apps/dielines/exporters/attachment_overlay.py:39:    poly(coords.glue_tab_polygon, "#888888", fill=_GLUE)
+apps/dielines/exporters/attachment_overlay.py:41:        poly(dust_poly, _DUST, fill="#D5E0F5")
+apps/dielines/exporters/attachment_overlay.py:44:             fill="#F5D5D5" if tuck_color == _TUCK_BAD else "#D5EAD5")
+apps/dielines/exporters/attachment_overlay.py:45:    poly(coords.cut_polygon, "#333333", width=2)
+apps/dielines/exporters/attachment_overlay.py:47:        draw.line([T((x1, y1)), T((x2, y2))], fill="#CC3333", width=1)
+apps/dielines/exporters/attachment_overlay.py:59:        draw.text((x - 4 * len(name), y), name, fill="#555555")
+apps/dielines/exporters/attachment_overlay.py:78:              fill=_TUCK_BAD if tuck_color == _TUCK_BAD else "#207040")
+apps/dielines/exporters/attachment_overlay.py:89:        draw.rectangle([x, oy, x + w, oy + body_h], outline="#333333",
+apps/dielines/exporters/attachment_overlay.py:90:                       fill="#F7F2EA")
+apps/dielines/exporters/attachment_overlay.py:92:                  fill="#555555")
+apps/dielines/exporters/attachment_overlay.py:98:                   fill="#D5EAD5")
+apps/dielines/exporters/attachment_overlay.py:104:                   outline=_TUCK_GOOD, fill="#D5EAD5")
+apps/dielines/exporters/attachment_overlay.py:112:                           outline=_DUST, fill="#D5E0F5")
+apps/dielines/exporters/attachment_overlay.py:157:              "creases · arrows = fold direction", fill="#555555")
+apps/dielines/exporters/attachment_overlay.py:160:              "APPROVED FOR MASS PRODUCTION", fill="#B03030")
+apps/dielines/exporters/design_preview.py:34:_TINT = "#EFE9E4"
+apps/dielines/exporters/design_preview.py:114:                 f'height="{vh:.2f}" fill="#FFFFFF"/>')
+apps/dielines/exporters/design_preview.py:205:        f'<polygon points="{cut_pts}" fill="none" stroke="#FFFFFF" '
+apps/dielines/exporters/design_preview.py:211:            f'stroke="#FFFFFF" stroke-width="1.6"/>'
+apps/dielines/exporters/design_preview.py:214:        f'<polygon points="{cut_pts}" fill="none" stroke="#0000FF" '
+apps/dielines/exporters/design_preview.py:220:            f'stroke="#FF0000" stroke-width="0.3" stroke-dasharray="3 2" '
+apps/dielines/exporters/design_preview.py:227:        f'fill="#8B3A52">{_CAPTION}</text>'
+apps/dielines/services/export_service.py:305:            _tint = artwork_tint or "#EFE9E4"

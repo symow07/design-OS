@@ -1,0 +1,430 @@
+{
+  "milestone": "DIP-0C3",
+  "slice_frozen_by": "DIP-0C3a",
+  "frozen": true,
+  "pilot_size": 21,
+  "notes": {
+    "purpose": "Brand masters, logos, third-party contamination, the palette, and the rights-blocked bottleneck. C3a audits TECHNIQUE and RELATIONSHIPS only — it infers no ownership, licence, canonical status or permission.",
+    "queue_i": "The 18 C2d Queue-I candidates resolve to 7 unique SOURCE files, all included.",
+    "grounded": "technical_readiness_c1 and brand_name_detection_capability are MEASURED from the C1 audit and the actual live-text span count, not assumed.",
+    "filename_proves_nothing": "Folder location and filename are recorded as supporting evidence ONLY. Three of the five vector logos in the BBROSE office folder are third-party (ATC x2, JOJIA x1).",
+    "no_mid_implementation_expansion": "Do not add entries during implementation without recording why."
+  },
+  "entries": [
+    {
+      "relative_path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/BBROSE.pdf",
+      "dip0a_classification": "BRAND_MASTER",
+      "c1_c2_classification_override": null,
+      "c3_test_role": "brand_master_mislabelled",
+      "format": ".pdf",
+      "technical_readiness_c1": "TECHNICALLY_USABLE_WITH_CAVEATS",
+      "rights_ownership_risk": "bbrose_named_but_unconfirmed",
+      "brand_name_detection_capability": "DIRECT",
+      "brand_name_detection_evidence": "44 live-text span(s) -> the wordmark text is extractable",
+      "reason_selected": "DIP-0A calls it BRAND_MASTER, but it is a 115 MB, 1-page, ~80% raster design composition with 18 embedded images and live text — not isolated logo geometry. C3 records a classification override; it can never be a canonical master.",
+      "queue_i_membership": {
+        "in_queue_i": false,
+        "candidates": []
+      }
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/BBROSE-1.pdf",
+      "dip0a_classification": "BRAND_MASTER",
+      "c1_c2_classification_override": null,
+      "c3_test_role": "brand_master_mislabelled",
+      "format": ".pdf",
+      "technical_readiness_c1": "TECHNICALLY_USABLE_WITH_CAVEATS",
+      "rights_ownership_risk": "bbrose_named_but_unconfirmed",
+      "brand_name_detection_capability": "DIRECT",
+      "brand_name_detection_evidence": "56 live-text span(s) -> the wordmark text is extractable",
+      "reason_selected": "As above: 161 MB, ~81% raster, 29 embedded images, 56 live-text spans. Design composition, not a vector master.",
+      "queue_i_membership": {
+        "in_queue_i": false,
+        "candidates": []
+      }
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/logo.pdf",
+      "dip0a_classification": "LOGO",
+      "c1_c2_classification_override": null,
+      "c3_test_role": "logo_candidate_outlined",
+      "format": ".pdf",
+      "technical_readiness_c1": "TECHNICALLY_USABLE_WITH_CAVEATS",
+      "rights_ownership_risk": "ownership_unknown",
+      "brand_name_detection_capability": "REQUIRES_HUMAN",
+      "brand_name_detection_evidence": "0 live-text spans -> the wordmark is OUTLINED geometry; the brand name is NOT machine-readable (no OCR in C3)",
+      "reason_selected": "22 paths, 0% raster, ZERO live text -> the wordmark is OUTLINED. A real isolated-logo candidate whose brand name is NOT machine-readable.",
+      "queue_i_membership": {
+        "in_queue_i": false,
+        "candidates": []
+      }
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/LOGO6.ai",
+      "dip0a_classification": "LOGO",
+      "c1_c2_classification_override": null,
+      "c3_test_role": "logo_candidate_live_text",
+      "format": ".ai",
+      "technical_readiness_c1": "TECHNICALLY_USABLE_WITH_CAVEATS",
+      "rights_ownership_risk": "ownership_unknown",
+      "brand_name_detection_capability": "DIRECT",
+      "brand_name_detection_evidence": "1 live-text span(s) -> the wordmark text is extractable",
+      "reason_selected": "8 paths, 0% raster, 1 LIVE-TEXT span + 1 font -> brand name is directly extractable. The other plausible master. Also a Queue-I rights-blocked candidate.",
+      "queue_i_membership": {
+        "in_queue_i": true,
+        "candidates": [
+          {
+            "candidate_id": "835d34ee58f3ff9e",
+            "technical_readiness": "TECHNICALLY_READY"
+          }
+        ]
+      }
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/ATC LOGO.ai",
+      "dip0a_classification": "LOGO",
+      "c1_c2_classification_override": null,
+      "c3_test_role": "third_party_logo",
+      "format": ".ai",
+      "technical_readiness_c1": "TECHNICALLY_USABLE_WITH_CAVEATS",
+      "rights_ownership_risk": "third_party_unconfirmed",
+      "brand_name_detection_capability": "REQUIRES_HUMAN",
+      "brand_name_detection_evidence": "0 live-text spans -> the wordmark is OUTLINED geometry; the brand name is NOT machine-readable (no OCR in C3)",
+      "reason_selected": "54 paths. ATC is NOT BBROSE. Sitting inside the BBROSE office folder proves nothing — it must stay excluded from BBROSE retrieval/canonical/production.",
+      "queue_i_membership": {
+        "in_queue_i": false,
+        "candidates": []
+      }
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/JOJIA LOGO.ai",
+      "dip0a_classification": "LOGO",
+      "c1_c2_classification_override": null,
+      "c3_test_role": "third_party_logo_live_text",
+      "format": ".ai",
+      "technical_readiness_c1": "TECHNICALLY_USABLE_WITH_CAVEATS",
+      "rights_ownership_risk": "third_party_unconfirmed",
+      "brand_name_detection_capability": "DIRECT",
+      "brand_name_detection_evidence": "4 live-text span(s) -> the wordmark text is extractable",
+      "reason_selected": "149 paths, 4 live-text spans -> the third-party brand name is directly readable, which is exactly how contamination is proven.",
+      "queue_i_membership": {
+        "in_queue_i": false,
+        "candidates": []
+      }
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/LOGO ATC.ai",
+      "dip0a_classification": "REUSABLE_VECTOR_ASSET",
+      "c1_c2_classification_override": null,
+      "c3_test_role": "third_party_logo_misshelved",
+      "format": ".ai",
+      "technical_readiness_c1": "TECHNICALLY_USABLE_WITH_CAVEATS",
+      "rights_ownership_risk": "third_party_unconfirmed",
+      "brand_name_detection_capability": "REQUIRES_HUMAN",
+      "brand_name_detection_evidence": "0 live-text spans -> the wordmark is OUTLINED geometry; the brand name is NOT machine-readable (no OCR in C3)",
+      "reason_selected": "7 paths. DIP-0A shelved it as REUSABLE_VECTOR_ASSET, but it is a THIRD-PARTY LOGO. A second ATC mark in the brand folder.",
+      "queue_i_membership": {
+        "in_queue_i": false,
+        "candidates": []
+      }
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/ATC PRESENTATION.pdf",
+      "dip0a_classification": "REUSABLE_VECTOR_ASSET",
+      "c1_c2_classification_override": null,
+      "c3_test_role": "third_party_deck",
+      "format": ".pdf",
+      "technical_readiness_c1": "NEEDS_CLEANUP",
+      "rights_ownership_risk": "third_party_unconfirmed",
+      "brand_name_detection_capability": "DIRECT",
+      "brand_name_detection_evidence": "55 live-text span(s) -> the wordmark text is extractable",
+      "reason_selected": "Third-party presentation deck inside the BBROSE office folder.",
+      "queue_i_membership": {
+        "in_queue_i": false,
+        "candidates": []
+      }
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/ATC PRESENTATION-1.pdf",
+      "dip0a_classification": "REUSABLE_VECTOR_ASSET",
+      "c1_c2_classification_override": "THIRD_PARTY_RESTRICTED (C1)",
+      "c3_test_role": "third_party_deck",
+      "format": ".pdf",
+      "technical_readiness_c1": "NEEDS_CLEANUP",
+      "rights_ownership_risk": "third_party_unconfirmed",
+      "brand_name_detection_capability": "DIRECT",
+      "brand_name_detection_evidence": "54 live-text span(s) -> the wordmark text is extractable",
+      "reason_selected": "Third-party deck (C1 already overrode it to THIRD_PARTY_RESTRICTED).",
+      "queue_i_membership": {
+        "in_queue_i": false,
+        "candidates": []
+      }
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/ATC PRESENTATION-2.pdf",
+      "dip0a_classification": "REUSABLE_VECTOR_ASSET",
+      "c1_c2_classification_override": null,
+      "c3_test_role": "third_party_deck",
+      "format": ".pdf",
+      "technical_readiness_c1": "NEEDS_CLEANUP",
+      "rights_ownership_risk": "third_party_unconfirmed",
+      "brand_name_detection_capability": "DIRECT",
+      "brand_name_detection_evidence": "54 live-text span(s) -> the wordmark text is extractable",
+      "reason_selected": "Third-party deck.",
+      "queue_i_membership": {
+        "in_queue_i": false,
+        "candidates": []
+      }
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/ATC PRESENTATION-3.pdf",
+      "dip0a_classification": "REUSABLE_VECTOR_ASSET",
+      "c1_c2_classification_override": null,
+      "c3_test_role": "third_party_deck",
+      "format": ".pdf",
+      "technical_readiness_c1": "NEEDS_CLEANUP",
+      "rights_ownership_risk": "third_party_unconfirmed",
+      "brand_name_detection_capability": "DIRECT",
+      "brand_name_detection_evidence": "54 live-text span(s) -> the wordmark text is extractable",
+      "reason_selected": "Third-party deck.",
+      "queue_i_membership": {
+        "in_queue_i": false,
+        "candidates": []
+      }
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/Color Obsession_ BBROSE® Flair.png",
+      "dip0a_classification": "PRODUCT_REFERENCE",
+      "c1_c2_classification_override": null,
+      "c3_test_role": "bbrose_product_render",
+      "format": ".png",
+      "technical_readiness_c1": "TECHNICALLY_USABLE_WITH_CAVEATS",
+      "rights_ownership_risk": "ai_generated_render_unconfirmed",
+      "brand_name_detection_capability": "NOT_APPLICABLE",
+      "brand_name_detection_evidence": "raster: no live-text layer to read a brand name from",
+      "reason_selected": "A BBROSE-named RASTER render sitting beside the brand masters. Per the DIP-0A rule a BBROSE-named raster is PRODUCT_REFERENCE and can NEVER be a canonical master.",
+      "queue_i_membership": {
+        "in_queue_i": false,
+        "candidates": []
+      }
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/محفوظات شغل  02 المكتب/Peach Perfection_ BBROSE Nail Polish.png",
+      "dip0a_classification": "PRODUCT_REFERENCE",
+      "c1_c2_classification_override": null,
+      "c3_test_role": "bbrose_product_render",
+      "format": ".png",
+      "technical_readiness_c1": "TECHNICALLY_USABLE_WITH_CAVEATS",
+      "rights_ownership_risk": "ai_generated_render_unconfirmed",
+      "brand_name_detection_capability": "NOT_APPLICABLE",
+      "brand_name_detection_evidence": "raster: no live-text layer to read a brand name from",
+      "reason_selected": "Second BBROSE-named raster render in the office folder.",
+      "queue_i_membership": {
+        "in_queue_i": false,
+        "candidates": []
+      }
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/نماذج عامة من  01الانترنيت/BBROSE_palette.png",
+      "dip0a_classification": "PRODUCT_REFERENCE",
+      "c1_c2_classification_override": null,
+      "c3_test_role": "bbrose_palette_raster",
+      "format": ".png",
+      "technical_readiness_c1": "TECHNICALLY_USABLE_WITH_CAVEATS",
+      "rights_ownership_risk": "ai_generated_render_unconfirmed",
+      "brand_name_detection_capability": "NOT_APPLICABLE",
+      "brand_name_detection_evidence": "raster: no live-text layer to read a brand name from",
+      "reason_selected": "Named 'BBROSE_palette' but it is a RASTER in the internet-downloads folder. A filename is not a palette and not proof of ownership.",
+      "queue_i_membership": {
+        "in_queue_i": false,
+        "candidates": []
+      }
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/نماذج عامة من  01الانترنيت/Pantone_3519C.ase",
+      "dip0a_classification": "COLOR_PALETTE",
+      "c1_c2_classification_override": null,
+      "c3_test_role": "color_palette_ase",
+      "format": ".ase",
+      "technical_readiness_c1": null,
+      "rights_ownership_risk": "third_party_color_system_unconfirmed",
+      "brand_name_detection_capability": "NOT_APPLICABLE",
+      "brand_name_detection_evidence": "deferred: no live-text layer to read a brand name from",
+      "reason_selected": "The only .ase. 'Pantone' is a THIRD-PARTY trademarked colour system and the file sits in an internet-downloads folder: both signals argue AGAINST BBROSE ownership. Deep-parsed in C3c; recorded here.",
+      "queue_i_membership": {
+        "in_queue_i": false,
+        "candidates": []
+      }
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/9993170.ai",
+      "dip0a_classification": "REUSABLE_VECTOR_ASSET",
+      "c1_c2_classification_override": null,
+      "c3_test_role": "queue_i_rights_blocked",
+      "format": ".ai",
+      "technical_readiness_c1": "TECHNICALLY_USABLE_WITH_CAVEATS",
+      "rights_ownership_risk": "technically_ready_rights_unverified",
+      "brand_name_detection_capability": "REQUIRES_HUMAN",
+      "brand_name_detection_evidence": "0 live-text spans -> the wordmark is OUTLINED geometry; the brand name is NOT machine-readable (no OCR in C3)",
+      "reason_selected": "Technically strong but ownership unconfirmed / licence unverified — the C2d Queue-I bottleneck. Looks ready; is not usable.",
+      "queue_i_membership": {
+        "in_queue_i": true,
+        "candidates": [
+          {
+            "candidate_id": "708000dd4543375c",
+            "technical_readiness": "TECHNICALLY_READY"
+          },
+          {
+            "candidate_id": "027f8369ea6df36c",
+            "technical_readiness": "TECHNICALLY_READY"
+          },
+          {
+            "candidate_id": "732101066a8aa0b5",
+            "technical_readiness": "TECHNICALLY_READY"
+          },
+          {
+            "candidate_id": "40e18d412e8e7a48",
+            "technical_readiness": "TECHNICALLY_READY"
+          }
+        ]
+      }
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/abstract-background-with-rounded-shapes/344195-PC2FZA-950.ai",
+      "dip0a_classification": "BACKGROUND",
+      "c1_c2_classification_override": null,
+      "c3_test_role": "queue_i_rights_blocked",
+      "format": ".ai",
+      "technical_readiness_c1": "TECHNICALLY_USABLE_WITH_CAVEATS",
+      "rights_ownership_risk": "technically_ready_rights_unverified",
+      "brand_name_detection_capability": "DIRECT",
+      "brand_name_detection_evidence": "2 live-text span(s) -> the wordmark text is extractable",
+      "reason_selected": "Technically strong but ownership unconfirmed / licence unverified — the C2d Queue-I bottleneck. Looks ready; is not usable.",
+      "queue_i_membership": {
+        "in_queue_i": true,
+        "candidates": [
+          {
+            "candidate_id": "1cb5f26a9b6dec30",
+            "technical_readiness": "TECHNICALLY_USABLE_WITH_CAVEATS"
+          },
+          {
+            "candidate_id": "069efd532dc8fb78",
+            "technical_readiness": "TECHNICALLY_USABLE_WITH_CAVEATS"
+          }
+        ]
+      }
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/acid-cosmetics-make-up-stickers-collection/9347862.ai",
+      "dip0a_classification": "MOTIF",
+      "c1_c2_classification_override": null,
+      "c3_test_role": "queue_i_rights_blocked",
+      "format": ".ai",
+      "technical_readiness_c1": "TECHNICALLY_USABLE_WITH_CAVEATS",
+      "rights_ownership_risk": "technically_ready_rights_unverified",
+      "brand_name_detection_capability": "REQUIRES_HUMAN",
+      "brand_name_detection_evidence": "0 live-text spans -> the wordmark is OUTLINED geometry; the brand name is NOT machine-readable (no OCR in C3)",
+      "reason_selected": "Technically strong but ownership unconfirmed / licence unverified — the C2d Queue-I bottleneck. Looks ready; is not usable.",
+      "queue_i_membership": {
+        "in_queue_i": true,
+        "candidates": [
+          {
+            "candidate_id": "9afe7eaed7fcbe4e",
+            "technical_readiness": "TECHNICALLY_READY"
+          },
+          {
+            "candidate_id": "8bebf7ba758744f0",
+            "technical_readiness": "TECHNICALLY_USABLE_WITH_CAVEATS"
+          },
+          {
+            "candidate_id": "af97bc7dd67d57cd",
+            "technical_readiness": "TECHNICALLY_USABLE_WITH_CAVEATS"
+          },
+          {
+            "candidate_id": "38335f9a113e1617",
+            "technical_readiness": "TECHNICALLY_READY"
+          },
+          {
+            "candidate_id": "77b1eaa67d19a9cb",
+            "technical_readiness": "TECHNICALLY_READY"
+          },
+          {
+            "candidate_id": "fedfe8387ba7ff9f",
+            "technical_readiness": "TECHNICALLY_READY"
+          }
+        ]
+      }
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/baby-pattern-collection-four/260107-P4T7LC-198.ai",
+      "dip0a_classification": "PATTERN",
+      "c1_c2_classification_override": null,
+      "c3_test_role": "queue_i_rights_blocked",
+      "format": ".ai",
+      "technical_readiness_c1": "TECHNICALLY_USABLE_WITH_CAVEATS",
+      "rights_ownership_risk": "technically_ready_rights_unverified",
+      "brand_name_detection_capability": "DIRECT",
+      "brand_name_detection_evidence": "3 live-text span(s) -> the wordmark text is extractable",
+      "reason_selected": "Technically strong but ownership unconfirmed / licence unverified — the C2d Queue-I bottleneck. Looks ready; is not usable.",
+      "queue_i_membership": {
+        "in_queue_i": true,
+        "candidates": [
+          {
+            "candidate_id": "e11cc823b45cb3af",
+            "technical_readiness": "TECHNICALLY_READY"
+          },
+          {
+            "candidate_id": "45f7b2bda2cdd3ec",
+            "technical_readiness": "TECHNICALLY_READY"
+          },
+          {
+            "candidate_id": "a1270658ef3c6b7f",
+            "technical_readiness": "TECHNICALLY_USABLE_WITH_CAVEATS"
+          }
+        ]
+      }
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/DOWNLOADS 12-2025/background-remover(1)/Weixin Image_20250919141742_67_18.png",
+      "dip0a_classification": "BACKGROUND",
+      "c1_c2_classification_override": null,
+      "c3_test_role": "queue_i_rights_blocked",
+      "format": ".png",
+      "technical_readiness_c1": "TECHNICALLY_USABLE_WITH_CAVEATS",
+      "rights_ownership_risk": "technically_ready_rights_unverified",
+      "brand_name_detection_capability": "NOT_APPLICABLE",
+      "brand_name_detection_evidence": "raster: no live-text layer to read a brand name from",
+      "reason_selected": "Technically strong but ownership unconfirmed / licence unverified — the C2d Queue-I bottleneck. Looks ready; is not usable.",
+      "queue_i_membership": {
+        "in_queue_i": true,
+        "candidates": [
+          {
+            "candidate_id": "a6768acf3555bca0",
+            "technical_readiness": "TECHNICALLY_READY"
+          }
+        ]
+      }
+    },
+    {
+      "relative_path": "materials/DOWNLOADE 2026/نماذج عامة من  01الانترنيت/1_5061030170064.svg",
+      "dip0a_classification": "REUSABLE_VECTOR_ASSET",
+      "c1_c2_classification_override": null,
+      "c3_test_role": "queue_i_rights_blocked",
+      "format": ".svg",
+      "technical_readiness_c1": "TECHNICALLY_USABLE_WITH_CAVEATS",
+      "rights_ownership_risk": "technically_ready_rights_unverified",
+      "brand_name_detection_capability": "NOT_APPLICABLE",
+      "brand_name_detection_evidence": "svg: no live-text layer to read a brand name from",
+      "reason_selected": "Technically strong but ownership unconfirmed / licence unverified — the C2d Queue-I bottleneck. Looks ready; is not usable.",
+      "queue_i_membership": {
+        "in_queue_i": true,
+        "candidates": [
+          {
+            "candidate_id": "ae45e20377b1e0a3",
+            "technical_readiness": "TECHNICALLY_READY"
+          }
+        ]
+      }
+    }
+  ]
+}

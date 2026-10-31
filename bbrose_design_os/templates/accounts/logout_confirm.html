@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% comment %}Signing out, asked once (the owner's answer to the UI directions of 2026-09-25: the top bar carries no form).
+The one button posts to the same door as before.{% endcomment %}
+{% block title %}Sign out{% endblock %}
+{% block content %}
+<div class="signin">
+  <h1 class="h1">Sign out?</h1>
+  <p class="lead">{% if user.is_authenticated %}You are signed in as {{ user.get_username }}.{% else %}You are not signed in.{% endif %}</p>
+  <form method="post" action="{% url 'accounts:logout' %}">{% csrf_token %}
+    <button class="btn primary lg" type="submit">Sign out</button>
+    <a class="btn quiet" href="{% url 'dashboard:index' %}">Stay signed in</a>
+  </form>
+</div>
+{% endblock %}

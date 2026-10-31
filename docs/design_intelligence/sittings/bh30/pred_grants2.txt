@@ -1,0 +1,41 @@
+§AD0(a) PREDICTION — the §BH30(d) GRANTS commit, ATTEMPT 2 (per §BH30(k)(2)),
+sealed BEFORE git add. Base HEAD 90f2649 (T30k, scored 8/8). Attempt 1
+(pred_grants c23ff24544774ac1) stands scored as history.
+
+L1 WRITE SET: exactly TWO tracked paths, both under apps/ —
+   bbrose_design_os/apps/ire/container_font_owner_grant.py and
+   bbrose_design_os/apps/pipeline/tests/test_container_font_owner_grant.py.
+   Plus the gate-staged ledger line. NO register append, NO docs/, tools/,
+   static/ path, NO container_font_authority.py, NO test_wit_unit_analysis.py
+   (the denominator stays 863 by (k)(2)), NO ppp/tcp, NO suite-manifest
+   regeneration.
+L2 DIFF SHAPE: module 451/10 — unchanged from attempt 1 (OWNER_GRANTS_BH30 =
+   35 rows, one face each, keyed by sha256; OWNER_GRANTS = (OWNER_GRANT_BH26,)
+   + the 35; apply_owner_grant(authority, *, grant=None, grants=None), first
+   match governs, malformed dropped, evidence re-hashed once per grant per
+   application). Tests 76/0 — the five appended tests as before with ONE
+   assertion removed (`len(cfg.OWNER_GRANTS_BH30) == len(on_disk)`, the
+   analyser's extra check); the three neighbouring assertions (exactly one
+   face per row; no sha256 twice; the union == the 35 on disk) prove the
+   shape.
+L3 MANIFEST / A391: suite_file_manifest untouched (existing test file; file
+   set of 372 unchanged; total floor 7,690 ≤ apps 7,698); records untouched;
+   ledger at 449 passes the APPEND_ONLY prefix rule.
+L4 STAGED == DECLARED: exactly TWO numstat rows — 451 10 module, 76 0 tests;
+   nothing else staged; the ledger left to the gate.
+L5 COMMIT CONTENTS: 3 files (2 + ledger), insertions 528, deletions 10.
+L6 SUITE LINE + REFUSAL TREE: GREEN — TIER_2=GREEN collected=8510
+   failures=0 apps=7698 dip0c=671 dip0=141 (8505 + the five tests;
+   TREE_CHECKS 863 holds — the WIT register class 6 passed on this
+   worktree). No refusal expected; §BH24 budget 0/3. Targeted before the
+   gate: owner-grant 11 + container font authority 34 + wif reconstruct 31 =
+   76 passed; the Noto pair VERIFIED_FOR_PRODUCTION / USER_CONFIRMED ×2 under
+   Django with the tuple in place.
+L7 LEDGER FOLD: 449 → 450, the +1 in THIS commit.
+L8 PROTOCOL IDENTITIES / APPS DIFF / AUTHORITY: apps diff = exactly the two
+   paths; GATE 7fbeb8f1fe10b0fb and TEST b32030dc827263e4 byte-identical;
+   tree seals unchanged (dip0c 5ae44035bd03bae1, dip0a 4fe747b806ed71bd);
+   protocol_identity unchanged; neither ceiling nor guard moved; the Noto
+   pair VERIFIED_FOR_PRODUCTION under Django at scoring; the §BH30(d)
+   single-use authority SPENT on this landing; no other authority involved.
+   No new divergence.

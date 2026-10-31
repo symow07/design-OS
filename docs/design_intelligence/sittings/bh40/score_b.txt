@@ -1,0 +1,28 @@
+§AD0(a) SCORE — (b) THE INDEX AND THE REBUILD (§BH40(b)), against pred_b.txt
+(sealed 62e86f5c15fb6c76 before git add). Gate GREEN, GEXIT=0. LANDED bcb7eca
+(launched 2026-09-08T09:01:41Z, finished 09:15:57Z). 8/8. Launched once;
+services checked up; nothing beside it.
+
+L1 HELD: exactly 3 new paths tools/brain/{sources,chunker,rebuild}.py + the
+   gate-staged ledger; nothing else; var/brain/ untracked (ignored).
+L2 HELD: 3 added +521 (117 + 215 + 189), 0 modified, 0 deleted.
+L3 HELD: manifest/records/identity in commit NONE; the ledger APPEND_ONLY;
+   WIT 864 (tools/brain outside apps/); corpus constants, dip1b, the
+   exclusion list, the materials record untouched; no test file; the
+   two-roots guard's three names unchanged.
+L4 HELD: 3 rows "A" (proved before launch).
+L5 HELD: 4 files, 522 insertions, 0 deletions.
+L6 HELD: "TIER_2=GREEN collected=8594 failures=0 apps=7782 dip0c=671
+   dip0=141" — exact. No flush deadlock.
+L7 HELD: ledger 488 → 489 (utc 2026-09-08T09:02:16Z, verdict OK).
+L8 HELD: apps diff EMPTY; GATE 7fbeb8f1fe10b0fb [514:541] / TEST
+   b32030dc827263e4; tree seals dip0c c22592930c75001c / dip0a
+   d72072760ab20a6a unchanged; M7 artefacts == baseline; the register 20,213
+   lines db241ccf0b258e35 untouched; the DIP-0A inventory 3b3cfdc2bf4fc6c0;
+   under Django at bcb7eca the Noto trio VERIFIED_FOR_PRODUCTION (3) and
+   Warm Gold in both systems (2); NO TRACKED FILE CARRIES A REGISTER HASH
+   (git grep over tools/brain at HEAD: 0); the rebuild measured 2.56–2.80 s
+   against the 120 s bound, writing only var/brain/ (porcelain clean after
+   it); the index's facts as predicted (414 sources, 43,757 docs, 834 + 556
+   sections, 12,473 materials rows).
+Next, in the ruled order: (c) the server and the .mcp.json.

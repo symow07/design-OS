@@ -1,0 +1,140 @@
+{
+ "record_type": "p1_v4_source_derivation_manifest/1.0",
+ "created_at": "2026-08-04",
+ "search_priority_applied": [
+  "1. exact product/supplier match - SEARCHED, NOT FOUND (retail listings only, no technical data)",
+  "2. exact dimensional match - NOT FOUND",
+  "3. closely related 50 ml dropper-container component - FOUND (GL18/DIN18 class)",
+  "4. calculated geometric approximation - APPLIED (formulas below)",
+  "5. generic visualization default - APPLIED to 2 fields only (base thickness, base edge blend)"
+ ],
+ "online_sources": {
+  "exact_match": [],
+  "analogous_references_used": [
+   {
+    "url": "https://www.gewinde-normen.de/en/knuckle-thread-din-168.html",
+    "used_for": "DIN 168 GL18: pitch 3.00 mm; external thread 17.50-18.00; bolt minor 15.48-15.98 - classifies the P1 neck as GL18/DIN18 class (owner: thread 17.4 +/-0.2, neck 15.6, 3 turns over 18.11 mm neck)",
+    "confidence": "MEDIUM"
+   },
+   {
+    "url": "https://www.cwynnejones.com/gl18-clear-bottles/699-50ml-clear-bottle-90.html",
+    "used_for": "commodity 50 ml GL18 dropper bottle: H 92 x dia 37, pipette 87 - corroborates owner 91.6 x 37.4 / 88.74 (sanity check only)",
+    "confidence": "MEDIUM"
+   },
+   {
+    "url": "https://www.rapidlabs.co.uk/product/50ml-clear-glass-bottles-with-0-6mm-dripper-insert-and-tamper-evident-cap-pack-of-88/",
+    "used_for": "50 ml DIN18 soda-lime bottle family context (capped height 96.7, cap dia 24.6)",
+    "confidence": "MEDIUM"
+   }
+  ],
+  "consulted_not_relied_on": [
+   {
+    "url": "https://www.paramountglobal.com/knowledge/bottle-neck-thread-finish/",
+    "note": "410 finish = 1.5 thread turns; 415 = 2 turns - ruled the GPI 410/415 families less consistent with the owner's 3 visible turns than the DIN/GL multi-turn class"
+   },
+   {
+    "url": "https://www.containerandpackaging.com/resources/match_neck_finish/",
+    "note": "neck finish T/E/I/H definitions"
+   },
+   {
+    "url": "https://www.carowpackaging.com/blog/what-is-an-18-din-neck-and-why-should-you-care",
+    "note": "18 DIN neck background"
+   },
+   {
+    "url": "https://ranwaz.com/products/bbrose-vitamin-c-facial-serum-50ml",
+    "note": "exact product retail listing - no technical data"
+   },
+   {
+    "url": "https://bcute-kw.com/product/bbrose-facial-serum-with-hyaluronic-acid-50ml/",
+    "note": "exact product retail listing - no technical data"
+   },
+   {
+    "url": "https://www.amazon.ae/BBROSE-Vitamin-Moisturizing-Face-Cream/dp/B0DNFJSZ88",
+    "note": "P4-class product listing; its 3.5x3.5x4 cm packaging figure is NOT P1 data and was not used"
+   }
+  ]
+ },
+ "calculated_dimensions": [
+  {
+   "field": "neck_base_z_mm",
+   "value": 73.49,
+   "formula": "91.6 - 18.11",
+   "confidence": "HIGH"
+  },
+  {
+   "field": "collar_top_z_mm",
+   "value": 95.1,
+   "formula": "114.3 - 19.2 (bulb fully proud: visible height = removed height)",
+   "confidence": "HIGH"
+  },
+  {
+   "field": "collar_bottom_z_mm",
+   "value": 78.6,
+   "formula": "95.1 - 16.5",
+   "confidence": "HIGH"
+  },
+  {
+   "field": "collar_above_glass_mm",
+   "value": 3.5,
+   "formula": "95.1 - 91.6",
+   "confidence": "HIGH"
+  },
+  {
+   "field": "collar_neck_engagement_mm",
+   "value": 13.0,
+   "formula": "91.6 - 78.6",
+   "confidence": "HIGH"
+  },
+  {
+   "field": "pipette_top_z_mm",
+   "value": 97.9,
+   "formula": "9.16 + 88.74",
+   "confidence": "HIGH"
+  },
+  {
+   "field": "pipette_tip_interior_clearance_mm",
+   "value": 6.16,
+   "formula": "9.16 - 3.0 (provisional floor)",
+   "confidence": "MEDIUM"
+  },
+  {
+   "field": "shoulder_r_at_69_mm",
+   "value": 14.93,
+   "formula": "r(z) = 18.7 - (18.7-7.8)*(1-cos(pi*(z-66)/7.49))/2 evaluated at z=69",
+   "confidence": "MEDIUM"
+  }
+ ],
+ "visual_estimates": [
+  {
+   "field": "shoulder_curve_model",
+   "basis": "soft rounded shoulder in IMG_3120/3121",
+   "confidence": "MEDIUM"
+  },
+  {
+   "field": "bulb_dome_model",
+   "basis": "rounded teat bulb in IMG_3120/3123 (spherical-cap top over upper 27.5% of bulb height)",
+   "confidence": "MEDIUM"
+  }
+ ],
+ "generic_defaults": [
+  {
+   "field": "bottom_glass_thickness_mm",
+   "value": 3.0,
+   "basis": "typical moulded 50 ml glass base 2-4 mm; clearance math only",
+   "confidence": "LOW"
+  },
+  {
+   "field": "base_edge_blend_mm",
+   "value": 1.2,
+   "basis": "visual plausibility only",
+   "confidence": "LOW"
+  }
+ ],
+ "owner_values_never_overwritten": "every owner measurement enters the contract verbatim as OWNER_MEASURED; online values corroborate or classify, never replace",
+ "provider_calls": 0,
+ "web_research_calls": {
+  "searches": 5,
+  "page_fetches": 1
+ },
+ "v4_note": "V1 research carried forward unchanged; V4 adds no new online sources \u2014 shoulder/bulb control points and collar ribbing are VISUAL_ESTIMATE_FROM_OWNER_PHOTO"
+}

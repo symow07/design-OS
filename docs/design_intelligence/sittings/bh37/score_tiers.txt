@@ -1,0 +1,31 @@
+§AD0(a) SCORE — §BH37(1) THE TIER MODEL IN CODE, launched against
+pred_tiers.txt (sealed 7e0cd2ce6281f1aa before git add). Gate GREEN,
+GEXIT=0. LANDED 2463f29 (2026-09-05T08:11:39Z UTC). 8/8. Launched once,
+through the inner-root launcher, nothing running beside it.
+
+L1 HELD: exactly the three declared apps paths (two new modules, the
+   channel's test file) + the gate-staged ledger; no new test file; nothing
+   under docs/, tools/, static/ or materials/.
+L2 HELD: materials_authority.py 118/0; materials_owner_grant.py 102/0;
+   test_container_font_owner_grant.py 121/0 — exact; nine tests added.
+L3 HELD: manifest, records, identity untouched; ledger 469 → 470 with
+   HEAD~1 a byte-prefix of HEAD; census-first held — WIT 863 with its keys
+   (the analyser's test green in the targeted set and the gate), records
+   none, identity none, corpus constants none, the exclusion list untouched.
+L4 HELD: staged == declared, 3 rows (2 A, 1 M), measured before launch.
+L5 HELD: 4 files, 342 insertions, 0 deletions — exact.
+L6 HELD: "TIER_2=GREEN collected=8564 failures=0 apps=7752 dip0c=671
+   dip0=141" — exact (8555 + the nine tests). No refusal; §BH24 1/3.
+L7 HELD: ledger 469 → 470; the new line verdict OK, refusal_count 0.
+L8 HELD: apps diff = exactly the three paths; GATE 7fbeb8f1fe10b0fb at
+   [514:541] (593 lines), TEST b32030dc827263e4 — the font module
+   untouched, its partition re-asserted by the appended test; tree seals
+   unchanged; protocol_identity untouched; the eight M7 artefacts ==
+   baseline; under Django at scoring the Noto trio VERIFIED_FOR_PRODUCTION,
+   the 35 at their PROVENANCE hashes, MACHINE_WRITABLE_TIERS ==
+   ("REFERENCE",), MACHINE_FORBIDDEN_TIERS == ("PRODUCTION",),
+   MATERIAL_GRANTS empty — no authority spent; the DIP-0A inventory sha
+   f4c8db7f051989dc unchanged.
+Post-landing: porcelain clean. Next, in the ruled order: (2)+(3) — the
+three deleted lines and the regen, ONE atomic commit, the declaration
+regen_declaration_bh37.md sealed 0b8db28f3c3a1670 before the re-run.

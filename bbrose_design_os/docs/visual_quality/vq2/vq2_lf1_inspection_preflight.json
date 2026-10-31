@@ -1,0 +1,75 @@
+{
+ "checked_at": "2026-07-29",
+ "checks": {
+  "lf1_r1_hash": {
+   "expected": "fcd8003994d52028",
+   "actual": "fcd8003994d52028",
+   "pass": true
+  },
+  "prompt_a_hash": {
+   "expected": "589d9d142150bb6f",
+   "actual": "589d9d142150bb6f",
+   "hashed_input": "inspector identity string",
+   "pass": true
+  },
+  "prompt_b_hash": {
+   "expected": "f7cd3805fd161d81",
+   "actual": "f7cd3805fd161d81",
+   "hashed_input": "inspector identity string",
+   "pass": true
+  },
+  "five_input_images": {
+   "reference_product_name_crop": {
+    "expected": "a381ead75b5afb4a",
+    "actual": "a381ead75b5afb4a",
+    "pass": true
+   },
+   "reference_enlarged_x8": {
+    "expected": "d5fc167c225204ec",
+    "actual": "d5fc167c225204ec",
+    "pass": true
+   },
+   "lf1_r1_words": {
+    "expected": "0a97c0d1bc2d7f9f",
+    "actual": "0a97c0d1bc2d7f9f",
+    "pass": true
+   },
+   "lf1_r1_glyph_panel": {
+    "expected": "3deba66ce7288e01",
+    "actual": "3deba66ce7288e01",
+    "pass": true
+   },
+   "approved_logo": {
+    "expected": "c321c1bea4c69e27",
+    "actual": "c321c1bea4c69e27",
+    "pass": true
+   }
+  },
+  "input_image_count": {
+   "expected": 5,
+   "actual": 5,
+   "pass": true
+  },
+  "input_quality_manifest": {
+   "all_present": true,
+   "no_clipping": true,
+   "pass": true
+  },
+  "freeze_record_hashes_match_manifest": {
+   "pass": true
+  }
+ },
+ "prompt_body_hashes": {
+  "A": "db6b57e82b96d83d",
+  "B": "030ac6e418a1fc34",
+  "scope": "66f1c5a682012465",
+  "output_contract": "50b89201fa84808c"
+ },
+ "frozen_prompt_hash_defect": "VQ2_FROZEN_PROMPT_HASH_IS_IDENTITY_NOT_BODY \u2014 the frozen values hash the inspector identity strings, so they never constrained the prompt text. Disclosed, not silently corrected: the frozen values are still checked as mandated, and true body hashes are recorded from this run forward. The bodies sent here are byte-identical to the hold-slice runner.",
+ "all_pass": true,
+ "no_crop_rebuilt": true,
+ "no_prompt_rewritten": true,
+ "no_evidence_regenerated": true,
+ "no_geometry_changed": true,
+ "no_axes_or_tracking_changed": true
+}

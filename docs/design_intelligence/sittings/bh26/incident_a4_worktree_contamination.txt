@@ -1,0 +1,62 @@
+INCIDENT — executor-caused worktree contamination during attempt 4's gate
+(2026-09-03, local CST). Recorded immediately; not resolved silently.
+
+WHAT HAPPENED. While attempt 4's guarded gate was inside TIER_2 (the
+full-suite stage; .tier2_gate_output stamped 11:00:17, .suite_gate_result
+11:00:09 — Tier-1 and the records step already passed, ledger 437), the
+executor rehearsed commit B's apply script on scratch copies. The rehearsal
+re-pointed the script's INNER constant with a sed over the whole line —
+`sed "s#^INNER = .*#INNER = '<scratch>'#"` — and that line ALSO carried
+`; os.chdir(INNER)`. The sed deleted the chdir, so the script ran with the
+shell's cwd (the REAL inner root) and applied commit B's edits to the REAL
+files by their relative paths:
+   apps/ire/container_font_evidence_join.py          (mtime 11:06:35)
+   apps/pipeline/targets/container/__init__.py       (mtime 11:06:35)
+   apps/pipeline/tests/test_wif_reconstruct_container.py (mtime 11:06:35)
+The edits were UNSTAGED; the index (commit A's sealed ten paths) was never
+touched. Detected two commands later by the porcelain count (12 rows, 4
+unstaged) and a reversed diff direction in the rehearsal's own report.
+
+REMEDY, IMMEDIATE. `git checkout -- <the three files>` at ~11:08:20
+restored each to its INDEX content; verified: container/__init__.py and
+test_wif_reconstruct_container.py sha256-equal to stash_a4/sha256s_ten.txt
+(the sealed content); container_font_evidence_join.py == HEAD (it is not in
+commit A's write set). Porcelain afterwards: exactly the ten staged rows +
+the gate's own unstaged ledger line (437). Contamination window on disk:
+11:06:35 → ~11:08:20, about two minutes, entirely inside the full-suite
+subprocess's run.
+
+EFFECT ON THE MEASUREMENT (assessed, then corroborated). pytest collects
+and imports every test module — and therefore the modules they import — at
+session start, minutes before the window. Both affected source modules are
+imported at module level by their test files (measured: see the grep
+recorded below), so the subprocess held the SEALED versions in memory for
+the whole run; edits on disk during the window could only have reached a
+first-time lazy import, and the sealed call site performs no such import.
+The gate's `git commit` commits the INDEX, which was never contaminated.
+Nevertheless the gate's TIER_2 verdict was obtained with a worktree that
+briefly differed from the committed tree, so attempt 4's L6 is scored with
+this incident attached and is CORROBORATED by a clean full three-leg suite
+run at the landed HEAD (the census driver, zero-write) BEFORE commit B is
+applied. If the gate refuses, the incident is reported alongside the
+refusal, not folded into it.
+
+PREVENTION. apply_b.py now sets INNER and performs the chdir on SEPARATE
+lines and asserts os.getcwd() == INNER before any edit; rehearsals copy the
+script to the scratch tree and rewrite ONLY the constant line. Rule taken
+for the arc: no script that edits by relative path runs while a gate is
+running, rehearsal or not.
+
+MEASURED (the grep referenced above): both affected source modules are
+imported at MODULE LEVEL by test files, i.e. at pytest collection, minutes
+before the window —
+   apps/pipeline/tests/test_container_font_authority.py:20
+      from apps.ire import container_font_evidence_join as cfj
+   apps/pipeline/tests/test_wif_reconstruct_container.py:76
+      from apps.pipeline.targets.container import (...)
+   apps/pipeline/tests/test_container_target.py:27
+      from apps.pipeline.targets.container import ProductContainerTarget
+and no non-test code path imports container_font_evidence_join at all at
+the sealed HEAD (git grep: only the module's own SCHEMA line), so no lazy
+first import could have picked the edited bytes up. The corroborating clean
+run at the landed HEAD stands regardless.

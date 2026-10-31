@@ -1,0 +1,33 @@
+{% extends "dashboard/library/base.html" %}
+{% block title %}House references{% endblock %}
+{% block content %}
+<h1>House references</h1>
+<p class="lede">Past production designs from the production library — {{ total }} of them, their lineage as the house's
+  own not confirmed — as a design's planner reads them: what each is, its layout, type, motifs, finishes and colours.
+  Their pictures are not shown: reference files are never served.</p>
+<form class="filters" method="get" action="{% url 'dashboard:house_references' %}" role="search">
+  <label>Search<input type="search" name="q" value="{{ q }}" placeholder="a product, a motif, a finish…"></label>
+  <button type="submit">Show</button>
+</form>
+<p class="count">{% if q %}{{ references|length }} match “{{ q }}”{% else %}{{ references|length }} references{% endif %}</p>
+<div class="refs">
+{% for r in references %}
+  <details class="ref">
+    <summary><strong>{{ r.name }}</strong> <span class="dim">· {{ r.product_type|default:"—" }}{% if r.category %} · {{ r.category }}{% endif %}</span>
+      {% if r.palette %}<span class="ref-palette">{% for h in r.palette %}<svg class="dot" viewBox="0 0 12 12" aria-hidden="true"><rect width="12" height="12" fill="{{ h }}"/></svg>{% endfor %}</span>{% endif %}</summary>
+    {% if r.summary %}<p>{{ r.summary }}</p>{% endif %}
+    <dl class="anatomy">
+      {% if r.layout %}<dt>Layout</dt><dd>{% for k, v in r.layout %}{{ k }}: {{ v }}{% if not forloop.last %}; {% endif %}{% endfor %}</dd>{% endif %}
+      {% if r.type %}<dt>Type</dt><dd>{% for k, v in r.type %}{{ k }}: {{ v }}{% if not forloop.last %}; {% endif %}{% endfor %}</dd>{% endif %}
+      {% if r.motifs %}<dt>Motifs</dt><dd>{{ r.motifs|join:"; " }}</dd>{% endif %}
+      {% if r.finishes %}<dt>Finishes</dt><dd>{{ r.finishes }}</dd>{% endif %}
+      {% if r.palette %}<dt>Colours</dt><dd class="mono">{{ r.palette|join:" " }}</dd>{% endif %}
+      {% if r.back %}<dt>Back panel</dt><dd>{% for k, v in r.back %}{{ k }}: {{ v }}{% if not forloop.last %}; {% endif %}{% endfor %}</dd>{% endif %}
+      {% if r.tags %}<dt>Tags</dt><dd>{{ r.tags|join:", " }}</dd>{% endif %}
+    </dl>
+  </details>
+{% empty %}
+  <p class="dim">No reference matches.</p>
+{% endfor %}
+</div>
+{% endblock %}

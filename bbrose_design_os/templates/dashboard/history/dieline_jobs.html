@@ -1,0 +1,18 @@
+{% extends "dashboard/history/base.html" %}
+{% load plain_words %}
+{% block title %}Dieline jobs{% endblock %}
+{% block content %}
+<h1>Dieline jobs</h1>
+<p class="lede">Every structure-generation job, including those no task links to, with its structure-selection record and files.</p>
+{% for j in jobs %}
+<section class="block">
+  <h3 class="mono">{{ j.job.pk }}</h3>
+  <div class="facts"><span class="pill">{{ j.job.template_type|plain }}</span><span>scenario {{ j.job.scenario|plain }}</span><span>{{ j.job.validation_status|plain }}</span>
+    <span>{{ j.job.created_at|date:"j F Y, H:i" }}</span>{% if j.job.product %}<span>product {{ j.job.product.name }}</span>{% endif %}
+    <span>{% for t in j.tasks %}<a href="{% url 'dashboard:history_task' t %}">design #{{ t }}</a> {% empty %}linked to no design{% endfor %}</span></div>
+  <ul class="files">{% for f in j.files %}{% include "dashboard/history/_file.html" %}{% empty %}<li class="dim">No output paths recorded.</li>{% endfor %}</ul>
+  <details><summary>Structure selection</summary><pre>{{ j.selection }}</pre></details>
+  {% if j.warnings %}<details><summary>Warnings</summary><pre>{{ j.warnings }}</pre></details>{% endif %}
+</section>
+{% empty %}<p class="dim">No dieline jobs.</p>{% endfor %}
+{% endblock %}

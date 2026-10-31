@@ -1,0 +1,36 @@
+§AD0(a) SCORE — T41 (§BH41 transcription, pure append, its own commit BEFORE
+any act; the §BH40(a) import stashed for its gate), launched against
+pred_t41.txt (sealed a778a16149769877 before the stash, the append and git
+add). Gate GREEN, GEXIT=0. LANDED 08a7c45 (launched 2026-09-08T05:45:07Z,
+finished 05:59:15Z). 8/8. Launched once; services checked up; nothing
+beside it.
+
+L1 HELD: exactly ONE path + the gate-staged ledger; nothing outside apps +
+   register + ledger (NONE); no CLAUDE.md, .mcp.json, tools/brain, var/brain.
+L2 HELD: register +94 −0; the 20,119-line prefix a26433bcb4a8c545 at HEAD;
+   the tail ed0497c2acb36d63 == ~/bh41_work/t41_block.md; the 58 owner lines
+   round-trip byte-identical (72e64d1d6cd53b00); 20,213 lines.
+L3 HELD: suite manifest untouched; manifest/records/identity in commit NONE;
+   the ledger APPEND_ONLY (HEAD~1 a byte-prefix of HEAD); WIT 864 untouched;
+   corpus constants, dip1b, the exclusion list, the materials record and
+   summary untouched; no new test file.
+L4 HELD: staged == declared, one row 94 0 (+ the gate's 2 0 ledger row).
+L5 HELD: 2 files, 96 insertions, 0 deletions.
+L6 HELD: "TIER_2=GREEN collected=8590 failures=0 apps=7778 dip0c=671
+   dip0=141" — exact. No flush deadlock on this run; no re-run needed.
+L7 HELD: ledger 484 → 486 — the refused (a) attempt's orphan (utc
+   2026-09-08T05:12:36Z) and this run's line both in this commit; verdict
+   OK, refusal_count 0.
+L8 HELD: apps diff EMPTY; GATE 7fbeb8f1fe10b0fb at [514:541] (593 lines);
+   TEST b32030dc827263e4; tree seals dip0c c22592930c75001c / dip0a
+   d72072760ab20a6a unchanged; protocol_identity untouched; the eight M7
+   artefacts == baseline; under Django at 08a7c45 the Noto trio
+   VERIFIED_FOR_PRODUCTION, the 35 (+ licence texts, 50 files) at their
+   PROVENANCE hashes; Warm Gold #CBA87D a Ground swatch in CS-001 and CS-002
+   (six swatches each); the DIP-0A inventory 3b3cfdc2bf4fc6c0 unchanged.
+   THE STASH: stash@{0} holds exactly the 298 recorded entries (path + blob
+   identical to ~/bh41_work/import_index_entries.txt, checked after the
+   landing); no sittings/ path on disk; porcelain clean. Not popped, not
+   read, not written by the commit.
+Next, in the ruled order: (1) the reproduction — the mechanism proof, then
+the three hypothesis runs with the sampler, counts reported.

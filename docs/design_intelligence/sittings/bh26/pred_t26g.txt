@@ -1,0 +1,42 @@
+§AD0(a) PREDICTION — T26g (§BH26(g) transcription, pure append), sealed
+BEFORE git add. Base HEAD 7108fc6.
+
+L1 WRITE SET: exactly ONE path — OWNER_BLOCKER_CLEARANCE.md (outer
+   root), the §BH26(g) block. Plus the gate-staged ledger line. NO
+   apps/ path, NO docs/roadmap path. The SEVEN commit-A WIP paths sit
+   in stash@{0} (all seven re-verified OK immediately before the push —
+   five apps paths against stash_a/sha256s.txt, manifest/diff-log
+   against stash_a/sha256s_docs.txt fe4199bc…/065b33fc…; after the
+   push both new files verified ABSENT and all five tracked paths
+   verified HEAD-identical; porcelain register-only).
+L2 DIFF SHAPE: register +75 −0 (1 seam blank + 74 block lines);
+   17,349-line prefix byte-identical, proved at append (worktree==HEAD
+   hash e1b14464… == head -17349 post-append); appended tail
+   byte-identical to the block file (86446f0e…); total 17,424.
+L3 MANIFEST / A391: manifest untouched at HEAD — extent guard passes
+   against the 371-declared disk state with the WIP paths off disk, as
+   at T26d/T26e/T26f. The records chain is digest-consistent in this
+   configuration (old manifest ↔ old record_digest pin ↔ old
+   identity), so the three GuardedCommitTests that refused attempt 2
+   PASS here — the same state T26f gated green through. The PREVIEW
+   (which mints the binding pair) and R1–R3 are the NEXT acts, after
+   this landing and the byte-verified restore.
+L4 STAGED == DECLARED: exactly one row: 75 0 OWNER_BLOCKER_CLEARANCE.md.
+L5 COMMIT CONTENTS: 2 files (register + ledger), insertions 75+1=76,
+   deletions 0.
+L6 SUITE LINE + REFUSAL TREE: GREEN — TIER_2=GREEN collected=8490
+   failures=0 apps=7684 dip0c=671 dip0=135, identical to
+   T26d/T26e/T26f (identical apps/ and docs/ disk state). No refusal
+   expected; §BH24 0/3 standing.
+L7 LEDGER FOLD: 433 → 434, the +1 in THIS commit.
+L8 PROTOCOL IDENTITIES / APPS DIFF: apps diff EMPTY; both protected
+   regions byte-identical at scoring (GATE 7fbeb8f1fe10b0fb @ cfa
+   worktree [514:541]; TEST b32030dc827263e4 @ a76242c^ blob [82:98],
+   cwd-correct pathspec, checked exit). protocol_identity UNCHANGED at
+   this commit — ead892658e3323a8; under §BH26(g) the declared move
+   belongs to commit A and its target is NO LONGER A FIXED HEX: it is
+   the pair the zero-write preview mints immediately before R1 over
+   the post-T26g tree (ledger 434), recorded verbatim in pred_a3's
+   seal before git add. Stash restore after scoring, byte-verified
+   against BOTH sha256 records, BEFORE the preview mints. §BH26(a)
+   authority UNSPENT at this commit.

@@ -1,0 +1,718 @@
+{% extends "base.html" %}
+{% load plain_words %}
+{% comment %}VQ-1 — THE BOTTLE'S STRUCTURE REVIEW, in the one shell (the owner's goal of 2026-09-25: "One clean visual system",
+"Plain words everywhere"): a summary in words at rest, every panel of the programme's record folded beneath it with
+every word and link it had, and the decision form as it was.{% endcomment %}
+{% block title %}The bottle's structure review{% endblock %}
+{% block content %}
+<h1 class="h1">The bottle's structure review</h1>
+<p class="lead">The programme that measures how finished a bottle's drawing looks — its first stage, VQ-1, the bottle's
+  structure. This page keeps its record; the decision below is yours.</p>
+<dl class="prog-dl vq-summary">
+  <dt>The bottle's structure (VQ-1)</dt>
+  <dd>{% if acceptance %}Accepted by you, and closed — its final candidate within tolerance. Accepting it does not clear
+    it for production.{% else %}{{ review.state|plain }}{% endif %}</dd>
+  {% if workstream %}
+  <dt>Its artwork (VQ-2)</dt><dd>{{ workstream.VQ_2|plain }} — it never starts by itself.</dd>
+  <dt>VQ-3</dt><dd>{{ workstream.VQ_3|plain }}</dd>
+  {% endif %}
+  <dt>Production</dt>
+  <dd>Its five gates and the spec pack they wait on are on <a href="{% url 'dashboard:status' %}#gates">Status</a>, in
+    words. The system never contacts suppliers (§BH46).</dd>
+</dl>
+
+<details class="tech vq-fold"><summary>Where the programme stands — its panels, as the record keeps them</summary>
+
+  <h1>VQ-1 — STRUCTURAL FORM REVIEW</h1>
+  <p><strong>Scope:</strong> cylindrical bottle backbone · neck/collar/bulb
+     assembly · structure only.<br>
+     <strong>Not included:</strong> glass realism · metal realism ·
+     typography · decoration · task #52 reconstruction acceptance.</p>
+  <p>Fixture <code>cylindrical_serum_dropper_backbone/1.0</code> ·
+     CORR-5 closure-first reset, contour v1.1 (VQ-1 / CORR-2 / CORR-3 /
+     CORR-4 all REJECTED — preserved immutably) ·
+     automated: <code>PASSES_STRUCTURAL_FORM_PENDING_HUMAN_REVIEW</code> ·
+     human review: <strong>{{ review.state }}</strong></p>
+{% if vq2 %}
+{% if vq2.production_authority %}
+  <section class="vq-panel note">
+    <h2 class="vq-h">PRODUCTION AUTHORITY PREFLIGHT —
+       {{ vq2.production_authority.state }}</h2>
+{% if vq2.production_authority.gate_a_passed %}
+    <p class="vq-callout done">
+       <strong>GATE A PASSED — Illustrator execution verified.</strong><br>
+       The round trip completed: opened, saved, closed, reopened, PDF and PNG
+       exported, both human confirmations answered, no warning. Re-measured
+       here from the returned files rather than taken from the report — all
+       four hashes match, artboard <code>207.162994 × 493.227997 pt</code>,
+       <strong>40 logical drawings / 67 path items</strong>, 39 filled plus the
+       divider stroke at 0.362384 pt, only the four approved colours, zero
+       rasters, zero live text.<br>
+       <strong>{{ vq2.production_authority.gates_remaining_blocked }} gates
+       remain BLOCKED.</strong> Gate A grants Illustrator execution
+       verification and nothing else — not
+       {{ vq2.production_authority.gate_a_does_not_grant|join:", not " }}.<br>
+       <strong>Next required owner action:
+       {{ vq2.production_authority.next_required_owner_action }}.</strong>
+       {# §BH55 Phase 3: it read "Sending the five requests is now authorized" — superseded by §BH46 #}
+       The system never contacts suppliers (§BH46): the drafted requests are not sent, and the spec pack is the
+       owner's to hand over.<br>
+       Package:
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.verified_ai }}">verified source (.ai)</a> ·
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.verified_pdf }}">verified (PDF)</a> ·
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.verified_png }}">verified (PNG)</a> ·
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.verified_result }}">human run result (JSON)</a> ·
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.final_verification }}">Gate A verification (JSON)</a> ·
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.reconciliation }}">40 ↔ 67 reconciliation (JSON)</a></p>
+{% if vq2.production_authority.supplier_dispatch %}
+    <p class="vq-callout">
+       <strong>SUPERSEDED-BY §BH46 — the system never contacts suppliers.</strong>
+       The owners of the companies deal with their suppliers directly and hand
+       the product information to this system, which is the designer and
+       acquires nothing. Nothing below is to be sent, the sent count is 0 for
+       good, and gates B to E open from the inside as the owner-supplied spec
+       pack is intaken item by item. What follows is the §BH44–§BH45 history,
+       kept as it was.</p>
+    <p class="vq-callout attn">
+       <strong>SUPPLIER REQUESTS — AUTHORIZED, NOT SENT.</strong>
+       {{ vq2.production_authority.supplier_dispatch.sent }} of 5 sent ·
+       {{ vq2.production_authority.supplier_dispatch.ready }} ready ·
+       {{ vq2.production_authority.supplier_dispatch.blocked }} blocked{% if vq2.production_authority.supplier_dispatch.blocking_code %} ·
+       <code>{{ vq2.production_authority.supplier_dispatch.blocking_code }}</code>{% endif %}<br>
+       Your authorization is recorded and stands. All five messages passed
+       every pre-send content check — no audit content, no repository paths,
+       no production-authority claim, no asserted dimensions, no colour
+       assigned, no attachments. <strong>On 2026-07-31 none was sent because
+       there was nowhere to send them:</strong> each draft then carried a
+       company and a domain but no address, its channel field read “public
+       contact form or email — TO BE SENT BY A HUMAN”, and this project had
+       no mail transport configured — recorded as
+       <code>SUPPLIER_REQUEST_RECIPIENT_UNRESOLVED</code>. That block is
+       history: the five official addresses were approved the same day and
+       verified against each company's own published page on 2026-09-10, and
+       the dispatch record, derived afresh on every run, now reads
+       READY_NOT_SENT for all five. Inventing an address at five real
+       companies is not something I will do on a guess, and none was.<br>
+       <a href="{{ vq2.production_authority.supplier_dispatch.pack }}">the five messages as text (TXT)</a> ·
+       <a href="{{ vq2.production_authority.supplier_dispatch.log }}">dispatch log (JSON)</a></p>
+{% if vq2.production_authority.supplier_dispatch.emails %}
+    <p class="vq-callout done">
+       <strong>DESTINATIONS RESOLVED — FIVE EMAILS READY FOR YOU TO SEND.</strong>
+       Still <strong>0 of 5 sent</strong>.<br>
+       You approved the five official public addresses, so each request is now
+       a composed <code>.eml</code>. Open one in your normal mail client,
+       replace the From placeholder and the signature, and send.
+       <strong>Writing an .eml is not dispatch</strong> — no SMTP is
+       configured, nothing was sent, no <code>Date</code> header was written
+       and no message ID was invented.<br>
+       Each body is the text you already approved with only three edits — the
+       supplier name, the greeting and a signature placeholder. Strip those
+       three back off and it hashes to the approved body exactly, which is how
+       “no substantive wording changed” is proven rather than claimed.<br>
+       {% for e in vq2.production_authority.supplier_dispatch.emails %}
+         <a href="{{ e.url }}">{{ e.supplier }}</a> →
+         <code>{{ e.destination }}</code><br>
+       {% endfor %}
+       <a href="{{ vq2.production_authority.supplier_dispatch.manifest_pdf }}">dispatch manifest (PDF)</a> ·
+       <a href="{{ vq2.production_authority.supplier_dispatch.manifest }}">manifest (JSON)</a><br>
+       After sending, send me the sent message or its ID and I will verify each
+       one against the manifest and label it EVIDENCE_VERIFIED — the sent
+       count moves only from your typed sent date on the tracking sheet,
+       transcribed by ruling.<br>
+       <strong>Validation run:
+       {{ vq2.production_authority.supplier_dispatch.evidence_verified }} of 5
+       verified.</strong> No sent-message evidence has reached this
+       environment yet — no exported <code>.eml</code>, no message ID, no
+       timestamp — so nothing is marked sent and the count stays 0. Nothing
+       here checks for sent-message evidence any more: outreach is deferred,
+       and these supplier records are kept as history.
+       <a href="{{ vq2.production_authority.supplier_dispatch.sent_validation }}">validation record (JSON)</a></p>
+{% endif %}
+{% endif %}
+    <p class="vq-p">
+       {{ vq2.production_authority.gates_passed }} of 5 gates passed; gates B
+       to E wait on {{ vq2.production_authority.gates_b_to_e_wait_on }} —
+       <code>{{ vq2.production_authority.gate_causes.B_supplier_geometry }}</code>.
+       Packaging has not started; the system contacts no supplier (§BH46).</p>
+{% else %}
+    <p class="vq-p">All five gates are BLOCKED
+       ({{ vq2.production_authority.gates_passed }} passed). This stage defines
+       what production authority requires and waits on the owner-supplied spec
+       pack (§BH46); it grants nothing and starts no packaging.</p>
+{% endif %}
+    <p class="vq-p">
+       {% for gate, state in vq2.production_authority.gate_states.items %}
+         <code>{{ gate }}</code> — <strong>{{ state }}</strong><br>
+       {% endfor %}</p>
+    <p class="vq-p">Illustrator execution verification:
+       <strong>{{ vq2.production_authority.illustrator_verification }}</strong> —
+       it could never be performed in this environment, and no automated check
+       substituted for it: a human ran it in Illustrator.</p>
+{% if vq2.production_authority.illustrator_receipts %}
+    <p class="vq-callout attn">
+       <strong>Gate A receipts, every attempt so far —
+       {{ vq2.production_authority.illustrator_receipts.codes|join:" · " }}</strong><br>
+       These are the recorded outcomes of each submission, not a verdict on
+       any of them. A file hashing to the source it came from is that source
+       re-uploaded, not a verification copy: a copy saved and reopened in
+       Illustrator necessarily differs from the file it was saved from. Gate A
+       is unchanged and still BLOCKED, and successful Illustrator execution
+       must never be inferred from the EPS/PostScript text.<br>
+       Still required:
+       {% for f in vq2.production_authority.illustrator_receipts.awaiting %}
+         <code>{{ f }}</code>{% if not forloop.last %} · {% endif %}
+       {% endfor %}
+       — saved and reopened in Illustrator, not overwriting the accepted source.
+       <a href="/api/visual-quality/vq1/pap-illustrator-receipts/">receipts (JSON)</a></p>
+{% endif %}
+{% if vq2.production_authority.gate_a_correction %}
+    <p class="vq-callout attn">
+       <strong>ILLUSTRATOR EXECUTION FAILED —
+       {{ vq2.production_authority.gate_a_correction.failure_codes|join:" · " }}</strong><br>
+       The accepted source opened in Illustrator as one solid black silhouette.
+       Every visible object had been written as
+       <code>0.0000 0.0000 0.0000 Xa</code> and the document declared Black
+       only, so the source did not carry the approved colours even though the
+       PDF and PNG proofs did. That file is preserved unchanged for audit and is
+       <strong>not</strong> production authority.<br>
+       <strong>Fixed in R1.</strong>
+       <code>vq2_a2_r2_final_gate_a_r1.ai</code> carries #D9BDB5 body, #705242
+       collar, #493034 closure and #502525 artwork, with geometry, logo, glyphs
+       and page size unchanged. Illustrator then showed those three structure
+       colours correctly on screen, so this defect is closed — R1 failed for a
+       different reason, below.<br>
+       R1 artefacts:
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.ai }}">R1 source (.ai)</a> ·
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.pdf }}">proof (PDF)</a> ·
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.png }}">proof (PNG)</a> ·
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.color_manifest }}">colour manifest (JSON)</a> ·
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.equivalence }}">source/proof equivalence (JSON)</a> ·
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.automated_gates }}">automated gates (JSON)</a> ·
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.defective_source_record }}">preserved defective source (JSON)</a></p>
+    <p class="vq-callout attn">
+       <strong>R1 ALSO FAILED IN ILLUSTRATOR — 3 of 40 objects rendered.</strong><br>
+       The colour repair worked: body, collar and closure opened in their
+       approved colours. But the logo, registered symbol, divider, Rose,
+       Damascena and NIGHT REPAIR OIL were all absent — 37 objects missing.
+       Measured here, all 37 lie fully inside the body's bounding box and the 3
+       survivors are exactly those the body does not cover. That fits two
+       explanations equally well — the body stacking above the artwork, or
+       Illustrator discarding content after the third layer block — and this
+       environment cannot tell them apart, so <strong>neither is recorded as
+       the cause</strong>.<br>
+       <strong>GATE A R2 — {{ vq2.production_authority.gate_a_correction.state }}.</strong>
+       <code>{{ vq2.production_authority.gate_a_correction.corrected_source }}</code>
+       drops layer blocks and inherited state entirely: one flat paint sequence,
+       every object wrapped in its own <code>gsave/grestore</code> with its own
+       <code>setrgbcolor</code>. So it does not depend on which explanation is
+       right. Geometry, colours and page size are unchanged. It is
+       <strong>not yet Illustrator verified</strong>.<br>
+{% if not vq2.production_authority.gate_a_correction.initial_open_passed %}
+       <strong>Open fixture A first</strong> — it takes seconds and costs
+       nothing. Eight overlapping rectangles painted 01 first and 08 last: all
+       eight with <em>black on top</em> means stacking is correct; all eight
+       with <em>red on top</em> means the order inverts; <em>fewer than
+       eight</em> means later content is being dropped. Either it clears the
+       serializer before you spend a round trip on the real artwork, or it
+       hands back the mechanism without touching the accepted design.<br>
+{% endif %}
+       <strong>Then the round trip — no longer by hand.</strong> Open
+       Illustrator → File → Scripts → Other Script… → choose
+       <code>illustrator_gate_a_roundtrip.jsx</code> → select the R2 file →
+       answer the two dialogs. A single unnamed Illustrator layer is
+       <em>expected</em>: this is an EPS, so the eight group names live in the
+       file and do not come back as layer names. That is not a fault — judge by
+       the path count the dialog shows and by what you can see. The script does Save As, close, reopen, PDF and
+       PNG export, and writes the result JSON — including what Illustrator
+       actually built, which settles the question above for the record.<br>
+       Download:
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.roundtrip_jsx }}">round-trip script (.jsx)</a> ·
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.r2_ai }}">R2 source (.ai)</a> ·
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.r2_pdf }}">R2 proof (PDF)</a> ·
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.r2_png }}">R2 proof (PNG)</a> ·
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.r2_manifest }}">R2 manifest (JSON)</a> ·
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.r2_equivalence }}">R2 equivalence (JSON)</a> ·
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.r2_gates }}">R2 gates (JSON)</a> ·
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.r1_failure }}">R1 failure record (JSON)</a> ·
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.fixtures }}">compatibility fixtures (JSON)</a> ·
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.fixture_a_ai }}">fixture A (.ai)</a><br>
+       <strong>Fixture A</strong> — eight overlapping rectangles painted 01
+       first and 08 last — would still say whether R1 lost its artwork to
+       stacking or to a dropped layer boundary. That is now forensic rather
+       than blocking.</p>
+{% if vq2.production_authority.gate_a_correction.initial_open_passed %}
+    <p class="vq-callout done">
+       <strong>R2 OPENED CORRECTLY IN ILLUSTRATOR — all artwork present.</strong><br>
+       Body, collar, closure, the BBROSE logo, the medallion and registered
+       symbol, the divider, Rose, Damascena and NIGHT REPAIR OIL are all
+       visible in their approved colours, as separate Path and Compound Path
+       objects. R1 rendered 3 of 40; R2 renders all of them, and Illustrator
+       built real vector objects rather than embedding the file. <strong>Both
+       known defects are now closed</strong> — R0's black emission and R1's
+       artwork loss.<br>
+       <strong>Gate A has still not moved, and this is not a partial pass.</strong>
+       The file that came back hashes exactly to the R2 source, so it is the
+       original re-uploaded: nothing was saved, closed or reopened, and no
+       verification-result JSON exists. A verification copy necessarily differs
+       from the file it was saved from. An uploaded PDF or PNG that matches the
+       R2 proofs above is likewise a re-upload of this repository's own output
+       and carries no Illustrator provenance.<br>
+       What is left is <strong>provenance, not a defect</strong>: run
+       <code>illustrator_gate_a_roundtrip.jsx</code> and return the four
+       artefacts it writes.
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.r2_initial_open }}">initial-open record (JSON)</a></p>
+{% endif %}
+{% if vq2.production_authority.gate_a_correction.roundtrip_performed %}
+    <p class="vq-callout attn">
+       <strong>ROUND TRIP 1 — ARTWORK PASSED, ARTBOARD FAILED.</strong><br>
+       A genuine Illustrator document came back — native <code>.ai</code>,
+       Creator Adobe Illustrator 30.0, and the first submission whose hash
+       actually differs from the source. Verified here from the file itself:
+       <strong>40 vector objects</strong> (39 filled plus the divider stroke),
+       all four approved colours and nothing else, <strong>zero rasters, zero
+       live text</strong>. The artwork survived intact.<br>
+       The page did not. It saved onto <code>763.654 × 983.225 pt</code>
+       instead of the accepted <code>207.1627 × 493.2283</code>. The ink
+       measures the same physical height as the source, so the artwork was
+       <em>translated, never resized</em>. Illustrator's EPS import brings the
+       artwork in without the source page, and the script saved the default
+       artboard it was handed — <strong>a defect in the automation, not in the
+       artwork</strong>.<br>
+       <strong>A second, separate problem:</strong> the result JSON on disk came
+       from a <em>different, aborted run</em> in which the <code>.jsx</code> was
+       selected instead of the <code>.ai</code>. It records FAIL with save,
+       reopen and both exports false, and it overwrote the record belonging to
+       the run that produced the copy — so that copy has no provenance to point
+       at. The copy is still genuine; its paperwork was destroyed.<br>
+       <strong>Both script defects are fixed.</strong> The script now restores
+       the source page around the imported artwork before Save As and re-checks
+       it after reopen; a wrong file selection now stops the run instead of
+       continuing; and an existing result JSON is copied aside before a new one
+       is written. Nothing about the artwork changed.<br>
+       <strong>Run it once more</strong> — same three steps, and this time
+       <em>select the .ai, not the .jsx</em>.<br>
+       Evidence:
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.roundtrip1_record }}">round-trip 1 record (JSON)</a> ·
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.drift_png }}">oversized-artboard copy (PNG)</a> ·
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.drift_ai }}">preserved drift copy (.ai)</a> ·
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.aborted_run }}">aborted-run record (JSON)</a> ·
+       <a href="{{ vq2.production_authority.gate_a_correction.downloads.final_gates }}">final gates (JSON)</a></p>
+{% endif %}
+{% endif %}
+    <p class="vq-p">Supplier requests sent:
+       <strong>{{ vq2.production_authority.supplier_requests_sent }}</strong>
+       (a path the system no longer has — §BH46) ·
+       packaging may begin now:
+       <strong>{{ vq2.production_authority.packaging_may_begin_now }}</strong>.</p>
+    <p class="vq-p warn"><strong>Owner actions:</strong>
+       {% for action in vq2.production_authority.owner_actions_required %}
+         {{ forloop.counter }}) {{ action }}{% if not forloop.last %} · {% endif %}
+       {% endfor %}</p>
+    <p class="vq-p0">Package:
+       <a href="{{ vq2.production_authority.package.pdf }}">preflight (PDF)</a> ·
+       <a href="{{ vq2.production_authority.package.json }}">preflight (JSON)</a> ·
+       <a href="{{ vq2.production_authority.package.checklist }}">Illustrator checklist (PDF)</a> ·
+       <a href="/api/visual-quality/vq1/pap-illustrator-template/">result template (JSON)</a> ·
+       <a href="/api/visual-quality/vq1/pap-supplier-spec/">supplier evidence spec (PDF — what the spec pack must contain)</a> ·
+       <a href="/api/visual-quality/vq1/pap-supplier-drafts/">supplier drafts (JSON, unsent — superseded by §BH46)</a> ·
+       <a href="/api/visual-quality/vq1/pap-gates/">gates (JSON)</a></p>
+  </section>
+{% endif %}
+{% if vq2.final_review %}
+  <section class="vq-panel info">
+    <h2 class="vq-h">VQ-2 — AWAITING YOUR VISUAL APPROVAL</h2>
+    <p class="vq-p"><strong>{{ vq2.final_review.result_classification }}</strong></p>
+    <p class="vq-p">Inspector A
+       <code>{{ vq2.final_review.inspector_a.request_id }}</code> —
+       {{ vq2.final_review.inspector_a.verdict }},
+       {{ vq2.final_review.inspector_a.actionable_defects }} actionable.<br>
+       Inspector B
+       <code>{{ vq2.final_review.inspector_b.request_id }}</code> —
+       {{ vq2.final_review.inspector_b.verdict }},
+       {{ vq2.final_review.inspector_b.actionable_defects }} actionable.<br>
+       Consistency checks all pass:
+       {{ vq2.final_review.consistency_all_pass }} ·
+       divergences recorded: {{ vq2.final_review.divergences|length }} ·
+       Rose width: <code>{{ vq2.rose_width }}</code></p>
+    <p class="vq-p warn"><strong>This is not acceptance.</strong>
+       Human approval: {{ vq2.final_review.human_approval_state }} · Gate-2:
+       {{ vq2.final_review.is_gate_2 }} · production authority:
+       {{ vq2.final_review.is_production_authority }}.</p>
+    <p class="vq-p warn"><strong>Owner action:</strong>
+       {{ vq2.owner_action_required }}</p>
+    <p class="vq-p0">Final review package:
+       <a href="{{ vq2.final_review.package.pdf }}">PDF</a> ·
+       <a href="{{ vq2.final_review.package.png }}">PNG</a> ·
+       <a href="{{ vq2.final_review.package.json }}">JSON</a> ·
+       <a href="/api/visual-quality/vq1/vq2-consistency/">consistency</a> ·
+       <a href="/api/visual-quality/vq1/vq2-preflight/">preflight</a></p>
+  </section>
+{% else %}
+  <section class="vq-panel attn">
+    <h2 class="vq-h">VQ-2 — BLOCKED, WAITING ON YOU</h2>
+    <p class="vq-p"><strong>{{ vq2.state }}</strong></p>
+    <p class="vq-p">Lettering candidate {{ vq2.lettering_candidate }}
+       is {{ vq2.deterministic_certification }}. The dual typography
+       inspection is <strong>{{ vq2.typography_inspection }}</strong> — it has
+       never run, so there is nothing to visually approve yet and Rose's width
+       is <code>{{ vq2.rose_width }}</code>.</p>
+    <p class="vq-p">Blocker: <strong>{{ vq2.blocker.reason }}</strong>
+       (external to this repo). {{ vq2.blocker.attempts }} provider attempts,
+       none returned model output. Latest request
+       <code>{{ vq2.blocker.latest_request_id }}</code>. Retries used
+       {{ vq2.blocker.retry_count }}, remaining
+       {{ vq2.blocker.retries_remaining }} —
+       <code>{{ vq2.blocker.further_automatic_retry }}</code>. Provider
+       substituted: {{ vq2.blocker.provider_substituted }}.</p>
+{% if vq2.billing_probe %}
+    <p class="vq-p">Stage-1 billing probe:
+       <strong>{{ vq2.billing_probe.outcome }}</strong> ·
+       <code>{{ vq2.billing_probe.code }}</code> · request
+       <code>{{ vq2.billing_probe.request_id }}</code> · credential valid:
+       {{ vq2.billing_probe.credential_valid }} · billing available:
+       {{ vq2.billing_probe.billing_available }}.<br>
+       Loaded key fingerprint
+       <code>{{ vq2.billing_probe.key_fingerprint }}</code> (sha256[:12] — the
+       key itself is never read, logged or stored); secret file last written
+       {{ vq2.billing_probe.env_file_mtime }}.
+       Root cause: <strong>{{ vq2.billing_probe.root_cause }}</strong>.</p>
+{% endif %}
+    <p class="vq-p warn"><strong>Owner action:</strong>
+       {{ vq2.owner_action_required }}</p>
+    <p class="vq-p0">Records:
+       <a href="/api/visual-quality/vq1/vq2-provider-blocker/">blocker</a> ·
+       <a href="/api/visual-quality/vq1/vq2-resume-attempt-1/">resume attempt 1</a> ·
+       <a href="/api/visual-quality/vq1/vq2-resume-contract/">resume contract</a> ·
+       <a href="/api/visual-quality/vq1/vq2-certification/">LF1-R1 certification</a> ·
+       <a href="/api/visual-quality/vq1/vq2-pending-pdf/">pending package (PDF)</a></p>
+  </section>
+{% endif %}
+{% endif %}
+{% if acceptance %}
+  <section class="vq-panel done">
+    <h2 class="vq-h done">VQ-1 — OWNER ACCEPTED AND CLOSED</h2>
+    <p><strong>{{ acceptance.codes|join:" · " }}</strong><br>
+       Final classification <code>{{ acceptance.final_classification }}</code> ·
+       candidate <strong>M3</strong> <code>{{ acceptance.identity_sha256_png }}</code> ·
+       candidate loop <code>{{ acceptance.candidate_loop_state }}</code>.</p>
+    <p>{{ acceptance.owner_determination }}</p>
+    <p><strong>Accepted within tolerance:</strong>
+       neck {{ acceptance.accepted_evidence.neck.mean }} /
+       {{ acceptance.accepted_evidence.neck.p95 }} /
+       {{ acceptance.accepted_evidence.neck.max }} —
+       {{ acceptance.accepted_evidence.neck.result }} ·
+       shoulder {{ acceptance.accepted_evidence.shoulder.mean }} /
+       {{ acceptance.accepted_evidence.shoulder.p95 }} /
+       {{ acceptance.accepted_evidence.shoulder.max }} —
+       {{ acceptance.accepted_evidence.shoulder.result }} ·
+       assembly-wide {{ acceptance.accepted_evidence.assembly_wide.max_px }} px
+       ({{ acceptance.accepted_evidence.assembly_wide.max_norm }}) against gate
+       {{ acceptance.accepted_evidence.assembly_wide.gate }} —
+       {{ acceptance.accepted_evidence.assembly_wide.result }}.</p>
+    <p class="warn"><strong>Scope:</strong> this certifies
+       <code>{{ acceptance.acceptance_scope.certifies_only }}</code> only. It does
+       NOT certify manufacturability, tooling readiness, physical dimensions,
+       neck-finish or closure compatibility, glass-wall construction, supplier
+       confirmation, rose-gold material realization, or any gloss/reflection
+       finish. <strong>Owner acceptance of VQ-1 is not production
+       authority.</strong></p>
+    <p class="warn">Inspector scores were <strong>not</strong> rewritten.
+       Acceptance is a human tolerance determination and does not imply the
+       inspectors agreed — their sub-10 scores and Inspector B's advisory
+       <code>TRUE_STRUCTURAL_DEFECT</code> classifications stand unchanged.</p>
+    {% if workstream %}
+    <p><strong>Downstream:</strong> VQ-2 <code>{{ workstream.VQ_2 }}</code> ·
+       VQ-3 <code>{{ workstream.VQ_3 }}</code> ·
+       production <code>{{ workstream.PRODUCTION_GEOMETRY }}</code> ·
+       supplier drafts <code>{{ workstream.SUPPLIER_DRAFTS }}</code> (unsent).
+       Neither VQ-2 nor VQ-3 starts automatically.</p>
+    {% endif %}
+    <p>
+      <a href="/api/visual-quality/vq1/close1-review-pdf/">Structural review PDF</a> ·
+      <a href="/api/visual-quality/vq1/close1-forensics-pdf/">Junction forensics PDF</a> ·
+      <a href="/api/visual-quality/vq1/close1-owner-acceptance/">Owner acceptance</a> ·
+      <a href="/api/visual-quality/vq1/close1-adjudication/">Human adjudication</a> ·
+      <a href="/api/visual-quality/vq1/close1-final-candidate/">Final candidate</a> ·
+      <a href="/api/visual-quality/vq1/close1-scoring-contract/">Scoring contract v2</a> ·
+      <a href="/api/visual-quality/vq1/close1-fitter-defect/">Fitter defect</a> ·
+      <a href="/api/visual-quality/vq1/close1-withdrawal/">Withdrawn claim</a> ·
+      <a href="/api/visual-quality/vq1/close1-dual-inspection/">Both inspectors</a> ·
+      <a href="/api/visual-quality/vq1/close1-m3-png/">M3</a> ·
+      <a href="/api/visual-quality/vq1/close1-contour-overlay/">Contour overlay</a>
+    </p>
+  </section>
+{% endif %}
+</details>
+<details class="tech vq-fold"><summary>Every stage of the structure review before it was accepted — as the record keeps it</summary>
+  <section class="vq-panel note">
+    <h2 class="vq-h">IT6 — COLLAR / NECK VISIBLE-ENVELOPE REPLACEMENT</h2>
+    <p class="warn"><strong>IT6 is NOT presented as passing. VQ-1 remains REVISION_REQUIRED.
+       No IT7. Not manufacturable. PRODUCTION_GEOMETRY: BLOCKED_PENDING_SUPPLIER_RESPONSE.</strong></p>
+    <p><strong>The stepped tower is gone.</strong> IT5 drew the neck as its own pale component between
+       collar and shoulder — that separate object, with its own top and bottom edges, was the white
+       spacer ring. The glass is now one continuous contour and the collar is one sleeve:
+       <strong>visible contour steps = 0</strong>, collar/body 0.634 against the reference 0.633.</p>
+    <p><strong>Collar metrics improved sharply</strong> (row-aligned, on the actual PNG, never averaged
+       with the body): outer-contour IoU 0.865 → <strong>0.972</strong>, mean distance 0.042 →
+       <strong>0.0088</strong>, p95 0.062 → 0.036. Six of seven gates pass; the seventh,
+       max_collar_junction_distance <strong>0.162 against 0.070</strong>, still fails at the
+       dark-flare/collar transition row.</p>
+    <p><strong>Scope respected:</strong> dome, dark shaft, body, shoulder, base, neck band, aspect and
+       centerline are byte-identical to IT5; only the collar was replaced plus one interface point.</p>
+    <p><strong>Visualizer</strong> (one call, input-quality gate PASSED on 371×560 crops):
+       stepped ledges removed ✓, better than previous ✓, verdict
+       <code>VISUALLY_IMPROVED_BUT_INSUFFICIENT</code>.</p>
+    <div class="vq-callout attn">
+      <strong class="warn">ACTIVE VQ-1 STRUCTURAL BLOCKER</strong><br>
+      <code>VQ_DARK_CLOSURE_LOWER_INTERFACE_FAILED</code> — the visible dark closure flare does not
+      transition into the collar in a reference-faithful, structurally coherent way.<br>
+      supported by <code>VQ_COLLAR_NECK_JUNCTION_DEVIATION</code>: max junction contour distance
+      <strong>0.16176 &gt; 0.070</strong> at the dark-flare/collar transition.
+    </div>
+    <div class="vq-callout note">
+      <strong class="gold">DEFERRED TO VQ-3 — NONBLOCKING FOR VQ-1 STRUCTURE</strong><br>
+      collar metallic realism · rose-gold material appearance · polished-metal highlights and
+      reflections (<code>VQ_COLLAR_METALLIC_REALIZATION_DEFERRED_TO_VQ3</code>).<br>
+      VQ-1 evaluates structural form and neutral diagnostic fills are permitted. Material appearance
+      cannot excuse incorrect geometry. <strong>VQ-3 may not start before VQ-1 structural
+      acceptance.</strong>
+    </div>
+    <img src="/api/visual-quality/vq1/it6-review-png/" alt="IT6 collar/neck review"
+         class="vq-img">
+    <p>
+      <a href="/api/visual-quality/vq1/it6-review-pdf/">IT6 review (PDF)</a> ·
+      <a href="/api/visual-quality/vq1/it6-review-json/">packet JSON</a> ·
+      <a href="/api/visual-quality/vq1/it6-png/">IT6 render</a> ·
+      <a href="/api/visual-quality/vq1/it6-envelope/">IT6 envelope</a> ·
+      <a href="/api/visual-quality/vq1/it6-blockers/">blocker classification</a> ·
+      <a href="/api/visual-quality/vq1/it6-reference-pixels/">reference collar pixels</a>
+    </p>
+  </section>
+  <section class="vq-panel info">
+    <h2 class="vq-h">VISUALIZER INPUT-QUALITY GATE</h2>
+    <p><code>visual_inspector_input_quality/1.0</code> — no multimodal call may run until the
+       target component clears a legibility floor measured in the actual bytes to be sent.
+       Fails closed with <code>INSPECTION_NOT_PERFORMED_INPUT_QUALITY_FAILED</code>; an invalid
+       packet can never return VISUALLY_REJECTED.</p>
+    <p><strong>Legibility floors (model-input only, no geometric authority):</strong>
+       full assembly 512&times;180 · closure 420&times;180 · dark closure 300&times;100 ·
+       dome apex 120&times;60 · collar 160&times;180 · neck 80 · shoulder 80&times;300.</p>
+    <p><strong>Original IT5 inspection:</strong> target dome measured <strong>69&times;36 px</strong>
+       against a 120 px floor — the gate now returns
+       <code>INSPECTION_NOT_PERFORMED_INPUT_QUALITY_FAILED</code> with no model call. That inspection is
+       annotated <code>INVALIDATED_INPUT_QUALITY_INSUFFICIENT</code> and preserved, not deleted.</p>
+    <p><strong>Bounded replay:</strong> annotated <code>VALID_DIAGNOSTIC_REPLAY</code>, gate PASSED,
+       apex = rounded. It does <em>not</em> constitute human acceptance.</p>
+    <p><strong>Automatic crops</strong> from the candidate itself, SHA lineage preserved, no generative
+       upscaling: dome apex 232&times;120 (2.6&times;), closure 246&times;420 (1.4&times;),
+       dark closure 262&times;300 (1.9&times;), collar 195&times;160, neck 751&times;80,
+       shoulder 687&times;80. Enlargement buys legibility only — topology, coordinates, ratios and
+       symmetry are always measured on the original image.</p>
+    <p class="warn"><strong>Unresolved:</strong> <code>VQ_COLLAR_NECK_JUNCTION_DEVIATION</code>
+       — max contour distance 0.182 against a 0.070 limit at the collar/neck junction. Geometry was not
+       changed in this slice.</p>
+    <p>
+      <a href="/api/visual-quality/vq1/gate-record/">gate record</a> ·
+      <a href="/api/visual-quality/vq1/gate-crops/">component crops</a> ·
+      <a href="/api/visual-quality/vq1/gate-dome-crop/">dome apex crop</a> ·
+      <a href="/api/visual-quality/vq1/gate-closure-crop/">closure crop</a>
+    </p>
+    <p><strong>NEXT REQUIRED HUMAN ACTION: HUMAN REVIEW OF IT5 COLLAR, NECK AND COMPLETE CLOSURE</strong></p>
+  </section>
+  <section class="vq-panel attn">
+    <h2 class="vq-h">IT5 HUMAN VISUAL REVIEW + VISUALIZER INPUT-INTEGRITY AUDIT</h2>
+    <p class="warn"><strong>IT5 has NOT passed human review. VQ-1 remains REVISION_REQUIRED.
+       No IT6. No supplier request sent. Not manufacturable.</strong></p>
+    <p><strong>Conflict resolved — the input was at fault, not the geometry.</strong> The inspector was
+       sent the full assembly at 307&times;709 px, in which the dome occupies just <strong>27 px</strong>
+       of height, and no enlarged closure crop, overlay, montage, metrics or semantic decision was
+       supplied. Cause: <code>VQ_VISUALIZER_INPUT_RESOLUTION_INSUFFICIENT</code>; the original verdict is
+       classified <code>VQ_VISUALIZER_ORIGINAL_INPUT_OR_INTERPRETATION_FAILED</code>, retained for audit
+       and <strong>not counted as a blocker against the dome</strong>.</p>
+    <p><strong>Output-pixel proof:</strong> top row 9 px wide, then 19/25/29/33/37 — monotonically
+       widening with decelerating increments, apex 0.5 px off centre. A rounded apex, measured from the
+       actual emitted PNG. The bounded replay on legible crops, asked blind and barred from numeric
+       estimation, answered <strong>apex = rounded, dome fully visible, same closure family</strong>
+       (confidence 0.82).</p>
+    <p class="warn"><strong>Still unresolved:</strong> max_contour_distance 0.182 against a
+       0.070 limit at the collar/neck junction (y=0.356) — not the dome, and out of scope this slice.</p>
+    <img src="/api/visual-quality/vq1/it5-review-png/" alt="IT5 human review"
+         class="vq-img">
+    <p>
+      <a href="/api/visual-quality/vq1/it5-review-pdf/">IT5 review (PDF)</a> ·
+      <a href="/api/visual-quality/vq1/it5-review-json/">packet JSON</a> ·
+      <a href="/api/visual-quality/vq1/it5-input-manifest/">input manifest</a> ·
+      <a href="/api/visual-quality/vq1/it5-apex-proof/">apex proof</a> ·
+      <a href="/api/visual-quality/vq1/it5-apex-mask/">apex binary mask</a> ·
+      <a href="/api/visual-quality/vq1/it5-replay/">replay</a> ·
+      <a href="/api/visual-quality/vq1/it5-conflict-resolution/">conflict resolution</a> ·
+      <a href="/api/visual-quality/vq1/it5-input-it5/">exact IT5 model input</a>
+    </p>
+    <p>All five supplier contact endpoints are now verified reachable; every request stays
+       <code>DRAFTED_READY_FOR_HUMAN_SEND</code>.</p>
+  </section>
+  <section class="vq-panel done">
+    <h2 class="vq-h">RESET-2-CORR-1 — DOME ITERATION (IT5)</h2>
+    <p class="warn"><strong>VQ-1 remains REVISION_REQUIRED · assembly NOT released ·
+       PRODUCTION_GEOMETRY: BLOCKED_PENDING_SUPPLIER_RESPONSE · not manufacturable.</strong></p>
+    <p><strong>Dome defect removed.</strong> Apex half-width is exactly 0 on the shared centerline,
+       no horizontal closing segment, curvature continuous across 25 angular samples, and the
+       dome-only contour distance is 0.0048 (max 0.033, limit 0.070). Every other contour is
+       byte-identical to IT4.</p>
+    <p>8 of 9 deterministic gates pass. <code>max_contour_distance</code> 0.182 still fails, but the
+       spike sits at the collar/neck junction (y=0.356) — geometry this slice was forbidden to touch.</p>
+    <p>The single visualizer call returned VISUALLY_REJECTED and described a "flat-topped cylinder".
+       That claim is contradicted by the measurement and by the render itself, so it is recorded as
+       <code>VQ_MULTIMODAL_NUMERIC_CLAIM_CONFLICT</code> — deterministic measurement governs.</p>
+    <img src="/api/visual-quality/vq1/corr1-review-png/" alt="CORR-1 review"
+         class="vq-img">
+    <p>
+      <a href="/api/visual-quality/vq1/corr1-review-pdf/">CORR-1 review (PDF)</a> ·
+      <a href="/api/visual-quality/vq1/corr1-review-json/">packet JSON</a> ·
+      <a href="/api/visual-quality/vq1/corr1-envelope/">IT5 envelope</a> ·
+      <a href="/api/visual-quality/vq1/reset2-it5-png/">IT5 render</a> ·
+      <a href="/api/visual-quality/vq1/corr1-outreach/">supplier outreach (unsent)</a>
+    </p>
+    <p><strong>Supplier dispatch:</strong> outbound email is unavailable (console backend, no host),
+       so nothing was sent. Five requests are exported <code>DRAFTED_READY_FOR_HUMAN_SEND</code>;
+       3 of 5 public contact endpoints verified reachable.</p>
+  </section>
+  <section class="vq-panel done">
+    <h2 class="vq-h">CONCEPT-VISUAL ENVELOPE (RESET-2)</h2>
+    <p class="warn"><strong>PRODUCTION_GEOMETRY: BLOCKED · approved physical dimensions: NONE ·
+       this envelope is CONCEPT-VISUAL ONLY and is not manufacturable, supplier-confirmed,
+       a production dimension, a tooling dimension or a verified closure construction.</strong></p>
+    <p>Approved visible semantic: <code>VISIBLE_DARK_CLOSURE_ENVELOPE_WITH_ROUNDED_DOME_AND_FLARED_SKIRT</code>.
+       Internal mechanism UNRESOLVED / HIDDEN. Bilateral symmetry is a human-approved concept-only assumption
+       (left side occluded by the carton).</p>
+    <p>4 iterations · 3 of 3 inspector calls used · <strong>assembly NOT released</strong>.
+       Best candidate RESET2-IT4: silhouette IoU 0.985, mean contour distance 0.0061, aspect error 0.0016 —
+       6 of 7 deterministic gates pass; max contour distance 0.182 (limit 0.070) fails and the inspector
+       verdict remains VISUALLY_REJECTED (dome renders flat-topped).</p>
+    <p>Same-domain public-spec discovery: <strong>NO_PUBLIC_SPECIFICATION_AVAILABLE</strong> (20 probes, all blocked).
+       Five supplier specification requests are <strong>DRAFTED, NOT SENT</strong> and await your approval.</p>
+    <img src="/api/visual-quality/vq1/reset2-review-png/" alt="RESET-2 visual review"
+         class="vq-img">
+    <p>
+      <a href="/api/visual-quality/vq1/reset2-review-pdf/">Visual review (PDF)</a> ·
+      <a href="/api/visual-quality/vq1/reset2-review-json/">packet JSON</a> ·
+      <a href="/api/visual-quality/vq1/reset2-authority/">geometry authority</a> ·
+      <a href="/api/visual-quality/vq1/reset2-envelope/">concept envelope</a> ·
+      <a href="/api/visual-quality/vq1/reset2-loop/">iteration history</a> ·
+      <a href="/api/visual-quality/vq1/reset2-plans/">correction plans</a> ·
+      <a href="/api/visual-quality/vq1/reset2-discovery/">spec discovery</a> ·
+      <a href="/api/visual-quality/vq1/reset2-supplier-requests/">supplier requests (unsent)</a>
+    </p>
+  </section>
+  <section class="vq-panel note">
+    <h2 class="vq-h">PHYSICAL GEOMETRY EVIDENCE — v2 (RESET-1B)</h2>
+    <p><strong>Evidence state: <code>VQ_PHYSICAL_GEOMETRY_EVIDENCE_INCOMPLETE</code></strong> —
+       6 of 10 sufficiency conditions fail. Geometry remains blocked.</p>
+    <p>Session 7 · 8 targeted searches over four separate tracks · 40 retained · 20 fetched · 2 PDFs.
+       Bottle variants 1 (need 3) · bottle dimension tables 1 (need 2) · bottle drawings 0 (need 1) ·
+       closure variants 3 · closure drawings 0 (need 1) · compatibility sources 2 · semantic sources 10 ·
+       <strong>dimensional measurements 0</strong>.</p>
+    <p>Both fetched PDFs are the same Carow "Dropper Pipette Buyer's Guide" — a marketing document,
+       not a technical drawing. Lab and chromatography glassware was screened out as the wrong product family.</p>
+    <p>Carried decisions: NOMINAL_CAPACITY 30 ml (product-concept requirement, <em>not</em> a geometry approval) ·
+       neck finish UNRESOLVED (18/415, 18/410, 20/410, 24/410) ·
+       WS-20 <code>NECK_FINISH_REFERENCE_ONLY / NEEDS_VERIFICATION</code>.</p>
+    <img src="/api/visual-quality/vq1/reset1b-packet-png/" alt="technical evidence v2 page 1"
+         class="vq-img">
+    <img src="/api/visual-quality/vq1/reset1b-packet-p2-png/" alt="technical evidence v2 page 2"
+         class="vq-img">
+    <img src="/api/visual-quality/vq1/reset1b-packet-p3-png/" alt="technical evidence v2 page 3"
+         class="vq-img">
+    <p>
+      <a href="/api/visual-quality/vq1/reset1b-packet-pdf/">1 sources by track (PDF)</a> ·
+      <a href="/api/visual-quality/vq1/reset1b-packet-p2-pdf/">2 drawings &amp; measurements</a> ·
+      <a href="/api/visual-quality/vq1/reset1b-packet-p3-pdf/">3 sufficiency &amp; decisions</a> ·
+      <a href="/api/visual-quality/vq1/reset1b-packet-json/">packet JSON</a> ·
+      <a href="/api/visual-quality/vq1/reset1b-decision/">RESET-1A decision record</a>
+    </p>
+    <p><strong>NEXT REQUIRED HUMAN ACTION: APPROVE TECHNICAL SOURCES, EXACT MEASUREMENT REFERENTS,
+       AND COMPONENT SEMANTICS</strong> — currently there are no dimensional candidates and no
+       qualified drawing to approve.</p>
+  </section>
+  <section class="vq-panel note">
+    <h2 class="vq-h">PHYSICAL GEOMETRY EVIDENCE</h2>
+    <p>Session <code>web_container_geometry_research/1.0</code> · 60 sources, <strong>25 qualified</strong> ·
+       shortlist 5 bottle + 4 closure + 3 alternates · 1 Tier-1 technical drawing ·
+       6 conflicts, none auto-resolved · component-semantic options A–F, <strong>none preselected</strong>.</p>
+    <p><strong>Finding:</strong> no dimensional referent survived governed re-extraction — the fetched pages carry
+       no dimension tables, so every mm value is demoted to <code>SNIPPET_NOT_TECHNICAL_EVIDENCE</code>.
+       Only <code>NECK_FINISH</code> and <code>NOMINAL_CAPACITY</code> qualify.</p>
+    <p>Permissions now: retrieval + reference-view true; fact-source, concept-geometry, provider-input,
+       artwork-reuse and Design-Memory all <strong>false</strong>.</p>
+    <img src="/api/visual-quality/vq1/reset1a-packet-png/" alt="evidence packet 1"
+         class="vq-img">
+    <img src="/api/visual-quality/vq1/reset1a-packet-p2-png/" alt="evidence packet 2"
+         class="vq-img">
+    <img src="/api/visual-quality/vq1/reset1a-packet-p3-png/" alt="evidence packet 3"
+         class="vq-img">
+    <p>
+      <a href="/api/visual-quality/vq1/reset1a-packet-pdf/">1 sources (PDF)</a> ·
+      <a href="/api/visual-quality/vq1/reset1a-packet-p2-pdf/">2 measurements &amp; conflicts</a> ·
+      <a href="/api/visual-quality/vq1/reset1a-packet-p3-pdf/">3 semantics &amp; decision form</a> ·
+      <a href="/api/visual-quality/vq1/reset1a-packet-json/">packet JSON</a>
+    </p>
+    <p><strong>NEXT REQUIRED HUMAN ACTION: APPROVE PHYSICAL SOURCES, MEASUREMENTS AND COMPONENT SEMANTICS</strong>
+       — seven independent decisions, never bundled. No geometry may be generated until they are recorded.</p>
+  </section>
+  <section class="vq-panel attn">
+    <h2 class="vq-h">VISUALIZER — ARIA Visual Inspector</h2>
+    <p><strong>CORR-5: REJECTED_WRONG_COMPONENT_MODEL.</strong> The generator is frozen as
+       <code>LEGACY_REJECTED_STRUCTURAL_GENERATOR</code> and no new candidate fixture was produced:
+       component semantics resolved <strong>UNCERTAIN</strong>, which blocks generation.</p>
+    <p>Reference vs current vs previous render, deterministic overlay metrics, multimodal findings,
+       correction plan, iteration history and the web reference packet:</p>
+    <img src="/api/visual-quality/vq1/reset1-packet-png/" alt="web geometry reference packet"
+         class="vq-img">
+    <p>
+      <a href="/api/visual-quality/vq1/reset1-packet-pdf/">Web geometry packet (PDF)</a> ·
+      <a href="/api/visual-quality/vq1/reset1-packet-json/">packet JSON</a> ·
+      <a href="/api/visual-quality/vq1/reset1-semantics/">component-semantic decision</a> ·
+      <a href="/api/visual-quality/vq1/reset1-plan/">correction plan</a> ·
+      <a href="/api/visual-quality/vq1/reset1-loop/">iteration history</a> ·
+      <a href="/api/visual-quality/vq1/reset1-inspection-corr4/">inspection CORR-4</a> ·
+      <a href="/api/visual-quality/vq1/reset1-inspection-corr5/">inspection CORR-5</a> ·
+      <a href="/api/visual-quality/vq1/reset1-provider-log/">provider calls</a> ·
+      <a href="/api/visual-quality/vq1/reset1-freeze/">generator freeze</a> ·
+      <a href="/api/visual-quality/vq1/reset1-corr5-classification/">CORR-5 classification</a>
+    </p>
+    <p><small>Pass/fail reasons: the inspector re-derives every recorded human rejection from pixels —
+       CORR-2 0.099, CORR-3 0.085, CORR-4 0.089, CORR-5 0.105 normalized contour distance, so CORR-5 is
+       independently measured as the worst. Four human approvals are PENDING before any geometry is built.</small></p>
+  </section>
+  <img src="/api/visual-quality/vq1/corr5-p4-png/" alt="VQ-1 backbone review"
+       class="vq-img">
+  <img src="/api/visual-quality/vq1/corr5-p1-png/" alt="VQ-1 CORR-4 sheet 2"
+       class="vq-img">
+  <p>
+    CORR-5 pages:
+    <a href="/api/visual-quality/vq1/corr5-p1-pdf/">1 bulb</a> ·
+    <a href="/api/visual-quality/vq1/corr5-p2-pdf/">2 collar/neck</a> ·
+    <a href="/api/visual-quality/vq1/corr5-p3-pdf/">3 shoulder/body</a> ·
+    <a href="/api/visual-quality/vq1/corr5-p4-pdf/">4 assembly</a> ·
+    <a href="/api/visual-quality/vq1/corr5-p5-pdf/">5 overlay</a> ·
+    <a href="/api/visual-quality/vq1/corr5-p6-pdf/">6 all fixtures</a> ·
+    <a href="/api/visual-quality/vq1/corr5-p7-pdf/">7 deviation</a> ·
+    <a href="/api/visual-quality/vq1/review-pdf/">PDF</a> ·
+    <a href="/api/visual-quality/vq1/review-ai/">.ai</a> ·
+    <a href="/api/visual-quality/vq1/graph/">Graph JSON</a> ·
+    <a href="/api/visual-quality/vq1/perceived-geometry/">Perceived geometry</a> ·
+    <a href="/api/visual-quality/vq1/closure-continuity/">Closure continuity</a> ·
+    <a href="/api/visual-quality/vq1/illustrator/">Illustrator state</a> ·
+    <a href="/api/visual-quality/vq1/task52-diagnostic/">Task-52 diagnostic</a>
+  </p>
+</details>
+  <form method="post" action="/dashboard/visual-quality/vq1/decision/"
+        class="vq-acts">{% csrf_token %}
+    <button name="state" value="ACCEPTED">ACCEPT VQ-1 STRUCTURAL BACKBONE</button>
+    <button name="state" value="REVISION_REQUIRED">REJECT / REVISION REQUIRED</button>
+  </form>
+  <p class="warn">Acceptance records structural acceptance of the
+     synthetic backbone only. It never approves task #52, clears any
+     rejection, approves materials/typography, or starts VQ-2.</p>
+
+{% endblock %}

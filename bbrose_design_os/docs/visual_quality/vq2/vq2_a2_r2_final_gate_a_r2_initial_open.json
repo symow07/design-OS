@@ -1,0 +1,72 @@
+{
+ "record_type": "illustrator_gate_a_r2_initial_open/1.0",
+ "created_at": "2026-07-31",
+ "environment": {
+  "application": "Adobe Illustrator 2026",
+  "operating_system": "macOS"
+ },
+ "subject": "vq2_a2_r2_final_gate_a_r2.ai",
+ "subject_sha256": "6ae00f726ddefda4adad93325735c489e3fe987452f9c1a2f603236c73e4c49a",
+ "result": "INITIAL_OPEN_PASSED",
+ "codes": [
+  "ILLUSTRATOR_GATE_A_R2_INITIAL_OPEN_PASSED",
+  "ILLUSTRATOR_GATE_A_R1_ARTWORK_LOSS_RESOLVED",
+  "ILLUSTRATOR_R2_FULL_VISIBLE_ARTWORK_PRESENT",
+  "ILLUSTRATOR_R2_VECTOR_PATHS_PRESENT"
+ ],
+ "confirmed_visible": [
+  "body",
+  "collar",
+  "closure",
+  "BBROSE logo",
+  "medallion and registered symbol",
+  "divider",
+  "Rose",
+  "Damascena",
+  "NIGHT REPAIR OIL",
+  "approved colours",
+  "separate Path and Compound Path objects"
+ ],
+ "objects_expected": 40,
+ "artwork_reported_missing": 0,
+ "what_this_establishes": [
+  "the R1 artwork loss is resolved - every object the owner listed is present, where R1 rendered only three",
+  "Illustrator parsed the EPS into real vector objects rather than embedding or rasterising it: the owner reports separate Path and Compound Path objects",
+  "compound paths survived, so the counters and the medallion are intact as objects and not merely as pixels",
+  "the approved colours render, which R0 could not do at all",
+  "the flat, self-contained construction was the right response - removing layer blocks and inherited state removed the defect"
+ ],
+ "what_this_does_not_establish": [
+  "Gate A - no save, close or reopen happened, so nothing is known about whether the document survives a round trip",
+  "provenance - the returned file is byte-identical to the source, so it carries no evidence of having been through Illustrator",
+  "which of H1 or H2 caused the R1 loss: R2 changed several things at once (no layer blocks, no AI operators, no inherited state, a different Creator line), so the fix does not isolate the mechanism"
+ ],
+ "upload": {
+  "reported_sha256": "6ae00f726ddefda4adad93325735c489e3fe987452f9c1a2f603236c73e4c49a",
+  "accepted_r2_source_sha256": "6ae00f726ddefda4adad93325735c489e3fe987452f9c1a2f603236c73e4c49a",
+  "equals_r2_source": true,
+  "is_new_verification_copy": false,
+  "finding": "the returned .ai hashes exactly to the R2 source, so it is the original re-uploaded. A verification copy necessarily differs from the file it was saved from.",
+  "corroboration": "digest equality computed against docs/visual_quality/vq2/vq2_a2_r2_final_gate_a_r2.ai on disk; the uploaded file itself was not present in this environment and was not re-hashed here"
+ },
+ "uploaded_proofs": {
+  "reported": "the uploaded PDF and PNG render the full artwork",
+  "carries_illustrator_provenance": false,
+  "note": "the R2 proofs generated here already render the full artwork, so a PDF/PNG that matches them is a re-upload of this repository's own output and says nothing about Illustrator. Only an export taken from the REOPENED verification copy carries provenance. Neither upload was present in this environment, so neither was hashed here and neither is claimed as evidence.",
+  "generated_here": {
+   "pdf_sha256_16": "0f7b9c7cbe3a050e",
+   "png_sha256_16": "54be1edb25d4ea88"
+  }
+ },
+ "verification_result_json_received": false,
+ "roundtrip_performed": false,
+ "gate_a_effect": "NONE - Gate A remains BLOCKED",
+ "remaining_requirement": "the four artefacts written by illustrator_gate_a_roundtrip.jsx",
+ "remaining_blocker_is_procedural_not_a_defect": true,
+ "remaining_blocker_note": "both known defects are now closed - R0's black emission and R1's artwork loss. What stands between this and Gate A is provenance: a document that has been saved, closed and reopened in Illustrator, with the result recorded. That is a procedure, not a fault in the source.",
+ "fixture_a_still_useful": true,
+ "fixture_a_now_optional": true,
+ "fixture_a_note": "fixture A would still isolate whether R1 lost its artwork to stacking or to a dropped layer boundary. That is now forensic rather than blocking, since R2 renders correctly. Worth a few seconds only if the mechanism is wanted for the record.",
+ "accepted_design_modified": false,
+ "source_modified": false
+}

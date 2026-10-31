@@ -1,0 +1,45 @@
+{
+ "record_type": "vq2_product_name_lettering_resume_contract/1.0",
+ "created_at": "2026-07-29",
+ "vq2_a2_may_resume_when": "the owner supplies an APPROVED human custom lettering asset",
+ "accepted_input_formats": [
+  ".ai",
+  "vector .pdf",
+  ".eps"
+ ],
+ "validation_on_receipt": [
+  "exact wording",
+  "vector status",
+  "glyph editability",
+  "no raster content",
+  "no live unresolved font",
+  "no horizontal scaling",
+  "no collision",
+  "no self-intersection",
+  "clean layer structure",
+  "apparent composition metrics",
+  "owner approval"
+ ],
+ "on_pass_classify": "VQ2_PRODUCT_NAME_LETTERING: RESOLVED_OWNER_APPROVED",
+ "then_construct": "exactly one VQ2-A2",
+ "vq2_a3_automatic": false,
+ "vq2_a2_inputs": [
+  "frozen M3 4ecc8e9df1d1",
+  "authoritative approved BBROSE vector logo",
+  "owner-approved custom Rose and Damascena lettering",
+  "accepted divider rule",
+  "accepted NIGHT REPAIR OIL",
+  "accepted vertical placement",
+  "flat artwork colours",
+  "concept-front appearance authority"
+ ],
+ "designer_delivery_layers": [
+  "01_ROSE_GLYPHS",
+  "02_DAMASCENA_GLYPHS",
+  "03_WORD_GROUPS",
+  "04_CONSTRUCTION_GUIDES_NONPRINTING",
+  "05_DESIGNER_NOTES_NONPRINTING"
+ ],
+ "designer_must_flag_interpretation": true,
+ "may_resume_from_automated_tracing": false
+}

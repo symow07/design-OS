@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}<link rel="stylesheet" href="{% static 'css/round-balm.css' %}">{% endblock %}
+{% block shell_object_rows %}<p class="none">This review shows only Round 1 objects. Earlier work remains in Status.</p>{% endblock %}
+{% block shell_notification_rows %}<p class="none">Open Status for earlier work and notifications.</p>{% endblock %}
+{% block title %}Lip balm · Round 1{% endblock %}
+{% block page_class %}page wide{% endblock %}
+{% block content %}
+
+<header class="page-hd"><div><p class="round-muted">BBROSE · A new object</p><h1 class="h1">Lip balm / بلسم شفاه</h1>
+<p><a href="{% url 'dashboard:hayat_master' %}">HAYAT · D1/A print master</a></p>
+{% if round.state == 'marks' %}
+<p class="lead">Eight whole objects. Mark up to three, with one line naming what must survive in each.</p>
+<p>Reply with the candidate ID and your line, or write them in <code>docs/rounds/r1-balm/MARKS</code>.</p>
+{% elif round.state == 'pick' %}
+<p class="lead">The final six, ordered pair by pair. Pick one and give a short reason.</p>
+<p>Reply with its ID and reason, or write <code>docs/rounds/r1-balm/PICK</code>. You may name one element from another candidate for day two.</p>
+{% else %}<p class="lead">The round is being prepared. The eight-sketch selection appears here after the whole-object checks and jury cut.</p>{% endif %}
+<p class="round-muted">Provisional lettering. Drawings show the closed object; these are sketches, with no live-type or print-fit certification.</p>
+{% if round.defects %}<details><summary>Known sheet limitations</summary><ul>{% for defect in round.defects %}<li>{{ defect.finding }} {{ defect.scope }}</li>{% endfor %}</ul></details>{% endif %}
+</div></header>
+{% if round.cards %}
+<nav class="round-tabs" aria-label="Round views"><button type="button" class="btn primary" data-round-tab="selection">Selection · {{ round.cards|length }}</button><button type="button" class="btn" data-round-tab="history">History</button><button type="button" class="btn" data-round-tab="jury">Jury records</button></nav>
+<section id="round-selection">
+{% for card in round.cards %}{% include 'dashboard/round_balm_card.html' with location='selection' %}{% endfor %}
+</section>
+<section id="round-history" hidden><h2>History</h2><p>All twenty sketches and every development; excluded objects retain their reasons.</p>
+{% for card in round.history %}{% include 'dashboard/round_balm_card.html' with location='history' %}{% endfor %}</section>
+<section id="round-jury" hidden><h2>Both jurors, every pair</h2><p>At equal execution quality, which idea is more distinctive, and what beyond its front proves it?</p>
+<p>Purchase appeal is recorded separately and does not decide the order.</p>
+{% for stage in round.jury %}<h3>{{ stage.stage|title }}</h3>{% for judge in stage.judges %}<h4>{{ judge.name }} order</h4><p>{{ judge.order|join:' → ' }}</p>
+{% if judge.pairs %}<details><summary>{{ judge.pairs|length }} pairwise decisions</summary><table><thead><tr><th>Pair</th><th>Preference</th><th>Decisive relationship</th></tr></thead><tbody>{% for pair in judge.pairs %}<tr><td>{{ pair.pair|join:' / ' }}</td><td>{{ pair.winner }}</td><td>{{ pair.relationship }}</td></tr>{% endfor %}</tbody></table></details>{% endif %}
+<details><summary>Purchase appeal · separate from order</summary>{% for batch in judge.appeal %}<ul>{% for id, answer in batch.items %}<li><strong>{{ id }}: {{ answer.answer }}</strong> — {{ answer.reason }}</li>{% endfor %}</ul>{% endfor %}</details>{% endfor %}{% endfor %}
+{% for record in round.records %}<p><a href="{% url 'dashboard:round_balm_file' record.role %}" target="_blank">{{ record.name }}</a></p>{% endfor %}
+<details><summary>Owner marks, picks and juror spread</summary><pre class="round-records">{{ round.calibration }}</pre></details></section>
+
+{% endif %}
+{% endblock %}
+
+{% block scripts %}<script src="{% static 'js/round-balm.js' %}"></script>{% endblock %}

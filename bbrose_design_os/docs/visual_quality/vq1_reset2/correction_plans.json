@@ -1,0 +1,44 @@
+[
+  {
+    "schema_version": "visual_correction_plan/1.0",
+    "iteration_identity": "RESET2-IT1",
+    "failed_component": "WHOLE_ASSEMBLY",
+    "root_cause": "the candidate was emitted as one undifferentiated silhouette on a page narrower than the body, so it rendered cropped with no distinguishable closure or collar",
+    "problem_class": "RENDERING",
+    "required_change": "draw separate visible component contours and size the page from the body width",
+    "model_replacement_required": false,
+    "human_review_state": "NOT_REVIEWED"
+  },
+  {
+    "schema_version": "visual_correction_plan/1.0",
+    "iteration_identity": "RESET2-IT2",
+    "failed_component": "CLOSURE_COLLAR_JUNCTION",
+    "root_cause": "band boundaries sat on transition rows, blending two widths and leaving a notch between closure and collar",
+    "problem_class": "CONTOUR",
+    "required_change": "move band boundaries inside each component and extend the sleeve to meet the flare",
+    "model_replacement_required": false,
+    "human_review_state": "NOT_REVIEWED"
+  },
+  {
+    "schema_version": "visual_correction_plan/1.0",
+    "iteration_identity": "RESET2-IT3",
+    "failed_component": "WHOLE_ASSEMBLY",
+    "root_cause": "width and height were normalized independently to 1.0 and x was scaled by height, making the render 1:1 instead of 3.08:1. The profile comparison divides by body width and was structurally blind to it; the visual inspector caught it",
+    "problem_class": "COORDINATE_SYSTEM",
+    "required_change": "scale x by ASPECT_W_OVER_H and add an assembly-aspect gate",
+    "model_replacement_required": false,
+    "human_review_state": "NOT_REVIEWED"
+  },
+  {
+    "schema_version": "visual_correction_plan/1.0",
+    "iteration_identity": "RESET2-IT4",
+    "failed_component": "DARK_CLOSURE",
+    "root_cause": "the closure contour terminates at its band top with a finite half-width, so the mirror closes it with a straight line and the dome reads as a flat trapezoid",
+    "problem_class": "CONTOUR",
+    "required_change": "carry the closure contour to zero half-width at the apex so the dome closes as a curve",
+    "model_replacement_required": false,
+    "human_review_state": "NOT_REVIEWED",
+    "applied": false,
+    "note": "identified but NOT applied \u2014 all three inspector calls are consumed and \u00a711 stops the loop"
+  }
+]

@@ -1,0 +1,91 @@
+§AD0(a) PREDICTION — commit A ATTEMPT 4 (§BH26(a) owner-grant channel,
+under §BH26(d) FOLD + (e) TOOL-RUN + (f) FOLD + (g) METHOD + (i) the
+EXPLICIT fourth fold), sealed BEFORE git add. Base HEAD 2ddc742 (T26i).
+Attempts 1–3 stand scored, unrevised (score_a_attempt1..3.txt); this is
+the fresh 8-leg §BH26(i)(3) requires, carrying the census
+(f5_downstream_audit_report.txt) as part of the seal per (i)(1).
+
+THE BINDING PAIR under (g)+(i), measured zero-write over the post-T26i
+tree (ledger 436) BEFORE R4/R5 (prefold_checks.py, 22/22 OK) and
+re-measured AFTER R4/R5 in a fresh process (r4r5_apply.py):
+   rdm digest (record_digest_manifest.json on disk): cbba67bee1c29105
+      — UNCHANGED; the fold edits two .py files (NOT_A_RECORD)
+   protocol_identity: c7924c5a4215f3cf — the (i)-named value; in
+      memory pre-fold with :1970 patched, on disk post-fold
+   tier2_gate.check_manifest under the rebound pin: [] with total 7690
+   manifest fe4199bc421b7454 (372 files); diffs 065b33fc2a10419f
+Any written value differing from these, or a gate refusal on any pin
+the census missed: HARD STOP — the census method goes under review per
+(i)(1); no further folds without the owner's word.
+
+COUNT READING unchanged from attempt 3: TEN numstat rows; the
+enumeration governs.
+
+L1 WRITE SET: exactly the same TEN tracked paths as attempt 3 — R4 and
+   R5 add NO path:
+   NEW  bbrose_design_os/apps/ire/container_font_owner_grant.py (141)
+   NEW  bbrose_design_os/apps/pipeline/tests/test_container_font_owner_grant.py (120)
+   MOD  bbrose_design_os/apps/pipeline/targets/container/__init__.py
+   MOD  bbrose_design_os/apps/pipeline/tests/test_wif_reconstruct_container.py
+   MOD  bbrose_design_os/apps/pipeline/tests/test_container_target.py
+   MOD  bbrose_design_os/apps/pipeline/services/palette_powder_protocol.py (R2 + R4)
+   MOD  bbrose_design_os/apps/pipeline/tests/test_characterization_protocol.py (R5)
+   MOD  bbrose_design_os/docs/roadmap/palt_m6/suite_file_manifest.json
+   MOD  bbrose_design_os/docs/roadmap/palt_m6/suite_manifest_diffs.json
+   MOD  bbrose_design_os/docs/roadmap/palt_m6/record_digest_manifest.json (R1)
+   Plus the gate-staged ledger line. The eight paths not touched by
+   R4/R5 are byte-identical to attempt 3's seal (sha256 AND index blob,
+   stash_a4/sha256s_ten.txt, verified through the T26i stash
+   round-trip); ppp and tcp carry one further literal each.
+   container_font_authority.py NOT in the write set.
+L2 DIFF SHAPE (measured vs HEAD on the worktree, pre-add): grant 141+0;
+   test 120+0; container/__init__.py +17 −7; wif +27 −8;
+   container_target +12 −8; ppp +2 −2 (:1970 R4 and :2195 R2); tcp +1
+   −1 (:617 R5 — one changed line vs HEAD); manifest +4 −3; diff-log
+   +8 −0; record_digest_manifest +17 −7.
+L3 MANIFEST / A391 / (i): the chain is now consistent END TO END —
+   manifest fe4199bc… ↔ ppp:1970 (R4) ↔ rdm survey row (R1) ↔ ppp:2195
+   (R2) ↔ identity c7924c5a… at tcp:617 (R5). Measured: check_manifest
+   → []; A327(a) file-set 372 == 372 both directions; A327(b) 52/52 and
+   66/66; A327(c) 7690/7690; DIP0C 671, DIP0 135 — five floors at zero
+   slack, a known sharpness per (i)(4). Records step: the ledger at 436
+   (437 after its own append) passes the APPEND_ONLY prefix rule; rdm
+   unchanged. No manifest regeneration in this arc ((i)(4)).
+L4 STAGED == DECLARED: git diff --cached --numstat = exactly the TEN
+   rows of L2 (141+0, 120+0, 17−7, 27−8, 12−8, 2−2, 1−1, 4−3, 8−0,
+   17−7).
+L5 COMMIT CONTENTS: 11 files (ten + ledger); insertions
+   141+120+17+27+12+2+1+4+8+17+1 = 350; deletions 7+8+8+2+1+3+0+7 = 36.
+L6 SUITE LINE + REFUSAL TREE: GREEN with the SIX grant tests —
+   TIER_2=GREEN collected=8496 failures=0 apps=7690 dip0c=671 dip0=135
+   (the owner's expected line at (i)(2); the census's forecast, every
+   stage PASS). Pre-gate targeted THIS configuration: 124 passed, 2
+   subtests passed in 40.14s — tcp + test_palette_statistics.py IN
+   FULL + the 6 grant tests. The three full-suite legs ran green on
+   the staged tree on 2026-09-02 at the pre-fold configuration; the
+   fold changes two literals whose only suite-wide reader is :617.
+   No refusal expected; §BH24 0/3. A refusal on a pin the census
+   missed = STOP per (i)(1).
+L7 LEDGER FOLD: 436 → 437, the +1 in THIS commit.
+L8 PROTOCOL IDENTITIES / APPS DIFF: apps diff = exactly SEVEN apps
+   paths; docs diff = exactly THREE ruled docs paths + ledger;
+   protected regions byte-identical at scoring (GATE 7fbeb8f1fe10b0fb
+   @ cfa [514:541]; TEST b32030dc827263e4 @ a76242c^ blob [82:98],
+   exact recipe, cwd-correct pathspec, checked exit). protocol_identity
+   MOVES ead892658e3323a8 (HEAD) → c7924c5a4215f3cf at its ONE live pin
+   — the (i)-named value. Grep-verified pin completeness on the
+   worktree (apps/tools/docs): c7924c5a… exactly ONE live hit
+   (tcp:617); fe4199bc… exactly TWO live (ppp:1970, rdm:10446);
+   0e9cd7a2… ZERO hits; 65aef9fb… and ead89265… comments only
+   (ppp:1938; tcp:455/:505/:594). The L8 identity table updates on
+   landing; the old values history. On THIS landing the single-use
+   §BH26(a) authority is SPENT.
+
+DIVERGENCES RIDING AS HISTORY, unchanged by this seal: transcribed R2's
+"exactly TWO" redden points measured THREE (attempt 1); attempt 1's
+L1/L3/L6 falsified (undeclared extent); attempt 2's L6 falsified
+(record-digest refusal); the (f)(2) pair void pre-write; attempt 3's L6
+falsified by the third pin (the (f)(5) stop that (i) answers); the (g)
+block's TRANSCRIBED date; the (i) ruling's "(h)(4)" with no §BH26(h) in
+the register; the (i) transcription's dates by wall clock (2026-09-03)
+against the session's notice (2026-09-02).

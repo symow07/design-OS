@@ -1,0 +1,191 @@
+{
+ "schema": "consolidation_chain_run/1",
+ "native": false,
+ "paid_steps_not_run": [
+  "research (Tavily, one Claude call)",
+  "the three boards",
+  "the three designs",
+  "the flat painting (a $0 stand-in instead: round 3's two real paintings were lost to the network)",
+  "the bottle and cap edits (round 3's own drawn faces used)",
+  "the eye"
+ ],
+ "die": {
+  "committed_equals_solved_again": true,
+  "height_mm": 225.02474195235837,
+  "header_mm": [
+   107.0,
+   78.2491
+  ],
+  "from_brief_alone": {
+   "height_mm": 160.0,
+   "header_mm": [
+    107.0,
+    58.5
+   ]
+  },
+  "record_sha256": "4e5a640fe41f157465d8b38e4e4a3c4a85f42e121d8a2faff035d5dc509442a8"
+ },
+ "template": {
+  "frame": "1024x1536",
+  "dpi_at_1to1": 59.8,
+  "template_sha256": "1bd873aa8fcbdd692d8f634746a8377f5b265903116a14dc8110026150d32838",
+  "sheet_sha256": "16b8edb96309c8189d70c7599989d8363b4e2c8363762bfcc148cf140a6e814d",
+  "same_as_round3": true
+ },
+ "die_match_proof": {
+  "stand_in": true,
+  "drift_applied_rows_cols": [
+   3,
+   2
+  ],
+  "best_shift_px_xy": [
+   2,
+   3
+  ],
+  "outside_pixels_differing": 0,
+  "pdf_readback_mm": {
+   "CUT": 0.0003,
+   "CREASE": 0.0002,
+   "ARTWORK": 0.0002
+  }
+ },
+ "faces": {
+  "header": {
+   "sha256": "2f15f8d30ace804d",
+   "size_px": [
+    266,
+    198
+   ]
+  },
+  "header_back": {
+   "sha256": "4983353114eb8d6c",
+   "size_px": [
+    266,
+    202
+   ]
+  },
+  "front": {
+   "sha256": "8cc9213f9f0902fa",
+   "size_px": [
+    266,
+    57
+   ]
+  },
+  "side": {
+   "sha256": "0338c25953770a8c",
+   "size_px": [
+    207,
+    352
+   ]
+  },
+  "left": {
+   "sha256": "46ef1762adee3f0e",
+   "size_px": [
+    207,
+    352
+   ]
+  },
+  "back": {
+   "sha256": "6cfad09475c58be5",
+   "size_px": [
+    266,
+    352
+   ]
+  },
+  "bottle": {
+   "sha256": "77d60c4dbf16477a",
+   "size_px": [
+    309,
+    1440
+   ]
+  },
+  "cap": {
+   "sha256": "0667edd2949ee5be",
+   "size_px": [
+    720,
+    1440
+   ]
+  }
+ },
+ "objects": {
+  "bottle-front": {
+   "ai": "bottle-front.ai",
+   "ai_sha256": "9d40ffc6cf5f648e",
+   "ai_content_sha256": "5a425ecdd7a4bd21",
+   "png_sha256": "d64ffd4df6ced226",
+   "checks": 15,
+   "checks_failed": [],
+   "native": null
+  },
+  "cap": {
+   "ai": "cap.ai",
+   "ai_sha256": "526a4fb6dc28517f",
+   "ai_content_sha256": "a4fc86ba03ece9a7",
+   "png_sha256": "532ed66a5e750495",
+   "checks": 15,
+   "checks_failed": [],
+   "native": null
+  },
+  "stand": {
+   "ai": "stand.ai",
+   "ai_sha256": "9dad5060fb38be8f",
+   "ai_content_sha256": "2ee3ec92f9420181",
+   "png_sha256": "782b5f63dcae7039",
+   "checks": 15,
+   "checks_failed": [],
+   "native": null
+  }
+ },
+ "die_files": {
+  "files": [
+   "die.pdf",
+   "die.dxf",
+   "die.cf2",
+   "assembly.pdf"
+  ],
+  "readback_mm": {
+   "CUT": 0.0003,
+   "CREASE": 0.0002,
+   "ARTWORK": 0.0001
+  },
+  "nest_best": {
+   "sheet_mm": [
+    1400,
+    1000
+   ],
+   "sets": 2,
+   "parts_placed": 14,
+   "yield": 0.155,
+   "turned": false,
+   "method": "shelf packing of the parts' bleed rectangles; whole sets only"
+  }
+ },
+ "zip": {
+  "members": [
+   "assembly.pdf",
+   "bottle-front.ai",
+   "bottle-front.png",
+   "cap.ai",
+   "cap.png",
+   "die.cf2",
+   "die.dxf",
+   "die.pdf",
+   "product-drawing.png",
+   "stand.ai",
+   "stand.png"
+  ],
+  "count": 11
+ },
+ "views": [
+  "back",
+  "bottle",
+  "cap",
+  "front",
+  "header",
+  "header_back",
+  "left",
+  "side"
+ ],
+ "drawing": "revisions/1/product-drawing.png",
+ "seconds": 5.1
+}

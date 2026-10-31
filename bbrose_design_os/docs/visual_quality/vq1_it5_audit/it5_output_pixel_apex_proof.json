@@ -1,0 +1,229 @@
+{
+  "record_type": "it5_output_pixel_apex_proof/1.0",
+  "image": "docs/visual_quality/vq1_reset2/iteration_5.png",
+  "image_sha256": "cef8e1ab2618a97859c693e8a91ed0378f31baae482caef991e87e136b3973b9",
+  "image_size": [
+    307,
+    709
+  ],
+  "topmost_foreground_row": 28,
+  "first_20_row_widths_px": [
+    9,
+    19,
+    25,
+    29,
+    33,
+    37,
+    39,
+    41,
+    45,
+    47,
+    49,
+    51,
+    52,
+    53,
+    55,
+    57,
+    57,
+    59,
+    60,
+    61
+  ],
+  "row_progression": [
+    {
+      "row_offset": 0,
+      "y": 28,
+      "left": 149,
+      "right": 157,
+      "width_px": 9,
+      "center": 153.0
+    },
+    {
+      "row_offset": 1,
+      "y": 29,
+      "left": 144,
+      "right": 162,
+      "width_px": 19,
+      "center": 153.0
+    },
+    {
+      "row_offset": 2,
+      "y": 30,
+      "left": 141,
+      "right": 165,
+      "width_px": 25,
+      "center": 153.0
+    },
+    {
+      "row_offset": 3,
+      "y": 31,
+      "left": 139,
+      "right": 167,
+      "width_px": 29,
+      "center": 153.0
+    },
+    {
+      "row_offset": 4,
+      "y": 32,
+      "left": 137,
+      "right": 169,
+      "width_px": 33,
+      "center": 153.0
+    },
+    {
+      "row_offset": 5,
+      "y": 33,
+      "left": 135,
+      "right": 171,
+      "width_px": 37,
+      "center": 153.0
+    },
+    {
+      "row_offset": 6,
+      "y": 34,
+      "left": 134,
+      "right": 172,
+      "width_px": 39,
+      "center": 153.0
+    },
+    {
+      "row_offset": 7,
+      "y": 35,
+      "left": 133,
+      "right": 173,
+      "width_px": 41,
+      "center": 153.0
+    },
+    {
+      "row_offset": 8,
+      "y": 36,
+      "left": 131,
+      "right": 175,
+      "width_px": 45,
+      "center": 153.0
+    },
+    {
+      "row_offset": 9,
+      "y": 37,
+      "left": 130,
+      "right": 176,
+      "width_px": 47,
+      "center": 153.0
+    },
+    {
+      "row_offset": 10,
+      "y": 38,
+      "left": 129,
+      "right": 177,
+      "width_px": 49,
+      "center": 153.0
+    },
+    {
+      "row_offset": 11,
+      "y": 39,
+      "left": 128,
+      "right": 178,
+      "width_px": 51,
+      "center": 153.0
+    },
+    {
+      "row_offset": 12,
+      "y": 40,
+      "left": 128,
+      "right": 179,
+      "width_px": 52,
+      "center": 153.5
+    },
+    {
+      "row_offset": 13,
+      "y": 41,
+      "left": 127,
+      "right": 179,
+      "width_px": 53,
+      "center": 153.0
+    },
+    {
+      "row_offset": 14,
+      "y": 42,
+      "left": 126,
+      "right": 180,
+      "width_px": 55,
+      "center": 153.0
+    },
+    {
+      "row_offset": 15,
+      "y": 43,
+      "left": 125,
+      "right": 181,
+      "width_px": 57,
+      "center": 153.0
+    },
+    {
+      "row_offset": 16,
+      "y": 44,
+      "left": 125,
+      "right": 181,
+      "width_px": 57,
+      "center": 153.0
+    },
+    {
+      "row_offset": 17,
+      "y": 45,
+      "left": 124,
+      "right": 182,
+      "width_px": 59,
+      "center": 153.0
+    },
+    {
+      "row_offset": 18,
+      "y": 46,
+      "left": 124,
+      "right": 183,
+      "width_px": 60,
+      "center": 153.5
+    },
+    {
+      "row_offset": 19,
+      "y": 47,
+      "left": 123,
+      "right": 183,
+      "width_px": 61,
+      "center": 153.0
+    }
+  ],
+  "apex_center_x": 153.0,
+  "image_center_x": 153.5,
+  "apex_centered_within_px": 0.5,
+  "top_horizontal_segment_length_px": 9,
+  "dome_region_height_px": 27,
+  "local_curvature_second_differences": [
+    -4,
+    -2,
+    0,
+    0,
+    -2,
+    0,
+    2,
+    -2
+  ],
+  "analysis": "measured from the ACTUAL emitted PNG, not pre-render vector data",
+  "apex_topology": "ROUNDED_APEX_WITH_RASTERIZATION_PLATEAU",
+  "topology_evidence": {
+    "width_increments": [
+      10,
+      6,
+      4,
+      4,
+      4,
+      2,
+      2,
+      4,
+      2,
+      2
+    ],
+    "monotonically_widening": true,
+    "increments_decelerate": true,
+    "top_row_width_px": 9
+  },
+  "resolution_caveat": "the dome occupies only 27 px of height in this image, so the topmost row is 9 px wide purely from rasterization of a vector apex whose half-width is exactly 0. An earlier binary label of FLAT came from an arbitrary 6 px threshold and was withdrawn as unreliable at this scale."
+}

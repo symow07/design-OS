@@ -1,0 +1,345 @@
+§BH26(f)(5) THIRD-PIN STOP — ZERO-WRITE AUDIT OF THE WHOLE DOWNSTREAM
+SURFACE, FOR THE OWNER'S RULING. Written 2026-09-02 against the frozen
+tree (HEAD 8bbe57e, ten paths staged, ledger 435 unstaged). Nothing in
+the repo was written by this audit; proof at §9.
+
+PURPOSE. The stop report (hard_stop_f5_third_pin_report.txt) priced the
+fourth fold as two one-literal edits and asked for the owner's word.
+This audit answers the question that ruling needs: IF the owner rules
+the fourth fold, does attempt 4 land, or does it surface pin FOUR? It
+also lays out, quoted, the textual question whether (f)'s "per the A391
+recipe" already covers the :1970 rebind — presented, not decided.
+
+METHOD. Seven independent read-only finders (gate-clause simulation
+in-process; the full three-leg suite; identity consumers; manifest
+consumers; records chain; tests of the gate tools; ruling text), each
+proving porcelain-identical and ledger 435 before/after. Every measured
+value below was reproduced by at least two finders independently, and
+the identity move by three. A first adversarial pass (2 refuters per
+live finding, 230 agents) died on a session limit; a second pass at
+decision scale (17 findings, 29 refuters) ran after — statuses at §10.
+The full suite was run by the executor's own shell (the finder's run
+was cut off at 8%) — result at §2, leg rows.
+
+§1 THE FOURTH FOLD, PRECISELY. Two one-literal edits, nothing else:
+   palette_powder_protocol.py:1970  "suite_file_manifest":
+        65aef9fb1a3660cd -> fe4199bc421b7454   (the staged manifest's bytes)
+   test_characterization_protocol.py:617  protocol_identity pin
+        0e9cd7a2b94ccc82 -> c7924c5a4215f3cf   (measured in-memory ×3)
+   The (g)-minted PAIR under the fold: the rdm half cbba67bee1c29105 is
+   UNCHANGED (the fold edits two .py files, NOT_A_RECORD; the gate's own
+   record-integrity step appends the ledger only and never regenerates
+   record_digest_manifest.json — guarded_commit.sh:227 passes no
+   --regenerate; ppp:2195 stays synced, _assert_record_manifest_synced
+   passes before and after, measured). Only the IDENTITY half is
+   superseded, and its new value is computable zero-write — it is
+   c7924c5a4215f3cf. So "the preview re-mints" in the stop report was
+   half right: one of the two values moves, and it is already known.
+
+§2 ATTEMPT-4 FORECAST, STAGE BY STAGE (guarded_commit.sh order), under
+the fourth fold. "Exercised" = whether any of attempts 1–3 ever reached
+the stage on this tree.
+   stage                                  verdict  exercised  evidence
+   extent clause 1 (targets exist)        PASS     yes(a3)    sizes 50609/81263
+   extent clause 2 (collected > 0)        PASS     yes(a3)    52 / 66 collected
+   extent clause 3 (floor per target)     PASS     yes(a3)    52>=52, 66>=66 (zero slack)
+   extent clause 4 (both directions)      PASS     yes(a3)    set difference empty
+   Tier-1 suite (tps + tcp)               PASS     yes(a3)    118 passed at a3; :617 re-pinned
+   flake_gate                             n/a      no         only entered on a red Tier-1
+   record_integrity (records step)        PASS     yes(a3)    ledger APPEND_ONLY prefix rule: stored
+                                                              digest ca3336e2 == hash of the 434-line
+                                                              prefix; 435 (and 436) pass; .py moves
+                                                              no record; simulated 436-line file -> []
+   reserved_copy                          PASS     yes(a3)    RESERVED_COPY_OK at a3; fold edits are hex
+   brand_strings                          PASS     yes(a3)    BRAND_STRINGS_OK at a3
+   TIER_2 A327(a) digest pre-check        PASS     yes(a3:REFUSED)  in-memory rebind -> refusals []
+   TIER_2 A327(a) file-set both ways      PASS     NEVER      372 declared == 372 collected, [] / []
+   TIER_2 A327(b) tier1 floors            PASS     NEVER      52>=52, 66>=66 (zero slack)
+   TIER_2 A327(c) total floor             PASS     NEVER      7690 >= 7690 (zero slack)
+   TIER_2 DIP0C floor                     PASS     yes(a3)    671 == 671
+   TIER_2 DIP0 floor                      PASS     yes(a3)    135 == 135
+   TIER_2 apps suite leg                  PASS     NEVER->now measured  rc=0, 7687 passed / 3 skipped, failed_ids=[] (§2a)
+   TIER_2 dip0c leg                       PASS     NEVER->now measured  rc=0, 671 passed, failures=[] (§2a)
+   TIER_2 dip0 leg                        PASS     NEVER->now measured  rc=0, 135 passed, failures=[] (§2a)
+   disposition / flake register           PASS-if-green  NEVER  zero consumable AMBER (4 at
+                                                              allowed 0, 2 at 1/1 spent): ANY
+                                                              failure -> REFUSE; --commit with zero
+                                                              failures rewrites nothing
+   ledger staging + commit                n/a      NEVER      the +1 (436) staged into commit A
+   Note the SIX stages never reached by any attempt: the three A327
+   content clauses and the three suite legs. The A327 content clauses
+   are now measured (above). The suite legs are §2a.
+
+§2a THE FULL SUITE AGAINST THE STAGED TREE (first time ever; the
+executor's shell, the gate's own three commands from tier2_gate.py's
+PYTEST / DIP0C_PYTEST / DIP0_PYTEST constants, cache provider off,
+zero-write proof before/after):
+   ALL THREE LEGS GREEN, rc=0 each (full_suite_run.txt, START
+   2026-09-02T06:35:20Z, END 06:49:24Z; cwd = the inner ROOT exactly as
+   tier2_gate.py sets it; PYTEST_ADDOPTS=-p no:cacheprovider):
+     LEG1 apps   ['venv/bin/python','-m','pytest','apps','-q','-p','no:randomly']
+                 rc=0  768s  "7687 passed, 3 skipped, 606 warnings, 41596
+                 subtests passed in 764.45s"  failed_ids=[]
+     LEG2 dip0c  tools/dip0c/tests  rc=0  74s  "671 passed"  failures=[]
+     LEG3 dip0   tools/dip0/tests   rc=0   2s  "135 passed"  failures=[]
+   Zero-write around the run: PORCELAIN_BEFORE/AFTER_IDENTICAL,
+   LEDGER 435 before and after, SHA_AFTER_IDENTICAL (all eleven
+   worktree paths). Read against the gate: tier2_gate.py's failed_ids()
+   parses FAILED/ERROR ids only and the returncode is the primary
+   signal — 3 skips cannot refuse. The driver logged tails, not the
+   -rs listing, so the three skipped ids are not named here; every
+   skip site in apps/ tests is environment-conditional (Playwright,
+   Blender, Imbue, poppler/sips, system ICC profiles, absent review
+   renders — git grep of skip/skipif/skipTest/skipUnless), none reads
+   a pin. test_two_roots_collision_guard.py has NO skip gating, so its
+   git-shelling tests RAN and PASSED in the executor's environment —
+   which settles T15's environmental UNKNOWN (the subagent sandbox's
+   Xcode-licence git refusal does not exist in the shell that runs the
+   gate). Compared with the T26g gate (TIER_2=GREEN collected=8490
+   apps=7684): apps grew by exactly the SIX grant tests (7684 -> 7690
+   collected; 7687 passed + 3 skipped = 7690).
+   Caveat that survives regardless: this run is the CURRENT staged
+   configuration (identity 0e9cd7a2b94ccc82, :617 matching). Under the
+   fold the only suite-wide consumer of the moved identity is :617,
+   re-pinned in the same edit; no other test reads
+   EXTENT_DIGESTS["suite_file_manifest"] (git grep, three finders).
+
+§3 LIVE PIN INVENTORY of the manifest rewrite and the identity move.
+   ppp:1970  "suite_file_manifest": 65aef9fb1a3660cd   STALE — THE REFUSER
+             sole consumer tools/tier2_gate.py:172-177 (check_manifest);
+             also hashed into protocol_identity() at ppp:2279.
+   ppp:2195  "record_digest_manifest": cbba67bee1c29105 REBOUND IN STAGED;
+             sole consumer ppp:2245-2268 _assert_record_manifest_synced.
+   tcp:617   protocol_identity pin 0e9cd7a2b94ccc82    REBOUND IN STAGED;
+             the ONE live pin of the identity; moves at the fold.
+   record_digest_manifest.json:10443-10448  suite_file_manifest.json
+             digest fe4199bc421b7454 (REVISABLE)      REBOUND IN STAGED (R1).
+   record_digest_manifest.json:9843-9848    record_gate_ledger.jsonl
+             APPEND_ONLY, digest ca3336e2 (=434-line prefix), prefix
+             72532e5a                                 CONSISTENT at 435/436.
+   guarded_commit.sh:150-151  EXPECTED_TARGETS :52 / :66   UNTOUCHED, equal
+             to the manifest's tier1_floors (the two copies agree).
+   Everything else that mentions these hexes is comment/prose: ppp:1938,
+   tcp:455/:505/:594/:600, register line 17336 (ead89265…).
+   EXTENT_DIGESTS has exactly THREE keys: suite_file_manifest,
+   record_digest_manifest, recipe (prose, hashed into the identity, no
+   check). Exactly TWO live readers of the dict: tier2_gate.py:172 and
+   ppp:2263.
+
+§4 FOURTH-PIN CANDIDATES: NONE FOUND. Measured negatives:
+   - c7924c5a4215f3cf exists nowhere on disk today (inner root incl.
+     docs/*.json|jsonl, outer register): 0 hits.
+   - 0e9cd7a2b94ccc82: exactly ONE hit, tcp:617. ead892658e3323a8: one
+     comment (tcp:594) + one register line (17336).
+   - The eight service call sites of ppp.protocol_identity() (flake_rig
+     :101, m6_exit_gate :73/:368, axis_diagnosis :133, rigs :406/:582,
+     texture_axes :903, ppp :2299) STORE the value into records or hash
+     it further; none compares it to a stored value. m5_closeout:638 and
+     tcp:115 use a DIFFERENT function (palette_characterization_protocol
+     .protocol_identity, 6b187e8b87bdb5e9, not bound to ppp).
+   - 65 docs records embed a "protocol_identity" (68 hits, 27 distinct
+     historical values); no code path reads one back for comparison.
+     The FROZEN literal 087c7f64317910fb in
+     palette_instrument_repair_protocol.py:55 never meets the live value.
+   - No test anywhere calls check_manifest() or manifest_digest(); tests
+     load tier2_gate.py only for failed_ids/normalize_node_id/
+     raised_floors. GuardedCommitTests run the REAL guarded_commit.sh
+     --dry-run but ALWAYS override SUITE_CMD, and guarded_commit.sh:283-
+     286 runs tier2_gate only when SUITE_CMD is NOT overridden — so
+     TIER2 is reported NOT_RUN_SUITE_CMD_OVERRIDDEN. THAT is why a fully
+     green 124-test sweep coexisted with the TIER_2 refusal.
+   - No live pin of 371/372/7643/7690/51/52 outside the manifest and
+     guarded_commit.sh:150 (git grep -w).
+   - The four SimpleTestCase tests that read the REAL manifest or diff
+     log (tcp:858, :1003, :1050, :889) compare content/floors, never the
+     digest; all pass now and are untouched by the fold.
+
+§5 THE A391 "THIS DIGEST" QUESTION — quoted, both readings, not chosen.
+   The recipe value (ppp:2196-2211, LAST key of EXTENT_DIGESTS,
+   immediately after "record_digest_manifest"):
+     "sha256 of the manifest file's bytes, first 16 hex; regenerate the
+     manifest, then update this digest in the same amendment, never
+     separately — and run A391's five steps IN ORDER: records first,
+     because clearing a record refusal moves this very digest and
+     silently invalidates any identity pinned before it (§AX). RUN THE
+     RECORDS STEP TWICE: regenerating the suite manifest is itself a
+     write to three declared records, so step 1's OK does not survive
+     step 2 and must be re-earned before the rebind (§AY1). REGENERATE
+     THE SUITE MANIFEST ONLY WHEN A TEST FILE WAS ACTUALLY ADDED OR
+     REMOVED. It is a WRITE, not a query: it stamps `generated` with the
+     wall clock, so a run that reports `added (0) / removed (0)` still
+     mints a new digest and still costs a rebind, an identity recompute
+     and a re-pin. ..."
+   The first sentence names neither key. "the manifest" differs by
+   tool: tier2_gate.py:46 MANIFEST = suite_file_manifest.json;
+   record_integrity.py:22 MANIFEST = record_digest_manifest.json.
+   A391's five steps (register 5283, AR4(4)): "records, regenerate,
+   rebind, compute, PIN" — the enumeration names no digest. Its
+   restatements name BOTH: AX0(p) 6798-6805 "regenerate/rebind/compute/
+   pin over `suite_file_manifest`" with record_digest_manifest.json
+   moved by the records step; AZ0(h) 7484-7491 step 2 = "regenerated the
+   suite manifest", then "the rebind"; AR3(c) 5256-5259 "The manifest's
+   digest lives in EXTENT_DIGESTS, so regenerating it moves
+   protocol_identity and drags the full five-step A391 chain".
+   The owner's own words: (f) 17260-17289 quotes the recipe's first
+   sentence and says "I follow the recipe", then enumerates "EIGHT
+   tracked paths ... with the two one-literal maintenance edits
+   (palette_powder_protocol.py:2195 rebind; test_characterization_
+   protocol.py:617 re-pin)", glosses "digest" in (f)(2) by the :2195
+   hex (ff18cb2d…), and in (f)(5) says "If a THIRD distinct downstream
+   pin fires after this fold, stop — do not fold further without my
+   word." (g) 17353-17369: "This method governs any recurrence of the
+   same dynamics without further rulings — the same three-file chain,
+   time-moved inputs only. A NEW downstream pin remains a hard stop per
+   (f)(5)." Grep of every owner-blockquoted line in 17100-17424 for
+   "1970", "suite_file_manifest", "EXTENT_DIGESTS", "identity chain":
+   NO HIT. The phrase "identity chain" exists only in tier2_gate.py:177.
+   READING A (already covered): the owner adopted the recipe by name;
+   the recipe's later sentences tie "regenerate the suite manifest" to
+   "a rebind, an identity recompute and a re-pin"; (e)'s tool-run DID
+   regenerate the suite manifest; A391's restatements place the
+   suite-manifest rebind inside the chain; (f)(3) pre-declares identity
+   movement as maintenance consequence.
+   READING B (not covered — the executor's reading at the stop): (f)
+   enumerated the write set and the two literals by line and neither is
+   :1970; (f)(2)'s "digest" is the :2195 value by its hex; (f)(5) and
+   (g) both reserve a NEW pin to the owner; the executor's R1/R2/R3
+   definitions (17326-17344) never mention :1970; tcp:581-589's own
+   narration treats the suite-manifest rebind as separately conditioned
+   ("NO SUITE-MANIFEST REGENERATION AND NO REBIND ... This commit adds no
+   test file") — and THIS commit does add a test file, so that
+   precondition for "no rebind" is absent here (stated as text).
+
+§6 CAVEATS THE OWNER SHOULD SEE.
+   (a) FIVE FLOORS AT ZERO SLACK: tier1 52/52 and 66/66, total 7690/
+       7690, dip0c 671/671, dip0 135/135. Any single test deleted
+       anywhere refuses. That is the ratified design, stated so the
+       fourth fold is not blamed for it later.
+   (b) THE MANIFEST GENERATOR IS NON-IDEMPOTENT: it stamps the wall
+       clock (tier2_gate.py:343/:350), so ANY further
+       --regenerate-manifest before commit A lands re-mints the digest
+       and re-fires A327(a). The fourth fold is stable only if the
+       manifest is never regenerated again in this arc. The recipe
+       says so itself ("DO NOT RUN IT").
+   (c) THE A387 GUARD IS ASYMMETRIC: _assert_record_manifest_synced
+       refuses an unsynced record_digest_manifest but nothing in ppp
+       refuses an unsynced suite_file_manifest — which is exactly how a
+       stale :1970 could be hashed into a mint, pinned at :617, pass a
+       green sweep, and be caught only by TIER_2. Recorded as a finding
+       (§X3(c): recorded, not fixed).
+   (d) The subagents' sandbox had /usr/bin/git refusing on an
+       unaccepted Xcode licence (exit 69). The executor's own shell —
+       the one that runs the gate — has a working /usr/bin/git
+       (rev-parse verified). So tier2_gate.py:401's `git rev-parse` and
+       guarded_commit.sh:337/340/343 are NOT at risk at attempt 4; the
+       full-suite run in §2a also settles test_two_roots_collision_guard
+       (which shells out to git) in the real environment.
+   (e) Errors in the EXECUTOR'S OWN brief caught by the finders,
+       recorded: the workflow brief said "suite_manifest_diffs.json
+       (74->75 entries)" — the 74→75 is record_digest_manifest.json's
+       `diffs` log; suite_manifest_diffs.json went 11→12 (one +8-line
+       entry). pred_a3 / a3_msg / the (f),(g) rulings use "diffs 74→75"
+       correctly for the rdm log; no repo artifact carries the mislabel.
+       Also stale COMMENTS, not ours to fix: guarded_commit.sh:146-148
+       cites tier2_gate.py:267 and ppp:2065 (now :362 and :1970/:1861);
+       tcp:505's prose "hashed 65aef9fb1a3660cd on disk, equal to the
+       corpus" is false as a description of the staged tree.
+   (f) The stop report's phrase "the preview would have to re-mint" is
+       refined by §1: only the identity half moves, and it is known.
+
+§7 WOULD ATTEMPT 4 LAND UNDER THE FOURTH FOLD?
+   ON EVERY MEASURED CLAUSE: YES. The fourth fold changes two literals.
+   Every gate stage was either exercised green at attempt 3 on this
+   exact tree (extent 1-4, Tier-1, record_integrity, reserved_copy,
+   brand_strings, DIP0C/DIP0 floors), or is now measured green
+   zero-write (A327(a) digest pre-check with the in-memory rebind ->
+   refusals []; A327(a) file-set 372==372 both ways; A327(b) 52>=52 and
+   66>=66; A327(c) 7690>=7690; the three suite legs at §2a; the
+   disposition with zero failures and zero consumable AMBER). The only
+   suite-wide consumer of the moved identity is tcp:617, re-pinned in
+   the same edit; its new value c7924c5a4215f3cf was computed three
+   times independently through ppp's own protocol_identity() with the
+   dict patched in memory. No fourth-pin candidate was found (§4).
+   RESIDUAL UNCERTAINTY, stated: (i) the suite measurement at §2a is
+   the CURRENT staged configuration, not the folded one — the folded
+   configuration differs by the two literals only, and no test other
+   than :617 reads either (three finders, git grep across *.py/*.json/
+   *.jsonl/*.sh), but that is a negative-search claim, not a run; (ii)
+   the adversarial pass is complete — 16 of 17 decision-critical
+   findings CONFIRMED by every lens, the 17th refuted only toward
+   STRICTER (§10); no verdict moved toward a refusal; (iii) the
+   gate's own record_integrity append (436) is priced in by the
+   APPEND_ONLY prefix rule, measured against a simulated 436-line file.
+   Under the fourth fold the expected line is
+   TIER_2=GREEN collected=8496 failures=0 apps=7690 dip0c=671 dip0=135
+   — the same line pred_a3 L6 predicted, now with A327's digest
+   pre-check satisfied.
+
+§8 OPTIONS FOR THE OWNER'S WORD (presented, not chosen; unchanged from
+the stop report, now priced):
+   (1) RULE A FOURTH FOLD: :1970 -> fe4199bc421b7454 and :617 ->
+       c7924c5a4215f3cf, same amendment; fresh 8-leg seal over the TEN
+       paths (two edited literals more, no new path); attempt 4. Every
+       measured clause is silent; the suite legs per §2a. The (g) pair
+       binds with its identity half moved to the value above; the rdm
+       half unchanged.
+   (2) RULE THAT (f) ALREADY COVERS IT (reading A): same edits, ruled
+       as within the A391 recipe the owner adopted, not a new fold. The
+       executor's reading at the stop was B; the texts are in §5.
+   (3) UNWIND the manifest regeneration so :1970 holds — contradicts
+       the standing (d)/(e) rulings; recorded, not recommended.
+   (4) Anything else the owner words.
+   Under every option: nothing moves until the owner's word.
+
+§9 ZERO-WRITE PROOF. Seven finders: porcelain identical before/after
+(11 rows: the ten staged + the unstaged ledger), ledger 435 before and
+after, HEAD 8bbe57e, no git state command, record_integrity.py never
+run as a script, tier2_gate.py never run as a script, no manifest
+regeneration, only in-memory dict mutation (restored), pytest only
+with -p no:cacheprovider on single node ids. Executor's baseline
+(audit_baseline/): porcelain, cached-diff sha 53feeeb4…, eleven
+worktree sha256s, ledger 435 — re-compared after every phase:
+   FINAL COMPARISON after the full suite, ~270 subagent runs, and the
+   verifier re-run launch: porcelain IDENTICAL to baseline (11 rows);
+   ledger 435 == 435; cached-diff sha 53feeeb4eaffb58c == baseline;
+   HEAD 8bbe57e5112de91a4bd906c0c3498a927bfb5ec2 == baseline; all
+   eleven worktree sha256s OK (shasum -c). The §BH26(a) authority is
+   UNSPENT; nothing has been folded, edited, unstaged, re-previewed or
+   gated.
+
+§10 ADVERSARIAL VERIFICATION STATUSES (second pass, 17 findings):
+   Second pass complete: 29/29 refuters returned (first launch: 20/29,
+   cut off by a session limit; resumed from cache, the 9 missing
+   re-run). Tally: 16 CONFIRMED, 1 REFUTED, 0 CONTESTED, 0 UNVERIFIED.
+   Two-lens (textual + execution), both held:
+     CL-A327A-DIGEST        cur=YES  4th=NO   (the refuser; in-memory rebind -> [])
+     CL-A327A-FILESET       cur=N/A  4th=NO   (372 == 372 both directions)
+     CL-A327B-TIER1-FLOORS  cur=N/A  4th=NO   (52>=52, 66>=66)
+     CL-A327C-TOTAL         cur=N/A  4th=NO   (7690>=7690)
+     CL-DISPOSITION         cur=N/A  4th=NO   (zero consumable AMBER)
+     CL-TIER1               cur=NO   4th=NO   (:617 the sole Tier-1 identity reader)
+     A5  (65 docs records embed historical identities; none read back)
+     B4  (flake_rig stores/hashes the identity; never compares)
+     R1-LEDGER-MANIFEST-ENTRY (APPEND_ONLY; ca3336e2 == 434-line prefix)
+     C3-PY-NOT-A-RECORD     (the fold moves no record digest)
+     T10 (GuardedCommitTests override SUITE_CMD -> tier2_gate never
+          runs inside them: TIER2=NOT_RUN_SUITE_CMD_OVERRIDDEN; the
+          execution lens traced it by hand rather than run the script)
+   Single-lens textual (ruling and recipe quotations), all BYTE-EXACT
+   against the register / source (Python byte-compare, no elision):
+     RT-03-BH26f-owner (register 17260-17289, the whole owner block)
+     RT-06-BH26g-owner (register 17353-…, the 8bbe57e append itself)
+     RT-15-ppp-recipe-value (ppp:2196-2211, closing brace 2212)
+     RT-10-AX0p-A391 (register 6798-6805, "records, regenerate,
+          rebind, compute, pin")
+     RT-16-test-comments-570-616 (tcp:581-608, all comment lines)
+   The one REFUTED: T15 (test_two_roots_collision_guard.py:323). Both
+   lenses refuted the finder's UNKNOWN/UNKNOWN as TOO WEAK, not too
+   strong: the test reads HEAD blobs of the two .gitignore files via
+   `git show` and nothing else (imports os/subprocess/unittest only;
+   grep for manifest|EXTENT_DIGESTS|tier2_gate|protocol_identity: 0
+   hits), so corrected to cur=NO / 4th=NO. Its environmental worry
+   (sandbox git exit 69) was independently settled by §2a: the test
+   ran and passed in the executor's environment. Every refuter
+   reported porcelain-identical, ledger 435, HEAD 8bbe57e; no verdict
+   moved any fires_* toward YES.

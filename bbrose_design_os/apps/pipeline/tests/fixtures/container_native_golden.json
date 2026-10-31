@@ -1,0 +1,148 @@
+{
+ "_comment": "Phase 2B-2 native-reconstruction golden fixtures. Frozen deterministic outputs of the native pipeline (propose_zones -> compose_container_graph[native] -> census -> projection -> containment -> fidelity) for bottle/jar/tube with a first-pass concept (no structured record). A change to any value means the native reconstruction geometry/policy changed and must be reviewed. Every fixture asserts zero decorative rasters, live text present, all placements contained, deterministic projection, and a three-state fidelity of MEASURED_PASS with no failures (name emitted; record-only axes UNMEASURED). ANNOTATED, never rewritten (§AZ0(u)): the base fidelity has read UNMEASURED_BLOCKING since VQR-2A, and since §BH50(f)(5) (2026-09-16) the motif fidelity reads UNMEASURED_BLOCKING too — the family passes and a pass never outvotes the unmeasured density, position, coverage and continuation axes; failures stay []. [His answer after test day finding 3, 2026-09-30, (4) round: a tube's width is its round diameter, its front and back its flat face, π/2 of it, and it is drawn that wide — the tube's entry recomputed with the tests' own functions (zones, their hashes, the motif's paths, the wrap), every other entry byte-identical.] [His review of 127, 130, 131 and 132, 2026-10-15, C (8): \"No empty grey blocks in the files (131's base bottom)\"] a surface panel that would hold only a placeholder — its tinted field, its caption and \"INFO · INCI · CODE\" or \"BATCH —\" — is no longer drawn; its surface keeps its (empty) group, so surface_groups stand: live_text bottle 7 -> 5, jar 6 -> 5, tube 10 -> 5; vector_paths bottle 9 -> 8, jar 10 -> 8, tube 10 -> 8; the motif runs' vector_paths bottle 59 -> 58, tube 38 -> 36 (the jar's wrap holds its motif, drawn as before), recomputed with the tests' own functions; every other value byte-identical.] [His last goal before the pitch, 2026-10-16, Step 2: \"the hero is never lost: caps and closures\"] every capped form draws the parting line where its cap meets its body (closure-join-line): one vector path more for bottle, jar and tube, with and without their motif.",
+ "bottle": {
+  "archetype": "bottle",
+  "width_mm": 40,
+  "height_mm": 110,
+  "profile_hash": "f7b3e2eb6614a1556b62d26c0704f86c",
+  "zone_set_hash": "5eea48f9aaf4ee500113f4d67d32e17d",
+  "projection_methods": [
+   "cylindrical_arc"
+  ],
+  "census": {
+   "live_text": 5,
+   "vector_paths": 9,
+   "decorative_raster_count": 0
+  },
+  "surface_groups": [
+   "BODY_BACK"
+  ],
+  "fidelity_overall": "UNMEASURED_BLOCKING",
+  "motif": {
+   "signature": "scattered powder constellation",
+   "rendered_via": "powder_constellation",
+   "motif_groups": [
+    "motif-front"
+   ],
+   "vector_paths": 59,
+   "motif_fidelity": "UNMEASURED_BLOCKING"
+  },
+  "production": {
+   "method_types": [
+    "SCREEN_PRINT",
+    "SCREEN_PRINT"
+   ],
+   "method_set_hash": "b494c7d6fcc491c2cfec57fb4b74005d",
+   "separation_set_hash": "65d801a4c80065e03a505e5a384cfdae",
+   "separation_names": [
+    "PROCESS_ARTWORK",
+    "SCREEN_INK_1",
+    "SCREEN_INK_2"
+   ],
+   "underbase_state": "REVIEW_REQUIRED",
+   "wrap_set_hash": "efd54e708219971ec8eabb0847ef2b3d",
+   "wrap_surfaces": [
+    "BODY_BACK",
+    "BODY_FRONT"
+   ]
+  }
+ },
+ "jar": {
+  "archetype": "jar",
+  "width_mm": 70,
+  "height_mm": 60,
+  "profile_hash": "df54002b70d8b93feea216c709fd5045",
+  "zone_set_hash": "0480469da685ed9f5d19007c7b1961cc",
+  "projection_methods": [
+   "cylindrical_arc"
+  ],
+  "census": {
+   "live_text": 5,
+   "vector_paths": 9,
+   "decorative_raster_count": 0
+  },
+  "surface_groups": [
+   "BODY_WRAP"
+  ],
+  "fidelity_overall": "UNMEASURED_BLOCKING",
+  "motif": {
+   "signature": "geometric strata bands",
+   "rendered_via": "strata_field",
+   "motif_groups": [
+    "motif-BODY_WRAP",
+    "motif-front"
+   ],
+   "vector_paths": 16,
+   "motif_fidelity": "UNMEASURED_BLOCKING"
+  },
+  "production": {
+   "method_types": [
+    "WRAP_LABEL"
+   ],
+   "method_set_hash": "e0e3063e600e7a7c1c0b8580105f7686",
+   "separation_set_hash": "944f99e4e90f9fd01f9ec8b4749ee557",
+   "separation_names": [
+    "LABEL_BLEED",
+    "LABEL_CUT",
+    "LABEL_SAFE",
+    "PROCESS_ARTWORK"
+   ],
+   "underbase_state": "NOT_APPLICABLE",
+   "wrap_set_hash": "b8f9ffbe0723036b2f63c2d8d3d7bcae",
+   "wrap_surfaces": [
+    "BODY_WRAP"
+   ]
+  }
+ },
+ "tube": {
+  "archetype": "tube",
+  "width_mm": 35,
+  "height_mm": 120,
+  "profile_hash": "be8c25d8b3dd401537a535186e3f85f8",
+  "zone_set_hash": "8cf8558ad1efedc21d05390c9fcf3c78",
+  "projection_methods": [
+   "cylindrical_arc",
+   "direct_1_1"
+  ],
+  "census": {
+   "live_text": 5,
+   "vector_paths": 9,
+   "decorative_raster_count": 0
+  },
+  "surface_groups": [
+   "BODY_BACK",
+   "CRIMP_ZONE"
+  ],
+  "fidelity_overall": "UNMEASURED_BLOCKING",
+  "motif": {
+   "signature": "flowing ribbon veil",
+   "rendered_via": "liquid_veil",
+   "motif_groups": [
+    "motif-front"
+   ],
+   "vector_paths": 37,
+   "motif_fidelity": "UNMEASURED_BLOCKING"
+  },
+  "production": {
+   "method_types": [
+    "BOTTOM_INKJET_CODE",
+    "SCREEN_PRINT",
+    "SCREEN_PRINT"
+   ],
+   "method_set_hash": "4ac56cf73e65dceb9d5d24eb9a3760ee",
+   "separation_set_hash": "56524a7c062d310d12b08e554bbd29ba",
+   "separation_names": [
+    "BOTTOM_CODE",
+    "PROCESS_ARTWORK",
+    "SCREEN_INK_1",
+    "SCREEN_INK_2"
+   ],
+   "underbase_state": "REVIEW_REQUIRED",
+   "wrap_set_hash": "53c8915df854dd44e7d3e31d22cbb81d",
+   "wrap_surfaces": [
+    "BODY_BACK",
+    "BODY_FRONT"
+   ]
+  }
+ }
+}

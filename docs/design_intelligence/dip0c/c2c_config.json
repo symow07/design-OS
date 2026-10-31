@@ -1,0 +1,78 @@
+{
+  "slice": "DIP-0C2c",
+  "purpose": "Fingerprinted hash/threshold config so any C2c result reproduces.",
+  "hash": {
+    "algorithm_version": "dhash9x8+phash32x8+shape/1.0",
+    "config_fingerprint": "5f31dc7c2e5b",
+    "dhash": [
+      9,
+      8
+    ],
+    "phash_size": 32,
+    "phash_keep": 8,
+    "alpha_background": [
+      255,
+      255,
+      255
+    ],
+    "orientation_policy": "no auto-rotation; the image is hashed as stored and under each transform separately, and a transform-only match is reported as explicit evidence",
+    "hamming_strong": 6,
+    "hamming_review": 12,
+    "info_min_std": 8.0,
+    "info_min_alpha_coverage": 0.05,
+    "info_min_entropy": 0.5,
+    "transforms": [
+      "IDENTITY",
+      "MIRRORED",
+      "ROT90",
+      "ROT180",
+      "ROT270"
+    ]
+  },
+  "thresholds": {
+    "hamming_strong": 6,
+    "hamming_review": 12,
+    "both_hashes_must_agree": true,
+    "containment_requires_strong_agreement": true,
+    "palette_different_min": 0.25,
+    "silhouette_similar_max": 8,
+    "aspect_similar_tol": 0.08,
+    "scale_variant_min_ratio": 1.25,
+    "strong_edge_confidence": 0.6,
+    "weak_bridge_confidence": 0.75,
+    "weak_evidence_confidence_cap": 0.3
+  },
+  "vocabularies": {
+    "source": [
+      "EXACT_FILE_DUPLICATE",
+      "SAME_DOWNLOAD_PACKAGE",
+      "FILENAME_FAMILY",
+      "ALTERNATE_FORMAT_SOURCE",
+      "VERSION_SOURCE"
+    ],
+    "candidate": [
+      "EXACT_VISUAL_DUPLICATE",
+      "LIKELY_NEAR_DUPLICATE",
+      "POSSIBLE_COLORWAY",
+      "POSSIBLE_CROP_VARIANT",
+      "POSSIBLE_FORMAT_VARIANT",
+      "POSSIBLE_SCALE_VARIANT",
+      "COLLECTION_MEMBER",
+      "UNKNOWN_RELATIONSHIP"
+    ],
+    "transforms": [
+      "IDENTITY",
+      "MIRRORED",
+      "ROT90",
+      "ROT180",
+      "ROT270"
+    ]
+  },
+  "blocking_strategy": [
+    "exact-SHA groups",
+    "pHash 4x16-bit bands",
+    "filename-normalized stems",
+    "folder/package groups",
+    "aspect-ratio + format buckets"
+  ]
+}

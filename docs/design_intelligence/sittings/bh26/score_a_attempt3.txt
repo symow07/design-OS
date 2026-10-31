@@ -1,0 +1,67 @@
+§AD0(a) SCORE — commit A ATTEMPT 3 (§BH26(a) under (d)+(e)+(f)+(g)),
+launched against pred_a3.txt. Gate REFUSED, hand-captured GEXIT=1.
+NOTHING LANDED. HEAD remains 8bbe57e (T26g). This score stands
+unrevised alongside score_a_attempt1.txt and score_a_attempt2.txt.
+
+THE REFUSAL, verbatim (a3_gate.log tail):
+   TIER_2_REFUSED: declared extent not met (A327/3m)
+     MANIFEST_DIGEST_MISMATCH: fe4199bc421b7454 != hashed
+     65aef9fb1a3660cd — the manifest was edited outside the identity
+     chain
+   TIER_2=REFUSE
+   GUARDED_COMMIT_REFUSED: TIER_2=REFUSE (A326/3m)
+
+L1 HELD (pre-launch measurement): exactly the TEN sealed tracked paths
+   staged (2 A + 8 M), porcelain-verified; the five carried apps paths
+   byte-identical through four stash round-trips; docs pair matched
+   sha256s_docs.txt as restored; container_font_authority.py not in
+   the diff. Re-verified UNCHANGED post-refusal.
+L2 HELD (pre-add measurement): all ten diff shapes exact — 141+0,
+   120+0, 17−7, 27−8, 12−8, 1−1, 1−1, 4−3, 8−0, 17−7.
+L3 HELD as written: record_digest_manifest joined per A391 pinning the
+   manifest's fe4199bc… bytes and the ledger-434 survey; ppp:2195
+   carries cbba67bee1c29105; tcp:617 carries 0e9cd7a2b94ccc82; the
+   records chain WAS digest-consistent — the gate's own records check
+   PASSED (ledger line 435, verdict OK, refusal_count 0,
+   2026-09-02T02:04:22Z). The refusal came from a DIFFERENT clause L3
+   never claimed: tier2_gate.py check_manifest (A327/A352 repair 3),
+   ppp:1970's EXTENT_DIGESTS["suite_file_manifest"] pin.
+L4 HELD: git diff --cached --numstat = exactly the TEN declared rows,
+   measured pre-launch, unchanged post-refusal.
+L5 NOT REALIZED: no commit exists; the predicted 11-file/349+/35−
+   contents were never minted. Unrealized via the L6 refusal, not
+   contradicted by measurement.
+L6 FALSIFIED: "GREEN … No refusal expected" — the gate REFUSED at
+   TIER_2 on MANIFEST_DIGEST_MISMATCH. This is a FINDING, not a flake:
+   the A327/3m clause verifies the manifest's disk hash against
+   ppp:1970's pin BEFORE reading the file, and that pin (65aef9fb…,
+   rebound 2026-08-27 at §BC(h)/C10 per the :1938 comment) still names
+   the PRE-regeneration bytes. Attempts 1 and 2 refused EARLIER in the
+   pipeline (extent guard; Tier-1 record digest), so this clause was
+   reached for the first time. No §BH24 id; budget stays 0/3.
+L7 NOT REALIZED: no landing; ledger at HEAD still 434. The refusing
+   gate appended its own unstaged line — worktree 435 (` M
+   record_gate_ledger.jsonl`), the known refusing-gate behaviour,
+   verdict OK (the records step it logs had passed).
+L8 HELD where measurable / landing predicates NOT REALIZED: apps diff
+   = exactly SEVEN apps paths, docs diff = THREE ruled paths (+
+   unstaged ledger); both protected regions re-verified post-refusal
+   (GATE 7fbeb8f1fe10b0fb; TEST b32030dc827263e4, cwd-correct
+   pathspec, checked exits); on-disk protocol_identity() ==
+   0e9cd7a2b94ccc82 == the mint, at its ONE live pin. No landing ⇒ the
+   L8 identity table does NOT update and the single-use §BH26(a)
+   authority remains UNSPENT.
+
+RULING TRIGGERED: the refuser is ppp:1970 —
+   "suite_file_manifest": "65aef9fb1a3660cd" — a THIRD distinct
+   downstream pin of the manifest rewrite, named in no ruling ((d)
+   ruled the manifest, (f) ruled R1–R3, (g) ruled the pair; none named
+   :1970). §BH26(f)(5): "If a THIRD distinct downstream pin fires
+   after this fold, stop — do not fold further without my word."
+   STOPPED. No fold, no edit, no unstage, no re-preview. Full
+   measurement and options in hard_stop_f5_third_pin_report.txt.
+
+Post-refusal state, frozen: HEAD 8bbe57e; ten paths staged exactly as
+sealed; one unstaged ledger row (worktree 435); binding pair intact on
+disk and at its pins; preview_a3_mint.txt untouched; awaiting the
+owner's word.

@@ -1,0 +1,196 @@
+{
+ "schema": "geometry_validation_render_manifest/1.0",
+ "statement": "GEOMETRY VALIDATION FIXTURE \u2014 NOT A REAL BOTTLE COMPARISON",
+ "fixture_id": "P1_provisional_pilot",
+ "geometry_schema": "container_geometry/1.0",
+ "geometry_class": "AXISYMMETRIC_REVOLUTION",
+ "authority_class": "PROVISIONAL_OWNER_MEASURED_PLUS_INFERRED",
+ "cross_section_family": "CIRCULAR",
+ "dimensions": {
+  "height_mm": 114.3,
+  "front_width_mm": 37.4,
+  "side_depth_mm": 37.4
+ },
+ "mesh_identities": {
+  "body": "e7b0236deb66715e",
+  "collar": "7175cb33d5cd7375",
+  "bulb": "491a134981dd9506"
+ },
+ "mesh_statistics": {
+  "body": {
+   "params_version": "mesh_diagnostics_params/1.0",
+   "vertex_count": 6146,
+   "edge_count": 18432,
+   "face_count": 12288,
+   "duplicate_vertices": 0,
+   "zero_area_faces": 0,
+   "non_manifold_edges": 0,
+   "components": 1,
+   "signed_volume_mm3": 80140.235,
+   "codes": []
+  },
+  "collar": {
+   "params_version": "mesh_diagnostics_params/1.0",
+   "vertex_count": 6146,
+   "edge_count": 18432,
+   "face_count": 12288,
+   "duplicate_vertices": 0,
+   "zero_area_faces": 0,
+   "non_manifold_edges": 0,
+   "components": 1,
+   "signed_volume_mm3": 5925.207,
+   "codes": []
+  },
+  "bulb": {
+   "params_version": "mesh_diagnostics_params/1.0",
+   "vertex_count": 6146,
+   "edge_count": 18432,
+   "face_count": 12288,
+   "duplicate_vertices": 0,
+   "zero_area_faces": 0,
+   "non_manifold_edges": 0,
+   "components": 1,
+   "signed_volume_mm3": 1450.324,
+   "codes": []
+  }
+ },
+ "assembly_relations": {
+  "facts": {
+   "body": {
+    "z_min": 0.0,
+    "z_max": 91.6,
+    "cx": 0.0,
+    "cy": 0.0,
+    "width": 37.39966536712151
+   },
+   "collar": {
+    "z_min": 78.6,
+    "z_max": 95.1,
+    "cx": 0.0,
+    "cy": 0.0,
+    "width": 21.4
+   },
+   "bulb": {
+    "z_min": 95.1,
+    "z_max": 114.3,
+    "cx": 0.0,
+    "cy": 0.0,
+    "width": 10.57
+   }
+  },
+  "codes": []
+ },
+ "blender_version": "Blender 4.5.12 LTS (pinned)",
+ "render_engine": "CYCLES CPU \u00b7 seed 0 \u00b7 12 samples",
+ "camera_standard": "real_bottle_camera_standard/1.0",
+ "lighting_standard": "real_bottle_lighting_standard/1.0 ",
+ "material_override": {
+  "version": "validation_clay/1.0",
+  "base_colour": [
+   0.69,
+   0.667,
+   0.65,
+   1.0
+  ],
+  "roughness": 0.9,
+  "specular": 0.1,
+  "alpha": 1.0,
+  "normals": "geometry normals unmodified",
+  "colour_management": "Cycles CPU \u00b7 Standard view transform \u00b7 exposure 0 \u00b7 gamma 1 \u00b7 sRGB \u00b7 8-bit PNG"
+ },
+ "render_params": {
+  "version": "geometry_validation_render_params/1.0",
+  "resolution": [
+   1600,
+   2200
+  ],
+  "samples": 12,
+  "ortho_scale_factor": 1.12,
+  "scale_tolerance": 0.03,
+  "center_tolerance": 0.03
+ },
+ "views": {
+  "front": "front.png",
+  "side": "side.png",
+  "top": "top.png",
+  "closure_detail": "closure_detail.png",
+  "three_quarter_diagnostic": "three_quarter_diagnostic.png",
+  "wireframe": "wireframe.png",
+  "normals": "normals.png",
+  "bounds_dimensions": "bounds_dimensions.png",
+  "neck_detail": "neck_detail.png",
+  "measurement_overlay": "measurement_overlay.png",
+  "material_reference_preview": "material_reference_preview.png"
+ },
+ "pixel_dimensions": [
+  1600,
+  2200
+ ],
+ "physical_scale_mm_per_px": 0.05819,
+ "pixel_hashes": {
+  "front": "bce8f06ef066eb94",
+  "side": "990a2647c7daacb9",
+  "top": "ff476dfac8f52ce6",
+  "closure_detail": "10421e204ab772b5",
+  "three_quarter_diagnostic": "8ac4ee0de44da513",
+  "wireframe": "4551e33777104c46",
+  "normals": "af22ad8bf14a57c2",
+  "bounds_dimensions": "69e167cb6a5380c9",
+  "neck_detail": "1c61d5a2203f5c63",
+  "material_reference_preview": "376c03a562e616d7"
+ },
+ "measurements": {
+  "expected_mm_per_px": 0.05819,
+  "front": {
+   "bounds_px": {
+    "x0": 478,
+    "x1": 1120,
+    "y0": 118,
+    "y1": 2081,
+    "touches_frame": false
+   },
+   "rendered_extent_mm": 37.42,
+   "contract_extent_mm": 37.4,
+   "rendered_height_mm": 114.28
+  },
+  "side": {
+   "bounds_px": {
+    "x0": 478,
+    "x1": 1120,
+    "y0": 118,
+    "y1": 2081,
+    "touches_frame": false
+   },
+   "rendered_extent_mm": 37.42,
+   "contract_extent_mm": 37.4,
+   "rendered_height_mm": 114.28
+  },
+  "top": {
+   "bounds_px": {
+    "x0": 479,
+    "x1": 1120,
+    "y0": 779,
+    "y1": 1420,
+    "touches_frame": false
+   }
+  },
+  "closure_detail": {
+   "bounds_px": {
+    "x0": 148,
+    "x1": 1423,
+    "y0": 413,
+    "y1": 2199,
+    "touches_frame": true
+   },
+   "closure_view_coverage": 0.6469
+  }
+ },
+ "warnings": [],
+ "uncertainty": [
+  "PROVISIONAL geometry: owner hand measurements + inferred values (assumptions A1-A4, simplifications S1-S5 in the contract)",
+  "no calibrated orthographic photography \u2014 visual comparison confidence LIMITED_BY_NON_CALIBRATED_PHOTOGRAPHY",
+  "NOT manufacturing geometry \u2014 never send to a supplier"
+ ],
+ "reference_availability": "PARTIAL \u2014 owner measurements + 23 uncalibrated owner photographs (reference pack REFERENCE_PACK_PARTIAL; no CAD, no technical drawing)",
+ "material_correction_2026_08_04": "bulb corrected CLEAR/TRANSPARENT -> GLOSSY/ORANGE/OPAQUE by owner review of the photographs (deviation D1 resolved)"
+}

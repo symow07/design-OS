@@ -1,0 +1,31 @@
+§AD0(a) PREDICTION — (e) CONSULTED BY RULE (§BH40(e)), its own commit, sealed
+BEFORE git add. Base HEAD 9f75253 ((d), 8/8).
+
+L1 WRITE SET: exactly ONE new path — CLAUDE.md at the OUTER root (7 lines, 662 bytes, sha256[:16] dc12f5dc6154ce6b of the draft copied byte-for-byte).
+   No other path; plus the gate-staged ledger line. No inner CLAUDE.md.
+L2 DIFF SHAPE: 1 added at +7, 0 modified, 0 deleted.
+L3 MANIFEST / A391: suite manifest untouched; records consistent; ledger
+   APPEND_ONLY. Census-first: records none; identity none; WIT 864; corpus
+   constants, dip1b, the exclusion list, the materials record untouched; the
+   two-roots guard's three names unchanged (CLAUDE.md at the outer root only).
+L4 STAGED == DECLARED: 1 row "A".
+L5 COMMIT CONTENTS: 2 files (CLAUDE.md + the ledger), insertions 8,
+   deletions 0.
+L6 SUITE LINE + REFUSAL TREE: GREEN — TIER_2=GREEN collected=8598
+   failures=0 apps=7786 dip0c=671 dip0=141 (no test change); the gate's
+   rebuild step (d) picks up CLAUDE.md as a new source (415 sources) and the
+   freshness test passes against the record it writes.
+L7 LEDGER FOLD: 491 → 492; HEAD~1 a byte-prefix of HEAD.
+L8 PROTOCOL IDENTITIES: apps diff EMPTY; GATE 7fbeb8f1fe10b0fb / TEST
+   b32030dc827263e4; tree seals dip0c c22592930c75001c / dip0a
+   d72072760ab20a6a UNCHANGED; protocol_identity UNCHANGED; the eight M7
+   artefacts == baseline; the register untouched (20,213 lines,
+   db241ccf0b258e35); font and colour themes unchanged; CLAUDE.md carries no
+   register hash.
+   Measured before this seal: no CLAUDE.md at the outer root (git ls-files:
+   not known to git; ls: no such file); the chain that follows this seal
+   guards the inner root and ~/.claude for absence before the copy; the draft
+   carries none of the seven phrases and no register hash (grep: none / 0).
+   The (d) gate's ledger line (utc 09:34:29Z) was appended AFTER its rebuild
+   step (log line 2) and its freshness test still passed — the ledger is not
+   in the record; this gate repeats that order.

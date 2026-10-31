@@ -1,0 +1,5 @@
+<article class="round-card ideas-card board-card" id="board-{{ board.id }}"><p class="over">{{ board.label }}</p><p class="ideas-line">{{ board.idea }}</p><p class="small">From the product: {{ board.link }}</p>
+<a href="{{ board.picture_url }}" target="_blank" rel="noopener"><img src="{{ board.picture_url }}" alt="{{ board.label }} mood board" loading="lazy"></a>
+<ul class="swatches" aria-label="{{ board.label }} palette">{% for colour in board.palette %}<li><svg class="swatch" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="4" fill="{{ colour.hex }}"/></svg><span><b>{{ colour.name }}</b> {{ colour.hex }}{% if colour.role %} · {{ colour.role }}{% endif %}</span></li>{% endfor %}</ul>
+{% if board.reference_inputs %}<p class="small">Drawn from {{ board.reference_inputs|length }} house-library picture{{ board.reference_inputs|length|pluralize }}.</p>{% endif %}
+<dl class="board-facts"><dt>Materials</dt><dd>{{ board.materials|join:" · " }}</dd><dt>Finishes</dt><dd>{{ board.finishes|join:" · " }}</dd><dt>Type</dt><dd>{{ board.type }}</dd><dt>Motif</dt><dd>{{ board.motif }}</dd><dt>Texture</dt><dd>{{ board.texture }}</dd></dl></article>

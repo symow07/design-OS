@@ -1,0 +1,15 @@
+{% extends "dashboard/history/base.html" %}
+{% load plain_words %}
+{% block title %}Projects{% endblock %}
+{% block content %}
+<h1>Projects</h1>
+<p class="lede">Complete Product projects and the designs that are their stages.</p>
+<div class="rows">
+{% for p in projects %}
+  <article class="block"><a href="{% url 'dashboard:history_project' p.pk %}">Project #{{ p.pk }}</a>
+    <span class="pill status">{{ p.status|plain }}</span> <span class="pill">{{ p.design_target|target }}</span>
+    <span class="dim">{{ p.created_at|date:"j F Y, H:i" }}</span>
+    <p>{{ p.brief|plain|truncatechars:240 }}</p></article>
+{% empty %}<p class="dim">No projects.</p>{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "dashboard/history/base.html" %}
+{% load plain_words %}
+{% block title %}Concepts{% endblock %}
+{% block content %}
+<h1>Every concept, side by side</h1>
+<p class="lede">All generated concepts across tasks, superseded and rejected included, newest first.</p>
+<form class="filters" method="get" action="{% url 'dashboard:history_concepts' %}">
+  <label>What it is <select id="concept-target" name="target"><option value="">any</option>
+    {% for t, words in targets %}<option value="{{ t }}"{% if params.target == t %} selected{% endif %}>{{ words }}</option>{% endfor %}</select></label>
+  <button type="submit">Show</button>
+</form>
+<p class="count">{{ images|length }} concept{{ images|length|pluralize }}.</p>
+<div class="grid">
+{% for c in images %}
+  <div class="card">
+    {% if c.file and c.file.url %}<a href="{{ c.file.url }}" target="_blank" rel="noopener"><img src="{{ c.file.url }}" alt="Concept {{ c.image.pk }}" loading="lazy"></a>
+    {% elif c.file %}<span class="pill withheld">{{ c.file.state|plain }}</span>{% else %}<span class="dim">no image file</span>{% endif %}
+    <div><a href="{% url 'dashboard:history_task' c.image.task_id %}#concepts">Design #{{ c.image.task_id }}</a> · #{{ c.image.pk }} {{ c.image.direction_name }}</div>
+    <div class="facts">{% if c.image.is_approved %}<span class="pill status">chosen</span>{% endif %}{% if c.image.superseded %}<span class="pill">replaced</span>{% endif %}
+      {% if c.image.user_rejection_label %}<span class="pill reject">{{ c.image.user_rejection_label|plain }}</span>{% endif %}<span>{{ c.image.created_at|date:"j F Y" }}</span></div>
+  </div>
+{% empty %}<p class="dim">No concepts.</p>{% endfor %}
+</div>
+{% endblock %}

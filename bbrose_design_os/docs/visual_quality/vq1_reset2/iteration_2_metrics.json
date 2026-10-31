@@ -1,0 +1,37 @@
+{
+  "iteration": "RESET2-IT2",
+  "render": "docs/visual_quality/vq1_reset2/iteration_2.png",
+  "comparison": {
+    "metrics": {
+      "silhouette_iou_non_occluded": 0.9887,
+      "mean_normalized_contour_distance": 0.00443,
+      "p95_contour_distance": 0.03248,
+      "max_contour_distance": 0.16156,
+      "component_centroid_displacement": 0.00025,
+      "collar_body_ratio_error": 0.00618,
+      "dark_body_ratio_error": 0.00022,
+      "constant_width_region_difference": 0.00091,
+      "flare_width_difference": 0.01706,
+      "shoulder_rise_difference": 0.0,
+      "occluded_side_excluded_from_scoring": "LEFT"
+    },
+    "gates": {
+      "silhouette_iou": true,
+      "mean_contour_distance": true,
+      "p95_contour_distance": true,
+      "max_contour_distance": false,
+      "collar_body_ratio": true,
+      "dark_body_ratio": true
+    },
+    "gates_pass": false,
+    "thresholds": {
+      "silhouette_iou_min": 0.9,
+      "mean_contour_max": 0.02,
+      "p95_contour_max": 0.045,
+      "max_contour_max": 0.07,
+      "collar_ratio_error_max": 0.025,
+      "dark_ratio_error_max": 0.025
+    },
+    "note": "a failing component is never excluded to improve the overall score"
+  }
+}

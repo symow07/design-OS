@@ -1,0 +1,45 @@
+{
+ "record_type": "p1_pilot_assumptions_manifest/1.0",
+ "created_at": "2026-08-04",
+ "pilot_mode": "PROVISIONAL_BEST_EFFORT_GEOMETRY_PILOT (owner-authorized)",
+ "provisional_assumptions": {
+  "A1": {"assumption": "66 mm = straight-wall-end landmark", "status": "OWNER_CLARIFICATION_PENDING", "geometry_effect": "straight cylinder wall ends at z=66"},
+  "A2": {"assumption": "69 mm = a point ON the shoulder curve (not a control point)", "status": "OWNER_CLARIFICATION_PENDING", "geometry_effect": "model radius at 69 = 14.93 mm; owner can falsify by measuring the diameter at 69"},
+  "A3": {"assumption": "18.11 mm neck height = shoulder/neck junction to glass mouth", "status": "OWNER_CLARIFICATION_PENDING", "geometry_effect": "neck base at z=73.49"},
+  "A4": {"assumption": "105 mm dropper assembly height = bulb top to pipette tip", "status": "OWNER_CLARIFICATION_PENDING", "geometry_effect": "not used to position any mesh; assembly built from 114.3/91.6/19.2/16.5 instead"},
+  "A5": {"assumption": "bottom glass thickness 3.0 mm (owner value UNKNOWN)", "status": "GENERIC_DEFAULT", "geometry_effect": "internal clearance math only — never rendered"}
+ },
+ "modelling_simplifications": {
+  "S1": "GL18-class thread NOT modelled (pitch 3.0 from DIN 168 analogous standard; owner-counted 3 turns); silhouette shows neck dia 15.6, not thread crest 17.4",
+  "S2": "collar knurling/ribs NOT modelled",
+  "S3": "base embossing ('50ml', '46', decorative dot ring) NOT modelled",
+  "S4": "label artwork NOT modelled (artwork bounds deferred per owner ruling)",
+  "S5": "pipette EXCLUDED from the rendered assembly (hidden interior component; clearances proven in contract math: tip z 9.16 > provisional floor 3.0; top z 97.9 < 114.3)"
+ },
+ "rejection_rules_checked": [
+  "impossible component overlap - PASS",
+  "negative clearances - PASS (pipette 6.9 < opening 10.3; bulb 10.57 < collar 21.4)",
+  "pipette penetration through the base - PASS (clearance 6.16 over the provisional floor)",
+  "closure/body collision - PASS (collar bottom 78.6 above neck base 73.49; engagement 13.0 on the neck only)",
+  "implausible shoulder/neck proportions - PASS (66 < 69 < 73.49; neck 15.6 < body 37.4)",
+  "assembled height vs owner 114.3 - PASS (91.6 + 3.5 + 19.2 = 114.3 exact)"
+ ],
+ "visible_deviations_from_owner_photographs": {
+  "D1": "bulb rendered CLEAR/TRANSPARENT per OWNER_CONFIRMED_MATERIAL_EVIDENCE, but IMG_3120/IMG_3123 show an opaque ORANGE bulb - DISCREPANCY FLAGGED FOR OWNER DECISION (owner facts kept; photos did not override them)",
+  "D2": "neck rendered smooth (thread crests dia 17.4 not modelled) - assembled photos hide the thread under the collar, so assembled-view impact is minimal",
+  "D3": "model bulb tip slightly more pointed than the blunt dome in the photos (dome model is a VISUAL_ESTIMATE)",
+  "D4": "collar fine vertical ribbing visible in photos, not modelled",
+  "D5": "base embossing and dot ring visible in IMG_3124, not modelled",
+  "D6": "no label artwork (neutral geometry-validation scope)",
+  "D7": "shoulder curvature is a cosine model; photos suggest a slightly fuller dome - uncalibrated, cannot be quantified without the calibrated side/front photos"
+ },
+ "accuracy_status": {
+  "P1_GEOMETRY_AUTHORITY": "PROVISIONAL_OWNER_MEASURED_PLUS_INFERRED",
+  "P1_MANUFACTURING_AUTHORITY": "NOT_ESTABLISHED",
+  "P1_VISUAL_COMPARISON_CONFIDENCE": "LIMITED_BY_NON_CALIBRATED_PHOTOGRAPHY",
+  "P1_OWNER_APPROVAL": "NOT_GRANTED",
+  "GATE_2": "BLOCKED",
+  "PACKAGING_PRODUCTION": "NOT_STARTED"
+ },
+ "usage_restriction": "visual review and pipeline validation only - never supplier/manufacturing geometry"
+}

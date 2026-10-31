@@ -1,0 +1,37 @@
+{% extends "dashboard/gate1_regeneration_base.html" %}
+{% block title %}Draw the concepts again — {{ task.task_text|truncatechars:40 }}{% endblock %}
+{% block regen %}
+<h1 class="h1">Draw the concepts again</h1>
+<p class="lead">With the references you approved for this design, in its chosen direction — three new concepts, one for
+  each variation below. Nothing happens until you confirm.</p>
+{% if last_failed_job %}
+<div class="card pad regen-note attn">
+  <p><b>The last try drew nothing</b> <span class="small">— {{ last_failed_job.finished_at|date:"j F Y, H:i" }}</span></p>
+  <p class="small">Nothing was drawn and nothing was paid for; this design's concepts, approvals and references are as
+    they were. Confirming below starts a new try.</p>
+  <details class="tech"><summary>What the record says</summary><p class="small">Job #{{ last_failed_job.pk }}: {{ last_failed_job.error }}</p></details>
+</div>
+{% endif %}
+<div class="card pad regen-card">
+  <dl class="regen-dl">
+    <dt>The design</dt><dd>{{ task.task_text|truncatechars:90 }}</dd>
+    <dt>Its direction</dt><dd>{{ direction_name }}</dd>
+    <dt>The references approved</dt><dd>{% for row in approved %}#{{ row.pk }} {{ row.title|truncatechars:48 }}<br>{% endfor %}</dd>
+    <dt>The three variations</dt><dd>{% for name, description in variations %}<b>{{ name }}</b> — {{ description }}<br>{% endfor %}</dd>
+    <dt>What confirming does</dt><dd>{% if mode == "live" %}<span class="tag attn">Draws, and pays</span> Three new concept pictures are drawn — a paid step.
+      {% else %}<span class="tag line">A check only</span> The whole request is checked, and <b>nothing is drawn, nothing is paid for and no job is started</b>.{% endif %}</dd>
+  </dl>
+  <p class="small">They are concept references only — they are not granted for production, nothing about who owns them
+    changes, and the concepts drawn before are kept (marked as replaced once new ones land).</p>
+  <details class="tech"><summary>What the record says</summary>
+    <p class="small">Task #{{ task.pk }} · direction {{ direction_id }} · influence plan <code>{{ plan_hash|slice:":16" }}…</code> ·
+      mode {% if mode == "live" %}LIVE{% else %}DRY RUN{% endif %}{% for row in approved %} · #{{ row.pk }} from {{ row.source_type }}{% endfor %}</p>
+  </details>
+</div>
+<form method="post" action="" class="regen-acts">
+  {% csrf_token %}
+  <input type="hidden" name="confirmation_token" value="{{ token }}">
+  <button class="btn primary" type="submit" name="confirm" value="1">Confirm regeneration</button>
+  <a class="btn" href="{% url 'dashboard:design' task.pk %}">Cancel</a>
+</form>
+{% endblock %}

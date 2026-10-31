@@ -1,0 +1,104 @@
+{
+ "record_type": "vq1_owner_acceptance/1.0",
+ "created_at": "2026-07-28",
+ "decided_by": "PROJECT_OWNER",
+ "accepted_commit": "6fb8262",
+ "runtime_parity_at_acceptance": "repo = worker = web = 6fb8262",
+ "codes": [
+  "VQ1_OWNER_ACCEPTED",
+  "VQ1_STRUCTURAL_GEOMETRY_ACCEPTED",
+  "VQ1_WORKSTREAM_CLOSED"
+ ],
+ "final_classification": "VQ1_FINAL_STRUCTURAL_CANDIDATE",
+ "candidate": "M3",
+ "identity_sha256_png": "4ecc8e9df1d1",
+ "owner_determination": "M3 meets the selected reference within the declared VQ-1 structural tolerance.",
+ "accepted_evidence": {
+  "neck": {
+   "mean": 0.001996,
+   "p95": 0.00337,
+   "max": 0.004073,
+   "result": "PASS"
+  },
+  "shoulder": {
+   "mean": 0.001011,
+   "p95": 0.003673,
+   "max": 0.004197,
+   "result": "PASS"
+  },
+  "assembly_wide": {
+   "max_px": 2.6,
+   "max_norm": 0.0076,
+   "gate": 0.035,
+   "result": "PASS"
+  }
+ },
+ "non_blocking_residuals_accepted": {
+  "neck_inset_px": 0.7,
+  "shoulder_px": 1.44,
+  "seam_px": 1.84
+ },
+ "preserved_codes": [
+  "VQ1_WITHIN_TOLERANCE_CONTOUR_RESIDUAL",
+  "VQ1_NONBLOCKING_SUBPIXEL_STRUCTURAL_DEVIATION",
+  "VQ1_INSPECTOR_DISAGREEMENT_RESOLVED_BY_HUMAN_TOLERANCE_RULING",
+  "HUMAN_ADJUDICATION_NOT_RETROACTIVE_MODEL_AGREEMENT"
+ ],
+ "acceptance_scope": {
+  "certifies_only": "CONCEPT_VISUAL_STRUCTURAL_GEOMETRY",
+  "certifies": [
+   "structural fidelity to selected concept #97",
+   "silhouette relationships",
+   "component proportions",
+   "contour continuity",
+   "closure coherence",
+   "reference fidelity within declared tolerances"
+  ],
+  "does_not_certify": [
+   "manufacturability",
+   "tooling readiness",
+   "physical dimensions",
+   "neck finish compatibility",
+   "closure compatibility",
+   "glass-wall construction",
+   "supplier confirmation",
+   "rose-gold material realization",
+   "reflections, gloss or photographic finish"
+  ]
+ },
+ "acceptance_is_production_authority": false,
+ "is_manufacturable": false,
+ "is_tooling_ready": false,
+ "is_production_geometry": false,
+ "inspector_scores_rewritten": false,
+ "implies_model_agreement": false,
+ "model_agreement_note": "Owner acceptance is a human tolerance determination. It does not mean the inspectors agreed, and their sub-10 scores and Inspector B advisory TRUE_STRUCTURAL_DEFECT classifications stand unchanged on the record.",
+ "candidate_loop_state": "PERMANENTLY_CLOSED",
+ "reopen_condition": "owner explicitly reopens it based on NEW AUTHORITATIVE REFERENCE EVIDENCE",
+ "prohibited_new_candidates": [
+  "M3S1",
+  "M3S2",
+  "M5",
+  "M6",
+  "RIM2",
+  "ANY_OTHER_VQ1_GEOMETRY_CANDIDATE"
+ ],
+ "refit_prohibited": true,
+ "vq_contour_fit_v2_retroactive_application": "PROHIBITED",
+ "preserved_audit_history": [
+  "every historical fixture",
+  "every human rejection",
+  "every withdrawn claim",
+  "VQ1_SAMPLE_IDENTITY_COMPARISON_VACUOUS",
+  "metric v1 and metric v2",
+  "invalid raster sweep",
+  "corrected raster sweep",
+  "both inspector records",
+  "invalidated inspector verdicts",
+  "Inspector B advisory defect classifications",
+  "human adjudication",
+  "fitter defect disclosures",
+  "closeout packages",
+  "all hashes and provenance"
+ ]
+}

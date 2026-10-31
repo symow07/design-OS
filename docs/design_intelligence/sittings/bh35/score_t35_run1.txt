@@ -1,0 +1,31 @@
+§AD0(a) SCORE — T35 run 1, launched against pred_t35.txt (sealed
+d6ba06d2d4415029 before git add). GATE REFUSED: TIER_2=REFUSE (A326/3m),
+GEXIT=1, nothing committed, HEAD still 5898035. §BH24 budget: 1/3.
+
+L1 HELD (the staged set): exactly OWNER_BLOCKER_CLEARANCE.md, 135/0.
+L2 HELD: prefix 5dc8b04482cb08c3 / block 7ef34d5fea0dc8e9 / 19,238 lines —
+   unchanged by the refusal.
+L3 HELD: manifest, records, identity untouched; the ledger's append-only
+   rule unbroken — the refused run appended its own record-integrity line
+   (verdict OK, refusal_count 0, 06:14:29Z), left UNSTAGED by the refusal;
+   it stays (the ledger is never edited) and rides in the next landing.
+L4 HELD: staged == declared, one row.
+L5 NOT REACHED (no commit).
+L6 FAILED — "TIER_2=REFUSE collected=8555 failures=2 apps=7743 dip0c=671
+   dip0=141": two UNREGISTERED failures, both real-browser (Playwright)
+   tests in apps/pipeline/tests/test_browser_review_board_references.py —
+   test_hostile_filenames_are_neutralized and
+   test_long_unicode_filename_stays_inside_its_card. Investigated before
+   any relaunch: the same two tests PASS when run alone on the same tree
+   (2 passed in 6.14 s) and passed in the six gates landed today
+   (04faa08 … 5898035) on an identical apps/ tree; this commit touches
+   the register only. The gate ran concurrently with my installation of
+   the census tooling wheels (pymupdf, opencv, psd-tools) into
+   ~/bh35_work/venv, a CPU/IO load beside the browser tests. READING: a
+   load-induced browser timing failure, not a finding in the tree. I do
+   not register flakes; the two stay UNREGISTERED. LESSON: nothing heavy
+   runs beside a gate — the census waits for the landing.
+L7 NOT REACHED. L8 NOT REACHED.
+Relaunch: pred_t35b.txt sealed for run 2 — same content, the ledger fold
+now 465 → 467 (the refused run's line + the landing's) and the commit
+2 files / 137 insertions; nothing else runs during the gate.

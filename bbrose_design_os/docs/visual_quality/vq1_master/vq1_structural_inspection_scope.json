@@ -1,0 +1,53 @@
+{
+  "record_type": "vq1_structural_inspection_scope/1.0",
+  "may_judge": [
+    "outer silhouette",
+    "component proportions",
+    "component continuity",
+    "centerline alignment",
+    "symmetry",
+    "contour smoothness",
+    "seam placement",
+    "collar sleeve form",
+    "neck transition",
+    "shoulder transition",
+    "body form",
+    "complete visible structural coherence"
+  ],
+  "may_not_judge": [
+    "metallic appearance",
+    "rose-gold colour",
+    "gloss",
+    "specular reflection",
+    "polished finish",
+    "texture",
+    "material realism",
+    "lighting quality",
+    "photographic realism"
+  ],
+  "evidence": {
+    "ref_silhouette": "docs/visual_quality/vq1_master/structural/ref_silhouette.png",
+    "m3_silhouette": "docs/visual_quality/vq1_master/structural/m3_silhouette.png",
+    "contour_overlay": "docs/visual_quality/vq1_master/structural/contour_overlay.png",
+    "component_masks": "docs/visual_quality/vq1_master/structural/component_masks.png",
+    "candidate_crops": {
+      "crop_dome": "docs/visual_quality/vq1_master/structural/crop_dome.png",
+      "crop_shaft": "docs/visual_quality/vq1_master/structural/crop_shaft.png",
+      "crop_flare": "docs/visual_quality/vq1_master/structural/crop_flare.png",
+      "crop_collar": "docs/visual_quality/vq1_master/structural/crop_collar.png",
+      "crop_junction": "docs/visual_quality/vq1_master/structural/crop_junction.png",
+      "crop_neck": "docs/visual_quality/vq1_master/structural/crop_neck.png",
+      "crop_shoulder": "docs/visual_quality/vq1_master/structural/crop_shoulder.png",
+      "crop_closure": "docs/visual_quality/vq1_master/structural/crop_closure.png"
+    },
+    "reference_crops": {
+      "neck": "docs/visual_quality/vq1_master/structural/ref_neck.png",
+      "shoulder": "docs/visual_quality/vq1_master/structural/ref_shoulder.png",
+      "closure": "docs/visual_quality/vq1_master/structural/ref_closure.png"
+    }
+  },
+  "masks_are_flat_diagnostic_values": true,
+  "no_simulated_metal": true,
+  "no_gradient_no_texture_no_shadow_no_reflection": true,
+  "reference_contour_source": "validated reference_halfwidth_px.json (source-pixel edge evidence, not colour thresholding)"
+}

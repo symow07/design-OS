@@ -1,0 +1,37 @@
+§AD0(a) SCORE — T30 (§BH30 transcription), commit fb9b065. Gate GREEN,
+hand-captured exit=0 (GEXIT=0). 8/8 legs HELD against pred_t30.txt
+(fcbc1eaa5d9e07d9, sealed before git add).
+
+L1 HELD: register + gate-staged ledger line only; no apps/, static/ or
+   docs/roadmap path beyond the ledger.
+L2 HELD: register +195 −0 (1 seam blank + 194 block lines); 18,074-line
+   prefix byte-identical (335a1e4d01524a5e at append AND at HEAD); seam
+   blank at 18,075; tail byte-identical to the block (383c932df9cfd284);
+   total 18,269; worktree == HEAD.
+L3 HELD: manifest untouched; records consistent; ppp/tcp untouched;
+   ledger at 443 passed the APPEND_ONLY prefix rule; DIP-0A 7,590.
+L4 HELD: one staged row 195 0, re-verified by the launch command
+   (INDEX_VERIFIED) before the gate ran.
+L5 HELD: 2 files, 196 insertions, 0 deletions.
+L6 HELD: suite line EXACT — TIER_2=GREEN collected=8499 failures=0
+   apps=7693 dip0c=671 dip0=135. No refusal; §BH24 0/3.
+L7 HELD: ledger 443 → 444 (HEAD~1=443, HEAD=444, worktree=444).
+L8 HELD: apps diff EMPTY; GATE 7fbeb8f1fe10b0fb and TEST
+   b32030dc827263e4 re-verified (exact recipe); protocol_identity
+   UNCHANGED c7924c5a4215f3cf; the Noto pair measured through the
+   channel UNDER DJANGO: bold and regular VERIFIED_FOR_PRODUCTION /
+   USER_CONFIRMED / is_fallback False, sha256 1df075a3…/478c558e…,
+   all_production_verified True. No authority spent.
+
+Scoring note, recorded: a first pair check ran the harness doc OUTSIDE
+Django, where reportlab has no registered faces, so the resolver
+returned no file path, no sha256 reached the grant, and the record
+showed UNVERIFIED / PLACEHOLDER_FALLBACK — a measurement of the wrong
+environment, not of the channel; re-measured under manage.py shell as
+above. The standing hard stop ("§BH26's two faces measuring anything
+but VERIFIED_FOR_PRODUCTION at any commit") is measured under Django
+from here on.
+
+Post-commit: HEAD fb9b065; porcelain EMPTY. Next: (b) acquisition
+(done immediately after: 38 files, every hash equal to the §BH29
+record), (c) intake commit.

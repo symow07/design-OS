@@ -1,0 +1,23 @@
+{% extends "dashboard/history/base.html" %}
+{% block title %}Your words · Task #{{ task.pk }}{% endblock %}
+{% block content %}
+<p class="dim"><a href="{% url 'dashboard:history' %}">Every past task</a> › <a href="{% url 'dashboard:history_task' task.pk %}">Task #{{ task.pk }}</a> › <a href="{% url 'dashboard:history_task_loop' task.pk %}">Design loop</a> › Your words</p>
+<h1>Read the words before they land</h1>
+<p>Nothing is saved yet. Saving makes these words the copy of <b>{{ task.product.name|default:"this product" }}</b> as your act: your account (<b>{{ request.user.username }}</b>), the server's time at your click, and the sha256 of exactly the words below. Every task of this product prints them from then on, and each piece is re-verified against its sha256 every time it is read. This page checks the room a piece takes — never what the law requires of it; that reading is yours.</p>
+<p id="room-total" class="room{% if rooms.fits == False %} over{% endif %}">{{ rooms.total_line }}</p>
+<form method="post" action="{% url 'dashboard:history_task_copy' task.pk %}" class="explore copy-confirm">{% csrf_token %}
+  <input type="hidden" name="confirm" value="1">
+  {% for p in pieces %}
+  <section class="card words">
+    <h2>{{ p.piece }}</h2>
+    <blockquote>{{ p.text|linebreaksbr }}</blockquote>
+    <p class="mono dim">sha256 {{ p.sha256 }} · {{ p.characters }} character{{ p.characters|pluralize }}</p>
+    {% if p.room %}<p class="room{% if p.room.over %} over{% endif %}">{{ p.room.line }}</p>{% endif %}
+    <textarea name="{{ p.name }}" hidden>{{ p.text }}</textarea>
+    <input type="hidden" name="{{ p.sha_name }}" value="{{ p.sha256 }}">
+  </section>
+  {% endfor %}
+  <p><button type="submit">These are my words — save them</button>
+    <a href="{% url 'dashboard:history_task_loop' task.pk %}#copy">Go back without saving</a></p>
+</form>
+{% endblock %}

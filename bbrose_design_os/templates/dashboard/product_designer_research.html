@@ -1,0 +1,26 @@
+{% extends 'base.html' %}{% load static %}
+{% block title %}{{ round.product_brief.name }} · Research{% endblock %}
+{% block head %}<link rel="stylesheet" href="{% static 'css/product-round.css' %}">{% endblock %}
+{% block page_class %}page wide round-page ideas-page designer-page{% endblock %}
+{% block content %}
+<header class="page-hd"><div><p class="over">BBROSE · New design · Research</p><h1 class="h1">{{ round.product_brief.name }}</h1>
+<p><a href="{% url 'dashboard:product_round' round.pk %}">Back to the round</a></p>
+{% if notes %}<p class="lead">{{ notes.category }}</p>{% if notes.web_search == 'unavailable' %}<p class="note-box" role="status"><strong>Web search unavailable.</strong> No Tavily search returned a page for this round, so the research is the house library and the model’s own knowledge.</p>{% else %}<p class="small">Researched with Tavily web search ({{ notes.searches|length }} searches) and in the house library, then written by one Claude call with no tools. Only words reach the board plan; no web picture is asked for, kept or sent to the image model.</p>{% endif %}{% else %}<p class="lead">The research is not written yet.</p>{% endif %}
+</div></header>
+{% if notes %}
+<section class="round-section" aria-labelledby="sources-title"><h2 id="sources-title">Web sources</h2>
+{% if notes.web_search == 'unavailable' %}<p>Web search unavailable — no web source for this round.</p>{% elif sources %}<ol class="research-sources">{% for source in sources %}<li>{% if source.link %}<a href="{{ source.url }}" target="_blank" rel="noopener noreferrer nofollow">{{ source.title|default:source.url }}</a>{% else %}{{ source.title|default:source.url }}{% endif %}<p>{{ source.takeaway }}</p></li>{% endfor %}</ol>{% else %}<p>No source was kept.</p>{% endif %}
+{% if notes.unverified_sources %}<p class="small">{{ notes.unverified_sources }} named source{{ notes.unverified_sources|pluralize }} left out: Tavily never returned {{ notes.unverified_sources|pluralize:"it,them" }}.</p>{% endif %}
+{% if notes.searches %}<h3>The searches</h3><ul class="research-searches">{% for search in notes.searches %}<li>“{{ search.query }}” — {% if search.status == 'complete' %}{{ search.results }} page{{ search.results|pluralize }}{% elif search.status == 'failed' %}failed{% else %}outcome unknown, not repeated{% endif %}</li>{% endfor %}</ul>{% endif %}
+</section>
+<section class="round-section" aria-labelledby="notes-title"><h2 id="notes-title">What the research says</h2>
+<div class="research-notes">{% for label, lines in lists %}{% if lines %}<div><h3>{{ label }}</h3><ul>{% for line in lines %}<li>{{ line }}</li>{% endfor %}</ul></div>{% endif %}{% endfor %}</div></section>
+<section class="round-section" aria-labelledby="library-title"><h2 id="library-title">House library matches</h2>
+<p>The top matches for {% for word in notes.library.words %}“{{ word }}”{% if not forloop.last %}, {% endif %}{% endfor %}{% if notes.library.colours %} and the colours {{ notes.library.colours|join:", " }}{% endif %}, from our own files. Their captions and colours feed the boards; a board may be drawn from up to three of the pictures marked “may be a reference”.</p>
+{% if matches %}<div class="library-matches">{% for match in matches %}<article class="round-card library-match" id="match-{{ match.id }}"><img src="{{ match.preview_url }}" alt="{{ match.subject|default:match.name }}" loading="lazy"><p class="over">{{ match.id }} · {{ match.kind }}</p><p>{{ match.subject }}</p>
+<ul class="swatches" aria-label="Measured colours">{% for hex in match.colours %}<li><svg class="swatch" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="4" fill="{{ hex }}"/></svg><span>{{ hex }}</span></li>{% endfor %}</ul>
+<p class="small">{% if match.may_reference %}May be a reference picture{% else %}{{ match.why_words_only|capfirst }}{% endif %}</p>
+<p class="small">{% if match.used_by %}Used by {{ match.used_by|join:", " }}{% else %}No board used it{% endif %}</p></article>{% endfor %}</div>{% else %}<p>No house-library file matched.</p>{% endif %}
+</section>
+{% endif %}
+{% endblock %}

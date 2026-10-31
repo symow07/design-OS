@@ -1,0 +1,53 @@
+{% comment %}ADJUST — try the design, at no cost and with nothing recorded (§BH51(a); §BH54(k) 2: "adjust a parameter and
+re-render, as EXPLORATION … Trying a design must not cost a gate"). Shown on a design that waits for its review; the
+knobs are the ones the design loop can turn for THIS design, and where it cannot, the reason is said in words. On a lid's
+face they are his pick (2026-09-25): "pick an element and try colours and faces from a library that stays open" — a colour
+from the brand's two systems for each element that shows one, and a face for the name from the granted set; the library
+beside it tries on the element picked here. A try answers here, in place, and is kept only as a try.{% endcomment %}
+{% if adjust.shown and adjust.pending %}
+{# [his last goal before the pitch, 2026-10-16, Step 1 (6)] the controls follow the page (static/js/adjust.js) #}
+<section class="adjust" id="adjust" aria-labelledby="adjust-h" data-src="{% url 'dashboard:design_adjust' task.pk %}">
+  <div class="top"><b id="adjust-h"><svg class="i" aria-hidden="true"><use href="#i-sliders"/></svg>Adjust</b>
+    <span>Try anything — nothing is final until you approve, and trying spends nothing.</span></div>
+  <p class="why">Getting the controls ready…</p>
+</section>
+{% elif adjust.shown %}
+<section class="adjust" id="adjust" aria-labelledby="adjust-h">
+  <div class="top"><b id="adjust-h"><svg class="i" aria-hidden="true"><use href="#i-sliders"/></svg>Adjust</b>
+    <span>Try anything — nothing is final until you approve, and trying spends nothing.</span>
+    <a class="tries" id="adjust-tries" href="{{ adjust.loop_url }}#side-by-side"{% if not adjust.tries %} hidden{% endif %}>Tries so far: <span data-tries>{{ adjust.tries }}</span> — side by side ›</a>
+    {% if not adjust.tries %}<span class="tries" id="adjust-no-tries">Tries so far: none</span>{% endif %}</div>
+  {% if adjust.available %}
+  <form class="ctrls{% if adjust.form == 'face' %} lid{% endif %}" id="adjust-form" method="post"
+        action="{% url 'dashboard:history_task_explore' task.pk %}" data-in-place="1" data-loop="{{ adjust.loop_url }}">{% csrf_token %}
+    <input type="hidden" name="from_loop" value="1">
+    {% for k in adjust.knobs %}
+    <label class="ctl{% if k.kind %} {{ k.kind }}{% endif %}">{{ k.label }}
+      {% if k.kind == "colour" or k.kind == "face" %}
+      <select name="{{ k.name }}" class="field" data-kind="{{ k.kind }}" data-label="{{ k.label }}">
+        <option value="">As it stands — {{ k.standing }}</option>
+        {% for value, words in k.options %}<option value="{{ value }}">{{ words }}</option>{% endfor %}
+      </select>
+      {% if k.hint %}<span class="hint">It paints {{ k.hint }}.</span>{% endif %}
+      {% elif k.options %}<select name="{{ k.name }}" class="field">{% for value, words in k.options %}<option value="{{ value }}"{% if value == k.standing %} selected{% endif %}>{{ words }}</option>{% endfor %}</select>
+      {% else %}<input class="field" name="{{ k.name }}" value="" placeholder="{{ k.standing }}"{% if k.numeric %} inputmode="decimal"{% endif %}>{% endif %}
+    </label>
+    {% endfor %}
+    {% if adjust.notes %}
+    <ul class="notes">
+      {% for n in adjust.notes %}<li><b>{{ n.what }}</b> — {{ n.why }}.{% if n.record %}
+        <details class="tech"><summary>Which faces, and why not</summary><ul>{% for r in n.record %}<li>{{ r.face }}: {{ r.why }}</li>{% endfor %}</ul></details>{% endif %}</li>{% endfor %}
+    </ul>
+    {% endif %}
+    <div class="go-row">
+      <button class="btn soft go" type="submit">{# [his goal of 2026-10-13, (5)] beside the step's own action, never a second primary #}<svg class="i i-sm" aria-hidden="true"><use href="#i-play"/></svg>Try it</button>
+      {% if adjust.form == "dropper" %}<a class="btn quiet" href="{{ adjust.loop_url }}#knobs">More adjustments ›</a>{% endif %}
+    </div>
+  </form>
+  <div class="adjust-result" id="adjust-result" aria-live="polite" hidden></div>
+  {% else %}
+  <p class="why">{{ adjust.reason }}</p>
+  {% endif %}
+  {% if inspiration.can_add %}{% include "dashboard/_inspiration_add.html" %}{% endif %}
+</section>
+{% endif %}

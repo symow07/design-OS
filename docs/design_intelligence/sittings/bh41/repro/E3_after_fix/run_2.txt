@@ -1,0 +1,158 @@
+.......................................F.F....                           [100%]
+BH41_AMPLIFIER fired=736 K=16
+BH41_DRAIN teardowns=46 median=0.091s p90=0.099s max=25.000s
+
+=================================== FAILURES ===================================
+_ ConfirmationDialogBrowserTests.test_confirm_sends_one_request_and_freezes_into_confirmed_state _
+
+self = <apps.pipeline.tests.test_browser_profile_editor.ConfirmationDialogBrowserTests testMethod=test_confirm_sends_one_request_and_freezes_into_confirmed_state>
+result = <TestCaseFunction test_confirm_sends_one_request_and_freezes_into_confirmed_state>
+debug = False
+
+    def _setup_and_call(self, result, debug=False):
+        """
+        Perform the following in order: pre-setup, run test, post-teardown,
+        skipping pre/post hooks if test is set to be skipped.
+    
+        If debug=True, reraise any errors in setup and use super().debug()
+        instead of __call__() to run the test.
+        """
+        testMethod = getattr(self, self._testMethodName)
+        skipped = getattr(self.__class__, "__unittest_skip__", False) or getattr(
+            testMethod, "__unittest_skip__", False
+        )
+    
+        # Convert async test methods.
+        if iscoroutinefunction(testMethod):
+            setattr(self, self._testMethodName, async_to_sync(testMethod))
+    
+        if not skipped:
+            try:
+                self._pre_setup()
+            except Exception:
+                if debug:
+                    raise
+                result.addError(self, sys.exc_info())
+                return
+        if debug:
+            super().debug()
+        else:
+            super().__call__(result)
+        if not skipped:
+            try:
+>               self._post_teardown()
+
+venv/lib/python3.11/site-packages/django/test/testcases.py:419: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+apps/pipeline/tests/browser_live_server.py:176: in _post_teardown
+    raise not_drained
+apps/pipeline/tests/browser_live_server.py:167: in _post_teardown
+    waited = httpd.wait_idle(self.live_server_drain_timeout)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <apps.pipeline.tests.browser_live_server.DrainableWSGIServer object at 0x1148f94d0>
+timeout = 25.0
+
+    def wait_idle(self, timeout: float) -> float:
+        """Block until no request is mid-handling and none arrives for ``settle_seconds``; return the
+        seconds waited. Raise ``LiveServerNotDrained`` when ``timeout`` expires first — the fast, named
+        failure."""
+        started = time.monotonic()
+        deadline = started + timeout
+        while True:
+            with self._drain_cv:
+                while self._inflight:
+                    remaining = deadline - time.monotonic()
+                    if remaining <= 0:
+>                       raise LiveServerNotDrained(
+                            "LIVE_SERVER_NOT_DRAINED: %d request(s) still mid-handling after %.1fs — the "
+                            "flush would race a live thread (§BH41)" % (self._inflight, timeout))
+E                       apps.pipeline.tests.browser_live_server.LiveServerNotDrained: LIVE_SERVER_NOT_DRAINED: 2 request(s) still mid-handling after 25.0s — the flush would race a live thread (§BH41)
+
+apps/pipeline/tests/browser_live_server.py:125: LiveServerNotDrained
+----------------------------- Captured stderr call -----------------------------
+[08/Sep/2026 07:53:02,809] - Broken pipe from ('127.0.0.1', 50277)
+[08/Sep/2026 07:53:02,915] - Broken pipe from ('127.0.0.1', 50279)
+______ ConfirmationDialogBrowserTests.test_double_click_sends_one_request ______
+
+self = <apps.pipeline.tests.test_browser_profile_editor.ConfirmationDialogBrowserTests testMethod=test_double_click_sends_one_request>
+result = <TestCaseFunction test_double_click_sends_one_request>, debug = False
+
+    def _setup_and_call(self, result, debug=False):
+        """
+        Perform the following in order: pre-setup, run test, post-teardown,
+        skipping pre/post hooks if test is set to be skipped.
+    
+        If debug=True, reraise any errors in setup and use super().debug()
+        instead of __call__() to run the test.
+        """
+        testMethod = getattr(self, self._testMethodName)
+        skipped = getattr(self.__class__, "__unittest_skip__", False) or getattr(
+            testMethod, "__unittest_skip__", False
+        )
+    
+        # Convert async test methods.
+        if iscoroutinefunction(testMethod):
+            setattr(self, self._testMethodName, async_to_sync(testMethod))
+    
+        if not skipped:
+            try:
+                self._pre_setup()
+            except Exception:
+                if debug:
+                    raise
+                result.addError(self, sys.exc_info())
+                return
+        if debug:
+            super().debug()
+        else:
+            super().__call__(result)
+        if not skipped:
+            try:
+>               self._post_teardown()
+
+venv/lib/python3.11/site-packages/django/test/testcases.py:419: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+apps/pipeline/tests/browser_live_server.py:176: in _post_teardown
+    raise not_drained
+apps/pipeline/tests/browser_live_server.py:167: in _post_teardown
+    waited = httpd.wait_idle(self.live_server_drain_timeout)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <apps.pipeline.tests.browser_live_server.DrainableWSGIServer object at 0x1148f94d0>
+timeout = 25.0
+
+    def wait_idle(self, timeout: float) -> float:
+        """Block until no request is mid-handling and none arrives for ``settle_seconds``; return the
+        seconds waited. Raise ``LiveServerNotDrained`` when ``timeout`` expires first — the fast, named
+        failure."""
+        started = time.monotonic()
+        deadline = started + timeout
+        while True:
+            with self._drain_cv:
+                while self._inflight:
+                    remaining = deadline - time.monotonic()
+                    if remaining <= 0:
+>                       raise LiveServerNotDrained(
+                            "LIVE_SERVER_NOT_DRAINED: %d request(s) still mid-handling after %.1fs — the "
+                            "flush would race a live thread (§BH41)" % (self._inflight, timeout))
+E                       apps.pipeline.tests.browser_live_server.LiveServerNotDrained: LIVE_SERVER_NOT_DRAINED: 1 request(s) still mid-handling after 25.0s — the flush would race a live thread (§BH41)
+
+apps/pipeline/tests/browser_live_server.py:125: LiveServerNotDrained
+----------------------------- Captured stderr call -----------------------------
+[08/Sep/2026 07:53:29,132] - Broken pipe from ('127.0.0.1', 50445)
+=============================== warnings summary ===============================
+apps/pipeline/tests/test_browser_review_board_references.py::ReviewBoardReferenceBrowserTests::test_card_metadata_badge_and_actions
+apps/pipeline/tests/test_browser_profile_editor.py::ProfileEditorBrowserTests::test_confirmed_task_shows_confirmed_state_not_the_editor
+apps/pipeline/tests/test_browser_profile_editor.py::ProfileEditorResponsiveA11yTests::test_focus_visible_styling_is_declared
+apps/pipeline/tests/test_browser_profile_editor.py::ConfirmationDialogBrowserTests::test_409_refusal_preserves_editor_and_state
+  /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/venv/lib/python3.11/site-packages/django/core/handlers/base.py:61: UserWarning: No directory at: /Users/symow/Desktop/bbrose-systemOS/bbrose_design_os/staticfiles/
+    mw_instance = middleware(adapted_handler)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED apps/pipeline/tests/test_browser_profile_editor.py::ConfirmationDialogBrowserTests::test_confirm_sends_one_request_and_freezes_into_confirmed_state
+FAILED apps/pipeline/tests/test_browser_profile_editor.py::ConfirmationDialogBrowserTests::test_double_click_sends_one_request
+2 failed, 44 passed, 4 warnings in 97.98s (0:01:37)

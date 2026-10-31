@@ -1,0 +1,73 @@
+{% extends "dashboard/history/base.html" %}
+{% comment %}DESIGNS — C's (his pick of the executor's options, a691f56: "starting a design, the library and history are C's"): every design, newest first, by month,
+each a tile saying where it stands and opening its own page, with its record one link below. Found by its words — the
+search reaches into the brief, its records and decisions — what it is, its product or its state; by date, renders or
+rejections under "More ways to find". The system's own tests are folded away unless asked for (his fold, a691f56).
+Read-only: nothing here decides, approves or spends.{% endcomment %}
+{% block title %}Designs{% endblock %}
+{% block content %}
+<h1 class="h1">Designs</h1>
+<p class="lead designs-lead">Everything you have designed, {% if order == "oldest" %}oldest{% else %}newest{% endif %} first — {{ shown }} design{{ shown|pluralize }}{% if q %} matching “{{ q }}”{% endif %}. Find old work by its words, what it is, its product or what happened to it.</p>
+<form class="hfilters" method="get" action="{% url 'dashboard:history' %}" role="search">
+  <label class="field find-field"><svg class="i i-sm" aria-hidden="true"><use href="#i-search"/></svg><span class="sr">Find by its words</span>
+    <input type="search" id="q" name="q" value="{{ q }}" placeholder="Find by product, direction, brief or anything on record"></label>
+  <label><span class="sr">What it is</span>
+    <select id="target" name="target" class="field"><option value="">Every kind</option>
+      {% for t, words in targets %}<option value="{{ t }}"{% if params.target == t %} selected{% endif %}>{{ words }}</option>{% endfor %}
+    </select></label>
+  <label><span class="sr">Product</span>
+    <select id="product" name="product" class="field"><option value="">Every product</option>
+      {% for p in products %}<option value="{{ p.pk }}"{% if params.product == p.pk|stringformat:"s" %} selected{% endif %}>{{ p.name }}</option>{% endfor %}
+    </select></label>
+  <label><span class="sr">Where it stands</span>
+    <select id="state" name="state" class="field"><option value="">Any state</option>
+      {% for value, words in state_filters %}<option value="{{ value }}"{% if state == value %} selected{% endif %}>{{ words }}</option>{% endfor %}
+    </select></label>
+  {% if brands|length > 1 %}<label><span class="sr">Brand</span>
+    <select id="brand" name="brand" class="field"><option value="">Every brand</option>
+      {% for b in brands %}<option value="{{ b.pk }}"{% if params.brand == b.pk|stringformat:"s" %} selected{% endif %}>{{ b.name }}</option>{% endfor %}
+    </select></label>{% endif %}
+  <label class="toggle"><input type="checkbox" name="mine" value="1"{% if params.mine == "1" %} checked{% endif %}><span class="sw2" aria-hidden="true"></span>Only the designs I started</label>
+  <label class="toggle"><input type="checkbox" name="tests" value="1"{% if tests %} checked{% endif %}><span class="sw2" aria-hidden="true"></span>Show the system's own tests ({{ folded }})</label>
+  <details class="more"{% if more_open %} open{% endif %}><summary>More ways to find</summary>
+    <div class="more-row">
+      <label>Its record's state
+        <select id="status" name="status" class="field"><option value="">any</option>
+          {% for value, label in statuses %}<option value="{{ value }}"{% if params.status == value %} selected{% endif %}>{{ label }}</option>{% endfor %}
+        </select></label>
+      <label>From <input type="date" id="from" name="from" value="{{ params.from }}" class="field"></label>
+      <label>To <input type="date" id="to" name="to" value="{{ params.to }}" class="field"></label>
+      <label>Its drawing
+        <select id="renders" name="renders" class="field"><option value="">any</option><option value="1"{% if params.renders == "1" %} selected{% endif %}>has a drawing</option></select></label>
+      <label>Turned down
+        <select id="rejections" name="rejections" class="field"><option value="">any</option><option value="1"{% if params.rejections == "1" %} selected{% endif %}>was turned down or asked to change</option></select></label>
+      <label>Order
+        <select id="order" name="order" class="field"><option value="newest">newest first</option><option value="oldest"{% if order == "oldest" %} selected{% endif %}>oldest first</option></select></label>
+    </div>
+  </details>
+  <button type="submit" class="btn">Show</button>
+</form>
+{% for m in months %}
+<section class="month" aria-labelledby="m-{{ forloop.counter }}">
+  <div class="month-hd"><h2 id="m-{{ forloop.counter }}">{{ m.month }}</h2><span>{{ m.tiles|length }} design{{ m.tiles|length|pluralize }}</span></div>
+  <div class="tgrid">
+    {% for c in m.tiles %}
+    <article class="tcard {{ c.state }}">
+      <a class="frame" href="{{ c.url }}">
+        {% if c.picture %}<img src="{{ c.picture }}" alt="" loading="lazy"{% if "/dielines/" in c.picture %} class="sheet"{% endif %}>
+        {% elif c.state == "attention" or c.state == "stuck" %}<span class="ph-fill attn"><svg class="i" aria-hidden="true"><use href="#{{ c.icon }}"/></svg><span>{{ c.reason|default:c.next_words }}</span></span>
+        {% elif c.state == "tried_again" %}<span class="ph-fill still"><svg class="i" aria-hidden="true"><use href="#{{ c.icon }}"/></svg><span>Stopped: {{ c.reason|default:"no reason recorded" }}{% if c.later_try %} — tried again as #{{ c.later_try }}{% endif %}</span></span>
+        {% else %}<span class="ph-fill wait"><svg class="i" aria-hidden="true"><use href="#{{ c.icon }}"/></svg><span>{{ c.next_words }}</span></span>{% endif %}
+        <span class="tag {{ c.tag_class }}"><svg class="i i-sm" aria-hidden="true"><use href="#{{ c.icon }}"/></svg>{{ c.tag }}</span>
+      </a>
+      <div class="cap"><a class="nm" href="{{ c.url }}">{{ c.title }}</a>
+        <span>#{{ c.task_id }} · {{ c.created|date:"j M" }}</span>
+        <a class="rec" href="{% url 'dashboard:history_task' c.task_id %}">Everything on record</a></div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% empty %}
+<p class="lead none">No design matches.</p>
+{% endfor %}
+{% endblock %}

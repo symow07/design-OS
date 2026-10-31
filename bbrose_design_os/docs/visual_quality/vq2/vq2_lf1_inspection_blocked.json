@@ -1,0 +1,95 @@
+{
+ "record_type": "vq2_lf1_inspection_blocked/1.0",
+ "created_at": "2026-07-29",
+ "state": "VQ2_LF1_HARD_STOP_REVIEW_REQUIRED",
+ "blocker": "VQ2_TYPOGRAPHY_INSPECTION_BLOCKED_PROVIDER_CREDIT",
+ "blocker_is_external": true,
+ "blocker_is_a_defect_in_the_work": false,
+ "provider_error": "HTTP 400 invalid_request_error \u2014 \"Your credit balance is too low to access the Anthropic API.\" request_id req_011CdVuiNaWaRAponJhPTXpk",
+ "inspections_attempted": 1,
+ "inspections_completed": 0,
+ "inspector_a": "NOT_RUN",
+ "inspector_b": "NOT_RUN",
+ "input_quality_gate": {
+  "result": "PASSED",
+  "all_images_present": true,
+  "no_clipping_verified": true,
+  "ink_bbox_check": "y 40-759 of 1000, x 70-1461 of 1650",
+  "images": {
+   "reference_product_name_crop": {
+    "size": [
+     305,
+     170
+    ],
+    "sha256": "a381ead75b5afb4a"
+   },
+   "reference_enlarged_x8": {
+    "size": [
+     2440,
+     1360
+    ],
+    "sha256": "d5fc167c225204ec"
+   },
+   "lf1_r1_words": {
+    "size": [
+     1650,
+     1000
+    ],
+    "sha256": "0a97c0d1bc2d7f9f"
+   },
+   "lf1_r1_glyph_panel": {
+    "size": [
+     1500,
+     940
+    ],
+    "sha256": "3deba66ce7288e01"
+   },
+   "approved_logo": {
+    "size": [
+     3721,
+     886
+    ],
+    "sha256": "c321c1bea4c69e27"
+   }
+  },
+  "inspectors_isolated_by_construction": true,
+  "note": "The manifest and both prompts were built and verified before the provider refused. Nothing about the inputs caused this."
+ },
+ "deterministic_certification_unaffected": {
+  "state": "VQ2_LF1_R1_DETERMINISTICALLY_CERTIFIED",
+  "vector": "13/13",
+  "raster": "13/13",
+  "symmetric_max_range": "0.613 - 0.908"
+ },
+ "rose_width_finding": {
+  "code": "VQ2_NATIVE_FONT_WIDTH_DIFFERS_FROM_REFERENCE",
+  "measured": "128.85 px vs 134 px target, 0.038 normalized",
+  "classification": "UNADJUDICATED",
+  "why": "Section 10 requires BOTH inspectors to classify it NONACTIONABLE before release. Neither ran, so it is not classified. It is NOT being treated as passed by default.",
+  "distortion_applied": false
+ },
+ "lettering_geometry_changed": false,
+ "lf1_r1_ai_sha256": "fcd8003994d52028",
+ "not_produced": [
+  "Inspector A findings",
+  "Inspector B findings",
+  "vq2_lf1_typography_inspection_consistency/1.0",
+  "converter fixture suite",
+  "vq2_imbue_lf1_r1_review package"
+ ],
+ "unimplemented_next_action_proposal": {
+  "step_1": "Restore Anthropic API credit.",
+  "step_2": "Re-run the two inspections from the already-built manifest \u2014 inputs, prompts and isolation are prepared and verified, so this is a single execution with no rebuild.",
+  "step_3": "Run the consistency check, then the converter fixture suite, then emit the review package.",
+  "geometry_correction_authorized": false,
+  "why_no_correction": "LF1-R1 passed every deterministic gate. There is no measured defect to correct, and Rose width may only be revisited if an inspector classifies it ACTIONABLE \u2014 and even then not by distortion."
+ },
+ "axes_changed": false,
+ "tracking_changed": false,
+ "font_reacquired": false,
+ "glyph_outline_modified": false,
+ "nonuniform_scaling_applied": false,
+ "font_binary_embedded": false,
+ "lf2_generated": false,
+ "vq2_a2_generated": false
+}

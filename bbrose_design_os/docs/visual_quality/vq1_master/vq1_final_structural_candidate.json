@@ -1,0 +1,49 @@
+{
+ "record_type": "vq1_final_structural_candidate/1.0",
+ "created_at": "2026-07-28",
+ "candidate": "M3",
+ "identity_sha256_png": "4ecc8e9df1d1",
+ "classification": [
+  "VQ1_FINAL_STRUCTURAL_CANDIDATE",
+  "VQ1_GEOMETRY_COMPLETE_PENDING_OWNER_ACCEPTANCE"
+ ],
+ "frozen_byte_identical": true,
+ "geometry_authority": "CONCEPT_VISUAL_GEOMETRY_ONLY",
+ "is_manufacturable": false,
+ "is_tooling_ready": false,
+ "is_production_geometry": false,
+ "human_accepted": false,
+ "prohibited_new_candidates": [
+  "M3S1",
+  "M3S2",
+  "M5",
+  "M6",
+  "RIM2",
+  "ANY_OTHER_COLLAR_MODEL",
+  "ANY_OTHER_NECK_MODEL",
+  "ANY_OTHER_SHOULDER_MODEL",
+  "ANY_ADDITIONAL_VQ1_GEOMETRY_CANDIDATE"
+ ],
+ "candidate_loop_state": "CLOSED",
+ "authoritative_metrics": {
+  "neck_local_normal": {
+   "count": 30,
+   "mean": 0.001996,
+   "p95": 0.00337,
+   "max": 0.004073
+  },
+  "shoulder_local_normal": {
+   "count": 36,
+   "mean": 0.001011,
+   "p95": 0.003673,
+   "max": 0.004197
+  },
+  "assembly_wide_largest_norm": 0.007594,
+  "gates": {
+   "mean": 0.006,
+   "p95": 0.018,
+   "max": 0.035
+  },
+  "result": "PASS"
+ }
+}

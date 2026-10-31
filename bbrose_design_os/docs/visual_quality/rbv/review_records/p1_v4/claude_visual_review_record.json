@@ -1,0 +1,269 @@
+{
+ "schema": "rbv4_claude_review_record/1.0",
+ "contract": {
+  "schema": "claude_visual_review/1.0",
+  "status": "PROPOSED_PENDING_OWNER_APPROVAL \u2014 no provider calls in this slice; execution requires owner-budgeted authorization",
+  "source": "docs/visual_quality/rbv/claude_visual_review_contract.json"
+ },
+ "subject_id": "P1_V4",
+ "created_at": "2026-08-17",
+ "note": "RBV-4 review record. Mode A GEOMETRY VALIDATION only. Dispositions were OBSERVED in a live provider call authorized by OWNER_BLOCKER_CLEARANCE.md \u00a7R1 and ledgered in docs/visual_quality/rbv/rbv4_call_budget.json. The review approves nothing (\u00a7R1d): findings are evidence feeding the fail-closed gate, and the OWNER remains final authority.",
+ "mode_reviewed": "GEOMETRY_VALIDATION",
+ "statement": "GEOMETRY VALIDATION FIXTURE \u2014 NOT A REAL BOTTLE COMPARISON",
+ "presentation_mode": {
+  "status": "ABSENT_BLOCKED",
+  "reasons": [
+   "RBV2C_PRESENTATION_RENDERER_NOT_BUILT",
+   "OWNER_GATE_PILOT_GEOMETRY_INSPECTION_PENDING"
+  ],
+  "rule": "validation renders are never re-badged as presentation (\u00a71 two-mode principle); geometry verdicts come only from mode A"
+ },
+ "execution": {
+  "execution": "LIVE_PROVIDER_CALL",
+  "provider_call_made": true,
+  "state": "EXECUTED",
+  "provider_identity": {
+   "name": "anthropic",
+   "model": "claude-opus-5"
+  },
+  "provider_request_id": "req_011Ce7xmfjDHHmmF1LRPkwZv",
+  "response_sha256": "9daf3efdedde92a81b78f080cd86890e8fd1fead90d0f3032fc03b69c31c9c4b",
+  "budget": {
+   "state": "BUDGET_AVAILABLE",
+   "live_state": "BUDGET_AVAILABLE",
+   "calls_authorized": 10,
+   "spent": 4,
+   "remaining": 6,
+   "authorizing_ruling": "PROJECT_OWNER \u2014 OWNER_BLOCKER_CLEARANCE.md \u00a7R1, 2026-08-17, Cowork question session",
+   "rollover": false,
+   "source": "docs/visual_quality/rbv/rbv4_call_budget.json"
+  }
+ },
+ "dispositions": [
+  {
+   "category": "silhouette differences",
+   "disposition": "UNCERTAIN_MISSING_EVIDENCE",
+   "source": "PROVIDER_CALL",
+   "observation": "Clay renders show a consistent silhouette across front, side, three_quarter, wireframe and normals: straight-walled cylindrical body with a slight radius at the base edge, a short tapered shoulder, a narrow neck, a squat cylindrical collar and a domed dropper bulb. The form is internally self-consistent and free of visible profile breaks, but with no authoritative real-bottle outline in the package the silhouette cannot be compared to the real container, so no difference can be confirmed or excluded.",
+   "missing_evidence": "No real-bottle reference image is packaged (references_packaged: 0); reference_availability is only PARTIAL (owner measurements + uncalibrated photos, none included in the sheet). A calibrated, camera-matched reference silhouette or overlay/difference plate would be required."
+  },
+  {
+   "category": "shoulder differences",
+   "disposition": "UNCERTAIN_MISSING_EVIDENCE",
+   "source": "PROVIDER_CALL",
+   "observation": "The shoulder reads as a short, fairly tight convex transition from the body wall into the neck, visible in front, side, three_quarter and the closure_detail crop; the normals pass shows a smooth gradient across the transition with no faceting or shading discontinuity. Whether this radius and transition height match the real bottle cannot be assessed without a reference.",
+   "missing_evidence": "A dimensioned or camera-matched reference of the real bottle's shoulder radius/transition height; none is packaged."
+  },
+  {
+   "category": "neck differences",
+   "disposition": "UNCERTAIN_MISSING_EVIDENCE",
+   "source": "PROVIDER_CALL",
+   "observation": "The neck is a short straight cylinder between the shoulder and the collar, largely occluded by the collar in front and side views; the closure_detail crop exposes only its lower portion. No thread or finish detail is modelled. Correspondence to the real bottle's neck cannot be evaluated from the supplied evidence.",
+   "missing_evidence": "Reference imagery or neck/finish dimensions (neck diameter, neck length, finish detail) for the real bottle; the package supplies only overall contract H/W/D."
+  },
+  {
+   "category": "closure differences",
+   "disposition": "UNCERTAIN_MISSING_EVIDENCE",
+   "source": "PROVIDER_CALL",
+   "observation": "The closure is modelled as a plain cylindrical collar with softly rounded top/bottom edges and a domed capsule bulb above it; no knurling, thread line, or crimp seam is present. The dedicated closure_detail view is off-centre with its bounds touching the frame (x0 115\u2013x1 1217, y0 432\u2013y1 2199) so part of the closure/shoulder context is cropped, further limiting inspection. No reference exists against which to judge closure differences.",
+   "missing_evidence": "A real-bottle closure reference (dropper collar height/diameter, bulb profile) and a correctly framed closure_detail view; the packaged closure_detail is flagged RENDER_OFF_CENTER, touches the frame, and reports closure_view_coverage 0.5532."
+  },
+  {
+   "category": "aspect and proportion differences",
+   "disposition": "UNCERTAIN_MISSING_EVIDENCE",
+   "source": "PROVIDER_CALL",
+   "observation": "Against the internal contract (H 114.3 \u00b7 W 37.4 \u00b7 D 37.4) the rendered numbers are close but not identical: front and side rendered_extent 37.36 mm vs contract 37.40 mm (-0.04 mm), front rendered_height 113.64 mm and side rendered_height 114.23 mm \u2014 a 0.59 mm (~10 px) discrepancy between two orthographic views of a nominally square-section body, and both short of the 114.3 mm contract height. This is an internal render/measurement inconsistency worth owner attention, but proportional fidelity to the real bottle itself remains undeterminable without reference evidence.",
+   "missing_evidence": "An authoritative real-bottle proportion reference (calibrated photograph or full dimensional set beyond overall H/W/D) to compare body:neck:closure ratios."
+  },
+  {
+   "category": "perspective mismatch",
+   "disposition": "UNCERTAIN_MISSING_EVIDENCE",
+   "source": "PROVIDER_CALL",
+   "observation": "Front, side, top and bounds_dimensions views appear to share one consistent near-orthographic camera preset (identical x-bounds 479\u20131120 for front and side); the three_quarter diagnostic reads as a plausible rotation of the same setup. The closure_detail view is flagged RENDER_OFF_CENTER and its bounds touch the frame, so its framing deviates from the other views. Camera agreement with any real-bottle photograph cannot be tested with the supplied material.",
+   "missing_evidence": "A reference photograph with known/recoverable camera parameters to compare against real_bottle_camera_standard/1.0; the packaged photos are described as uncalibrated and none are included."
+  },
+  {
+   "category": "artwork placement",
+   "disposition": "NOT_OBSERVED",
+   "source": "PROVIDER_CALL",
+   "observation": "No artwork, label, decoration or print of any kind is applied anywhere on the clay geometry in any of the eight views; surfaces are uniformly blank, which is expected for a neutral geometry validation render. There is therefore nothing to place or mis-place."
+  },
+  {
+   "category": "logo placement",
+   "disposition": "NOT_OBSERVED",
+   "source": "PROVIDER_CALL",
+   "observation": "No brand mark, embossed logo or engraved identifier is present on the body, shoulder, collar or base in front, side, three_quarter, closure_detail, wireframe or normals views. Logo placement is not carried by this geometry fixture."
+  },
+  {
+   "category": "typography quality",
+   "disposition": "FINDING",
+   "source": "PROVIDER_CALL",
+   "observation": "No product typography exists on the geometry. The only type is sheet/annotation typography: the header block, panel captions and \u00a711 measurement restatement are crisp and legible, but the annotation text baked into the bounds_dimensions tile (the red 'GEOMETRY VALIDATION FIXTURE' line and the 'contract: H 114.3mm \u00b7 W 37.4mm \u00b7 D 37.4mm' line) renders at a very small size and is effectively sub-legible at contact-sheet scale; it is only readable because the \u00a711 block restates it verbatim. Cosmetic annotation-legibility issue only, no bearing on geometry.",
+   "classification": "VISUAL_POLISH"
+  },
+  {
+   "category": "material realism",
+   "disposition": "NOT_OBSERVED",
+   "source": "PROVIDER_CALL",
+   "observation": "Out of scope by rule for this mode. The surfaces are the expected uniform neutral matte clay with no glass, transparency, refraction or label material simulated; this is the intended validation shader and is not assessed for realism."
+  },
+  {
+   "category": "lighting issues",
+   "disposition": "NOT_OBSERVED",
+   "source": "PROVIDER_CALL",
+   "observation": "Lighting appears consistent with the declared real_bottle_lighting_standard/1.0 across all beauty views: soft, even, largely shadowless illumination with a gentle vertical falloff. No blown highlights, no clipped blacks, no visible noise or fireflies at 64 samples, and no light leaks. Subject-to-background separation is low-contrast (light clay on light grey) but silhouette edges remain readable in every view, and the wireframe/normals diagnostics provide independent edge confirmation."
+  },
+  {
+   "category": "colour differences",
+   "disposition": "UNCERTAIN_MISSING_EVIDENCE",
+   "source": "PROVIDER_CALL",
+   "observation": "The renders carry no colour intent \u2014 a single neutral off-white clay across all geometry, with the normals pass using conventional false colour for diagnostics. Colour is out of scope for this neutral-clay mode, and in any case no calibrated reference exists, so any colour difference from the real bottle cannot be resolved.",
+   "missing_evidence": "A colour-calibrated real-bottle reference (with known illuminant/white balance); the package contains zero reference images and describes the available photos as uncalibrated."
+  },
+  {
+   "category": "client-presentability",
+   "disposition": "NOT_OBSERVED",
+   "source": "PROVIDER_CALL",
+   "observation": "Out of scope by rule. The package explicitly declares client_presentation_mode ABSENT_BLOCKED (RBV2C_PRESENTATION_RENDERER_NOT_BUILT, OWNER_GATE_PILOT_GEOMETRY_INSPECTION_PENDING) and the sheet restates the \u00a71 two-mode principle that validation renders are never re-badged as presentation. These clay renders were not judged as, and must not be reused as, client-facing imagery."
+  },
+  {
+   "category": "uncertainty caused by missing reference evidence",
+   "disposition": "FINDING",
+   "source": "PROVIDER_CALL",
+   "observation": "The sheet states reference availability PARTIAL (owner measurements + uncalibrated photos) yet references_packaged is 0 \u2014 no real-bottle image, overlay or difference plate appears anywhere in the eight tiles. Consequently six difference-defined categories (silhouette, shoulder, neck, closure, aspect/proportion, perspective, plus colour) are structurally undischargeable from this package and are reported as uncertain rather than clear. This compounds with the declared package state: subject is the FROZEN P1 V4 regression fixture with P1_OWNER_VISUAL_APPROVAL NOT_GRANTED and a standing uncertainty 'V3 provisional geometry \u2014 owner review pending', and with the open RENDER_OFF_CENTER:closure_detail warning plus the front/side rendered-height mismatch (113.64 vs 114.23 mm against a 114.3 mm contract). Evidence for owner consideration only.",
+   "classification": "MAJOR"
+  }
+ ],
+ "counts_by_classification": {
+  "BLOCKING": 0,
+  "MAJOR": 1,
+  "MINOR": 0,
+  "VISUAL_POLISH": 1
+ },
+ "authority": {
+  "rules": [
+   "Claude must not self-approve any gate",
+   "Claude findings feed the fail-closed gate as evidence; they never override a blocking automated failure and never substitute owner judgment",
+   "the OWNER remains final authority",
+   "uncertainty from missing reference evidence must be reported as uncertainty, never resolved by assumption"
+  ],
+  "no_self_approval_rule": "STRUCTURALLY ABSENT \u2014 this record carries no decision key at any depth and the harness raises if one is present",
+  "gate_relationship": "EVIDENCE ONLY \u2014 findings never override a blocking automated failure and never substitute owner judgment",
+  "decision_channel": "this record is EVIDENCE ONLY \u2014 owner reviews are QUEUED in OWNER_REVIEW_QUEUE.md and decided ONLY through OWNER_BLOCKER_CLEARANCE.md; no decision field exists in this record by rule and none may be added"
+ },
+ "provenance": {
+  "inputs_read_in_order": [
+   {
+    "role": "review_package_manifest",
+    "path": "docs/visual_quality/rbv/review_packages/p1_v4/review_package_manifest.json",
+    "sha256": "3101abe99ac7b913e1fc378f446e41f4f05bd106a736ad475b7a5b0c1fa85f4e"
+   },
+   {
+    "role": "contact_sheet",
+    "path": "docs/visual_quality/rbv/review_packages/p1_v4/review_contact_sheet.png",
+    "pixel_hash": "c8af548d789b12ff"
+   },
+   {
+    "role": "view:bounds_dimensions",
+    "path": "docs/visual_quality/rbv/p1_pilot/2026-08-04_v4/bounds_dimensions.png",
+    "pixel_hash": "91a8d69a83f650cc"
+   },
+   {
+    "role": "view:closure_detail",
+    "path": "docs/visual_quality/rbv/p1_pilot/2026-08-04_v4/closure_detail.png",
+    "pixel_hash": "e2e378c2470fac68"
+   },
+   {
+    "role": "view:front",
+    "path": "docs/visual_quality/rbv/p1_pilot/2026-08-04_v4/neutral_front.png",
+    "pixel_hash": "c97b59c3c090083a"
+   },
+   {
+    "role": "view:normals",
+    "path": "docs/visual_quality/rbv/p1_pilot/2026-08-04_v4/normals.png",
+    "pixel_hash": "8a859f6be9334fab"
+   },
+   {
+    "role": "view:side",
+    "path": "docs/visual_quality/rbv/p1_pilot/2026-08-04_v4/neutral_side.png",
+    "pixel_hash": "55bcf238cec41a83"
+   },
+   {
+    "role": "view:three_quarter_diagnostic",
+    "path": "docs/visual_quality/rbv/p1_pilot/2026-08-04_v4/neutral_three_quarter.png",
+    "pixel_hash": "6498e2fd2b94b847"
+   },
+   {
+    "role": "view:top",
+    "path": "docs/visual_quality/rbv/p1_pilot/2026-08-04_v4/neutral_top.png",
+    "pixel_hash": "7da3633c74802162"
+   },
+   {
+    "role": "view:wireframe",
+    "path": "docs/visual_quality/rbv/p1_pilot/2026-08-04_v4/wireframe.png",
+    "pixel_hash": "723262b6786875b7"
+   },
+   {
+    "role": "review_contract",
+    "path": "docs/visual_quality/rbv/claude_visual_review_contract.json",
+    "sha256": "d98f46cc3664f77fdb4d87d0b8a0e25949607084f5ed01ddcfa088d8a4b411bd"
+   }
+  ],
+  "derivation": {
+   "module": "apps/pipeline/services/rbv4_claude_review.py",
+   "code_sha256": "ba3800a0aa528b7a701d8acd4fdaa15902520e3255d8dafa8a17c58b032ae934",
+   "record_schema": "rbv4_claude_review_record/1.0"
+  },
+  "required_categories": [
+   "silhouette differences",
+   "shoulder differences",
+   "neck differences",
+   "closure differences",
+   "aspect and proportion differences",
+   "perspective mismatch",
+   "artwork placement",
+   "logo placement",
+   "typography quality",
+   "material realism",
+   "lighting issues",
+   "colour differences",
+   "client-presentability",
+   "uncertainty caused by missing reference evidence"
+  ],
+  "law": "3aa \u2014 a derived quantity carries the identity of every input it read and of the derivation that produced it, or it is not evidence"
+ },
+ "decision_key_scan": {
+  "keys_visited": 149,
+  "forbidden_keys": [
+   "accept",
+   "acceptance",
+   "accepted",
+   "approval",
+   "approvals",
+   "approve",
+   "approved",
+   "authorised",
+   "authorized",
+   "clear_to_proceed",
+   "clearance",
+   "cleared",
+   "gate_decision",
+   "gate_result",
+   "gate_verdict",
+   "grant",
+   "granted",
+   "grants",
+   "pass_fail",
+   "passed",
+   "ruling",
+   "self_approval",
+   "self_approve",
+   "self_approved",
+   "sign_off",
+   "signed_off",
+   "signoff",
+   "verdict",
+   "verdicts"
+  ]
+ }
+}

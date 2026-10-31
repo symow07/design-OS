@@ -1,0 +1,29 @@
+{% extends "dashboard/history/base.html" %}
+{% block title %}Project #{{ project.pk }}{% endblock %}
+{% block content %}
+<p class="dim"><a href="{% url 'dashboard:history_projects' %}">Projects</a> › Project #{{ project.pk }}</p>
+<h1>Project #{{ project.pk }}</h1>
+<div class="facts"><span class="pill status">{{ project.status }}</span><span class="pill">{{ project.design_target }}</span>
+  <span>created {{ project.created_at|date:"Y-m-d H:i" }}</span>{% if project.failed_stage %}<span>failed stage: {{ project.failed_stage }}</span>{% endif %}</div>
+<h2>Brief</h2><div class="brief">{{ project.brief }}</div>
+<h2>Derived state</h2>
+<div class="tablewrap"><table><tbody>
+  <tr><th>Project state</th><td>{{ summary.project_state }}</td></tr>
+  <tr><th>Next required action</th><td>{{ summary.next_required_action|default:"—" }}</td></tr>
+  <tr><th>Blockers (persisted snapshot)</th><td><div class="codes">{% for b in summary.combined_blockers %}<span class="pill">{{ b }}</span>{% empty %}none recorded in the snapshot — the reader's verdict, derived now, is in each stage's row (§BH50(g)(4)){% endfor %}</div></td></tr>
+  <tr><th>Design complete</th><td>{{ summary.design_complete|yesno:"yes,no" }}</td></tr>
+  <tr><th>Production ready</th><td>{{ summary.production_ready|yesno:"yes,no" }}</td></tr>
+</tbody></table></div>
+<h2>Stages</h2>
+<div class="tablewrap"><table><thead><tr><th>Stage</th><th>Target</th><th>Task</th><th>Status</th><th>Blockers (persisted snapshot)</th><th>Derived at readiness-read</th></tr></thead><tbody>
+{% for s in stages %}<tr><td>{{ s.label }}</td><td>{{ s.target }}</td>
+  <td>{% if s.task_id %}<a href="{% url 'dashboard:history_task' s.task_id %}">#{{ s.task_id }}</a>{% else %}not started{% endif %}</td>
+  <td>{{ s.status }}{% if s.human_acceptance %} · {{ s.human_acceptance }}{% endif %}</td>
+  <td><div class="codes">{% for b in s.blockers %}<span class="pill">{{ b }}</span>{% endfor %}</div></td>
+  <td>{% if s.derived.applies %}{{ s.derived.blocking|length }} blocking · {{ s.derived.notes|length }} production note{{ s.derived.notes|length|pluralize }} · acceptance {{ s.derived.human }}{% if s.derived.staleness.stale %} · <span class="pill withheld">STALE — checks predate {{ s.derived.staleness.latest_since }}</span>{% else %} · current{% endif %}{% else %}—{% endif %}</td></tr>{% endfor %}
+</tbody></table></div>
+<h2>Tasks</h2>
+<ul>{% for t in tasks %}<li><a href="{% url 'dashboard:history_task' t.pk %}">Task #{{ t.pk }}</a> · {{ t.stage|default:"—" }} · {{ t.status }}</li>{% empty %}<li class="dim">No tasks.</li>{% endfor %}</ul>
+<h2>Stage and pilot records ({{ metadata|length }})</h2>
+{% for m in metadata %}<details><summary class="mono">{{ m.key }}</summary><pre>{{ m.raw }}</pre></details>{% empty %}<p class="dim">No records.</p>{% endfor %}
+{% endblock %}

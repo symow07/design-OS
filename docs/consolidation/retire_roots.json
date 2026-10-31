@@ -1,0 +1,27 @@
+{
+ "schema": "retire_roots/1",
+ "why": "the roots the owner's goal of 2026-10-29 retires: the old task API (api/), the dielines API, the intelligence pages, the old ARIA tasks and signals, the old commands, and the routes of config/urls.py and dashboard/urls.py other than the chain's own pages; new_roots are what stays: the chain's pages and its worker tasks",
+ "old_roots": [
+  "apps.pipeline.urls",
+  "apps.dielines.urls",
+  "apps.intelligence.urls",
+  "apps.pipeline.signals",
+  "apps.pipeline.tasks",
+  "apps.dashboard.urls",
+  "config.urls",
+  "apps.pipeline.apps",
+  "config.settings",
+  "apps.accounts.management.commands.verify_decision_chain",
+  "apps.core.management.commands.import_design_references",
+  "apps.intelligence.management.commands.rebuild_intelligence_assertions",
+  "apps.intelligence.management.commands.rebuild_intelligence_governance",
+  "apps.intelligence.management.commands.rebuild_intelligence_semantic_index",
+  "apps.pipeline.management.commands.build_stepped_display",
+  "apps.pipeline.management.commands.rbv4_review"
+ ],
+ "new_roots": [
+  "apps.dashboard.product_round_views",
+  "apps.dashboard.round_files_views",
+  "apps.pipeline.round_tasks"
+ ]
+}

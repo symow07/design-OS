@@ -1,0 +1,5878 @@
+{
+ "extent": "apps/**/*.py|html|css|js excluding tests/migrations; static/**/*.css|js|html excluding vendor/fonts",
+ "files_scanned": 507,
+ "hits": [
+  {
+   "file": "apps/pipeline/review_board.py",
+   "line": 65,
+   "text": "uploaded_at: str = \"\"          # ISO timestamp"
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 58,
+   "text": "\"name fills\", \"oversized serif\", \"oversized type\")),"
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 93,
+   "text": "# Cue vocabularies for typographic INTENT (serif/sans, width, geometry,"
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 97,
+   "text": "_SERIF_WORDS = (\"serif\", \"didone\", \"roman\", \"slab\", \"antiqua\", \"garald\","
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 98,
+   "text": "\"transitional serif\")"
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 100,
+   "text": "_MIX_PHRASES = (\"serif with sans\", \"serif against\", \"paired with a sans\","
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 101,
+   "text": "\"sans for support\", \"serif for the name\", \"serif for the product\","
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 102,
+   "text": "\"serif paired\", \"serif and sans\", \"serif plus sans\","
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 103,
+   "text": "\"serif alongside\", \"serif for the primary\", \"serif with a sans\","
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 104,
+   "text": "\"sans for the supporting\", \"serif headline with a sans\")"
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 111,
+   "text": "\"helvetica\", \"swiss\")"
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 112,
+   "text": "_HIGH_CONTRAST_CUES = (\"high-contrast\", \"high contrast\", \"didone\", \"modern serif\","
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 113,
+   "text": "\"hairline serif\", \"fine-contrast\", \"sharp contrast\")"
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 114,
+   "text": "_DISPLAY_SERIF_CUES = (\"display serif\", \"slab\", \"chunky serif\", \"fat serif\")"
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 137,
+   "text": "# high-contrast serif of direction 2\" describes what this direction is"
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 140,
+   "text": "# BEFORE the cue, so \"uses a serif, different from direction 1\" still"
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 141,
+   "text": "# classifies as serif."
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 153,
+   "text": "\"geometric uppercase sans \u2014 distinct from the serif and script of other"
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 177,
+   "text": "def _has_serif(text):"
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 178,
+   "text": "\"\"\"A serif CUE that is not merely the 'serif' inside 'sans-serif'.\"\"\""
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 179,
+   "text": "residue = text.replace(\"sans-serif\", \" \").replace(\"sans serif\", \" \") \\"
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 180,
+   "text": ".replace(\"sanserif\", \" \")"
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 187,
+   "text": "Distinguishes serif/sans, width (condensed), geometry (geometric/rounded,"
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 189,
+   "text": "different classes. Order matters: a serif+sans pairing is MIXED before any"
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 191,
+   "text": "NEUTRAL_GROTESK / SANS_LED fallbacks; and bare-'serif' SERIF_LED is only"
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 192,
+   "text": "reached after the sans branch, so 'sans-serif' can never read as serif."
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 196,
+   "text": "serif and script of other directions\" did the same \u2014 a description of"
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 202,
+   "text": "serif, sans = _has_serif(t), _has(t, _SANS_WORDS)"
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 203,
+   "text": "if _has(t, _MIX_PHRASES) or (serif and sans):"
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 215,
+   "text": "if serif:"
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 217,
+   "text": "return \"HIGH_CONTRAST_SERIF\""
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 219,
+   "text": "return \"DISPLAY_SERIF\""
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 280,
+   "text": "(\"DRAMATIC\", (\"dramatic\", \"bold\", \"striking\", \"intense\", \"theatrical\")),"
+  },
+  {
+   "file": "apps/pipeline/direction_signature.py",
+   "line": 527,
+   "text": "\"condensed sans, a high-contrast serif paired with a sans, and a \""
+  },
+  {
+   "file": "apps/pipeline/live_views.py",
+   "line": 47,
+   "text": "deadline = time.monotonic() + max_seconds"
+  },
+  {
+   "file": "apps/pipeline/live_views.py",
+   "line": 55,
+   "text": "while time.monotonic() < deadline:"
+  },
+  {
+   "file": "apps/pipeline/models.py",
+   "line": 214,
+   "text": "timestamp = models.DateTimeField(auto_now_add=True)"
+  },
+  {
+   "file": "apps/pipeline/models.py",
+   "line": 481,
+   "text": "# literal PROVIDER_REQUEST_ID_NOT_RETURNED), start/end timestamps,"
+  },
+  {
+   "file": "apps/pipeline/serializers.py",
+   "line": 43,
+   "text": "fields = ['id', 'agent_name', 'action', 'level', 'actor', 'timestamp']"
+  },
+  {
+   "file": "apps/pipeline/design_context.py",
+   "line": 47,
+   "text": "\"FONT_TECHNICAL\": 2,"
+  },
+  {
+   "file": "apps/pipeline/design_context.py",
+   "line": 57,
+   "text": "\"FONT_TECHNICAL\": [\"FONT\"],"
+  },
+  {
+   "file": "apps/pipeline/design_context.py",
+   "line": 61,
+   "text": "CHANNEL_ORDER = (\"HISTORICAL_DESIGN\", \"DESIGN_ASSET_METADATA\", \"FONT_TECHNICAL\","
+  },
+  {
+   "file": "apps/pipeline/design_context.py",
+   "line": 64,
+   "text": "_TYPOGRAPHY_TRIGGERS = (\"font\", \"type\", \"typograph\", \"serif\", \"sans\", \"script\","
+  },
+  {
+   "file": "apps/pipeline/design_context.py",
+   "line": 165,
+   "text": "\"channel\": \"FONT_TECHNICAL\","
+  },
+  {
+   "file": "apps/pipeline/vq_views.py",
+   "line": 542,
+   "text": "\"vq2-review-json\": (\"../vq2/typeface/vq2_imbue_lf1_r1_review.json\","
+  },
+  {
+   "file": "apps/pipeline/vq_views.py",
+   "line": 544,
+   "text": "\"vq2-review-pdf\": (\"../vq2/typeface/vq2_imbue_lf1_r1_review.pdf\","
+  },
+  {
+   "file": "apps/pipeline/vq_views.py",
+   "line": 546,
+   "text": "\"vq2-review-png\": (\"../vq2/typeface/vq2_imbue_lf1_r1_review.png\","
+  },
+  {
+   "file": "apps/pipeline/vq_views.py",
+   "line": 559,
+   "text": "\"../vq2/typeface/vq2_imbue_lf1_r1_review_pending.json\","
+  },
+  {
+   "file": "apps/pipeline/vq_views.py",
+   "line": 562,
+   "text": "\"../vq2/typeface/vq2_imbue_lf1_r1_review_pending.pdf\","
+  },
+  {
+   "file": "apps/pipeline/vq_views.py",
+   "line": 565,
+   "text": "\"../vq2/typeface/vq2_imbue_lf1_r1_review_pending.png\", \"image/png\"),"
+  },
+  {
+   "file": "apps/pipeline/vq_views.py",
+   "line": 623,
+   "text": "os.path.join(VQ2_DIR, \"typeface\", \"vq2_imbue_lf1_r1_review.json\"))"
+  },
+  {
+   "file": "apps/pipeline/admin.py",
+   "line": 62,
+   "text": "list_display = (\"id\", \"task\", \"agent_name\", \"level\", \"timestamp\")"
+  },
+  {
+   "file": "apps/pipeline/admin.py",
+   "line": 63,
+   "text": "list_filter = (\"level\", \"agent_name\", \"timestamp\")"
+  },
+  {
+   "file": "apps/pipeline/design_direction_generator.py",
+   "line": 412,
+   "text": "started = time.monotonic()"
+  },
+  {
+   "file": "apps/pipeline/design_direction_generator.py",
+   "line": 470,
+   "text": "duration_seconds=round(time.monotonic() - started, 3))"
+  },
+  {
+   "file": "apps/pipeline/design_direction_generator.py",
+   "line": 476,
+   "text": "duration_seconds=round(time.monotonic() - started, 3),"
+  },
+  {
+   "file": "apps/pipeline/views.py",
+   "line": 244,
+   "text": "logs = task.logs.order_by('-timestamp')[:20]"
+  },
+  {
+   "file": "apps/pipeline/targets/container/__init__.py",
+   "line": 429,
+   "text": "fa = spec.get(\"container_font_authority/1.0\") or {}"
+  },
+  {
+   "file": "apps/pipeline/targets/container/__init__.py",
+   "line": 432,
+   "text": "\"value\": f'{f.get(\"font_family\") or \"?\"} \u00b7 '"
+  },
+  {
+   "file": "apps/pipeline/targets/container/__init__.py",
+   "line": 882,
+   "text": "aria, output, confirmed: dict, *, confirmed_fonts: dict | None = None"
+  },
+  {
+   "file": "apps/pipeline/targets/container/__init__.py",
+   "line": 894,
+   "text": "P2-b: `confirmed_fonts` is the SEAM for owner-confirmed faces, kept"
+  },
+  {
+   "file": "apps/pipeline/targets/container/__init__.py",
+   "line": 901,
+   "text": "\u00a7BH12(a) Option B join (container_font_evidence_join.join_document_fonts)"
+  },
+  {
+   "file": "apps/pipeline/targets/container/__init__.py",
+   "line": 906,
+   "text": "(apps/ire/container_font_owner_grant.py) is applied DOWNSTREAM, after the"
+  },
+  {
+   "file": "apps/pipeline/targets/container/__init__.py",
+   "line": 1234,
+   "text": "from apps.ire.container_font_authority import ("
+  },
+  {
+   "file": "apps/pipeline/targets/container/__init__.py",
+   "line": 1235,
+   "text": "build_font_authority,"
+  },
+  {
+   "file": "apps/pipeline/targets/container/__init__.py",
+   "line": 1236,
+   "text": "font_confirmation_gate,"
+  },
+  {
+   "file": "apps/pipeline/targets/container/__init__.py",
+   "line": 1244,
+   "text": "if confirmed_fonts is None:"
+  },
+  {
+   "file": "apps/pipeline/targets/container/__init__.py",
+   "line": 1245,
+   "text": "from apps.ire.container_font_evidence_join import join_document_fonts"
+  },
+  {
+   "file": "apps/pipeline/targets/container/__init__.py",
+   "line": 1246,
+   "text": "confirmed_fonts = join_document_fonts(doc)[\"confirmed_fonts\"]"
+  },
+  {
+   "file": "apps/pipeline/targets/container/__init__.py",
+   "line": 1247,
+   "text": "font_authority = build_font_authority(doc, confirmed_fonts=confirmed_fonts)"
+  },
+  {
+   "file": "apps/pipeline/targets/container/__init__.py",
+   "line": 1254,
+   "text": "from apps.ire.container_font_owner_grant import apply_owner_grant"
+  },
+  {
+   "file": "apps/pipeline/targets/container/__init__.py",
+   "line": 1255,
+   "text": "font_authority = apply_owner_grant(font_authority)"
+  },
+  {
+   "file": "apps/pipeline/targets/container/__init__.py",
+   "line": 1256,
+   "text": "font_gate_codes = font_confirmation_gate(font_authority)"
+  },
+  {
+   "file": "apps/pipeline/targets/container/__init__.py",
+   "line": 1465,
+   "text": "spec[\"container_font_authority/1.0\"] = font_authority"
+  },
+  {
+   "file": "apps/pipeline/targets/container/__init__.py",
+   "line": 1480,
+   "text": "readiness[\"font\"] = font_gate_codes"
+  },
+  {
+   "file": "apps/pipeline/targets/container/__init__.py",
+   "line": 1559,
+   "text": "# It was NOT lying about existence, which is the more dramatic reading"
+  },
+  {
+   "file": "apps/pipeline/management/commands/correct_dieline_output.py",
+   "line": 80,
+   "text": "# The regulatory sticker's product name must be the PRODUCT name,"
+  },
+  {
+   "file": "apps/pipeline/agents/aria.py",
+   "line": 1196,
+   "text": "# regulatory copy for any task with no Product row."
+  },
+  {
+   "file": "apps/pipeline/agents/aria.py",
+   "line": 1233,
+   "text": "\"the printed information at the dimension gate; regulatory \""
+  },
+  {
+   "file": "apps/pipeline/agents/aria.py",
+   "line": 1276,
+   "text": "# geometry gate blocks with FONT_CONFIRMATION_REQUIRED until"
+  },
+  {
+   "file": "apps/pipeline/agents/aria.py",
+   "line": 1278,
+   "text": "confirmed_font = (output.spec_sheet or {}).get("
+  },
+  {
+   "file": "apps/pipeline/agents/aria.py",
+   "line": 1279,
+   "text": "\"confirmed_font\")"
+  },
+  {
+   "file": "apps/pipeline/agents/aria.py",
+   "line": 1280,
+   "text": "if confirmed_font:"
+  },
+  {
+   "file": "apps/pipeline/agents/aria.py",
+   "line": 1281,
+   "text": "font = dict(confirmed_font)"
+  },
+  {
+   "file": "apps/pipeline/agents/aria.py",
+   "line": 1287,
+   "text": "concept_spec[\"confirmed_font\"] = font"
+  },
+  {
+   "file": "apps/pipeline/agents/image_producer.py",
+   "line": 274,
+   "text": "_t0 = time.monotonic()"
+  },
+  {
+   "file": "apps/pipeline/agents/image_producer.py",
+   "line": 303,
+   "text": "_latency_ms = int((time.monotonic() - _t0) * 1000)"
+  },
+  {
+   "file": "apps/pipeline/agents/prompt_engineer.py",
+   "line": 33,
+   "text": "set in a modern serif, oversized, foil-stamped...), any motif or pattern"
+  },
+  {
+   "file": "apps/pipeline/agents/pacdora_agent.py",
+   "line": 87,
+   "text": "Attempts the Playwright automation up to MAX_RETRIES times."
+  },
+  {
+   "file": "apps/pipeline/services/vqr2b_reconstruction_measurement.py",
+   "line": 243,
+   "text": "\"cairosvg\": bool(shutil.which(\"cairosvg\")),"
+  },
+  {
+   "file": "apps/pipeline/services/h2_design_request.py",
+   "line": 23,
+   "text": "in the request's round_pointer.json (\u00a7L amendment; owner authority"
+  },
+  {
+   "file": "apps/pipeline/services/h2_design_request.py",
+   "line": 214,
+   "text": "# owner mandate in the request (round_pointer.json citing an"
+  },
+  {
+   "file": "apps/pipeline/services/h2_design_request.py",
+   "line": 217,
+   "text": "rp = Path(request_dir) / \"round_pointer.json\""
+  },
+  {
+   "file": "apps/pipeline/services/h2_design_request.py",
+   "line": 244,
+   "text": "\"signed owner mandate in round_pointer.json)\")"
+  },
+  {
+   "file": "apps/pipeline/services/visual_inspector.py",
+   "line": 203,
+   "text": "inter = float(sum(min(x, y) for x, y in zip(a, b)))"
+  },
+  {
+   "file": "apps/pipeline/services/visual_inspector.py",
+   "line": 204,
+   "text": "return {\"histogram_intersection\": round(inter, 4),"
+  },
+  {
+   "file": "apps/pipeline/services/visual_inspector.py",
+   "line": 205,
+   "text": "\"palette_distance\": round(1.0 - inter, 4)}"
+  },
+  {
+   "file": "apps/pipeline/services/panel_translate.py",
+   "line": 28,
+   "text": "_TRANSLATE_SYSTEM = \"\"\"You are a professional cosmetics-label translator."
+  },
+  {
+   "file": "apps/pipeline/services/production_authority_package.py",
+   "line": 51,
+   "text": "def _font(size, bold=False):"
+  },
+  {
+   "file": "apps/pipeline/services/production_authority_package.py",
+   "line": 53,
+   "text": "names = ((\"/System/Library/Fonts/Supplemental/Arial Bold.ttf\","
+  },
+  {
+   "file": "apps/pipeline/services/production_authority_package.py",
+   "line": 54,
+   "text": "\"/System/Library/Fonts/Helvetica.ttc\") if bold else"
+  },
+  {
+   "file": "apps/pipeline/services/production_authority_package.py",
+   "line": 55,
+   "text": "(\"/System/Library/Fonts/Supplemental/Arial.ttf\","
+  },
+  {
+   "file": "apps/pipeline/services/production_authority_package.py",
+   "line": 56,
+   "text": "\"/System/Library/Fonts/Helvetica.ttc\","
+  },
+  {
+   "file": "apps/pipeline/services/production_authority_package.py",
+   "line": 57,
+   "text": "\"/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf\"))"
+  },
+  {
+   "file": "apps/pipeline/services/production_authority_package.py",
+   "line": 113,
+   "text": "def line(text, font=\"Helvetica\", size=8.6, gap=lead):"
+  },
+  {
+   "file": "apps/pipeline/services/production_authority_package.py",
+   "line": 122,
+   "text": "c.setFont(font, size)"
+  },
+  {
+   "file": "apps/pipeline/services/production_authority_package.py",
+   "line": 126,
+   "text": "c.setFont(\"Helvetica-Bold\", 15)"
+  },
+  {
+   "file": "apps/pipeline/services/production_authority_package.py",
+   "line": 138,
+   "text": "line(heading, \"Helvetica-Bold\", 10.6, lead + 3)"
+  },
+  {
+   "file": "apps/pipeline/services/production_authority_package.py",
+   "line": 140,
+   "text": "line(s, \"Helvetica-Oblique\", 8.6)"
+  },
+  {
+   "file": "apps/pipeline/services/production_authority_package.py",
+   "line": 338,
+   "text": "d.text((22, 20), \"PRODUCTION AUTHORITY PREFLIGHT\", font=_font(26), fill=INK)"
+  },
+  {
+   "file": "apps/pipeline/services/production_authority_package.py",
+   "line": 341,
+   "text": "d.text((22, y), text, font=_font(13), fill=INK)"
+  },
+  {
+   "file": "apps/pipeline/services/palette_render_contract.py",
+   "line": 73,
+   "text": "\"dramatic_lighting\": False,"
+  },
+  {
+   "file": "apps/pipeline/services/visual_review.py",
+   "line": 208,
+   "text": "def _font(size):"
+  },
+  {
+   "file": "apps/pipeline/services/visual_review.py",
+   "line": 210,
+   "text": "for path in (\"/System/Library/Fonts/Helvetica.ttc\","
+  },
+  {
+   "file": "apps/pipeline/services/visual_review.py",
+   "line": 211,
+   "text": "\"/System/Library/Fonts/Supplemental/Arial.ttf\","
+  },
+  {
+   "file": "apps/pipeline/services/visual_review.py",
+   "line": 212,
+   "text": "\"/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf\"):"
+  },
+  {
+   "file": "apps/pipeline/services/visual_review.py",
+   "line": 242,
+   "text": "f_head = _font(52)"
+  },
+  {
+   "file": "apps/pipeline/services/visual_review.py",
+   "line": 243,
+   "text": "f_label = _font(38)"
+  },
+  {
+   "file": "apps/pipeline/services/visual_review.py",
+   "line": 244,
+   "text": "f_body = _font(30)"
+  },
+  {
+   "file": "apps/pipeline/services/visual_review.py",
+   "line": 245,
+   "text": "f_small = _font(26)"
+  },
+  {
+   "file": "apps/pipeline/services/visual_review.py",
+   "line": 300,
+   "text": "d.text((MARGIN, 120), title, font=_font(64), fill=(20, 20, 20))"
+  },
+  {
+   "file": "apps/pipeline/services/visual_review.py",
+   "line": 303,
+   "text": "for ln in _wrap(d, text, _font(34), CARD_W - 2 * MARGIN):"
+  },
+  {
+   "file": "apps/pipeline/services/visual_review.py",
+   "line": 304,
+   "text": "d.text((MARGIN, y), ln, font=_font(34), fill=(45, 45, 45))"
+  },
+  {
+   "file": "apps/pipeline/services/palt_m4b_a.py",
+   "line": 53,
+   "text": "\"pitch_mm\": (30.6, C, \"26.6 module + 4.0 mm inter-pan gap\"),"
+  },
+  {
+   "file": "apps/pipeline/services/palt_m4b_a.py",
+   "line": 269,
+   "text": "\"makes the moulded inter-pocket gap exactly the 4.0 mm the \""
+  },
+  {
+   "file": "apps/pipeline/services/palt_m4b_a.py",
+   "line": 304,
+   "text": "f\"inter-pocket land is up to {land:.2f} mm wide and the tray \""
+  },
+  {
+   "file": "apps/pipeline/services/palette_design_intent.py",
+   "line": 60,
+   "text": "\"BACKGROUND\", \"PRESENTATION_EFFECTS\", \"SHADOWS\", \"REFLECTIONS\")"
+  },
+  {
+   "file": "apps/pipeline/services/palette_design_intent.py",
+   "line": 64,
+   "text": "\"SHADOWS\", \"REFLECTIONS\")"
+  },
+  {
+   "file": "apps/pipeline/services/palette_design_intent.py",
+   "line": 95,
+   "text": "\"regulatory_zones\", \"ornament\", \"pattern\", \"hierarchy\")"
+  },
+  {
+   "file": "apps/pipeline/services/palette_design_intent.py",
+   "line": 256,
+   "text": "\"shadows are not moulded geometry\","
+  },
+  {
+   "file": "apps/pipeline/services/container_contract.py",
+   "line": 247,
+   "text": "\"\"\"Canonical hash of the profile facts (excludes volatile timestamps and"
+  },
+  {
+   "file": "apps/pipeline/services/container_contract.py",
+   "line": 279,
+   "text": "\"\"\"\u00a79: identity of a profile+zone confirmation; timestamps excluded, so a"
+  },
+  {
+   "file": "apps/pipeline/services/web_research_tavily.py",
+   "line": 106,
+   "text": "t0 = time.monotonic()"
+  },
+  {
+   "file": "apps/pipeline/services/web_research_tavily.py",
+   "line": 113,
+   "text": "latency_ms = int((time.monotonic() - t0) * 1000)"
+  },
+  {
+   "file": "apps/pipeline/services/web_research_tavily.py",
+   "line": 481,
+   "text": "elapsed = time.monotonic() - last_access.get(domain, 0.0)"
+  },
+  {
+   "file": "apps/pipeline/services/web_research_tavily.py",
+   "line": 484,
+   "text": "last_access[domain] = time.monotonic()"
+  },
+  {
+   "file": "apps/pipeline/services/palt_m4b_a2_evidence.py",
+   "line": 26,
+   "text": "from apps.pipeline.services.palette_review_fonts import font"
+  },
+  {
+   "file": "apps/pipeline/services/a3p_evidence_render.py",
+   "line": 40,
+   "text": "from apps.pipeline.services.palette_review_fonts import font"
+  },
+  {
+   "file": "apps/pipeline/services/palette_review_board.py",
+   "line": 8,
+   "text": "from apps.pipeline.services.palette_review_fonts import fit, font"
+  },
+  {
+   "file": "apps/pipeline/services/palt_p1_m4b_evidence.py",
+   "line": 12,
+   "text": "from apps.pipeline.services.palette_review_fonts import font"
+  },
+  {
+   "file": "apps/pipeline/services/palette_characterization_rig.py",
+   "line": 7,
+   "text": "reflection lobe, with a restrained fill so shadows do not collapse."
+  },
+  {
+   "file": "apps/pipeline/services/visual_quality_program.py",
+   "line": 64,
+   "text": "\"VQ_FONT_CHARACTER_MISMATCH\", \"VQ_LIVE_TEXT_VISUALLY_WRONG\"),"
+  },
+  {
+   "file": "apps/pipeline/services/native_handoff.py",
+   "line": 78,
+   "text": "confirmed = spec_sheet.get(\"confirmed_font\")"
+  },
+  {
+   "file": "apps/pipeline/services/native_handoff.py",
+   "line": 86,
+   "text": "concept_spec[\"confirmed_font\"] = font"
+  },
+  {
+   "file": "apps/pipeline/services/native_handoff.py",
+   "line": 123,
+   "text": "if (spec_sheet.get(\"confirmed_font\") or {}).get(\"production_blocker\"):"
+  },
+  {
+   "file": "apps/pipeline/services/native_handoff.py",
+   "line": 124,
+   "text": "blockers.append(spec_sheet[\"confirmed_font\"][\"production_blocker\"])"
+  },
+  {
+   "file": "apps/pipeline/services/palette_technical_sections.py",
+   "line": 19,
+   "text": "from apps.pipeline.services.palette_review_fonts import font"
+  },
+  {
+   "file": "apps/pipeline/services/flat_artwork.py",
+   "line": 31,
+   "text": "\"edges or side faces, no background, no table, no shadows, no bottle, \""
+  },
+  {
+   "file": "apps/pipeline/services/flat_artwork.py",
+   "line": 33,
+   "text": "\"artwork file a printer would receive for the front face, composed for \""
+  },
+  {
+   "file": "apps/pipeline/services/flat_artwork.py",
+   "line": 59,
+   "text": "\"shadows, no product, no props.\""
+  },
+  {
+   "file": "apps/pipeline/services/selected_concept_contract.py",
+   "line": 8,
+   "text": "human rationale verbatim, actor, timestamp and a canonical-JSON sha256"
+  },
+  {
+   "file": "apps/pipeline/services/selected_concept_contract.py",
+   "line": 421,
+   "text": "\"shadows\", \"floor reflections\", \"highlights\","
+  },
+  {
+   "file": "apps/pipeline/services/p1_v4_evidence.py",
+   "line": 21,
+   "text": "from apps.pipeline.services.p1_review_board import _fit, _font"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v4_evidence.py",
+   "line": 102,
+   "text": "\"shaded RGB; same pinned camera)\", font=_font(44),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v4_evidence.py",
+   "line": 109,
+   "text": "\"blue=V4 only, dark=agreement\", font=_font(28),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v4_evidence.py",
+   "line": 114,
+   "text": "d.text((x + 4, 140 + h), label, font=_font(28), fill=(45, 45, 48))"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v4_evidence.py",
+   "line": 129,
+   "text": "dd.text((30, 14), title, font=_font(40), fill=(30, 30, 34))"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v4_evidence.py",
+   "line": 131,
+   "text": "\"blue=V4 only, dark=agreement\", font=_font(26),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v4_evidence.py",
+   "line": 137,
+   "text": "dd.text((xx + 4, 118 + ch), lab, font=_font(26),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v4_evidence.py",
+   "line": 167,
+   "text": "font=_font(48), fill=(140, 70, 70))"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v4_evidence.py",
+   "line": 171,
+   "text": "\"stretched/warped\", font=_font(28), fill=(90, 70, 60))"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v4_evidence.py",
+   "line": 175,
+   "text": "d.text((x + 4, 160 + target_h), t, font=_font(24),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v4_evidence.py",
+   "line": 266,
+   "text": "\"BOARD (V4)\", font=_font(64), fill=(30, 30, 34))"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v4_evidence.py",
+   "line": 280,
+   "text": "d.text((60, 132 + i * 40), line, font=_font(27), fill=(90, 70, 60))"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v4_evidence.py",
+   "line": 287,
+   "text": "d.text((x, y), klass, font=_font(30), fill=col)"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v4_evidence.py",
+   "line": 288,
+   "text": "d.text((x, y + img.height + 66), title, font=_font(27),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v4_evidence.py",
+   "line": 346,
+   "text": "font=_font(34), fill=(30, 30, 34))"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v4_evidence.py",
+   "line": 363,
+   "text": "d.text((x_leg, y5 + 60 + i * 42), a, font=_font(28),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v4_evidence.py",
+   "line": 365,
+   "text": "d.text((x_leg + 640, y5 + 60 + i * 42), b, font=_font(28),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v4_evidence.py",
+   "line": 367,
+   "text": "d.text((x_leg + 1000, y5 + 60 + i * 42), c, font=_font(28),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v4_evidence.py",
+   "line": 370,
+   "text": "font=_font(34), fill=(179, 69, 79))"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v4_evidence.py",
+   "line": 375,
+   "text": "d.text((x_leg, y5 + 440 + i * 40), line, font=_font(28),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v4_evidence.py",
+   "line": 395,
+   "text": "font=_font(26), fill=(90, 90, 92))"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v4_evidence.py",
+   "line": 398,
+   "text": "font=_font(26), fill=(140, 70, 70))"
+  },
+  {
+   "file": "apps/pipeline/services/palette_rect_tray_geometry.py",
+   "line": 57,
+   "text": "# derived at import from the pan field and the inter-pocket land so the"
+  },
+  {
+   "file": "apps/pipeline/services/palette_rect_tray_geometry.py",
+   "line": 127,
+   "text": "# against a 1.18 mm inter-pocket land, which is not the \"tight margins\""
+  },
+  {
+   "file": "apps/pipeline/services/palette_intent_confirmation.py",
+   "line": 52,
+   "text": "# 3u/A446 \u2014 regulatory_zones is a HARD_VISIBLE_CONSTRAINT read at 0.9"
+  },
+  {
+   "file": "apps/pipeline/services/palette_intent_confirmation.py",
+   "line": 57,
+   "text": "\"regulatory_zones\","
+  },
+  {
+   "file": "apps/pipeline/services/palette_intent_confirmation.py",
+   "line": 256,
+   "text": "# three times and once are identical to them. Two acts are legal"
+  },
+  {
+   "file": "apps/pipeline/services/web_research.py",
+   "line": 47,
+   "text": "STYLING_ELEMENTS = (\"condensation\", \"water droplets\", \"shadows\","
+  },
+  {
+   "file": "apps/pipeline/services/rbv3_review_package.py",
+   "line": 54,
+   "text": "RBV3_SHEET_FONT_UNAVAILABLE = \"RBV3_SHEET_FONT_UNAVAILABLE\""
+  },
+  {
+   "file": "apps/pipeline/services/rbv3_review_package.py",
+   "line": 147,
+   "text": "_FONT = \"/System/Library/Fonts/Helvetica.ttc\""
+  },
+  {
+   "file": "apps/pipeline/services/rbv3_review_package.py",
+   "line": 169,
+   "text": "def _font(size):"
+  },
+  {
+   "file": "apps/pipeline/services/rbv3_review_package.py",
+   "line": 174,
+   "text": "return ImageFont.truetype(_FONT, size)"
+  },
+  {
+   "file": "apps/pipeline/services/rbv3_review_package.py",
+   "line": 176,
+   "text": "raise Rbv3Refusal([f\"{RBV3_SHEET_FONT_UNAVAILABLE}:{_FONT}\"]) \\"
+  },
+  {
+   "file": "apps/pipeline/services/rbv3_review_package.py",
+   "line": 188,
+   "text": "box = probe.textbbox((0, 0), text, font=_font(size))"
+  },
+  {
+   "file": "apps/pipeline/services/rbv3_review_package.py",
+   "line": 202,
+   "text": "``drawn`` is a sequence of (role, sample_text, font_size). Returns the"
+  },
+  {
+   "file": "apps/pipeline/services/rbv3_review_package.py",
+   "line": 211,
+   "text": "texts.append({\"role\": role, \"font_size\": size,"
+  },
+  {
+   "file": "apps/pipeline/services/rbv3_review_package.py",
+   "line": 244,
+   "text": "\"renderer_font\": \"PIL default bitmap face (no truetype face given)\","
+  },
+  {
+   "file": "apps/pipeline/services/rbv3_review_package.py",
+   "line": 365,
+   "text": "font = _font(30)"
+  },
+  {
+   "file": "apps/pipeline/services/rbv3_review_package.py",
+   "line": 383,
+   "text": "f\"{subject_id}\", font=_font(60), fill=(30, 30, 34))"
+  },
+  {
+   "file": "apps/pipeline/services/rbv3_review_package.py",
+   "line": 396,
+   "text": "draw.text((60, 130 + i * 40), line, font=_font(28),"
+  },
+  {
+   "file": "apps/pipeline/services/rbv3_review_package.py",
+   "line": 417,
+   "text": "font=_font(40), fill=red)"
+  },
+  {
+   "file": "apps/pipeline/services/rbv3_review_package.py",
+   "line": 419,
+   "text": "draw.text((90, y + 100 + i * 44), reason, font=_font(30),"
+  },
+  {
+   "file": "apps/pipeline/services/rbv3_review_package.py",
+   "line": 423,
+   "text": "draw.text((90, y + 188 + i * 38), line, font=_font(26),"
+  },
+  {
+   "file": "apps/pipeline/services/rbv3_review_package.py",
+   "line": 428,
+   "text": "font=_font(36), fill=(30, 30, 34))"
+  },
+  {
+   "file": "apps/pipeline/services/rbv3_review_package.py",
+   "line": 464,
+   "text": "font=_font(30 if emphasis else 26),"
+  },
+  {
+   "file": "apps/pipeline/services/rbv3_review_package.py",
+   "line": 477,
+   "text": "draw.text((60, y + 1170), REFERENCE_DISCLAIMER, font=_font(28),"
+  },
+  {
+   "file": "apps/pipeline/services/rbv3_review_package.py",
+   "line": 486,
+   "text": "font=_font(26), fill=grey)"
+  },
+  {
+   "file": "apps/pipeline/services/rbv3_review_package.py",
+   "line": 624,
+   "text": "\"font\": {\"path\": _FONT,"
+  },
+  {
+   "file": "apps/pipeline/services/rbv3_review_package.py",
+   "line": 625,
+   "text": "\"sha256\": _file_sha256(_FONT)[:16]}},"
+  },
+  {
+   "file": "apps/pipeline/services/reference_manifest.py",
+   "line": 121,
+   "text": "persisted ordering, then upload timestamp, then pk. Never alphabetical \u2014"
+  },
+  {
+   "file": "apps/pipeline/services/palette_statistics.py",
+   "line": 55,
+   "text": "# perfectly with any monotone companion. The raw-value check"
+  },
+  {
+   "file": "apps/pipeline/services/palette_raking_rig.py",
+   "line": 24,
+   "text": "monotone bright-to-dark ramp; a flat pan does not."
+  },
+  {
+   "file": "apps/pipeline/services/vq1_close1_inspection.py",
+   "line": 124,
+   "text": "INSPECTOR_B_ID = \"STRUCTURAL_ADVERSARIAL_EVIDENCE_AUDITOR\""
+  },
+  {
+   "file": "apps/pipeline/services/vq1_close1_inspection.py",
+   "line": 298,
+   "text": "\"reference is a smooth monotonic waist\"})"
+  },
+  {
+   "file": "apps/pipeline/services/palt_m4b_a_evidence.py",
+   "line": 22,
+   "text": "from apps.pipeline.services.palette_review_fonts import font"
+  },
+  {
+   "file": "apps/pipeline/services/gate_a_corr1.py",
+   "line": 46,
+   "text": "\"product_name_font_unit\": \"5db4403984ba6f75\","
+  },
+  {
+   "file": "apps/pipeline/services/brand_component_library.py",
+   "line": 4,
+   "text": "medallion, the registered symbol, and the divider rule. Not a starter set"
+  },
+  {
+   "file": "apps/pipeline/services/brand_component_library.py",
+   "line": 20,
+   "text": "symbol. These are DIRECT VECTOR EXTRACTIONS from the owner's own brand"
+  },
+  {
+   "file": "apps/pipeline/services/brand_component_library.py",
+   "line": 63,
+   "text": "ROLES = frozenset({\"wordmark_lockup\", \"medallion\", \"registered_symbol\","
+  },
+  {
+   "file": "apps/pipeline/services/brand_component_library.py",
+   "line": 67,
+   "text": "MINIMUM_SET = (\"LOGO\", \"MEDALLION\", \"REGISTERED_SYMBOL\", \"DIVIDER\")"
+  },
+  {
+   "file": "apps/pipeline/services/brand_component_library.py",
+   "line": 73,
+   "text": "\"font_substituted\", \"paths_simplified\","
+  },
+  {
+   "file": "apps/pipeline/services/brand_component_library.py",
+   "line": 74,
+   "text": "\"medallion_altered\", \"registered_symbol_altered\")"
+  },
+  {
+   "file": "apps/pipeline/services/brand_component_library.py",
+   "line": 246,
+   "text": "\"REGISTERED_SYMBOL\", \"registered_symbol\", extracted(state),"
+  },
+  {
+   "file": "apps/pipeline/services/brand_component_library.py",
+   "line": 249,
+   "text": "identity=logo.get(\"registered_symbol_identity\"),"
+  },
+  {
+   "file": "apps/pipeline/services/brand_component_library.py",
+   "line": 250,
+   "text": "may_be_omitted=bool(ruling.get(\"registered_symbol_omitted\")),"
+  },
+  {
+   "file": "apps/pipeline/services/brand_component_library.py",
+   "line": 251,
+   "text": "note=\"the ruling lists inclusion of the registered symbol among \""
+  },
+  {
+   "file": "apps/pipeline/services/print_data.py",
+   "line": 79,
+   "text": "PrintField(\"regulatory_text\", \"Regulatory block\"),"
+  },
+  {
+   "file": "apps/pipeline/services/complete_product_pilot.py",
+   "line": 140,
+   "text": "\"verified regulatory data\"],"
+  },
+  {
+   "file": "apps/pipeline/services/palette_governance.py",
+   "line": 37,
+   "text": "\"field\", \"old_value\", \"new_value\", \"actor\", \"timestamp\","
+  },
+  {
+   "file": "apps/pipeline/services/palette_governance.py",
+   "line": 137,
+   "text": "timestamp, source_revision, resulting_revision) -> list:"
+  },
+  {
+   "file": "apps/pipeline/services/palette_governance.py",
+   "line": 150,
+   "text": "\"actor\": actor, \"timestamp\": timestamp,"
+  },
+  {
+   "file": "apps/pipeline/services/reconstruction_status.py",
+   "line": 87,
+   "text": ".order_by(\"-timestamp\").first())"
+  },
+  {
+   "file": "apps/pipeline/services/reconstruction_status.py",
+   "line": 91,
+   "text": ".order_by(\"-timestamp\").first())"
+  },
+  {
+   "file": "apps/pipeline/services/reconstruction_status.py",
+   "line": 103,
+   "text": "started_at = start_log.timestamp.isoformat() if start_log else None"
+  },
+  {
+   "file": "apps/pipeline/services/reconstruction_status.py",
+   "line": 114,
+   "text": "finished_at = (done_log.timestamp.isoformat() if done_log"
+  },
+  {
+   "file": "apps/pipeline/services/palette_powder_protocol.py",
+   "line": 199,
+   "text": "\"read: rank correlation along a monotone driver is 1.0 by \""
+  },
+  {
+   "file": "apps/pipeline/services/palette_powder_protocol.py",
+   "line": 200,
+   "text": "\"construction for any two monotonically-responding axes; \""
+  },
+  {
+   "file": "apps/pipeline/services/palette_powder_protocol.py",
+   "line": 255,
+   "text": "\"inter-family effect must be accountable by the union of the \""
+  },
+  {
+   "file": "apps/pipeline/services/palette_powder_protocol.py",
+   "line": 256,
+   "text": "\"swept drivers' measured spans over their inter-family \""
+  },
+  {
+   "file": "apps/pipeline/services/palette_powder_protocol.py",
+   "line": 268,
+   "text": "\"wrong three times in exactly that pattern (the sub-pixel \""
+  },
+  {
+   "file": "apps/pipeline/services/palette_powder_protocol.py",
+   "line": 579,
+   "text": "\"as its discovery. Origin: guard scope failed three times \""
+  },
+  {
+   "file": "apps/pipeline/services/palette_powder_protocol.py",
+   "line": 616,
+   "text": "\"symbol and shape \u2014 never line numbers.\"),"
+  },
+  {
+   "file": "apps/pipeline/services/palette_powder_protocol.py",
+   "line": 989,
+   "text": "\"allowlists were refreshed mechanically four times across \""
+  },
+  {
+   "file": "apps/pipeline/services/palette_powder_protocol.py",
+   "line": 1626,
+   "text": "\"subject appearing N times and once are \""
+  },
+  {
+   "file": "apps/pipeline/services/palette_powder_protocol.py",
+   "line": 1651,
+   "text": "\"including regulatory_zones at 0.9 and \""
+  },
+  {
+   "file": "apps/pipeline/services/palette_powder_protocol.py",
+   "line": 1916,
+   "text": "#: is a WRITE and not a query. The stale timestamp was NOT edited back to"
+  },
+  {
+   "file": "apps/pipeline/services/palette_powder_protocol.py",
+   "line": 2053,
+   "text": "#: .json with nothing but a new timestamp (see above), which moved that"
+  },
+  {
+   "file": "apps/pipeline/services/palette_powder_protocol.py",
+   "line": 2236,
+   "text": "\"pantone_tokens\": \"SYMBOLIC_NAMED_REFERENCE_NO_VALUE_FABRICATED\","
+  },
+  {
+   "file": "apps/pipeline/services/spec_sheet.py",
+   "line": 50,
+   "text": "spaceAfter=4 * mm, fontName='Helvetica-Bold',"
+  },
+  {
+   "file": "apps/pipeline/services/spec_sheet.py",
+   "line": 54,
+   "text": "fontName='Helvetica-Bold', spaceAfter=1 * mm,"
+  },
+  {
+   "file": "apps/pipeline/services/spec_sheet.py",
+   "line": 58,
+   "text": "fontName='Helvetica', spaceAfter=3 * mm,"
+  },
+  {
+   "file": "apps/pipeline/services/spec_sheet.py",
+   "line": 65,
+   "text": "ParagraphStyle('Header', fontSize=10, textColor=BBROSE_ROSE_GOLD, fontName='Helvetica-Bold'),"
+  },
+  {
+   "file": "apps/pipeline/services/spec_sheet.py",
+   "line": 118,
+   "text": "('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),"
+  },
+  {
+   "file": "apps/pipeline/services/spec_sheet.py",
+   "line": 139,
+   "text": "\"the printer together with the CMYK production PDF (CutContour / \""
+  },
+  {
+   "file": "apps/pipeline/services/spec_sheet.py",
+   "line": 156,
+   "text": "('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),"
+  },
+  {
+   "file": "apps/pipeline/services/spec_sheet.py",
+   "line": 181,
+   "text": "ParagraphStyle('Timestamp', fontSize=8, textColor=colors.HexColor('#999999')),"
+  },
+  {
+   "file": "apps/pipeline/services/palette_m6_products.py",
+   "line": 78,
+   "text": "FONT = str(REPO.parent / \"materials\" / \"Fonts\" / \"CrimsonText-Regular.ttf\")"
+  },
+  {
+   "file": "apps/pipeline/services/palette_m6_products.py",
+   "line": 534,
+   "text": "def _font(px):"
+  },
+  {
+   "file": "apps/pipeline/services/palette_m6_products.py",
+   "line": 557,
+   "text": "d.text((gap, 20), title, font=_font(30), fill=(20, 22, 20))"
+  },
+  {
+   "file": "apps/pipeline/services/palette_m6_products.py",
+   "line": 567,
+   "text": "f = _font(19)"
+  },
+  {
+   "file": "apps/pipeline/services/palette_m6_products.py",
+   "line": 572,
+   "text": "d.text((gap, y + 8), note, font=_font(17), fill=(140, 60, 40))"
+  },
+  {
+   "file": "apps/pipeline/services/palette_m6_products.py",
+   "line": 689,
+   "text": "font=_font(28), fill=(20, 22, 20))"
+  },
+  {
+   "file": "apps/pipeline/services/palette_m6_products.py",
+   "line": 697,
+   "text": "font=_font(18), fill=(50, 50, 50))"
+  },
+  {
+   "file": "apps/pipeline/services/influence_realization.py",
+   "line": 122,
+   "text": "\"emitted_evidence\": \"quiet regulatory back panel with the \""
+  },
+  {
+   "file": "apps/pipeline/services/gate_a_corr2.py",
+   "line": 6,
+   "text": "to run through \u2014 inter-layer stacking and inherited graphics state \u2014 and hands"
+  },
+  {
+   "file": "apps/pipeline/services/gate_a_corr2.py",
+   "line": 68,
+   "text": "\"medallion and registered symbol\", \"divider\", \"Rose\", \"Damascena\","
+  },
+  {
+   "file": "apps/pipeline/services/gate_a_corr2.py",
+   "line": 270,
+   "text": "\"inter-layer stacking left to invert (H1) and no layer boundary \""
+  },
+  {
+   "file": "apps/pipeline/services/palette_m5_evidence.py",
+   "line": 30,
+   "text": "from apps.pipeline.services.palette_review_fonts import font"
+  },
+  {
+   "file": "apps/pipeline/services/palette_m5_evidence.py",
+   "line": 44,
+   "text": "(\"ES3083_SYMBOLIC_ZONES\", \"es3083_colour_zone_proxy.png\","
+  },
+  {
+   "file": "apps/pipeline/services/palette_m5_evidence.py",
+   "line": 312,
+   "text": "if a.colour.kind == ME.SYMBOLIC})"
+  },
+  {
+   "file": "apps/pipeline/services/palette_variant_visual_proof.py",
+   "line": 31,
+   "text": "from apps.pipeline.services.palette_review_fonts import font"
+  },
+  {
+   "file": "apps/pipeline/services/claude_service.py",
+   "line": 69,
+   "text": "_start = _time.monotonic()"
+  },
+  {
+   "file": "apps/pipeline/services/claude_service.py",
+   "line": 72,
+   "text": "_latency_ms = int((_time.monotonic() - _start) * 1000)"
+  },
+  {
+   "file": "apps/pipeline/services/palt_m4b_a3_evidence.py",
+   "line": 19,
+   "text": "from apps.pipeline.services.palette_review_fonts import font"
+  },
+  {
+   "file": "apps/pipeline/services/supplier_sent_validation.py",
+   "line": 18,
+   "text": "* ``<stem>.json`` \u2014 ``{\"message_id\": ..., \"sent_timestamp\": ...,"
+  },
+  {
+   "file": "apps/pipeline/services/supplier_sent_validation.py",
+   "line": 45,
+   "text": "\"a JSON with message_id and sent_timestamp, plus the destination\","
+  },
+  {
+   "file": "apps/pipeline/services/supplier_sent_validation.py",
+   "line": 47,
+   "text": "\"a sent-email screenshot showing destination and timestamp\","
+  },
+  {
+   "file": "apps/pipeline/services/supplier_sent_validation.py",
+   "line": 120,
+   "text": "\"sent_timestamp\": msg[\"Date\"],"
+  },
+  {
+   "file": "apps/pipeline/services/supplier_sent_validation.py",
+   "line": 121,
+   "text": "\"sent_timestamp_exists\": bool(msg[\"Date\"]),"
+  },
+  {
+   "file": "apps/pipeline/services/supplier_sent_validation.py",
+   "line": 148,
+   "text": "\"sent_timestamp\": d.get(\"sent_timestamp\"),"
+  },
+  {
+   "file": "apps/pipeline/services/supplier_sent_validation.py",
+   "line": 149,
+   "text": "\"sent_timestamp_exists\": bool(d.get(\"sent_timestamp\")),"
+  },
+  {
+   "file": "apps/pipeline/services/supplier_sent_validation.py",
+   "line": 159,
+   "text": "\"sent_timestamp_exists\", \"message_id_exists\","
+  },
+  {
+   "file": "apps/pipeline/services/supplier_sent_validation.py",
+   "line": 249,
+   "text": "\"timestamps_or_message_ids_fabricated\": 0,"
+  },
+  {
+   "file": "apps/pipeline/services/palette_es3083_intent.py",
+   "line": 115,
+   "text": "intent.add(**_f(\"regulatory_zones\", \"BACK_PANEL_WITH_BARCODE\","
+  },
+  {
+   "file": "apps/pipeline/services/palette_es3083_intent.py",
+   "line": 116,
+   "text": "di.HARD, \"display box regulatory panel\", 0.9,"
+  },
+  {
+   "file": "apps/pipeline/services/palette_es3083_intent.py",
+   "line": 145,
+   "text": "\"SHADOWS\": {\"ignored\": \"render shadow is not moulded relief\"},"
+  },
+  {
+   "file": "apps/pipeline/services/palette_powder_engine.py",
+   "line": 25,
+   "text": "because it is not held. Pantone tokens stay symbolic and FB3090 stays"
+  },
+  {
+   "file": "apps/pipeline/services/palette_powder_engine.py",
+   "line": 167,
+   "text": "_LAW = \"AMPLITUDE_TIMES_SCALE_MM\""
+  },
+  {
+   "file": "apps/pipeline/services/palette_m5_workflow.py",
+   "line": 71,
+   "text": "\"symbolic_colour_references\": sorted({"
+  },
+  {
+   "file": "apps/pipeline/services/palette_m5_workflow.py",
+   "line": 73,
+   "text": "if a.colour.kind == ME.SYMBOLIC}),"
+  },
+  {
+   "file": "apps/pipeline/services/concept_references.py",
+   "line": 282,
+   "text": "\"typographic\", vocab & {\"editorial\", \"serif\", \"sans\","
+  },
+  {
+   "file": "apps/pipeline/services/p1_review_board.py",
+   "line": 34,
+   "text": "_FONT = \"/System/Library/Fonts/Helvetica.ttc\""
+  },
+  {
+   "file": "apps/pipeline/services/p1_review_board.py",
+   "line": 37,
+   "text": "def _font(size):"
+  },
+  {
+   "file": "apps/pipeline/services/p1_review_board.py",
+   "line": 39,
+   "text": "return ImageFont.truetype(_FONT, size)"
+  },
+  {
+   "file": "apps/pipeline/services/p1_review_board.py",
+   "line": 57,
+   "text": "draw.text((x, y), f\"{klass}\", font=_font(34), fill=colour)"
+  },
+  {
+   "file": "apps/pipeline/services/p1_review_board.py",
+   "line": 58,
+   "text": "draw.text((x, y + img.height + 74), title, font=_font(30),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_review_board.py",
+   "line": 61,
+   "text": "draw.text((x, y + img.height + 112), note, font=_font(24),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_review_board.py",
+   "line": 100,
+   "text": "\"photograph)\", font=_font(44), fill=(30, 30, 34))"
+  },
+  {
+   "file": "apps/pipeline/services/p1_review_board.py",
+   "line": 103,
+   "text": "\"only, dark=agreement\", font=_font(36),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_review_board.py",
+   "line": 127,
+   "text": "d.text((x + 8, 110), label, font=_font(32), fill=(45, 45, 48))"
+  },
+  {
+   "file": "apps/pipeline/services/p1_review_board.py",
+   "line": 131,
+   "text": "\"accurate overlay is claimed\", font=_font(44),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_review_board.py",
+   "line": 167,
+   "text": "\"BOARD\", font=_font(64), fill=(30, 30, 34))"
+  },
+  {
+   "file": "apps/pipeline/services/p1_review_board.py",
+   "line": 179,
+   "text": "draw.text((MARGIN, 130 + i * 40), line, font=_font(28),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_review_board.py",
+   "line": 182,
+   "text": "draw.text((MARGIN, 250), revision_banner, font=_font(30),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_review_board.py",
+   "line": 202,
+   "text": "draw.text((3420, ty), \"DIMENSION RECONCILIATION\", font=_font(34),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_review_board.py",
+   "line": 217,
+   "text": "f = _font(26 if i else 28)"
+  },
+  {
+   "file": "apps/pipeline/services/p1_review_board.py",
+   "line": 249,
+   "text": "draw.text((lx, y2), \"INFERRED GEOMETRY\", font=_font(36),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_review_board.py",
+   "line": 262,
+   "text": "draw.text((lx, y2 + 60 + i * 42), line, font=_font(28),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_review_board.py",
+   "line": 264,
+   "text": "draw.text((lx, y2 + 360), \"OMITTED DETAILS\", font=_font(36),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_review_board.py",
+   "line": 272,
+   "text": "draw.text((lx, y2 + 420 + i * 42), line, font=_font(28),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_review_board.py",
+   "line": 275,
+   "text": "font=_font(36), fill=(24, 60, 130))"
+  },
+  {
+   "file": "apps/pipeline/services/p1_review_board.py",
+   "line": 280,
+   "text": "draw.text((lx, y2 + 660 + i * 42), line, font=_font(28),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_review_board.py",
+   "line": 308,
+   "text": "font=_font(26), fill=(90, 90, 92))"
+  },
+  {
+   "file": "apps/pipeline/services/p1_review_board.py",
+   "line": 311,
+   "text": "font=_font(26), fill=(140, 70, 70))"
+  },
+  {
+   "file": "apps/pipeline/services/palette_design_graph.py",
+   "line": 208,
+   "text": "\"rule\": \"border equals the inter-pocket land\"})"
+  },
+  {
+   "file": "apps/pipeline/services/palette_material_engine.py",
+   "line": 10,
+   "text": "among several, and its Pantone tokens stay symbolic: 621 C and 627 C are"
+  },
+  {
+   "file": "apps/pipeline/services/palette_material_engine.py",
+   "line": 77,
+   "text": "RESOLVED, SYMBOLIC = \"RESOLVED_VALUE\", \"SYMBOLIC_NAMED_REFERENCE\""
+  },
+  {
+   "file": "apps/pipeline/services/palette_material_engine.py",
+   "line": 81,
+   "text": "#: \u00a77 \u2014 a symbolic colour still has to be shown as SOMETHING. These are"
+  },
+  {
+   "file": "apps/pipeline/services/palette_material_engine.py",
+   "line": 118,
+   "text": "self.kind, self.rgb, self.name = SYMBOLIC, None, name"
+  },
+  {
+   "file": "apps/pipeline/services/palette_material_engine.py",
+   "line": 134,
+   "text": "\"\"\"A Pantone token stays symbolic. Always.\"\"\""
+  },
+  {
+   "file": "apps/pipeline/services/palette_material_engine.py",
+   "line": 144,
+   "text": "A resolved colour shows itself. A symbolic one shows a proxy that is"
+  },
+  {
+   "file": "apps/pipeline/services/palette_material_engine.py",
+   "line": 242,
+   "text": "symbolic = [a.colour.name for a in self.assignments"
+  },
+  {
+   "file": "apps/pipeline/services/palette_material_engine.py",
+   "line": 243,
+   "text": "if a.colour.kind == SYMBOLIC]"
+  },
+  {
+   "file": "apps/pipeline/services/palette_material_engine.py",
+   "line": 251,
+   "text": "\"symbolic_colour_references\": sorted(set(symbolic)),"
+  },
+  {
+   "file": "apps/pipeline/services/palette_material_engine.py",
+   "line": 280,
+   "text": "symbolic colour and per-component assignment."
+  },
+  {
+   "file": "apps/pipeline/services/palette_material_engine.py",
+   "line": 330,
+   "text": "\"ES3083_SYMBOLIC_ZONES\": MaterialContract("
+  },
+  {
+   "file": "apps/pipeline/services/palette_material_engine.py",
+   "line": 331,
+   "text": "\"ES3083_SYMBOLIC_ZONES\","
+  },
+  {
+   "file": "apps/pipeline/services/palette_material_engine.py",
+   "line": 341,
+   "text": "\"stay symbolic and carry no RGB\"),"
+  },
+  {
+   "file": "apps/pipeline/services/palette_material_engine.py",
+   "line": 374,
+   "text": "\"symbolic_colour_references\":"
+  },
+  {
+   "file": "apps/pipeline/services/palette_material_engine.py",
+   "line": 376,
+   "text": "if a.colour.kind == SYMBOLIC}),"
+  },
+  {
+   "file": "apps/pipeline/services/palette_material_engine.py",
+   "line": 403,
+   "text": "\"any Pantone value \u2014 the tokens remain symbolic\","
+  },
+  {
+   "file": "apps/pipeline/services/supplier_eml.py",
+   "line": 19,
+   "text": "timestamp on a message that has not been sent."
+  },
+  {
+   "file": "apps/pipeline/services/supplier_eml.py",
+   "line": 207,
+   "text": "\"sent_timestamp\": None,"
+  },
+  {
+   "file": "apps/pipeline/services/supplier_eml.py",
+   "line": 257,
+   "text": "\"no_timestamps_or_message_ids_fabricated\": all("
+  },
+  {
+   "file": "apps/pipeline/services/supplier_eml.py",
+   "line": 258,
+   "text": "r[\"sent_timestamp\"] is None and r[\"message_id\"] is None"
+  },
+  {
+   "file": "apps/pipeline/services/supplier_eml.py",
+   "line": 302,
+   "text": "\"No sent timestamp, message ID or delivery receipt exists, and none \""
+  },
+  {
+   "file": "apps/pipeline/services/palette_compact_family.py",
+   "line": 57,
+   "text": "\"the inter-pocket spacing rule and the grid alignment constraints \""
+  },
+  {
+   "file": "apps/pipeline/services/palette_compact_family.py",
+   "line": 125,
+   "text": "add(**_f(\"regulatory_zones\", \"BACK_PANEL_WITH_INGREDIENTS_AND_BARCODE\","
+  },
+  {
+   "file": "apps/pipeline/services/palette_m4b_b_evidence.py",
+   "line": 340,
+   "text": "from apps.pipeline.services.palette_review_fonts import font"
+  },
+  {
+   "file": "apps/pipeline/services/palette_m7_ai_emitter.py",
+   "line": 6,
+   "text": "embedded SET_FACE (Crimson Text, OFL/fsType 0), OCG layers (Ground /"
+  },
+  {
+   "file": "apps/pipeline/services/palette_m7_ai_emitter.py",
+   "line": 35,
+   "text": "MATERIALS_FONT = REPO.parent / \"materials\" / \"Fonts\" / \\"
+  },
+  {
+   "file": "apps/pipeline/services/palette_m7_ai_emitter.py",
+   "line": 36,
+   "text": "\"CrimsonText-Regular.ttf\""
+  },
+  {
+   "file": "apps/pipeline/services/palette_m7_ai_emitter.py",
+   "line": 67,
+   "text": "\"text\": {\"x\", \"y\", \"font-family\", \"font-size\", \"letter-spacing\","
+  },
+  {
+   "file": "apps/pipeline/services/palette_m7_ai_emitter.py",
+   "line": 144,
+   "text": "def __init__(self, font_path):"
+  },
+  {
+   "file": "apps/pipeline/services/palette_m7_ai_emitter.py",
+   "line": 146,
+   "text": "p = Path(font_path)"
+  },
+  {
+   "file": "apps/pipeline/services/palette_m7_ai_emitter.py",
+   "line": 150,
+   "text": "tt = TTFont(str(p))"
+  },
+  {
+   "file": "apps/pipeline/services/palette_m7_ai_emitter.py",
+   "line": 160,
+   "text": "\"changed since the typeface spec; refusing\")"
+  },
+  {
+   "file": "apps/pipeline/services/palette_m7_ai_emitter.py",
+   "line": 427,
+   "text": "if attrs[\"font-family\"] != \"Crimson Text\":"
+  },
+  {
+   "file": "apps/pipeline/services/palette_m7_ai_emitter.py",
+   "line": 429,
+   "text": "f\"font-family {attrs['font-family']!r} is not the \""
+  },
+  {
+   "file": "apps/pipeline/services/palette_m7_ai_emitter.py",
+   "line": 515,
+   "text": "f\"/CrimsonText-Regular /FirstChar {first_char} /LastChar \""
+  },
+  {
+   "file": "apps/pipeline/services/palette_m7_ai_emitter.py",
+   "line": 520,
+   "text": "desc = (f\"<< /Type /FontDescriptor /FontName /CrimsonText-Regular \""
+  },
+  {
+   "file": "apps/pipeline/services/palette_m7_ai_emitter.py",
+   "line": 582,
+   "text": "fonts = page.get_fonts(full=True)"
+  },
+  {
+   "file": "apps/pipeline/services/palette_m7_ai_emitter.py",
+   "line": 583,
+   "text": "embedded = [f for f in fonts if \"CrimsonText\" in f[3]]"
+  },
+  {
+   "file": "apps/pipeline/services/palette_m7_ai_emitter.py",
+   "line": 587,
+   "text": "extracted = doc.extract_font(embedded[0][0])"
+  },
+  {
+   "file": "apps/pipeline/services/palette_m7_ai_emitter.py",
+   "line": 598,
+   "text": "face_for_bytes = SetFace(MATERIALS_FONT)"
+  },
+  {
+   "file": "apps/pipeline/services/palette_m7_ai_emitter.py",
+   "line": 617,
+   "text": "face = SetFace(MATERIALS_FONT)"
+  },
+  {
+   "file": "apps/pipeline/services/palette_m7_ai_emitter.py",
+   "line": 639,
+   "text": "\"file\": \"materials/Fonts/CrimsonText-Regular.ttf\","
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 25,
+   "text": "from apps.pipeline.services.p1_review_board import _fit, _font"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 342,
+   "text": "\"GLASS\", font=_font(52), fill=(30, 30, 34))"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 347,
+   "text": "font=_font(28), fill=(90, 70, 60))"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 351,
+   "text": "d.text((x + 4, 150 + tile_h + 10), title, font=_font(26),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 367,
+   "text": "\"V4\", font=_font(48), fill=(30, 30, 34))"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 372,
+   "text": "font=_font(26), fill=(90, 70, 60))"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 378,
+   "text": "\"qualitative)\", font=_font(24),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 395,
+   "text": "d.text((X(z) - 30, y1 + 10), label, font=_font(24),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 406,
+   "text": "d.text((x1 - 420, y0 + 10), \"grey = V1 (rejected)\", font=_font(26),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 408,
+   "text": "d.text((x1 - 420, y0 + 44), \"rose = V2 (rejected)\", font=_font(26),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 410,
+   "text": "d.text((x1 - 420, y0 + 78), \"red = V3 (rejected)\", font=_font(26),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 413,
+   "text": "font=_font(26), fill=colours[\"V4\"])"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 431,
+   "text": "d.text((760, 1180 + i * 34), line, font=_font(26),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 456,
+   "text": "\"RGB; same pinned camera)\", font=_font(44),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 462,
+   "text": "\"blue=V3-only, dark=common\", font=_font(28),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 467,
+   "text": "d.text((x + 4, 140 + h), label, font=_font(28), fill=(45, 45, 48))"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 485,
+   "text": "dd.text((30, 14), title, font=_font(40), fill=(30, 30, 34))"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 487,
+   "text": "\"blue=V3 only, dark=agreement\", font=_font(26),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 492,
+   "text": "dd.text((xx + 4, 118 + ch), lab, font=_font(26),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 523,
+   "text": "font=_font(48), fill=(140, 70, 70))"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 527,
+   "text": "\"stretched/warped\", font=_font(28), fill=(90, 70, 60))"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 531,
+   "text": "d.text((x + 4, 160 + target_h), t, font=_font(24),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 661,
+   "text": "\"BOARD (V3)\", font=_font(64), fill=(30, 30, 34))"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 675,
+   "text": "d.text((60, 132 + i * 40), line, font=_font(27), fill=(90, 70, 60))"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 682,
+   "text": "d.text((x, y), klass, font=_font(30), fill=col)"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 683,
+   "text": "d.text((x, y + img.height + 66), title, font=_font(27),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 742,
+   "text": "font=_font(34), fill=(30, 30, 34))"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 760,
+   "text": "d.text((x_leg, y5 + 60 + i * 42), a, font=_font(28),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 762,
+   "text": "d.text((x_leg + 640, y5 + 60 + i * 42), b, font=_font(28),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 764,
+   "text": "d.text((x_leg + 1000, y5 + 60 + i * 42), c, font=_font(28),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 767,
+   "text": "font=_font(34), fill=(179, 69, 79))"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 772,
+   "text": "d.text((x_leg, y5 + 440 + i * 40), line, font=_font(28),"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 792,
+   "text": "font=_font(26), fill=(90, 90, 92))"
+  },
+  {
+   "file": "apps/pipeline/services/p1_v3_evidence.py",
+   "line": 795,
+   "text": "font=_font(26), fill=(140, 70, 70))"
+  },
+  {
+   "file": "apps/pipeline/services/container_material_influence.py",
+   "line": 31,
+   "text": "\"typography\": {\"type\", \"typographic\", \"serif\", \"sans\", \"condensed\","
+  },
+  {
+   "file": "apps/pipeline/services/palette_understanding_overlay.py",
+   "line": 23,
+   "text": "from apps.pipeline.services.palette_review_fonts import font"
+  },
+  {
+   "file": "apps/pipeline/services/illustrator_fixtures.py",
+   "line": 75,
+   "text": "\"\"\"Outer contour with two counters, plus a registered-symbol-sized mark."
+  },
+  {
+   "file": "apps/pipeline/services/illustrator_fixtures.py",
+   "line": 91,
+   "text": "small = A.Obj(\"B_COMPOUND\", \"REGISTERED_SYMBOL_SIZED\", rgb=ink)"
+  },
+  {
+   "file": "apps/pipeline/services/palette_layout_validators.py",
+   "line": 70,
+   "text": "# --- inter-pan gap declared below the recommended minimum"
+  },
+  {
+   "file": "apps/pipeline/services/palette_layout_validators.py",
+   "line": 73,
+   "text": "f\"declared inter-pan gap {spec.tray.inter_pan_gap.mm} mm is \""
+  },
+  {
+   "file": "apps/pipeline/services/rbv4_claude_review.py",
+   "line": 849,
+   "text": "f\"how this hatch was reopened three times. Write \""
+  },
+  {
+   "file": "apps/pipeline/services/rbv4_claude_review.py",
+   "line": 1102,
+   "text": "# with a fresh timestamp, package, tokens and cost, reusing only a"
+  },
+  {
+   "file": "apps/pipeline/services/palette_m5_closeout.py",
+   "line": 605,
+   "text": "symbolic = manifest.get(\"variants\", {}).get("
+  },
+  {
+   "file": "apps/pipeline/services/palette_m5_closeout.py",
+   "line": 606,
+   "text": "\"ES3083_SYMBOLIC_ZONES\", {})"
+  },
+  {
+   "file": "apps/pipeline/services/palette_m5_closeout.py",
+   "line": 607,
+   "text": "check(16, \"Pantone tokens remain symbolic authority\","
+  },
+  {
+   "file": "apps/pipeline/services/palette_m5_closeout.py",
+   "line": 608,
+   "text": "sorted(symbolic.get(\"proxy_tokens\", [])) == ["
+  },
+  {
+   "file": "apps/pipeline/services/palette_m5_closeout.py",
+   "line": 610,
+   "text": "str(symbolic.get(\"proxy_tokens\")))"
+  },
+  {
+   "file": "apps/pipeline/services/palette_m5_closeout.py",
+   "line": 675,
+   "text": "from apps.pipeline.services.palette_review_fonts import font"
+  },
+  {
+   "file": "apps/pipeline/services/palette_m5_closeout.py",
+   "line": 688,
+   "text": "from apps.pipeline.services.palette_review_fonts import font"
+  },
+  {
+   "file": "apps/pipeline/services/palette_profile_offset.py",
+   "line": 52,
+   "text": "OFFSET_NON_MONOTONIC = \"OFFSET_NON_MONOTONIC\""
+  },
+  {
+   "file": "apps/pipeline/services/palette_profile_offset.py",
+   "line": 150,
+   "text": "*, monotonic=True) -> dict:"
+  },
+  {
+   "file": "apps/pipeline/services/palette_profile_offset.py",
+   "line": 174,
+   "text": "if monotonic:"
+  },
+  {
+   "file": "apps/pipeline/services/palette_profile_offset.py",
+   "line": 178,
+   "text": "f\"{OFFSET_NON_MONOTONIC}: offset profile rises from \""
+  },
+  {
+   "file": "apps/pipeline/services/ai8_color.py",
+   "line": 53,
+   "text": "# the PostScript default of 1 pt \u2014 nearly three times the accepted weight. That"
+  },
+  {
+   "file": "apps/pipeline/services/ai8_color.py",
+   "line": 547,
+   "text": "# There are no layer blocks, so there is no inter-layer stacking to invert and"
+  },
+  {
+   "file": "apps/pipeline/services/palette_recessed_tray_geometry.py",
+   "line": 109,
+   "text": "cell boundary (which starts at the +x,+y corner) is monotonic in"
+  },
+  {
+   "file": "apps/pipeline/services/palette_recessed_tray_geometry.py",
+   "line": 214,
+   "text": "\"pocket profile is not monotonic \u2014 it would self-intersect\")"
+  },
+  {
+   "file": "apps/pipeline/services/palette_powder_texture_axes.py",
+   "line": 125,
+   "text": "#: completeness check cannot iterate zero times \u2014 the 2p shape (a count"
+  },
+  {
+   "file": "apps/pipeline/services/palette_powder_texture_axes.py",
+   "line": 207,
+   "text": "# in a comment too; it caught this instrument three times"
+  },
+  {
+   "file": "apps/pipeline/services/print_data_snapshot.py",
+   "line": 4,
+   "text": "record from defaults and overwrote verified regulatory copy, and nothing"
+  },
+  {
+   "file": "apps/pipeline/services/print_data_snapshot.py",
+   "line": 133,
+   "text": "timestamp and the hash itself, so two snapshots of the same data"
+  },
+  {
+   "file": "apps/pipeline/services/palette_review_fonts.py",
+   "line": 1,
+   "text": "\"\"\"Shared font/fit helpers for palette review boards.\"\"\""
+  },
+  {
+   "file": "apps/pipeline/services/palette_review_fonts.py",
+   "line": 6,
+   "text": "_FONT = \"/System/Library/Fonts/Helvetica.ttc\""
+  },
+  {
+   "file": "apps/pipeline/services/palette_review_fonts.py",
+   "line": 11,
+   "text": "return ImageFont.truetype(_FONT, size)"
+  },
+  {
+   "file": "apps/pipeline/services/palette_pan_profile.py",
+   "line": 99,
+   "text": "raise PanProfileError(\"pan outer profile is not monotonic\")"
+  },
+  {
+   "file": "apps/pipeline/services/palette_design_fidelity.py",
+   "line": 56,
+   "text": "\"the border land is no wider than the inter-pocket land\","
+  },
+  {
+   "file": "apps/pipeline/services/reference_index.py",
+   "line": 94,
+   "text": "\"serif_sans\": \"serif | sans | mixed\","
+  },
+  {
+   "file": "apps/pipeline/services/palette_thickness_analysis.py",
+   "line": 134,
+   "text": "\"location\": \"pocket floor into the inter-pocket land\"},"
+  },
+  {
+   "file": "apps/pipeline/services/container_visual_graph.py",
+   "line": 452,
+   "text": "\"\"\"Deterministic identity of the visual graph (no timestamps present).\"\"\""
+  },
+  {
+   "file": "apps/pipeline/services/panel_info.py",
+   "line": 1,
+   "text": "\"\"\"Info-panel (regulatory back face) data assembly (2026-07-06)."
+  },
+  {
+   "file": "apps/pipeline/services/panel_info.py",
+   "line": 13,
+   "text": "\"net_weight\", \"item_no\", \"barcode_ean\", \"qr_url\", \"regulatory_text\","
+  },
+  {
+   "file": "apps/pipeline/services/panel_info.py",
+   "line": 39,
+   "text": "\"regulatory_text\": getattr(brand, \"regulatory_text\", \"\"),"
+  },
+  {
+   "file": "apps/pipeline/services/blender_scripts/powder_materials.py",
+   "line": 104,
+   "text": "law=\"AMPLITUDE_TIMES_SCALE_MM\"):"
+  },
+  {
+   "file": "apps/pipeline/services/blender_scripts/powder_materials.py",
+   "line": 115,
+   "text": "if law != \"AMPLITUDE_TIMES_SCALE_MM\":"
+  },
+  {
+   "file": "apps/core/models.py",
+   "line": 20,
+   "text": "regulatory_text = models.TextField("
+  },
+  {
+   "file": "apps/core/models.py",
+   "line": 109,
+   "text": "# --- Info panel / regulatory data (2026-07-06) --------------------------"
+  },
+  {
+   "file": "apps/core/checks.py",
+   "line": 24,
+   "text": "times and sets `ENVIRONMENT` zero times \u2014 so its database is legitimately"
+  },
+  {
+   "file": "apps/core/apps.py",
+   "line": 15,
+   "text": "# That pointer read ..._and_not_merely_defined until 2026-08-22 \u2014 the"
+  },
+  {
+   "file": "apps/core/tests.py",
+   "line": 274,
+   "text": "`migrate` zero times and sets `ENVIRONMENT` zero times. CI's database"
+  },
+  {
+   "file": "apps/core/middleware.py",
+   "line": 145,
+   "text": "\"ts\": _dt.datetime.fromtimestamp("
+  },
+  {
+   "file": "apps/core/management/commands/seed_bbrose.py",
+   "line": 206,
+   "text": "\"hard shadows\","
+  },
+  {
+   "file": "apps/intelligence/projection_reader.py",
+   "line": 139,
+   "text": "\"\"\"Return current projection state only when chain and pointer are fully valid."
+  },
+  {
+   "file": "apps/intelligence/evidence_labels.py",
+   "line": 82,
+   "text": "if schema == \"font_face/1.0\":"
+  },
+  {
+   "file": "apps/intelligence/human_semantic_metadata.py",
+   "line": 50,
+   "text": "\"SOPHISTICATED\", \"YOUTHFUL\", \"PROFESSIONAL\", \"PREMIUM\", \"FRESH\", \"DRAMATIC\","
+  },
+  {
+   "file": "apps/intelligence/human_semantic_metadata.py",
+   "line": 62,
+   "text": "FONT_STYLE = frozenset({"
+  },
+  {
+   "file": "apps/intelligence/human_semantic_metadata.py",
+   "line": 63,
+   "text": "\"SERIF\", \"SANS_SERIF\", \"SCRIPT\", \"DISPLAY\", \"GEOMETRIC\", \"HUMANIST\", \"CONDENSED\","
+  },
+  {
+   "file": "apps/intelligence/human_semantic_metadata.py",
+   "line": 84,
+   "text": "\"font_styles\": FONT_STYLE,"
+  },
+  {
+   "file": "apps/intelligence/human_semantic_metadata.py",
+   "line": 110,
+   "text": "\"font_styles\", \"script_suitability\", \"brand_observations\", \"search_synonyms\","
+  },
+  {
+   "file": "apps/intelligence/review_campaign.py",
+   "line": 13,
+   "text": "* **The hashed scope content carries no volatile values** (no generation timestamp), so a"
+  },
+  {
+   "file": "apps/intelligence/review_campaign.py",
+   "line": 38,
+   "text": "WAVE_3 = \"WAVE_3_FONT_CANDIDATES\""
+  },
+  {
+   "file": "apps/intelligence/review_campaign.py",
+   "line": 87,
+   "text": "\"selection_reason\": \"CURATED_FONT_REVIEW_SUBSET\","
+  },
+  {
+   "file": "apps/intelligence/review_campaign.py",
+   "line": 89,
+   "text": "\"risk_codes\": (\"LICENCE_EVIDENCE_UNVERIFIED\", \"POSSIBLE_SYSTEM_OR_TRIAL_FONT\"),"
+  },
+  {
+   "file": "apps/intelligence/review_campaign.py",
+   "line": 149,
+   "text": "if rt == ReviewCandidate.ReviewType.FONT_TECHNICAL:"
+  },
+  {
+   "file": "apps/intelligence/semantic_metadata_pilot.py",
+   "line": 62,
+   "text": "\"font_styles\", \"script_suitability\", \"layout_or_format_types\","
+  },
+  {
+   "file": "apps/intelligence/semantic_metadata_pilot.py",
+   "line": 89,
+   "text": "\"Fonts carry family name and script coverage but no style judgement; font_styles is \""
+  },
+  {
+   "file": "apps/intelligence/semantic_metadata_pilot.py",
+   "line": 144,
+   "text": "\"\"\"Deterministic pilot document (no timestamp), hash-stable.\"\"\""
+  },
+  {
+   "file": "apps/intelligence/mvp_import.py",
+   "line": 35,
+   "text": "return datetime.fromtimestamp(path.stat().st_mtime, tz=dt_timezone.utc)"
+  },
+  {
+   "file": "apps/intelligence/mvp_import.py",
+   "line": 372,
+   "text": "def _font(batch, prepared, face, artifact):"
+  },
+  {
+   "file": "apps/intelligence/mvp_import.py",
+   "line": 378,
+   "text": "item, artifact, kind=\"FONT_FACE\", schema=\"font_face/1.0\","
+  },
+  {
+   "file": "apps/intelligence/mvp_import.py",
+   "line": 381,
+   "text": "_provenance(item, artifact, prepared, \"DIP0_FONT_CANDIDATE_IMPORT\")"
+  },
+  {
+   "file": "apps/intelligence/mvp_import.py",
+   "line": 383,
+   "text": "if machine.get(\"license_evidence_mentioning_fonts\")"
+  },
+  {
+   "file": "apps/intelligence/mvp_import.py",
+   "line": 402,
+   "text": "\"suspected_system_copy\": machine.get(\"system_font_suspicion\")"
+  },
+  {
+   "file": "apps/intelligence/mvp_import.py",
+   "line": 403,
+   "text": "not in (None, \"NO_SYSTEM_FONT_EVIDENCE\"),"
+  },
+  {
+   "file": "apps/intelligence/mvp_import.py",
+   "line": 408,
+   "text": "_fact(item, artifact, evidence, \"FONT_TECHNICAL_OBSERVATION\", {"
+  },
+  {
+   "file": "apps/intelligence/mvp_import.py",
+   "line": 416,
+   "text": "item, artifact, evidence, \"FONT_CURATED_STARTER_CANDIDATE\","
+  },
+  {
+   "file": "apps/intelligence/mvp_import.py",
+   "line": 606,
+   "text": "_font, (entry, face)))"
+  },
+  {
+   "file": "apps/intelligence/governance_reader.py",
+   "line": 68,
+   "text": "\"\"\"Return governance only through a verified, current publication pointer.\"\"\""
+  },
+  {
+   "file": "apps/intelligence/artwork_preview.py",
+   "line": 66,
+   "text": "FONT_SUFFIXES = {\".ttf\", \".otf\", \".ttc\"}"
+  },
+  {
+   "file": "apps/intelligence/artwork_preview.py",
+   "line": 199,
+   "text": "if schema == \"font_face/1.0\":"
+  },
+  {
+   "file": "apps/intelligence/artwork_preview.py",
+   "line": 326,
+   "text": "def _render_font_specimen(path: Path) -> bytes:"
+  },
+  {
+   "file": "apps/intelligence/artwork_preview.py",
+   "line": 356,
+   "text": "if suffix in FONT_SUFFIXES:"
+  },
+  {
+   "file": "apps/intelligence/artwork_preview.py",
+   "line": 357,
+   "text": "return _render_font_specimen(path)"
+  },
+  {
+   "file": "apps/intelligence/artwork_preview.py",
+   "line": 415,
+   "text": "card[\"is_specimen\"] = suffix in FONT_SUFFIXES"
+  },
+  {
+   "file": "apps/intelligence/artwork_preview.py",
+   "line": 416,
+   "text": "if suffix not in (PDF_BACKED_SUFFIXES | EPS_SUFFIXES | FONT_SUFFIXES):"
+  },
+  {
+   "file": "apps/intelligence/models.py",
+   "line": 208,
+   "text": "acquisition_timestamp = models.DateTimeField(null=True, blank=True)"
+  },
+  {
+   "file": "apps/intelligence/models.py",
+   "line": 322,
+   "text": "FONT_TECHNICAL = \"FONT_TECHNICAL\""
+  },
+  {
+   "file": "apps/intelligence/models.py",
+   "line": 362,
+   "text": "\"HISTORICAL_MEMORY\", \"DESIGN_ASSET\", \"FONT_TECHNICAL\","
+  },
+  {
+   "file": "apps/intelligence/models.py",
+   "line": 410,
+   "text": "evaluation_timestamp = models.DateTimeField()"
+  },
+  {
+   "file": "apps/intelligence/models.py",
+   "line": 663,
+   "text": "evaluation_timestamp = models.DateTimeField()"
+  },
+  {
+   "file": "apps/intelligence/models.py",
+   "line": 1262,
+   "text": "related_name=\"font_face_profile\")"
+  },
+  {
+   "file": "apps/intelligence/models.py",
+   "line": 1264,
+   "text": "SourceArtifact, on_delete=models.PROTECT, related_name=\"font_face_profiles\")"
+  },
+  {
+   "file": "apps/intelligence/models.py",
+   "line": 1289,
+   "text": "name=\"intel_font_face_index_bounded\"),"
+  },
+  {
+   "file": "apps/intelligence/models.py",
+   "line": 1292,
+   "text": "name=\"intel_font_weight_bounded\"),"
+  },
+  {
+   "file": "apps/intelligence/models.py",
+   "line": 1295,
+   "text": "name=\"intel_font_evidence_valid\"),"
+  },
+  {
+   "file": "apps/intelligence/models.py",
+   "line": 1298,
+   "text": "name=\"intel_font_suitability_valid\"),"
+  },
+  {
+   "file": "apps/intelligence/models.py",
+   "line": 1301,
+   "text": "name=\"intel_font_source_face_uniq\"),"
+  },
+  {
+   "file": "apps/intelligence/manifest.py",
+   "line": 23,
+   "text": "\"FONT_CANDIDATE\", \"BRAND_CANDIDATE\", \"PALETTE_CANDIDATE\","
+  },
+  {
+   "file": "apps/intelligence/manifest.py",
+   "line": 40,
+   "text": "\"font_candidates\": 34,"
+  },
+  {
+   "file": "apps/intelligence/manifest.py",
+   "line": 254,
+   "text": "elif record_type == \"FONT_CANDIDATE\":"
+  },
+  {
+   "file": "apps/intelligence/manifest.py",
+   "line": 364,
+   "text": "\"font_candidates\": len(domain[\"fonts\"]),"
+  },
+  {
+   "file": "apps/intelligence/search_report.py",
+   "line": 61,
+   "text": "\"font_face_profile\", \"brand_candidate_profile\"):"
+  },
+  {
+   "file": "apps/intelligence/semantic_evaluation.py",
+   "line": 73,
+   "text": "\"font_documents\": len(fonts),"
+  },
+  {
+   "file": "apps/intelligence/semantic_evaluation.py",
+   "line": 74,
+   "text": "\"font_documents_with_script_coverage\": sum("
+  },
+  {
+   "file": "apps/intelligence/curated_expansion_import.py",
+   "line": 72,
+   "text": "source_modified_at=datetime.fromtimestamp("
+  },
+  {
+   "file": "apps/intelligence/brand_evidence.py",
+   "line": 75,
+   "text": "\"extracted_at\", \"runtime_timestamp\", \"runtime_path\", \"temporary_path\","
+  },
+  {
+   "file": "apps/intelligence/evidence_integrity.py",
+   "line": 92,
+   "text": "evaluation_timestamp: str"
+  },
+  {
+   "file": "apps/intelligence/evidence_integrity.py",
+   "line": 126,
+   "text": "def _timestamp(value=None) -> str:"
+  },
+  {
+   "file": "apps/intelligence/evidence_integrity.py",
+   "line": 222,
+   "text": "self.evaluation_timestamp = _timestamp(evaluated_at)"
+  },
+  {
+   "file": "apps/intelligence/evidence_integrity.py",
+   "line": 462,
+   "text": "evaluation_timestamp=self.evaluation_timestamp, grants_authority=False,"
+  },
+  {
+   "file": "apps/intelligence/review_services.py",
+   "line": 51,
+   "text": "\"created_at\", \"timestamp\", \"supersedes_event\", \"supersedes_event_id\","
+  },
+  {
+   "file": "apps/intelligence/review_services.py",
+   "line": 64,
+   "text": "ReviewCandidate.ReviewType.FONT_TECHNICAL: ("
+  },
+  {
+   "file": "apps/intelligence/review_services.py",
+   "line": 65,
+   "text": "\"font_technical_suitability\", frozenset({"
+  },
+  {
+   "file": "apps/intelligence/semantic_benchmark.py",
+   "line": 34,
+   "text": "ASSET_METADATA, DESIGN_STYLE, FONT_METADATA, GENERAL_CONCEPT, PRODUCT_CATEGORY,"
+  },
+  {
+   "file": "apps/intelligence/semantic_benchmark.py",
+   "line": 156,
+   "text": "_q(\"Q18\", \"serif font\", FONT_METADATA,"
+  },
+  {
+   "file": "apps/intelligence/semantic_benchmark.py",
+   "line": 158,
+   "text": "\"Font items surface. Serif-ness is NOT recorded in the semantic document \""
+  },
+  {
+   "file": "apps/intelligence/semantic_benchmark.py",
+   "line": 159,
+   "text": "\"(font_metadata carries family name + technical state only).\","
+  },
+  {
+   "file": "apps/intelligence/semantic_benchmark.py",
+   "line": 161,
+   "text": "\"does not establish that a face is serif.\",)),"
+  },
+  {
+   "file": "apps/intelligence/semantic_benchmark.py",
+   "line": 162,
+   "text": "_q(\"Q19\", \"sans serif font\", FONT_METADATA,"
+  },
+  {
+   "file": "apps/intelligence/semantic_benchmark.py",
+   "line": 165,
+   "text": "_q(\"Q20\", \"arabic compatible font\", FONT_METADATA,"
+  },
+  {
+   "file": "apps/intelligence/semantic_benchmark.py",
+   "line": 172,
+   "text": "_q(\"Q21\", \"cjk chinese japanese font\", FONT_METADATA,"
+  },
+  {
+   "file": "apps/intelligence/semantic_benchmark.py",
+   "line": 175,
+   "text": "_q(\"Q22\", \"demo trial font\", FONT_METADATA,"
+  },
+  {
+   "file": "apps/intelligence/semantic_benchmark.py",
+   "line": 218,
+   "text": "_q(\"Q30\", \"EXACT_DISPLAY_LABEL_CONTROL\", FONT_METADATA,"
+  },
+  {
+   "file": "apps/intelligence/semantic_benchmark.py",
+   "line": 220,
+   "text": "\"An exact font-family query must rank that family first in lexical AND hybrid.\","
+  },
+  {
+   "file": "apps/intelligence/brand_evidence_import.py",
+   "line": 87,
+   "text": "source_modified_at=datetime.fromtimestamp("
+  },
+  {
+   "file": "apps/intelligence/review_manifest.py",
+   "line": 29,
+   "text": "ReviewCandidate.ReviewType.FONT_TECHNICAL: CorpusItem.Kind.FONT,"
+  },
+  {
+   "file": "apps/intelligence/semantic_corpus.py",
+   "line": 46,
+   "text": "\"font_face_profile\", \"brand_candidate_profile\").order_by(\"id\"):"
+  },
+  {
+   "file": "apps/intelligence/search_service.py",
+   "line": 19,
+   "text": "timestamp."
+  },
+  {
+   "file": "apps/intelligence/search_service.py",
+   "line": 60,
+   "text": "(\"font_face_profile\", \"family_name\"),"
+  },
+  {
+   "file": "apps/intelligence/search_service.py",
+   "line": 84,
+   "text": "(\"font_face_profile\", \"technical_suitability_state\"),"
+  },
+  {
+   "file": "apps/intelligence/search_service.py",
+   "line": 143,
+   "text": "\"historical_design_profile\", \"design_asset_profile\", \"font_face_profile\","
+  },
+  {
+   "file": "apps/intelligence/semantic_metadata_scope.py",
+   "line": 87,
+   "text": "\"\"\"Deterministic scope document (no timestamp), hash-stable.\"\"\""
+  },
+  {
+   "file": "apps/intelligence/semantic_document_v12.py",
+   "line": 71,
+   "text": "\"font_family_terms\","
+  },
+  {
+   "file": "apps/intelligence/semantic_document_v12.py",
+   "line": 72,
+   "text": "\"font_style_terms\","
+  },
+  {
+   "file": "apps/intelligence/semantic_document_v12.py",
+   "line": 84,
+   "text": "\"FONT\": \"font typeface\","
+  },
+  {
+   "file": "apps/intelligence/semantic_document_v12.py",
+   "line": 140,
+   "text": "\"LEGAL_TEXT\": \"legal or regulatory text\","
+  },
+  {
+   "file": "apps/intelligence/semantic_document_v12.py",
+   "line": 157,
+   "text": "# recorded family name is \"gobold bold\" carries the word \"bold\" through `font_family_terms`"
+  },
+  {
+   "file": "apps/intelligence/semantic_document_v12.py",
+   "line": 184,
+   "text": "def _font_style_terms(font):"
+  },
+  {
+   "file": "apps/intelligence/semantic_document_v12.py",
+   "line": 190,
+   "text": "corpus does not record whether a face is serif or sans (DIP-0C4a: style tags are"
+  },
+  {
+   "file": "apps/intelligence/semantic_document_v12.py",
+   "line": 191,
+   "text": "heuristic, family-level and human-reviewable), so deriving \"serif typeface\" from a name"
+  },
+  {
+   "file": "apps/intelligence/semantic_document_v12.py",
+   "line": 192,
+   "text": "containing \"serif\" would be a claim, not a fact. The family name itself is already in"
+  },
+  {
+   "file": "apps/intelligence/semantic_document_v12.py",
+   "line": 193,
+   "text": "`font_family_terms`, so a query for a serif-named face can still match it \u2014 honestly,"
+  },
+  {
+   "file": "apps/intelligence/semantic_document_v12.py",
+   "line": 207,
+   "text": "terms.append(_term(\"bold weight typeface\", PROV_TECHNICAL))"
+  },
+  {
+   "file": "apps/intelligence/semantic_document_v12.py",
+   "line": 209,
+   "text": "terms.append(_term(\"light weight typeface\", PROV_TECHNICAL))"
+  },
+  {
+   "file": "apps/intelligence/semantic_document_v12.py",
+   "line": 211,
+   "text": "terms.append(_term(\"italic typeface\", PROV_TECHNICAL))"
+  },
+  {
+   "file": "apps/intelligence/semantic_document_v12.py",
+   "line": 271,
+   "text": "font = getattr(item, \"font_face_profile\", None)"
+  },
+  {
+   "file": "apps/intelligence/semantic_document_v12.py",
+   "line": 277,
+   "text": "channels[\"font_family_terms\"].append(_term(family_name, PROV_TECHNICAL))"
+  },
+  {
+   "file": "apps/intelligence/semantic_document_v12.py",
+   "line": 278,
+   "text": "channels[\"font_style_terms\"].extend(_font_style_terms(font))"
+  },
+  {
+   "file": "apps/intelligence/governance_projection.py",
+   "line": 50,
+   "text": "GENESIS_EVALUATION_TIMESTAMP = dt.datetime(1970, 1, 1, tzinfo=dt.timezone.utc)"
+  },
+  {
+   "file": "apps/intelligence/governance_projection.py",
+   "line": 159,
+   "text": "evaluation_timestamp: object"
+  },
+  {
+   "file": "apps/intelligence/governance_projection.py",
+   "line": 177,
+   "text": "\"evaluation_timestamp\": self.evaluation_timestamp.isoformat(),"
+  },
+  {
+   "file": "apps/intelligence/governance_projection.py",
+   "line": 507,
+   "text": "events[-1].created_at if events else GENESIS_EVALUATION_TIMESTAMP)"
+  },
+  {
+   "file": "apps/intelligence/governance_projection.py",
+   "line": 510,
+   "text": "\"EVALUATION_TIMESTAMP_MUST_BE_AWARE\")"
+  },
+  {
+   "file": "apps/intelligence/governance_projection.py",
+   "line": 523,
+   "text": "event_count=len(events), evaluation_timestamp=evaluation_at, rows=rows,"
+  },
+  {
+   "file": "apps/intelligence/governance_projection.py",
+   "line": 537,
+   "text": "\"evaluation_timestamp\": build.evaluation_timestamp,"
+  },
+  {
+   "file": "apps/intelligence/governance_projection.py",
+   "line": 589,
+   "text": "and generation.evaluation_timestamp == build.evaluation_timestamp):"
+  },
+  {
+   "file": "apps/intelligence/governance_projection.py",
+   "line": 680,
+   "text": "seed_evaluation = evaluation_at or GENESIS_EVALUATION_TIMESTAMP"
+  },
+  {
+   "file": "apps/intelligence/governance_projection.py",
+   "line": 687,
+   "text": "evaluation_timestamp=seed_evaluation,"
+  },
+  {
+   "file": "apps/intelligence/governance_projection.py",
+   "line": 732,
+   "text": "\"GENESIS_EVALUATION_TIMESTAMP\", \"GovernanceProjectionError\","
+  },
+  {
+   "file": "apps/intelligence/semantic_document.py",
+   "line": 37,
+   "text": "\"product_family_label\", \"style_labels\", \"font_metadata\","
+  },
+  {
+   "file": "apps/intelligence/semantic_document.py",
+   "line": 64,
+   "text": "\"font_metadata\", \"observed_script_coverage\","
+  },
+  {
+   "file": "apps/intelligence/semantic_document.py",
+   "line": 109,
+   "text": "NON_SCRIPT_TOKENS = frozenset({\"numerals\", \"punctuation\", \"symbols\"})"
+  },
+  {
+   "file": "apps/intelligence/semantic_document.py",
+   "line": 117,
+   "text": "\"source_binary\", \"image\", \"illustrator_file\", \"font_file\", \"archive_contents\","
+  },
+  {
+   "file": "apps/intelligence/semantic_document.py",
+   "line": 156,
+   "text": "(\"font_face_profile\", \"family_name\"),"
+  },
+  {
+   "file": "apps/intelligence/semantic_document.py",
+   "line": 250,
+   "text": "profile = getattr(item, \"font_face_profile\", None)"
+  },
+  {
+   "file": "apps/intelligence/semantic_document.py",
+   "line": 281,
+   "text": "def _font_metadata(item):"
+  },
+  {
+   "file": "apps/intelligence/semantic_document.py",
+   "line": 282,
+   "text": "profile = getattr(item, \"font_face_profile\", None)"
+  },
+  {
+   "file": "apps/intelligence/semantic_document.py",
+   "line": 358,
+   "text": "\"font_metadata\": _font_metadata(item),"
+  },
+  {
+   "file": "apps/intelligence/semantic_document.py",
+   "line": 397,
+   "text": "\".zip\", \".otf\", \".ttf\", \".ttc\", \".ase\","
+  },
+  {
+   "file": "apps/intelligence/semantic_document.py",
+   "line": 531,
+   "text": "font = document.get(\"font_metadata\") or {}"
+  },
+  {
+   "file": "apps/intelligence/locator_schemas.py",
+   "line": 105,
+   "text": "def _font_face(locator):"
+  },
+  {
+   "file": "apps/intelligence/locator_schemas.py",
+   "line": 120,
+   "text": "\"font_face/1.0\": _font_face,"
+  },
+  {
+   "file": "apps/intelligence/projection.py",
+   "line": 40,
+   "text": "GENESIS_EVALUATION_TIMESTAMP = dt.datetime(1970, 1, 1, tzinfo=dt.timezone.utc)"
+  },
+  {
+   "file": "apps/intelligence/projection.py",
+   "line": 156,
+   "text": "evaluation_timestamp: object"
+  },
+  {
+   "file": "apps/intelligence/projection.py",
+   "line": 174,
+   "text": "\"evaluation_timestamp\": self.evaluation_timestamp.isoformat(),"
+  },
+  {
+   "file": "apps/intelligence/projection.py",
+   "line": 683,
+   "text": "events[-1].created_at if events else GENESIS_EVALUATION_TIMESTAMP)"
+  },
+  {
+   "file": "apps/intelligence/projection.py",
+   "line": 685,
+   "text": "raise ProjectionValidationError(\"EVALUATION_TIMESTAMP_MUST_BE_AWARE\")"
+  },
+  {
+   "file": "apps/intelligence/projection.py",
+   "line": 712,
+   "text": "event_count=len(events), evaluation_timestamp=evaluation_at, rows=rows,"
+  },
+  {
+   "file": "apps/intelligence/projection.py",
+   "line": 726,
+   "text": "\"evaluation_timestamp\": build.evaluation_timestamp,"
+  },
+  {
+   "file": "apps/intelligence/projection.py",
+   "line": 774,
+   "text": "and generation.evaluation_timestamp == build.evaluation_timestamp):"
+  },
+  {
+   "file": "apps/intelligence/projection.py",
+   "line": 856,
+   "text": "seed_evaluation = evaluation_at or GENESIS_EVALUATION_TIMESTAMP"
+  },
+  {
+   "file": "apps/intelligence/projection.py",
+   "line": 862,
+   "text": "evaluation_timestamp=seed_evaluation,"
+  },
+  {
+   "file": "apps/intelligence/semantic_query.py",
+   "line": 40,
+   "text": "FONT_METADATA = \"FONT_METADATA\""
+  },
+  {
+   "file": "apps/intelligence/semantic_query.py",
+   "line": 42,
+   "text": "FONT_METADATA)"
+  },
+  {
+   "file": "apps/intelligence/semantic_index.py",
+   "line": 55,
+   "text": "\"font_face_profile\", \"brand_candidate_profile\").order_by(\"id\"):"
+  },
+  {
+   "file": "apps/intelligence/views.py",
+   "line": 90,
+   "text": "\"historical_design_profile\", \"design_asset_profile\", \"font_face_profile\","
+  },
+  {
+   "file": "apps/intelligence/views.py",
+   "line": 101,
+   "text": "if hasattr(item, \"font_face_profile\"):"
+  },
+  {
+   "file": "apps/intelligence/views.py",
+   "line": 102,
+   "text": "return item.font_face_profile.family_name"
+  },
+  {
+   "file": "apps/intelligence/views.py",
+   "line": 116,
+   "text": "if hasattr(item, \"font_face_profile\"):"
+  },
+  {
+   "file": "apps/intelligence/views.py",
+   "line": 117,
+   "text": "return item.font_face_profile.technical_suitability_state"
+  },
+  {
+   "file": "apps/intelligence/views.py",
+   "line": 196,
+   "text": "| Q(font_face_profile__family_name__icontains=search)"
+  },
+  {
+   "file": "apps/intelligence/views.py",
+   "line": 197,
+   "text": "| Q(font_face_profile__postscript_name__icontains=search)"
+  },
+  {
+   "file": "apps/intelligence/views.py",
+   "line": 217,
+   "text": "| Q(font_face_profile__technical_suitability_state=readiness)"
+  },
+  {
+   "file": "apps/intelligence/views.py",
+   "line": 308,
+   "text": "\"corpus_item__design_asset_profile\", \"corpus_item__font_face_profile\","
+  },
+  {
+   "file": "apps/intelligence/review_packet.py",
+   "line": 40,
+   "text": "\"FONT_TECHNICAL\": ("
+  },
+  {
+   "file": "apps/intelligence/review_packet.py",
+   "line": 74,
+   "text": "\"FONT_TECHNICAL\": ("
+  },
+  {
+   "file": "apps/intelligence/governance.py",
+   "line": 125,
+   "text": "\"unresolved_source_version_ids\", \"evaluation_timestamp\", \"grants_authority\","
+  },
+  {
+   "file": "apps/intelligence/governance.py",
+   "line": 295,
+   "text": "\"evaluation_timestamp\": result.evaluation_timestamp,"
+  },
+  {
+   "file": "apps/intelligence/governance.py",
+   "line": 309,
+   "text": "or not isinstance(summary.get(\"evaluation_timestamp\"), str)"
+  },
+  {
+   "file": "apps/intelligence/governance.py",
+   "line": 327,
+   "text": "summary[\"evaluation_timestamp\"].replace(\"Z\", \"+00:00\"))"
+  },
+  {
+   "file": "apps/intelligence/governance.py",
+   "line": 330,
+   "text": "\"evidence-integrity evaluation timestamp is invalid\") from exc"
+  },
+  {
+   "file": "apps/intelligence/governance.py",
+   "line": 333,
+   "text": "\"evidence-integrity evaluation timestamp must be aware\")"
+  },
+  {
+   "file": "apps/intelligence/management/commands/rebuild_intelligence_governance.py",
+   "line": 24,
+   "text": "\"--evaluation-timestamp\","
+  },
+  {
+   "file": "apps/intelligence/management/commands/rebuild_intelligence_governance.py",
+   "line": 32,
+   "text": "if options[\"evaluation_timestamp\"]:"
+  },
+  {
+   "file": "apps/intelligence/management/commands/rebuild_intelligence_governance.py",
+   "line": 33,
+   "text": "evaluation_at = parse_datetime(options[\"evaluation_timestamp\"])"
+  },
+  {
+   "file": "apps/intelligence/management/commands/rebuild_intelligence_governance.py",
+   "line": 35,
+   "text": "raise CommandError(\"EVALUATION_TIMESTAMP_MUST_BE_AWARE\")"
+  },
+  {
+   "file": "apps/intelligence/management/commands/rebuild_intelligence_assertions.py",
+   "line": 24,
+   "text": "\"--evaluation-timestamp\","
+  },
+  {
+   "file": "apps/intelligence/management/commands/rebuild_intelligence_assertions.py",
+   "line": 32,
+   "text": "if options[\"evaluation_timestamp\"]:"
+  },
+  {
+   "file": "apps/intelligence/management/commands/rebuild_intelligence_assertions.py",
+   "line": 33,
+   "text": "evaluation_at = parse_datetime(options[\"evaluation_timestamp\"])"
+  },
+  {
+   "file": "apps/intelligence/management/commands/rebuild_intelligence_assertions.py",
+   "line": 35,
+   "text": "raise CommandError(\"EVALUATION_TIMESTAMP_MUST_BE_AWARE\")"
+  },
+  {
+   "file": "apps/ire/back_panel.py",
+   "line": 6,
+   "text": "40. \u00a7W1 ruled that a product gap, not a measurement gap \u2014 the panel a printer"
+  },
+  {
+   "file": "apps/ire/back_panel.py",
+   "line": 7,
+   "text": "and a regulator read first cannot be a 1 pt diagram \u2014 and this module is the"
+  },
+  {
+   "file": "apps/ire/back_panel.py",
+   "line": 197,
+   "text": "font_name: str | None) -> list[str] | None:"
+  },
+  {
+   "file": "apps/ire/back_panel.py",
+   "line": 217,
+   "text": "width = text_width_mm_measured(trial, em_mm, font_name)"
+  },
+  {
+   "file": "apps/ire/container_motif.py",
+   "line": 246,
+   "text": "\"\"\"Deterministic identity (no timestamps present).\"\"\""
+  },
+  {
+   "file": "apps/ire/compose_dropper.py",
+   "line": 347,
+   "text": "#: These were fractions of ``zh`` (the zone's height in millimetres, times the"
+  },
+  {
+   "file": "apps/ire/compose_dropper.py",
+   "line": 375,
+   "text": "#: Three times the type size, in a block whose own comment says \"two serif"
+  },
+  {
+   "file": "apps/ire/compose_dropper.py",
+   "line": 649,
+   "text": "# \u00a711: the stacked product-name block \u2014 two serif lines, dominant over"
+  },
+  {
+   "file": "apps/ire/compose_dropper.py",
+   "line": 656,
+   "text": "# three times the type size. Measured off the emitted PDF, the two line"
+  },
+  {
+   "file": "apps/ire/compose_dropper.py",
+   "line": 729,
+   "text": "font=\"serif-bold\"))"
+  },
+  {
+   "file": "apps/ire/vq2_artwork.py",
+   "line": 36,
+   "text": "TYPEFACE_UNRESOLVED = \"VQ2_EXACT_TYPEFACE_UNRESOLVED\""
+  },
+  {
+   "file": "apps/ire/vq2_artwork.py",
+   "line": 240,
+   "text": "return TTFont(path, fontNumber=index) if path.endswith(\".ttc\") \\"
+  },
+  {
+   "file": "apps/ire/vq2_artwork.py",
+   "line": 241,
+   "text": "else TTFont(path)"
+  },
+  {
+   "file": "apps/ire/vq2_artwork.py",
+   "line": 246,
+   "text": "licence state stays human-verified (matches container_font_authority).\"\"\""
+  },
+  {
+   "file": "apps/ire/vq2_artwork.py",
+   "line": 247,
+   "text": "from apps.ire.container_font_authority import (LICENCE_REVIEW_REQUIRED,"
+  },
+  {
+   "file": "apps/ire/vq1_close1_package.py",
+   "line": 20,
+   "text": "\"h1\": ParagraphStyle(\"h1\", fontName=\"Helvetica-Bold\", fontSize=17,"
+  },
+  {
+   "file": "apps/ire/vq1_close1_package.py",
+   "line": 22,
+   "text": "\"h2\": ParagraphStyle(\"h2\", fontName=\"Helvetica-Bold\", fontSize=12,"
+  },
+  {
+   "file": "apps/ire/vq1_close1_package.py",
+   "line": 25,
+   "text": "\"p\": ParagraphStyle(\"p\", fontName=\"Helvetica\", fontSize=9.2,"
+  },
+  {
+   "file": "apps/ire/vq1_close1_package.py",
+   "line": 27,
+   "text": "\"mono\": ParagraphStyle(\"mono\", fontName=\"Courier\", fontSize=7.8,"
+  },
+  {
+   "file": "apps/ire/vq1_close1_package.py",
+   "line": 29,
+   "text": "\"warn\": ParagraphStyle(\"warn\", fontName=\"Helvetica-Bold\", fontSize=9.6,"
+  },
+  {
+   "file": "apps/ire/vq1_close1_package.py",
+   "line": 89,
+   "text": "from apps.ire.vq1_close1 import BG, LABEL, _font"
+  },
+  {
+   "file": "apps/ire/vq1_close1_package.py",
+   "line": 104,
+   "text": "d.text((22, 20), title, fill=LABEL, font=_font(23))"
+  },
+  {
+   "file": "apps/ire/vq1_close1_package.py",
+   "line": 107,
+   "text": "d.text((22, y), ln, fill=LABEL, font=_font(14))"
+  },
+  {
+   "file": "apps/ire/vq1_close1.py",
+   "line": 313,
+   "text": "def _font(size: int):"
+  },
+  {
+   "file": "apps/ire/vq1_close1.py",
+   "line": 315,
+   "text": "for p in (\"/System/Library/Fonts/Supplemental/Arial.ttf\","
+  },
+  {
+   "file": "apps/ire/vq1_close1.py",
+   "line": 316,
+   "text": "\"/System/Library/Fonts/Helvetica.ttc\"):"
+  },
+  {
+   "file": "apps/ire/vq1_close1.py",
+   "line": 367,
+   "text": "d.text((8, 6), title, fill=LABEL, font=_font(16))"
+  },
+  {
+   "file": "apps/ire/vq1_close1.py",
+   "line": 401,
+   "text": "f = _font(15)"
+  },
+  {
+   "file": "apps/ire/vq1_close1.py",
+   "line": 426,
+   "text": "d.text((150, py - 7), str(gy), fill=GRID, font=_font(13))"
+  },
+  {
+   "file": "apps/ire/vq1_close1.py",
+   "line": 447,
+   "text": "f = _font(16)"
+  },
+  {
+   "file": "apps/ire/vq1_close1.py",
+   "line": 451,
+   "text": "fill=LABEL, font=_font(14))"
+  },
+  {
+   "file": "apps/ire/vq1_close1.py",
+   "line": 455,
+   "text": "d.text((6, py - 8), m[\"label\"], fill=(30, 90, 180), font=_font(14))"
+  },
+  {
+   "file": "apps/ire/vq1_close1.py",
+   "line": 490,
+   "text": "d.text((gut - 46, Y(gy) - 7), str(gy), fill=GRID, font=_font(13))"
+  },
+  {
+   "file": "apps/ire/vq1_close1.py",
+   "line": 494,
+   "text": "d.text((X(v) - 10, h - 26), str(v), fill=GRID, font=_font(13))"
+  },
+  {
+   "file": "apps/ire/vq1_close1.py",
+   "line": 511,
+   "text": "fill=LABEL, font=_font(17))"
+  },
+  {
+   "file": "apps/ire/vq1_close1.py",
+   "line": 513,
+   "text": "\"(far flank is mirrored)\", fill=LABEL, font=_font(14))"
+  },
+  {
+   "file": "apps/ire/vq1_close1.py",
+   "line": 518,
+   "text": "fill=(30, 90, 180), font=_font(14))"
+  },
+  {
+   "file": "apps/ire/vq1_close1.py",
+   "line": 535,
+   "text": "f, fs = _font(17), _font(14)"
+  },
+  {
+   "file": "apps/ire/vq1_close1.py",
+   "line": 537,
+   "text": "fill=LABEL, font=_font(20))"
+  },
+  {
+   "file": "apps/ire/vq1_close1.py",
+   "line": 623,
+   "text": "f, fs = _font(17), _font(14)"
+  },
+  {
+   "file": "apps/ire/vq1_close1.py",
+   "line": 625,
+   "text": "fill=LABEL, font=_font(20))"
+  },
+  {
+   "file": "apps/ire/vq1_close1.py",
+   "line": 731,
+   "text": "f = _font(15)"
+  },
+  {
+   "file": "apps/ire/container_method_provenance.py",
+   "line": 86,
+   "text": "times, 64 text runs both times, text-geometry hash `6246ca5b1132d697` both"
+  },
+  {
+   "file": "apps/ire/container_method_provenance.py",
+   "line": 87,
+   "text": "times. The only differing bytes are ReportLab's `/CreationDate`, `/ModDate`"
+  },
+  {
+   "file": "apps/ire/unit_analysis.py",
+   "line": 55,
+   "text": "rule that unknown times anything is unknown::"
+  },
+  {
+   "file": "apps/ire/unit_analysis.py",
+   "line": 580,
+   "text": "#: how many times a dimension was actually COMPARED against another."
+  },
+  {
+   "file": "apps/ire/unit_analysis.py",
+   "line": 638,
+   "text": "WI-3E: THE ACCUMULATORS ARE RESET HERE, and they were not always. This"
+  },
+  {
+   "file": "apps/ire/unit_analysis.py",
+   "line": 642,
+   "text": "register scaled with how many times somebody asked."
+  },
+  {
+   "file": "apps/ire/container_production_method.py",
+   "line": 369,
+   "text": "hold regulatory copy to the front's print method, which is a different"
+  },
+  {
+   "file": "apps/ire/vq1_reset2.py",
+   "line": 493,
+   "text": "inter = sum(min(x, y) for x, y in zip(a, b))"
+  },
+  {
+   "file": "apps/ire/vq1_reset2.py",
+   "line": 495,
+   "text": "iou = inter / union if union else 0.0"
+  },
+  {
+   "file": "apps/ire/vq1_reset2.py",
+   "line": 656,
+   "text": "checks[\"dome_widens_monotonically_from_apex\"] = all("
+  },
+  {
+   "file": "apps/ire/container_font_evidence_join.py",
+   "line": 1,
+   "text": "\"\"\"\u00a7BH12(a) Option B \u2014 the ``confirmed_fonts`` producer."
+  },
+  {
+   "file": "apps/ire/container_font_evidence_join.py",
+   "line": 4,
+   "text": "confirmed_fonts producer is a join over dip0c evidence by file_sha256, ceiling"
+  },
+  {
+   "file": "apps/ire/container_font_evidence_join.py",
+   "line": 9,
+   "text": "The cap lives in ``container_font_authority``'s public guards and this module"
+  },
+  {
+   "file": "apps/ire/container_font_evidence_join.py",
+   "line": 20,
+   "text": "then wired the producer live (``join_document_fonts`` below, at the production"
+  },
+  {
+   "file": "apps/ire/container_font_evidence_join.py",
+   "line": 46,
+   "text": "from apps.ire.container_font_authority import ("
+  },
+  {
+   "file": "apps/ire/container_font_evidence_join.py",
+   "line": 54,
+   "text": "SCHEMA = \"container_font_evidence_join/1.0\""
+  },
+  {
+   "file": "apps/ire/container_font_evidence_join.py",
+   "line": 110,
+   "text": "deletes CONTAINER_FONT_FALLBACK_DETECTED. Declaring MACHINE_DERIVED keeps"
+  },
+  {
+   "file": "apps/ire/container_font_evidence_join.py",
+   "line": 135,
+   "text": "def join_font_evidence(faces, *, evidence_path=None) -> dict:"
+  },
+  {
+   "file": "apps/ire/container_font_evidence_join.py",
+   "line": 139,
+   "text": "not just its yield: ``confirmed_fonts`` is the mapping"
+  },
+  {
+   "file": "apps/ire/container_font_evidence_join.py",
+   "line": 140,
+   "text": "``build_font_authority`` consumes, and the sibling fields record what was"
+  },
+  {
+   "file": "apps/ire/container_font_evidence_join.py",
+   "line": 170,
+   "text": "\"confirmed_fonts\": confirmed,"
+  },
+  {
+   "file": "apps/ire/container_font_evidence_join.py",
+   "line": 174,
+   "text": "def join_document_fonts(doc, *, evidence_path=None) -> dict:"
+  },
+  {
+   "file": "apps/ire/container_font_evidence_join.py",
+   "line": 177,
+   "text": "the roles ``build_font_authority`` will record and no other. Returns the whole"
+  },
+  {
+   "file": "apps/ire/container_font_evidence_join.py",
+   "line": 178,
+   "text": "join result (see ``join_font_evidence``); the call site passes"
+  },
+  {
+   "file": "apps/ire/container_font_evidence_join.py",
+   "line": 179,
+   "text": "``[\"confirmed_fonts\"]`` to the seam. Same ceiling, same yield discipline."
+  },
+  {
+   "file": "apps/ire/container_font_evidence_join.py",
+   "line": 181,
+   "text": "from apps.ire.container_font_authority import _resolved_faces"
+  },
+  {
+   "file": "apps/ire/container_font_evidence_join.py",
+   "line": 183,
+   "text": "return join_font_evidence([(role, path) for role, _name, path in faces],"
+  },
+  {
+   "file": "apps/ire/container_font_evidence_join.py",
+   "line": 192,
+   "text": "\"join_font_evidence\", \"join_document_fonts\","
+  },
+  {
+   "file": "apps/ire/back_panel_copy.py",
+   "line": 85,
+   "text": "# No regulatory text exists anywhere in this repo \u2014 that was grepped, not"
+  },
+  {
+   "file": "apps/ire/back_panel_copy.py",
+   "line": 86,
+   "text": "# assumed \u2014 so every regulatory citation below is in the second class."
+  },
+  {
+   "file": "apps/ire/back_panel_copy.py",
+   "line": 247,
+   "text": "\"sentences is a required precaution is a regulatory \""
+  },
+  {
+   "file": "apps/ire/graph.py",
+   "line": 10,
+   "text": "rose-gold radial fill, a serif title run, the logo asset placed here at this"
+  },
+  {
+   "file": "apps/ire/graph.py",
+   "line": 197,
+   "text": "symbology: Literal[\"ean13\", \"qr\"]"
+  },
+  {
+   "file": "apps/ire/container_production_metrics.py",
+   "line": 9,
+   "text": "is measured per zone but gated only against a reliable target \u2014 a regulatory"
+  },
+  {
+   "file": "apps/ire/container_production_metrics.py",
+   "line": 126,
+   "text": "reliable target; a regulatory back label uses a different (looser) target"
+  },
+  {
+   "file": "apps/ire/design_language.py",
+   "line": 132,
+   "text": "#: strongest expression; the back prioritizes regulatory readability; sides"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 6,
+   "text": "arriving through ``confirmed_fonts`` \u2014 all three stay byte-identical in"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 33,
+   "text": "from apps.ire.container_font_authority import ("
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 41,
+   "text": "SCHEMA = \"container_font_owner_grant/1.0\""
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 58,
+   "text": "# NotoSans-Regular.ttf"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 60,
+   "text": "# NotoSans-Bold.ttf"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 70,
+   "text": "#: The Noto pair keeps its own grant above; no sha256 appears in two grants (tested)."
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 77,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Amatic_SC\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 80,
+   "text": "# Amatic_SC/AmaticSC-Bold.ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 89,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Amatic_SC\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 92,
+   "text": "# Amatic_SC/AmaticSC-Regular.ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 101,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Bebas_Neue\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 104,
+   "text": "# Bebas_Neue/BebasNeue-Regular.ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 113,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Cairo\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 116,
+   "text": "# Cairo/Cairo-Bold.ttf (LIBRARY_COPY_HASH_MATCHED)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 128,
+   "text": "# Grand_Hotel/GrandHotel-Regular.ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 140,
+   "text": "# Great_Vibes/GreatVibes-Regular.ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 149,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Lato\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 152,
+   "text": "# Lato/Lato-Black.ttf (LIBRARY_COPY_HASH_MATCHED)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 161,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Montserrat\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 164,
+   "text": "# Montserrat/Montserrat-Italic[wght].ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 173,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Montserrat\" / \"OFL_at_9548902f.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 176,
+   "text": "# Montserrat/Montserrat-Regular.ttf (LIBRARY_COPY_HASH_MATCHED)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 185,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Montserrat\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 188,
+   "text": "# Montserrat/Montserrat[wght].ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 200,
+   "text": "# Open_Sans/OpenSans-Semibold.ttf (LIBRARY_COPY_HASH_MATCHED)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 209,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Playfair_Display\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 212,
+   "text": "# Playfair_Display/PlayfairDisplay-Italic[wght].ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 221,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Playfair_Display\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 224,
+   "text": "# Playfair_Display/PlayfairDisplay[wght].ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 233,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Poppins\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 236,
+   "text": "# Poppins/Poppins-Black.ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 245,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Poppins\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 248,
+   "text": "# Poppins/Poppins-BlackItalic.ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 257,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Poppins\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 260,
+   "text": "# Poppins/Poppins-Bold.ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 269,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Poppins\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 272,
+   "text": "# Poppins/Poppins-BoldItalic.ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 281,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Poppins\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 284,
+   "text": "# Poppins/Poppins-ExtraBold.ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 293,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Poppins\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 296,
+   "text": "# Poppins/Poppins-ExtraBoldItalic.ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 305,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Poppins\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 308,
+   "text": "# Poppins/Poppins-ExtraLight.ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 317,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Poppins\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 320,
+   "text": "# Poppins/Poppins-ExtraLightItalic.ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 329,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Poppins\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 332,
+   "text": "# Poppins/Poppins-Italic.ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 341,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Poppins\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 344,
+   "text": "# Poppins/Poppins-Light.ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 353,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Poppins\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 356,
+   "text": "# Poppins/Poppins-LightItalic.ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 365,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Poppins\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 368,
+   "text": "# Poppins/Poppins-Medium.ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 377,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Poppins\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 380,
+   "text": "# Poppins/Poppins-MediumItalic.ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 389,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Poppins\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 392,
+   "text": "# Poppins/Poppins-Regular.ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 401,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Poppins\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 404,
+   "text": "# Poppins/Poppins-SemiBold.ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 413,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Poppins\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 416,
+   "text": "# Poppins/Poppins-SemiBoldItalic.ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 425,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Poppins\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 428,
+   "text": "# Poppins/Poppins-Thin.ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 437,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Poppins\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 440,
+   "text": "# Poppins/Poppins-ThinItalic.ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 449,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Quicksand\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 452,
+   "text": "# Quicksand/Quicksand[wght].ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 461,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Raleway\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 464,
+   "text": "# Raleway/Raleway-Light.ttf (LIBRARY_COPY_HASH_MATCHED)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 473,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Rubik\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 476,
+   "text": "# Rubik/Rubik-Bold.ttf (LIBRARY_COPY_HASH_MATCHED)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 485,
+   "text": "\"licence_evidence_path\": str(_BRAND2026 / \"Shadows_Into_Light_Two\" / \"OFL.txt\"),"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 488,
+   "text": "# Shadows_Into_Light_Two/ShadowsIntoLightTwo-Regular.ttf (ACQUIRED_UPSTREAM_RELEASE)"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 511,
+   "text": "\"\"\"Apply the owner grant to a ``container_font_authority/1.0`` record."
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 514,
+   "text": "production call site AFTER ``build_font_authority`` and BEFORE"
+  },
+  {
+   "file": "apps/ire/container_font_owner_grant.py",
+   "line": 515,
+   "text": "``font_confirmation_gate`` \u2014 never inside the builder, so the machine"
+  },
+  {
+   "file": "apps/ire/compose_vector_art.py",
+   "line": 17,
+   "text": "quiet so regulatory copy reads; sides coordinate at reduced density without"
+  },
+  {
+   "file": "apps/ire/compose_vector_art.py",
+   "line": 219,
+   "text": "# The back panel (and any sticker face) stays quiet: regulatory"
+  },
+  {
+   "file": "apps/ire/compose_vector_art.py",
+   "line": 268,
+   "text": "# --- Info face: the regulatory sticker on the quiet back panel ----------"
+  },
+  {
+   "file": "apps/ire/compose_vector_art.py",
+   "line": 299,
+   "text": "\"confirmed_font\": (concept_spec or {}).get(\"confirmed_font\"),"
+  },
+  {
+   "file": "apps/ire/compose_vector_art.py",
+   "line": 302,
+   "text": "\"font_note\": ("
+  },
+  {
+   "file": "apps/ire/compose_vector_art.py",
+   "line": 490,
+   "text": "from apps.ire.text_metrics import (cap_height_em, resolve_metric_font,"
+  },
+  {
+   "file": "apps/ire/compose_vector_art.py",
+   "line": 501,
+   "text": "# selected concept), and the inter-line air carries the constellation"
+  },
+  {
+   "file": "apps/ire/compose_vector_art.py",
+   "line": 505,
+   "text": "metric_font, metric_path = resolve_metric_font("
+  },
+  {
+   "file": "apps/ire/compose_vector_art.py",
+   "line": 506,
+   "text": "{\"confirmed_font\": spec.get(\"confirmed_font\")})"
+  },
+  {
+   "file": "apps/ire/compose_vector_art.py",
+   "line": 509,
+   "text": "unit_widths = [ratio * text_width_mm(line, 1.0, metric_font)"
+  },
+  {
+   "file": "apps/ire/vq2_lettering_receipt.py",
+   "line": 53,
+   "text": "LIVE_FONT = \"VQ2_UNRESOLVED_LIVE_FONT_DETECTED\""
+  },
+  {
+   "file": "apps/ire/vq2_lettering_receipt.py",
+   "line": 79,
+   "text": "(\"no_unresolved_live_fonts\", LIVE_FONT),"
+  },
+  {
+   "file": "apps/ire/vq2_lettering_receipt.py",
+   "line": 145,
+   "text": "\"a genuinely condensed licensed typeface used without non-uniform \""
+  },
+  {
+   "file": "apps/ire/vq2_lettering_receipt.py",
+   "line": 305,
+   "text": "if asset.get(\"live_font_object_count\", 0) > 0:"
+  },
+  {
+   "file": "apps/ire/vq2_lettering_receipt.py",
+   "line": 306,
+   "text": "f.append(LIVE_FONT)"
+  },
+  {
+   "file": "apps/ire/geometry_report.py",
+   "line": 37,
+   "text": "def _text_bbox_mm(run, font_name=None, cap_em=0.72):"
+  },
+  {
+   "file": "apps/ire/geometry_report.py",
+   "line": 48,
+   "text": "length = text_width_mm(run.text or \" \", size_mm, font_name)"
+  },
+  {
+   "file": "apps/ire/geometry_report.py",
+   "line": 222,
+   "text": "bold_font, bold_path = faces.get(\"bold\") or (None, None)"
+  },
+  {
+   "file": "apps/ire/geometry_report.py",
+   "line": 318,
+   "text": "\"metric_font\": bold_font,"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 16,
+   "text": "* a defaulted substitution is ``UNVERIFIED`` + ``CONTAINER_FONT_FALLBACK_"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 24,
+   "text": "SCHEMA = \"container_font_authority/1.0\""
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 30,
+   "text": "FONT_FILE_MISSING = \"FONT_FILE_MISSING\""
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 31,
+   "text": "FONT_IDENTITY_MISMATCH = \"FONT_IDENTITY_MISMATCH\""
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 45,
+   "text": "# ``font_confirmation_gate`` uses below \u2014 that one answers production"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 55,
+   "text": "FONT_FILE_MISSING: AT_OR_BELOW_CEILING,"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 56,
+   "text": "FONT_IDENTITY_MISMATCH: AT_OR_BELOW_CEILING,"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 70,
+   "text": "fired. ``tools/dip0c/font_rights.py`` keeps its own two refusals disjoint for"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 102,
+   "text": "# guard in ``test_container_font_authority`` asserts that the only SELF-NAMING"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 254,
+   "text": "\u00a7BH12(b): *\"The app-side seam gets a machine_font_state-equivalent: a"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 260,
+   "text": "THREE DISJOINT REFUSALS, mirroring ``tools/dip0c/font_rights."
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 261,
+   "text": "machine_font_state`` \u2014 which raises ``ValueError`` for an unknown state and"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 310,
+   "text": "FONT_CONFIRMATION_REQUIRED = \"CONTAINER_FONT_CONFIRMATION_REQUIRED\""
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 311,
+   "text": "FONT_MISSING = \"CONTAINER_FONT_MISSING\""
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 312,
+   "text": "FONT_IDENTITY_MISMATCH_CODE = \"CONTAINER_FONT_IDENTITY_MISMATCH\""
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 313,
+   "text": "FONT_LICENSE_REVIEW_REQUIRED = \"CONTAINER_FONT_LICENSE_REVIEW_REQUIRED\""
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 314,
+   "text": "FONT_FALLBACK_DETECTED = \"CONTAINER_FONT_FALLBACK_DETECTED\""
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 340,
+   "text": "with TTFont(path, lazy=True, fontNumber=0) as font:"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 394,
+   "text": "all. Placing it here rather than in ``build_font_authority`` covers both"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 402,
+   "text": "\"font_family\": ident[\"family\"] or (name or \"\"),"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 403,
+   "text": "\"font_style\": ident[\"style\"] or role,"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 417,
+   "text": "# flag deletes CONTAINER_FONT_FALLBACK_DETECTED at the gate below, so"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 441,
+   "text": "rec[\"verification\"] = FONT_FILE_MISSING"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 443,
+   "text": "rec[\"verification\"] = FONT_IDENTITY_MISMATCH"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 450,
+   "text": "from apps.ire.text_metrics import resolve_metric_font"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 459,
+   "text": "bold_name, bold_path = resolve_metric_font(doc.metadata)"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 460,
+   "text": "reg_name, reg_path = _regular_face()"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 471,
+   "text": "def _regular_face():"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 474,
+   "text": "``_resolve_fonts()`` returns REGISTRATION LABELS, not filenames. The regular"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 475,
+   "text": "label is ``NotoSans``, which is neither the family (``Noto Sans``), nor the"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 476,
+   "text": "postscript name (``NotoSans-Regular``), nor the file stem \u2014 it is a fourth,"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 477,
+   "text": "caller-chosen string. Deriving the path as ``f\"{label}.ttf\"`` therefore found"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 478,
+   "text": "a file for the bold face only, by the coincidence that ``NotoSans-Bold`` is"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 482,
+   "text": "Asked of reportlab instead, per ``registered_font_path``: the face that"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 484,
+   "text": "two lower fallback tiers honest \u2014 DejaVu resolves outside ``static/fonts``,"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 485,
+   "text": "and Helvetica is a built-in with no file at all, where None is the true answer."
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 488,
+   "text": "from apps.dielines.exporters.production_pdf import _resolve_fonts"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 489,
+   "text": "reg, _ = _resolve_fonts()"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 492,
+   "text": "from apps.ire.text_metrics import registered_font_path"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 493,
+   "text": "return reg, registered_font_path(reg)"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 496,
+   "text": "def build_font_authority(doc, *, confirmed_fonts: dict | None = None) -> dict:"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 497,
+   "text": "\"\"\"container_font_authority/1.0 for the emitted document.\"\"\""
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 498,
+   "text": "confirmed_fonts = confirmed_fonts or {}"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 502,
+   "text": "conf = confirmed_fonts.get(role)"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 515,
+   "text": "def font_confirmation_gate(authority: dict) -> list[str]:"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 525,
+   "text": "if v == FONT_FILE_MISSING:"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 526,
+   "text": "codes.append(FONT_MISSING)"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 527,
+   "text": "elif v == FONT_IDENTITY_MISMATCH:"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 528,
+   "text": "codes.append(FONT_IDENTITY_MISMATCH_CODE)"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 530,
+   "text": "codes.append(FONT_LICENSE_REVIEW_REQUIRED)"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 532,
+   "text": "codes.append(FONT_CONFIRMATION_REQUIRED)"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 534,
+   "text": "codes.append(FONT_FALLBACK_DETECTED)"
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 545,
+   "text": "\"SCHEMA\", \"extract_identity\", \"build_font_authority\","
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 546,
+   "text": "\"font_confirmation_gate\","
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 548,
+   "text": "\"LICENCE_REVIEW_REQUIRED\", \"FONT_FILE_MISSING\", \"FONT_IDENTITY_MISMATCH\","
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 549,
+   "text": "\"UNVERIFIED\", \"FONT_CONFIRMATION_REQUIRED\", \"FONT_MISSING\","
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 550,
+   "text": "\"FONT_IDENTITY_MISMATCH_CODE\", \"FONT_LICENSE_REVIEW_REQUIRED\","
+  },
+  {
+   "file": "apps/ire/container_font_authority.py",
+   "line": 551,
+   "text": "\"FONT_FALLBACK_DETECTED\","
+  },
+  {
+   "file": "apps/ire/vq2_didone.py",
+   "line": 82,
+   "text": "def serif(cx, y, half_len, th, up=True):"
+  },
+  {
+   "file": "apps/ire/vq2_didone.py",
+   "line": 83,
+   "text": "\"\"\"Unbracketed hairline slab serif of near-constant width.\"\"\""
+  },
+  {
+   "file": "apps/ire/vq2_didone.py",
+   "line": 118,
+   "text": "out += serif(s / 2, 0, p.serif_len * 0.62, p.serif_th)"
+  },
+  {
+   "file": "apps/ire/vq2_didone.py",
+   "line": 119,
+   "text": "out += serif(s / 2, p.cap, p.serif_len * 0.52, p.serif_th, up=False)"
+  },
+  {
+   "file": "apps/ire/vq2_didone.py",
+   "line": 131,
+   "text": "out += serif(s / 2, 0, p.serif_len * 0.60, p.serif_th)"
+  },
+  {
+   "file": "apps/ire/vq2_didone.py",
+   "line": 132,
+   "text": "out += serif(s / 2, p.cap, p.serif_len * 0.60, p.serif_th, up=False)"
+  },
+  {
+   "file": "apps/ire/vq2_didone.py",
+   "line": 202,
+   "text": "out += serif(s / 2, 0, p.serif_len * 0.55, p.serif_th)"
+  },
+  {
+   "file": "apps/ire/vq2_didone.py",
+   "line": 204,
+   "text": "out += serif(w - s / 2, 0, p.serif_len * 0.55, p.serif_th)"
+  },
+  {
+   "file": "apps/ire/vq2_didone.py",
+   "line": 213,
+   "text": "out += serif(s / 2, 0, p.serif_len * 0.50, p.serif_th)"
+  },
+  {
+   "file": "apps/ire/vq2_didone.py",
+   "line": 215,
+   "text": "out += serif(half, 0, p.serif_len * 0.50, p.serif_th)"
+  },
+  {
+   "file": "apps/ire/vq2_didone.py",
+   "line": 217,
+   "text": "out += serif(w - s / 2, 0, p.serif_len * 0.50, p.serif_th)"
+  },
+  {
+   "file": "apps/ire/container_brand_usage.py",
+   "line": 183,
+   "text": "#: NotoSans / NotoSans-Bold, the faces ``emitters/pdf_ai.py`` registers:"
+  },
+  {
+   "file": "apps/ire/container_brand_usage.py",
+   "line": 189,
+   "text": "_FONT_CAP_RATIO = 0.714"
+  },
+  {
+   "file": "apps/ire/container_brand_usage.py",
+   "line": 191,
+   "text": "_FONT_DESCENDER_RATIO = 0.271"
+  },
+  {
+   "file": "apps/ire/container_brand_usage.py",
+   "line": 208,
+   "text": "``0.72`` \u2014 against this module's fixed ``_FONT_CAP_RATIO`` of ``0.714``,"
+  },
+  {
+   "file": "apps/ire/container_brand_usage.py",
+   "line": 227,
+   "text": "return baseline_mm - size_pt * _FONT_CAP_RATIO * PT_TO_MM"
+  },
+  {
+   "file": "apps/ire/container_brand_usage.py",
+   "line": 354,
+   "text": "desc_mm = size * _FONT_DESCENDER_RATIO * PT_TO_MM"
+  },
+  {
+   "file": "apps/ire/back_panel_ledger.py",
+   "line": 39,
+   "text": "grepping, not by assuming -- that no regulatory text exists anywhere in this"
+  },
+  {
+   "file": "apps/ire/back_panel_ledger.py",
+   "line": 110,
+   "text": "\"have a default set. No regulatory text exists in this repository (\u00a7AA1 \""
+  },
+  {
+   "file": "apps/ire/container_typography_metrics.py",
+   "line": 340,
+   "text": "\"font_role\": node.font,"
+  },
+  {
+   "file": "apps/ire/compose_container.py",
+   "line": 417,
+   "text": "#     carries `size_{i+1}` symbolically \u2014 so it survives untouched."
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 23,
+   "text": "``resolve_metric_font`` previously returned ``(name, None)`` on its own"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 40,
+   "text": "def register_font(name: str, path: str | None) -> bool:"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 54,
+   "text": "pdfmetrics.registerFont(TTFont(name, path))"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 60,
+   "text": "def registered_font_path(font_name: str | None) -> str | None:"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 61,
+   "text": "\"\"\"The FILE reportlab registered for ``font_name``, or None."
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 66,
+   "text": "from one file and heights from another. A built-in Type1 (Helvetica) has"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 69,
+   "text": "if not font_name:"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 73,
+   "text": "face = pdfmetrics.getFont(font_name).face"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 80,
+   "text": "def text_width_mm(text: str, size_mm: float, font_name: str | None) -> float:"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 84,
+   "text": "measured = text_width_mm_measured(text, size_mm, font_name)"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 91,
+   "text": "font_name: str | None) -> float | None:"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 94,
+   "text": "if not font_name:"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 98,
+   "text": "return pdfmetrics.stringWidth(text, font_name, size_mm)"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 103,
+   "text": "def cap_height_em(font_path: str | None) -> float:"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 107,
+   "text": "measured = cap_height_em_measured(font_path)"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 112,
+   "text": "def cap_height_em_measured(font_path: str | None) -> float | None:"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 116,
+   "text": "None rather than the constant: 0.72 and NotoSans' true 0.714 differ by"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 120,
+   "text": "if not (font_path and os.path.exists(font_path)):"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 124,
+   "text": "with FTFont(font_path, lazy=True) as font:"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 136,
+   "text": "\"\"\"``{logical role: (font_name, font_path)}`` \u2014 the SAME role\u2192face map"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 144,
+   "text": "Paths come from ``registered_font_path``, so a role's cap height is read"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 151,
+   "text": "_resolve_arabic_font, _resolve_fonts)"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 152,
+   "text": "regular, bold = _resolve_fonts()"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 153,
+   "text": "arabic = _resolve_arabic_font() or regular"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 157,
+   "text": "confirmed = (doc_metadata or {}).get(\"confirmed_font\") or {}"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 159,
+   "text": "if name and register_font(name, confirmed.get(\"path\")):"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 161,
+   "text": "return {role: (n, registered_font_path(n)) for role, n in names.items()}"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 165,
+   "text": "\"\"\"``{role: (font_name, cap_height_em, cap_height_was_measured)}`` for an"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 195,
+   "text": "def resolve_metric_font(doc_metadata: dict | None) -> tuple[str | None,"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 197,
+   "text": "\"\"\"(font_name, font_path) of the face the emitter will actually use for"
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 203,
+   "text": "__all__ = [\"register_font\", \"registered_font_path\", \"text_width_mm\","
+  },
+  {
+   "file": "apps/ire/text_metrics.py",
+   "line": 207,
+   "text": "\"resolve_metric_font\"]"
+  },
+  {
+   "file": "apps/ire/vq2_vectorize.py",
+   "line": 180,
+   "text": "\"\"\"Indices where the contour turns sharply \u2014 serif tips and stem"
+  },
+  {
+   "file": "apps/ire/vq2_vectorize.py",
+   "line": 323,
+   "text": "inter = (a & b).sum()"
+  },
+  {
+   "file": "apps/ire/vq2_vectorize.py",
+   "line": 325,
+   "text": "return float(inter) / float(union) if union else 0.0"
+  },
+  {
+   "file": "apps/ire/concept_fidelity.py",
+   "line": 300,
+   "text": "# licensed face \u2014 the NotoSans placeholder cannot express it"
+  },
+  {
+   "file": "apps/ire/concept_fidelity.py",
+   "line": 302,
+   "text": "and not spec.get(\"confirmed_font\"):"
+  },
+  {
+   "file": "apps/ire/concept_fidelity.py",
+   "line": 304,
+   "text": "\"FONT_CONFIRMATION_REQUIRED: the selected concept uses tall \""
+  },
+  {
+   "file": "apps/ire/container_separations.py",
+   "line": 210,
+   "text": "method or separation invalidates it (timestamps excluded).\"\"\""
+  },
+  {
+   "file": "apps/ire/vq2_glyph_pen.py",
+   "line": 14,
+   "text": "OPERATION_DROPPED = \"VQ2_FONT_OUTLINE_OPERATION_DROPPED\""
+  },
+  {
+   "file": "apps/ire/vq2_glyph_pen.py",
+   "line": 15,
+   "text": "COMPONENT_FAILED = \"VQ2_FONT_COMPONENT_DECOMPOSITION_FAILED\""
+  },
+  {
+   "file": "apps/ire/handoff/package.py",
+   "line": 35,
+   "text": "HANDOFF_FONT_MISSING = \"HANDOFF_FONT_MISSING\""
+  },
+  {
+   "file": "apps/ire/handoff/package.py",
+   "line": 89,
+   "text": "\"font_policy\": (\"fonts are REFERENCES to expected installed faces; \""
+  },
+  {
+   "file": "apps/ire/handoff/package.py",
+   "line": 223,
+   "text": "if illustrator_summary.get(\"status\") == \"ILLUSTRATOR_FONT_MISSING\":"
+  },
+  {
+   "file": "apps/ire/handoff/package.py",
+   "line": 225,
+   "text": "HANDOFF_FONT_MISSING + \": \""
+  },
+  {
+   "file": "apps/ire/handoff/graph_schema.py",
+   "line": 13,
+   "text": "unrelated task data, volatile timestamps."
+  },
+  {
+   "file": "apps/ire/handoff/graph_schema.py",
+   "line": 54,
+   "text": "\"08_REGULATORY_COPY\","
+  },
+  {
+   "file": "apps/ire/handoff/graph_schema.py",
+   "line": 180,
+   "text": "confirmed_font = metadata.get(\"confirmed_font\") or {}"
+  },
+  {
+   "file": "apps/ire/handoff/graph_schema.py",
+   "line": 216,
+   "text": "font_role=node.font,"
+  },
+  {
+   "file": "apps/ire/handoff/graph_schema.py",
+   "line": 217,
+   "text": "font_postscript=(confirmed_font.get(\"name\")"
+  },
+  {
+   "file": "apps/ire/handoff/graph_schema.py",
+   "line": 219,
+   "text": "and confirmed_font.get(\"name\")"
+  },
+  {
+   "file": "apps/ire/handoff/graph_schema.py",
+   "line": 220,
+   "text": "else \"NotoSans-Regular\""
+  },
+  {
+   "file": "apps/ire/handoff/graph_schema.py",
+   "line": 222,
+   "text": "else \"NotoSans-Bold\"),"
+  },
+  {
+   "file": "apps/ire/handoff/graph_schema.py",
+   "line": 231,
+   "text": "base.update(symbology=node.symbology, x=_r(node.x), y=_r(node.y))"
+  },
+  {
+   "file": "apps/ire/handoff/graph_schema.py",
+   "line": 235,
+   "text": "note=\"trilingual regulatory sticker \u2014 rendered by \""
+  },
+  {
+   "file": "apps/ire/handoff/graph_schema.py",
+   "line": 316,
+   "text": "_emit(child, \"08_REGULATORY_COPY\", \"BACK\","
+  },
+  {
+   "file": "apps/ire/handoff/graph_schema.py",
+   "line": 317,
+   "text": "[\"regulatory-sticker\"])"
+  },
+  {
+   "file": "apps/ire/handoff/graph_schema.py",
+   "line": 363,
+   "text": "\"fonts\": sorted({record[\"font_postscript\"]"
+  },
+  {
+   "file": "apps/ire/handoff/parity.py",
+   "line": 19,
+   "text": "HANDOFF_FONT_UNAVAILABLE = \"HANDOFF_FONT_UNAVAILABLE\""
+  },
+  {
+   "file": "apps/ire/handoff/parity.py",
+   "line": 64,
+   "text": "if summary.get(\"status\") == HANDOFF_FONT_UNAVAILABLE:"
+  },
+  {
+   "file": "apps/ire/handoff/parity.py",
+   "line": 66,
+   "text": "report[\"status\"] = HANDOFF_FONT_UNAVAILABLE"
+  },
+  {
+   "file": "apps/ire/handoff/parity.py",
+   "line": 67,
+   "text": "report[\"missing_fonts\"] = summary.get(\"missingFonts\", [])"
+  },
+  {
+   "file": "apps/ire/handoff/parity.py",
+   "line": 68,
+   "text": "report[\"codes\"] = [HANDOFF_FONT_UNAVAILABLE]"
+  },
+  {
+   "file": "apps/ire/handoff/parity.py",
+   "line": 161,
+   "text": "__all__ = [\"run_parity\", \"measure_exported_pdf\", \"HANDOFF_FONT_UNAVAILABLE\"]"
+  },
+  {
+   "file": "apps/ire/handoff/container_adapter.py",
+   "line": 117,
+   "text": "fonts_rec = spec.get(\"container_font_authority/1.0\") or {}"
+  },
+  {
+   "file": "apps/ire/handoff/container_adapter.py",
+   "line": 123,
+   "text": "font_role=node.font,"
+  },
+  {
+   "file": "apps/ire/handoff/container_adapter.py",
+   "line": 124,
+   "text": "font_postscript=face.get(\"postscript_name\")"
+  },
+  {
+   "file": "apps/ire/handoff/container_adapter.py",
+   "line": 125,
+   "text": "or (\"NotoSans-Bold\" if node.font == \"bold\""
+  },
+  {
+   "file": "apps/ire/handoff/container_adapter.py",
+   "line": 126,
+   "text": "else \"NotoSans-Regular\"),"
+  },
+  {
+   "file": "apps/ire/handoff/container_adapter.py",
+   "line": 314,
+   "text": "fonts_rec = spec.get(\"container_font_authority/1.0\") or {}"
+  },
+  {
+   "file": "apps/ire/handoff/container_adapter.py",
+   "line": 317,
+   "text": "or {\"NotoSans-Regular\", \"NotoSans-Bold\"})"
+  },
+  {
+   "file": "apps/ire/handoff/container_adapter.py",
+   "line": 484,
+   "text": "\"font_authority\": _bounded_font_authority(spec),"
+  },
+  {
+   "file": "apps/ire/handoff/container_adapter.py",
+   "line": 485,
+   "text": "\"font_policy\": \"font references only \u2014 no binaries ship\","
+  },
+  {
+   "file": "apps/ire/handoff/container_adapter.py",
+   "line": 538,
+   "text": "def _bounded_font_authority(spec: dict) -> list[dict]:"
+  },
+  {
+   "file": "apps/ire/handoff/container_adapter.py",
+   "line": 539,
+   "text": "faces = (spec.get(\"container_font_authority/1.0\") or {}).get(\"faces\") or []"
+  },
+  {
+   "file": "apps/ire/handoff/jsx_emitter.py",
+   "line": 8,
+   "text": "text in the exact requested faces (missing face \u2192 ILLUSTRATOR_FONT_MISSING,"
+  },
+  {
+   "file": "apps/ire/handoff/jsx_emitter.py",
+   "line": 49,
+   "text": "// document exists. Missing \u2192 abort with HANDOFF_FONT_UNAVAILABLE; no"
+  },
+  {
+   "file": "apps/ire/handoff/jsx_emitter.py",
+   "line": 66,
+   "text": "'{\"status\":\"HANDOFF_FONT_UNAVAILABLE\",\"missingFonts\":['"
+  },
+  {
+   "file": "apps/ire/handoff/jsx_emitter.py",
+   "line": 323,
+   "text": "attrs.textFont = app.textFonts.getByName(obj.font_postscript);"
+  },
+  {
+   "file": "apps/ire/handoff/jsx_emitter.py",
+   "line": 325,
+   "text": "report.missingFonts.push(obj.font_postscript);"
+  },
+  {
+   "file": "apps/ire/handoff/jsx_emitter.py",
+   "line": 367,
+   "text": "note.contents = \"[regulatory sticker zone \" + obj.w + \"x\""
+  },
+  {
+   "file": "apps/ire/emitters/pdf_ai.py",
+   "line": 59,
+   "text": "_resolve_arabic_font,"
+  },
+  {
+   "file": "apps/ire/emitters/pdf_ai.py",
+   "line": 60,
+   "text": "_resolve_fonts,"
+  },
+  {
+   "file": "apps/ire/emitters/pdf_ai.py",
+   "line": 63,
+   "text": "f_reg, f_bold = _resolve_fonts()"
+  },
+  {
+   "file": "apps/ire/emitters/pdf_ai.py",
+   "line": 64,
+   "text": "f_ar = _resolve_arabic_font()"
+  },
+  {
+   "file": "apps/ire/emitters/pdf_ai.py",
+   "line": 70,
+   "text": "confirmed = (doc.metadata or {}).get(\"confirmed_font\") or {}"
+  },
+  {
+   "file": "apps/ire/emitters/pdf_ai.py",
+   "line": 71,
+   "text": "font_path = confirmed.get(\"path\")"
+  },
+  {
+   "file": "apps/ire/emitters/pdf_ai.py",
+   "line": 72,
+   "text": "font_name = confirmed.get(\"name\")"
+  },
+  {
+   "file": "apps/ire/emitters/pdf_ai.py",
+   "line": 73,
+   "text": "if font_name and font_path and os.path.exists(font_path):"
+  },
+  {
+   "file": "apps/ire/emitters/pdf_ai.py",
+   "line": 75,
+   "text": "if _register_ttf(font_name, font_path):"
+  },
+  {
+   "file": "apps/ire/emitters/pdf_ai.py",
+   "line": 76,
+   "text": "fonts[\"bold\"] = font_name"
+  },
+  {
+   "file": "apps/ire/emitters/pdf_ai.py",
+   "line": 201,
+   "text": "c.setFont(face, node.size_pt)"
+  },
+  {
+   "file": "apps/ire/emitters/pdf_ai.py",
+   "line": 229,
+   "text": "if node.symbology == \"ean13\":"
+  },
+  {
+   "file": "apps/dashboard/regeneration_views.py",
+   "line": 235,
+   "text": "\"timestamp\": timezone.now(),"
+  },
+  {
+   "file": "apps/accounts/chain_verification.py",
+   "line": 183,
+   "text": "\"evaluation_timestamp\": str,"
+  },
+  {
+   "file": "apps/accounts/chain_verification.py",
+   "line": 215,
+   "text": "evaluated_at = parse_datetime(snap[\"evaluation_timestamp\"])"
+  },
+  {
+   "file": "apps/accounts/chain_verification.py",
+   "line": 217,
+   "text": "return \"authorization snapshot evaluation_timestamp is not timezone-aware ISO-8601\""
+  },
+  {
+   "file": "apps/accounts/chain_verification.py",
+   "line": 219,
+   "text": "return \"authorization snapshot evaluation_timestamp is after the event timestamp\""
+  },
+  {
+   "file": "apps/accounts/chain_verification.py",
+   "line": 281,
+   "text": "\"snapshot at the event timestamp \u2014 investigate a possible \""
+  },
+  {
+   "file": "apps/accounts/models.py",
+   "line": 500,
+   "text": "# the persisted timestamp is exactly the signed one."
+  },
+  {
+   "file": "apps/accounts/authorization.py",
+   "line": 63,
+   "text": "\"evaluation_timestamp\","
+  },
+  {
+   "file": "apps/accounts/authorization.py",
+   "line": 298,
+   "text": "\"evaluation_timestamp\": at.isoformat(),"
+  },
+  {
+   "file": "apps/accounts/attestation.py",
+   "line": 315,
+   "text": "\"\"\"Was the actor's `role_used` genuinely valid AT the event's signed timestamp? Uses the"
+  },
+  {
+   "file": "apps/accounts/attestation.py",
+   "line": 348,
+   "text": "reasons.append(\"no role assignment was valid at the event timestamp\")"
+  },
+  {
+   "file": "apps/accounts/decision_chain.py",
+   "line": 5,
+   "text": "resolves idempotency, allocates the next sequence, generates the signed timestamp once,"
+  },
+  {
+   "file": "apps/accounts/decision_chain.py",
+   "line": 251,
+   "text": "timestamp), derives `role_used` deterministically from policy, and writes that derived"
+  },
+  {
+   "file": "apps/accounts/decision_chain.py",
+   "line": 279,
+   "text": "# 6) idempotency on event_id, comparing CALLER INTENT (sequence/timestamp/role are not"
+  },
+  {
+   "file": "apps/accounts/decision_chain.py",
+   "line": 295,
+   "text": "# 7-8) one UTC timestamp, used for the authorization decision AND the signed field."
+  },
+  {
+   "file": "apps/accounts/decision_chain.py",
+   "line": 490,
+   "text": "raise ChainError(\"grant window timestamps are invalid\")"
+  },
+  {
+   "file": "apps/accounts/reaffirmation.py",
+   "line": 340,
+   "text": "\"timestamp\": closure.created_at.isoformat(),"
+  },
+  {
+   "file": "apps/accounts/reaffirmation.py",
+   "line": 351,
+   "text": "\"timestamp\": rep.created_at.isoformat(),"
+  },
+  {
+   "file": "apps/accounts/bootstrap_verification.py",
+   "line": 105,
+   "text": "return [\"ceremony timestamps are not parseable\"]"
+  },
+  {
+   "file": "apps/accounts/bootstrap_verification.py",
+   "line": 290,
+   "text": "problems.append(\"grant window timestamps are invalid\")"
+  },
+  {
+   "file": "apps/accounts/security/canonical.py",
+   "line": 21,
+   "text": "* **Datetimes are normalised to UTC ISO-8601 with an explicit offset.** A naive datetime"
+  },
+  {
+   "file": "apps/accounts/security/canonical.py",
+   "line": 91,
+   "text": "\"created_at_db\": \"auto_now_add would REPLACE the signed timestamp \u2014 the append \""
+  },
+  {
+   "file": "apps/accounts/security/canonical.py",
+   "line": 185,
+   "text": "the signed timestamp would then differ from the persisted one \u2014 a chain that fails"
+  },
+  {
+   "file": "apps/accounts/security/canonical.py",
+   "line": 276,
+   "text": "anchor (a transparency log, an external timestamp, write-once storage) and is"
+  },
+  {
+   "file": "apps/dielines/exporters/folded_diagnostic.py",
+   "line": 164,
+   "text": "# body panels (fills ordered far -> near for painter overlap)"
+  },
+  {
+   "file": "apps/dielines/exporters/text_intl.py",
+   "line": 47,
+   "text": "def wrap_ar(text: str, font_name: str, font_size: float, max_width: float,"
+  },
+  {
+   "file": "apps/dielines/exporters/text_intl.py",
+   "line": 48,
+   "text": "latin_font: str | None = None) -> list[str]:"
+  },
+  {
+   "file": "apps/dielines/exporters/text_intl.py",
+   "line": 53,
+   "text": "line, preserving the correct visual order line by line. ``latin_font``"
+  },
+  {
+   "file": "apps/dielines/exporters/text_intl.py",
+   "line": 71,
+   "text": "if not latin_font:"
+  },
+  {
+   "file": "apps/dielines/exporters/text_intl.py",
+   "line": 72,
+   "text": "return stringWidth(shaped, font_name, font_size)"
+  },
+  {
+   "file": "apps/dielines/exporters/text_intl.py",
+   "line": 74,
+   "text": "stringWidth(run, font_name if is_ar else latin_font, font_size)"
+  },
+  {
+   "file": "apps/dielines/exporters/text_intl.py",
+   "line": 98,
+   "text": "def has_ar_support(arabic_font: str | None) -> bool:"
+  },
+  {
+   "file": "apps/dielines/exporters/text_intl.py",
+   "line": 100,
+   "text": "return bool(arabic_font) and _libs() is not None"
+  },
+  {
+   "file": "apps/dielines/exporters/text_intl.py",
+   "line": 112,
+   "text": "Noto Naskh Arabic carries no Latin glyphs, so mixed lines (INCI names,"
+  },
+  {
+   "file": "apps/dielines/exporters/ai_exporter.py",
+   "line": 76,
+   "text": "Modern Illustrator .ai files are PDF-compatible internally. CairoSVG is"
+  },
+  {
+   "file": "apps/dielines/exporters/ai_exporter.py",
+   "line": 77,
+   "text": "used when native Cairo is available; ReportLab/Svglib is the local fallback"
+  },
+  {
+   "file": "apps/dielines/exporters/ai_exporter.py",
+   "line": 78,
+   "text": "for environments where the Python package is installed but libcairo is not."
+  },
+  {
+   "file": "apps/dielines/exporters/ai_exporter.py",
+   "line": 85,
+   "text": "import cairosvg"
+  },
+  {
+   "file": "apps/dielines/exporters/ai_exporter.py",
+   "line": 87,
+   "text": "cairosvg.svg2pdf("
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 35,
+   "text": "_resolve_fonts,"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 310,
+   "text": "font_r, font_b = _resolve_fonts()"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 315,
+   "text": "_page_preview(c, coords, checklist, font_r, font_b)"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 317,
+   "text": "_page_reconciliation(c, checklist, font_r, font_b)"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 319,
+   "text": "_page_checklist(c, checklist, font_r, font_b)"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 327,
+   "text": "def _page_preview(c, coords, checklist, font_r, font_b):"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 329,
+   "text": "c.setFont(font_b, 13)"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 332,
+   "text": "c.setFont(font_r, 8.5)"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 376,
+   "text": "c.setFont(font_b, 8)"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 381,
+   "text": "c.setFont(font_r, 7)"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 383,
+   "text": "c.setFont(font_b, 8)"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 390,
+   "text": "c.setFont(font_r, 7)"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 416,
+   "text": "def _page_reconciliation(c, checklist, font_r, font_b):"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 420,
+   "text": "c.setFont(font_b, 13)"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 424,
+   "text": "c.setFont(font_r, 8.5)"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 433,
+   "text": "c.setFont(font_b, 8.5)"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 438,
+   "text": "c.setFont(font_r, 8.5)"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 447,
+   "text": "c.setFont(font_b, 9)"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 451,
+   "text": "c.setFont(font_r, 8)"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 459,
+   "text": "c.setFont(font_b, 9)"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 462,
+   "text": "c.setFont(font_r, 8)"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 469,
+   "text": "c.setFont(font_b, 9)"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 472,
+   "text": "c.setFont(font_r, 8)"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 484,
+   "text": "def _page_checklist(c, checklist, font_r, font_b):"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 487,
+   "text": "c.setFont(font_b, 13)"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 492,
+   "text": "c.setFont(font_b, 9)"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 496,
+   "text": "c.setFont(font_r, 8)"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 503,
+   "text": "c.setFont(font_b, 9)"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 506,
+   "text": "c.setFont(font_r, 8)"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 514,
+   "text": "c.setFont(font_b, 9)"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 517,
+   "text": "c.setFont(font_r, 8)"
+  },
+  {
+   "file": "apps/dielines/exporters/structural_comparison.py",
+   "line": 525,
+   "text": "c.setFont(font_b, 10)"
+  },
+  {
+   "file": "apps/dielines/exporters/physical_test_pdf.py",
+   "line": 11,
+   "text": "fit; the calibration square proves at the printer that no \"fit to page\""
+  },
+  {
+   "file": "apps/dielines/exporters/physical_test_pdf.py",
+   "line": 71,
+   "text": "c.setFont(\"Helvetica-Bold\", 11)"
+  },
+  {
+   "file": "apps/dielines/exporters/physical_test_pdf.py",
+   "line": 116,
+   "text": "c.setFont(\"Helvetica\", 8)"
+  },
+  {
+   "file": "apps/dielines/exporters/physical_test_pdf.py",
+   "line": 120,
+   "text": "c.setFont(\"Helvetica\", 6)"
+  },
+  {
+   "file": "apps/dielines/exporters/physical_test_pdf.py",
+   "line": 131,
+   "text": "c.setFont(\"Helvetica-Bold\" if bold else \"Helvetica\", size)"
+  },
+  {
+   "file": "apps/dielines/exporters/physical_test_pdf.py",
+   "line": 185,
+   "text": "c.setFont(\"Helvetica\", 7)"
+  },
+  {
+   "file": "apps/dielines/exporters/svg_validator.py",
+   "line": 181,
+   "text": "# guaranteed print-shop rejection; the explicit Helvetica standard-14"
+  },
+  {
+   "file": "apps/dielines/exporters/info_panel.py",
+   "line": 1,
+   "text": "\"\"\"Back-face regulatory STICKER (2026-07-07) \u2014 shared by the faithful .ai,"
+  },
+  {
+   "file": "apps/dielines/exporters/info_panel.py",
+   "line": 26,
+   "text": "\"barcode_ean\", \"qr_url\", \"regulatory_text\","
+  },
+  {
+   "file": "apps/dielines/exporters/info_panel.py",
+   "line": 78,
+   "text": "if (info.get(\"regulatory_text\") or \"\").strip():"
+  },
+  {
+   "file": "apps/dielines/exporters/info_panel.py",
+   "line": 79,
+   "text": "blocks.append({\"field\": \"regulatory_text\", \"lang\": \"en\","
+  },
+  {
+   "file": "apps/dielines/exporters/info_panel.py",
+   "line": 80,
+   "text": "\"label\": \"\", \"text\": info[\"regulatory_text\"].strip()})"
+  },
+  {
+   "file": "apps/dielines/exporters/info_panel.py",
+   "line": 89,
+   "text": "return (wrap_ar(body, f_ar, size, max_w, latin_font=f_reg)"
+  },
+  {
+   "file": "apps/dielines/exporters/info_panel.py",
+   "line": 110,
+   "text": "\"\"\"(font_size, blocks) that fit avail_h; truncates by priority if needed.\"\"\""
+  },
+  {
+   "file": "apps/dielines/exporters/info_panel.py",
+   "line": 140,
+   "text": "from apps.dielines.exporters.production_pdf import _resolve_arabic_font"
+  },
+  {
+   "file": "apps/dielines/exporters/info_panel.py",
+   "line": 143,
+   "text": "f_ar = _resolve_arabic_font()"
+  },
+  {
+   "file": "apps/dielines/exporters/info_panel.py",
+   "line": 177,
+   "text": "c.setFont(f_bold, tsize)"
+  },
+  {
+   "file": "apps/dielines/exporters/info_panel.py",
+   "line": 180,
+   "text": "c.setFont(f_ar, tsize)"
+  },
+  {
+   "file": "apps/dielines/exporters/info_panel.py",
+   "line": 220,
+   "text": "c.setFont(f_ar if is_ar else f_reg, size)"
+  },
+  {
+   "file": "apps/dielines/exporters/info_panel.py",
+   "line": 230,
+   "text": "c.setFont(f_bold, size)"
+  },
+  {
+   "file": "apps/dielines/exporters/info_panel.py",
+   "line": 233,
+   "text": "c.setFont(f_reg, size)"
+  },
+  {
+   "file": "apps/dielines/exporters/info_panel.py",
+   "line": 236,
+   "text": "c.setFont(f_reg, size)"
+  },
+  {
+   "file": "apps/dielines/exporters/info_panel.py",
+   "line": 259,
+   "text": "c.setFont(f_bold, msize)"
+  },
+  {
+   "file": "apps/dielines/exporters/info_panel.py",
+   "line": 337,
+   "text": "f'<text x=\"{left:.2f}\" y=\"{y:.2f}\" font-family=\"Helvetica,Arial\" '"
+  },
+  {
+   "file": "apps/dielines/exporters/info_panel.py",
+   "line": 343,
+   "text": "f'text-anchor=\"end\" font-family=\"Noto Naskh Arabic,Arial\" '"
+  },
+  {
+   "file": "apps/dielines/exporters/info_panel.py",
+   "line": 350,
+   "text": "f'font-family=\"Helvetica,Arial\" font-size=\"{size * 1.25:.2f}\" '"
+  },
+  {
+   "file": "apps/dielines/exporters/info_panel.py",
+   "line": 382,
+   "text": "f'text-anchor=\"end\" font-family=\"Noto Naskh Arabic,Arial\" '"
+  },
+  {
+   "file": "apps/dielines/exporters/info_panel.py",
+   "line": 389,
+   "text": "f'font-family=\"Helvetica,Arial\" font-size=\"{size:.2f}\" '"
+  },
+  {
+   "file": "apps/dielines/exporters/info_panel.py",
+   "line": 401,
+   "text": "f'<text x=\"{left + 1:.2f}\" y=\"{by + 5:.2f}\" font-family=\"Helvetica\" '"
+  },
+  {
+   "file": "apps/dielines/exporters/info_panel.py",
+   "line": 410,
+   "text": "f'font-family=\"Helvetica\" font-size=\"{size * 0.9:.2f}\" '"
+  },
+  {
+   "file": "apps/dielines/exporters/info_panel.py",
+   "line": 419,
+   "text": "f'<text x=\"{left:.2f}\" y=\"{by + 11:.2f}\" font-family=\"Helvetica\" '"
+  },
+  {
+   "file": "apps/dielines/exporters/design_preview.py",
+   "line": 121,
+   "text": "# Info panel (2026-07-06): when regulatory data exists, the back face"
+  },
+  {
+   "file": "apps/dielines/exporters/design_preview.py",
+   "line": 226,
+   "text": "f'font-family=\"Helvetica,Arial,sans-serif\" font-size=\"3\" '"
+  },
+  {
+   "file": "apps/dielines/exporters/design_preview.py",
+   "line": 264,
+   "text": "from apps.dielines.exporters.production_pdf import _resolve_fonts"
+  },
+  {
+   "file": "apps/dielines/exporters/design_preview.py",
+   "line": 266,
+   "text": "f_reg, f_bold = _resolve_fonts()"
+  },
+  {
+   "file": "apps/dielines/exporters/design_preview.py",
+   "line": 299,
+   "text": "# Info panel (2026-07-06): when regulatory data exists, the BACK face"
+  },
+  {
+   "file": "apps/dielines/exporters/design_preview.py",
+   "line": 310,
+   "text": "# near-white ground for legibility of small regulatory type"
+  },
+  {
+   "file": "apps/dielines/exporters/design_preview.py",
+   "line": 400,
+   "text": "c.setFont(f_bold, max(8.0, p.width * mm * 0.075))"
+  },
+  {
+   "file": "apps/dielines/exporters/design_preview.py",
+   "line": 404,
+   "text": "c.setFont(f_reg, max(5.5, p.width * mm * 0.045))"
+  },
+  {
+   "file": "apps/dielines/exporters/design_preview.py",
+   "line": 408,
+   "text": "# --- component 4b: regulatory info panel on the back face ---------------"
+  },
+  {
+   "file": "apps/dielines/exporters/design_preview.py",
+   "line": 416,
+   "text": "c.setFont(f_reg, 7)"
+  },
+  {
+   "file": "apps/dielines/exporters/design_preview.py",
+   "line": 435,
+   "text": "the regulatory info panel (live text + vector EAN-13 + QR) and the"
+  },
+  {
+   "file": "apps/dielines/exporters/design_preview.py",
+   "line": 447,
+   "text": "from apps.dielines.exporters.production_pdf import _resolve_fonts"
+  },
+  {
+   "file": "apps/dielines/exporters/design_preview.py",
+   "line": 479,
+   "text": "# Info panel on the back face when regulatory content exists."
+  },
+  {
+   "file": "apps/dielines/exporters/design_preview.py",
+   "line": 542,
+   "text": "f_reg, f_bold = _resolve_fonts()"
+  },
+  {
+   "file": "apps/dielines/exporters/design_preview.py",
+   "line": 552,
+   "text": "c.setFont(\"Helvetica\", 7)"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 12,
+   "text": "svglib/cairo path. Text is welcome here: it is a production document, not the"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 24,
+   "text": "- Text is set in an embedded TrueType face (DejaVu Sans) when available so the"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 26,
+   "text": "on this machine we fall back to the built-in Helvetica (one of the 14"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 81,
+   "text": "# 2026-07-07: repo-bundled Noto fonts (static/fonts/, OFL) are preferred so"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 83,
+   "text": "# for the trilingual sticker. DejaVu (Linux system TTF) is the next fallback,"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 84,
+   "text": "# then the built-in Helvetica (standard-14) \u2014 graceful degradation, never a"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 86,
+   "text": "_DEJAVU_DIR = \"/usr/share/fonts/truetype/dejavu\""
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 87,
+   "text": "_FONT_REGULAR_TTF = os.path.join(_DEJAVU_DIR, \"DejaVuSans.ttf\")"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 88,
+   "text": "_FONT_BOLD_TTF = os.path.join(_DEJAVU_DIR, \"DejaVuSans-Bold.ttf\")"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 89,
+   "text": "_fonts_cache: tuple[str, str] | None = None"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 90,
+   "text": "_ar_font_cache: str | None | bool = False   # False = unresolved sentinel"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 93,
+   "text": "def _repo_font(filename: str) -> str:"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 103,
+   "text": "pdfmetrics.registerFont(TTFont(name, path))"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 110,
+   "text": "def _resolve_fonts() -> tuple[str, str]:"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 112,
+   "text": "global _fonts_cache"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 113,
+   "text": "if _fonts_cache is not None:"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 114,
+   "text": "return _fonts_cache"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 115,
+   "text": "if (_register_ttf(\"NotoSans\", _repo_font(\"NotoSans-Regular.ttf\"))"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 116,
+   "text": "and _register_ttf(\"NotoSans-Bold\", _repo_font(\"NotoSans-Bold.ttf\"))):"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 117,
+   "text": "_fonts_cache = (\"NotoSans\", \"NotoSans-Bold\")"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 118,
+   "text": "elif _register_ttf(\"DejaVuSans\", _FONT_REGULAR_TTF):"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 119,
+   "text": "bold = (\"DejaVuSans-Bold\""
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 120,
+   "text": "if _register_ttf(\"DejaVuSans-Bold\", _FONT_BOLD_TTF) else \"DejaVuSans\")"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 121,
+   "text": "_fonts_cache = (\"DejaVuSans\", bold)"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 123,
+   "text": "_fonts_cache = (\"Helvetica\", \"Helvetica-Bold\")"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 124,
+   "text": "return _fonts_cache"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 127,
+   "text": "def _resolve_arabic_font() -> str | None:"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 129,
+   "text": "global _ar_font_cache"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 130,
+   "text": "if _ar_font_cache is not False:"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 131,
+   "text": "return _ar_font_cache"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 132,
+   "text": "_ar_font_cache = ("
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 133,
+   "text": "\"NotoNaskhArabic\""
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 134,
+   "text": "if _register_ttf(\"NotoNaskhArabic\", _repo_font(\"NotoNaskhArabic-Regular.ttf\"))"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 137,
+   "text": "return _ar_font_cache"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 343,
+   "text": "f_reg, f_bold = _resolve_fonts()"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 470,
+   "text": "f_reg, _ = _resolve_fonts()"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 484,
+   "text": "c.setFont(f_reg, 7.5)"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 510,
+   "text": "f_reg, f_bold = _resolve_fonts()"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 531,
+   "text": "c.setFont(f_bold, 10)"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 533,
+   "text": "c.setFont(f_reg, 7.5)"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 551,
+   "text": "c.setFont(f_bold, 8)"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 557,
+   "text": "c.setFont(f_reg, 7.5)"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 562,
+   "text": "c.setFont(f_bold, 8)"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 564,
+   "text": "c.setFont(f_reg, 7.5)"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 590,
+   "text": "f_reg, _ = _resolve_fonts()"
+  },
+  {
+   "file": "apps/dielines/exporters/production_pdf.py",
+   "line": 597,
+   "text": "c.setFont(f_reg, 6.5)"
+  },
+  {
+   "file": "apps/dielines/exporters/artwork_layers.py",
+   "line": 8,
+   "text": "back panel         -> \"sticker\" when regulatory info exists, else \"motif\""
+  },
+  {
+   "file": "apps/dielines/exporters/output_intent.py",
+   "line": 47,
+   "text": "b\"prtr\": \"output (printer)\", b\"mntr\": \"display (monitor)\","
+  },
+  {
+   "file": "apps/dielines/exporters/output_intent.py",
+   "line": 51,
+   "text": "#: Only an output (printer) profile describes a press condition."
+  },
+  {
+   "file": "apps/dielines/exporters/output_intent.py",
+   "line": 180,
+   "text": "\"production intent needs an output (printer) profile\")"
+  },
+  {
+   "file": "apps/dielines/management/commands/check_icc_profile.py",
+   "line": 3,
+   "text": "manage.py check_icc_profile /path/to/printer-supplied.icc"
+  },
+  {
+   "file": "apps/dielines/management/commands/check_icc_profile.py",
+   "line": 28,
+   "text": "parser.add_argument(\"path\", help=\"path to the printer-supplied .icc\")"
+  },
+  {
+   "file": "apps/dielines/validators/production_readiness.py",
+   "line": 20,
+   "text": "PLACEHOLDER_REGULATORY_INFO   placeholder/empty regulatory panel copy"
+  },
+  {
+   "file": "apps/dielines/validators/production_readiness.py",
+   "line": 43,
+   "text": "# Regulatory fields that must carry real copy on a cosmetic carton."
+  },
+  {
+   "file": "apps/dielines/validators/production_readiness.py",
+   "line": 47,
+   "text": "_OPTIONAL_INFO_FIELDS = (\"description\", \"ingredients\", \"regulatory_text\")"
+  },
+  {
+   "file": "apps/dielines/validators/production_readiness.py",
+   "line": 185,
+   "text": "# 9. Placeholder regulatory info ------------------------------------------"
+  },
+  {
+   "file": "apps/dielines/validators/production_readiness.py",
+   "line": 186,
+   "text": "r.checked.append(\"regulatory_info\")"
+  },
+  {
+   "file": "apps/dielines/validators/production_readiness.py",
+   "line": 191,
+   "text": "r.fail(\"PLACEHOLDER_REGULATORY_INFO\","
+  },
+  {
+   "file": "apps/dielines/validators/production_readiness.py",
+   "line": 192,
+   "text": "f\"regulatory field {fld!r} is empty or placeholder text\")"
+  },
+  {
+   "file": "apps/dielines/validators/production_readiness.py",
+   "line": 196,
+   "text": "r.fail(\"PLACEHOLDER_REGULATORY_INFO\","
+  },
+  {
+   "file": "apps/dielines/validators/production_readiness.py",
+   "line": 197,
+   "text": "f\"regulatory field {fld!r} carries placeholder text\")"
+  },
+  {
+   "file": "apps/dielines/validators/production.py",
+   "line": 26,
+   "text": "MISSING_OUTPUT_INTENT \u00b7 INVALID_FONT_EMBEDDING \u00b7 PRODUCTION_PDF_MISSING"
+  },
+  {
+   "file": "apps/dielines/validators/production.py",
+   "line": 386,
+   "text": "fonts = [f for page in doc for f in page.get_fonts(full=True)]"
+  },
+  {
+   "file": "apps/dielines/validators/production.py",
+   "line": 426,
+   "text": "r.checked.append(\"font_embedding\")"
+  },
+  {
+   "file": "apps/dielines/validators/production.py",
+   "line": 431,
+   "text": "r.fail(CATEGORY_OUTPUT, \"INVALID_FONT_EMBEDDING\","
+  },
+  {
+   "file": "apps/dielines/geometry/engine.py",
+   "line": 177,
+   "text": "there) and up to tuck_inset at the very tip. y(t) is monotonic for"
+  },
+  {
+   "file": "apps/dielines/qualification/runner.py",
+   "line": 19,
+   "text": "#: invariants, folded simulator and collision checks read THIS, never"
+  },
+  {
+   "file": "apps/dielines/qualification/domain.py",
+   "line": 10,
+   "text": "Symbols: W/D/H = inner width/depth/height, t = board, G = glue width,"
+  },
+  {
+   "file": "apps/dielines/qualification/closure.py",
+   "line": 4,
+   "text": "the folded simulator and the collision checks read THESE declarations"
+  },
+  {
+   "file": "apps/dielines/qualification/closure.py",
+   "line": 62,
+   "text": "\"\"\"How the folded simulator should articulate this closure."
+  },
+  {
+   "file": "apps/dielines/services/export_service.py",
+   "line": 288,
+   "text": "\"font_note\": doc.metadata.get(\"font_note\"),"
+  }
+ ],
+ "static_hits": [
+  {
+   "file": "static/css/intelligence.css",
+   "line": 18,
+   "text": "code { display: block; font-family: ui-monospace, SFMono-Regular, monospace; font-size: 12px; overflow-wrap: anywhere; white-space: pre-wrap; }.hash { color: va"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 26,
+   "text": "font-family: var(--font-serif);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 58,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 83,
+   "text": "font-family: var(--font-serif);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 97,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 109,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 171,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 184,
+   "text": "font-family: var(--font-serif);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 189,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 248,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 271,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 279,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 305,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 334,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 368,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 410,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 418,
+   "text": "font-family: var(--font-serif);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 437,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 444,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 481,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 516,
+   "text": "font-family: var(--font-serif);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 522,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 557,
+   "text": "font-family: var(--font-serif);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 570,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 581,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 586,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 616,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 633,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 654,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 684,
+   "text": "font-family: var(--font-serif);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 695,
+   "text": "font-family: var(--font-serif);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 718,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 746,
+   "text": "font-family: var(--font-serif);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 753,
+   "text": "font-family: var(--font-serif);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 776,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 793,
+   "text": "font-family: var(--font-serif);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 825,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 836,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 863,
+   "text": "font-family: var(--font-serif);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 880,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 945,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 987,
+   "text": "font-family: var(--font-mono); font-size: 10px;"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 998,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 1003,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 1015,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 1026,
+   "text": "font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 1192,
+   "text": "color: var(--rose-gold-light); font-family: var(--font-serif);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 1201,
+   "text": "font-family: inherit;"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 1209,
+   "text": "font-size: 0.62rem; font-family: var(--font-mono);"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 1233,
+   "text": "font-family: var(--font-serif); font-size: 0.95rem;"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 1338,
+   "text": ".authority-table .fname { font-family: monospace; white-space: nowrap;"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 1447,
+   "text": "font-family: inherit;"
+  },
+  {
+   "file": "static/css/dashboard.css",
+   "line": 1872,
+   "text": ".vq-axis-measured { font-family: var(--mono, monospace); font-size: 0.68rem; }"
+  }
+ ]
+}

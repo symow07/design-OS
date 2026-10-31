@@ -1,0 +1,96 @@
+{
+ "row": 8,
+ "ok": true,
+ "result": {
+  "files": [
+   "die.pdf",
+   "die.dxf",
+   "die.cf2",
+   "assembly.pdf"
+  ],
+  "ocgs": [
+   "ARTWORK",
+   "BLEED",
+   "CREASE",
+   "CUT",
+   "DIMENSIONS",
+   "GLUE",
+   "PERF"
+  ],
+  "nest": "{'board': 'E-flute corrugated, 1.5 mm', 'sheets': [{'sheet_mm': [1400, 1000], 'sets': 2, 'parts_placed': 14, 'yield': 0.155, 'turned': False, 'method': \"shelf packing of the parts' bleed rectangles; whole sets only\"}, {'sheet_mm': [1200, 800], 'sets': 1, 'parts_placed': 7, 'yield': 0.113, 'turned': ",
+  "readback_cut_crease": {
+   "CUT": {
+    "vertices": 403,
+    "read_back": 632,
+    "max_mm": 0.0003
+   },
+   "CREASE": {
+    "vertices": 104,
+    "read_back": 104,
+    "max_mm": 0.0002
+   }
+  },
+  "template_same_as_round3": true,
+  "frame": {
+   "size": "1024x1536",
+   "dpi_at_1to1": 59.8
+  },
+  "stand_in_proof": {
+   "registration": {
+    "best_shift_px": [
+     2,
+     3
+    ],
+    "iou_at_zero": 0.9409,
+    "iou_at_best": 0.9641,
+    "search_px": 12,
+    "note": "the painting's own drift before the die was applied again"
+   },
+   "outside": {
+    "pixels": 1285946,
+    "differing_from_template": 0,
+    "zero_offset": true
+   },
+   "pdf": {
+    "CUT": {
+     "vertices": 403,
+     "read_back": 632,
+     "max_mm": 0.0003
+    },
+    "CREASE": {
+     "vertices": 104,
+     "read_back": 104,
+     "max_mm": 0.0002
+    },
+    "ARTWORK": {
+     "box_mm": [
+      4.721,
+      -86.8438,
+      439.8304,
+      565.8201
+     ],
+     "max_mm": 0.0002
+    }
+   }
+  },
+  "continuity_folds": 4
+ },
+ "seconds": 1.2,
+ "files": [
+  "08/die/assembly.pdf",
+  "08/die/die.cf2",
+  "08/die/die.dxf",
+  "08/die/die.pdf",
+  "08/flat/owner.npy",
+  "08/flat/paintings/1/art.png",
+  "08/flat/paintings/1/continuity.json",
+  "08/flat/paintings/1/die-flat.pdf",
+  "08/flat/paintings/1/flat.png",
+  "08/flat/paintings/1/proof.json",
+  "08/flat/paintings/1/view.png",
+  "08/flat/sheet.png",
+  "08/flat/template.json",
+  "08/flat/template.png",
+  "08/stand-in-raw.png"
+ ]
+}

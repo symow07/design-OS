@@ -1,0 +1,33 @@
+{
+  "record_type": "visualizer_input_resolution_validation/1.0",
+  "it5_input_size": [
+    307,
+    709
+  ],
+  "reference_crop_size": [
+    260,
+    430
+  ],
+  "dome_region_height_px_in_input": 27,
+  "requirements": {
+    "closure_crop_min_height_px": 512,
+    "dome_min_height_px": 120
+  },
+  "checks": {
+    "entire_dome_visible": true,
+    "no_top_cropping": true,
+    "closure_crop_at_least_512px_tall": false,
+    "dome_region_at_least_120px_tall": false,
+    "no_aspect_distortion": true,
+    "no_jpeg_compression": true,
+    "no_thumbnail_substitution": true,
+    "dedicated_closure_crop_supplied": false,
+    "overlay_supplied": false,
+    "montage_supplied": false,
+    "deterministic_metrics_supplied": false,
+    "semantic_decision_supplied": false
+  },
+  "finding": "VQ_VISUALIZER_INPUT_RESOLUTION_INSUFFICIENT",
+  "root_cause": "the inspector was sent the FULL assembly render at 307x709 px, in which the dome occupies about 27 px of height \u2014 far below the 120 px floor. No enlarged closure crop, overlay, montage, metrics or semantic decision was supplied, so the payload also under-met the CORR-1 requirement.",
+  "encoder_resizing": "NONE \u2014 image_block_from_file base64-encodes the file bytes unchanged, so the model received exactly these pixels"
+}

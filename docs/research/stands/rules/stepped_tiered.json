@@ -1,0 +1,129 @@
+{
+ "id": "stepped_tiered",
+ "version": "1.0",
+ "label": "Stepped or tiered counter display",
+ "status": "working",
+ "build_order": 2,
+ "one_line": "Rows rise like stairs, so most of each product shows: for tall products and more rows.",
+ "for": "When more of the product must show than a tray's rows allow: tall sets, hero launches.",
+ "suits": {
+  "products": [
+   "bottle",
+   "stick",
+   "tube"
+  ],
+  "counts": [
+   6,
+   60
+  ],
+  "rows": [
+   2,
+   5
+  ]
+ },
+ "panels": [
+  "floor",
+  "front panel",
+  "front cap",
+  "front inner",
+  "back panel",
+  "back cap",
+  "back inner",
+  "left side",
+  "right side",
+  "front left flap",
+  "front right flap",
+  "back left flap",
+  "back right flap",
+  "header front",
+  "header back",
+  "collar leg",
+  "collar tread 1",
+  "collar riser 1"
+ ],
+ "folds": [
+  {
+   "fold": "floor / front",
+   "angle": 90,
+   "kind": "crease"
+  },
+  {
+   "fold": "floor / back",
+   "angle": 90,
+   "kind": "crease"
+  },
+  {
+   "fold": "floor / left",
+   "angle": 90,
+   "kind": "crease"
+  },
+  {
+   "fold": "floor / right",
+   "angle": 90,
+   "kind": "crease"
+  },
+  {
+   "fold": "front / cap",
+   "angle": 90,
+   "kind": "crease"
+  },
+  {
+   "fold": "back / cap",
+   "angle": 90,
+   "kind": "crease"
+  },
+  {
+   "fold": "header fold",
+   "angle": 180,
+   "kind": "half-cut"
+  }
+ ],
+ "locks": [
+  {
+   "kind": "barbed",
+   "what": "the header's two leaves, by barbed tongues through the back wall's rim"
+  },
+  {
+   "kind": "flush",
+   "what": "each inner leaf and stair foot through the floor, level with its underside"
+  },
+  {
+   "kind": "through",
+   "what": "each stair's rear tabs through the back wall's inner leaf"
+  }
+ ],
+ "allowances": {
+  "crease_centres": "outside − one caliper (FEFCO Rec. 101, C1)",
+  "panel_ends": "half a caliper + fit gap short of the surface met",
+  "corner_folds": "one caliper + fit gap, so a flap lies on the panel's inner face"
+ },
+ "limits": {
+  "face_share_of_product": 0.55,
+  "front_lip_mm": 15
+ },
+ "reinforcement": [
+  "as the tray",
+  "side walls cut to the stair, a margin above each deck"
+ ],
+ "glue": "none",
+ "faces_to_shopper": [
+  "header front",
+  "front panel",
+  "the risers (ground only)"
+ ],
+ "failures": [
+  "tier sag",
+  "a stair that racks without its wall locks"
+ ],
+ "codes": "US4582283 folds steps from a tube through a counter floor; no FEFCO code found.",
+ "sources": [
+  "A11",
+  "A19",
+  "D14",
+  "D20",
+  "D21"
+ ],
+ "provisional": [
+  "Tier rise is solved from the eyes; one catalogue listing shows 50 mm (excerpt)."
+ ]
+}

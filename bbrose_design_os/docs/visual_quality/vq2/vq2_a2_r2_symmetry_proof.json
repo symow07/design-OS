@@ -1,0 +1,57 @@
+{
+ "record_type": "vq2_a2_r2_symmetry_proof/1.0",
+ "created_at": "2026-07-29",
+ "architecture": "MASTER_LEFT_PROFILE -> MIRROR_ACROSS_CENTERLINE",
+ "canonical_centerline_mm": 36.541193,
+ "independently_authored_sides": false,
+ "post_mirror_adjustment": false,
+ "separate_shoulder_construction": false,
+ "separate_base_construction": false,
+ "tolerance_mm": 0.01,
+ "components": {
+  "GLASS": {
+   "worst_lr_mm": 0.0,
+   "bbox_mid_deviation_mm": 0.0,
+   "profile_points": 2737,
+   "pass": true
+  },
+  "COLLAR": {
+   "worst_lr_mm": 0.0,
+   "bbox_mid_deviation_mm": 0.0,
+   "profile_points": 865,
+   "pass": true
+  },
+  "DARK_CLOSURE": {
+   "worst_lr_mm": 0.0,
+   "bbox_mid_deviation_mm": 0.0,
+   "profile_points": 865,
+   "pass": true
+  }
+ },
+ "all_pass": true,
+ "before_r2": {
+  "code": "VQ_CONTAINER_BILATERAL_SYMMETRY_FAILED",
+  "confirmed": true,
+  "scope": "DARK_CLOSURE only",
+  "method": "per-component Bezier geometry measured against the CANONICAL centerline OX=36.541193mm, not a self-derived bbox midpoint (a self-derived centre cannot detect centreline deviation and would have reported a false pass)",
+  "GLASS": {
+   "worst_lr_mm": 0.0,
+   "bbox_mid_deviation_mm": 0.0,
+   "verdict": "PASS"
+  },
+  "COLLAR": {
+   "worst_lr_mm": 0.0,
+   "bbox_mid_deviation_mm": 0.0,
+   "verdict": "PASS"
+  },
+  "DARK_CLOSURE": {
+   "worst_lr_mm": 8.531533,
+   "bbox_mid_deviation_mm": 1.198714,
+   "verdict": "FAIL",
+   "tolerance_mm": 0.01
+  },
+  "owner_was_right": true,
+  "note": "A composite silhouette check on the PNG reported 145/148 rows within 1px and would have wrongly cleared this. The raster is ~0.09mm per pixel against a 0.01mm tolerance, and merging the three components hides an off-centre closure inside the outer silhouette."
+ },
+ "method_note": "measured against the CANONICAL centerline. A self-derived bbox midpoint reported 145/148 rows clean and would have wrongly passed the off-centre closure."
+}

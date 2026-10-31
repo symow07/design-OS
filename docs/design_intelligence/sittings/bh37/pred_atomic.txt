@@ -1,0 +1,61 @@
+§AD0(a) PREDICTION — §BH37(2)+(3) ONE ATOMIC COMMIT, sealed BEFORE git add.
+Base HEAD 2463f29 ((1), scored 8/8). The re-run ran twice under sealed
+declarations (run 1: 0b8db28f3c3a1670, the E12 finding treated under
+§BH36(d) and recorded; run 2: 5a72b040ccbb71c6, every expectation HELD).
+
+L1 WRITE SET: exactly FOURTEEN tracked paths, all under the OUTER root —
+   tools/dip0/config.py (three deleted lines + the comment);
+   tools/dip0/tests/test_corpus_roots.py (five → two, the three admitted
+   proved walked); docs/design_intelligence/dip0a/{summary.md,
+   pilot_manifest.json}; dip0c/{c4a_family_summary.json,
+   c4a_reconciliation.json, c4c_reconciliation.json,
+   font_batch_review_manifest.json, font_review_queue_summary.json} (SEVEN
+   regenerated records — the eighth, c4c_curated_starter_candidates.json,
+   came back byte-identical: recorded, a divergence from the declaration's
+   "eight", explained by its content — the curated starter set unchanged
+   by the new faces); tools/dip0c/tests/{test_c4a.py, test_c4c.py,
+   test_c5.py} (twelve literals); docs/design_intelligence/dip1/
+   {dip1b_mvp_manifest_1_0.json (34 entries), dip1b_evidence_integrity_
+   registry_1_0.json (one pin)}. Plus the gate-staged ledger line. NO apps/
+   path, NO register block, NO docs/roadmap record but the ledger, NO
+   suite-manifest regeneration, NO new file.
+L2 DIFF SHAPE (insertions/deletions vs HEAD): pilot_manifest 80/80;
+   summary.md 72/59; c4a_family_summary 649/530; c4a_reconciliation 52/51;
+   c4c_reconciliation 39/39; font_batch_review_manifest 3230/7;
+   font_review_queue_summary 26/26; registry 1/1; manifest 34/34;
+   config 8/9; test_corpus_roots 13/14; test_c4a 4/4; test_c4c 6/6;
+   test_c5 2/2. The twelve literals: c4a 5212/4157/1047/2102; c4c
+   5212/4157/4182/2841/137/1047; c5 4182/2099. The 34 entries:
+   28f0cf310361a680… → 9697b040eae2622b… (byte_size 12,310,903); the
+   registry pin 7759ee0150b87665… → 7d31d29ff4e500931…; the registry's own
+   bytes 52abcf88aa155aa2….
+L3 MANIFEST / A391: suite_file_manifest untouched; records chain consistent
+   (record_integrity roots = docs/roadmap only; nothing there moves but the
+   ledger); ledger at 470 passes the APPEND_ONLY prefix rule; the frozen
+   manifest and registry consistent with the on-disk face_manifest
+   (manifest-import 30 passed). Census-first: records — the seven
+   regenerated records named above; identity none; WIT 863 (no apps
+   change, the analyser's test green); corpus constants — the twelve
+   literals above, each written from its preview; the dip1b entries and
+   the registry pin — the two classes the §BH30 census found and no other.
+L4 STAGED == DECLARED: exactly the FOURTEEN numstat rows of L2; the ledger
+   left to the gate.
+L5 COMMIT CONTENTS: 15 files (14 + ledger), insertions 4,217, deletions 862.
+L6 SUITE LINE + REFUSAL TREE: GREEN — TIER_2=GREEN collected=8564
+   failures=0 apps=7752 dip0c=671 dip0=141 (no test added). No refusal
+   expected; §BH24 1/3 carried; nothing runs beside the gate. Targeted
+   before the gate: dip0c 671, dip0 141, manifest-import + evidence
+   integrity + brand evidence 30, font authority + owner grant + WIT +
+   wif 151 — all passed; the Noto trio VERIFIED_FOR_PRODUCTION under Django.
+L7 LEDGER FOLD: 470 → 471, the +1 in THIS commit.
+L8 PROTOCOL IDENTITIES / APPS DIFF / AUTHORITY: apps diff EMPTY; GATE
+   7fbeb8f1fe10b0fb and TEST b32030dc827263e4 byte-identical; tree seals
+   MOVE to dip0c c22592930c75001c, dip0a cac81c9c1ba5fade (records, not
+   protected); protocol_identity UNCHANGED; the eight M7 artefacts ==
+   baseline; the Noto trio VERIFIED_FOR_PRODUCTION and the 35 at their
+   PROVENANCE hashes at scoring; exactly 38 faces carry a granted sha256
+   after the regen, none a drop font; the re-pin authority SPENT on this
+   landing; (4)'s grant authority UNSPENT until its own commit. RECORDED
+   DIVERGENCES: the walk sees the census minus 16 (the owner's 13 + three
+   archives carrying executable content, under §BH36(d)'s last sentence),
+   not 13; seven records moved, not eight.

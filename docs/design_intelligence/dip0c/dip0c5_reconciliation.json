@@ -1,0 +1,384 @@
+{
+  "slice": "DIP-0C5",
+  "c4c_commit": "7beb5e5",
+  "coverage": {
+    "schema_version": "dip0_consolidation/1.0",
+    "rows": [
+      {
+        "milestone": "DIP-0A — materials inventory",
+        "status": "COMPLETE_FULL_CORPUS",
+        "corpus": 7586,
+        "audited": 7586,
+        "coverage_pct": 100.0,
+        "outstanding": 0,
+        "note": "every file indexed, classified, hashed. UNKNOWN = 0."
+      },
+      {
+        "milestone": "DIP-0B — historical Illustrator deep audit",
+        "status": "PILOT_VALIDATED",
+        "corpus": 91,
+        "audited": 14,
+        "coverage_pct": 15.4,
+        "outstanding": 77,
+        "note": "14 files / 173 design units. The METHOD is validated; 77 historical designs remain unaudited at corpus scale."
+      },
+      {
+        "milestone": "DIP-0C1/C2 — reusable-material deep audit",
+        "status": "PILOT_VALIDATED",
+        "corpus": 2305,
+        "audited": 24,
+        "coverage_pct": 1.0,
+        "outstanding": 2281,
+        "note": "frozen pilots of 24 (C1) and 20 (C2) files. ~2281 reusable-material files remain unaudited at corpus scale."
+      },
+      {
+        "milestone": "DIP-0C3 — brand, logo, palette, ownership, permissions",
+        "status": "COMPLETE_FRAMEWORK",
+        "corpus": 21,
+        "audited": 21,
+        "coverage_pct": 100.0,
+        "outstanding": 0,
+        "note": "a complete governance framework (dual control, ledger, scope, conflicts, expiry) plus a pilot audit. NO real approval or permission exists."
+      },
+      {
+        "milestone": "DIP-0C4 — font intelligence",
+        "status": "COMPLETE_FULL_CORPUS",
+        "corpus": 4883,
+        "audited": 4883,
+        "coverage_pct": 100.0,
+        "outstanding": 0,
+        "note": "4,883 files / 3,966 faces / 2,832 families. Every font audited."
+      },
+      {
+        "milestone": "DIP-1 — production ingestion",
+        "status": "DEFERRED_TO_DIP1_OR_FOLLOW_UP",
+        "corpus": null,
+        "audited": 0,
+        "coverage_pct": 0.0,
+        "outstanding": null,
+        "note": "database models, authenticated identity, retrieval activation. Not implemented, by design."
+      }
+    ],
+    "headline": "DIP-0 is COMPLETE as an audit framework, a governance framework, a full inventory and a full font audit — with PILOT-VALIDATED methods for historical designs and reusable assets. The materials library is NOT fully audited, and this report does not claim otherwise.",
+    "outstanding_workstreams": [
+      {
+        "workstream": "Historical Design Corpus Expansion",
+        "outstanding_files": 77,
+        "status": "NOT_RUN_AT_CORPUS_SCALE",
+        "note": "planned operational expansion — not a hidden omission"
+      },
+      {
+        "workstream": "Reusable Asset Corpus Expansion",
+        "outstanding_files": 2281,
+        "status": "NOT_RUN_AT_CORPUS_SCALE",
+        "note": "planned operational expansion — not a hidden omission"
+      }
+    ],
+    "parser": "dip0c.consolidate/0.1.0"
+  },
+  "inventory": {
+    "total_files": 7586,
+    "by_category": {
+      "FONT": 4883,
+      "RASTER_DESIGN_ASSET": 1292,
+      "REUSABLE_VECTOR_ASSET": 374,
+      "PATTERN": 241,
+      "BACKGROUND": 198,
+      "MOTIF": 137,
+      "HISTORICAL_DESIGN": 91,
+      "PRODUCT_REFERENCE": 90,
+      "LICENSE_EVIDENCE": 85,
+      "ARCHIVE": 76,
+      "ICON": 63,
+      "OUT_OF_SCOPE": 48,
+      "LOGO": 4,
+      "BRAND_MASTER": 2,
+      "COLOR_PALETTE": 1,
+      "SUPPORTING_METADATA": 1
+    },
+    "reusable_category_files": 2305,
+    "historical_designs": 91,
+    "font_files": 4883
+  },
+  "milestone_artifacts": {
+    "reconciliations_found": [
+      "c3a_reconciliation.json",
+      "c3b1_reconciliation.json",
+      "c3b2_reconciliation.json",
+      "c3b3_reconciliation.json",
+      "c3b4_reconciliation.json",
+      "c3c_parser_reconciliation.json",
+      "c3d_reconciliation.json",
+      "c3e_reconciliation.json",
+      "c4a_reconciliation.json",
+      "c4b_reconciliation.json",
+      "c4c_reconciliation.json"
+    ],
+    "reconciliation_count": 11,
+    "missing": [],
+    "milestones_without_machine_reconciliation": [
+      {
+        "milestone": "DIP-0B",
+        "artifact_kind": "summary JSON + markdown report",
+        "machine_readable_reconciliation": false
+      },
+      {
+        "milestone": "DIP-0C1",
+        "artifact_kind": "markdown completion report",
+        "machine_readable_reconciliation": false
+      },
+      {
+        "milestone": "DIP-0C2",
+        "artifact_kind": "markdown + pilot manifests",
+        "machine_readable_reconciliation": false
+      }
+    ],
+    "regenerated_any_old_artifact": false,
+    "note": "milestone records are READ, never rewritten. A record describes what was true at that milestone."
+  },
+  "review_index": {
+    "schema_version": "review_item/1.0",
+    "unique_review_items": 6089,
+    "total_queue_memberships": 6795,
+    "items_in_multiple_queues": 706,
+    "unique_blocking_items": 5780,
+    "unique_high_priority_items": 5688,
+    "items_requiring_dual_control": 3,
+    "items_requiring_evidence_before_review": 5983,
+    "batch_groups": 4,
+    "estimated_human_decisions": 6089,
+    "by_domain": {
+      "CANONICAL_MASTER_CANDIDATE": 2,
+      "COLOR_PALETTE": 1,
+      "FONT_FACE": 3966,
+      "FONT_FAMILY": 192,
+      "FONT_SOURCE_PACKAGE": 47,
+      "PROVENANCE_RIGHTS_GROUP": 1880,
+      "QUARANTINE_BATCH": 1
+    },
+    "queue_memberships_are_not_decisions": "ESTIMATED DECISIONS = UNIQUE REVIEW ITEMS, never the sum of queue memberships. One font face can sit in four queues; it is still ONE decision in its domain. C4c's fourteen queues summed to 6,921 'decisions' for 4,883 files — a number that flattered nobody and misled everybody.",
+    "parser": "dip0c.review_contract/0.1.0"
+  },
+  "review_domains": {
+    "HISTORICAL_DESIGN_UNIT": {
+      "dual_control_required": false,
+      "batch_review_allowed": true,
+      "expiry_applies": false,
+      "allowed_human_actions": [
+        "APPROVE_REFERENCE_MEMORY",
+        "REJECT",
+        "DEFER",
+        "REQUEST_EVIDENCE"
+      ]
+    },
+    "REUSABLE_ASSET": {
+      "dual_control_required": false,
+      "batch_review_allowed": true,
+      "expiry_applies": true,
+      "allowed_human_actions": [
+        "APPROVE_REUSABLE_ASSET",
+        "REJECT",
+        "DEFER",
+        "REQUEST_CLEANUP",
+        "REQUEST_EVIDENCE",
+        "QUARANTINE"
+      ]
+    },
+    "BRAND_ASSET": {
+      "dual_control_required": false,
+      "batch_review_allowed": false,
+      "expiry_applies": true,
+      "allowed_human_actions": [
+        "APPROVE_BRAND_ASSET",
+        "REJECT",
+        "DEFER",
+        "REQUEST_EVIDENCE",
+        "QUARANTINE"
+      ]
+    },
+    "CANONICAL_MASTER_CANDIDATE": {
+      "dual_control_required": true,
+      "batch_review_allowed": false,
+      "expiry_applies": true,
+      "allowed_human_actions": [
+        "APPROVE_CANONICAL_MASTER",
+        "REJECT",
+        "DEFER",
+        "SUPERSEDE",
+        "DEPRECATE",
+        "QUARANTINE"
+      ]
+    },
+    "COLOR_PALETTE": {
+      "dual_control_required": true,
+      "batch_review_allowed": false,
+      "expiry_applies": true,
+      "allowed_human_actions": [
+        "APPROVE_PALETTE",
+        "REJECT",
+        "DEFER",
+        "REQUEST_EVIDENCE",
+        "SUPERSEDE",
+        "DEPRECATE",
+        "QUARANTINE"
+      ]
+    },
+    "FONT_FACE": {
+      "dual_control_required": false,
+      "batch_review_allowed": true,
+      "expiry_applies": true,
+      "allowed_human_actions": [
+        "APPROVE_FONT",
+        "REJECT",
+        "DEFER",
+        "REQUEST_EVIDENCE",
+        "QUARANTINE"
+      ]
+    },
+    "FONT_FAMILY": {
+      "dual_control_required": false,
+      "batch_review_allowed": true,
+      "expiry_applies": false,
+      "allowed_human_actions": [
+        "APPROVE_FONT",
+        "REJECT",
+        "DEFER"
+      ]
+    },
+    "FONT_SOURCE_PACKAGE": {
+      "dual_control_required": false,
+      "batch_review_allowed": true,
+      "expiry_applies": true,
+      "allowed_human_actions": [
+        "APPROVE_LIMITED_USE",
+        "REJECT",
+        "DEFER",
+        "REQUEST_EVIDENCE",
+        "QUARANTINE"
+      ]
+    },
+    "LICENSE_EVIDENCE": {
+      "dual_control_required": false,
+      "batch_review_allowed": true,
+      "expiry_applies": true,
+      "allowed_human_actions": [
+        "REQUEST_EVIDENCE",
+        "REJECT",
+        "DEFER"
+      ]
+    },
+    "OWNERSHIP_EVIDENCE": {
+      "dual_control_required": false,
+      "batch_review_allowed": true,
+      "expiry_applies": true,
+      "allowed_human_actions": [
+        "REQUEST_EVIDENCE",
+        "REJECT",
+        "DEFER"
+      ]
+    },
+    "QUARANTINE_BATCH": {
+      "dual_control_required": false,
+      "batch_review_allowed": true,
+      "expiry_applies": false,
+      "allowed_human_actions": [
+        "QUARANTINE",
+        "REJECT",
+        "DEFER",
+        "REQUEST_EVIDENCE",
+        "APPROVE_LIMITED_USE"
+      ]
+    },
+    "PROVENANCE_RIGHTS_GROUP": {
+      "dual_control_required": false,
+      "batch_review_allowed": false,
+      "expiry_applies": true,
+      "allowed_human_actions": [
+        "APPROVE_LIMITED_USE",
+        "REJECT",
+        "DEFER",
+        "REQUEST_EVIDENCE",
+        "QUARANTINE"
+      ]
+    }
+  },
+  "dispositions": {
+    "machine_recommendations": [
+      "RECOMMEND_INCLUDE_AS_REFERENCE_MEMORY",
+      "RECOMMEND_EXCLUDE_FROM_MEMORY",
+      "REUSABLE_AFTER_REVIEW",
+      "TECHNICALLY_READY",
+      "NEEDS_CLEANUP",
+      "NEEDS_VECTOR_RECONSTRUCTION",
+      "REFERENCE_ONLY",
+      "RIGHTS_REVIEW_REQUIRED",
+      "PROVENANCE_MISSING",
+      "QUARANTINE_CANDIDATE",
+      "OUT_OF_SCOPE",
+      "REQUIRES_TOOL",
+      "REQUIRES_HUMAN"
+    ],
+    "human_decisions": [
+      "APPROVE_REFERENCE_MEMORY",
+      "APPROVE_REUSABLE_ASSET",
+      "APPROVE_BRAND_ASSET",
+      "APPROVE_CANONICAL_MASTER",
+      "APPROVE_PALETTE",
+      "APPROVE_FONT",
+      "APPROVE_LIMITED_USE",
+      "REJECT",
+      "QUARANTINE",
+      "DEFER",
+      "REQUEST_EVIDENCE",
+      "REQUEST_CLEANUP",
+      "SUPERSEDE",
+      "DEPRECATE"
+    ],
+    "vocabularies_disjoint": true,
+    "any_decision_grants_permission": false
+  },
+  "gates": {
+    "retrieval_default": false,
+    "automatic_use_default": false,
+    "collapsed": false,
+    "font_permissions_separate": [
+      "installation",
+      "embedding_allowed",
+      "production_use_allowed"
+    ],
+    "historical_memory_posture": "REFERENCE_MEMORY_ONLY",
+    "historical_memory_excluded": [
+      "exact_reusable_placement_coordinates",
+      "complete_historical_layouts",
+      "reusable_dieline_paths",
+      "copied_artwork_paths",
+      "template_instructions",
+      "automatic_reproduction_of_old_designs"
+    ]
+  },
+  "activation": {
+    "real_approval_events": 0,
+    "real_permission_grants": 0,
+    "compound_decision_events": 0,
+    "retrieval_enabled_assets": 0,
+    "automatic_use_enabled_assets": 0,
+    "fonts_installed": 0,
+    "fonts_activated": 0,
+    "files_moved_or_deleted": 0,
+    "synthetic_decisions_in_real_ledger": 0,
+    "all_zero": true,
+    "note": "the real decision ledger is EMPTY. Every TEST_ONLY record lives in examples_TEST_ONLY/ and is excluded from migration."
+  },
+  "integrity": {
+    "materials": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "modified": [],
+      "file_count_before": 7695,
+      "file_count_after": 7695
+    }
+  },
+  "runtime_seconds": 1.89,
+  "output_bytes": 11683717
+}

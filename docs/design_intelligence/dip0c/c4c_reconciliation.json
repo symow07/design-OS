@@ -1,0 +1,209 @@
+{
+  "slice": "DIP-0C4c",
+  "c4b_commits": [
+    "394ca3c",
+    "d18e1c7"
+  ],
+  "scale": {
+    "raw_files": 5212,
+    "unique_files_by_hash": 4157,
+    "faces": 4182,
+    "technical_families": 2841,
+    "source_packages": 137,
+    "technical_duplicate_groups": 1047,
+    "provenance_rights_subgroups": 2099,
+    "rights_batchable_duplicate_groups": 0,
+    "review_queues": 14,
+    "proposed_human_decisions": 7261,
+    "review_reduction_note": "Technical deduplication reduces repeated PARSING. It does NOT reduce legal review: 0 of 1047 duplicate groups are rights-batchable.",
+    "exceptions_preventing_batch_decisions": [
+      "exact bytes do not prove identical rights",
+      "one package's licence never clears another",
+      "the dump batch is defined by folder, suspicion by name table",
+      "190 families carry conflicting evidence",
+      "evidence that does not mention fonts governs nothing"
+    ]
+  },
+  "views": {
+    "technical": {
+      "view": "TECHNICAL_FAMILY",
+      "question": "which faces belong together, and are they technically healthy?",
+      "answers_nothing_about": "ownership, licence, permission, or quarantine",
+      "family_group_count": 2841,
+      "face_count": 4182,
+      "file_count": 4157,
+      "technical_duplicate_groups": 1047,
+      "unsupported_files": 32,
+      "note": "TECHNICAL ONLY. A decision here implies NOTHING in the rights view.",
+      "parser": "dip0c.font_views/0.1.0"
+    },
+    "rights": {
+      "view": "PROVENANCE_RIGHTS",
+      "question": "where did each copy come from, and what paperwork exists?",
+      "answers_nothing_about": "typographic family, weight, script, or health",
+      "subgroup_count": 2099,
+      "files_with_font_relevant_evidence": 121,
+      "files_without_evidence": 3841,
+      "rights_batchable_duplicate_groups": 0,
+      "all_permissions_false": true,
+      "note": "RIGHTS ONLY. A decision here implies NOTHING in the technical view. One package's licence never clears an identical file from another.",
+      "parser": "dip0c.font_views/0.1.0"
+    },
+    "independence": "a decision in one view NEVER implies a decision in the other"
+  },
+  "style_observations": {
+    "faces_with_a_tag": 2888,
+    "faces_with_panose_declared": 3051,
+    "faces_with_no_tag": 1294,
+    "tags": {
+      "body candidate": 1321,
+      "sans": 746,
+      "display": 691,
+      "serif": 507,
+      "condensed": 172,
+      "handwritten": 156,
+      "high contrast": 143,
+      "monospace": 91,
+      "extended": 34
+    },
+    "filename_used": false,
+    "affects_license_or_permission": false
+  },
+  "review_priorities": {
+    "HIGH": 3955,
+    "MEDIUM": 119,
+    "LOW": 108
+  },
+  "curated_starter": {
+    "candidates": 32,
+    "capability_coverage": {
+      "arabic_body": [
+        "almarai",
+        "alqalam mehwish ali",
+        "damavand heavy",
+        "maghribi assile"
+      ],
+      "handwritten_display": [
+        "pumpkin soup"
+      ],
+      "latin_body": [
+        "acidrop solid demo",
+        "almarai",
+        "aonic",
+        "chicken butt",
+        "damavand heavy",
+        "drink south demo version",
+        "front page neue",
+        "gobold",
+        "gobold bold",
+        "gobold cuts",
+        "gobold extra1",
+        "gobold extra2",
+        "gobold high",
+        "gobold high bold",
+        "gobold high thin",
+        "gobold hollow",
+        "gobold hollow bold",
+        "gobold lowplus",
+        "gobold thin",
+        "gobold thin light",
+        "gobold uplow",
+        "janda apple cobbler solid",
+        "maghribi assile",
+        "playwrite us trad guides",
+        "qurova demo",
+        "snacktime",
+        "yellow ramen",
+        "zen dots"
+      ],
+      "latin_display": [
+        "firlands house demo",
+        "madame karoline demo",
+        "pumpkin soup"
+      ],
+      "multilingual_utility": [
+        "almarai",
+        "alqalam mehwish ali",
+        "aonic",
+        "damavand heavy",
+        "maghribi assile"
+      ]
+    },
+    "capability_gaps": [
+      "arabic_display",
+      "cjk_compatible",
+      "modern_sans",
+      "elegant_serif"
+    ],
+    "approved": false,
+    "activated": false
+  },
+  "quarantine": {
+    "proposal": "QUARANTINE_CANDIDATE — the suspected duplicated dump",
+    "is_applied": false,
+    "applied_by_machine": false,
+    "human_confirmed": null,
+    "total_files": 4715,
+    "total_faces": 3692,
+    "suspected_faces": 706,
+    "duplicate_overlap": {
+      "fonts_3333_unique_hashes": 3706,
+      "fonts_unique_hashes": 1009,
+      "shared_hashes": 933,
+      "overlap_pct_of_fonts": 92.5,
+      "conclusion": "ONE suspected duplicated dump, not two rights batches",
+      "neither_clears_the_other": true
+    },
+    "unsupported_fon_files": 32,
+    "false_positive_risk": "MATERIAL. This batch is defined by FOLDER, but suspicion is defined by NAME TABLE — and most files in the folder carry no suspicion. Accepting the batch quarantines fonts that were never individually implicated. That may still be the right call for an unverified dump; it is a judgement, and it is not the machine's.",
+    "statements": [
+      "folder membership alone does not prove system-font status",
+      "system-font suspicion does not prove illegal acquisition",
+      "quarantine is PROPOSED, not executed"
+    ]
+  },
+  "queue_totals": {
+    "FONT_FAMILY_RELATIONSHIP_REVIEW": 199,
+    "FONT_PROVENANCE_MISSING": 3667,
+    "FONT_LICENSE_EVIDENCE_PRESENT": 119,
+    "FONT_LICENSE_EVIDENCE_IRRELEVANT": 193,
+    "FONT_SUSPECTED_SYSTEM_COPY": 706,
+    "FONT_SYSTEM_STATUS_UNCERTAIN": 130,
+    "FONT_DUPLICATE_TECHNICAL_GROUP": 1047,
+    "FONT_CROSS_PACKAGE_DUPLICATE_RIGHTS_REVIEW": 1047,
+    "FONT_SOURCE_PACKAGE_REVIEW": 46,
+    "FONT_FAMILY_SOURCE_CONFLICT": 42,
+    "FONT_UNSUPPORTED_FORMAT": 32,
+    "FONT_PARSE_FAILURE": 0,
+    "FONT_QUARANTINE_CANDIDATE": 1,
+    "FONT_CURATED_STARTER_CANDIDATE": 32
+  },
+  "safety": {
+    "all_permissions_false": true,
+    "fonts_installed": 0,
+    "fonts_rendered": 0,
+    "fonts_exported": 0,
+    "fonts_exposed": 0,
+    "fonts_approved": 0,
+    "fonts_activated": 0,
+    "files_moved_or_deleted": 0,
+    "human_fields_blank": true,
+    "machine_inference_immutable": true
+  },
+  "integrity": {
+    "materials": {
+      "unchanged": true,
+      "roots_covered": [
+        "materials",
+        "bbrose_design_os/static/fonts"
+      ],
+      "added": [],
+      "removed": [],
+      "modified": [],
+      "file_count_before": 16747,
+      "file_count_after": 16747
+    }
+  },
+  "runtime_seconds": 2.44,
+  "output_bytes": 21025608
+}

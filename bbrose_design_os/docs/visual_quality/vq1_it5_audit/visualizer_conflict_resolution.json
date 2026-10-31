@@ -1,0 +1,33 @@
+{
+  "record_type": "visualizer_conflict_resolution/1.0",
+  "created_at": "2026-07-28T12:00:00+00:00",
+  "codes_recorded": [
+    "VQ_VISUALIZER_DETERMINISTIC_CONFLICT",
+    "VQ_VISUALIZER_INPUT_INTEGRITY_REVIEW_REQUIRED",
+    "VQ_VISUALIZER_POSSIBLE_STALE_OUTPUT",
+    "VQ_VISUALIZER_POSSIBLE_WRONG_CROP",
+    "VQ_VISUALIZER_POSSIBLE_RESOLUTION_LOSS",
+    "VQ_VISUALIZER_VERDICT_NOT_ACTIONABLE"
+  ],
+  "integrity_findings": {
+    "wrong_iteration_input": false,
+    "stale_asset_input": false,
+    "image_label_mismatch": false,
+    "input_hash_mismatch": false,
+    "resolution_insufficient": true
+  },
+  "confirmed_cause": "VQ_VISUALIZER_INPUT_RESOLUTION_INSUFFICIENT",
+  "cause_detail": "the inspector received the full assembly at 307x709 px, in which the dome occupies 27 px of height. The required payload (enlarged closure crop, overlay, montage, metrics, semantic decision) was never supplied \u2014 an implementation error, not a model fault.",
+  "replay_result": {
+    "apex_appearance": "rounded",
+    "entire_dome_visible": true,
+    "same_visible_closure_family": true,
+    "confidence": 0.82
+  },
+  "resolution": "VQ_VISUALIZER_ORIGINAL_INPUT_OR_INTERPRETATION_FAILED",
+  "original_verdict_retained_for_audit": true,
+  "counts_as_blocker_against_dome": false,
+  "proceed_to_human_visual_review_of_it5": true,
+  "unreliable_for_apex_geometry": false,
+  "governing_authority": "deterministic output-pixel topology governs apex geometry; the multimodal model may never override it"
+}

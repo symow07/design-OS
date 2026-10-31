@@ -1,0 +1,71 @@
+{
+ "schema_version": "brand_mark_approval/1.0",
+ "ruling": "THE OWNER'S SECOND ANSWER OF 2026-09-25 (OWNER_BLOCKER_CLEARANCE.md:23803, the block headed \"Before I start testing\"): \"When I approve the logo trace, switch the mark to it so gold foil can print.\"",
+ "owner_words": "The ® circle trace looks right — approve it",
+ "register": "OWNER_BLOCKER_CLEARANCE.md:23884",
+ "register_check": "the words stand verbatim in the register block that starts at that line",
+ "date": "2026-09-25",
+ "approved_file": {
+  "name": "bbrose-logo-traced-reg.svg",
+  "sha256": "dcdb005e0b491b217262f1bbd1903f26b0845c26dd2995e03cfd8111409d813b",
+  "bytes": 75904,
+  "viewBox": "0 0 1397 305"
+ },
+ "master": "bbrose-logo.svg",
+ "master_sha256": "ccf120cef3e8317dc0a3dce36673709a104e9456a4eeb15b36722103d65b19ed",
+ "crop": {
+  "viewBox": "8.63268 8.27 1379.32 287.712",
+  "rewritten": "the root's viewBox, width and height only — every path's data byte-identical"
+ },
+ "fill": "#000000",
+ "fill_rule": "nonzero",
+ "ink_bounds": [
+  8.632684,
+  8.27,
+  1387.948,
+  295.982086
+ ],
+ "ink_aspect": 0.208591,
+ "census": {
+  "paths": 9,
+  "subpaths": 18,
+  "curves": 3382,
+  "lines": 74
+ },
+ "source_png": {
+  "path": "media/brand/bbrose-logo.png",
+  "sha256": "e107a0989d9cedf52980166cca0d368cdb4f1059ed8aff0c51badac7cee58c18"
+ },
+ "tracer": {
+  "name": "potrace 1.16",
+  "settings": "on the PNG's alpha, enlarged 8x by centre-aligned cubic interpolation (cv2 INTER_CUBIC) and cut at 50%, -O 4, alphamax 1.0, turdsize 2 (~/bh69_work/logo/SELECTION_RULE.txt rules 1-2, sealed 2026-09-25); the ® replaced by construction from measurements of the PNG: a circular ring, centre (1351.954, 44.265) px, r_outer 35.994, r_inner 28.785 (reg/ring_fit.json), and an R built from measured parts (reg/reg_parts.json)"
+ },
+ "match": {
+  "emitter_vs_mupdf": {
+   "raster_px": [
+    1397,
+    305
+   ],
+   "px_disagreeing_over_half": 0,
+   "mean_coverage_diff": 3e-06,
+   "iou": 1.0,
+   "passed": true,
+   "criterion": "THE TOOL'S OWN BAR: the mark as the emitter draws it (emit_pdf_ai, rendered by MuPDF) against MuPDF's rendering of the same SVG, at the source PNG's pixel size, both rasters the same size and no pixel disagreeing by more than half. Its form is the last clause of rule 2 of the trace's SELECTION_RULE.txt (sealed 2026-09-25: no pixel at the PNG's own size disagreeing with the PNG's coverage by more than half), which holds the TRACE against the PNG; this holds the EMITTER against MuPDF",
+   "measured_by": "emit_pdf_ai (the mark expanded by apps/ire/brand_mark.py) rendered by MuPDF, against MuPDF's rendering of the SVG, both at the source PNG's pixel size"
+  },
+  "master_vs_source_png": {
+   "raster_px": [
+    1397,
+    305
+   ],
+   "px_disagreeing_over_half": 80,
+   "mean_coverage_diff": 0.001399,
+   "iou": 0.996393,
+   "bar": null,
+   "note": "recorded, never a bar: the approved drawing, not the PNG, is the mark"
+  },
+  "zoom_px_per_pt": 1.0
+ },
+ "placed_by": "tools/brand_mark_place.py",
+ "written_as": "PLACED"
+}

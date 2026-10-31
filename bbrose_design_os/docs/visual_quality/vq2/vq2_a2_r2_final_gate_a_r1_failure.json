@@ -1,0 +1,112 @@
+{
+ "record_type": "illustrator_gate_a_r1_human_failure/1.0",
+ "created_at": "2026-07-31",
+ "environment": {
+  "application": "Adobe Illustrator 2026",
+  "operating_system": "macOS"
+ },
+ "opened_file": "vq2_a2_r2_final_gate_a_r1.ai",
+ "opened_sha256": "0555c9f68d10bbd0369bcf191791f5b74366f5f74b3ed8453f4b254ad96400e2",
+ "illustrator_window_title": "vq2_a2_r2_final_gate_a_r1 [Converted].ai @ 66.05 % (RGB/Preview)",
+ "converted_suffix_note": "Illustrator showed [Converted], i.e. it ran an import rather than opening a native document. Which importer, and with what layer semantics, is not established by the screenshot.",
+ "result": "FAILED",
+ "codes": [
+  "ILLUSTRATOR_EXECUTION_VERIFICATION_FAILED",
+  "ILLUSTRATOR_GATE_A_R1_ARTWORK_NOT_RENDERED",
+  "ILLUSTRATOR_LOGO_NOT_RENDERED",
+  "ILLUSTRATOR_DIVIDER_NOT_RENDERED",
+  "ILLUSTRATOR_PRODUCT_NAME_NOT_RENDERED",
+  "ILLUSTRATOR_SUPPORTING_COPY_NOT_RENDERED",
+  "ILLUSTRATOR_SOURCE_PROOF_DIVERGENCE_PERSISTS",
+  "GATE_A_R2_SOURCE_REQUIRED"
+ ],
+ "human_screenshot_received": false,
+ "screenshot_note": "a screenshot was shown in the working session; no image FILE was supplied to this environment, so none is stored or claimed here. What it showed is described below.",
+ "screenshot_shows": [
+  "one bottle: body in a pale pink, collar in mid brown, closure in near-black plum",
+  "the three structural colours are correct, so colour serialization is no longer the defect",
+  "no logo, no divider, no Rose, no Damascena, no NIGHT REPAIR OIL",
+  "artboard and page proportions correct"
+ ],
+ "visible_objects": 3,
+ "missing_objects": 37,
+ "expected_objects": 40,
+ "visible_object_names": [
+  "STRUCTURE_BODY",
+  "STRUCTURE_COLLAR",
+  "STRUCTURE_CLOSURE"
+ ],
+ "what_this_rules_out": [
+  "colour serialization — the three visible objects carry their approved colours, which R0 did not",
+  "wholesale parse failure — Illustrator built a document with correct page geometry",
+  "any claim that automated source/proof equivalence certifies Illustrator execution"
+ ],
+ "measurement": {
+  "body_bbox_pt": [
+   34.04,
+   34.02,
+   173.12,
+   309.43
+  ],
+  "artwork_objects_fully_inside_body_bbox": 37,
+  "artwork_objects_outside_body_bbox": 0,
+  "surviving_objects": [
+   {
+    "object": "STRUCTURE_BODY",
+    "bbox": [
+     34.04,
+     34.02,
+     173.12,
+     309.43
+    ],
+    "vertically_overlaps_body": true
+   },
+   {
+    "object": "STRUCTURE_COLLAR",
+    "bbox": [
+     59.89,
+     305.0,
+     147.27,
+     378.68
+    ],
+    "vertically_overlaps_body": true
+   },
+   {
+    "object": "STRUCTURE_CLOSURE",
+    "bbox": [
+     69.56,
+     377.07,
+     137.61,
+     458.0
+    ],
+    "vertically_overlaps_body": false
+   }
+  ],
+  "finding": "all 37 missing objects lie fully inside the body's bounding box; the 3 survivors are exactly the objects the body does not cover"
+ },
+ "hypotheses": [
+  {
+   "id": "H1",
+   "statement": "the body ends up stacked above the artwork, so all 40 objects exist but 37 are hidden behind it",
+   "status": "NOT_ESTABLISHED"
+  },
+  {
+   "id": "H2",
+   "statement": "Illustrator stopped or discarded content after the third %AI5_BeginLayer block, so the artwork is not in the document at all",
+   "status": "NOT_ESTABLISHED"
+  }
+ ],
+ "why_not_resolved_here": "the three survivors are BOTH the first three layers AND the only geometry outside the body's bounding box, so the observation fits either hypothesis exactly. Illustrator is not driven from this environment, so the two are not separated here. Fixture A and the round-trip script's inventory each settle it in Illustrator.",
+ "cause_asserted": false,
+ "r2_does_not_depend_on_the_answer": "R2 emits no layer blocks and no inherited state, so there is no inter-layer stacking left to invert (H1) and no layer boundary left to drop (H2)",
+ "classification": [
+  "ILLUSTRATOR_EXECUTION_FAILED_SOURCE",
+  "GATE_A_R1_ARTWORK_NOT_RENDERED",
+  "NOT_PRODUCTION_AUTHORITY",
+  "PRESERVED_FOR_AUDIT"
+ ],
+ "preserved": true,
+ "overwritten": false,
+ "superseded_by": "vq2_a2_r2_final_gate_a_r2.ai",
+ "superseded_by_is_illustrator_verified": false
+}

@@ -1,0 +1,186 @@
+{
+  "schema_version": "visual_quality_inspection/1.0",
+  "inspection_id": "vq1-reset1-corr-3",
+  "created_at": "2026-07-28T03:18:30.473347+00:00",
+  "reference_ids": {
+    "closure": {
+      "path": "docs/visual_quality/vq1_corr5/ref97_closure.png",
+      "sha256_16": "69f0d12296ccb562"
+    },
+    "shoulder_neck": {
+      "path": "docs/visual_quality/vq1_corr5/ref97_shoulder_neck.png",
+      "sha256_16": "b4f669f8c80fdac5"
+    },
+    "body_base": {
+      "path": "docs/visual_quality/vq1_corr5/ref97_body_base.png",
+      "sha256_16": "c0efe752ec0e921b"
+    }
+  },
+  "output_id": "CORR-3",
+  "output": {
+    "path": "/private/tmp/claude-501/-Users-symow-Desktop-bbrose-systemOS/efd76b9c-049f-4ceb-a7f2-f9ad58dfc50c/scratchpad/cal/corr3.png",
+    "sha256_16": "8088ab22f82fcb2b"
+  },
+  "component_identities": [
+    "BODY",
+    "SHOULDER",
+    "NECK",
+    "COLLAR",
+    "DARK_TOP_COMPONENT"
+  ],
+  "physical_packet_present": false,
+  "previous_human_findings": [
+    "the reference top component is smooth and rounded with a naturally flared lower transition",
+    "CORR-5 creates a spear-, leaf- or arrow-shaped component",
+    "the artificial narrow stem is not supported by the visible reference",
+    "the generated top component is not a faithful rubber pipette bulb",
+    "the current system may have misclassified the visible component as a generic pipette bulb when it may be an outer bulb cover or closure cover",
+    "the generated collar is a squat bowed box rather than a tall polished metal cylinder",
+    "the generated collar/neck opening is rectangular",
+    "the generated neck is presented as a plug inside the collar",
+    "the shoulder calibration is made from straight polygonal segments",
+    "the body and shoulder contour do not follow the reference",
+    "current dimensions are not supported by verified physical-container data",
+    "the assembly gate reports PASS because it validates internal formulas rather than visible reference fidelity",
+    "the visual overlay demonstrates substantial mismatch",
+    "CORR-5 must not become the basis for VQ-2"
+  ],
+  "extractor_validation": {
+    "schema_version": "visual_extractor_validation/1.0",
+    "tolerance_px": 12.0,
+    "checks": {
+      "collar_half_width": {
+        "measured_px": 108.5,
+        "hand_read_px": 109.5,
+        "delta_px": 1.0,
+        "within_tolerance": true
+      },
+      "body_half_width": {
+        "measured_px": 172.5,
+        "hand_read_px": 171.5,
+        "delta_px": 1.0,
+        "within_tolerance": true
+      },
+      "bulb_half_width": {
+        "measured_px": 54.5,
+        "hand_read_px": 54.5,
+        "delta_px": 0.0,
+        "within_tolerance": true
+      }
+    },
+    "extractor_validated": true,
+    "note": "half-width profiles are only trusted downstream when this validation passes; it is re-run on every inspection",
+    "crops": [
+      "body_base",
+      "closure",
+      "shoulder_neck"
+    ]
+  },
+  "component_semantics": {
+    "schema_version": "component_semantic_classification/1.0",
+    "deterministic_classification": "BULB_WITH_INTEGRAL_FLARED_SKIRT",
+    "vision_classification": "UNCERTAIN",
+    "vision_confidence": 0.0,
+    "resolved_classification": "UNCERTAIN",
+    "confidence": 0.0,
+    "agreement": false,
+    "note": "vision classification, deterministic read inconclusive",
+    "evidence": "",
+    "profile_findings": {
+      "label": "reference",
+      "peak_at_fraction_from_top": 0.4034,
+      "longest_constant_width_run": 0.5667,
+      "lower_flare": 0.0986,
+      "top_closure_width": 0.0377,
+      "reads_as_cylinder_with_dome": true,
+      "reads_as_teardrop": false
+    },
+    "generation_blocked": true,
+    "blocker": "VQ_COMPONENT_SEMANTICS_HUMAN_CONFIRMATION_REQUIRED",
+    "human_confirmed": false,
+    "allowed_values": [
+      "EXPOSED_RUBBER_PIPETTE_BULB",
+      "BULB_WITH_INTEGRAL_FLARED_SKIRT",
+      "DECORATIVE_OUTER_BULB_COVER",
+      "COMPLETE_CLOSURE_OVERCAP",
+      "OTHER_CLOSURE_FORM",
+      "UNCERTAIN"
+    ]
+  },
+  "deterministic": {
+    "normalized_contour_distance": 0.08536,
+    "max_contour_distance": 0.52893,
+    "gradient_distance": 0.0151,
+    "band_distance": {
+      "upper_third": 0.21234,
+      "middle_third": 0.03452,
+      "lower_third": 0.01113
+    },
+    "reference_profile_n": 1056,
+    "output_profile_n": 425,
+    "output_shape": {
+      "label": "CORR-3",
+      "peak_at_fraction_from_top": 0.4034,
+      "longest_constant_width_run": 0.575,
+      "lower_flare": 0.3306,
+      "top_closure_width": 0.0413,
+      "reads_as_cylinder_with_dome": true,
+      "reads_as_teardrop": false
+    },
+    "reference_shape": {
+      "label": "reference",
+      "peak_at_fraction_from_top": 0.4034,
+      "longest_constant_width_run": 0.5667,
+      "lower_flare": 0.0986,
+      "top_closure_width": 0.0377,
+      "reads_as_cylinder_with_dome": true,
+      "reads_as_teardrop": false
+    },
+    "geometry": {
+      "symmetry_measurable": true,
+      "wall_band_mean_half_width": 60.5,
+      "wall_band_max_deviation": 0.0,
+      "walls_parallel_within_1pc": true,
+      "mean_symmetry_error_px": 0.355
+    },
+    "curvature": {
+      "mean_abs_second_difference": 0.013797,
+      "max_second_difference": 0.31405,
+      "curvature_spikes": 13,
+      "flat_segments": 87,
+      "polygonized": true
+    }
+  },
+  "multimodal": {
+    "unavailable": true
+  },
+  "per_component_score": {
+    "closure": null,
+    "shoulder": null,
+    "body": null,
+    "silhouette": null
+  },
+  "silhouette_score": null,
+  "closure_score": null,
+  "shoulder_score": null,
+  "body_score": null,
+  "reference_preservation_score": null,
+  "visual_findings": [
+    "output contour is polygonized",
+    "normalized contour distance 0.08536 exceeds 0.08"
+  ],
+  "critical_blockers": [
+    "VQ_SHOULDER_POLYGONIZED",
+    "VQ_CONTOUR_DIVERGENCE_FROM_CONCEPT"
+  ],
+  "improvement_against_previous": {
+    "previous_output_id": "CORR-2",
+    "contour_distance_delta": 0.01377,
+    "direction": "NO_MATERIAL_CHANGE"
+  },
+  "confidence": null,
+  "recommended_correction_type": "SEMANTIC_MODEL_REPLACEMENT",
+  "verdict": "VISUALLY_REJECTED",
+  "human_review_state": "NOT_REVIEWED",
+  "note": "verdict is advisory; a human structural rejection always stands and no state here can auto-accept"
+}

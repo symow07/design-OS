@@ -1,0 +1,43 @@
+{
+  "schema": "bh22_write_time_measurement/1.0",
+  "utc": "2026-09-01T01:31:26Z",
+  "manifest_entries": 100,
+  "declared_sources": 100,
+  "mismatch_total": 55,
+  "face_mismatches": 34,
+  "face_entry_span": [
+    44,
+    77
+  ],
+  "face_expected_uniq": [
+    "9337c4825d5a519e592932617087ebb411993788a50e638c6d2dbdb9057ba953"
+  ],
+  "face_observed_uniq": [
+    "302679234ae5b9bb935d0394d952fab7f32aee2add5f732ee17dd9bdbc66e35c"
+  ],
+  "brand_mismatches": 21,
+  "brand_expected_uniq": [
+    "dfccbad26e98744e78d606fec85a301a9d3d2357ff17cf8ece5fcbe7a2d9e62b"
+  ],
+  "other_mismatches": [],
+  "hard_stop_count_gate": "PASS",
+  "fresh_face_manifest_sha256": "302679234ae5b9bb935d0394d952fab7f32aee2add5f732ee17dd9bdbc66e35c",
+  "same_run_sha_consistent": true,
+  "constants": {
+    "test_c4c.py:267 faces": 3969,
+    "test_c4c.py:268 groups": 2834,
+    "test_c5.py:307 FONT_FACE": 3969,
+    "test_c4b.py:481 SUSPECTED_SYSTEM_FONT_COPY": 706,
+    "test_c4b.py:482 SYSTEM_FONT_EVIDENCE_PRESENT": 130,
+    "c4b_outcomes_full": {
+      "NO_SYSTEM_FONT_EVIDENCE": 3133,
+      "SUSPECTED_SYSTEM_FONT_COPY": 706,
+      "SYSTEM_FONT_EVIDENCE_PRESENT": 130
+    }
+  },
+  "write_control": {
+    "files": 519,
+    "changed": {},
+    "clean": true
+  }
+}

@@ -1,0 +1,31 @@
+§AD0(a) SCORE — T26d (§BH26(d) transcription), commit 8aab053. Gate
+GREEN, hand-captured exit=0 (~/bh26_work/t26d_exit.txt). 8/8 legs HELD.
+
+L1 HELD: write set = OWNER_BLOCKER_CLEARANCE.md only + gate-staged
+   ledger line; no apps path. Five WIP paths sat in stash@{0} for the
+   gate, disk verified == HEAD pre-launch.
+L2 HELD: register 77+0; 17,098-line prefix byte-identical, proved at
+   append time (pre-append hash 01e1bccc… == head -17098 post-append).
+L3 HELD: manifest untouched; the extent guard passed against the
+   371-file disk state (Tier-2 GREEN is the measurement).
+L4 HELD: staged==declared, exactly one row 77 0 (measured pre-launch).
+L5 HELD: commit = 2 files, 78 insertions(+), 0 deletions — numstat rows
+   77+0 register, 1+0 ledger. Measured: git show --numstat 8aab053.
+L6 HELD: suite line EXACT — TIER_2=GREEN collected=8490 failures=0
+   apps=7684 dip0c=671 dip0=135. No refusal; §BH24 budget 0/3 intact.
+L7 HELD: ledger 430 → 431, the +1 in this commit (wc measured).
+L8 HELD: apps diff EMPTY (commit touches no apps path); protected
+   regions re-verified at scoring: GATE 7fbeb8f1fe10b0fb (cfa slice
+   [514:541]) ✓, TEST b32030dc827263e4 (a76242c^ blob slice [82:98]) ✓.
+   MEASUREMENT NOTE, recorded: the first TEST re-verification hashed
+   e3b0c442… — sha256 of EMPTY input — because the recipe's pathspec
+   a76242c^:./bbrose_design_os/… is CWD-relative and was run from
+   bbrose_design_os (TWO-ROOTS idiom) with the subprocess exit
+   unchecked. The expected-value comparison caught it; re-measured with
+   the cwd-correct pathspec and a checked exit: True. The recipe's
+   canonical form FROM bbrose_design_os is
+   a76242c^:./apps/pipeline/tests/test_container_font_authority.py.
+   §BH26(a) authority still UNSPENT — commit A not yet landed.
+
+Post-commit state: HEAD 8aab053; porcelain empty; stash@{0} holds the
+five commit-A WIP paths, restore + byte-verification next.

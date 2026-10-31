@@ -1,0 +1,135 @@
+{
+ "record_type": "vq1_close1_input_quality/1.0",
+ "floors": {
+  "full_reference": {
+   "min_h": 900
+  },
+  "full_candidate": {
+   "min_h": 900
+  },
+  "neck_crop": {
+   "min_h": 600
+  },
+  "shoulder_crop": {
+   "min_w": 600
+  },
+  "collar_neck_crop": {
+   "min_h": 600
+  },
+  "complete_closure_crop": {
+   "min_h": 900
+  }
+ },
+ "slots": {
+  "full_reference": {
+   "evidence": "reference_silhouette",
+   "native_size": [
+    532,
+    1116
+   ],
+   "delivered_size": [
+    532,
+    1116
+   ],
+   "requirement": {
+    "min_h": 900
+   },
+   "passes": true,
+   "sha256": "b14cc69ac0d9b213",
+   "is_native_resolution": true,
+   "enlargement_factor": null
+  },
+  "full_candidate": {
+   "evidence": "m3_silhouette",
+   "native_size": [
+    532,
+    1116
+   ],
+   "delivered_size": [
+    532,
+    1116
+   ],
+   "requirement": {
+    "min_h": 900
+   },
+   "passes": true,
+   "sha256": "f269531bca3caeb4",
+   "is_native_resolution": true,
+   "enlargement_factor": null
+  },
+  "neck_crop": {
+   "evidence": "neck_overlay",
+   "native_size": [
+    782,
+    793
+   ],
+   "delivered_size": [
+    782,
+    793
+   ],
+   "requirement": {
+    "min_h": 600
+   },
+   "passes": true,
+   "sha256": "6efb48eadbbce95b",
+   "is_native_resolution": true,
+   "enlargement_factor": null
+  },
+  "shoulder_crop": {
+   "evidence": "shoulder_overlay",
+   "native_size": [
+    910,
+    686
+   ],
+   "delivered_size": [
+    910,
+    686
+   ],
+   "requirement": {
+    "min_w": 600
+   },
+   "passes": true,
+   "sha256": "cb2b87e25f8fdc41",
+   "is_native_resolution": true,
+   "enlargement_factor": null
+  },
+  "collar_neck_crop": {
+   "evidence": "collar_neck_overlay",
+   "native_size": [
+    566,
+    978
+   ],
+   "delivered_size": [
+    566,
+    978
+   ],
+   "requirement": {
+    "min_h": 600
+   },
+   "passes": true,
+   "sha256": "45c159c25dfd68c5",
+   "is_native_resolution": true,
+   "enlargement_factor": null
+  },
+  "complete_closure_crop": {
+   "evidence": "complete_closure_overlay",
+   "native_size": [
+    987,
+    1161
+   ],
+   "delivered_size": [
+    987,
+    1161
+   ],
+   "requirement": {
+    "min_h": 900
+   },
+   "passes": true,
+   "sha256": "bba0142b7f653666",
+   "is_native_resolution": true,
+   "enlargement_factor": null
+  }
+ },
+ "failures": [],
+ "passes": true
+}

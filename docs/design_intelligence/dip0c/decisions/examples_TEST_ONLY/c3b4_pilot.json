@@ -1,0 +1,144 @@
+{
+  "refused": [
+    {
+      "attempt": "supersede with no legal attestation",
+      "reason": "CANONICAL_MASTER_REPLACED is under DUAL CONTROL and must carry BOTH a technical/brand attestation and a rights/ownership attestation"
+    },
+    {
+      "attempt": "supersede where one person attests both halves",
+      "reason": "CANONICAL_MASTER_REPLACED is under DUAL CONTROL: its attestations name only {'TEST_ONLY_brand_admin'} — the two attestations must come from two DIFFERENT people. Holding both roles does not make one person two reviewers."
+    },
+    {
+      "attempt": "widening disguised as a narrowing",
+      "reason": "- this WIDENS the scope on ['markets'] — widening is a NEW canonical approval and must pass the complete dual-control process. It may not be recorded as a scope reduction."
+    },
+    {
+      "attempt": "SYSTEM_ADMIN supersedes a master",
+      "reason": "- unauthorized: role 'SYSTEM_ADMIN' may NOT 'approve_canonical_master'. Permitted roles: ['BRAND_ADMIN']. (Git authorship is provenance, not authorisation.)"
+    },
+    {
+      "attempt": "a variant reclassified INTO the canonical master",
+      "reason": "a variant reclassification may not make something the canonical master — that is an activation, and it takes full dual control"
+    },
+    {
+      "attempt": "a resolution with no reason",
+      "reason": "- a resolution must record an explicit reason"
+    },
+    {
+      "attempt": "a machine resolving a conflict",
+      "reason": "a canonical conflict is resolved by a human. Machine code may raise POSSIBLE_CONFLICT and enumerate the permitted resolutions; choosing between two masters is a judgement about the brand, and it is not reachable from here."
+    }
+  ],
+  "disjoint": {
+    "assets": [
+      "EU",
+      "US"
+    ],
+    "conflicts": 0,
+    "note": "FR vs DE, EU vs US: the taxonomy PROVES they cannot collide, so both masters stay active."
+  },
+  "proven_conflict": {
+    "count": 1,
+    "assets": [
+      "TEST_ONLY_master_eu.ai",
+      "TEST_ONLY_master_fr.ai"
+    ],
+    "relation": "SCOPE_OVERLAPPING",
+    "proven": true,
+    "reason": "markets: EU vs FR: EU is an ancestor of FR"
+  },
+  "scope_local": {
+    "us_still_usable": true,
+    "us_master": "TEST_ONLY_master_us.ai",
+    "fr_blocked": "CANONICAL_CONFLICT",
+    "note": "a fight over France does not invalidate the master approved for the United States. Being maximally destructive is not being safe."
+  },
+  "uncertain": {
+    "count": 1,
+    "relation": "SCOPE_UNKNOWN_OVERLAP",
+    "proven": false,
+    "note": "ATLANTIS is not in the taxonomy. 'We cannot tell' is not 'they do not collide', so it is treated as a conflict and queued for review."
+  },
+  "supersession": {
+    "compound_event_id": "cmp-b2ab8f7172a4fc96e9f6",
+    "constituents": [
+      "CANONICAL_MASTER_DEPRECATED",
+      "CANONICAL_MASTER_REPLACED"
+    ],
+    "post_state": [
+      [
+        "TEST_ONLY_master_eu.ai",
+        "SUPERSEDED"
+      ],
+      [
+        "TEST_ONLY_master_eu_v2.ai",
+        "ACTIVE"
+      ],
+      [
+        "TEST_ONLY_master_us.ai",
+        "ACTIVE"
+      ]
+    ],
+    "post_conflicts": 0,
+    "chain": [
+      {
+        "from_asset": "TEST_ONLY_master_eu.ai",
+        "from_event": "evt-4b26e26c7036a572c923",
+        "to_asset": "TEST_ONLY_master_eu_v2.ai",
+        "to_event": "evt-5534e5171a8bdb01688b",
+        "lifecycle": "SUPERSEDED"
+      }
+    ],
+    "canonical_for_eu": "TEST_ONLY_master_eu_v2.ai",
+    "note": "the incumbent's retirement and the successor's activation live in ONE file. There is no instant at which two masters hold the EU."
+  },
+  "narrowing": {
+    "before": [
+      "EU"
+    ],
+    "after": [
+      "FR"
+    ],
+    "event": "SCOPE_REDUCED"
+  },
+  "nothing_written_on_failure": true,
+  "queues": {
+    "totals": {
+      "A": 1,
+      "B": 1,
+      "C": 0,
+      "D": 3,
+      "E": 0,
+      "F": 0,
+      "G": 1,
+      "H": 0,
+      "I": 0,
+      "J": 1
+    },
+    "total_items": 7,
+    "critical": [
+      "B"
+    ],
+    "never_batch_approved": [
+      "A",
+      "B",
+      "C"
+    ],
+    "deterministic": true
+  },
+  "no_permission_granted": true,
+  "projection": {
+    "active": [
+      "TEST_ONLY_master_eu_v2.ai",
+      "TEST_ONLY_master_us.ai"
+    ],
+    "superseded": [
+      "TEST_ONLY_master_eu.ai"
+    ],
+    "deprecated": [],
+    "quarantined": [],
+    "conflict_free": true
+  },
+  "TEST_ONLY": true,
+  "WARNING": "SYNTHETIC EXAMPLE. This is NOT a real decision and confers NOTHING. It exists to exercise the schema and the validator."
+}

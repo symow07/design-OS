@@ -1,0 +1,47 @@
+{
+ "record_type": "vq2_pre_receipt_validation_contract_normalization/1.0",
+ "created_at": "2026-07-29",
+ "classification": "VQ2_PRE_RECEIPT_VALIDATION_CONTRACT_NORMALIZED",
+ "reason": "The receipt criteria were completed and frozen BEFORE any asset arrived so they are deterministic and cannot be tailored to a submitted file.",
+ "lettering_asset_available_during_amendment": false,
+ "lettering_asset_processed": false,
+ "criteria_tailored_to_a_submitted_file": false,
+ "prior_contracts": {
+  "validation_spec_v1": {
+   "path": "docs/visual_quality/vq2/lettering/archive/vq2_product_name_lettering_validation_spec_v1.json",
+   "sha256": "ae89dadefa341882"
+  },
+  "resume_contract_v1": {
+   "path": "docs/visual_quality/vq2/lettering/archive/vq2_product_name_lettering_resume_contract_v1.json",
+   "sha256": "d7a846482c8cd5b1"
+  }
+ },
+ "updated_contracts": {
+  "validation_spec_v2": {
+   "path": "docs/visual_quality/vq2/lettering/vq2_product_name_lettering_validation_spec.json",
+   "sha256": "606c6158dddf3d8b"
+  },
+  "resume_contract_v2": {
+   "path": "docs/visual_quality/vq2/lettering/vq2_product_name_lettering_resume_contract.json",
+   "sha256": "c669c2cb36a04aa4"
+  }
+ },
+ "changed_requirements": [
+  "added vertical glyph scaling prohibition (VQ2_VERTICAL_GLYPH_SCALING_DETECTED)",
+  "added non-uniform scaling prohibition (VQ2_NONUNIFORM_GLYPH_SCALING_DETECTED)",
+  "added word-group scaling prohibition (VQ2_WORD_GROUP_SCALING_DETECTED)",
+  "added residual-transform and expanded-after-distortion prohibitions",
+  "promoted capitalization from an indirect spec dependency into the receipt summary (VQ2_PRODUCT_NAME_CAPITALIZATION_MISMATCH)",
+  "added explicit counter-integrity requirements and four counter findings",
+  "added the explicit distinction between NATIVE DRAWN condensed proportions (permitted) and TRANSFORM DISTORTION (prohibited)",
+  "generated both files from a single MANDATORY_CHECKS source so neither can be weaker"
+ ],
+ "parity": {
+  "source_of_truth": "apps.ire.vq2_lettering_receipt.MANDATORY_CHECKS",
+  "mandatory_check_count": 23,
+  "spec_matches_source": true,
+  "resume_matches_source": true,
+  "files_aligned": true
+ },
+ "state_unchanged": true
+}

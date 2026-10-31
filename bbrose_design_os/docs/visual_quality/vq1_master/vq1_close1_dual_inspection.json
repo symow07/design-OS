@@ -1,0 +1,730 @@
+{
+ "record_type": "vq1_evidence_assisted_structural_inspection/1.0",
+ "candidate": "M3",
+ "candidate_modified": false,
+ "inspectors_independent": true,
+ "inspector_b_saw_inspector_a_result": false,
+ "input_quality": {
+  "record_type": "vq1_close1_input_quality/1.0",
+  "floors": {
+   "full_reference": {
+    "min_h": 900
+   },
+   "full_candidate": {
+    "min_h": 900
+   },
+   "neck_crop": {
+    "min_h": 600
+   },
+   "shoulder_crop": {
+    "min_w": 600
+   },
+   "collar_neck_crop": {
+    "min_h": 600
+   },
+   "complete_closure_crop": {
+    "min_h": 900
+   }
+  },
+  "slots": {
+   "full_reference": {
+    "evidence": "reference_silhouette",
+    "native_size": [
+     532,
+     1116
+    ],
+    "delivered_size": [
+     532,
+     1116
+    ],
+    "requirement": {
+     "min_h": 900
+    },
+    "passes": true,
+    "sha256": "b14cc69ac0d9b213",
+    "is_native_resolution": true,
+    "enlargement_factor": null
+   },
+   "full_candidate": {
+    "evidence": "m3_silhouette",
+    "native_size": [
+     532,
+     1116
+    ],
+    "delivered_size": [
+     532,
+     1116
+    ],
+    "requirement": {
+     "min_h": 900
+    },
+    "passes": true,
+    "sha256": "f269531bca3caeb4",
+    "is_native_resolution": true,
+    "enlargement_factor": null
+   },
+   "neck_crop": {
+    "evidence": "neck_overlay",
+    "native_size": [
+     782,
+     793
+    ],
+    "delivered_size": [
+     782,
+     793
+    ],
+    "requirement": {
+     "min_h": 600
+    },
+    "passes": true,
+    "sha256": "6efb48eadbbce95b",
+    "is_native_resolution": true,
+    "enlargement_factor": null
+   },
+   "shoulder_crop": {
+    "evidence": "shoulder_overlay",
+    "native_size": [
+     910,
+     686
+    ],
+    "delivered_size": [
+     910,
+     686
+    ],
+    "requirement": {
+     "min_w": 600
+    },
+    "passes": true,
+    "sha256": "cb2b87e25f8fdc41",
+    "is_native_resolution": true,
+    "enlargement_factor": null
+   },
+   "collar_neck_crop": {
+    "evidence": "collar_neck_overlay",
+    "native_size": [
+     566,
+     978
+    ],
+    "delivered_size": [
+     566,
+     978
+    ],
+    "requirement": {
+     "min_h": 600
+    },
+    "passes": true,
+    "sha256": "45c159c25dfd68c5",
+    "is_native_resolution": true,
+    "enlargement_factor": null
+   },
+   "complete_closure_crop": {
+    "evidence": "complete_closure_overlay",
+    "native_size": [
+     987,
+     1161
+    ],
+    "delivered_size": [
+     987,
+     1161
+    ],
+    "requirement": {
+     "min_h": 900
+    },
+    "passes": true,
+    "sha256": "bba0142b7f653666",
+    "is_native_resolution": true,
+    "enlargement_factor": null
+   }
+  },
+  "failures": [],
+  "passes": true
+ },
+ "evidence_delivered": [
+  {
+   "label": "ORIGINAL REFERENCE PHOTOGRAPH (concept #97)",
+   "path": "docs/visual_quality/vq1_master/crops/ref97_complete_assembly.png",
+   "sha256": "081ee23839764122"
+  },
+  {
+   "label": "REFERENCE SILHOUETTE (normalized)",
+   "path": "docs/visual_quality/vq1_master/close1/ref_silhouette.png",
+   "sha256": "b14cc69ac0d9b213"
+  },
+  {
+   "label": "M3 CANDIDATE SILHOUETTE (normalized)",
+   "path": "docs/visual_quality/vq1_master/close1/m3_silhouette.png",
+   "sha256": "f269531bca3caeb4"
+  },
+  {
+   "label": "CONTOUR OVERLAY",
+   "path": "docs/visual_quality/vq1_master/close1/contour_overlay.png",
+   "sha256": "6a14102eb6e0ea87"
+  },
+  {
+   "label": "COMPONENT MASK",
+   "path": "docs/visual_quality/vq1_master/close1/component_mask.png",
+   "sha256": "234cb4128290156a"
+  },
+  {
+   "label": "DOME \u2014 enlarged overlay",
+   "path": "docs/visual_quality/vq1_master/close1/dome_overlay.png",
+   "sha256": "803ebc3fd0eda547"
+  },
+  {
+   "label": "DARK SHAFT \u2014 enlarged overlay",
+   "path": "docs/visual_quality/vq1_master/close1/shaft_overlay.png",
+   "sha256": "0bf5e86884cc42b5"
+  },
+  {
+   "label": "LOWER FLARE \u2014 enlarged overlay",
+   "path": "docs/visual_quality/vq1_master/close1/flare_overlay.png",
+   "sha256": "a4e18e076227bf5a"
+  },
+  {
+   "label": "COLLAR SLEEVE \u2014 enlarged overlay",
+   "path": "docs/visual_quality/vq1_master/close1/collar_sleeve_overlay.png",
+   "sha256": "b1b6d3e66ccfaf94"
+  },
+  {
+   "label": "COLLAR/CLOSURE JUNCTION \u2014 enlarged overlay",
+   "path": "docs/visual_quality/vq1_master/close1/junction_overlay.png",
+   "sha256": "cb0f20ee449a46ff"
+  },
+  {
+   "label": "NECK TRANSITION \u2014 enlarged overlay",
+   "path": "docs/visual_quality/vq1_master/close1/neck_overlay.png",
+   "sha256": "6efb48eadbbce95b"
+  },
+  {
+   "label": "NECK WIDTH DIAGRAM",
+   "path": "docs/visual_quality/vq1_master/close1/neck_width_diagram.png",
+   "sha256": "8def4a0e94a5bfe0"
+  },
+  {
+   "label": "SHOULDER TRANSITION \u2014 enlarged overlay",
+   "path": "docs/visual_quality/vq1_master/close1/shoulder_overlay.png",
+   "sha256": "cb2b87e25f8fdc41"
+  },
+  {
+   "label": "SHOULDER CURVATURE DIAGRAM",
+   "path": "docs/visual_quality/vq1_master/close1/shoulder_curvature_diagram.png",
+   "sha256": "b3f600679f606c2a"
+  },
+  {
+   "label": "COMPLETE CLOSURE \u2014 enlarged overlay",
+   "path": "docs/visual_quality/vq1_master/close1/closure_overlay.png",
+   "sha256": "bba0142b7f653666"
+  }
+ ],
+ "measurements_supplied": {
+  "normalization": "distances divided by body width 343 source px",
+  "canonical_correspondence": "LOCAL_NORMAL (true point-to-curve distance)",
+  "same_row_is_diagnostic_only": "SAME_ROW horizontal difference is invalid where the contour is steep; it is reported only as a diagnostic.",
+  "neck_local_normal": {
+   "count": 30,
+   "mean": 0.001996,
+   "p95": 0.00337,
+   "max": 0.004073
+  },
+  "neck_same_row_diagnostic": {
+   "count": 30,
+   "mean": 0.002909,
+   "p95": 0.007381,
+   "max": 0.0074
+  },
+  "shoulder_local_normal": {
+   "count": 36,
+   "mean": 0.001011,
+   "p95": 0.003673,
+   "max": 0.004197
+  },
+  "shoulder_same_row_diagnostic": {
+   "count": 36,
+   "mean": 0.00255,
+   "p95": 0.013544,
+   "max": 0.014869
+  },
+  "neck_inset": {
+   "collar_half_px": 108.5,
+   "reference_min_half_px": 100.5,
+   "m3_min_half_px": 101.2,
+   "reference_inset_px_per_side": 8.0,
+   "m3_inset_px_per_side": 7.3,
+   "inset_expression_ratio": 0.9125,
+   "feature_relative_shortfall_px": 0.7
+  },
+  "shoulder_convexity": {
+   "reference_curvature_sum": -5.0,
+   "m3_curvature_sum": -4.8842,
+   "both_outward_convex": true
+  },
+  "one_row_spikes": {
+   "neck": 0,
+   "shoulder": 0
+  },
+  "rows_measured": 66,
+  "disclosures": {
+   "reference_quantization": "The reference edge is extracted at 1-pixel granularity, so every reference half-width carries +/-0.5 px of quantization. Differences at or below that scale are not resolvable.",
+   "glass_fit_tolerance_not_enforced": "The GLASS contour chain exceeded the fitter's segment budget, so its adaptive 0.6 px tolerance was NOT enforced; segments were chunked uniformly instead. Its worst measured segment residual is 5.1 px and it falls on the shoulder transition. Measured perpendicular to the contour that same worst point is 1.44 px.",
+   "peak_deviation": "Largest deviation anywhere in the bounded region: 1.44 px local-normal at row 706 (shoulder), where the reference tangent is 74 degrees from vertical.",
+   "far_flank_is_mirrored": "The reference photograph is occluded on one flank. The far edge is mirrored from the measured edge, so reference symmetry cannot be audited and no reference-vs-candidate asymmetry finding is supportable. Candidate symmetry alone is auditable.",
+   "candidate_is_neutral_flat_fill": "The candidate carries no shading, gradient, shadow or reflection by design."
+  }
+ },
+ "inspections": {
+  "A": {
+   "identity": "STRUCTURAL_REFERENCE_FIDELITY_CRITIC",
+   "result": {
+    "scores": {
+     "rounded_dome": {
+      "structural_score": 9,
+      "structural_finding": "The dome contour (rows 295\u2013360) shows excellent agreement between the M3 red contour and the black reference. The enlarged dome overlay (Image 6) confirms the overall arc shape, apex height, and lateral curvature are faithfully reproduced. A very minor outward offset of the red contour is visible on the upper flanks of the dome (approximately rows 302\u2013318 on both sides), where M3 sits fractionally wider than the reference, but the deviation is within quantization tolerance (~0.5 px) and does not constitute a structural defect. The dome apex height and symmetry are correctly represented.",
+      "critical_structural_blocker": false,
+      "confidence": 0.92,
+      "low_salience_observation": true,
+      "material_observation_excluded": true,
+      "deterministic_evidence_consulted": [
+       "Image 6 dome enlarged overlay",
+       "Image 4 contour overlay",
+       "Image 15 complete closure overlay"
+      ]
+     },
+     "dark_shaft": {
+      "structural_score": 10,
+      "structural_finding": "The dark shaft region (rows 360\u2013450) shows near-perfect contour agreement. The enlarged shaft overlay (Image 7) displays the red and black contour lines as essentially coincident across the entire vertical extent of the shaft, with no measurable lateral deviation. Width, parallelism, and vertical extent are all structurally faithful to the reference.",
+      "critical_structural_blocker": false,
+      "confidence": 0.97,
+      "low_salience_observation": false,
+      "material_observation_excluded": true,
+      "deterministic_evidence_consulted": [
+       "Image 7 dark shaft enlarged overlay",
+       "Image 4 contour overlay",
+       "Image 15 complete closure overlay"
+      ]
+     },
+     "lower_flare": {
+      "structural_score": 9,
+      "structural_finding": "The lower flare region (rows 450\u2013500) shows good overall agreement in the flare curvature. The enlarged overlay (Image 8) reveals that the red M3 contour follows the same general descent and horizontal spread as the reference black contour. A minor deviation is visible around rows 493\u2013496 where the red contour shows a slightly smoother/rounder transition compared to the reference's more abrupt step-down, but the difference is small (within ~1\u20132 px) and does not represent a substantive structural departure from the reference flare geometry.",
+      "critical_structural_blocker": false,
+      "confidence": 0.88,
+      "low_salience_observation": true,
+      "material_observation_excluded": true,
+      "deterministic_evidence_consulted": [
+       "Image 8 lower flare enlarged overlay",
+       "Image 4 contour overlay",
+       "Image 15 complete closure overlay"
+      ]
+     },
+     "flare_symmetry": {
+      "structural_score": 9,
+      "structural_finding": "The far flank of the reference is mirrored per the disclosed methodology, so reference symmetry cannot be independently audited. Examining the M3 candidate silhouette (Image 3) and the complete closure overlay (Image 15), the candidate's own flare is bilaterally symmetric. The collar-to-body step transition appears symmetric on both sides in the contour overlay. No candidate asymmetry defect is detectable.",
+      "critical_structural_blocker": false,
+      "confidence": 0.82,
+      "low_salience_observation": false,
+      "material_observation_excluded": true,
+      "deterministic_evidence_consulted": [
+       "Image 15 complete closure overlay",
+       "Image 3 M3 silhouette",
+       "Image 4 contour overlay",
+       "Image 8 lower flare enlarged overlay"
+      ]
+     },
+     "collar_sleeve": {
+      "structural_score": 10,
+      "structural_finding": "The collar sleeve (rows 495\u2013676) shows excellent contour fidelity throughout its vertical extent. The enlarged collar overlay (Image 9) confirms that the red M3 contour is essentially coincident with the black reference across the full collar height, both on the straight vertical walls and at the upper and lower rounded corners. The collar width and height proportions match the reference closely. The slight positional divergence at the very top of the collar (~row 492\u2013497) is within expected quantization tolerance.",
+      "critical_structural_blocker": false,
+      "confidence": 0.95,
+      "low_salience_observation": false,
+      "material_observation_excluded": true,
+      "deterministic_evidence_consulted": [
+       "Image 9 collar sleeve enlarged overlay",
+       "Image 4 contour overlay",
+       "Image 15 complete closure overlay"
+      ]
+     },
+     "collar_closure_junction": {
+      "structural_score": 9,
+      "structural_finding": "The collar/closure junction (rows 480\u2013520) shows good structural agreement in the enlarged overlay (Image 10). The red M3 contour follows the reference's curved transition from the wider collar flare down to the narrower shaft closely. The curvature of the inward step and the horizontal position of the junction boundary align well. A small deviation is visible where the red contour transitions slightly more smoothly around rows 502\u2013510 compared to the reference's steeper descent, but this difference is minor and within acceptable tolerance.",
+      "critical_structural_blocker": false,
+      "confidence": 0.88,
+      "low_salience_observation": false,
+      "material_observation_excluded": true,
+      "deterministic_evidence_consulted": [
+       "Image 10 collar/closure junction enlarged overlay",
+       "Image 4 contour overlay",
+       "Image 15 complete closure overlay"
+      ]
+     },
+     "neck_transition": {
+      "structural_score": 9,
+      "structural_finding": "The neck undercut transition (rows 670\u2013699) is structurally well-represented. The enlarged overlay (Image 11) and the neck width diagram (Image 12) confirm that M3's neck minimum half-width is 101.2 px versus the reference's 100.5 px \u2014 a shortfall of only 0.7 px (inset expression ratio 0.9125). The neck undercut is present and correctly positioned vertically. The M3 contour follows the reference curvature into and out of the minimum closely, with local-normal mean residual of 0.002 (normalized) and max of 0.004073 \u2014 all within tolerance. The M3 neck is very slightly shallower than the reference but the difference is sub-pixel in significance.",
+      "critical_structural_blocker": false,
+      "confidence": 0.91,
+      "low_salience_observation": false,
+      "material_observation_excluded": true,
+      "deterministic_evidence_consulted": [
+       "Image 11 neck transition enlarged overlay",
+       "Image 12 neck width diagram",
+       "Measured deterministic evidence neck_local_normal and neck_inset"
+      ]
+     },
+     "shoulder_transition": {
+      "structural_score": 9,
+      "structural_finding": "The shoulder transition (rows 688\u2013735) shows good structural conformance. The enlarged overlay (Image 13) and the shoulder curvature diagram (Image 14) confirm that M3 reproduces the outward-convex shoulder sweep from neck to body wall. The peak local-normal deviation is 1.44 px at row 706 (where the reference tangent is 74\u00b0 from vertical), which is a small absolute departure. The mean residual is 0.001011 normalized and max is 0.004197 normalized. Both M3 and reference show outward-convex curvature. The M3 shoulder is marginally more gradual in the early portion (rows 690\u2013706) compared to the reference's tighter initial curve, but this is a minor geometric difference that does not materially alter the overall shoulder profile.",
+      "critical_structural_blocker": false,
+      "confidence": 0.89,
+      "low_salience_observation": false,
+      "material_observation_excluded": true,
+      "deterministic_evidence_consulted": [
+       "Image 13 shoulder transition enlarged overlay",
+       "Image 14 shoulder curvature diagram",
+       "Measured deterministic evidence shoulder_local_normal and shoulder_convexity"
+      ]
+     },
+     "complete_closure_coherence": {
+      "structural_score": 9,
+      "structural_finding": "The complete closure overlay (Image 15, rows 292\u2013700) shows strong overall coherence between M3 and the reference across all component zones. The red and black contours track closely throughout \u2014 dome, shaft, flare, collar, neck, and shoulder all read as structurally faithful in a single unified view. No discontinuities, misaligned transitions, or zone-boundary mismatches are present. The small individual deviations noted per zone are consistent and do not compound into a systemic coherence failure. The overall structural architecture of the dropper closure is well-reproduced.",
+      "critical_structural_blocker": false,
+      "confidence": 0.93,
+      "low_salience_observation": false,
+      "material_observation_excluded": true,
+      "deterministic_evidence_consulted": [
+       "Image 15 complete closure enlarged overlay",
+       "Image 4 contour overlay",
+       "Image 2 reference silhouette",
+       "Image 3 M3 silhouette"
+      ]
+     },
+     "overall": {
+      "structural_score": 9,
+      "structural_finding": "Across all ten structural categories, M3 demonstrates high fidelity to the reference geometry. All major structural features \u2014 dome curvature, shaft width and parallelism, lower flare shape, collar proportions, neck undercut depth (7.3 px vs 8.0 px reference, 91.25% expression), shoulder convexity, and component transitions \u2014 are faithfully reproduced. The largest individual deviation is 1.44 px local-normal at the shoulder row 706. Normalized residuals across neck and shoulder regions are very low (mean ~0.001\u20130.002, max ~0.004). No critical structural blocker is present. Minor deviations at the dome flanks, lower flare step, and shoulder early curvature are within or near quantization tolerance and do not constitute structural defects.",
+      "critical_structural_blocker": false,
+      "confidence": 0.92,
+      "low_salience_observation": false,
+      "material_observation_excluded": true,
+      "deterministic_evidence_consulted": [
+       "Image 4 contour overlay",
+       "Image 15 complete closure overlay",
+       "Image 6 dome enlarged overlay",
+       "Image 7 dark shaft enlarged overlay",
+       "Image 8 lower flare enlarged overlay",
+       "Image 9 collar sleeve enlarged overlay",
+       "Image 10 collar/closure junction enlarged overlay",
+       "Image 11 neck transition enlarged overlay",
+       "Image 12 neck width diagram",
+       "Image 13 shoulder transition enlarged overlay",
+       "Image 14 shoulder curvature diagram",
+       "Measured deterministic evidence all fields"
+      ]
+     }
+    },
+    "verdict": "PASSES_STRUCTURAL_INSPECTION_PENDING_HUMAN_REVIEW",
+    "defect_classifications": [
+     {
+      "observation": "Dome flanks show M3 contour sitting fractionally wider than reference in the upper arc region (rows 302\u2013318), estimated ~0.5 px per side",
+      "classification": "LOW_SALIENCE_UNDER_NEUTRAL_PRESENTATION",
+      "evidence": "Image 6 dome enlarged overlay; deviation within reference quantization tolerance of \u00b10.5 px"
+     },
+     {
+      "observation": "Lower flare transition around rows 493\u2013496 shows M3 with slightly smoother curvature versus a more abrupt step in the reference",
+      "classification": "LOW_SALIENCE_UNDER_NEUTRAL_PRESENTATION",
+      "evidence": "Image 8 lower flare enlarged overlay; deviation estimated 1\u20132 px, does not alter overall flare geometry"
+     },
+     {
+      "observation": "Neck inset depth is 7.3 px per side versus reference 8.0 px per side (0.7 px shortfall, 91.25% expression ratio)",
+      "classification": "LOW_SALIENCE_UNDER_NEUTRAL_PRESENTATION",
+      "evidence": "Image 12 neck width diagram; measured deterministic evidence neck_inset; shortfall is sub-pixel relative to 343 px body width (0.2% of body width)"
+     },
+     {
+      "observation": "Shoulder transition shows M3 curvature is marginally more gradual than reference in the early portion (rows 690\u2013706), peak local-normal deviation 1.44 px",
+      "classification": "LOW_SALIENCE_UNDER_NEUTRAL_PRESENTATION",
+      "evidence": "Image 13 shoulder transition overlay; Image 14 shoulder curvature diagram; peak deviation 1.44 px at a steeply-angled contour segment (74\u00b0 from vertical), normalized residual max 0.004197"
+     }
+    ]
+   },
+   "consistency": {
+    "record_type": "vq1_final_structural_scorecard_consistency/1.0",
+    "inspector": "STRUCTURAL_REFERENCE_FIDELITY_CRITIC",
+    "codes": [
+     "VQ1_LOW_SALIENCE_ALONE_REDUCED_STRUCTURAL_SCORE",
+     "VQ1_PASS_VERDICT_CONTAINS_SCORE_BELOW_10"
+    ],
+    "detail": [
+     {
+      "code": "VQ1_PASS_VERDICT_CONTAINS_SCORE_BELOW_10",
+      "categories": {
+       "rounded_dome": 9,
+       "lower_flare": 9,
+       "flare_symmetry": 9,
+       "collar_closure_junction": 9,
+       "neck_transition": 9,
+       "shoulder_transition": 9,
+       "complete_closure_coherence": 9,
+       "overall": 9
+      }
+     },
+     {
+      "category": "rounded_dome",
+      "code": "VQ1_LOW_SALIENCE_ALONE_REDUCED_STRUCTURAL_SCORE"
+     }
+    ],
+    "scores": {
+     "rounded_dome": 9,
+     "dark_shaft": 10,
+     "lower_flare": 9,
+     "flare_symmetry": 9,
+     "collar_sleeve": 10,
+     "collar_closure_junction": 9,
+     "neck_transition": 9,
+     "shoulder_transition": 9,
+     "complete_closure_coherence": 9,
+     "overall": 9
+    },
+    "verdict": "PASSES_STRUCTURAL_INSPECTION_PENDING_HUMAN_REVIEW",
+    "consistent": false,
+    "all_categories_10": false
+   }
+  },
+  "B": {
+   "identity": "STRUCTURAL_ADVERSARIAL_EVIDENCE_AUDITOR",
+   "result": {
+    "scores": {
+     "rounded_dome": {
+      "structural_score": 9,
+      "structural_finding": "The dome contour in Image 6 shows RED tracking BLACK closely across the full arc from rows 295\u2013362. The left flank shows a mild outward excursion of the red contour between rows 302\u2013315 (approximately 2\u20133 px at 11x magnification, corresponding to roughly 0.2\u20130.3 px source), and the apex is marginally wider on M3 than reference. Both deviations are within the quantization floor of \u00b10.5 px per side and within the normalized residual budget. No spike, flat-top truncation, or asymmetric deformation is detectable. The dome shape is structurally faithful.",
+      "critical_structural_blocker": false,
+      "confidence": 0.88,
+      "low_salience_observation": false,
+      "material_observation_excluded": true,
+      "deterministic_evidence_consulted": [
+       "Image 6 DOME enlarged overlay",
+       "Image 15 COMPLETE CLOSURE overlay",
+       "neck_local_normal residuals"
+      ]
+     },
+     "dark_shaft": {
+      "structural_score": 10,
+      "structural_finding": "Image 7 shows the dark shaft (rows 360\u2013450) with RED and BLACK contours coincident to within sub-pixel precision on both flanks across the entire height. No lateral drift, taper, asymmetry, or stepped collar artifact is detectable. The shaft is rendered as two parallel vertical walls perfectly matching the reference geometry. This is an unambiguous structural match.",
+      "critical_structural_blocker": false,
+      "confidence": 0.97,
+      "low_salience_observation": false,
+      "material_observation_excluded": true,
+      "deterministic_evidence_consulted": [
+       "Image 7 DARK SHAFT enlarged overlay",
+       "Image 15 COMPLETE CLOSURE overlay"
+      ]
+     },
+     "lower_flare": {
+      "structural_score": 8,
+      "structural_finding": "Image 8 (rows 450\u2013500) shows RED generally tracking BLACK through the inward-to-outward flare transition. A visible divergence occurs around rows 493\u2013497 where the red contour is displaced laterally outward by approximately 1\u20132 source px relative to the black reference in the curved corner region before the straight wall begins. This divergence is consistent with the disclosed adaptive fitter tolerance relaxation (worst segment residual 5.1 px, worst perpendicular 1.44 px at row 706, but the shoulder/flare junction shows measurable offset here too). The overall flare shape and inflection depth are correct; the deviation is localized and sub-2 px, not a gross geometry error.",
+      "critical_structural_blocker": false,
+      "confidence": 0.8,
+      "low_salience_observation": false,
+      "material_observation_excluded": true,
+      "deterministic_evidence_consulted": [
+       "Image 8 LOWER FLARE enlarged overlay",
+       "disclosures glass_fit_tolerance_not_enforced",
+       "Image 15 COMPLETE CLOSURE overlay"
+      ]
+     },
+     "flare_symmetry": {
+      "structural_score": 8,
+      "structural_finding": "The reference far flank is disclosed as mirrored from the measured flank, so reference bilateral symmetry cannot be independently audited. The candidate's own bilateral symmetry is assessable: in Images 4, 9, and 15 both flanks of the collar/body junction appear to trace symmetrically. The collar sleeve overlay (Image 9) confirms left/right contour behavior is mirror-consistent within the measurement noise. The slight divergence in the lower flare region noted above appears to affect both flanks equally by the mirroring convention. No asymmetric structural deviation is positively identified in the candidate.",
+      "critical_structural_blocker": false,
+      "confidence": 0.72,
+      "low_salience_observation": false,
+      "material_observation_excluded": true,
+      "deterministic_evidence_consulted": [
+       "Image 8 LOWER FLARE enlarged overlay",
+       "Image 9 COLLAR SLEEVE overlay",
+       "Image 15 COMPLETE CLOSURE overlay",
+       "far_flank_is_mirrored disclosure"
+      ]
+     },
+     "collar_sleeve": {
+      "structural_score": 9,
+      "structural_finding": "Image 9 (rows 495\u2013676) shows the collar sleeve flanks with RED and BLACK virtually coincident across the full height. The upper rounded corner (rows 495\u2013512) shows a slight red excursion outward by approximately 1 px at the shoulder of the collar top, and the lower corner (rows 665\u2013677) shows a similar small divergence. The straight vertical walls are sub-pixel matched. No false ring, stepped collar, adapter geometry, or disconnected collar component is present. The component mask (Image 5) confirms a single unbroken COLLAR band. Overall collar sleeve geometry is structurally accurate.",
+      "critical_structural_blocker": false,
+      "confidence": 0.9,
+      "low_salience_observation": false,
+      "material_observation_excluded": true,
+      "deterministic_evidence_consulted": [
+       "Image 9 COLLAR SLEEVE enlarged overlay",
+       "Image 5 COMPONENT MASK",
+       "Image 15 COMPLETE CLOSURE overlay"
+      ]
+     },
+     "collar_closure_junction": {
+      "structural_score": 9,
+      "structural_finding": "Image 10 (rows 480\u2013520) shows the junction between the dark closure and the collar top. The RED contour tracks the inward-curving BLACK contour closely from row 499 through the inflection and into the collar sidewall at row 515. A minor step-like deviation of the black reference contour around rows 505\u2013510 (attributable to reference pixel quantization at 17x magnification) is not replicated by the smooth red contour, which is the expected and correct behavior for a properly smoothed candidate contour. No hidden adapter geometry, stepped collar seat, or disconnected component boundary is detected. The junction is structurally coherent.",
+      "critical_structural_blocker": false,
+      "confidence": 0.88,
+      "low_salience_observation": false,
+      "material_observation_excluded": true,
+      "deterministic_evidence_consulted": [
+       "Image 10 COLLAR/CLOSURE JUNCTION enlarged overlay",
+       "Image 5 COMPONENT MASK",
+       "reference_quantization disclosure"
+      ]
+     },
+     "neck_transition": {
+      "structural_score": 8,
+      "structural_finding": "Image 11 and Image 12 document the neck undercut region (rows 670\u2013699). The M3 neck minimum half-width is 101.2 px versus the reference 100.5 px, yielding an inset per side of 7.3 px versus the reference 8.0 px\u2014a shortfall of 0.7 px per side (inset expression ratio 0.9125). The local-normal residual max is 0.004073 normalized (\u22481.40 px source). The neck undercut is present and geometrically correct in kind; the M3 neck is marginally less deep than the reference. At 0.7 px shortfall this is near the \u00b10.5 px quantization floor but slightly exceeds it, making it a small but measurable under-expression of the neck undercut depth. It does not constitute a critical structural blocker. In Image 11 the red contour also shows a slightly earlier divergence from the black contour on the outward flare below row 690, consistent with a slightly shallower undercut.",
+      "critical_structural_blocker": false,
+      "confidence": 0.85,
+      "low_salience_observation": false,
+      "material_observation_excluded": true,
+      "deterministic_evidence_consulted": [
+       "Image 11 NECK UNDERCUT overlay",
+       "Image 12 NECK WIDTH DIAGRAM",
+       "neck_inset measurements",
+       "neck_local_normal residuals"
+      ]
+     },
+     "shoulder_transition": {
+      "structural_score": 8,
+      "structural_finding": "Image 13 and Image 14 show the shoulder transition (rows 688\u2013735). The M3 shoulder tracks the reference through most of the curve but shows a consistent lateral offset: the red contour sits inside the black contour (narrower) through rows 690\u2013705, then crosses to outside (wider) through rows 706\u2013720, with peak local-normal deviation 1.44 px at row 706. The normalized residuals are mean 0.001011, p95 0.003673, max 0.004197 (\u22481.44 px). The disclosed fitter tolerance relaxation for the glass body is the likely cause. The shoulder curvature sums are both negative (outward convex), confirming the correct convexity sign. The deviation of 1.44 px is above the quantization floor and represents a minor but real contour mismatch at the point of maximum curvature. This is a true structural deviation, though not a blocker.",
+      "critical_structural_blocker": false,
+      "confidence": 0.87,
+      "low_salience_observation": false,
+      "material_observation_excluded": true,
+      "deterministic_evidence_consulted": [
+       "Image 13 SHOULDER TRANSITION overlay",
+       "Image 14 SHOULDER CURVATURE DIAGRAM",
+       "shoulder_local_normal residuals",
+       "peak_deviation disclosure",
+       "glass_fit_tolerance_not_enforced disclosure"
+      ]
+     },
+     "complete_closure_coherence": {
+      "structural_score": 9,
+      "structural_finding": "Image 15 (rows 292\u2013700) provides the full-closure view of both contours at 2.6x. RED and BLACK contours are coherent throughout: dome, shaft, collar top shoulder, collar sidewalls, collar bottom corner, neck undercut, and body shoulder all connect without discontinuity, gap, false ring, or disconnected segment. Component boundaries visible in Image 5 align with contour transition zones. The three identified minor deviations (neck inset -0.7 px, shoulder peak 1.44 px, lower flare corner ~1\u20132 px) are all localized and individually small. No structural topology defect, hidden adapter, or split component is present. The closure reads as a continuous, coherent, connected geometry across its full extent.",
+      "critical_structural_blocker": false,
+      "confidence": 0.92,
+      "low_salience_observation": false,
+      "material_observation_excluded": true,
+      "deterministic_evidence_consulted": [
+       "Image 15 COMPLETE CLOSURE overlay",
+       "Image 5 COMPONENT MASK",
+       "Image 4 CONTOUR OVERLAY",
+       "all enlarged overlays Images 6\u201313"
+      ]
+     },
+     "overall": {
+      "structural_score": 8,
+      "structural_finding": "The M3 candidate reproduces the reference structural geometry faithfully across all major zones. All three components (dark closure, collar, glass body) are present, connected, and topologically correct. The largest identified deviations are: (1) neck inset under-expressed by 0.7 px/side (9.125% shortfall, slightly above quantization noise); (2) shoulder transition peak deviation 1.44 px at row 706 (attributable in part to the disclosed fitter tolerance relaxation, but a real measurable contour difference); (3) minor lower flare corner divergence ~1\u20132 px. No critical structural blockers are found. The global contour is continuous and symmetrical within the auditable evidence. Scores are withheld from 10 specifically because the neck undercut shortfall and shoulder peak deviation are measurable true structural deviations, not presentation artifacts.",
+      "critical_structural_blocker": false,
+      "confidence": 0.88,
+      "low_salience_observation": false,
+      "material_observation_excluded": true,
+      "deterministic_evidence_consulted": [
+       "all images and all deterministic evidence fields"
+      ]
+     }
+    },
+    "verdict": "PASSES_STRUCTURAL_INSPECTION_PENDING_HUMAN_REVIEW",
+    "defect_classifications": [
+     {
+      "observation": "Neck inset depth under-expressed by 0.7 px per side (M3 inset 7.3 px vs reference 8.0 px, ratio 0.9125). The neck undercut exists but is marginally shallower than the reference.",
+      "classification": "TRUE_STRUCTURAL_DEFECT",
+      "evidence": "Image 12 NECK WIDTH DIAGRAM: ref inset/side 8.0 px, M3 inset/side 7.3 px, shortfall 0.7 px. Image 11 NECK UNDERCUT overlay: red contour diverges outward from black below row 690. neck_inset measurement block. Exceeds \u00b10.5 px quantization floor."
+     },
+     {
+      "observation": "Shoulder transition peak local-normal deviation of 1.44 px at row 706, where M3 contour crosses from inside to outside the reference curve at the point of maximum curvature.",
+      "classification": "TRUE_STRUCTURAL_DEFECT",
+      "evidence": "Image 13 SHOULDER TRANSITION overlay rows 688\u2013735: visible crossing deviation near row 706. Image 14 deviation map: peak 1.44 px at row 706. shoulder_local_normal max 0.004197 normalized. Disclosed fitter tolerance relaxation (glass_fit_tolerance_not_enforced) is a contributing factor but does not fully excuse the deviation."
+     },
+     {
+      "observation": "Lower flare corner (rows 493\u2013497) shows red contour displaced approximately 1\u20132 px outward from black reference at the transition from curved corner to straight sidewall.",
+      "classification": "TRUE_STRUCTURAL_DEFECT",
+      "evidence": "Image 8 LOWER FLARE enlarged overlay: visible lateral separation between red and black contours in the corner zone near row 494\u2013497. Consistent with disclosed adaptive fitter tolerance relaxation for the glass contour."
+     },
+     {
+      "observation": "Dome left flank mild outward excursion between rows 302\u2013315 (approximately 0.2\u20130.3 px source at 11x). Near quantization noise floor.",
+      "classification": "LOW_SALIENCE_UNDER_NEUTRAL_PRESENTATION",
+      "evidence": "Image 6 DOME overlay: slight red-outside-black separation on left flank mid-arc. Magnitude estimated \u22640.5 px source, within \u00b10.5 px reference quantization floor. Not resolvable as genuine structural mismatch."
+     },
+     {
+      "observation": "Reference far flank is mirrored from the measured flank; bilateral reference symmetry cannot be audited. Any reference-vs-candidate asymmetry finding is unsupportable.",
+      "classification": "LOW_SALIENCE_UNDER_NEUTRAL_PRESENTATION",
+      "evidence": "Deterministic disclosure: far_flank_is_mirrored. Candidate bilateral symmetry appears consistent in Images 4, 9, 15; no candidate asymmetry positively identified."
+     }
+    ]
+   },
+   "consistency": {
+    "record_type": "vq1_final_structural_scorecard_consistency/1.0",
+    "inspector": "STRUCTURAL_ADVERSARIAL_EVIDENCE_AUDITOR",
+    "codes": [
+     "VQ1_PASS_VERDICT_CONTAINS_SCORE_BELOW_10",
+     "VQ1_SCORE_10_CONTAINS_GENUINE_CONTOUR_CRITICISM"
+    ],
+    "detail": [
+     {
+      "code": "VQ1_PASS_VERDICT_CONTAINS_SCORE_BELOW_10",
+      "categories": {
+       "rounded_dome": 9,
+       "lower_flare": 8,
+       "flare_symmetry": 8,
+       "collar_sleeve": 9,
+       "collar_closure_junction": 9,
+       "neck_transition": 8,
+       "shoulder_transition": 8,
+       "complete_closure_coherence": 9,
+       "overall": 8
+      }
+     },
+     {
+      "category": "dark_shaft",
+      "code": "VQ1_SCORE_10_CONTAINS_GENUINE_CONTOUR_CRITICISM",
+      "geometry_terms": [
+       "step",
+       "stepped",
+       "asymmetry"
+      ]
+     }
+    ],
+    "scores": {
+     "rounded_dome": 9,
+     "dark_shaft": 10,
+     "lower_flare": 8,
+     "flare_symmetry": 8,
+     "collar_sleeve": 9,
+     "collar_closure_junction": 9,
+     "neck_transition": 8,
+     "shoulder_transition": 8,
+     "complete_closure_coherence": 9,
+     "overall": 8
+    },
+    "verdict": "PASSES_STRUCTURAL_INSPECTION_PENDING_HUMAN_REVIEW",
+    "consistent": false,
+    "all_categories_10": false
+   }
+  }
+ },
+ "release": {
+  "state": "VQ1_MASTER_HARD_STOP_REVIEW_REQUIRED",
+  "blocking_reasons": [
+   "INSPECTORS_DISAGREE_ON_GEOMETRY_CORRECTNESS",
+   "INSPECTOR_A_CATEGORY_BELOW_10",
+   "INSPECTOR_A_SCORECARD_INCONSISTENT",
+   "INSPECTOR_B_CATEGORY_BELOW_10",
+   "INSPECTOR_B_SCORECARD_INCONSISTENT"
+  ],
+  "human_accepted": false,
+  "manufacturable": false,
+  "production_ready": false
+ },
+ "substantive_disagreement": {
+  "inspector_a_true_defects": 0,
+  "inspector_b_true_defects": 3,
+  "a_true_defect_observations": [],
+  "b_true_defect_observations": [
+   "Neck inset depth under-expressed by 0.7 px per side (M3 inset 7.3 px vs reference 8.0 px, ratio 0.9125). The neck undercut exists but is marginally shallower than the reference.",
+   "Shoulder transition peak local-normal deviation of 1.44 px at row 706, where M3 contour crosses from inside to outside the reference curve at the point of maximum curvature.",
+   "Lower flare corner (rows 493\u2013497) shows red contour displaced approximately 1\u20132 px outward from black reference at the transition from curved corner to straight sidewall."
+  ],
+  "categories_diverging_by_2_or_more": {},
+  "disagree_on_geometry_correctness": true
+ },
+ "geometry_state": "VQ1_GEOMETRY_COMPLETE_PENDING_FINAL_STRUCTURAL_INSPECTION"
+}

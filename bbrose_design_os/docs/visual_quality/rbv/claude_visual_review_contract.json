@@ -1,0 +1,49 @@
+{
+ "schema": "claude_visual_review/1.0",
+ "status": "PROPOSED_PENDING_OWNER_APPROVAL \u2014 no provider calls in this slice; execution requires owner-budgeted authorization",
+ "inputs_compared": [
+  "authoritative real bottle (reference pack)",
+  "selected concept",
+  "confirmed profile",
+  "geometry validation render",
+  "client presentation render",
+  "reconstructed AI/PNG"
+ ],
+ "required_findings": [
+  "silhouette differences",
+  "shoulder differences",
+  "neck differences",
+  "closure differences",
+  "aspect and proportion differences",
+  "perspective mismatch",
+  "artwork placement",
+  "logo placement",
+  "typography quality",
+  "material realism",
+  "lighting issues",
+  "colour differences",
+  "client-presentability",
+  "uncertainty caused by missing reference evidence"
+ ],
+ "classification": [
+  "BLOCKING",
+  "MAJOR",
+  "MINOR",
+  "VISUAL_POLISH"
+ ],
+ "authority_rules": [
+  "Claude must not self-approve any gate",
+  "Claude findings feed the fail-closed gate as evidence; they never override a blocking automated failure and never substitute owner judgment",
+  "the OWNER remains final authority",
+  "uncertainty from missing reference evidence must be reported as uncertainty, never resolved by assumption"
+ ],
+ "cost_governance": "every review call cost-ledgered; batch budget pre-approved by the owner",
+ "observed_properties": {
+  "classification_is_not_deterministic": {
+   "statement": "Repeated executions over an IDENTICAL package agree on substance but NOT on severity classification. This is a measured property of the review, not a defect to be tuned out, and it is recorded here so a later session cannot rediscover it as a surprise.",
+   "evidence": "Two live passes over the byte-identical P1_V4 package on claude-opus-5, 2026-08-17: req_011Ce7vK9W58YKue3dLAnZuj returned 1 MAJOR (the absent-reference problem raised as a finding); req_011Ce7vY2dBsvNN3iaBqWjZW returned 0 findings, classifying every reference-dependent category as UNCERTAIN_MISSING_EVIDENCE instead. Both are ledgered in rbv4_call_budget.json. The dispositions agreed on what was seen; only the severity assignment moved.",
+   "consequence_for_consumers": "A finding COUNT is not a measurement and must never be a gate input. RBV-5 binds to specific dispositions or to nothing; real_bottle_visual_comparison/1.0 takes review findings as EVIDENCE only, which is also what §R1d requires.",
+   "what_would_change_this": "A stability characterisation across N repeated passes with the count distribution recorded — not yet run, and it would spend owner-budgeted calls."
+  }
+ }
+}

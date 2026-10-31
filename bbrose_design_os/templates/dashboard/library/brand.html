@@ -1,0 +1,135 @@
+{% extends "dashboard/library/base.html" %}
+{% block title %}The brand{% endblock %}
+{% block content %}
+<h1>The brand{% if brand %} — {{ brand.name }}{% endif %}</h1>
+{% include "dashboard/_brand_switch.html" %}
+<p class="lede">What every design is made from: the brand's colours and the part each plays, its type, its mark, and
+  what a design is told about the brand — read from the records that govern them. Nothing on this page changes a design.</p>
+<ul class="toc">
+  <li><a href="#colours">Colours</a></li>
+  <li><a href="#colour-roles">The part each colour plays</a></li>
+  <li><a href="#type">Type</a></li>
+  <li><a href="#faces">Faces</a></li>
+  <li><a href="#mark">The mark</a></li>
+  <li><a href="#told">What a design is told</a></li>
+</ul>
+
+<h2 id="colours">Colours</h2>
+{% for cs in colour_systems %}
+<section class="colour-system">
+  <h3>{{ cs.name }}</h3>
+  <ul class="swatches">
+  {% for sw in cs.swatches %}
+    <li class="swatch">
+      {% if sw.hex %}<svg class="chip" viewBox="0 0 48 48" role="img" aria-label="{{ sw.name }}, {{ sw.hex }}"><rect width="48" height="48" fill="{{ sw.hex }}"/></svg>
+      {% else %}<svg class="chip" viewBox="0 0 48 48" role="img" aria-label="{{ sw.name }}: a metallic ink, with no screen colour"><rect x="1" y="1" width="46" height="46" fill="none" stroke="currentColor" stroke-dasharray="4 3"/></svg>{% endif %}
+      <div>
+        <strong>{{ sw.name }}</strong>{% if sw.role %} <span class="dim">· {{ sw.role }}</span>{% endif %}<br>
+        {% if sw.hex %}<span class="mono">{{ sw.hex }}</span>{% else %}{{ sw.ink }} — a metallic ink, shown without a screen colour{% endif %}{% if sw.pantone %} <span class="dim">· Pantone {{ sw.pantone }}</span>{% endif %}
+        {% if sw.usage %}<br><span class="dim">{{ sw.usage }}</span>{% endif %}
+      </div>
+    </li>
+  {% endfor %}
+  </ul>
+</section>
+{% empty %}
+<p class="dim">No colour system is on record for this brand.</p>
+{% endfor %}
+
+<h2 id="colour-roles">The part each colour plays</h2>
+<p class="lede">A design gives each colour a part — a ground, an accent, the text. Each part takes the brand colour named
+  here, read from the colour system; a part with no brand colour says so, and a design brings its own.</p>
+<div class="table-wrap"><table class="roles">
+  <thead><tr><th scope="col">Part</th><th scope="col">Colour</th><th scope="col">From</th></tr></thead>
+  <tbody>
+  {% for r in colour_roles %}
+  <tr>
+    <td>{{ r.words }}</td>
+    <td>{% if r.brand_colour and r.brand_colour.hex %}<svg class="dot" viewBox="0 0 20 20" aria-hidden="true"><rect width="20" height="20" fill="{{ r.brand_colour.hex }}"/></svg> <span class="mono">{{ r.brand_colour.hex }}</span>{% elif r.brand_colour %}{{ r.brand_colour.value }}{% else %}<span class="dim">no brand colour</span>{% endif %}</td>
+    <td>{% if r.brand_colour %}{{ r.brand_colour.name }}{% else %}measured on the house's own files{% if r.measured_hex %} as <span class="mono">{{ r.measured_hex }}</span>{% endif %} — each design brings its own{% endif %}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table></div>
+
+<h2 id="type">Type</h2>
+<p class="lede">Each kind of text on a design is set in the first face of its list that is granted for production — asked
+  of the same resolver the drawing uses.</p>
+<div class="table-wrap"><table class="roles">
+  <thead><tr><th scope="col">Text</th><th scope="col">Set in</th><th scope="col">Its list, in order</th></tr></thead>
+  <tbody>
+  {% for r in type_roles %}
+  <tr>
+    <td>{{ r.words }}</td>
+    <td>{% if r.face %}<a href="#face-{{ r.face|slugify }}">{{ r.face }}</a>{% if r.weight %} <span class="dim">at weight {{ r.weight|floatformat:0 }}</span>{% endif %}{% else %}<span class="warn">{{ r.refusal }}</span>{% endif %}</td>
+    <td class="dim">{{ r.chain|join:" → " }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table></div>
+<p class="dim">Where the brand's type does not apply, by ruling: {{ exempt_surfaces|join:"; " }}. These keep the faces
+  they were measured in — the Noto faces, and a concept's own face.</p>
+
+<h2 id="faces">Faces</h2>
+<p class="lede">Every face of the house a design may use — {{ faces|length }} in all — each with its grant and its licence{% if pool_faces %}; and,
+  under D-D7-1, {{ pool_faces }} granted faces of the materials library, listed on <a href="{% url 'dashboard:materials_library' %}?tier=GRANTED">the Library's granted fonts</a>{% endif %}. Each
+  specimen is drawn on the server from the granted file.</p>
+<ul class="faces">
+{% for f in faces %}
+  <li class="face" id="face-{{ f.stem|slugify }}">
+    <img class="specimen" src="{% url 'dashboard:face_specimen' f.stem %}" alt="{{ f.postscript }}, a specimen" decoding="async">
+    <div>
+      <strong>{{ f.postscript }}</strong> <span class="dim">· {{ f.family }} · {{ f.scripts }}{% if f.variable %} · variable, shown at its default ({{ f.default_instance }}){% endif %}</span><br>
+      {% if f.granted %}Granted for production{% if f.approved_by %} by {{ f.approved_by }}{% endif %}{% if f.licence %} · {% if f.licence == "OFL-1.1" %}SIL Open Font License, Version 1.1{% else %}{{ f.licence }}{% endif %}{% endif %}{% else %}<span class="warn">Not granted — a design will not use it</span>{% endif %}
+      {% if f.serves %}<br><span class="dim">Used for: {{ f.serves|join:", " }}</span>{% endif %}
+    </div>
+  </li>
+{% endfor %}
+</ul>
+
+<h2 id="mark">The mark</h2>
+{% if marks.refused %}
+<p class="warn">The mark's own record refuses to hand it out: {{ marks.refused|join:"; " }}</p>
+{% else %}
+<figure class="mark">
+  <img src="{% url 'dashboard:brand_mark' %}" alt="The brand's mark in the product ink on the brand's cream">
+  <figcaption>In the product ink, <span class="mono">{{ marks.ink }}</span>, on the brand's cream — one ink shared by the
+    mark, the divider rule and the product's name. The brand guideline publishes the mark in {{ marks.guideline_colour }};
+    this product does not use it.</figcaption>
+</figure>
+<ul class="parts">
+  {% for p in marks.parts %}
+  <li>{{ p.words }}{% if p.must_appear %} — it always appears with the mark{% endif %}{% if p.stroke_pt %} — a {{ p.stroke_pt|floatformat:3 }} pt rule in <span class="mono">{{ p.ink }}</span>{% endif %}{% if p.provenance %} <span class="dim">· {{ p.provenance }}</span>{% endif %}</li>
+  {% endfor %}
+</ul>
+<p class="dim">Never: {{ marks.prohibited|join:", " }}. Its use: {{ marks.scope }}{% if not marks.third_party_authorized %}; no other company's mark may be used{% endif %}.</p>
+{% endif %}
+
+<h2 id="told">What a design is told about the brand</h2>
+{% if knowledge %}
+<p class="lede">Before it proposes directions, a design is given this — read from the brand's records.</p>
+<h3>The brief</h3>
+<p class="prose">{{ knowledge.master_brief|linebreaksbr }}</p>
+{% if knowledge.not %}<h3>What the brand is not</h3><p class="prose">{{ knowledge.not|linebreaksbr }}</p>{% endif %}
+{% for a in knowledge.aesthetics %}
+<h3>{{ a.name }}</h3>
+<p class="prose">{{ a.description|linebreaksbr }}</p>
+{% if a.seed %}<p class="dim">For pictures of the product: {{ a.seed }}</p>{% endif %}
+{% endfor %}
+{% for m in knowledge.materials %}
+<h3>{{ m.name }}</h3>
+<p class="prose">{{ m.descriptors }}</p>
+{% endfor %}
+{% for cs in colour_systems %}{% if cs.generation_context %}
+<h3>{{ cs.name }}, for pictures</h3>
+<p class="prose">{{ cs.generation_context }}</p>
+{% endif %}{% endfor %}
+<details class="told-text"><summary>The text itself, exactly as a design is given it</summary><pre>{{ knowledge.text }}</pre></details>
+{% if knowledge.unused %}
+<h3>On record, but given to no design</h3>
+<dl class="unused">{% for label, value in knowledge.unused %}<dt>{{ label }}</dt><dd>{{ value|linebreaksbr }}</dd>{% endfor %}</dl>
+{% endif %}
+{% else %}
+<p class="dim">No brand is on record.</p>
+{% endif %}
+{% endblock %}

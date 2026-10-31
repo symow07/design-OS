@@ -1,0 +1,32 @@
+§AD0(a) SCORE — T38 (§BH38 transcription, pure append, its own commit
+BEFORE any act), launched against pred_t38.txt (sealed 74c8010e33b408e2
+before git add). Gate GREEN, GEXIT=0. LANDED ff7b11a (finished
+2026-09-07T15:35:35Z). 8/8. Launched once, through the inner-root
+launcher, PostgreSQL 16 and Redis checked up before launch, nothing
+beside it.
+
+L1 HELD: exactly ONE path + the gate-staged ledger; no apps/, docs/
+   design_intelligence, tools/ or static/ path; nothing under materials/,
+   var/ or ~/ touched by the commit.
+L2 HELD: register +158 −0; the 19,649-line prefix ac353fac2745560f at HEAD;
+   the tail 6a75932a0dec237a == ~/bh38_work/t38_block.md; the 64 owner
+   lines round-trip byte-identical (abb1f3db519bac3f); 19,807 lines.
+L3 HELD: suite manifest untouched; records none; identity none; WIT 863
+   untouched; corpus constants, dip1b, the exclusion list, the materials
+   record (a38270318b0d0399…) and summary untouched by this commit; the
+   ledger passes APPEND_ONLY.
+L4 HELD: staged == declared, one row 158 0.
+L5 HELD: 2 files, 159 insertions, 0 deletions.
+L6 HELD: "TIER_2=GREEN collected=8569 failures=0 apps=7757 dip0c=671
+   dip0=141" — exact. No refusal; §BH24 2/3 carried.
+L7 HELD: ledger 474 → 475; HEAD~1 a byte-prefix of HEAD; the new line
+   verdict OK, refusal_count 0 (utc 2026-09-07T15:22:20Z).
+L8 HELD: apps diff EMPTY; GATE 7fbeb8f1fe10b0fb at [514:541] (593 lines);
+   TEST b32030dc827263e4; tree seals dip0c c22592930c75001c / dip0a
+   c378ee88026e1223 unchanged; protocol_identity untouched; the eight M7
+   artefacts == baseline; under Django at ff7b11a the Noto trio
+   VERIFIED_FOR_PRODUCTION, the 35 (+ licence texts, 50 files) at their
+   PROVENANCE hashes, catalogue 38; the DIP-0A inventory 3b3cfdc2bf4fc6c0
+   unchanged. Porcelain clean. No authority spent; nothing built.
+Next, in the ruled order: the riding commit (preview-is-prediction), then
+the proposal half (measure, propose, build nothing).

@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% comment %}Design intelligence — the reviewer's pages, in the one shell (the owner's goal of 2026-09-25: one visual system everywhere); their notices keep their words.{% endcomment %}
+{% block title %}{{ display_label }} · Human review{% endblock %}
+{% block page_class %}page wide intel{% endblock %}
+{% block before %}
+<nav class="seg subnav" aria-label="Design intelligence">
+  <a href="{% url 'intelligence:review-queue' %}">Review queue</a>
+  <a href="{% url 'intelligence:corpus-list' %}">Candidate corpus</a>
+  <a href="{% url 'intelligence:search' %}">Candidate search</a>
+</nav>
+{% endblock %}
+{% block content %}
+  <section class="notice"><strong>HUMAN INTELLIGENCE ASSERTIONS DO NOT AUTHORIZE OPERATIONAL USE.</strong></section>
+  <section class="notice"><strong>REVIEW READINESS IS NOT APPROVAL OR OPERATIONAL PERMISSION.</strong></section>
+  {% if integrity_warning %}<section class="notice"><strong>{{ integrity_warning.status }} · REVIEW REQUIRED · {{ integrity_warning.classification }}</strong><p>{{ integrity_warning.warning_message }}</p>{% for version in integrity_warning.unresolved_source_versions %}<article class="evidence"><strong>{{ version.status }} · {{ version.dataset_id }}</strong><code>Source version {{ version.version_id }} · expected SHA-256 {{ version.expected_sha256 }} · observed {{ version.observed_sha256|default:'UNAVAILABLE' }}</code><small>Stable source records {{ version.stable_source_keys|join:', ' }}</small></article>{% endfor %}<p>Machine classifications are non-authoritative. Operational permissions remain denied.</p></section>{% endif %}
+  <section class="hero"><div class="eyebrow">{{ candidate.review_type }} · PRIORITY {{ candidate.priority }}</div><h1>{{ display_label }}</h1><code>{{ item.pk }} · {{ item.external_key }}</code></section>
+  <section class="status-grid"><div><span>WORKFLOW COORDINATION</span><strong>{{ candidate.workflow_status }}</strong><small>{{ candidate.assigned_to.username|default:'UNASSIGNED' }}</small></div><div><span>PROJECTION STATUS</span><strong>{{ assertion_result.state }}</strong><small>{{ assertion_result.reason }}</small></div>{% for permission in permission_results %}<div><span>OPERATIONAL PERMISSION · {{ permission.permission_type }}</span><strong class="denied">{{ permission.effective_state }}</strong><small>{{ permission.reason_code }}</small></div>{% endfor %}</section>
+  <section><h2>EVIDENCE-INTEGRITY DIMENSIONS</h2><p><strong>{{ evidence_readiness.overall_status }}</strong> · review eligibility {% if evidence_readiness.review_eligible %}READY{% else %}BLOCKED{% endif %} · governance eligibility {% if evidence_readiness.governance_ready %}READY{% else %}BLOCKED{% endif %}</p>{% for dimension in evidence_readiness.dimensions %}<article class="evidence"><strong>{{ dimension.name }}</strong><span>{% if dimension.ready %}READY{% else %}NOT READY{% endif %}</span><small>{{ dimension.reason }}</small></article>{% endfor %}{% for version in evidence_readiness.dataset_versions %}<article class="evidence"><strong>{{ version.dataset_id }} · {{ version.schema_version }}</strong><code>SourceArtifact {{ version.source_artifact_id }} · SHA-256 {{ version.sha256 }}</code></article>{% endfor %}<p>Manifest membership: {{ evidence_readiness.manifest_memberships|join:', '|default:'No versioned manifest membership recorded' }}.</p></section>
+  <section><h2>HUMAN ASSERTION PROJECTION</h2><dl class="detail-list"><div><dt>Generation</dt><dd>{{ assertion_result.generation_id|default:'NOT BUILT' }}</dd></div><div><dt>Chain checkpoint</dt><dd><code>{{ assertion_result.chain_head_hash|default:'GENESIS' }} · sequence {{ assertion_result.terminal_sequence }}</code></dd></div><div><dt>Warnings</dt><dd>{{ assertion_result.warning_codes|default:'None' }}</dd></div></dl>{% for current_domain, current in assertion_result.current_by_domain.items %}<article class="evidence"><strong>{{ current_domain }} · {{ current.label }}</strong><span>{{ current.state }}</span><code>Event {{ current.event_id }} · sequence {{ current.sequence_number }}</code><small>{{ current.role_used }} · policy {{ current.policy_id }}/{{ current.policy_version }}</small></article>{% empty %}<p>No current effective human classification.</p>{% endfor %}{% if assertion_result.evidence_assessment %}<article class="evidence"><strong>EVIDENCE ASSESSMENT · {{ assertion_result.evidence_assessment.state }}</strong><code>Event {{ assertion_result.evidence_assessment.event_id }} · sequence {{ assertion_result.evidence_assessment.sequence_number }}</code><small>Independent evidence assessment; this grants no approval or permission.</small></article>{% endif %}</section>
+
+  {% if governance %}
+  <section class="notice"><strong>CANONICAL OR PRIMARY GOVERNANCE STATUS DOES NOT AUTHORIZE OPERATIONAL USE.</strong></section>
+  <section><h2>DUAL-CONTROL GOVERNANCE</h2>
+    <dl class="detail-list"><div><dt>Governance type</dt><dd>{{ governance.governance_type }}</dd></div><div><dt>Evidence integrity</dt><dd>{{ governance.integrity.status }} · {{ governance.integrity.classification }}</dd></div><div><dt>Required attestations</dt><dd>{{ governance.required_categories|join:' + ' }}</dd></div><div><dt>Governance projection</dt><dd>{{ governance.published.state }} · {{ governance.published.reason }}</dd></div><div><dt>Projection generation</dt><dd>{{ governance.published.generation_id|default:'NOT BUILT' }}</dd></div><div><dt>Chain checkpoint</dt><dd><code>{{ governance.published.chain_head_hash|default:'GENESIS' }} · sequence {{ governance.published.terminal_sequence }}</code></dd></div></dl>
+    {% for projection in governance.published.projections %}<article class="evidence"><strong>{{ projection.governance_type }} · {{ projection.effective_state }}</strong><code>{{ projection.normalized_scope }} · event {{ projection.event_id }} · sequence {{ projection.sequence_number }}</code><small>Policy {{ projection.policy_id }}/{{ projection.policy_version }} · grants no operational permission.</small></article>{% empty %}<p>No published governance selection for this candidate.</p>{% endfor %}
+    <h3>Attestation history</h3>{% for event in governance.published.attestations %}<article class="evidence"><strong>{{ event.payload.attestation_category }}</strong><code>{{ event.event_id }} · sequence {{ event.sequence_number }} · binding {{ event.payload.decision_scope_hash }}</code><small>{{ event.role_used }} · expires {{ event.payload.review_expiry }}</small></article>{% empty %}<p>No governance attestation history.</p>{% endfor %}
+    <h3>Final governance-decision history</h3>{% for event in governance.published.final_decisions %}<article class="evidence"><strong>{{ event.payload.governance_type }}</strong><code>{{ event.event_id }} · sequence {{ event.sequence_number }} · {{ event.payload.normalized_scope }}</code><small>Selected candidate {{ event.payload.selected_corpus_item_id }} · authority effect {{ event.payload.authority_effect }}</small>{% if governance.can_revoke %}<form method="post" action="{% url 'intelligence:governance-revoke' candidate.pk event.event_id %}" class="filters">{% csrf_token %}<label>Revocation reason<textarea name="reason" maxlength="1000" required></textarea></label><button type="submit">Append governance revocation</button></form>{% endif %}</article>{% empty %}<p>No final governance-decision history.</p>{% endfor %}
+    {% for event in governance.published.revocations %}<article class="evidence"><strong>REVOKED</strong><code>{{ event.event_id }} · target {{ event.payload.revoked_final_event_id }}</code><small>{{ event.payload.reason }}</small></article>{% endfor %}
+    {% if not governance.controls_available %}<p class="denied">Governance attestation and finalization are unavailable: {{ governance.eligibility_reasons|join:', ' }}. Technical evidence alone does not establish brand identity, palette authority, ownership, or rights.</p>{% endif %}
+  </section>
+  {% if governance.controls_available %}
+    {% for category, allowed in governance.can_attest.items %}{% if allowed %}<section><h2>Create {{ category }} attestation</h2><form method="post" action="{% url 'intelligence:governance-attest' candidate.pk %}" class="filters">{% csrf_token %}<input type="hidden" name="governance_type" value="{{ governance.governance_type }}"><input type="hidden" name="attestation_category" value="{{ category }}"><label>Scope<select name="scope_type" required>{% for scope_type in governance.scope_types %}<option value="{{ scope_type }}">{{ scope_type }}</option>{% endfor %}</select></label><label>Scope identifier (required for non-global scopes)<input name="scope_identifier" maxlength="64"></label><label>Review expiry (aware ISO-8601)<input name="review_expiry" placeholder="2030-01-01T00:00:00+00:00" required></label><fieldset><legend>Evidence sources</legend>{% for evidence, label in labelled_evidence %}{% if not evidence.is_test_only %}
+<label class="evidence-option"><input type="checkbox" name="evidence_reference_ids" value="{{ evidence.pk }}"> {{ label }}</label>
+{% endif %}{% endfor %}</fieldset><button type="submit">Append signed governance attestation</button></form></section>{% endif %}{% endfor %}
+    {% if governance.can_finalize %}<section><h2>Finalize dual-control governance selection</h2><form method="post" action="{% url 'intelligence:governance-finalize' candidate.pk %}" class="filters">{% csrf_token %}<input type="hidden" name="governance_type" value="{{ governance.governance_type }}"><label>Scope<select name="scope_type" required>{% for scope_type in governance.scope_types %}<option value="{{ scope_type }}">{{ scope_type }}</option>{% endfor %}</select></label><label>Scope identifier (required for non-global scopes)<input name="scope_identifier" maxlength="64"></label><fieldset><legend>Exactly two complementary attestations</legend>{% for event in governance.published.attestations %}<label><input type="checkbox" name="attestation_event_ids" value="{{ event.event_id }}">{{ event.payload.attestation_category }} · {{ event.event_id }}</label>{% empty %}<span>No attestations recorded.</span>{% endfor %}</fieldset><label>Prior final event to replace (leave blank for an empty scope)<select name="supersedes_final_event_id"><option value="">None</option>{% for event in governance.published.final_decisions %}<option value="{{ event.event_id }}">{{ event.event_id }}</option>{% endfor %}</select></label><button type="submit">Append final governance decision</button></form></section>{% endif %}
+  {% endif %}
+  {% endif %}
+
+  <section><h2>Workflow</h2>{% if not candidate.assigned_to %}<form method="post" action="{% url 'intelligence:review-claim' candidate.pk %}">{% csrf_token %}<button type="submit">Claim review</button></form>{% elif candidate.assigned_to_id == request.user.id and candidate.workflow_status != 'COMPLETED' %}<form method="post" action="{% url 'intelligence:review-release' candidate.pk %}">{% csrf_token %}<button type="submit">Release review</button></form>{% endif %}</section>
+
+  {% if review_packet %}
+  <section aria-label="Review packet"><h2>REVIEW PACKET · {{ review_packet.schema_version }}</h2>
+    <dl class="detail-list"><div><dt>Campaign wave</dt><dd>{{ review_packet.wave }}</dd></div><div><dt>Dataset lineage</dt><dd>{{ review_packet.dataset_identifier }}</dd></div><div><dt>Selection reason</dt><dd>{{ review_packet.selection_reason }}</dd></div></dl>
+    <h3>TECHNICAL EVIDENCE</h3>
+    {% for evidence in review_packet.evidence_references %}<article class="evidence"><strong>{{ evidence.evidence_kind }}</strong><code>{{ evidence.locator_schema_version }} · source SHA-256 {{ evidence.source_sha256 }}</code><small>Technical evidence only. Matching bytes do not transfer rights.</small></article>{% empty %}<p>No evidence references recorded.</p>{% endfor %}
+    {% for location in review_packet.source_location_observations %}<article class="evidence"><strong>{{ location.location_kind }} · {{ location.availability_state }}</strong><code>{{ location.observed_location }}</code><small>A file location never establishes ownership or identity.</small></article>{% endfor %}
+    <h3>PROVENANCE</h3>
+    {% for provenance in review_packet.provenance_records %}<article class="evidence"><strong>{{ provenance.provenance_type }} · {{ provenance.source_organization|default:'UNRECORDED' }}</strong><code>{{ provenance.acquisition_reference|default:'NO ACQUISITION REFERENCE' }}</code><small>Observed licence reference: {{ provenance.observed_licence_file_reference|default:'NONE' }} — evidence, never permission.</small></article>{% empty %}<p>No provenance recorded. Rights remain unreviewed.</p>{% endfor %}
+    <h3>MACHINE OUTPUT</h3>
+    {% for machine in review_packet.machine_classifications %}<article class="evidence"><strong>{{ machine.classification_type }} · {{ machine.label }}</strong><span>Confidence {{ machine.confidence }}</span><small>Machine output — authoritative: {{ machine.authoritative }}. Not human truth.</small></article>{% empty %}<p>No machine classifications.</p>{% endfor %}
+    <h3>HUMAN ASSERTIONS</h3>
+    <article class="evidence"><strong>{{ review_packet.human_assertions.projection_state }}</strong><small>{{ review_packet.human_assertions.reason }}</small></article>
+    <h3>REVIEW READINESS</h3>
+    <article class="evidence"><strong>{{ review_readiness.overall }}</strong><code>Technical {{ review_readiness.technical_evidence }} · Provenance {{ review_readiness.provenance_evidence }} · Identity {{ review_readiness.identity_evidence }} · Rights {{ review_readiness.rights_evidence }} · Integrity {{ review_readiness.integrity }}</code><small>Blockers: {{ review_readiness.blocker_codes|join:', '|default:'None' }} · Next: {{ review_readiness.recommended_next_action }}</small></article>
+    <p>Implies approval: {{ review_readiness.implies_approval }} · implies rights clearance: {{ review_readiness.implies_rights_clearance }} · operational permission granted: {{ review_readiness.operational_permission_granted }}. Technical readiness and rights are separate axes and never combine into one score.</p>
+    <h3>GOVERNANCE STATUS</h3>
+    <article class="evidence"><strong>{{ review_packet.governance.state }}</strong><small>{{ review_packet.governance.reason }} · read-only: {{ review_packet.governance.read_only }}. This packet never creates or changes a governance selection.</small></article>
+    <h3>OPERATIONAL PERMISSION</h3>
+    {% for permission in review_packet.operational_permissions %}<article class="evidence"><strong>{{ permission.permission_type }}</strong><span class="denied">ALLOWED: {{ permission.allowed }}</span><small>{{ permission.reason_code }}</small></article>{% endfor %}
+    <h3>REQUIRED HUMAN QUESTIONS</h3>
+    <ul>{% for question in review_packet.required_human_questions %}<li>{{ question }}</li>{% endfor %}</ul>
+    <p>The packet asks these questions; it never answers them. Answers arrive only as a signed decision event.</p>
+    <h3>PROHIBITED INFERENCES</h3>
+    <ul>{% for warning in review_packet.prohibited_inference_warnings %}<li>{{ warning }}</li>{% endfor %}</ul>
+  </section>
+  {% elif review_packet_error %}<section class="notice"><strong>NO CAMPAIGN REVIEW PACKET.</strong><p>{{ review_packet_error }}</p></section>{% endif %}
+
+  <section><h2>OBSERVED FACTS</h2>{% for fact in item.observed_facts.all %}<article class="evidence"><strong>{{ fact.fact_type }}</strong><code>{{ fact.normalized_value }}</code><small>Observed/imported; not a human conclusion.</small></article>{% empty %}<p>None.</p>{% endfor %}</section>
+  <section><h2>MACHINE CLASSIFICATION</h2>{% for machine in item.machine_classifications.all %}<article class="evidence"><strong>{{ machine.classification_type }} · {{ machine.label }}</strong><span>Confidence {{ machine.confidence }}</span><small>Machine output; not authoritative.</small></article>{% empty %}<p>None.</p>{% endfor %}</section>
+
+  {% if candidate.assigned_to_id == request.user.id and candidate.workflow_status == 'CLAIMED' %}
+  {% if evidence_readiness.review_eligible %}
+  <section><h2>Record human classification</h2><form method="post" action="{% url 'intelligence:review-classify' candidate.pk %}" class="filters">{% csrf_token %}<input type="hidden" name="classification_domain" value="{{ domain }}"><label>Domain<input value="{{ domain }}" disabled></label><label>Label<select name="classification_label" required>{% for label in labels %}<option value="{{ label }}">{{ label }}</option>{% endfor %}</select></label><label>Normalized value (JSON)<textarea name="normalized_value" required>{}</textarea></label><label>Explanation<textarea name="explanation" maxlength="4000" required></textarea></label><fieldset><legend>Evidence</legend>{% for evidence, label in labelled_evidence %}
+<label class="evidence-option"><input type="checkbox" name="evidence_reference_ids" value="{{ evidence.pk }}"> {{ label }}</label>
+{% endfor %}</fieldset><fieldset><legend>Machine classifications referenced</legend>{% for machine in item.machine_classifications.all %}<label><input type="checkbox" name="machine_classification_ids" value="{{ machine.pk }}">{{ machine.classification_type }} · {{ machine.label }}</label>{% empty %}<span>None.</span>{% endfor %}</fieldset><button type="submit">Record signed classification</button></form></section>
+  {% endif %}
+  <section><h2>Evidence assessment</h2><form method="post" action="{% url 'intelligence:review-assess-evidence' candidate.pk %}" class="filters">{% csrf_token %}<label>Explanation<textarea name="explanation" maxlength="4000" required></textarea></label><fieldset><legend>Evidence assessed</legend>{% for evidence, label in labelled_evidence %}
+<label class="evidence-option"><input type="checkbox" name="evidence_reference_ids" value="{{ evidence.pk }}"> {{ label }}</label>
+{% endfor %}</fieldset>{% if evidence_readiness.review_eligible %}<button type="submit" name="assessment" value="EVIDENCE_SUFFICIENT">Evidence sufficient</button>{% else %}<button type="button" disabled>Evidence sufficient unavailable — source integrity review required</button>{% endif %}<button type="submit" name="assessment" value="EVIDENCE_INSUFFICIENT">Evidence insufficient</button><button type="submit" formaction="{% url 'intelligence:review-request-clarification' candidate.pk %}">Request clarification</button></form></section>
+  {% endif %}
+
+  {% if assertion_result.current_by_domain %}<section><h2>Correct current classification</h2>{% for current_domain, current in assertion_result.current_by_domain.items %}<form method="post" action="{% url 'intelligence:review-correct' candidate.pk %}" class="filters">{% csrf_token %}<input type="hidden" name="supersedes_event_id" value="{{ current.event_id }}"><input type="hidden" name="classification_domain" value="{{ current_domain }}"><label>Current event<input value="{{ current.event_id }}" disabled></label><label>Corrected label<select name="classification_label" required>{% for label in labels %}<option value="{{ label }}">{{ label }}</option>{% endfor %}</select></label><label>Normalized value (JSON)<textarea name="normalized_value" required>{}</textarea></label><label>Explanation<textarea name="explanation" maxlength="4000" required></textarea></label><fieldset><legend>Evidence</legend>{% for evidence, label in labelled_evidence %}
+<label class="evidence-option"><input type="checkbox" name="evidence_reference_ids" value="{{ evidence.pk }}"> {{ label }}</label>
+{% endfor %}</fieldset><fieldset><legend>Machine classifications referenced</legend>{% for machine in item.machine_classifications.all %}<label><input type="checkbox" name="machine_classification_ids" value="{{ machine.pk }}">{{ machine.classification_type }} · {{ machine.label }}</label>{% endfor %}</fieldset><button type="submit">Record signed correction</button></form>{% endfor %}</section>{% endif %}
+
+  <section class="notice"><strong>VISUAL PREVIEW IS FOR DESCRIPTIVE REVIEW ONLY. IT DOES NOT AUTHORIZE USE.</strong></section>
+  <section><h2>VISUAL EVIDENCE</h2>
+    <p>Generated read-only previews of evidence already imported and hash-verified. A preview is not classification, approval, ownership, licence, or permission, and the original source file is never served to the browser. Each card names the evidence reference its checkbox uses.</p>
+    <div class="preview-grid">
+    {% for card in visual_evidence %}<article class="evidence preview-card">
+      {% if card.status == 'AVAILABLE' %}<img src="{% url 'intelligence:review-evidence-preview' candidate.pk card.evidence_reference_id %}" alt="Preview of {{ card.label }}" loading="lazy" width="320">
+      {% else %}<div class="preview-unavailable"><strong>{{ card.status }}</strong><small>{{ card.detail }}</small><small>Visual review cannot be completed in the browser for this evidence. The technical evidence below remains available.</small></div>{% endif %}
+      <strong>{{ card.label }}</strong>
+      <code>{{ card.evidence_kind }} · {{ card.unit_identity }} · source SHA-256 {{ card.source_sha256_prefix }}…</code>
+      <small>Evidence reference {{ card.evidence_reference_id }}</small>
+      {% if card.is_page_view %}<small>This is a view of the page within the same source, not a separate original artwork.</small>{% endif %}
+      {% if card.is_specimen %}<small>Generated glyph specimen. It carries no licence finding and authorizes no production use.</small>{% endif %}
+    </article>{% empty %}<p>No previewable evidence for this item.</p>{% endfor %}
+    </div>
+  </section>
+
+  {% if semantic_metadata.in_scope %}
+  <section class="notice"><strong>HUMAN DESCRIPTIVE METADATA IMPROVES SEARCH. IT DOES NOT AUTHORIZE USE.</strong></section>
+  <section><h2>HUMAN SEARCH METADATA</h2>
+    <p>Controlled vocabulary {{ semantic_metadata.vocabulary_version }} · scope {{ semantic_metadata.review_scope_id }}. Descriptive only: it confers no ownership, licence, canonical status, retrieval, or production permission, and brand entries are observations, never authority.</p>
+    {% if semantic_metadata.current %}<article class="evidence"><strong>CURRENT DESCRIPTIVE METADATA</strong><code>Event {{ semantic_metadata.current.event_id }} · sequence {{ semantic_metadata.current.sequence_number }}</code><small>{{ semantic_metadata.current.role_used }} · policy {{ semantic_metadata.current.policy_id }}/{{ semantic_metadata.current.policy_version }}</small>{% for field, terms in semantic_metadata.current.normalized_value.items %}<div><em>{{ field }}</em>: {{ terms }}</div>{% endfor %}</article>{% else %}<p>No signed descriptive metadata recorded for this item.</p>{% endif %}
+    {% if semantic_metadata.review_required_reason %}<section class="notice"><strong>REVIEW_REQUIRED · {{ semantic_metadata.review_required_reason }}</strong><p>The signed metadata history for this item is unresolved, so no ordinary record or correction form is offered. Recording another event would deepen the conflict.</p></section>
+    {% if semantic_metadata.conflict %}
+    <section class="notice"><strong>THIS ACTION PRESERVES ALL PRIOR EVENTS AND CREATES ONE SIGNED EFFECTIVE METADATA BUNDLE.</strong></section>
+    <section><h3>RESOLVE DESCRIPTIVE METADATA CONFLICT</h3>
+      <p>{{ semantic_metadata.conflict.active|length }} metadata events are active for this item. A correction supersedes ONE parent, so correcting each separately would leave one active event per correction and resolve nothing. One signed resolution names the whole active set instead. Nothing is edited or deleted — every event below stays in the immutable history.</p>
+      {% for entry in semantic_metadata.conflict.active %}<article class="evidence"><strong>ACTIVE · sequence {{ entry.sequence_number }} · {{ entry.action }}</strong>
+        <code>{{ entry.event_id }}</code>
+        <small>{{ entry.actor }} · {{ entry.role_used }} · {{ entry.created_at }}</small>
+        <small>Evidence: {% for reference, label in entry.evidence %}{{ label }}{% if not forloop.last %}; {% endif %}{% empty %}none{% endfor %}</small>
+        {% for field, values in entry.bundle.items %}{% if values and field != 'schema_version' and field != 'vocabulary_version' %}<small>{{ field }}: {{ values }}</small>{% endif %}{% endfor %}
+      </article>{% endfor %}
+      {% if semantic_metadata.conflict.bundles_identical %}<p>The active bundles are logically identical, so the descriptors below are prefilled from them. Review them before submitting.</p>{% else %}<p><strong>The active bundles differ.</strong> Nothing is prefilled — select the final values explicitly.</p>{% endif %}
+      <form method="post" action="{% url 'intelligence:review-resolve-semantic-metadata-conflict' candidate.pk %}" class="filters">{% csrf_token %}
+        <input type="hidden" name="review_scope_id" value="{{ semantic_metadata.review_scope_id }}">
+        <input type="hidden" name="resolution_reason" value="{{ semantic_metadata.conflict.resolution_reason }}">
+        <input type="hidden" name="incident_type" value="{{ semantic_metadata.conflict.incident_type }}">
+        {% for event_id in semantic_metadata.conflict.active_event_ids %}<input type="hidden" name="resolved_event_ids" value="{{ event_id }}">{% endfor %}
+        {% for field, terms in semantic_metadata.vocabulary_fields %}<label>{{ field }}<select name="metadata_{{ field }}" multiple size="6">{% for term, chosen in terms %}<option value="{{ term }}"{% if chosen %} selected{% endif %}>{{ term }}</option>{% endfor %}</select></label>{% endfor %}
+        <label>Search synonyms (one per line, max 12)<textarea name="metadata_search_synonyms">{{ semantic_metadata.prefill_synonyms }}</textarea></label>
+        <label>Reviewer notes (context for humans; never embedded)<textarea name="metadata_reviewer_notes" maxlength="2000">{{ semantic_metadata.prefill_notes }}</textarea></label>
+        <label>Resolution explanation (required, bounded)<textarea name="reviewer_explanation" maxlength="2000" required></textarea></label>
+        <fieldset><legend>Final evidence (choose explicitly)</legend>{% for evidence, label, chosen in semantic_metadata.evidence_references %}
+<label class="evidence-option"><input type="checkbox" name="evidence_reference_ids" value="{{ evidence.pk }}"{% if chosen %} checked{% endif %}> {{ label }}</label>
+{% endfor %}</fieldset>
+        <button type="submit">Resolve signed metadata conflict</button>
+      </form>
+    </section>
+    {% endif %}
+    {% else %}
+    {% if semantic_metadata.resolved_from_history %}<section class="notice"><strong>PROJECTION IS STALE. THIS CORRECTION TARGET IS RESOLVED FROM VERIFIED SIGNED EVENT HISTORY.</strong><p>Correcting event <code>{{ semantic_metadata.current_event_id }}</code>. The published projection has not caught up with the chain; the signed history is authoritative for what exists.</p></section>{% endif %}
+    <form method="post" action="{% if semantic_metadata.current_event_id %}{% url 'intelligence:review-correct-semantic-metadata' candidate.pk %}{% else %}{% url 'intelligence:review-record-semantic-metadata' candidate.pk %}{% endif %}" class="filters">{% csrf_token %}
+      <input type="hidden" name="review_scope_id" value="{{ semantic_metadata.review_scope_id }}">
+      {% if semantic_metadata.current_event_id %}<input type="hidden" name="supersedes_event_id" value="{{ semantic_metadata.current_event_id }}">{% endif %}
+      {% for field, terms in semantic_metadata.vocabulary_fields %}<label>{{ field }}<select name="metadata_{{ field }}" multiple size="6">{% for term, chosen in terms %}<option value="{{ term }}"{% if chosen %} selected{% endif %}>{{ term }}</option>{% endfor %}</select></label>{% endfor %}
+      <label>Search synonyms (one per line, max 12)<textarea name="metadata_search_synonyms">{{ semantic_metadata.prefill_synonyms }}</textarea></label>
+      <label>Reviewer notes (context for humans; never embedded)<textarea name="metadata_reviewer_notes" maxlength="2000">{{ semantic_metadata.prefill_notes }}</textarea></label>
+      <fieldset><legend>Evidence observed (required)</legend>{% for evidence, label, chosen in semantic_metadata.evidence_references %}
+<label class="evidence-option"><input type="checkbox" name="evidence_reference_ids" value="{{ evidence.pk }}"{% if chosen %} checked{% endif %}> {{ label }}</label>
+{% empty %}<span>No non-test evidence available.</span>{% endfor %}</fieldset>
+      <button type="submit">{% if semantic_metadata.current_event_id %}Correct signed descriptive metadata{% else %}Record signed descriptive metadata{% endif %}</button>
+    </form>
+    {% endif %}
+    <h3>IMMUTABLE DESCRIPTIVE METADATA HISTORY</h3>
+    {% for event in semantic_metadata.history %}<article class="evidence"><strong>{{ event.action }}</strong><span>{% if event.effective %}CURRENT{% elif event.superseded %}SUPERSEDED{% else %}HISTORICAL{% endif %}</span><code>{{ event.event_id }} · sequence {{ event.sequence_number }}</code><small>{{ event.role_used }} · {{ event.created_at }}</small></article>{% empty %}<p>No signed descriptive metadata history.</p>{% endfor %}
+  </section>
+  {% endif %}
+
+  <section><h2>IMMUTABLE HUMAN ASSERTION HISTORY</h2>{% for event in assertion_result.history %}<article class="evidence"><strong>{{ event.domain }} · {{ event.label }}</strong><span>{% if event.effective %}CURRENT{% elif event.superseded %}SUPERSEDED{% else %}HISTORICAL{% endif %}</span><code>{{ event.event_id }} · sequence {{ event.sequence_number }}</code><small>{{ event.role_used }} · {{ event.created_at }}</small></article>{% empty %}<p>No signed classification history.</p>{% endfor %}</section>
+  <section><h2>OPERATIONAL PERMISSION</h2><p class="denied">Human review does not grant retrieval, automatic use, export, or production permission.</p></section>
+{% endblock %}

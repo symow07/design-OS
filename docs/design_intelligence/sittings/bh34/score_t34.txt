@@ -1,0 +1,31 @@
+§AD0(a) SCORE — T34 (§BH34 roadmap transcription, pure append, one commit,
+nothing else acted on), launched against pred_t34.txt (sealed
+8fb04497a0b5a192 before git add). Gate GREEN, GEXIT=0. LANDED 5898035
+(2026-09-05T04:45:52Z UTC). 8/8. Launched once, through the inner-root
+launcher.
+
+L1 HELD: exactly OWNER_BLOCKER_CLEARANCE.md + the gate-staged ledger; no
+   apps/, docs/design_intelligence, tools/ or static/ path.
+L2 HELD: register +60 −0; the 19,043-line 8b5e70e prefix byte-identical
+   (b3053e8c92aeb2ce); seam + tail == t34_block.md (e29bf0757916d921);
+   total 19,103; the owner's 28 lines round-trip byte-identical
+   (5994c4934b682753); worktree == HEAD.
+L3 HELD: no manifest / records / identity in the commit; ledger 464 → 465
+   with HEAD~1 a byte-prefix of HEAD; census-first held (records none,
+   identity none, WIT 863 untouched — no apps change, corpus constants none).
+L4 HELD: staged == declared, one row 60 0, measured before launch (the
+   first `git add` was issued from ~/bh34_work — "not a git repository",
+   nothing staged — and re-issued from the outer root; the seal preceded
+   both).
+L5 HELD: 2 files, 61 insertions, 0 deletions — exact.
+L6 HELD: "TIER_2=GREEN collected=8555 failures=0 apps=7743 dip0c=671
+   dip0=141" — exact. No refusal; §BH24 0/3.
+L7 HELD: ledger 464 → 465; the new line verdict OK, refusal_count 0.
+L8 HELD: apps diff EMPTY; GATE 7fbeb8f1fe10b0fb at [514:541] (593 lines),
+   TEST b32030dc827263e4; tree seals unchanged; protocol_identity
+   untouched; the eight M7 artefacts == baseline; under Django at scoring
+   the Noto trio VERIFIED_FOR_PRODUCTION / USER_CONFIRMED, the 35 (and
+   their licence texts) at their PROVENANCE hashes, catalogue 38, the three
+   Arabic chains (Naskh,); no authority involved; nothing built.
+Post-landing: porcelain clean. Nothing else acted on. The executor waits
+for the owner's goal for front 2 ("MY LIBRARIES ACTUALLY GET USED").

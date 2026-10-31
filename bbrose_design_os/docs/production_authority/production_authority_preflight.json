@@ -1,0 +1,2223 @@
+{
+ "record_type": "production_authority_preflight/1.0",
+ "created_at": "2026-07-29",
+ "state": "STARTED",
+ "is_design_stage": false,
+ "closed_workstreams": {
+  "VQ_1": "OWNER_ACCEPTED_AND_CLOSED",
+  "VQ_2": "OWNER_ACCEPTED_AND_CLOSED",
+  "COMPLETE_PRODUCT_REVIEW": "OWNER_ACCEPTED_AND_CLOSED",
+  "VQ_3": "OWNER_APPROVED_AND_CLOSED"
+ },
+ "workstreams_reopened": false,
+ "frozen": {
+  "vq3_selected_render": {
+   "live": "fbdedc5b23e31745",
+   "expected": "fbdedc5b23e31745",
+   "match": true
+  },
+  "m3_structural": {
+   "live": "4ecc8e9df1d1",
+   "expected": "4ecc8e9df1d1",
+   "match": true
+  },
+  "lf1_r1": {
+   "live": "fcd8003994d52028",
+   "expected": "fcd8003994d52028",
+   "match": true
+  },
+  "font_unit": {
+   "live": "5db4403984ba6f75",
+   "expected": "5db4403984ba6f75",
+   "match": true
+  },
+  "approved_logo": {
+   "live": "a2b2a82969389ac2",
+   "expected": "a2b2a82969389ac2",
+   "match": true
+  },
+  "vq2_clean_artwork": {
+   "live": "94ec944326889c20",
+   "expected": "94ec944326889c20",
+   "match": true
+  },
+  "vq2_ai8_source": {
+   "live": "f3707618edf98c87",
+   "expected": "f3707618edf98c87",
+   "match": true
+  }
+ },
+ "frozen_drift": [],
+ "illustrator_verification": {
+  "record_type": "illustrator_execution_verification_checklist/1.0",
+  "created_at": "2026-07-29",
+  "state": "PASSED",
+  "must_be_performed_in": "Adobe Illustrator, by a human",
+  "cannot_be_performed_here": "Illustrator is not installed in this environment and no automated check can substitute for opening the file in Illustrator",
+  "subject_file": "docs/visual_quality/vq2/vq2_a2_r2_final_gate_a_r2.ai",
+  "subject_sha256_16": "6ae00f726ddefda4",
+  "subject_format": "FLAT_EPS_STANDARD_POSTSCRIPT_VECTOR_SOURCE",
+  "expected_layers": [
+   "01_STRUCTURE_BODY",
+   "02_STRUCTURE_COLLAR",
+   "03_STRUCTURE_CLOSURE",
+   "04_APPROVED_BBROSE_LOGO",
+   "05_DIVIDER",
+   "06_ROSE_LETTERING",
+   "07_DAMASCENA_LETTERING",
+   "08_SUPPORTING_COPY"
+  ],
+  "expected_objects": 40,
+  "expected_logo_components": 9,
+  "expected_logo_source_path_items": 314,
+  "expected_rose_glyphs": 4,
+  "expected_damascena_glyphs": 9,
+  "expected_supporting_glyphs": 14,
+  "checks": [
+   {
+    "n": 1,
+    "check": "file opens without repair warnings",
+    "result": "PASS",
+    "notes": null
+   },
+   {
+    "n": 2,
+    "check": "all expected layers/groups appear",
+    "result": "PASS",
+    "notes": null
+   },
+   {
+    "n": 3,
+    "check": "body, collar and closure remain editable",
+    "result": "PASS",
+    "notes": null
+   },
+   {
+    "n": 4,
+    "check": "logo remains 9 components",
+    "result": "PASS",
+    "notes": null
+   },
+   {
+    "n": 5,
+    "check": "medallion remains intact",
+    "result": "PASS",
+    "notes": null
+   },
+   {
+    "n": 6,
+    "check": "registered symbol remains intact",
+    "result": "PASS",
+    "notes": null
+   },
+   {
+    "n": 7,
+    "check": "Rose and Damascena remain separate outlined glyphs",
+    "result": "PASS",
+    "notes": null
+   },
+   {
+    "n": 8,
+    "check": "NIGHT REPAIR OIL remains outlined",
+    "result": "PASS",
+    "notes": null
+   },
+   {
+    "n": 9,
+    "check": "counters and compound paths remain correct",
+    "result": "PASS",
+    "notes": null
+   },
+   {
+    "n": 10,
+    "check": "no clipping-mask corruption",
+    "result": "PASS",
+    "notes": null
+   },
+   {
+    "n": 11,
+    "check": "no fill-rule change",
+    "result": "PASS",
+    "notes": null
+   },
+   {
+    "n": 12,
+    "check": "no mirrored geometry inversion",
+    "result": "PASS",
+    "notes": null
+   },
+   {
+    "n": 13,
+    "check": "no font substitution",
+    "result": "PASS",
+    "notes": null
+   },
+   {
+    "n": 14,
+    "check": "no raster replacement",
+    "result": "PASS",
+    "notes": null
+   },
+   {
+    "n": 15,
+    "check": "no missing artwork",
+    "result": "PASS",
+    "notes": null
+   },
+   {
+    "n": 16,
+    "check": "no object displacement",
+    "result": "PASS",
+    "notes": null
+   },
+   {
+    "n": 17,
+    "check": "no colour change",
+    "result": "PASS",
+    "notes": null
+   },
+   {
+    "n": 18,
+    "check": "no page-size change",
+    "result": "PASS",
+    "notes": null
+   },
+   {
+    "n": 19,
+    "check": "no geometry drift after save",
+    "result": "PASS",
+    "notes": null
+   },
+   {
+    "n": 20,
+    "check": "no unexpected flattening",
+    "result": "PASS",
+    "notes": null
+   },
+   {
+    "n": 21,
+    "check": "no hidden live text",
+    "result": "PASS",
+    "notes": null
+   },
+   {
+    "n": 22,
+    "check": "no linked missing assets",
+    "result": "PASS",
+    "notes": null
+   },
+   {
+    "n": 23,
+    "check": "every object shows its intended colour and none appears black",
+    "result": "PASS",
+    "notes": null
+   },
+   {
+    "n": 24,
+    "check": "the product is not a solid black silhouette",
+    "result": "PASS",
+    "notes": null
+   },
+   {
+    "n": 25,
+    "check": "body #D9BDB5, collar #705242, closure #493034 and artwork #502525 are all present and distinguishable",
+    "result": "PASS",
+    "notes": null
+   },
+   {
+    "n": 26,
+    "check": "counters are OPEN and not filled in - check the H and both R of NIGHT REPAIR OIL, the A of REPAIR, the e of Rose and Damascena, and the P of REPAIR",
+    "result": "PASS",
+    "notes": null
+   },
+   {
+    "n": 27,
+    "check": "ALL of the artwork is present - logo, registered symbol, divider, Rose, Damascena and NIGHT REPAIR OIL are each visible on the bottle",
+    "result": "PASS",
+    "notes": null
+   },
+   {
+    "n": 28,
+    "check": "the count of drawing objects is 40, not 3",
+    "result": "PASS",
+    "notes": null
+   }
+  ],
+  "actions": [
+   {
+    "n": 1,
+    "action": "Run illustrator_gate_a_roundtrip.jsx and select vq2_a2_r2_final_gate_a_r2.ai (NOT the preserved R0 or R1 sources, which both failed)",
+    "done": true
+   },
+   {
+    "n": 2,
+    "action": "Confirm every object shows its intended colour and nothing is black — this is the check the previous attempt failed",
+    "done": true
+   },
+   {
+    "n": 3,
+    "action": "Inspect Layers and Appearance panels",
+    "done": true
+   },
+   {
+    "n": 4,
+    "action": "Select and verify each major object group",
+    "done": true
+   },
+   {
+    "n": 5,
+    "action": "Save a NEW verification copy without overwriting the accepted source",
+    "done": true
+   },
+   {
+    "n": 6,
+    "action": "Reopen the verification copy",
+    "done": true
+   },
+   {
+    "n": 7,
+    "action": "Export a vector PDF and PNG proof",
+    "done": true
+   },
+   {
+    "n": 8,
+    "action": "Compare hashes, dimensions and visible geometry",
+    "done": true
+   },
+   {
+    "n": 9,
+    "action": "Record Illustrator version and operating system",
+    "done": true
+   }
+  ],
+  "do_not_overwrite_accepted_source": true,
+  "passed": true,
+  "passed_by": "PROJECT_OWNER",
+  "passed_at": "2026-07-31",
+  "illustrator_version": "30.0.0",
+  "operating_system": "macOS",
+  "gate": "ILLUSTRATOR_EXECUTION_VERIFICATION",
+  "gate_state": "REQUIRED_BEFORE_PRODUCTION_AUTHORITY",
+  "pdf": {
+   "path": "docs/production_authority/illustrator_execution_verification_checklist.pdf",
+   "sections": 5,
+   "size_bytes": 11568
+  },
+  "verification_copy_received": false,
+  "receipts_record": "docs/production_authority/illustrator_execution_verification_receipts.json",
+  "latest_receipt_codes": [
+   "ILLUSTRATOR_GATE_A_PAGE_SIZE_DRIFT",
+   "ILLUSTRATOR_GATE_A_ARTBOARD_NOT_PRESERVED",
+   "ILLUSTRATOR_ROUNDTRIP_PARTIAL_PASS",
+   "ILLUSTRATOR_EXECUTION_VERIFICATION_INCOMPLETE"
+  ],
+  "awaiting_artifacts": [
+   "vq2_a2_r2_final_illustrator_verified.ai",
+   "vq2_a2_r2_final_illustrator_verified.pdf",
+   "vq2_a2_r2_final_illustrator_verified.png"
+  ],
+  "previous_subject": {
+   "file": "docs/visual_quality/vq2/vq2_a2_r2_final_illustrator_verified_artboard_drift.ai",
+   "sha256_16": "547f55b8f6a71e9b",
+   "result": "ARTWORK_PASSED_ARTBOARD_FAILED",
+   "codes": [
+    "ILLUSTRATOR_GATE_A_PAGE_SIZE_DRIFT",
+    "ILLUSTRATOR_GATE_A_ARTBOARD_NOT_PRESERVED",
+    "ILLUSTRATOR_ROUNDTRIP_PARTIAL_PASS",
+    "ILLUSTRATOR_EXECUTION_VERIFICATION_INCOMPLETE"
+   ],
+   "preserved": true,
+   "overwritten": false
+  },
+  "expected_colors": {
+   "01_STRUCTURE_BODY": "#D9BDB5",
+   "02_STRUCTURE_COLLAR": "#705242",
+   "03_STRUCTURE_CLOSURE": "#493034",
+   "04_APPROVED_BBROSE_LOGO": "#502525",
+   "05_DIVIDER": "#502525",
+   "06_ROSE_LETTERING": "#502525",
+   "07_DAMASCENA_LETTERING": "#502525",
+   "08_SUPPORTING_COPY": "#502525"
+  },
+  "verification_state": "PASSED",
+  "result": "PASSED",
+  "codes": [
+   "ILLUSTRATOR_EXECUTION_VERIFICATION_PASSED",
+   "PRODUCTION_AUTHORITY_GATE_A_PASSED",
+   "ILLUSTRATOR_SAVE_REOPEN_EXPORT_CONFIRMED",
+   "ILLUSTRATOR_ARTBOARD_PRESERVED",
+   "ILLUSTRATOR_VECTOR_EDITABILITY_CONFIRMED"
+  ],
+  "corrected_source": "vq2_a2_r2_final_gate_a_r2.ai",
+  "corrected_source_sha256_16": "6ae00f726ddefda4",
+  "corrected_source_verified": false,
+  "roundtrip_script": "illustrator_gate_a_roundtrip.jsx",
+  "how_to_run": [
+   "open Adobe Illustrator",
+   "File > Scripts > Other Script...",
+   "choose docs/production_authority/illustrator_gate_a_roundtrip.jsx",
+   "select vq2_a2_r2_final_gate_a_r2.ai when prompted",
+   "answer the two confirmation dialogs honestly"
+  ],
+  "human_actions_required": 3,
+  "script_performs": [
+   "Save As",
+   "close",
+   "reopen",
+   "PDF export",
+   "PNG export",
+   "result JSON"
+  ],
+  "named_layers_guaranteed": false,
+  "named_layers_note": "R2 is plain EPS and will most likely import as a single Illustrator layer. The eight group names are carried as comments and object names. Correct stacking and independent editability are what Gate A requires.",
+  "initial_open_passed": true,
+  "initial_open_confirmed_visible": [
+   "body",
+   "collar",
+   "closure",
+   "BBROSE logo",
+   "medallion and registered symbol",
+   "divider",
+   "Rose",
+   "Damascena",
+   "NIGHT REPAIR OIL",
+   "approved colours",
+   "separate Path and Compound Path objects"
+  ],
+  "roundtrip_performed": true,
+  "remaining_actions": [],
+  "roundtrip_passed": true,
+  "expected_page_pt": [
+   207.1627,
+   493.2283
+  ]
+ },
+ "supplier_evidence_specification": {
+  "record_type": "supplier_evidence_request_specification/1.0",
+  "created_at": "2026-07-29",
+  "container_evidence": [
+   "exact supplier and product code",
+   "bottle technical drawing",
+   "bottle nominal capacity",
+   "overflow capacity",
+   "body diameter",
+   "overall height",
+   "shoulder height",
+   "neck finish",
+   "neck outer diameter",
+   "neck inner diameter",
+   "glass weight",
+   "glass wall or construction notes when available",
+   "dimensional tolerances",
+   "frosting/coating capability",
+   "colour capability",
+   "print-zone drawing",
+   "flat artwork dimensions",
+   "recommended decoration process"
+  ],
+  "closure_evidence": [
+   "exact supplier and closure product code",
+   "compatible neck finish",
+   "collar outer diameter",
+   "collar height",
+   "bulb dimensions",
+   "pipette dimensions",
+   "dip-tube length",
+   "compatibility declaration",
+   "torque or assembly guidance",
+   "closure technical drawing",
+   "material specification",
+   "finish options",
+   "colour options",
+   "dimensional tolerances"
+  ],
+  "compatibility_evidence": [
+   "written bottle/closure compatibility confirmation",
+   "assembled sample photographs",
+   "leakage-test information",
+   "drop-test or transport-test information when available",
+   "recommended filling line or assembly requirements"
+  ],
+  "material_evidence": {
+   "BODY": [
+    "glass type",
+    "frosting method",
+    "dusty-rose colouring method",
+    "coating or spraying system",
+    "durability",
+    "adhesion",
+    "chemical resistance",
+    "colour tolerance",
+    "MOQ",
+    "sample availability"
+   ],
+   "COLLAR": [
+    "aluminium grade",
+    "anodizing or coating process",
+    "rose-gold colour options",
+    "gloss level",
+    "surface treatment",
+    "colour tolerance",
+    "corrosion resistance",
+    "sample availability"
+   ],
+   "CLOSURE": [
+    "rubber or elastomer compound",
+    "colour options",
+    "hardness",
+    "compatibility with oil formula",
+    "chemical-resistance data",
+    "odour or migration information",
+    "sample availability"
+   ]
+  },
+  "print_evidence": [
+   "direct screen printing",
+   "pad printing",
+   "hot stamping",
+   "foil",
+   "decal",
+   "UV printing",
+   "coating compatibility",
+   "maximum printable width",
+   "maximum printable height",
+   "safe margin",
+   "wrap angle",
+   "artwork distortion compensation",
+   "colour count",
+   "registration tolerance",
+   "minimum line width",
+   "minimum readable text size",
+   "registered-symbol minimum size",
+   "medallion minimum printable detail",
+   "recommended CMYK/Pantone/spot-colour setup",
+   "artwork file requirements"
+  ],
+  "concept_authority_note": "the accepted VQ-2 artwork is CONCEPT_FRONT authority only",
+  "projected_to_wrap_conversion": "PROHIBITED without supplier evidence — every accepted width is APPARENT/projected from a photograph of a cylinder",
+  "material_spec_inferred_from_vq3_visuals": false,
+  "vq3_is_visualization_only": true
+ },
+ "supplier_drafts": {
+  "record_type": "production_supplier_request_drafts/2.0",
+  "created_at": "2026-07-29",
+  "supersedes": "vq1_supplier_specification_request (5 drafts, DRAFTED_NOT_SENT)",
+  "prior_drafts_preserved_at": "docs/visual_quality/vq1_reset2/vq1_supplier_specification_request.json",
+  "status": "READY_FOR_OWNER_MANUAL_SEND",
+  "sent": false,
+  "send_count": 0,
+  "requires_explicit_owner_authorization_before_sending": true,
+  "required_asks": [
+   "bottle technical drawing",
+   "closure technical drawing",
+   "compatibility confirmation",
+   "print-zone drawing",
+   "material and finish options",
+   "dimensional tolerances",
+   "sample availability",
+   "MOQ",
+   "lead time",
+   "production artwork requirements"
+  ],
+  "suppliers": [
+   {
+    "supplier": "Liquid Bottles LLC",
+    "domain": "liquidbottles.com",
+    "channel": "public contact form or email — TO BE SENT BY A HUMAN",
+    "asks": [
+     "bottle technical drawing",
+     "closure technical drawing",
+     "compatibility confirmation",
+     "print-zone drawing",
+     "material and finish options",
+     "dimensional tolerances",
+     "sample availability",
+     "MOQ",
+     "lead time",
+     "production artwork requirements"
+    ],
+    "status": "READY_FOR_OWNER_MANUAL_SEND",
+    "sent": false,
+    "subject": "30 ml cylindrical frosted-glass serum bottle + dropper closure — technical specification and decoration request",
+    "body": "Hello,\n\nWe are specifying packaging for a 30 ml cylindrical frosted-glass cosmetic serum bottle with a metallic collar and dropper closure. We need manufacturer specification data rather than marketing copy, for one exact product variant that you can actually supply.\n\nCONTAINER — please send:\n  - exact supplier and product code\n  - bottle technical drawing (CAD or dimensioned PDF)\n  - nominal capacity and overflow capacity\n  - body diameter, overall height, shoulder height\n  - neck finish, neck outer diameter, neck inner diameter\n  - glass weight and any wall or construction notes\n  - dimensional tolerances\n  - frosting/coating capability and colour capability\n  - print-zone drawing and flat artwork dimensions\n  - recommended decoration process\n\nCLOSURE — please send:\n  - exact supplier and closure product code\n  - compatible neck finish\n  - collar outer diameter and collar height\n  - bulb dimensions, pipette dimensions, dip-tube length\n  - closure technical drawing and material specification\n  - finish and colour options\n  - torque or assembly guidance\n  - dimensional tolerances\n\nCOMPATIBILITY — please confirm in writing:\n  - that the quoted bottle and closure are a compatible pair\n  - assembled sample photographs\n  - leakage-test information, and drop/transport-test data if held\n  - recommended filling-line or assembly requirements\n\nMATERIALS — please state the available options and tolerances for:\n  - body: glass type, frosting method, colour/spraying system, durability, adhesion, chemical resistance, colour tolerance\n  - collar: aluminium grade, anodizing or coating process, gloss level, surface treatment, corrosion resistance\n  - closure: elastomer compound, hardness, colour options, compatibility with a cosmetic oil formula, chemical-resistance and migration data\n\nDECORATION — please state which of screen printing, pad printing, hot stamping, foil, decal or UV printing you support on this item, together with maximum printable width and height, safe margin, wrap angle, any artwork distortion compensation you apply, colour count, registration tolerance, minimum line width, minimum readable text size, and your artwork file requirements.\n\nCOLOUR — for each decoration process you offer on this item, please state which colour systems you accept artwork in (Pantone, CMYK or spot colours), what you can hold to in each, and any colour tolerance you state.\n\nFinally, please confirm MOQ, sample availability and lead time.\n\nA dimensional drawing or CAD file is the single most useful item — our current geometry is a design concept and we will not treat it as production authority until your drawing confirms it.\n\nThank you.",
+    "body_is_send_ready_prose": true,
+    "owner_authorized_to_send": true,
+    "blocking_code": null,
+    "body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+    "destination": "Info@LiquidBottles.com",
+    "destination_owner_approved": true
+   },
+   {
+    "supplier": "SKS Bottle & Packaging",
+    "domain": "sks-bottle.com",
+    "channel": "public contact form or email — TO BE SENT BY A HUMAN",
+    "asks": [
+     "bottle technical drawing",
+     "closure technical drawing",
+     "compatibility confirmation",
+     "print-zone drawing",
+     "material and finish options",
+     "dimensional tolerances",
+     "sample availability",
+     "MOQ",
+     "lead time",
+     "production artwork requirements"
+    ],
+    "status": "READY_FOR_OWNER_MANUAL_SEND",
+    "sent": false,
+    "subject": "30 ml cylindrical frosted-glass serum bottle + dropper closure — technical specification and decoration request",
+    "body": "Hello,\n\nWe are specifying packaging for a 30 ml cylindrical frosted-glass cosmetic serum bottle with a metallic collar and dropper closure. We need manufacturer specification data rather than marketing copy, for one exact product variant that you can actually supply.\n\nCONTAINER — please send:\n  - exact supplier and product code\n  - bottle technical drawing (CAD or dimensioned PDF)\n  - nominal capacity and overflow capacity\n  - body diameter, overall height, shoulder height\n  - neck finish, neck outer diameter, neck inner diameter\n  - glass weight and any wall or construction notes\n  - dimensional tolerances\n  - frosting/coating capability and colour capability\n  - print-zone drawing and flat artwork dimensions\n  - recommended decoration process\n\nCLOSURE — please send:\n  - exact supplier and closure product code\n  - compatible neck finish\n  - collar outer diameter and collar height\n  - bulb dimensions, pipette dimensions, dip-tube length\n  - closure technical drawing and material specification\n  - finish and colour options\n  - torque or assembly guidance\n  - dimensional tolerances\n\nCOMPATIBILITY — please confirm in writing:\n  - that the quoted bottle and closure are a compatible pair\n  - assembled sample photographs\n  - leakage-test information, and drop/transport-test data if held\n  - recommended filling-line or assembly requirements\n\nMATERIALS — please state the available options and tolerances for:\n  - body: glass type, frosting method, colour/spraying system, durability, adhesion, chemical resistance, colour tolerance\n  - collar: aluminium grade, anodizing or coating process, gloss level, surface treatment, corrosion resistance\n  - closure: elastomer compound, hardness, colour options, compatibility with a cosmetic oil formula, chemical-resistance and migration data\n\nDECORATION — please state which of screen printing, pad printing, hot stamping, foil, decal or UV printing you support on this item, together with maximum printable width and height, safe margin, wrap angle, any artwork distortion compensation you apply, colour count, registration tolerance, minimum line width, minimum readable text size, and your artwork file requirements.\n\nCOLOUR — for each decoration process you offer on this item, please state which colour systems you accept artwork in (Pantone, CMYK or spot colours), what you can hold to in each, and any colour tolerance you state.\n\nFinally, please confirm MOQ, sample availability and lead time.\n\nA dimensional drawing or CAD file is the single most useful item — our current geometry is a design concept and we will not treat it as production authority until your drawing confirms it.\n\nThank you.",
+    "body_is_send_ready_prose": true,
+    "owner_authorized_to_send": true,
+    "blocking_code": null,
+    "body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+    "destination": "Customersupport@sks-bottle.com",
+    "destination_owner_approved": true
+   },
+   {
+    "supplier": "Bottlestore / O.Berk",
+    "domain": "bottlestore.com",
+    "channel": "public contact form or email — TO BE SENT BY A HUMAN",
+    "asks": [
+     "bottle technical drawing",
+     "closure technical drawing",
+     "compatibility confirmation",
+     "print-zone drawing",
+     "material and finish options",
+     "dimensional tolerances",
+     "sample availability",
+     "MOQ",
+     "lead time",
+     "production artwork requirements"
+    ],
+    "status": "READY_FOR_OWNER_MANUAL_SEND",
+    "sent": false,
+    "subject": "30 ml cylindrical frosted-glass serum bottle + dropper closure — technical specification and decoration request",
+    "body": "Hello,\n\nWe are specifying packaging for a 30 ml cylindrical frosted-glass cosmetic serum bottle with a metallic collar and dropper closure. We need manufacturer specification data rather than marketing copy, for one exact product variant that you can actually supply.\n\nCONTAINER — please send:\n  - exact supplier and product code\n  - bottle technical drawing (CAD or dimensioned PDF)\n  - nominal capacity and overflow capacity\n  - body diameter, overall height, shoulder height\n  - neck finish, neck outer diameter, neck inner diameter\n  - glass weight and any wall or construction notes\n  - dimensional tolerances\n  - frosting/coating capability and colour capability\n  - print-zone drawing and flat artwork dimensions\n  - recommended decoration process\n\nCLOSURE — please send:\n  - exact supplier and closure product code\n  - compatible neck finish\n  - collar outer diameter and collar height\n  - bulb dimensions, pipette dimensions, dip-tube length\n  - closure technical drawing and material specification\n  - finish and colour options\n  - torque or assembly guidance\n  - dimensional tolerances\n\nCOMPATIBILITY — please confirm in writing:\n  - that the quoted bottle and closure are a compatible pair\n  - assembled sample photographs\n  - leakage-test information, and drop/transport-test data if held\n  - recommended filling-line or assembly requirements\n\nMATERIALS — please state the available options and tolerances for:\n  - body: glass type, frosting method, colour/spraying system, durability, adhesion, chemical resistance, colour tolerance\n  - collar: aluminium grade, anodizing or coating process, gloss level, surface treatment, corrosion resistance\n  - closure: elastomer compound, hardness, colour options, compatibility with a cosmetic oil formula, chemical-resistance and migration data\n\nDECORATION — please state which of screen printing, pad printing, hot stamping, foil, decal or UV printing you support on this item, together with maximum printable width and height, safe margin, wrap angle, any artwork distortion compensation you apply, colour count, registration tolerance, minimum line width, minimum readable text size, and your artwork file requirements.\n\nCOLOUR — for each decoration process you offer on this item, please state which colour systems you accept artwork in (Pantone, CMYK or spot colours), what you can hold to in each, and any colour tolerance you state.\n\nFinally, please confirm MOQ, sample availability and lead time.\n\nA dimensional drawing or CAD file is the single most useful item — our current geometry is a design concept and we will not treat it as production authority until your drawing confirms it.\n\nThank you.",
+    "body_is_send_ready_prose": true,
+    "owner_authorized_to_send": true,
+    "blocking_code": null,
+    "body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+    "destination": "customerservice@bottlestore.com",
+    "destination_owner_approved": true,
+    "owner_supplied_spelling": "BottleStore / O.Berk",
+    "spelling_note": "the owner's capitalisation is used in the email greeting; this record keeps its own"
+   },
+   {
+    "supplier": "Premium Vials",
+    "domain": "premiumvials.com",
+    "channel": "public contact form or email — TO BE SENT BY A HUMAN",
+    "asks": [
+     "bottle technical drawing",
+     "closure technical drawing",
+     "compatibility confirmation",
+     "print-zone drawing",
+     "material and finish options",
+     "dimensional tolerances",
+     "sample availability",
+     "MOQ",
+     "lead time",
+     "production artwork requirements"
+    ],
+    "status": "READY_FOR_OWNER_MANUAL_SEND",
+    "sent": false,
+    "subject": "30 ml cylindrical frosted-glass serum bottle + dropper closure — technical specification and decoration request",
+    "body": "Hello,\n\nWe are specifying packaging for a 30 ml cylindrical frosted-glass cosmetic serum bottle with a metallic collar and dropper closure. We need manufacturer specification data rather than marketing copy, for one exact product variant that you can actually supply.\n\nCONTAINER — please send:\n  - exact supplier and product code\n  - bottle technical drawing (CAD or dimensioned PDF)\n  - nominal capacity and overflow capacity\n  - body diameter, overall height, shoulder height\n  - neck finish, neck outer diameter, neck inner diameter\n  - glass weight and any wall or construction notes\n  - dimensional tolerances\n  - frosting/coating capability and colour capability\n  - print-zone drawing and flat artwork dimensions\n  - recommended decoration process\n\nCLOSURE — please send:\n  - exact supplier and closure product code\n  - compatible neck finish\n  - collar outer diameter and collar height\n  - bulb dimensions, pipette dimensions, dip-tube length\n  - closure technical drawing and material specification\n  - finish and colour options\n  - torque or assembly guidance\n  - dimensional tolerances\n\nCOMPATIBILITY — please confirm in writing:\n  - that the quoted bottle and closure are a compatible pair\n  - assembled sample photographs\n  - leakage-test information, and drop/transport-test data if held\n  - recommended filling-line or assembly requirements\n\nMATERIALS — please state the available options and tolerances for:\n  - body: glass type, frosting method, colour/spraying system, durability, adhesion, chemical resistance, colour tolerance\n  - collar: aluminium grade, anodizing or coating process, gloss level, surface treatment, corrosion resistance\n  - closure: elastomer compound, hardness, colour options, compatibility with a cosmetic oil formula, chemical-resistance and migration data\n\nDECORATION — please state which of screen printing, pad printing, hot stamping, foil, decal or UV printing you support on this item, together with maximum printable width and height, safe margin, wrap angle, any artwork distortion compensation you apply, colour count, registration tolerance, minimum line width, minimum readable text size, and your artwork file requirements.\n\nCOLOUR — for each decoration process you offer on this item, please state which colour systems you accept artwork in (Pantone, CMYK or spot colours), what you can hold to in each, and any colour tolerance you state.\n\nFinally, please confirm MOQ, sample availability and lead time.\n\nA dimensional drawing or CAD file is the single most useful item — our current geometry is a design concept and we will not treat it as production authority until your drawing confirms it.\n\nThank you.",
+    "body_is_send_ready_prose": true,
+    "owner_authorized_to_send": true,
+    "blocking_code": null,
+    "body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+    "destination": "support@premiumvials.com",
+    "destination_owner_approved": true
+   },
+   {
+    "supplier": "Nicer Packaging",
+    "domain": "nicerpackaging.com",
+    "channel": "public contact form or email — TO BE SENT BY A HUMAN",
+    "asks": [
+     "bottle technical drawing",
+     "closure technical drawing",
+     "compatibility confirmation",
+     "print-zone drawing",
+     "material and finish options",
+     "dimensional tolerances",
+     "sample availability",
+     "MOQ",
+     "lead time",
+     "production artwork requirements"
+    ],
+    "status": "READY_FOR_OWNER_MANUAL_SEND",
+    "sent": false,
+    "subject": "30 ml cylindrical frosted-glass serum bottle + dropper closure — technical specification and decoration request",
+    "body": "Hello,\n\nWe are specifying packaging for a 30 ml cylindrical frosted-glass cosmetic serum bottle with a metallic collar and dropper closure. We need manufacturer specification data rather than marketing copy, for one exact product variant that you can actually supply.\n\nCONTAINER — please send:\n  - exact supplier and product code\n  - bottle technical drawing (CAD or dimensioned PDF)\n  - nominal capacity and overflow capacity\n  - body diameter, overall height, shoulder height\n  - neck finish, neck outer diameter, neck inner diameter\n  - glass weight and any wall or construction notes\n  - dimensional tolerances\n  - frosting/coating capability and colour capability\n  - print-zone drawing and flat artwork dimensions\n  - recommended decoration process\n\nCLOSURE — please send:\n  - exact supplier and closure product code\n  - compatible neck finish\n  - collar outer diameter and collar height\n  - bulb dimensions, pipette dimensions, dip-tube length\n  - closure technical drawing and material specification\n  - finish and colour options\n  - torque or assembly guidance\n  - dimensional tolerances\n\nCOMPATIBILITY — please confirm in writing:\n  - that the quoted bottle and closure are a compatible pair\n  - assembled sample photographs\n  - leakage-test information, and drop/transport-test data if held\n  - recommended filling-line or assembly requirements\n\nMATERIALS — please state the available options and tolerances for:\n  - body: glass type, frosting method, colour/spraying system, durability, adhesion, chemical resistance, colour tolerance\n  - collar: aluminium grade, anodizing or coating process, gloss level, surface treatment, corrosion resistance\n  - closure: elastomer compound, hardness, colour options, compatibility with a cosmetic oil formula, chemical-resistance and migration data\n\nDECORATION — please state which of screen printing, pad printing, hot stamping, foil, decal or UV printing you support on this item, together with maximum printable width and height, safe margin, wrap angle, any artwork distortion compensation you apply, colour count, registration tolerance, minimum line width, minimum readable text size, and your artwork file requirements.\n\nCOLOUR — for each decoration process you offer on this item, please state which colour systems you accept artwork in (Pantone, CMYK or spot colours), what you can hold to in each, and any colour tolerance you state.\n\nFinally, please confirm MOQ, sample availability and lead time.\n\nA dimensional drawing or CAD file is the single most useful item — our current geometry is a design concept and we will not treat it as production authority until your drawing confirms it.\n\nThank you.",
+    "body_is_send_ready_prose": true,
+    "owner_authorized_to_send": true,
+    "blocking_code": null,
+    "body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+    "destination": "sales@nicerpackaging.com",
+    "destination_owner_approved": true
+   }
+  ],
+  "attachments": {
+   "proprietary_internal_audit_files": "NONE — never attached",
+   "owner_approved_public_concept_material": "ONLY when explicitly authorized",
+   "currently_attached": []
+  },
+  "no_response_is_not_evidence": true,
+  "drafts_have_send_ready_bodies": true,
+  "owner_authorized_to_send": true,
+  "owner_authorization_codes": [
+   "SUPPLIER_EVIDENCE_REQUEST_DISPATCH_OWNER_AUTHORIZED",
+   "PRODUCTION_AUTHORITY_SUPPLIER_OUTREACH_STARTED"
+  ],
+  "owner_authorized_at": "2026-07-31",
+  "authorization_is_durable": true,
+  "blocking_code": null,
+  "bodies_modified_after_authorization": true,
+  "body_amendment": {
+   "ruling": "§BH45(a), ruled §BH45(e) OPTION (i) and landed under §BH45(f)(5)",
+   "date": "2026-09-11",
+   "what": "one paragraph added to the single shared body, after the DECORATION paragraph and before the closing lines, asking for the supplier's Pantone, CMYK and spot-colour guidance for the decoration processes it offers — the nineteenth of the nineteen gate requirements, the one the 2026-07-31 body did not ask",
+   "paragraph": "COLOUR — for each decoration process you offer on this item, please state which colour systems you accept artwork in (Pantone, CMYK or spot colours), what you can hold to in each, and any colour tolerance you state.",
+   "prior_body_sha256": "cb5423b8fe27902e7c21fd3a5fd56f3adefeb311d2276cdba4ee9076ff2dd426",
+   "prior_body_length": 2444,
+   "body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+   "body_length": 2661,
+   "reviewed_by": "PROJECT_OWNER — the paragraph previewed in the §BH45 report is the paragraph (§BH45(e)(2)); the letter assigns no colour and the Section 2 colour rule narrowed at ade91aa passes it",
+   "authorization": "the durable authorization of 2026-07-31 covers the amended body by the owner's §BH45(e)(2) and §BH45(f)(5)"
+  },
+  "recipients_resolved": true
+ },
+ "gates": {
+  "record_type": "production_authority_gate/2.0",
+  "generated_on": "2026-09-11",
+  "first_created": "2026-07-29",
+  "derived_from": [
+   "docs/production_authority/production_authority_gate_a.json",
+   "docs/production_authority_intake/spec_pack_manifest.json and spec_pack/",
+   "docs/production_authority/supplier_evidence_request_dispatch.json",
+   "docs/production_authority/supplier_outreach_deferral.json"
+  ],
+  "derivation": "Gate A is carried verbatim from its own record; gates B to E are computed from the intake state on this run — an item is SATISFIED only by intaken, provenanced evidence and a gate passes only when every one of its items is; nothing here flips a gate by any other means",
+  "gates": {
+   "A_illustrator_execution": {
+    "requires": [
+     "human Illustrator verification passed",
+     "verification copy opens correctly",
+     "artwork geometry unchanged",
+     "all objects remain editable"
+    ],
+    "evidence_present": true,
+    "state": "PASSED",
+    "blocked_by": null,
+    "previous_attempt": {
+     "subject": "vq2_a2_r2_final_gate_a_r1.ai",
+     "result": "FAILED",
+     "codes": [
+      "ILLUSTRATOR_EXECUTION_VERIFICATION_FAILED",
+      "ILLUSTRATOR_GATE_A_R1_ARTWORK_NOT_RENDERED",
+      "ILLUSTRATOR_LOGO_NOT_RENDERED",
+      "ILLUSTRATOR_DIVIDER_NOT_RENDERED",
+      "ILLUSTRATOR_PRODUCT_NAME_NOT_RENDERED",
+      "ILLUSTRATOR_SUPPORTING_COPY_NOT_RENDERED",
+      "ILLUSTRATOR_SOURCE_PROOF_DIVERGENCE_PERSISTS",
+      "GATE_A_R2_SOURCE_REQUIRED"
+     ],
+     "visible_objects": 3,
+     "missing_objects": 37
+    },
+    "correction": {
+     "slice": "PRODUCTION-AUTHORITY-GATE-A-CORR-2",
+     "state": "CLOSED_GATE_A_PASSED",
+     "corrected_source": "vq2_a2_r2_final_gate_a_r2.ai",
+     "corrected_source_sha256": "6ae00f726ddefda4adad93325735c489e3fe987452f9c1a2f603236c73e4c49a",
+     "automated_evidence_complete": true,
+     "automated_evidence_can_pass_gate_a": false,
+     "roundtrip_script": "docs/production_authority/illustrator_gate_a_roundtrip.jsx",
+     "awaiting": "the owner running the round-trip script in Adobe Illustrator and confirming both dialogs",
+     "initial_open_passed": true,
+     "roundtrip_performed": true,
+     "known_defects_closed": [
+      "black emission (R0)",
+      "artwork loss (R1)"
+     ],
+     "remaining_blocker": "artboard: the script now restores the source page before Save As and re-checks it after reopen; a second run is required",
+     "roundtrip_passed": true
+    },
+    "attempt_history": [
+     {
+      "n": 1,
+      "subject": "vq2_a2_r2_final.ai",
+      "result": "FAILED",
+      "observed": "one solid black silhouette",
+      "code": "ILLUSTRATOR_AI8_ALL_OBJECTS_EMITTED_BLACK"
+     },
+     {
+      "n": 2,
+      "subject": "vq2_a2_r2_final_gate_a_r1.ai",
+      "result": "FAILED",
+      "observed": "correct structure colours, 37 artwork objects absent",
+      "code": "ILLUSTRATOR_GATE_A_R1_ARTWORK_NOT_RENDERED"
+     },
+     {
+      "n": 3,
+      "subject": "vq2_a2_r2_final_gate_a_r2.ai",
+      "result": "INITIAL_OPEN_PASSED",
+      "observed": "all 40 objects visible with approved colours; separate Path and Compound Path objects",
+      "code": "ILLUSTRATOR_GATE_A_R2_INITIAL_OPEN_PASSED",
+      "gate_a_effect": "NONE - round trip not performed"
+     },
+     {
+      "n": 4,
+      "subject": "vq2_a2_r2_final_gate_a_r2.ai",
+      "result": "ARTWORK_PASSED_ARTBOARD_FAILED",
+      "observed": "genuine Illustrator save, 40 vector objects, all four approved colours, no raster, no live text - on a 763.654 x 983.225 pt artboard",
+      "code": "ILLUSTRATOR_GATE_A_ARTBOARD_NOT_PRESERVED",
+      "gate_a_effect": "NONE - artboard drift"
+     },
+     {
+      "n": 5,
+      "subject": "vq2_a2_r2_final_gate_a_r2.ai",
+      "result": "PASSED",
+      "observed": "saved, closed, reopened, exported; artboard preserved at 207.1627 x 493.2283; 40 logical drawings / 67 path items; both human confirmations answered",
+      "code": "PRODUCTION_AUTHORITY_GATE_A_PASSED",
+      "gate_a_effect": "GATE A PASSED"
+     }
+    ],
+    "passed_at": "2026-07-31",
+    "passed_by": "PROJECT_OWNER",
+    "evidence": {
+     "verified_ai_sha256": "ae287712de97798e9fa91efbb4fe3bb093f5950b8f55931441af71d7b00c13c0",
+     "verified_pdf_sha256": "1ea6e44863e50ce54596aba6880a2dd3ab182912c0565c8107fa513a7afa2066",
+     "verified_png_sha256": "ebd96ac4fe88c0b08610611e89380787dc3c73d156df89991eff5236f63b5460",
+     "verification_json_sha256": "110d205d04712d44af79f86838a04de9bd3a4165d465e5ca6d4cc7e18c350cb3",
+     "illustrator_version": "30.0.0",
+     "operating_system": "macOS",
+     "artboard_pt": [
+      207.162994,
+      493.227997
+     ],
+     "logical_drawings": 40,
+     "path_items": 67,
+     "record": "docs/visual_quality/vq2/gate_a_final_verification.json"
+    },
+    "codes": [
+     "ILLUSTRATOR_EXECUTION_VERIFICATION_PASSED",
+     "PRODUCTION_AUTHORITY_GATE_A_PASSED",
+     "ILLUSTRATOR_SAVE_REOPEN_EXPORT_CONFIRMED",
+     "ILLUSTRATOR_ARTBOARD_PRESERVED",
+     "ILLUSTRATOR_VECTOR_EDITABILITY_CONFIRMED"
+    ],
+    "grants": [
+     "Illustrator execution verification only"
+    ],
+    "does_not_grant": [
+     "production geometry authority",
+     "supplier compatibility",
+     "print-wrap authority",
+     "colour-separation authority",
+     "material specification",
+     "manufacturability",
+     "packaging authorization"
+    ]
+   },
+   "B_supplier_geometry": {
+    "requires": [
+     "qualified bottle drawing",
+     "qualified closure drawing",
+     "product codes",
+     "tolerances",
+     "compatibility evidence"
+    ],
+    "source": "OWNER_SUPPLIED_SPEC_PACK",
+    "evidence_present": false,
+    "state": "BLOCKED",
+    "blocked_by": "no owner-supplied evidence intaken for this item: qualified bottle drawing, qualified closure drawing, product codes, tolerances, compatibility evidence",
+    "blocked_code": "BLOCKED_PENDING_SUPPLIER_GEOMETRY",
+    "blocked_code_note": "the code names the cause as it was written on 2026-07-31; the cause now is `cause` (§BH46(e))",
+    "cause": "spec pack not yet handed over",
+    "items_total": 5,
+    "items_satisfied": 0,
+    "items_refused": 0,
+    "items_missing": 5,
+    "items": [
+     {
+      "item": "qualified bottle drawing",
+      "state": "MISSING",
+      "satisfied_by": []
+     },
+     {
+      "item": "qualified closure drawing",
+      "state": "MISSING",
+      "satisfied_by": []
+     },
+     {
+      "item": "product codes",
+      "state": "MISSING",
+      "satisfied_by": []
+     },
+     {
+      "item": "tolerances",
+      "state": "MISSING",
+      "satisfied_by": []
+     },
+     {
+      "item": "compatibility evidence",
+      "state": "MISSING",
+      "satisfied_by": []
+     }
+    ],
+    "items_satisfied_on": null,
+    "deferred_non_blocking_for_platform_development": true
+   },
+   "C_flat_artwork": {
+    "requires": [
+     "supplier print-zone drawing",
+     "wrap dimensions",
+     "safe zone",
+     "decoration-process limitations"
+    ],
+    "source": "OWNER_SUPPLIED_SPEC_PACK",
+    "evidence_present": false,
+    "state": "BLOCKED",
+    "blocked_by": "no owner-supplied evidence intaken for this item: supplier print-zone drawing, wrap dimensions, safe zone, decoration-process limitations",
+    "blocked_code": "BLOCKED_PENDING_PRINT_ZONE_AND_WRAP_EVIDENCE",
+    "blocked_code_note": "the code names the cause as it was written on 2026-07-31; the cause now is `cause` (§BH46(e))",
+    "cause": "spec pack not yet handed over",
+    "items_total": 4,
+    "items_satisfied": 0,
+    "items_refused": 0,
+    "items_missing": 4,
+    "items": [
+     {
+      "item": "supplier print-zone drawing",
+      "state": "MISSING",
+      "satisfied_by": []
+     },
+     {
+      "item": "wrap dimensions",
+      "state": "MISSING",
+      "satisfied_by": []
+     },
+     {
+      "item": "safe zone",
+      "state": "MISSING",
+      "satisfied_by": []
+     },
+     {
+      "item": "decoration-process limitations",
+      "state": "MISSING",
+      "satisfied_by": []
+     }
+    ],
+    "items_satisfied_on": null,
+    "deferred_non_blocking_for_platform_development": true
+   },
+   "D_colour_separation": {
+    "requires": [
+     "supplier decoration process",
+     "colour-system requirements",
+     "Pantone/CMYK/spot guidance",
+     "ink or foil limitations"
+    ],
+    "source": "OWNER_SUPPLIED_SPEC_PACK",
+    "evidence_present": false,
+    "state": "BLOCKED",
+    "blocked_by": "no owner-supplied evidence intaken for this item: supplier decoration process, colour-system requirements, Pantone/CMYK/spot guidance, ink or foil limitations",
+    "blocked_code": "BLOCKED_PENDING_DECORATION_PROCESS_AND_COLOUR_EVIDENCE",
+    "blocked_code_note": "the code names the cause as it was written on 2026-07-31; the cause now is `cause` (§BH46(e))",
+    "cause": "spec pack not yet handed over",
+    "items_total": 4,
+    "items_satisfied": 0,
+    "items_refused": 0,
+    "items_missing": 4,
+    "items": [
+     {
+      "item": "supplier decoration process",
+      "state": "MISSING",
+      "satisfied_by": []
+     },
+     {
+      "item": "colour-system requirements",
+      "state": "MISSING",
+      "satisfied_by": []
+     },
+     {
+      "item": "Pantone/CMYK/spot guidance",
+      "state": "MISSING",
+      "satisfied_by": []
+     },
+     {
+      "item": "ink or foil limitations",
+      "state": "MISSING",
+      "satisfied_by": []
+     }
+    ],
+    "items_satisfied_on": null,
+    "deferred_non_blocking_for_platform_development": true
+   },
+   "E_material_specification": {
+    "requires": [
+     "supplier-confirmed glass",
+     "collar",
+     "closure",
+     "frosting",
+     "coating",
+     "colour and finish options"
+    ],
+    "source": "OWNER_SUPPLIED_SPEC_PACK",
+    "evidence_present": false,
+    "state": "BLOCKED",
+    "blocked_by": "no owner-supplied evidence intaken for this item: supplier-confirmed glass, collar, closure, frosting, coating, colour and finish options",
+    "blocked_code": "BLOCKED_PENDING_SUPPLIER_MATERIAL_EVIDENCE",
+    "blocked_code_note": "the code names the cause as it was written on 2026-07-31; the cause now is `cause` (§BH46(e))",
+    "cause": "spec pack not yet handed over",
+    "items_total": 6,
+    "items_satisfied": 0,
+    "items_refused": 0,
+    "items_missing": 6,
+    "items": [
+     {
+      "item": "supplier-confirmed glass",
+      "state": "MISSING",
+      "satisfied_by": []
+     },
+     {
+      "item": "collar",
+      "state": "MISSING",
+      "satisfied_by": []
+     },
+     {
+      "item": "closure",
+      "state": "MISSING",
+      "satisfied_by": []
+     },
+     {
+      "item": "frosting",
+      "state": "MISSING",
+      "satisfied_by": []
+     },
+     {
+      "item": "coating",
+      "state": "MISSING",
+      "satisfied_by": []
+     },
+     {
+      "item": "colour and finish options",
+      "state": "MISSING",
+      "satisfied_by": []
+     }
+    ],
+    "items_satisfied_on": null,
+    "deferred_non_blocking_for_platform_development": true
+   }
+  },
+  "all_gates_blocked": false,
+  "gates_passed": 1,
+  "packaging_may_begin_when": "the required geometry and artwork gates pass (Gate B and Gate C at minimum)",
+  "packaging_may_begin_now": false,
+  "evidence_authority_order": [
+   "owner-supplied supplier technical drawing",
+   "owner-supplied supplier signed or written compatibility confirmation",
+   "physical sample measurement",
+   "owner-supplied supplier material specification",
+   "owner-supplied supplier print-zone specification",
+   "accepted concept geometry and artwork"
+  ],
+  "concept_never_overrides_qualified_production_evidence": true,
+  "on_conflict": [
+   "preserve the concept",
+   "record the difference",
+   "create a production adaptation proposal",
+   "stop for owner approval",
+   "never silently modify accepted artwork"
+  ],
+  "gate_a_correction": "IN_PROGRESS",
+  "supplier_requests_sent": 0,
+  "supplier_requests_sent_note": "a field that describes a path the system no longer has (§BH46): it stays 0 forever, and its tests are the proof that no outreach path exists",
+  "gates_remaining_blocked": 4,
+  "gate_a_passing_does_not_imply": [
+   "production geometry authority",
+   "supplier compatibility",
+   "print-wrap authority",
+   "colour-separation authority",
+   "material specification",
+   "manufacturability",
+   "packaging authorization"
+  ],
+  "next_required_owner_action": "place the spec pack: 19 of 19 items missing — B_supplier_geometry: qualified bottle drawing; B_supplier_geometry: qualified closure drawing; B_supplier_geometry: product codes; B_supplier_geometry: tolerances; B_supplier_geometry: compatibility evidence; C_flat_artwork: supplier print-zone drawing; C_flat_artwork: wrap dimensions; C_flat_artwork: safe zone; C_flat_artwork: decoration-process limitations; D_colour_separation: supplier decoration process; D_colour_separation: colour-system requirements; D_colour_separation: Pantone/CMYK/spot guidance; D_colour_separation: ink or foil limitations; E_material_specification: supplier-confirmed glass; E_material_specification: collar; E_material_specification: closure; E_material_specification: frosting; E_material_specification: coating; E_material_specification: colour and finish options",
+  "spec_pack_intake": {
+   "location": "docs/production_authority_intake",
+   "documents_placed": 0,
+   "items_satisfied": 0,
+   "items_refused": 0,
+   "items_missing": 19,
+   "state_record": "docs/production_authority_intake/intake_state.json",
+   "dry_run": "docs/production_authority_intake/dry_run.md"
+  },
+  "supplier_request_dispatch": {
+   "superseded_by": "§BH46",
+   "status": "SUPERSEDED-BY §BH46 — the system never contacts suppliers; kept as history, unsent",
+   "requests_total": 5,
+   "requests_sent": 0,
+   "dispatch_complete": false,
+   "log": "docs/production_authority/supplier_evidence_request_dispatch.json"
+  },
+  "supplier_outreach": "SUPERSEDED-BY §BH46 — the system never contacts suppliers",
+  "gates_b_to_e_deferral": "DEFERRED_NON_BLOCKING_FOR_PLATFORM_DEVELOPMENT",
+  "gates_b_to_e_wait_on": "the owner-supplied spec pack, intaken item by item (§BH46)",
+  "deferral_is_not_a_pass": true
+ },
+ "blockers": {
+  "PRODUCTION_GEOMETRY": "BLOCKED_PENDING_SUPPLIER_EVIDENCE",
+  "PRODUCTION_FLAT_ARTWORK": "BLOCKED_PENDING_WRAP_AND_SUPPLIER_EVIDENCE",
+  "PRODUCTION_COLOR_SEPARATION": "BLOCKED_PENDING_SUPPLIER_EVIDENCE",
+  "PRODUCTION_MATERIAL_SPECIFICATION": "BLOCKED_PENDING_SUPPLIER_EVIDENCE",
+  "ILLUSTRATOR_EXECUTION_VERIFICATION": "PASSED",
+  "PACKAGING": "NOT_STARTED"
+ },
+ "owner_actions_required": [
+  {
+   "n": 1,
+   "action": "REVIEW B4a — design target selector and creation form",
+   "where": "the dashboard Create panel",
+   "note": "supplier outreach is deferred and is no longer an owner action; the drafts, emails, manifests and validators are preserved as OPTIONAL_FUTURE_MANUFACTURING_WORKFLOW. SUPERSEDED-BY §BH46: outreach is not deferred but withdrawn — the system never contacts suppliers; what remains of it is history.",
+   "unblocks": "B4b references",
+   "status": "OUTSTANDING"
+  }
+ ],
+ "accepted_assets_changed": false,
+ "packaging_started": false,
+ "supplier_requests_sent": 0,
+ "provider_calls": 0,
+ "image_generation_calls": 0,
+ "human_accepted": false,
+ "pdf": {
+  "path": "docs/production_authority/production_authority_preflight.pdf",
+  "sections": 13,
+  "size_bytes": 27146
+ },
+ "png": {
+  "path": "docs/production_authority/production_authority_preflight.png",
+  "size": [
+   1500,
+   792
+  ]
+ },
+ "section_titles": [
+  "What this is",
+  "1. Closed workstreams",
+  "2. Frozen accepted identities",
+  "3. Illustrator verification requirements",
+  "4. Bottle evidence requirements",
+  "5. Closure evidence requirements",
+  "6. Compatibility requirements",
+  "7. Material evidence requirements",
+  "8. Print evidence requirements",
+  "9. Supplier request drafts",
+  "10. Production authority gates",
+  "11. Current blockers",
+  "12. Exact owner actions required"
+ ],
+ "sections": 13,
+ "blockers_note": "ILLUSTRATOR_EXECUTION_VERIFICATION carries two true and distinct strings: the blocker it imposes is REQUIRED_BEFORE_PRODUCTION_AUTHORITY, and its execution state — in vq2_state.json and in illustrator_verification.state — is PENDING_HUMAN_EXECUTION.",
+ "provider_ledger_baseline": {
+  "table": "apps.pipeline.models.ApiCallRecord",
+  "api_call_records": 226,
+  "read_at": "2026-07-30",
+  "unchanged_since": "2C_LIVE_PILOT_CLOSE",
+  "note": "observed count of the live ledger when this package was built; this stage renders documents from records already on disk and adds none"
+ },
+ "illustrator_receipts": {
+  "record_type": "illustrator_execution_verification_receipts/1.0",
+  "created_at": "2026-07-30",
+  "gate": "A_illustrator_execution",
+  "gate_state": "PASSED",
+  "verification_state": "PASSED",
+  "verification_complete": true,
+  "passed": true,
+  "receipts": [
+   {
+    "n": 1,
+    "received_at": "2026-07-30",
+    "reported_by": "owner",
+    "submitted_sha256": "f3707618edf98c87ceb86e03c9ca8d5d42c52c52f708807e335a02794d5a54c1",
+    "accepted_source_sha256": "f3707618edf98c87ceb86e03c9ca8d5d42c52c52f708807e335a02794d5a54c1",
+    "equals_accepted_source": true,
+    "is_new_verification_copy": false,
+    "codes": [
+     "ILLUSTRATOR_ORIGINAL_SOURCE_REUPLOADED",
+     "ILLUSTRATOR_VERIFICATION_COPY_NOT_RECEIVED",
+     "ILLUSTRATOR_EXECUTION_VERIFICATION_INCOMPLETE"
+    ],
+    "gate_a_effect": "NONE — Gate A remains BLOCKED",
+    "finding": "The submitted file hashes exactly to the frozen accepted source, so it is byte-identical to the original and cannot be the product of an open/save/reopen cycle in Illustrator. A verification copy necessarily differs from the source it was saved from.",
+    "corroboration": "digest equality against docs/visual_quality/vq2/vq2_a2_r2_final.ai on disk; the submitted file itself was not present in this environment and was not re-hashed here",
+    "accepted_source_modified": false
+   },
+   {
+    "n": 2,
+    "received_at": "2026-07-30",
+    "reported_by": "owner",
+    "subject": "docs/visual_quality/vq2/vq2_a2_r2_final.ai",
+    "subject_sha256": "f3707618edf98c87ceb86e03c9ca8d5d42c52c52f708807e335a02794d5a54c1",
+    "performed_in": "Adobe Illustrator",
+    "result": "FAILED",
+    "observed": "the complete product opened as one solid black silhouette",
+    "codes": [
+     "ILLUSTRATOR_EXECUTION_VERIFICATION_FAILED",
+     "ILLUSTRATOR_AI8_ALL_OBJECTS_EMITTED_BLACK",
+     "ILLUSTRATOR_DOCUMENT_PROCESS_COLORS_BLACK_ONLY",
+     "ILLUSTRATOR_SOURCE_PROOF_COLOR_DIVERGENCE",
+     "ILLUSTRATOR_PRODUCTION_SOURCE_REGENERATION_REQUIRED"
+    ],
+    "is_display_preference": false,
+    "is_source_emission_defect": true,
+    "corroborated_in_repo": {
+     "document_process_colors": "Black",
+     "every_visible_object_operator": "0.0000 0.0000 0.0000 Xa",
+     "visible_objects_resolving_to_black": 40,
+     "accepted_pdf_proof_carried_correct_colors": true
+    },
+    "gate_a_effect": "NONE — Gate A remains BLOCKED; the source is superseded by a corrected one that is itself not yet verified",
+    "finding": "This is a real Illustrator execution result, and it FAILED. The cause is a source colour-emission defect, not an Illustrator display preference: every visible object in the accepted .ai was written as 0.0000 0.0000 0.0000 Xa and the document declared Black only, while the accepted PDF and PNG proofs committed alongside it carried the four correct colours. The source and the proofs were therefore not equivalent in colour. A corrected source has been generated from the same geometry and awaits a new human round trip; it is NOT itself verified, and Gate A has not moved.",
+    "accepted_source_modified": false,
+    "accepted_design_modified": false
+   },
+   {
+    "n": 3,
+    "received_at": "2026-07-31",
+    "reported_by": "owner",
+    "subject": "docs/visual_quality/vq2/vq2_a2_r2_final_gate_a_r1.ai",
+    "subject_sha256": "0555c9f68d10bbd0369bcf191791f5b74366f5f74b3ed8453f4b254ad96400e2",
+    "performed_in": "Adobe Illustrator 2026 / macOS",
+    "result": "FAILED",
+    "observed": "body, collar and closure rendered in their approved colours; logo, registered symbol, divider, Rose, Damascena and NIGHT REPAIR OIL all absent from the visible result",
+    "visible_objects": 3,
+    "missing_objects": 37,
+    "codes": [
+     "ILLUSTRATOR_EXECUTION_VERIFICATION_FAILED",
+     "ILLUSTRATOR_GATE_A_R1_ARTWORK_NOT_RENDERED",
+     "ILLUSTRATOR_LOGO_NOT_RENDERED",
+     "ILLUSTRATOR_DIVIDER_NOT_RENDERED",
+     "ILLUSTRATOR_PRODUCT_NAME_NOT_RENDERED",
+     "ILLUSTRATOR_SUPPORTING_COPY_NOT_RENDERED",
+     "ILLUSTRATOR_SOURCE_PROOF_DIVERGENCE_PERSISTS",
+     "GATE_A_R2_SOURCE_REQUIRED"
+    ],
+    "colour_defect_resolved": true,
+    "finding": "The R1 colour repair worked - the three visible objects carry their approved colours, which R0 did not. A different defect remains: 37 of 40 objects do not reach the visible result. Measured in the repo, all 37 missing objects lie fully inside the body's bounding box and the 3 survivors are exactly those the body does not cover. That fits two explanations equally well - the body stacking above the artwork, or Illustrator discarding content after the third layer block - and this environment cannot separate them, so neither is recorded as the cause. R2 removes layer blocks and inherited state entirely, so it does not depend on which is true.",
+    "gate_a_effect": "NONE - Gate A remains BLOCKED",
+    "accepted_source_modified": false,
+    "accepted_design_modified": false,
+    "human_screenshot_received": false
+   },
+   {
+    "n": 4,
+    "received_at": "2026-07-31",
+    "reported_by": "owner",
+    "subject": "docs/visual_quality/vq2/vq2_a2_r2_final_gate_a_r2.ai",
+    "subject_sha256": "6ae00f726ddefda4adad93325735c489e3fe987452f9c1a2f603236c73e4c49a",
+    "performed_in": "Adobe Illustrator 2026 / macOS",
+    "result": "INITIAL_OPEN_PASSED",
+    "observed": "body, collar, closure, BBROSE logo, medallion and registered symbol, divider, Rose, Damascena and NIGHT REPAIR OIL all visible in approved colours, as separate Path and Compound Path objects",
+    "codes": [
+     "ILLUSTRATOR_GATE_A_R2_INITIAL_OPEN_PASSED",
+     "ILLUSTRATOR_GATE_A_R1_ARTWORK_LOSS_RESOLVED",
+     "ILLUSTRATOR_R2_FULL_VISIBLE_ARTWORK_PRESENT",
+     "ILLUSTRATOR_R2_VECTOR_PATHS_PRESENT"
+    ],
+    "artwork_loss_resolved": true,
+    "colour_defect_resolved": true,
+    "submitted_sha256": "6ae00f726ddefda4adad93325735c489e3fe987452f9c1a2f603236c73e4c49a",
+    "equals_accepted_source": true,
+    "is_new_verification_copy": false,
+    "roundtrip_performed": false,
+    "verification_result_json_received": false,
+    "finding": "This is the first Illustrator run of this artwork that lost nothing, and it closes the second defect: R1 rendered 3 of 40 objects, R2 renders all of them. Illustrator also built real vector objects rather than embedding the EPS - the owner reports separate Path and Compound Path items, so the compound paths carrying the counters and the medallion survived as objects. What it does NOT establish is Gate A. The returned .ai hashes exactly to the R2 source, so it is the original re-uploaded and nothing was saved, closed or reopened; a verification copy necessarily differs from the file it was saved from. Any uploaded PDF/PNG that matches this repository's own R2 proofs is likewise a re-upload and carries no Illustrator provenance. Neither upload reached this environment, so neither was hashed here.",
+    "does_not_isolate_r1_mechanism": "R2 changed several things at once, so this does not say whether R1 lost its artwork to stacking or to a dropped layer boundary. Fixture A would still separate them; that is now forensic, not blocking.",
+    "gate_a_effect": "NONE - Gate A remains BLOCKED",
+    "accepted_source_modified": false,
+    "accepted_design_modified": false
+   },
+   {
+    "n": 5,
+    "received_at": "2026-07-31",
+    "reported_by": "owner",
+    "subject": "vq2_a2_r2_final_illustrator_verified.ai (as submitted)",
+    "subject_sha256": "547f55b8f6a71e9b85236d185b0fdc977497374ebf96fc50339388c8660967c0",
+    "performed_in": "Adobe Illustrator 30.0 (Macintosh)",
+    "result": "ARTWORK_PASSED_ARTBOARD_FAILED",
+    "codes": [
+     "ILLUSTRATOR_R2_SAVE_COMPLETED",
+     "ILLUSTRATOR_R2_FULL_ARTWORK_PRESERVED",
+     "ILLUSTRATOR_R2_COLOURS_PRESERVED",
+     "ILLUSTRATOR_R2_VECTOR_OBJECTS_PRESERVED",
+     "ILLUSTRATOR_GATE_A_PAGE_SIZE_DRIFT",
+     "ILLUSTRATOR_GATE_A_ARTBOARD_NOT_PRESERVED",
+     "ILLUSTRATOR_ROUNDTRIP_PARTIAL_PASS",
+     "ILLUSTRATOR_EXECUTION_VERIFICATION_INCOMPLETE"
+    ],
+    "is_new_verification_copy": true,
+    "roundtrip_performed": true,
+    "verified_here": {
+     "page_pt": [
+      763.654,
+      983.225
+     ],
+     "expected_page_pt": [
+      207.1627,
+      493.2283
+     ],
+     "drawing_objects": 40,
+     "filled": 39,
+     "stroked": 1,
+     "raster_images": 0,
+     "live_text_characters": 0,
+     "colours": [
+      "#D9BDB5",
+      "#705242",
+      "#493034",
+      "#502525"
+     ]
+    },
+    "finding": "The first genuinely different file to come back, and a native Illustrator document rather than our EPS - a save really happened. Measured here from the file itself: 40 vector objects, 39 filled plus the divider stroke, all four approved colours and nothing else, zero rasters, zero live text. The artwork passed. The page did not: 763.654 x 983.225 pt against the accepted 207.1627 x 493.2283. The ink measures the same physical height as the source, so the artwork was translated, never resized. This is a defect in the automation script, not in the artwork.",
+    "second_finding": "The result JSON on disk came from a DIFFERENT, aborted run in which the .jsx was selected instead of the .ai; it records FAIL with save, reopen and both exports false, and it overwrote the record belonging to the run that produced this copy. The copy is still genuine, but its script-written provenance was destroyed. Both script defects are now fixed.",
+    "gate_a_effect": "NONE - Gate A remains BLOCKED",
+    "accepted_artwork_modified": false,
+    "r2_source_modified": false
+   },
+   {
+    "n": 6,
+    "received_at": "2026-07-31",
+    "reported_by": "owner",
+    "subject": "vq2_a2_r2_final_illustrator_verified.ai",
+    "subject_sha256": "ae287712de97798e9fa91efbb4fe3bb093f5950b8f55931441af71d7b00c13c0",
+    "performed_in": "Adobe Illustrator 30.0.0 / macOS",
+    "result": "PASSED",
+    "codes": [
+     "ILLUSTRATOR_EXECUTION_VERIFICATION_PASSED",
+     "PRODUCTION_AUTHORITY_GATE_A_PASSED",
+     "ILLUSTRATOR_SAVE_REOPEN_EXPORT_CONFIRMED",
+     "ILLUSTRATOR_ARTBOARD_PRESERVED",
+     "ILLUSTRATOR_VECTOR_EDITABILITY_CONFIRMED"
+    ],
+    "is_new_verification_copy": true,
+    "roundtrip_performed": true,
+    "verified_here": {
+     "artboard_pt": [
+      207.162994,
+      493.227997
+     ],
+     "logical_drawings": 40,
+     "path_items": 67,
+     "filled": 39,
+     "stroked": 1,
+     "raster_images": 0,
+     "live_text_characters": 0,
+     "colours": [
+      "#D9BDB5",
+      "#705242",
+      "#493034",
+      "#502525"
+     ],
+     "divider_stroke_width_pt": 0.362384
+    },
+    "finding": "The round trip completed and every figure was re-measured here from the returned files rather than taken from the report: all four hashes match, the artboard is 207.162994 x 493.227997 pt, there are 40 logical drawings, 39 filled plus the divider stroke, only the four approved colours, no raster and no live text. The submitted JSON records human_result PASS with save, reopen and both exports true, no warning, and both nine-item human confirmations answered. Gate A passes.",
+    "gate_a_effect": "GATE A PASSED",
+    "accepted_artwork_modified": false
+   }
+  ],
+  "verification_copy_received": true,
+  "awaiting": [],
+  "acceptance_rules": [
+   "the verification .ai must be produced from vq2_a2_r2_final_gate_a_r2.ai",
+   "a submission whose sha256 equals the corrected source is a re-upload, never a verification copy - it must differ from 6ae00f726ddefda4adad93325735c489e3fe987452f9c1a2f603236c73e4c49a",
+   "the R2 source must still hash to 6ae00f726ddefda4adad93325735c489e3fe987452f9c1a2f603236c73e4c49a afterwards",
+   "R1 must still hash to 0555c9f68d10bbd0369bcf191791f5b74366f5f74b3ed8453f4b254ad96400e2 and R0 to f3707618edf98c87ceb86e03c9ca8d5d42c52c52f708807e335a02794d5a54c1",
+   "all four artefacts are required before Gate A can be evaluated",
+   "human_result must be PASS; save, reopen, PDF export and PNG export must all be true",
+   "a null or absent check result is not a pass",
+   "colour AND presence must be confirmed visually in Illustrator; automated checks on the bytes are not evidence of what Illustrator renders",
+   "a successful OPEN is not a round trip: Gate A needs the file saved, closed and reopened in Illustrator, with exports taken from the REOPENED copy",
+   "an uploaded PDF or PNG identical to this repository's own R2 proofs is a re-upload of our own output and is not Illustrator evidence",
+   "automated evidence was wrong twice before a human opened the file; a human open that succeeds is still not provenance",
+   "a successful OPEN is not a round trip: Gate A needs the file saved, closed and reopened in Illustrator, with exports taken from the REOPENED copy",
+   "an uploaded PDF or PNG identical to this repository's own R2 proofs is a re-upload of our own output and is not Illustrator evidence",
+   "automated evidence was wrong twice before a human opened the file; a human open that succeeds is still not provenance",
+   "a successful OPEN is not a round trip: Gate A needs the file saved, closed and reopened in Illustrator, with exports taken from the REOPENED copy",
+   "an uploaded PDF or PNG identical to this repository's own R2 proofs is a re-upload of our own output and is not Illustrator evidence",
+   "automated evidence was wrong twice before a human opened the file; a human open that succeeds is still not provenance",
+   "the verified .ai must differ from the preserved artboard-drift copy 547f55b8f6a71e9b85236d185b0fdc977497374ebf96fc50339388c8660967c0",
+   "the verified page must be 207.1627 x 493.2283 pt; artwork preserved on the wrong page size is not a pass",
+   "the result JSON must belong to the run that produced the files - an aborted run's record is not provenance for someone else's output"
+  ],
+  "eps_text_is_not_evidence": true,
+  "eps_text_note": "Successful Illustrator execution must NOT be inferred from reading the EPS/PostScript text inside the .ai. The file being parseable, well-formed, or containing the expected operators says nothing about whether Illustrator opened it without repair, preserved editability, or survived a save/reopen cycle. Only a human performing the checks in Illustrator can establish that.",
+  "automated_pass_possible_here": false,
+  "accepted_assets_changed": false,
+  "packaging_started": false,
+  "required_input": "vq2_a2_r2_final_gate_a_r2.ai",
+  "required_input_sha256": "6ae00f726ddefda4adad93325735c489e3fe987452f9c1a2f603236c73e4c49a",
+  "roundtrip_script": "illustrator_gate_a_roundtrip.jsx",
+  "initial_open_passed": true,
+  "roundtrip_performed": true,
+  "remaining_blocker_is_procedural_not_a_defect": true,
+  "roundtrip_passed": true
+ },
+ "gate_a_correction": "CLOSED_GATE_A_PASSED",
+ "supplier_dispatch": {
+  "record_type": "supplier_evidence_request_dispatch/2.0",
+  "generated_on": "2026-09-11",
+  "superseded_by": "§BH46",
+  "supersession": "§BH46: the system never contacts suppliers. The owners of the companies deal with their suppliers directly and hand the product information to this system, which is the designer and acquires nothing. This record describes a path the system no longer has; it is kept as history, unsent, and nothing here is to be sent.",
+  "derived_from": [
+   "docs/production_authority/production_supplier_request_drafts.json",
+   "docs/production_authority/supplier_dispatch_manifest.json",
+   "django settings (EMAIL_BACKEND, EMAIL_HOST)"
+  ],
+  "derivation": "every field is measured from those inputs on generated_on; nothing here is a record of an earlier run, and nothing here is a send",
+  "authorization": {
+   "granted": true,
+   "granted_by": "PROJECT_OWNER",
+   "granted_at": "2026-07-31",
+   "codes": [
+    "SUPPLIER_EVIDENCE_REQUEST_DISPATCH_OWNER_AUTHORIZED",
+    "PRODUCTION_AUTHORITY_SUPPLIER_OUTREACH_STARTED"
+   ],
+   "scope": "the 5 previously reviewed drafts in production_supplier_request_drafts.json only",
+   "additional_recipients_created": 0,
+   "additional_messages_created": 0,
+   "durable": true,
+   "durable_note": "the authorization stands and does not need to be given again; it is recorded in the drafts record"
+  },
+  "transport": {
+   "email_backend": "django.core.mail.backends.console.EmailBackend",
+   "is_console_backend": true,
+   "delivering_backend": false,
+   "email_host": null,
+   "email_host_user": null,
+   "transport_configured": false,
+   "finding": "EMAIL_BACKEND is django.core.mail.backends.console.EmailBackend and EMAIL_HOST is empty, so this project has no transport that reaches a supplier: a 'send' here would print to a log or a memory buffer and reach no supplier, which must never be recorded as dispatch."
+  },
+  "requests_total": 5,
+  "requests_ready_not_sent": 5,
+  "requests_blocked": 0,
+  "requests_sent": 0,
+  "supplier_requests_sent": 0,
+  "dispatch_complete": false,
+  "full_dispatch_claimed": false,
+  "sent_counts_are_literals": {
+   "rule": "supplier_requests_sent and dispatch_complete are not computed from any state this module can reach. They move only from an owner-typed sent date on the tracking sheet, transcribed by ruling.",
+   "tracking_sheet": "docs/production_authority/dispatch_pack/dispatch_tracking_sheet.md",
+   "this_module_sends": false
+  },
+  "requests": [
+   {
+    "supplier": "Liquid Bottles LLC",
+    "subject": "30 ml cylindrical frosted-glass serum bottle + dropper closure — technical specification and decoration request",
+    "subject_sha256": "b55119288056389c70d30e007806ca2f02cc6b0418c1bea09edb919ae56cfa34",
+    "body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+    "body_length": 2661,
+    "attachments": 0,
+    "recipient": {
+     "company": "Liquid Bottles LLC",
+     "domain": "liquidbottles.com",
+     "channel_field": "public contact form or email — TO BE SENT BY A HUMAN",
+     "recipient_name": null,
+     "email_addresses_in_draft": [
+      "Info@LiquidBottles.com"
+     ],
+     "explicit_address": "Info@LiquidBottles.com",
+     "destination_owner_approved": true,
+     "channel_is_a_placeholder": true,
+     "resolved": true,
+     "code": null
+    },
+    "evidence_categories_covered": {
+     "container": true,
+     "closure": true,
+     "compatibility": true,
+     "material": true,
+     "decoration": true
+    },
+    "checks": {
+     "recipient_company_known": true,
+     "recipient_destination_resolved": true,
+     "recipient_destination_owner_approved": true,
+     "recipient_identity_known": true,
+     "draft_identity_known": true,
+     "subject_present": true,
+     "body_present": true,
+     "language_is_english": true,
+     "product_reference_present": true,
+     "requested_evidence_categories_present": true,
+     "no_internal_audit_content": true,
+     "no_confidential_repository_paths": true,
+     "no_production_authority_claim": true,
+     "no_supplier_approved_geometry_claim": true,
+     "no_unsupported_dimensions": true,
+     "no_colour_system_assignment": true,
+     "no_attachments": true
+    },
+    "content_findings": {},
+    "content_safe_to_send": true,
+    "sendable": true,
+    "blocking_checks": [],
+    "codes": [],
+    "status": "READY_NOT_SENT"
+   },
+   {
+    "supplier": "SKS Bottle & Packaging",
+    "subject": "30 ml cylindrical frosted-glass serum bottle + dropper closure — technical specification and decoration request",
+    "subject_sha256": "b55119288056389c70d30e007806ca2f02cc6b0418c1bea09edb919ae56cfa34",
+    "body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+    "body_length": 2661,
+    "attachments": 0,
+    "recipient": {
+     "company": "SKS Bottle & Packaging",
+     "domain": "sks-bottle.com",
+     "channel_field": "public contact form or email — TO BE SENT BY A HUMAN",
+     "recipient_name": null,
+     "email_addresses_in_draft": [
+      "Customersupport@sks-bottle.com"
+     ],
+     "explicit_address": "Customersupport@sks-bottle.com",
+     "destination_owner_approved": true,
+     "channel_is_a_placeholder": true,
+     "resolved": true,
+     "code": null
+    },
+    "evidence_categories_covered": {
+     "container": true,
+     "closure": true,
+     "compatibility": true,
+     "material": true,
+     "decoration": true
+    },
+    "checks": {
+     "recipient_company_known": true,
+     "recipient_destination_resolved": true,
+     "recipient_destination_owner_approved": true,
+     "recipient_identity_known": true,
+     "draft_identity_known": true,
+     "subject_present": true,
+     "body_present": true,
+     "language_is_english": true,
+     "product_reference_present": true,
+     "requested_evidence_categories_present": true,
+     "no_internal_audit_content": true,
+     "no_confidential_repository_paths": true,
+     "no_production_authority_claim": true,
+     "no_supplier_approved_geometry_claim": true,
+     "no_unsupported_dimensions": true,
+     "no_colour_system_assignment": true,
+     "no_attachments": true
+    },
+    "content_findings": {},
+    "content_safe_to_send": true,
+    "sendable": true,
+    "blocking_checks": [],
+    "codes": [],
+    "status": "READY_NOT_SENT"
+   },
+   {
+    "supplier": "Bottlestore / O.Berk",
+    "subject": "30 ml cylindrical frosted-glass serum bottle + dropper closure — technical specification and decoration request",
+    "subject_sha256": "b55119288056389c70d30e007806ca2f02cc6b0418c1bea09edb919ae56cfa34",
+    "body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+    "body_length": 2661,
+    "attachments": 0,
+    "recipient": {
+     "company": "Bottlestore / O.Berk",
+     "domain": "bottlestore.com",
+     "channel_field": "public contact form or email — TO BE SENT BY A HUMAN",
+     "recipient_name": null,
+     "email_addresses_in_draft": [
+      "customerservice@bottlestore.com"
+     ],
+     "explicit_address": "customerservice@bottlestore.com",
+     "destination_owner_approved": true,
+     "channel_is_a_placeholder": true,
+     "resolved": true,
+     "code": null
+    },
+    "evidence_categories_covered": {
+     "container": true,
+     "closure": true,
+     "compatibility": true,
+     "material": true,
+     "decoration": true
+    },
+    "checks": {
+     "recipient_company_known": true,
+     "recipient_destination_resolved": true,
+     "recipient_destination_owner_approved": true,
+     "recipient_identity_known": true,
+     "draft_identity_known": true,
+     "subject_present": true,
+     "body_present": true,
+     "language_is_english": true,
+     "product_reference_present": true,
+     "requested_evidence_categories_present": true,
+     "no_internal_audit_content": true,
+     "no_confidential_repository_paths": true,
+     "no_production_authority_claim": true,
+     "no_supplier_approved_geometry_claim": true,
+     "no_unsupported_dimensions": true,
+     "no_colour_system_assignment": true,
+     "no_attachments": true
+    },
+    "content_findings": {},
+    "content_safe_to_send": true,
+    "sendable": true,
+    "blocking_checks": [],
+    "codes": [],
+    "status": "READY_NOT_SENT"
+   },
+   {
+    "supplier": "Premium Vials",
+    "subject": "30 ml cylindrical frosted-glass serum bottle + dropper closure — technical specification and decoration request",
+    "subject_sha256": "b55119288056389c70d30e007806ca2f02cc6b0418c1bea09edb919ae56cfa34",
+    "body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+    "body_length": 2661,
+    "attachments": 0,
+    "recipient": {
+     "company": "Premium Vials",
+     "domain": "premiumvials.com",
+     "channel_field": "public contact form or email — TO BE SENT BY A HUMAN",
+     "recipient_name": null,
+     "email_addresses_in_draft": [
+      "support@premiumvials.com"
+     ],
+     "explicit_address": "support@premiumvials.com",
+     "destination_owner_approved": true,
+     "channel_is_a_placeholder": true,
+     "resolved": true,
+     "code": null
+    },
+    "evidence_categories_covered": {
+     "container": true,
+     "closure": true,
+     "compatibility": true,
+     "material": true,
+     "decoration": true
+    },
+    "checks": {
+     "recipient_company_known": true,
+     "recipient_destination_resolved": true,
+     "recipient_destination_owner_approved": true,
+     "recipient_identity_known": true,
+     "draft_identity_known": true,
+     "subject_present": true,
+     "body_present": true,
+     "language_is_english": true,
+     "product_reference_present": true,
+     "requested_evidence_categories_present": true,
+     "no_internal_audit_content": true,
+     "no_confidential_repository_paths": true,
+     "no_production_authority_claim": true,
+     "no_supplier_approved_geometry_claim": true,
+     "no_unsupported_dimensions": true,
+     "no_colour_system_assignment": true,
+     "no_attachments": true
+    },
+    "content_findings": {},
+    "content_safe_to_send": true,
+    "sendable": true,
+    "blocking_checks": [],
+    "codes": [],
+    "status": "READY_NOT_SENT"
+   },
+   {
+    "supplier": "Nicer Packaging",
+    "subject": "30 ml cylindrical frosted-glass serum bottle + dropper closure — technical specification and decoration request",
+    "subject_sha256": "b55119288056389c70d30e007806ca2f02cc6b0418c1bea09edb919ae56cfa34",
+    "body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+    "body_length": 2661,
+    "attachments": 0,
+    "recipient": {
+     "company": "Nicer Packaging",
+     "domain": "nicerpackaging.com",
+     "channel_field": "public contact form or email — TO BE SENT BY A HUMAN",
+     "recipient_name": null,
+     "email_addresses_in_draft": [
+      "sales@nicerpackaging.com"
+     ],
+     "explicit_address": "sales@nicerpackaging.com",
+     "destination_owner_approved": true,
+     "channel_is_a_placeholder": true,
+     "resolved": true,
+     "code": null
+    },
+    "evidence_categories_covered": {
+     "container": true,
+     "closure": true,
+     "compatibility": true,
+     "material": true,
+     "decoration": true
+    },
+    "checks": {
+     "recipient_company_known": true,
+     "recipient_destination_resolved": true,
+     "recipient_destination_owner_approved": true,
+     "recipient_identity_known": true,
+     "draft_identity_known": true,
+     "subject_present": true,
+     "body_present": true,
+     "language_is_english": true,
+     "product_reference_present": true,
+     "requested_evidence_categories_present": true,
+     "no_internal_audit_content": true,
+     "no_confidential_repository_paths": true,
+     "no_production_authority_claim": true,
+     "no_supplier_approved_geometry_claim": true,
+     "no_unsupported_dimensions": true,
+     "no_colour_system_assignment": true,
+     "no_attachments": true
+    },
+    "content_findings": {},
+    "content_safe_to_send": true,
+    "sendable": true,
+    "blocking_checks": [],
+    "codes": [],
+    "status": "READY_NOT_SENT"
+   }
+  ],
+  "ready_requests": [
+   {
+    "supplier": "Liquid Bottles LLC",
+    "destination": "Info@LiquidBottles.com",
+    "destination_owner_approved": true
+   },
+   {
+    "supplier": "SKS Bottle & Packaging",
+    "destination": "Customersupport@sks-bottle.com",
+    "destination_owner_approved": true
+   },
+   {
+    "supplier": "Bottlestore / O.Berk",
+    "destination": "customerservice@bottlestore.com",
+    "destination_owner_approved": true
+   },
+   {
+    "supplier": "Premium Vials",
+    "destination": "support@premiumvials.com",
+    "destination_owner_approved": true
+   },
+   {
+    "supplier": "Nicer Packaging",
+    "destination": "sales@nicerpackaging.com",
+    "destination_owner_approved": true
+   }
+  ],
+  "blocked_requests": [],
+  "blocking_code": null,
+  "blocking_codes": [],
+  "blocking_reason": "none of the 5 is blocked: every request passes the Section 2 content checks and carries an owner-approved destination. None is sent. Sending is the owner's act; this module has no transport and writes no sent count.",
+  "content_validation_passed": true,
+  "attachments_sent": 0,
+  "bodies_modified_after_authorization": true,
+  "body_amendment": {
+   "ruling": "§BH45(a), ruled §BH45(e) OPTION (i) and landed under §BH45(f)(5)",
+   "date": "2026-09-11",
+   "what": "one paragraph added to the single shared body, after the DECORATION paragraph and before the closing lines, asking for the supplier's Pantone, CMYK and spot-colour guidance for the decoration processes it offers — the nineteenth of the nineteen gate requirements, the one the 2026-07-31 body did not ask",
+   "paragraph": "COLOUR — for each decoration process you offer on this item, please state which colour systems you accept artwork in (Pantone, CMYK or spot colours), what you can hold to in each, and any colour tolerance you state.",
+   "prior_body_sha256": "cb5423b8fe27902e7c21fd3a5fd56f3adefeb311d2276cdba4ee9076ff2dd426",
+   "prior_body_length": 2444,
+   "body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+   "body_length": 2661,
+   "reviewed_by": "PROJECT_OWNER — the paragraph previewed in the §BH45 report is the paragraph (§BH45(e)(2)); the letter assigns no colour and the Section 2 colour rule narrowed at ade91aa passes it",
+   "authorization": "the durable authorization of 2026-07-31 covers the amended body by the owner's §BH45(e)(2) and §BH45(f)(5)"
+  },
+  "recipients_resolved": true,
+  "recipients_resolved_at": "2026-07-31",
+  "recipients_resolved_at_source": "supplier_dispatch_manifest.json created_at, where the manifest records recipients_owner_approved",
+  "gates_supported_by_each_request": {
+   "container": [
+    "B_supplier_geometry",
+    "C_flat_artwork"
+   ],
+   "closure": [
+    "B_supplier_geometry"
+   ],
+   "compatibility": [
+    "B_supplier_geometry"
+   ],
+   "material": [
+    "E_material_specification"
+   ],
+   "decoration": [
+    "C_flat_artwork",
+    "D_colour_separation"
+   ]
+  },
+  "what_would_unblock": [],
+  "owner_clarification_required": false,
+  "gate_effect": "NONE - this record moves no gate"
+ },
+ "supplier_manifest": {
+  "record_type": "supplier_dispatch_manifest/1.0",
+  "superseded_by": "§BH46",
+  "supersession": "§BH46: the system never contacts suppliers. The owners of the companies deal with their suppliers directly and hand the product information to this system, which is the designer and acquires nothing. This record describes a path the system no longer has; it is kept as history, unsent, and nothing here is to be sent.",
+  "created_at": "2026-07-31",
+  "generated_at": "2026-09-11T16:06:05+00:00",
+  "recipient_codes": [
+   "SUPPLIER_REQUEST_RECIPIENTS_OWNER_APPROVED",
+   "SUPPLIER_REQUEST_RECIPIENT_UNRESOLVED:RESOLVED"
+  ],
+  "recipients_owner_approved": true,
+  "recipient_source": "suppliers' official public contact pages",
+  "subject": "30 ml cylindrical frosted-glass serum bottle + dropper closure — technical specification and decoration request",
+  "approved_base_body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+  "approved_base_body_length": 2661,
+  "messages": [
+   {
+    "supplier": "Liquid Bottles LLC",
+    "destination": "Info@LiquidBottles.com",
+    "destination_source": "supplier's official public contact page, owner-approved",
+    "subject": "30 ml cylindrical frosted-glass serum bottle + dropper closure — technical specification and decoration request",
+    "subject_header_encoded": true,
+    "subject_round_trips": true,
+    "from": "BBROSE Design (REPLACE WITH YOUR SENDING ADDRESS) <sender@example.invalid>",
+    "reply_to": "BBROSE Design (REPLACE WITH YOUR REPLY ADDRESS) <sender@example.invalid>",
+    "from_is_placeholder": true,
+    "mime_version": "1.0",
+    "content_type": "text/plain",
+    "charset": "utf-8",
+    "transfer_encoding": "quoted-printable",
+    "attachment_count": 0,
+    "is_multipart": false,
+    "has_date_header": false,
+    "custom_headers": [],
+    "body_sha256": "0ab5f4e10f04f1e4abeda80716369bd45a55e0e8bc3997f7e845a98ad9e07e45",
+    "body_length": 2735,
+    "body_round_trips_through_the_file": true,
+    "approved_base_body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+    "restored_body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+    "substantive_wording_unchanged": true,
+    "permitted_edits_applied": [
+     "supplier name",
+     "contact greeting",
+     "sender signature placeholder"
+    ],
+    "required_claims_present": {
+     "geometry_is_a_design_concept": true,
+     "not_production_authority": true,
+     "supplier_drawings_required": true,
+     "no_supplier_approved_dimensions": true
+    },
+    "status": "READY_FOR_OWNER_MANUAL_SEND",
+    "sent": false,
+    "sent_timestamp": null,
+    "message_id": null,
+    "delivery_receipt": null,
+    "eml_filename": "supplier_01_liquid_bottles.eml",
+    "eml_path": "docs/production_authority/supplier_emails/supplier_01_liquid_bottles.eml",
+    "eml_sha256": "feb60e3a9fafd6ffa175013acd4ec09ce7e42a687540f9d079e946c8eaed6987",
+    "eml_bytes": 3257,
+    "generated_at": "2026-09-11T16:06:05+00:00"
+   },
+   {
+    "supplier": "SKS Bottle & Packaging",
+    "destination": "Customersupport@sks-bottle.com",
+    "destination_source": "supplier's official public contact page, owner-approved",
+    "subject": "30 ml cylindrical frosted-glass serum bottle + dropper closure — technical specification and decoration request",
+    "subject_header_encoded": true,
+    "subject_round_trips": true,
+    "from": "BBROSE Design (REPLACE WITH YOUR SENDING ADDRESS) <sender@example.invalid>",
+    "reply_to": "BBROSE Design (REPLACE WITH YOUR REPLY ADDRESS) <sender@example.invalid>",
+    "from_is_placeholder": true,
+    "mime_version": "1.0",
+    "content_type": "text/plain",
+    "charset": "utf-8",
+    "transfer_encoding": "quoted-printable",
+    "attachment_count": 0,
+    "is_multipart": false,
+    "has_date_header": false,
+    "custom_headers": [],
+    "body_sha256": "ffa2b351bf4b1d0c75f13e150d9d46e9e951b2ddbc60744cab6b3fafa6df84eb",
+    "body_length": 2739,
+    "body_round_trips_through_the_file": true,
+    "approved_base_body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+    "restored_body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+    "substantive_wording_unchanged": true,
+    "permitted_edits_applied": [
+     "supplier name",
+     "contact greeting",
+     "sender signature placeholder"
+    ],
+    "required_claims_present": {
+     "geometry_is_a_design_concept": true,
+     "not_production_authority": true,
+     "supplier_drawings_required": true,
+     "no_supplier_approved_dimensions": true
+    },
+    "status": "READY_FOR_OWNER_MANUAL_SEND",
+    "sent": false,
+    "sent_timestamp": null,
+    "message_id": null,
+    "delivery_receipt": null,
+    "eml_filename": "supplier_02_sks_bottle.eml",
+    "eml_path": "docs/production_authority/supplier_emails/supplier_02_sks_bottle.eml",
+    "eml_sha256": "60dbe688f7df9c0e13274a271cd445140559446d4a67db711ee29e1f90a954d5",
+    "eml_bytes": 3269,
+    "generated_at": "2026-09-11T16:06:05+00:00"
+   },
+   {
+    "supplier": "BottleStore / O.Berk",
+    "destination": "customerservice@bottlestore.com",
+    "destination_source": "supplier's official public contact page, owner-approved",
+    "subject": "30 ml cylindrical frosted-glass serum bottle + dropper closure — technical specification and decoration request",
+    "subject_header_encoded": true,
+    "subject_round_trips": true,
+    "from": "BBROSE Design (REPLACE WITH YOUR SENDING ADDRESS) <sender@example.invalid>",
+    "reply_to": "BBROSE Design (REPLACE WITH YOUR REPLY ADDRESS) <sender@example.invalid>",
+    "from_is_placeholder": true,
+    "mime_version": "1.0",
+    "content_type": "text/plain",
+    "charset": "utf-8",
+    "transfer_encoding": "quoted-printable",
+    "attachment_count": 0,
+    "is_multipart": false,
+    "has_date_header": false,
+    "custom_headers": [],
+    "body_sha256": "8336223a35724d90835ef75a6518d27bc41d373734057aedbf64ce1b4b5bf803",
+    "body_length": 2737,
+    "body_round_trips_through_the_file": true,
+    "approved_base_body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+    "restored_body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+    "substantive_wording_unchanged": true,
+    "permitted_edits_applied": [
+     "supplier name",
+     "contact greeting",
+     "sender signature placeholder"
+    ],
+    "required_claims_present": {
+     "geometry_is_a_design_concept": true,
+     "not_production_authority": true,
+     "supplier_drawings_required": true,
+     "no_supplier_approved_dimensions": true
+    },
+    "status": "READY_FOR_OWNER_MANUAL_SEND",
+    "sent": false,
+    "sent_timestamp": null,
+    "message_id": null,
+    "delivery_receipt": null,
+    "eml_filename": "supplier_03_bottlestore_oberk.eml",
+    "eml_path": "docs/production_authority/supplier_emails/supplier_03_bottlestore_oberk.eml",
+    "eml_sha256": "4296a9865bc32e44c54cdeba0d3f4f364f9c6cdbf5df3acbc706375b3e6392f6",
+    "eml_bytes": 3268,
+    "generated_at": "2026-09-11T16:06:05+00:00"
+   },
+   {
+    "supplier": "Premium Vials",
+    "destination": "support@premiumvials.com",
+    "destination_source": "supplier's official public contact page, owner-approved",
+    "subject": "30 ml cylindrical frosted-glass serum bottle + dropper closure — technical specification and decoration request",
+    "subject_header_encoded": true,
+    "subject_round_trips": true,
+    "from": "BBROSE Design (REPLACE WITH YOUR SENDING ADDRESS) <sender@example.invalid>",
+    "reply_to": "BBROSE Design (REPLACE WITH YOUR REPLY ADDRESS) <sender@example.invalid>",
+    "from_is_placeholder": true,
+    "mime_version": "1.0",
+    "content_type": "text/plain",
+    "charset": "utf-8",
+    "transfer_encoding": "quoted-printable",
+    "attachment_count": 0,
+    "is_multipart": false,
+    "has_date_header": false,
+    "custom_headers": [],
+    "body_sha256": "8f357815848b3635e854ec49dc5a0222ea9ddfeb31e34173dea81348e80bc3e8",
+    "body_length": 2730,
+    "body_round_trips_through_the_file": true,
+    "approved_base_body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+    "restored_body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+    "substantive_wording_unchanged": true,
+    "permitted_edits_applied": [
+     "supplier name",
+     "contact greeting",
+     "sender signature placeholder"
+    ],
+    "required_claims_present": {
+     "geometry_is_a_design_concept": true,
+     "not_production_authority": true,
+     "supplier_drawings_required": true,
+     "no_supplier_approved_dimensions": true
+    },
+    "status": "READY_FOR_OWNER_MANUAL_SEND",
+    "sent": false,
+    "sent_timestamp": null,
+    "message_id": null,
+    "delivery_receipt": null,
+    "eml_filename": "supplier_04_premium_vials.eml",
+    "eml_path": "docs/production_authority/supplier_emails/supplier_04_premium_vials.eml",
+    "eml_sha256": "80741f272b6f282358df274d6183629aae9f31a8de8c47589b4f0b03fbbb7e19",
+    "eml_bytes": 3254,
+    "generated_at": "2026-09-11T16:06:05+00:00"
+   },
+   {
+    "supplier": "Nicer Packaging",
+    "destination": "sales@nicerpackaging.com",
+    "destination_source": "supplier's official public contact page, owner-approved",
+    "subject": "30 ml cylindrical frosted-glass serum bottle + dropper closure — technical specification and decoration request",
+    "subject_header_encoded": true,
+    "subject_round_trips": true,
+    "from": "BBROSE Design (REPLACE WITH YOUR SENDING ADDRESS) <sender@example.invalid>",
+    "reply_to": "BBROSE Design (REPLACE WITH YOUR REPLY ADDRESS) <sender@example.invalid>",
+    "from_is_placeholder": true,
+    "mime_version": "1.0",
+    "content_type": "text/plain",
+    "charset": "utf-8",
+    "transfer_encoding": "quoted-printable",
+    "attachment_count": 0,
+    "is_multipart": false,
+    "has_date_header": false,
+    "custom_headers": [],
+    "body_sha256": "49dc09b07c0e0afb7e96045d5d8c13b26930425a1f6203357cde9f61dbae5fa1",
+    "body_length": 2732,
+    "body_round_trips_through_the_file": true,
+    "approved_base_body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+    "restored_body_sha256": "08f0ccab76b48ecb431cfd8db91e90750c0c514330ec244a558921fceaf90655",
+    "substantive_wording_unchanged": true,
+    "permitted_edits_applied": [
+     "supplier name",
+     "contact greeting",
+     "sender signature placeholder"
+    ],
+    "required_claims_present": {
+     "geometry_is_a_design_concept": true,
+     "not_production_authority": true,
+     "supplier_drawings_required": true,
+     "no_supplier_approved_dimensions": true
+    },
+    "status": "READY_FOR_OWNER_MANUAL_SEND",
+    "sent": false,
+    "sent_timestamp": null,
+    "message_id": null,
+    "delivery_receipt": null,
+    "eml_filename": "supplier_05_nicer_packaging.eml",
+    "eml_path": "docs/production_authority/supplier_emails/supplier_05_nicer_packaging.eml",
+    "eml_sha256": "9177d826673313258a512d96a29f7b7bcbdcce6ea3ff6c74083152d60c0c438a",
+    "eml_bytes": 3256,
+    "generated_at": "2026-09-11T16:06:05+00:00"
+   }
+  ],
+  "message_count": 5,
+  "attachments_total": 0,
+  "supplier_requests_sent": 0,
+  "creating_an_eml_is_not_dispatch": true,
+  "all_ready_for_manual_send": true,
+  "substantive_wording_unchanged_in_all": true,
+  "bodies_differ_only_by_permitted_edits": true,
+  "no_smtp_configured": true,
+  "no_mail_was_sent": true,
+  "no_timestamps_or_message_ids_fabricated": true,
+  "manual_send_instructions": [
+   "open each .eml in your normal email client",
+   "verify the To address against the manifest",
+   "replace the From placeholder with your sending address",
+   "replace [YOUR NAME], [YOUR ROLE] and [YOUR EMAIL] in the signature",
+   "send it",
+   "keep the sent message or its message ID",
+   "return that evidence so each request can be logged individually"
+  ],
+  "do_not_change": "any other wording in the body. The manifest records the approved hash, and returned evidence is checked against it.",
+  "status_after_generation": "READY_FOR_OWNER_MANUAL_SEND",
+  "status_will_become": "EVIDENCE_VERIFIED, per message, when sent-message evidence is returned and passes the validator's eight checks; supplier_requests_sent moves only from the owner's typed sent date on the tracking sheet, transcribed by ruling",
+  "gate_effect": "NONE - Gates B, C, D and E remain BLOCKED"
+ },
+ "supplier_sent_validation": {
+  "record_type": "supplier_sent_evidence_validation/1.0",
+  "superseded_by": "§BH46",
+  "supersession": "§BH46: the system never contacts suppliers. The owners of the companies deal with their suppliers directly and hand the product information to this system, which is the designer and acquires nothing. This record describes a path the system no longer has; it is kept as history, unsent, and nothing here is to be sent.",
+  "created_at": "2026-07-31",
+  "validated_against": "docs/production_authority/supplier_dispatch_manifest.json",
+  "manifest_path_note": "the request cited docs/production_authority/supplier_emails/supplier_dispatch_manifest.json; the manifest is one level up, at docs/production_authority/supplier_dispatch_manifest.json. supplier_emails/ holds only the five .eml files.",
+  "evidence_directory": "docs/production_authority/supplier_sent_evidence",
+  "evidence_directory_exists": true,
+  "messages": [
+   {
+    "supplier": "Liquid Bottles LLC",
+    "approved_destination": "Info@LiquidBottles.com",
+    "evidence_files": [],
+    "evidence_received": false,
+    "status": "EVIDENCE_NOT_RECEIVED",
+    "verified": false,
+    "checks": {
+     "destination_matches": null,
+     "subject_matches": null,
+     "body_matches_approved_reversible_hash": null,
+     "no_attachments": null,
+     "sent_timestamp_exists": null,
+     "message_id_exists": null,
+     "no_internal_audit_file_attached": null,
+     "no_production_authority_claim_introduced": null
+    },
+    "unverifiable_because": "no evidence file for this supplier reached docs/production_authority/supplier_sent_evidence"
+   },
+   {
+    "supplier": "SKS Bottle & Packaging",
+    "approved_destination": "Customersupport@sks-bottle.com",
+    "evidence_files": [],
+    "evidence_received": false,
+    "status": "EVIDENCE_NOT_RECEIVED",
+    "verified": false,
+    "checks": {
+     "destination_matches": null,
+     "subject_matches": null,
+     "body_matches_approved_reversible_hash": null,
+     "no_attachments": null,
+     "sent_timestamp_exists": null,
+     "message_id_exists": null,
+     "no_internal_audit_file_attached": null,
+     "no_production_authority_claim_introduced": null
+    },
+    "unverifiable_because": "no evidence file for this supplier reached docs/production_authority/supplier_sent_evidence"
+   },
+   {
+    "supplier": "BottleStore / O.Berk",
+    "approved_destination": "customerservice@bottlestore.com",
+    "evidence_files": [],
+    "evidence_received": false,
+    "status": "EVIDENCE_NOT_RECEIVED",
+    "verified": false,
+    "checks": {
+     "destination_matches": null,
+     "subject_matches": null,
+     "body_matches_approved_reversible_hash": null,
+     "no_attachments": null,
+     "sent_timestamp_exists": null,
+     "message_id_exists": null,
+     "no_internal_audit_file_attached": null,
+     "no_production_authority_claim_introduced": null
+    },
+    "unverifiable_because": "no evidence file for this supplier reached docs/production_authority/supplier_sent_evidence"
+   },
+   {
+    "supplier": "Premium Vials",
+    "approved_destination": "support@premiumvials.com",
+    "evidence_files": [],
+    "evidence_received": false,
+    "status": "EVIDENCE_NOT_RECEIVED",
+    "verified": false,
+    "checks": {
+     "destination_matches": null,
+     "subject_matches": null,
+     "body_matches_approved_reversible_hash": null,
+     "no_attachments": null,
+     "sent_timestamp_exists": null,
+     "message_id_exists": null,
+     "no_internal_audit_file_attached": null,
+     "no_production_authority_claim_introduced": null
+    },
+    "unverifiable_because": "no evidence file for this supplier reached docs/production_authority/supplier_sent_evidence"
+   },
+   {
+    "supplier": "Nicer Packaging",
+    "approved_destination": "sales@nicerpackaging.com",
+    "evidence_files": [],
+    "evidence_received": false,
+    "status": "EVIDENCE_NOT_RECEIVED",
+    "verified": false,
+    "checks": {
+     "destination_matches": null,
+     "subject_matches": null,
+     "body_matches_approved_reversible_hash": null,
+     "no_attachments": null,
+     "sent_timestamp_exists": null,
+     "message_id_exists": null,
+     "no_internal_audit_file_attached": null,
+     "no_production_authority_claim_introduced": null
+    },
+    "unverifiable_because": "no evidence file for this supplier reached docs/production_authority/supplier_sent_evidence"
+   }
+  ],
+  "messages_total": 5,
+  "messages_with_evidence": 0,
+  "messages_verified": 0,
+  "all_verified": false,
+  "sent_count": {
+   "written_here": false,
+   "rule": "supplier_requests_sent moves only from an owner-typed sent date on the tracking sheet, transcribed by ruling (§BH45(f)(2)); a verified message is evidence, not a count",
+   "tracking_sheet": "docs/production_authority/dispatch_pack/dispatch_tracking_sheet.md"
+  },
+  "checks_applied": [
+   "destination_matches",
+   "subject_matches",
+   "body_matches_approved_reversible_hash",
+   "no_attachments",
+   "sent_timestamp_exists",
+   "message_id_exists",
+   "no_internal_audit_file_attached",
+   "no_production_authority_claim_introduced"
+  ],
+  "accepted_evidence_forms": [
+   "an exported sent .eml (strongest — everything is checkable from it)",
+   "a JSON with message_id and sent_timestamp, plus the destination",
+   "a Gmail/Outlook message ID",
+   "a sent-email screenshot showing destination and timestamp",
+   "a supplier contact-form receipt"
+  ],
+  "why_a_claim_is_not_evidence": "the eight checks are about a message that exists — its destination, its subject, its body hash, its Date and its Message-ID. None of those can be read from a statement that sending happened. Neither a statement nor a verified message moves the count: only the owner's typed sent date does.",
+  "nothing_is_marked_sent_here": true,
+  "timestamps_or_message_ids_fabricated": 0,
+  "gate_effect": "NONE - Gates B, C, D and E remain BLOCKED",
+  "dispatch_success_does_not_imply": [
+   "supplier compatibility",
+   "production dimensions",
+   "print-zone or wrap authority",
+   "colour separation",
+   "material specification"
+  ]
+ },
+ "supplier_outreach_deferral": {
+  "record_type": "supplier_outreach_deferral/1.0",
+  "created_at": "2026-07-31",
+  "SUPPLIER_OUTREACH": "DEFERRED_UNTIL_REAL_SUPPLIER_ENGAGEMENT",
+  "PRODUCTION_AUTHORITY_GATES_B_TO_E": "DEFERRED_NON_BLOCKING_FOR_PLATFORM_DEVELOPMENT",
+  "decided_by": "PROJECT_OWNER",
+  "reason": "the owner has decided not to contact generic external suppliers during the current Design OS development phase",
+  "supplier_requests_sent": 0,
+  "emails_sent": 0,
+  "stopped": [
+   "sending supplier email",
+   "requesting sent-message evidence",
+   "asking for Message-IDs",
+   "configuring SMTP",
+   "dispatch validation",
+   "creating further .eml files"
+  ],
+  "preserved_unchanged": {
+   "classification": "OPTIONAL_FUTURE_MANUFACTURING_WORKFLOW",
+   "deleted": false,
+   "artefacts": [
+    "docs/production_authority/production_supplier_request_drafts.json",
+    "docs/production_authority/supplier_dispatch_manifest.json",
+    "docs/production_authority/supplier_dispatch_manifest.pdf",
+    "docs/production_authority/supplier_dispatch_manifest.png",
+    "docs/production_authority/supplier_emails/ (5 .eml files)",
+    "docs/production_authority/supplier_evidence_request_dispatch.json",
+    "docs/production_authority/supplier_evidence_request_dispatch_pack.txt",
+    "docs/production_authority/supplier_sent_evidence_validation.json",
+    "docs/production_authority/supplier_sent_evidence/README.txt",
+    "apps/pipeline/services/supplier_dispatch.py",
+    "apps/pipeline/services/supplier_eml.py",
+    "apps/pipeline/services/supplier_sent_validation.py"
+   ],
+   "why_kept": "it will be useful when a real supplier is selected; the validator in particular encodes what qualified evidence must prove and took several rounds to get right"
+  },
+  "gates_b_to_e_still_blocked": true,
+  "deferral_is_not_a_pass": "deferring the outreach does not pass Gates B to E and does not grant any production authority. They are simply no longer the active blocker for platform development.",
+  "gate_a_unaffected": "PASSED",
+  "packaging_production_work": "NOT_STARTED",
+  "removed_from_owner_actions": true
+ },
+ "blockers_cause": {
+  "PRODUCTION_GEOMETRY": "spec pack not yet handed over",
+  "PRODUCTION_FLAT_ARTWORK": "spec pack not yet handed over",
+  "PRODUCTION_COLOR_SEPARATION": "spec pack not yet handed over",
+  "PRODUCTION_MATERIAL_SPECIFICATION": "spec pack not yet handed over"
+ },
+ "blockers_cause_note": "the codes are kept as the history they are; the cause of each production block is read from the gate record (§BH46)"
+}

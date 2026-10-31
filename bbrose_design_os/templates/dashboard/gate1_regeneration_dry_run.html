@@ -1,0 +1,27 @@
+{% extends "dashboard/gate1_regeneration_base.html" %}
+{% block title %}Checked — nothing was drawn{% endblock %}
+{% block regen %}
+<span class="tag done"><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg>Checked</span>
+<h1 class="h1">The request works — nothing was drawn</h1>
+<div class="card pad regen-card">
+  <p>Every step of drawing this design's concepts again was checked and works. This was a check only: <b>no job was
+    started, no picture was drawn and no provider was called</b>, so nothing was paid for.</p>
+  <dl class="regen-dl">
+    <dt>Its direction</dt><dd>{{ direction_name }}</dd>
+    <dt>The three variations</dt><dd>{% for name, description in variations %}{{ name }}<br>{% endfor %}</dd>
+    <dt>When</dt><dd>{{ timestamp|date:"j F Y, H:i" }}</dd>
+  </dl>
+  <p class="small">Drawing for real is switched on by whoever runs the system, once this check is seen to work.</p>
+  <details class="tech"><summary>What the record says</summary>
+    <p class="small">DRY_RUN_ACCEPTED</p>
+    <table><tr><th>Diagnostic request ID</th><td><code>{{ diagnostic_id }}</code></td></tr>
+      <tr><th>Task</th><td>#{{ task.pk }}</td></tr>
+      <tr><th>Direction</th><td>{{ direction_id }}</td></tr>
+      <tr><th>Approved reference IDs</th><td>{{ approved_ids|join:", " }}</td></tr>
+      <tr><th>Influence plan</th><td><code>{{ plan_hash|slice:":16" }}…</code></td></tr>
+      <tr><th>Timestamp</th><td>{{ timestamp|date:"Y-m-d H:i:s T" }}</td></tr>
+      <tr><th>Live mode</th><td>GATE1_REGENERATION_MODE=live</td></tr></table>
+  </details>
+</div>
+<p class="regen-acts"><a class="btn" href="{% url 'dashboard:design' task.pk %}">Back to the design</a></p>
+{% endblock %}

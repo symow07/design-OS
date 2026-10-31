@@ -1,0 +1,55 @@
+{
+ "record_type": "rbv_reference_pack_status/1.0",
+ "created_at": "2026-08-04",
+ "intake": "owner photographs + hand measurements, docs/received.zip (sha256 cfceb952754553e437fa7856a7fafe711e862ea57358aff0b69cdf75e432d71c)",
+ "authority": {
+  "images": ["OWNER_SUPPLIED_PHOTOGRAPHY", "MEDIUM_VISUAL_AUTHORITY", "NOT_CAD", "NOT_TECHNICAL_DRAWING"],
+  "measurements": ["OWNER_MEASURED_DIMENSIONAL_EVIDENCE"],
+  "limits": [
+   "measurement uncertainty",
+   "tool precision",
+   "ambiguous landmark definitions",
+   "photography perspective",
+   "missing side/depth calibration",
+   "missing technical drawings"
+  ]
+ },
+ "products": {
+  "P1": {
+   "name": "Dropper Serum Bottle",
+   "status": ["PRIMARY_REAL_BOTTLE_PILOT", "REFERENCE_PACK_PARTIAL"],
+   "images": 5,
+   "geometry_construction": "BLOCKED until the P1 minimum pack is validated (landmark clarifications + calibrated views)",
+   "P1_GEOMETRY_READINESS": "BLOCKED_PENDING_OWNER_CLARIFICATIONS_AND_CALIBRATED_PHOTOS",
+   "owner_review_2026_08_04": "intake IMPLEMENTED (owner_intake_review_decision.json); thread pitch + bottom-glass thickness stay UNKNOWN and are NOT required for the first external-shape validation pilot; artwork bounds pending until artwork-composition phase; material/finish awaits explicit owner values"
+  },
+  "P2": {
+   "name": "Rectangular Foundation Bottle",
+   "status": ["REFERENCE_PACK_PARTIAL", "REMEASUREMENT_REQUIRED_FOR_HEIGHTS_AND_PUMP"],
+   "images": 4,
+   "geometry_construction": "BLOCKED — ambiguous height set; four clarified verticals + pump nozzle split required"
+  },
+  "P4": {
+   "name": "Face-Cream Jar",
+   "status": ["REFERENCE_PACK_PARTIAL", "GEOMETRY_PLAUSIBLE_PENDING_HEIGHT_DEFINITION"],
+   "images": 6,
+   "geometry_construction": "BLOCKED pending the five-value height decomposition"
+  },
+  "P6": {
+   "name": "Rectangular/Faceted Lip-Gloss Tube",
+   "status": ["REFERENCE_PACK_INVALID_FIELD", "FACETED_GEOMETRY_REQUIRES_TOP_VIEW_AND_REMEASUREMENT"],
+   "images": 4,
+   "geometry_construction": "BLOCKED — stem diameter PHYSICALLY_IMPLAUSIBLE as submitted; faceted cross-section evidence missing"
+  },
+  "P7": {
+   "name": "Square Blush Compact",
+   "status": ["REFERENCE_PACK_INVALID", "COMPLETE_REMEASUREMENT_REQUIRED"],
+   "images": 4,
+   "geometry_construction": "FORBIDDEN from the current measurement set"
+  },
+  "P3": {"status": ["NOT_IN_THIS_INTAKE"], "images": 0},
+  "P5": {"status": ["NOT_IN_THIS_INTAKE"], "images": 0}
+ },
+ "pilot_decision": "P1 is the primary real-bottle pilot; no Blender geometry and no real-bottle comparison may begin before owner review of this intake validation",
+ "stop_point": "OWNER REVIEW COMPLETE 2026-08-04: intake IMPLEMENTED — now stopped for P1 clarifications + calibrated photographs (owner_intake_review_decision.json)"
+}

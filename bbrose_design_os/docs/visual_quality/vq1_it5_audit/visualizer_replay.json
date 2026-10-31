@@ -1,0 +1,44 @@
+{
+  "apex_appearance": "rounded",
+  "entire_dome_visible": true,
+  "same_visible_closure_family": true,
+  "qualitative_differences": [
+    "Image 1 has a highly reflective gold/rose-gold metallic collar ring, while Image 2 shows a plain matte beige/cream rectangular base with no metallic elements",
+    "Image 1 bulb has a narrower neck that flares outward before meeting the collar, giving a more hourglass-like lower profile; Image 2 bulb has a wider, more uniform bell-shaped lower body that flares more gradually",
+    "Image 1 surface has subtle light reflections and sheen on the rubber bulb; Image 2 is completely flat and matte with no shading or highlights",
+    "Image 1 background is a warm off-white photographic environment; Image 2 has a plain white background",
+    "Image 2 bulb appears broader and taller relative to the base compared to Image 1",
+    "Image 1 shows fine material texture and three-dimensionality; Image 2 is a flat 2D silhouette-style vector render with no depth cues"
+  ],
+  "confidence": 0.82,
+  "replay_inputs": {
+    "reference": {
+      "path": "docs/visual_quality/vq1_it5_audit/replay_reference_closure.png",
+      "sha256": "68107cc1f0f898bd2a47455f927b28957100d663cd1539db9a248ada571419e5",
+      "size": [
+        780,
+        1290
+      ],
+      "operation": "LANCZOS 3x upscale of the exact reference closure crop"
+    },
+    "it5": {
+      "path": "docs/visual_quality/vq1_it5_audit/replay_it5_closure.png",
+      "sha256": "5726b5df7e531f425ff302ac7293fb2ea5a6a2bd6841c090a86ce2636897f276",
+      "size": [
+        1032,
+        894
+      ],
+      "operation": "crop of the exact IT5 PNG, LANCZOS 6x upscale",
+      "crop_box": [
+        67,
+        20,
+        239,
+        169
+      ]
+    }
+  },
+  "prompt_prohibits_numeric_estimation": true,
+  "prior_verdict_withheld": true,
+  "deterministic_result_withheld": true,
+  "calls": 1
+}

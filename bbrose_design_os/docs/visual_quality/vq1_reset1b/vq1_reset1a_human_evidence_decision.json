@@ -1,0 +1,69 @@
+{
+  "record_type": "vq1_reset1a_human_evidence_decision/1.0",
+  "decided_at": "2026-07-28",
+  "verdict": "ACCEPTED_AS_HONEST_NEGATIVE_FINDING",
+  "source_count_threshold": "MET",
+  "evidence_quality_threshold": "NOT_MET",
+  "decisions": {
+    "PHYSICAL_ANALOG_APPROVAL": "PENDING",
+    "FACT_SOURCE_APPROVAL": "PENDING",
+    "TECHNICAL_DRAWING_APPROVAL": "NOT_SUFFICIENT",
+    "MEASUREMENT_APPROVAL": "NONE",
+    "COMPONENT_SEMANTICS": "UNCERTAIN",
+    "BOTTLE_CLOSURE_CONSTRUCTION": "NOT_SELECTED",
+    "NEXT_ACTION": "RESEARCH_AGAIN"
+  },
+  "findings": [
+    "VQ_DIMENSIONAL_EVIDENCE_INSUFFICIENT",
+    "VQ_SNIPPET_MEASUREMENTS_REJECTED",
+    "VQ_TECHNICAL_DRAWING_COVERAGE_INSUFFICIENT",
+    "VQ_COMPONENT_SEMANTICS_UNRESOLVED",
+    "VQ_STRUCTURAL_GENERATION_BLOCKED",
+    "VQ_PRODUCT_VARIANT_PAGE_REQUIRED",
+    "VQ_MANUFACTURER_SPECIFICATION_REQUIRED"
+  ],
+  "carried_decisions": {
+    "NOMINAL_CAPACITY": {
+      "value": "30",
+      "unit": "ml",
+      "authority": "PRODUCT_CONCEPT_REQUIREMENT",
+      "is_physical_geometry_approval": false,
+      "note": "bottle dimensions may NOT be derived from nominal capacity alone"
+    },
+    "NECK_FINISH_CANDIDATES": {
+      "values": [
+        "18/415",
+        "18/410",
+        "20/410",
+        "24/410"
+      ],
+      "selected": null,
+      "state": "UNRESOLVED",
+      "selection_requires": [
+        "exact bottle product variant",
+        "exact compatible closure",
+        "manufacturer or official supplier documentation",
+        "explicit diameter/thread referents"
+      ]
+    },
+    "WS-20": {
+      "classification": "NECK_FINISH_REFERENCE_ONLY",
+      "state": "NEEDS_VERIFICATION",
+      "may_support": [
+        "neck-finish terminology",
+        "thread families"
+      ],
+      "does_not_authorize": [
+        "bottle diameter",
+        "bottle height",
+        "collar diameter",
+        "collar height",
+        "bulb geometry",
+        "closure construction",
+        "total assembled height",
+        "structural backbone generation"
+      ],
+      "is_sufficient_complete_drawing": false
+    }
+  }
+}

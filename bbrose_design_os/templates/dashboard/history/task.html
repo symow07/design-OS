@@ -1,0 +1,190 @@
+{% extends "dashboard/history/base.html" %}
+{% load plain_words %}
+{% block title %}Design #{{ task.pk }}{% endblock %}
+{% block content %}
+{# §BH55 Phase 3: a past design reads as the live one does — "Design #N", its kind in words, and the way to it #}
+<p class="dim"><a href="{% url 'dashboard:history' %}">Designs</a> › Design #{{ task.pk }}</p>
+<h1>Design #{{ task.pk }}{% if task.product %} · {{ task.product.name }}{% endif %}</h1>
+<p><a href="{% url 'dashboard:design' task.pk %}">Open this design</a> — where it stands now, and what can be done with it.</p>
+<div class="facts">
+  <span class="pill status">{{ status_label }}</span><span class="pill">{{ target_label }}</span>
+  <span>created {{ task.created_at|date:"j F Y, H:i" }}</span><span>updated {{ task.updated_at|date:"j F Y, H:i" }}</span>
+  <span>brand {{ task.brand.name }}</span>{% if task.created_by %}<span>by {{ task.created_by.username }}</span>{% endif %}
+  {% if task.project %}<span>project <a href="{% url 'dashboard:history_project' task.project.pk %}">#{{ task.project.pk }}</a> · stage {{ task.stage|default:"—"|plain }}</span>{% endif %}
+</div>
+<ul class="toc">
+  <li><a href="#brief">Brief</a></li><li><a href="#inspiration">Inspiration pictures ({{ inspiration.rows|length }})</a></li>
+  <li><a href="#concepts">Concepts ({{ images|length }})</a></li>
+  <li><a href="#outputs">Renders and records ({{ outputs|length }})</a></li><li><a href="#decisions">Decisions ({{ decisions|length }})</a></li>
+  <li><a href="#references">References ({{ references|length }})</a></li><li><a href="#jobs">Regeneration jobs ({{ jobs|length }})</a></li>
+  <li><a href="#palette">Palette records ({{ confirmations|length }})</a></li><li><a href="#notifications">Notifications ({{ notifications|length }})</a></li>
+  <li><a href="#spend">Spend</a></li><li><a href="#logs">Every step ({{ logs|length }})</a></li>
+  {% if explorations %}<li><a href="#explorations">Explorations — not outputs ({{ explorations|length }})</a></li>{% endif %}
+</ul>
+
+<h2 id="brief">Brief</h2>
+<div class="brief">{{ task.task_text }}</div>
+{% if task.error_message %}<h3>Why it stopped</h3><p>{{ stop_words }}</p>
+  <details class="tech"><summary>The error, as recorded</summary><div class="brief">{{ task.error_message }}</div></details>{% endif %}
+{% if brief %}
+  <details><summary>Directions ({{ brief.directions|length }}){% if direction_name %} · chosen: {{ direction_name }}{% elif brief.selected_direction_id %} · one chosen{% endif %}</summary><pre>{{ directions }}</pre></details>
+  {% if intent %}<details><summary>Design intent</summary><pre>{{ intent }}</pre></details>{% endif %}
+{% else %}<p class="dim">No creative brief row.</p>{% endif %}
+
+<h2 id="inspiration">Inspiration pictures</h2>
+{% if inspiration.rows %}<p class="dim">What each gave this design, in words. The pictures themselves are never drawn from.</p>
+<div class="inspire-kept-list">{% include "dashboard/_inspiration_list.html" %}</div>{% else %}<p class="dim">No inspiration pictures.</p>{% endif %}
+
+<h2 id="concepts">Concepts</h2>
+<div class="grid">
+{% for c in images %}
+  <div class="card">
+    {% if c.file and c.file.url %}<a href="{{ c.file.url }}" target="_blank" rel="noopener"><img src="{{ c.file.url }}" alt="Concept {{ c.image.pk }}" loading="lazy"></a>
+    {% elif c.file %}<span class="pill withheld">{{ c.file.state|plain }}</span>{% else %}<span class="dim">no image file</span>{% endif %}
+    <div><b>#{{ c.image.pk }}</b> {{ c.image.direction_name }} · v{{ c.image.variation_number }}</div>
+    <div class="facts">
+      {% if c.image.is_approved %}<span class="pill status">chosen</span>{% endif %}
+      {% if c.image.superseded %}<span class="pill">replaced</span>{% endif %}
+      {% if c.image.user_rejection_label %}<span class="pill reject">{{ c.image.user_rejection_label|plain }}</span>{% endif %}
+      <span>{{ c.quality }}</span>
+      {% if c.file.url %}<span>{{ c.file.tier_words }}</span>{% endif %}
+      <span>{{ c.image.created_at|date:"j F Y" }}</span>
+    </div>
+    <details><summary>Prompt</summary><pre>{{ c.image.prompt_used }}</pre></details>
+    {% if c.image.qa_notes %}<details><summary>What the check noted</summary><pre>{{ c.image.qa_notes }}</pre></details>{% endif %}
+    {% if c.provenance %}<details><summary>What was sent to the drawing service, as text</summary><pre>{{ c.provenance }}</pre></details>{% endif %}
+  </div>
+{% empty %}<p class="dim">No concepts.</p>{% endfor %}
+</div>
+
+<h2 id="outputs">Renders and records</h2>
+{% for o in outputs %}
+<section class="block">
+  <h3>Output #{{ o.output.pk }} · {{ o.output.created_at|date:"j F Y, H:i" }}{% if o.output.is_final_approved %} <span class="pill status">final approved</span>{% endif %}</h3>
+  {% for f in o.files %}{% if f.url and f.kind == "image" and f.label == "current render (preview)" %}<a href="{{ f.url }}" target="_blank" rel="noopener"><img class="preview" src="{{ f.url }}" alt="Current render of output {{ o.output.pk }}" loading="lazy"></a>{% endif %}{% endfor %}
+  {% if o.no_preview %}<p class="dim">No preview stored for this output.</p>{% endif %}
+  <ul class="files">{% for f in o.files %}{% include "dashboard/history/_file.html" %}{% endfor %}</ul>
+  {% if o.rejections %}
+    <h3>Rejected outputs ({{ o.rejections|length }})</h3>
+    {% for r in o.rejections %}
+    <div class="block">
+      <div><span class="pill reject">{{ r.label|default:"rejected"|plain }}</span></div>
+      <div class="facts"><span>decided by: {{ r.by|default:"(none recorded)" }}</span><span>when: {% if r.at %}{{ r.at|when }}{% else %}(none recorded){% endif %}</span></div>
+      {% if r.note %}<p>{{ r.note|plain }}</p>{% endif %}
+      <div class="codes">{% for c in r.codes %}<span class="pill">{{ c|plain }}</span>{% endfor %}</div>
+      <details class="tech"><summary>What the record says</summary><p>{{ r.key }}{% for c in r.codes %} · {{ c }}{% endfor %}</p></details>
+      {% for f in r.files %}{% if f.url and f.kind == "image" and f.name|slice:"-4:" == ".png" %}<a href="{{ f.url }}" target="_blank" rel="noopener"><img class="preview" src="{{ f.url }}" alt="Rejected render {{ f.name }}" loading="lazy"></a>{% endif %}{% endfor %}
+      <ul class="files">{% for f in r.files %}{% include "dashboard/history/_file.html" %}{% endfor %}</ul>
+    </div>
+    {% endfor %}
+  {% endif %}
+  {% if o.handoff %}<h3>Illustrator handoff files</h3><ul class="files">{% for f in o.handoff %}{% include "dashboard/history/_file.html" %}{% endfor %}</ul>{% endif %}
+  {% if o.provisional %}<h3>Provisional structure review artefacts</h3><ul class="files">{% for f in o.provisional %}{% include "dashboard/history/_file.html" %}{% endfor %}</ul>{% endif %}
+  {% if o.readiness.applies %}
+  <h3>What its review finds, read now</h3>
+  <p class="dim">Derived when this page was read, from the records — not a verdict anyone gave (§BH50(g)(4)).</p>
+  <div class="facts"><span>{{ o.readiness.blocking|length }} thing{{ o.readiness.blocking|length|pluralize }} stand{{ o.readiness.blocking|length|pluralize:"s," }} in its way · a person's acceptance of the design: {{ o.readiness.human|plain }}</span></div>
+  <ul class="status-list">{% for c in o.readiness.blocking_words %}<li>{{ c.words|plain }}</li>{% endfor %}</ul>
+  <details class="tech"><summary>What the record says</summary><p>checks as of {{ o.readiness.checks_date }}</p>
+    <ul>{% for c in o.readiness.blocking_words %}<li>{{ c.code }}</li>{% endfor %}</ul></details>
+  {% if o.readiness.warning_words %}<p>Not measured yet — shown beside Approve and kept with an approval, never a reason the design is refused:</p>
+  <ul class="status-list">{% for c in o.readiness.warning_words %}<li>{{ c.words|plain }}</li>{% endfor %}</ul>
+  <details class="tech"><summary>What the record says</summary><ul>{% for c in o.readiness.warnings %}<li>{{ c }}</li>{% endfor %}</ul></details>{% endif %}
+  {% if o.readiness.unconfirmed_words %}<p>Not confirmed yet — words the executor wrote that you have not confirmed, shown beside Approve and kept with an approval, never a reason the design is refused:</p>
+  <ul class="status-list">{% for c in o.readiness.unconfirmed_words %}<li>{{ c.words|plain }}</li>{% endfor %}</ul>
+  <details class="tech"><summary>What the record says</summary><ul>{% for c in o.readiness.unconfirmed_words %}<li>{{ c.code }}</li>{% endfor %}</ul></details>{% endif %}
+  {% if o.readiness.note_words %}<p>Production notes, for the printer — the maker's printing specification settles each, and none is a reason the design is refused:</p>
+  <ul class="status-list">{% for c in o.readiness.note_words %}<li>{{ c.words|plain }}</li>{% endfor %}</ul>
+  <details class="tech"><summary>What the record says</summary><ul>{% for c in o.readiness.note_words %}<li>{{ c.code }}</li>{% endfor %}</ul></details>{% endif %}
+  {% if o.readiness.staleness.stale %}<p><span class="pill withheld">STALE</span> the saved checks predate {{ o.readiness.staleness.checks_predate|length }} change{{ o.readiness.staleness.checks_predate|length|pluralize }} to what the system writes today — nothing rewritten, nothing newly blocking:</p>
+  <ul>{% for i in o.readiness.staleness.checks_predate %}<li>{{ i.what|plain }} — {{ i.ruling }}, {{ i.since }}</li>{% endfor %}</ul>
+  <details class="tech"><summary>What the record says</summary><p>{% for i in o.readiness.staleness.checks_predate %}{{ i.what }} · {{ i.commit }}{% if not forloop.last %} · {% endif %}{% endfor %}</p></details>
+  {% else %}<p class="dim">Its checks are current — they read what the system writes today.</p>{% endif %}
+  {% endif %}
+  <details class="tech records"><summary>The design's technical records ({{ o.records|length }}) — as the system wrote them</summary>
+  {% for rec in o.records %}<details><summary>{{ rec.words }}</summary><p class="dim mono">{{ rec.key }} — {{ rec.summary }}</p><pre>{{ rec.raw }}</pre></details>{% endfor %}
+  </details>
+</section>
+{% empty %}<p class="dim">No output rows.</p>{% endfor %}
+
+<h2 id="decisions">The decisions people made</h2>
+{% if decisions %}<div class="tablewrap"><table>
+  <thead><tr><th>When</th><th>On what</th><th>What was decided</th><th>Recorded actor</th><th>Notes</th></tr></thead>
+  <tbody>{% for d in decisions %}<tr><td>{{ d.row.decided_at|date:"j F Y, H:i" }}</td><td>{{ d.gate }}</td>
+    <td>{% if d.row.decision == "reject" %}<span class="pill reject">{{ d.decision }}</span>{% else %}<span class="pill">{{ d.decision }}</span>{% endif %}</td>
+    <td>{{ d.row.decided_by.username|default:"(none recorded)" }}</td><td>{{ d.row.notes|plain|linebreaksbr }}{% if d.row.notes|plain != d.row.notes %}<details class="tech"><summary>The note, as recorded</summary><p>{{ d.row.notes|linebreaksbr }}</p></details>{% endif %}</td></tr>{% endfor %}</tbody>
+</table></div>{% else %}<p class="dim">No gate decisions.</p>{% endif %}
+
+<h2 id="references">Concept references</h2>
+<p class="dim">Shown as text. Their bytes are REFERENCE-class or carry no tier row, and history never serves them.</p>
+{% if references %}<div class="tablewrap"><table>
+  <thead><tr><th>#</th><th>Source</th><th>Title</th><th>Permission</th><th>Ownership · rights</th></tr></thead>
+  <tbody>{% for r in references %}<tr><td>{{ r.row.pk }}</td><td>{{ r.source }}</td><td>{{ r.row.title|plain }}<div class="dim">{{ r.row.relevance_reason|plain }}</div></td>
+    <td>{{ r.permission }}{% if r.row.approved_at %} · {{ r.row.approved_at|date:"j F Y" }}{% endif %}</td><td>{{ r.ownership }} · {{ r.rights }}</td></tr>{% endfor %}</tbody>
+</table></div>
+<details class="tech"><summary>Where each is stored (never served)</summary><ul>{% for r in references %}<li>#{{ r.row.pk }} — {{ r.row.image_root }}/{{ r.row.image_path }}</li>{% endfor %}</ul></details>{% else %}<p class="dim">No concept references.</p>{% endif %}
+
+<h2 id="jobs">Drawing the concepts again, with references</h2>
+{% for j in jobs %}<div class="block"><div class="facts"><span>job #{{ j.job.pk }}</span><span class="pill">{{ j.job.status|plain }}</span>
+  {% if j.direction %}<span>for the direction {{ j.direction }}</span>{% elif j.job.direction_id %}<span>for a direction no longer on its brief</span>{% endif %}
+  <span>{{ j.job.created_at|date:"j F Y, H:i" }}{% if j.job.finished_at %} → {{ j.job.finished_at|date:"j F Y, H:i" }}{% endif %}</span></div>
+  {% if j.job.error %}<p>{{ j.job.error }}</p>{% endif %}
+  {% if j.prompts %}<details><summary>Prompts</summary><pre>{{ j.prompts }}</pre></details>{% endif %}
+  {% if j.job.direction_id %}<details class="tech"><summary>What the record says</summary><p>direction {{ j.job.direction_id }}</p></details>{% endif %}</div>
+{% empty %}<p class="dim">No regeneration jobs.</p>{% endfor %}
+
+<h2 id="palette">Palette records</h2>
+{% for c in confirmations %}<div class="block"><div class="facts"><span>confirmation #{{ c.row.pk }} v{{ c.row.version }}</span><span>{{ c.row.scope|plain }}</span>
+  <span>recorded actor: {{ c.row.confirmed_by.username|default:"(none recorded)" }}</span><span>{{ c.row.created_at|date:"j F Y, H:i" }}</span></div>
+  <details><summary>Confirmed intent</summary><pre>{{ c.intent }}</pre></details></div>
+{% empty %}<p class="dim">No palette intent confirmations.</p>{% endfor %}
+{% if material_artifacts %}<p>Material studies: {% for a in material_artifacts %}{{ a.words }}{% if not forloop.last %} · {% endif %}{% endfor %} — kept outside the site, never served.</p>
+<details class="tech"><summary>Where each is kept, and its fingerprint</summary><ul>{% for a in material_artifacts %}<li>{{ a.row.variant_name }} — {{ a.row.evidence_path }} · sha256 {{ a.row.evidence_sha256|slice:":16" }}</li>{% endfor %}</ul></details>{% endif %}
+
+<h2 id="notifications">Notifications</h2>
+<p class="dim">Notifications addressed to you ({{ request.user.username }}).</p>
+{% if notifications %}<div class="tablewrap"><table><thead><tr><th>When</th><th>Kind</th><th>Message</th></tr></thead>
+  <tbody>{% for n in notifications %}<tr><td>{{ n.row.created_at|date:"j F Y, H:i" }}</td><td>{{ n.words }}</td><td>{{ n.row.message|plain }}</td></tr>{% endfor %}</tbody></table></div>
+{% else %}<p class="dim">None addressed to you.</p>{% endif %}
+
+<h2 id="spend">AI spend</h2>
+<p>Total recorded: <b>${{ spend }}</b> over {{ calls|length }} provider call{{ calls|length|pluralize }}.</p>
+{% if calls %}<div class="tablewrap"><table><thead><tr><th>When</th><th>What it did</th><th>Who drew or read it</th><th>Tokens in/out</th><th>Pictures</th><th>USD</th></tr></thead>
+  <tbody>{% for c in calls %}<tr><td>{{ c.row.created_at|date:"j F Y, H:i" }}</td><td>{{ c.did }}</td>
+    <td class="dim">{{ c.row.provider }} · {{ c.row.model }}</td>
+    <td class="mono">{{ c.row.input_tokens }}/{{ c.row.output_tokens }}</td><td>{{ c.row.image_count }}</td><td class="mono">{{ c.row.cost_usd }}</td></tr>{% endfor %}</tbody></table></div>{% endif %}
+
+{% if explorations_refusal %}
+<h2 id="explorations">Explorations — not outputs</h2>
+<p><span class="pill withheld">withheld</span> {{ explorations_refusal_words }}</p>
+<details class="tech"><summary>What the record says</summary><p>{{ explorations_refusal }}</p></details>
+{% endif %}
+{% if explorations %}
+<h2 id="explorations">Explorations — not outputs</h2>
+<div class="exploration-band" role="note"><p><span class="words">{{ explorations.0.status }}</span><br>
+  Disposable pictures made from this task's inputs. Not outputs, not decisions, not evidence.</p></div>
+<ul>{% for s in explorations %}<li><a href="{% url 'dashboard:history_exploration_study' s.slug %}">{{ s.slug }}</a>
+  <span class="pill withheld">exploration</span> <span class="dim">{{ s.pictures|length }} pictures</span></li>{% endfor %}</ul>
+{% endif %}
+{% if explore.form %}
+{% if not explorations %}<h2 id="explorations">Explorations — not outputs</h2>{% endif %}
+<form method="post" action="{% url 'dashboard:history_task_explore' task.pk %}" class="explore">{% csrf_token %}
+  <button type="submit">Render an exploration of this task</button>
+  <a href="{% url 'dashboard:history_task_loop' task.pk %}">Open the design loop — knobs, and the pictures side by side</a>
+  <span class="dim">about 5 seconds · spends nothing · writes the exploration store and nothing the gate reads ·
+    never verified, never accepted, never evidence</span></form>
+{% elif explore.reason %}
+{% if not explorations %}<h2 id="explorations">Explorations — not outputs</h2>{% endif %}
+<p class="dim">No exploration can be rendered of this design — {{ explore.reason_words }}</p>
+<details class="tech"><summary>What the record says</summary><p>{{ explore.reason }}</p></details>
+{% endif %}
+
+<h2 id="logs">Every step, as it happened</h2>
+{% for l in logs %}<details><summary><span class="dim">{{ l.log.timestamp|date:"j M Y, H:i:s" }}</span> {{ l.who }} — {{ l.said|plain|truncatechars:160 }}{% if l.payload %} <span class="pill">its record</span>{% endif %}</summary>
+  <pre>{{ l.log.action }}{% if l.log.actor %}
+
+actor: {{ l.log.actor.username }}{% endif %}{% if l.payload %}
+
+{{ l.payload }}{% endif %}</pre></details>
+{% empty %}<p class="dim">No logs.</p>{% endfor %}
+{% endblock %}

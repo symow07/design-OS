@@ -1,0 +1,156 @@
+{
+ "record_type": "vq3_closeout_verification/1.0",
+ "created_at": "2026-07-29",
+ "frozen_inputs": {
+  "m3_selected_render": {
+   "live": "fbdedc5b23e31745",
+   "expected": "fbdedc5b23e31745",
+   "match": true
+  },
+  "m3_structural": {
+   "live": "4ecc8e9df1d1",
+   "expected": "4ecc8e9df1d1",
+   "match": true
+  },
+  "lf1_r1": {
+   "live": "fcd8003994d52028",
+   "expected": "fcd8003994d52028",
+   "match": true
+  },
+  "font_unit": {
+   "live": "5db4403984ba6f75",
+   "expected": "5db4403984ba6f75",
+   "match": true
+  },
+  "approved_logo": {
+   "live": "a2b2a82969389ac2",
+   "expected": "a2b2a82969389ac2",
+   "match": true
+  },
+  "vq2_clean_preview": {
+   "live": "94ec944326889c20",
+   "expected": "94ec944326889c20",
+   "match": true
+  },
+  "m1_render": {
+   "live": "cfba6016eb4ac40f",
+   "expected": "cfba6016eb4ac40f",
+   "match": true
+  },
+  "m2_render": {
+   "live": "26ed49546edbea48",
+   "expected": "26ed49546edbea48",
+   "match": true
+  },
+  "BODY": {
+   "live": "1ce3057cf3bc2f80",
+   "expected": "1ce3057cf3bc2f80",
+   "match": true
+  },
+  "COLLAR": {
+   "live": "4e666b3cf6841ef9",
+   "expected": "4e666b3cf6841ef9",
+   "match": true
+  },
+  "DARK_CLOSURE": {
+   "live": "a05982ac563865a4",
+   "expected": "a05982ac563865a4",
+   "match": true
+  },
+  "LOGO": {
+   "live": "cb4b4c5ad2f24904",
+   "expected": "cb4b4c5ad2f24904",
+   "match": true
+  },
+  "DIVIDER": {
+   "live": "152bc61d7fbf3fdb",
+   "expected": "152bc61d7fbf3fdb",
+   "match": true
+  },
+  "ROSE": {
+   "live": "54cd2ead9beb64a2",
+   "expected": "54cd2ead9beb64a2",
+   "match": true
+  },
+  "DAMASCENA": {
+   "live": "5cc66f125ec63e0a",
+   "expected": "5cc66f125ec63e0a",
+   "match": true
+  },
+  "SUPPORTING_COPY": {
+   "live": "95b20e7ce6463080",
+   "expected": "95b20e7ce6463080",
+   "match": true
+  }
+ },
+ "frozen_input_drift": [],
+ "frozen_inputs_checked": 16,
+ "selected_render_hash_unchanged": true,
+ "all_eight_mask_hashes_unchanged": true,
+ "geometry_overlay_derived_from_frozen_vectors": true,
+ "closeups_derived_from_frozen_m3_pixels": true,
+ "render_regenerated": false,
+ "material_modified": false,
+ "typography_modified": false,
+ "logo_modified": false,
+ "new_provider_calls": 0,
+ "new_image_generation_calls": 0,
+ "m4_created": false,
+ "packaging_started": false,
+ "supplier_requests_sent": 0,
+ "ranking_preserved": [
+  "M3",
+  "M1",
+  "M2"
+ ],
+ "actionable_counts_true": {
+  "M1": 4,
+  "M2": 7,
+  "M3": 0
+ },
+ "actionable_count_correction": {
+  "code": "VQ3_ACTIONABLE_COUNT_MISREPORTED_IN_PRIOR_SUMMARY",
+  "previously_reported": {
+   "M1": 2,
+   "M2": 5,
+   "M3": 0
+  },
+  "correct": {
+   "M1": 4,
+   "M2": 7,
+   "M3": 0
+  },
+  "cause": "my earlier prose quoted Inspector A's per-candidate counts as if they were the two-inspector totals",
+  "records_were_always_correct": true,
+  "evidence": {
+   "M1": {
+    "A": 2,
+    "B": 2
+   },
+   "M2": {
+    "A": 5,
+    "B": 2
+   },
+   "M3": {
+    "A": 0,
+    "B": 0
+   }
+  },
+  "affects_selection": false,
+  "why_not": "M3 had zero actionable findings from both inspectors under either reading, and the owner selected M3"
+ },
+ "collar_body_integration": {
+  "code": "VQ3_COLLAR_BODY_MATERIAL_INTEGRATION_RESOLVED",
+  "supported_by": [
+   "owner selection of M3",
+   "both M3 material inspections returned collar_body_integration PASS",
+   "material close-up evidence sheet",
+   "collar warmer than body: True",
+   "collar more reflective than body: True",
+   "shared studio lighting environment across all components",
+   "no chromatic isolation",
+   "no pasted-on appearance"
+  ],
+  "still_supported": true
+ }
+}

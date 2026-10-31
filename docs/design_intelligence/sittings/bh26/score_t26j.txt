@@ -1,0 +1,35 @@
+§AD0(a) SCORE — T26j (§BH26(j) transcription repair supplying §BH26(h)),
+commit 23fdfc4. Gate GREEN, hand-captured exit=0 (GEXIT=0). 8/8 legs
+HELD against pred_t26j.txt (c757547d1e7bc3ec, sealed before git add).
+
+L1 HELD: register + gate-staged ledger line only; no apps path, no
+   docs/roadmap path beyond the ledger; tree was clean at d7575fd,
+   nothing stashed.
+L2 HELD: register +126 −0 (1 seam blank + 125 block lines; 49
+   owner-quoted lines, 32 of them the inner (h) blockquote carried one
+   level deeper); 17,535-line prefix byte-identical (79c345eb039035a4
+   at append AND at HEAD); seam blank at 17,536; appended tail
+   byte-identical to the block file (473c295da36005e1); total 17,661;
+   worktree == HEAD; "§BH26(h)" now greppable in the register (6 hits).
+L3 HELD: manifest untouched; records chain consistent; ppp/tcp
+   untouched; the ledger at 438 passed the APPEND_ONLY prefix rule.
+L4 HELD: one staged row 126 0 OWNER_BLOCKER_CLEARANCE.md, re-verified
+   by the launch command itself (INDEX_VERIFIED) before the gate ran.
+L5 HELD: 2 files (register + ledger), 127 insertions, 0 deletions.
+L6 HELD: suite line EXACT — TIER_2=GREEN collected=8499 failures=0
+   apps=7693 dip0c=671 dip0=135. No refusal; §BH24 0/3.
+L7 HELD: ledger 438 → 439, +1 in this commit (HEAD~1=438, HEAD=439,
+   worktree=439).
+L8 HELD: apps diff HEAD~1..HEAD EMPTY; both protected regions
+   re-verified with the exact recipe (GATE 7fbeb8f1fe10b0fb; TEST
+   b32030dc827263e4); protocol_identity UNCHANGED c7924c5a4215f3cf. No
+   authority involved.
+
+Scoring note: the first scoring pass ran the register proof from the
+INNER root (`git show HEAD:./OWNER_BLOCKER_CLEARANCE.md` resolved
+under bbrose_design_os/ and failed); re-run from the OUTER root, all
+proofs held. The two-roots idiom, again.
+
+Post-commit: HEAD 23fdfc4; porcelain EMPTY; ledger HEAD == worktree ==
+439. Per the owner's last sentence: the score line only; then the next
+goal the owner pastes.

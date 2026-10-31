@@ -1,0 +1,129 @@
+{
+ "id": "slanted_front",
+ "version": "1.0",
+ "label": "Slanted or angled counter display",
+ "status": "working",
+ "build_order": 4,
+ "one_line": "The rows lean back toward the eye: for one or two rows of a tall product.",
+ "for": "Few rows of a tall product whose front must read.",
+ "suits": {
+  "products": [
+   "bottle",
+   "stick",
+   "tube"
+  ],
+  "counts": [
+   2,
+   24
+  ],
+  "rows": [
+   1,
+   2
+  ]
+ },
+ "panels": [
+  "floor",
+  "front panel",
+  "front cap",
+  "front inner",
+  "back panel",
+  "back cap",
+  "back inner",
+  "left side",
+  "right side",
+  "front left flap",
+  "front right flap",
+  "back left flap",
+  "back right flap",
+  "header front",
+  "header back",
+  "collar leg",
+  "collar tread 1",
+  "seat leg",
+  "seat tread 1"
+ ],
+ "folds": [
+  {
+   "fold": "floor / front",
+   "angle": 90,
+   "kind": "crease"
+  },
+  {
+   "fold": "floor / back",
+   "angle": 90,
+   "kind": "crease"
+  },
+  {
+   "fold": "floor / left",
+   "angle": 90,
+   "kind": "crease"
+  },
+  {
+   "fold": "floor / right",
+   "angle": 90,
+   "kind": "crease"
+  },
+  {
+   "fold": "front / cap",
+   "angle": 90,
+   "kind": "crease"
+  },
+  {
+   "fold": "back / cap",
+   "angle": 90,
+   "kind": "crease"
+  },
+  {
+   "fold": "header fold",
+   "angle": 180,
+   "kind": "half-cut"
+  }
+ ],
+ "locks": [
+  {
+   "kind": "barbed",
+   "what": "the header's two leaves, by barbed tongues through the back wall's rim"
+  },
+  {
+   "kind": "flush",
+   "what": "each inner leaf and stair foot through the floor, level with its underside"
+  },
+  {
+   "kind": "through",
+   "what": "each stair's rear tabs through the back wall's inner leaf"
+  }
+ ],
+ "allowances": {
+  "crease_centres": "outside − one caliper (FEFCO Rec. 101, C1)",
+  "panel_ends": "half a caliper + fit gap short of the surface met",
+  "corner_folds": "one caliper + fit gap, so a flap lies on the panel's inner face"
+ },
+ "limits": {
+  "angle_deg": 15,
+  "front_lip_mm": 25
+ },
+ "reinforcement": [
+  "as the tray",
+  "rear tabs turned level through the back wall"
+ ],
+ "glue": "none",
+ "faces_to_shopper": [
+  "header front",
+  "front panel",
+  "each deck (ground only)"
+ ],
+ "failures": [
+  "a product that slides forward",
+  "a bed that bows"
+ ],
+ "codes": "US10159361's shelf slopes down to the rear, as ours does. Published angles are for other goods: 20–40° sliding trays (A10), 5–10° tester tiers (A13).",
+ "sources": [
+  "A9",
+  "A10",
+  "A13",
+  "A22"
+ ],
+ "provisional": [
+  "Lean 15°: ours, between the published ranges; a sample proves it on board."
+ ]
+}

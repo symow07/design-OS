@@ -1,0 +1,300 @@
+[
+ {
+  "family": "Hayah",
+  "upstream": "Arabic Font Resources / ZakDesign (per Luc Devroye: Zak Design, Zakariya Saleh, Ramallah). The declared licence_url http://zakdesign.net/ no longer serves the foundry: the live domain returns an 807-byte gb2312 stub titled \"丹阳德蛹餐饮管理有限公司\" with Baidu push scripts (domain repurposed). The 2011-06-22 Wayback snapshot shows an IPB forum \"Arabic Font Resources\" (Arabic fonts library) linking a ZakDesign blog. The face is currently carried only by third-party Arabic font repositories (arfonts.net).",
+  "how_identified": "Declared strings (manufacturer \"Arabic Font Resources.\", copyright \"Copyright (c) 2010 by Arabic Font Resources.\", licence_url zakdesign.net, \"Version 1.001 2010\") + web search: arfonts.net listing names designer/foundry \"Arabic Font Resources.\", marketer \"zakdesign.net\", \"Version 1.001 2010\"; Luc Devroye page identifies Zak Design.",
+  "confidence_class": "NAME+VERSION-MATCHED",
+  "licence_status": "UNRESOLVED",
+  "stored": [
+   {
+    "path": "/Users/symow/bh29_work/evidence/Hayah/www.zakdesign.net",
+    "url": "http://www.zakdesign.net/",
+    "sha256": "9166f1231ff21d6aeadab99def3e38e000d0994587c7c5dd9d8e8ee641b8e1f7",
+    "kind": "PRODUCT_PAGE",
+    "fetched_at": "2026-09-03T07:39:41Z",
+    "bytes": 807,
+    "note": "Live content of the declared licence_url: 807-byte gb2312 stub, unrelated to fonts."
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Hayah/wayback_zakdesign_net_20110622.html",
+    "url": "https://web.archive.org/web/20110622033318/http://zakdesign.net/",
+    "sha256": "5615305137339fd5a9b99f1e78a05993b38f151b783106c7aa8c92e08c1dd8e5",
+    "kind": "PRODUCT_PAGE",
+    "fetched_at": "2026-09-03T07:42:42Z",
+    "bytes": 51889
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Hayah/hayah-font.html",
+    "url": "https://www.arfonts.net/hayah-font",
+    "sha256": "f9cd8e0f8ba1ab1a71abaec67a380e2856339ec31f74d8b70cd64fc80907c8a2",
+    "kind": "PRODUCT_PAGE",
+    "fetched_at": "2026-09-03T07:39:48Z",
+    "bytes": 41562,
+    "note": "Third-party repository listing (arfonts.net), not the foundry."
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Hayah/luc_devroye_zak_design.html",
+    "url": "https://luc.devroye.org/fonts-54992.html",
+    "sha256": "f3945f36611f0d231b681f32f00c778f25a8a40cb0b2ac30f823d9804a377c9d",
+    "kind": "PRODUCT_PAGE",
+    "fetched_at": "2026-09-03T07:41:08Z",
+    "bytes": 44765,
+    "note": "Third-party reference page; does not list Hayah."
+   }
+  ],
+  "bundling_product": "",
+  "reportage": "arfonts.net (third-party repository; listing dated 2018/05/12) states in Arabic \"الترخيص: مجاني للاستخدام الشخصي والتجاري\" (\"Licence: free for personal and commercial use\") and lists designer/foundry \"Arabic Font Resources.\", marketer \"zakdesign.net\", \"Version 1.001 2010\", TrueType .ttf, 791 glyphs — a repository claim, not the foundry's text. The 2011 Wayback snapshot of zakdesign.net is a forum homepage (windows-1256) with no licence statement and no mention of Hayah.",
+  "notes": "Confidence qualification: the name+version match is against a third-party repository listing (arfonts serves a .ttf; the library file is Hayah.otf with the same version string), not against the foundry, whose site is gone; bytes not obtained (fonts not fetched). HTTP: http://zakdesign.net/ -> 301 -> http://www.zakdesign.net/ 200 (807 B); https://zakdesign.net/ -> connection failed (curl 000); urllib fetch hung >120 s, stored via curl. archive.org availability API located snapshot 20110622033318; port-80 fetch failed (curl 28, 75 s), https fetch succeeded (51,889 B). No licence text published by the foundry was located; the declared copyright string ends \"All rights reserved. www\" (truncated). Located but not fetched: fontke listing eng.m.fontke.com/font/10379901/ (\"Hayah Version 1.001 2010\"), X account @ArabicFonts."
+ },
+ {
+  "family": "Bauhaus 93",
+  "upstream": "Microsoft (bundling vendor: supplied with Microsoft 365 / Office as a cloud font). Foundry per Microsoft's page: URW (\"Font vendor: URW Type Foundry\", copyright \"URW Software, Copyright 1993 by URW\"). Declared http://www.urwpp.de -> 3 redirects -> https://www.myfonts.com/a/font/premium-font-collections/urw (Monotype-owned URW foundry listing, HTTP 200).",
+  "how_identified": "Declared strings (copyright/manufacturer/licence_url) + Microsoft Typography font-list page (identical copyright string) + Office cloud fonts table (\"Bauhaus 93 bauhaus93.ttf 1.53\").",
+  "confidence_class": "NAME+VERSION-MATCHED",
+  "licence_status": "BUNDLED — VENDOR TERMS PAGE STORED (reportage)",
+  "stored": [
+   {
+    "path": "/Users/symow/bh29_work/evidence/Bauhaus_93/ms_font_list_bauhaus-93.html",
+    "url": "https://learn.microsoft.com/en-us/typography/font-list/bauhaus-93",
+    "sha256": "2afd361ebd9064e481ce348bab3d677f551888a833bf7e8eb184b79150fef88d",
+    "kind": "PRODUCT_PAGE",
+    "fetched_at": "2026-09-03T06:19:43Z",
+    "bytes": 46992,
+    "note": "Re-fetched 07:34Z as bauhaus-93.html: identical bytes, same sha256."
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Bauhaus_93/ms_office_cloud_fonts.html",
+    "url": "https://support.office.com/en-us/article/cloud-fonts-in-office-f7b009fe-037f-45ed-a556-b5fe6ede6adb",
+    "sha256": "cb4223e6127f65f81cee09cf74e81b44fe27ea369f66433ffaf524d1234d1f3a",
+    "kind": "PRODUCT_PAGE",
+    "fetched_at": "2026-09-03T07:42:50Z",
+    "bytes": 186356,
+    "note": "Final URL https://support.microsoft.com/en-us/office/fonts/cloud-fonts-in-office; table lists bauhaus93.ttf 1.53."
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Bauhaus_93/ms_font_redistribution_faq.html",
+    "url": "https://learn.microsoft.com/en-us/typography/fonts/font-faq",
+    "sha256": "004ac39f8da44bc06f19af127b11084c4cc6924aa60541d9c839101c8c4108bb",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "fetched_at": "2026-09-03T06:19:29Z",
+    "bytes": 58746
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Bauhaus_93/ms_license_terms_office_2024_english.pdf",
+    "url": "https://www.microsoft.com/content/dam/microsoft/usetm/documents/office/2024-word/retail-(packaged)/Microsoft%20License%20Terms%20Office%202024%20-%20English.pdf",
+    "sha256": "0aeb6bd82a0de7fa99b671b734d50685aa7dc17623168e5959abfd6a0a028a76",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "fetched_at": "2026-09-03T07:44:17Z",
+    "bytes": 137366
+   }
+  ],
+  "bundling_product": "Microsoft 365 / Office (cloud fonts) — https://support.microsoft.com/en-us/office/fonts/cloud-fonts-in-office (reached via the font-list link https://support.office.com/en-us/article/cloud-fonts-in-office-f7b009fe-037f-45ed-a556-b5fe6ede6adb); terms pages: Office 2024 Software License Terms PDF (fonts clause) and Font redistribution FAQ https://learn.microsoft.com/en-us/typography/fonts/font-faq (which scopes itself to Windows-supplied fonts).",
+  "reportage": "Microsoft Software License Terms, Office 2024 retail (PDF, \"Last updated July 2024\"), clause (iv), reportage: \"While the software is running, you may use its fonts to display and print content. You may temporarily download the fonts to a printer or other output device to print content, and you may embed fonts in content only as permitted by the embedding restrictions in the fonts.\" Cloud fonts page: \"Cloud fonts are available to Microsoft 365 subscribers.\" Font redistribution FAQ (learn.microsoft.com, ms.date 2024-11-19), reportage: scope — \"they apply to all the fonts installed with Windows as system-wide resources\"; \"Unless you are using an application that is specifically licensed for home, student, or non-commercial use, we do not place any restrictions on what you do with print output that uses these fonts\"; \"We view creating graphic files as being essentially the same as printing from an output device\"; videos: \"the same as graphic files, providing the captions or text is rendered as a bitmap image, and the font files themselves are not embedded within the video file\". NOTE: the FAQ's scope statement covers fonts installed with Windows; Bauhaus 93 is Office-supplied.",
+  "notes": "Version match: library BAUHS93.TTF \"Version 1.53\" = cloud-fonts table bauhaus93.ttf 1.53; bytes not obtained. The font-list page (last updated 2022-03-30) has no products/versions table and no Office mention. Which product supplied the owner's copy is not concluded. urwpp.de redirect target not stored (storefront listing, not a Bauhaus 93 page)."
+ },
+ {
+  "family": "Colonna MT",
+  "upstream": "Microsoft (bundling vendor: supplied with Microsoft 365 / Office as a cloud font; font-list page: \"This typeface is available within Office applications\"). Foundry per Microsoft's page: Monotype (\"Font vendor: Agfa Monotype Corporation\", designers Monotype Design Studio, copyright \"Copyright © The Monotype Corporation plc. 1992. All rights reserved.\").",
+  "how_identified": "Declared copyright string (identical on the Microsoft font-list page) + Office cloud fonts table (\"Colonna MT Colonna.ttf 1.52\").",
+  "confidence_class": "FAMILY-MATCHED",
+  "licence_status": "BUNDLED — VENDOR TERMS PAGE STORED (reportage)",
+  "stored": [
+   {
+    "path": "/Users/symow/bh29_work/evidence/Colonna_MT/ms_font_list_colonna-mt.html",
+    "url": "https://learn.microsoft.com/en-us/typography/font-list/colonna-mt",
+    "sha256": "b0a033102af89c335b77cfb4d99f6915e23a209a6024e79b718b5027c694a0ea",
+    "kind": "PRODUCT_PAGE",
+    "fetched_at": "2026-09-03T06:19:46Z",
+    "bytes": 47560,
+    "note": "Re-fetched 07:34Z as colonna-mt.html: identical bytes, same sha256."
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Colonna_MT/ms_office_cloud_fonts.html",
+    "url": "https://support.office.com/en-us/article/cloud-fonts-in-office-f7b009fe-037f-45ed-a556-b5fe6ede6adb",
+    "sha256": "185c846432e865d27cf151114d3b5d809cf7e8ababbd8e222728a50e740645d5",
+    "kind": "PRODUCT_PAGE",
+    "fetched_at": "2026-09-03T07:44:14Z",
+    "bytes": 186341,
+    "note": "Final URL https://support.microsoft.com/en-us/office/fonts/cloud-fonts-in-office; table lists Colonna.ttf 1.52 (differs from the Bauhaus copy's sha only by dynamic page content)."
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Colonna_MT/ms_font_redistribution_faq.html",
+    "url": "https://learn.microsoft.com/en-us/typography/fonts/font-faq",
+    "sha256": "004ac39f8da44bc06f19af127b11084c4cc6924aa60541d9c839101c8c4108bb",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "fetched_at": "2026-09-03T06:19:33Z",
+    "bytes": 58746
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Colonna_MT/ms_license_terms_office_2024_english.pdf",
+    "url": "https://www.microsoft.com/content/dam/microsoft/usetm/documents/office/2024-word/retail-(packaged)/Microsoft%20License%20Terms%20Office%202024%20-%20English.pdf",
+    "sha256": "0aeb6bd82a0de7fa99b671b734d50685aa7dc17623168e5959abfd6a0a028a76",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "fetched_at": "2026-09-03T07:44:19Z",
+    "bytes": 137366
+   }
+  ],
+  "bundling_product": "Microsoft 365 / Office (cloud fonts) — https://support.microsoft.com/en-us/office/fonts/cloud-fonts-in-office; terms pages: Office 2024 Software License Terms PDF (fonts clause) and Font redistribution FAQ https://learn.microsoft.com/en-us/typography/fonts/font-faq (Windows-scoped).",
+  "reportage": "Microsoft Software License Terms, Office 2024 retail (PDF, \"Last updated July 2024\"), clause (iv), reportage: \"While the software is running, you may use its fonts to display and print content. You may temporarily download the fonts to a printer or other output device to print content, and you may embed fonts in content only as permitted by the embedding restrictions in the fonts.\" Cloud fonts page: \"Cloud fonts are available to Microsoft 365 subscribers.\" Font redistribution FAQ (learn.microsoft.com, ms.date 2024-11-19), reportage: scope — \"they apply to all the fonts installed with Windows as system-wide resources\"; \"Unless you are using an application that is specifically licensed for home, student, or non-commercial use, we do not place any restrictions on what you do with print output that uses these fonts\"; \"We view creating graphic files as being essentially the same as printing from an output device\"; videos: \"the same as graphic files, providing the captions or text is rendered as a bitmap image, and the font files themselves are not embedded within the video file\". NOTE: the FAQ's scope statement covers fonts installed with Windows; Colonna MT is Office-supplied.",
+  "notes": "VERSION DIFFERS: library COLONNA.TTF declares \"Version 1.51\"; Microsoft's current cloud-fonts table lists Colonna.ttf 1.52; the font-list page (last updated 2025-08-08) states no version. No Microsoft page listing 1.51 was found (an earlier Office release presumably shipped 1.51 — not verified). Bytes not obtained."
+ },
+ {
+  "family": "Square721 BT",
+  "upstream": "Foundry: Bitstream Inc. (now Monotype; http://www.bitstream.com/ -> 301 -> https://www.monotype.com/ 200). Bundling vendor: Corel (CorelDRAW Graphics Suite ships Bitstream \"BT\" fonts; Corel's copyrights page defers font licensing to Bitstream). Retail: MyFonts (Monotype) \"Square 721\" by Bitstream, designer Aldo Novarese, 6 styles.",
+  "how_identified": "Declared copyright \"Copyright 1990-2003 Bitstream Inc.\" + the \"BT\" family suffix and \"Version 1.01 emb4-OT\" string (consistent with Corel-bundled Bitstream fonts per search reportage) + search (MyFonts/Monotype catalog product pages; Corel copyrights page).",
+  "confidence_class": "FAMILY-MATCHED",
+  "licence_status": "BUNDLED — VENDOR TERMS PAGE STORED (reportage)",
+  "stored": [
+   {
+    "path": "/Users/symow/bh29_work/evidence/Square721_BT/corel_copyrights.html",
+    "url": "https://www.corel.com/en/corel-copyrights/",
+    "sha256": "1dfaa791662367327d970e0e86964dbca292f6d10646643321191df28c9282e6",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "fetched_at": "2026-09-03T07:44:21Z",
+    "bytes": 48439,
+    "note": "The only Corel page found that speaks about bundled fonts."
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Square721_BT/corel_eula.html",
+    "url": "https://www.corel.com/en/eula/",
+    "sha256": "4056b19a34e23f80f8a2694366a110396d53aa6eef67ea9079be80e398bd6158",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "fetched_at": "2026-09-03T06:20:13Z",
+    "bytes": 86413,
+    "note": "Current generic Corel EULA text; zero occurrences of \"font\"."
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Square721_BT/coreldraw_licensing_faqs.html",
+    "url": "https://www.coreldraw.com/en/licensing/faqs/",
+    "sha256": "2297befc1bfdc56bfbf153d0f2445c19df83f64c8b3d2cd4523d062f8dbfaa0a",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "fetched_at": "2026-09-03T07:42:44Z",
+    "bytes": 70243,
+    "note": "Zero occurrences of \"font\"."
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Square721_BT/128050.html",
+    "url": "https://kb.corel.com/en/128050",
+    "sha256": "e0253b5455444dcbfb5054503d22b96d2e3f67ed98d2f73a27b228c1cc18484d",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "fetched_at": "2026-09-03T07:36:43Z",
+    "bytes": 30603,
+    "note": "Corel KB \"Usefull information regarding Fonts in Corel Draw\" (last review 2021-09-07): installation how-to, not terms."
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Square721_BT/myfonts_square-721-font-bitstream.html",
+    "url": "https://www.myfonts.com/collections/square-721-font-bitstream",
+    "sha256": "44f28bd9347b96584e220cddb3723b4efefa7f1639d4486d5e762d6871de97b2",
+    "kind": "PRODUCT_PAGE",
+    "fetched_at": "2026-09-03T06:20:09Z",
+    "bytes": 1005520,
+    "note": "Retail listing; commercial — evidence would require purchase."
+   }
+  ],
+  "bundling_product": "CorelDRAW Graphics Suite (Corel) — https://www.corel.com/en/corel-copyrights/ (\"Fonts\" section); the Corel EULA https://www.corel.com/en/eula/ is referred to for redistribution rights but its current text has no font clause.",
+  "reportage": "Corel copyrights page, reportage: \"While Corel has developed some fonts in-house, most of the fonts found in Corel products have been licensed from independent font vendors. If you wish to license a particular font, you should contact Bitstream at www.bitstream.com, not Corel. Corel does not make fonts developed by it available for licensing.\" and, under Use of Software: \"Please read the accompanying end user license agreement accompanying the software to determine your redistribution rights.\" Corel KB 128050: bonus fonts come with the DVD version; Bitstream Font Navigator; \"Embed Fonts Using TrueDoc(TM)\" on save. MyFonts, reportage: \"Individual Styles from $29.99 USD\", \"Complete family of 6 fonts: $140.99 USD\", licence types Desktop / Webfont / App / Electronic Doc / Digital Ad-Email / Server, \"make sure to read the full EULA text\" — retail path is commercial; licence evidence for it would require purchase.",
+  "notes": "Provenance of the owner's copy (Corel bundle vs retail vs other) is not established; the naming \"Square721 BT Roman\" differs from the retail \"Square 721 Std Roman\" and no version is stated on the retail page. No Corel page found states what the bundled fonts permit; the copyrights page defers to the product EULA (no font clause today) and to Bitstream (now Monotype). www.bitstream.com redirect target not stored (Monotype homepage)."
+ },
+ {
+  "family": "Arial",
+  "upstream": "Microsoft (bundling vendor: Windows-supplied font; also an Office cloud font). Foundry: The Monotype Corporation (copyright \"© 2017 The Monotype Corporation. All Rights Reserved. Hebrew OpenType Layout logic copyright © 2003 & 2007, Ralph Hancock & John Hudson\"; designers Robin Nicholas, Patricia Saunders, 1982 — per the Microsoft page).",
+  "how_identified": "Declared strings (copyright/manufacturer identical on the Microsoft font-list page) + Windows 10 font list table (\"Arial Bold Arialbd.ttf 7.00\").",
+  "confidence_class": "NAME+VERSION-MATCHED",
+  "licence_status": "BUNDLED — VENDOR TERMS PAGE STORED (reportage)",
+  "stored": [
+   {
+    "path": "/Users/symow/bh29_work/evidence/Arial/ms_font_list_arial.html",
+    "url": "https://learn.microsoft.com/en-us/typography/font-list/arial",
+    "sha256": "fe0e0c37fd0b8dd88f9befa659a295073a30eac95cc4146af6b8dfcb7eaf2b42",
+    "kind": "PRODUCT_PAGE",
+    "fetched_at": "2026-09-03T06:19:48Z",
+    "bytes": 52267,
+    "note": "Re-fetched 07:34Z as arial.html: identical bytes, same sha256."
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Arial/ms_windows_10_font_list.html",
+    "url": "https://learn.microsoft.com/en-us/typography/fonts/windows_10_font_list",
+    "sha256": "90a028d083f15483ca1e8510295ea483cc0c30d144d528c2aaf5d72ffa2e1c4b",
+    "kind": "PRODUCT_PAGE",
+    "fetched_at": "2026-09-03T06:19:56Z",
+    "bytes": 104142,
+    "note": "Row: Arial Bold Arialbd.ttf 7.00."
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Arial/ms_font_redistribution_faq.html",
+    "url": "https://learn.microsoft.com/en-us/typography/fonts/font-faq",
+    "sha256": "004ac39f8da44bc06f19af127b11084c4cc6924aa60541d9c839101c8c4108bb",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "fetched_at": "2026-09-03T06:19:38Z",
+    "bytes": 58746
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Arial/ms_product_terms_for_all_software.html",
+    "url": "https://www.microsoft.com/licensing/terms/product/ForallSoftware/all",
+    "sha256": "2a5b18d1cd907e1da955e9f555dbdfd6835c75f85fd72597ee08eed54415a13f",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "fetched_at": "2026-09-03T07:45:31Z",
+    "bytes": 158566
+   }
+  ],
+  "bundling_product": "Windows 10 (Windows-supplied font) — https://learn.microsoft.com/en-us/typography/fonts/windows_10_font_list; terms pages: Font redistribution FAQ https://learn.microsoft.com/en-us/typography/fonts/font-faq and Microsoft Product Terms https://www.microsoft.com/licensing/terms/product/ForallSoftware/all.",
+  "reportage": "Font redistribution FAQ (learn.microsoft.com, ms.date 2024-11-19), reportage: scope — \"they apply to all the fonts installed with Windows as system-wide resources\"; \"Unless you are using an application that is specifically licensed for home, student, or non-commercial use, we do not place any restrictions on what you do with print output that uses these fonts\"; \"We view creating graphic files as being essentially the same as printing from an output device\"; videos: \"the same as graphic files, providing the captions or text is rendered as a bitmap image, and the font files themselves are not embedded within the video file\". Microsoft Product Terms, Universal License Terms For all Software, \"Font Components, Images, and Sounds\", reportage: \"may use the fonts included with or installed by that software to display and print content. Customer may only embed fonts in content as permitted by the embedding restrictions in the fonts; and temporarily download them to a printer or other output device to print content.\"",
+  "notes": "Version match: library arialbd.ttf \"Version 7.00\" = Windows 10 font list Arialbd.ttf 7.00; the Office cloud-fonts table today lists arialbd.ttf 7.04 (newer). The font-list page (last updated 2026-07-08) tabulates versions only up to Vista (5.01) and points to per-release pages for Windows 7-11. The page's \"License Microsoft fonts\" link https://www.fonts.com/content/microsoft-typography now -> https://www.myfonts.com/a/font/form/microsoft-typography-licensing (200; a Monotype licensing enquiry form) — not stored. Which Windows release supplied the owner's copy is not concluded."
+ },
+ {
+  "family": "Bahnschrift",
+  "upstream": "Microsoft Corporation (foundry and bundling vendor; Windows 10/11-supplied; designer Aaron Bell; released as a variable font for Windows in 2017 per the Microsoft page).",
+  "how_identified": "Declared strings (manufacturer Microsoft, licence_url docs.microsoft.com/typography/about) + Microsoft font-list page + Windows 10 font list table (\"Bahnschrift * Bahnschrift.ttf 2.06\").",
+  "confidence_class": "NAME+VERSION-MATCHED",
+  "licence_status": "BUNDLED — VENDOR TERMS PAGE STORED (reportage)",
+  "stored": [
+   {
+    "path": "/Users/symow/bh29_work/evidence/Bahnschrift/ms_font_list_bahnschrift.html",
+    "url": "https://learn.microsoft.com/en-us/typography/font-list/bahnschrift",
+    "sha256": "2d4a7553c557f0236bc6ca76816b79503b2c1a6b246327816ade707b1170b953",
+    "kind": "PRODUCT_PAGE",
+    "fetched_at": "2026-09-03T06:19:52Z",
+    "bytes": 54238,
+    "note": "Re-fetched 07:34Z as bahnschrift.html: identical bytes, same sha256."
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Bahnschrift/ms_windows_10_font_list.html",
+    "url": "https://learn.microsoft.com/en-us/typography/fonts/windows_10_font_list",
+    "sha256": "90a028d083f15483ca1e8510295ea483cc0c30d144d528c2aaf5d72ffa2e1c4b",
+    "kind": "PRODUCT_PAGE",
+    "fetched_at": "2026-09-03T06:19:58Z",
+    "bytes": 104142,
+    "note": "Row: Bahnschrift * Bahnschrift.ttf 2.06."
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Bahnschrift/ms_font_redistribution_faq.html",
+    "url": "https://learn.microsoft.com/en-us/typography/fonts/font-faq",
+    "sha256": "004ac39f8da44bc06f19af127b11084c4cc6924aa60541d9c839101c8c4108bb",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "fetched_at": "2026-09-03T06:19:40Z",
+    "bytes": 58746
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Bahnschrift/ms_typography_about.html",
+    "url": "https://learn.microsoft.com/en-us/typography/about",
+    "sha256": "85c542e029caa14efe0cc52de0d7041e0b2ad3465389218614825fd998f76eb7",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "fetched_at": "2026-09-03T06:20:01Z",
+    "bytes": 49460,
+    "note": "Declared licence_url target after redirects; an About page, not a licence text."
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Arial/ms_product_terms_for_all_software.html",
+    "url": "https://www.microsoft.com/licensing/terms/product/ForallSoftware/all",
+    "sha256": "2a5b18d1cd907e1da955e9f555dbdfd6835c75f85fd72597ee08eed54415a13f",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "fetched_at": "2026-09-03T07:45:31Z",
+    "bytes": 158566,
+    "note": "Shared copy stored under Arial (fetched once for both Windows-supplied faces)."
+   }
+  ],
+  "bundling_product": "Windows 10 / Windows 11 (Windows-supplied font) — https://learn.microsoft.com/en-us/typography/fonts/windows_10_font_list; terms pages: Font redistribution FAQ https://learn.microsoft.com/en-us/typography/fonts/font-faq and Microsoft Product Terms https://www.microsoft.com/licensing/terms/product/ForallSoftware/all.",
+  "reportage": "Declared licence_url https://docs.microsoft.com/typography/about -> 2 redirects -> https://learn.microsoft.com/en-us/typography/about (200): an \"About Microsoft Typography\" page (ms.date 2020-03-10), not a licence text. Font redistribution FAQ (learn.microsoft.com, ms.date 2024-11-19), reportage: scope — \"they apply to all the fonts installed with Windows as system-wide resources\"; \"Unless you are using an application that is specifically licensed for home, student, or non-commercial use, we do not place any restrictions on what you do with print output that uses these fonts\"; \"We view creating graphic files as being essentially the same as printing from an output device\"; videos: \"the same as graphic files, providing the captions or text is rendered as a bitmap image, and the font files themselves are not embedded within the video file\". Microsoft Product Terms, Universal License Terms For all Software, \"Font Components, Images, and Sounds\", reportage: \"may use the fonts included with or installed by that software to display and print content. Customer may only embed fonts in content as permitted by the embedding restrictions in the fonts; and temporarily download them to a printer or other output device to print content.\"",
+  "notes": "Version match: library bahnschrift.ttf \"Version 2.06\" = Windows 10 font list Bahnschrift.ttf 2.06. Copyright year differs between file (© 2018) and the font-list page (© 2019) — recorded, not resolved. The Office cloud-fonts table lists other Bahnschrift files (e.g. bahnschrift-semilight-condensed.ttf 2.08), not the library's file."
+ }
+]

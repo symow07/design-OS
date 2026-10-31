@@ -1,0 +1,113 @@
+§AD0(a) PREDICTION — COMMIT AX — §BH22(a) RE-PIN
+================================================
+Written AFTER the two ruled edits and their verification, BEFORE `git add`,
+BEFORE the gate. Scored in the final §BH22 report, against measurement. No
+bar lowered after the fact. Durable in ~/bh21_work/ (/tmp untrusted, §BH21(h)).
+
+HEAD at time of writing: a06ccf6 (transcription of §BH20+§BH21, landed+scored)
+Ruling executed:         §BH22(a) — single-use authorization: "amend EXACTLY
+                         the 34 face_manifest entries in
+                         dip1b_mvp_manifest_1_0.json to the measured
+                         post-regen sha256 values — each value measured fresh
+                         at write time, not taken from the report. Own commit;
+                         the message quotes this ruling as its authority and
+                         records the mover."
+Goal-order position:     FIRST landing of §BH22 — authorized ahead of the
+                         transcription by the header ("if the amendment in (a)
+                         must land first for the gate to go green, that order
+                         is authorized, same logic as §BH21's header"): no
+                         gate can pass until the worktree answers both refused
+                         tests, and the register must not land through a
+                         refusing gate.
+
+WHAT CARRIES THE PROOF. bh22_measure.py (exit 0 hand-captured to
+bh22_exit.txt, utc 2026-09-01T01:31:26Z, write-control CLEAN over 519 files):
+  - count gate PASS: mismatches exactly 55 = 34 face_manifest (entries 44-77,
+    ONE shared old pin 9337c482…ba953) + 21 brand_candidates (78-98) — no
+    35th, per the ruling's own hard stop;
+  - fresh value 302679…e35c, same-run consistent with all 34 observed;
+  - the four constants measured true fresh: faces 3969 · groups 2834 ·
+    FONT_FACE 3969 · SYSTEM_FONT_EVIDENCE_PRESENT 130 (:481 holds 706).
+Post-edit verification, measured: old pin 34→0 occurrences, new 0→34; fresh
+full re-audit = exactly 21 mismatches, entries 78-98, brand path only.
+
+THE EIGHT LEGS
+==============
+L1 — WRITE SET
+    Exactly ONE path of mine, staged:
+      M  docs/design_intelligence/dip1/dip1b_mvp_manifest_1_0.json
+    Plus, written BY THE GATE and not by me:
+      M  bbrose_design_os/docs/roadmap/palt_m6/record_gate_ledger.jsonl
+         (folded whole: the refused run's orphan line + this run's line = +2)
+      +  THREE capture files under bbrose_design_os/.tier2_captures
+         (gitignored, unstaged).
+    UNSTAGED and NOT in this commit (commit B's declared set, worktree-
+    present so the suite is green): tools/dip0c/tests/test_c4b.py (+1 -1),
+    test_c4c.py (+2 -2), test_c5.py (+1 -1). NOTHING ELSE — the 21 brand
+    pins byte-untouched (§BH22(b)); register and queue untouched (commits
+    C and D).
+
+L2 — DIFF SHAPE
+      docs/design_intelligence/dip1/dip1b_mvp_manifest_1_0.json  +34 -34
+      + record_gate_ledger.jsonl                                 +2  -0  (gate)
+      ------------------------------------------------------------------
+      commit total                                               +36 -34, 2 files
+    34 identical single-token sha swaps, 64 hex chars both ways — every
+    changed line is a "sha256" line; no key, no ordering, no count changes.
+
+L3 — MANIFEST / A391
+    suite_file_manifest.json absent from the commit; no new file anywhere.
+
+L4 — §BH4(l) STAGED == DECLARED, BOTH HALVES
+    STAGED: `git diff --cached --numstat` = the manifest at +34 -34, nothing
+    else. UNSTAGED: exactly FOUR ` M` rows — the three test files + the
+    ledger. No `??` entries.
+
+L5 — COMMIT CONTENTS
+    ONE commit, evidence-contract amendment ONLY, under the quoted single-use
+    authorization; message records the mover (the §BH20(b) ruled regen, sole
+    mover, proven by fedfab7 + a06ccf6 hashing pre-regen bytes to the old
+    pin). NOT DONE HERE: the four constants (commit B), the transcription
+    (commit C), the queue record (commit D), anything on the 21.
+
+L6 — SUITE / COLLECTION
+      TIER_2=GREEN collected=8490 failures=0 apps=7684 dip0c=671 dip0=135
+    The worktree now answers both refused tests: dip1b's fail-closed branch
+    sees the 21 brand mismatches only (first unresolved = brand again, the
+    pre-refusal shape) and test_c4b reads 130. A refusal on ANYTHING at this
+    gate = hard stop, stop and report (§BH22: "beyond the two known movers",
+    and both known movers are answered here).
+
+L7 — LEDGER
+    Starts DIRTY at 422 on disk / 421 committed — the refused run's orphan,
+    measured and declared. This run appends its own line: 423 on disk; the
+    gate folds the whole file: committed 423, +2 -0 in this commit, CLEAN
+    after. No second orphan.
+
+L8 — PROTOCOL IDENTITIES
+    Zero apps/ files in the commit; EXTENT_DIGESTS at
+    palette_powder_protocol.py:1861 untouched, PROVED by an empty
+    `git diff a06ccf6 <new> -- bbrose_design_os/apps/`.
+
+NUMBERED CLAIMS
+===============
+C1. THE WRITTEN VALUE WAS MEASURED FRESH AT WRITE TIME, not taken from the
+    §BH21 report: bh22_measurement.json, minutes before the edit, exit 0,
+    write-control clean. 302679…e35c and no other value written anywhere.
+C2. THE COUNT IS PART OF THE RULING AND MEASURED: exactly 34 amended; the
+    only other mismatches are the 21 §BH22(b) queues; no 35th existed at
+    write time (hard_stop_count_gate PASS).
+C3. THE 21 ARE BYTE-UNTOUCHED: the diff contains no dfccbad2… line; the
+    post-edit audit still measures them MISMATCH at entries 78-98.
+C4. SINGLE-USE: the commit message carries the owner sentence verbatim; this
+    commit establishes NO standing machine authority over evidence contracts.
+C5. TWO-SIDED GUARD PRESERVED: a corpus regression re-fires both the dip1b
+    fail-closed branch and the four constants tomorrow; nothing is silenced.
+C6. EXIT EVIDENCE: gate log to ~/bh21_work/a_gate.log, exit hand-captured to
+    ~/bh21_work/a_exit.txt. TWO confirmations required before "landed" is
+    claimed: captured exit 0 AND a new HEAD hash.
+
+WHAT COMMIT AX IS NOT: not pass 2 (commit B), not the transcription (commit
+C), not the queue record (commit D), not a touch on the 21 or their masking
+coincidence (§BH22(b), owner-gated), not a precedent — "absent an owner
+sentence like this one, they may not."

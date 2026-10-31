@@ -1,0 +1,4855 @@
+{
+ "schema": "retire_scan/1",
+ "old_roots": [
+  "apps.pipeline.urls",
+  "apps.dielines.urls",
+  "apps.intelligence.urls",
+  "apps.pipeline.signals",
+  "apps.pipeline.tasks",
+  "apps.dashboard.urls",
+  "config.urls",
+  "apps.pipeline.apps",
+  "config.settings",
+  "apps.accounts.management.commands.verify_decision_chain",
+  "apps.core.management.commands.import_design_references",
+  "apps.intelligence.management.commands.rebuild_intelligence_assertions",
+  "apps.intelligence.management.commands.rebuild_intelligence_governance",
+  "apps.intelligence.management.commands.rebuild_intelligence_semantic_index",
+  "apps.pipeline.management.commands.build_stepped_display",
+  "apps.pipeline.management.commands.rbv4_review"
+ ],
+ "new_roots": [
+  "apps.dashboard.product_round_views",
+  "apps.dashboard.round_files_views",
+  "apps.pipeline.round_tasks"
+ ],
+ "summary": {
+  "kept": 228,
+  "old only: to archive with its old engine": 296,
+  "loaded by nothing": 335
+ },
+ "held_engines_still_kept": [
+  "3 carton choosers"
+ ],
+ "modules": {
+  "apps": {
+   "verdict": "kept (reached from apps.ire.apps)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts": {
+   "verdict": "kept (reached from apps.accounts)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.admin": {
+   "verdict": "kept (reached from apps.accounts.admin)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.apps": {
+   "verdict": "kept (reached from apps.accounts.apps)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.attestation": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.authorization": {
+   "verdict": "kept (reached from apps.accounts.management.commands.bootstrap_reviewer_role)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.authz_policy": {
+   "verdict": "kept (reached from apps.accounts.management.commands.bootstrap_reviewer_role)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.bootstrap_ceremony": {
+   "verdict": "kept (reached from apps.accounts.management.commands.bootstrap_single_operator_reviewer)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.bootstrap_environment": {
+   "verdict": "kept (reached from apps.accounts.management.commands.bootstrap_single_operator_reviewer)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.bootstrap_preflight": {
+   "verdict": "kept (reached from apps.accounts.management.commands.bootstrap_single_operator_reviewer)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.bootstrap_registry": {
+   "verdict": "kept (reached from apps.accounts.management.commands.bootstrap_reviewer_role)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.bootstrap_verification": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.chain_verification": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.checks": {
+   "verdict": "kept (reached from apps.accounts.apps)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.decision_chain": {
+   "verdict": "kept (reached from apps.accounts.management.commands.bootstrap_reviewer_role)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.management": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.management.commands": {
+   "verdict": "kept (reached from apps.accounts.management.commands)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.management.commands.bootstrap_reviewer_role": {
+   "verdict": "kept (reached from apps.accounts.management.commands.bootstrap_reviewer_role)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.management.commands.bootstrap_single_operator_reviewer": {
+   "verdict": "kept (reached from apps.accounts.management.commands.bootstrap_single_operator_reviewer)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.management.commands.rotate_demo_password": {
+   "verdict": "kept (reached from apps.accounts.management.commands.rotate_demo_password)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.management.commands.seed_roles": {
+   "verdict": "kept (reached from apps.accounts.management.commands.seed_roles)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.management.commands.verify_decision_chain": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.migrations": {
+   "verdict": "kept (reached from apps.accounts.migrations)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.migrations.0001_initial": {
+   "verdict": "kept (reached from apps.accounts.migrations.0001_initial)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.migrations.0002_authorizationaudit": {
+   "verdict": "kept (reached from apps.accounts.migrations.0002_authorizationaudit)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.migrations.0003_decisionevent_decisionchainhead": {
+   "verdict": "kept (reached from apps.accounts.migrations.0003_decisionevent_decisionchainhead)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.migrations.0004_alter_decisionevent_schema_version": {
+   "verdict": "kept (reached from apps.accounts.migrations.0004_alter_decisionevent_schema_version)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.migrations.0005_bootstrapstate": {
+   "verdict": "kept (reached from apps.accounts.migrations.0005_bootstrapstate)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.migrations.0006_single_operator_bootstrap_source": {
+   "verdict": "kept (reached from apps.accounts.migrations.0006_single_operator_bootstrap_source)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.migrations.0007_alter_reviewerroleassignment_grant_source": {
+   "verdict": "kept (reached from apps.accounts.migrations.0007_alter_reviewerroleassignment_grant_source)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.models": {
+   "verdict": "kept (reached from apps.accounts.models)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.pipeline_capability": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.reaffirmation": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.role_services": {
+   "verdict": "kept (reached from apps.accounts.management.commands.bootstrap_reviewer_role)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.security": {
+   "verdict": "kept (reached from apps.accounts.apps)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.security.canonical": {
+   "verdict": "kept (reached from apps.accounts.apps)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.security.checks": {
+   "verdict": "kept (reached from apps.accounts.apps)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.security.key_epochs": {
+   "verdict": "kept (reached from apps.accounts.management.commands.bootstrap_reviewer_role)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.security.signing": {
+   "verdict": "kept (reached from apps.accounts.apps)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.tests": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.urls": {
+   "verdict": "kept (reached from apps.accounts.urls)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.views": {
+   "verdict": "kept (reached from apps.accounts.urls)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.accounts.web_review_grant": {
+   "verdict": "kept (reached from apps.accounts.management.commands.seed_roles)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.core": {
+   "verdict": "kept (reached from apps.core)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.core.admin": {
+   "verdict": "kept (reached from apps.core.admin)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.core.apps": {
+   "verdict": "kept (reached from apps.core.apps)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.core.checks": {
+   "verdict": "kept (reached from apps.core.apps)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.core.health": {
+   "verdict": "kept (reached from apps.core.apps)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.core.management": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.core.management.commands": {
+   "verdict": "kept (reached from apps.core.management.commands)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.core.management.commands.import_design_references": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.core.management.commands.import_product_images": {
+   "verdict": "kept (reached from apps.core.management.commands.import_product_images)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.core.management.commands.import_products": {
+   "verdict": "kept (reached from apps.core.management.commands.import_products)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.core.management.commands.seed_bbrose": {
+   "verdict": "kept (reached from apps.core.management.commands.seed_bbrose)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.core.management.commands.verify_launch": {
+   "verdict": "kept (reached from apps.core.management.commands.verify_launch)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.core.middleware": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.core.migration_head": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.core.migrations": {
+   "verdict": "kept (reached from apps.core.migrations)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.core.migrations.0001_initial": {
+   "verdict": "kept (reached from apps.core.migrations.0001_initial)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.core.migrations.0002_product_campaign": {
+   "verdict": "kept (reached from apps.core.migrations.0002_product_campaign)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.core.migrations.0003_product_depth_mm_product_height_mm_and_more": {
+   "verdict": "kept (reached from apps.core.migrations.0003_product_depth_mm_product_height_mm_and_more)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.core.migrations.0004_brand_regulatory_text_brand_website_and_more": {
+   "verdict": "kept (reached from apps.core.migrations.0004_brand_regulatory_text_brand_website_and_more)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.core.migrations.0005_designreference": {
+   "verdict": "kept (reached from apps.core.migrations.0005_designreference)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.core.migrations.0006_designreference_anatomy": {
+   "verdict": "kept (reached from apps.core.migrations.0006_designreference_anatomy)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.core.migrations.0007_bilingual_claims_and_shades": {
+   "verdict": "kept (reached from apps.core.migrations.0007_bilingual_claims_and_shades)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.core.models": {
+   "verdict": "kept (reached from apps.core.models)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.core.pinned_media": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.core.tests": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": [
+    "57 palette M-series"
+   ]
+  },
+  "apps.core.views": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard": {
+   "verdict": "kept (reached from apps.dashboard)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard.admin": {
+   "verdict": "kept (reached from apps.dashboard.admin)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard.apps": {
+   "verdict": "kept (reached from apps.dashboard.apps)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard.board": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard.brand_library": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "49 font_pool"
+   ]
+  },
+  "apps.dashboard.context_processors": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard.copy_room": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard.exploration_render": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer",
+    "53 IRE composer"
+   ]
+  },
+  "apps.dashboard.explorations": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard.history": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard.history_views": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard.loop_views": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard.materials_library": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "24 library retrieval"
+   ]
+  },
+  "apps.dashboard.migrations": {
+   "verdict": "kept (reached from apps.dashboard.migrations)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard.migrations.0001_initial": {
+   "verdict": "kept (reached from apps.dashboard.migrations.0001_initial)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard.migrations.0002_owner_copy": {
+   "verdict": "kept (reached from apps.dashboard.migrations.0002_owner_copy)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard.migrations.0003_design_acceptance": {
+   "verdict": "kept (reached from apps.dashboard.migrations.0003_design_acceptance)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard.models": {
+   "verdict": "kept (reached from apps.dashboard.models)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard.owner_channel": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard.product_ideas_forms": {
+   "verdict": "kept (reached from apps.dashboard.product_round_views)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard.product_round_views": {
+   "verdict": "kept (reached from apps.dashboard.product_round_views)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard.products": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard.regeneration_views": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard.round_files_views": {
+   "verdict": "kept (reached from apps.dashboard.round_files_views)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard.rulings": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard.status": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard.templatetags": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard.templatetags.plain_words": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard.tests": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard.urls": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dashboard.views": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.dashboard.words": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines": {
+   "verdict": "kept (reached from apps.dielines)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.admin": {
+   "verdict": "kept (reached from apps.dielines.admin)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.analysis": {
+   "verdict": "kept (reached from apps.dielines.registry)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.analysis.measure": {
+   "verdict": "kept (reached from apps.dielines.management.commands.measure_dielines)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.analysis.reconciliation": {
+   "verdict": "kept (reached from apps.dielines.management.commands.qualify_archetype)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.api": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.api.views": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "9 carton exporters"
+   ]
+  },
+  "apps.dielines.apps": {
+   "verdict": "kept (reached from apps.dielines.apps)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.checks": {
+   "verdict": "kept (reached from apps.dielines.apps)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.constants": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.exporters": {
+   "verdict": "kept (reached from apps.pipeline.services.round_files_gate)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.exporters.artwork_layers": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "9 carton exporters",
+   "imports_held": []
+  },
+  "apps.dielines.exporters.attachment_overlay": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.exporters.counter_display_files": {
+   "verdict": "kept (reached from apps.dielines.exporters.counter_display_files)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.exporters.folded_diagnostic": {
+   "verdict": "kept (reached from apps.dielines.management.commands.qualify_archetype)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.exporters.info_panel": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "9 carton exporters"
+   ]
+  },
+  "apps.dielines.exporters.label_layout": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "9 carton exporters",
+   "imports_held": []
+  },
+  "apps.dielines.exporters.output_intent": {
+   "verdict": "kept (reached from apps.dielines.exporters.counter_display_files)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.exporters.physical_test_pdf": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.exporters.structural_comparison": {
+   "verdict": "kept (reached from apps.dielines.management.commands.qualify_archetype)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.exporters.svg_validator": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.exporters.text_intl": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.geometry": {
+   "verdict": "kept (reached from apps.pipeline.services.round_files_gate)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.geometry.coordinates": {
+   "verdict": "kept (reached from apps.dielines.geometry.trade_tuck)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.geometry.counter_display": {
+   "verdict": "kept (reached from apps.dielines.geometry.counter_display)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.geometry.ecma_ste": {
+   "verdict": "kept (reached from apps.dielines.geometry.engine)",
+   "engine": "3 carton choosers",
+   "imports_held": []
+  },
+  "apps.dielines.geometry.engine": {
+   "verdict": "kept (reached from apps.dielines.geometry.engine)",
+   "engine": "",
+   "imports_held": [
+    "3 carton choosers",
+    "3 carton choosers",
+    "3 carton choosers"
+   ]
+  },
+  "apps.dielines.geometry.fold_check": {
+   "verdict": "kept (reached from apps.dielines.geometry.fold_check)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.geometry.opposed_tuck": {
+   "verdict": "kept (reached from apps.dielines.geometry.engine)",
+   "engine": "3 carton choosers",
+   "imports_held": [
+    "3 carton choosers"
+   ]
+  },
+  "apps.dielines.geometry.panels": {
+   "verdict": "kept (reached from apps.dielines.geometry.trade_tuck)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.geometry.primitives": {
+   "verdict": "kept (reached from apps.dielines.geometry.trade_tuck)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.geometry.side_seam": {
+   "verdict": "kept (reached from apps.dielines.geometry.engine)",
+   "engine": "3 carton choosers",
+   "imports_held": []
+  },
+  "apps.dielines.geometry.styles": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.geometry.trade_tuck": {
+   "verdict": "kept (reached from apps.dielines.geometry.trade_tuck)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.management": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.management.commands": {
+   "verdict": "kept (reached from apps.dielines.management.commands)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.management.commands.check_icc_profile": {
+   "verdict": "kept (reached from apps.dielines.management.commands.check_icc_profile)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.management.commands.measure_dielines": {
+   "verdict": "kept (reached from apps.dielines.management.commands.measure_dielines)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.management.commands.qualify_archetype": {
+   "verdict": "kept (reached from apps.dielines.management.commands.qualify_archetype)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.migrations": {
+   "verdict": "kept (reached from apps.dielines.migrations)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.migrations.0001_initial": {
+   "verdict": "kept (reached from apps.dielines.migrations.0001_initial)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.migrations.0002_seed_straight_tuck_end_carton": {
+   "verdict": "kept (reached from apps.dielines.migrations.0002_seed_straight_tuck_end_carton)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.migrations.0003_dielinejob_ai_output_path": {
+   "verdict": "kept (reached from apps.dielines.migrations.0003_dielinejob_ai_output_path)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.migrations.0004_dielinejob_owner": {
+   "verdict": "kept (reached from apps.dielines.migrations.0004_dielinejob_owner)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.migrations.0005_alter_dielinejob_template_type_and_more": {
+   "verdict": "kept (reached from apps.dielines.migrations.0005_alter_dielinejob_template_type_and_more)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.migrations.0006_alter_dielinejob_template_type_and_more": {
+   "verdict": "kept (reached from apps.dielines.migrations.0006_alter_dielinejob_template_type_and_more)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.migrations.0007_dielinejob_structure_selection": {
+   "verdict": "kept (reached from apps.dielines.migrations.0007_dielinejob_structure_selection)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.migrations.0008_alter_dielinejob_template_type_and_more": {
+   "verdict": "kept (reached from apps.dielines.migrations.0008_alter_dielinejob_template_type_and_more)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.migrations.0009_seed_reverse_tuck_end_carton": {
+   "verdict": "kept (reached from apps.dielines.migrations.0009_seed_reverse_tuck_end_carton)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.migrations.0010_counter_tray_header_template_type": {
+   "verdict": "kept (reached from apps.dielines.migrations.0010_counter_tray_header_template_type)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.models": {
+   "verdict": "kept (reached from apps.dielines.models)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.qualification": {
+   "verdict": "kept (reached from apps.dielines.qualification)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.qualification.authority": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.qualification.closure": {
+   "verdict": "kept (reached from apps.dielines.management.commands.qualify_archetype)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.qualification.contract": {
+   "verdict": "kept (reached from apps.dielines.management.commands.qualify_archetype)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.qualification.domain": {
+   "verdict": "kept (reached from apps.dielines.management.commands.qualify_archetype)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.qualification.dtuck_qual": {
+   "verdict": "kept (reached from apps.dielines.management.commands.qualify_archetype)",
+   "engine": "",
+   "imports_held": [
+    "3 carton choosers"
+   ]
+  },
+  "apps.dielines.qualification.invariants": {
+   "verdict": "kept (reached from apps.dielines.management.commands.qualify_archetype)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.qualification.legacy_tuck": {
+   "verdict": "kept (reached from apps.dielines.management.commands.qualify_archetype)",
+   "engine": "",
+   "imports_held": [
+    "3 carton choosers"
+   ]
+  },
+  "apps.dielines.qualification.reverse_tuck_qual": {
+   "verdict": "kept (reached from apps.dielines.management.commands.qualify_archetype)",
+   "engine": "",
+   "imports_held": [
+    "3 carton choosers"
+   ]
+  },
+  "apps.dielines.qualification.runner": {
+   "verdict": "kept (reached from apps.dielines.management.commands.qualify_archetype)",
+   "engine": "",
+   "imports_held": [
+    "3 carton choosers"
+   ]
+  },
+  "apps.dielines.qualification.side_seam_qual": {
+   "verdict": "kept (reached from apps.dielines.management.commands.qualify_archetype)",
+   "engine": "",
+   "imports_held": [
+    "3 carton choosers",
+    "3 carton choosers"
+   ]
+  },
+  "apps.dielines.registry": {
+   "verdict": "kept (reached from apps.dielines.registry)",
+   "engine": "",
+   "imports_held": [
+    "3 carton choosers",
+    "3 carton choosers",
+    "3 carton choosers"
+   ]
+  },
+  "apps.dielines.services": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.services.customer_dieline": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.services.export_service": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "9 carton exporters",
+   "imports_held": [
+    "53 IRE composer",
+    "53 IRE composer",
+    "53 IRE composer",
+    "53 IRE composer"
+   ]
+  },
+  "apps.dielines.services.physical_validation": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.urls": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.validators": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.dielines.validators.production": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "9 carton exporters"
+   ]
+  },
+  "apps.dielines.validators.production_readiness": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "9 carton exporters"
+   ]
+  },
+  "apps.dielines.validators.schema": {
+   "verdict": "kept (reached from apps.dielines.geometry.engine)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence": {
+   "verdict": "kept (reached from apps.intelligence)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.apps": {
+   "verdict": "kept (reached from apps.intelligence.apps)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.artwork_preview": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.asset_identity_reconciliation": {
+   "verdict": "kept (reached from apps.intelligence.management.commands.reconcile_dip1b2_asset_identity)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.brand_evidence": {
+   "verdict": "kept (reached from apps.intelligence.management.commands.import_dip1b_brand_evidence)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.brand_evidence_import": {
+   "verdict": "kept (reached from apps.intelligence.management.commands.import_dip1b_brand_evidence)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.campaign_report": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.curated_expansion": {
+   "verdict": "kept (reached from apps.intelligence.management.commands.import_dip1b_curated_expansion)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.curated_expansion_import": {
+   "verdict": "kept (reached from apps.intelligence.management.commands.import_dip1b_curated_expansion)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.curated_review": {
+   "verdict": "kept (reached from apps.intelligence.management.commands.build_dip1b_curated_review_manifest)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.dataset_identifiers": {
+   "verdict": "kept (reached from apps.intelligence.models)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.evidence_integrity": {
+   "verdict": "kept (reached from apps.intelligence.management.commands.reconcile_dip1b_brand_candidate_hash)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.evidence_labels": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.evidence_readiness": {
+   "verdict": "kept (reached from apps.intelligence.management.commands.build_dip1b_curated_review_manifest)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.governance": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.governance_projection": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.governance_reader": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.human_semantic_metadata": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.hybrid_ranker": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.identity": {
+   "verdict": "kept (reached from apps.intelligence.management.commands.reconcile_dip1b2_asset_identity)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.import_services": {
+   "verdict": "kept (reached from apps.intelligence.management.commands.import_dip1b_brand_evidence)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.legacy_signals": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.lexical_evidence": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.lexical_ranker": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.locator_schemas": {
+   "verdict": "kept (reached from apps.intelligence.models)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.management": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.management.commands": {
+   "verdict": "kept (reached from apps.intelligence.management.commands)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.management.commands.build_dip1b_brand_evidence": {
+   "verdict": "kept (reached from apps.intelligence.management.commands.build_dip1b_brand_evidence)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.management.commands.build_dip1b_curated_expansion_manifest": {
+   "verdict": "kept (reached from apps.intelligence.management.commands.build_dip1b_curated_expansion_manifest)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.management.commands.build_dip1b_curated_review_manifest": {
+   "verdict": "kept (reached from apps.intelligence.management.commands.build_dip1b_curated_review_manifest)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.management.commands.import_dip0_mvp": {
+   "verdict": "kept (reached from apps.intelligence.management.commands.import_dip0_mvp)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.management.commands.import_dip1b_brand_evidence": {
+   "verdict": "kept (reached from apps.intelligence.management.commands.import_dip1b_brand_evidence)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.management.commands.import_dip1b_curated_expansion": {
+   "verdict": "kept (reached from apps.intelligence.management.commands.import_dip1b_curated_expansion)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.management.commands.import_dip1b_curated_review": {
+   "verdict": "kept (reached from apps.intelligence.management.commands.import_dip1b_curated_review)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.management.commands.import_dip1b_review_tasks": {
+   "verdict": "kept (reached from apps.intelligence.management.commands.import_dip1b_review_tasks)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.management.commands.rebuild_intelligence_assertions": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.management.commands.rebuild_intelligence_governance": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.management.commands.rebuild_intelligence_semantic_index": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.management.commands.reconcile_dip1b2_asset_identity": {
+   "verdict": "kept (reached from apps.intelligence.management.commands.reconcile_dip1b2_asset_identity)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.management.commands.reconcile_dip1b_brand_candidate_hash": {
+   "verdict": "kept (reached from apps.intelligence.management.commands.reconcile_dip1b_brand_candidate_hash)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.manifest": {
+   "verdict": "kept (reached from apps.intelligence.management.commands.import_dip0_mvp)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.metadata_history": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.migrations": {
+   "verdict": "kept (reached from apps.intelligence.migrations)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.migrations.0001_source_foundation": {
+   "verdict": "kept (reached from apps.intelligence.migrations.0001_source_foundation)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.migrations.0002_corpus_browser_foundation": {
+   "verdict": "kept (reached from apps.intelligence.migrations.0002_corpus_browser_foundation)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.migrations.0003_review_candidates": {
+   "verdict": "kept (reached from apps.intelligence.migrations.0003_review_candidates)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.migrations.0004_human_assertion_projections": {
+   "verdict": "kept (reached from apps.intelligence.migrations.0004_human_assertion_projections)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.migrations.0005_governance_projections": {
+   "verdict": "kept (reached from apps.intelligence.migrations.0005_governance_projections)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.migrations.0006_design_asset_dataset_scope": {
+   "verdict": "kept (reached from apps.intelligence.migrations.0006_design_asset_dataset_scope)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.migrations.0007_semanticdocumentembedding_semanticindexgeneration_and_more": {
+   "verdict": "kept (reached from apps.intelligence.migrations.0007_semanticdocumentembedding_semanticindexgeneration_and_more)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.models": {
+   "verdict": "kept (reached from apps.intelligence.models)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.mvp_import": {
+   "verdict": "kept (reached from apps.intelligence.management.commands.import_dip0_mvp)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.permissions": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.process_revision": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.projection": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.projection_reader": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.rescue_ranker": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.retrieval_readiness": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.review_campaign": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.review_manifest": {
+   "verdict": "kept (reached from apps.intelligence.management.commands.import_dip1b_review_tasks)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.review_packet": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.review_readiness": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.review_services": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.search_contract": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.search_planner": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.search_report": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.search_service": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.semantic_benchmark": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.semantic_builders": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.semantic_corpus": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.semantic_document": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.semantic_document_v12": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.semantic_document_v13": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.semantic_encoder": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.semantic_evaluation": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.semantic_evaluation_sheet": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.semantic_index": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.semantic_metadata_pilot": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.semantic_metadata_preflight": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.semantic_metadata_preview": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.semantic_metadata_scope": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.semantic_metadata_service": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.semantic_query": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.semantic_rescue_eval": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.semantic_similarity": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.urls": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.intelligence.views": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire": {
+   "verdict": "kept (reached from apps.ire)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.apps": {
+   "verdict": "kept (reached from apps.ire.apps)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.assembly_drawings": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.back_info": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.back_panel": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer"
+   ]
+  },
+  "apps.ire.back_panel_copy": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.back_panel_ledger": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.back_panel_packer": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.brand_mark": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.brand_string_runtime": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.colour_applications": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.colour_roles": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.compose": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "53 IRE composer",
+   "imports_held": [
+    "53 IRE composer",
+    "53 IRE composer",
+    "53 IRE composer",
+    "53 IRE composer",
+    "9 carton exporters",
+    "9 carton exporters"
+   ]
+  },
+  "apps.ire.compose_artwork": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "53 IRE composer",
+   "imports_held": []
+  },
+  "apps.ire.compose_container": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "53 IRE composer",
+   "imports_held": [
+    "53 IRE composer",
+    "53 IRE composer"
+   ]
+  },
+  "apps.ire.compose_dropper": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "53 IRE composer",
+   "imports_held": [
+    "53 IRE composer"
+   ]
+  },
+  "apps.ire.compose_hybrid_bottle": {
+   "verdict": "loaded by nothing",
+   "engine": "53 IRE composer",
+   "imports_held": []
+  },
+  "apps.ire.compose_vector_art": {
+   "verdict": "loaded by nothing",
+   "engine": "53 IRE composer",
+   "imports_held": [
+    "53 IRE composer",
+    "9 carton exporters"
+   ]
+  },
+  "apps.ire.composer_vocabulary": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "53 IRE composer",
+   "imports_held": [
+    "53 IRE composer"
+   ]
+  },
+  "apps.ire.concept_face": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer"
+   ]
+  },
+  "apps.ire.concept_fidelity": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.concept_front": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer"
+   ]
+  },
+  "apps.ire.concept_typeface": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "49 font_pool"
+   ]
+  },
+  "apps.ire.container_brand_usage": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.container_composition_metrics": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer"
+   ]
+  },
+  "apps.ire.container_concept_fidelity": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer"
+   ]
+  },
+  "apps.ire.container_fidelity": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer"
+   ]
+  },
+  "apps.ire.container_finishes": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer"
+   ]
+  },
+  "apps.ire.container_font_authority": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.container_font_evidence_join": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.container_font_owner_grant": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "49 font_pool"
+   ]
+  },
+  "apps.ire.container_label_construction": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.container_line_weight": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.container_logo_metrics": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.container_method_provenance": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.container_motif": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer"
+   ]
+  },
+  "apps.ire.container_motif_fidelity": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.container_overlap": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.container_placeholder_copy": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.container_production_method": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer"
+   ]
+  },
+  "apps.ire.container_production_metrics": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.container_production_readiness": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.container_quant_fidelity": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.container_separations": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.container_text_floor": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer"
+   ]
+  },
+  "apps.ire.container_typography_metrics": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.container_wrap_geometry": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.contour_fit": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.corr_mirror": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.design_graph_v2": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.design_language": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.display_name": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.emitters": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "53 IRE composer",
+   "imports_held": []
+  },
+  "apps.ire.emitters.native_ai": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "53 IRE composer",
+   "imports_held": [
+    "53 IRE composer",
+    "9 carton exporters"
+   ]
+  },
+  "apps.ire.emitters.pdf_ai": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "53 IRE composer",
+   "imports_held": []
+  },
+  "apps.ire.estimated_sign": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.fit_grid": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.font_instances": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "49 font_pool"
+   ]
+  },
+  "apps.ire.font_pool": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "49 font_pool",
+   "imports_held": []
+  },
+  "apps.ire.font_roles": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "49 font_pool"
+   ]
+  },
+  "apps.ire.front_faces": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer"
+   ]
+  },
+  "apps.ire.front_hierarchy": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.geometry_report": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.grain": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.graph": {
+   "verdict": "kept (reached from apps.intelligence.management.commands.import_dip1b_brand_evidence)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.handoff": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.handoff.container_adapter": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer"
+   ]
+  },
+  "apps.ire.handoff.graph_schema": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.handoff.illustrator_exec": {
+   "verdict": "kept (reached from apps.pipeline.services.round_files_export)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.handoff.jsx_emitter": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.handoff.package": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.handoff.parity": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.identity_sightlines": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.inside_print": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer"
+   ]
+  },
+  "apps.ire.legibility": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer"
+   ]
+  },
+  "apps.ire.lettering_faces": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "49 font_pool",
+    "53 IRE composer"
+   ]
+  },
+  "apps.ire.materials_authority": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.materials_owner_grant": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.materials_paths": {
+   "verdict": "kept (reached from apps.intelligence.management.commands.import_dip1b_brand_evidence)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.materials_placement": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.materials_retrieval": {
+   "verdict": "loaded by nothing",
+   "engine": "24 library retrieval",
+   "imports_held": []
+  },
+  "apps.ire.nodes": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.palette_tray": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer"
+   ]
+  },
+  "apps.ire.pdf_raster": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.print_scope": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.rasterize": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.self_check": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer"
+   ]
+  },
+  "apps.ire.sparkle_glyph": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.stepped_display": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.surface_plan": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.text_metrics": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.text_script": {
+   "verdict": "kept (reached from apps.intelligence.management.commands.import_dip1b_brand_evidence)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.type_book": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "49 font_pool"
+   ]
+  },
+  "apps.ire.unit_analysis": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.views_of": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.vq1_backbone": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.vq1_close1": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.vq1_close1_package": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.vq1_corr4": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.vq1_corr5": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.vq1_master": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.vq1_render": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer"
+   ]
+  },
+  "apps.ire.vq1_reset2": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.vq2_artwork": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.vq2_didone": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.vq2_glyph_pen": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.vq2_lettering_receipt": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.vq2_polyline_distance": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.ire.vq2_vectorize": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline": {
+   "verdict": "kept (reached from apps.pipeline)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.admin": {
+   "verdict": "kept (reached from apps.pipeline.admin)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.agents": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.agents.aria": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "20 designers eye",
+    "23 trend board",
+    "53 IRE composer"
+   ]
+  },
+  "apps.pipeline.agents.creative_director": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.agents.dieline_agent": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "9 carton exporters"
+   ]
+  },
+  "apps.pipeline.agents.image_producer": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "23 trend board"
+   ]
+  },
+  "apps.pipeline.agents.prompt_engineer": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.agents.qa_reviewer": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "23 trend board"
+   ]
+  },
+  "apps.pipeline.apps": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.autopilot": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "23 trend board"
+   ]
+  },
+  "apps.pipeline.context_processors": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.creative_rules": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.design_context": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.design_direction_generator": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.design_intent": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.direction_content": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.direction_signature": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.drawing_views": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.feed_words": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.gate2_problems": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer"
+   ]
+  },
+  "apps.pipeline.h2_views": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.hybrid_boundary": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.library_views": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.live_views": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.management": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.management.commands": {
+   "verdict": "kept (reached from apps.pipeline.management.commands)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.management.commands.build_stepped_display": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.management.commands.rbv4_review": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.management.commands.roadmap_status": {
+   "verdict": "kept (reached from apps.pipeline.management.commands.roadmap_status)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.management.commands.seed_dieline_demo": {
+   "verdict": "kept (reached from apps.pipeline.management.commands.seed_dieline_demo)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations": {
+   "verdict": "kept (reached from apps.pipeline.migrations)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0001_initial": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0001_initial)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0002_packagingoutput_spec_pdf": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0002_packagingoutput_spec_pdf)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0003_packagingoutput_dieline_ai_file_and_more": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0003_packagingoutput_dieline_ai_file_and_more)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0004_packagingoutput_production_pdf": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0004_packagingoutput_production_pdf)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0005_designtask_error_message_and_more": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0005_designtask_error_message_and_more)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0006_agentlog_actor_designtask_assigned_to_and_more": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0006_agentlog_actor_designtask_assigned_to_and_more)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0007_apicallrecord_and_more": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0007_apicallrecord_and_more)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0008_notificationpreference_notification_and_more": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0008_notificationpreference_notification_and_more)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0009_batchrun_designtask_batch": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0009_batchrun_designtask_batch)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0010_packagingoutput_design_preview_and_more": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0010_packagingoutput_design_preview_and_more)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0011_designtask_design_target": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0011_designtask_design_target)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0012_alter_designtask_status": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0012_alter_designtask_status)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0013_taskreference": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0013_taskreference)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0014_designtask_stage_designproject_designtask_project": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0014_designtask_stage_designproject_designtask_project)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0015_designtask_uniq_project_stage": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0015_designtask_uniq_project_stage)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0016_direction_selection": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0016_direction_selection)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0017_alter_designtask_status": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0017_alter_designtask_status)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0018_concept_references": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0018_concept_references)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0019_gate1_regeneration_job": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0019_gate1_regeneration_job)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0020_job_prompts_payload": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0020_job_prompts_payload)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0021_apicallrecord_metadata": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0021_apicallrecord_metadata)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0022_designproject_metadata": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0022_designproject_metadata)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0023_webresearchsession_websourcerecord_webaccessrecord": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0023_webresearchsession_websourcerecord_webaccessrecord)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0024_alter_designtask_status": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0024_alter_designtask_status)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0025_container_stage_visually_rejected": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0025_container_stage_visually_rejected)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0026_taskreference_secure_core": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0026_taskreference_secure_core)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0027_palette_design_target": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0027_palette_design_target)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0028_palette_reference_kinds": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0028_palette_reference_kinds)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0029_palette_intent_confirmation": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0029_palette_intent_confirmation)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0030_design_intent_confirmed_status": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0030_design_intent_confirmed_status)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0031_palette_material_artifact": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0031_palette_material_artifact)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0032_notification_every_waiting_step": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0032_notification_every_waiting_step)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0033_inspiration_picture": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0033_inspiration_picture)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0034_learned_shape": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0034_learned_shape)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0035_apicallrecord_tavily": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0035_apicallrecord_tavily)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0036_trend_board": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0036_trend_board)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0037_trend_review_status": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0037_trend_review_status)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0038_inside_reference": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0038_inside_reference)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0039_sticker_reference": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0039_sticker_reference)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0040_generatedimage_direction_id": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0040_generatedimage_direction_id)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0041_designtask_sku": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0041_designtask_sku)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0042_designtask_options": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0042_designtask_options)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0043_trendboard_brief": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0043_trendboard_brief)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0044_creative_round": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0044_creative_round)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.migrations.0045_round_master": {
+   "verdict": "kept (reached from apps.pipeline.migrations.0045_round_master)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.models": {
+   "verdict": "kept (reached from apps.pipeline.models)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.notifications": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.notifications_views": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.permissions": {
+   "verdict": "kept (reached from apps.accounts.management.commands.seed_roles)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.rbv_views": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.references": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.review_board": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.round_tasks": {
+   "verdict": "kept (reached from apps.pipeline.round_tasks)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.serializers": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services": {
+   "verdict": "kept (reached from apps.pipeline.services.round_files_gate)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.a3p_evidence_manifest": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.a3p_evidence_render": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.ai8_color": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.ai_style_profile": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.artwork_segments": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.assembly_output": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.assembly_spec": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.authored_master": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.blender_scripts": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.blender_scripts.m4b_a_tray_views": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.blender_scripts.material_characterization": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.blender_scripts.p1_material_preview": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.blender_scripts.p1_material_studio": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.blender_scripts.palette_csg_views": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.blender_scripts.palette_views": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.blender_scripts.powder_materials": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.blender_scripts.silhouette_mask": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.blender_scripts.tube_proof": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.blender_scripts.validation_views": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.brand_component_library": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.brand_context": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.cairo_measured": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.claude_service": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.comparison_anchors": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": [
+    "21 tavily",
+    "22 web research",
+    "23 trend board"
+   ]
+  },
+  "apps.pipeline.services.complete_product_pilot": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.concept_analysis": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.concept_design_map": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "49 font_pool",
+    "51 tracers",
+    "53 IRE composer"
+   ]
+  },
+  "apps.pipeline.services.concept_layout": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.concept_outline": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.concept_quality": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.concept_references": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "24 library retrieval"
+   ]
+  },
+  "apps.pipeline.services.concept_selection_ceremony": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.concept_visual_graph": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.container_asset_resolver": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.container_contract": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.container_gate1": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.container_geometry": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.container_material_influence": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.container_material_realization": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.container_projection": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.container_visual_graph": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.cost_ledger": {
+   "verdict": "kept (reached from apps.pipeline.services.round_designer)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.design_spec": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.designers_eye": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "20 designers eye",
+   "imports_held": [
+    "51 tracers"
+   ]
+  },
+  "apps.pipeline.services.direction_replan": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.display_space_exemptions": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.fidelity_assets": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.fidelity_master": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.flat_artwork": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.flat_motif": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "51 tracers",
+   "imports_held": []
+  },
+  "apps.pipeline.services.gate1_checkpoint": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.gate1_prompts": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.gate1_regeneration": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.gate1_review": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.gate_a_corr1": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.gate_a_corr2": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.gate_a_final": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.gate_a_roundtrip1": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.geometry_evidence": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.geometry_validation_render": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.h2_design_request": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.hybrid_bottle_output": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer",
+    "53 IRE composer"
+   ]
+  },
+  "apps.pipeline.services.identity_assembly": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.illustrator_fixtures": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.image_checks": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.influence_realization": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.inside_read": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.inspiration": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.intake_constraints": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.label_copy": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.learned_shapes": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.line_art": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "51 tracers",
+   "imports_held": []
+  },
+  "apps.pipeline.services.line_geometry": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.m3_calibration": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.master_tasks": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.materials_captions": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.materials_house_designs": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": [
+    "24 library retrieval"
+   ]
+  },
+  "apps.pipeline.services.materials_previews": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.materials_retrieval": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "24 library retrieval",
+   "imports_held": []
+  },
+  "apps.pipeline.services.matte_colour": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.mesh_diagnostics": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.native_handoff": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "54 native_handoff",
+   "imports_held": [
+    "53 IRE composer",
+    "53 IRE composer",
+    "9 carton exporters"
+   ]
+  },
+  "apps.pipeline.services.orn_a2": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.orn_c2": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.other_designs": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.p1_pilot_evidence": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.p1_pilot_geometry": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.p1_review_board": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.p1_v3_evidence": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.p1_v4_evidence": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.palette_axis_eligibility": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_baked_clearance": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_baked_geometry": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_characterization_protocol": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_characterization_rig": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_clearance_policy": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": []
+  },
+  "apps.pipeline.services.palette_clearing_dispersion": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": []
+  },
+  "apps.pipeline.services.palette_compact_family": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_confirmation_flow": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_contracts": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_cored_tray_geometry": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_design_fidelity": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_design_graph": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_design_intent": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "57 palette M-series",
+   "imports_held": []
+  },
+  "apps.pipeline.services.palette_energy_recovery": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_es3083_intent": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_es3083_owner_confirmation": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_evidence_manifest": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": []
+  },
+  "apps.pipeline.services.palette_firing_trace": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "57 palette M-series",
+   "imports_held": []
+  },
+  "apps.pipeline.services.palette_flake_rig": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_geometry": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": []
+  },
+  "apps.pipeline.services.palette_geometry_validators": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_governance": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "57 palette M-series",
+   "imports_held": []
+  },
+  "apps.pipeline.services.palette_identity": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": []
+  },
+  "apps.pipeline.services.palette_instrument_repair_protocol": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": []
+  },
+  "apps.pipeline.services.palette_intent_confirmation": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_intent_mapping": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_layout_kernel": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_layout_validators": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_m4b_b_evidence": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_m4b_b_gate": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_m5_closeout": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_m5_evidence": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_m5_workflow": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_m6_exit_gate": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_m6_products": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_m6_spreads_adjudication": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_m6_spreads_driver": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_m7_ai_emitter": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": []
+  },
+  "apps.pipeline.services.palette_marbling_rig": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_material_characterization": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_material_engine": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": []
+  },
+  "apps.pipeline.services.palette_material_swatch": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": []
+  },
+  "apps.pipeline.services.palette_mechanism_contracts": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_mechanism_geometry": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_mechanism_validators": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_mesh_section": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": []
+  },
+  "apps.pipeline.services.palette_moulded_geometry": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_moulded_rect": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_moulded_validators": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_pan_profile": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "57 palette M-series",
+   "imports_held": []
+  },
+  "apps.pipeline.services.palette_parameter_realization_audit": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_pocket_datums": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_powder_axis_diagnosis": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_powder_engine": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_powder_protocol": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": []
+  },
+  "apps.pipeline.services.palette_powder_rigs": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_powder_texture_axes": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_profile_offset": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": []
+  },
+  "apps.pipeline.services.palette_queue_control": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_raking_rig": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_recessed_tray_geometry": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_rect_pan": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "57 palette M-series",
+   "imports_held": []
+  },
+  "apps.pipeline.services.palette_rect_tray_geometry": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_render_contract": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": []
+  },
+  "apps.pipeline.services.palette_review_board": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_review_fonts": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "57 palette M-series",
+   "imports_held": []
+  },
+  "apps.pipeline.services.palette_rig_validation": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_spend_reconciler": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": []
+  },
+  "apps.pipeline.services.palette_stackup_engine": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_statistics": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": []
+  },
+  "apps.pipeline.services.palette_technical_sections": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_thickness_analysis": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": []
+  },
+  "apps.pipeline.services.palette_thickness_authority": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_thickness_field": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_threshold_kind": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": []
+  },
+  "apps.pipeline.services.palette_understanding_overlay": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_variant_proof": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_variant_visual_proof": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palette_verdict_identity": {
+   "verdict": "loaded by nothing",
+   "engine": "57 palette M-series",
+   "imports_held": []
+  },
+  "apps.pipeline.services.palt_m4b_a": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palt_m4b_a2": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palt_m4b_a2_evidence": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palt_m4b_a3": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palt_m4b_a3_evidence": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": [
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palt_m4b_a_evidence": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palt_p1": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palt_p1_evidence": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.palt_p1_m4b_evidence": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": [
+    "57 palette M-series",
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.services.panel_info": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.panel_translate": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.pilot_closeout": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.pipeline_errors": {
+   "verdict": "kept (reached from apps.pipeline.services.round_calls)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.print_data": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.print_data_recovery": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.print_data_snapshot": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.product_drawing": {
+   "verdict": "kept (reached from apps.pipeline.services.product_drawing)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.product_profile": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.production_authority_gates": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.production_authority_package": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.provider_prespend": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.rbv3_review_package": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.rbv4_claude_review": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.rbv5_comparison_gate": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.reconstruction_status": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.reference_index": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.reference_manifest": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.reference_pack": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.revision": {
+   "verdict": "kept (reached from apps.pipeline.services.revision)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.round_calls": {
+   "verdict": "kept (reached from apps.pipeline.services.round_calls)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.round_designer": {
+   "verdict": "kept (reached from apps.pipeline.services.round_designer)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.round_files_export": {
+   "verdict": "kept (reached from apps.pipeline.services.round_files_export)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.round_files_faces": {
+   "verdict": "kept (reached from apps.pipeline.services.round_files_faces)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.round_files_gate": {
+   "verdict": "kept (reached from apps.pipeline.services.round_files_gate)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.round_flow": {
+   "verdict": "kept (reached from apps.pipeline.services.round_flow)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.selected_concept": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.selected_concept_contract": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.shape_reconfirmation": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.spec_pack_intake": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.spec_sheet": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.spend_reservation": {
+   "verdict": "kept (reached from apps.pipeline.services.spend_reservation)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.structure_selection": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.technical_geometry_research": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": [
+    "22 web research"
+   ]
+  },
+  "apps.pipeline.services.template_selection": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.trend_board": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "23 trend board",
+   "imports_held": [
+    "21 tavily",
+    "22 web research",
+    "24 library retrieval"
+   ]
+  },
+  "apps.pipeline.services.tube_proof": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer"
+   ]
+  },
+  "apps.pipeline.services.two_ink_matte": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.visual_extract": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.visual_input_quality": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.visual_inspector": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.visual_quality_gate": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.visual_quality_program": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.visual_reference_resolver": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.visual_review": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "22 web research"
+   ]
+  },
+  "apps.pipeline.services.vq1_close1_inspection": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.vqr2b_reconstruction_measurement": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.services.web_geometry_research": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": [
+    "22 web research"
+   ]
+  },
+  "apps.pipeline.services.web_research": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "22 web research",
+   "imports_held": []
+  },
+  "apps.pipeline.services.web_research_tavily": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "21 tavily",
+   "imports_held": [
+    "22 web research"
+   ]
+  },
+  "apps.pipeline.signals": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.spend_estimates": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.step_times": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.targets": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.targets.artwork": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer",
+    "53 IRE composer"
+   ]
+  },
+  "apps.pipeline.targets.base": {
+   "verdict": "kept (reached from apps.pipeline.models)",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.targets.carton_layout": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "51 tracers"
+   ]
+  },
+  "apps.pipeline.targets.composite": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "51 tracers"
+   ]
+  },
+  "apps.pipeline.targets.container": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "20 designers eye",
+    "23 trend board",
+    "51 tracers",
+    "53 IRE composer",
+    "53 IRE composer",
+    "53 IRE composer",
+    "53 IRE composer",
+    "53 IRE composer",
+    "9 carton exporters"
+   ]
+  },
+  "apps.pipeline.targets.container.archetypes": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.targets.container.colour_sources": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.targets.container.face_art": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.targets.container.lid_art": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.targets.container.m3_backbone": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.targets.container.readable": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "23 trend board"
+   ]
+  },
+  "apps.pipeline.targets.container.shapes": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.targets.container.silhouettes": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.targets.container.tray_picture": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "51 tracers"
+   ]
+  },
+  "apps.pipeline.targets.gift_set": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.targets.packaging": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "51 tracers",
+    "53 IRE composer",
+    "53 IRE composer",
+    "53 IRE composer",
+    "54 native_handoff"
+   ]
+  },
+  "apps.pipeline.targets.palette": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "57 palette M-series"
+   ]
+  },
+  "apps.pipeline.targets.ui": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.tasks": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "23 trend board"
+   ]
+  },
+  "apps.pipeline.urls": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.variation_diversity": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "apps.pipeline.views": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": [
+    "20 designers eye",
+    "22 web research",
+    "23 trend board",
+    "53 IRE composer",
+    "53 IRE composer",
+    "54 native_handoff"
+   ]
+  },
+  "apps.pipeline.vq_views": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "config": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "config.celery": {
+   "verdict": "kept (reached from config.celery)",
+   "engine": "",
+   "imports_held": []
+  },
+  "config.settings": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "config.urls": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "config.wsgi": {
+   "verdict": "kept (reached from config.wsgi)",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.allowlist_census": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.allowlist_disposition": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.brain.caption_scope": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.brain.chunker": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.brain.embed": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.brain.export_embed_model": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.brain.rebuild": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.brain.server": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.brain.sources": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.brain.vault": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.brand_mark_place": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer"
+   ]
+  },
+  "tools.brand_strings": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.build_rescue_serum": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer",
+    "53 IRE composer",
+    "53 IRE composer"
+   ]
+  },
+  "tools.claim_scan": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0.archives": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0.classify": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0.config": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0.detect": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0.fonts": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0.integrity": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0.pilot": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0.provenance": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0.report": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0.run": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0.walk": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0b": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0b.artwork": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0b.associate": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0b.boxes": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0b.cluster": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0b.color": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0b.config": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0b.contentstream": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0b.dieline": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0b.inspect": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0b.limits": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0b.manifest": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0b.overlay": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0b.preview": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0b.regions": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0b.report": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0b.reports_b5": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0b.review": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0b.run": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0b.run_b2": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0b.run_b3": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0b.run_b4": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0b.run_b5": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0b.separation": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0b.structure": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0b.typography": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.ase": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.assetcandidate": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.authz": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.brand": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.brand_rel": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.canonical": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.canonical_master": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.canonical_read": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.canonical_scope": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.classify_override": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.color_compare": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.compound": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.config": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.conflict_resolution": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.consolidate": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.dispositions": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.eps_ghostscript": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.eps_header": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.families": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.font_curated": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.font_packages": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.font_provenance": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.font_rights": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.font_style": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.font_views": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.fontfamily": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.fontinfo": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.gates": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.ledger": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.ledger_store": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.palette": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.palette_approval": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.palette_rights": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.pattern": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.pdf_vector": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.permissions": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.phash": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.quality": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.raster": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.readiness": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.relationships": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.review_c2d": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.review_c3": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.review_c3b4": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.review_c4": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.review_c4c": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.review_contract": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.review_domains": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.rights_model": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.run_c1": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.run_c2a": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.run_c2b": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.run_c2c": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.run_c2d": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.run_c3a": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.run_c3b1": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.run_c3b2": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.run_c3b3": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.run_c3b4": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.run_c3c": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.run_c3d": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.run_c3e": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.run_c4a": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.run_c4b": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.run_c4c": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.run_c5": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.segment": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.svg": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.taxonomy": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.dip0c.watermark": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.extent_gate": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.fixture_diff": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.flake_gate": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.gate_registration": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.opt_out_log": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.record_integrity": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.record_only": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.rescue_day4_package": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.rescue_materials_census": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.rescue_materials_migrate": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.rescue_mockups_census": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.reserved_copy": {
+   "verdict": "old only: to archive with its old engine",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.sweep_manifest": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": []
+  },
+  "tools.tier2_gate": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": [
+    "57 palette M-series"
+   ]
+  },
+  "tools.wim_front_render": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer",
+    "53 IRE composer"
+   ]
+  },
+  "tools.wiu_front_collision": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer",
+    "53 IRE composer"
+   ]
+  },
+  "tools.wiv_leading_comparison": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer",
+    "53 IRE composer"
+   ]
+  },
+  "tools.wiy_leading_floor": {
+   "verdict": "loaded by nothing",
+   "engine": "",
+   "imports_held": [
+    "53 IRE composer",
+    "53 IRE composer"
+   ]
+  }
+ }
+}

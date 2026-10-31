@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% load static %}
+{% comment %}A DESIGN — C's design page (the owner's pick of 2026-09-25: "C's design page — pick an element and try colours and
+faces from a library that stays open"; the options' wording is the executor's, and he chose it). Its header says what it
+is and where it stands; the step bar and the step itself are drawn in the stage by the page's own scripts from the
+design's live record (every control they draw is the one the design always had); its concepts sit on the left; the
+library stays open on the right while he designs. Nothing on this page approves anything but his own click.{% endcomment %}
+{% block title %}{{ d.title }}{% endblock %}
+{% block page_class %}page wide design-page{% endblock %}
+{% block content %}
+<header class="d-hd">
+  <a class="back" href="{% url 'dashboard:index' %}"><svg class="i i-sm" aria-hidden="true"><use href="#i-back"/></svg>Board</a>
+  <div class="ttl">
+    <h1 class="d-title">{{ d.title }}</h1>
+    <div class="meta">
+      {% if d.name_ar %}<span class="ar" lang="ar" dir="rtl">{{ d.name_ar }}</span>{% endif %}
+      <span id="task-status-badge" class="tag {{ d.state }}">{{ d.state_words }} · {{ d.next_words }}</span>
+      {% if d.test_words %}<span class="tag line test-mark">{{ d.test_words }}</span>{% endif %}
+      <span class="quiet">started {{ task.created_at|date:"j M" }} · No. {{ task.pk }}</span>
+    </div>
+  </div>
+  <div class="acts">
+    <div class="spent"><b class="num" id="task-spent">${{ d.spent|floatformat:2 }} spent</b>of its ${{ d.cap|floatformat:2 }} cap</div>
+    <a class="btn" href="{% url 'dashboard:history_task' task.pk %}">Everything on record</a>
+    <button type="button" class="btn soft lib-toggle" aria-controls="library-panel" aria-expanded="true"><svg class="i i-sm" aria-hidden="true"><use href="#i-swatch"/></svg>Library</button>
+  </div>
+</header>
+<span id="task-title" class="sr"></span>
+<div id="step-line" class="step-line"></div>
+
+<div class="d-main" id="design-main">
+  {% if d.concepts %}
+  <aside class="concepts" aria-labelledby="concepts-h">
+    <div class="lbl"><b id="concepts-h">Concepts</b>{% if d.direction %}<span>drawn in {{ d.direction }}</span>{% endif %}</div>
+    {% for c in d.concepts %}
+    <a class="cpt{% if c.chosen %} on{% endif %}" href="{{ c.url }}" target="_blank" rel="noopener">
+      <img src="{{ c.thumb }}" alt="Concept {{ forloop.counter }}{% if c.direction %}, {{ c.direction }}{% endif %}" decoding="async">
+      {% if c.chosen %}<span class="tag done mine"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Your pick</span>{% endif %}
+      <span class="cap"><b>Concept {{ forloop.counter }}</b><span>{% if c.chosen %}in use{% else %}open full size{% endif %}</span></span>
+    </a>
+    {% endfor %}
+    {% if d.direction %}<p class="dirs">The direction: <b>{{ d.direction }}</b></p>{% endif %}
+  </aside>
+  {% endif %}
+
+  <section class="dstage" id="panel-center" aria-label="This design's step">
+    <div id="center-content">
+      <div id="empty-state"></div>
+      <div id="stage-breadcrumb"></div>
+      <div id="refusal-note" class="refusal-note" role="alert" hidden></div>
+      <div id="state-note" class="state-note" hidden></div>
+      <div id="review-board"></div>
+      <div id="feed-state"><div id="activity-feed"></div></div>
+      <div id="trend-state"><div id="trend-view"></div></div>
+      <div id="direction-state"><div id="direction-view"></div></div>
+      <div id="gallery-state"><div id="image-gallery"></div><div id="gate1-actions"></div></div>
+      <div id="dimensions-state"><div id="dimensions-view"></div></div>
+      <div id="profile-state"><div id="profile-view"></div></div>
+      <div id="gate2-state"><div id="mockup-view"></div></div>
+      <div id="complete-state"></div>
+    </div>
+    {% include "dashboard/_adjust.html" %}
+    {% if inspiration.rows %}{% include "dashboard/_inspiration.html" %}{% endif %}
+  </section>
+
+  {% include "dashboard/_library_panel.html" %}
+</div>
+{% endblock %}
+{% block scripts %}
+{{ status_words|json_script:"status-words" }}
+{{ page|json_script:"design-page" }}
+<script src="{% static 'js/design_page.js' %}?v={{ FRONTEND_BUILD }}"></script>
+<script src="{% static 'js/adjust.js' %}?v={{ FRONTEND_BUILD }}"></script>
+<script src="{% static 'js/inspiration.js' %}?v={{ FRONTEND_BUILD }}"></script>
+<script src="{% static 'js/api.js' %}?v={{ FRONTEND_BUILD }}"></script>
+<script src="{% static 'js/review_board.js' %}?v={{ FRONTEND_BUILD }}"></script>
+<script src="{% static 'js/render.js' %}?v={{ FRONTEND_BUILD }}"></script>
+<script src="{% static 'js/gates.js' %}?v={{ FRONTEND_BUILD }}"></script>
+<script src="{% static 'js/directions.js' %}?v={{ FRONTEND_BUILD }}"></script>
+<script src="{% static 'js/trends.js' %}?v={{ FRONTEND_BUILD }}"></script>
+<script src="{% static 'js/confirm_profile.js' %}?v={{ FRONTEND_BUILD }}"></script>
+<script src="{% static 'js/project.js' %}?v={{ FRONTEND_BUILD }}"></script>
+<script src="{% static 'js/staged_references.js' %}?v={{ FRONTEND_BUILD }}"></script>
+<script src="{% static 'js/staged_reference_ui.js' %}?v={{ FRONTEND_BUILD }}"></script>
+<script src="{% static 'js/omission_dialog.js' %}?v={{ FRONTEND_BUILD }}"></script>
+<script src="{% static 'js/poll.js' %}?v={{ FRONTEND_BUILD }}"></script>
+{% endblock %}

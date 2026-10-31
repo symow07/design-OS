@@ -1,0 +1,44 @@
+{% extends "dashboard/library/base.html" %}
+{% comment %}FINISHED DESIGNS — part of the Library (C's: "one library, with finished designs part of it"): every approved design
+with its own picture and its files, found by words, brand, product category or date, each opening its own page. It was
+a page of its own outside the one shell, dark, its cards drawn by a script (templates/library/index.html, retired —
+history keeps it). Seen by a member of the team, as the Library's API was (removed in the clean-up of 2026-10-04).
+{% endcomment %}
+{% block title %}Finished designs{% endblock %}
+{% block content %}
+<h1 class="h1">Finished designs</h1>
+<p class="lead">Every design that has been approved, with its files. Open one to see what was asked, the size it was made
+  at and who approved it, to go back to the design itself, or to start a new design from it.</p>
+{% if not can_see_finished %}
+<p class="warn" role="alert">Your account has no role — ask an admin to add you to a team role.</p>
+{% else %}
+<form class="hfilters" method="get" action="{% url 'dashboard:finished_designs' %}" role="search">
+  <label class="field find-field"><svg class="i i-sm" aria-hidden="true"><use href="#i-search"/></svg><span class="sr">Find by its words</span>
+    <input type="search" name="q" value="{{ params.q }}" placeholder="What was asked, or the product"></label>
+  <label><span class="sr">Brand</span>
+    <select name="brand" class="field"><option value="">Every brand</option>
+      {% for b in brands %}<option value="{{ b.pk }}"{% if params.brand == b.pk|stringformat:"s" %} selected{% endif %}>{{ b.name }}</option>{% endfor %}
+    </select></label>
+  <label><span class="sr">Product category</span>
+    <select name="category" class="field"><option value="">Every category</option>
+      {% for value, label in categories %}<option value="{{ value }}"{% if params.category == value %} selected{% endif %}>{{ label }}</option>{% endfor %}
+    </select></label>
+  <details class="more"{% if more_open %} open{% endif %}><summary>More ways to find</summary>
+    <div class="more-row">
+      <label>Finished from <input type="date" name="date_from" value="{{ params.date_from }}" class="field"></label>
+      <label>To <input type="date" name="date_to" value="{{ params.date_to }}" class="field"></label>
+    </div>
+  </details>
+  <button type="submit" class="btn">Show</button>
+</form>
+<p class="small fin-count">{{ count }} finished design{{ count|pluralize }}{% if query %} found{% endif %}.</p>
+<div class="lib-fins">{% for f in finished %}{% include "dashboard/library/_finished_card.html" %}{% empty %}<p class="small">No finished design matches — a design appears here once it is approved.</p>{% endfor %}</div>
+{% if pages > 1 %}
+<nav class="pager" aria-label="Pages">
+  {% if page > 1 %}<a href="?{% if query %}{{ query }}&amp;{% endif %}page={{ page|add:"-1" }}">← Earlier</a>{% endif %}
+  <span class="dim">Page {{ page }} of {{ pages }}</span>
+  {% if page < pages %}<a href="?{% if query %}{{ query }}&amp;{% endif %}page={{ page|add:"1" }}">Next →</a>{% endif %}
+</nav>
+{% endif %}
+{% endif %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{
+ "row": 5,
+ "ok": false,
+ "error": "TypeError: solve_product_tray() missing 2 required keyword-only arguments: 'header_height_mm' and 'front_height_mm'",
+ "trace": [
+  "Traceback (most recent call last):",
+  "  File \"/Users/symow/Desktop/bbrose-systemOS/docs/consolidation/probe.py\", line 112, in main",
+  "    result = {'row': n, 'ok': True, 'result': PROBES[n](folder, out)}",
+  "                                              ^^^^^^^^^^^^^^^^^^^^^^",
+  "  File \"/Users/symow/Desktop/bbrose-systemOS/docs/consolidation/probes.py\", line 170, in p05",
+  "    grid = ct.solve_product_tray(product_width_mm=15.0, product_depth_mm=15.0, product_height_mm=100.0, rows=3,",
+  "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+  "TypeError: solve_product_tray() missing 2 required keyword-only arguments: 'header_height_mm' and 'front_height_mm'"
+ ],
+ "seconds": 0.1,
+ "files": []
+}

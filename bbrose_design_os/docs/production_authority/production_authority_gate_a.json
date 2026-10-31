@@ -1,0 +1,136 @@
+{
+ "record_type": "production_authority_gate_a/1.0",
+ "note": "Gate A — Illustrator execution — as the owner ruled it PASSED on 2026-07-31, carried verbatim from the 2026-07-29 production_authority_gate/1.0 record (its own history stays in git). The gate record is generated from this file and the intake state on every run (§BH46(d)).",
+ "created_at": "2026-07-29",
+ "gate": {
+  "requires": [
+   "human Illustrator verification passed",
+   "verification copy opens correctly",
+   "artwork geometry unchanged",
+   "all objects remain editable"
+  ],
+  "evidence_present": true,
+  "state": "PASSED",
+  "blocked_by": null,
+  "previous_attempt": {
+   "subject": "vq2_a2_r2_final_gate_a_r1.ai",
+   "result": "FAILED",
+   "codes": [
+    "ILLUSTRATOR_EXECUTION_VERIFICATION_FAILED",
+    "ILLUSTRATOR_GATE_A_R1_ARTWORK_NOT_RENDERED",
+    "ILLUSTRATOR_LOGO_NOT_RENDERED",
+    "ILLUSTRATOR_DIVIDER_NOT_RENDERED",
+    "ILLUSTRATOR_PRODUCT_NAME_NOT_RENDERED",
+    "ILLUSTRATOR_SUPPORTING_COPY_NOT_RENDERED",
+    "ILLUSTRATOR_SOURCE_PROOF_DIVERGENCE_PERSISTS",
+    "GATE_A_R2_SOURCE_REQUIRED"
+   ],
+   "visible_objects": 3,
+   "missing_objects": 37
+  },
+  "correction": {
+   "slice": "PRODUCTION-AUTHORITY-GATE-A-CORR-2",
+   "state": "CLOSED_GATE_A_PASSED",
+   "corrected_source": "vq2_a2_r2_final_gate_a_r2.ai",
+   "corrected_source_sha256": "6ae00f726ddefda4adad93325735c489e3fe987452f9c1a2f603236c73e4c49a",
+   "automated_evidence_complete": true,
+   "automated_evidence_can_pass_gate_a": false,
+   "roundtrip_script": "docs/production_authority/illustrator_gate_a_roundtrip.jsx",
+   "awaiting": "the owner running the round-trip script in Adobe Illustrator and confirming both dialogs",
+   "initial_open_passed": true,
+   "roundtrip_performed": true,
+   "known_defects_closed": [
+    "black emission (R0)",
+    "artwork loss (R1)"
+   ],
+   "remaining_blocker": "artboard: the script now restores the source page before Save As and re-checks it after reopen; a second run is required",
+   "roundtrip_passed": true
+  },
+  "attempt_history": [
+   {
+    "n": 1,
+    "subject": "vq2_a2_r2_final.ai",
+    "result": "FAILED",
+    "observed": "one solid black silhouette",
+    "code": "ILLUSTRATOR_AI8_ALL_OBJECTS_EMITTED_BLACK"
+   },
+   {
+    "n": 2,
+    "subject": "vq2_a2_r2_final_gate_a_r1.ai",
+    "result": "FAILED",
+    "observed": "correct structure colours, 37 artwork objects absent",
+    "code": "ILLUSTRATOR_GATE_A_R1_ARTWORK_NOT_RENDERED"
+   },
+   {
+    "n": 3,
+    "subject": "vq2_a2_r2_final_gate_a_r2.ai",
+    "result": "INITIAL_OPEN_PASSED",
+    "observed": "all 40 objects visible with approved colours; separate Path and Compound Path objects",
+    "code": "ILLUSTRATOR_GATE_A_R2_INITIAL_OPEN_PASSED",
+    "gate_a_effect": "NONE - round trip not performed"
+   },
+   {
+    "n": 4,
+    "subject": "vq2_a2_r2_final_gate_a_r2.ai",
+    "result": "ARTWORK_PASSED_ARTBOARD_FAILED",
+    "observed": "genuine Illustrator save, 40 vector objects, all four approved colours, no raster, no live text - on a 763.654 x 983.225 pt artboard",
+    "code": "ILLUSTRATOR_GATE_A_ARTBOARD_NOT_PRESERVED",
+    "gate_a_effect": "NONE - artboard drift"
+   },
+   {
+    "n": 5,
+    "subject": "vq2_a2_r2_final_gate_a_r2.ai",
+    "result": "PASSED",
+    "observed": "saved, closed, reopened, exported; artboard preserved at 207.1627 x 493.2283; 40 logical drawings / 67 path items; both human confirmations answered",
+    "code": "PRODUCTION_AUTHORITY_GATE_A_PASSED",
+    "gate_a_effect": "GATE A PASSED"
+   }
+  ],
+  "passed_at": "2026-07-31",
+  "passed_by": "PROJECT_OWNER",
+  "evidence": {
+   "verified_ai_sha256": "ae287712de97798e9fa91efbb4fe3bb093f5950b8f55931441af71d7b00c13c0",
+   "verified_pdf_sha256": "1ea6e44863e50ce54596aba6880a2dd3ab182912c0565c8107fa513a7afa2066",
+   "verified_png_sha256": "ebd96ac4fe88c0b08610611e89380787dc3c73d156df89991eff5236f63b5460",
+   "verification_json_sha256": "110d205d04712d44af79f86838a04de9bd3a4165d465e5ca6d4cc7e18c350cb3",
+   "illustrator_version": "30.0.0",
+   "operating_system": "macOS",
+   "artboard_pt": [
+    207.162994,
+    493.227997
+   ],
+   "logical_drawings": 40,
+   "path_items": 67,
+   "record": "docs/visual_quality/vq2/gate_a_final_verification.json"
+  },
+  "codes": [
+   "ILLUSTRATOR_EXECUTION_VERIFICATION_PASSED",
+   "PRODUCTION_AUTHORITY_GATE_A_PASSED",
+   "ILLUSTRATOR_SAVE_REOPEN_EXPORT_CONFIRMED",
+   "ILLUSTRATOR_ARTBOARD_PRESERVED",
+   "ILLUSTRATOR_VECTOR_EDITABILITY_CONFIRMED"
+  ],
+  "grants": [
+   "Illustrator execution verification only"
+  ],
+  "does_not_grant": [
+   "production geometry authority",
+   "supplier compatibility",
+   "print-wrap authority",
+   "colour-separation authority",
+   "material specification",
+   "manufacturability",
+   "packaging authorization"
+  ]
+ },
+ "gate_a_correction": "IN_PROGRESS",
+ "gate_a_passing_does_not_imply": [
+  "production geometry authority",
+  "supplier compatibility",
+  "print-wrap authority",
+  "colour-separation authority",
+  "material specification",
+  "manufacturability",
+  "packaging authorization"
+ ]
+}

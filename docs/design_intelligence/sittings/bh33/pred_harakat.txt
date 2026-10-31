@@ -1,0 +1,50 @@
+§AD0(a) PREDICTION — §BH33(3) HARAKAT KEPT, sealed BEFORE git add. Base HEAD
+5a3627b ((2), scored 8/8).
+
+L1 WRITE SET: exactly FIVE tracked paths, all under apps/ —
+   apps/dielines/exporters/text_intl.py, apps/ire/emitters/pdf_ai.py,
+   apps/ire/font_roles.py, apps/ire/tests/test_pdf_ai_emitter.py,
+   apps/dielines/tests/test_info_panel.py. Plus the gate-staged ledger line.
+   NO other path; info_panel.py, production_pdf.py, design_preview.py (the
+   sticker family) untouched; the exemption list and the chains untouched.
+L2 DIFF SHAPE (insertions/deletions):
+   apps/dielines/exporters/text_intl.py 21/5 — `_libs(keep_harakat)` +
+   `shape_ar(text, keep_harakat=False)`; every existing caller takes the
+   default.
+   apps/ire/emitters/pdf_ai.py 24/1 — the NON-exempt drawer shapes with
+   keep_harakat=True; `_attach_marks` (a mark left at the tail of a Latin
+   chunk moves to the Arabic chunk that follows; a truthiness guard, no
+   count comparison — the WIT denominator holds); the exempt drawer
+   untouched.
+   apps/ire/font_roles.py 8/1 — `_ARABIC_MARKS`; the catalogue's
+   `arabic_marks_missing`; capability needs the marks; the chain verdict
+   ARABIC_MARKS_MISSING(n).
+   apps/ire/tests/test_pdf_ai_emitter.py 54/0 — THREE tests added.
+   apps/dielines/tests/test_info_panel.py 14/0 — ONE test added (the
+   sticker's inflated content streams pinned to
+   35060d5da26f8506a8175752369ec8bef08c1831f4f9fde61542018277073c41,
+   measured at 5a3627b before this change, stable across runs).
+L3 MANIFEST / A391: suite manifest untouched (no new test FILE); records
+   untouched; ledger at 462 passes the APPEND_ONLY prefix rule. Census-first:
+   records none; identity none; WIT denominator 863 and its REGISTER keys
+   hold — the first draft moved it to 864 (`j < len(text)`, a count
+   comparison), caught by the census BEFORE any gate and rewritten as a
+   truthiness guard; the analyser's test green on the patched tree (250 +
+   92 targeted passed); corpus constants none.
+L4 STAGED == DECLARED: exactly the FIVE numstat rows of L2.
+L5 COMMIT CONTENTS: 6 files (5 + ledger), insertions 122, deletions 7.
+L6 SUITE LINE + REFUSAL TREE: GREEN — TIER_2=GREEN collected=8552
+   failures=0 apps=7740 dip0c=671 dip0=141 (8548 + the four tests). No
+   refusal expected; §BH24 0/3.
+L7 LEDGER FOLD: 462 → 463, the +1 in THIS commit.
+L8 PROTOCOL IDENTITIES / APPS DIFF / AUTHORITY: apps diff = exactly the
+   five paths; GATE 7fbeb8f1fe10b0fb at [514:541] and TEST b32030dc827263e4
+   byte-identical (cfa untouched); tree seals unchanged; protocol_identity
+   unchanged; neither ceiling nor guard moved; the eight M7 artefacts ==
+   baseline; under Django at scoring: Naskh `arabic_marks_missing` 0 and
+   the sole Arabic-capable face; `shape_ar("صباحاً", keep_harakat=True)`
+   carries U+064B and the default does not; a themed document draws both
+   tanween of يوضع قطرتان صباحاً ومساءً in Naskh and its untagged (exempt)
+   twin draws none; the sticker preview's inflated streams equal the pin;
+   the Noto trio VERIFIED_FOR_PRODUCTION; the 35 at their PROVENANCE
+   hashes; no authority involved.

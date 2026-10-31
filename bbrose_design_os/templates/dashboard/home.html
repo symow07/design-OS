@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% comment %}HOME — THE BOARD (the owner's answer to the UI directions of 2026-09-25: "B's board, C's design page", "C's look").
+Every design is a card on the step it stands at; the "Needs attention" lane is on top; what is folded away sits in one
+row at the foot. Since the owner's goal of 2026-10-29 the cards are the chain's rounds, read from their one classification
+(apps/dashboard/views.py, round_card) — the old tasks' board (apps/dashboard/board.py) is Status's; nothing here writes.{% endcomment %}
+{% block title %}Home{% endblock %}
+{% block page_class %}page wide board-page{% endblock %}
+{% block content %}
+<div class="board-hd">
+  <h1 class="h1">Board</h1>
+  <p class="lead">Your {{ total_yours }} design{{ total_yours|pluralize }}, by step. Each card says what happens next.</p>
+  <ul class="legend" aria-label="What the marks mean">
+    <li><span class="sdot run"></span>Working on it</li>
+    <li><span class="sdot wait"></span>Waiting for you</li>
+    <li><span class="sdot attn"></span>Needs attention</li>
+    <li><span class="sdot still"></span>Can't move on here</li>
+    <li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg>Finished</li>
+  </ul>
+  <form class="board-filter" method="get" action="{% url 'dashboard:index' %}">
+    <label class="sr" for="board-product">Product</label>
+    <select id="board-product" name="product" class="field">
+      <option value="">Every product</option>
+      {% for p in products %}<option value="{{ p.pk }}"{% if p.pk == product_id %} selected{% endif %}>{{ p.name }}</option>{% endfor %}
+    </select>
+    <button class="btn sm" type="submit">Show</button>
+  </form>
+</div>
+
+{% if attention %}
+<section class="lane-attn" id="attention" aria-labelledby="attn-h">
+  <div class="lh">
+    <h2 class="lane-title" id="attn-h"><svg class="i" aria-hidden="true"><use href="#i-alert"/></svg>Needs attention <span class="num">{{ attention|length }}</span></h2>
+    <span class="sub">Designs that stopped, each with the reason in plain words and one thing to do</span>
+    <a href="{% url 'dashboard:round_list' %}">All {{ attention|length }} on Rounds <svg class="i i-sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  </div>
+  <div class="attn-row">
+    {% for c in attention|slice:":4" %}
+    <article class="attn-card">
+      <div class="top"><b class="nm">{{ c.title }}</b><span class="meta">#{{ c.task_id }}</span></div>
+      {% if c.brief_note %}<p class="briefline">{{ c.brief_note }}</p>{% endif %}
+      <p class="why">{{ c.reason }}</p>
+      <div class="foot"><span class="when">{{ c.last_sign|date:"j M" }}</span><a class="btn sm soft" href="{{ c.url }}">See why</a></div>
+    </article>
+    {% endfor %}
+    {% if attention|length > 4 %}
+    <a class="attn-more" href="{% url 'dashboard:round_list' %}"><span class="num">{{ attention|length|add:"-4" }}</span>more<small>on Rounds</small></a>
+    {% endif %}
+  </div>
+</section>
+{% endif %}
+
+<div class="board" id="board">
+  {% for col in columns %}
+  <section class="col" aria-labelledby="col-{{ col.key }}">
+    <div class="col-head"><span class="n">{{ forloop.counter }}</span><h2 class="t" id="col-{{ col.key }}">{{ col.words }}</h2><span class="count num">{{ col.cards|length }}</span></div>
+    {% for c in col.cards|slice:":5" %}{% include "dashboard/_board_card.html" %}{% empty %}
+    <p class="empty-note">{{ col.empty }}</p>
+    {% endfor %}
+    {% if col.cards|length > 5 %}
+    <details class="more-cards">
+      <summary>{{ col.cards|length|add:"-5" }} more</summary>
+      {% for c in col.cards|slice:"5:" %}{% include "dashboard/_board_card.html" %}{% endfor %}
+    </details>
+    {% endif %}
+  </section>
+  {% endfor %}
+</div>
+
+{% for g in folded %}{% if forloop.first %}
+<details class="fold" id="folded">
+  <summary><svg class="i" aria-hidden="true"><use href="#i-fold"/></svg>
+    <span><b>{{ g.words }} ({{ g.cards|length }})</b> · {{ g.why }}</span>
+    <span class="also">{% for o in folded %}{% if not forloop.first %}Also folded: {{ o.words }} ({{ o.cards|length }}){% if not forloop.last %} · {% endif %}{% endif %}{% endfor %}</span>
+    <span class="btn sm">Show</span>
+  </summary>
+  <p class="small">{% if fold_words %}Folded away by your word — "{{ fold_words }}" {% endif %}Nothing is deleted; each opens as it always did.</p>
+  {% for o in folded %}
+  <div class="fold-list"><b class="small">{{ o.words }}</b>
+    {% for c in o.cards %}<a href="{{ c.url }}"><span class="num">#{{ c.task_id }}</span><span>{{ c.title }}</span><span class="quiet">{{ c.next_words }}</span></a>{% endfor %}
+  </div>
+  {% endfor %}
+</details>
+{% endif %}{% endfor %}
+{% endblock %}

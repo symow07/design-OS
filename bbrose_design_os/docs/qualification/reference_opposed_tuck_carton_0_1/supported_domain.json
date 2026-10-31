@@ -1,0 +1,118 @@
+{
+  "schema": "dieline_supported_domain/1.0",
+  "template_key": "reference_opposed_tuck_carton/0.1",
+  "constraints": [
+    {
+      "name": "BOARD_RANGE",
+      "formula": "0.3 <= board_thickness_mm <= 1",
+      "derivation": "manufacturing caliper range for folding-carton board; every compensation in the contract derives from t"
+    },
+    {
+      "name": "WIDTH_RANGE",
+      "formula": "12 <= width_mm <= 300",
+      "derivation": "print-shop sheet/die budget (schema Milestone 9.1)"
+    },
+    {
+      "name": "DEPTH_RANGE",
+      "formula": "12 <= depth_mm <= 300",
+      "derivation": "print-shop sheet/die budget"
+    },
+    {
+      "name": "HEIGHT_RANGE",
+      "formula": "60 <= height_mm <= 600",
+      "derivation": "print-shop sheet/die budget"
+    },
+    {
+      "name": "GLUE_RANGE",
+      "formula": "6 <= glue_tab_mm <= 15",
+      "derivation": "adhesive-joint practice bounds"
+    },
+    {
+      "name": "BLEED_RANGE",
+      "formula": "2 <= bleed_mm <= 5",
+      "derivation": "prepress practice bounds"
+    },
+    {
+      "name": "SAFE_RANGE",
+      "formula": "3 <= safe_margin_mm <= 8",
+      "derivation": "prepress practice bounds"
+    },
+    {
+      "name": "HEIGHT_GT_WIDTH",
+      "formula": "H > W",
+      "derivation": "tuck-carton proportion: the tuck closure needs the body taller than the opening span"
+    },
+    {
+      "name": "HEIGHT_GT_DEPTH",
+      "formula": "H > D",
+      "derivation": "tuck-carton proportion"
+    },
+    {
+      "name": "GLUE_CLEARANCE",
+      "formula": "D + 2t >= G + 3",
+      "derivation": "the glue flap laps inside the side span; less than 3 mm of clearance overlaps the side fold (adapted-source guard)"
+    },
+    {
+      "name": "DUST_BASE_MIN",
+      "formula": "(D + t) - 2*chamfer - taper >= 2",
+      "derivation": "dust-flap base after the 3 mm chamfer and 2 mm taper must keep a 2 mm manufacturable base (minimum feature)"
+    },
+    {
+      "name": "FOLD_HINGE_MIN",
+      "formula": "(W + t) - 2*slit_l >= 10",
+      "derivation": "the tuck-fold crease is shortened by a 7 mm entry slit at each end; below a 10 mm remaining span the fold has no functional hinge"
+    },
+    {
+      "name": "TUCK_TIP_MIN",
+      "formula": "(W + t) - 2*(slit_l + 2t) >= 4",
+      "derivation": "the flat tuck tip between the Bezier shoulders must keep a 4 mm span or the shoulders cross (self-intersection)"
+    },
+    {
+      "name": "DUST_PAIR_CLEARANCE",
+      "formula": "W - (D + t + hook) >= 2",
+      "derivation": "FOLDED: opposing dust flaps (depth (P + hook - t)/2 each) meet across the inner width; W - 2*dust_d >= 2 mm or they collide (measured on the actual outlines by the folded checks)"
+    },
+    {
+      "name": "EAR_ENGAGEMENT",
+      "formula": "slit_d - 2t >= 0.5",
+      "derivation": "the entry slit must cross the fold beyond the 2t locking ear by >= 0.5 mm or the ear cannot snap in"
+    },
+    {
+      "name": "HOOK_VS_BODY",
+      "formula": "H >= hook + 2t + 2",
+      "derivation": "FOLDED: the tuck hook folds down inside the opposite main face and must clear the body height"
+    }
+  ],
+  "envelope_at_t05_glue12": {
+    "board_thickness_mm": [
+      0.3,
+      1.0
+    ],
+    "width_mm_min_at_depth_floor": 32.5,
+    "width_mm_max": 300.0,
+    "depth_mm_min": 14.0,
+    "depth_mm_max_given_W": "W - t - 20",
+    "height_mm": [
+      60.0,
+      600.0
+    ],
+    "height_rule": "H > W and H > D",
+    "width_depth_rule": "W >= D + t + 20 (folded dust clearance)"
+  },
+  "envelope_at_t10_glue12": {
+    "board_thickness_mm": [
+      0.3,
+      1.0
+    ],
+    "width_mm_min_at_depth_floor": 33.0,
+    "width_mm_max": 300.0,
+    "depth_mm_min": 13.0,
+    "depth_mm_max_given_W": "W - t - 20",
+    "height_mm": [
+      60.0,
+      600.0
+    ],
+    "height_rule": "H > W and H > D",
+    "width_depth_rule": "W >= D + t + 20 (folded dust clearance)"
+  }
+}

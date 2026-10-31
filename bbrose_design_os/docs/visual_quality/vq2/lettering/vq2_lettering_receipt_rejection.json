@@ -1,0 +1,76 @@
+{
+ "record_type": "vq2_lettering_receipt_rejection/1.0",
+ "created_at": "2026-07-29",
+ "adjudicated_by": "PROJECT_OWNER",
+ "codes": [
+  "VQ2_SUBMISSION_CONTAINS_PRESERVED_DIAGNOSTIC_A1",
+  "VQ2_SUBMISSION_CONTAINS_BLANK_HANDOFF_TEMPLATE",
+  "VQ2_AUTHORITATIVE_HUMAN_LETTERING_NOT_DELIVERED",
+  "VQ2_RECEIPT_VALIDATION_STOPPED_AT_ASSET_AUTHORITY"
+ ],
+ "outcome": "REJECTED_AT_ASSET_AUTHORITY_GATE",
+ "downstream_glyph_validation_executed": false,
+ "why_downstream_not_executed": "No qualifying new lettering asset was delivered. The 23-check glyph validation is only meaningful against a designer delivery; running it on our own prior outputs would manufacture the appearance of a receipt.",
+ "submitted_files": [
+  {
+   "file": "FILE_1",
+   "declared_sha256": "f12b5d1df048e51059bccbd0a3d952afbf346755e45ff38668f890ca2a172402",
+   "identified_as": "docs/visual_quality/vq2/vq2_a1.ai",
+   "sha256_verified": true,
+   "internal_title": "VQ2-A1 - BBROSE Rose Damascena surface artwork",
+   "origin": "PRIOR_CLAUDE_OUTPUT_NOT_A_DESIGNER_DELIVERY",
+   "generator": "ReportLab via apps.ire.emitters.pdf_ai",
+   "native_illustrator_layers": false,
+   "designer_output_provenance": false,
+   "finding": "This is the previously preserved VQ2-A1 diagnostic composition, not a new owner-approved human custom-lettering delivery.",
+   "disposition": "PRESERVED_DIAGNOSTIC_CANDIDATE",
+   "rose_damascena_outlines_promoted_to_final_artwork": false,
+   "code": "VQ2_SUBMISSION_CONTAINS_PRESERVED_DIAGNOSTIC_A1"
+  },
+  {
+   "file": "FILE_2",
+   "declared_sha256": "32bd5eb61ad7248067bfb3173624d11a09c2043c4adc4f0043e853ddc9598da0",
+   "identified_as": "docs/visual_quality/vq2/lettering/vq2_product_name_lettering_template.ai",
+   "sha256_verified": true,
+   "also_matches": "docs/visual_quality/vq2/lettering/vq2_product_name_lettering_template.pdf",
+   "byte_identical_note": "The template .ai and .pdf are the same bytes; the .ai was copied to .pdf at emission, so both paths hash to FILE_2.",
+   "internal_title": "VQ-2 product-name lettering template (designer handoff)",
+   "origin": "PRIOR_CLAUDE_OUTPUT_BLANK_HANDOFF_TEMPLATE",
+   "contains_approved_logo": true,
+   "contains_supporting_copy": true,
+   "contains_construction_guides": true,
+   "contains_completed_rose_lettering": false,
+   "contains_completed_damascena_lettering": false,
+   "designer_output_layer_populated": false,
+   "finding": "This is the blank handoff template. It carries the approved logo, supporting copy and construction guides, but no completed Rose or Damascena lettering.",
+   "code": "VQ2_SUBMISSION_CONTAINS_BLANK_HANDOFF_TEMPLATE"
+  }
+ ],
+ "neither_file_modified": true,
+ "glyphs_generated": false,
+ "vq2_a1_reused_as_lettering_delivery": false,
+ "required_primary_delivery": {
+  "format": "Adobe Illustrator source authored by the human designer",
+  "words": [
+   "Rose",
+   "Damascena"
+  ],
+  "drawn_inside_layer": "09_DESIGNER_OUTPUT",
+  "requirements": [
+   "one independently editable vector object per glyph",
+   "no raster lettering",
+   "no live unresolved font",
+   "no automated trace",
+   "no horizontal or vertical scaling",
+   "no non-uniform transform",
+   "no word-group scaling",
+   "clean counters",
+   "no self-intersections",
+   "straight canonical baselines",
+   "explicit owner approval"
+  ],
+  "accompanying_pdf_or_eps": "PERMITTED_BUT_DOES_NOT_REPLACE_THE_AUTHORITATIVE_SOURCE"
+ },
+ "contract_version_in_force": "2.0",
+ "mandatory_checks_awaiting_a_qualifying_asset": 23
+}

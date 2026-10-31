@@ -1,0 +1,310 @@
+{
+  "record_type": "vq1_corr4_structural_fixture/1.0",
+  "backbone": "cylindrical_serum_dropper_backbone/1.0",
+  "dims_mm": {
+    "body_diameter": 31.3,
+    "body_height": 60.5,
+    "shoulder_rise": 7.6,
+    "neck_diameter": 10.4,
+    "visible_neck": 2.2,
+    "collar_diameter": 19.0,
+    "collar_height": 15.8,
+    "collar_bow": 0.55,
+    "bulb_height": 21.2,
+    "bulb_max_width": 12.3,
+    "bulb_base_width": 8.6,
+    "bulb_max_at": 0.28,
+    "bulb_dome_n": 2.0,
+    "bulb_taper": 0.1,
+    "bulb_dome_start": 0.74,
+    "bulb_dome_width": 0.72,
+    "bulb_insertion": 3.0,
+    "base_curve_depth": 1.6
+  },
+  "projection": {
+    "mode": "weak_perspective_front",
+    "ellipse_depth_ratio": 0.13,
+    "centerline": "shared",
+    "scale": "shared",
+    "vertical_axis": "shared"
+  },
+  "layout_mm": {
+    "y_collar_top": 18.2,
+    "y_collar_bot": 34.0,
+    "y_body_top": 36.2,
+    "y_wall_top": 43.800000000000004,
+    "y_base_start": 95.10000000000001,
+    "y_bottom": 96.7,
+    "total_height": 96.7
+  },
+  "canonical_path_hashes": {
+    "BODY": "baec7496a46db25b",
+    "COLLAR": "afad48cfb339bbce",
+    "NECK": "0d4311710f497e1f",
+    "BULB": "24d56f146319f44e"
+  },
+  "shoulder_control_points": {
+    "P0": [
+      10.45,
+      36.2
+    ],
+    "C1": [
+      4.7025,
+      36.2
+    ],
+    "C2": [
+      0.0,
+      40.38
+    ],
+    "P3": [
+      0.0,
+      43.8
+    ],
+    "tangent_at_neck": "horizontal",
+    "tangent_at_wall": "vertical"
+  },
+  "shoulder_curvature_samples": [
+    {
+      "t": 0.02,
+      "x": 10.106,
+      "y": 36.205,
+      "curvature": 0.084176
+    },
+    {
+      "t": 0.08,
+      "x": 9.093,
+      "y": 36.278,
+      "curvature": 0.083374
+    },
+    {
+      "t": 0.14,
+      "x": 8.108,
+      "y": 36.432,
+      "curvature": 0.082429
+    },
+    {
+      "t": 0.2,
+      "x": 7.156,
+      "y": 36.662,
+      "curvature": 0.081642
+    },
+    {
+      "t": 0.26,
+      "x": 6.243,
+      "y": 36.961,
+      "curvature": 0.081302
+    },
+    {
+      "t": 0.32,
+      "x": 5.373,
+      "y": 37.322,
+      "curvature": 0.081685
+    },
+    {
+      "t": 0.38,
+      "x": 4.551,
+      "y": 37.74,
+      "curvature": 0.083074
+    },
+    {
+      "t": 0.44,
+      "x": 3.782,
+      "y": 38.207,
+      "curvature": 0.085779
+    },
+    {
+      "t": 0.5,
+      "x": 3.07,
+      "y": 38.718,
+      "curvature": 0.090166
+    },
+    {
+      "t": 0.56,
+      "x": 2.42,
+      "y": 39.265,
+      "curvature": 0.096695
+    },
+    {
+      "t": 0.62,
+      "x": 1.836,
+      "y": 39.843,
+      "curvature": 0.105953
+    },
+    {
+      "t": 0.68,
+      "x": 1.325,
+      "y": 40.445,
+      "curvature": 0.118682
+    },
+    {
+      "t": 0.74,
+      "x": 0.889,
+      "y": 41.065,
+      "curvature": 0.135772
+    },
+    {
+      "t": 0.8,
+      "x": 0.535,
+      "y": 41.696,
+      "curvature": 0.15815
+    },
+    {
+      "t": 0.86,
+      "x": 0.266,
+      "y": 42.332,
+      "curvature": 0.186429
+    },
+    {
+      "t": 0.92,
+      "x": 0.088,
+      "y": 42.967,
+      "curvature": 0.220135
+    },
+    {
+      "t": 0.98,
+      "x": 0.006,
+      "y": 43.594,
+      "curvature": 0.256396
+    }
+  ],
+  "bulb_samples_21": [
+    {
+      "t": 0.0,
+      "width_frac": 0.6992,
+      "half_width_mm": 4.3
+    },
+    {
+      "t": 0.05,
+      "width_frac": 0.7825,
+      "half_width_mm": 4.8121
+    },
+    {
+      "t": 0.1,
+      "width_frac": 0.8592,
+      "half_width_mm": 5.2843
+    },
+    {
+      "t": 0.15,
+      "width_frac": 0.9235,
+      "half_width_mm": 5.6794
+    },
+    {
+      "t": 0.2,
+      "width_frac": 0.9702,
+      "half_width_mm": 5.9668
+    },
+    {
+      "t": 0.25,
+      "width_frac": 0.9957,
+      "half_width_mm": 6.1239
+    },
+    {
+      "t": 0.3,
+      "width_frac": 0.9965,
+      "half_width_mm": 6.1286
+    },
+    {
+      "t": 0.35,
+      "width_frac": 0.9799,
+      "half_width_mm": 6.0266
+    },
+    {
+      "t": 0.4,
+      "width_frac": 0.9573,
+      "half_width_mm": 5.8876
+    },
+    {
+      "t": 0.45,
+      "width_frac": 0.9305,
+      "half_width_mm": 5.7226
+    },
+    {
+      "t": 0.5,
+      "width_frac": 0.9003,
+      "half_width_mm": 5.5369
+    },
+    {
+      "t": 0.55,
+      "width_frac": 0.8672,
+      "half_width_mm": 5.3333
+    },
+    {
+      "t": 0.6,
+      "width_frac": 0.8315,
+      "half_width_mm": 5.1139
+    },
+    {
+      "t": 0.65,
+      "width_frac": 0.7936,
+      "half_width_mm": 4.8804
+    },
+    {
+      "t": 0.7,
+      "width_frac": 0.7535,
+      "half_width_mm": 4.6339
+    },
+    {
+      "t": 0.75,
+      "width_frac": 0.7195,
+      "half_width_mm": 4.4247
+    },
+    {
+      "t": 0.8,
+      "width_frac": 0.7006,
+      "half_width_mm": 4.3085
+    },
+    {
+      "t": 0.85,
+      "width_frac": 0.6524,
+      "half_width_mm": 4.0122
+    },
+    {
+      "t": 0.9,
+      "width_frac": 0.5675,
+      "half_width_mm": 3.4903
+    },
+    {
+      "t": 0.95,
+      "width_frac": 0.4245,
+      "half_width_mm": 2.6108
+    },
+    {
+      "t": 1.0,
+      "width_frac": 0.0,
+      "half_width_mm": 0.0
+    }
+  ],
+  "mirror_rule": "right side generated by mathematical reflection of the left half about the shared centerline",
+  "emitted_contour_verification": {
+    "filled_render": "EQUAL_TO_CANONICAL",
+    "stroked_silhouette": "EQUAL_TO_CANONICAL"
+  },
+  "perceived_structural_report": {
+    "record_type": "vq1_corr4_perceived_structural_report/1.0",
+    "checks": {
+      "body_wall_parallelism": true,
+      "shoulder_curvature_continuity": true,
+      "neck_visibility": true,
+      "collar_cylindrical_readability": true,
+      "collar_visual_mass_subordinate": true,
+      "bulb_symmetry": true,
+      "bulb_taper": true,
+      "bulb_dome": true,
+      "bulb_insertion": true,
+      "base_integration": true,
+      "closure_coherence": true,
+      "visual_center_of_mass_in_body": true,
+      "canonical_render_identity": true
+    },
+    "findings": [],
+    "verdict": "PASSES_STRUCTURAL_FORM_PENDING_HUMAN_REVIEW",
+    "human_note": "human rejection is always authoritative; this verdict never auto-accepts"
+  },
+  "human_review": "PENDING",
+  "preserved_prior_fixtures": {
+    "vq1_original": "19f9b98d0bc46a0d (REJECTED, unchanged)",
+    "corr2": "docs/visual_quality/vq1_corr2/ (REJECTED, unchanged)",
+    "corr3": "docs/visual_quality/vq1_corr3/ (REJECTED, unchanged)"
+  },
+  "fixture_hash": "b67352ca10e8b62376df25794e6c6247f938250ad066d304f2320195ddcc4ca2"
+}

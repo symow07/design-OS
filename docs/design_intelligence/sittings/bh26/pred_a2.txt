@@ -1,0 +1,59 @@
+§AD0(a) PREDICTION — commit A ATTEMPT 2 (§BH26(a) owner-grant channel,
+under §BH26(d) FOLD + §BH26(e) TOOL-RUN), sealed BEFORE git add.
+Base HEAD d1e5213. Attempt 1's falsified prediction stands as history
+(score_a_attempt1.txt); this seal supersedes nothing — it is the fresh
+8-leg §BH26(e)(3) requires.
+
+L1 WRITE SET: exactly SEVEN tracked paths —
+   NEW  bbrose_design_os/apps/ire/container_font_owner_grant.py (141)
+   NEW  bbrose_design_os/apps/pipeline/tests/test_container_font_owner_grant.py (120)
+   MOD  bbrose_design_os/apps/pipeline/targets/container/__init__.py
+   MOD  bbrose_design_os/apps/pipeline/tests/test_wif_reconstruct_container.py
+   MOD  bbrose_design_os/apps/pipeline/tests/test_container_target.py
+   MOD  bbrose_design_os/docs/roadmap/palt_m6/suite_file_manifest.json
+   MOD  bbrose_design_os/docs/roadmap/palt_m6/suite_manifest_diffs.json
+   Plus the gate-staged ledger line. The five apps paths byte-identical
+   to attempt 1 (sha256-verified through two stash round-trips against
+   stash_a/sha256s.txt). The ignored probe overwrite is NOISE, noted
+   not predicted, per (e)(2). container_font_authority.py NOT in the
+   write set.
+L2 DIFF SHAPE: grant 141+0; test 120+0; container/__init__.py +17 −7;
+   wif +27 −8; container_target +12 −8; manifest +4 −3 (generated
+   stamp swap, ONE sorted files entry added, palette floor 51→52,
+   total_floor 7643→7690 — the two ratified rises, nothing else);
+   diff-log +8 −0 (byte-purely-additive append, prior entries
+   parse-verified identical).
+L3 MANIFEST / A391: the manifest IS in this write set, produced by the
+   ruled TOOL-RUN — regenerate_manifest(apply_it=True), all FIFTEEN
+   verification checks PASS against the preview (toolrun_apply.log):
+   added exactly the one file, removed none, files 372, total_floor
+   7690, palette floor 52, CHARACTERIZATION FLOOR 66→66 UNCHANGED
+   (sealed per (e)(3)), record_type and set-not-total flag kept, fresh
+   ISO stamp shared by manifest.generated and the log entry's utc.
+L4 STAGED == DECLARED: git diff --cached --numstat = exactly the seven
+   rows of L2 (141+0, 120+0, 17−7, 27−8, 12−8, 4−3, 8−0).
+L5 COMMIT CONTENTS: 8 files (seven + ledger), insertions
+   141+120+17+27+12+4+8+1 = 330, deletions 7+8+8+3+0 = 26.
+L6 SUITE LINE + REFUSAL TREE: GREEN with SIX NEW TESTS —
+   TIER_2=GREEN collected=8496 failures=0 apps=7690 dip0c=671 dip0=135.
+   The extent guard passes WITH the new file on disk because it is
+   DECLARED; floors pass at equality (palette 52==52, charact 66,
+   total 7690==7690 — floors are minimums, raised to measured reality).
+   Pre-gate targeted evidence: 72 passed (characterization file — the
+   attempt-1 refuser — + the 6 grant tests, 3.07s); attempt-1's
+   40-passed (grant+cfa) and 392-passed (19 files) evidence carries on
+   byte-identical apps content. No refusal expected; §BH24 covers only
+   its two named ids, 0/3 used.
+L7 LEDGER FOLD: 432 → 433, the +1 in THIS commit.
+L8 PROTOCOL IDENTITIES / APPS DIFF: apps diff = exactly the FIVE apps
+   paths; docs diff = exactly the TWO ruled docs paths + ledger;
+   protected regions byte-identical, re-verified at scoring (GATE
+   7fbeb8f1fe10b0fb @ cfa [514:541] — file not in the diff; TEST
+   b32030dc827263e4 @ a76242c^ blob [82:98], cwd-correct pathspec,
+   checked exit). On THIS landing the single-use §BH26(a) authority is
+   SPENT.
+
+DIVERGENCES RIDING AS HISTORY, unchanged by this seal: transcribed R2's
+"exactly TWO" redden points measured THREE at build (recorded at
+attempt 1); attempt 1's L1/L3/L6 falsified by the undeclared-extent
+omission, ruled FOLD at (d), tool shape ruled at (e).

@@ -1,0 +1,87 @@
+{
+ "record_type": "p1_v3_materials_manifest/1.0",
+ "owner_confirmed_materials": {
+  "bottle": {
+   "material": "GLASS",
+   "finish": "MATTE_FROSTED_EXTERIOR",
+   "colour": "ORANGE_TINTED_AMBER",
+   "transparency": "TRANSPARENT_NOT_OPAQUE"
+  },
+  "collar": {
+   "material": "PLASTIC",
+   "finish": "GLOSSY",
+   "colour": "ORANGE"
+  },
+  "bulb": {
+   "material": "PLASTIC",
+   "finish": "GLOSSY",
+   "colour": "ORANGE",
+   "transparency": "OPAQUE"
+  },
+  "pipette": {
+   "material": "CLEAR_GLASS",
+   "finish": null,
+   "colour": null
+  },
+  "authority": "OWNER_CONFIRMED_MATERIAL_EVIDENCE",
+  "correction_2026_08_04": "bulb corrected CLEAR/TRANSPARENT -> GLOSSY/ORANGE/OPAQUE by owner review of the photographs (deviation D1 resolved)",
+  "clarification_v3": "bottle = TRANSPARENT orange-tinted glass with matte/frosted exterior; V2 opaque rendering owner-REJECTED"
+ },
+ "material_nodes": {
+  "glass": {
+   "shader": "Principled BSDF + Volume Absorption",
+   "base_colour": [
+    0.93,
+    0.89,
+    0.85
+   ],
+   "surface_roughness": 0.32,
+   "transmission_weight": 1.0,
+   "ior": 1.5,
+   "volume_absorption_colour": [
+    0.95,
+    0.72,
+    0.3
+   ],
+   "volume_absorption_density_per_mm": 0.78,
+   "authority": "OWNER_CONFIRMED external appearance + VISUALIZATION parameters"
+  },
+  "collar": {
+   "shader": "Principled BSDF (dielectric, no transmission)",
+   "base_colour": [
+    0.55,
+    0.13,
+    0.015
+   ],
+   "roughness": 0.12,
+   "specular_ior_level": 0.55
+  },
+  "bulb": {
+   "shader": "Principled BSDF (opaque)",
+   "base_colour": [
+    0.6,
+    0.1,
+    0.03
+   ],
+   "roughness": 0.22,
+   "specular_ior_level": 0.45
+  },
+  "lighting": {
+   "world_strength": 0.22,
+   "sample_clamp_indirect": 4.0,
+   "key": "area 320x320 @ (-260,-330,250), 1.3e6 W",
+   "fill": "area 260x260 @ (300,-280,120), 4.0e5 W",
+   "rim": "area 60x260 @ (140,300,240), 1.3e6 W",
+   "side_lit_edge": "key 1.0e5 / fill 5.0e4 / rim 3.2e6",
+   "colour_management": "Cycles CPU seed 0, Standard view transform, exposure 0, gamma 1"
+  }
+ },
+ "glass_construction": {
+  "strategy": "single revolved closed manifold: outer surface + mouth rim + inner cavity surface + inner floor (no Solidify modifier; deterministic path revolve)",
+  "wall_body_mm": 1.8,
+  "wall_neck_mm": 2.65,
+  "inner_floor_mm": 3.0,
+  "authority": "VISUALIZATION_ONLY_GEOMETRY \u2014 never measured, never manufacturing geometry",
+  "identity": "e3bf976cabe0fcc5"
+ }
+}

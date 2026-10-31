@@ -1,0 +1,238 @@
+{% extends "base.html" %}
+{% load plain_words %}
+{% comment %}STATUS (the owner's pick of 2026-09-25: B's Status, in C's look), and below it the records §BH55 Phase 3 put here (slice 4 of §BH51) — each read now from what governs it; nothing on the page writes.{% endcomment %}
+{% block title %}Status{% endblock %}
+{% block page_class %}page wide{% endblock %}
+{% block content %}
+{% comment %}STATUS, the top (the owner's pick: B's Status in C's look). What is working, what waits for him and what needs
+his attention — each design once, from the board's one classification — then what has been spent against the caps and
+whether the system answers. The detailed records below it are the page they always were.{% endcomment %}
+<div class="page-hd">
+  <div>
+    <h1 class="h1">Status</h1>
+    <p class="lead">{{ summary }}</p>
+  </div>
+</div>
+
+<div class="tiles">
+  <a class="tile run" href="#working"><span class="tl"><span class="sdot run"></span>Working on it</span><b class="num">{{ counts.working }}</b><span class="small">{{ tile_words.working }}</span></a>
+  <a class="tile wait" href="#waiting"><span class="tl"><span class="sdot wait"></span>Waiting for you</span><b class="num">{{ counts.waiting }}</b><span class="small">{{ tile_words.waiting }}</span></a>
+  <a class="tile attn" href="#attention"><span class="tl"><svg class="i i-sm" aria-hidden="true"><use href="#i-alert"/></svg>Needs attention</span><b class="num">{{ counts.attention }}</b><span class="small">{{ tile_words.attention }}</span></a>
+  <a class="tile spend" href="#spend"><span class="tl">Spent in the last 24 hours</span><b class="num">${{ spend.last24|floatformat:2 }}</b>
+    <svg class="meter" viewBox="0 0 100 4" preserveAspectRatio="none" aria-hidden="true"><rect class="bg" width="100" height="4" rx="2"/><rect class="fg" width="{{ spend_pct }}" height="4" rx="2"/></svg>
+    <span class="small">of your ${{ spend.cap_day|floatformat:0 }} daily cap · this month ${{ spend.month|floatformat:2 }}</span></a>
+</div>
+
+<div class="status-cols">
+  <div class="status-main">
+    <section class="list-card" id="attention" aria-labelledby="attention-h">
+      <div class="lc-hd"><h2 class="lc-title" id="attention-h"><span class="sdot attn"></span>Needs attention <span class="num">{{ counts.attention }}</span></h2><span class="small">Newest first. Each with its reason and one thing to do.</span></div>
+      {% for c in attention %}
+      <div class="srow">
+        {% if c.picture %}<img class="pic" src="{{ c.picture }}" alt="">{% else %}<span class="pic ph-pic attn"><svg class="i" aria-hidden="true"><use href="#i-alert"/></svg></span>{% endif %}
+        <div class="t"><b>{{ c.title }}</b> <span class="quiet">· #{{ c.task_id }} · {{ c.last_sign|date:"j M" }}</span>
+          {% if c.brief_note %}<p class="briefline">“{{ c.brief_note }}”</p>{% endif %}<p>{{ c.reason }}</p></div>
+        <a class="btn sm soft" href="{{ c.url }}"><svg class="i i-sm" aria-hidden="true"><use href="#i-info"/></svg>See why</a>
+      </div>
+      {% empty %}<p class="none">Nothing needs your attention.</p>{% endfor %}
+    </section>
+
+    <section class="list-card" id="waiting" aria-labelledby="waiting-h">
+      <div class="lc-hd"><h2 class="lc-title" id="waiting-h"><span class="sdot wait"></span>Waiting for you <span class="num">{{ counts.waiting }}</span></h2><span class="small">Grouped by the choice each one needs.</span></div>
+      {% for g in waiting_groups %}
+      <div class="srow grp">
+        <span class="pic ph-pic wait"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg></span>
+        <div class="t"><b>{{ g.words }}</b> <span class="quiet">· {{ g.cards|length }}</span>
+          <p class="links">{% for c in g.cards %}<a href="{{ c.url }}">{{ c.title }} <span class="num quiet">#{{ c.task_id }}</span>{% if c.blocked %} <span class="warn">— {{ c.blocked }}</span>{% endif %}</a>{% endfor %}</p></div>
+      </div>
+      {% empty %}<p class="none">Nothing is waiting for you.</p>{% endfor %}
+    </section>
+
+    <section class="list-card" id="working" aria-labelledby="working-h">
+      <div class="lc-hd"><h2 class="lc-title" id="working-h"><span class="sdot run"></span>Working on it <span class="num">{{ counts.working }}</span></h2><span class="small">What the system is doing now.</span></div>
+      {% for c in working %}
+      <div class="srow"><span class="pic ph-pic run"><svg class="i" aria-hidden="true"><use href="#i-arc"/></svg></span>
+        <div class="t"><b>{{ c.title }}</b> <span class="quiet">· #{{ c.task_id }}</span><p>{{ c.next_words }} — since {{ c.last_sign|date:"j M, H:i" }}</p></div>
+        <a class="btn sm" href="{{ c.url }}">Watch it</a></div>
+      {% empty %}<p class="none">Nothing is being worked on right now.</p>{% endfor %}
+    </section>
+
+    {% if stuck %}
+    <section class="list-card" id="stuck" aria-labelledby="stuck-h">
+      <div class="lc-hd"><h2 class="lc-title" id="stuck-h"><span class="sdot still"></span>Can't move on here <span class="num">{{ stuck|length }}</span></h2><span class="small">Nothing on this site moves these on; not counted as waiting for you.</span></div>
+      {% for c in stuck %}
+      <div class="srow"><span class="pic ph-pic"><svg class="i" aria-hidden="true"><use href="#i-still"/></svg></span>
+        <div class="t"><b>{{ c.title }}</b> <span class="quiet">· #{{ c.task_id }}</span><p>{{ c.next_words }}</p></div>
+        <a class="btn sm" href="{{ c.url }}">Open it</a></div>
+      {% endfor %}
+    </section>
+    {% endif %}
+
+    {% if tried_again %}
+    <section class="list-card" id="tried" aria-labelledby="tried-h">
+      <div class="lc-hd"><h2 class="lc-title" id="tried-h"><span class="sdot still"></span>Stopped, then tried again <span class="num">{{ tried_again|length }}</span></h2><span class="small">Each stopped try, and the later try of the same design that went on.</span></div>
+      {% for c in tried_again %}
+      <div class="srow"><span class="pic ph-pic"><svg class="i" aria-hidden="true"><use href="#i-again"/></svg></span>
+        <div class="t"><b>{{ c.title }}</b> <span class="quiet">· #{{ c.task_id }} · {{ c.last_sign|date:"j M" }}</span><p>{{ c.reason }}</p>
+          <p class="small">Tried again as <a href="/dashboard/designs/{{ c.later_try }}/">#{{ c.later_try }}</a>, which went on.</p></div>
+        <a class="btn sm" href="{{ c.url }}">Open it</a></div>
+      {% endfor %}
+    </section>
+    {% endif %}
+  </div>
+
+  <aside class="status-side">
+    <section class="card pad" aria-labelledby="spend-h">
+      <div class="lc-hd"><h2 class="lc-title" id="spend-h">Spending</h2><span class="small">daily cap ${{ spend.cap_day|floatformat:0 }}</span></div>
+      <div class="kv"><span>Last 24 hours</span><b class="num">${{ spend.last24|floatformat:2 }}</b></div>
+      <svg class="meter" viewBox="0 0 100 4" preserveAspectRatio="none" aria-hidden="true"><rect class="bg" width="100" height="4" rx="2"/><rect class="fg" width="{{ spend_pct }}" height="4" rx="2"/></svg>
+      <div class="kv"><span>This month</span><b class="num">${{ spend.month|floatformat:2 }}</b></div>
+      <div class="kv"><span>Each design's own cap</span><b class="num">${{ spend.cap_task|floatformat:2 }}</b></div>
+      <a class="go" href="#spend">What was spent, and on what <svg class="i i-sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </section>
+    <section class="card pad" aria-labelledby="system-h">
+      <div class="lc-hd"><h2 class="lc-title" id="system-h">The system</h2><span class="small">read now</span></div>
+      <div class="kv"><span>The database</span><b>{% if health.db == "ok" %}Answering{% else %}<span class="warn">{{ health.db }}</span>{% endif %}</b></div>
+      <div class="kv"><span>Its migrations</span><b>{% if health.migrations == "ok" %}Up to date{% else %}<span class="warn">Behind</span>{% endif %}</b></div>
+      <div class="kv"><span>The worker</span><b>{% if health.probed %}{% if health.worker %}Answering{% else %}<span class="warn">Not answering</span>{% endif %}{% else %}<a href="?probe=1#health">Ask it</a>{% endif %}</b></div>
+      <a class="go" href="#health">More about the system <svg class="i i-sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </section>
+    {% if folded %}
+    <section class="card pad" aria-labelledby="folded-h">
+      <div class="lc-hd"><h2 class="lc-title" id="folded-h">Folded away</h2><span class="small">not your designs</span></div>
+      {% for g in folded %}<div class="kv"><span>{{ g.words }}</span><b class="num">{{ g.cards|length }}</b></div>{% endfor %}
+      <a class="go" href="{% url 'dashboard:index' %}#folded">See them on the board <svg class="i i-sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </section>
+    {% endif %}
+  </aside>
+</div>
+
+<h2 class="more-hd">More about the system</h2>
+<nav class="seg subnav" aria-label="More about the system">
+  <a href="#gates">Production gates</a><a href="#spend">Spending</a><a href="#health">Health</a><a href="#drawing">How cartons are drawn</a><a href="#programme">The programme</a><a href="#checks">The last checks</a><a href="{% url 'dashboard:rulings' %}">The rulings</a>
+</nav>
+<h2 id="targets">What cannot be finished at its review, whoever designs it</h2>
+<section class="status-group">
+  <ul class="status-list">{% for t in targets %}<li><strong>{{ t.name }}</strong> — {{ t.status }}. <span class="dim">{{ t.why }}</span></li>{% endfor %}</ul>
+</section>
+<h2 id="gates">Production gates</h2>
+<p class="lede">Before a carton goes to production it passes five gates — {{ gates.passed }} of 5 have passed; production
+  {% if gates.packaging_may_begin_now %}may begin{% else %}may not begin yet{% endif %}. Gates B to E wait on
+  {{ gates.wait_on }}. The system never contacts suppliers: the pack is the owner's to hand over.</p>
+<div class="table-wrap"><table class="roles">
+  <thead><tr><th scope="col">Gate</th><th scope="col">Where it stands</th><th scope="col">What it requires</th></tr></thead>
+  <tbody>
+  {% for g in gates.gates %}
+  <tr>
+    <td>{{ g.title }}</td>
+    <td>{% if g.passed %}<span class="ok">Passed</span>{% if g.passed_at %} on {{ g.passed_at }}{% endif %}{% if g.passed_by %} by {{ g.passed_by }}{% endif %}{% else %}<span class="warn">Waiting</span>{% if g.cause %} — {{ g.cause }}{% endif %}{% if g.total %}; {{ g.missing }} of its {{ g.total }} items still missing{% endif %}{% endif %}</td>
+    <td class="dim">{{ g.requires|join:"; " }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table></div>
+<details><summary>The spec pack's {{ gates.items|length }} items, and what satisfies each</summary>
+<div class="table-wrap"><table class="roles">
+  <thead><tr><th scope="col">Gate</th><th scope="col">Item</th><th scope="col">State</th><th scope="col">Satisfied when</th></tr></thead>
+  <tbody>
+  {% for i in gates.items %}
+  <tr><td>{{ i.gate }}</td><td>{{ i.item }}</td><td>{% if i.state == "SATISFIED" %}<span class="ok">Satisfied</span>{% elif i.state == "REFUSED" %}<span class="warn">Refused</span>{% else %}Missing{% endif %}</td><td class="dim">{{ i.when }}</td></tr>
+  {% endfor %}
+  </tbody>
+</table></div>
+</details>
+
+<h2 id="spend">Spending</h2>
+<p>In the last 24 hours: <strong>${{ spend.last24|floatformat:2 }}</strong> of the ${{ spend.cap_day|floatformat:2 }} daily cap
+  — the same 24 hours the budget counts when it refuses new paid work.
+  {% if spend.over %}<span class="warn">New paid work is refused until that spend falls under the cap.</span>{% else %}${{ spend.left|floatformat:2 }} is left.{% endif %}</p>
+<p>This month: <strong>${{ spend.month|floatformat:2 }}</strong>.</p>
+{% if spend.by_model %}
+<div class="table-wrap"><table class="roles">
+  <thead><tr><th scope="col">Provider</th><th scope="col">Model</th><th scope="col">Calls</th><th scope="col">Spent</th></tr></thead>
+  <tbody>{% for r in spend.by_model %}<tr><td>{{ r.provider }}</td><td class="mono">{{ r.model }}</td><td>{{ r.calls }}</td><td>${{ r.usd|floatformat:2 }}</td></tr>{% endfor %}</tbody>
+</table></div>
+{% endif %}
+<h3>Each design against its own cap of ${{ spend.cap_task|floatformat:2 }}</h3>
+{% if spend.per_task %}
+<ul class="status-list">{% for r in spend.per_task %}<li><a href="{% url 'dashboard:design' r.pk %}">{{ r.title|default:r.pk }}</a> — ${{ r.usd|floatformat:2 }}{% if r.over %} <span class="warn">over its cap</span>{% endif %}</li>{% endfor %}</ul>
+{% else %}<p class="dim">No design has spent yet.</p>{% endif %}
+<h3>Not counted toward the caps</h3>
+<ul class="status-list">{% for line in spend.not_counted %}<li>{{ line }}</li>{% endfor %}</ul>
+
+<h2 id="health">Health</h2>
+<dl class="unused">
+  <dt>The database</dt><dd>{% if health.db == "ok" %}Answering{% else %}<span class="warn">{{ health.db }}</span>{% endif %}</dd>
+  <dt>Its migrations</dt><dd>{% if health.migrations == "ok" %}Up to date{% else %}<span class="warn">{{ health.migrations }}</span>{% endif %}</dd>
+  <dt>This page's code</dt><dd class="mono">{{ health.web_revision }}</dd>
+  {% if health.eager %}
+  <dt>The worker</dt><dd>Work runs in this process — there is no separate worker.</dd>
+  {% elif health.probed %}
+  <dt>The queue</dt><dd>{% if health.redis == "ok" %}Answering{% else %}<span class="warn">{{ health.redis }}</span>{% endif %}</dd>
+  <dt>The worker</dt><dd>{% if health.worker %}Answering{% else %}<span class="warn">No worker answered — a design started now would wait</span>{% endif %}</dd>
+  {% if health.worker %}<dt>The worker's code</dt><dd>{% if health.worker_revision %}<span class="mono">{{ health.worker_revision }}</span> — {% if health.same_revision %}the same as this page's{% else %}<span class="warn">not this page's: the worker is running other code</span>{% endif %}{% else %}<span class="warn">it did not say</span>{% endif %}</dd>{% endif %}
+  {% endif %}
+</dl>
+{% if not health.eager and not health.probed %}
+<form class="probe" method="get" action="{% url 'dashboard:status' %}#health"><input type="hidden" name="probe" value="1">
+  <button type="submit">Check the queue and the worker now</button> <span class="dim">— it waits a few seconds for their answer</span></form>
+{% endif %}
+
+<h2 id="drawing">How cartons are drawn here</h2>
+{# the clean-up of 2026-10-04 (his Q1): one way, said — the switches listed here left with the ways they chose #}
+<p class="lede">{{ drawing }}</p>
+
+{# §BH55 Phase 3 (survey row 1.4): what the paid steps use — the picture model, its size, how many are drawn #}
+<h3>What the paid steps use</h3>
+<dl class="unused">{% for s in paid_settings %}<dt>{{ s.name }}: <b>{{ s.value }}</b></dt><dd>{{ s.words }}</dd>{% endfor %}</dl>
+
+{# §BH70(1), item 22: it read "The visual-quality programme" and presented one bottle's programme as the whole #}
+<h2 id="programme">The bottle's visual-quality programme</h2>
+<p class="lede">The programme that measures how finished the dropper bottle's drawing looks, read from its records. It is
+  the bottle's alone — no other form has one yet.</p>
+<dl class="unused">
+  {% if programme.accepted_on %}<dt>VQ-1's final structural candidate</dt><dd>{{ programme.accepted_words|capfirst }} — {{ programme.accepted_on }}{% if programme.accepted_by %}, by {{ programme.accepted_by }}{% endif %}.</dd>{% endif %}
+  {% for label, state in programme.workstreams %}<dt>{{ label }}</dt><dd>{{ state|capfirst }}.</dd>{% endfor %}
+  <dt>Requests to suppliers</dt><dd>Superseded — the system never contacts suppliers (§BH46).</dd>
+  {% if programme.review_state %}<dt>The review of the CORR-5 fixture</dt><dd>{{ programme.review_state|capfirst }}{% if programme.review_on %} ({{ programme.review_on }}){% endif %} — an earlier fixture than the candidate accepted.</dd>{% endif %}
+  {% if programme.status %}<dt>The programme itself</dt><dd>{{ programme.status|capfirst }}; {{ programme.architecture }}.</dd>{% endif %}
+</dl>
+{% if programme.scorecard %}
+<h3>Its scorecard</h3>
+<div class="table-wrap"><table class="roles">
+  <thead><tr><th scope="col">What is scored</th><th scope="col">Points</th><th scope="col">The least it must score</th></tr></thead>
+  <tbody>{% for name, most, least in programme.scorecard %}<tr><td>{{ name|capfirst }}</td><td>{{ most }}</td><td>{% if least is not None %}{{ least }}{% else %}<span class="dim">no minimum</span>{% endif %}</td></tr>{% endfor %}</tbody>
+</table></div>
+{% endif %}
+<figure class="mark"><img src="/api/visual-quality/vq1/corr5-p4-png/" alt="A diagnostic drawing of the programme's synthetic bottle backbone" loading="lazy">
+  <figcaption>A diagnostic drawing of the programme's synthetic backbone. Design #52 stays rejected at review; these
+    drawings never imply a fix for it.</figcaption></figure>
+<p>Its pages: <a href="/dashboard/visual-quality/vq1/">the bottle's structure review</a> ·
+  <a href="/dashboard/visual-quality/rbv3/">the render review packages</a> ·
+  <a href="/dashboard/design-requests/">the design requests</a> ·
+  <a href="{% url 'intelligence:review-queue' %}">the design-intelligence review</a>, with
+  <a href="{% url 'intelligence:corpus-list' %}">its corpus</a> and <a href="{% url 'intelligence:search' %}">its search</a>
+  — for a reviewer</p>
+
+<h2 id="checks">The last checks</h2>
+<dl class="unused">
+  <dt>The test suite</dt><dd>{% if checks.running %}A check is running now.{% elif checks.tier2 %}{{ checks.tier2 }} — {{ checks.tier2_words }}{% if checks.suite_utc %} <span class="dim">({{ checks.suite_utc }}{% if checks.at %}, on the code at {{ checks.at }} — derived: the newest commit no later than that time{% endif %})</span>{% endif %}{% else %}No check is on record on this machine.{% endif %}</dd>
+  <dt>The records' integrity</dt><dd>{{ checks.ledger_total }} checks on record, {{ checks.ledger_refused }} of them refused.
+    {% if checks.ledger_last %}<ul class="status-list">{% for r in checks.ledger_last %}<li>{{ r.utc }} — {% if r.ok %}<span class="ok">whole</span>{% else %}<span class="warn">refused</span>{% endif %} <span class="dim">({{ r.checked }} records read{% if r.refusals %}, {{ r.refusals }} refusals{% endif %})</span></li>{% endfor %}</ul>{% endif %}</dd>
+  {% if extent %}<dt>The suite's declared extent</dt><dd>{{ extent.files }} test files, at least {{ extent.floor }} tests
+    <span class="dim">(declared {{ extent.declared }})</span></dd>{% endif %}
+  {% if materials %}<dt>The materials record</dt><dd>{{ materials.rows }} files — {{ materials.placeable }} may be placed, {{ materials.reference }} are references (<a href="{% url 'dashboard:materials_library' %}">Materials</a>)</dd>{% endif %}
+  <dt>The rulings</dt><dd><a href="{% url 'dashboard:rulings' %}">The owner's register of rulings</a> and
+    <a href="{% url 'dashboard:rulings' %}?source=queue">his review queue</a>, newest first.</dd>
+  <dt>The brain</dt><dd>{% if brain %}Rebuilt {{ brain.built_at|when }} UTC from {{ brain.sources }} sources — the index of the rulings, the queue and the records.
+    {% if brain.fresh %}<span class="ok">It still matches all {{ brain.measured }} of them</span>, read and hashed just now.
+    {% else %}<span class="warn">{{ brain.changed_count }} of {{ brain.measured }} have changed since</span>{% if brain.missing_count %}, and {{ brain.missing_count }} are no longer there{% endif %} — its answers may be behind.{% if brain.changed %}<details class="tech"><summary>Which have changed</summary><p>{{ brain.changed|join:", " }}{% if brain.changed_count > brain.changed|length %}, …{% endif %}</p></details>{% endif %}{% endif %}{% else %}Not on this machine.{% endif %}</dd>
+  {# §BH55 Phase 3 (survey rows 1.16, 7.13): the keys that let it spend, and what a live machine wants #}
+  <dt>The provider keys</dt><dd>{% for k in providers.keys %}{{ k.name }}: {% if k.set %}<span class="ok">set</span>{% else %}<span class="warn">not set</span>{% endif %} <span class="dim">— {{ k.words }}</span>{% if not forloop.last %}<br>{% endif %}{% endfor %}
+    {% if providers.last %}<br>The last check before spending: {% if providers.last.passed %}<span class="ok">it passed</span>{% else %}<span class="warn">it refused</span>{% endif %}
+      <span class="dim">({{ providers.last.when|date:"j M Y, H:i" }}{% if providers.last.design %}, <a href="{% url 'dashboard:design' providers.last.design %}">the design it was for</a>{% endif %}{% if providers.last.codes %} — {{ providers.last.codes|join:"; "|plain }}{% endif %})</span>
+      {% if providers.last.codes %}<details class="tech"><summary>What the record says</summary><p>{{ providers.last.codes|join:", " }}</p></details>{% endif %}
+    {% else %}<br><span class="dim">No check before spending is on record yet.</span>{% endif %}</dd>
+  <dt>Ready to run</dt><dd><ul class="status-list">{% for c in launch_checks %}<li>{{ c.name }}: {% if c.ok %}<span class="ok">{{ c.words }}</span>{% else %}<span class="warn">{{ c.words }}</span>{% endif %}{% if c.record %}<details class="tech"><summary>What the record says</summary><p>{{ c.record }}</p></details>{% endif %}</li>{% endfor %}</ul></dd>
+</dl>
+{% endblock %}

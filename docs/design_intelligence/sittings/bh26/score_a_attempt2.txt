@@ -1,0 +1,63 @@
+§AD0(a) SCORE — commit A ATTEMPT 2 (§BH26(a) under (d) FOLD + (e)
+TOOL-RUN), scored against pred_a2.txt. Gate REFUSED — hand-captured
+exit=1, Tier-1, 10.33s, "3 failed, 115 passed, 2 subtests passed".
+This score records the refusal as history; nothing is revised.
+
+L1 HELD AS STAGED: exactly the seven declared tracked paths staged
+   (A/M rows verified post-refusal, 7 cached rows, nothing else); no
+   commit occurred, so the write set never became a commit. The five
+   apps paths byte-identical to attempt 1 (sha256s stood through both
+   stash round-trips). container_font_authority.py not in the diff.
+L2 HELD AS STAGED: numstat re-measured post-refusal — 141+0, 120+0,
+   17−7, 27−8, 12−8, 4−3, 8−0. Exactly as sealed.
+L3 HELD AS WRITTEN, WITH A BLIND SPOT NOW ON RECORD: every claim in
+   the leg is true (tool-run produced the manifest, 15/15 checks ==
+   preview, files 372, floors 7690/52, characterization 66→66 sealed).
+   What the leg never claimed — and what refused — is the layer ABOVE
+   the manifest: record_digest_manifest.json (A373/3q) still pins the
+   OLD manifest digest. The prediction's A391 clause covered the
+   manifest's content, not the corpus's digest of it.
+L4 HELD: staged == declared, measured before launch and again after
+   the refusal (identical).
+L5 NOT REACHED: no commit (refusal precedes it).
+L6 FALSIFIED — the core miss. Predicted GREEN with six new tests and
+   "no refusal expected". Measured: Tier-1 refusal, exit=1, 3 failed:
+     test_palette_statistics.py::GuardedCommitTests::
+       test_green_suite_passes_gate            (:615)
+       test_the_real_ledger_and_artifact_are_left_alone (:654)
+       test_the_real_output_files_are_left_alone        (:711)
+   None §BH24-covered (budget stands 0/3) ⇒ HARD STOP 4, second
+   occurrence. Mechanism, measured not inferred (reproduced with all
+   writes redirected, nested exit=1):
+     each test runs the real guarded_commit.sh --dry-run with
+     SUITE_CMD=true; the nested run reaches record_integrity.py
+     (guarded_commit.sh:227), whose survey()/check() ALWAYS read the
+     real records ("the override moves WHERE the line is written. It
+     does not move what is CHECKED"); check() refuses:
+       RECORD_DIGEST_MISMATCH: docs/roadmap/palt_m6/
+       suite_file_manifest.json 65aef9fb1a3660cd -> fe4199bc421b7454
+     — the ruled tool-run rewrote the suite manifest; the A373/3q
+     digest record above it was in no ruling and still pins the old
+     bytes. Nested gate exits 1 at guarded_commit.sh:230 ⇒ the three
+     green-path assertions (returncode==0) fail. The two siblings
+     pass because they refuse on suite_exit BEFORE record_integrity.
+     suite_manifest_diffs.json PASSED its APPEND_ONLY check (prefix
+     90d84d6b stable, bytes 20930→21101 grew) — the byte-purely-
+     additive append held; it is NOT part of the refusal.
+   Pre-gate evidence gap, on record: the 72-test targeted sweep ran
+   characterization + grant and NOT test_palette_statistics.py — the
+   attempt-1 lesson (select by the tests' SUBJECT, not by files the
+   diff touches) repeated one file over: the GuardedCommitTests'
+   subject is the gate machinery plus the record set, and the record
+   set changed.
+L7 NOT REACHED: ledger stands 432; the refusal path appends nothing
+   (verified — no unstaged ledger line).
+L8 HELD WHERE MEASURABLE: apps diff = exactly the five apps paths
+   (as staged); both protected regions byte-identical, re-verified at
+   scoring (GATE 7fbeb8f1fe10b0fb @ cfa worktree [514:541]; TEST
+   b32030dc827263e4 @ a76242c^ blob [82:98], cwd-correct pathspec,
+   checked exit). §BH26(a) authority UNSPENT — commit A not landed.
+
+Post-refusal state: HEAD d1e5213; seven paths staged intact; ledger
+432; porcelain otherwise clean; evidence a2_gate.log/a2_exit.txt.
+The falsified legs stand unrevised; the hard-stop-4 report follows.

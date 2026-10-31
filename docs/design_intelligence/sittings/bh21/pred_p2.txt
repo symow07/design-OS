@@ -1,0 +1,115 @@
+§AD0(a) PREDICTION — COMMIT AW — §BH21(d) PASS 2
+=================================================
+Written BEFORE the edits, BEFORE `git add`, BEFORE the gate. Scored in the
+final §BH21 report, against measurement. No bar is lowered after the fact.
+Kept in ~/bh21_work/ (durable; /tmp is NOT trusted after the §BH21(h) sweep).
+
+HEAD at time of writing: a06ccf6 (transcription, landed and fully scored)
+Ruling executed:         §BH21(d) — "PASS 2 — own code commit after the regen:
+                         update whatever the regen actually moves, by
+                         measurement, not by the predicted list (faces, groups,
+                         test_c5:307's FONT_FACE expected; the measured set
+                         governs)."
+Goal-order position:     THIRD commit of four. The regen (declared, executed,
+                         all E1-E7 MATCH) and the §BH20(c) measurement (Q4 all
+                         MATCH, zero divergences) sit between pass 1 and this.
+
+WHAT CARRIES THE PROOF. One fresh run (pass2_measure.py, exit 0 hand-captured
+to ~/bh21_work/pass2_exit.txt, minutes before this file) measured ALL 13
+pinned quantities through the tests' own accessors against the fresh views:
+    MOVERS (3):  faces 3966→3969 · groups 2832→2834 · FONT_FACE 3966→3969
+    HOLDERS (10): files 4886 · dedupe.unique 3944 · dup_group_count 941 ·
+                  files_in_dup_grps 1883 · packages 48 · duplicate_model 941 ·
+                  PROVENANCE_RIGHTS_GROUP 1880 · dual_control 3 (+ the two
+                  c4c-side files/unique repeats)
+    write_control CLEAN (519 files snapshotted, zero changed) · info guards OK
+    (rights_batchable 0, decisions==unique True)
+THE MEASURED SET EQUALS THE OWNER'S EXPECTED LIST — faces, groups, test_c5:307
+— scored as coincidence-of-prediction-and-measurement, not assumed. PRG and
+dual-control HELD, so they are NOT touched; touching them would violate (d).
+
+THE EIGHT LEGS
+==============
+L1 — WRITE SET
+    Exactly TWO paths of mine, both at the GIT ROOT:
+      M  tools/dip0c/tests/test_c4c.py
+      M  tools/dip0c/tests/test_c5.py
+    Plus, written BY THE GATE and not by me:
+      M  bbrose_design_os/docs/roadmap/palt_m6/record_gate_ledger.jsonl (+1,
+         this run's own line; ledger starts CLEAN at 421 committed)
+      +  THREE capture files under bbrose_design_os/.tier2_captures
+         (gitignored, unstaged).
+    NOTHING ELSE. test_c4a.py is NOT in this commit (all four of its pins
+    HELD). No queued item is touched: no load_c4a freshness guard, no
+    corpus-pin architecture change, no smalls, no OFL reading.
+
+L2 — DIFF SHAPE
+      tools/dip0c/tests/test_c4c.py     +2  -2   (:267 3966→3969, :268 2832→2834)
+      tools/dip0c/tests/test_c5.py      +1  -1   (:307 3966→3969)
+      --------------------------------------------------
+      my subtotal                       +3  -3
+      + record_gate_ledger.jsonl        +1  -0   (gate-written)
+      --------------------------------------------------
+      commit total                      +4  -3   across 3 files
+    Constants only — same digit width both swaps, so the trailing "# C4a"
+    comment alignment on :267/:268 is byte-identical; the :306 comment line
+    above test_c5:307 is untouched.
+
+L3 — MANIFEST / A391
+    suite_file_manifest.json absent from the commit; neither test file is
+    among its 371 apps/ paths. No new file anywhere.
+
+L4 — §BH4(l) STAGED == DECLARED, BOTH HALVES
+    STAGED half: `git diff --cached --numstat` lists exactly the two test
+    files at +2 -2 and +1 -1, nothing else.
+    UNSTAGED half: after staging, `git status --porcelain` shows the two
+    staged rows and — once the gate is running/done — exactly ONE column-2
+    entry, ` M .../record_gate_ledger.jsonl` (folded whole by the gate at
+    guarded_commit.sh:340). No `??` entries.
+
+L5 — COMMIT CONTENTS
+    ONE commit. CODE-ONLY, CONSTANTS-ONLY — the three swaps above and nothing
+    else. NOT DONE HERE: the queue record (next commit), no touch on any of
+    the 10 holding pins, no comment edits, no structural change to any test.
+
+L6 — SUITE / COLLECTION
+      TIER_2=GREEN collected=8490 failures=0 apps=7684 dip0c=671 dip0=135
+    Identical collection to pass 1 and the transcription. The pre-edit truth:
+    with the fresh views on disk, the three stale-true pins would now FAIL —
+    this commit is what makes the gate's dip0c leg green again. failures 0.
+    A refusal on ANYTHING other than these three constants = hard stop.
+
+L7 — LEDGER
+    Starts CLEAN at 421 committed lines (verified: wc -l = 421, porcelain
+    empty). This run appends its own line: 422 on disk, +1 -0 vs HEAD in the
+    commit, CLEAN after. No orphan exists.
+
+L8 — PROTOCOL IDENTITIES
+    Zero apps/ files in the commit; EXTENT_DIGESTS at apps/pipeline/services/
+    palette_powder_protocol.py:1861 untouched, PROVED by an empty
+    `git diff a06ccf6 <new> -- bbrose_design_os/apps/pipeline/services/palette_powder_protocol.py`.
+
+NUMBERED CLAIMS
+===============
+C1. EVERY WRITTEN VALUE WAS MEASURED TRUE IMMEDIATELY BEFORE WRITING — 3969,
+    2834, 3969 from the pass2_measure run (exit 0 hand-captured), through the
+    tests' own accessor paths. No other value is written anywhere.
+C2. THE MEASURED SET GOVERNS: it happens to equal the owner's expected list
+    exactly (faces, groups, FONT_FACE). PRG (test_c5:308) and dual-control
+    (:309) measured AT their pins and are deliberately untouched.
+C3. PASS 2 LEAVES NOTHING CURRENTLY-FALSE UNFIXED AND NOTHING CURRENTLY-TRUE
+    ALTERED: the same run held all 10 other pins. After this commit, dip0c
+    has ZERO pins asserting a value the live corpus contradicts.
+C4. THE GATE COMMITS THE INDEX PLUS THE LEDGER, NOTHING MORE
+    (guarded_commit.sh:340,:343 — measured at pass 1, unchanged since).
+C5. THE GUARD STAYS TWO-SIDED: a corpus regression to 3966 faces / 2832
+    groups would refuse again tomorrow. The detections are answered at their
+    newly measured truth, not silenced.
+C6. EXIT EVIDENCE KEPT OUT OF /tmp: hand-captured exit to
+    ~/bh21_work/p2_exit.txt, log to ~/bh21_work/p2_gate.log. Two
+    confirmations required: captured exit 0 AND a new HEAD hash.
+
+WHAT PASS 2 IS NOT: not the queue record (next and last commit), not a touch
+on test_c4a.py, not a repair of the load_c4a existence-test staleness defect
+(queued, owner-gated, §BH20(a)), not the corpus-pin architecture item, not
+the smalls, not the OFL reading (owner's alone, §BH12(a)).

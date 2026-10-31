@@ -1,0 +1,32 @@
+{
+ "record_type": "rbv_owner_reference_pack/1.0",
+ "product": "P1",
+ "name": "Dropper Serum Bottle (BBROSE Vitamin C Facial Serum, ZAROX-family retail unit)",
+ "created_at": "2026-08-04",
+ "status": ["PRIMARY_REAL_BOTTLE_PILOT", "REFERENCE_PACK_PARTIAL"],
+ "authority": {
+  "images": "OWNER_SUPPLIED_PHOTOGRAPHY / MEDIUM_VISUAL_AUTHORITY / NOT_CAD / NOT_TECHNICAL_DRAWING",
+  "measurements": "OWNER_MEASURED_DIMENSIONAL_EVIDENCE"
+ },
+ "images": [
+  {"file": "IMG_3120.jpg", "view": "FRONT"},
+  {"file": "IMG_3121.jpg", "view": "NECK_DETAIL"},
+  {"file": "IMG_3122.jpg", "view": "TOP"},
+  {"file": "IMG_3123.jpg", "view": "APPLICATOR_DETAIL"},
+  {"file": "IMG_3124.jpg", "view": "BOTTOM"}
+ ],
+ "photo_verified_identity": {
+  "front_artwork": "VITAMIN C FACIAL SERUM / TO LIGHTEN AND RENEW SKIN CELLS / V.C / BBROSE® / Sérum facial / For all skin types (+ Arabic line)",
+  "base_embossing": ["50ml (clearly readable)", "46 (probable mould/base code, unverified)"],
+  "body": "circular, frosted translucent orange glass",
+  "closure": "orange dropper: collar + bulb + clear glass pipette, rounded tip"
+ },
+ "measurements": "see normalized_measurements.json → products.P1 (validation states per field); raw text in raw_measurements.json",
+ "validated_summary": {
+  "accepted": ["bottle height 91.6", "body Ø 37.4 / base Ø 37.35", "neck OD 15.6", "opening ID 10.3", "thread OD 17.4", "collar OD 21.4", "bulb Ø 10.57 / h 19.2", "pipette OD 6.9", "embossed 50 ml"],
+  "pending_landmark_clarification": ["66 straight-wall end?", "69 shoulder-start landmark?", "shoulder top vs neck start", "105 includes full pipette?"],
+  "missing": ["thread pitch", "bottom-glass thickness", "artwork area", "material/finish spec", "supplier/factory/product code", "calibrated front/side/top views"]
+ },
+ "geometry_construction": "BLOCKED — do not construct final geometry until the P1 minimum pack is validated by the owner",
+ "checklist": "missing_information_checklist.md § P1"
+}

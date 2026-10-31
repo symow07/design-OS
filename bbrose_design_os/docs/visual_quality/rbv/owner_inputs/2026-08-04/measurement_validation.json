@@ -1,0 +1,129 @@
+{
+ "record_type": "rbv_measurement_validation/1.0",
+ "created_at": "2026-08-04",
+ "scope": "owner intake 2026-08-04 — P1, P2, P4, P6, P7; P3/P5 not submitted",
+ "global_findings": [
+  "No photograph in the submission is calibrated; no dimension was or may be extracted from imagery.",
+  "No value was silently corrected; all suspicious values are preserved verbatim with a validation state.",
+  "Owner measurement authority is OWNER_MEASURED_DIMENSIONAL_EVIDENCE and is NOT elevated to supplier/manufacturer authority."
+ ],
+ "products": {
+  "P1": {
+   "verdict": "REFERENCE_PACK_PARTIAL / PRIMARY_REAL_BOTTLE_PILOT",
+   "consistency_checks_passed": [
+    "diameter ordering: opening 10.3 < neck OD 15.6 < thread OD 17.4 < collar OD 21.4 < body 37.4",
+    "pipette mutual plausibility: clearance 9.16 + pipette 88.74 = 97.9, below assembled 114.3 and above bottle 91.6 (tip reaches 9.16 mm off the base; upper end enters the collar/bulb zone)",
+    "bulb visible height = bulb removed height (19.2) — bulb fully proud of the collar",
+    "base 37.35 ≈ body 37.4 — near-cylindrical wall"
+   ],
+   "photo_verified": [
+    "embossed '50ml' capacity clearly readable on the base (IMG_3124) — probable-capacity item CONFIRMED",
+    "additional embossed base mark '46' (probable mould/base code, meaning unverified)",
+    "circular body (IMG_3122 top, IMG_3124 bottom)",
+    "visible dropper assembly (IMG_3120)",
+    "frosted translucent orange finish (IMG_3120/3121)",
+    "rounded pipette tip (IMG_3123)"
+   ],
+   "open_questions": [
+    "Is 66 the straight-wall end height?",
+    "Is 69 the first shoulder-transition point or another landmark?",
+    "Are shoulder top and neck start separately measurable?",
+    "Does 105 dropper assembly height include the full pipette?"
+   ],
+   "blocking": "final geometry construction blocked until the P1 minimum pack is validated (landmark clarifications + missing items in the checklist)"
+  },
+  "P2": {
+   "verdict": "REFERENCE_PACK_PARTIAL / REMEASUREMENT_REQUIRED_FOR_HEIGHTS_AND_PUMP",
+   "contradictions": [
+    "height set overlaps: body 104 + overcap 41.52 = 145.52 vs assembled 110 — engagement depth ≈35.5 mm undefined; the reported assembled/body/overcap heights cannot be reconciled without exact landmark definitions"
+   ],
+   "interpretations_applied": [
+    "overcap 30.8 provisionally treated as cylindrical OUTSIDE DIAMETER (photo-supported: circular profile in IMG_3117 and circular opening in IMG_3118) — NOT as rectangular width/depth; owner to confirm",
+    "pump nozzle '1.7' note split into two required reads: horizontal projection from centreline AND vertical hole position below pump top — neither is currently known"
+   ],
+   "photo_verified": [
+    "overcap is cylindrical (IMG_3117/3118)",
+    "square body cross-section with rounded corners — direct top view evidence, qualitative only (IMG_3118)",
+    "shoulder taper toward pump mount (IMG_3119)"
+   ],
+   "required_clarified_verticals": [
+    "1. bottle base to top of bottle neck/pump mount",
+    "2. bottle plus pump total height",
+    "3. overcap external height",
+    "4. fully assembled product height"
+   ],
+   "blocking": "no authoritative geometry from the present ambiguous height set"
+  },
+  "P4": {
+   "verdict": "REFERENCE_PACK_PARTIAL / GEOMETRY_PLAUSIBLE_PENDING_HEIGHT_DEFINITION",
+   "contradictions": [
+    "height set overlaps by design: jar 42.3 + lid 14.42 = 56.72 vs assembled 44.7 — lid overlaps the threaded neck ≈12 mm; requires the 5-value decomposition (jar-to-neck-top / visible body below neck / neck height / lid external height / assembled height)"
+   ],
+   "consistency_checks_passed": [
+    "diameter ordering: opening ID 42.09 < opening OD 49.4 < thread 50.5 < lid OD 55.5 < body max 56.56",
+    "assembled 44.7 = jar 42.3 + ~2.4 lid stand-off — plausible for a neck-overlapping lid",
+    "internal depth 24.74 + base 6.7 = 31.44 < 42.3 (remainder pending height decomposition)"
+   ],
+   "photo_verified": [
+    "printed 'NET: 50 ML' corroborates nominal capacity (IMG_3112)",
+    "printed 'ITEM NO: R-133-H' — product code recovered from the label (IMG_3112); supplier/factory identity still missing",
+    "internal sealing disc PRESENT with pull tab (IMG_3115) — dimensions unmeasured",
+    "screw closure: threaded white liner inside the chrome lid shell (IMG_3115)",
+    "lid top is plain mirror chrome — no lid-top decoration on this unit (IMG_3111)",
+    "ribbed/dotted decorative moulding at the jar rim (IMG_3113)"
+   ],
+   "blocking": "height decomposition + missing items in the checklist"
+  },
+  "P6": {
+   "verdict": "REFERENCE_PACK_INVALID_FIELD / FACETED_GEOMETRY_REQUIRES_TOP_VIEW_AND_REMEASUREMENT",
+   "invalid_fields": [
+    {
+     "field": "stem_diameter",
+     "submitted": 56.07,
+     "states": ["PHYSICALLY_IMPLAUSIBLE", "REMEASUREMENT_REQUIRED"],
+     "reason": "physically impossible for a ~20 mm wide product; the stem passes a 6.6 mm opening and photographs (IMG_3108) show a stem of a few millimetres",
+     "handling": "recorded exactly as submitted; NOT reinterpreted as 5.607"
+    }
+   ],
+   "consistency_checks_passed": [
+    "wand 117 + closed tip-to-bottom clearance 5 = 122 = total closed height (exact)",
+    "reservoir 77.1 + cap 45.68 = 122.78 ≈ 122 (≈0.8 mm engagement)",
+    "wiper 4.3 < opening 6.6 < neck OD 12"
+   ],
+   "photo_verified": [
+    "faceted/chamfered reservoir edges (IMG_3106) and a cap top profile with flattened/chamfered corner (IMG_3109) — supports faceted polygonal cross-section; facet COUNT not determinable from these views",
+    "sticker: 'LIP GLOSS ITEM NO: LG5855', EAN 5 061030 636268, shade 11 (IMG_3107)",
+    "thin white stem + doe-foot applicator (IMG_3108)"
+   ],
+   "required_cross_section_evidence": [
+    "number of facets",
+    "width across opposite flats",
+    "width across opposite corners",
+    "side depth across flats",
+    "side depth across corners",
+    "reservoir top-view geometry",
+    "cap top-view geometry (cap-only near-axial view exists, uncalibrated)"
+   ],
+   "cap_decoration_distinction_required": "CAP_DECORATION_INTENTIONALLY_UNUSED vs NO_USABLE_DECORATION_AREA — unresolved; the plain cap sleeve is physically printable",
+   "blocking": "no final geometry until stem and cross-section data are corrected"
+  },
+  "P7": {
+   "verdict": "REFERENCE_PACK_INVALID / COMPLETE_REMEASUREMENT_REQUIRED",
+   "contradictions": [
+    "79 mm window cannot fit within a 20 mm outer width",
+    "56.18 mm hinge cannot fit within a 20 mm outer width",
+    "128.6 mm pan cannot fit within any plausible size of this compact",
+    "16.26 is likely a thickness, not the front-to-hinge height (7.9 lid + 7.8 base = 15.7 ≈ 16.26 — hypothesis recorded, NOT applied)",
+    "closed_depth_or_thickness 7.9 duplicates lid_thickness 7.9 — labeling suspect"
+   ],
+   "photo_verified": [
+    "palm-scale compact (IMG_3102/3103) — visually incompatible with a 20 mm outer width",
+    "back label: 'ITEM NO: BL5879', EAN 5 061030 636305, shade 07, 'MADE IN CHINA BY SUPPLIER: YIWU YIBIN TRADING COMPANY GENERAL PARTNERSHIP . YIWU YIBIN TRADING CO.,LTD BRITISH, LONDON', distributor mark 'BEAUTY TREND', standard QB/T 1976-2004, PRO 12-2025, EXP 12-2029, batch YB-BB-202509-1212; net-weight box only partially legible (probable 8 g, NOT confirmed) (IMG_3104)",
+    "metal hinge pin along the hinge edge (IMG_3104)",
+    "transparent frosted lid printed 'ZAROX Velvet Glow'; white base frame; rectangular X-embossed pan; paper insert card under the lid (IMG_3102/3105)",
+    "opening angle appears wide/flat in IMG_3105 (unmeasured)"
+   ],
+   "handling": "no corrected values inferred; NO P7 geometry from the current measurement set"
+  }
+ }
+}

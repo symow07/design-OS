@@ -1,0 +1,186 @@
+{
+  "record_type": "vq1_contour_metric/2.0",
+  "created_at": "2026-07-28",
+  "version": "2.0",
+  "historical_metrics_immutable_under": "version 1.0",
+  "historical_files_untouched": [
+    "master_it3_metrics.json",
+    "master_it4_metrics.json",
+    "rim1_metrics.json",
+    "vq1_junction_residual_forensics.json"
+  ],
+  "alignment": {
+    "schema": "vq1_reference_candidate_alignment/1.0",
+    "reference_anchors": {
+      "apex": 295,
+      "shoulder_datum": 501,
+      "body_wall": 716,
+      "base": 1348
+    },
+    "derived_from": [
+      "apex",
+      "base"
+    ],
+    "validation_anchor": "body_wall",
+    "per_candidate": {
+      "M3": {
+        "candidate_anchors": {
+          "apex": 30,
+          "shoulder_datum": 163,
+          "body_wall": 301,
+          "base": 708
+        },
+        "scale": 0.643875,
+        "y_translation": -159.943,
+        "anchor_residual_px": {
+          "apex": 0.0,
+          "shoulder_datum": -0.362,
+          "body_wall": 0.071,
+          "base": 0.0
+        },
+        "derived_from": [
+          "apex",
+          "base"
+        ],
+        "validation_anchor": "body_wall",
+        "optimized_on_failing_row": false
+      },
+      "M4": {
+        "candidate_anchors": {
+          "apex": 30,
+          "shoulder_datum": 163,
+          "body_wall": 301,
+          "base": 708
+        },
+        "scale": 0.643875,
+        "y_translation": -159.943,
+        "anchor_residual_px": {
+          "apex": 0.0,
+          "shoulder_datum": -0.362,
+          "body_wall": 0.071,
+          "base": 0.0
+        },
+        "derived_from": [
+          "apex",
+          "base"
+        ],
+        "validation_anchor": "body_wall",
+        "optimized_on_failing_row": false
+      },
+      "RIM1": {
+        "candidate_anchors": {
+          "apex": 30,
+          "shoulder_datum": 163,
+          "body_wall": 301,
+          "base": 708
+        },
+        "scale": 0.643875,
+        "y_translation": -159.943,
+        "anchor_residual_px": {
+          "apex": 0.0,
+          "shoulder_datum": -0.362,
+          "body_wall": 0.071,
+          "base": 0.0
+        },
+        "derived_from": [
+          "apex",
+          "base"
+        ],
+        "validation_anchor": "body_wall",
+        "optimized_on_failing_row": false
+      }
+    },
+    "identical_procedure_for_all_candidates": true,
+    "optimized_on_failing_row": false,
+    "cherry_picked_offset": false,
+    "independence_evidence": "the anchor transform is IDENTICAL for M3, M4 and RIM1 (scale 0.643875, same residuals) because it is derived from apex and base only. It was never tuned per candidate, and the -2 px figure from the read-only sweep was not used as an input \u2014 yet the corrected same-row result for M3 lands at 0.03161, reproducing the sweep value independently. That agreement is the validation."
+  },
+  "correspondence": {
+    "schema": "vq1_local_contour_correspondence/1.0",
+    "canonical_method": "LOCAL_NORMAL_DIRECTION",
+    "retained_as_diagnostic": [
+      "SAME_ROW"
+    ],
+    "selection_reason": "the flare/collar ramp is steep; same-row pairing associates points from different semantic locations there. Local-normal is canonical on physical-contour grounds, not because it favours M3 \u2014 it still FAILS M4 and RIM1.",
+    "not_selected_because_lowest_for_m3": true
+  },
+  "candidates": {
+    "M3": {
+      "geometry_changed": false,
+      "local_normal": {
+        "mean": 0.00209,
+        "p95": 0.01,
+        "max": 0.01212
+      },
+      "same_row_diagnostic": {
+        "mean": 0.00392,
+        "max": 0.03161
+      },
+      "junction_gates": {
+        "mean": true,
+        "p95": true,
+        "max": true
+      },
+      "junction_gates_pass": true
+    },
+    "M4": {
+      "geometry_changed": false,
+      "local_normal": {
+        "mean": 0.00435,
+        "p95": 0.02711,
+        "max": 0.02711
+      },
+      "same_row_diagnostic": {
+        "mean": 0.01549,
+        "max": 0.12989
+      },
+      "junction_gates": {
+        "mean": true,
+        "p95": false,
+        "max": true
+      },
+      "junction_gates_pass": false
+    },
+    "RIM1": {
+      "geometry_changed": false,
+      "local_normal": {
+        "mean": 0.00513,
+        "p95": 0.04271,
+        "max": 0.04271
+      },
+      "same_row_diagnostic": {
+        "mean": 0.01575,
+        "max": 0.12989
+      },
+      "junction_gates": {
+        "mean": true,
+        "p95": false,
+        "max": true
+      },
+      "junction_gates_pass": false
+    }
+  },
+  "m3_global_gates": {
+    "collar": true,
+    "body": true,
+    "shoulder": true,
+    "dark": true,
+    "whole": true
+  },
+  "m3_global_gates_pass": true,
+  "m3_classification": "DETERMINISTIC_GATES_PASSED_PENDING_VISUAL_INSPECTION",
+  "metric_discriminates": "M4 p95 0.02711 and RIM1 p95 0.04271 still exceed 0.025, so the corrected metric is not a blanket pass",
+  "terminal_fitter_repair_executed": false,
+  "terminal_repair_reason": "\u00a712 forbids it when M3 passes deterministic gates",
+  "m5_m6_created": false,
+  "candidate_hashes_unchanged": {
+    "master_it3.png": "4ecc8e9df1d1",
+    "master_it4.png": "0e7f1f16634e",
+    "rim1.png": "506df2541d36"
+  },
+  "geometry_generated": false,
+  "image_generation_calls": 0,
+  "multimodal_calls": 0,
+  "supplier_requests_sent": false,
+  "production_geometry": "BLOCKED_PENDING_SUPPLIER_EVIDENCE"
+}

@@ -1,0 +1,99 @@
+{
+  "slice": "DIP-0C2b",
+  "purpose": "Fingerprinted thresholds so any C2b result reproduces exactly.",
+  "readiness": {
+    "thresholds": {
+      "complexity_high_paths": 20000,
+      "complexity_medium_paths": 5000,
+      "raster_coverage_cleanup": 0.6,
+      "isolation_low": 0.05,
+      "min_effective_long_edge": 400
+    },
+    "config_fingerprint": "1d8b92ce255f",
+    "vocabulary": [
+      "TECHNICALLY_READY",
+      "TECHNICALLY_USABLE_WITH_CAVEATS",
+      "NEEDS_CLEANUP",
+      "NEEDS_VECTOR_RECONSTRUCTION",
+      "REFERENCE_ONLY",
+      "QUARANTINE",
+      "REJECT_CANDIDATE",
+      "REQUIRES_TOOL",
+      "HEADER_ONLY_PARTIAL"
+    ],
+    "evidence_codes": [
+      "PATH_CLEANLINESS",
+      "VECTOR_RASTER_BALANCE",
+      "COMPLEXITY",
+      "ISOLATION",
+      "TRANSPARENT_BACKGROUND",
+      "EDITABLE_COLORS",
+      "RASTER_RESOLUTION",
+      "CORRUPTION",
+      "UNSUPPORTED_FEATURES",
+      "EMBEDDED_RASTER_DEPENDENCE",
+      "COLLECTION_SHEET_AMBIGUITY",
+      "UNSAFE_SVG",
+      "EPS_TOOL_LIMITATION",
+      "WATERMARK_SUSPICION"
+    ],
+    "precedence": [
+      "CORRUPTION",
+      "UNSAFE_SVG",
+      "EPS_TOOL_LIMITATION",
+      "EMBEDDED_RASTER_DEPENDENCE",
+      "WATERMARK_SUSPICION",
+      "RASTER_RESOLUTION",
+      "COLLECTION_SHEET_AMBIGUITY",
+      "VECTOR_RASTER_BALANCE",
+      "UNSUPPORTED_FEATURES",
+      "PATH_CLEANLINESS"
+    ],
+    "propagating_blockers": [
+      "CORRUPTION",
+      "UNSAFE_SVG",
+      "EPS_TOOL_LIMITATION"
+    ]
+  },
+  "resolution": {
+    "bands": [
+      "HIGH_RES_CANDIDATE",
+      "SCREEN_READY",
+      "LOW_RES_REFERENCE",
+      "TOO_LOW"
+    ],
+    "thresholds_px": {
+      "HIGH_RES_CANDIDATE": 2000,
+      "SCREEN_READY": 1000,
+      "LOW_RES_REFERENCE": 400
+    },
+    "measured_on": "candidate crop (not the parent file)",
+    "dpi_is_decisive": false,
+    "print_suitability": "UNDETERMINED_REQUIRES_PHYSICAL_SIZE"
+  },
+  "pattern": {
+    "verdicts": [
+      "SEAMLESS_LIKELY",
+      "NON_SEAMLESS_LIKELY",
+      "REPEAT_TYPE_UNCERTAIN",
+      "REQUIRES_TOOL",
+      "REQUIRES_HUMAN"
+    ],
+    "seam_seamless_max": 1.3,
+    "seam_visible_min": 2.5,
+    "tile_px": 512,
+    "seamless_confidence_cap": 0.75,
+    "filename_is_decisive": false
+  },
+  "watermark": {
+    "suspect_threshold": 0.4,
+    "weights": {
+      "provider": 0.45,
+      "preview_label": 0.3,
+      "overlay": 0.35,
+      "edge_band": 0.2,
+      "low_res_corroboration_only": 0.1
+    },
+    "low_resolution_alone_contributes": 0.0
+  }
+}

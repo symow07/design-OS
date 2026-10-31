@@ -1,0 +1,70 @@
+{
+  "iteration": "MASTER-M3",
+  "render": "docs/visual_quality/vq1_master/master_it3.png",
+  "regions": {
+    "whole": {
+      "iou": 0.9889,
+      "mean": 0.00442,
+      "p95": 0.00805,
+      "max": 0.37479
+    },
+    "dark_closure": {
+      "iou": 0.97966,
+      "mean": 0.00314,
+      "p95": 0.0115,
+      "max": 0.04411
+    },
+    "collar": {
+      "iou": 0.99183,
+      "mean": 0.00256,
+      "p95": 0.0026,
+      "max": 0.00485
+    },
+    "junction": {
+      "iou": 0.94784,
+      "mean": 0.01353,
+      "p95": 0.06539,
+      "max": 0.06539
+    },
+    "shoulder": {
+      "iou": 0.98121,
+      "mean": 0.00771,
+      "p95": 0.03143,
+      "max": 0.03807
+    },
+    "body": {
+      "iou": 0.99473,
+      "mean": 0.00264,
+      "p95": 0.00292,
+      "max": 0.00517
+    }
+  },
+  "gates": {
+    "collar_iou": true,
+    "collar_mean": true,
+    "collar_p95": true,
+    "collar_max": true,
+    "junction_max": false,
+    "shoulder_iou": true,
+    "dark_closure_iou": true,
+    "visible_object_count": true
+  },
+  "gates_pass": false,
+  "fit_residuals": {
+    "DARK_CLOSURE": {
+      "segments": 18,
+      "mean": 0.3395,
+      "max": 1.3916
+    },
+    "COLLAR": {
+      "segments": 18,
+      "mean": 0.2028,
+      "max": 1.25
+    },
+    "GLASS": {
+      "segments": 57,
+      "mean": 0.343,
+      "max": 5.1
+    }
+  }
+}

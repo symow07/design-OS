@@ -1,0 +1,38 @@
+{
+  "reference_description": "Close-up of a dropper bottle closure showing a large, soft dark-plum/mauve rubber pipette bulb with a rounded dome top and a wide skirt that flares over a tall, highly polished rose-gold metallic collar/cap. The bulb is prominent, occupying roughly half the visible height. The collar is cylindrical, wide, and reflective with a warm gold tone. No bottle body is visible.",
+  "output_description": "Full-bottle synthetic render showing a rectangular flat-sided bottle body in off-white/cream. The closure consists of a small beige/tan stepped collar (two-tier cylindrical cap) surmounted by a small dark-plum flat-topped cylindrical rubber bulb. The bulb is disproportionately small, flat-topped rather than dome-shaped, and the collar is beige/tan with no metallic finish whatsoever.",
+  "top_component_observed_shape": "Small flat-topped cylinder (dark plum) sitting on a two-step beige cylindrical collar",
+  "component_semantics": {
+    "classification": "EXPOSED_RUBBER_PIPETTE_BULB",
+    "confidence": 0.45,
+    "evidence": "A dark plum element is present at the top suggesting a rubber bulb, but its shape is flat-cylindrical rather than the large rounded dome seen in the reference; it lacks the characteristic rounded top and wide flared skirt of the reference bulb"
+  },
+  "same_component_type": false,
+  "same_structural_family": false,
+  "closure_proportions_physically_coherent": false,
+  "output_appears_generic": true,
+  "failing_component": "BULB",
+  "per_component_score": {
+    "closure": 2,
+    "shoulder": 3,
+    "body": 4,
+    "silhouette": 3
+  },
+  "reference_preservation_score": 2,
+  "visual_findings": [
+    "Reference bulb is large, dome-topped, dark plum with wide flared skirt; generated bulb is small, flat-topped, and cylindrical with no flare",
+    "Reference collar is tall, wide, highly polished rose-gold metallic; generated collar is beige/tan matte with stepped profile \u2014 no metallic finish",
+    "Generated bulb height is approximately 20% of closure height vs ~55% in reference",
+    "Generated Image 2 is nearly identical to rejected Image 3; minimal or no improvement between iterations",
+    "Bottle body in generated render is rectangular/flat-sided; reference shows no body but implies a cylindrical or round-shouldered bottle",
+    "Color palette of collar is completely wrong (beige vs rose-gold)"
+  ],
+  "critical_blockers": [
+    "Bulb shape wrong: flat cylinder instead of large rounded dome",
+    "Collar color/material wrong: beige matte instead of rose-gold polished metal",
+    "Bulb-to-collar proportion wrong: bulb is far too small relative to collar",
+    "No improvement from previously rejected iteration \u2014 essentially same render",
+    "Flared skirt on bulb absent entirely"
+  ],
+  "confidence": 0.92
+}

@@ -1,0 +1,43 @@
+{
+ "record_type": "p1_engine_validation_freeze/1.0",
+ "frozen_at": "2026-08-05",
+ "decided_by": "owner strategic pivot",
+ "status": {
+  "P1_ENGINE_VALIDATION_REFERENCE": "IMPLEMENTED",
+  "P1_GEOMETRY_PIPELINE": "VALIDATED_PROVISIONALLY",
+  "P1_MATERIAL_SYSTEM": "PROVEN_BUT_REQUIRES_GENERALIZATION",
+  "P1_OWNER_VISUAL_APPROVAL": "NOT_GRANTED",
+  "P1_FURTHER_VISUAL_POLISH": "DEFERRED",
+  "GATE_2": "BLOCKED",
+  "PACKAGING_PRODUCTION": "NOT_STARTED"
+ },
+ "what_p1_proved": [
+  "deterministic geometry generation (revision-addressable, hash-identified meshes)",
+  "Blender validation rendering (pinned runtime, decoded-pixel determinism)",
+  "material separation (neutral clay validation mode vs material validation mode)",
+  "versioned evidence packages (V1-V4 each immutable and independently reviewable)",
+  "strict owner review (four rejections absorbed without weakening the record)",
+  "geometry, materials and artwork must remain SEPARATE authorities"
+ ],
+ "prohibitions": [
+  "no P1 V5 in this milestone",
+  "P1 versions and evidence preserved unchanged",
+  "P1 is a regression fixture and engine-validation reference, NOT the active design priority"
+ ],
+ "regression_fixture_role": {
+  "mesh_identities": {
+   "V1": {"body": "e7b0236deb66715e", "collar": "7175cb33d5cd7375", "bulb": "491a134981dd9506"},
+   "V2": {"body": "b301a10969b4e943", "collar": "0c0b5a6edcd33875", "bulb": "edfac8571aea80b8"},
+   "V3": {"body": "3d81bf24ac44bfea", "collar": "0c0b5a6edcd33875", "bulb": "931cb17e89f86322"},
+   "V4": {"body": "ddc3e59624a29f03", "collar": "0c0b5a6edcd33875", "bulb": "237f7e5c45cd37dd"}
+  },
+  "visualization_only_solids": {"V3_glass": "e3bf976cabe0fcc5", "V4_glass": "9c07ac5f5ca66fcf", "V4_serum": "21aa8be931f649d0"},
+  "enforced_by": "apps/pipeline/tests/test_p1_pilot_geometry.py — every historical revision must keep reproducing its pinned identities"
+ },
+ "carried_forward_into_the_generalized_engine": [
+  "the empty-vessel lesson: colour that must come only from the wall saturates to brown/red over long optical paths — contents are a first-class material input",
+  "Beer-Lambert solving (transmitted = exp(-d*(1-colour)*path)) beats shader guessing",
+  "mask authority must be an unlit alpha pass, never thresholded shaded RGB",
+  "any new render option must preserve existing fixture output when disabled"
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "record_type": "vqr1_artboard_role_analysis/1.0",
+ "created_at": "2026-08-03",
+ "margins_mm": {
+  "left": 43.75,
+  "right": 7.0,
+  "top": 11.4,
+  "bottom": 47.5
+ },
+ "asymmetry_explanation": {
+  "left_43_75": "NOT empty margin \u2014 the left column contains the REFERENCE panel (x 7.0-38.5 mm, width 0.9xW) plus the 0.15xW gap; the product hero is deliberately the RIGHT column of a two-column technical sheet",
+  "right_7_00": "true outer margin (0.2 x width_mm)",
+  "top_11_40": "header band (0.12 x height_mm) holding the sheet title",
+  "bottom_47_50": "NOT empty margin \u2014 contains the surface-panel strip (back/cap/code panels) and the spec block (SKU + colour swatches)",
+  "source": "layout composition: reference panel (left) + technical annotations (bottom). NOT object bounds, NOT incorrect centering (the hero is exactly centered within its own column), NOT export behavior"
+ },
+ "artboard_roles": {
+  "STRUCTURAL_DOCUMENT_ARTBOARD": {
+   "state": "THIS is what production emits",
+   "description": "a product-derived TECHNICAL CONCEPT SHEET: reference, hero, surface panels, spec \u2014 margins asymmetric BY COMPOSITION",
+   "gate_axis_meaning": "the VQR-2A artboard axis certifies exactly this role: product-derived, no fixed page standard, bounded by the 3.0x factor"
+  },
+  "CLIENT_PRESENTATION_ARTBOARD": {
+   "state": "NOT_BUILT / NOT_EVALUATED",
+   "description": "a centered, presentation-balanced product artboard for client review does not exist yet; no fitness claim is made for it \u2014 candidate scope for VQR-3/VQR-5 or the Design Adjustment Studio"
+  }
+ },
+ "gate_state": "VISUAL_QUALITY_GATE remains FAIL; the artboard role question stays open for the owner"
+}

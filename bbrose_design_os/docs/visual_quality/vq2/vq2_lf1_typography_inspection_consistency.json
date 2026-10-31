@@ -1,0 +1,92 @@
+{
+ "record_type": "vq2_lf1_typography_inspection_consistency/1.0",
+ "created_at": "2026-07-29",
+ "both_inspectors_returned_output": true,
+ "per_inspector": {
+  "A": {
+   "identity": "VQ2_IMBUE_LF1_REFERENCE_FIDELITY_CRITIC",
+   "request_id": "req_011CdW1hCQznBoLM2TpT4VST",
+   "verdict_vs_findings": {
+    "declared_actionable": 0,
+    "findings_marked_actionable": 0,
+    "count_matches_findings": true,
+    "verdict": "PASSES_TYPOGRAPHY_INSPECTION_PENDING_OWNER_REVIEW",
+    "verdict_consistent_with_findings": true
+   },
+   "prohibited_correction_scan": {
+    "recommends_prohibited_correction": false,
+    "prohibited_matches": [],
+    "material_terms_present": false,
+    "material_mentions": []
+   },
+   "measurement_representation": {
+    "cites_rose_128_85": true,
+    "cites_target_134": true,
+    "cites_3_8_pct": true,
+    "no_invented_iou": true
+   },
+   "rose_width_classification": "NONACTIONABLE",
+   "rose_width_explicit": true,
+   "finding_count": 15
+  },
+  "B": {
+   "identity": "VQ2_IMBUE_LF1_ADVERSARIAL_DEFECT_FINDER",
+   "request_id": "req_011CdW1kNamXSPhnxt7QAM6a",
+   "verdict_vs_findings": {
+    "declared_actionable": 0,
+    "findings_marked_actionable": 0,
+    "count_matches_findings": true,
+    "verdict": "PASSES_TYPOGRAPHY_INSPECTION_PENDING_OWNER_REVIEW",
+    "verdict_consistent_with_findings": true
+   },
+   "prohibited_correction_scan": {
+    "recommends_prohibited_correction": false,
+    "prohibited_matches": [],
+    "material_terms_present": false,
+    "material_mentions": []
+   },
+   "measurement_representation": {
+    "cites_rose_128_85": true,
+    "cites_target_134": true,
+    "cites_3_8_pct": true,
+    "no_invented_iou": true
+   },
+   "rose_width_classification": "NONACTIONABLE",
+   "rose_width_explicit": true,
+   "finding_count": 16
+  }
+ },
+ "divergences": [
+  {
+   "field": "description_of_the_approved_BBROSE_logo",
+   "A": "describes the logo as a rounded SANS with swashes",
+   "B": "describes the logo as an upright SERIF face",
+   "severity": "OBSERVATIONAL_NOT_A_TYPOGRAPHY_DEFECT",
+   "note": "both marked their logo finding non-actionable and both reached the same conclusion (register differs from the Didone product name). Recorded, not resolved."
+  }
+ ],
+ "checks": {
+  "each_verdict_agrees_with_its_findings": true,
+  "no_passing_verdict_contains_an_actionable_defect": true,
+  "neither_recommends_prohibited_scaling_or_glyph_modification": true,
+  "material_realization_did_not_drive_typography_judgment": true,
+  "deterministic_measurements_represented_accurately": true,
+  "rose_width_classifications_explicit": true,
+  "inspection_independence_proven": true
+ },
+ "independence_evidence": {
+  "separate_provider_requests": [
+   "req_011CdW1hCQznBoLM2TpT4VST",
+   "req_011CdW1kNamXSPhnxt7QAM6a"
+  ],
+  "distinct_prompts": [
+   "589d9d142150bb6f",
+   "f7cd3805fd161d81"
+  ],
+  "a_output_not_in_b_payload": true,
+  "method": "two separate API calls; B's payload contained only the five frozen images and the deterministic measurements",
+  "finding_texts_differ": true
+ },
+ "all_checks_pass": true,
+ "divergence_count": 1
+}

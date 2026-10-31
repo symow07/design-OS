@@ -1,0 +1,274 @@
+{
+  "slice": "DIP-0C3d",
+  "c3c_commit": "c34d4a1",
+  "taxonomy": {
+    "schema_version": "scope_taxonomy/1.0",
+    "taxonomy_version": "1.1.0",
+    "axes": [
+      "markets",
+      "products",
+      "lockups",
+      "variant_roles",
+      "media"
+    ],
+    "media_tokens": [
+      "ALL",
+      "DIGITAL",
+      "PACKAGING_PRINT",
+      "PRINT",
+      "SCREEN",
+      "SOCIAL_MEDIA",
+      "WEB"
+    ],
+    "media_closed_world": true,
+    "media_mutually_exclusive_roots": false,
+    "media_relations": {
+      "ALL vs PRINT": "SCOPE_OVERLAPPING",
+      "PRINT vs PACKAGING_PRINT": "SCOPE_OVERLAPPING",
+      "DIGITAL vs SCREEN": "SCOPE_OVERLAPPING",
+      "PRINT vs DIGITAL": "SCOPE_DISJOINT",
+      "DIGITAL vs PACKAGING_PRINT": "SCOPE_DISJOINT",
+      "SCREEN vs WEB": "SCOPE_UNKNOWN_OVERLAP",
+      "WEB vs SOCIAL_MEDIA": "SCOPE_UNKNOWN_OVERLAP"
+    }
+  },
+  "authority_domains": [
+    "BRAND_MASTER",
+    "BRAND_PALETTE"
+  ],
+  "palette_event_types": [
+    "PALETTE_ASSOCIATION_CONFIRMED",
+    "PALETTE_OWNERSHIP_CONFIRMED",
+    "PALETTE_LICENSE_CONFIRMED",
+    "BRAND_PALETTE_APPROVED",
+    "PALETTE_VARIANT_APPROVED",
+    "PALETTE_DEPRECATED",
+    "PALETTE_SUPERSEDED",
+    "PALETTE_QUARANTINED",
+    "PALETTE_APPROVAL_REVOKED",
+    "PALETTE_RE_REVIEW_REQUIRED"
+  ],
+  "dual_control_events": [
+    "CANONICAL_MASTER_APPROVED",
+    "CANONICAL_MASTER_REPLACED",
+    "BRAND_PALETTE_APPROVED",
+    "PALETTE_SUPERSEDED"
+  ],
+  "permission_flags": [
+    "approved_for_bbrose",
+    "approved_for_other_brands",
+    "automatic_use_allowed",
+    "embedding_allowed",
+    "modification_allowed",
+    "production_use_allowed",
+    "public_export_allowed",
+    "redistribution_allowed",
+    "retrieval_allowed"
+  ],
+  "permission_flag_count": 9,
+  "queues": [
+    {
+      "queue_id": "POSSIBLE_BRAND_MASTER",
+      "display_label": "A",
+      "title": "Possible BBROSE logo masters",
+      "priority": "HIGH",
+      "batch_review_allowed": true,
+      "count": 1
+    },
+    {
+      "queue_id": "COMPOSITION_MISLABELLED_AS_MASTER",
+      "display_label": "B",
+      "title": "Brand compositions incorrectly labelled as masters",
+      "priority": "MEDIUM",
+      "batch_review_allowed": true,
+      "count": 0
+    },
+    {
+      "queue_id": "OUTLINED_WORDMARK_IDENTIFICATION",
+      "display_label": "C",
+      "title": "Outlined wordmarks needing human identification",
+      "priority": "MEDIUM",
+      "batch_review_allowed": true,
+      "count": 1
+    },
+    {
+      "queue_id": "THIRD_PARTY_LOGO_IN_BBROSE_FOLDER",
+      "display_label": "D",
+      "title": "Third-party logos inside BBROSE folders",
+      "priority": "HIGH",
+      "batch_review_allowed": true,
+      "count": 1
+    },
+    {
+      "queue_id": "TECHNICALLY_STRONG_OWNERSHIP_BLOCKED",
+      "display_label": "E",
+      "title": "Technically strong but ownership-blocked assets",
+      "priority": "HIGH",
+      "batch_review_allowed": true,
+      "count": 0
+    },
+    {
+      "queue_id": "MISSING_BRAND_LICENSE_EVIDENCE",
+      "display_label": "F",
+      "title": "Missing brand-asset licence evidence",
+      "priority": "HIGH",
+      "batch_review_allowed": true,
+      "count": 0
+    },
+    {
+      "queue_id": "CANONICAL_MASTER_NOMINATION",
+      "display_label": "G",
+      "title": "Canonical-master nominations",
+      "priority": "HIGH",
+      "batch_review_allowed": false,
+      "count": 1
+    },
+    {
+      "queue_id": "CANONICAL_CONFLICT",
+      "display_label": "H",
+      "title": "Canonical conflicts and replacements",
+      "priority": "CRITICAL",
+      "batch_review_allowed": false,
+      "count": 1
+    },
+    {
+      "queue_id": "PALETTE_ASSOCIATION_REVIEW",
+      "display_label": "I",
+      "title": "Palette association review",
+      "priority": "MEDIUM",
+      "batch_review_allowed": true,
+      "count": 1
+    },
+    {
+      "queue_id": "PALETTE_OWNERSHIP_LICENSE_REVIEW",
+      "display_label": "J",
+      "title": "Palette ownership / licence review",
+      "priority": "HIGH",
+      "batch_review_allowed": true,
+      "count": 1
+    },
+    {
+      "queue_id": "PALETTE_APPROVAL_DUAL_CONTROL",
+      "display_label": "K",
+      "title": "Palette approval and dual-control review",
+      "priority": "HIGH",
+      "batch_review_allowed": false,
+      "count": 1
+    },
+    {
+      "queue_id": "EXPIRED_OR_REVOKED_APPROVAL",
+      "display_label": "L",
+      "title": "Expired or revoked brand/palette approvals",
+      "priority": "CRITICAL",
+      "batch_review_allowed": true,
+      "count": 0
+    },
+    {
+      "queue_id": "ASSERTION_CONTRADICTS_EVIDENCE",
+      "display_label": "M",
+      "title": "Contradictory business assertion and file evidence",
+      "priority": "HIGH",
+      "batch_review_allowed": true,
+      "count": 1
+    },
+    {
+      "queue_id": "RIGHTS_BLOCKED_PERMISSION",
+      "display_label": "N",
+      "title": "Rights-blocked operational permissions",
+      "priority": "HIGH",
+      "batch_review_allowed": true,
+      "count": 2
+    }
+  ],
+  "real_ase": {
+    "audit": {
+      "parse_status": "PARTIAL_PARSE",
+      "capability": "REQUIRES_HUMAN",
+      "layout": [
+        "NON_STANDARD_NAME_ENCODING"
+      ],
+      "fallback_used": true,
+      "parser_warnings": [
+        "NAME_LENGTH_FIELD_ABSENT"
+      ],
+      "color_models": [
+        "RGB"
+      ],
+      "color_types": [
+        "GLOBAL"
+      ],
+      "third_party_naming": [
+        "PANTONE"
+      ],
+      "contains_spot_identity": false,
+      "swatch_names": [
+        "Pantone 3519 C"
+      ]
+    },
+    "approval_allowed": false,
+    "problems": [
+      "ownership is 'OWNERSHIP_UNKNOWN': a brand palette requires confirmed ownership or explicitly permitted use (one of ['BBROSE_OWNED_CONFIRMED', 'LICENSED_FOR_LIMITED_USE', 'JOINT_OR_CONTRACTED_USE'])",
+      "the licence is UNVERIFIED — a brand palette approval must rest on a recorded licence decision",
+      "no REVIEWED_ACCEPTED evidence supports this approval",
+      "this palette is PARTIAL_PARSE (fallback_used=True). A human MAY approve it — but the approval must explicitly acknowledge the parser limitation. Approving a file does not make it well-formed.",
+      "third-party naming detected (['PANTONE']) and NOT acknowledged. A name is not a licence, and approving a palette does not resolve it.",
+      "swatch 'Pantone 3519 C': every approved value must declare its provenance — one of ['RAW_SOURCE', 'DERIVED_PREVIEW', 'MANUALLY_CONFIRMED']. A derived preview does not become source truth by being approved."
+    ]
+  },
+  "pilot": {
+    "real_ase_refused": true,
+    "synthetic_palette_approved": true,
+    "approval_grants_no_permission": true,
+    "master_and_palette_do_not_conflict": true,
+    "two_palettes_conflict": true,
+    "media_digital_covers_screen": true,
+    "media_digital_denies_packaging_print": true,
+    "media_unknown_fails_closed": true,
+    "expiry_fails_closed": true,
+    "parser_limitation_survives_approval": true,
+    "dual_control_refuses_one_person": true,
+    "naive_cmyk_refused": true,
+    "historical_link_absent": true,
+    "queues_deterministic": true
+  },
+  "refused_attempts": [
+    {
+      "attempt": "SYSTEM_ADMIN approves a brand palette",
+      "reason": "role 'SYSTEM_ADMIN' may NOT 'approve_brand_palette'. Permitted roles: ['BRAND_ADMIN']. (Gi"
+    },
+    {
+      "attempt": "SYSTEM_ADMIN attests palette rights",
+      "reason": "role 'SYSTEM_ADMIN' may NOT 'attest_palette_rights'. Permitted roles: ['LEGAL_REVIEWER']. "
+    },
+    {
+      "attempt": "BRAND_ADMIN attests palette RIGHTS (legal only)",
+      "reason": "role 'BRAND_ADMIN' may NOT 'attest_palette_rights'. Permitted roles: ['LEGAL_REVIEWER']. ("
+    },
+    {
+      "attempt": "machine declares APPROVED_BRAND_PALETTE",
+      "reason": "'APPROVED_BRAND_PALETTE' is a HUMAN decision. Machine code may audit a palette's colours; "
+    },
+    {
+      "attempt": "a palette approval attested by ONE person",
+      "reason": "BRAND_PALETTE_APPROVED is under DUAL CONTROL: its attestations name only {'TEST_ONLY_brand"
+    }
+  ],
+  "real_ledger": {
+    "events": 0,
+    "compound_events": 0,
+    "note": "EMPTY. No real palette approval, no real activation."
+  },
+  "ledger_valid": true,
+  "integrity": {
+    "materials": {
+      "unchanged": true,
+      "added": [],
+      "removed": [],
+      "modified": [],
+      "file_count_before": 7695,
+      "file_count_after": 7695
+    }
+  },
+  "runtime_seconds": 0.13,
+  "output_bytes": 17481
+}

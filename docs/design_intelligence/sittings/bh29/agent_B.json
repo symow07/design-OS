@@ -1,0 +1,342 @@
+[
+ {
+  "family": "Selima",
+  "upstream": "Jroh Creative (designer; Banda Aceh, Indonesia) — own site jrohcreative.com (freebies/selima-script) and Behance gallery 33401167 'Selima - Free Font' (behance.net/jrohcreative, the declared licence_url)",
+  "how_identified": "declared strings (copyright '@zamroni_agus', licence_url 'behance.net/jrohcreative') + web search → the Behance project, whose description links the designer's own download page",
+  "confidence_class": "NAME+VERSION-MATCHED",
+  "licence_status": "OPEN_LICENCE_TEXT_STORED",
+  "stored": [
+   {
+    "path": "/Users/symow/bh29_work/evidence/Selima/selima.font",
+    "url": "https://www.dafont.com/selima.font",
+    "sha256": "04963718a22c5211c47780604c5dac1540de71e2ec8c5d27513927dac51c4e47",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "bytes": 14878,
+    "fetched_at": "2026-09-03T06:18:23Z",
+    "note": "Aggregator page (dafont) carrying the author's own note ('100% FREE, even for commercial purpose'); not authoritative"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Selima/Selima-Free-Font.html",
+    "url": "https://www.behance.net/gallery/33401167/Selima-Free-Font",
+    "sha256": "7aa65de5442c204af3f5462c8fd4683ff117a00d711a6d044cc1e22a685b53ae",
+    "kind": "PRODUCT_PAGE",
+    "bytes": 540642,
+    "fetched_at": "2026-09-03T07:35:40Z",
+    "note": ""
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Selima/selima-script.html",
+    "url": "https://jrohcreative.com/freebies/selima-script",
+    "sha256": "df027cf8209a4964593382fe1a64439e110b13307887f53c64bd7dd5c4a315d7",
+    "kind": "DOWNLOAD_PAGE",
+    "bytes": 14769,
+    "fetched_at": "2026-09-03T07:38:21Z",
+    "note": ""
+   }
+  ],
+  "reportage": "REPORTAGE — Behance project (stored bytes): 'Selima Free Brush Script is FREE for PERSONAL & COMMERCIAL USE !'. Designer's own page jrohcreative.com/freebies/selima-script (stored SPA bytes; embedded data-page JSON): name 'Selima Script', formats ['OTF','RTF'], includes ['1 style included','Formats: OTF, RTF','Free license · personal & commercial'], identity {glyph_count 223, version '1.000', style_count 1}. Rendered page (read-only browser view, not stored): 'LICENSE Free'; 'Free downloads are for members. Sign in (it's free) and the zip downloads instantly'. dafont author note (aggregator; stored by the earlier leg): '100% FREE, even for commercial purpose.'",
+  "notes": "Version match rests on the designer's own page payload ('version':'1.000' vs the library's 1.000). Bytes NOT obtained: the designer's download is account-gated (login/register), so no zip was fetched and no hash comparison was possible; the page's live-preview font is served from a signed, expiring URL and was deliberately not fetched. The stored page is a JS-app shell (creatorspace.id) with 15 chars of visible text — the evidence is in its embedded JSON. No formal EULA document exists on the designer's channels; the 'licence text' is the designer's one-line statement, so OPEN_LICENCE_TEXT_STORED is to be read with that qualification. WebFetch cannot read jrohcreative.com (policy); the rendered view came from the browser pane, read-only, nothing entered or clicked. fontsquirrel/fontmeme/befonts copies are aggregators, not used."
+ },
+ {
+  "family": "Nickainley",
+  "upstream": "Seniors Studio (Indonesia) — Behance gallery 24243507 'Nickainley Script - Free Font' (behance.net/seniorsstudio); the project names its download hosts: fontfabric.com/nickainley-free-font/ (Fontfabric; email-gated free download under the Fontfabric FFF EULA 2.0), dafont, fontsquirrel",
+  "how_identified": "declared copyright 'Seniors Studio' + web search → Behance project; the Fontfabric host and the FFF EULA are named by the project and by the licence file bundled with the font (inkstitch copy stored by the earlier leg)",
+  "confidence_class": "FAMILY-MATCHED",
+  "licence_status": "OPEN_LICENCE_TEXT_STORED",
+  "stored": [
+   {
+    "path": "/Users/symow/bh29_work/evidence/Nickainley/nick_ainley_LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/inkstitch/embroidery-fonts/main/src/nick_ainley/LICENSE",
+    "sha256": "187e5110ffb7b6bda2d2f58696790b484e8a2484308e25eb625df9fbc67b4566",
+    "kind": "LICENCE_TEXT",
+    "bytes": 3810,
+    "fetched_at": "2026-09-03T06:16:37Z",
+    "note": "Third-party (inkstitch/embroidery-fonts GitHub repo) copy of the licence text bundled with Nickainley; names Seniors Studio and the Fontfabric FFF EULA 2.0"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Nickainley/Nickainley-Script-Free-Font.html",
+    "url": "https://www.behance.net/gallery/24243507/Nickainley-Script-Free-Font",
+    "sha256": "1b3ed382be80063e933e55699961e7e64fabb60fe57c591c9025f8da5955e8b0",
+    "kind": "PRODUCT_PAGE",
+    "bytes": 569726,
+    "fetched_at": "2026-09-03T07:35:44Z",
+    "note": ""
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Nickainley/nickainley.html",
+    "url": "https://www.fontsquirrel.com/license/nickainley",
+    "sha256": "30ae75c67e3e1d4815fdf0dff4c3570f988bb977c0b74dcb49eb6a7ceb33f0d6",
+    "kind": "LICENCE_TEXT",
+    "bytes": 24047,
+    "fetched_at": "2026-09-03T07:37:58Z",
+    "note": ""
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Nickainley/nickainley-free-font.html",
+    "url": "https://www.fontfabric.com/nickainley-free-font/",
+    "sha256": "79c40b98573a7238fd5b413334add978afa2b6e69f096f393a1269f8f8e3b8c4",
+    "kind": "DOWNLOAD_PAGE",
+    "bytes": 229696,
+    "fetched_at": "2026-09-03T07:38:18Z",
+    "note": ""
+   }
+  ],
+  "reportage": "REPORTAGE — Behance project (stored bytes): 'Free for Personal and Commercial use'; download links listed: fontfabric.com/nickainley-free-font/, dafont.com/nickainley.font, fontsquirrel.com/fonts/nickainley. Fontfabric page (stored): 'Download for free' → 'We'll send you a zipped file with the free font, license agreement, and installation instructions' behind an email form; 'Credits: Seniors Studio'; the page also shows Fontfabric's generic licence-purchase panel. fontsquirrel licence page (stored): \"License for 'Nickainley' — Fontfabric License, FFF EULA ver. 2.0 June 2015: 'All fonts on the site (fontfabric.com) available for free download (except “Baron”) can be used for both personal and commercial work' ... 'You may not modify, adapt ... or create derivative works' ... 'You may not resell or redistribute'\". inkstitch LICENSE copy (stored by the earlier leg): the same EULA plus an email exchange in which Seniors Studio answered 'Yes, you allowed :)' to an embroidery-adaptation request.",
+  "notes": "No version stated on any page (library: 'Version 1.000;PS 001.000;hotconv...'). No bytes obtained — the only designer-named host offering a download (Fontfabric) requires an email address; dafont/fontsquirrel are aggregators — so no download and no hash comparison. The licence text is Fontfabric's EULA (a distributor's EULA applied to fonts it hosts), stored via fontsquirrel's republication and the inkstitch copy, not from a Seniors Studio page; the designer's own statement is the one-line Behance text. The first fontsquirrel fetch returned HTTP 200 with a 0-byte body (urllib); re-fetched with curl (24,047 B) and the stray empty-body index entry pruned. Creative Fabrica also lists 'Nickainley by seniorsstudio' (not fetched, budget)."
+ },
+ {
+  "family": "BORELA",
+  "upstream": "Maiko Hatta / 'MaikoHatta' (credited on dafont as Gilang Ternadho) — Creative Market shop MaikoHatta, product 27129461 'BORELA - Modern Sans Serif Font' (commercial); Envato Elements user 'maikohatta' (linked from the author's dafont note); designer-uploaded personal-use demo on fontspace (borela-font-f103891) and dafont (borela.font), both carrying the author's own note",
+  "how_identified": "declared copyright '©Maikohatta' + web search; the library filename suffix '-6YX71' is fontspace's naming pattern, and the fontspace listing was located through the designer's fontspace profile/search",
+  "confidence_class": "FAMILY-MATCHED",
+  "licence_status": "FREE_FOR_PERSONAL_USE — commercial requires purchase (COMMERCIAL — EVIDENCE REQUIRES PURCHASE)",
+  "stored": [
+   {
+    "path": "/Users/symow/bh29_work/evidence/BORELA/borela.font",
+    "url": "https://www.dafont.com/borela.font",
+    "sha256": "f614cd7e9ddec8b57b7b254d26a7d272a2d99878442ad93dad2ffed9341feae9",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "bytes": 17083,
+    "fetched_at": "2026-09-03T07:35:50Z",
+    "note": ""
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/BORELA/borela-font-f103891.html",
+    "url": "https://www.fontspace.com/borela-font-f103891",
+    "sha256": "204a39acab734c26fef06d0a13b637450ce630dcf5571ecd8d09504922afe8d8",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "bytes": 96591,
+    "fetched_at": "2026-09-03T07:43:08Z",
+    "note": ""
+   }
+  ],
+  "reportage": "REPORTAGE — dafont author note (stored): '1. This font is for PERSONAL USE ONLY. No promotional or commercial use is permitted. 2. You need a license for promotional or commercial use. 3. You will be charged 20x the Renewal License Price if you violate this agreement. 4. ... https://elements.envato.com/fonts/maikohatta 5. ... maikofarazhatta@gmail.com' (repeated in Indonesian). fontspace listing (stored): 'License Info: Freeware, Non-Commercial'; designer note 'NOTE: This demo font is for PERSONAL USE ONLY! and NO COMMERCIAL USE ALLOWED'; 'Commercial licenses ... Buy at Creative Fabrica'; 'Regular Style, TrueType/PostScript, 153 glyphs, 167 characters'. Creative Market product page (NOT stored — HTTP 403 to direct clients; summary via the fetch proxy): 'BORELA - Modern Sans Serif Font' by MaikoHatta, Desktop $18.00, Webfont $20.00, E-pub $36.00, App $144.00, OTF+TTF, created July 19, 2023.",
+  "notes": "creativemarket.com answers HTTP 403 to urllib and to curl (also with full browser headers / HTTP1.1), so the commercial product page could not be stored byte-verbatim; creativefabrica.com/product/borela/ answers HTTP 403 to curl and to WebFetch, so the CF listing named by fontspace is unverified. No page states a version (library: 'Version 1.001;Fontself Maker 3'); dafont lists BORELA.ttf while the library file is Borela-6YX71.otf (fontspace naming). No download attempted (free copies are aggregator-hosted only; the commercial copy requires purchase), so no hash comparison. Attribution discrepancy recorded, not resolved: font strings '©Maikohatta', dafont 'Gilang Ternadho', fontspace 'Maiko Hatta'. Envato Elements shows other MaikoHatta fonts but no Borela listing surfaced in search."
+ },
+ {
+  "family": "Blisey",
+  "upstream": "Syauqi Studio (type foundry, Tangerang, Indonesia; designer credited by MyFonts as Muhammad Asroful Umam) — Behance gallery 219816927 'Blisey: Psychedelic Display Typeface' (behance.net/syauqistudio); designer's Gumroad storefront syauqistudio.gumroad.com/l/blisey (commercial); marketplace listings on MyFonts (collections/blisey-font-syauqi-studio) and Fontspring; the personal-use demo is directed by the designer to 1001fonts.com",
+  "how_identified": "declared copyright 'Typeface © (Syauqi Studio). 2025' + web search → MyFonts/Fontspring/Behance profile; the gallery itself was located with a Behance search in the browser pane (the profile's first page does not list it)",
+  "confidence_class": "FAMILY-MATCHED",
+  "licence_status": "FREE_FOR_PERSONAL_USE — commercial requires purchase (COMMERCIAL — EVIDENCE REQUIRES PURCHASE)",
+  "stored": [
+   {
+    "path": "/Users/symow/bh29_work/evidence/Blisey/blisey-font-syauqi-studio.html",
+    "url": "https://www.myfonts.com/collections/blisey-font-syauqi-studio",
+    "sha256": "efd35fe482410d07fcbf35e545843afdc153116460fb915e38f9c18da9d9a31b",
+    "kind": "PRODUCT_PAGE",
+    "bytes": 1009291,
+    "fetched_at": "2026-09-03T07:35:56Z",
+    "note": ""
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Blisey/syauqistudio_profile.html",
+    "url": "https://www.behance.net/syauqistudio",
+    "sha256": "d6273315991c5d78d7d59e05b632927131a1f81c31e712372892169cadad8671",
+    "kind": "PRODUCT_PAGE",
+    "bytes": 695457,
+    "fetched_at": "2026-09-03T07:40:51Z",
+    "note": "Designer's own Behance profile (Syauqi Studio); fetched to locate the Blisey project"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Blisey/Blisey-Psychedelic-Display-Typeface.html",
+    "url": "https://www.behance.net/gallery/219816927/Blisey-Psychedelic-Display-Typeface",
+    "sha256": "4cde0b19288377088fcd8e5635a6d1b2d200940e39808e8e297ed706cdd457da",
+    "kind": "PRODUCT_PAGE",
+    "bytes": 626136,
+    "fetched_at": "2026-09-03T07:49:57Z",
+    "note": "Designer's own Behance project for Blisey (Syauqi Studio), located via Behance search"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Blisey/gumroad_blisey.html",
+    "url": "https://syauqistudio.gumroad.com/l/blisey",
+    "sha256": "a984539c823933be2cb588c7a9460a67cb7fe1c4828c554c1eb38a8bb857839f",
+    "kind": "PRODUCT_PAGE",
+    "bytes": 78916,
+    "fetched_at": "2026-09-03T07:50:37Z",
+    "note": "Designer's own Gumroad storefront for Blisey, linked from the Behance project as the commercial-use outlet"
+   }
+  ],
+  "reportage": "REPORTAGE — Behance project (stored; fetch-proxy summary): 'Download for Free Personal Use' → 1001fonts.com; 'Download for COMMERCIAL USE and Get the Best Price' → syauqistudio.gumroad.com/l/blisey; published February 21, 2025; the stored bytes contain 'Personal Use:', 'COMMERCIAL USE and Get the Best Price:' and 'gumroad.com/l/blisey'. Gumroad page (stored; embedded JSON): name 'Blisey - Psychedelic Retro Display Typeface for Unique Designs', price 21.0 USD, seller 'Syauqi Studio | Type Foundry'. MyFonts (stored; summary): 6 styles (Light/Light Italic/Regular/Italic/Bold/Bold Italic), $17.00 per style, family $21.00, licence types Desktop / Company Desktop / Webfonts / App / Digital Ad-Email / Electronic Doc, released February 20, 2025, no free version mentioned. Aggregators (1001fonts, freedesignresources, befonts) describe the free file as a demo for personal use.",
+  "notes": "No version stated on any page (library: 'Version 1.00;February 12, 2025'; the library holds a single 'Blisey' face while the commercial family has 6 styles — recorded, not interpreted). No Syauqi Studio own-domain found (syauqistudio.com / www.syauqistudio.com / syauqi.studio all fail the TLS handshake). The demo is offered only via aggregators (1001fonts, named by the designer), so nothing was downloaded and no hash comparison was made; the commercial EULA is behind purchase. The Gumroad page is mostly JS (64 chars of visible text); price/name read from its embedded JSON. The designer's Behance profile page was also stored (used to look for the gallery)."
+ },
+ {
+  "family": "Figerona Black",
+  "upstream": "Drizy Studio (Faqih Fawaji) — own store drizystudio.com (product/figerona/ + license/), second own site drizyfont.com (product + licenses pages), Behance project 130041031; the designer's own dafont listing (file Figerona-VF.ttf) carrying his note",
+  "how_identified": "declared copyright 'Figerona (c) Drizy Studio 2021' + web search; the earlier leg had already stored both Drizy sites; the library filename 'FontsFree-Net-Figerona-VF(1).ttf' is fontsfree.net's re-hosting pattern of the dafont 'Figerona-VF.ttf' file",
+  "confidence_class": "FAMILY-MATCHED",
+  "licence_status": "FREE_FOR_PERSONAL_USE — commercial requires purchase (COMMERCIAL — EVIDENCE REQUIRES PURCHASE)",
+  "stored": [
+   {
+    "path": "/Users/symow/bh29_work/evidence/Figerona_Black/license.html",
+    "url": "https://drizystudio.com/license/",
+    "sha256": "e62e70718ad5fdae1de386ce9dcc9b97ad5c0e26e376f53fb891926a6e569879",
+    "kind": "LICENCE_TEXT",
+    "bytes": 294950,
+    "fetched_at": "2026-09-03T06:16:49Z",
+    "note": "Drizy Studio (Faqih Fawaji) own-site licence page, as linked from the author's dafont note"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Figerona_Black/figerona.html",
+    "url": "https://drizystudio.com/product/figerona/",
+    "sha256": "78440d155c261bd7ee3adfdc97ad7c3692c3bfa7260f83d6702e904de6b53359",
+    "kind": "PRODUCT_PAGE",
+    "bytes": 668176,
+    "fetched_at": "2026-09-03T06:17:45Z",
+    "note": "Drizy Studio own-store product page for Figerona (commercial licence), linked from the author's dafont note"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Figerona_Black/licenses.html",
+    "url": "https://drizyfont.com/licenses/",
+    "sha256": "6d44b2221c4f2ceb77abb2b07537fe0ff859c01739e2a568a0724df88a7c71ab",
+    "kind": "LICENCE_TEXT",
+    "bytes": 321638,
+    "fetched_at": "2026-09-03T06:17:53Z",
+    "note": "Drizy Font (second Drizy site, linked from Behance project 130041031) licence page"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Figerona_Black/figerona-geometric-variable-typeface-font.html",
+    "url": "https://drizyfont.com/fonts/figerona-geometric-variable-typeface-font/",
+    "sha256": "6cc29b9051b07ebdc8e1b27f3f9ba5198677774e9a4c15502d43d8996df217e9",
+    "kind": "PRODUCT_PAGE",
+    "bytes": 1486424,
+    "fetched_at": "2026-09-03T06:18:11Z",
+    "note": "Drizy Font store product page linked from Behance project 130041031"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Figerona_Black/figerona.font",
+    "url": "https://www.dafont.com/figerona.font",
+    "sha256": "42f7a99bfda9be8887b4e149ee7ece6af20d7a540a57dccf9a2cd23a1cf1ecb1",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "bytes": 18496,
+    "fetched_at": "2026-09-03T07:35:58Z",
+    "note": ""
+   }
+  ],
+  "reportage": "REPORTAGE — dafont author note (stored): 'By purchasing, downloading and installing this font, you accept and agree to the Product Use License Agreement: - This is already FULL VERSION FONT and ONLY for PERSONAL USE. NO COMMERCIAL USE ALLOWED! - Here is the link to purchase COMMERCIAL LICENSE: https://drizystudio.com/product/figerona/ - If you need a CUSTOM LICENSE or CORPORATE LICENSE please contact us at: admin@drizystudio.com'; file listed Figerona-VF.ttf; first seen November 01, 2022. drizystudio.com product page (stored): 'Figerona – Geometric Variable Typeface by Drizy Studio, June 16, 2022 ... License Option: Personal License $12, Webfont License ...'; styles listed Thin→Black including 'Figerona Black'. drizystudio.com/license/ (stored): Desktop License '1 User, 5 Commercial Project, Unlimited Personal Project, 2 Computer Installation ...'; Extended License 'Maks. 10 User ...'. drizyfont.com product (stored): 'Family Package $ 57,99 — For non-commercial personal use' / '$ 84,99 — For freelance professionals ...'.",
+  "notes": "No page states a version (library: 'Version 1.000'), hence FAMILY-MATCHED. The free file reaches users through aggregators (dafont, then fontsfree.net which produced the library's filename) — not the designer's own page — so no download and no hash comparison. The file's governing text is the author's dafont note, not a formal EULA; the commercial EULA is behind purchase. The two Drizy sites (both the designer's) show different packages/prices — recorded as reportage. Behance project 130041031 was not re-fetched (budget)."
+ },
+ {
+  "family": "Komika Axis",
+  "upstream": "Apostrophic Laboratories ('Apostrophic Labs', apostrofe@mail.com; WolfBainX listed among its collaborators) — own site apostrophiclab.com, DEFUNCT; in 2001 it was a frameset over hardcovermedia.com/lab/ (Wayback captures stored); dafont now lists the font under 'Vigilante Typeface Corporation' linking facebook.com/wolfbainx; the 'Apostrophic Labs License' text survives as a third-party republication (localfonts.eu, stored by the earlier leg)",
+  "how_identified": "declared strings ('© 1999-2001, WolfBainX & Apostrophic Labs', licence_url 'www.@apostrophiclab.com') + web search; Wayback Machine reached with curl through the proxy (WebFetch is blocked for web.archive.org); captures chosen from the CDX index",
+  "confidence_class": "UNRESOLVED",
+  "licence_status": "OPEN_LICENCE_TEXT_STORED",
+  "stored": [
+   {
+    "path": "/Users/symow/bh29_work/evidence/Komika_Axis/apostrophic-labs-license.html",
+    "url": "https://localfonts.eu/apostrophic-labs-license/",
+    "sha256": "14d342178db81ee6ffec541ddcef47f97b8fcbbcf4d45785df0adadc448fc93b",
+    "kind": "LICENCE_TEXT",
+    "bytes": 409350,
+    "fetched_at": "2026-09-03T06:18:20Z",
+    "note": "Third-party (localfonts.eu) republication of the 'Apostrophic Labs License v1.00'; apostrophiclab.com is defunct"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Komika_Axis/komika-axis.font",
+    "url": "https://www.dafont.com/komika-axis.font",
+    "sha256": "4b24bae20124d25f9d8186e19127de3ad3274ce5fb4de4fad91f2492c4f420c0",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "bytes": 14518,
+    "fetched_at": "2026-09-03T07:36:00Z",
+    "note": ""
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Komika_Axis/www.apostrophiclab.com",
+    "url": "https://web.archive.org/web/2002id_/http://www.apostrophiclab.com/",
+    "sha256": "cb43421ed8649345cc97a75f038501f31002d8390ac19669d9bad0d257e859ce",
+    "kind": "PRODUCT_PAGE",
+    "bytes": 204,
+    "fetched_at": "2026-09-03T07:38:27Z",
+    "note": ""
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Komika_Axis/apostrophiclab_lab_frame_wayback.html",
+    "url": "https://web.archive.org/web/2003id_/http://www.hardcovermedia.com/lab/",
+    "sha256": "c218c3a6534a5734652ebf286e4bbc610bd4ebd1849a74be70dd59773d2ca3ea",
+    "kind": "PRODUCT_PAGE",
+    "bytes": 2171,
+    "fetched_at": "2026-09-03T07:42:37Z",
+    "note": "Wayback Machine capture of hardcovermedia.com/lab/ — the frame target of apostrophiclab.com's 2003-01-24 frameset stub (the copyright holder's own, now defunct, site)"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Komika_Axis/apostrophiclab_20010302044239.html",
+    "url": "https://web.archive.org/web/20010302044239id_/http://www.apostrophiclab.com:80/",
+    "sha256": "1e006c6295485620d781845f442b02faab530ebd466fe0c2c597a71e9f1e4e0d",
+    "kind": "PRODUCT_PAGE",
+    "bytes": 361,
+    "fetched_at": "2026-09-03T07:52:55Z",
+    "note": "Wayback Machine capture 20010302044239 of http://www.apostrophiclab.com:80/ (the copyright holder's own, now defunct, site), chosen from the CDX index"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Komika_Axis/apostrophiclab_laboratory_20010221231147.html",
+    "url": "https://web.archive.org/web/20010221231147id_/http://www.hardcovermedia.com:80/lab/laboratory.html",
+    "sha256": "3e583887262ff37f2a2b8058879c042c3266648511e19f8677e00a3765a4930e",
+    "kind": "LICENCE_TEXT",
+    "bytes": 11467,
+    "fetched_at": "2026-09-03T07:54:48Z",
+    "note": "Archived 'laboratory' info page of the copyright holder's own (defunct) site — candidate for the site's licence/terms statement (Wayback 20010221231147 of http://www.hardcovermedia.com:80/lab/laboratory.html)"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/Komika_Axis/apostrophiclab_main_20010221031257.html",
+    "url": "https://web.archive.org/web/20010221031257id_/http://www.hardcovermedia.com:80/lab/main.html",
+    "sha256": "f1646f964138de17d09354083c105d8b3a361fa71b9a3f20270a72702cac3280",
+    "kind": "LICENCE_TEXT",
+    "bytes": 3317,
+    "fetched_at": "2026-09-03T07:58:01Z",
+    "note": "Archived main page of the copyright holder's own (defunct) site — carries the site's terms statement if any (Wayback 20010221031257 of http://www.hardcovermedia.com:80/lab/main.html)"
+   }
+  ],
+  "reportage": "REPORTAGE — Apostrophic Labs License (third-party republication at localfonts.eu, stored by the earlier leg): 'The fonts on this site are freeware and can be used as they are in any context without permission from Apostrophic Laboratories, except to produce material that is racist, criminal and/or illegal in nature. It is prohibited to modify any Apostrophic Laboratories font(s) for repackaging and/or re-release without an express written authorization by the designer(s) of the font(s) or Apostrophic Laboratories. Under no circumstance shall any Apostrophic Laboratories design or font design be sold or purchased.' Copyright holder's own archived main page, Feb 2001 (stored): no 'freeware' passage found in its text. Copyright holder's own archived page, Dec 2003 (stored): 'This site offers public domain fonts ... The old apostrophiclab.com contained over 1000 free font packages for download. Many of those packages will be coming back under a new public domain license instead of their initial freeware one.' Archived 'laboratory' page, Feb 2001 (stored): lists the lab's collaborators including 'WolfBainX'. dafont (stored): 'Free for personal use', author shown as 'Vigilante Typeface Corporation' (link facebook.com/wolfbainx), file KOMIKAX_.ttf, first seen 'before 2005'. No archived Komika Axis page was obtainable (see notes).",
+  "notes": "apostrophiclab.com is defunct (the declared licence_url 'www.@apostrophiclab.com' is malformed); Wayback captures 2001-03 and 2003-01 of the root are 200-361-byte frameset stubs pointing at hardcovermedia.com/lab/, where the 2001 catalogue lived. The CDX index lists per-font pages there for sibling Komika faces (komikahuna.html, komikazba.html, komikaze.html, komikazoom.html) but no page for Komika Axis itself was found in the 80-row listing, and the targeted 'lab/komika*' prefix queries answered HTTP 503 (Wayback overload) on both attempts — so no upstream page carrying this exact face was stored and the confidence class stays UNRESOLVED although every source attributes the family to Apostrophic Labs/WolfBainX. No page states the library's version '2.0'. Licence classification is inconsistent across sources and is recorded, not resolved: the era licence text says 'freeware ... any context' (third-party republication), the holder's 2003 page speaks of a 'new public domain license', dafont says 'Free for personal use'. WebFetch is blocked for web.archive.org; curl through the proxy works. One mis-fetch (the LIVE hardcovermedia.com, an unrelated current owner) was pruned from evidence/ and index.json. Nothing downloaded (no designer-offered binary exists)."
+ },
+ {
+  "family": "2  Narenj",
+  "upstream": "UNRESOLVED — 'Mrtsoft' / 'MRT' (Mohammad Reza Tavakoli; win2farsi.com, MRTpack.com per aggregator metadata and the archived site's generator tag) has no locatable foundry channel: win2farsi.com no longer resolves in DNS, mrtpack.com serves HTTP 404, and the 2010 Wayback capture of win2farsi.com is a Persian software-download listing page (e.g. '374 Farsi Fonts new 2010' via rapidshare) with no font licence statement",
+  "how_identified": "declared copyright '(c) 1998 Mrtsoft' + web search (aggregators fontke/arbfonts/freearabicfont attribute the font to Mrtsoft, 'released 2016')",
+  "confidence_class": "UNRESOLVED",
+  "licence_status": "UNRESOLVED",
+  "stored": [
+   {
+    "path": "/Users/symow/bh29_work/evidence/2_Narenj/win2farsi_wayback_2010.html",
+    "url": "https://web.archive.org/web/2010id_/http://www.win2farsi.com/",
+    "sha256": "d495f0962cd6da5bbe117f49e6ce218ccdffa3a8f27de35e1a3f4a1b55381ebd",
+    "kind": "DOWNLOAD_PAGE",
+    "bytes": 68593,
+    "fetched_at": "2026-09-03T07:40:43Z",
+    "note": "Wayback Machine stub/capture of win2farsi.com (MRT/Mrtsoft site named in aggregator metadata); live DNS fails"
+   },
+   {
+    "path": "/Users/symow/bh29_work/evidence/2_Narenj/2-narenj-font-download.html",
+    "url": "https://arbfonts.com/2-narenj-font-download.html",
+    "sha256": "4b751448539c95996ffd3f23d42fe35d8635a3f79ca74e1944526174bc67d8f2",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "bytes": 36078,
+    "fetched_at": "2026-09-03T07:45:45Z",
+    "note": ""
+   }
+  ],
+  "reportage": "REPORTAGE — arbfonts.com (aggregator, Arabic; stored): company 'Mrtsoft', copyright '(c) 1998 Mrtsoft', ttf, weight Regular, listed '9 years' ago. fontke (aggregator; search summary, page not storable): licence 'Unknown', 288 characters. Web summaries attribute an unsourced 'Do not use it commercially without authorization' line to aggregator pages. Archived win2farsi.com, 2010 (stored): 'Modified:1995-2010 MRT www.win2farsi.com' followed by a software/Windows/fonts download list; generator tag 'MRTpack.com'.",
+  "notes": "fontke's licence page redirects in a loop (en.m.fontke.com → 301 english.m.fontke.com → 302; eng.fontke.com → 301 english.fontke.com → 302) — not stored. Same-name ambiguity: 'B Narenj' (Borna Rayaneh's 'B' series) is a different vendor's font of the same name; the '2 ' prefix is a vendor-series prefix. The version string 'Version 1.00 November 10, 2016' against a 1998 copyright indicates repackaging. No designer channel → nothing downloaded, no hash comparison. Aggregator-only availability."
+ },
+ {
+  "family": "HASOOB",
+  "upstream": "UNRESOLVED — no designer/foundry channel located; the font's own strings identify only 'Generated by Fontographer 3.5' (1993) with vendor/subfamily tags 'AAHS:HASSOB' / 'AAHS:Kuwait' as shown by aggregators; 'FP Hasoob' (Fontparsi, Mohammad Amuie) is a later, differently named font",
+  "how_identified": "declared strings + web search (aggregators only: arafonts, wfonts, world-fonts, arbfonts, alfont)",
+  "confidence_class": "UNRESOLVED",
+  "licence_status": "UNRESOLVED",
+  "stored": [
+   {
+    "path": "/Users/symow/bh29_work/evidence/HASOOB/hasoob.html",
+    "url": "https://www.wfonts.com/font/hasoob",
+    "sha256": "eae54c972309ed5892072e9b82bf6ff2956b60c49bc2c3c65bbf567de30b9ae6",
+    "kind": "TERMS_PAGE_REPORTAGE",
+    "bytes": 68421,
+    "fetched_at": "2026-09-03T07:40:45Z",
+    "note": ""
+   }
+  ],
+  "reportage": "REPORTAGE — wfonts.com (aggregator; stored): 'AAHS:HASSOB FontName HASSOB NameTableVersion 1 ... Copyright Generated by Fontographer 3.5'. arafonts.com (search summary; site unreachable): 'associated with AAHS:Kuwait', 'popular in Saudi Arabia'. No licence text or terms statement exists on any located page.",
+  "notes": "arafonts.com is unreachable (port 80 connect failure; port 443 TLS failure); world-fonts.com fails the TLS handshake; wfonts.com stored via curl. The font predates the web (Sep 1993, Fontographer 3.5) and carries no author or licence strings; same-name ambiguity with 'FP Hasoob'. Nothing downloaded, no hash comparison. Aggregator-only availability."
+ }
+]

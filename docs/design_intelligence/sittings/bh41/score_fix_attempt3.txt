@@ -1,0 +1,33 @@
+§AD0(a) SCORE — (3) THE DRAINED LIVE SERVER, ATTEMPT 3, scored as HISTORY
+against pred_fix3.txt (sealed 5867d3b9f8d8c29c before git add). NOT
+launched: the negative control refuted the attempt's shape; the content
+changes and pred_fix4.txt is sealed on it.
+
+MISS (L8, the control's claim "0 LiveServerNotDrained, 10 of 10 green"):
+   E3_after_fix runs 1–2 (single session): deadlocks 0, flush errors 0, setUp
+   collisions 0 — but LiveServerNotDrained ×2 per run at the 25 s bound, the
+   same ConfirmationDialog tests. The instrumented failure (attempt 3 +
+   stacks, debug_confirm2) named the requests: two event streams, age 25.6 s,
+   client_gone=True, their handler threads inside live_views.py:83 (the
+   stream's one-second sleep) called from wsgiref's write loop. Measured on
+   this host (a bare streaming server, no database): after a client closes,
+   the handler's FIRST write still succeeds and only the SECOND fails; a
+   server-side shutdown of the socket raises ENOTCONN and changes nothing.
+   The stream writes once per fifteen iterations, so an abandoned stream
+   lives one to two ping intervals (16–32 s) whatever the bound: "ending it
+   from the server" was the wrong shape, and a longer bound would only
+   stall every such teardown.
+   Correction (attempt 4): a request older than stream_seconds (2 s) whose
+   client has gone is a stream and is TOLERATED — between its single-table
+   statements it holds no lock, and it ends by itself at its next writes or
+   at the flush (its task gone) — while every ordinary request (younger, or
+   with a live client) is still drained; and right before the flush the test
+   proves on its own connection that no other backend of the test database
+   holds a relation lock (pg_locks, polled every 10 ms, bounded, named on
+   expiry), so the TRUNCATE never begins beside a statement in flight. The
+   socket shutdown is removed as measured useless. Four browser-free tests:
+   the drain, the fast named failure, the tolerance of an old silent
+   abandoned stream against the blocking of a young one, the idle path.
+HELD: WIT 864 (0 checks in the module and the tests); the collected FILE
+   set; the swaps; the stash.
+Score: 7/8 (L8's control sub-claim missed; L1–L7 not exercised — no gate).

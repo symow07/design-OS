@@ -1,0 +1,80 @@
+{
+  "one_clean_cylindrical_metal_sleeve": false,
+  "stepped_ledges_removed": true,
+  "visible_neck_transition_minimal_and_coherent": false,
+  "dark_lower_flare_connects_naturally": false,
+  "same_visible_closure_family": false,
+  "better_than_previous": true,
+  "critical_blockers": [
+    "Metal gold sleeve is absent \u2014 the cylindrical collar is rendered in pale beige/cream instead of rose-gold metallic finish",
+    "Dark rubber bulb flare does not form a clean skirt sitting atop the metal sleeve; it bleeds into the beige collar ambiguously",
+    "Neck transition between dark component and sleeve lacks the crisp defined ring seen in the reference",
+    "Overall closure family reads as a flat matte dropper rather than the reference's polished metal-banded dropper"
+  ],
+  "confidence": 0.62,
+  "calls": 1,
+  "manifest": {
+    "schema_version": "visual_inspector_input_manifest/1.0",
+    "created_at": "2026-07-28T05:41:46.819588+00:00",
+    "inspection_identity": "vq1-it6-collar",
+    "purpose": "collar/neck comparison",
+    "component_under_review": "CLOSURE",
+    "images": [
+      {
+        "label": "reference_component_crop",
+        "path": "docs/visual_quality/vq1_it6_gate/ref97_closure_full_assembly.png",
+        "sha256": "4b0f019e8ef708db87b683b16351498e1a312d361ba1fcd7b4cf23c2093865c0"
+      },
+      {
+        "label": "previous_candidate",
+        "path": "docs/visual_quality/vq1_it6_gate/iteration_5_closure.png",
+        "sha256": "ae2b8ced94f9b3393cc097996232d25975b9c14abab534c46ac79a6c691af7c7"
+      },
+      {
+        "label": "candidate_component_crop",
+        "path": "docs/visual_quality/vq1_it6_gate/iteration_6_closure.png",
+        "sha256": "13906bace40eb6c7e4369dff1d1fbf34211b08054052d31e6fdcad14cde6fbce"
+      }
+    ],
+    "image_order": [
+      "reference_component_crop",
+      "previous_candidate",
+      "candidate_component_crop"
+    ],
+    "semantic_state": "VISIBLE_DARK_CLOSURE_ENVELOPE_WITH_ROUNDED_DOME_AND_FLARED_SKIRT",
+    "human_findings": [],
+    "prompt_version": "it6-collar-qualitative-v1",
+    "model": "claude-sonnet-4-6",
+    "quality_gate": "PASSED",
+    "quality_findings": [],
+    "response_identity": "",
+    "call_permitted": true,
+    "verdict_authority": {
+      "deterministic_output_pixel_analysis_governs": [
+        "apex topology",
+        "contour coordinates",
+        "pixel width",
+        "pixel height",
+        "numeric ratios",
+        "clipping",
+        "symmetry",
+        "component bounds"
+      ],
+      "multimodal_inspection_governs": [
+        "semantic resemblance",
+        "perceived form",
+        "qualitative proportional balance",
+        "generic-versus-reference character",
+        "visual improvement or regression"
+      ],
+      "human_governs": [
+        "final structural acceptance",
+        "semantic approval",
+        "whether another correction is authorized"
+      ],
+      "multimodal_may_override_deterministic_pixel_topology": false
+    },
+    "credentials_persisted": false
+  },
+  "verdict": "VISUALLY_IMPROVED_BUT_INSUFFICIENT"
+}

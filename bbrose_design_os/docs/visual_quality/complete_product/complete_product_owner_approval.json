@@ -1,0 +1,192 @@
+{
+ "record_type": "complete_product_owner_approval/1.0",
+ "created_at": "2026-07-29",
+ "decided_by": "PROJECT_OWNER",
+ "decision": "APPROVED",
+ "accepted_review_commit": "aa632ff",
+ "codes": [
+  "COMPLETE_PRODUCT_OWNER_APPROVED",
+  "COMPLETE_PRODUCT_CANDIDATE_ACCEPTED",
+  "COMPLETE_PRODUCT_REVIEW_CLOSED",
+  "COMPLETE_PRODUCT_INSPECTOR_DISAGREEMENT_RESOLVED_BY_OWNER",
+  "COMPLETE_PRODUCT_INSPECTOR_B_FINDINGS_NONBLOCKING_ADVISORY"
+ ],
+ "accepted_candidate": "VQ2-A2-R2-FINAL (integrated complete product)",
+ "passes": [
+  "structural coherence",
+  "artwork coherence",
+  "luxury-cosmetics character",
+  "brand hierarchy",
+  "logo integration",
+  "typography integration",
+  "symmetry",
+  "negative-space balance",
+  "concept-front fidelity"
+ ],
+ "inspection_results_preserved": {
+  "inspector_a": {
+   "verdict": "COMPLETE_PRODUCT_COHERENT_PENDING_OWNER_APPROVAL",
+   "actionable": 0,
+   "request_id": "req_011CdXe3RRqm2P9W8VYButK4",
+   "raw_output_sha256_16": "e14b7a14b04a4304"
+  },
+  "inspector_b": {
+   "verdict": "COMPLETE_PRODUCT_REVIEW_REQUIRED",
+   "actionable": 4,
+   "request_id": "req_011CdXe5hYWfPJJrutDkJySm",
+   "raw_output_sha256_16": "b90999bb18a7b174"
+  },
+  "model_output_rewritten": false,
+  "adjudication_added_beside_not_over": true
+ },
+ "owner_adjudication": [
+  {
+   "finding_index": 0,
+   "area": "Collar colour vs reference concept",
+   "inspector_observation_preserved_verbatim": "The integrated product collar is rendered in flat mid-brown #705242, which is a warm earth tone with no chromatic relationship to the rose-pink body (#D9BDB5) or the artwork ink (#502525). In the reference concept the collar is a rose-gold metallic band that acts as a chromatic bridge between the pink body and the dark closure. Without that bridging tone the integrated flat version presents a three-colour stack (pink / brown / near-black) where the collar reads as an unrelated intrusion rather than a luxury connector. This is a new integrated-system observation: it only manifests when the flat colour system is read as a complete product stack rather than as isolated accepted swatches.",
+   "raised_by": "COMPLETE_PRODUCT_ADVERSARIAL_DEFECT_FINDER",
+   "owner": {
+    "ruling": "NONBLOCKING_FOR_COMPLETE_PRODUCT",
+    "disposition": "DEFERRED_TO_VQ3_MATERIAL_INTEGRATION",
+    "codes": [
+     "COMPLETE_PRODUCT_COLLAR_COLOUR_SPLIT_ACCEPTED_FOR_FLAT_CONCEPT",
+     "VQ3_COLLAR_BODY_MATERIAL_INTEGRATION_REQUIRED"
+    ],
+    "reason": [
+     "body, collar and closure are distinct physical components",
+     "VQ-2 uses flat concept colours only",
+     "VQ-3 will judge frosted glass, metallic collar, closure material, reflections and integrated colour response",
+     "the colour separation does not damage hierarchy or brand identity",
+     "both inspectors agreed the product remains luxurious and coherent",
+     "neither inspector considered it unsuitable for packaging or VQ-3"
+    ],
+    "artwork_changed": false
+   }
+  },
+  {
+   "finding_index": 1,
+   "area": "Artwork block left-alignment vs bottle centroid \u2014 negative-space imbalance on right",
+   "inspector_observation_preserved_verbatim": "The artwork block occupies 80.7% of body width but is left-anchored, leaving approximately 19% of the body width as unoccupied right-side space below the label zone. The divider rule, logo, and both name lines all share the same left datum, producing a deliberate asymmetry that is concept-consistent. However, in the integrated flat view \u2014 with no tonal gradient or glass edge to carry the eye \u2014 the raw right-side void is visually heavier than in the reference, where frosted-glass curvature and subtle shadow fill the same zone perceptually. The void is not resolved by any graphic device in the flat concept, making it read as incomplete rather than intentional when the product is viewed in isolation (Image 2). This is an integration-level finding: the right-side negative space is acceptable in the reference context but unresolved in the flat integrated product.",
+   "raised_by": "COMPLETE_PRODUCT_ADVERSARIAL_DEFECT_FINDER",
+   "owner": {
+    "ruling": "APPROVED_AND_FROZEN",
+    "disposition": "CONFIRMED",
+    "codes": [
+     "COMPLETE_PRODUCT_ARTWORK_LEFT_DATUM_OWNER_CONFIRMED"
+    ],
+    "reason": [
+     "the left datum derives from concept #97 and was accepted during VQ-2"
+    ],
+    "artwork_changed": false
+   }
+  },
+  {
+   "finding_index": 2,
+   "area": "Logo scale relative to hero type block",
+   "inspector_observation_preserved_verbatim": "The logo-to-'Rose'-width ratio is 0.813, meaning the BBROSE logo is only marginally smaller than the width of the 'Rose' line. In the reference concept the logo is visually subordinate because the frosted body and surrounding white space give it breathing room. In the flat integrated product the logo sits in very close proximity above a large negative-space gap before the divider, then an even larger hero type block. The logo therefore reads as weakly anchored \u2014 too small to command the upper zone, too large to be a discreet brand mark. The gap between the logo baseline and the divider rule is perceptually disproportionate to the gap between the divider and the 'Rose' headline.",
+   "raised_by": "COMPLETE_PRODUCT_ADVERSARIAL_DEFECT_FINDER",
+   "owner": {
+    "ruling": "APPROVED_AND_FROZEN",
+    "disposition": "REOPENING_REJECTED",
+    "codes": [
+     "COMPLETE_PRODUCT_LOGO_SCALE_OWNER_CONFIRMED",
+     "COMPLETE_PRODUCT_LOGO_SCALE_REOPENING_REJECTED"
+    ],
+    "reason": [
+     "accepted logo/Rose ratio 0.8133 against the measured reference target 0.8134",
+     "the previous 0.6035 was explicitly rejected as visually undersized",
+     "the inspector's recommendation does not override the reference-derived measurement, the owner-approved VQ-2 composition, or the accepted final-front-artwork state"
+    ],
+    "artwork_changed": false
+   }
+  },
+  {
+   "finding_index": 3,
+   "area": "Colour coherence \u2014 four-tone system chromatic isolation",
+   "inspector_observation_preserved_verbatim": "Viewed as a complete colour system, the four tones split into two unconnected pairs: {#D9BDB5 pink body} and {#705242 brown collar / #493034 dark closure / #502525 artwork ink}. The pink body has no warm-brown undertone relative to the collar, so the body-to-collar junction reads as a colour discontinuity rather than a tone family. In the reference concept rose-gold metallic unifies the warm register across all zones. In the flat system there is no hue shared between the pink body and the brown/dark group, which weakens product-family coherence at the integrated stage.",
+   "raised_by": "COMPLETE_PRODUCT_ADVERSARIAL_DEFECT_FINDER",
+   "owner": {
+    "ruling": "NONBLOCKING_FOR_COMPLETE_PRODUCT",
+    "disposition": "DEFERRED_TO_VQ3_MATERIAL_INTEGRATION",
+    "codes": [
+     "COMPLETE_PRODUCT_COLLAR_COLOUR_SPLIT_ACCEPTED_FOR_FLAT_CONCEPT",
+     "VQ3_COLLAR_BODY_MATERIAL_INTEGRATION_REQUIRED"
+    ],
+    "reason": [
+     "this is the collar-colour observation restated at system level; the same ruling applies"
+    ],
+    "artwork_changed": false
+   }
+  }
+ ],
+ "adjudications_count": 4,
+ "all_inspector_b_findings_adjudicated": true,
+ "artwork_modified_by_this_closeout": false,
+ "rerendered": false,
+ "frozen": {
+  "m3": "4ecc8e9df1d1",
+  "lf1_r1": "fcd8003994d52028",
+  "font_unit_contour_hash": "5db4403984ba6f75",
+  "approved_logo": "a2b2a82969389ac2",
+  "clean_preview": "94ec944326889c20",
+  "logo_to_rose_ratio": 0.8133,
+  "logo_uniform_scale": 0.970431,
+  "left_datum_px": 528,
+  "flat_colours": {
+   "body": "#D9BDB5",
+   "collar": "#705242",
+   "closure": "#493034",
+   "artwork_ink": "#502525"
+  },
+  "symmetry_mirror_mm": {
+   "GLASS": 0.0,
+   "COLLAR": 0.0,
+   "DARK_CLOSURE": 0.0
+  },
+  "vq2_frozen_outputs": {
+   "vq2_a2_r2_final.ai": "f3707618edf98c87",
+   "vq2_a2_r2_final.pdf": "a95d6d63d0e45871",
+   "vq2_a2_r2_final_clean.png": "94ec944326889c20",
+   "vq2_a2_r2_final_guides.png": "6186e4e7669758af",
+   "vq2_a2_r2_final_audit.json": "94517c3e4086cf40",
+   "vq2_a2_r2_final_review.pdf": "edeafb10c5b72d8d",
+   "vq2_a2_r2_final_review.png": "a9b9629369a0d8f0",
+   "vq2_a2_r2_final_review.json": "5d9142e024824322",
+   "vq2_complete_product_handoff.json": "f19e9b08f069e512"
+  }
+ },
+ "frozen_scope": [
+  "M3",
+  "accepted derived symmetric presentation geometry",
+  "approved BBROSE logo",
+  "logo scale",
+  "logo placement",
+  "divider",
+  "Rose",
+  "Damascena",
+  "supporting copy",
+  "flat colours",
+  "complete front composition",
+  "final clean preview"
+ ],
+ "vq1_reopened": false,
+ "vq2_reopened": false,
+ "another_candidate_created": false,
+ "new_candidate_requires": "new authoritative owner evidence",
+ "downstream": {
+  "COMPLETE_PRODUCT_REVIEW": "OWNER_ACCEPTED_AND_CLOSED",
+  "VQ3_READINESS": "READY_PENDING_EXPLICIT_START",
+  "PACKAGING_READINESS": "BLOCKED_PENDING_WRAP_AND_SUPPLIER_EVIDENCE",
+  "PRODUCTION_GEOMETRY": "BLOCKED_PENDING_SUPPLIER_EVIDENCE",
+  "PRODUCTION_FLAT_ARTWORK": "BLOCKED_PENDING_WRAP_AND_SUPPLIER_EVIDENCE",
+  "PRODUCTION_COLOR_SEPARATION": "BLOCKED_PENDING_SUPPLIER_EVIDENCE",
+  "ILLUSTRATOR_EXECUTION_VERIFICATION": "REQUIRED_BEFORE_PRODUCTION_AUTHORITY"
+ },
+ "packaging_started": false,
+ "vq3_started": false,
+ "starts_nothing_automatically": true,
+ "supplier_requests_sent": 0,
+ "provider_calls": 0,
+ "image_generation_calls": 0,
+ "closure_is_not": "production authority, Gate-2, manufacturability, or permission to start packaging or VQ-3"
+}

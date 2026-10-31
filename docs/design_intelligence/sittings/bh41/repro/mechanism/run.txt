@@ -1,0 +1,13 @@
+
+MECHANISM: {
+ "flush_order_first": "intelligence_corpusitem",
+ "flush_order_last": "accounts_decisionevent",
+ "tables": 70,
+ "flush": "CommandError: Database test_bbrose_db couldn't be flushed. Possible reasons:\n  * The database isn't running or isn't configured correctly.\n  * At least one of the expected database tables doesn't exist.\n  * The SQL was invalid.\nHint: Look at the output of 'django-admin sqlflush'. That's the SQL this command wasn't able to run.",
+ "flush_cause": "deadlock detected\nDETAIL:  Process 6770 waits for AccessExclusiveLock on relation 55332370 of database 55332184; blocked by process 6769.\nProcess 6769 waits for AccessShareLock on relation 55332614 of database 55332184; blocked by process 6770.\nHINT:  See server log for query details.\n",
+ "flush_seconds": 1.165,
+ "second_select": "OK",
+ "second_seconds": 0.356
+}
+.
+1 passed in 3.74s

@@ -1,0 +1,56 @@
+{
+  "schema_version": "dip1b_evidence_integrity_registry/1.0",
+  "registry_id": "dip1b_evidence_integrity_registry/1.0",
+  "evaluated_at": "2026-07-16T08:27:13Z",
+  "policies": [
+    {
+      "correction_id": "dip1b_data_corr_1_brand_candidate_source_hash/1.0",
+      "classification": "STALE_IGNORED_OUTPUT",
+      "manifest_selector": {
+        "manifest_id": "dip1b_mvp_manifest/1.0",
+        "manifest_schema_version": "dip1b_mvp_manifest/1.0",
+        "dataset_id": "dip0c3_brand_candidates/1.0",
+        "record_type": "BRAND_CANDIDATE",
+        "source_role": "DATA_SOURCE",
+        "expected_sha256": "dfccbad26e98744e78d606fec85a301a9d3d2357ff17cf8ece5fcbe7a2d9e62b"
+      },
+      "root_of_trust": {
+        "current_frozen_manifest_sha256": "7d31d29ff4e500931c55660da4439265d070618b867e0268ab1742a7f00af072",
+        "accepted_import_manifest_sha256": "824434857fced5bae40d7786f3ef372a1b7ba524f72d9e9ab961eb65ce096692",
+        "generator_identifier": "tools.dip0c.run_c3a",
+        "generator_version": "0.1.0",
+        "parser_identifier": "dip0c.brand",
+        "parser_version": "0.1.0",
+        "configuration_identifier": "docs/design_intelligence/dip0c/c3_pilot_manifest.json",
+        "configuration_sha256": "9dde40cf679fab5e388626b4d9ef9782536915f28a25adbc172abc2f81787d68"
+      },
+      "recognized_non_authoritative_versions": [
+        {
+          "observation_id": "dip1b4a_initial_observation",
+          "sha256": "5873424819b4776796df7b083636bbe19b5af24f74265c6c36a12d60202434f7",
+          "byte_size": 101488,
+          "semantic_sha256": "3cca47770f22bd863fafdd0116556ce7934f8c4ee0e9185ff235eda395639074"
+        },
+        {
+          "observation_id": "dip1b_data_corr_1_current_observation",
+          "sha256": "b4a891debabebdb721b919fa793264c5e8c2e671f5e2d5f3e5218e284d2f5cbf",
+          "byte_size": 101488,
+          "semantic_sha256": "3cca47770f22bd863fafdd0116556ce7934f8c4ee0e9185ff235eda395639074"
+        },
+        {
+          "observation_id": "dip1b_data_corr_1_controlled_rerun_1",
+          "sha256": "9c67949d6d80884d94004ef4a1bc3541bbe3aafa6812ec2eace80d2854b4c32f",
+          "byte_size": 101488,
+          "semantic_sha256": "3cca47770f22bd863fafdd0116556ce7934f8c4ee0e9185ff235eda395639074"
+        },
+        {
+          "observation_id": "dip1b_data_corr_1_controlled_rerun_2",
+          "sha256": "29c9a64d1cc628accdc62791769511b0aa4d86da453dfff206ab1128f6328bef",
+          "byte_size": 101488,
+          "semantic_sha256": "3cca47770f22bd863fafdd0116556ce7934f8c4ee0e9185ff235eda395639074"
+        }
+      ],
+      "authority_effect": "NONE"
+    }
+  ]
+}

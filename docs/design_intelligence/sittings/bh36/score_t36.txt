@@ -1,0 +1,31 @@
+§AD0(a) SCORE — T36 (§BH36 transcription, pure append, its own commit
+BEFORE any act), launched against pred_t36.txt (sealed 63dfff15c44e46ea
+before git add). Gate GREEN, GEXIT=0. LANDED b77afe1
+(2026-09-05T07:27:25Z UTC). 8/8. Launched once, through the inner-root
+launcher, nothing running beside it.
+
+L1 HELD: exactly OWNER_BLOCKER_CLEARANCE.md + the gate-staged ledger; no
+   apps/, docs/design_intelligence, tools/ or static/ path; nothing under
+   materials/ touched before the landing.
+L2 HELD: register +125 −0; the 19,238-line b7ed6cc prefix byte-identical
+   (66d907f27c99d14c); seam + tail == t36_block.md (92398c713e552122);
+   total 19,363; the owner's 59 lines round-trip byte-identical
+   (e7d7276cbc19339f); worktree == HEAD.
+L3 HELD: no manifest / records / identity in the commit; ledger 467 → 468
+   with HEAD~1 a byte-prefix of HEAD; census-first held (records none,
+   identity none, WIT 863 untouched, corpus constants none, the exclusion
+   list untouched).
+L4 HELD: staged == declared, one row 125 0.
+L5 HELD: 2 files, 126 insertions, 0 deletions — exact.
+L6 HELD: "TIER_2=GREEN collected=8555 failures=0 apps=7743 dip0c=671
+   dip0=141" — exact. No refusal; §BH24 1/3 carried from T35 run 1.
+L7 HELD: ledger 467 → 468; the new line verdict OK, refusal_count 0.
+L8 HELD: apps diff EMPTY; GATE 7fbeb8f1fe10b0fb at [514:541] (593 lines),
+   TEST b32030dc827263e4; tree seals unchanged; protocol_identity
+   untouched; the eight M7 artefacts == baseline; the DIP-0A inventory
+   sha f4c8db7f051989dc unchanged; under Django at scoring the Noto trio
+   VERIFIED_FOR_PRODUCTION / USER_CONFIRMED, the 35 at their PROVENANCE
+   hashes, catalogue 38; no authority involved; nothing quarantined or
+   sorted before this landing.
+Post-landing: porcelain clean. The ruled order resumes: (d) the quarantine,
+then (c) the sort, then the report.

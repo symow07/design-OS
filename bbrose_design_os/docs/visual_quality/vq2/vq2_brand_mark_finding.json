@@ -1,0 +1,57 @@
+{
+ "record_type": "vq2_brand_mark_finding/1.0",
+ "created_at": "2026-07-28",
+ "codes": [
+  "VQ2_BRAND_MARK_SOURCE_CONFLICT",
+  "VQ2_BRAND_MEDALLION_UNRESOLVED"
+ ],
+ "approved_asset": {
+  "path": "media/brand/logo.png",
+  "sha256": "72f0fc7ad97b90e0",
+  "format": "RASTER_PNG",
+  "vector_available": false,
+  "size": [
+   1439,
+   300
+  ],
+  "characteristics": [
+   "high-contrast SERIF wordmark",
+   "tight letterspacing",
+   "FILLED circular rose medallion replacing the O",
+   "carries a registered mark"
+  ],
+  "state": "REFERENCE_ONLY_NONPRINTING"
+ },
+ "reference_mark_in_concept_97": {
+  "characteristics": [
+   "geometric letterspaced SANS capitals",
+   "wide tracking",
+   "OUTLINED circular rose medallion with line-art rose",
+   "no registered mark visible"
+  ],
+  "measured_bounds_px": [
+   528,
+   835,
+   636,
+   855
+  ],
+  "medallion_bounds_px": [
+   580,
+   836,
+   598,
+   855
+  ]
+ },
+ "finding": "Concept #97 does NOT depict the approved BBROSE brand asset. The two marks differ in typeface class, letterspacing, medallion treatment and registered-mark presence. This is a SOURCE-AUTHORITY conflict, not a missing-vector problem: \u00a72 names both the concept and the approved brand assets as authority, and they disagree.",
+ "why_not_resolved_here": "\u00a79 forbids redesigning the BBROSE logo, so no third mark may be synthesized. No authoritative VECTOR logo exists, and Image Trace is prohibited.",
+ "what_was_done": "The five letterforms visible in the reference are set as outlined vectors at the measured positions. The rose medallion is NOT invented: its measured bounds are parked as a non-printing guide in layer 09 and the glyph slot is left empty while still consuming its advance, so the rest of the line keeps its measured position.",
+ "owner_decision_required": [
+  "A: reconstruct what concept #97 shows (letterspaced sans mark)",
+  "B: reconstruct the approved mark and accept deviation from #97",
+  "C: supply an authoritative vector logo"
+ ],
+ "image_trace_used": false,
+ "logo_redesigned": false,
+ "raster_logo_state": "REFERENCE_ONLY_NONPRINTING",
+ "raster_logo_placed_in_artwork": false
+}

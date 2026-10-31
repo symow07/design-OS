@@ -1,0 +1,21 @@
+{
+  "day": 8,
+  "commit": "eea398fabf35a70c0d65bd87c0404cbfeb34c522",
+  "started_at": "2026-10-19T23:11:47.825689+00:00",
+  "site": {
+    "url": "http://127.0.0.1:8000/healthz",
+    "status": 200,
+    "body": "{\"db\": \"ok\", \"redis\": \"ok\", \"celery\": \"ok\"}"
+  },
+  "worker": {
+    "pid": 80039,
+    "running": true,
+    "revision": "55e16dc",
+    "revision_match_at_start": true,
+    "started": "restart_worker.sh at 55e16dc after the browser capture commit (repo == worker revision; complete_product_preflight READY_FOR_LIVE_PILOT)"
+  },
+  "startup_verified": true,
+  "clean_tree_required_by_restart_scripts": true,
+  "worker_stopped_for_the_app_probe": "2026-10-20 06:41 Asia/Shanghai, queue empty and idle; restarted here",
+  "note": "site restarted at eea398f (the pick page's final banner), worker at 55e16dc (+ the capture PNGs only); later commits change records, tests and the Day 8 modules' failure paths, none of which the site or the worker calls \u2014 the final HEAD is in verification.json"
+}

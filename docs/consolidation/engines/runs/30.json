@@ -1,0 +1,87 @@
+{
+ "row": 30,
+ "ok": true,
+ "result": {
+  "proof_outside": {
+   "pixels": 1285946,
+   "differing_from_template": 0,
+   "zero_offset": true
+  },
+  "continuity": "{'schema': 'flat_fold_continuity/1', 'metric': 'CIEDE2000 (lid_master.delta_e00), 3 × 3 px means 1 mm either side', 'seams': [{'seam': 'back panel | header back', 'kind': 'same board, no fold', 'samples': 106, 'delta_e00_mean': 35.24, 'delta_e00_p90': 38.71, 'delta_e00_max': 38.71}, {'seam': 'header",
+  "faces_cut": {
+   "header": [
+    266,
+    198
+   ],
+   "header_back": [
+    266,
+    202
+   ],
+   "front": [
+    266,
+    57
+   ],
+   "side": [
+    207,
+    352
+   ],
+   "left": [
+    207,
+    352
+   ],
+   "back": [
+    266,
+    352
+   ]
+  },
+  "compose_stand": {
+   "artwork_rasters": 1,
+   "type_runs": 5,
+   "logos": 1,
+   "placements": [
+    "tray / back panel",
+    "tray / front panel",
+    "tray / header back",
+    "tray / header front",
+    "tray / left side",
+    "tray / right side"
+   ]
+  },
+  "tests": {
+   "tests": [
+    "apps/pipeline/tests/test_round_files_faces.py"
+   ],
+   "k": null,
+   "summary": "21 passed, 11 warnings in 38.18s",
+   "failed": [],
+   "seconds": 39.2
+  }
+ },
+ "seconds": 40.2,
+ "files": [
+  "30/faces/back/drawings/1/face.png",
+  "30/faces/back/drawings/1/record.json",
+  "30/faces/front/drawings/1/face.png",
+  "30/faces/front/drawings/1/record.json",
+  "30/faces/header/drawings/1/face.png",
+  "30/faces/header/drawings/1/record.json",
+  "30/faces/header_back/drawings/1/face.png",
+  "30/faces/header_back/drawings/1/record.json",
+  "30/faces/left/drawings/1/face.png",
+  "30/faces/left/drawings/1/record.json",
+  "30/faces/side/drawings/1/face.png",
+  "30/faces/side/drawings/1/record.json",
+  "30/flat/owner.npy",
+  "30/flat/paintings/1/art.png",
+  "30/flat/paintings/1/continuity.json",
+  "30/flat/paintings/1/die-flat.pdf",
+  "30/flat/paintings/1/flat.png",
+  "30/flat/paintings/1/proof.json",
+  "30/flat/paintings/1/view.png",
+  "30/flat/sheet.png",
+  "30/flat/template.json",
+  "30/flat/template.png",
+  "30/on-die/stand--flat.png",
+  "30/stand-in-raw.png"
+ ]
+}

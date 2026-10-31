@@ -1,0 +1,6 @@
+{% load plain_words %}<li>{% if f.label %}<span class="dim">{{ f.label|plain }}</span>{% endif %}
+  {% if f.url %}<a href="{{ f.url }}" target="_blank" rel="noopener"{% if f.kind == "download" %} download{% endif %}>{{ f.name }}</a>
+    <span class="pill">{% if f.kind == "download" %}download{% else %}opens full size{% endif %}</span>
+    <span class="pill" title="what the materials record says of this file">{{ f.tier_words }}</span>
+  {% else %}<span class="mono">{{ f.name }}</span> <span class="pill withheld">{{ f.state|plain }}</span>{% endif %}
+</li>

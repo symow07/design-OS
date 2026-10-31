@@ -1,0 +1,145 @@
+{
+ "record_type": "rbv_normalized_owner_measurements/1.0",
+ "created_at": "2026-08-04",
+ "unit": "mm unless stated",
+ "states": [
+  "ACCEPTED_AS_REPORTED",
+  "PLAUSIBLE_PENDING_PHOTO_VALIDATION",
+  "AMBIGUOUS_DEFINITION",
+  "CONTRADICTORY",
+  "PHYSICALLY_IMPLAUSIBLE",
+  "MISSING",
+  "REMEASUREMENT_REQUIRED"
+ ],
+ "rules": [
+  "raw text preserved separately in raw_measurements.json; nothing here overrides the raw record",
+  "no decimal correction was applied anywhere; implausible values keep their submitted magnitude",
+  "uncertainty is the owner's hand-calliper context: assume ±0.2 mm on clean calliper reads, ±1 mm on landmark-dependent reads, unless the field is flagged worse",
+  "this is the interpretation layer — owner ruling 2026-08-27: the raw file stays untouched per its preservation rule, all interpretation lives here",
+  "photographs are CORROBORATING EVIDENCE ONLY; no pixel-derived quantity may be promoted into this record as an owner measurement"
+ ],
+ "amendments": [
+  {
+   "at": "2026-08-27",
+   "record": "docs/visual_quality/rbv/owner_inputs/2026-08-27/a1_closeout.json",
+   "authority": "owner rulings typed in the sitting of 2026-08-27",
+   "scope": "P1 only — resolves the four landmark clarifications the 2026-08-04 intake left pending; no value was changed, only state, note and remeasure"
+  }
+ ],
+ "products": {
+  "P1": {
+   "fields": {
+    "total_assembled_height": {"value": 114.3, "state": "PLAUSIBLE_PENDING_PHOTO_VALIDATION", "remeasure": false, "note": "cross-check passed: pipette top (9.16 + 88.74 = 97.9) sits below 114.3 and above bottle top 91.6; exact collar/bulb overlap undefined. 2026-08-27: photogrammetry reads 118.4–120.2 mm here and 95.0 mm for the bare bottle against 91.6 — a 3.6–5.2% length excess left UNRESOLVED_ACCEPTABLE by owner ruling. Dropper seating explains ~4.1 mm (≈1.3 turns at 3 mm pitch) of the assembled case but none of the bare-bottle case. Calliper authority is unaffected."},
+    "bottle_height_without_dropper": {"value": 91.6, "state": "ACCEPTED_AS_REPORTED", "remeasure": false},
+    "body_height_before_shoulder_begins": {"value": 66, "state": "ACCEPTED_AS_REPORTED", "remeasure": false, "resolved_by": "a1_closeout 2026-08-27 (Q1)", "note": "OWNER RULED 2026-08-27: a distinct calliper landmark — the body height before the shoulder begins — NOT a competing reading of the 69 shoulder-start. An intra-sitting retirement of this field was proposed on photogrammetric evidence and was REVERSED by the owner once the measurement's error bar was corrected upward. Photographs corroborate within ±3.5 mm and do not separate 66 from 69."},
+    "maximum_body_diameter": {"value": 37.4, "state": "ACCEPTED_AS_REPORTED", "remeasure": false, "note": "single value for diameter/front width/side depth is consistent with the photo-confirmed circular body. 2026-08-27: circularity measured calibration-free at 0.96% out of round (two top-down frames, ellipse axis ratio 0.9904 at differing major-axis orientations) — this discharged the owner's conditional ruling and bound the `side` view key to SATISFIED_BY_SYMMETRY rather than to an image. Also used as the depth-correction anchor for IMG_3344."},
+    "base_diameter": {"value": 37.35, "state": "ACCEPTED_AS_REPORTED", "remeasure": false},
+    "shoulder_start_height_from_base": {"value": 69, "state": "ACCEPTED_AS_REPORTED", "remeasure": false, "resolved_by": "a1_closeout 2026-08-27 (Q2)", "note": "OWNER RULED 2026-08-27: a distinct calliper landmark — the shoulder start height from the base — separate from the 66 body height. Photographs corroborate within ±3.5 mm and do not separate 69 from 66; the photogrammetric silhouette-tangent departure sits at 68.1–69.2 mm with an open 4–5% length systematic (a1_closeout derived_evidence.open_systematic)."},
+    "neck_height": {"value": 18.11, "state": "ACCEPTED_AS_REPORTED", "remeasure": false, "resolved_by": "a1_closeout 2026-08-27 (Q3)", "landmark_pair": "shoulder/neck junction → glass mouth", "note": "OWNER RULED 2026-08-27: this is a HEIGHT, the owner's own calliper submission, verbatim-preserved — assumption A3 CONFIRMED. It is NOT a diameter: the sibling diameter fields (neck_outside_diameter 15.6, thread_outside_diameter 17.4) are separately populated. Photogrammetry puts shoulder/neck junction → rim at 19–20 mm with a rim endpoint biased long (clear glass defeats the R−B discriminator), compatible under the open scale systematic."},
+    "neck_outside_diameter": {"value": 15.6, "state": "ACCEPTED_AS_REPORTED", "remeasure": false, "note": "COLLISION WARNING (owner ruling 2026-08-27): this is a DIAMETER. The photogrammetric rim→support-bead HEIGHT also measures 15.59 mm — a numeric coincidence, not a corroboration. No 'neck height 15.6' entry may be created anywhere; the derived value is held only in a1_closeout under the explicit landmark-pair name rim_to_support_bead_bottom_mm."},
+    "bottle_opening_inside_diameter": {"value": 10.3, "state": "ACCEPTED_AS_REPORTED", "remeasure": false},
+    "thread_outside_diameter": {"value": 17.4, "state": "ACCEPTED_AS_REPORTED", "remeasure": false, "note": "ordering consistent: opening 10.3 < neck 15.6 < thread 17.4 < collar 21.4"},
+    "number_of_visible_thread_turns": {"value": 3, "unit": "turns", "state": "ACCEPTED_AS_REPORTED", "remeasure": false, "note": "IMG_3121 shows a multi-turn external thread; exact count not resolvable from photo"},
+    "thread_pitch": {"value": null, "state": "MISSING", "remeasure": true, "note": "owner calliper value REMAINS UNKNOWN and is not overwritten. The finish is OWNER_CONFIRMED GL18/DIN 168 (2026-08-27), whose table pitch is 3.00 mm; photogrammetry measured ~3.0 mm (DERIVED_INDICATIVE). Neither promotes this field to measured."},
+    "bottom_glass_thickness": {"value": null, "state": "MISSING", "remeasure": true},
+    "dropper_total_assembly_height": {"value": 105, "state": "ACCEPTED_AS_REPORTED", "remeasure": false, "resolved_by": "a1_closeout 2026-08-27 (Q4)", "landmark_pair": "bulb top → pipette tip, closure included", "note": "OWNER CONFIRMED 2026-08-27: overall dropper assembly length. PHOTO-CORROBORATED at 105.77 mm table-plane scale (IMG_3344, ±0.32 mm endpoint sensitivity, ~99–102 mm depth-corrected); no other span in the assembly is within 35 mm of 105, so the reading is unambiguous."},
+    "collar_outside_diameter": {"value": 21.4, "state": "ACCEPTED_AS_REPORTED", "remeasure": false},
+    "collar_height": {"value": 16.5, "state": "PLAUSIBLE_PENDING_PHOTO_VALIDATION", "remeasure": false, "note": "16.5 < neck height 18.11 — engagement definition needed"},
+    "bulb_maximum_diameter": {"value": 10.57, "state": "ACCEPTED_AS_REPORTED", "remeasure": false},
+    "bulb_visible_height": {"value": 19.2, "state": "ACCEPTED_AS_REPORTED", "remeasure": false, "note": "identical to removed-assembly bulb height — bulb fully proud of collar"},
+    "bulb_total_height_removed": {"value": 19.2, "state": "ACCEPTED_AS_REPORTED", "remeasure": false},
+    "pipette_total_length": {"value": 88.74, "state": "PLAUSIBLE_PENDING_PHOTO_VALIDATION", "remeasure": false, "note": "mutual-plausibility check with assembled clearance PASSED: 9.16 + 88.74 = 97.9 ≤ 114.3 and > 91.6 (enters collar/bulb zone)"},
+    "pipette_outside_diameter": {"value": 6.9, "state": "ACCEPTED_AS_REPORTED", "remeasure": false, "note": "6.9 < opening 10.3 ✓"},
+    "pipette_tip_shape": {"value": "rounded", "unit": null, "state": "ACCEPTED_AS_REPORTED", "remeasure": false, "note": "PHOTO-VERIFIED in IMG_3123"},
+    "pipette_tip_to_base_clearance_assembled": {"value": 9.16, "state": "PLAUSIBLE_PENDING_PHOTO_VALIDATION", "remeasure": false},
+    "embossed_capacity": {"value": 50, "unit": "ml", "state": "ACCEPTED_AS_REPORTED", "remeasure": false, "note": "PHOTO-VERIFIED: '50ml' embossed in the base, clearly readable in IMG_3124; additional embossed base mark '46' (meaning unverified)"}
+   }
+  },
+  "P2": {
+   "fields": {
+    "total_height_with_overcap": {"value": 110, "state": "AMBIGUOUS_DEFINITION", "remeasure": true, "note": "height set overlaps: 104 body + 41.52 overcap = 145.5 ≫ 110; overcap engagement depth undefined; the four clarified vertical measurements are required"},
+    "body_height_without_overcap": {"value": 104, "state": "AMBIGUOUS_DEFINITION", "remeasure": true, "note": "undefined whether this is glass-only, glass+pump-collar, or glass+pump"},
+    "front_width_at_widest": {"value": 34.6, "state": "ACCEPTED_AS_REPORTED", "remeasure": false},
+    "side_depth_at_widest": {"value": 35.38, "state": "ACCEPTED_AS_REPORTED", "remeasure": false},
+    "base_width": {"value": 35, "state": "AMBIGUOUS_DEFINITION", "remeasure": true, "note": "single submitted value must be split into base width and base depth as separate reads"},
+    "base_depth": {"value": 35, "state": "AMBIGUOUS_DEFINITION", "remeasure": true, "note": "same single-value submission as base_width"},
+    "corner_radius": {"value": null, "state": "MISSING", "remeasure": true, "note": "rounded corners visible in IMG_3118 top view but unmeasured"},
+    "shoulder_start_height": {"value": 67.4, "state": "PLAUSIBLE_PENDING_PHOTO_VALIDATION", "remeasure": false},
+    "neck_or_pump_mount_diameter": {"value": 22.6, "state": "PLAUSIBLE_PENDING_PHOTO_VALIDATION", "remeasure": false},
+    "overcap_height": {"value": 41.52, "state": "PLAUSIBLE_PENDING_PHOTO_VALIDATION", "remeasure": false, "note": "external cap height as removed part — part of the overlapping height set"},
+    "overcap_outside_diameter": {"value": 30.8, "state": "AMBIGUOUS_DEFINITION", "remeasure": false, "note": "submitted as 'front width and side depth'; PER INTAKE RULE + PHOTO EVIDENCE (circular profile in IMG_3117/3118) provisionally interpreted as cylindrical OUTSIDE DIAMETER — owner to confirm"},
+    "pump_height_beneath_overcap": {"value": 14.26, "state": "PLAUSIBLE_PENDING_PHOTO_VALIDATION", "remeasure": false},
+    "pump_nozzle_projection": {"value": 1.7, "state": "AMBIGUOUS_DEFINITION", "remeasure": true, "note": "raw note 'projection from the centre 1.7 beneath the top of the pump' must be split into (a) horizontal nozzle projection from centreline and (b) vertical nozzle-hole position below pump top"},
+    "pump_nozzle_width": {"value": 5.52, "state": "PLAUSIBLE_PENDING_PHOTO_VALIDATION", "remeasure": false},
+    "usable_front_artwork_panel_w": {"value": 24.36, "state": "PLAUSIBLE_PENDING_PHOTO_VALIDATION", "remeasure": false},
+    "usable_front_artwork_panel_h": {"value": 41.9, "state": "PLAUSIBLE_PENDING_PHOTO_VALIDATION", "remeasure": false},
+    "usable_back_artwork_panel_w": {"value": 24.36, "state": "PLAUSIBLE_PENDING_PHOTO_VALIDATION", "remeasure": false},
+    "usable_back_artwork_panel_h": {"value": 51.9, "state": "PLAUSIBLE_PENDING_PHOTO_VALIDATION", "remeasure": false},
+    "capacity": {"value": null, "state": "MISSING", "remeasure": true}
+   }
+  },
+  "P4": {
+   "fields": {
+    "total_height_with_lid": {"value": 44.7, "state": "AMBIGUOUS_DEFINITION", "remeasure": true, "note": "overlap: jar 42.3 + lid 14.42 = 56.72 ≫ 44.7 because the lid overlaps the threaded neck by ≈12 mm; the five-value height decomposition is required"},
+    "jar_height_without_lid": {"value": 42.3, "state": "ACCEPTED_AS_REPORTED", "remeasure": false, "note": "needs landmark confirmation as 'jar base to top of threaded neck'"},
+    "maximum_jar_outside_diameter": {"value": 56.56, "state": "ACCEPTED_AS_REPORTED", "remeasure": false},
+    "base_diameter": {"value": 56.5, "state": "ACCEPTED_AS_REPORTED", "remeasure": false},
+    "opening_outside_diameter": {"value": 49.4, "state": "ACCEPTED_AS_REPORTED", "remeasure": false},
+    "opening_inside_diameter": {"value": 42.09, "state": "ACCEPTED_AS_REPORTED", "remeasure": false},
+    "thread_diameter": {"value": 50.5, "state": "ACCEPTED_AS_REPORTED", "remeasure": false, "note": "thread crest 50.5 > opening OD 49.4 — external neck thread, consistent with the threaded lid liner seen in IMG_3115"},
+    "threaded_neck_height": {"value": 10.77, "state": "ACCEPTED_AS_REPORTED", "remeasure": false},
+    "lid_outside_diameter": {"value": 55.5, "state": "ACCEPTED_AS_REPORTED", "remeasure": false, "note": "55.5 < jar max 56.56 ✓"},
+    "lid_height": {"value": 14.42, "state": "ACCEPTED_AS_REPORTED", "remeasure": false},
+    "jar_wall_thickness": {"value": 1.56, "state": "PLAUSIBLE_PENDING_PHOTO_VALIDATION", "remeasure": false, "note": "(42.09 + 2×1.56 = 45.21) < opening OD 49.4 — implies a thicker wall or step at the neck; landmark of this read needs confirmation"},
+    "base_thickness": {"value": 6.7, "state": "PLAUSIBLE_PENDING_PHOTO_VALIDATION", "remeasure": false},
+    "internal_usable_depth": {"value": 24.74, "state": "PLAUSIBLE_PENDING_PHOTO_VALIDATION", "remeasure": false, "note": "24.74 + 6.7 = 31.44 < 42.3 — remainder implies a domed interior or deep neck region; acceptable pending height decomposition"},
+    "nominal_capacity": {"value": 50, "unit": "ml", "state": "ACCEPTED_AS_REPORTED", "remeasure": false, "note": "PHOTO-CORROBORATED: back label prints 'NET: 50 ML' (IMG_3112)"},
+    "front_printable_height_around_jar": {"value": 20.8, "state": "PLAUSIBLE_PENDING_PHOTO_VALIDATION", "remeasure": false}
+   }
+  },
+  "P6": {
+   "fields": {
+    "total_closed_height": {"value": 122, "state": "ACCEPTED_AS_REPORTED", "remeasure": false, "note": "consistency check PASSED: wand 117 + closed tip-to-bottom clearance 5 = 122 exactly"},
+    "transparent_reservoir_height": {"value": 77.1, "state": "PLAUSIBLE_PENDING_PHOTO_VALIDATION", "remeasure": false, "note": "77.1 + cap 45.68 = 122.78 vs 122 — ≈0.8 mm cap/shoulder overlap implied; acceptable"},
+    "reservoir_front_width": {"value": 20, "state": "ACCEPTED_AS_REPORTED", "remeasure": false},
+    "reservoir_side_depth": {"value": 19.15, "state": "ACCEPTED_AS_REPORTED", "remeasure": false},
+    "base_width_and_depth": {"value": 18.62, "state": "AMBIGUOUS_DEFINITION", "remeasure": true, "note": "single value for width AND depth of a faceted cross-section; must be split across flats vs across corners once the facet count is known"},
+    "cap_height": {"value": 45.68, "state": "ACCEPTED_AS_REPORTED", "remeasure": false},
+    "cap_front_width_and_side_depth": {"value": 20.54, "state": "AMBIGUOUS_DEFINITION", "remeasure": true, "note": "single value for both axes; cap top view (IMG_3109) shows a non-square rounded/chamfered profile"},
+    "neck_outside_diameter": {"value": 12, "state": "ACCEPTED_AS_REPORTED", "remeasure": false},
+    "opening_inside_diameter": {"value": 6.6, "state": "ACCEPTED_AS_REPORTED", "remeasure": false},
+    "wiper_opening_diameter": {"value": 4.3, "state": "ACCEPTED_AS_REPORTED", "remeasure": false, "note": "ordering 4.3 < 6.6 < 12 ✓"},
+    "wand_total_length": {"value": 117, "state": "AMBIGUOUS_DEFINITION", "remeasure": true, "note": "must be split into cap+wand total / underside-of-cap to tip / stem-only / applicator-tip lengths"},
+    "stem_diameter": {"value": 56.07, "state": "PHYSICALLY_IMPLAUSIBLE", "remeasure": true, "note": "recorded exactly as submitted; impossible for a ~20 mm product whose stem passes a 6.6 mm opening — photo IMG_3108 shows a stem of a few millimetres; NOT silently reinterpreted as 5.607"},
+    "applicator_tip_length": {"value": 15, "state": "ACCEPTED_AS_REPORTED", "remeasure": false},
+    "applicator_maximum_width": {"value": 4, "state": "ACCEPTED_AS_REPORTED", "remeasure": false},
+    "applicator_thickness": {"value": 4, "state": "ACCEPTED_AS_REPORTED", "remeasure": false},
+    "distance_applicator_tip_to_bottom_closed": {"value": 5, "state": "ACCEPTED_AS_REPORTED", "remeasure": false},
+    "maximum_front_artwork_area_w": {"value": 8.5, "state": "PLAUSIBLE_PENDING_PHOTO_VALIDATION", "remeasure": false},
+    "maximum_front_artwork_area_h": {"value": 54, "state": "PLAUSIBLE_PENDING_PHOTO_VALIDATION", "remeasure": false},
+    "maximum_cap_decoration_area": {"value": 0, "state": "AMBIGUOUS_DEFINITION", "remeasure": false, "note": "owner must classify as CAP_DECORATION_INTENTIONALLY_UNUSED vs NO_USABLE_DECORATION_AREA — the plain cream cap sleeve in the photos is physically printable"}
+   }
+  },
+  "P7": {
+   "verdict": "REFERENCE_PACK_INVALID — the set is internally contradictory as submitted; individual values are recorded but NONE may seed geometry",
+   "fields": {
+    "closed_overall_width": {"value": 20, "state": "CONTRADICTORY", "remeasure": true, "note": "a 79 mm window and 56.18 mm hinge cannot fit in a 20 mm width; photos show a palm-scale compact"},
+    "closed_overall_height": {"value": 16.26, "state": "CONTRADICTORY", "remeasure": true, "note": "likely a thickness rather than the front-to-hinge dimension"},
+    "closed_depth_or_thickness": {"value": 7.9, "state": "CONTRADICTORY", "remeasure": true, "note": "duplicates lid_thickness exactly; labeling suspect"},
+    "corner_radius": {"value": null, "state": "MISSING", "remeasure": true},
+    "front_frame_measurements": {"value": "8.44 / 7.55", "unit": "mm (raw)", "state": "AMBIGUOUS_DEFINITION", "remeasure": true, "note": "'rounded body rather than straight' — landmark undefined"},
+    "transparent_window_width": {"value": 79, "state": "CONTRADICTORY", "remeasure": true},
+    "transparent_window_height": {"value": 67.4, "state": "CONTRADICTORY", "remeasure": true},
+    "lid_thickness": {"value": 7.9, "state": "CONTRADICTORY", "remeasure": true},
+    "base_thickness": {"value": 7.8, "state": "CONTRADICTORY", "remeasure": true, "note": "7.9 + 7.8 = 15.7 ≈ 16.26 'height' — supports the thickness/height label swap hypothesis, which is recorded but NOT applied"},
+    "hinge_width": {"value": 56.18, "state": "CONTRADICTORY", "remeasure": true},
+    "hinge_location": {"value": 10.74, "state": "AMBIGUOUS_DEFINITION", "remeasure": true},
+    "opening_angle": {"value": 180, "unit": "degrees", "state": "PLAUSIBLE_PENDING_PHOTO_VALIDATION", "remeasure": true, "note": "IMG_3105 shows the lid lying wide open; exact angle unmeasured"},
+    "internal_pan_width": {"value": 20, "state": "CONTRADICTORY", "remeasure": true},
+    "internal_pan_height": {"value": 128.6, "state": "PHYSICALLY_IMPLAUSIBLE", "remeasure": true, "note": "a 128.6 mm pan cannot exist in this compact at any plausible outer size"},
+    "maximum_front_artwork_area": {"value": "64 / 36.3", "unit": "mm (raw)", "state": "CONTRADICTORY", "remeasure": true},
+    "maximum_back_label_area": {"value": "57 / 47", "unit": "mm (raw)", "state": "CONTRADICTORY", "remeasure": true}
+   }
+  }
+ }
+}

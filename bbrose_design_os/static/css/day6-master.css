@@ -1,0 +1,12 @@
+.day6 .tabs a[aria-current=page]{font-weight:700;text-decoration:underline}
+.day6 .pending{display:inline-block;color:#6b4a12;background:#fbf3e4;padding:6px 10px;border-radius:6px;margin:4px 0}
+.day6 .pending-list li{margin:6px 0}
+.day6 table{border-collapse:collapse;width:100%;font-size:14px;margin:12px 0}.day6 th,.day6 td{border-bottom:1px solid #ddd;padding:6px 8px;text-align:left;vertical-align:top}
+.day6 .surface{border-top:1px solid #ddd;padding:18px 0}.day6 .surface-picture{display:block;max-width:100%;max-height:420px;margin:8px auto;background:#4a2a10;padding:8px;box-sizing:border-box}
+.day6 .views{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.day6 .views img{width:100%;display:block}.day6 .views figcaption{padding:8px 0;font-size:14px}
+.day6 .device-panel{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}.day6 .device-panel figure{margin:0;text-align:center}.day6 .device-panel img{width:100%;height:520px;object-fit:contain;background:#4a2a10}
+.day6 .pages{display:grid;grid-template-columns:1fr 1fr;gap:16px}.day6 .pages img{width:100%;display:block;border:1px solid #ddd}
+.day6 pre{white-space:pre-wrap;font-size:13px;line-height:1.5}
+.day6 dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 16px}.day6 dt{font-weight:600}.day6 dd{margin:0}
+@media(max-width:900px){.day6 .device-panel,.day6 .views,.day6 .pages{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.day6 .device-panel,.day6 .views,.day6 .pages{grid-template-columns:1fr}}

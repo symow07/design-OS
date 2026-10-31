@@ -1,0 +1,144 @@
+{
+ "record_type": "supplier_sent_evidence_validation/1.0",
+ "superseded_by": "§BH46",
+ "supersession": "§BH46: the system never contacts suppliers. The owners of the companies deal with their suppliers directly and hand the product information to this system, which is the designer and acquires nothing. This record describes a path the system no longer has; it is kept as history, unsent, and nothing here is to be sent.",
+ "created_at": "2026-07-31",
+ "validated_against": "docs/production_authority/supplier_dispatch_manifest.json",
+ "manifest_path_note": "the request cited docs/production_authority/supplier_emails/supplier_dispatch_manifest.json; the manifest is one level up, at docs/production_authority/supplier_dispatch_manifest.json. supplier_emails/ holds only the five .eml files.",
+ "evidence_directory": "docs/production_authority/supplier_sent_evidence",
+ "evidence_directory_exists": true,
+ "messages": [
+  {
+   "supplier": "Liquid Bottles LLC",
+   "approved_destination": "Info@LiquidBottles.com",
+   "evidence_files": [],
+   "evidence_received": false,
+   "status": "EVIDENCE_NOT_RECEIVED",
+   "verified": false,
+   "checks": {
+    "destination_matches": null,
+    "subject_matches": null,
+    "body_matches_approved_reversible_hash": null,
+    "no_attachments": null,
+    "sent_timestamp_exists": null,
+    "message_id_exists": null,
+    "no_internal_audit_file_attached": null,
+    "no_production_authority_claim_introduced": null
+   },
+   "unverifiable_because": "no evidence file for this supplier reached docs/production_authority/supplier_sent_evidence"
+  },
+  {
+   "supplier": "SKS Bottle & Packaging",
+   "approved_destination": "Customersupport@sks-bottle.com",
+   "evidence_files": [],
+   "evidence_received": false,
+   "status": "EVIDENCE_NOT_RECEIVED",
+   "verified": false,
+   "checks": {
+    "destination_matches": null,
+    "subject_matches": null,
+    "body_matches_approved_reversible_hash": null,
+    "no_attachments": null,
+    "sent_timestamp_exists": null,
+    "message_id_exists": null,
+    "no_internal_audit_file_attached": null,
+    "no_production_authority_claim_introduced": null
+   },
+   "unverifiable_because": "no evidence file for this supplier reached docs/production_authority/supplier_sent_evidence"
+  },
+  {
+   "supplier": "BottleStore / O.Berk",
+   "approved_destination": "customerservice@bottlestore.com",
+   "evidence_files": [],
+   "evidence_received": false,
+   "status": "EVIDENCE_NOT_RECEIVED",
+   "verified": false,
+   "checks": {
+    "destination_matches": null,
+    "subject_matches": null,
+    "body_matches_approved_reversible_hash": null,
+    "no_attachments": null,
+    "sent_timestamp_exists": null,
+    "message_id_exists": null,
+    "no_internal_audit_file_attached": null,
+    "no_production_authority_claim_introduced": null
+   },
+   "unverifiable_because": "no evidence file for this supplier reached docs/production_authority/supplier_sent_evidence"
+  },
+  {
+   "supplier": "Premium Vials",
+   "approved_destination": "support@premiumvials.com",
+   "evidence_files": [],
+   "evidence_received": false,
+   "status": "EVIDENCE_NOT_RECEIVED",
+   "verified": false,
+   "checks": {
+    "destination_matches": null,
+    "subject_matches": null,
+    "body_matches_approved_reversible_hash": null,
+    "no_attachments": null,
+    "sent_timestamp_exists": null,
+    "message_id_exists": null,
+    "no_internal_audit_file_attached": null,
+    "no_production_authority_claim_introduced": null
+   },
+   "unverifiable_because": "no evidence file for this supplier reached docs/production_authority/supplier_sent_evidence"
+  },
+  {
+   "supplier": "Nicer Packaging",
+   "approved_destination": "sales@nicerpackaging.com",
+   "evidence_files": [],
+   "evidence_received": false,
+   "status": "EVIDENCE_NOT_RECEIVED",
+   "verified": false,
+   "checks": {
+    "destination_matches": null,
+    "subject_matches": null,
+    "body_matches_approved_reversible_hash": null,
+    "no_attachments": null,
+    "sent_timestamp_exists": null,
+    "message_id_exists": null,
+    "no_internal_audit_file_attached": null,
+    "no_production_authority_claim_introduced": null
+   },
+   "unverifiable_because": "no evidence file for this supplier reached docs/production_authority/supplier_sent_evidence"
+  }
+ ],
+ "messages_total": 5,
+ "messages_with_evidence": 0,
+ "messages_verified": 0,
+ "all_verified": false,
+ "sent_count": {
+  "written_here": false,
+  "rule": "supplier_requests_sent moves only from an owner-typed sent date on the tracking sheet, transcribed by ruling (§BH45(f)(2)); a verified message is evidence, not a count",
+  "tracking_sheet": "docs/production_authority/dispatch_pack/dispatch_tracking_sheet.md"
+ },
+ "checks_applied": [
+  "destination_matches",
+  "subject_matches",
+  "body_matches_approved_reversible_hash",
+  "no_attachments",
+  "sent_timestamp_exists",
+  "message_id_exists",
+  "no_internal_audit_file_attached",
+  "no_production_authority_claim_introduced"
+ ],
+ "accepted_evidence_forms": [
+  "an exported sent .eml (strongest — everything is checkable from it)",
+  "a JSON with message_id and sent_timestamp, plus the destination",
+  "a Gmail/Outlook message ID",
+  "a sent-email screenshot showing destination and timestamp",
+  "a supplier contact-form receipt"
+ ],
+ "why_a_claim_is_not_evidence": "the eight checks are about a message that exists — its destination, its subject, its body hash, its Date and its Message-ID. None of those can be read from a statement that sending happened. Neither a statement nor a verified message moves the count: only the owner's typed sent date does.",
+ "nothing_is_marked_sent_here": true,
+ "timestamps_or_message_ids_fabricated": 0,
+ "gate_effect": "NONE - Gates B, C, D and E remain BLOCKED",
+ "dispatch_success_does_not_imply": [
+  "supplier compatibility",
+  "production dimensions",
+  "print-zone or wrap authority",
+  "colour separation",
+  "material specification"
+ ]
+}

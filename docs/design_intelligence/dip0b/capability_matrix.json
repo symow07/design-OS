@@ -1,0 +1,39 @@
+{
+ "DIRECT": [
+  "page/artboard count",
+  "MediaBox/CropBox/ArtBox/TrimBox/BleedBox (pt+mm, y-down)",
+  "rotation",
+  "path counts by type",
+  "path width/dash/cap/join/opacity histograms",
+  "bounded per-path sample (bbox, colours, seqno, layer)",
+  "clip and transparency-group counts",
+  "raster count/bounds/pixels/bpc/colourspace/filter",
+  "shading, pattern and SMask census",
+  "/Separation table incl. /All registration",
+  "spot full-strength sRGB via tint transform",
+  "OCG layer names",
+  "XMP presence + document metadata",
+  "content-stream operator census",
+  "live text span count (measured: 0)",
+  "embedded font count (measured: 0)"
+ ],
+ "HEURISTIC": [
+  "glyph_scale_fill_ratio (TEXT_LIKE_GEOMETRY_CANDIDATE evidence — may be outlined type OR icons/ornaments/motifs/decorative linework)",
+  "thin_nofill_stroke_count (structural evidence for B3, not a dieline claim)"
+ ],
+ "REQUIRES_ILLUSTRATOR": [
+  "original_layer_names_and_nesting",
+  "live_text_objects_and_fonts",
+  "symbols_and_instances",
+  "appearance_attributes",
+  "live_effects",
+  "artboard_names",
+  "swatch_library"
+ ],
+ "REQUIRES_HUMAN": [
+  "exact wording (unavailable / requires OCR)",
+  "language (unavailable / requires OCR or human confirmation)",
+  "precise type style (uncertain)",
+  "whether text-like geometry is really type or decoration"
+ ]
+}

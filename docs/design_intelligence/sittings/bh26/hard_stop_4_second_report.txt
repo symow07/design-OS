@@ -1,0 +1,122 @@
+⛔ HARD STOP 4 REPORT — SECOND OCCURRENCE (commit A attempt 2)
+§BH26 hard stop 4: gate refusal not covered by §BH24. Filed before any
+remedial act; nothing below has been applied. §BH24 stands 0/3 — this
+refusal is a finding, not a flake.
+
+WHAT REFUSED. Attempt 2's gate: hand-captured exit=1, Tier-1, 10.33s,
+"3 failed, 115 passed, 2 subtests passed". Failing ids:
+  test_palette_statistics.py::GuardedCommitTests::
+    test_green_suite_passes_gate
+    test_the_real_ledger_and_artifact_are_left_alone
+    test_the_real_output_files_are_left_alone
+None is a §BH24 id. No ledger append on refusal (432 stands).
+
+MECHANISM, measured end-to-end (reproduced with every write redirected
+to temp; zero tracked writes; nested exit=1):
+  Each test runs the real guarded_commit.sh --dry-run (SUITE_CMD=true,
+  ledger/artifact/outputs redirected). The nested run reaches
+  record_integrity.py (guarded_commit.sh:227) — A373/3q, whose
+  survey()/check() ALWAYS read the real record set: "The override
+  moves WHERE the line is written. It does not move what is CHECKED."
+  check() refuses with exactly one finding:
+    RECORD_DIGEST_MISMATCH: docs/roadmap/palt_m6/
+    suite_file_manifest.json 65aef9fb1a3660cd -> fe4199bc421b7454
+    — regenerate to record the diff
+  The ruled §BH26(e) tool-run rewrote the suite manifest (ratified);
+  record_digest_manifest.json — the A373/3q digest record ABOVE it,
+  in no ruling — still pins the old bytes. record_integrity exits 1 ⇒
+  nested gate refuses at guarded_commit.sh:230 ⇒ the three green-path
+  assertions (returncode==0) fail. The two sibling tests pass because
+  they refuse on suite_exit BEFORE record_integrity runs.
+  suite_manifest_diffs.json PASSED its APPEND_ONLY check (prefix
+  90d84d6b stable, bytes 20930→21101 grew): the ruled append held;
+  it is NOT part of the refusal. Had Tier-1 passed, the outer gate's
+  own record-integrity step (:227) would have refused on the same
+  mismatch — the stale pin blocks the gate twice over.
+
+WHY MY SEAL MISSED IT. Two gaps, both mine, on record in the score:
+  (1) The 72-test pre-gate sweep ran characterization + grant, not
+  test_palette_statistics.py — attempt 1's lesson (select by the
+  tests' SUBJECT, not the files the diff touches) repeated one file
+  over: GuardedCommitTests' subject is the gate machinery plus the
+  record set, and the record set changed. (2) The condition-(1)
+  reading covered regenerate_manifest() in full, as ruled — but the
+  corpus documents this exact downstream cost in the A391 recipe at
+  palette_powder_protocol.py:2196–2211, which I did not surface:
+  "regenerate the manifest, then update this digest in the same
+  amendment, never separately — and run A391's five steps IN ORDER:
+  records first … RUN THE RECORDS STEP TWICE: regenerating the suite
+  manifest is itself a write to three declared records, so step 1's
+  OK does not survive step 2 and must be re-earned before the rebind
+  (§AY1) … a run that reports added (0) / removed (0) still mints a
+  new digest and still costs a rebind, an identity recompute and a
+  re-pin." Here a test file WAS actually added — the sanctioned case
+  — and the refusal now on screen is the recipe's own "step 1's OK
+  does not survive step 2" clause, arriving as measured.
+
+THE DOCUMENTED REMEDY (A391), previewed ZERO-WRITE — every value
+below computed without touching the tree; regenerate()'s diffs entry
+carries no timestamp, so the preview is exact, not approximate:
+  R1  record_integrity.py --regenerate → rewrites TRACKED
+      docs/roadmap/palt_m6/record_digest_manifest.json:
+      +0 −0 ~3 (record_gate_ledger.jsonl — legitimate growth from the
+      T26d/T26e gate appends; suite_file_manifest.json — the ruled
+      rewrite; suite_manifest_diffs.json — the ruled append); diffs
+      74→75 entries; file digest ff18cb2d74866a94 → 1e52199daa2ea4e8.
+      No ledger line (the --regenerate path never calls emit_ledger);
+      ignored probe .record_regen_candidates.json overwritten (noise,
+      same shape as before). APPEND_ONLY digests drift by design —
+      check() holds them by prefix+growth, so no future refusal.
+  R2  REBIND: palette_powder_protocol.py:2195, one literal,
+      "ff18cb2d74866a94" → "1e52199daa2ea4e8" ("in the same
+      amendment, never separately" — the recipe's own sentence).
+      Between R1 and R2 the A387 guard _assert_record_manifest_synced
+      raises by design; the two must land together.
+  R3  RE-PIN: protocol_identity moves ead892658e3323a8 →
+      11d57441e84b8d73 (computed over the rebound literal). One live
+      pin exists: test_characterization_protocol.py:617. One literal.
+      Grep-verified: no other live pin of either old value; remaining
+      hits are historical prose, left standing.
+  After R1–R3 the chain closes green, by construction: check() → 0
+  refusals → nested runs exit 0 → the three tests pass; :617 passes
+  on the new pin; A387 synced (on-disk rdm == rebound literal);
+  current identity verified computing exactly as pinned today, so the
+  remedy is the only moving part.
+
+WHAT THIS DOES TO THE WRITE SET IF FOLDED (the (d)/(e) shape, one
+level up): 7 → 8 tracked paths (+ record_digest_manifest.json), and
+the apps diff grows from the FIVE ruled paths to SEVEN — two
+one-literal maintenance edits (palette_powder_protocol.py:2195,
+test_characterization_protocol.py:617). To be explicit about §BH26's
+identities: NEITHER protected region is in these files — GATE
+7fbeb8f1fe10b0fb and TEST b32030dc827263e4 both re-verified
+byte-identical at scoring. No ceiling, no floor, no guard BEHAVIOR
+moves; cfa untouched. What moves is protocol_identity — a declared,
+predicted move (11d57441e84b8d73), which the recipe prices as the
+normal cost of adding a test file to the suite. Characterization
+count stays 66 (a literal swap collects identically).
+
+STATE. HEAD d1e5213; the seven ruled paths staged intact (numstat
+re-measured, exact); ledger 432; porcelain otherwise clean; §BH26(a)
+authority UNSPENT; attempt 2 scored as history (score_a_attempt2.txt
+— L6 falsified, L1/L2/L4/L8 held, L5/L7 not reached); evidence
+a2_gate.log, a2_exit.txt, this preview's transcript.
+
+LAWFUL EXITS — I act on NONE without your ruling:
+  (i) FOLD one level up, recipe-conformant: R1+R2+R3 join commit A
+      (8 tracked paths, 7 apps files of which 2 are one-literal
+      maintenance); fresh 8-leg seal with preview-is-the-prediction
+      on all three values (1e52199daa2ea4e8, 11d57441e84b8d73, +0−0~3
+      /74→75); relaunch. This is the same concern by the recipe's own
+      sentence: the digest of the record changes because the record
+      changed because the extent changed.
+  (ii) SEPARATE commit for the A391 sync — measured tangle, stated
+      honestly: the sync pins the NEW manifest bytes, which belong to
+      commit A; gating the sync alone would need the manifest stashed
+      back to HEAD, at which point the sync pins the WRONG (old)
+      state — circular. The recipe forbids it directly ("never
+      separately"). Listed because it is nameable, not because it
+      works.
+  (iii) Any narrower or different shape you rule — including unwind
+      of the tool-run (against the ratified floors' "retreat stays
+      refused", listed for completeness only).

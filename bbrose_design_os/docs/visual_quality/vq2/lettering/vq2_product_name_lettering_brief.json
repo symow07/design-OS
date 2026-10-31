@@ -1,0 +1,177 @@
+{
+ "record_type": "vq2_product_name_lettering_brief/2.0",
+ "created_at": "2026-07-29",
+ "codes": [
+  "VQ2_OWNER_SELECTED_HUMAN_CUSTOM_VECTOR_LETTERING",
+  "VQ2_PRODUCT_NAME_LETTERING_COMMISSION_REQUIRED",
+  "VQ2_A2_BLOCKED_PENDING_APPROVED_CUSTOM_LETTERING"
+ ],
+ "commissioned_words": [
+  "Rose",
+  "Damascena"
+ ],
+ "targets": {
+  "Rose": {
+   "word": "Rose",
+   "reference_left_px": 527,
+   "apparent_width_px": 134,
+   "baseline_px": 1021.0,
+   "cap_height_px": 73.0
+  },
+  "Damascena": {
+   "word": "Damascena",
+   "reference_left_px": 527,
+   "apparent_width_px": 281,
+   "baseline_px": 1091.0,
+   "cap_height_px": 61.0
+  }
+ },
+ "why_custom_required": "Human lettering is the approved path because every alternative was tested and failed:\n\n- No authoritative Rose/Damascena vector artwork exists. 'Damascena' appears NOWHERE in the searched approved assets - not as live text in 253 vector files, not in a raw byte scan of every .eps/.ai/.pdf/.svg.\n- No complete licensed matching typeface is available. MOXA Bestine and MAREGY Regular are named in the brand guideline but absent from all 4,845 inventoried font files; only incomplete Type1 subsets exist, which carry no licence authority.\n- The reference crop is too coarse for reliable automatic tracing. All thirteen diagnostic glyph reconstructions failed (0.639-0.920 IoU) because the product name is only 40-75 px of cap height and Didone hairlines are 1-2 px there.\n- Available Didone substitutes need distortion or colliding tracking: Bodoni 72 is 1.41x and 1.33x too wide at the measured cap heights, Didot 1.61x and 1.54x.\n- MOXA Bestine is approved brand-typography EVIDENCE but is not confirmed as the concept #97 product-name face.",
+ "handoff_only": true,
+ "claude_drew_final_glyphs": false,
+ "automated_tracing_used_for_final_glyphs": false,
+ "image_generation_calls": 0,
+ "provider_calls": 0,
+ "template_ai": "docs/visual_quality/vq2/lettering/vq2_product_name_lettering_template.ai",
+ "template_pdf": "docs/visual_quality/vq2/lettering/vq2_product_name_lettering_template.pdf",
+ "template_png": "docs/visual_quality/vq2/lettering/vq2_product_name_lettering_template.png",
+ "template_layers": [
+  "00_REFERENCE_NONPRINTING",
+  "01_M3_STRUCTURE_LOCKED",
+  "02_APPROVED_BBROSE_LOGO_LOCKED",
+  "03_ARTWORK_ZONE_GUIDES_NONPRINTING",
+  "04_ROSE_LETTERING_PLACEHOLDER",
+  "05_DAMASCENA_LETTERING_PLACEHOLDER",
+  "06_SUPPORTING_COPY_LOCKED",
+  "07_DIVIDER_RULE_LOCKED",
+  "08_MEASUREMENT_GUIDES_NONPRINTING",
+  "09_DESIGNER_OUTPUT",
+  "10_AUDIT_METADATA_NONPRINTING"
+ ],
+ "designer_output_layer": null,
+ "validation_spec": "docs/visual_quality/vq2/lettering/vq2_product_name_lettering_validation_spec.json",
+ "resume_contract": "docs/visual_quality/vq2/lettering/vq2_product_name_lettering_resume_contract.json",
+ "evidence": {
+  "product_name_block": {
+   "native": "docs/visual_quality/vq2/lettering/ref_product_name_block_native.png",
+   "native_size": [
+    305,
+    170
+   ],
+   "enlarged": "docs/visual_quality/vq2/lettering/ref_product_name_block_enlarged_x8.png",
+   "enlarged_size": [
+    2440,
+    1360
+   ],
+   "source_bounds_px": [
+    515,
+    935,
+    820,
+    1105
+   ],
+   "enlargement": 8,
+   "resample": "NEAREST",
+   "is_native_resolution": false
+  },
+  "rose": {
+   "native": "docs/visual_quality/vq2/lettering/ref_rose_native.png",
+   "native_size": [
+    157,
+    97
+   ],
+   "enlarged": "docs/visual_quality/vq2/lettering/ref_rose_enlarged_x8.png",
+   "enlarged_size": [
+    1256,
+    776
+   ],
+   "source_bounds_px": [
+    515,
+    935,
+    672,
+    1032
+   ],
+   "enlargement": 8,
+   "resample": "NEAREST",
+   "is_native_resolution": false
+  },
+  "damascena": {
+   "native": "docs/visual_quality/vq2/lettering/ref_damascena_native.png",
+   "native_size": [
+    305,
+    85
+   ],
+   "enlarged": "docs/visual_quality/vq2/lettering/ref_damascena_enlarged_x8.png",
+   "enlarged_size": [
+    2440,
+    680
+   ],
+   "source_bounds_px": [
+    515,
+    1020,
+    820,
+    1105
+   ],
+   "enlargement": 8,
+   "resample": "NEAREST",
+   "is_native_resolution": false
+  }
+ },
+ "canonical_logo": "docs/visual_quality/vq2/brand/bbrose_logo_approved.ai",
+ "canonical_logo_sha256": "a2b2a82969389ac2",
+ "vq2_a2_created": false,
+ "vq2_a3_created": false,
+ "pdf": {
+  "path": "docs/visual_quality/vq2/lettering/vq2_product_name_lettering_brief.pdf",
+  "sections": 16,
+  "size_bytes": 957406
+ },
+ "png": {
+  "path": "docs/visual_quality/vq2/lettering/vq2_product_name_lettering_brief.png",
+  "size": [
+   1500,
+   754
+  ]
+ },
+ "sections": 16,
+ "updated_at": "2026-07-29",
+ "supersedes": "vq2_product_name_lettering_brief/1.0",
+ "template_classification": {
+  "classification": [
+   "DESIGNER_REFERENCE_TEMPLATE",
+   "PDF_COMPATIBLE",
+   "NOT_AUTHORITATIVE_NATIVE_AI_SOURCE"
+  ],
+  "designer_may_use_as": "REFERENCE_AND_PLACEMENT_GUIDE",
+  "designer_must_edit_it_directly": false,
+  "may_be_placed_as": "locked, non-printing reference layer",
+  "delete_rename_or_overwrite": false,
+  "codes": [
+   "VQ2_HANDOFF_AI_IS_PDF_COMPATIBLE_NOT_NATIVE_LAYERED_AI",
+   "VQ2_TEMPLATE_AI_AND_PDF_BYTES_IDENTICAL",
+   "VQ2_EXISTING_DESIGNER_OUTPUT_LAYER_NOT_TECHNICALLY_ENFORCEABLE"
+  ]
+ },
+ "template_is_native_layered_ai": false,
+ "designer_creates_new_native_document": true,
+ "required_designer_layers": [
+  "00_REFERENCE_NONPRINTING",
+  "01_M3_STRUCTURE_LOCKED",
+  "02_APPROVED_BBROSE_LOGO_LOCKED",
+  "03_ARTWORK_ZONE_GUIDES_NONPRINTING",
+  "04_ROSE_LETTERING",
+  "05_DAMASCENA_LETTERING",
+  "06_SUPPORTING_COPY_LOCKED",
+  "07_DIVIDER_RULE_LOCKED",
+  "08_MEASUREMENT_GUIDES_NONPRINTING",
+  "09_DESIGNER_NOTES_NONPRINTING",
+  "10_AUDIT_METADATA_NONPRINTING"
+ ],
+ "word_layer_placement": {
+  "Rose": "04_ROSE_LETTERING",
+  "Damascena": "05_DAMASCENA_LETTERING"
+ },
+ "superseded_instruction": {
+  "was": "draw Rose and Damascena inside 09_DESIGNER_OUTPUT",
+  "now": "draw Rose in 04_ROSE_LETTERING and Damascena in 05_DAMASCENA_LETTERING inside the designer-authored native document; 09 is now DESIGNER_NOTES_NONPRINTING"
+ }
+}

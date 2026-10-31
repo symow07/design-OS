@@ -1,0 +1,13 @@
+{% extends "dashboard/gate1_regeneration_base.html" %}
+{% block title %}Regeneration refused{% endblock %}
+{% block regen %}
+<h1 class="h1">Regeneration refused</h1>
+<div class="card pad regen-note attn">
+  <p>{{ words }}</p>
+  <details class="tech"><summary>What the record says</summary><p class="small"><b>{{ code }}</b> — {{ message }}</p></details>
+</div>
+<p class="regen-acts">
+  {% if task_id %}<a class="btn primary" href="{% url 'dashboard:gate1_regeneration_confirm' task_id %}">Look again</a>
+  <a class="btn" href="{% url 'dashboard:design' task_id %}">Back to the design</a>{% else %}<a class="btn" href="{% url 'dashboard:index' %}">Back to the board</a>{% endif %}
+</p>
+{% endblock %}

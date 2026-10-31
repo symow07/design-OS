@@ -1,0 +1,27 @@
+{
+  "schema_version": "visual_correction_loop/1.0",
+  "iterations": [
+    "RESET2-IT1",
+    "RESET2-IT2",
+    "RESET2-IT3",
+    "RESET2-IT4"
+  ],
+  "inspector_calls_used": 3,
+  "inspector_calls_max": 3,
+  "image_generation_calls": 0,
+  "stop": true,
+  "reason": "ALL_INSPECTOR_CALLS_CONSUMED",
+  "additional_stop_conditions_met": [
+    "deterministic metrics did not improve 5% on iteration 4 (mean 0.00469 -> 0.00605, max 0.105 -> 0.182) even though it corrected a structural aspect error",
+    "visualizer and deterministic metrics materially conflicted on iteration 3: IoU 0.988 while the inspector reported a squat jar-like form \u2014 the conflict was real and the inspector was right"
+  ],
+  "best_candidate": "RESET2-IT4",
+  "assembly_released": false,
+  "release_rule": "\u00a712 requires deterministic gates to pass AND a PASSES_VISUAL_INSPECTION_PENDING_HUMAN_REVIEW verdict; neither holds",
+  "outstanding_blockers": [
+    "max_contour_distance 0.182 > 0.070",
+    "dark closure dome renders flat-topped",
+    "visual inspector verdict VISUALLY_REJECTED"
+  ],
+  "never_auto_accepted": true
+}

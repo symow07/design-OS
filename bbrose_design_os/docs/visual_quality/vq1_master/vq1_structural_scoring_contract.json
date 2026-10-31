@@ -1,0 +1,33 @@
+{
+ "record_type": "vq1_structural_scoring_contract/2.0",
+ "created_at": "2026-07-28",
+ "supersedes": "vq1_structural_scoring_contract/1.0 (implicit)",
+ "ten_of_ten_means": "MEETS_REFERENCE_WITHIN_DECLARED_STRUCTURAL_TOLERANCE",
+ "ten_of_ten_does_not_mean": [
+  "mathematical identity",
+  "pixel-for-pixel identity",
+  "zero residual",
+  "HUMAN_ACCEPTED",
+  "MANUFACTURABLE",
+  "PRODUCTION_READY"
+ ],
+ "qualifying_conditions": [
+  "its deterministic gates pass",
+  "reference uncertainty is respected",
+  "no actionable visible structural defect exists",
+  "no component-family mismatch exists",
+  "no topology error exists",
+  "no unsupported visible object exists",
+  "no human-rejected fallback remains"
+ ],
+ "sub_threshold_residual_alone_blocks_ten": false,
+ "gates_lowered": false,
+ "rows_excluded": false,
+ "historical_inspector_scores_rewritten": false,
+ "gates": {
+  "mean": 0.006,
+  "p95": 0.018,
+  "max": 0.035
+ },
+ "applies_to": "raster photographic reference (VQ-1)"
+}
